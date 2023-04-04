@@ -40,6 +40,7 @@ class TkeySshAgent < Formula
     resource("signerapp").stage("./cmd/tkey-ssh-agent/app.bin")
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tkey-ssh-agent"
+    man1.install "system/tkey-ssh-agent.1"
   end
 
   def post_install
@@ -55,7 +56,20 @@ class TkeySshAgent < Formula
   end
 
   service do
-    run [opt_bin/"tkey-ssh-agent", "--agent-socket", var/"run/tkey-ssh-agent.sock"]
+    run macos: [
+          opt_bin/"tkey-ssh-agent",
+          "--agent-socket",
+          var/"run/tkey-ssh-agent.sock",
+          "--uss",
+          "--pinentry",
+          HOMEBREW_PREFIX/"bin/pinentry-mac",
+        ],
+        linux: [
+          opt_bin/"tkey-ssh-agent",
+          "--agent-socket",
+          var/"run/tkey-ssh-agent.sock",
+          "--uss",
+        ]
     keep_alive true
     log_path var/"log/tkey-ssh-agent.log"
     error_log_path var/"log/tkey-ssh-agent.log"
