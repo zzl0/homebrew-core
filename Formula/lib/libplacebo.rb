@@ -4,6 +4,7 @@ class Libplacebo < Formula
   desc "Reusable library for GPU-accelerated image/video processing primitives"
   homepage "https://code.videolan.org/videolan/libplacebo"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   stable do
@@ -38,14 +39,14 @@ class Libplacebo < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "vulkan-headers" => :build
 
-  depends_on "glslang"
   depends_on "little-cms2"
   depends_on "python-markupsafe"
-  depends_on "sdl2"
+  depends_on "shaderc"
   depends_on "vulkan-loader"
 
   def install
@@ -63,6 +64,7 @@ class Libplacebo < Formula
 
     system "meson", "setup", "build",
                     "-Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml",
+                    "-Dshaderc=enabled", "-Dvulkan=enabled", "-Dlcms=enabled",
                     *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
