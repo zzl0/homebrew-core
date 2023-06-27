@@ -3,6 +3,7 @@ class I2util < Formula
   homepage "https://software.internet2.edu/"
   url "https://software.internet2.edu/sources/I2util/I2util-1.2.tar.gz"
   sha256 "3b704cdb88e83f7123f3cec0fe3283b0681cc9f80c426c3f761a0eefd1d72c59"
+  revision 1
 
   livecheck do
     # HTTP allows directory listing while HTTPS returns 403
