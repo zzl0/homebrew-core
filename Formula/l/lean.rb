@@ -29,6 +29,11 @@ class Lean < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "47716dec0f9e482dd8a44694c4916cc86d104dcc65f50f4fc8d81e0f2d366ef6"
   end
 
+  # Lean 3 is now at end of life.
+  # The `elan-init` formula provides a Lean installation manager
+  # which continues to support Lean 3 users, but also provides Lean 4.
+  disable! date: "2024-06-28", because: :deprecated_upstream
+
   depends_on "cmake" => :build
   depends_on "coreutils"
   depends_on "gmp"
