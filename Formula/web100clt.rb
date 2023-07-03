@@ -38,7 +38,7 @@ class Web100clt < Formula
   end
 
   def install
-    ENV.append_to_cflags "-fcommon" if OS.linux?
+    ENV.append "CPPFLAGS", "-fcommon" if OS.linux?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
