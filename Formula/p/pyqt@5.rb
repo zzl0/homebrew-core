@@ -1,10 +1,9 @@
 class PyqtAT5 < Formula
   desc "Python bindings for v5 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/e1/57/2023316578646e1adab903caab714708422f83a57f97eb34a5d13510f4e1/PyQt5-5.15.7.tar.gz"
-  sha256 "755121a52b3a08cb07275c10ebb96576d36e320e572591db16cfdbc558101594"
+  url "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz"
+  sha256 "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0"
   license "GPL-3.0-only"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "3e36ecd411d274f6c728ee7be982673d8a843795909a1e6a7294a9c287445292"
@@ -27,13 +26,13 @@ class PyqtAT5 < Formula
 
   # extra components
   resource "PyQt5-sip" do
-    url "https://files.pythonhosted.org/packages/39/5f/fd9384fdcb9cd0388088899c110838007f49f5da1dd1ef6749bfb728a5da/PyQt5_sip-12.11.0.tar.gz"
-    sha256 "b4710fd85b57edef716cc55fae45bfd5bfac6fc7ba91036f1dcc3f331ca0eb39"
+    url "https://files.pythonhosted.org/packages/c1/61/4055e7a0f36339964956ff415e36f4abf82561904cc49c021da32949fc55/PyQt5_sip-12.12.1.tar.gz"
+    sha256 "8fdc6e0148abd12d977a1d3828e7b79aae958e83c6cb5adae614916d888a6b10"
   end
 
   resource "PyQt3D" do
-    url "https://files.pythonhosted.org/packages/44/af/58684ce08013c0e16839662844b29cd73259a909982c4d6517ce5ffda05f/PyQt3D-5.15.5.tar.gz"
-    sha256 "c025e8a2de12a27e3bd34671d01cac39f78305128cc6cea3f0ba99e4ca3ec41b"
+    url "https://files.pythonhosted.org/packages/a5/80/26e3394c25187854bd3b68865b2b46cfd285aae01bbf448ddcac6f466af0/PyQt3D-5.15.6.tar.gz"
+    sha256 "7d6c6d55cd8fc221b313c995c0f8729a377114926f0377f8e9011d45ebf3881c"
   end
 
   resource "PyQtChart" do
