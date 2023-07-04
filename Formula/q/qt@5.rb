@@ -64,7 +64,6 @@ class QtAT5 < Formula
     depends_on "nss"
     depends_on "opus"
     depends_on "pulseaudio"
-    depends_on "re2"
     depends_on "sdl2"
     depends_on "snappy"
     depends_on "systemd"
