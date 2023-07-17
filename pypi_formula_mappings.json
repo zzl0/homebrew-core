@@ -110,7 +110,7 @@
     "exclude_packages": ["certifi", "six"]
   },
   "bilix": {
-    "exclude_packages": ["certifi", "typing-extensions", "pygments"]
+    "exclude_packages": ["certifi", "typing-extensions", "Pygments"]
   },
   "black": "black[d]",
   "borgmatic": {
