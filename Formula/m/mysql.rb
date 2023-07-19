@@ -3,10 +3,9 @@ class Mysql < Formula
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
   # https://bugs.mysql.com/bug.php?id=111469
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
-  sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.1/mysql-boost-8.1.0.tar.gz"
+  sha256 "cb19648bc8719b9f6979924bfea806b278bd26b8d67740e5742c6f363f142188"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -23,6 +22,7 @@ class Mysql < Formula
     sha256 x86_64_linux:   "e81e56785691e7ea4d0af44e4ce5d73035bc09959b9b80ea2300d1df66ef2958"
   end
 
+  depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -30,7 +30,7 @@ class Mysql < Formula
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "protobuf@21" # https://bugs.mysql.com/bug.php?id=111469
+  depends_on "protobuf@21" # percona-xtrabackup dependency conflict
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
 
