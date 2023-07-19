@@ -1,10 +1,9 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
-  sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.1/mysql-boost-8.1.0.tar.gz"
+  sha256 "cb19648bc8719b9f6979924bfea806b278bd26b8d67740e5742c6f363f142188"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
 
   livecheck do
     formula "mysql"
@@ -22,6 +21,7 @@ class MysqlClient < Formula
 
   keg_only "it conflicts with mysql (which contains client libraries)"
 
+  depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libevent"
@@ -63,8 +63,9 @@ class MysqlClient < Formula
       -DWITHOUT_SERVER=ON
     ]
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Fix bad linker flags in `mysql_config`.
     # https://bugs.mysql.com/bug.php?id=111011
