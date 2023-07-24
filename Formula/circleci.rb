@@ -6,7 +6,7 @@ class Circleci < Formula
       tag:      "v0.1.28196",
       revision: "0fd0133721c20a21e8a062ae6fe3ff8bca18fc69"
   license "MIT"
-  head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
+  head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5729772340c4a22e3e9b3fdbeba1d9fe0bd58a49a2a642f68b37d3bfb708198"
@@ -26,6 +26,7 @@ class Circleci < Formula
       -X github.com/CircleCI-Public/circleci-cli/version.packageManager=homebrew
       -X github.com/CircleCI-Public/circleci-cli/version.Version=#{version}
       -X github.com/CircleCI-Public/circleci-cli/version.Commit=#{Utils.git_short_head}
+      -X github.com/CircleCI-Public/circleci-cli/telemetry.SegmentEndpoint=https://api.segment.io
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
@@ -34,6 +35,7 @@ class Circleci < Formula
   end
 
   test do
+    ENV["CIRCLECI_CLI_TELEMETRY_OPTOUT"] = "1"
     # assert basic script execution
     assert_match(/#{version}\+.{7}/, shell_output("#{bin}/circleci version").strip)
     (testpath/".circleci.yml").write("{version: 2.1}")
