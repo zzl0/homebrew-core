@@ -1,8 +1,8 @@
 class GhcAT92 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.2.7/ghc-9.2.7-src.tar.xz"
-  sha256 "a253567a17b734a4c0dd0ffa296d33c2a5b5a54a77df988806a2a1e1ca7e88b8"
+  url "https://downloads.haskell.org/~ghc/9.2.8/ghc-9.2.8-src.tar.xz"
+  sha256 "5f13d1786bf4fd12f4b45faa37abedb5bb3f36d5e58f7da5307e8bfe88a567a1"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -73,13 +73,20 @@ class GhcAT92 < Formula
     end
   end
 
-  # Fix build with sphinx-doc 6+ using open upstream MR.
-  # TODO: Update commit when upstream MR is merged.
+  # Backport fix for building docs with sphinx-doc 6.
   # TODO: Remove patch if fix is backported to 9.2.
   # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/9625
   patch do
-    url "https://gitlab.haskell.org/ghc/ghc/-/commit/10e94a556b4f90769b7fd718b9790d58ae566600.diff"
+    url "https://gitlab.haskell.org/ghc/ghc/-/commit/00dc51060881df81258ba3b3bdf447294618a4de.diff"
     sha256 "354baeb8727fbbfb6da2e88f9748acaab23bcccb5806f8f59787997753231dbb"
+  end
+
+  # Backport fix for building docs with sphinx-doc 7.
+  # TODO: Remove patch if fix is backported to 9.2.
+  # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
+  patch do
+    url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
+    sha256 "54cdde1ca5d1b6fe3bbad8d0eac2b8c112ca1f346c4086d1e7361fa9510f1f44"
   end
 
   def install
