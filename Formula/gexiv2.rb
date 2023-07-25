@@ -1,8 +1,10 @@
 class Gexiv2 < Formula
   desc "GObject wrapper around the Exiv2 photo metadata library"
   homepage "https://wiki.gnome.org/Projects/gexiv2"
-  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.1.tar.xz"
-  sha256 "ec3ee3ec3860b9c78958a55da89cf76ae2305848e12f41945b7b52124d8f6cf9"
+  # release info on the website might lag behind, refer to gitlab tags for latest release info
+  # see discussions in https://gitlab.gnome.org/GNOME/gexiv2/-/issues/77
+  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz"
+  sha256 "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
   license "GPL-2.0-or-later"
 
   bottle do
