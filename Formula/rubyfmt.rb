@@ -2,8 +2,8 @@ class Rubyfmt < Formula
   desc "Ruby autoformatter"
   homepage "https://github.com/fables-tales/rubyfmt"
   url "https://github.com/fables-tales/rubyfmt.git",
-    tag:      "v0.8.1",
-    revision: "266b47b4666106e579626b1823100ccedf5cbbc3"
+    tag:      "v0.9.5",
+    revision: "46e08ebde71f5e816bdde0065c5100f33ee638a7"
   license "MIT"
   head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
 
@@ -28,6 +28,10 @@ class Rubyfmt < Formula
   depends_on "automake" => :build
   depends_on "bison" => :build
   depends_on "rust" => :build
+  # https://bugs.ruby-lang.org/issues/18616
+  # error: '__declspec' attributes are not enabled;
+  # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+  depends_on macos: :monterey
   uses_from_macos "ruby"
 
   def install
