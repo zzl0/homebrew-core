@@ -4,8 +4,8 @@ class Sysdig < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.0.tar.gz"
-    sha256 "478c5667b0936af827b87357a785069350514fd503e3eea55e9092be7bd22853"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.1.tar.gz"
+    sha256 "463ea62f3bc870b4dfaa5143abd6b790efb2219f86e8799792768d06de4169f9"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
@@ -60,6 +60,7 @@ class Sysdig < Formula
     depends_on "jq"
     depends_on "openssl@3"
     depends_on "protobuf@21"
+    depends_on "zstd"
   end
 
   fails_with gcc: "5" # C++17
@@ -72,6 +73,10 @@ class Sysdig < Formula
 
   def install
     (buildpath/"falcosecurity-libs").install resource("falcosecurity-libs")
+
+    # fix `libzstd.so.1: error adding symbols: DSO missing from command line` error
+    # https://stackoverflow.com/a/55086637
+    ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
