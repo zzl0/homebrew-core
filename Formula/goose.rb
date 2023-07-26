@@ -1,8 +1,8 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https://pressly.github.io/goose/"
-  url "https://github.com/pressly/goose/archive/v3.13.4.tar.gz"
-  sha256 "b2f19eb4026b1a8a20f57c27ea22715b7721efb4c6a93e2d6a89e4393705d1a9"
+  url "https://github.com/pressly/goose/archive/v3.15.0.tar.gz"
+  sha256 "f301fdd7df5d05c6c1f8eb358f8aaa8177afb7e5d28064586cdf00bd6e5677ec"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class Goose < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[-s -w -X main.version=#{version}]
+    ldflags = %W[-s -w -X main.version=v#{version}]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/goose"
   end
 
