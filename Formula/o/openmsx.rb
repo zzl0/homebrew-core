@@ -1,8 +1,8 @@
 class Openmsx < Formula
   desc "MSX emulator"
   homepage "https://openmsx.org/"
-  url "https://github.com/openMSX/openMSX/releases/download/RELEASE_18_0/openmsx-18.0.tar.gz"
-  sha256 "23db7756e6c6b5cfd157bb4720a0d96aa2bb75e88d1fdf5a0f76210eef4aff60"
+  url "https://github.com/openMSX/openMSX/releases/download/RELEASE_19_0/openmsx-19.0.tar.gz"
+  sha256 "bbc8afff5f933278ed96b1699446b7c85daeeaa1b71fd369391231d6474b3af1"
   license "GPL-2.0-or-later"
   head "https://github.com/openMSX/openMSX.git", branch: "master"
 
@@ -35,13 +35,27 @@ class Openmsx < Formula
   uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  end
+
   on_linux do
     depends_on "alsa-lib"
   end
 
-  fails_with gcc: "5"
+  fails_with :clang do
+    build 1300
+    cause "Requires C++20"
+  end
+
+  fails_with :gcc do
+    version "7"
+    cause "Requires C++20"
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
+
     # Hardcode prefix
     inreplace "build/custom.mk", "/opt/openMSX", prefix
     inreplace "build/probe.py", "platform == 'darwin'", "platform == 'linux'" if OS.linux?
@@ -51,7 +65,7 @@ class Openmsx < Formula
     ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path/"System/Library/Frameworks/Tcl.framework" : Formula["tcl-tk"].lib
 
     system "./configure"
-    system "make"
+    system "make", "CXX=#{ENV.cxx}"
 
     if OS.mac?
       prefix.install Dir["derived/**/openMSX.app"]
