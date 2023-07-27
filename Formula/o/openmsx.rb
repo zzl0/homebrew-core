@@ -22,7 +22,6 @@ class Openmsx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec2ae1eaab1752ecb6309a49470417a87cb2f85eb9de3d57f9c33313f2bc9525"
   end
 
-  depends_on "python@3.11" => :build
   depends_on "freetype"
   depends_on "glew"
   depends_on "libogg"
@@ -32,6 +31,7 @@ class Openmsx < Formula
   depends_on "sdl2_ttf"
   depends_on "theora"
 
+  uses_from_macos "python" => :build
   uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
