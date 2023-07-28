@@ -1,8 +1,8 @@
 class Vvenc < Formula
   desc "Fraunhofer Versatile Video Encoder"
   homepage "https://github.com/fraunhoferhhi/vvenc"
-  url "https://github.com/fraunhoferhhi/vvenc/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "119970f1e00667045eb12775db10611fc04f9158348144913c9e233f98664714"
+  url "https://github.com/fraunhoferhhi/vvenc/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "4ddb365dfc21bbbb7ed54655c7630ae3e8e977af31f22b28195e720215b1072d"
   license "BSD-3-Clause-Clear"
   head "https://github.com/fraunhoferhhi/vvenc.git", branch: "master"
 
@@ -18,11 +18,6 @@ class Vvenc < Formula
 
   depends_on "cmake" => :build
 
-  resource("test_video") do
-    url "https://archive.org/download/test_bunny_202304/test_bunny.yuv"
-    sha256 "6c7e90db57f5097d05d735757d72ef2ef4d5a3c0da562706fd9cfa669535e797"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DVVENC_INSTALL_FULLFEATURE_APP=1",
@@ -33,14 +28,19 @@ class Vvenc < Formula
   end
 
   test do
-    resource("test_video").stage testpath
+    resource "homebrew-test_video" do
+      url "https://raw.githubusercontent.com/fraunhoferhhi/vvenc/master/test/data/RTn23_80x44p15_f15.yuv"
+      sha256 "ecd2ef466dd2975f4facc889e0ca128a6bea6645df61493a96d8e7763b6f3ae9"
+    end
+
+    resource("homebrew-test_video").stage testpath
     system bin/"vvencapp",
-           "-i", testpath/"test_bunny.yuv",
+           "-i", testpath/"RTn23_80x44p15_f15.yuv",
            "-s", "360x640",
            "--fps", "60/1",
            "--format", "yuv420_10",
            "--hdr", "hdr10_2020",
-           "-o", testpath/"test_bunny.vvc"
-    assert_predicate testpath/"test_bunny.vvc", :exist?
+           "-o", testpath/"RTn23_80x44p15_f15.vvc"
+    assert_predicate testpath/"RTn23_80x44p15_f15.vvc", :exist?
   end
 end
