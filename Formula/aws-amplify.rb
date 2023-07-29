@@ -3,8 +3,8 @@ require "language/node"
 class AwsAmplify < Formula
   desc "Build full-stack web and mobile apps in hours. Easy to start, easy to scale"
   homepage "https://aws.amazon.com/amplify"
-  url "https://registry.npmjs.org/@aws-amplify/cli-internal/-/cli-internal-12.2.0.tgz"
-  sha256 "5e5ef6fb2e3cda1ab8c2217cc01fd77fce7e3dd98f6e140df45f00b9e204cfc3"
+  url "https://registry.npmjs.org/@aws-amplify/cli-internal/-/cli-internal-12.2.3.tgz"
+  sha256 "b7bb92591d73420ea28b6696336d3977438e766de5de53bc1303a38313b82cfb"
   license "Apache-2.0"
 
   bottle do
@@ -55,6 +55,6 @@ class AwsAmplify < Formula
       assert_match "No Amplify backend project files detected within this folder.", stdout.read
     end
 
-    assert_match version.to_s, shell_output(bin/"amplify version")
+    assert_match version.to_s, shell_output("#{bin}/amplify version")
   end
 end
