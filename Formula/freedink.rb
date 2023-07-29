@@ -43,6 +43,9 @@ class Freedink < Formula
   end
 
   def install
+    # cannot initialize a variable of type 'char *' with an rvalue of type 'const char *'
+    inreplace "src/gfx_fonts.cpp", "char *familyname", "const char *familyname"
+    inreplace "src/gfx_fonts.cpp", "char *stylename", "const char *stylename"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
