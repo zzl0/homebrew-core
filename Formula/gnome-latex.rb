@@ -1,8 +1,8 @@
 class GnomeLatex < Formula
   desc "LaTeX editor for the GNOME desktop"
   homepage "https://gitlab.gnome.org/swilmet/gnome-latex"
-  url "https://download.gnome.org/sources/gnome-latex/3.44/gnome-latex-3.44.0.tar.xz"
-  sha256 "88bd5340bd28c7ed01c7966a3a00732bbd902773df5ac659be6ad11806a9e744"
+  url "https://download.gnome.org/sources/gnome-latex/3.46/gnome-latex-3.46.0.tar.xz"
+  sha256 "d67555639b2a15a8aebd54f335354e44fe3433143ae3cb3cca7a8e26f8112ada"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -33,11 +33,11 @@ class GnomeLatex < Formula
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "amtk"
   depends_on "glib"
   depends_on "gspell"
   depends_on "gtk+3"
-  depends_on "gtksourceview4"
+  depends_on "libgedit-amtk"
+  depends_on "libgedit-gtksourceview"
   depends_on "libgee"
   depends_on "tepl"
 
