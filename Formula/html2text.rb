@@ -1,8 +1,8 @@
 class Html2text < Formula
   desc "Advanced HTML-to-text converter"
   homepage "https://github.com/grobian/html2text"
-  url "https://github.com/grobian/html2text/archive/v2.1.1.tar.gz"
-  sha256 "be16ec8ceb25f8e7fe438bd6e525b717d5de51bd0797eeadda0617087f1563c9"
+  url "https://github.com/grobian/html2text/releases/download/v2.2.2/html2text-2.2.2.tar.gz"
+  sha256 "7afb9c5cec4e27b69a50f082770eae09a0e5f081809b29975be2907176645a60"
   license "GPL-2.0-or-later"
   head "https://github.com/grobian/html2text.git", branch: "master"
 
