@@ -6,13 +6,13 @@ class StructurizrCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99d1a07207001d20ed1e1671b0f51d20811fc1e0853b4546c3b560fb82f033b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d5bb5037a6fc115090fbb7ceab208a2ac2c2200f2ef774dbcf5eb99bc51482"
   end
 
   depends_on "openjdk"
