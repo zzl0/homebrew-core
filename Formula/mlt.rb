@@ -28,7 +28,7 @@ class Mlt < Formula
   depends_on "libvorbis"
   depends_on "opencv"
   depends_on "pango"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "sdl2"
   depends_on "sox"
 
@@ -41,8 +41,10 @@ class Mlt < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     "-DGPL=ON",
                     "-DGPL3=ON",
-                    "-DMOD_OPENCV=ON",
                     "-DMOD_JACKRACK=OFF",
+                    "-DMOD_OPENCV=ON",
+                    "-DMOD_QT5=OFF",
+                    "-DMOD_QT6=ON",
                     "-DMOD_SDL1=OFF",
                     "-DRELOCATABLE=OFF",
                     *std_cmake_args
