@@ -1,8 +1,8 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://github.com/jdxcode/rtx"
-  url "https://github.com/jdxcode/rtx/archive/refs/tags/v1.35.2.tar.gz"
-  sha256 "f70c6a35d183f26b6224684b4491eae39ed6427c071e2c0c05e96f956b1278c3"
+  url "https://github.com/jdxcode/rtx/archive/refs/tags/v1.35.6.tar.gz"
+  sha256 "7e9723146611592d1b5c4c8dfa33e027e09af4f7da714f6890ef7b09bb0c23f7"
   license "MIT"
   head "https://github.com/jdxcode/rtx.git", branch: "main"
 
@@ -17,6 +17,11 @@ class Rtx < Formula
   end
 
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", "--features=brew", *std_cargo_args
