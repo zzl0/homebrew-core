@@ -1,9 +1,9 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-28.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-28.2.tar.xz"
-  sha256 "ee21182233ef3232dc97b486af2d86e14042dbb65bbc535df562c3a858232488"
+  url "https://ftp.gnu.org/gnu/emacs/emacs-29.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/emacs/emacs-29.1.tar.xz"
+  sha256 "d2f881a5cc231e2f5a03e86f4584b0438f83edd7598a09d24a21bd8d003e2e01"
   license "GPL-3.0-or-later"
 
   bottle do
