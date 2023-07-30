@@ -23,6 +23,7 @@ class Swiftlint < Formula
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release", "--product", "swiftlint"
     bin.install ".build/release/swiftlint"
+    generate_completions_from_executable(bin/"swiftlint", "--generate-completion-script")
   end
 
   test do
