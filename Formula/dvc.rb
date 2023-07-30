@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/30/3c/4d47accc46da04fafb05c09836ec780d0c7ca2dcfe17bdd5f659a2e9c9a2/dvc-3.9.1.tar.gz"
-  sha256 "cb6edad631e2e88101217af020e0549b66fde34a3ce8b0c1971341fe2b7ff8d8"
+  url "https://files.pythonhosted.org/packages/52/0f/13a0e857e6776f20ca003e476aae118a2525a82748dfa39fb9e41b15c7d9/dvc-3.10.1.tar.gz"
+  sha256 "5897942aabe371fe1c826b302238936d827b354494ff1cbea0bce55ffe426a5d"
   license "Apache-2.0"
 
   bottle do
@@ -259,8 +259,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/bd/35/a509f400fc34b9d5de0cdb47c6e86b178314b1eca02cb731a933b931e178/dvc-data-2.8.0.tar.gz"
-    sha256 "6b5a509a9f378952723a5c2900a3849307e4a3ddfde3cfd98d1a6ad75c58b6fb"
+    url "https://files.pythonhosted.org/packages/17/f8/64da2a7960f5450b7b770bd33a2182be1ea5d0dabf3e5a60f465a09afdd8/dvc-data-2.8.1.tar.gz"
+    sha256 "eb5026754f7b6d6a0051e49975c9116571933d3349a6db49f211f1237882b830"
   end
 
   resource "dvc-gdrive" do
@@ -284,8 +284,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/7f/62/406c64cac386e1001a7470ee1c73ad17e814e7289beb48455051c5c7d7fe/dvc-objects-0.24.0.tar.gz"
-    sha256 "4c58153162b71d2290e13c47de4f4f009c6ed43f1b3e37cfe8a9a76065101e37"
+    url "https://files.pythonhosted.org/packages/93/ba/c2e8a3dbafb4a2c2a917316fa542fff6632c1d196c229376ee88256c4460/dvc-objects-0.24.1.tar.gz"
+    sha256 "174168b826ad2699e3de5e203d6b65c5893b5d1f668c2db20516631f65288d7f"
   end
 
   resource "dvc-oss" do
@@ -554,13 +554,13 @@ class Dvc < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/95/60/d93628975242cc515ab2b8f5b2fc831d8be2eff32f5a1be4776d49305d13/pathspec-0.11.1.tar.gz"
-    sha256 "2798de800fa92780e33acca925945e9a19a133b715067cf165b8866c15a31687"
+    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "portalocker" do
@@ -639,8 +639,8 @@ class Dvc < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/d0/50/74cc70b70662f0571c28733581a40097c0d626d70eefd17c606a195f36fc/rich-13.5.0.tar.gz"
+    sha256 "62c81e88dc078d2372858660e3d5566746870133e51321f852ccc20af5c7e7b2"
   end
 
   resource "rsa" do
@@ -679,8 +679,8 @@ class Dvc < Formula
   end
 
   resource "shtab" do
-    url "https://files.pythonhosted.org/packages/ed/34/19dce6683a45403e7b268838ee2b037b679fa5b2048b59bfbd17753f714b/shtab-1.6.3.tar.gz"
-    sha256 "00bfb8c2b02f503298a6774fb40503c0dbf9621205f721725f8ef40bd4f32027"
+    url "https://files.pythonhosted.org/packages/72/5c/6614a030e5308c244f3fb7ada978d3860720d8dc69522c651d3052c50e8c/shtab-1.6.4.tar.gz"
+    sha256 "aba9e049bed54ffdb650cb2e02657282d8c0148024b0f500277052df124d47de"
   end
 
   resource "smmap" do
