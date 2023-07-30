@@ -1,10 +1,9 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
   homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.6.2.tar.xz"
-  sha256 "9e2c1b80d5fbe59b61308fdfab6c79b5021d7ff4ff2489fb12daf0a96a83551d"
+  url "https://www.libarchive.org/downloads/libarchive-3.7.1.tar.xz"
+  sha256 "b17403ce670ff18d8e06fea05a9ea9accf70678c88f1b9392a2e29b51127895f"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url :homepage
@@ -43,8 +42,11 @@ class Libarchive < Formula
     system "make", "install"
 
     # fixes https://github.com/libarchive/libarchive/issues/1819
-    inreplace lib/"pkgconfig/libarchive.pc", "Libs.private: ", "Libs.private: -liconv " if OS.mac?
-    inreplace lib/"pkgconfig/libarchive.pc", "Requires.private: iconv", ""
+    if OS.mac?
+      inreplace lib/"pkgconfig/libarchive.pc", "Libs.private: ", "Libs.private: -liconv "
+      inreplace lib/"pkgconfig/libarchive.pc", "Requires.private: iconv", ""
+    end
+
     return unless OS.mac?
 
     # Just as apple does it.
