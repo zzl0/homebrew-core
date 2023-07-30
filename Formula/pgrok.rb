@@ -25,19 +25,13 @@ class Pgrok < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    ["pgrokd", "pgrok"].each do |f|
-      system "go", "build", *std_go_args(ldflags: ldflags, output: bin/f), "./cmd/#{f}"
-    end
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/pgrok"
 
     etc.install "pgrok.example.yml"
-    etc.install "pgrokd.exmaple.yml"
   end
 
   test do
     ENV["XDG_CONFIG_HOME"] = testpath
-
-    output = shell_output("#{bin}/pgrokd --config #{etc}/pgrokd.exmaple.yml 2>&1", 1)
-    assert_match "[error] failed to initialize database", output
 
     system bin/"pgrok", "init", "--remote-addr", "example.com:222",
                                 "--forward-addr", "http://localhost:3000",
