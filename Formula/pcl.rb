@@ -4,7 +4,7 @@ class Pcl < Formula
   url "https://github.com/PointCloudLibrary/pcl/archive/pcl-1.13.1.tar.gz"
   sha256 "8ab98a9db371d822de0859084a375a74bdc7f31c96d674147710cf4101b79621"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
@@ -27,12 +27,16 @@ class Pcl < Formula
   depends_on "libpcap"
   depends_on "libusb"
   depends_on "qhull"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "vtk"
 
   on_macos do
     depends_on "libomp"
   end
+
+  # Fix build with Qt 6
+  # https://github.com/PointCloudLibrary/pcl/issues/5776
+  patch :DATA
 
   def install
     args = std_cmake_args + %w[
@@ -127,3 +131,16 @@ class Pcl < Formula
     end
   end
 end
+__END__
+diff -pur a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h
+--- a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-05-10 08:44:47
++++ b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-07-31 18:04:25
+@@ -42,6 +42,8 @@
+ 
+ #pragma once
+ 
++#include <QList>
++#include <QObject>
+ #include <QPointer>
+ 
+ namespace pcl
