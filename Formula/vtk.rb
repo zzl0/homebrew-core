@@ -4,7 +4,7 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.2/VTK-9.2.6.tar.gz"
   sha256 "06fc8d49c4e56f498c40fcb38a563ed8d4ec31358d0101e8988f0bb4d539dd12"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
@@ -34,9 +34,9 @@ class Vtk < Formula
   depends_on "lz4"
   depends_on "netcdf"
   depends_on "pugixml"
-  depends_on "pyqt@5"
+  depends_on "pyqt"
   depends_on "python@3.11"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
   depends_on "utf8cpp"
@@ -107,7 +107,7 @@ class Vtk < Formula
       -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
       -DPython3_EXECUTABLE:FILEPATH=#{which(python)}
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
-      -DVTK_QT_VERSION:STRING=5
+      -DVTK_QT_VERSION:STRING=6
     ]
 
     # https://github.com/Homebrew/linuxbrew-core/pull/21654#issuecomment-738549701
