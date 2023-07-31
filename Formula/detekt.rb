@@ -11,13 +11,13 @@ class Detekt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eb9d906989f2b1b7cb8d874ec9aff4e11e627a9b72b58f11ee8b07f3e34134b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d212935e52e998855e8093b00010af6fd223ac5be0b59c04f3e7420e77176259"
   end
 
   depends_on "openjdk@17"
