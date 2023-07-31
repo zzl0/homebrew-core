@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/6a/34/f9da5361b0e37b960fcbdc1176f765a64418ed4530018f74cd8e37113f36/cfn-lint-0.79.5.tar.gz"
-  sha256 "7a00dba8f70b8a92c38bfc8f45e2ab20cedad5c49054a46f1ce931e48fc1cd0c"
+  url "https://files.pythonhosted.org/packages/68/ad/bc3193f294200753b938a75982c5efb5019da3b24dd8d0897decf6b8fb65/cfn-lint-0.79.6.tar.gz"
+  sha256 "09fc9cc497fc6d15e8b822a98fa0628ed6f8e9bcce6c289d95b2fc71d50aa63f"
   license "MIT-0"
 
   bottle do
@@ -34,13 +34,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/88/e0/1b779c4ffd8637ccb9e5b6dde2da16b89c825c98aebad5f7dd818aeb90bf/boto3-1.28.15.tar.gz"
-    sha256 "a6e711e0b6960c3a5b789bd30c5a18eea7263f2a59fc07f85efa5e04804e49d2"
+    url "https://files.pythonhosted.org/packages/fd/e6/1c1ca0e723b3d5d1f340a84420ee16eea5dc38db8ab351c5e7944ba4dbe5/boto3-1.28.16.tar.gz"
+    sha256 "aea48aedf3e8676e598e3202e732295064a4fcad5f2d2d2a699368b8c3ab492c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/81/f1/328009b97681416251cef7569d0343c140bbe13e5f2913ee051ec3af458f/botocore-1.31.15.tar.gz"
-    sha256 "b46d1ce4e0cf42d28fdf61ce0c999904645d38b51cb809817a361c0cec16d487"
+    url "https://files.pythonhosted.org/packages/35/eb/507284da10ad97d0e84bfe1a5c3493902311fb943c943b8d8348e7ee41b6/botocore-1.31.16.tar.gz"
+    sha256 "563e15979e763b93d78de58d0fc065f8615be12f41bab42f5ad9f412b6a224b3"
   end
 
   resource "jmespath" do
