@@ -3,8 +3,8 @@ require "language/node"
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.16.0.tgz"
-  sha256 "1830a7b6877a39ff51fecab3ee6007f68caf9771c50118842e6b6e7f4764f5c1"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.16.1.tgz"
+  sha256 "9fb4ffa24159d24856e357b1633d22672c82404d1ca5e8888e57f66c567ab8b1"
   license "MIT"
 
   bottle do
