@@ -5,7 +5,7 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-8.2.0.tar.xz"
   sha256 "b7b9d6e5004ff039450cfedd2a59ddbe2a3c22296df927a8af994182eb2670de"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
     sha256 arm64_ventura:  "8c87a7d72e3a385863b8ded569079d98ec18dcdbe7d2d05579a4fd24d10398dd"
@@ -42,7 +42,6 @@ class Octave < Formula
   depends_on "ghostscript"
   depends_on "gl2ps"
   depends_on "glpk"
-  depends_on "gnuplot"
   depends_on "graphicsmagick"
   depends_on "hdf5"
   depends_on "libsndfile"
@@ -74,6 +73,10 @@ class Octave < Formula
   cxxstdlib_check :skip
 
   fails_with gcc: "5"
+
+  # Upstream fix for compatibility with SuiteSparse 7.1.0
+  # http://hg.savannah.gnu.org/hgweb/octave/rev/134152cf1a3f
+  patch :DATA
 
   def install
     # Default configuration passes all linker flags to mkoctfile, to be
@@ -165,3 +168,143 @@ class Octave < Formula
     EOS
   end
 end
+__END__
+diff --git a/liboctave/numeric/sparse-qr.cc b/liboctave/numeric/sparse-qr.cc
+--- a/liboctave/numeric/sparse-qr.cc
++++ b/liboctave/numeric/sparse-qr.cc
+@@ -805,16 +805,17 @@
+   cholmod_dense *q;
+
+   // I is nrows x nrows identity matrix
+-  cholmod_dense *I
++  cholmod_dense *I_mat
+     = cholmod_l_allocate_dense (nrows, nrows, nrows, CHOLMOD_REAL, &m_cc);
+
+   for (octave_idx_type i = 0; i < nrows * nrows; i++)
+-    (reinterpret_cast<double *> (I->x))[i] = 0.0;
++    (reinterpret_cast<double *> (I_mat->x))[i] = 0.0;
+
+   for (octave_idx_type i = 0; i < nrows; i++)
+-    (reinterpret_cast<double *> (I->x))[i * nrows + i] = 1.0;
+-
+-  q = SuiteSparseQR_qmult<double> (SPQR_QX, m_H, m_Htau, m_HPinv, I, &m_cc);
++    (reinterpret_cast<double *> (I_mat->x))[i * nrows + i] = 1.0;
++
++  q = SuiteSparseQR_qmult<double> (SPQR_QX, m_H, m_Htau, m_HPinv, I_mat,
++                                   &m_cc);
+   spqr_error_handler (&m_cc);
+
+   double *q_x = reinterpret_cast<double *> (q->x);
+@@ -824,7 +825,7 @@
+       ret_vec[j * nrows + i] = q_x[j * nrows + i];
+
+   cholmod_l_free_dense (&q, &m_cc);
+-  cholmod_l_free_dense (&I, &m_cc);
++  cholmod_l_free_dense (&I_mat, &m_cc);
+
+   return ret;
+
+@@ -1739,17 +1740,17 @@
+   cholmod_dense *q;
+
+   // I is nrows x nrows identity matrix
+-  cholmod_dense *I
++  cholmod_dense *I_mat
+     = reinterpret_cast<cholmod_dense *>
+       (cholmod_l_allocate_dense (nrows, nrows, nrows, CHOLMOD_COMPLEX, &m_cc));
+
+   for (octave_idx_type i = 0; i < nrows * nrows; i++)
+-    (reinterpret_cast<Complex *> (I->x))[i] = 0.0;
++    (reinterpret_cast<Complex *> (I_mat->x))[i] = 0.0;
+
+   for (octave_idx_type i = 0; i < nrows; i++)
+-    (reinterpret_cast<Complex *> (I->x))[i * nrows + i] = 1.0;
+-
+-  q = SuiteSparseQR_qmult<Complex> (SPQR_QX, m_H, m_Htau, m_HPinv, I,
++    (reinterpret_cast<Complex *> (I_mat->x))[i * nrows + i] = 1.0;
++
++  q = SuiteSparseQR_qmult<Complex> (SPQR_QX, m_H, m_Htau, m_HPinv, I_mat,
+                                     &m_cc);
+   spqr_error_handler (&m_cc);
+
+@@ -1761,7 +1762,7 @@
+       ret_vec[j * nrows + i] = q_x[j * nrows + i];
+
+   cholmod_l_free_dense (&q, &m_cc);
+-  cholmod_l_free_dense (&I, &m_cc);
++  cholmod_l_free_dense (&I_mat, &m_cc);
+
+   return ret;
+
+@@ -2073,7 +2074,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < S->m2; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_ipvec) (S->pinv,
+                                reinterpret_cast<cs_complex_t *>(Xx),
+@@ -2143,7 +2144,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < nbuf; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_pvec) (S->q, reinterpret_cast<cs_complex_t *> (Xx),
+                               buf, nr);
+@@ -2206,7 +2207,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < S->m2; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_ipvec) (S->pinv,
+                                reinterpret_cast<cs_complex_t *> (Xx),
+@@ -2304,7 +2305,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < nbuf; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_pvec) (S->q,
+                               reinterpret_cast<cs_complex_t *> (Xx),
+@@ -2392,7 +2393,7 @@
+       octave_quit ();
+
+       for (octave_idx_type j = nr; j < S->m2; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_ipvec) (S->pinv, bvec + bidx, buf, nr);
+
+@@ -2460,7 +2461,7 @@
+       octave_quit ();
+
+       for (octave_idx_type j = nr; j < nbuf; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_pvec) (S->q, bvec + bidx, buf, nr);
+       CXSPARSE_ZNAME (_utsolve) (N->U, buf);
+@@ -2522,7 +2523,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < S->m2; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_ipvec) (S->pinv,
+                                reinterpret_cast<cs_complex_t *> (Xx),
+@@ -2620,7 +2621,7 @@
+         Xx[j] = b.xelem (j, i);
+
+       for (octave_idx_type j = nr; j < nbuf; j++)
+-        buf[j] = cs_complex_t (0.0, 0.0);
++        buf[j] = 0.0;
+
+       CXSPARSE_ZNAME (_pvec) (S->q, reinterpret_cast<cs_complex_t *>(Xx),
+                               buf, nr);
