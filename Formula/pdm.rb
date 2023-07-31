@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/f6/f4/73324cdbaa4dc6b91c081844a26e68d21770abc5d2af9ceb27d25034ac52/pdm-2.8.1.tar.gz"
-  sha256 "90366bc6d3f8f0e7ba4271efa0f78dae04f1634aec5aa44784d93e2bd4edcad8"
+  url "https://files.pythonhosted.org/packages/e9/10/8d02f73be59e8a310265fab28dec2552882da77321a4f36ad9af3993a5da/pdm-2.8.2.tar.gz"
+  sha256 "b948d00bf620682b0ac4c80d228cb305a2b0150e497ee6931da30e3cc305bfdc"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -87,8 +87,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "pyproject-hooks" do
@@ -117,8 +117,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/d0/50/74cc70b70662f0571c28733581a40097c0d626d70eefd17c606a195f36fc/rich-13.5.0.tar.gz"
+    sha256 "62c81e88dc078d2372858660e3d5566746870133e51321f852ccc20af5c7e7b2"
   end
 
   resource "shellingham" do
@@ -127,8 +127,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/10/37/dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978af/tomlkit-0.11.8.tar.gz"
-    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
+    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "unearth" do
