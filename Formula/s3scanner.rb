@@ -5,6 +5,16 @@ class S3scanner < Formula
   sha256 "bf6d40f919be2284840980ab874cd9a345c3ea948902b14504f225d9ef1af953"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
+    sha256 cellar: :any_skip_relocation, ventura:        "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "856a2954c1c74c2d209bc99d00a7a22658b1cf55094985fccbb981a6ee009be1"
+  end
+
   depends_on "go" => :build
 
   def install
