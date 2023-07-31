@@ -6,6 +6,16 @@ class Urlfinder < Formula
   license "MIT"
   head "https://github.com/pingc0y/URLFinder.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f0811a60f05f9e710aa850e29d7349c98c5a84cfb13e2ec526de4c2772580f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f0811a60f05f9e710aa850e29d7349c98c5a84cfb13e2ec526de4c2772580f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f0811a60f05f9e710aa850e29d7349c98c5a84cfb13e2ec526de4c2772580f7"
+    sha256 cellar: :any_skip_relocation, ventura:        "92b9eb4709bba949c8712cf2296d7293ebec619b8f29b657554b4780582d3bf6"
+    sha256 cellar: :any_skip_relocation, monterey:       "92b9eb4709bba949c8712cf2296d7293ebec619b8f29b657554b4780582d3bf6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "92b9eb4709bba949c8712cf2296d7293ebec619b8f29b657554b4780582d3bf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f19ac1ec01277bb2248c29d73b8101f0946580cbaa850948e00dce6fb2841d5a"
+  end
+
   depends_on "go" => :build
 
   def install
