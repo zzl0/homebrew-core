@@ -26,6 +26,7 @@ class RpkiClient < Formula
   depends_on "rsync"
 
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", *std_configure_args,
