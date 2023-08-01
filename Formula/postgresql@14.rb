@@ -100,6 +100,8 @@ class PostgresqlAT14 < Formula
     (var/"log").mkpath
     postgresql_datadir.mkpath
 
+    odeprecated old_postgres_data_dir, new_postgres_data_dir if old_postgres_data_dir.exist?
+
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
@@ -110,7 +112,7 @@ class PostgresqlAT14 < Formula
     if old_postgres_data_dir.exist?
       old_postgres_data_dir
     else
-      var/name
+      new_postgres_data_dir
     end
   end
 
@@ -120,6 +122,10 @@ class PostgresqlAT14 < Formula
 
   def pg_version_exists?
     (postgresql_datadir/"PG_VERSION").exist?
+  end
+
+  def new_postgres_data_dir
+    var/name
   end
 
   def old_postgres_data_dir
@@ -145,7 +151,7 @@ class PostgresqlAT14 < Formula
         Previous versions of postgresql shared the same data directory.
 
         You can migrate to a versioned data directory by running:
-          mv -v "#{old_postgres_data_dir}" "#{var/name}"
+          mv -v "#{old_postgres_data_dir}" "#{new_postgres_data_dir}"
 
         (Make sure PostgreSQL is stopped before executing this command)
 
