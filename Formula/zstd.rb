@@ -44,6 +44,10 @@ class Zstd < Formula
                     *std_cmake_args
     system "cmake", "--build", "builddir"
     system "cmake", "--install", "builddir"
+
+    # Prevent dependents from relying on fragile Cellar paths.
+    # https://github.com/ocaml/ocaml/issues/12431
+    inreplace lib/"pkgconfig/libzstd.pc", prefix, opt_prefix
   end
 
   test do
