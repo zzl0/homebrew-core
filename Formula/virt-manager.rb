@@ -41,13 +41,13 @@ class VirtManager < Formula
   # Resources are for Python `libvirt-python` and `requests` packages
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "idna" do
@@ -56,8 +56,8 @@ class VirtManager < Formula
   end
 
   resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/b0/8d/8a0e86d6c2f4f93f33146fc076b26acbdb943b1fdc2abed9fb1f770ddbba/libvirt-python-9.5.0.tar.gz"
-    sha256 "8b6ace0810528ec020e121bf1a142c12f786b12c130c7899e9397f0f3a82c392"
+    url "https://files.pythonhosted.org/packages/bb/1a/d1cf7c8b988cfbbfcc3d6fb1e4e2216690ff64453d3488c9c9e1dfa1e8e2/libvirt-python-9.6.0.tar.gz"
+    sha256 "53422d8e3110139655c3d9c2ff2602b238f8a39b7bf61a92a620119b45550a99"
   end
 
   resource "requests" do
