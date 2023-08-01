@@ -44,10 +44,11 @@ class Clipboard < Formula
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
 
-    # Workaround for:
+    # `-Os` is slow and buggy.
     #   https://github.com/Homebrew/homebrew-core/issues/136551
     #   https://github.com/Slackadays/Clipboard/issues/147
-    ENV["HOMEBREW_OPTIMIZATION_LEVEL"] = "O2"
+    ENV.O3
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
