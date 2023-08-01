@@ -1,8 +1,8 @@
 class Fw < Formula
   desc "Workspace productivity booster"
   homepage "https://github.com/brocode/fw"
-  url "https://github.com/brocode/fw/archive/refs/tags/v2.16.1.tar.gz"
-  sha256 "2d77ce6673e48dd8f20ee42d8a64a0cbe648d51b837cb930b69c3707718659c2"
+  url "https://github.com/brocode/fw/archive/refs/tags/v2.17.0.tar.gz"
+  sha256 "0e08a8c02f013df033bad41b19ad772480bee76060b1030a9cec0b81aa7879db"
   license "WTFPL"
 
   bottle do
@@ -21,7 +21,7 @@ class Fw < Formula
   uses_from_macos "zlib"
 
   resource "fw.1" do
-    url "https://github.com/brocode/fw/releases/download/v2.16.1/fw.1"
+    url "https://github.com/brocode/fw/releases/download/v2.17.0/fw.1"
     sha256 "b19e2ccb837e4210d7ee8bb7a33b7c967a5734e52c6d050cc716490cac061470"
   end
 
