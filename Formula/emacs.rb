@@ -5,6 +5,7 @@ class Emacs < Formula
   mirror "https://ftpmirror.gnu.org/emacs/emacs-29.1.tar.xz"
   sha256 "d2f881a5cc231e2f5a03e86f4584b0438f83edd7598a09d24a21bd8d003e2e01"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "43c2791523dc17eb04a2667bd810c255a150b102c6d6de5fb2791b8163c404cd"
@@ -27,6 +28,7 @@ class Emacs < Formula
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "jansson"
+  depends_on "tree-sitter"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -54,6 +56,7 @@ class Emacs < Formula
       --without-ns
       --without-imagemagick
       --without-selinux
+      --with-tree-sitter
     ]
 
     if build.head?
