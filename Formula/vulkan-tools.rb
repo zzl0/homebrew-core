@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https://github.com/KhronosGroup/Vulkan-Tools"
-  url "https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.259.tar.gz"
-  sha256 "7fd28fa6ac5f008902424fc5942008b54b793d2181ce56dc4cda6fe0199b3d42"
+  url "https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.260.tar.gz"
+  sha256 "f071232eb52172b742aaa9ca66647140df98ea443d6591b54c6f850fc05990ac"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
