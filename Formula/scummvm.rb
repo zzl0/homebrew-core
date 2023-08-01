@@ -1,8 +1,8 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
   homepage "https://www.scummvm.org/"
-  url "https://downloads.scummvm.org/frs/scummvm/2.7.0/scummvm-2.7.0.tar.xz"
-  sha256 "444b1ffd61774fe867824e57bb3033c9998ffa8a4ed3a13246b01611d5cf9993"
+  url "https://downloads.scummvm.org/frs/scummvm/2.7.1/scummvm-2.7.1.tar.xz"
+  sha256 "d6bbf62e33154759a609d59f3034d71652ecdb64ed5c800156718ab1f1d5d063"
   license "GPL-3.0-or-later"
   head "https://github.com/scummvm/scummvm.git", branch: "master"
 
