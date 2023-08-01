@@ -6,6 +6,7 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/c6/37/fc94979077241a09f31f347cbae401c9f62705eadd441a392285537e603c/robotframework-6.1.1.zip"
   sha256 "3fa18f2596a4df2418c4b59abf43248327c15ed38ad8665f6a9a9c75c95d7789"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
@@ -112,8 +113,8 @@ class RobotFramework < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/86/d3/7fd6820e441550a4d0dae621c02f75339c6fafd98352f2727dd68e6e4cda/selenium-4.10.0.tar.gz"
-    sha256 "871bf800c4934f745b909c8dfc7d15c65cf45bd2e943abd54451c810ada395e3"
+    url "https://files.pythonhosted.org/packages/9b/21/dc6e78b967b62cb39748bfd1af10cc245c8bc81ad8568b1efe80e73fd8a7/selenium-4.11.2.tar.gz"
+    sha256 "9f9a5ed586280a3594f7461eb1d9dab3eac9d91e28572f365e9b98d9d03e02b5"
   end
 
   resource "sniffio" do
