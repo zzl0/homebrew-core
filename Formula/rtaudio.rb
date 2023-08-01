@@ -1,8 +1,8 @@
 class Rtaudio < Formula
   desc "API for realtime audio input/output"
   homepage "https://www.music.mcgill.ca/~gary/rtaudio/"
-  url "https://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-6.0.0.tar.gz"
-  sha256 "b4a2531bdcfe3368c78182a151885cc61cb1fc49fcdeaac520c55bd230ea5bfa"
+  url "https://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-6.0.1.tar.gz"
+  sha256 "2161c8ba9e96ea64cc855724358bc5d90d9bbe13446e6e6b83ccdcbbb86789c0"
   license "MIT"
 
   livecheck do
