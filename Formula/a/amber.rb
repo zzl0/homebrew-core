@@ -1,10 +1,9 @@
 class Amber < Formula
   desc "Crystal web framework. Bare metal performance, productivity and happiness"
   homepage "https://amberframework.org/"
-  url "https://github.com/amberframework/amber/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "37511d6b4afe308e1943cedeab9114b01d5787d868c23d2c0cc555917a21c830"
+  url "https://github.com/amberframework/amber/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "92664a859fb27699855dfa5d87dc9bf2e4a614d3e54844a8344196d2807e775c"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 arm64_ventura:  "a58e71da8f3bd81d7ea0865629192516c7b78ffdf86f4a36ef9d16f0989f4d53"
@@ -20,6 +19,13 @@ class Amber < Formula
   depends_on "openssl@3"
   uses_from_macos "sqlite"
 
+  # patch granite to fix db dependency resolution issue
+  # upstream patch https://github.com/amberframework/amber/pull/1339
+  patch do
+    url "https://github.com/amberframework/amber/commit/20f95cae1d8c934dcd97070daeaec0077b00d599.patch?full_index=1"
+    sha256 "ad8a303fe75611583ada10686fee300ab89f3ae37139b50f22eeabef04a48bdf"
+  end
+
   def install
     system "shards", "install"
     system "make", "install", "PREFIX=#{prefix}"
@@ -34,7 +40,6 @@ class Amber < Formula
       public
       src/controllers
       src/views
-      src/assets
       src/test_app.cr
     ].each do |path|
       assert_match path, output
