@@ -1,11 +1,9 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
-  sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
+  url "https://dlcdn.apache.org/brpc/1.6.0/apache-brpc-1.6.0-src.tar.gz"
+  sha256 "06ff4adebc720bf1529b03ade872cbd41c6ed69971e6e0d210d57d7b72856bd4"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
@@ -25,6 +23,8 @@ class Brpc < Formula
   depends_on "protobuf@21"
 
   def install
+    inreplace "CMakeLists.txt", "/usr/local/opt/openssl",
+                                Formula["openssl@3"].opt_prefix
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_UNIT_TESTS=OFF
