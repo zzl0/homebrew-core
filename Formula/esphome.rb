@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/67/b9/620eff2543f5266aef97e5addce015e4f0126aa7f6ac102eb027021ad0da/esphome-2023.7.0.tar.gz"
-  sha256 "2fed4aedf6c3ca03c4d4a906a10edb64d9f624021483fd9c0679413ab525bf80"
+  url "https://files.pythonhosted.org/packages/94/0e/277c873ec8e747532934c83cb7767378b92f617835782d5eacb816fd80d4/esphome-2023.7.1.tar.gz"
+  sha256 "5ddcd3dffa5e5332a21ad3700a11987c8a129d0d61d4fda4fc46bb5343ee8a9d"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "3fdd390727adf9399788393619c903325111b24a2735cd8d36c40668688fa1bd"
@@ -156,8 +155,8 @@ class Esphome < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pyserial" do
