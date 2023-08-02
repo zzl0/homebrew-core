@@ -9,13 +9,13 @@ class Ocrmypdf < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d574f9797142de5f0e689b4ee9846217319f584e1b9c218c83654f70925aeb94"
-    sha256 cellar: :any,                 arm64_monterey: "39a0303d8126f95ec97c83996d2f02a7ff38facc81bd27f33e938861106af802"
-    sha256 cellar: :any,                 arm64_big_sur:  "29107aeb8b2a4b931ae51f22d7cb202d3de2d87fc44407c63b338d219e686ea9"
-    sha256 cellar: :any,                 ventura:        "551be3ebdd6858d85c21235a43e682678741daf0617c82d32ff308aa2c9ca2d7"
-    sha256 cellar: :any,                 monterey:       "0cc6d26186eafbb9427b6bf75e21430f0550fa9c3863b129715ca08add9ed491"
-    sha256 cellar: :any,                 big_sur:        "273725b77afd5bb9204dc85da5e505e58eaae2d9da640c7ec853981e894435ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0397725a3f47946ed1cad2cf9b33fc8461ef0557f1c0e9cd8ac352b5250fd455"
+    sha256 cellar: :any,                 arm64_ventura:  "0810343d1f043dce0fa1cf82c4b6a77b96f56d1e21df1028ba04afd5794d540c"
+    sha256 cellar: :any,                 arm64_monterey: "1d2c0f50fb9eaceb39bc8c288210046b9fbd6b2438466d8b1c40c0591d267fab"
+    sha256 cellar: :any,                 arm64_big_sur:  "62824b161524cb7ba4e68340672f3bfce521b69466435d4f42b525b76c32e32d"
+    sha256 cellar: :any,                 ventura:        "18daebdd2663aae22d32e43ed26547b1cfe5455b59210e414ff535a6b12109ca"
+    sha256 cellar: :any,                 monterey:       "1ac44b4dc4191c15bc47707fdb7c541739a8b86abd543eb221ccf77d80f5e4c4"
+    sha256 cellar: :any,                 big_sur:        "6bea35b8df0524737f96b004e06a298f907a00eda6ebc0f5f0b86e052913133e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a991cd218c1c206ab541d2d19ae1402539af6c2e636065b3696ccfd9d68e98"
   end
 
   depends_on "pkg-config" => :build
