@@ -14,7 +14,6 @@
     ],
     "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
   },
-  "ansible@2.8": false,
   "ansible@2.9": {
     "extra_packages": [
       "apache-libcloud", "boto3", "dnspython", "docker-py", "junos-eznc", "jxmlease", "kerberos", "ntc-templates",
