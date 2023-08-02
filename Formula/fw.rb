@@ -1,8 +1,8 @@
 class Fw < Formula
   desc "Workspace productivity booster"
   homepage "https://github.com/brocode/fw"
-  url "https://github.com/brocode/fw/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "0e08a8c02f013df033bad41b19ad772480bee76060b1030a9cec0b81aa7879db"
+  url "https://github.com/brocode/fw/archive/refs/tags/v2.17.1.tar.gz"
+  sha256 "9b87924c5384c65f7012ae545d40e550f830fdf1b3e75bbbde5f9b4bd64aab86"
   license "WTFPL"
 
   bottle do
