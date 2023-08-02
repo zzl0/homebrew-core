@@ -16,13 +16,13 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c4366444ddd5f55ff7dc1cb24a81c01f6ba946e255556af9c641da17142d472e"
-    sha256 arm64_monterey: "36b1a4b62c08bb2bf6cd013d952d26cb10bdee3306ae95178b86cd9d661363e0"
-    sha256 arm64_big_sur:  "6d2ec66dd29a9e5fb070c8c6f773ba9e5d50a4beef0bd96ee96e73c17a26c3bc"
-    sha256 ventura:        "a123a680d5fd22d094e2337101d3c8f8b8f78960c9ad4f07abbe3b025b8d36ff"
-    sha256 monterey:       "7d21b114cdeb9c924f3efa5ba6e120c6a852b0c7be0dda71354f6704b02e4883"
-    sha256 big_sur:        "50c7448f726762394d63abe2722acee2a426d8fd1a8101504ad7c8dfc44bca31"
-    sha256 x86_64_linux:   "1231b6b95a6c55e775258b4c19b3babbc504a065b984ec6df9d960cf7ffc947b"
+    sha256 arm64_ventura:  "1e0aef0aefa768e29c8eb8ab31f84edfb9111020e389ebd13d3a87b89441ad1e"
+    sha256 arm64_monterey: "57bf9a18a7f5d8d2e9fb4b50eac1d5a8be27b9bb9fff156ee024e8e12f5d2fbd"
+    sha256 arm64_big_sur:  "5d39cfbada1b9ef15f468021ca02fd5e6b6ec22f011945847de6403e9d8a723c"
+    sha256 ventura:        "aa220ccb73320a045bbd64b03c980d3c643407789cae96cd527c3b3c7b59f905"
+    sha256 monterey:       "7f1809a78c80813a5f7a12c41320c52ad601ee45b53d5de1cc972c46f4302b21"
+    sha256 big_sur:        "e1e4fabca37bd90d6b4e89a65225c935fec8d8d4adf02bd93ad3951d53e05985"
+    sha256 x86_64_linux:   "f2913e52e4c2243ff8f77d96b14e315f7449a4f7f647145e514b4e10434fd9bb"
   end
 
   depends_on "ca-certificates"
