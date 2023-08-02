@@ -9,13 +9,13 @@ class GimmeAwsCreds < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7276784ef6ceb6edd86981bdc587aa7e86e19c27d5903b394c09615f0f5f0a4e"
-    sha256 cellar: :any,                 arm64_monterey: "9c7ccb8f921d7cb8125c24506a2a62466fbdc9fccce2f38816d60c48d9586ad4"
-    sha256 cellar: :any,                 arm64_big_sur:  "672034c1a208dd3efa7da3fce2b3d09d13ad6f0de279ab00d107aa5e4baf51e2"
-    sha256 cellar: :any,                 ventura:        "eb2a05042fb2059c654e68fa9856f32f83530d750c4e5e26a1cd92529741aeaf"
-    sha256 cellar: :any,                 monterey:       "e94271ec45f92d526333e21ae61290e0f46eb8fa725e031435a71f9882c206d0"
-    sha256 cellar: :any,                 big_sur:        "d0b96ba49f2033a394404ba0f3055f1c6fe43fa4038e2e6cde20f7f02146c3c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e02a0768052756ce6bf7e4bdc57f09299082673edf59ee60dee2abf0ccb4ee4"
+    sha256 cellar: :any,                 arm64_ventura:  "9368ae6d91893e226823a251a4693fdfc4ab3d413e54d75d01fda60e6437d479"
+    sha256 cellar: :any,                 arm64_monterey: "9acd85c62bcad26859c64d8dd7945d1c087744c0c827666939dacb00f3a679b5"
+    sha256 cellar: :any,                 arm64_big_sur:  "1a78c800d780768abdf1806464c151dffaee2947847388c91a70c9e97a4955d4"
+    sha256 cellar: :any,                 ventura:        "ee0b954cdd64b4b64a3bad656006654e40832b5d5cd33ae4457fc08acc64a6eb"
+    sha256 cellar: :any,                 monterey:       "d780b0d238d3bff37212fa885850515c49ad04c893aa4bb6534922a84bd30539"
+    sha256 cellar: :any,                 big_sur:        "f1ee4127808854a0200aa2be6a91d3365148bd473c80c5a11a50a48954ae1352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1277a82c3215da6b8664e6cbdb5f763fed024bbb2e77a05b0ad4c8cc30fc191a"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
