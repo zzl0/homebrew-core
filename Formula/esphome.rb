@@ -6,6 +6,7 @@ class Esphome < Formula
   url "https://files.pythonhosted.org/packages/94/0e/277c873ec8e747532934c83cb7767378b92f617835782d5eacb816fd80d4/esphome-2023.7.1.tar.gz"
   sha256 "5ddcd3dffa5e5332a21ad3700a11987c8a129d0d61d4fda4fc46bb5343ee8a9d"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e109568df02c6a723aadee81b2cc14cf03eb5e8c9221c14e5f3f27fb322de694"
@@ -85,8 +86,8 @@ class Esphome < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ecdsa" do
