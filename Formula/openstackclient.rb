@@ -9,13 +9,13 @@ class Openstackclient < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "070cc44af547240b29a7c1caa04582edc65e9b8f81c6835486108aa8a3d890b3"
-    sha256 cellar: :any,                 arm64_monterey: "7abbb998daa93c69a657ba2ee1785b3479af79b9e4e592ee3131d69ab2f7f834"
-    sha256 cellar: :any,                 arm64_big_sur:  "3858659c50a00d73202a1f6587aac2f3b43a916f10f6e18977cc2d29872852f7"
-    sha256 cellar: :any,                 ventura:        "72b29fd4dcd8849bc5c5a044f69a75d69eba9ed59f6875291069d35bc46faf12"
-    sha256 cellar: :any,                 monterey:       "ec5501dfea2d26db42066499fb327d88eb55cad36a3a838c521140cf8c8a2907"
-    sha256 cellar: :any,                 big_sur:        "b230b4574bf20e8f89ed827f91881cfc671a5e99e17edc3e32669d6c9f0ab051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d74f7599dfe0465bdf3b8fe876d27d1ac42c2b92e5dafa534c7b0fff1c1148"
+    sha256 cellar: :any,                 arm64_ventura:  "af3feaa17f0c0453aa29f7ce7762c2dd0f208cf591e0a624517c46f6b9b9b75c"
+    sha256 cellar: :any,                 arm64_monterey: "ca061dfca42860ea9dc7761beb1cf1d61e0f83a5695ce47ffdf707e481d8f587"
+    sha256 cellar: :any,                 arm64_big_sur:  "3b73cc6d0ea96ba13a706bbb5b55ed1145c2fb6a7159bce54e5f360d40fe06ea"
+    sha256 cellar: :any,                 ventura:        "644e8e14319e4896d42372b9dfb49e2eed21304f3842f682311bb3d7af7788a1"
+    sha256 cellar: :any,                 monterey:       "efcf022b146c2d46ea825b7400cde1ee10730922c47725ab56500dd53fcd32b5"
+    sha256 cellar: :any,                 big_sur:        "6f7ee46ff723b5c0715cab7ff75160ab71a6e21a22f6fd63e3a6514c1953b4bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e06072c1d0b1e997b744f5d293b0de54641306788d5c5a4e99f4a269822b4fe"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
