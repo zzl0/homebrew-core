@@ -70,11 +70,12 @@ class OpensslAT30 < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
 
       %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
         resource(r).stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+          system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
           system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
           system "make", "install"
         end
