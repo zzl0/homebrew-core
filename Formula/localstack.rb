@@ -9,13 +9,13 @@ class Localstack < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2308f4abcd5a87b75b9e8f5d10ecfc71e202a7939f730e60ca134e38863ee3a2"
-    sha256 cellar: :any,                 arm64_monterey: "f0188d0d80734ef39bf8eb6a42387a2d7cd7ce93f211b93efd8698f854a598c7"
-    sha256 cellar: :any,                 arm64_big_sur:  "6447d93ca4234b68f6d525fdb90eb9307a06928a21106e01f25e5bdb424d3215"
-    sha256 cellar: :any,                 ventura:        "7578a29648be0bd826fbafbe83697db76de71fb32ecfcfd9cb446698c7b5eab2"
-    sha256 cellar: :any,                 monterey:       "4e9a13e6c8c93d2bdeed8e4baeb1401669d92371f3fd55f936a9006896f07d38"
-    sha256 cellar: :any,                 big_sur:        "7ed697921ce9cf38fcbf10e480072b41a9e8a058aff7c2fae9b95f9efaed7f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0b793be9e75af8d6250655565501001e8562dc7b616506a64b2b642af28f265"
+    sha256 cellar: :any,                 arm64_ventura:  "3a926a1b64acbbaf59e8b83865bce964b0d2106a8b8eea188eed15541817d10c"
+    sha256 cellar: :any,                 arm64_monterey: "f3b90f181284e0143c683c65d39a155e389702f9c38de88e89afc85f5738d80d"
+    sha256 cellar: :any,                 arm64_big_sur:  "a12cb3b97890a169897d7690cacdecbf027c4f8356b8ef6eb968462805989681"
+    sha256 cellar: :any,                 ventura:        "d76aad2ed8373c9537b6021b95eff874a7ddae602d4ce99932f9bd7a2001e5e2"
+    sha256 cellar: :any,                 monterey:       "bcd250f1301f77aaf6070e93c4df59c5914ac8c0f34c17773c33499363383a14"
+    sha256 cellar: :any,                 big_sur:        "2be415b7c203c770f25ebd7f36a0882ca167d3284519b3f2440b4e8e799cf7f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f6af332c9d32aa644aef267c72a23c95db5377b5a701ab80fde4864d3d42dc"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
