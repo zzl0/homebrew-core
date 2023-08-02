@@ -70,13 +70,15 @@ class Libgccjit < Formula
       --with-system-zlib
     ]
 
-    if OS.mac?
+    make_args = if OS.mac?
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
+
+      ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
     else
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
@@ -87,12 +89,14 @@ class Libgccjit < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https://stackoverflow.com/a/54038769
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
+
+      []
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
       system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
-      system "make"
+      system "make", *make_args
       system "make", "install"
     end
 
