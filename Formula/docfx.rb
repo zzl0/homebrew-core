@@ -1,8 +1,8 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https://dotnet.github.io/docfx/"
-  url "https://github.com/dotnet/docfx/archive/refs/tags/v2.63.0.tar.gz"
-  sha256 "78b244b7af1c056825f603ad6364dd3576e7ff9baefffd7c0f4ce8eb905c9122"
+  url "https://github.com/dotnet/docfx/archive/refs/tags/v2.70.0.tar.gz"
+  sha256 "985b7bc49c4fe02d920590107e1f2fe73bd9b3f96bf3cb3d1f8aa09188a32659"
   license "MIT"
 
   bottle do
@@ -22,13 +22,18 @@ class Docfx < Formula
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
+    # specify the target framework to only target the currently used version of
+    # .NET, otherwise additional frameworks will be added due to this running
+    # inside of GitHub Actions, for details see:
+    # https://github.com/dotnet/docfx/blob/main/Directory.Build.props#L3-L5
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
       --output #{libexec}
       --runtime #{os}-#{arch}
       --no-self-contained
-      /p:Version=#{version}
+      -p:Version=#{version}
+      -p:TargetFrameworks=net#{dotnet.version.major_minor}
     ]
 
     system "dotnet", "publish", "src/docfx", *args
