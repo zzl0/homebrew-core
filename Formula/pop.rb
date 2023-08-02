@@ -6,13 +6,13 @@ class Pop < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
-    sha256 cellar: :any_skip_relocation, ventura:        "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
-    sha256 cellar: :any_skip_relocation, monterey:       "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b7a91d27becd83aad04f8ccbf56945d52358c29546a481fac725c249d039a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03eb314794237b4fc005f0d7128d4679dda5415979c7ee28646d8c88f176a696"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03eb314794237b4fc005f0d7128d4679dda5415979c7ee28646d8c88f176a696"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03eb314794237b4fc005f0d7128d4679dda5415979c7ee28646d8c88f176a696"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be47be0676bdfcf2a246fc6295eb3b454328e35e827455f0c921ab1a723d1be"
   end
 
   depends_on "go" => :build
