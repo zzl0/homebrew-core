@@ -3,10 +3,9 @@ class GrpcAT154 < Formula
   homepage "https://grpc.io/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.54.2",
-      revision: "8871dab19b4ab5389e28474d25cfeea61283265c"
+      tag:      "v1.54.3",
+      revision: "868412b573a0663c8db41558498caf44098f4390"
   license "Apache-2.0"
-  revision 2
 
   # The "latest" release on GitHub is sometimes for an older major/minor and
   # there's sometimes a notable gap between when a version is tagged and
