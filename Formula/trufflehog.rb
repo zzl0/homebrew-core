@@ -1,20 +1,20 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https://trufflesecurity.com/"
-  url "https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.45.3.tar.gz"
-  sha256 "4ecba876c0d53bf8e3d01ce9940cca7661233329828efd5ea67be345a855f819"
+  url "https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.46.2.tar.gz"
+  sha256 "89f6cabfbcb8c8177c37dc3d57bc51fad4e073d200cfa287d31866564c6fd8f3"
   # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
   head "https://github.com/trufflesecurity/driftwood.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33f8776ffac672deace27801df2166f36043c48793cea74186c1af13af9bd8ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c49f3186f2aac2195372350d05928e2271328c798dba1ef13e45fc19f8e6db09"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3b26891b1dede384159a0a055d8725ccbda56938e3d12091000000c2500191a"
-    sha256 cellar: :any_skip_relocation, ventura:        "fb6bbee2d8f611ad0b548c80ad0aec7b9b398d73b159fb0537543c3e188a08dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "db0a0c987ab9cc46d3064601b0b7743e1f6f5b43bf5db65c0148d664f05bec48"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed0c8c2af92f1f4ef575a43175cfdb23a80883df03cd008e63880a976f056a42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b22a8cefe205d7a02082249f34ef40983c9d4c1bcc3ea8b621474c0a8310e29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d642c6dbc4b172f2e0b403b40d95ee2d137093fd8878299ba8107ecf073625c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6030adf05cb92e8e369b3e14742c7d48c6fde19ae4b301838f79b8948bde3fe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f554846b784ae3703c7c641af1a14b7601a06574f106aa1b4282edf6afbb78c"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e2d673902102e863a5bcdc9975b07ce3592839d823eaa6fb1550d1131a63298"
+    sha256 cellar: :any_skip_relocation, monterey:       "c055e77fef098b349afba2ad4a799f7ec7a80fa404fb080ec8ca9b1b2b9e1a69"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b70d588ef034403d62ab3a82f8a23913f055880c660f33f44b6c068179b543a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7995ae6e14c3f7c8fcdb5b1cfc0c31f773b8e71d64d1e9067e352eb37bce9f0b"
   end
 
   depends_on "go" => :build
@@ -27,7 +27,8 @@ class Trufflehog < Formula
   test do
     repo = "https://github.com/trufflesecurity/test_keys"
     output = shell_output("#{bin}/trufflehog git #{repo} --no-update --only-verified 2>&1")
-    assert_match "loaded decoders	{\"count\": 3}", output
+    expected = "{\"chunks\": 0, \"bytes\": 0, \"verified_secrets\": 0, \"unverified_secrets\": 0}"
+    assert_match expected, output
 
     assert_match version.to_s, shell_output("#{bin}/trufflehog --version 2>&1")
   end
