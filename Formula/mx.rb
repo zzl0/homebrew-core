@@ -11,13 +11,13 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed599305dbcd16e16fafcdfc75e71d4c3a15fb7463de333a1f60924ce99585b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f01219806c41ad00e15c11ed0c03a1b1ab266c77e9c60c3e24c236727dbef0de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, ventura:        "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, monterey:       "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7add9a51018a51b910577e2be772a72d84034d99a518a3c6d3f85efb4a216ce7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcf1da609d960bade0ce5be2d7a07747847bc55974250e7607641d972fb19a05"
   end
 
   depends_on "openjdk" => :test
