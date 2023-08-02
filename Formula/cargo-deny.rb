@@ -1,8 +1,8 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https://github.com/EmbarkStudios/cargo-deny"
-  url "https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "b100e36c5eb4405067ee2350aea7b5089e9e72f787603fdc3929f6586a69b0f4"
+  url "https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.14.1.tar.gz"
+  sha256 "0579a6469688360d0bfc1245c3455335b0c2f8ae6c40645fcf0e8e1a700eb7f6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
@@ -49,7 +49,7 @@ class CargoDeny < Formula
         version = "0.1.0"
       EOS
 
-      output = shell_output("cargo deny check 2>&1", 1)
+      output = shell_output("cargo deny check 2>&1", 4)
       assert_match "advisories ok, bans ok, licenses FAILED, sources ok", output
     end
   end
