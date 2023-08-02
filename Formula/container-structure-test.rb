@@ -1,8 +1,8 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
   homepage "https://github.com/GoogleContainerTools/container-structure-test"
-  url "https://github.com/GoogleContainerTools/container-structure-test/archive/v1.15.0.tar.gz"
-  sha256 "b5dd39d572b80617f0bc72959bcbe7ec649dd2e141ea9a119c04a84b4783e3c7"
+  url "https://github.com/GoogleContainerTools/container-structure-test/archive/v1.16.0.tar.gz"
+  sha256 "4fe56bd96340873ac4aa677a770cec1b7aebdd841c11e368d90f2a9d369cf133"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "master"
 
@@ -18,12 +18,6 @@ class ContainerStructureTest < Formula
 
   depends_on "go" => :build
 
-  # Small Docker image to run tests against
-  resource "test_resource" do
-    url "https://gist.github.com/AndiDog/1fab301b2dbc812b1544cd45db939e94/raw/5160ab30de17833fdfe183fc38e4e5f69f7bbae0/busybox-1.31.1.tar", using: :nounzip
-    sha256 "ab5088c314316f39ff1d1a452b486141db40813351731ec8d5300db3eb35a316"
-  end
-
   def install
     project = "github.com/GoogleContainerTools/container-structure-test"
     ldflags = %W[
@@ -35,6 +29,12 @@ class ContainerStructureTest < Formula
   end
 
   test do
+    # Small Docker image to run tests against
+    resource "homebrew-test_resource" do
+      url "https://gist.github.com/AndiDog/1fab301b2dbc812b1544cd45db939e94/raw/5160ab30de17833fdfe183fc38e4e5f69f7bbae0/busybox-1.31.1.tar", using: :nounzip
+      sha256 "ab5088c314316f39ff1d1a452b486141db40813351731ec8d5300db3eb35a316"
+    end
+
     (testpath/"test.yml").write <<~EOF
       schemaVersion: "2.0.0"
 
@@ -58,7 +58,7 @@ class ContainerStructureTest < Formula
       --config test.yml
     ].join(" ")
 
-    resource("test_resource").stage testpath
+    resource("homebrew-test_resource").stage testpath
     json_text = shell_output("#{bin}/container-structure-test test #{args}")
     res = JSON.parse(json_text)
     assert_equal res["Pass"], 2
