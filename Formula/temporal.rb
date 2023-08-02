@@ -7,13 +7,13 @@ class Temporal < Formula
   head "https://github.com/temporalio/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b8482d2f074134797761c3980e5d05e3ac1162a5d9da0ac8bacfc96baf887a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b8482d2f074134797761c3980e5d05e3ac1162a5d9da0ac8bacfc96baf887a9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b8482d2f074134797761c3980e5d05e3ac1162a5d9da0ac8bacfc96baf887a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbca03345479f3e791c451c27d6457a5685f1cf426aa299c910bdb7cc123a049"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbca03345479f3e791c451c27d6457a5685f1cf426aa299c910bdb7cc123a049"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bbca03345479f3e791c451c27d6457a5685f1cf426aa299c910bdb7cc123a049"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa538bb103ea9182d556e34b54913930a59ad0d819879dd836a13e42356a9b9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77a10a2c0b2c92345f5b8b529732a99c27441eb6534876821196d7bd580fa5d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77a10a2c0b2c92345f5b8b529732a99c27441eb6534876821196d7bd580fa5d4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "77a10a2c0b2c92345f5b8b529732a99c27441eb6534876821196d7bd580fa5d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "f319e2022ffeacef44573a6e12af55cba80d974ea3d26226ec1cfa53e8f47d36"
+    sha256 cellar: :any_skip_relocation, monterey:       "f319e2022ffeacef44573a6e12af55cba80d974ea3d26226ec1cfa53e8f47d36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f319e2022ffeacef44573a6e12af55cba80d974ea3d26226ec1cfa53e8f47d36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fd2186b35563f054ade9d57f33355b69fa2a6a5e19e13f767a82bec086f3ece"
   end
 
   depends_on "go" => :build
