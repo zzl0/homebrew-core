@@ -3,8 +3,8 @@ class Mkdocs < Formula
 
   desc "Project documentation with Markdown"
   homepage "https://www.mkdocs.org/"
-  url "https://files.pythonhosted.org/packages/40/fa/3d68128bad167f063ac2842a68a407247c02491e87fe4beb77d9cd1fb71b/mkdocs-1.5.1.tar.gz"
-  sha256 "f2f323c62fffdf1b71b84849e39aef56d6852b3f0a5571552bca32cefc650209"
+  url "https://files.pythonhosted.org/packages/35/6a/63612e19d9c903a608caf91fd2c1f07ccbb9610de4ddb6f187aec1cce197/mkdocs-1.5.2.tar.gz"
+  sha256 "70d0da09c26cff288852471be03c23f0f521fc15cf16ac89c7a3bfb9ae8d24f9"
   license "BSD-2-Clause"
 
   bottle do
@@ -57,13 +57,13 @@ class Mkdocs < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/95/60/d93628975242cc515ab2b8f5b2fc831d8be2eff32f5a1be4776d49305d13/pathspec-0.11.1.tar.gz"
-    sha256 "2798de800fa92780e33acca925945e9a19a133b715067cf165b8866c15a31687"
+    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "python-dateutil" do
