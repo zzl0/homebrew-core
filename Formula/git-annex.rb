@@ -8,13 +8,13 @@ class GitAnnex < Formula
   head "git://git-annex.branchable.com/", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "abad0a4b95e28735eb1806914513253753ab49b746fde0014b43300f7ab7584c"
-    sha256 cellar: :any,                 arm64_monterey: "8a1fbd87fe8374586567b861352117f0c8f11decf1000ece6329449e8bbb572e"
-    sha256 cellar: :any,                 arm64_big_sur:  "253c3f5f40ff6612ffb5d3f983933b11b1334c2dda777c4e5ba97703e881a3e6"
-    sha256 cellar: :any,                 ventura:        "3a0daa08181377bb8eda7ae13c950d11bf3dd226134edf1500a787b9ea9db146"
-    sha256 cellar: :any,                 monterey:       "ac1d41eab96ffbf749295467013fc7deae1580ab6055486185d9639a6d01c58c"
-    sha256 cellar: :any,                 big_sur:        "7e24cbf91c185e806051edbaea2d901cabba0a0f277b12a887534ca3d0768989"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5cb736ce99eef312298bf0f70e70a6f948e9aa23997e09b02514bdc9e62fbd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bbbf4d6bcbf25e6aa6df6418c5c8505b9edce7da8a97b01dd52431bee798301"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5fbadcb20c3408d6b379cab77e3677fe38b3a7a8d032b1dc87d24679b613b01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "077e4b5b731cc56b633ac1df9f546ac0761719832dcadf891c0f17da71d89def"
+    sha256 cellar: :any_skip_relocation, ventura:        "d7e3e5df37e4fb7f9fb79388e7fc87244525cd3566debcb854001a2ad8329d4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f77c924f64abcf8a40c2ddbce6a08ea3204a9abb8c22ea4a6da5800a780639b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ace357e4217c0d6acf143726e363fa91823bf49b964be649ff8f39c1b2ca0af1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28bf18d857c39bea3d5b2543ce6cd0892c2d2d7e6c0100fd57b0aeb6b4237ae5"
   end
 
   depends_on "cabal-install" => :build
