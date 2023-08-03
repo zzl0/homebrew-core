@@ -1,8 +1,8 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
-  homepage "https://github.com/filips123/PWAsForFirefox"
-  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.7.2.tar.gz"
-  sha256 "f19bef914a48d936fc4aab01757108e3bd6bc93e10e54f60844df630fbfe7ef1"
+  homepage "https://pwasforfirefox.filips.si/"
+  url "https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.7.3.tar.gz"
+  sha256 "b520cf5caeeca1d23043a032137f7eead7eb88270e5376c5d08b1234bb90376f"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
@@ -30,7 +30,7 @@ class Firefoxpwa < Formula
     # Prepare the project to work with Homebrew
     ENV["FFPWA_EXECUTABLES"] = opt_bin
     ENV["FFPWA_SYSDATA"] = opt_share
-    system "bash", "./packages/brew/configure.sh", version, opt_bin, opt_libexec
+    system "bash", "./packages/brew/configure.sh", version.to_s, opt_bin, opt_libexec
 
     # Build and install the project
     system "cargo", "install", *std_cargo_args
@@ -62,7 +62,6 @@ class Firefoxpwa < Formula
   end
 
   test do
-    # Test version so we know if Homebrew configure script correctly sets it
     assert_match "firefoxpwa #{version}", shell_output("#{bin}/firefoxpwa --version")
 
     # Test launching non-existing site which should fail
