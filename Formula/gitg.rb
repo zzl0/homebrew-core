@@ -1,8 +1,8 @@
 class Gitg < Formula
   desc "GNOME GUI client to view git repositories"
   homepage "https://wiki.gnome.org/Apps/Gitg"
-  url "https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz"
-  sha256 "7fb61b9fb10fbaa548d23d7065babd72ad63e621de55840c065ce6e3986c4629"
+  url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
+  sha256 "5b0e99ab3e7b94b0daa98ca8041d5ec9280ee0a2c28338a5506a968ac52e2354"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -28,6 +28,7 @@ class Gitg < Formula
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
   depends_on "gobject-introspection"
+  depends_on "gpgme"
   depends_on "gspell"
   depends_on "gtk+3"
   depends_on "gtksourceview4"
@@ -37,16 +38,14 @@ class Gitg < Formula
   depends_on "libgee"
   depends_on "libgit2"
   depends_on "libgit2-glib"
+  depends_on "libhandy"
   depends_on "libpeas"
   depends_on "libsecret"
 
-  # Apply upstream commit to fix build.  Remove with next release.
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gitg/-/commit/1978973b12848741b08695ec2020bac98584d636.diff"
-    sha256 "1787335100ab78bc044cda29613a40f3f85c3ef287646914e56b2ce578e05fdf"
-  end
-
   def install
+    # Fix version output. Remove on next release.
+    inreplace "meson.build", "version: '45.alpha'", "version: '#{version}'"
+
     ENV["DESTDIR"] = "/"
     system "meson", *std_meson_args, "build", "-Dpython=false"
     system "meson", "compile", "-C", "build", "--verbose"
@@ -79,6 +78,7 @@ class Gitg < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     gobject_introspection = Formula["gobject-introspection"]
+    gpgme = Formula["gpgme"]
     gtkx3 = Formula["gtk+3"]
     harfbuzz = Formula["harfbuzz"]
     libepoxy = Formula["libepoxy"]
@@ -86,6 +86,7 @@ class Gitg < Formula
     libgee = Formula["libgee"]
     libgit2 = Formula["libgit2"]
     libgit2_glib = Formula["libgit2-glib"]
+    libhandy = Formula["libhandy"]
     libpng = Formula["libpng"]
     pango = Formula["pango"]
     pixman = Formula["pixman"]
@@ -100,6 +101,7 @@ class Gitg < Formula
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
       -I#{gobject_introspection.opt_include}/gobject-introspection-1.0
+      -I#{gpgme.opt_include}
       -I#{gtkx3.opt_include}/gtk-3.0
       -I#{harfbuzz.opt_include}/harfbuzz
       -I#{include}/libgitg-1.0
@@ -108,6 +110,7 @@ class Gitg < Formula
       -I#{libffi.opt_lib}/libffi-3.0.13/include
       -I#{libgit2}/include
       -I#{libgit2_glib.opt_include}/libgit2-glib-1.0
+      -I#{libhandy.opt_include}/libhandy-1
       -I#{libpng.opt_include}/libpng16
       -I#{pango.opt_include}/pango-1.0
       -I#{pixman.opt_include}/pixman-1
@@ -119,10 +122,12 @@ class Gitg < Formula
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
       -L#{gobject_introspection.opt_lib}
+      -L#{gpgme.opt_lib}
       -L#{gtkx3.opt_lib}
       -L#{libgee.opt_lib}
       -L#{libgit2.opt_lib}
       -L#{libgit2_glib.opt_lib}
+      -L#{libhandy.opt_lib}
       -L#{lib}
       -L#{pango.opt_lib}
       -latk-1.0
@@ -138,8 +143,10 @@ class Gitg < Formula
       -lglib-2.0
       -lgmodule-2.0
       -lgobject-2.0
+      -lgpgme
       -lgthread-2.0
       -lgtk-3
+      -lhandy-1
       -lpango-1.0
       -lpangocairo-1.0
     ]
