@@ -13,7 +13,7 @@ class DeviceMapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "71a24cd1c4d310295199c9b510ad811bbfadcc15d7abbaadb97edcb67a366010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e7ee0a1ebe03e55ba39f7202ecbf79c6a2b5fc76efccc83e8eec471cbd62b9ed"
   end
 
   depends_on "libaio"
