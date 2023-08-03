@@ -17,13 +17,14 @@ class Libeatmydata < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "de3355a75858f6920204fff4ad1e6eb7b38052a7bf07dae93328042742ee8cb0"
-    sha256 cellar: :any,                 arm64_monterey: "5aeff8a0e8b2c0a31cc32263aaa7a7ab6bbbd6f67eb580fb936afabdb0aa68bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "e9483db0ccbd0655be7cc8460d15ee7859d413e3193de6757226d89e6ab939fa"
-    sha256 cellar: :any,                 ventura:        "a04cdcab93139d5f4c67c0d8dc1ec8edd3ce018196f479be4e42788d366d13c8"
-    sha256 cellar: :any,                 monterey:       "04224ec4469d4c4ec5a076067d375c705cd0aab2fda326aa4d99dec11d88a62e"
-    sha256 cellar: :any,                 big_sur:        "d41935844ac5a0c0ab0f3970d16f8172534cb0cf6c63b0ecb7532e7730d79cf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e475757576e6590c75990086fd97f7582028e9f44af02bbca011c1e7e7d3099"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "ba431c20d2cfdca496b982172a5c1cfa54019e722d39d68452da7ba777b90364"
+    sha256 cellar: :any,                 arm64_monterey: "e85eba783c02da67dbba76f16de831769b13ce6fdaccf94e0404567b2a0646f4"
+    sha256 cellar: :any,                 arm64_big_sur:  "a0d61b1323d5efdcb7ad0d9a5c92e0196d75e0cc10ffa53acd65813dbfe5e152"
+    sha256 cellar: :any,                 ventura:        "03d011ca0e5c1a324b8ba45a10ddcb07fba2128ce0ae352a3c4c652ea060f347"
+    sha256 cellar: :any,                 monterey:       "c424091120ea1d287a7ac95cdbf2620cdc0adf8e251e79cbeb8b4326b800ae24"
+    sha256 cellar: :any,                 big_sur:        "4d2a2ee043f16c6215d03d286f27395cf40ed7d2de56bee098b36cad579dbe0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "108aec33bd43ad8bb056cbe840019a5ec42f0f16a99c3b40d0ce8c5d891f0249"
   end
 
   depends_on "autoconf"         => :build
