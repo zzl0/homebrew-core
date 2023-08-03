@@ -1,8 +1,8 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
-  url "https://download.gnome.org/sources/gedit/44/gedit-44.2.tar.xz"
-  sha256 "3bbb1b3775d4c277daf54aaab44b0eb83a4eb1f09f0391800041c9e56893ec11"
+  url "https://download.gnome.org/sources/gedit/46/gedit-46.0.tar.xz"
+  sha256 "2ca1be052902cf05b1f3d389d12e3cc8cb906740c10c9bde3cb8af6db58f655f"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -15,6 +15,7 @@ class Gedit < Formula
     sha256 x86_64_linux:   "a758efe0173d7ade8ad0576242917451221904efd1f64b85a1568208fd753e0d"
   end
 
+  depends_on "desktop-file-utils" => :build # for update-desktop-database
   depends_on "docbook-xsl" => :build
   depends_on "gtk-doc" => :build
   depends_on "itstool" => :build
@@ -23,7 +24,6 @@ class Gedit < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "amtk"
   depends_on "atk"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -33,12 +33,20 @@ class Gedit < Formula
   depends_on "gsettings-desktop-schemas"
   depends_on "gspell"
   depends_on "gtk+3"
-  depends_on "gtksourceview4"
+  depends_on "libgedit-amtk"
+  depends_on "libgedit-gtksourceview"
   depends_on "libpeas"
   depends_on "libsoup"
   depends_on "libxml2"
   depends_on "pango"
   depends_on "tepl"
+
+  # Fixes `git submodule` failure.
+  # Remove on next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gedit/-/commit/02b0a3ab1486406c1fb300c1bdee7060946c3d66.diff"
+    sha256 "4cb4cb888964248cf9507ad58e4eaef99267b446f6f8d06cd2d82c8d32818bd3"
+  end
 
   def install
     ENV["DESTDIR"] = "/"
