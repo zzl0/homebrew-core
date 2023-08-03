@@ -7,7 +7,7 @@ class Dysk < Formula
   head "https://github.com/Canop/dysk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a5790eae48a6b66dd811301e209f694246612ecbff94e39857a1b5f73c8a3771"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c194666082291116b60ad82bb453c5eefe1c6170abbedb688a60ea58fad7277"
   end
 
   depends_on "rust" => :build
