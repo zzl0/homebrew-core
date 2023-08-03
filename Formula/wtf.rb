@@ -11,7 +11,13 @@ class Wtf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5a9a3648a67666e5f3fa34d8bfb3825637dfc8b8a5b52928d2430c8e7ab93d4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55958ea25be7538ee42bd7404f2242193594baf52b174ebbff169e7a4163ceb"
   end
 
   def install
