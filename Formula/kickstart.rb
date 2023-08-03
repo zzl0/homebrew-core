@@ -1,8 +1,8 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
   homepage "https://github.com/Keats/kickstart"
-  url "https://github.com/Keats/kickstart/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "98f25f870d6b1bff9bb22a485cf307d42a1d4243550080cf0d122c6d71c23ded"
+  url "https://github.com/Keats/kickstart/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "5aae308d7d6aa021ddf7f5dc882f8199a5d4f4db8cb8f7175c1c1ac831075a8c"
   license "MIT"
 
   bottle do
