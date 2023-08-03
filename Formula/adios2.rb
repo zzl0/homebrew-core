@@ -1,8 +1,8 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.9.0.tar.gz"
-  sha256 "69f98ef58c818bb5410133e1891ac192653b0ec96eb9468590140f2552b6e5d1"
+  url "https://github.com/ornladios/ADIOS2/archive/v2.9.1.tar.gz"
+  sha256 "ddfa32c14494250ee8a48ef1c97a1bf6442c15484bbbd4669228a0f90242f4f9"
   license "Apache-2.0"
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
