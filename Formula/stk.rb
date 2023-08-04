@@ -1,8 +1,8 @@
 class Stk < Formula
   desc "Sound Synthesis Toolkit"
   homepage "https://ccrma.stanford.edu/software/stk/"
-  url "https://ccrma.stanford.edu/software/stk/release/stk-4.6.2.tar.gz"
-  sha256 "573e26ccf72ce436a1dc4ee3bea05fd35e0a8e742c339c7f5b85225502238083"
+  url "https://ccrma.stanford.edu/software/stk/release/stk-5.0.0.tar.gz"
+  sha256 "0e97d8d2ef0d0d3dd4255fed6d71fcbd832f9977bd1031d2166cdbb865529f11"
   license "MIT"
 
   livecheck do
@@ -29,8 +29,7 @@ class Stk < Formula
   end
 
   def install
-    system "autoreconf", "-fiv"
-    system "./configure", "--prefix=#{prefix}", "--disable-debug"
+    system "./configure", *std_configure_args.reject { |s| s["--disable-dependency-tracking"] }
     system "make"
 
     lib.install "src/libstk.a"
