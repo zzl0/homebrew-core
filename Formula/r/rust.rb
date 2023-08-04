@@ -4,14 +4,14 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.71.0-src.tar.gz"
-    sha256 "a667e4abdc5588ebfea35c381e319d840ffbf8d2dbfb79771730573642034c96"
+    url "https://static.rust-lang.org/dist/rustc-1.71.1-src.tar.gz"
+    sha256 "6fa90d50d1d529a75f6cc349784de57d7ec0ba2419b09bde7d335c25bd4e472e"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
-          tag:      "0.72.0",
-          revision: "cfd3bbd8fe4fd92074dfad04b7eb9a923646839f"
+          tag:      "0.72.2",
+          revision: "1a737af0c83b28c1f249b821a76a19c82696b05a"
     end
   end
 
@@ -86,7 +86,7 @@ class Rust < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
     end
 
-    args = %W[--prefix=#{prefix} --enable-vendor --set rust.jemalloc]
+    args = %W[--prefix=#{prefix} --sysconfdir=#{etc} --enable-vendor --set rust.jemalloc]
     if build.head?
       args << "--disable-rpath"
       args << "--release-channel=nightly"
