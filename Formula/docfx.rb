@@ -6,13 +6,13 @@ class Docfx < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "556c1d067c96620e57dd2babbc44aae47c81307ab2f708232455c14abdeddf50"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6d2b0157174e85b9d43bd3a07ada880faca637a632a9cb131ba9ea769a30c5d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1ddd6630232bf54599ba12f3c95059ec85c25eaa46b54a9ce0cad73d62ff685"
-    sha256 cellar: :any_skip_relocation, ventura:        "94de3923426b9f1ac19fce443e0f3426a99f499aeb689103b47c2df291227531"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5124890a8fe533417b89475a0270d5d6c364c821d482c72a9f71e4ecbe7abd7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "39e162cf91d2bf849f009d03947de2a57aae20ab25db749934ec2acbaf570870"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b50ef0c7be24a1bbd06f5fb242d93033be8cf02ac398dc930f52068f1df520ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e45da8277bf33a61d7d7eee3641ff8eda6fc1b85383f46956da72051f8509855"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbcce54f023a65bac48c24693996e9b3c86ad97fe090d6d2a8b3523aee290b58"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f25d563de450b300259edda687f0f6c17ba368ee5b9911da400556aac23085b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2f99ddc4bd049081e0e945cd25dafc282509a2a5648f54c1aa3d5693ddb2625"
+    sha256 cellar: :any_skip_relocation, monterey:       "0338ee28b5989d6e97739fc85a40a8e726339f4b97b610b9cb9299a94029018d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ed39d8d2ef5a6e27de481a264d52f026bcb118772de50b693ac212abdc61e81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b056e9a8a772b60f294631d82908420544f662397d0e3de45a5ada2740007b6"
   end
 
   depends_on "dotnet"
