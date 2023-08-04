@@ -3,8 +3,8 @@ require "language/node"
 class Autocannon < Formula
   desc "Fast HTTP/1.1 benchmarking tool written in Node.js"
   homepage "https://github.com/mcollina/autocannon"
-  url "https://registry.npmjs.org/autocannon/-/autocannon-7.11.0.tgz"
-  sha256 "0b7b7df9126343782e860eeb84b663d6634f54a1e40f7e472b9350eebb72512a"
+  url "https://registry.npmjs.org/autocannon/-/autocannon-7.12.0.tgz"
+  sha256 "ba33a4b876b5d07e6d430481d2331170942f744a2f608c7a7c21eafe6c83f888"
   license "MIT"
 
   bottle do
