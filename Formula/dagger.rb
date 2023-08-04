@@ -2,8 +2,8 @@ class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
   url "https://github.com/dagger/dagger.git",
-      tag:      "v0.6.4",
-      revision: "0889c0961c764fc9fbd7cdecb67e5ba388a6ca01"
+      tag:      "v0.8.0",
+      revision: "4fe49b534a8cc5bc37cbd17f4b4343d2c1868f8b"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
@@ -28,7 +28,7 @@ class Dagger < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/dagger/dagger/internal/engine.Version=v#{version}
+      -X github.com/dagger/dagger/engine.Version=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/dagger"
 
