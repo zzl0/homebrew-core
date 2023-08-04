@@ -1,8 +1,8 @@
 class Fnlfmt < Formula
   desc "Formatter for Fennel code"
   homepage "https://git.sr.ht/~technomancy/fnlfmt"
-  url "https://git.sr.ht/~technomancy/fnlfmt/archive/0.3.0.tar.gz"
-  sha256 "8baa2f5ed98f449139f6bd8b4859575c4cfeacc60c0a8884ecaa27bc94e69156"
+  url "https://git.sr.ht/~technomancy/fnlfmt/archive/0.3.1.tar.gz"
+  sha256 "5f829b40b19388db2e87cc2cb490ab6e81d52ce119f96912b4ed7e416d964721"
   license "LGPL-3.0-or-later"
 
   bottle do
