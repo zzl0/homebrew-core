@@ -3,10 +3,9 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/bd/47/70038b678e12181a28959d3ca3a7f3dcacb0b01da217550ab710a453e34d/borgmatic-1.8.0.tar.gz"
-  sha256 "b561c69f241d9e87af585720079e9ef7b43bdee8d4c39c8775476e068ec71a5a"
+  url "https://files.pythonhosted.org/packages/bd/6f/10307178af97bfa4473f07303b03b53002e6d37336cc5618253849894628/borgmatic-1.8.1.tar.gz"
+  sha256 "5db8a14d026da224517f08cc08ff9710f99bb7bfffcc53f1d5f2163af9fdd8d7"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "daaa0809a857c97fcfa9b9445deb7ac0fb731d76dee4fc8bf65d440953061766"
@@ -47,8 +46,8 @@ class Borgmatic < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/ae/a9/30605c5fe91e5087dacd85809322021106920a866d114a14f042781ffa3e/jsonschema-4.18.6.tar.gz"
+    sha256 "ce71d2f8c7983ef75a756e568317bf54bc531dc3ad7e66a128eae0d51623d8a3"
   end
 
   resource "jsonschema-specifications" do
