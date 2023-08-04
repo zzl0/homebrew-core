@@ -1,10 +1,20 @@
 class Libgit2Glib < Formula
   desc "Glib wrapper library around libgit2 git access library"
-  homepage "https://github.com/GNOME/libgit2-glib"
-  url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.1.0/libgit2-glib-v1.1.0.tar.bz2"
-  sha256 "6cbbf43eda241cc8602fc22ccd05bbc4355d9873634bc12576346e6b22321f03"
+  homepage "https://gitlab.gnome.org/GNOME/libgit2-glib"
   license "LGPL-2.1-only"
-  head "https://github.com/GNOME/libgit2-glib.git", branch: "master"
+  head "https://gitlab.gnome.org/GNOME/libgit2-glib.git", branch: "master"
+
+  stable do
+    url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.1.0/libgit2-glib-v1.1.0.tar.bz2"
+    sha256 "6cbbf43eda241cc8602fc22ccd05bbc4355d9873634bc12576346e6b22321f03"
+
+    # Add commit signing API. Needed for dependent `gitg`.
+    # Remove with `stable` block on next release.
+    patch do
+      url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/commit/7f36e18f41e0b28b35c85fe8bf11d844a0001305.diff"
+      sha256 "e5a07c6bbd05b88f1d52107167d7db52f43abfd0b367645cc75b72acb623d9ff"
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "cd5ce302746b146fbcae23c34a4962cadf2aa6167872281c60c2dbd0c933e596"
@@ -27,16 +37,13 @@ class Libgit2Glib < Formula
   depends_on "libgit2"
 
   def install
-    mkdir "build" do
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
-      system "meson", *std_meson_args,
-                      "-Dpython=false",
-                      "-Dvapi=true",
-                      ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-      libexec.install Dir["examples/*"]
-    end
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
+    system "meson", "setup", "build", *std_meson_args,
+                                      "-Dpython=false",
+                                      "-Dvapi=true"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+    libexec.install (buildpath/"build/examples").children
   end
 
   test do
