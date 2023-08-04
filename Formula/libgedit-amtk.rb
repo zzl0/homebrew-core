@@ -6,6 +6,16 @@ class LibgeditAmtk < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/gedit-technology/libgedit-amtk.git", branch: "main"
 
+  bottle do
+    sha256 arm64_ventura:  "e6b1196ae73eaeebc6722e30a1b331841405a4414f0395fd8ec9bfddaf0258d3"
+    sha256 arm64_monterey: "ce53bd6100c84e17f8d35bf92c8386369c26b396b69c4666d3b979776ad3ecb6"
+    sha256 arm64_big_sur:  "b942811c4c77c9c3eae4973dfdd0bdec4340d5bcd85bcb120d4fdf1d16e8083d"
+    sha256 ventura:        "5757401079d2a27249fadfd5a9e5dd6b9b382cc3c023128e296e8044506074c8"
+    sha256 monterey:       "6290de91843706bc42c743422b98158fd702893a475a7e7936683dfbefaf5909"
+    sha256 big_sur:        "d99e61c8a7632acd4c24af0c3ea49370d69329cad29fe5018b31669c1bf209e3"
+    sha256 x86_64_linux:   "9e3a21fa3a77d3c98fb22553a21abfe163456381d2e9b8e26bdaa4f1013546da"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
