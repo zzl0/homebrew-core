@@ -22,14 +22,13 @@ class Libspatialite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e899d02886f31301ebd4c65a0fbf56237ea49ddb3f1468437204ea567b94d75"
-    sha256 cellar: :any,                 arm64_monterey: "8dc0901eff2763a59d1ddc22f3ed19ef1a1b706ba2d4069a092e1c86e730db91"
-    sha256 cellar: :any,                 arm64_big_sur:  "bdc286c42eb9dcead8e145ae385f4764cc6b081b4284388749b3e0ee270b4431"
-    sha256 cellar: :any,                 ventura:        "c4e86af4b415b091cb0e53a49236b67079b0fe61d0be81e2202e9f0657826fbc"
-    sha256 cellar: :any,                 monterey:       "87c4d5eedbd6657e5bbb5f02c64f82dd9d7de502c57fecd44a2059cdff476724"
-    sha256 cellar: :any,                 big_sur:        "001ef9d46fb1b508459bf5a1aac259643def005b8fb808663dd32e49c89cff5a"
-    sha256 cellar: :any,                 catalina:       "d403ece87a9d8349fc2bad142f52b1c44c423cc17fbc7da5ee3f2a2a168dd796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7936163e48b970c168ccd0b53d917b47364d91b4698aed7cd1199858d0e30b8"
+    sha256 cellar: :any,                 arm64_ventura:  "93ad60cc9ec55d4f4472d83bf9775d2e1d75fc6d23b3cdf891086057bc76e465"
+    sha256 cellar: :any,                 arm64_monterey: "cd54cba79354b17f2a3d0b367a1cf0863ce134ce7441b4ec5b8538f6e51a2cf0"
+    sha256 cellar: :any,                 arm64_big_sur:  "51e6aa08cb016ed1b348cb7d4cdbddf43f5f99d0a21958eb8272b635df732c61"
+    sha256 cellar: :any,                 ventura:        "3baa41829944e9b089682dd3d4d96cd4a68d67d1a4668e935ad2387e626c196e"
+    sha256 cellar: :any,                 monterey:       "384f5f1304cf4dfd32e0a59e8c4669f5534a043cab13791d6dc56f696230d407"
+    sha256 cellar: :any,                 big_sur:        "1957739657a713ca553b78e3a9a7ac4626a50af9db64d207d5d2487a2df95de9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a0a7b3bf5bd73224b24abefa5a0f709c4c6fd832d4868cf6fedf213a73971fd"
   end
 
   head do
