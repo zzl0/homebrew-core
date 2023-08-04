@@ -101,7 +101,7 @@
     "exclude_packages": ["PyYAML", "pygments"]
   },
   "bbot": {
-    "exclude_packages": ["cffi", "docutils", "pycparser", "pyyaml", "six", "typing-extensions"]
+    "exclude_packages": ["cffi", "cryptography", "docutils", "pycparser", "pyyaml", "six", "typing-extensions"]
   },
   "beancount": {
     "exclude_packages": ["six"]
