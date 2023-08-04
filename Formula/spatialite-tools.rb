@@ -1,10 +1,9 @@
 class SpatialiteTools < Formula
   desc "CLI tools supporting SpatiaLite"
   homepage "https://www.gaia-gis.it/fossil/spatialite-tools/index"
-  url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-5.0.1.tar.gz"
-  sha256 "9604c205e87f037789bc52302c66ccd1371c3e98c74e8ec4e29b0752de35171c"
+  url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-5.1.0.tar.gz"
+  sha256 "df3030367c089ca90fa6630897f3f1a280784da29e1ba634f340dba4b08583b5"
   license "GPL-3.0-or-later"
-  revision 4
 
   livecheck do
     url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/"
@@ -12,13 +11,13 @@ class SpatialiteTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1a931418bfbef5b64396031baebc4462a340a7d09c192915f14bf2bc4055de5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13bc1b2535b2c6e406f70918faf6ecd56afc3560d410eb3008a933ad60564635"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de9a15768ccca6354a320603babd68a185ce704cb5517df1867f3b9a5ddb2de2"
-    sha256 cellar: :any_skip_relocation, ventura:        "744ba791b58397a07c550560358be2972dc57b1d6c285677f15344a15ec953ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d92709e9eb0f828586a531c3aca5946c138b0adfb3a07a1e9386554f5be1e14"
-    sha256 cellar: :any_skip_relocation, big_sur:        "93763f63f9fe08eb4a707fb227e8e405fd75482da16cd4c07d71c86b41e94eda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f792e592db95f0d8b725808d24b57618c73ca9b8cd98eb5b31194d244b0c5dde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ec7d078c58b3eef0e931c6f0bef1760eaf288501c2cb45efa78ab11f4934efa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "095be35895db6bfe29a616f878845db1798cde3d97d27c9ac26003f85ea5f589"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5641d6bb597c7cf039b33b9bd9b3d54f37659ce3aaa278f1fc211ea80efeb82"
+    sha256 cellar: :any_skip_relocation, ventura:        "94eb1627d64ec557b504def0c18548fe159c84132dd85b2656764c11ff4b2758"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e59743367a535c343149b04d25f4abda572f34469516851c3e6b606db6fc7d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "73c977980d27f5a82f2cc7f21a843b9c2c9b912501d503998312756dd9ab9430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf36de708f0b4ade1201cdf1e0878b08283c155fd486fb9d7ec8d856e3a2e78"
   end
 
   depends_on "pkg-config" => :build
