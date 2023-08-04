@@ -1,8 +1,8 @@
 class Jigdo < Formula
   desc "Tool to distribute very large files over the internet"
   homepage "https://www.einval.com/~steve/software/jigdo/"
-  url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.1.tar.xz"
-  sha256 "b1f08c802dd7977d90ea809291eb0a63888b3984cc2bf4c920ecc2a1952683da"
+  url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.2.tar.xz"
+  sha256 "36f286d93fa6b6bf7885f4899c997894d21da3a62176592ac162d9c6a8644f9e"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://git.einval.com/git/jigdo.git", branch: "upstream"
 
@@ -36,9 +36,6 @@ class Jigdo < Formula
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "./configure", *std_configure_args, "--mandir=#{man}"
-
-    # replace non-existing function
-    inreplace "src/compat.hh", "return truncate64(path, length);", "return truncate(path, length);" if OS.mac?
 
     # disable documentation building
     (buildpath/"doc/Makefile").atomic_write "all:\n\techo hello"
