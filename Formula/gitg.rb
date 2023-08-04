@@ -11,14 +11,13 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f2ddb91d679e3cce264f52960a7e30e2a5267dbcd85e64b02c8706cfd3a5479c"
-    sha256 arm64_monterey: "f68e86061156ba405410156aa3e4066015cdb9227162d68f2581664a6a7b4ba9"
-    sha256 arm64_big_sur:  "a2bf23c4cb3fdfdcdb05f250b5bf62d33bc60d01072f182f1209a40b604674df"
-    sha256 ventura:        "5309cb3218437eb04e8f635a281f2e027cce2132fc172625da6647e2b95ab76d"
-    sha256 monterey:       "70d587c967403aafdff322736896ad013be0b1bc0a4a9fbe60329913a4f07fad"
-    sha256 big_sur:        "45de0fdc63fdd84c90e4ccfcbd99e7f2338b5d5510f7b8364fc32b49d6335528"
-    sha256 catalina:       "6243ae261e1994f5b72c79bb469c23270c67e25a1e0f1a4a1fa39f1f248fd3f4"
-    sha256 x86_64_linux:   "e25650fea8b7537a43e868afc3f0e1ac7aa1ed8153b655556bafe6fbdf883132"
+    sha256 arm64_ventura:  "a5d013b479cbb9b9a0f77448fa51f649654e629a5b48184a9e2aa571396354d1"
+    sha256 arm64_monterey: "1a46f7acc167edaac7e768a15aa09805e27f694c2f20fb21452db71bf832ef36"
+    sha256 arm64_big_sur:  "7e9c89e643ef04d97c5648f46965c43d24927a1206c9d07587fb54842b744c83"
+    sha256 ventura:        "6390aec004418998abbfbf5e1100e40dcd4fd852b53a6fdcd35791af2083e0e8"
+    sha256 monterey:       "e89020ed39c5a0476712b9b38872683132860cdde5a318b3cbca2b5dc4460054"
+    sha256 big_sur:        "b202491385fbc0b03d915cec9919c591f88768582fdfb8a67d8fbd2345de3670"
+    sha256 x86_64_linux:   "2788c52516db7b9904dfbd8de27b088a0a096bb79786ecdfe6c5b367d3855a0d"
   end
 
   depends_on "intltool" => :build
