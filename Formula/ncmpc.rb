@@ -1,8 +1,8 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.48.tar.xz"
-  sha256 "b4b2d27e518096de2a145ef5ddf86cf46f8ba1f849bf45c6d81183a38869b90c"
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.49.tar.xz"
+  sha256 "65bbec0ede9e6bcf62ac647b0c706485beb2bdd5db70ca8d60103f32f162cf29"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -28,15 +28,30 @@ class Ncmpc < Formula
   depends_on "libmpdclient"
   depends_on "pcre2"
 
-  fails_with gcc: "5"
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  end
+
+  fails_with :clang do
+    build 1300
+    cause "Requires C++20"
+  end
+
+  fails_with :gcc do
+    version "9"
+    cause "Requires C++20"
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
+
     system "meson", "setup", "build", "-Dcolors=false", "-Dnls=enabled", "-Dregex=enabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   test do
-    system bin/"ncmpc", "--help"
+    assert_match "Key configuration screen", shell_output("#{bin}/ncmpc --dump-keys")
+    assert_match version.to_s, shell_output("#{bin}/ncmpc --version")
   end
 end
