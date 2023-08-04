@@ -3,8 +3,8 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/a8/ba/2dda5c081d2bef7c21e2bd915df9437b2ef3fcd608988c847907118bf4e4/sqlfluff-2.1.4.tar.gz"
-  sha256 "86ee197cb6919e50962c4def5f64ba8bafb35b1ffab943b2e87fca137e3df2a2"
+  url "https://files.pythonhosted.org/packages/55/75/9d1b53f394ef9efb9007c43c83c7bb9ebac47cfae777625d61c3fd58c29a/sqlfluff-2.2.0.tar.gz"
+  sha256 "0187da866f232add88038811c1b959af5176bfe2e2ded63a920dd1e413e65f2a"
   license "MIT"
 
   bottle do
@@ -28,8 +28,8 @@ class Sqlfluff < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "click" do
@@ -68,8 +68,8 @@ class Sqlfluff < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/95/60/d93628975242cc515ab2b8f5b2fc831d8be2eff32f5a1be4776d49305d13/pathspec-0.11.1.tar.gz"
-    sha256 "2798de800fa92780e33acca925945e9a19a133b715067cf165b8866c15a31687"
+    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
   resource "pluggy" do
