@@ -12,14 +12,13 @@ class SpatialiteTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ae74cc99ac7a4b6bb712479f4b78ca3e2948c22bc5f3274e6e393f895203bd9b"
-    sha256 cellar: :any,                 arm64_monterey: "b86e6782ee3e213e0f48dff798cfb97abe3d7b70b9952adec27a38101ae79ad0"
-    sha256 cellar: :any,                 arm64_big_sur:  "85f55f7e24e468d2e8c4e12b756adb403c7dca4c7d876ffa6f4d137068281bb7"
-    sha256 cellar: :any,                 ventura:        "ea4eb6399d740f3b6c7ee6afc7c8068482a1047969d2e53fe30a4ba177cf2c15"
-    sha256 cellar: :any,                 monterey:       "a48217b08cf43cb0ab8f3d4d04746039aed59f2e6ab94da257086640cc554809"
-    sha256 cellar: :any,                 big_sur:        "14b4e9a726e60acf5e1e1fee927c95ac8956b616882e689010dd9c0f13e19675"
-    sha256 cellar: :any,                 catalina:       "73a69a00307ae7198b57f8e9636be6c096364366ab0e6641aed513a2fc88022f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b23dd8401a4f5979eb7f4d4356fe0a6254097d7312ceb4d9261bdce49593d9cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1a931418bfbef5b64396031baebc4462a340a7d09c192915f14bf2bc4055de5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13bc1b2535b2c6e406f70918faf6ecd56afc3560d410eb3008a933ad60564635"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de9a15768ccca6354a320603babd68a185ce704cb5517df1867f3b9a5ddb2de2"
+    sha256 cellar: :any_skip_relocation, ventura:        "744ba791b58397a07c550560358be2972dc57b1d6c285677f15344a15ec953ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d92709e9eb0f828586a531c3aca5946c138b0adfb3a07a1e9386554f5be1e14"
+    sha256 cellar: :any_skip_relocation, big_sur:        "93763f63f9fe08eb4a707fb227e8e405fd75482da16cd4c07d71c86b41e94eda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f792e592db95f0d8b725808d24b57618c73ca9b8cd98eb5b31194d244b0c5dde"
   end
 
   depends_on "pkg-config" => :build
