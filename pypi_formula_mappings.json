@@ -533,7 +533,7 @@
     "exclude_packages": ["six"]
   },
   "onlykey-agent": {
-    "exclude_packages": ["cffi", "six", "Cython", "pycparser", "docutils"]
+    "exclude_packages": ["certifi", "cffi", "Cython", "docutils", "pycparser", "six"]
   },
   "openai-whisper": {
     "exclude_packages": ["torch", "PyYAML", "huggingface_hub"]
