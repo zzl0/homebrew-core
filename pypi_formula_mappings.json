@@ -277,7 +277,7 @@
     "exclude_packages": ["PyMuPDF", "six"]
   },
   "esphome": {
-    "exclude_packages": ["cffi", "protobuf", "pycparser", "PyYAML", "six", "tabulate"]
+    "exclude_packages": ["certifi", "cffi", "protobuf", "pycparser", "PyYAML", "six", "tabulate"]
   },
   "esptool": {
     "exclude_packages": ["cffi", "pycparser", "six", "PyYAML"]
