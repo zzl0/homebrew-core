@@ -9,14 +9,14 @@ class CharmTools < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "100586aaad066f13aab903c934b6e5d10713c0db86ebc510cb82f5bd7fad7043"
-    sha256 cellar: :any,                 arm64_monterey: "f446d41d1dbbfae85293fd5de83977f5a58453b7487aada98cdea66f89fa52bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "71f892a1e9876b37fcb00094418c6ef0b18f2990304c623abb03806303d476a1"
-    sha256 cellar: :any,                 ventura:        "d2b30271d21ec028249b7caf6cd783494eb8ef28aa9d2c88d151baf417f873ca"
-    sha256 cellar: :any,                 monterey:       "29f2543279ddca25bdba66bfec49e5e7910dab353d0ee669284f62bacced2378"
-    sha256 cellar: :any,                 big_sur:        "cca03328e197ecc9ea36af1eb008cfbae98629be428ba8c99d2582b0eaaff937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe74f3e5f0a5a1b6cf2d8400b5ad640daf5f7ebd56799a1b2425adf214775699"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "2915b387ac39b4508a239c04369bd24a7316a8d6357abb9a47452cdfadf8c3d2"
+    sha256 cellar: :any,                 arm64_monterey: "60aabc32ffcd0d93912ba6be8daaab5638a1297a4322985bc4d399c64dbf4a41"
+    sha256 cellar: :any,                 arm64_big_sur:  "1540f72754e07fcb5f314c6317a62605491c224456b785de3c0379d44913685f"
+    sha256 cellar: :any,                 ventura:        "c1afb9cf392b74e3e986d35dc1317730c610a3f5f05c77143d63ce8c6e93875a"
+    sha256 cellar: :any,                 monterey:       "587392bc312648395f2853f96e3f952ebff881b5226c21acfcf05ca44793d083"
+    sha256 cellar: :any,                 big_sur:        "6925a3a9c4d07ec0eef080826eddf2013dbac198d7a17980fbbbf208dba3c931"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c9de4de060cbcfd620d6a97f7f5b30d41eb9d60c36ed2d0c37ce247d9cf7959"
   end
 
   depends_on "pkg-config" => :build
@@ -25,6 +25,7 @@ class CharmTools < Formula
   depends_on "charm"
   depends_on "libyaml"
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -47,11 +48,6 @@ class CharmTools < Formula
   resource "blessings" do
     url "https://files.pythonhosted.org/packages/5c/f8/9f5e69a63a9243448350b44c87fae74588aa634979e6c0c501f26a4f6df7/blessings-1.7.tar.gz"
     sha256 "98e5854d805f50a5b58ac2333411b0482516a8210f23f43308baeb58d77c157d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
