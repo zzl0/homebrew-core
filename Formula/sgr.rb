@@ -19,11 +19,10 @@ class Sgr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a5004769f5900ea8ddc97ab004885e4ce55d528fc23dec74363c93b377c175"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build # for pydantic
   depends_on "libpq" # for psycopg2-binary
-  depends_on "openssl@3"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -70,11 +69,6 @@ class Sgr < Formula
   resource "click-log" do
     url "https://files.pythonhosted.org/packages/32/32/228be4f971e4bd556c33d52a22682bfe318ffe57a1ddb7a546f347a90260/click-log-0.4.0.tar.gz"
     sha256 "3970f8570ac54491237bcdb3d8ab5e3eef6c057df29f8c3d1151a51a9c23b975"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "docker" do
@@ -205,20 +199,12 @@ class Sgr < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 
   test do
     sgr_status = shell_output("#{bin}/sgr cloud login --username homebrewtest --password correcthorsebattery 2>&1", 2)
-
-    expected_output = <<~EOS
-      error: splitgraph.exceptions.AuthAPIError: {"error_code":"INVALID_CREDENTIALS","error":"Invalid username or password"}
-    EOS
-
-    assert_equal expected_output, sgr_status
+    assert_match "error: splitgraph.exceptions.AuthAPIError", sgr_status
+    assert_match version.to_s, shell_output("#{bin}/sgr --version")
   end
 end
