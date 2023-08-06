@@ -19,6 +19,8 @@ class GiDocgen < Formula
   end
 
   depends_on "pygments"
+  depends_on "python-markdown"
+  depends_on "python-toml"
   depends_on "python@3.11"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
@@ -33,19 +35,9 @@ class GiDocgen < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/85/7e/133e943e97a943d2f1d8bae0c5060f8ac50e6691754eb9dbe036b047a9bb/Markdown-3.4.1.tar.gz"
-    sha256 "3b809086bb6efad416156e00a0da66fe47618a5d6918dd688f53f40c8e4cfeff"
-  end
-
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
     sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "typogrify" do
@@ -55,6 +47,11 @@ class GiDocgen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # we depend on python-markdown, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    python_markdown = Formula["python-markdown"].opt_libexec
+    (libexec/site_packages/"homebrew-python-markdown.pth").write python_markdown/site_packages
   end
 
   test do

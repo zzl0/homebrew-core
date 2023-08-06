@@ -345,7 +345,7 @@
     "exclude_packages": ["pygments"]
   },
   "gi-docgen": {
-    "exclude_packages": ["pygments", "smartypants"]
+    "exclude_packages": ["markdown", "pygments", "smartypants", "toml"]
   },
   "gimme-aws-creds": {
     "package_name": "gimme-aws-creds",
