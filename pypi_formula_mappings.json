@@ -332,7 +332,7 @@
     "exclude_packages": ["certifi"]
   },
   "gcalcli": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["certifi", "six"]
   },
   "gdbgui": {
     "exclude_packages": ["six"]
