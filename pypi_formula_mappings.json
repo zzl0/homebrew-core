@@ -177,7 +177,7 @@
     "extra_packages": ["wheel"]
   },
   "chatblade": {
-    "exclude_packages": ["PyYAML", "pygments"]
+    "exclude_packages": ["certifi", "pygments", "PyYAML"]
   },
   "checkov": {
     "exclude_packages": ["certifi", "cffi", "markdown", "pycparser", "PyYAML", "six", "tabulate", "typing-extensions"]
