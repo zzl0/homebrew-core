@@ -817,6 +817,9 @@
   "toot": {
     "exclude_packages": ["certifi"]
   },
+  "torchvision": {
+    "exclude_packages": ["certifi"]
+  },
   "touca": {
     "exclude_packages": ["certifi", "pygments"]
   },
