@@ -21,6 +21,7 @@ class Datalad < Formula
   depends_on "rust" => :build # for cryptography
   depends_on "git-annex"
   depends_on "p7zip"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "annexremote" do
@@ -31,11 +32,6 @@ class Datalad < Formula
   resource "boto" do
     url "https://files.pythonhosted.org/packages/c8/af/54a920ff4255664f5d238b5aebd8eedf7a07c7a5e71e27afcfe840b82f51/boto-2.49.0.tar.gz"
     sha256 "ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do
