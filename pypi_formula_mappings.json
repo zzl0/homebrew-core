@@ -274,7 +274,7 @@
     "exclude_packages": ["six", "cffi", "pycparser"]
   },
   "enex2notion": {
-    "exclude_packages": ["PyMuPDF", "six"]
+    "exclude_packages": ["certifi", "PyMuPDF", "six"]
   },
   "esphome": {
     "exclude_packages": ["cffi", "protobuf", "pycparser", "PyYAML", "six", "tabulate"]
