@@ -18,6 +18,7 @@ class OktaAwscli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "014417c231aea1e240595c09d7a26ad93569780251e438a02eb49de18f6536e8"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -39,11 +40,6 @@ class OktaAwscli < Formula
   resource "bs4" do
     url "https://files.pythonhosted.org/packages/10/ed/7e8b97591f6f456174139ec089c769f89a94a1a4025fe967691de971f314/bs4-0.0.1.tar.gz"
     sha256 "36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
