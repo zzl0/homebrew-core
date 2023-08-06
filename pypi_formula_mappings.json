@@ -928,6 +928,9 @@
   "yle-dl": {
     "exclude_packages": ["certifi", "cffi", "pycparser"]
   },
+  "yt-dlp": {
+    "exclude_packages": ["certifi"]
+  },
   "zabbix-cli": {
     "exclude_packages": ["certifi"]
   }
