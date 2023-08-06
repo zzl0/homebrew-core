@@ -562,7 +562,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "pferd": {
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["certifi", "Pygments"]
   },
   "pgcli": {
     "exclude_packages": ["six", "tabulate", "typing-extensions", "Pygments"]
