@@ -18,6 +18,7 @@ class Datasette < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70f022b8d8b297162daec2f4d9a4a3ef800333898f678d5201f83ca05b1cadd8"
   end
 
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -41,11 +42,6 @@ class Datasette < Formula
   resource "asgiref" do
     url "https://files.pythonhosted.org/packages/12/19/64e38c1c2cbf0da9635b7082bbdf0e89052e93329279f59759c24a10cc96/asgiref-3.7.2.tar.gz"
     sha256 "9e0ce3aa93a819ba5b45120216b23878cf6e8525eb3848653452b4192b92afed"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "click" do
