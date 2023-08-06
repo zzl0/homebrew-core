@@ -111,7 +111,8 @@
   },
   "black": "black[d]",
   "borgmatic": {
-    "extra_packages": ["ruamel.yaml.clib"]
+    "extra_packages": ["ruamel.yaml.clib"],
+    "exclude_packages": ["certifi"]
   },
   "bpython": {
     "exclude_packages": ["six", "Pygments"]
