@@ -20,6 +20,7 @@ class Ansible < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2ac2fc6365bc3cfb2abbfb178184d2f00951d3f35f8d94fd7c236ca5fd59faa"
   end
 
+  # `pkg-config` and `rust` are for bcrypt
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"

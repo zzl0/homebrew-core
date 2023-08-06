@@ -18,7 +18,7 @@ class Bbot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0998f3605a1271b5c9933bc763e653a2a8accb6a35aeee9b922afe4ba798d6e2"
   end
 
-  # `rust` is for `rpds-py` via `url-normalize`
+  # `pkg-config` and `rust` are for `rpds-py` via `url-normalize`
   depends_on "cmake" => :build
   depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
