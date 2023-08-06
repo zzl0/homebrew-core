@@ -25,6 +25,7 @@ class Howdoi < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -43,11 +44,6 @@ class Howdoi < Formula
   resource "cachelib" do
     url "https://files.pythonhosted.org/packages/70/0b/e7647e072ff60997d69517072145ef56898278afda7deff7cc6858b1541f/cachelib-0.10.2.tar.gz"
     sha256 "593faeee62a7c037d50fc835617a01b887503f972fb52b188ae7e50e9cb69740"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
