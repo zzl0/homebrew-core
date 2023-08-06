@@ -930,7 +930,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "ykman": {
-    "exclude_packages": ["cffi", "keyring", "pycparser"]
+    "exclude_packages": ["cffi", "cryptography", "keyring", "pycparser"]
   },
   "yle-dl": {
     "exclude_packages": ["certifi", "cffi", "pycparser"]
