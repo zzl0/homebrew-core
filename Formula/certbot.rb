@@ -20,15 +20,12 @@ class Certbot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aff411cb5c110b28e7b3bc554d31a04e54d5edbfbc0eb9c563045b355e032649"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "augeas"
   depends_on "cffi"
   depends_on "dialog"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -62,11 +59,6 @@ class Certbot < Formula
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "distro" do
@@ -125,10 +117,6 @@ class Certbot < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     if build.head?
       head_packages = %w[acme certbot certbot-apache certbot-nginx]
       venv = virtualenv_create(libexec, "python3.11")
