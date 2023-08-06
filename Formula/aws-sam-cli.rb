@@ -19,7 +19,6 @@ class AwsSamCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fbbf786a708e52d3e6fa5342b8724c95ed30372e9cef55d770a0f64535c9d5e"
   end
 
-  depends_on "pkg-config" => :build
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "pygments"
