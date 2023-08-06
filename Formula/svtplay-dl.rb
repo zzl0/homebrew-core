@@ -9,14 +9,14 @@ class SvtplayDl < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "e4598f592aaf22778912811dbb5ce5a7a26b8572555a452f68de86276972b8a4"
-    sha256 cellar: :any,                 arm64_monterey: "c737a563bb767a016ab0b859d5bf3dffd20136960650abb9556592a40bb48df8"
-    sha256 cellar: :any,                 arm64_big_sur:  "194ceccbd0551774c9d03dca09147c85d0a01f01e97bd3b1dff4730b5ddfd7bc"
-    sha256 cellar: :any,                 ventura:        "1fb03fe0a9a26aedd687808e9546332a71e34cd41cbb72f40a824f749bab8ca0"
-    sha256 cellar: :any,                 monterey:       "eb5d725216718d92af3904fdc461c6e83da3e6adbfba9a226017de5f72b9a14e"
-    sha256 cellar: :any,                 big_sur:        "e3d3e0cf82d4702df51b8a74d56acb19e459db900a868e1a2fe2da67feaa520d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1860ac11bd18e434339e1df852ccb6427e6e1e1069bc70637258669ffe1a21ad"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3556dabf73bdd8b4033788ab18a90dd1f15ba3e4872887e27e4723595f05897a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "627a68708597f6fe8f71510f148976abf6b6546fb1240e734d542755ac76581f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0b7153a9c6ee58b8d0e41fdceabf9e03a39d2c38e44347fe3c3dd78084a0688"
+    sha256 cellar: :any_skip_relocation, ventura:        "80760363a1bee78f62d2a9f125d3b74a71a293776ecb131e289cf21e1983422c"
+    sha256 cellar: :any_skip_relocation, monterey:       "561803dc76bd866b78e01428fed6971585c38f12ebcb521034218126ff90fa43"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ee393b08f40d5be7ed378b937690f5279e52b869f489fec87e2b5a5280b897c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b99d0e88d268b75d56ef76dfd5ecc9deaa4e788bcd0df7cc48237fafc86841f6"
   end
 
   depends_on "cffi"
