@@ -814,6 +814,9 @@
   "vint": {
     "exclude_packages": ["PyYAML"]
   },
+  "virt-manager": {
+    "exclude_packages": ["certifi"]
+  },
   "virtualenvwrapper": {
     "exclude_packages": ["six", "virtualenv"]
   },
