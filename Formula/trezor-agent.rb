@@ -9,25 +9,23 @@ class TrezorAgent < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "7c1c34e17f0109ad202b5ae1f26424ded7bd8c8f3468034264ff029d4630c3a8"
-    sha256 cellar: :any,                 arm64_monterey: "0a7a9598e4abb264482f0d943a440262b7269886dd2eb7089a17c256b5845a35"
-    sha256 cellar: :any,                 arm64_big_sur:  "24ec64a1d8f130271a953e7ceb48a4c304cfd679e9a99864e3119aaded513073"
-    sha256 cellar: :any,                 ventura:        "8b6a481a6527e3043f4db1d5b0d1c675b8ca0d2b8686efb71340a69fbefd2ae0"
-    sha256 cellar: :any,                 monterey:       "d465202e5b5c0fac3d2a82e86f3a9a87c618164616a9a2ae169baa7b5611e050"
-    sha256 cellar: :any,                 big_sur:        "91bd02905c678319bdda02bfb7efcc9392be6f93644b791598a8a4b2e8b82ed2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff503ea38423009b3278a55dccbeb1c3891b958e24e44f077dd803c81be7316b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f79fae71fa66b759a9b5c30fbec3ceb8ec05f0d2a34582126a2f0a0a15ff7d09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e65940d6e9e5cb29606170c475b7474093af742cdbcd4c4c7eb8c9b44df6dd66"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5b45c26f2de32899993ce60d2cca4093f09bf5cf014a372dbc0cae7dac64d54"
+    sha256 cellar: :any_skip_relocation, ventura:        "285c299dcf2000e46913863f1809d3f10dd525f028641d38ee3713fea29a8881"
+    sha256 cellar: :any_skip_relocation, monterey:       "911d17621ca86910faba00b60201d5f80c8286a5b7a5ca2a86a33b81df4a1e52"
+    sha256 cellar: :any_skip_relocation, big_sur:        "10f15d9c767d32c48d2328275a16608fffb3e6a3891b88ad74590b7d8c4d89aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bba6964bfc999f77fcf7d2c3c46df0d26dac0a433463159b40805d8a618382cc"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # python-daemon resource depends on cryptography
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -70,11 +68,6 @@ class TrezorAgent < Formula
   resource "construct-classes" do
     url "https://files.pythonhosted.org/packages/83/d3/e42d3cc9eab95995d5349ec51f6d638028b9c21e7e8ac6bea056b36438b8/construct-classes-0.1.2.tar.gz"
     sha256 "72ac1abbae5bddb4918688713f991f5a7fb6c9b593646a82f4bf3ac53de7eeb5"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "ecdsa" do
@@ -264,10 +257,6 @@ class TrezorAgent < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     ENV.append "CFLAGS", "-I#{Formula["libusb"].include}/libusb-1.0"
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| OS.mac? ? r.name == "dbus-fast" : r.name.start_with?("pyobjc") }
