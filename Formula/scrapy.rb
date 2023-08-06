@@ -3,20 +3,20 @@ class Scrapy < Formula
 
   desc "Web crawling & scraping framework"
   homepage "https://scrapy.org"
-  url "https://files.pythonhosted.org/packages/eb/b0/7da031ff0ce073839984097724db2c54e8c4b7938acb9ef4691a98620ce7/Scrapy-2.9.0.tar.gz"
-  sha256 "564c972b56e54b83141f395ce3f6a25bfe2093d61d13f9b81d05384e19db98da"
+  url "https://files.pythonhosted.org/packages/33/c9/1c516d418dc5ad8de725590a2d0cf611e547cadedd121d797f80859dfda4/Scrapy-2.10.0.tar.gz"
+  sha256 "4e16a33fc8c03a58bdf4e8d4bdca1f867354eac69ccf573658c7ff34fa0cae39"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7f99c0cb850278525b94221a387b27d64935d3908cdf65fbe121e88714076f00"
-    sha256 cellar: :any,                 arm64_monterey: "01576e95c4476d104a96ad0884e9b5e3f63047691cf8995aa477358705b6f4bb"
-    sha256 cellar: :any,                 arm64_big_sur:  "9e8f341d147376a86d8c7aad6ee47f122d5e0ba7195039f0da7793dd1f90a9c9"
-    sha256 cellar: :any,                 ventura:        "f3d600b92a26ebc9f1041124e3f41653792771665073efcc8a6c718eb5eef08d"
-    sha256 cellar: :any,                 monterey:       "f51e36a1c9aa5778fe9827c2011c6f6b16ac3b48f8a5667efe77a3634ccaace6"
-    sha256 cellar: :any,                 big_sur:        "799ee2e0ace7bf8693a17cc6f68caad24579f48a5ec9135d7d1fe007e69e097f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e5976b7cf4d8a636a3e5fc157cf67fcee23a133c3e270632bc8d194efd3aa0f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "230a734c486fd765b847f37437fddf0d669604c9b61920db8125c4d327663186"
+    sha256 cellar: :any,                 arm64_monterey: "52a6bb6c8519ec9c09d14c3ffaaf30b66f21fa12f468fb30ec35135130abfb93"
+    sha256 cellar: :any,                 arm64_big_sur:  "16b01251db3266c5b1e83a5cbe36850c705e35924b5faf9fa6444432fe874923"
+    sha256 cellar: :any,                 ventura:        "8242ffa8ccc9435086b26b3c26afec04f5fd765c10f8ed3be7080b46c44ad4ce"
+    sha256 cellar: :any,                 monterey:       "d18aec5fdda3ad21dbab4669965a87cd7e56d7deaa7697b95b1867aa3800d80f"
+    sha256 cellar: :any,                 big_sur:        "87a149cff258101a305bd69f0491e886d877bf1a3bf10b4b4ac967e6246adf43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "458419fd323c67c3e3429a096cbb459858989e7cac6b45e47830037d0aaccf70"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +25,7 @@ class Scrapy < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -43,11 +44,6 @@ class Scrapy < Formula
     sha256 "e56beb84edad19dcc11d30e8d9b895f75deeb5ef5e96b84a467066b3b84bb04e"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -59,8 +55,8 @@ class Scrapy < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "cssselect" do
@@ -179,8 +175,8 @@ class Scrapy < Formula
   end
 
   resource "w3lib" do
-    url "https://files.pythonhosted.org/packages/0b/29/755466b52987cf553231ca929149c62583b938dc9cd5a7cc63c9dcf2175c/w3lib-2.1.1.tar.gz"
-    sha256 "0e1198f1b745195b6b3dd1a4cd66011fbf82f30a4d9dabaee1f9e5c86f020274"
+    url "https://files.pythonhosted.org/packages/47/79/0c62d246fcc9e6fe520c196fe4dad2070db64692bde49c15c4f71fe7d1cb/w3lib-2.1.2.tar.gz"
+    sha256 "ed5b74e997eea2abe3c1321f916e344144ee8e9072a6f33463ee8e57f858a4b1"
   end
 
   resource "zope-interface" do

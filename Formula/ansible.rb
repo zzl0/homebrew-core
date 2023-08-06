@@ -10,13 +10,14 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c8652eb7e8bd0bc3fa337de11d14b9ee9e41577eab3dc0a2bb6161127bee2088"
-    sha256 cellar: :any,                 arm64_monterey: "72f5b559db9035e6855388c0c650e54bc25f785bdf1781e08b6bcec89873831f"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc40faff0ae43eb1e2fcc040189436bfe8071f2c194d19874f67929bc8ed28b4"
-    sha256 cellar: :any,                 ventura:        "51dc83e60290fbab6e071dd675f964c09e9fe504c2fe2e6aebbafec78b5ae37e"
-    sha256 cellar: :any,                 monterey:       "7fd93165329f01d736df160c2d04f02fcc04d307e2595a79c3052646656d3bf9"
-    sha256 cellar: :any,                 big_sur:        "8bd28bd016df3639db66ab5b2e6752167c2a056c91594d9187a338e864033446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "603d33e4b3cfbd23a015a5a0073ae54de3b819261182c4ca86fdfe4ac439f882"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "ca2d43627275037492ca4c92625462675bad5c1223ffaf0d2f510a3734d2a353"
+    sha256 cellar: :any,                 arm64_monterey: "cecf3d8e85cc1be45ed7f57255cd0c607b23c6e0d825ba2d624aba5b6bfcafd3"
+    sha256 cellar: :any,                 arm64_big_sur:  "ac17b95409d3326dd9da6c63e28e46cc069375b6782c8723a773a9429a94e832"
+    sha256 cellar: :any,                 ventura:        "a03e17314aa9ee3bb06616d2cf9b554024609d3f8818e01036a71bd650475f36"
+    sha256 cellar: :any,                 monterey:       "88edd931d670c4cc711f84a9a9d2a71f139036b78901500c562dd6bf254abb28"
+    sha256 cellar: :any,                 big_sur:        "7da6514828ac87660c278ac7fc978858edcecbf145026e2bd42843a6faf4bf1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8596329e010f8a6e937aee84902b202d07b9e0bbb37face95b35890f734ff8d5"
   end
 
   depends_on "pkg-config" => :build
@@ -24,6 +25,7 @@ class Ansible < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -98,11 +100,6 @@ class Ansible < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

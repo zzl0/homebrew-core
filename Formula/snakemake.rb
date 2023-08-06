@@ -3,24 +3,26 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/59/02/ba496267322090759d8401926fd3912173b2bd8b86a9f842cecb4c3b3a2e/snakemake-7.31.1.tar.gz"
-  sha256 "6fadcc9a051737aa187dccf437879b3b83ddc917fff9bd7d400e056cf17a1788"
+  url "https://files.pythonhosted.org/packages/5c/a4/8d18f381da0ace07fc95c552db8327930157bb4909b0c5fe1d18c89d4555/snakemake-7.32.1.tar.gz"
+  sha256 "5a8e1c36c7cf2bcd88f70e34a9cecd3154fc745688c80227ff929b0990c6fa67"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3388e651e60e6b7efe7b9fe679e8d90e21e14fa78af1744bf9a472ac329c4352"
-    sha256 cellar: :any,                 arm64_monterey: "d053bd6d4564a52b7fc54ad4e080e2499086b5d326902ad461ba07b19ef4f197"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a3f55d16dc39848a4ae47b4c6c58e72f3eccf5903dc4ace7856d999003ec8c8"
-    sha256 cellar: :any,                 ventura:        "08a433510948487df445a1e0c4480b40ac5e384b40179c8e45d8fdf6aa5101ce"
-    sha256 cellar: :any,                 monterey:       "17333dafb5d34bf26e8a59eff1fa74c28dea226245312e6c47cc3e042250e5b0"
-    sha256 cellar: :any,                 big_sur:        "b7b4ccadfbd91aac06cd395ea1dc9dc08a25184a6b117b29fdc54e534936d50e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad13726198aa4327258a85943b39b6a1c612ab51d1ff60995a332c3b6c78a269"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "3ac883c8f6e54397d863021c35f2c5251d5513caaa28147fb89d5283602993b8"
+    sha256 cellar: :any,                 arm64_monterey: "6f889c45b55cb6326315c3436256278d85a0c4dfb4bf514378201803aefe33ba"
+    sha256 cellar: :any,                 arm64_big_sur:  "e12ee52b2a637bdb90cc085d91f392671067a1259d7024e28f502344108451cb"
+    sha256 cellar: :any,                 ventura:        "ae5a3798861828dd371d98a65d6daabca257ee6453de2bbd24b4d052119adb11"
+    sha256 cellar: :any,                 monterey:       "6f9ecf9a25d543ee2918e8fb4b94f91bcf3c9584c15d84ab9d82c3f1cba37a46"
+    sha256 cellar: :any,                 big_sur:        "c8734d9e45d92008f9254eff460a544e8289a2ff3f094ed0901a8fe0558ef5b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3d92add2440ed006bc3c2e70395128ac3e61054eb7d492fd2060fa064fa47c9"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "cbc"
   depends_on "docutils"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -33,11 +35,6 @@ class Snakemake < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -96,8 +93,8 @@ class Snakemake < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/ae/a9/30605c5fe91e5087dacd85809322021106920a866d114a14f042781ffa3e/jsonschema-4.18.6.tar.gz"
+    sha256 "ce71d2f8c7983ef75a756e568317bf54bc531dc3ad7e66a128eae0d51623d8a3"
   end
 
   resource "jsonschema-specifications" do
@@ -146,8 +143,8 @@ class Snakemake < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "requests" do

@@ -8,14 +8,14 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "6b0dbff0a43e4276fbd24a124661bf2b0cfab24538360bfc9e4dc6228d8f711f"
-    sha256 cellar: :any,                 arm64_monterey: "72403807e178209fc308d16f6e1217d00087ad37c60dbe33d1e526c5e53311d4"
-    sha256 cellar: :any,                 arm64_big_sur:  "7fd432a2ab04ca2c055a77f3fb5d6dc4a7f7957053cb43f53ef9f6d39cc7e6d5"
-    sha256 cellar: :any,                 ventura:        "bd80158bc1899914bc413063c0d9e1ab5293030a7b16b891351a3edb12e528f4"
-    sha256 cellar: :any,                 monterey:       "ac7e713c1b03bbd934deab3bae17c00ad03cf97f7db8c3f4953808dd70ebcb8f"
-    sha256 cellar: :any,                 big_sur:        "ead2c53214c08b58374fe0fa40e7474b2c7497a8bfa7ed82010bb3edd7e50aaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5a6545db8442d6442a40783daba38931eb491b3f9bbf065c0f20f9c41842c4"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "7575d13a4cff132e5cebaabfd02232960e182eeea7173af19e64402e839b1f67"
+    sha256 cellar: :any,                 arm64_monterey: "b8ed332d7c1174f5bce93e77e348946f547af236b403cd636f50e68824d1262b"
+    sha256 cellar: :any,                 arm64_big_sur:  "f7ce482e01c485624de54175acca26fd3f56a49a7fed55417ebb9da51d010c12"
+    sha256 cellar: :any,                 ventura:        "69f6c39cc52bcf26d95fb584f67e7f678b6bd8659a71046e25694c57cbcbcbaf"
+    sha256 cellar: :any,                 monterey:       "b2d1a2406205fd690aecd0181d3edba40268ce16d4418886148877935ff7b7f6"
+    sha256 cellar: :any,                 big_sur:        "d8e9010c1b7a145ad0f4de928b1f1d2109cb2585fde837ae8141652b944b2acf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68125e32db6b28a722d0409d2581c14020eebbaec2ce50351eddb06ea9c80176"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -24,6 +24,7 @@ class Sickchill < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -60,11 +61,6 @@ class Sickchill < Formula
   resource "cacheyou" do
     url "https://files.pythonhosted.org/packages/8e/6e/8a9d13f938789b29e89b78cfeb9d0a9e002c67272ead73060c8306b74fc8/cacheyou-23.3.tar.gz"
     sha256 "7e408f15f4978fea2247734b308621f75f7fe169b461679519c72e8a85d61d5d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "chardet" do
