@@ -1,8 +1,8 @@
 class Pygments < Formula
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/11/a0/7e8158246de1f7062a9a01963503d83dc64a6d1d6b2e3aa2e46e92b94314/Pygments-2.16.0.tar.gz"
-  sha256 "4f6df32f21dca07a54a0a130bda9a25d2241e9e0a206841d061c85a60cc96145"
+  url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
+  sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
   license "BSD-2-Clause"
   head "https://github.com/pygments/pygments.git", branch: "master"
 
