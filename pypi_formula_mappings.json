@@ -493,7 +493,7 @@
     "exclude_packages": ["cffi", "cfn-lint", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
   "mvt": {
-    "exclude_packages": ["cffi", "pycparser", "pygments", "pyyaml"]
+    "exclude_packages": ["certifi", "cffi", "pycparser", "Pygments", "PyYAML"]
   },
   "mycli": {
     "exclude_packages": ["six", "tabulate", "Pygments", "cffi", "pycparser"]
