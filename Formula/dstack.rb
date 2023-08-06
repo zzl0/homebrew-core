@@ -18,15 +18,15 @@ class Dstack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bdc322ba19db02d03e184ffc9c7abe16eeadd9c10f65c4c547f6a372a2d0776"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  # `pkg-config` and `rust` are for bcrypt.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -187,11 +187,6 @@ class Dstack < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "cursor" do
@@ -580,10 +575,6 @@ class Dstack < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| r.name == "workflows.json" }
     venv.pip_install_and_link buildpath
