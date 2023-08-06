@@ -18,6 +18,7 @@ class Urlwatch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c41c72f2719e90966f97ce677e5f71423951436f442323680a49fd8440114b7"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -27,11 +28,6 @@ class Urlwatch < Formula
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
