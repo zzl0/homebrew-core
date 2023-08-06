@@ -114,7 +114,7 @@
     "extra_packages": ["ruamel.yaml.clib"]
   },
   "bpython": {
-    "exclude_packages": ["six", "Pygments"]
+    "exclude_packages": ["certifi", "Pygments", "six"]
   },
   "bpytop": "bpytop",
   "breezy": {
