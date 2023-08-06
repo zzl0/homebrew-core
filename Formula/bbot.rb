@@ -8,13 +8,14 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60514a3d72c77af58e94b33a1b3e9e8d93cf5627dd66d1e073d19e0d4c7c0ad5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc83a5b8e61bb4ec72bff7a834e95936edda352160b98af7f8e9201af3dc3209"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1577913d2b15a93cbda5ba72b9b12b385418d7177396ada046a6938c2f0643bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "949c16eddd2e46b0d70f112a22987b82cb9b0d9244d22378eb5a3459df5175e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "490877ff7d591e6fc106dbc8d1d0f62943adb814b436b0c2b417f55612826462"
-    sha256 cellar: :any_skip_relocation, big_sur:        "27e36e293638370e87bcf5f6282ae86ae499c8e38ea8f0cc33b57f7ae947d766"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871b1eb03c3903be434da2287df6595436db6d2f10bc6192aa6037f5513c6ab3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db8a200cb97eb392436035353e35bb4d48589f98b03abc4a12ab83431a0a9c62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b537f5ab2ff57bca9099323d33ae6a240b3876adcea8f713dabc08715738fa3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "228daf673e8292182f87b028290648cadcafd0c0dedec7306a51acb589faa50d"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a6e734b61f6f72c59c600f60dd260ec82760d609f85016c68c9c16bc679624b"
+    sha256 cellar: :any_skip_relocation, monterey:       "22bfe8f4a7895e620d47ee3e7f4adb5455c8ff4e29cc595c9f3208f1ab518583"
+    sha256 cellar: :any_skip_relocation, big_sur:        "480a646dde6356576aa0414d1feaac3ef223ac3a4cdbe453000db05f09a90c5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0998f3605a1271b5c9933bc763e653a2a8accb6a35aeee9b922afe4ba798d6e2"
   end
 
   # `rust` is for `rpds-py` via `url-normalize`
@@ -25,6 +26,7 @@ class Bbot < Formula
   depends_on "cffi"
   depends_on "docutils"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -78,11 +80,6 @@ class Bbot < Formula
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
     sha256 "db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
