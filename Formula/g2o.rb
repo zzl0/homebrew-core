@@ -1,9 +1,9 @@
 class G2o < Formula
   desc "General framework for graph optimization"
   homepage "https://openslam-org.github.io/g2o.html"
-  url "https://github.com/RainerKuemmerle/g2o/archive/refs/tags/20230223_git.tar.gz"
-  version "20230223"
-  sha256 "c8cf002f636ce2e83fc96f5e8257be4020cf1ae9f6a9d71838ec024f4d8a16cf"
+  url "https://github.com/RainerKuemmerle/g2o/archive/refs/tags/20230806_git.tar.gz"
+  version "20230806"
+  sha256 "e717d3b96cc6d00fcbbaf637aae648c9823599e6aa8fcf4546fc9ad4034dcde5"
   license "BSD-2-Clause"
 
   livecheck do
@@ -62,7 +62,7 @@ class G2o < Formula
     cd "src" do
       system ENV.cxx, "simple_optimize.cpp",
              "-I#{opt_include}", "-I#{Formula["eigen"].opt_include}/eigen3",
-             "-L#{opt_lib}", *libs, "-std=c++11", "-o", testpath/"simple_optimize"
+             "-L#{opt_lib}", *libs, "-std=c++17", "-o", testpath/"simple_optimize"
     end
 
     resource("homebrew-testdata").stage do
