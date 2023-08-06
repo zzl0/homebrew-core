@@ -1,10 +1,9 @@
 class Libantlr3c < Formula
   desc "ANTLRv3 parsing library for C"
   homepage "https://www.antlr3.org/"
-  url "https://www.antlr3.org/download/C/libantlr3c-3.4.tar.gz"
-  sha256 "ca914a97f1a2d2f2c8e1fca12d3df65310ff0286d35c48b7ae5f11dcc8b2eb52"
+  url "https://github.com/antlr/antlr3/archive/refs/tags/3.5.3.tar.gz"
+  sha256 "a0892bcf164573d539b930e57a87ea45333141863a0dd3a49e5d8c919c8a58ab"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://github.com/antlr/antlr3.git"
@@ -26,26 +25,20 @@ class Libantlr3c < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "acd166cf59163343b31b229124ddf4e982c4fa42b196ec443b5ff8b02e12566a"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
-    args = ["--disable-dependency-tracking",
-            "--disable-antlrdebug",
-            "--prefix=#{prefix}",
-            "--enable-64bit"]
-    system "./configure", *args
+    cd "runtime/C" do
+      system "autoreconf", "--force", "--install", "--verbose"
+      system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },
+                            "--disable-debuginfo",
+                            "--enable-64bit",
+                            "--disable-antlrdebug"
 
-    inreplace "Makefile" do |s|
-      cflags = s.get_make_var "CFLAGS"
-      cflags = cflags << " -fexceptions"
-      s.change_make_var! "CFLAGS", cflags
+      system "make", "install"
     end
-
-    system "make", "install"
   end
 
   test do
