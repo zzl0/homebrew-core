@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://github.com/djcb/mu/releases/download/v1.10.5/mu-1.10.5.tar.xz"
-  sha256 "1af693dc19d6980f743b98494ab6db97656b6954e7edff343ceb62e65ca5cc2d"
+  url "https://github.com/djcb/mu/releases/download/v1.10.6/mu-1.10.6.tar.xz"
+  sha256 "3c45b72ad5de350c8ff6e1ad19a3cb868719cfc3e65c3427797e757d6eff18d6"
   license "GPL-3.0-or-later"
   head "https://github.com/djcb/mu.git", branch: "master"
 
@@ -47,12 +47,14 @@ class Mu < Formula
 
   fails_with gcc: "5"
 
+  # upstream bug report, https://github.com/djcb/mu/issues/2531
+  # reverts https://github.com/djcb/mu/pull/2522
+  patch :DATA
+
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dlispdir=#{elisp}", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dlispdir=#{elisp}", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   # Regression test for:
@@ -95,3 +97,20 @@ class Mu < Formula
     EOS
   end
 end
+
+__END__
+diff --git a/guile/meson.build b/guile/meson.build
+index 933553c..ca051d1 100644
+--- a/guile/meson.build
++++ b/guile/meson.build
+@@ -73,9 +73,7 @@ lib_guile_mu = shared_module(
+   [ 'mu-guile.cc',
+     'mu-guile-message.cc' ],
+   dependencies: [guile_dep, glib_dep, lib_mu_dep, config_h_dep, thread_dep ],
+-  install: true,
+-  install_dir: guile_dep.get_variable(pkgconfig: 'extensiondir')
+-)
++  install: true)
+
+ if makeinfo.found()
+   custom_target('mu_guile_info',
