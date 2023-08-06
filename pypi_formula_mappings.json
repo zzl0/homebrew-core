@@ -516,6 +516,9 @@
   "nicotine-plus": {
     "exclude_packages": ["pycairo", "PyGObject"]
   },
+  "notifiers": {
+    "exclude_packages": ["certifi"]
+  },
   "nox": {
     "exclude_packages": ["six", "virtualenv"]
   },
