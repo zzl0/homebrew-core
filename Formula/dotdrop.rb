@@ -3,10 +3,9 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://deadc0de.re/dotdrop"
-  url "https://files.pythonhosted.org/packages/2d/13/34fa31d4da9c05918185cd7dd58cc258b7751c270f3d8e84502807cfc3eb/dotdrop-1.13.0.tar.gz"
-  sha256 "f2fee9d67d21ac2a6fcd60a31dc69ade29e08b8e91db0970b87bfa530961853a"
+  url "https://files.pythonhosted.org/packages/1d/2e/ea86e7cb0998ad742bb1019521857717db184f2b82bba856ba64564d3f02/dotdrop-1.13.2.tar.gz"
+  sha256 "a0dcac9382b823cf9e858e953bed16e409761b77f53d3d87454b1ce6c936858b"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     rebuild 1
@@ -78,9 +77,9 @@ class Dotdrop < Formula
     sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/49/05/6bf21838623186b91aedbda06248ad18f03487dc56fbc20e4db384abde6c/tomli_w-1.0.0.tar.gz"
+    sha256 "f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"
   end
 
   resource "urllib3" do
