@@ -266,7 +266,7 @@
   "dvc": {
     "package_name": "dvc[all]",
     "exclude_packages": [
-      "cffi", "numpy", "protobuf", "pyarrow", "pycparser",
+      "certifi", "cffi", "numpy", "protobuf", "pyarrow", "pycparser",
       "pygit2", "Pygments", "PyYAML", "six", "tabulate", "typing-extensions"
     ]
   },
