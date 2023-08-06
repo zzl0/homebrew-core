@@ -8,13 +8,14 @@ class Prowler < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "003498731ab7df0e4bfcc4758eb659ed2b3b6d4b2fac248191b32778e47d4cf3"
-    sha256 cellar: :any,                 arm64_monterey: "3b7e6a8969cb0410123d8f9cbda8ac44098e2dbc932e8d21dba6d241eab75983"
-    sha256 cellar: :any,                 arm64_big_sur:  "7424685c64b2cf7aec4033e3d4bf7f382fe747f8c43834c86c93b039e43b98b6"
-    sha256 cellar: :any,                 ventura:        "4e0d9b143bb466a2229d2f40ce8960a66dbfb280724c01e9f9686880e74762f2"
-    sha256 cellar: :any,                 monterey:       "28ce5a0710bb327d4536ae8b310d27f4a4c54445ce414edc48736c019a2c7bd1"
-    sha256 cellar: :any,                 big_sur:        "f040611db1541af94dcb03dd0dd04062cc38320d78e0ce92aede0733d9c4601a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fa91773e5d682c2434cc9376812eabb26af81154cb2f7461b1f4ad36f152e82"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "cf34a6cbee5ad111dc22820b748e87d98000d551af4655bf8f287ac0d7adb650"
+    sha256 cellar: :any,                 arm64_monterey: "17926ff38bf02739e376789d9010da82e250f34177992abb0ea2f53a39613729"
+    sha256 cellar: :any,                 arm64_big_sur:  "752a0eeafaff929635d2d249f95e65be319add7fc05684713f3793393fde7baa"
+    sha256 cellar: :any,                 ventura:        "882a63ef73907cd43b42f88ef55fcf9391218850341a930ea1e4dac4af746c2e"
+    sha256 cellar: :any,                 monterey:       "348bf11633e6766e04070b2af1c83df9074d986815cde0838d0232de8a9a57d7"
+    sha256 cellar: :any,                 big_sur:        "b36a47a65336e595148cbc29f7f911d15c309fb36d04c527675b1281d05e6abe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c9ea2a11814cf73d35412442df09bcc1f0ec15c3f893a14e6a18466da56b29c"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -23,6 +24,7 @@ class Prowler < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -107,11 +109,6 @@ class Prowler < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
