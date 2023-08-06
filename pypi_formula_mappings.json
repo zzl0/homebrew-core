@@ -841,7 +841,7 @@
     "exclude_packages": ["certifi"]
   },
   "twarc": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["certifi", "six"]
   },
   "twine-pypi": {
     "exclude_packages": ["certifi", "docutils", "Pygments", "six"]
