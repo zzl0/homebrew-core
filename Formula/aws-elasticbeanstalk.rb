@@ -19,13 +19,12 @@ class AwsElasticbeanstalk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "65b1d916f696c535bdab08ecf0db888c9111a60dd7ae7552e8f2fcf3386bf745"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -70,11 +69,6 @@ class AwsElasticbeanstalk < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
     sha256 "e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "docker" do
@@ -184,10 +178,6 @@ class AwsElasticbeanstalk < Formula
   patch :DATA
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 
