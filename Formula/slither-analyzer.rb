@@ -21,6 +21,7 @@ class SlitherAnalyzer < Formula
 
   depends_on "rust" => :build # for rpds-py
   depends_on "crytic-compile"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "solc-select"
 
@@ -47,11 +48,6 @@ class SlitherAnalyzer < Formula
   resource "bitarray" do
     url "https://files.pythonhosted.org/packages/2d/08/e6b51b0456becc0db01e969d6e1c4542094bde0a7bbb197834f94b18332a/bitarray-2.7.6.tar.gz"
     sha256 "3807f9323c308bc3f9b58cbe5d04dc28f34ac32d852999334da96b42f64b5356"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do

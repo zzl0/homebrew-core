@@ -741,6 +741,9 @@
   "sickchill": {
     "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
+  "slither-analyzer": {
+    "exclude_packages": ["certifi"]
+  },
   "snakefmt": {
     "exclude_packages": [
       "pathspec", "black", "click", "mypy-extensions", "platformdirs"
