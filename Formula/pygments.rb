@@ -7,13 +7,13 @@ class Pygments < Formula
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99fa2c86e532f8347f5485dbf66a801c7237bc4f7153a69dbd8176cc20d1c409"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38b194f6f6fa8d06bf8d24fd2851afc47334f541c429e9d4c37e79e366799b9e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ddc5f7c765dd58f4b5678f4a22bbb28e5bb560f281b62403017a1884c60725f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "151ce86f8286c1ec94fee0d97126546d24416c0c86c8a828de682bda2d15169e"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c7b5a1e7ca890a9897f7dd9309f6bd435e19fac64e17339ed023919086125ad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "54e04d811cb5706eb90baaad6cc7f33b4ece4cc9288141e7b6cf418d6c78dfda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e9299d59924f27837184c02814fb963d112112dbfd29d59475a2c9f4870f40f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "559c9e5f2e02ab5f1ba7d613a8b34db2f838e1858feede8c9fd56128006522e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d8285e8c7c2560f5243fff90ea564d5807017ae6c1f838a089050e663ddd31a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae6cc81c275c2daa061d02a455f847441cdc697d0c6ec7b64ec93ac36458cbf4"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8b4aad08fe4fdc54e10fef060779e40cb41a24a552fd99c3d23374fd6c517b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "e17fb3c825ecd89faf79ae8f84f3e0224a6c5aab9daffe65475ba14e49aa4601"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a40200bae52d000af9c9b83c2fce97f9508e627cec7b3410227234ad8f8a1693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f5931cbf1c8329172ba638a022190b042ae9eab47b141a43148c811928432ea"
   end
 
   depends_on "python@3.10" => [:build, :test]
