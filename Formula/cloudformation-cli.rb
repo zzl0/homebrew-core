@@ -19,8 +19,10 @@ class CloudformationCli < Formula
   end
 
   depends_on "go" => :test
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   uses_from_macos "expect" => :test
@@ -43,11 +45,6 @@ class CloudformationCli < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/27/bc/453002cf9231d5020df56ea0985e523b5b28fe09f289615f99a9f2f5acc6/botocore-1.29.147.tar.gz"
     sha256 "f7433bcce5ef7baad2fdd29f97c9fdcf8de4ec1cf577ae308901caf778ed48c2"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "cfn-flip" do
@@ -215,11 +212,6 @@ class CloudformationCli < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -263,6 +255,13 @@ class CloudformationCli < Formula
   resource "werkzeug" do
     url "https://files.pythonhosted.org/packages/2d/bf/5a00bb4a70028f7c6000bc9394492154fa9ae3f5226187e3ddcd0aa5eca1/Werkzeug-2.3.4.tar.gz"
     sha256 "1d5a58e0377d1fe39d061a5de4469e414e78ccb1e1e59c0f5ad6fa1c36c52b76"
+  end
+
+  # patch pyyaml to build with cython 3+,
+  # upstream PR ref, https://github.com/aws-cloudformation/cloudformation-cli/pull/1014
+  patch do
+    url "https://github.com/aws-cloudformation/cloudformation-cli/commit/80ca7a9c64233fd3ff435b335a658d4f2e6037f4.patch?full_index=1"
+    sha256 "81ace4511d227181fe456ac231ba25feabdafefff2c6091288ce6fb2d694f199"
   end
 
   def install
