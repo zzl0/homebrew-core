@@ -858,7 +858,7 @@
   },
   "woob": {
     "exclude_packages": ["pillow", "Pygments", "PyYAML", "six"],
-    "extra_packages": ["colorama"]
+    "extra_packages": ["certifi", "colorama"]
   },
   "wxpython": {
     "exclude_packages": ["numpy", "pillow", "six"]
