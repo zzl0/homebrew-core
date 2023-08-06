@@ -9,13 +9,14 @@ class Tern < Formula
   head "https://github.com/tern-tools/tern.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "048187cbe4be44e7f71ef0ca070d1d452079550e28f47c4af9668d432ba68812"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "360012e63a5dfd9b35ef0fb7d7aedc89370ac95047336fa159241a8e49e2e6df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51c458550762a4d80c28cd04e94b4fcbe8251d55774e87279df2628070022944"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ecb618340337e96f6c6a9ac8db26825691a6e536d7391f32bf416fb4fb1ac55"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4011bccfa25732375baa826835523e017dc6dbe6c535694f7c547d1d7f22a74"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b52783efaecefe398007a3ff0ac47c78a2ff3c9696a0b06cf9a3dea3a9dea731"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba8e8887742e7a73217bca053051dd6cc246d2c264c2bb8d88d610a2973bc41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0334278b654dc7a4dc2e1afbc300f9ff825d54b1d791bc2f076fefe720041828"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9730e9770740879d8269bc431429e3ff712f930d116c8111117ee6986db89e7c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0a126825339228d61a0535f70ec1208878b70b4adcaf9a57c1b40712489347a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2c033584f56f8bd7549b597a8338cf9ae14f7a8abfec3d8173e1a5cf4536654"
+    sha256 cellar: :any_skip_relocation, monterey:       "f133a6da1ff3234e31ff7f372155e9993ac038a51982162d35996e3ba6972054"
+    sha256 cellar: :any_skip_relocation, big_sur:        "686426b7af0f024dc8e643ec846e0a8b5eeff65c4fdcd0c466e402dd35ad0db8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b636aadce34e9bd22fbaae0c129ab725a879aca6c9189df973be5bffe052adae"
   end
 
   depends_on "python-certifi"
