@@ -132,7 +132,7 @@
     "exclude_packages": ["PyYAML", "six"]
   },
   "censys": {
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["certifi", "Pygments"]
   },
   "certbot": {
     "extra_packages": ["certbot-apache", "certbot-nginx"],
