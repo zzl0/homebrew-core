@@ -739,7 +739,7 @@
     "exclude_packages": ["certifi", "pyyaml", "six"]
   },
   "sickchill": {
-    "exclude_packages": ["cffi", "pycparser", "PyYAML", "six", "typing-extensions"]
+    "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
   "snakefmt": {
     "exclude_packages": [
