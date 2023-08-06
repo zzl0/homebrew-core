@@ -351,7 +351,7 @@
     "exclude_packages": ["Pygments", "virtualenv"]
   },
   "homeassistant-cli": {
-    "exclude_packages": ["six", "tabulate"]
+    "exclude_packages": ["certifi", "six", "tabulate"]
   },
   "howdoi": {
     "exclude_packages": ["six", "Pygments", "cffi", "pycparser"]
