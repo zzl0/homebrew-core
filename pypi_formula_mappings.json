@@ -396,7 +396,7 @@
     "exclude_packages": ["PyYAML", "typing-extensions"]
   },
   "instalooter": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["certifi", "six"]
   },
   "internetarchive": {
     "exclude_packages": ["certifi"]
