@@ -22,6 +22,7 @@ class Checkov < Formula
   depends_on "rust" => :build # for rpds-py
 
   depends_on "cffi"
+  depends_on "python-certifi"
   depends_on "python-markdown"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
@@ -107,11 +108,6 @@ class Checkov < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
