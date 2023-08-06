@@ -372,6 +372,9 @@
   "grip": {
     "exclude_packages": ["certifi", "Pygments"]
   },
+  "grokmirror": {
+    "exclude_packages": ["certifi"]
+  },
   "gyb": {
     "exclude_packages": ["certifi"]
   },
