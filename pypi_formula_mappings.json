@@ -303,7 +303,7 @@
     "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
   },
   "flit": {
-    "exclude_packages": ["docutils"]
+    "exclude_packages": ["certifi", "docutils"]
   },
   "fobis": "fobis-py",
   "fonttools": {
