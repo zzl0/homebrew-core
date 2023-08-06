@@ -9,14 +9,14 @@ class CharmTools < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "2915b387ac39b4508a239c04369bd24a7316a8d6357abb9a47452cdfadf8c3d2"
-    sha256 cellar: :any,                 arm64_monterey: "60aabc32ffcd0d93912ba6be8daaab5638a1297a4322985bc4d399c64dbf4a41"
-    sha256 cellar: :any,                 arm64_big_sur:  "1540f72754e07fcb5f314c6317a62605491c224456b785de3c0379d44913685f"
-    sha256 cellar: :any,                 ventura:        "c1afb9cf392b74e3e986d35dc1317730c610a3f5f05c77143d63ce8c6e93875a"
-    sha256 cellar: :any,                 monterey:       "587392bc312648395f2853f96e3f952ebff881b5226c21acfcf05ca44793d083"
-    sha256 cellar: :any,                 big_sur:        "6925a3a9c4d07ec0eef080826eddf2013dbac198d7a17980fbbbf208dba3c931"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c9de4de060cbcfd620d6a97f7f5b30d41eb9d60c36ed2d0c37ce247d9cf7959"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "e33a7c6c42056df4423d574674a776282013b6911661c1b308313f9aab110597"
+    sha256 cellar: :any,                 arm64_monterey: "cc62f7154c0cba1c695df8f9425c5a9cff58f5b3011cc53cfdfcaec3edfcac71"
+    sha256 cellar: :any,                 arm64_big_sur:  "d7c63b26202dafdb104d3a9b21949cf375d6d798eb8a2eda602cde5a29397f19"
+    sha256 cellar: :any,                 ventura:        "d6b8d010393064f3de3be7592ba1c0d59862f59cfc308d8e0b09c0e46d8ec1ef"
+    sha256 cellar: :any,                 monterey:       "80bc69ca68f630e83b1d15aba3338e24f7f53523d9895e4ad7d7805982bed468"
+    sha256 cellar: :any,                 big_sur:        "098dd0059cf5dd92f0262d69a0f952bbde4fc2401f13abc94e460632d4fe5cb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3cb19112cfdeed9630d8ca5e689a6ea3a583a0977e27b4cdfb894f520d84adb"
   end
 
   # `pkg-config` and `rust` are for `rpds-py`
