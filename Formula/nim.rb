@@ -4,6 +4,7 @@ class Nim < Formula
   url "https://nim-lang.org/download/nim-2.0.0.tar.xz"
   sha256 "bd6101d840036fb78e93a69df6cf3f9fd0c21cd754b695ff84a3b4add8ed0af7"
   license "MIT"
+  revision 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
   livecheck do
@@ -49,9 +50,14 @@ class Nim < Formula
 
     target = prefix/"nim/bin"
     bin.install_symlink target/"nim"
-    tools = %w[nimble nimgrep nimpretty nimsuggest]
+    tools = %w[nimble nimgrep nimpretty nimsuggest atlas testament]
     tools.each do |t|
-      system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N"
+      if t == "testament"
+        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N", "--no-discard-stderr"
+      else
+        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N"
+      end
+
       man1.install "#{t}.1"
       target.install buildpath/"bin"/t
       bin.install_symlink target/t
