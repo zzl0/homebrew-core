@@ -23,6 +23,7 @@ class CyralGimmeDbToken < Formula
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -37,11 +38,6 @@ class CyralGimmeDbToken < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/6d/f4/07a2ad9a3ba8e393616ad9401ca2f73d22a4144f893c2e6735a37a212fe1/botocore-1.29.138.tar.gz"
     sha256 "31edc237088c104f7a05887646bbec31d7459dd2e108fd90cbffa315902817e2"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
