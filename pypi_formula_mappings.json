@@ -765,7 +765,7 @@
   },
   "semgrep": {
     "package_name": "semgrep",
-    "exclude_packages": ["typing-extensions", "Pygments"]
+    "exclude_packages": ["certifi", "Pygments", "typing-extensions"]
   },
   "sgr": {
     "exclude_packages": ["certifi", "six", "tabulate", "typing-extensions"]
