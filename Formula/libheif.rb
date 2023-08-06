@@ -37,6 +37,9 @@ class Libheif < Formula
     system "cmake", "--install", "build"
     pkgshare.install "examples/example.heic"
     pkgshare.install "examples/example.avif"
+    system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "static"
+    lib.install "static/libheif/libheif.a"
   end
 
   def post_install
