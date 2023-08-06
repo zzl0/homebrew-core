@@ -345,7 +345,7 @@
     "exclude_packages": ["six"]
   },
   "grip": {
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["certifi", "Pygments"]
   },
   "hatch": {
     "exclude_packages": ["Pygments", "virtualenv"]
