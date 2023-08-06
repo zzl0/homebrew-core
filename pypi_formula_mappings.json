@@ -341,6 +341,9 @@
   "git-remote-codecommit": {
     "exclude_packages": ["six"]
   },
+  "git-review": {
+    "exclude_packages": ["certifi"]
+  },
   "gitless": {
     "exclude_packages": ["pygit2"]
   },
