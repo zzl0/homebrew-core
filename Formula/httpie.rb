@@ -3,11 +3,11 @@ class Httpie < Formula
 
   desc "User-friendly cURL replacement (command-line HTTP client)"
   homepage "https://httpie.io/"
-  url "https://github.com/httpie/httpie/archive/refs/tags/3.2.2.tar.gz"
-  sha256 "797fe33afe3bf0a4364a869a7d73f5c728f67d4ac47039be41e08bd564f86bb0"
+  url "https://github.com/httpie/cli/archive/refs/tags/3.2.2.tar.gz"
+  sha256 "01b4407202fac3cc68c73a8ff1f4a81a759d9575fabfad855772c29365fe18e6"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/httpie/httpie.git", branch: "master"
+  head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4647e26bafd55e41a17d6278d0389d06fe6fc78f0ab49c47299e36357594db8"
@@ -20,12 +20,8 @@ class Httpie < Formula
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

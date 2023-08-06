@@ -390,7 +390,7 @@
   },
   "httpie": {
     "package_name": "httpie",
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["certifi", "Pygments"]
   },
   "http-prompt": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
