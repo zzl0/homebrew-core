@@ -21,6 +21,7 @@ class AwsGoogleAuth < Formula
 
   depends_on "keyring"
   depends_on "pillow"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
@@ -49,11 +50,6 @@ class AwsGoogleAuth < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
     sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
