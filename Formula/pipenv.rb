@@ -17,12 +17,8 @@ class Pipenv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61ca8783c7868e256ac05da5eaa548f6744f1c9ca9b140b0acdc1d890e415dbc"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"

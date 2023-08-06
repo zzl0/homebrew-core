@@ -570,6 +570,9 @@
   "pip-audit": {
     "exclude_packages": ["six", "Pygments"]
   },
+  "pipenv": {
+    "exclude_packages": ["certifi"]
+  },
   "pipgrip": {
     "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
