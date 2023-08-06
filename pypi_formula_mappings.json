@@ -420,7 +420,7 @@
   },
   "lexicon": {
     "package_name": "dns-lexicon[full]",
-    "exclude_packages": ["cffi", "pycparser", "Pygments", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "cffi", "pycparser", "Pygments", "PyYAML", "six"]
   },
   "legit": {
     "exclude_packages": ["six"]
