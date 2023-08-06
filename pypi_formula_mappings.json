@@ -540,7 +540,7 @@
   },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],
-    "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six"]
   },
   "organize-tool": {
     "exclude_packages": ["cffi", "pycparser", "Pygments", "PyYAML", "six"]
