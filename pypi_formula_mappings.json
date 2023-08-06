@@ -351,7 +351,7 @@
     "exclude_packages": ["certifi"]
   },
   "hatch": {
-    "exclude_packages": ["Pygments", "virtualenv"]
+    "exclude_packages": ["certifi", "Pygments", "virtualenv"]
   },
   "homeassistant-cli": {
     "exclude_packages": ["certifi", "six", "tabulate"]
