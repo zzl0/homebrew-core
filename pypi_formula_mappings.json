@@ -351,7 +351,7 @@
     "exclude_packages": ["certifi", "six"]
   },
   "grip": {
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["certifi", "Pygments"]
   },
   "gyb": {
     "exclude_packages": ["certifi"]
