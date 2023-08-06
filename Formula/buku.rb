@@ -10,13 +10,14 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6a6a57ff8acf5e568050507b5982d0a11b2478d7aff105c5d168555d83300414"
-    sha256 cellar: :any,                 arm64_monterey: "f1c29839406d71c7670af0cde442be4ac15dd591297f305202c7248724be79e4"
-    sha256 cellar: :any,                 arm64_big_sur:  "e0109fe4d7b35a0923d546850632320725dbff72e090b27f593a44cad8693901"
-    sha256 cellar: :any,                 ventura:        "6f9523f566579f5259b3428a723a3299d0d9be38d96f31da35dc1211d97698d9"
-    sha256 cellar: :any,                 monterey:       "0492c191fd1dddc89e2af6d1e0e706ba742b7a5bfe72ac9c995d17ce05b33d9a"
-    sha256 cellar: :any,                 big_sur:        "41ae7bbd98fa34b63422eaf4c3a50eee5950ca276d1f7f94b746dbd5d47ea6d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10bb04e1db407d303e240aa08a3a5cbae732340973cec31d068e2955ab8a3521"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "088c5b8b9e60353d7b73013b5bfd6a7ff40335b9e7a8cc72f9c239123715e3ef"
+    sha256 cellar: :any,                 arm64_monterey: "a756b6814803a595f8ae9dedd7ad3653be285fcd63cad4bce193e3c9b041c87a"
+    sha256 cellar: :any,                 arm64_big_sur:  "e7b0dfe5cc5853b6d3611dc8095f4dd5731affe5652f8af9c839eed2dddf1910"
+    sha256 cellar: :any,                 ventura:        "78628c0d69a07ae7a4d74ac1b2959465ee981d3cb0a6c10d651e3aa13f8efb33"
+    sha256 cellar: :any,                 monterey:       "8edfc8427bb07df760c1fc7fab18934918775008d2d5214b40fbe2b5cb2d18f8"
+    sha256 cellar: :any,                 big_sur:        "6c63f0b97a90aacda42f1e710829a835384c81f0273f14fcf1e17cd9ea1fc635"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4153ec3fea5350877a9c0de86937c42f83a5f7f74da1d1395682b5c55c7cc7ac"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +26,7 @@ class Buku < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -43,11 +45,6 @@ class Buku < Formula
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "click" do
