@@ -230,7 +230,10 @@
     "exclude_packages": ["PyYAML"]
   },
   "diffoscope": "diffoscope[cmdline]",
-  "dnstwist": "dnstwist[full]",
+  "dnstwist": {
+    "package_name": "dnstwist[full]",
+    "exclude_packages": ["certifi"]
+  },
   "doc8": {
     "exclude_packages": ["docutils", "Pygments"]
   },
