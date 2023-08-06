@@ -823,6 +823,9 @@
   "watson": {
     "exclude_packages": ["six"]
   },
+  "waybackpy": {
+    "exclude_packages": ["certifi"]
+  },
   "weasyprint": {
     "exclude_packages": ["Brotli", "fonttools", "Pillow", "six", "cffi", "pycparser"]
   },
