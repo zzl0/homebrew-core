@@ -13,13 +13,13 @@ class PhpAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "dadd93dc57c6982363fc00f70cd9fe5bf774c2aac4226a2c0b6acb2182c1f138"
-    sha256 arm64_monterey: "9ef8867fcd559c80bd60ac2f7a8abc0db1269c286c9586429ecc93b018f46350"
-    sha256 arm64_big_sur:  "218e846204fdd2ae8c131e5b5c06a5a18df72fdfd2e979039b5d640ece586c19"
-    sha256 ventura:        "960f2acc31900e5fa9fbc1f3168f51218be7473363b3a0267dbebac3e39142f2"
-    sha256 monterey:       "e12c4e5099e63a5b9603e67f06e9d0903d9278f0cf6c9523b65b81f04df12baf"
-    sha256 big_sur:        "ab51096d0a03564801616949f019bcfd22d0a1680daa4d9238a1410bc00281cd"
-    sha256 x86_64_linux:   "e62d1bbf9a7292c725e2c0a5206d6d707cf253187ea6260ce244778daeb076c5"
+    sha256 arm64_ventura:  "38796f46bddb5651bc2c6cc152adfe12ef0122e46831482a240bf2773ac1eb5c"
+    sha256 arm64_monterey: "86368f03b28c512fb0ef1d7c8e821fe5611b6027ac5d1afbb9c54ea7390428eb"
+    sha256 arm64_big_sur:  "111902437ee7e731abe9e586ac54c76e1e23e5471913db10bfdb711d7fb292e3"
+    sha256 ventura:        "1f4ffefe7cd7b571a357f379a9146bdb3319b5ff9ee098ce1d5ec8e9921be2f1"
+    sha256 monterey:       "85fa4ee0d2bc21993f8ed1e66f8858f3698bb28ad2546ddae4ffc18b0c109828"
+    sha256 big_sur:        "b77b221e9dd2cdeab50e83d48b906c422d1a0102cc18ac8df498d8eb2365ab2c"
+    sha256 x86_64_linux:   "bfea07026a7dbbca708b5f310ad93be1e8d0f5ba7bf5987e85a343aa73e3546f"
   end
 
   keg_only :versioned_formula
