@@ -197,7 +197,7 @@
     "exclude_packages": ["PyYAML", "typing-extensions"]
   },
   "cookiecutter": {
-    "exclude_packages": ["six", "PyYAML", "Pygments"]
+    "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
   },
   "copier": {
     "exclude_packages": ["PyYAML", "typing-extensions", "Pygments"]
