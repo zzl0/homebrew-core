@@ -530,7 +530,7 @@
     "exclude_packages": ["certifi"]
   },
   "okta-awscli": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["certifi", "six"]
   },
   "onlykey-agent": {
     "exclude_packages": ["cffi", "six", "Cython", "pycparser", "docutils"]
