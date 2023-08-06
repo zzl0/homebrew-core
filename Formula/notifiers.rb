@@ -9,13 +9,14 @@ class Notifiers < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ba35c23c11292637fcd01e3d66bd52cfcaaf52efa24cb1198d616921a04e5f93"
-    sha256 cellar: :any,                 arm64_monterey: "08f38782ba4e0397652b86ae1485a4bcc0087a4b01e1d28cfac951718ea5cf91"
-    sha256 cellar: :any,                 arm64_big_sur:  "d3ee67cb9dfeefd60ba9b185420bbee1312da9db90af5556ab0bb920a717b033"
-    sha256 cellar: :any,                 ventura:        "6dec188027d801480c738332cbbc1fd51a4854fe7456fc22101184c1efc7e8df"
-    sha256 cellar: :any,                 monterey:       "e9973438652308182bfe3e6157b70fd6179a676d552552ea33ffbdf18a1ee162"
-    sha256 cellar: :any,                 big_sur:        "03de5da0376867cc91f952cd295b69127a0377d306434c5529e2797120431f9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df9023e4b643b6f2f373899b1121487316b05e95098392af8bbec74ea62f77f9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "37f36d2c5a00f4813f572f1b266bacae7d3e661cd3541744182d9a585da2a411"
+    sha256 cellar: :any,                 arm64_monterey: "a617f82423428f57dc6f45845e56cc8ebeaa9ba6195ca3d5c00463052c94ed3a"
+    sha256 cellar: :any,                 arm64_big_sur:  "c1c6131264960fea4932e136387ddd11d3abf3da10b561538ea73f0adf10565f"
+    sha256 cellar: :any,                 ventura:        "73fc8b2c03048a228dd4a699ab2252f181f50450c1741be5d082d1ca8051ef6b"
+    sha256 cellar: :any,                 monterey:       "0a39bfe48811b9a9bae8b00048971ee374c06999bccac5f1b5dec60ee625ef8d"
+    sha256 cellar: :any,                 big_sur:        "64a96ad971f2f6e76fd0fa818ef84827c064005bf5a2f50cc2b3b85da52b5dbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f69e07b0a5ca16f8e55bb17aa4b984aa936e39897bf2431ddb5f68531150595"
   end
 
   depends_on "rust" => :build # for rpds-py
