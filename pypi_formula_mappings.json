@@ -288,6 +288,9 @@
   "esptool": {
     "exclude_packages": ["cffi", "pycparser", "six", "PyYAML"]
   },
+  "evernote-backup": {
+    "exclude_packages": ["certifi"]
+  },
   "fabric": {
     "extra_packages": ["decorator"],
     "exclude_packages": ["invoke", "cffi", "pycparser"]
