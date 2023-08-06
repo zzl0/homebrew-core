@@ -25,6 +25,7 @@ class Poetry < Formula
 
   depends_on "cffi"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   # `six` is still used by `html5lib`
   depends_on "six"
@@ -43,11 +44,6 @@ class Poetry < Formula
   resource "cachecontrol" do
     url "https://files.pythonhosted.org/packages/50/43/bfdc1888b1889bdb6eaadc179f6d18a0aa34d53eb89fb5954e09bc37b7e1/CacheControl-0.12.14.tar.gz"
     sha256 "d1087f45781c0e00616479bfd282c78504371ca71da017b49df9f5365a95feba"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
