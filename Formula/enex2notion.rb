@@ -19,6 +19,7 @@ class Enex2notion < Formula
   end
 
   depends_on "pymupdf"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -35,11 +36,6 @@ class Enex2notion < Formula
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/61/2c/d21c1c23c2895c091fa7a91a54b6872098fea913526932d21902088a7c41/cached-property-1.5.2.tar.gz"
     sha256 "9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
