@@ -25,6 +25,7 @@ class Bbot < Formula
   depends_on "cffi"
   depends_on "docutils"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -78,11 +79,6 @@ class Bbot < Formula
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
     sha256 "db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
