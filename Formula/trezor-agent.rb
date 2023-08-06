@@ -19,15 +19,13 @@ class TrezorAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff503ea38423009b3278a55dccbeb1c3891b958e24e44f077dd803c81be7316b"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # python-daemon resource depends on cryptography
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -70,11 +68,6 @@ class TrezorAgent < Formula
   resource "construct-classes" do
     url "https://files.pythonhosted.org/packages/83/d3/e42d3cc9eab95995d5349ec51f6d638028b9c21e7e8ac6bea056b36438b8/construct-classes-0.1.2.tar.gz"
     sha256 "72ac1abbae5bddb4918688713f991f5a7fb6c9b593646a82f4bf3ac53de7eeb5"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "ecdsa" do
@@ -264,10 +257,6 @@ class TrezorAgent < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     ENV.append "CFLAGS", "-I#{Formula["libusb"].include}/libusb-1.0"
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| OS.mac? ? r.name == "dbus-fast" : r.name.start_with?("pyobjc") }
