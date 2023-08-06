@@ -832,7 +832,7 @@
     "exclude_packages": ["six"]
   },
   "urlwatch": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["certifi", "PyYAML"]
   },
   "vdirsyncer": {
     "package_name": "vdirsyncer[google]",
