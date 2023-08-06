@@ -10,13 +10,14 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "52f4907a930492ef5ec011ce675a6b8dcb1a4be3a002c355449e7b3caf11ffa6"
-    sha256 cellar: :any,                 arm64_monterey: "8cdc515cbe9fbcb044cd7c3bf97b61b099de31df289d2180ba0953d11d910444"
-    sha256 cellar: :any,                 arm64_big_sur:  "39e140677fa4d8d8be6c3bcf30105b9efec991c47e8abeff96c922329c39bc49"
-    sha256 cellar: :any,                 ventura:        "a4b3c12ac11922c0874abf735b4c356228260d8f118cd158550c16cacb1617d2"
-    sha256 cellar: :any,                 monterey:       "3660f7d83ba3c77d7fb75eddb1c8690f559b90eda062da6d3247593880a15c66"
-    sha256 cellar: :any,                 big_sur:        "4410e9560c354890494d2e3171fb7ba055e29730660c99a0896f2a4f98a177b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1ceb02d4086d6754418d9f0a66611d0f9630248702f19ff7c63849619d48384"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "de2c7f1c14e69d6775f354c82a5a468de18135e5020652123b6f6599cd74dc9c"
+    sha256 cellar: :any,                 arm64_monterey: "7b36b99a8c4ec3588a225e169b5c31b3fa62ccf73e8ff06ff61954aae538c671"
+    sha256 cellar: :any,                 arm64_big_sur:  "d4b5d217256ca7268b1832d6369e9d2627116ce89891ab9c60a0bb370befc240"
+    sha256 cellar: :any,                 ventura:        "331442191b254b3b77a95c6d447632003d0334e9575f28146d6cb6d552d8eee7"
+    sha256 cellar: :any,                 monterey:       "40ff97fccdc8391598e0831459f0d0d81b3389c91e3af823811350de235f9c06"
+    sha256 cellar: :any,                 big_sur:        "1ba9c5be90ce6652f86bcf5f556c17c551156fc8df87918e64eeb44743b96157"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aff411cb5c110b28e7b3bc554d31a04e54d5edbfbc0eb9c563045b355e032649"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -27,6 +28,7 @@ class Certbot < Formula
   depends_on "dialog"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -45,11 +47,6 @@ class Certbot < Formula
   resource "certbot-nginx" do
     url "https://files.pythonhosted.org/packages/51/01/4c2776e7154b972277d46fa63eff87accd5f026ffa6aa6204a3fe438640f/certbot-nginx-2.6.0.tar.gz"
     sha256 "426038336f0eb305579aa1bd71d021cfbbfa0925d165198054763b7225d64a05"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
