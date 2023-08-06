@@ -18,6 +18,7 @@ class Tern < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba8e8887742e7a73217bca053051dd6cc246d2c264c2bb8d88d610a2973bc41"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -33,11 +34,6 @@ class Tern < Formula
   resource "boolean-py" do
     url "https://files.pythonhosted.org/packages/a2/d9/b6e56a303d221fc0bdff2c775e4eef7fedd58194aa5a96fa89fb71634cc9/boolean.py-4.0.tar.gz"
     sha256 "17b9a181630e43dde1851d42bef546d616d5d9b4480357514597e78b203d06e4"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "chardet" do

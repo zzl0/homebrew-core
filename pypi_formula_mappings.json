@@ -763,7 +763,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "tern": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["certifi", "PyYAML"]
   },
   "termius": {
     "package_name": "termius",
