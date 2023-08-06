@@ -444,7 +444,7 @@
     "exclude_packages": ["cffi", "six", "tabulate", "pycparser", "PyYAML", "Pygments"]
   },
   "locust": {
-    "exclude_packages": ["six", "typing-extensions"]
+    "exclude_packages": ["certifi", "six", "typing-extensions"]
   },
   "mackup": {
     "exclude_packages": ["six"]
