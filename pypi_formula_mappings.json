@@ -344,6 +344,9 @@
   "goolabs": {
     "exclude_packages": ["six"]
   },
+  "grayskull": {
+    "exclude_packages": ["certifi"]
+  },
   "grip": {
     "exclude_packages": ["Pygments"]
   },
