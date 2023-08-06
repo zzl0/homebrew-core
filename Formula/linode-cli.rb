@@ -19,17 +19,13 @@ class LinodeCli < Formula
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
     url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.159.0/openapi.yaml"
     sha256 "a4761d7bb1b995fe88c3e4bc592ab1465c6eae6ec448186097f9fcc9a2920acb"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -73,7 +69,7 @@ class LinodeCli < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| r.name == "linode-api-spec" }
     buildpath.install resource("linode-api-spec")
 
