@@ -347,6 +347,9 @@
   "grip": {
     "exclude_packages": ["Pygments"]
   },
+  "gyb": {
+    "exclude_packages": ["certifi"]
+  },
   "hatch": {
     "exclude_packages": ["Pygments", "virtualenv"]
   },
