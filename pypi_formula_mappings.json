@@ -350,6 +350,9 @@
   "goolabs": {
     "exclude_packages": ["certifi", "six"]
   },
+  "grayskull": {
+    "exclude_packages": ["certifi"]
+  },
   "grip": {
     "exclude_packages": ["certifi", "Pygments"]
   },
