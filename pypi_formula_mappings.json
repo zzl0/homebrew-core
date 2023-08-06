@@ -312,6 +312,9 @@
   "ford": {
     "exclude_packages": ["pygments"]
   },
+  "gallery-dl": {
+    "exclude_packages": ["certifi"]
+  },
   "gcalcli": {
     "exclude_packages": ["six"]
   },
