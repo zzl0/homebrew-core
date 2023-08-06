@@ -432,7 +432,7 @@
   "jupyterlab": {
     "extra_packages": ["jupyter-console", "notebook"],
     "exclude_packages": [
-      "appnope", "asttokens", "backcall", "cffi", "decorator", "executing", "ipython", "jedi",
+      "appnope", "asttokens", "backcall", "certifi", "cffi", "decorator", "executing", "ipython", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
       "pure-eval", "pycparser", "Pygments", "PyYAML", "six", "stack-data", "traitlets", "typing-extensions", "wcwidth"
     ]
