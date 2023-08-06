@@ -20,14 +20,10 @@ class Mapproxy < Formula
 
   depends_on "pillow"
   depends_on "proj"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "pyproj" do
     url "https://files.pythonhosted.org/packages/38/77/46fe6a107b934fd23b903cb7402b69c8b2480a6cab9481d9f98c6dc7726e/pyproj-3.6.0.tar.gz"
