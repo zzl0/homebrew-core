@@ -277,7 +277,7 @@
     ]
   },
   "dxpy": {
-    "exclude_packages": ["six", "cffi", "pycparser"]
+    "exclude_packages": ["certifi", "cffi", "pycparser", "six"]
   },
   "enex2notion": {
     "exclude_packages": ["certifi", "PyMuPDF", "six"]
