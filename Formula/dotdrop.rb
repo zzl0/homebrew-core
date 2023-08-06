@@ -3,20 +3,18 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://deadc0de.re/dotdrop"
-  url "https://files.pythonhosted.org/packages/2d/13/34fa31d4da9c05918185cd7dd58cc258b7751c270f3d8e84502807cfc3eb/dotdrop-1.13.0.tar.gz"
-  sha256 "f2fee9d67d21ac2a6fcd60a31dc69ade29e08b8e91db0970b87bfa530961853a"
+  url "https://files.pythonhosted.org/packages/1d/2e/ea86e7cb0998ad742bb1019521857717db184f2b82bba856ba64564d3f02/dotdrop-1.13.2.tar.gz"
+  sha256 "a0dcac9382b823cf9e858e953bed16e409761b77f53d3d87454b1ce6c936858b"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "960ddb62a5f71b25ead1fababca1d7c68d3c1857d6e34a0c1cc9958b02539b9a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7ab9e5bbf77035369f89bbae6a1c6b8f4c819f6ba15bd18888dd1e300b678e6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "79472478ba40a4b5def742a6925ff0c6846dfc42ef7396f7cb7c119c8fcc84af"
-    sha256 cellar: :any_skip_relocation, ventura:        "498c5aa13f1e69987b1c56c94e36cd28a4a740d1ea29cd245e23e2d069dcb698"
-    sha256 cellar: :any_skip_relocation, monterey:       "7291acef0ff797b6b27b3c7ebabffd3e258d5e079088a9ee43a283ad3d4264eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c7ec46e16ea22b9fa14c5e175d44aa33c5d19342258029dd6ac5f115662ac1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54419757323fbda1e4629ee62cf88f3103ba48eb0c448c2d4d624e7f4c223110"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67d94deffd7fb243472c978a795de8bc17e7d4eea538ce65dc1f75279070554c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9e9361321b29488c7d8f11f4ad70cf0212c0b106b8f449a8b215fa6d8d6d6d1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14242159411f2d3a34311d2a5e7c997d6eae5e50dc6ed429042f5360ac0db6b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "486678c5a859c78bd0ef096b601fe246cab9909ad97fe43ca0dd96042f3a2280"
+    sha256 cellar: :any_skip_relocation, monterey:       "c26ec3ab72a05bdb74ec1e2d959b0ddf9e0d0c9d5e6fcd5d254e849adc690d83"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5f7af07e8f43c7bb1a2ba59505bbd4ac31e32558c4c05e3891a1ecae43261907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cf1ebf987beddbf046903615875a8b47473d629e8fa5f759766b429591443ca"
   end
 
   depends_on "libmagic"
@@ -78,9 +76,9 @@ class Dotdrop < Formula
     sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/49/05/6bf21838623186b91aedbda06248ad18f03487dc56fbc20e4db384abde6c/tomli_w-1.0.0.tar.gz"
+    sha256 "f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"
   end
 
   resource "urllib3" do
