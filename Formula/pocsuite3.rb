@@ -19,12 +19,10 @@ class Pocsuite3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8088af702b7bf23d607f1afb5b5a43417695d26936a0229f416b3c4bd84df1d"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -55,11 +53,6 @@ class Pocsuite3 < Formula
   resource "colorlog" do
     url "https://files.pythonhosted.org/packages/78/6b/4e5481ddcdb9c255b2715f54c863629f1543e97bc8c309d1c5c131ad14f2/colorlog-6.7.0.tar.gz"
     sha256 "bd94bd21c1e13fac7bd3153f4bc3a7dc0eb0974b8bc2fdf1a989e474f6e582e5"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "dacite" do
@@ -148,10 +141,6 @@ class Pocsuite3 < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 
