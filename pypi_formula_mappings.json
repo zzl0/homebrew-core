@@ -126,7 +126,7 @@
     "exclude_packages": ["certifi", "cffi", "pycparser", "six"]
   },
   "bzt": {
-    "exclude_packages": ["numpy", "six", "Cython", "PyYAML"]
+    "exclude_packages": ["certifi", "numpy", "six", "Cython", "PyYAML"]
   },
   "ccm": {
     "extra_packages": ["cassandra-driver"],
