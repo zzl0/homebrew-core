@@ -137,7 +137,7 @@
   },
   "certbot": {
     "extra_packages": ["certbot-apache", "certbot-nginx"],
-    "exclude_packages": ["certifi", "cffi", "pycparser", "six"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six"]
   },
   "cffi": {
     "exclude_packages": ["pycparser"]
