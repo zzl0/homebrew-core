@@ -17,6 +17,7 @@ class Cycode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e4f3ccfab199ba941b974edad318d5fc6a24eb429a48f32c1c1a7c560ad5c8"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -29,11 +30,6 @@ class Cycode < Formula
   resource "binaryornot" do
     url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
     sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do
