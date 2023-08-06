@@ -328,6 +328,9 @@
   "ford": {
     "exclude_packages": ["pygments"]
   },
+  "fred": {
+    "exclude_packages": ["certifi"]
+  },
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
