@@ -23,15 +23,7 @@ class Keyring < Formula
   depends_on "python@3.11"
 
   on_linux do
-    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-    depends_on "pkg-config" => :build
-    depends_on "rust" => :build
-    depends_on "openssl@3"
-
-    resource "cryptography" do
-      url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-      sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
-    end
+    depends_on "python-cryptography"
 
     resource "jeepney" do
       url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
@@ -65,12 +57,6 @@ class Keyring < Formula
   end
 
   def install
-    if OS.linux?
-      # Ensure that the `openssl` crate picks up the intended library.
-      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-      ENV["OPENSSL_NO_VENDOR"] = "1"
-    end
-
     virtualenv_install_with_resources
   end
 
