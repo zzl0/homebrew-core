@@ -19,20 +19,13 @@ class GimmeAwsCreds < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f545c30082d7cd4d4772c0018e4429de48cdaedfac0c88d55c61a74002801ae6"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   # Extra package resources are set for platform-specific dependencies in
   # pypi_formula_mappings.json, since the output of `bump-formula-pr` and
@@ -71,11 +64,6 @@ class GimmeAwsCreds < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ctap-keyring-device" do
@@ -189,10 +177,6 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
     res = resources.to_set(&:name)
     if OS.mac?
