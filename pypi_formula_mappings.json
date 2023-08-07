@@ -431,7 +431,10 @@
     "exclude_packages": ["six", "tabulate", "PyYAML"]
   },
   "jrnl": {
-    "exclude_packages": ["six", "Pygments", "cffi", "pycparser"]
+    "exclude_packages": [
+      "cffi", "cryptography", "keyring", "importlib-metadata", "jaraco-classes", "jeepney",
+      "more-itertools", "pycparser", "Pygments", "secretstorage", "six", "zipp"
+    ]
   },
   "juju-wait": {
     "exclude_packages": ["PyYAML"]
