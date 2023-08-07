@@ -18,18 +18,15 @@ class Snakefmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96caa291d8fe76b796a11ed33d6b9bd8264ecd9612cbdedbf00c7fee7feccb05"
   end
 
-  depends_on "cmake" => :build
   depends_on "black"
+  depends_on "python-toml"
   depends_on "python@3.11"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "rust" => :build
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  # Switch build-system to poetry-core to avoid rust dependency on Linux.
+  # https://github.com/snakemake/snakefmt/pull/199
+  patch do
+    url "https://github.com/snakemake/snakefmt/commit/cee8a662c286fc78a593534f5700e08a7096c822.patch?full_index=1"
+    sha256 "094e56dd75bf2506ac3c73ab9877cd2a56137092c98bd8063404f57a77825536"
   end
 
   def install
