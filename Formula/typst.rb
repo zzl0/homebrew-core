@@ -1,8 +1,8 @@
 class Typst < Formula
   desc "Markup-based typesetting system"
   homepage "https://github.com/typst/typst"
-  url "https://github.com/typst/typst/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "0f5c16c2143bbdc8889d823506e29a4706f8606ce29769916d71b17a05dda568"
+  url "https://github.com/typst/typst/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "550fb66bb3405951dfd0a1736e9e17756e906e664f6f683eeb87d40643218846"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/typst/typst.git", branch: "main"
@@ -26,7 +26,7 @@ class Typst < Formula
 
   def install
     ENV["TYPST_VERSION"] = version.to_s
-    system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/typst-cli")
   end
 
   test do
