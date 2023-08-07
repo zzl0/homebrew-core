@@ -25,17 +25,9 @@ class Hatch < Formula
   depends_on "virtualenv"
 
   on_linux do
-    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-    depends_on "pkg-config" => :build
-    depends_on "rust" => :build
     depends_on "cffi"
-    depends_on "openssl@3"
     depends_on "pycparser"
-
-    resource "cryptography" do
-      url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
-      sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
-    end
+    depends_on "python-cryptography"
 
     resource "jeepney" do
       url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
@@ -214,12 +206,6 @@ class Hatch < Formula
   end
 
   def install
-    if OS.linux?
-      # Ensure that the `openssl` crate picks up the intended library.
-      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-      ENV["OPENSSL_NO_VENDOR"] = "1"
-    end
-
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
