@@ -562,7 +562,7 @@
   },
   "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
-    "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "PyYAML", "six"]
   },
   "ocrmypdf": {
     "exclude_packages": ["pillow", "cffi", "pycparser"]
