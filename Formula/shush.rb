@@ -1,8 +1,8 @@
 class Shush < Formula
   desc "Encrypt and decrypt secrets using the AWS Key Management Service"
   homepage "https://github.com/realestate-com-au/shush"
-  url "https://github.com/realestate-com-au/shush/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "07eed7f6fa34b0cadf64e5dfde752f12fa038293765eef35d43790c479e72fc6"
+  url "https://github.com/realestate-com-au/shush/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "9b4c4f24fbdee1e761e67984d85c51bcb656db7e3e03406200d40ade765417a7"
   license "MIT"
   head "https://github.com/realestate-com-au/shush.git", branch: "master"
 
