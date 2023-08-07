@@ -12,13 +12,7 @@ class Xbyak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, ventura:        "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, monterey:       "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6983a30eb6cf8ca221aa10db6cb96ace697ea0ada3949cddf9407f93ecdb02e8"
+    sha256 cellar: :any_skip_relocation, all: "49c122bdac09df7fdedf958def1c616590a414a92e0cae12aabb304a8186e409"
   end
 
   depends_on "cmake" => :build
