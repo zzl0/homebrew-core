@@ -9,14 +9,14 @@ class Localstack < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "9a636b2d40facd977df1e8c7c8def2f15e5613893a5bd3b0ea92227031a80052"
-    sha256 cellar: :any,                 arm64_monterey: "68b7851f092dc73227d37b24db2190bacdda79592b4205d3ef17d192ca5f664a"
-    sha256 cellar: :any,                 arm64_big_sur:  "e29a9e9232e82c30cffac4019c7e3e091c2c87c8e188d52089801573319fed2c"
-    sha256 cellar: :any,                 ventura:        "f1392276fb87b8f6df95fa1fe69e9d202c3451133450afca8977c3f500d0be15"
-    sha256 cellar: :any,                 monterey:       "01a885723e53f5855d0c9fa02044ec1467ce552faae7b6abaec18487fcf50078"
-    sha256 cellar: :any,                 big_sur:        "ec9380766bbf3f0e19cc7cd56f95567a10e9f2504134c48d69bc4b700a95f115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d8ea3438a79f40bb477e80490cd9803a875d418f1b19d2346ff0fb0336332bd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ca5a12950a7a08d226c3c4b7bf87f52aabcee4ea0c15e90ede73ccdca88b584"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a09b175c284ff5f4a65f1b91820851c1b002a8a0360c3460f6a7a889d3a8b1c0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b1d93a0133499d2f6112154af60710790c96e491bef4a56636cbe1f61c1ee929"
+    sha256 cellar: :any_skip_relocation, ventura:        "86d2d6845e333a5d6ba64cf01f903a57594f1c7fa63cf461d890c32b96135afc"
+    sha256 cellar: :any_skip_relocation, monterey:       "fdd166071ed10ec2733687758356d46baf08510bbc4513b93129401b4d2b61e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1496548d1d73cf238b1f8c68232f0359e10034f748960312588065b8ea8de5ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6052be7d261ced434c2be350980103f14dcac8fe58af78bf662d2fed620fbaa4"
   end
 
   depends_on "docker" => :test
