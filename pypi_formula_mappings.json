@@ -300,7 +300,7 @@
   },
   "fabric": {
     "extra_packages": ["decorator"],
-    "exclude_packages": ["invoke", "cffi", "pycparser"]
+    "exclude_packages": ["cffi", "cryptography", "invoke", "pycparser"]
   },
   "fava": {
     "exclude_packages": ["certifi", "six"]
