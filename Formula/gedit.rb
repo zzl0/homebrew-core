@@ -1,8 +1,8 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
-  url "https://download.gnome.org/sources/gedit/46/gedit-46.0.tar.xz"
-  sha256 "2ca1be052902cf05b1f3d389d12e3cc8cb906740c10c9bde3cb8af6db58f655f"
+  url "https://download.gnome.org/sources/gedit/46/gedit-46.1.tar.xz"
+  sha256 "a1a6e37f041765dff7227a1f5578b6f49faaf016b1e17e869caf5bfb94c6aa4e"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -40,13 +40,6 @@ class Gedit < Formula
   depends_on "libxml2"
   depends_on "pango"
   depends_on "tepl"
-
-  # Fixes `git submodule` failure.
-  # Remove on next release.
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gedit/-/commit/02b0a3ab1486406c1fb300c1bdee7060946c3d66.diff"
-    sha256 "4cb4cb888964248cf9507ad58e4eaef99267b446f6f8d06cd2d82c8d32818bd3"
-  end
 
   def install
     ENV["DESTDIR"] = "/"
