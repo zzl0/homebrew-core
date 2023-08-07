@@ -4,6 +4,7 @@ class Rizin < Formula
   url "https://github.com/rizinorg/rizin/releases/download/v0.6.0/rizin-src-v0.6.0.tar.xz"
   sha256 "6a924906efdf547ac50462767f5add53902436e7a4862d2c0e24ca91b7761508"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
@@ -43,7 +44,7 @@ class Rizin < Formula
         "-Duse_sys_capstone=enabled",
         "-Duse_sys_xxhash=enabled",
         "-Duse_sys_magic=enabled",
-        "-Drizin_plugins=#{HOMEBREW_PREFIX}/lib/rizin/plugins",
+        "-Dextra_prefix=#{HOMEBREW_PREFIX}",
         "-Denable_tests=false",
         "-Denable_rz_test=false",
         "--wrap-mode=nodownload",
