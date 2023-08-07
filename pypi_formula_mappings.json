@@ -586,6 +586,9 @@
   "organize-tool": {
     "exclude_packages": ["cffi", "pycparser", "Pygments", "PyYAML", "six"]
   },
+  "osc": {
+    "exclude_packages": ["cffi", "pycparser", "cryptography"]
+  },
   "osc-cli": {
     "exclude_packages": ["certifi", "six", "typing-extensions"]
   },
