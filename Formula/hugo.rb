@@ -2,8 +2,8 @@ class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
   url "https://github.com/gohugoio/hugo.git",
-      tag:      "v0.116.1",
-      revision: "3e1ea030a5897addaf9d113d0826709fe07f77c0"
+      tag:      "v0.117.0",
+      revision: "b2f0696cad918fb61420a6aff173eb36662b406e"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
