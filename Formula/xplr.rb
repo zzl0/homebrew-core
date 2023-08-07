@@ -1,8 +1,8 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://github.com/sayanarijit/xplr"
-  url "https://github.com/sayanarijit/xplr/archive/v0.21.2.tar.gz"
-  sha256 "de433dfe87e903d3eaff4a8e55416609534cfe4a5ef86c0065d7bc405f353090"
+  url "https://github.com/sayanarijit/xplr/archive/refs/tags/v0.21.3.tar.gz"
+  sha256 "27800f0e731aedc194872609263e8c20b2e94b2f2e9088da5d3f501c406e938d"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
@@ -16,10 +16,23 @@ class Xplr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c3c0bc346680c2429382a13f2e868da3aae71858657d227ab5033653795740f"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "luajit"
+
+  # Avoid vendoring `luajit`.
+  patch :DATA
 
   def install
     system "cargo", "install", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
@@ -34,5 +47,24 @@ class Xplr < Formula
       contents = f.read
       assert_match testpath.to_s, contents
     end
+
+    assert check_binary_linkage(bin/"xplr",
+                                Formula["luajit"].opt_lib/shared_library("libluajit")),
+           "No linkage with libluajit! Cargo is likely using a vendored version."
   end
 end
+
+__END__
+diff --git a/Cargo.toml b/Cargo.toml
+index 48bd3e1..69cdd17 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -73,7 +73,7 @@ features = ['serde']
+ 
+ [dependencies.mlua]
+ version = "0.8.9"
+-features = ['luajit', 'vendored', 'serialize', 'send']
++features = ['luajit', 'serialize', 'send']
+ 
+ [dependencies.tui-input]
+ version = "0.8.0"
