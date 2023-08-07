@@ -18,19 +18,17 @@ class Dvc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "950e8b59ab174df7255e0341213332743d836f4242ca8aa936eb887b1f083dbc"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "openjdk" => :build # for hydra-core
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "apache-arrow"
   depends_on "cffi"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygit2"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
