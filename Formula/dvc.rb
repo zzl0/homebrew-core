@@ -8,27 +8,27 @@ class Dvc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "90cb7c98d57e503615fda93423b417b65e92086cc06c8ccfe80d5c3a1e16d272"
-    sha256 cellar: :any,                 arm64_monterey: "31f0622605933ba204d921134fd70e6f93b0029ade69c1b92ced692b85e10f2a"
-    sha256 cellar: :any,                 arm64_big_sur:  "1856d33fee4ca77a1c57278e1a566ab4a36d945ad3dbb511271d17b9764547b7"
-    sha256 cellar: :any,                 ventura:        "ddc8f9778bd2c0148278eb191b498f04a7123959c344e106d4cada6c3c1924f1"
-    sha256 cellar: :any,                 monterey:       "98453712e20e7467883ea30c819680ac76471003e6a0b5bdc9cf87dd9daca262"
-    sha256 cellar: :any,                 big_sur:        "eb8634bbf25deafab6599d281dd45c6ea9f8674c376599798acd521a61dcdf48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11017dc414e1c1aed7c3423509efbaac2a2a4da4b546e96724805a878b9cecd7"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "e189b3f072044acfd106a9926a27483eba2d1c509c5c3bdf0a1c41dbe91356bc"
+    sha256 cellar: :any,                 arm64_monterey: "90101ba5f6690e3683d89acac5707b8fb63c01100861de4681ef2422a906320b"
+    sha256 cellar: :any,                 arm64_big_sur:  "66a6871b2caa1a4d400ffc0bf7292ffb07f2c630b889f6c9be8f2ed822287ed8"
+    sha256 cellar: :any,                 ventura:        "a8237f9854607604fba7ac70384bbfda6d8e0c37200561ffc07828e13775eec1"
+    sha256 cellar: :any,                 monterey:       "a0d11614663cbad5bc7ca5a68d815b37a5c8ed9e10c2d1ff22775932c1bcdcd0"
+    sha256 cellar: :any,                 big_sur:        "b4f87bc1ccbfa9eb9f76bd37d06ce8c9a40796199ef144b2c7ca467591f7a6e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68b30ead80d27d691486f79a5cc201481bd89745dbeb7456194b48906f5c8774"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "openjdk" => :build # for hydra-core
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "apache-arrow"
   depends_on "cffi"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygit2"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -171,11 +171,6 @@ class Dvc < Formula
   resource "celery" do
     url "https://files.pythonhosted.org/packages/a4/e2/102f8d3453a9f1c6918245a97b9b8e7352a2925d4c5477a7401de2bb54dc/celery-5.3.1.tar.gz"
     sha256 "f84d1c21a1520c116c2b7d26593926581191435a03aa74b77c941b93ca1c6210"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

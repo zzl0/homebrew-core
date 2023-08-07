@@ -10,21 +10,21 @@ class Lexicon < Formula
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "44f31fc03179c30355bd45bd42db3760f610923914932f497b0f61a61d90366b"
-    sha256 cellar: :any,                 arm64_monterey: "65d3142571077129f7325855a5266d9923dec97e76a81c5bd9151d5fd393f1ad"
-    sha256 cellar: :any,                 arm64_big_sur:  "9020ef3d0b912b211733d462bbfe2eb065941f5f2e8c3b12df61bfcc0bd19f3b"
-    sha256 cellar: :any,                 ventura:        "7124a630336b6fe204e53f51e02c68aee9e068438548591ac62331ee2f0ea30d"
-    sha256 cellar: :any,                 monterey:       "89a01bf27925ce631de099bfd0f1857af4863fd8c3f66a2314971799675364c7"
-    sha256 cellar: :any,                 big_sur:        "0cca409a1d025390a50bd7191f37b84ca7c31dc57b86b76e381210ed3b36b668"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a43f5f2524991b6bfc1e0c227fbb206288526eac6dead7de844f879648834aa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9fa6a74958edee6795ba942abd4ea0a7b2c0f5c3583603362d4c0b03464ded2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3e4c3b23f882214ce9b021febf6d9061884a38a8962f4eb8888dbe3698ff93b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "293e58fbf639c1a7798be2c9de146f05d44b89c9f8ecd96536713128a09b187a"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c56d25b58d3c7bf71159b434cba7713b39a2944c3979e90efbf966c11a8c2f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "94e56d981b09a195be215cf118df78ac379975e94597cdc690f6274c35d3b8cb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "97bf98b9fc792dd42411a33abf31eb4e83d8f1e2668ab7294164f3b3eb5bb481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "415985439eeba9f59ecb258735d414f8d6b4ca9e8efabc22e06d1123c1c5e5f4"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -52,11 +52,6 @@ class Lexicon < Formula
     sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -70,11 +65,6 @@ class Lexicon < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "dnspython" do
@@ -223,10 +213,6 @@ class Lexicon < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

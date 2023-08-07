@@ -8,21 +8,19 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "2958881d0eae2fe341c88891bc48f6c0432cc9682ec9a6683f5771c38955edc8"
-    sha256 cellar: :any,                 arm64_monterey: "dd1c0aa5f748ac3126e3842452afd09242d290cdef2fb676777ddb50215238d7"
-    sha256 cellar: :any,                 arm64_big_sur:  "8ed7d78fdf9716a4295090877c1c46b5c861abe88bf78c227931807a0977475e"
-    sha256 cellar: :any,                 ventura:        "8093cd3f3cfae059d378bc2a7e5b3ae38875681ae2fb7d4137fabb0416a26b29"
-    sha256 cellar: :any,                 monterey:       "dde88f83ac9bd3e705e73d09ad0d6fa38076ed6c4947648d95ce1cb9baec95f0"
-    sha256 cellar: :any,                 big_sur:        "7c64dfeec5ba53b6517af3e5f4d03e7fe138a5938444343e78c8a9134859e949"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6471fb08275ca1248df3f7694b580ad0e3d431e97dd97f558e11cdb95f58163d"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc777411a131f423d7dbb852c52a11034c28d66706046e9ed90bdd9572e81eef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "167e85abebdd8687caab2c83d23e2de93bedb8c7888d74b4a6cff00a2b460a23"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7fe9843dfdcfe7e255c7bb89376b87195ab472791173506f78311a36209e3fc1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1947e1e0227ef594869ec9613ef081ef7a34122dc1ab89166636ad9415c8d93"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f1e3337e136b4839fa5b12c3c35543b103af4474370b735c80c3104a9b8f83a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ba4fe7b755877f339cc036e7236cabd434d3bb9d83ad7b3da1c3b61cefa7b0e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97d4466731af801a5ec35220fab5e53f2cca77738cc3550c1b833745bff6d587"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -39,11 +37,6 @@ class CyralGimmeDbToken < Formula
     sha256 "31edc237088c104f7a05887646bbec31d7459dd2e108fd90cbffa315902817e2"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
     sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
@@ -57,11 +50,6 @@ class CyralGimmeDbToken < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/1f/bb/5d3246097ab77fa083a61bd8d3d527b7ae063c7d8e8671b1cf8c4ec10cbe/colorama-0.4.4.tar.gz"
     sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "docutils" do
@@ -113,10 +101,6 @@ class CyralGimmeDbToken < Formula
   patch :DATA
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

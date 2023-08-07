@@ -9,23 +9,23 @@ class AwsElasticbeanstalk < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "e76ac87be18dabe5aae9d6d4759772dce158faf916342b5b1ab62b42ca53c3ec"
-    sha256 cellar: :any,                 arm64_monterey: "0278695d3c3acad6a251c6868efd3a7925bdc343fc7ff779dbbf06437bfb6b1b"
-    sha256 cellar: :any,                 arm64_big_sur:  "19c3d9aa7411967c51d323faa3b37b41cfcd687ebd21def104acf44576142bc2"
-    sha256 cellar: :any,                 ventura:        "c2c666e090f3c67164767fd5b1fd65d313d5e821917f9678235a1587341039d3"
-    sha256 cellar: :any,                 monterey:       "85d990efc901c096ecab0686a2fdedd268fa93a931b745c0dfd862796d276187"
-    sha256 cellar: :any,                 big_sur:        "378ec913c096dd1d5e0fd7617754f3f528799072378cde5d15f55ad46421c0ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65b1d916f696c535bdab08ecf0db888c9111a60dd7ae7552e8f2fcf3386bf745"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "2ccecc1fd3fff85e7bdc059f5625196de39763eba562fb7f43414184c7f68878"
+    sha256 cellar: :any,                 arm64_monterey: "fec90b74ff2cc2ef1cc90979525e5bb0d9c43662022f63a80da9275725518691"
+    sha256 cellar: :any,                 arm64_big_sur:  "ded3678693592352e31ac060a75942171eda392383ae28398001d74eda989251"
+    sha256 cellar: :any,                 ventura:        "9505b0deabac36c098ec846cf3c6b7ce4a85ee7166019b11cfe8e54bf764142b"
+    sha256 cellar: :any,                 monterey:       "d459680a8ffcfb2db311335046fc0ec9ab378292cde3135e295e68f0a9bb4455"
+    sha256 cellar: :any,                 big_sur:        "815aa264065e262a0faa3ccc88d686e0ceee62efc8481510ae647a9976630757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37bfcbfaf99c5f61b37c5adcd92e56a59099912781a6629ca9f39999f145e448"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  # `pkg-config` and `rust` are for bcrypt
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -70,11 +70,6 @@ class AwsElasticbeanstalk < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
     sha256 "e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "docker" do
@@ -184,10 +179,6 @@ class AwsElasticbeanstalk < Formula
   patch :DATA
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

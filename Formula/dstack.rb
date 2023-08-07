@@ -8,25 +8,25 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "de736d216fcf1ab82a43d78b467f1f6dd720460ddd4349bf68a0cef214c2b3fd"
-    sha256 cellar: :any,                 arm64_monterey: "362316a06a3513142b753740f79d81b7865e2ec5f97cbf5fa57988f7b9da441c"
-    sha256 cellar: :any,                 arm64_big_sur:  "ca2c8382e8060d32087b32529131c5e9be7bab4afc7812ba69b430e1f59f0ada"
-    sha256 cellar: :any,                 ventura:        "5e25731dddce7a7962794a30ac2b68d5456023ed10df4df600e7f3afbcef32e3"
-    sha256 cellar: :any,                 monterey:       "45cf84c61bc8402d0c34b8ff15ff31af52c8e8771837a98cab25b91e9fee729d"
-    sha256 cellar: :any,                 big_sur:        "75e44f36cb3858d846cd3f2e1ccd0f1d6bdd1c9ae2986975d16791391bdce702"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bdc322ba19db02d03e184ffc9c7abe16eeadd9c10f65c4c547f6a372a2d0776"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "bad30e1c9cdc61be00ef62af92caa2757df453114851d6f39fc1fc9d212c7dde"
+    sha256 cellar: :any,                 arm64_monterey: "db3be3541f3acca84acf4a4adbeecc48bcb6a459aef83d4bdface069fa2b6b9e"
+    sha256 cellar: :any,                 arm64_big_sur:  "96bdc1ff5973974c31948e4f5a8666be9861784d26883891866fad2521cd2de1"
+    sha256 cellar: :any,                 ventura:        "2dc0cd3ba8b5fd6b25d665f086d349c7b56a4c04273d600705c860866d6a6950"
+    sha256 cellar: :any,                 monterey:       "56189a0ecdde85a02b29c6eb4e90c98de73c1ef670b391fb9aa80a8f0488065c"
+    sha256 cellar: :any,                 big_sur:        "0f6172c3ab9faf3db5c10b4f79e387e5229682365a40155de670136bb97fe7a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2431fe041b583da65eb8524ea62ad0e307a16bc072e9122f8bba97b6e4362cdd"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  # `pkg-config` and `rust` are for bcrypt.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -187,11 +187,6 @@ class Dstack < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "cursor" do
@@ -580,10 +575,6 @@ class Dstack < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| r.name == "workflows.json" }
     venv.pip_install_and_link buildpath

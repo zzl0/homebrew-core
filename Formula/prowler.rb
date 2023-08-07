@@ -8,23 +8,20 @@ class Prowler < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "cf34a6cbee5ad111dc22820b748e87d98000d551af4655bf8f287ac0d7adb650"
-    sha256 cellar: :any,                 arm64_monterey: "17926ff38bf02739e376789d9010da82e250f34177992abb0ea2f53a39613729"
-    sha256 cellar: :any,                 arm64_big_sur:  "752a0eeafaff929635d2d249f95e65be319add7fc05684713f3793393fde7baa"
-    sha256 cellar: :any,                 ventura:        "882a63ef73907cd43b42f88ef55fcf9391218850341a930ea1e4dac4af746c2e"
-    sha256 cellar: :any,                 monterey:       "348bf11633e6766e04070b2af1c83df9074d986815cde0838d0232de8a9a57d7"
-    sha256 cellar: :any,                 big_sur:        "b36a47a65336e595148cbc29f7f911d15c309fb36d04c527675b1281d05e6abe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c9ea2a11814cf73d35412442df09bcc1f0ec15c3f893a14e6a18466da56b29c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5bafc3c0fc4a6931ca8c4504b02ed0b50433929b6a2ea90ff062b1f02d0ee84"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1a1fb5e5570a0b69c327201c099b41cb8c7517eda833821a258a29d59c30baf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6645271b712f9b8978788685316ccce2b3899ac1cae8d0d0aef63e2babdbfb5b"
+    sha256 cellar: :any_skip_relocation, ventura:        "75219e40090b2301e8169a2feb6ab789cff8d49ca51fdc43fca7f8d09ddbb117"
+    sha256 cellar: :any_skip_relocation, monterey:       "a237234b0e16b571f648b5862b3d71ff5c03cdc4052e780bdb234fe32f10b41d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6980fdbf5c31f9aa5691ec0ca9af5e8dc809645e6759a6bb65238c4e8363efb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c9ef2d5c80774223c767f42eff515672467c431f8626a04a6de58146b14d8b7"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -134,11 +131,6 @@ class Prowler < Formula
   resource "contextlib2" do
     url "https://files.pythonhosted.org/packages/c7/13/37ea7805ae3057992e96ecb1cffa2fa35c2ef4498543b846f90dd2348d8f/contextlib2-21.6.0.tar.gz"
     sha256 "ab1e2bfe1d01d968e1b7e8d9023bc51ef3509bba217bb730cee3827e1ee82869"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "detect-secrets" do
@@ -312,10 +304,6 @@ class Prowler < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 
