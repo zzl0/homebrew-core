@@ -534,7 +534,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "Pygments", "PyYAML"]
   },
   "mycli": {
-    "exclude_packages": ["six", "tabulate", "Pygments", "cffi", "pycparser"]
+    "exclude_packages": ["cffi", "cryptography", "pycparser", "Pygments", "six", "tabulate"]
   },
   "name-that-hash": {
     "exclude_packages": ["Pygments"]
