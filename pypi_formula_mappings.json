@@ -156,7 +156,7 @@
   },
   "charmcraft": {
     "extra_packages": ["appdirs", "pydantic"],
-    "exclude_packages": ["certifi", "cffi", "keyring", "pycparser", "PyYAML", "six", "tabulate", "typing-extensions"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "keyring", "pycparser", "PyYAML", "six", "tabulate", "typing-extensions"]
   },
   "check-jsonschema": {
     "exclude_packages": ["certifi", "six"],
