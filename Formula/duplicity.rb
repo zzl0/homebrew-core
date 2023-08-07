@@ -19,17 +19,15 @@ class Duplicity < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0341710599769daaa5a2fda373e8e6f5fe9fee00c970ca47ab8b301dfe7941c0"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "gettext" => :build # for msgfmt
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "gnupg"
   depends_on "librsync"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -106,11 +104,6 @@ class Duplicity < Formula
   resource "clint" do
     url "https://files.pythonhosted.org/packages/3d/b4/41ecb1516f1ba728f39ee7062b9dac1352d39823f513bb6f9e8aeb86e26d/clint-0.5.1.tar.gz"
     sha256 "05224c32b1075563d0b16d0015faaf9da43aa214e4a2140e51f08789e7a4c5aa"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "debtcollector" do
