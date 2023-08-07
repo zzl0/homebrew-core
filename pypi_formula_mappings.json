@@ -389,7 +389,7 @@
     "exclude_packages": ["certifi", "six", "tabulate"]
   },
   "howdoi": {
-    "exclude_packages": ["certifi", "cffi", "pycparser", "Pygments", "six"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "Pygments", "six"]
   },
   "httpie": {
     "package_name": "httpie",
