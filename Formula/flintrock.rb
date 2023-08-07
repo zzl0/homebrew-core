@@ -19,11 +19,9 @@ class Flintrock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "338d299508ddc9a1e80d194a21539376ea29c37d542d138ad42d4c0322ba60c3"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -46,11 +44,6 @@ class Flintrock < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/f8/5c/f60e9d8a1e77005f664b76ff8aeaee5bc05d0a91798afd7f53fc998dbc47/Click-7.0.tar.gz"
     sha256 "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "jmespath" do
@@ -84,8 +77,6 @@ class Flintrock < Formula
   end
 
   def install
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     virtualenv_install_with_resources
   end
 
