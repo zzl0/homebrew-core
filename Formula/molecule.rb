@@ -18,12 +18,12 @@ class Molecule < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa3425a7fd252e4577bf9dbe20536dfc55c5a91496eec055e42bfcb4eb408754"
   end
 
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for rpds-py
   depends_on "ansible"
   depends_on "cffi"
   depends_on "cookiecutter"
-  depends_on "openssl@3"
   depends_on "pygments"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,7 +31,6 @@ class Molecule < Formula
   uses_from_macos "libffi"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "gmp"
   end
 
@@ -53,11 +52,6 @@ class Molecule < Formula
   resource "click-help-colors" do
     url "https://files.pythonhosted.org/packages/6c/c1/abc07420cfdc046c1005e16bc8090bc1f226d631b2bd172e5a8f5524c127/click-help-colors-0.9.1.tar.gz"
     sha256 "78cbcf30cfa81c5fc2a52f49220121e1a8190cd19197d9245997605d3405824d"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "distro" do
