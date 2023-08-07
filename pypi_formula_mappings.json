@@ -293,7 +293,7 @@
     "exclude_packages": ["certifi", "cffi", "protobuf", "pycparser", "PyYAML", "six", "tabulate"]
   },
   "esptool": {
-    "exclude_packages": ["cffi", "pycparser", "six", "PyYAML"]
+    "exclude_packages": ["cffi", "cryptography", "pycparser", "six", "PyYAML"]
   },
   "evernote-backup": {
     "exclude_packages": ["certifi"]

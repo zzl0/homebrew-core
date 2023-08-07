@@ -18,12 +18,9 @@ class Esptool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b62874bbbaf52a07f567773efb7d8dd20530d025b851e61acf218e51d65200b"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,11 +28,6 @@ class Esptool < Formula
   resource "bitstring" do
     url "https://files.pythonhosted.org/packages/b5/f1/f55f568ef587fe7a74f46a9ae869dbbda10575b2a404c831d2bc0567b7de/bitstring-4.0.2.tar.gz"
     sha256 "a391db8828ac4485dd5ce72c80b27ebac3e7b989631359959e310cd9729723b2"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ecdsa" do
@@ -56,10 +48,6 @@ class Esptool < Formula
   def install
     # Workaround to avoid creating libexec/bin/__pycache__ which gets linked to bin
     ENV["PYTHONPYCACHEPREFIX"] = buildpath/"pycache"
-
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
   end
