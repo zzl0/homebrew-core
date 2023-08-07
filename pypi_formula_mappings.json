@@ -496,7 +496,7 @@
     "extra_packages": ["pyproj"]
   },
   "mathlibtools": {
-    "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "PyYAML"]
   },
   "mdv": {
     "package_name": "mdv[yaml]",
