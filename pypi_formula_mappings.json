@@ -508,6 +508,9 @@
       "certifi", "docutils", "Pygments", "PyYAML", "tabulate", "typing-extensions"
     ]
   },
+  "mitmproxy": {
+    "exclude_packages": ["certifi", "cffi", "cryptography"]
+  },
   "mkdocs": {
     "exclude_packages": ["six", "PyYAML"]
   },
