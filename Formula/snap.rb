@@ -1,9 +1,8 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://github.com/snapcore/snapd/releases/download/2.60.1/snapd_2.60.1.vendor.tar.xz"
-  version "2.60.1"
-  sha256 "f7b4a95501179d1aaf7e066989b3543a38eec44c623caffc2e149875def41a4b"
+  url "https://github.com/snapcore/snapd/releases/download/2.60.2/snapd_2.60.2.tar.xz"
+  sha256 "cf1f30152614975b14be014d4f6e753705eec04a3d36b54960d528e9044ac54e"
   license "GPL-3.0-only"
 
   livecheck do
@@ -25,7 +24,7 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
-    system "./mkversion.sh", version
+    system "./mkversion.sh", version.to_s
     tags = OS.mac? ? ["-tags=nosecboot"] : []
     system "go", "build", *std_go_args(ldflags: "-s -w"), *tags, "./cmd/snap"
 
