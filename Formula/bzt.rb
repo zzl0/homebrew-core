@@ -3,10 +3,9 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/7c/09/7d38d9327dcb279f8863985f3808c3da25543eda4bac0bb38681ea36c28f/bzt-1.16.23.tar.gz"
-  sha256 "2d90a58c0316697399e83f7cf96a7f99d2ee244f5dffb9ebf5cc4be21161efd8"
+  url "https://files.pythonhosted.org/packages/26/20/04e5ecc56688d0485c73b4cd12333694dc7b89eedfe48bd2643e77df1e65/bzt-1.16.24.tar.gz"
+  sha256 "a89652def362be33149a78b888f877c69b385fe6d00b55a3ee40e2b2f4ab2a5a"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
@@ -185,8 +184,8 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/29/73/b41cac4dcb1c8fde87fe6f1ce6e4e08de688305d48b99e8bfbba2654a57b/rapidfuzz-3.1.2.tar.gz"
-    sha256 "1b1b2eab728efc239c8aab97b4821f8e10dcd5a1b066365d0e38023e3b2289e8"
+    url "https://files.pythonhosted.org/packages/77/76/224d6eeab59c705bb7c1986b91b3e756dd65efbcf5bda148d39c3cbf402b/rapidfuzz-3.2.0.tar.gz"
+    sha256 "448d031d9960fea7826d42bd4284156fc68d3b55a6946eb34ca5c6acf960577b"
   end
 
   resource "requests" do
@@ -200,8 +199,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   resource "urwid" do
@@ -220,8 +219,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz"
-    sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
+    url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
+    sha256 "12b911f083e876e10c595779709f8a88a59f45aacc646492a67fe9ef796c1b47"
   end
 
   resource "yarl" do
