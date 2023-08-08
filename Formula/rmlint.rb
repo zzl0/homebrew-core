@@ -1,8 +1,8 @@
 class Rmlint < Formula
   desc "Extremely fast tool to remove dupes and other lint from your filesystem"
   homepage "https://github.com/sahib/rmlint"
-  url "https://github.com/sahib/rmlint/archive/v2.10.1.tar.gz"
-  sha256 "10e72ba4dd9672d1b6519c0c94eae647c5069c7d11f1409a46e7011dd0c6b883"
+  url "https://github.com/sahib/rmlint/archive/v2.10.2.tar.gz"
+  sha256 "0a0233ad517e0fb721f21e188a57cdee5279dd5329b38acb56d5d5312ce46388"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -38,16 +38,6 @@ class Rmlint < Formula
       ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["glib"].opt_lib}"
       ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["json-glib"].opt_lib}"
       ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["util-linux"].opt_lib}"
-    end
-
-    # patch to address bug affecting High Sierra & Mojave introduced in rmlint v2.10.0
-    # may be removed once the following issue / pull request are resolved & merged:
-    #   https://github.com/sahib/rmlint/issues/438
-    #   https://github.com/sahib/rmlint/pull/444
-    if MacOS.version < :catalina
-      inreplace "lib/cfg.c",
-      "    rc = faccessat(AT_FDCWD, path, R_OK, AT_EACCESS|AT_SYMLINK_NOFOLLOW);",
-      "    rc = faccessat(AT_FDCWD, path, R_OK, AT_EACCESS);"
     end
 
     system "scons", "config"
