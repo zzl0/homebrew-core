@@ -197,7 +197,7 @@ jobs:
               content: system "swift", "build"
 
             - label: long build
-              path: Formula/(agda|arangodb|boost|deno|dotnet|dvc|dstack|emscripten|envoy|freetype|gcc|ghc|graph-tool|harfbuzz|howdoi|libtensorflow|llvm|node|pango|ponyc|rav1e|rust|semgrep|suite-sparse|swift|texlive|qt|v8|vtk|xz|zstd)(@[0-9]+)?.rb
+              path: Formula/(agda|arangodb|boost|deno|dotnet|emscripten|envoy|freetype|gcc|ghc|graph-tool|harfbuzz|libtensorflow|llvm|metashell|node|pango|ponyc|rav1e|rust|semgrep|suite-sparse|swift|texlive|qt|v8|verilator|vtk|xz|zstd)(@[0-9]+)?.rb
               keep_if_no_match: true
 
             - label: CI-build-dependents-from-source
