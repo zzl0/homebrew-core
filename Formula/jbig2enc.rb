@@ -4,7 +4,7 @@ class Jbig2enc < Formula
   url "https://github.com/agl/jbig2enc/archive/0.29.tar.gz"
   sha256 "bfcf0d0448ee36046af6c776c7271cd5a644855723f0a832d1c0db4de3c21280"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/agl/jbig2enc.git", branch: "master"
 
   bottle do
@@ -22,9 +22,26 @@ class Jbig2enc < Formula
   depends_on "libtool" => :build
   depends_on "leptonica"
 
+  # The following two patches fix build with leptonica >= 1.83.
+  # Remove them when they are included in a release.
+  patch do
+    url "https://github.com/agl/jbig2enc/commit/a614bdb580d65653dbfe5c9925940797a065deac.patch?full_index=1"
+    sha256 "93106a056562e1268403a30bdab46f8f3fa332b68fb169a494541ea944d6ba2f"
+  end
+  patch do
+    url "https://github.com/agl/jbig2enc/commit/d211d8c9c65fbc103594580484a3b7fa0249e160.patch?full_index=1"
+    sha256 "a1e7b44b9ea28d32d034718fb10022961dcec32b74beda56575f84416081bd43"
+  end
+
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+  end
+
+  test do
+    assert_match "JBIG2 compression complete",
+                 shell_output("#{bin}/jbig2 -s -S -p -v -O out.png #{test_fixtures("test.jpg")} 2>&1")
+    assert_predicate testpath/"out.png", :exist?
   end
 end
