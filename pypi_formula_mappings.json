@@ -149,7 +149,11 @@
     "exclude_packages": ["Pygments", "typing-extensions"]
   },
   "conda-lock" : {
-    "exclude_packages": ["certifi", "cffi", "keyring", "pycparser", "PyYAML", "six", "typing-extensions", "virtualenv"]
+    "exclude_packages": [
+      "certifi", "cffi", "cryptography", "importlib-metadata", "jaraco-classes",
+      "jeepney", "keyring", "more-itertools", "pycparser", "PyYAML", "secretstorage",
+      "six", "typing-extensions", "virtualenv", "zipp"
+    ]
   },
   "cfn-flip": {
     "exclude_packages": ["six", "PyYAML"]
