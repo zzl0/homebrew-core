@@ -1,10 +1,9 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
-  url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
-  sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
+  url "https://github.com/google/or-tools/archive/v9.7.tar.gz"
+  sha256 "054d9517fc6c83f15150c93ef1c2c674ffd7d4a0d1fdc78f6ef8bc3e25c2e339"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -38,17 +37,6 @@ class OrTools < Formula
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
-
-  # Fix definition duplicated from Protobuf.
-  # https://github.com/google/or-tools/issues/3826
-  patch :DATA
-
-  # Also, fix use of StringPiece for new re2.
-  # https://github.com/google/or-tools/pull/3840
-  patch do
-    url "https://github.com/google/or-tools/commit/8844e557bfc36c1b171b84048a5c40b6dbc97206.patch?full_index=1"
-    sha256 "c884d9d011548e28b503a424ac1d2be8197b0090d3f473708f3330b319130da0"
-  end
 
   def install
     args = %w[
@@ -87,24 +75,3 @@ class OrTools < Formula
     system "./simple_sat_program"
   end
 end
-
-__END__
-diff --git a/ortools/base/logging.h b/ortools/base/logging.h
-index 7f570f9..183b3a4 100644
---- a/ortools/base/logging.h
-+++ b/ortools/base/logging.h
-@@ -52,6 +52,7 @@ enum LogSeverity {
- };
- }  // namespace google
-
-+#if GOOGLE_PROTOBUF_VERSION <= 3021012
- // Implementation of the `AbslStringify` interface. This adds `DebugString()`
- // to the sink. Do not rely on exact format.
- namespace google {
-@@ -62,5 +63,6 @@ void AbslStringify(Sink& sink, const Message& msg) {
- }
- }  // namespace protobuf
- }  // namespace google
-+#endif
-
- #endif  // OR_TOOLS_BASE_LOGGING_H_
