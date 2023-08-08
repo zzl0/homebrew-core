@@ -8,7 +8,7 @@ class Czg < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cdf72a753ef333f1358cfbc14a5de4435dded6db42de00db6e1da7aeb5ddf349"
+    sha256 cellar: :any_skip_relocation, all: "6b38716e89aa0546dfb47220d975084f78316ed6d0d6a2886f1976d61d1864f0"
   end
 
   depends_on "node"
