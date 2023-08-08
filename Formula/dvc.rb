@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/36/51/1746ccc37867f66acb3dec7c6b1f7cf6ed9a47d8936604546646eb6d8de0/dvc-3.13.2.tar.gz"
-  sha256 "5264e398c2fd33f2c61ba6bad428e3f69e4ea06fa398b47fc180d22c12b4c10c"
+  url "https://files.pythonhosted.org/packages/88/3b/c29fe7fc9a016250e5d616745bdb853388e333d13ab2343e48a1f949f007/dvc-3.13.3.tar.gz"
+  sha256 "35b997ee27d34161d2296770f9081575e1741629d0903e870e302b97b2038934"
   license "Apache-2.0"
 
   bottle do
@@ -38,8 +38,8 @@ class Dvc < Formula
   # correctly reflects the following extra packages in setup.py:
   # gs, s3, azure, oss, ssh, gdrive, webdav (hdfs is provided by apache-arrow)
   resource "adlfs" do
-    url "https://files.pythonhosted.org/packages/8a/4d/90ab49b86b63b3139d082d8ccea240d14c4201ec2971d38196c72ff9e06c/adlfs-2023.4.0.tar.gz"
-    sha256 "84bf8875c57d6cc7e8b3f38034b117b4f43be1c7010aef9947bb5044c7b2fa37"
+    url "https://files.pythonhosted.org/packages/76/b5/39a05057787d9ad3c92025707f581a3949ba81b82291102b2ff8cc3ff1e5/adlfs-2023.8.0.tar.gz"
+    sha256 "07e804f6df4593acfcaf01025b162e30ac13e523d3570279c98b2d91a18026d9"
   end
 
   resource "aiobotocore" do
@@ -298,8 +298,8 @@ class Dvc < Formula
   end
 
   resource "dvc-studio-client" do
-    url "https://files.pythonhosted.org/packages/33/e7/829a7bdf2737c2364deaac03792b587d8efd8b4ad292bb22971b1aa92ebe/dvc-studio-client-0.12.0.tar.gz"
-    sha256 "45ae45df813050c9b9ccbea6ebd666dbb7687c5466a5a0c2ec9df290705e2d7a"
+    url "https://files.pythonhosted.org/packages/25/2b/e48b01d5e97c775b4a4b7fde1e8c872f05d072945ddceec5de531aa2c33e/dvc-studio-client-0.13.0.tar.gz"
+    sha256 "f9259f30b49bb4915803b745ea1b746bec32ed824347bbbeedee3c56c93c626a"
   end
 
   resource "dvc-task" do
@@ -368,8 +368,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/d2/e8/8cbc3186a98b38332db85b4537cce71f0df170a35e5cd88c1dd3be4a0aca/google-api-python-client-2.95.0.tar.gz"
-    sha256 "d2731ede12f79e53fbe11fdb913dfe986440b44c0a28431c78a8ec275f4c1541"
+    url "https://files.pythonhosted.org/packages/df/d6/58ec56e2a2717ee16761b4809c3763d564b7478f49bf97f6d080e1a7553e/google-api-python-client-2.96.0.tar.gz"
+    sha256 "f712373d03d338af57b9f5fe98c91f4b5baaa8765469b015bc623c4681c5bd51"
   end
 
   resource "google-auth" do
@@ -693,8 +693,8 @@ class Dvc < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/3d/78/81191f56abb7d3d56963337dbdff6aa4f55805c8afd8bad64b0a34199e9b/tqdm-4.65.0.tar.gz"
-    sha256 "1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"
+    url "https://files.pythonhosted.org/packages/43/1d/05cab81c428967dad3fbf77e9a9e40a24a0199faccf52afc19e079205263/tqdm-4.65.1.tar.gz"
+    sha256 "2cb0075cc5269f8edac40bdeb757cc36ab5b6648caf014822b67e1a49fba141d"
   end
 
   resource "tzdata" do
