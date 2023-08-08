@@ -22,6 +22,14 @@ class Ollama < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
+  service do
+    run [opt_bin/"ollama", "serve"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/ollama.log"
+    error_log_path var/"log/ollama.log"
+  end
+
   test do
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost"
