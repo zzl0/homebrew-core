@@ -1,8 +1,8 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https://trufflesecurity.com/"
-  url "https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.46.3.tar.gz"
-  sha256 "803ec325f83756a36cd0f0449fb07b89e9d38904aa86f7375f347059e1fb3224"
+  url "https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.47.0.tar.gz"
+  sha256 "0c559e87654345b9866bf1e9f3618699428144cf645e390defc239ff8f1abf63"
   # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
   head "https://github.com/trufflesecurity/driftwood.git", branch: "main"
@@ -27,7 +27,7 @@ class Trufflehog < Formula
   test do
     repo = "https://github.com/trufflesecurity/test_keys"
     output = shell_output("#{bin}/trufflehog git #{repo} --no-update --only-verified 2>&1")
-    expected = "{\"chunks\": 0, \"bytes\": 0, \"verified_secrets\": 0, \"unverified_secrets\": 0}"
+    expected = "{\"chunks\": 0, \"bytes\": 0, \"verified_secrets\": 0, \"unverified_secrets\": 0, \"scan_duration\":"
     assert_match expected, output
 
     assert_match version.to_s, shell_output("#{bin}/trufflehog --version 2>&1")
