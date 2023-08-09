@@ -8,13 +8,13 @@ class Jbig2enc < Formula
   head "https://github.com/agl/jbig2enc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6a83bb4c38af3d7c863c95fb2220ba0bb09a6e6d15d3f5bcb77dba3cad083ebd"
-    sha256 cellar: :any,                 arm64_monterey: "31e2eea748f66cfe91745fe4726d2cc152a198db95d0cc36ca3d6252b6e95b1a"
-    sha256 cellar: :any,                 arm64_big_sur:  "36eff0c93fdb1139b771f4c81a03c8b8c32cee1674bd938374e06cc985620e9f"
-    sha256 cellar: :any,                 ventura:        "d77d6707c1514d5ab17411c0027a71190546f43de342e3c970c9693cb3a2cfb6"
-    sha256 cellar: :any,                 monterey:       "89f7d28906c21b059edb10a24fce102b31575ab6b0ab51eda8cf4bcb96bdd503"
-    sha256 cellar: :any,                 big_sur:        "0270c51d95e2674a2d2b03d8e98737e8a3da6bf890757e4c55663315c0a728e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3113143ac93d502f01304f838e5c73bd96366a08dfd79109730965de9e583c9a"
+    sha256 cellar: :any,                 arm64_ventura:  "5894ec7327cf835d5c03aa7dfe077ec1976e07587fe3f7f8a8d188b07d486dda"
+    sha256 cellar: :any,                 arm64_monterey: "a616b755cbdaf4d7133f6a7dde4a1a8cf59295bf627b00a3a6f022e2c0b2010f"
+    sha256 cellar: :any,                 arm64_big_sur:  "c4fd2fd1394266163c8e07b4378c09ddd57c408c3fdf8098b7c0931856c3e742"
+    sha256 cellar: :any,                 ventura:        "1e3b10797b108104ededfbdada4f6c03d288dbc3f4c2b75173d29796e53edac7"
+    sha256 cellar: :any,                 monterey:       "fbf2dcb1e29ac4aff73463dd153d38357b073b9ab184001d6a9a4baabd44023d"
+    sha256 cellar: :any,                 big_sur:        "9cc450a97ea92e1b86cc68b4b521971de0f3816939b495fa9ca8ac5b8d66c7b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de11ca25b4e186c650ecf95a3711f6cb8ae605b52054553c3b1814f0aabca269"
   end
 
   depends_on "autoconf" => :build
