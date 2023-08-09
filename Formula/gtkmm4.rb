@@ -1,8 +1,8 @@
 class Gtkmm4 < Formula
   desc "C++ interfaces for GTK+ and GNOME"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/gtkmm/4.10/gtkmm-4.10.0.tar.xz"
-  sha256 "e1b109771557ecc53cba915a80b6ede827ffdbd0049c62fdf8bd7fa79afcc6eb"
+  url "https://download.gnome.org/sources/gtkmm/4.12/gtkmm-4.12.0.tar.xz"
+  sha256 "fbc3e7618123345c0148ef71abb6548d421f52bb224fbda34875b677dc032c92"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -30,13 +30,9 @@ class Gtkmm4 < Formula
   fails_with gcc: "5"
 
   def install
-    ENV.cxx11
-
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
