@@ -7,13 +7,13 @@ class Buf < Formula
   head "https://github.com/bufbuild/buf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3acab1120e894eb29798d3bdc138af7ff30ff1a0ee43bec7ce9b03a343eec4c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34ff2eed4c820638ed1aa921ddad1babf03171ec06984be9b69d4a05ddae8347"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3acab1120e894eb29798d3bdc138af7ff30ff1a0ee43bec7ce9b03a343eec4c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "aeb308309c71adbef14878571ad83fa5574165d97a6c71fde64c5c1dfc7d648a"
-    sha256 cellar: :any_skip_relocation, monterey:       "aeb308309c71adbef14878571ad83fa5574165d97a6c71fde64c5c1dfc7d648a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1f46782fca6175ab1507a558299dbc7b82629b621bdead3e3582623ec3001283"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4ff1880b43d2913d9c9e3b8bfca32faa405a2cb4886ba7642e8f6d37c2ca400"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c475cd048376ee072eab0937e6d7f5d68d05b7020060935c01543ec23f5d5fdf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c475cd048376ee072eab0937e6d7f5d68d05b7020060935c01543ec23f5d5fdf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c475cd048376ee072eab0937e6d7f5d68d05b7020060935c01543ec23f5d5fdf"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bfa6c69743f930335e5bc9a2df3228f0afdff496843f8d1acc8962bc25d1e2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bfa6c69743f930335e5bc9a2df3228f0afdff496843f8d1acc8962bc25d1e2e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2f3790702a4c5e5d67be9589f71bed2cfcb173583063df5303fceb34ad1f5069"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0931ada10907d38c1568e86a9b2bff44eeb0d591aaec45895b3b8ff45e72a81"
   end
 
   depends_on "go" => :build
