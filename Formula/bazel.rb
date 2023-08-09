@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/6.3.1/bazel-6.3.1-dist.zip"
-  sha256 "2676319e86c5aeab142dccd42434364a33aa330a091c13562b7de87a10e68775"
+  url "https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-dist.zip"
+  sha256 "8cd7feac58193be2bcba451ba6688a46824d37ca6359ff58e0d44eb98f042948"
   license "Apache-2.0"
 
   livecheck do
