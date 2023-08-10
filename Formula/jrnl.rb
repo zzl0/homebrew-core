@@ -9,14 +9,13 @@ class Jrnl < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67b0026495409ebebfce0b6ed8a22069c8426a2499ba63b5966a2aba7d8d6e74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2a30431dfcfd0e13816e75c0816cb55cb1bd76e85d3d19e4b20ddc51b108004"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55ac08615e2122b290c67bb12bf4607161019a8b446aca538da941087efe6ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "0df93cb3233774e5bf8429bc03d40d8d1132bf0bac5d1cd036b5d376d220d31e"
-    sha256 cellar: :any_skip_relocation, monterey:       "24c931229d1b451614453db6131286c163618f4b697a930c37a1c8208e47896b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c64ddef05328ade635954a7f394b8a11a78315c69626d3096e0c27e9d2f41547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e62b29f13d1121055b7dcb4a4c8786601b9de7c4aaa80f4d3d46e9059dd2d68c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e8023c19c8d51de9420a1405942d802bebfed64d402251de139ee4256187976"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "667dd5a5f42f90f7e80588a55add0880d6d4aebf7936398ac15520843f3dba6f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2d08dbfd2571715f489833af6de0afbf0dc481fe206d514b78620de1ae0d8c5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b87332491a22d044b9a7ce81498cea8f195509cd74c125c6a5ea31180a93b426"
+    sha256 cellar: :any_skip_relocation, monterey:       "8640a3b9d5449d449f5a675cd3874aa50b3f93247b1127a1ade0e73220b1af36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "58ec0e20fa23d1ca8a66c39c525866282707b307ffbfcc7dd9e37844c6b2b8b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e726aaefed69288f3cf9157f776a2af172d14a7d0f1643420a55184114462e"
   end
 
   depends_on "cffi"
