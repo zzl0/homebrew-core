@@ -9,13 +9,13 @@ class Remarshal < Formula
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b9db56cb8a13ccdcdd726c5bc234d61f8728b3db3fadc4f5e0dede159944bd4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "483aa4297cee934b1ac604b38c50eae91c5d471d975615c1df18ddfba4bf57d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a121422a85c2afb9c98f8e6d387dba108efaebe3357760ff1e89651ee2f1a69"
-    sha256 cellar: :any_skip_relocation, ventura:        "65596783d3ff9a34ac0468bd3e139dbff5ce798254180f489ecc44dbb9b84c25"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c1867917eb349ad4bd50f95f762b9bca7c0326bbc278dfaf20c4653d6693c1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e55b54fa36d671c988b0f679d4388bae544f878ec0b2fe6babc49d83e2fea109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1938105f928e8ea308ce1bc7767abbbc930f48a35bf08b0234bd06897344372"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d908a78b2e39517a59f656eff1971fdf2e2481ed6bd2a38e40fd32b11585d372"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6c837c7892ff1f03e1fb83c64c6f2e72f162e35af6cdd855177b315217322b8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "527aa7ba41dc658a692beb3b49da3f659b1c1e37db5421089b278677d543f4d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "8afe3245841edf3267e46a4c65cfb4c2886cc0b2581d14b8051bd3e7d040c148"
+    sha256 cellar: :any_skip_relocation, monterey:       "93faef65a7c95c7a4401593b12913495cda75dc23c21075dc884d5c175b7644c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3bb4d0aaa19446293db18ff45ad1eb7a0273c4de9bd133b7fb10d9ce49294a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e72a19eeb7cb2aa1d1681be0951e548ec83d14ed905ba01a760e61d8eb4a2486"
   end
 
   depends_on "python@3.11"
