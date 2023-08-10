@@ -4,6 +4,7 @@ class Qdmr < Formula
   url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.11.3.tar.gz"
   sha256 "bad499faec7533c460e72c121716141f8cca0ea613ed55143ba1780b06a49b9a"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "df447c2ae8b3fc9f9697c39c934265c45bbb910757973ade6ba3ff40f54f5216"
