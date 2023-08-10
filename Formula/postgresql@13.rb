@@ -1,10 +1,9 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.11/postgresql-13.11.tar.bz2"
-  sha256 "4992ff647203566b670d4e54dc5317499a26856c93576d0ea951bdf6bee50bfb"
+  url "https://ftp.postgresql.org/pub/source/v13.12/postgresql-13.12.tar.bz2"
+  sha256 "0da1edcee3514b7bc7ba6dbaf0c00499e8ac1590668e8789c50253a6249f218b"
   license "PostgreSQL"
-  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
