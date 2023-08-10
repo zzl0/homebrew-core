@@ -12,13 +12,13 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a458aef7ae221ccc5347a9a840a4c80b1929ffa25dbe14af55fa02708ffaa4b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a458aef7ae221ccc5347a9a840a4c80b1929ffa25dbe14af55fa02708ffaa4b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a458aef7ae221ccc5347a9a840a4c80b1929ffa25dbe14af55fa02708ffaa4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac13b3294f1514ca697d4f4aa9aaeb1b0b844d6c060727f49609a2dcd6dea187"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac13b3294f1514ca697d4f4aa9aaeb1b0b844d6c060727f49609a2dcd6dea187"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac13b3294f1514ca697d4f4aa9aaeb1b0b844d6c060727f49609a2dcd6dea187"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12b74a9ccfd8a914bfa476b68ba2a876f78f04c066f54533116a7cc2d3ccc9db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1107319e79944ee3051601f1085a48f4807de7194d3f3a504243bab83ab70a4"
   end
 
   depends_on "go"
