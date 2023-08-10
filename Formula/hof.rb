@@ -2,9 +2,9 @@ class Hof < Formula
   desc "Flexible data modeling & code generation system"
   homepage "https://hofstadter.io/"
   url "https://github.com/hofstadter-io/hof.git",
-      tag:      "v0.6.7",
-      revision: "5f6770b9628cd46a4caa24594e052dd715ac2dca"
-  license "BSD-3-Clause"
+      tag:      "v0.6.8",
+      revision: "112659fe982a3efbe0acdb151c659e0b8b2e081f"
+  license "Apache-2.0"
   head "https://github.com/hofstadter-io/hof.git", branch: "_dev"
 
   # Latest release tag contains `-beta`, which is not ideal
@@ -50,10 +50,11 @@ class Hof < Formula
 
   test do
     ENV["HOF_TELEMETRY_DISABLED"] = "1"
-    assert_match "v#{version}", shell_output("#{bin}/hof version")
+    # upstream bug report, https://github.com/hofstadter-io/hof/issues/257
+    # assert_match "v#{version}", shell_output("#{bin}/hof version")
 
-    system bin/"hof", "mod", "init", "cue", "brew.sh/brewtest"
-    assert_predicate testpath/"cue.mods", :exist?
-    assert_equal "module: \"brew.sh/brewtest\"", (testpath/"cue.mod/module.cue").read.chomp
+    system bin/"hof", "mod", "init", "brew.sh/brewtest"
+    assert_predicate testpath/"cue.mod", :exist?
+    assert_match 'module: "brew.sh/brewtest"', (testpath/"cue.mod/module.cue").read
   end
 end
