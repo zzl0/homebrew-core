@@ -3,8 +3,8 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/ea/3e/a2c05b93bba409ea656c4a822bdc38c59eae33b8f73c3563d00b36c09466/bbot-1.1.0.2090.tar.gz"
-  sha256 "b0b724d97eb1dab2fc7b61dd8dcf4f96dac8bb782df1e48a87b60fd4c3f9eaed"
+  url "https://files.pythonhosted.org/packages/5c/eb/e79160ad9d406cd0cb8cfa5ec9c2341d2c39356d6fe192996b96281efa98/bbot-1.1.0.2124.tar.gz"
+  sha256 "33841c6852e667c3f151f7463d4a3419dc9ada5a867fa8a5d34f124beb4f8152"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -98,8 +98,8 @@ class Bbot < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/78/ad/db7b362200e11378d1d286a4452c7050dab47b0e6d99afa51364ad95a9f9/dnspython-2.4.1.tar.gz"
-    sha256 "c33971c79af5be968bb897e95c2448e11a645ee84d93b265ce0b7aabe5dfdca8"
+    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "filelock" do
