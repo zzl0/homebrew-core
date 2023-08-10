@@ -3,8 +3,8 @@ class Vulture < Formula
 
   desc "Find dead Python code"
   homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/de/ff/196ca63becc5faf5586202ab6e30102322adeea538bb45549d97ed38225d/vulture-2.7.tar.gz"
-  sha256 "67fb80a014ed9fdb599dd44bb96cb54311032a104106fc2e706ef7a6dad88032"
+  url "https://files.pythonhosted.org/packages/f8/12/a4f70dc86015a76d66785e2dbc3a03e00fb6ff70a4d039dd8ed14a9df03a/vulture-2.8.tar.gz"
+  sha256 "393293f183508064294b0feb4c8579e7f1f27e5bf74c9def6a3d52f38b29b599"
   license "MIT"
   head "https://github.com/jendrikseipp/vulture.git", branch: "main"
 
@@ -18,12 +18,8 @@ class Vulture < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "832b6778a2859b8f5dc40a1edcca62fe0b0605c7018f8d7925e64d3d459cbc5b"
   end
 
+  depends_on "python-toml"
   depends_on "python@3.11"
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
-  end
 
   def install
     virtualenv_install_with_resources
