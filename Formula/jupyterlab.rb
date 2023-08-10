@@ -30,6 +30,7 @@ class Jupyterlab < Formula
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-lsp-server"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -377,11 +378,13 @@ class Jupyterlab < Formula
     venv = virtualenv_create(libexec, python3)
     ENV["JUPYTER_PATH"] = etc/"jupyter"
 
+    # link dependent virtualenvs to this one
     site_packages = Language::Python.site_packages(python3)
-    %w[ipython].each do |package_name|
+    paths = %w[ipython python-lsp-server].map do |package_name|
       package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
+      package/site_packages
     end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     postinstall = %w[jupyterlab-pygments notebook nbclassic]
     linked_hatch = %w[
@@ -451,7 +454,7 @@ class Jupyterlab < Formula
 
     (testpath/"console.exp").write <<~EOS
       spawn #{bin}/jupyter-console
-      expect "In "
+      expect -timeout 60 "In "
       send "exit\r"
     EOS
     assert_match "Jupyter console", shell_output("expect -f console.exp")
