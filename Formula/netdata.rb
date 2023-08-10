@@ -1,8 +1,8 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.41.0/netdata-v1.41.0.tar.gz"
-  sha256 "8372d86ab88f7ec0b0b714dabbf2d03cf819d5db9bf4d8ae612f1a3dbc96b9a0"
+  url "https://github.com/netdata/netdata/releases/download/v1.42.0/netdata-v1.42.0.tar.gz"
+  sha256 "10c5685ba184a348fb75d0ce2d011bf9227774a07de60197a81b04373d5ea333"
   license "GPL-3.0-or-later"
 
   livecheck do
