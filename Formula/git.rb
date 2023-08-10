@@ -94,6 +94,10 @@ class Git < Formula
       %W[NO_APPLE_COMMON_CRYPTO=1 OPENSSLDIR=#{openssl_prefix}]
     end
 
+    # Make sure `git` looks in `opt_prefix` instead of the Cellar.
+    # Otherwise, Cellar references propagate to generated plists from `git maintenance`.
+    inreplace "Makefile", /(-DFALLBACK_RUNTIME_PREFIX=")[^"]+/, "\\1#{opt_prefix}"
+
     system "make", "install", *args
 
     git_core = libexec/"git-core"
