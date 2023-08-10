@@ -27,13 +27,13 @@ class Shaderc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a017566c74853fa8e0246bd7ea0bff8b78f6ced0b5d237d6d8bd96064d00bcd6"
-    sha256 cellar: :any,                 arm64_monterey: "a92b2dddea5e31c5da5457a744970deef1b9004d977c5d6ccce49a0a87d7b924"
-    sha256 cellar: :any,                 arm64_big_sur:  "25d23ab55986cfb3466e2242672391a88d797b52079e91e123e98654fb9dd491"
-    sha256 cellar: :any,                 ventura:        "3924d11369ad92392219fccf416097ee8a596f85240e48bb3048f4d13a7dcae6"
-    sha256 cellar: :any,                 monterey:       "8be8b2910b900b8875d3cd3ea36fb4895dc29d99890b979e75ab39d077658d57"
-    sha256 cellar: :any,                 big_sur:        "db957eb06ca149da8d511a614b269c24591e3c7122163b3b7c0087cf9e88964c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e2f087be3200578290dd8144431bec4011f0be59f676e22fad2983fdbaeaa3a"
+    sha256 cellar: :any,                 arm64_ventura:  "8dffc0cf4d1fb6e0e512f282b50738bbb758a365c9848f8363e8e3191b8e8158"
+    sha256 cellar: :any,                 arm64_monterey: "012cb597bab3326899b421fc557e8d448c38967801fdebffe20b3af6ddcad253"
+    sha256 cellar: :any,                 arm64_big_sur:  "1940d6e626ab52f840275f6eaac7567b865fd07951f04e996a144ded9b4399f2"
+    sha256 cellar: :any,                 ventura:        "855d90d7e2bd7208510639342f12d95341e801c43c075a25b03d10db2dc5d5d2"
+    sha256 cellar: :any,                 monterey:       "f72d775abe1053fe7e9deaa7383753ff4fb62cea91315668ba64681887f33e96"
+    sha256 cellar: :any,                 big_sur:        "b58f91fba26173a7ee05a7bcf229d8b15a743bfce855eba803485267d00488d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a507c8adf294fa23564f31290811b8bb74f5976332e4457cc2d2d056f70f364"
   end
 
   head do
