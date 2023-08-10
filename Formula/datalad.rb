@@ -8,14 +8,13 @@ class Datalad < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d704f30200ab14963de709ff161ed41a026d6c68ec4aebc76dba9e6b4ac47909"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9113408160d7660e1a6b23c04573636c35dbf5399ec1ad10b39b36fe93578c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d606f9d80ba721663c576a1a952f8b670d4e29351ea9e637d345bc8da8c8caa2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f7842c78c0d33c651221ade0f4d57a061bc418b16061f279a86301bc29764a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a40eb59f66b78839a160b5040dccb323c8ac5cfbfafc557f12b6b8274ba85ee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a75cd72e589aedfb2738556b433f61fb8656e4168a90fec26d7821ca71c8759a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f9da6ae41a1fc80a20e4567a7a12a5b9c698e6a2ae8b17c9a34f5c3b07c8ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d92f4c2c03cb41965bfc7ac84e567e60638aa99770d2924d68607d0e0e99541"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b61e9135e61788cb9da2cb62e2e592d7d2faa27be5ae801c88a576404074210"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c5d3365239ff8e6db0281c8fc20166dce8e41e653edeadbd2d087d3878509ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "c826382cdafef21b5f8854752c9ca3bd1932519c5216c26af472890d319ce843"
+    sha256 cellar: :any_skip_relocation, monterey:       "db59f451e2aaa267af3e4bb50a434b115f03b9dfc72953a94b7644a62e10b2be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "deda9286b755d29e99ffefc6b41d5e0c23e5e34e7fe25b4c4e00b22c184e423d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1339d6ab31d83e1aee76c667bdafb8c666edc1b3226a20fd4dcc5ba057a339"
   end
 
   depends_on "rust" => :build # for cryptography
