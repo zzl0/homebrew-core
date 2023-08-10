@@ -1,8 +1,8 @@
 class Zenity < Formula
   desc "GTK+ dialog boxes for the command-line"
   homepage "https://wiki.gnome.org/Projects/Zenity"
-  url "https://download.gnome.org/sources/zenity/3.44/zenity-3.44.1.tar.xz"
-  sha256 "d65400aec965411f4c0b3d8e0e0dac54be55d807a29279697537da2dfee93eaa"
+  url "https://download.gnome.org/sources/zenity/3.44/zenity-3.44.2.tar.xz"
+  sha256 "3fb5b8b1044d3d129262d3c54cf220eb7f76bc21bd5ac6d96ec115cd3518300e"
   license "LGPL-2.1-or-later"
 
   bottle do
