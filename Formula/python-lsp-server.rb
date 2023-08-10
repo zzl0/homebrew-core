@@ -18,6 +18,10 @@ class PythonLspServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc751949b75695e98248f3414340deae6249e2d07eb9465cfaf40316cf8b9d80"
   end
 
+  depends_on "black"
+  depends_on "mypy"
+  depends_on "pycodestyle"
+  depends_on "pydocstyle"
   depends_on "python@3.11"
 
   resource "docstring-to-markdown" do
@@ -40,6 +44,16 @@ class PythonLspServer < Formula
     sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
   end
 
+  resource "pylsp-mypy" do
+    url "https://files.pythonhosted.org/packages/5f/56/5dd31793481169f71f3849d9b455c253511c1298db7ec73f484b923bac22/pylsp-mypy-0.6.7.tar.gz"
+    sha256 "06ba6d09bdd6ec29025ccc952dd66a849361a224a9f04cebd69b9f45f7d4a064"
+  end
+
+  resource "python-lsp-black" do
+    url "https://files.pythonhosted.org/packages/ad/1b/f20e612a33f9dcc2a0863a42ee62cc4f30ee724f1e7cc869b92c786c8ebd/python-lsp-black-1.3.0.tar.gz"
+    sha256 "5aa257e9e7b7e5a2316ef2a9fbcd242e82e0f695bf1622e31c0bf5cd69e6113f"
+  end
+
   resource "python-lsp-jsonrpc" do
     url "https://files.pythonhosted.org/packages/99/45/1c2a272950679af529f7360af6ee567ef266f282e451be926329e8d50d84/python-lsp-jsonrpc-1.0.0.tar.gz"
     sha256 "7bec170733db628d3506ea3a5288ff76aa33c70215ed223abdb0d95e957660bd"
@@ -50,8 +64,25 @@ class PythonLspServer < Formula
     sha256 "78e318def4ade898a461b3d92a79f9441e7e0e4d2ad5419abed4336d702c7425"
   end
 
+  resource "websockets" do
+    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
+    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
+  end
+
+  def python3
+    "python3.11"
+  end
+
   def install
     virtualenv_install_with_resources
+
+    # link dependent virtualenvs to this one
+    site_packages = Language::Python.site_packages(python3)
+    paths = %w[black mypy pycodestyle pydocstyle].map do |package_name|
+      package = Formula[package_name].opt_libexec
+      package/site_packages
+    end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do
