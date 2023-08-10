@@ -5,6 +5,7 @@ class Trafficserver < Formula
   mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.2.2.tar.bz2"
   sha256 "5960dd2d075e8f1c71d299a09155ca8ed6dd02af1d39678e7379c1e5bd81c388"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "ead1ae3a4043e2d6280239fa83e5466febec54ab7cc0b878b6ff8e437e5c4864"
