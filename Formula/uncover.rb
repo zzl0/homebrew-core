@@ -6,6 +6,16 @@ class Uncover < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/uncover.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9331531ccb753717882646863b715b22eba96fde9314cf3c24cfb2eb3340b076"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9331531ccb753717882646863b715b22eba96fde9314cf3c24cfb2eb3340b076"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9331531ccb753717882646863b715b22eba96fde9314cf3c24cfb2eb3340b076"
+    sha256 cellar: :any_skip_relocation, ventura:        "5aeb9ef1ef9adad4021391c065185329c2da1fe695cb5477c9057b4eae7c86a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "5aeb9ef1ef9adad4021391c065185329c2da1fe695cb5477c9057b4eae7c86a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5aeb9ef1ef9adad4021391c065185329c2da1fe695cb5477c9057b4eae7c86a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b82908efc13b1cf3b6d233c184a7829492ffdd426a18463e37e1c4338cb8a66e"
+  end
+
   depends_on "go" => :build
 
   def install
