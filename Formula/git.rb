@@ -192,16 +192,21 @@ class Git < Formula
     system bin/"git", "commit", "-a", "-m", "Initial Commit"
     assert_equal "haunted\nhouse", shell_output("#{bin}/git ls-files").strip
 
+    # Check that our `inreplace` for the `Makefile` does not break.
+    # If this assertion fails, please fix the `inreplace` instead of removing this test.
+    # The failure of this test means that `git` will generate broken launchctl plist files.
+    refute_match HOMEBREW_CELLAR.to_s, shell_output("#{bin}/git --exec-path")
+
+    return unless OS.mac?
+
     # Check Net::SMTP or Net::SMTP::SSL works for git-send-email
-    if OS.mac?
-      %w[foo bar].each { |f| touch testpath/f }
-      system bin/"git", "add", "foo", "bar"
-      system bin/"git", "commit", "-a", "-m", "Second Commit"
-      assert_match "Authentication Required", pipe_output(
-        "#{bin}/git send-email --from=test@example.com --to=dev@null.com " \
-        "--smtp-server=smtp.gmail.com --smtp-server-port=587 " \
-        "--smtp-encryption=tls --confirm=never HEAD^ 2>&1",
-      )
-    end
+    %w[foo bar].each { |f| touch testpath/f }
+    system bin/"git", "add", "foo", "bar"
+    system bin/"git", "commit", "-a", "-m", "Second Commit"
+    assert_match "Authentication Required", pipe_output(
+      "#{bin}/git send-email --from=test@example.com --to=dev@null.com " \
+      "--smtp-server=smtp.gmail.com --smtp-server-port=587 " \
+      "--smtp-encryption=tls --confirm=never HEAD^ 2>&1",
+    )
   end
 end
