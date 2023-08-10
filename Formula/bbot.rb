@@ -8,14 +8,13 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db8a200cb97eb392436035353e35bb4d48589f98b03abc4a12ab83431a0a9c62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b537f5ab2ff57bca9099323d33ae6a240b3876adcea8f713dabc08715738fa3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "228daf673e8292182f87b028290648cadcafd0c0dedec7306a51acb589faa50d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a6e734b61f6f72c59c600f60dd260ec82760d609f85016c68c9c16bc679624b"
-    sha256 cellar: :any_skip_relocation, monterey:       "22bfe8f4a7895e620d47ee3e7f4adb5455c8ff4e29cc595c9f3208f1ab518583"
-    sha256 cellar: :any_skip_relocation, big_sur:        "480a646dde6356576aa0414d1feaac3ef223ac3a4cdbe453000db05f09a90c5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0998f3605a1271b5c9933bc763e653a2a8accb6a35aeee9b922afe4ba798d6e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfcecbc47ec846dd2718be1ce2636e8d72ff3844dd4982a6dc64d68776dae602"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "54ca6ce603fb20777136762279c2e1b208bd45cabec12466ee18f90f0cdc8305"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c50d0bd9d14c8986d9bb5a4a6dcdb1e7a9ea69de3a52b380f9468aaf08554de8"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4c28fef910aacee1b906191cd2beeae9a0a3e140161227f4763f08200b62b52"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc3242074c03607d853c0d41085189fef620569f04daa1f523d54d80e99a1724"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4b5e5802536f74d86177d27780bc42a52ecb2f31eb17eafe1ffbaad3dad5f9d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b118360b38673f2935333813a1d5a4145355998353619ee047027a5fa931dd7"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `url-normalize`
