@@ -6,7 +6,7 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
     rebuild 1
@@ -22,6 +22,7 @@ class Jrnl < Formula
   depends_on "cffi"
   depends_on "keyring"
   depends_on "pygments"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -89,6 +90,11 @@ class Jrnl < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    keyring = Formula["keyring"].opt_libexec
+    (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
 
   test do
@@ -98,65 +104,30 @@ class Jrnl < Formula
       set timeout 3
       match_max 100000
 
-      # Write the journal
-      spawn "#{bin}/jrnl" "This is the fanciest test in the world."
-
-      expect {
-        "/.local/share/jrnl/journal.txt" { send -- "#{testpath}/test.txt\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "Do you want to encrypt your journal?" { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "Do you want jrnl to use colors when displaying entries?" { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        eof { exit }
-        timeout { exit 1 }
-      }
-
-      # Read the journal
-      spawn "#{bin}/jrnl" -1
-
-      expect {
-        "This is the fanciest test in the world." { exit }
-        timeout { exit 1 }
-        eof { exit 1 }
-      }
-
-      # Encrypt the journal
       spawn "#{bin}/jrnl" --encrypt
-
-      expect {
-        -exact "Enter password for new journal: " { send -- "homebrew\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -exact "Enter password again: " { send -- "homebrew\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -exact "Do you want to store the password in your keychain? [Y/n] " { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -re "Journal encrypted to .*/test.txt." { exit }
-        timeout { exit 1 }
-        eof { exit 1 }
-      }
+      expect -exact "Enter password for journal 'default': "
+      sleep 0.5
+      send -- "homebrew\\r"
+      expect -exact "Enter password again: "
+      sleep 0.5
+      send -- "homebrew\\r"
+      expect -exact "Do you want to store the password in your keychain? \\[Y/n\\] "
+      send -- "n\\r"
+      expect -re "Journal encrypted to .*"
+      expect eof
     EOS
 
+    # Write the journal
+    input = "#{testpath}/journal.txt\nn\nn"
+    assert_match "Journal 'default' created", pipe_output("#{bin}/jrnl My journal entry 2>&1", input, 0)
+    assert_predicate testpath/"journal.txt", :exist?
+
+    # Read the journal
+    assert_match "#{testpath}/journal.txt", shell_output("#{bin}/jrnl --list 2>&1")
+
+    # Encrypt the journal. Needs a TTY to read password.
     system "expect", "./tests.sh"
     assert_predicate testpath/".config/jrnl/jrnl.yaml", :exist?
-    assert_predicate testpath/"test.txt", :exist?
+    assert_match "encrypt: true", (testpath/".config/jrnl/jrnl.yaml").read
   end
 end
