@@ -696,6 +696,14 @@
     "exclude_packages": ["cffi", "pycparser", "typing-extensions"],
     "extra_packages": ["semantic-version", "setuptools-rust"]
   },
+  "python-lsp-server": {
+    "package_name": "python-lsp-server[websockets]",
+    "extra_packages": ["python-lsp-black", "pylsp-mypy"],
+    "exclude_packages": [
+      "black", "click", "mypy", "mypy-extensions", "packaging", "pathspec",
+      "platformdirs", "typing-extensions"
+    ]
+  },
   "python-yq": {
     "exclude_packages": ["PyYAML"]
   },
