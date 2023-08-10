@@ -1,8 +1,8 @@
 class Stk < Formula
   desc "Sound Synthesis Toolkit"
   homepage "https://ccrma.stanford.edu/software/stk/"
-  url "https://ccrma.stanford.edu/software/stk/release/stk-5.0.0.tar.gz"
-  sha256 "0e97d8d2ef0d0d3dd4255fed6d71fcbd832f9977bd1031d2166cdbb865529f11"
+  url "https://ccrma.stanford.edu/software/stk/release/stk-5.0.1.tar.gz"
+  sha256 "afc35faea3bb8baacacb8d9db3fa745e4f7d8dd46f36aac5436ca377d565a184"
   license "MIT"
 
   livecheck do
