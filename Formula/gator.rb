@@ -21,7 +21,7 @@ class Gator < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/open-policy-agent/gatekeeper/pkg/version.Version=#{version}
+      -X github.com/open-policy-agent/gatekeeper/v3/pkg/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gator"
 
@@ -103,5 +103,7 @@ class Gator < Formula
     EOS
 
     assert_empty shell_output("#{bin}/gator test -f gator-manifest.yaml -f template-and-constraints/")
+
+    assert_match version.to_s, shell_output("#{bin}/gator --version")
   end
 end
