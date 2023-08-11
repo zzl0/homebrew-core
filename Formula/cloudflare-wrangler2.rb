@@ -3,8 +3,8 @@ require "language/node"
 class CloudflareWrangler2 < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-2.20.0.tgz"
-  sha256 "3bd115747ae01700cd40ab869440785eb9de771ad946a591b65ec313783cea96"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-3.5.0.tgz"
+  sha256 "de085cac338f52a079a9c93b4fa84bd5297d2c58fbf043c76e273b113dbecd79"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -30,10 +30,7 @@ class CloudflareWrangler2 < Formula
   end
 
   test do
-    system "#{bin}/wrangler", "init", "--yes"
-    assert_predicate testpath/"wrangler.toml", :exist?
-    assert_match "wrangler", (testpath/"package.json").read
-
-    assert_match "dry-run: exiting now.", shell_output("#{bin}/wrangler publish --dry-run")
+    assert_match version.to_s, shell_output("#{bin}/wrangler -v")
+    assert_match "Required Worker name missing", shell_output("#{bin}/wrangler secret list 2>&1", 1)
   end
 end
