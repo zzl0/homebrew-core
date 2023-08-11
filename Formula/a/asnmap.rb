@@ -6,6 +6,16 @@ class Asnmap < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/asnmap.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da1aa64132b6210f87205e93d08eaefa27f7ec8119a4314b9a5ec0ce00905390"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da1aa64132b6210f87205e93d08eaefa27f7ec8119a4314b9a5ec0ce00905390"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da1aa64132b6210f87205e93d08eaefa27f7ec8119a4314b9a5ec0ce00905390"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5f54a85117decc28810bc4f95704ff4f7d6865cad41cd29927f24c02d4e8ef2"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5f54a85117decc28810bc4f95704ff4f7d6865cad41cd29927f24c02d4e8ef2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d5f54a85117decc28810bc4f95704ff4f7d6865cad41cd29927f24c02d4e8ef2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "127a26e6a4b4712c01b2ae54d1099a2980e883ac9bc11aefb65a953afdd9f427"
+  end
+
   depends_on "go" => :build
 
   def install
