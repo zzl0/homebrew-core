@@ -2,8 +2,8 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.6.0",
-      revision: "38e6fab9664c6e59b66e73523b307a56130316ae"
+      tag:      "v4.6.1",
+      revision: "f3069b3ff48e30373c33b3f5976f15abf8cfee20"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -43,8 +43,8 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.6.2.tar.gz"
-      sha256 "64de2a0223c2219a85d66ebb200c3d8b3501276754d7b0267435e81f40215e7d"
+      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.0.tar.gz"
+      sha256 "e526b8bf568a5145f4f265a8d450483be27c82717e60f4f22902589a78f68e1f"
     end
   end
 
