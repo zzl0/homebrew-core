@@ -3,8 +3,8 @@ require "language/node"
 class Gtop < Formula
   desc "System monitoring dashboard for terminal"
   homepage "https://github.com/aksakalli/gtop"
-  url "https://registry.npmjs.org/gtop/-/gtop-1.1.3.tgz"
-  sha256 "5bd04175c5d075b58448cf4fff3a2c6a760e28807e73f4a8f1ab0adf14d7c926"
+  url "https://registry.npmjs.org/gtop/-/gtop-1.1.5.tgz"
+  sha256 "a8e90b828e33160c6a0ac4fb11231f292496e8049c0dac814e46fdd0c90817c1"
   license "MIT"
 
   bottle do
