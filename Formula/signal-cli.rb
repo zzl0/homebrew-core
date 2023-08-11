@@ -1,8 +1,8 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.11.11.tar.gz"
-  sha256 "c9fa90e3e9b4a7324504cb1009a1c7c41fd7b4ef4e17361654431a436639f234"
+  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "c69d2c9c0d69970bdaffb33115384f7dd35843cd4169661b7b6430272a17f50a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -26,21 +26,17 @@ class SignalCli < Formula
 
   depends_on "openjdk"
 
+  uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
 
-  # Use `llvm@15` to work around build failure with Clang 16 described in
-  # rust-lang/rust-bindgen#2312.
-  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `libsignal`
-  # crate's dependency `boring-sys` uses `bindgen` v0.62.0 or newer.
-  on_linux do
-    depends_on "llvm@15" => :build # For `libclang`, used by `boring-sys` crate
-  end
-
-  # per https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#libsignal-client
-  # we want the specific libsignal-client version from 'signal-cli-#{version}/lib/libsignal-client-X.X.X.jar'
+  # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
+  # To check the version of `libsignal-client`, run:
+  # curl -fsSL https://github.com/AsamK/signal-cli/releases/download/v${version}/signal-cli-${version}-Linux.tar.gz |
+  #   tar -tz |
+  #   grep libsignal-client
   resource "libsignal-client" do
-    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "2479bb5257a7a36ee6b929097be0b118ce13694b226f03aac6f71f64c7d896e9"
+    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.30.0.tar.gz"
+    sha256 "a9fe90f35c87c85d30efed3ffa0f717196e10eba4d2a9c95fa8129e88847f7f0"
   end
 
   def install
@@ -55,11 +51,12 @@ class SignalCli < Formula
     ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
 
     resource("libsignal-client").stage do |r|
-      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#building-libsignal-client-yourself
+      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#manual-build
 
       libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
       embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
-      odie "#{r.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != r.version
+      res = r.resource
+      odie "#{res.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != res.version
 
       # rm originally-embedded libsignal_jni lib
       system "zip", "-d", libsignal_client_jar, "libsignal_jni.so", "libsignal_jni.dylib", "signal_jni.dll"
