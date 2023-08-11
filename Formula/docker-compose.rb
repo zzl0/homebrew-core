@@ -4,7 +4,7 @@ class DockerCompose < Formula
   url "https://github.com/docker/compose/archive/refs/tags/v2.20.3.tar.gz"
   sha256 "af8025623de3991a15a89575ae4fc4f3f38a17311af9641815500c01f0775950"
   license "Apache-2.0"
-  head "https://github.com/docker/compose.git", branch: "v2"
+  head "https://github.com/docker/compose.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "be205e463441886a5aca153d209d10d75ee5030d160880f6c2bcf59362cdadc8"
