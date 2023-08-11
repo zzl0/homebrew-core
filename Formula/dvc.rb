@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/c5/fd/96fecb295c9d8a612094d24d64dafcb66c3ca0f1b43016ef20e0675f7c90/dvc-3.15.0.tar.gz"
-  sha256 "bd2ef4b7bc3fa98bbff4b66f08764a0cd3bc089349e341a76fee92cc13b97c12"
+  url "https://files.pythonhosted.org/packages/09/c0/81b826ae3fc2d4e9bb2093af3927ca73b9736de0d159862f8521d3236e5f/dvc-3.15.1.tar.gz"
+  sha256 "77eb3b67847eaed6cb753acd3298b5b76850337d13f23d82d2f1c59f42d6647b"
   license "Apache-2.0"
 
   bottle do
@@ -243,8 +243,8 @@ class Dvc < Formula
   end
 
   resource "dvc-azure" do
-    url "https://files.pythonhosted.org/packages/8a/48/e16a2401be67e4fdfebb3cf0444048bc22784d0e36d28a2cdfc7197d98a3/dvc-azure-2.22.0.tar.gz"
-    sha256 "6863e1efb1cb79471d746b6615c2ddf5b73e59a600154a6bb69164c378798927"
+    url "https://files.pythonhosted.org/packages/fc/89/a0835bb993906e3a44c2649e6592ff417e3384f2b73169374322c3a0b7b2/dvc-azure-2.22.1.tar.gz"
+    sha256 "bf755108dd4ea124f94657d438ff43a5f99fde8f42fdc92eb2687dd586b60a29"
   end
 
   resource "dvc-data" do
