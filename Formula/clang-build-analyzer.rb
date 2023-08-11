@@ -1,8 +1,8 @@
 class ClangBuildAnalyzer < Formula
   desc "Tool to analyze compilation time"
   homepage "https://github.com/aras-p/ClangBuildAnalyzer"
-  url "https://github.com/aras-p/ClangBuildAnalyzer/archive/v1.4.0.tar.gz"
-  sha256 "dae8e7838145a72c01c397c3998d9f6801fc4dc819d552010d702cab7dede530"
+  url "https://github.com/aras-p/ClangBuildAnalyzer/archive/v1.4.1.tar.gz"
+  sha256 "bee3028091a41005a3e0988a1c6a1dbeb500ea45114bcc3244faada9fd551226"
   license all_of: ["Unlicense", "Zlib", "MIT", "BSL-1.0", "BSD-3-Clause", "Apache-2.0",
                    "BSD-2-Clause", "Apache-2.0" => { with: "LLVM-exception" }]
   head "https://github.com/aras-p/ClangBuildAnalyzer.git", branch: "main"
