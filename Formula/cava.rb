@@ -1,8 +1,8 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
   homepage "https://github.com/karlstav/cava"
-  url "https://github.com/karlstav/cava/archive/0.9.0.tar.gz"
-  sha256 "3e79367169791fb11236dce6da7b38f46cdd859304710391785c4df7f364fd23"
+  url "https://github.com/karlstav/cava/archive/0.9.1.tar.gz"
+  sha256 "483f571d5fba5fb8aa81511c4dcf8ce0949c7c503ec6c743c2914cd78e6faf03"
   license "MIT"
   head "https://github.com/karlstav/cava.git", branch: "master"
 
@@ -19,6 +19,7 @@ class Cava < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool"  => :build
+  depends_on "pkg-config"  => :build
   depends_on "fftw"
   depends_on "iniparser"
   depends_on "portaudio"
