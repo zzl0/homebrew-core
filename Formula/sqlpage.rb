@@ -1,8 +1,8 @@
 class Sqlpage < Formula
   desc "Web application framework, for creation of websites with simple database queries"
   homepage "https://sql.ophir.dev/"
-  url "https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "169808dd5c53b6474aaf0fe2ad00a4358d5898015d18bcabc9770facdf999fa1"
+  url "https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "e04e98ff7529e293bf441e07e79de02442fbed6909fcdef5356d8d7b30dba4c1"
   license "MIT"
 
   bottle do
