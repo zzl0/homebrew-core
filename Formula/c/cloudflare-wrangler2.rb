@@ -1,11 +1,14 @@
 require "language/node"
 
 class CloudflareWrangler2 < Formula
+  include Language::Node::Shebang
+
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
   url "https://registry.npmjs.org/wrangler/-/wrangler-3.5.1.tgz"
   sha256 "9c73ca8c5e2f90351081bb8f83fe27089bbede94ccc75b97bdebe0f1c36cfc72"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "10368ee147136fcd1e3bbb89b1f5c0ce2e74f682299d43ddc6ebc24d031ffd8a"
@@ -23,6 +26,7 @@ class CloudflareWrangler2 < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    rewrite_shebang detected_node_shebang, *Dir["#{libexec}/lib/node_modules/**/*"]
     bin.install_symlink Dir["#{libexec}/bin/wrangler*"]
 
     # Replace universal binaries with their native slices
