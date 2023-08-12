@@ -20,13 +20,13 @@ class Lilypond < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c45e113cf07c6e3f5cdf643afef23374d3a0ecd3899eea218ada9643b01d6d66"
-    sha256 arm64_monterey: "f8c7fa7a880578518afc49fa973c3c9fc3e7121777cc876034ebd27a34bdf4c4"
-    sha256 arm64_big_sur:  "c2bc546882c16a954bc3e09534d73ba2aa72eefa1d727fb6b5e7317d456f1259"
-    sha256 ventura:        "eb3a0f38944e7148d50db0ef6f304d1e486b796d11de913215e07ef9217f74c4"
-    sha256 monterey:       "96950e483a62532a6f8245b9b2ed6e11ec0c3ceae8e3895f478af3e26034f845"
-    sha256 big_sur:        "747b81fb47da9b632cc89036f5c8cb97b320244b819f8f89e50eb13a37c81e47"
-    sha256 x86_64_linux:   "4795737ac58934f65fc775dc2d6ad5de4e895649a5be6e6656663811f7d28746"
+    sha256 arm64_ventura:  "b973ba76a36b81950caa232b10148e2c0d43e62f0def6677e6b19aa40da15552"
+    sha256 arm64_monterey: "5732abb8072a696dda9cbfb272f7d8c5ad6f332ebfb7a7eaa70ef1936b0fe5b7"
+    sha256 arm64_big_sur:  "b95ab74431437c46a3f382c4811feb154071f2959dd19dcde23329c51f8fbb54"
+    sha256 ventura:        "6849dd72a19388dd6df520c49ffc340b0fdccecea03bf8157ff41c59be8e0ce1"
+    sha256 monterey:       "408f15cc55d732483e7ed346914689557ca38a9190b1815b8ee6da3ef65a32a1"
+    sha256 big_sur:        "a5412b0836cbcce70f3dcfd6cf0923f65d10e215ce98fc4db20a70028b257ea4"
+    sha256 x86_64_linux:   "4e9a9887ae7ee6205a6c5b85a2e2ab69b46b75676781228910bb3ad780a7d794"
   end
 
   head do
