@@ -3,8 +3,8 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https://github.com/rrthomas/psutils"
-  url "https://files.pythonhosted.org/packages/c9/e1/b21d2005f929ee9a8891080dbff70b322566e027e16823a050e72a37baea/pspdfutils-3.0.8.tar.gz"
-  sha256 "392392b7eb67848a7f30e7c96e88e0a54bdc95b34dea57df6f3fad303289e40d"
+  url "https://files.pythonhosted.org/packages/c8/2a/43babe806e5eda2cd810419060da9e8dd7376c0b5738b4c8f8718a19ac2a/pspdfutils-3.0.9.tar.gz"
+  sha256 "06f6c3eec3256baac4846d9e4e591d9e01affedd6be1a75f6c93f6884ba00f7c"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -26,8 +26,8 @@ class Psutils < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/54/34/0f351758d7285409cc7ec7f7b92cb5201416bf7bfb78461ee1a593e75c74/pypdf-3.12.2.tar.gz"
-    sha256 "8657d56fd4f64540b9a1e5285845543534321484f1276af893eead7bd00598e6"
+    url "https://files.pythonhosted.org/packages/bb/82/4a63d50e25f1e4ff4119aa14d1e0ecb90335a48e9c01c13d39a6e521bfb1/pypdf-3.15.0.tar.gz"
+    sha256 "8a6264e1c47c63dc2484e29bdfa76b121435896a84e94b7c5ae82c6ae96354bb"
   end
 
   def install
