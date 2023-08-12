@@ -60,6 +60,12 @@ class Clamav < Formula
     (var/"lib/clamav").mkpath
   end
 
+  service do
+    run [opt_sbin/"clamd", "--foreground"]
+    keep_alive true
+    require_root true
+  end
+
   def caveats
     <<~EOS
       To finish installation & run clamav you will need to edit
