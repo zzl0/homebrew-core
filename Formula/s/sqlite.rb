@@ -5,6 +5,7 @@ class Sqlite < Formula
   version "3.42.0"
   sha256 "7abcfd161c6e2742ca5c6c0895d1f853c940f203304a0b49da4e1eca5d088ca6"
   license "blessing"
+  revision 1
 
   livecheck do
     url :homepage
@@ -31,13 +32,17 @@ class Sqlite < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_COLUMN_METADATA=1"
     # Default value of MAX_VARIABLE_NUMBER is 999 which is too low for many
     # applications. Set to 250000 (Same value used in Debian and Ubuntu).
-    ENV.append "CPPFLAGS", "-DSQLITE_MAX_VARIABLE_NUMBER=250000"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_RTREE=1"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_JSON1=1"
+    ENV.append "CPPFLAGS", %w[
+      -DSQLITE_ENABLE_COLUMN_METADATA=1
+      -DSQLITE_ENABLE_FTS3=1
+      -DSQLITE_ENABLE_FTS3_PARENTHESIS=1
+      -DSQLITE_ENABLE_JSON1=1
+      -DSQLITE_ENABLE_RTREE=1
+      -DSQLITE_ENABLE_UNLOCK_NOTIFY=1
+      -DSQLITE_MAX_VARIABLE_NUMBER=250000
+    ].join(" ")
 
     args = %W[
       --prefix=#{prefix}
