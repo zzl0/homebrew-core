@@ -7,13 +7,13 @@ class Proxify < Formula
   head "https://github.com/projectdiscovery/proxify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91c0b93902207b7027a48b69ccf3de62f3cb8586c3d5b005c75cba874b20c598"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91c0b93902207b7027a48b69ccf3de62f3cb8586c3d5b005c75cba874b20c598"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91c0b93902207b7027a48b69ccf3de62f3cb8586c3d5b005c75cba874b20c598"
-    sha256 cellar: :any_skip_relocation, ventura:        "630e0642c1a3f8fb0bb23c0ba5536ea794eb5aca7356a86529950f305f86c92e"
-    sha256 cellar: :any_skip_relocation, monterey:       "630e0642c1a3f8fb0bb23c0ba5536ea794eb5aca7356a86529950f305f86c92e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "630e0642c1a3f8fb0bb23c0ba5536ea794eb5aca7356a86529950f305f86c92e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32bdc9d7b5844b596eb441cf8795933b7320beb3130f1776f6d1583942a5ed88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "553399eb553d799ecb88926b2d1456f142eb249f0954b24b1b3e7c9829599247"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "553399eb553d799ecb88926b2d1456f142eb249f0954b24b1b3e7c9829599247"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "553399eb553d799ecb88926b2d1456f142eb249f0954b24b1b3e7c9829599247"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ac4ac1f0d17c20fa320ee3f8d55458491d70a08b93b891ee0a8b993913bbe36"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ac4ac1f0d17c20fa320ee3f8d55458491d70a08b93b891ee0a8b993913bbe36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0ac4ac1f0d17c20fa320ee3f8d55458491d70a08b93b891ee0a8b993913bbe36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "230a63dced3306bff64b691cf350a15b6c59b868de9340450683679eeedcc129"
   end
 
   depends_on "go" => :build
