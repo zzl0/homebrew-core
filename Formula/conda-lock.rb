@@ -205,8 +205,8 @@ class CondaLock < Formula
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
     site_packages = Language::Python.site_packages("python3.11")
-    virtualenv = Formula["virtualenv"].opt_libexec
-    (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
+    paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do
