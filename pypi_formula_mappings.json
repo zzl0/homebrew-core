@@ -519,7 +519,7 @@
     ]
   },
   "mitmproxy": {
-    "exclude_packages": ["certifi", "cffi", "cryptography"]
+    "exclude_packages": ["certifi", "cffi", "cryptography", "protobuf", "pycparser"]
   },
   "mkdocs": {
     "exclude_packages": ["six", "PyYAML"]
