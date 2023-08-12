@@ -1,8 +1,8 @@
 class Proxify < Formula
   desc "Portable proxy for capturing, manipulating, and replaying HTTP/HTTPS traffic"
   homepage "https://github.com/projectdiscovery/proxify"
-  url "https://github.com/projectdiscovery/proxify/archive/refs/tags/v0.0.11.tar.gz"
-  sha256 "c3e99a94778687027806d1ad5511e23c86fce99bf3018d52119f28cc6ee3de17"
+  url "https://github.com/projectdiscovery/proxify/archive/refs/tags/v0.0.12.tar.gz"
+  sha256 "ed58d5e2cf5d25f7f067e5b9d9b6c5de82d6d989dd04c7be40b4aef0beddb1ed"
   license "MIT"
   head "https://github.com/projectdiscovery/proxify.git", branch: "main"
 
@@ -23,7 +23,8 @@ class Proxify < Formula
   end
 
   test do
+    # Other commands start proxify, which causes Homebrew CI to time out
     assert_match version.to_s, shell_output("#{bin}/proxify -version 2>&1")
-    assert_match "failed to load open", shell_output("#{bin}/proxify 2>&1", 1)
+    assert_match "given config file 'brew' does not exist", shell_output("#{bin}/proxify -config brew 2>&1", 1)
   end
 end
