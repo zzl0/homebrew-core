@@ -11,13 +11,13 @@ class Promtail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6441fbe5e5ce34832f1a1f043ecfa7a2eab4c9a07b6edb816f5f4da3b5ab7cf1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6441fbe5e5ce34832f1a1f043ecfa7a2eab4c9a07b6edb816f5f4da3b5ab7cf1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6441fbe5e5ce34832f1a1f043ecfa7a2eab4c9a07b6edb816f5f4da3b5ab7cf1"
-    sha256 cellar: :any_skip_relocation, ventura:        "b83854a686657c4be7dba17bf8a574134e119fea7836d939bc891a69b2d6c6f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "b83854a686657c4be7dba17bf8a574134e119fea7836d939bc891a69b2d6c6f8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b83854a686657c4be7dba17bf8a574134e119fea7836d939bc891a69b2d6c6f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "199820bbe81a8d7bdb34f06d246153c8da805f770d3b839e082ae5d4d86fd521"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c8d010a1f423016202da40c38d8b57bb710b0af20fd2a4051b10467e2683d44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c8d010a1f423016202da40c38d8b57bb710b0af20fd2a4051b10467e2683d44"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c8d010a1f423016202da40c38d8b57bb710b0af20fd2a4051b10467e2683d44"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd88a80d942578aca5d2754a27ad5a8af22cdc8d34a85b2cb22f0ea54b2ff7b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd88a80d942578aca5d2754a27ad5a8af22cdc8d34a85b2cb22f0ea54b2ff7b8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fd88a80d942578aca5d2754a27ad5a8af22cdc8d34a85b2cb22f0ea54b2ff7b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c4de44de9ada199e7927dd267a2e8d1ad488ed43385274ccc60856c5470cd63"
   end
 
   depends_on "go" => :build
