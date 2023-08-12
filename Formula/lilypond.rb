@@ -1,8 +1,8 @@
 class Lilypond < Formula
   desc "Music engraving system"
   homepage "https://lilypond.org"
-  url "https://lilypond.org/download/sources/v2.24/lilypond-2.24.1.tar.gz"
-  sha256 "d5c59087564a5cd6f08a52ba80e7d6509b91c585e44385dcc0fa39265d181509"
+  url "https://lilypond.org/download/sources/v2.24/lilypond-2.24.2.tar.gz"
+  sha256 "7944e610d7b4f1de4c71ccfe1fbdd3201f54fac54561bdcd048914f8dbb60a48"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-3.0-only",
@@ -31,6 +31,8 @@ class Lilypond < Formula
 
   head do
     url "https://gitlab.com/lilypond/lilypond.git", branch: "master"
+    mirror "https://github.com/lilypond/lilypond.git"
+    mirror "https://git.savannah.gnu.org/git/lilypond.git"
 
     depends_on "autoconf" => :build
   end
@@ -95,16 +97,16 @@ class Lilypond < Formula
     assert_predicate testpath/"test.pdf", :exist?
 
     output = shell_output("#{bin}/lilypond --define-default=show-available-fonts 2>&1")
-    output = output.encode("UTF-8", invalid: :replace, replace: "")
-    fonts = {
-      "C059"            => ["Roman", "Bold", "Italic", "Bold Italic"],
-      "Nimbus Mono PS"  => ["Regular", "Bold", "Italic", "Bold Italic"],
-      "Nimbus Sans"     => ["Regular", "Bold", "Italic", "Bold Italic"],
-      "TeX Gyre Cursor" => ["Regular", "Bold", "Italic", "Bold Italic"],
-      "TeX Gyre Heros"  => ["Regular", "Bold", "Italic", "Bold Italic"],
-      "TeX Gyre Schola" => ["Regular", "Bold", "Italic", "Bold Italic"],
-    }
-    fonts.each do |family, styles|
+    output = output.encode("UTF-8", invalid: :replace, replace: "\ufffd")
+    common_styles = ["Regular", "Bold", "Italic", "Bold Italic"]
+    {
+      "C059"            => ["Roman", *common_styles[1..]],
+      "Nimbus Mono PS"  => common_styles,
+      "Nimbus Sans"     => common_styles,
+      "TeX Gyre Cursor" => common_styles,
+      "TeX Gyre Heros"  => common_styles,
+      "TeX Gyre Schola" => common_styles,
+    }.each do |family, styles|
       styles.each do |style|
         assert_match(/^\s*#{family}:style=#{style}$/, output)
       end
