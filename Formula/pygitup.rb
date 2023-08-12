@@ -9,14 +9,13 @@ class Pygitup < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54ec5590c370ff9324b20f83bf468b821da26e655c3be10d302d46fc1e82ff1d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "789e3cc5c6f94d144c88c6c82f4842aae2577a891c9aa6e54a81bcddd96b6f0d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2c86a9197c67525c1078a73aff4fda7735e82427ae709ad31fb0ba3036e6bcd"
-    sha256 cellar: :any_skip_relocation, ventura:        "64b51de3dcd18192d073f4c98af6f81c56b0292f1dd309ff877688d701ec7d60"
-    sha256 cellar: :any_skip_relocation, monterey:       "21aa813f4880fcaa67ec86892b22257634f0011cca30bce2700a1e9d214aa8db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ddb7020507a20291c4bf6db26dee60d14de89d736496f16384c8655f3232283f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09128867a857960e49050eefd31c979b98bc8537d8302132771cdfc8d2809a1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ca70f7b9b8ff1a6974542a5fd02ad24a8b6aee7ffb8d597e8374e3059393ffa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e28d865ab39ed9ee55cc862d61d650bfa745860565067fc6619251855363f60d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "764541c7e40ffea17f334c7469d116314c5c654492836a333d34f0c7919ba3d9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d05f35551eaf3f89d28e80eb01b8209c8e53254e4b107a3578c09a77d8f525f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b2728f7dfafb2a9031dfb46d083e126caa71aa8285c798258382116387deea7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4ee00aa7932f8f8e710fe917fdcea6d7a554740e32f09b1350bc8e56af32a9c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "032a9f531a02bd8a18882ba9850e0060d29dc4ca1ec8b4f8d2da70a6715a1d28"
   end
 
   depends_on "python-typing-extensions"
