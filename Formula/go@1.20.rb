@@ -11,6 +11,16 @@ class GoAT120 < Formula
     regex(/href=.*?go[._-]?v?(1\.20(?:\.\d+)*)[._-]src\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7748988781f6f17dca24802fa1c8507d004421052152ad7d322739fa8e9afa2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7748988781f6f17dca24802fa1c8507d004421052152ad7d322739fa8e9afa2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c7748988781f6f17dca24802fa1c8507d004421052152ad7d322739fa8e9afa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b80b34c50e7b5e6eec656bbb5a046e3b088755142bbed0492d25afea84a621b"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b80b34c50e7b5e6eec656bbb5a046e3b088755142bbed0492d25afea84a621b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1b80b34c50e7b5e6eec656bbb5a046e3b088755142bbed0492d25afea84a621b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76e2c75958b2a6eca9533c3966709bea357289e5c953d8e4ed49e828dcc30f23"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
