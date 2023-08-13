@@ -1,8 +1,8 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
   homepage "https://github.com/gopasspw/gopass-jsonapi"
-  url "https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.15.5/gopass-jsonapi-1.15.5.tar.gz"
-  sha256 "62d8df839014bad51d1b791837bc8348f7fdcafab0d04f0b7bf2b5d6f0dfc789"
+  url "https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.15.7.tar.gz"
+  sha256 "08ec445cc6929c7887caa3c631ab1aa73def89ca35f16160e5ff2ce535a0370b"
   license "MIT"
 
   bottle do
@@ -18,7 +18,8 @@ class GopassJsonapi < Formula
   depends_on "gopass"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    ldflags = "-s -w -X main.version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
