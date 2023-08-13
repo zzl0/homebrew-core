@@ -16,8 +16,8 @@ class Traefik < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a8e7592fcf1d1fa12266d85e7966ef2ec36bab6566e107db365e87920aa735d"
   end
 
-  depends_on "go" => :build
-  depends_on "go-bindata" => :build
+  # pin to 1.20 needed for release <= 2.10.4, which doesn't yet include https://github.com/traefik/traefik/pull/10078
+  depends_on "go@1.20" => :build
 
   def install
     ldflags = %W[
