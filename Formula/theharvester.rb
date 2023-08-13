@@ -3,8 +3,8 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "http://www.edge-security.com/theharvester.php"
-  url "https://github.com/laramies/theHarvester/archive/4.4.2.tar.gz"
-  sha256 "5f784de0d0faf98656793cdd8e504b1dd427d3e710d0891f664beca29963ee46"
+  url "https://github.com/laramies/theHarvester/archive/4.4.3.tar.gz"
+  sha256 "ccc032107caa4bedea7c58073fbc38937aa3d366a20793abb057d47ea96890cd"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
@@ -329,9 +329,6 @@ class Theharvester < Formula
 
   def install
     inreplace "setup.py", "/etc/theHarvester", etc/"theharvester"
-    # Fix setuptools.find_packages excluding module
-    # https://github.com/laramies/theHarvester/issues/1516
-    touch buildpath/"theHarvester/screenshot/__init__.py"
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/theHarvester" => "theharvester"
   end
