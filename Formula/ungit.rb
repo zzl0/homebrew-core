@@ -8,13 +8,13 @@ class Ungit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10a662739162e9eccd5e41fbacc6a7ed21b0e6f31ad7908b33608b98dd0036f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10a662739162e9eccd5e41fbacc6a7ed21b0e6f31ad7908b33608b98dd0036f3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10a662739162e9eccd5e41fbacc6a7ed21b0e6f31ad7908b33608b98dd0036f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f1cc918a458c3c25635be952c1cec2ba185ceca6715504eac7f25465101b535"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f1cc918a458c3c25635be952c1cec2ba185ceca6715504eac7f25465101b535"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5f1cc918a458c3c25635be952c1cec2ba185ceca6715504eac7f25465101b535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10a662739162e9eccd5e41fbacc6a7ed21b0e6f31ad7908b33608b98dd0036f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4a3c7e14b137d28f0852a7400f3d16fe78b85eda19cccff5f2786671e71af33"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4a3c7e14b137d28f0852a7400f3d16fe78b85eda19cccff5f2786671e71af33"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4a3c7e14b137d28f0852a7400f3d16fe78b85eda19cccff5f2786671e71af33"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d4156aefbab25d304c88411fa58145ac950ec70b6e73b7244f16112371029f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d4156aefbab25d304c88411fa58145ac950ec70b6e73b7244f16112371029f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3d4156aefbab25d304c88411fa58145ac950ec70b6e73b7244f16112371029f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4a3c7e14b137d28f0852a7400f3d16fe78b85eda19cccff5f2786671e71af33"
   end
 
   depends_on "node"
