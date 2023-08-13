@@ -4,6 +4,7 @@ class Ocp < Formula
   url "https://stian.cubic.org/ocp/ocp-0.2.106.tar.xz"
   sha256 "bf11d96d4a58bbf9c344eb53cf815fc2097c63a3c2c713f7ffb134073bd84721"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
   livecheck do
@@ -27,6 +28,7 @@ class Ocp < Formula
   depends_on "cjson"
   depends_on "flac"
   depends_on "freetype"
+  depends_on "game-music-emu"
   depends_on "jpeg-turbo"
   depends_on "libdiscid"
   depends_on "libpng"
@@ -44,12 +46,6 @@ class Ocp < Formula
   resource "unifont" do
     url "https://ftp.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
     sha256 "36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1"
-  end
-
-  # patch for clockid_t redefinition issue
-  patch do
-    url "https://github.com/mywave82/opencubicplayer/commit/6ad481d04cf34f29755b12aac9e9e3c046cfe764.patch?full_index=1"
-    sha256 "85943335fe93e577ef42c427f32b9a3759ec52beed86930e289205b2f5a30d1a"
   end
 
   def install
