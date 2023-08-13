@@ -1,8 +1,8 @@
 class Noweb < Formula
   desc "WEB-like literate-programming tool"
   homepage "https://www.cs.tufts.edu/~nr/noweb/"
-  url "https://github.com/nrnrnr/noweb/archive/refs/tags/v2_12.tar.gz"
-  sha256 "34e3903bce9771345ff392b1998f7877389b66c71b3292834e8aaf448837a7f0"
+  url "https://github.com/nrnrnr/noweb/archive/refs/tags/v2_13.tar.gz"
+  sha256 "7b32657128c8e2cb1114cca55023c58fa46789dcffcbe3dabde2c8a82fe57802"
   license "BSD-2-Clause"
 
   bottle do
@@ -15,13 +15,8 @@ class Noweb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e23dc34b6972b5a2b771c1a73444efd8c0c6a035a96437057ba52124433ea8a3"
   end
 
+  depends_on "gnu-sed" => :build
   depends_on "icon"
-
-  # add missing `lib/toascii`, remove in next release
-  patch do
-    url "https://github.com/nrnrnr/noweb/commit/7ebfd30f9fbeec9a2744c4dd483bd3d1068da352.patch?full_index=1"
-    sha256 "8f33cacd62b39dd750f577ad496a93b6bfe38400bd79e92ddfcc791cabfb0f5f"
-  end
 
   # remove pdcached ops, see discussions in https://github.com/nrnrnr/noweb/issues/31
   patch :DATA
@@ -31,6 +26,9 @@ class Noweb < Formula
   end
 
   def install
+    # use gnu-sed on macOS for fixing `illegal byte sequence` error
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+
     cd "src" do
       system "bash", "awkname", "awk"
       system "make", "LIBSRC=icon", "ICONC=icont", "CFLAGS=-U_POSIX_C_SOURCE -D_POSIX_C_SOURCE=1"
@@ -105,7 +103,7 @@ end
 
 __END__
 diff --git a/src/icon/Makefile b/src/icon/Makefile
-index 7d9b8db..dbda2eb 100644
+index b8f39ee..db51615 100644
 --- a/src/icon/Makefile
 +++ b/src/icon/Makefile
 @@ -10,11 +10,11 @@ LIBEXECS=totex disambiguate noidx tohtml elide l2h docs2comments \
@@ -115,7 +113,7 @@ index 7d9b8db..dbda2eb 100644
 -EXECS=$(LIBEXECS) $(BINEXECS) $(LIBSPECIAL) pdcached
 +EXECS=$(LIBEXECS) $(BINEXECS) $(LIBSPECIAL)
  SRCS=totex.icn disambiguate.icn noidx.icn texdefs.icn icondefs.icn \
-         yaccdefs.icn noindex.icn smldefs.icn tohtml.icn cdefs.icn elide.icn \
+ 	yaccdefs.icn noindex.icn smldefs.icn tohtml.icn cdefs.icn elide.icn \
  	l2h.icn sl2h.icn pascaldefs.icn promeladefs.icn lrtldefs.icn asdldefs.icn \
 -	mmixdefs.icn htmltoc.icn xchunks.icn docs2comments.icn pipedocs.icn pdcached.icn
 +	mmixdefs.icn htmltoc.icn xchunks.icn docs2comments.icn pipedocs.icn
