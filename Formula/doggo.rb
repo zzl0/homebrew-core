@@ -18,6 +18,12 @@ class Doggo < Formula
 
   depends_on "go" => :build
 
+  # quic-go patch for go1.21.0 build
+  patch do
+    url "https://github.com/mr-karan/doggo/commit/b296706c7b25a9bfa40fd927af9280b836c03c3a.patch?full_index=1"
+    sha256 "27f3444ec7e3629665dad7a767990cb118807575894bd7dfd13ce481a937eaa9"
+  end
+
   def install
     ldflags = %W[
       -s -w
