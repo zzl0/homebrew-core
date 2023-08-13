@@ -13,13 +13,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6370f8dcd5be6d7e6bc439a0367da6545722c012035a645da7ec4e6e660fd4d0"
-    sha256 arm64_monterey: "47fb624efc62c195eef2cfefbc339e9488a4c68387176d2ace28077060546845"
-    sha256 arm64_big_sur:  "56fdb440186f94635e2bc6a83353967e27cc6563a47ea0ee6f82b47ed3bc2a13"
-    sha256 ventura:        "500b78981dea43442b0fa4c9c7ac006b1211cd1ea7bc2d1f7dc6de36d467ad48"
-    sha256 monterey:       "5dbc87f6a3610a4e5999a44322a73b2cd5135bbecca6e527c317f478ab3970e3"
-    sha256 big_sur:        "92223048921e594a0e05b1a1addf487df4ca6a962fc8642dc6687ff909184b1e"
-    sha256 x86_64_linux:   "4783cdb910e8ec9be952dc0f1a6d64a82411591b71ee2b70e52a2771c2b1aadf"
+    sha256 arm64_ventura:  "98b920bce3a8dd1664102804316a636f1f36a1750d54be98a27d2c208585078f"
+    sha256 arm64_monterey: "98bee92ef9e920e5d4e5a16af9efba47eb26bca3bab25bc3b8de8fd57124a526"
+    sha256 arm64_big_sur:  "7dfbcf78f996adff1dc4c1dab3f908912b9109e068503361c10546adc397cdb4"
+    sha256 ventura:        "43069ef46c4e17de75490c55aa93393420660c2fafbb21dd6af13408601d3d56"
+    sha256 monterey:       "bdf0c54732d8169c6f0f2b10ac74eb388234bf41f9a8c7edbceae18e18b0b712"
+    sha256 big_sur:        "303b794f8055a4657ecfd8982930b1e7f96cb3f73111d6c5da78dfc9cf6218d8"
+    sha256 x86_64_linux:   "7f832d99afc957045e5e577d0d176e3ed4d4af7da5374774cd948df4d5c7345a"
   end
 
   depends_on "pkg-config" => :build
