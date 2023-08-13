@@ -3,19 +3,19 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "http://www.edge-security.com/theharvester.php"
-  url "https://github.com/laramies/theHarvester/archive/4.4.2.tar.gz"
-  sha256 "5f784de0d0faf98656793cdd8e504b1dd427d3e710d0891f664beca29963ee46"
+  url "https://github.com/laramies/theHarvester/archive/4.4.3.tar.gz"
+  sha256 "ccc032107caa4bedea7c58073fbc38937aa3d366a20793abb057d47ea96890cd"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b96a20273060f2bc874f12f310ae0efd047be030a7176e4b7a8e2ae5233441d3"
-    sha256 cellar: :any,                 arm64_monterey: "e97093996a04666b1e61a263f99c27699a5009b09cc07b37ffe8be193eab99e0"
-    sha256 cellar: :any,                 arm64_big_sur:  "187cfe0db4a2165ab4e20949b4d34c7654b5adfc92d6927ab20b3ba61400d69a"
-    sha256 cellar: :any,                 ventura:        "a842a28e557c192dde0b940c20c68c094906000bde6eba1df58420c504260059"
-    sha256 cellar: :any,                 monterey:       "703193a83fbffbdaaae2672bcb008b30538d4296b76c22703789e7ab50853124"
-    sha256 cellar: :any,                 big_sur:        "5d7f08b2e02d98bbccf641ab35780a67d5491a2dd9be3f854a351101633e0674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5b0fe31ea92acf1feaeae016826e33b5952e319ab2a026918257b4d3dd6edd2"
+    sha256 cellar: :any,                 arm64_ventura:  "a28fbe587779b9ecf760fca565d90805d8a22e748944fc4677f661ab91f75a4f"
+    sha256 cellar: :any,                 arm64_monterey: "945c8699bbb7f654782a99bf7fb8bdc78789cabff5843ff845a924289e757a9f"
+    sha256 cellar: :any,                 arm64_big_sur:  "19e834c5acdd0fc87b5cb8f2b902ce6561fb306950278503294343bff8dc33b2"
+    sha256 cellar: :any,                 ventura:        "c1edac48403c87331a5f6938fde7fec0ada2ae22989f8914b509e6b87e44f1a7"
+    sha256 cellar: :any,                 monterey:       "cfa18b78eacd056329be30922cb844d7d795c4e363e063cc0dc13033f378f8aa"
+    sha256 cellar: :any,                 big_sur:        "1934feedabe0a50f154f61143981540a991d54483404ae02967f2dacf3b32ba2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f93ae4f4d882737fd067d924b521e852a258cb1349b33eed6a7b6f3197882611"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -329,9 +329,6 @@ class Theharvester < Formula
 
   def install
     inreplace "setup.py", "/etc/theHarvester", etc/"theharvester"
-    # Fix setuptools.find_packages excluding module
-    # https://github.com/laramies/theHarvester/issues/1516
-    touch buildpath/"theHarvester/screenshot/__init__.py"
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/theHarvester" => "theharvester"
   end
