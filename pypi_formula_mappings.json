@@ -245,6 +245,10 @@
     "package_name": "dnstwist[full]",
     "exclude_packages": ["certifi"]
   },
+  "dnsrobocert": {
+    "exclude_packages": [
+      "certbot", "certifi", "cffi", "cryptography", "dns-lexicon", "pycparser", "pygments", "pyyaml", "six"]
+  },
   "doc8": {
     "exclude_packages": ["docutils", "Pygments"]
   },
