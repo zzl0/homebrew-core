@@ -6,13 +6,13 @@ class Noweb < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0068cf8061ae3a7cb18121fd2ebfdc4acf8b7637a53ba827b8510b3dc0bdf714"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1300e280c5bf6bffb9ea37a6840265d7645db9aae1a39fa1a423c1649bd606a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "203d5c7e72a0b556c08745473c80b516b842d9a70f345fb29d9e12ef2c056d32"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc6bb8e8e542cf8f0dd2630b8f79cf5f478a17fe422c8b05a2d2c209d445f859"
-    sha256 cellar: :any_skip_relocation, monterey:       "65bc66014cc8a65cf32b9fa09167330a166cee389f9bda2e9cd02eb27982082b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "56341492c694961e3f86baa4bc2ffe3dd175d59b2a6417e345ddd545877da83e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e23dc34b6972b5a2b771c1a73444efd8c0c6a035a96437057ba52124433ea8a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a2984bbf74de88caf1026e1d940c45bd2288361b1f48458e04758b585e1d07a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be96a5565ef49b6639fefad120cc677a9235fe665196f6b9d1ac353627a6abfe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef7e6d0cd7c63e47d4c82b1417e26cf8fb0be1fec0c27fd99e67af7d5dcd4813"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad26424a2647f8feb82d8735c6792b755bd56d7c720ffa64101fbd3061d4d94c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab0cabc785cdc9c5d34cb9e41e518eac9411dc3c6fe249ba4ac82dcd830ba851"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1c9575804e168b4ec6c8f28f6fd1748d509726a35704ee1ca7469257380617c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b0483e38e12bf0bcc968685af551d17a421ff7d27cf0433082fc08bd5135a0d"
   end
 
   depends_on "gnu-sed" => :build
