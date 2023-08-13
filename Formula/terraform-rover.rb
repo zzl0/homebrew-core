@@ -21,13 +21,25 @@ class TerraformRover < Formula
   depends_on "node"
   depends_on "terraform"
 
+  # build patch for building with node 20 and go 1.21.0
+  # fix `Error: error:0308010C:digital envelope routines::unsupported` error
+  # upstream patch PR, https://github.com/im2nguyen/rover/pull/128
+  patch do
+    url "https://github.com/im2nguyen/rover/commit/8f5c9ca2ca6294c6a0463199ace822335c780041.patch?full_index=1"
+    sha256 "c13464fe2de234ab670e58cd9f8999d23b088260927797708ce00bd5a11ce821"
+  end
+  patch do
+    url "https://github.com/im2nguyen/rover/commit/989802276f74c57406a6b23a8d7ccc470fcdc975.patch?full_index=1"
+    sha256 "3550755a11358385000f1a6af96a305c3f49690949d079d8e4fd59b8d17a06f5"
+  end
+
   def install
     Language::Node.setup_npm_environment
     cd "ui" do
       system "npm", "install", *Language::Node.local_npm_install_args
       system "npm", "run", "build"
     end
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
@@ -38,5 +50,7 @@ class TerraformRover < Formula
     EOS
     system bin/"terraform-rover", "-standalone", "-tfPath", Formula["terraform"].bin/"terraform"
     assert_predicate testpath/"rover.zip", :exist?
+
+    assert_match version.to_s, shell_output("#{bin}/terraform-rover --version")
   end
 end
