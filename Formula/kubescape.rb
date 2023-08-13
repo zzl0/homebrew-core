@@ -6,6 +6,11 @@ class Kubescape < Formula
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "15927b380685ba677463649c13236d4827f1409a4e872a819eaf386b18de5f7a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "20e6cbebd0b5368656c489df6669ac497b924d9c07105bf2f35685b59cafca04"
