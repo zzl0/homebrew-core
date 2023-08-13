@@ -2,10 +2,9 @@ class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
   url "https://github.com/signalwire/freeswitch.git",
-      tag:      "v1.10.9",
-      revision: "a615e85afcdc5f3ca438e86fefc7ca21ee6b3a06"
+      tag:      "v1.10.10",
+      revision: "4cb05e7f4a23645ec387f3b5391194128be7d193"
   license "MPL-1.1"
-  revision 2
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
@@ -29,7 +28,7 @@ class Freeswitch < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "yasm" => :build
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg@5"
   depends_on "jpeg-turbo"
   depends_on "ldns"
   depends_on "libpq"
@@ -115,14 +114,14 @@ class Freeswitch < Formula
 
   resource "libks" do
     url "https://github.com/signalwire/libks.git",
-        tag:      "v1.8.2",
-        revision: "85a575bb892254dd105a6490b9864956b90430ce"
+        tag:      "v2.0.2",
+        revision: "423c68c92d1871e2c9cb83d974eac7830ddcdcf5"
   end
 
   resource "signalwire-c" do
     url "https://github.com/signalwire/signalwire-c.git",
-        tag:      "1.3.0",
-        revision: "e2f3abf59c800c6d39234e9f0a85fb15d1486d8d"
+        tag:      "v2.0.0",
+        revision: "c432105788424d1ddb7c59aacd49e9bfa3c5e917"
   end
 
   def install
@@ -146,8 +145,8 @@ class Freeswitch < Formula
       ENV.append_path "PKG_CONFIG_PATH", libexec/"libks/lib/pkgconfig"
       ENV.append "CFLAGS", "-I#{libexec}/libks/include"
 
-      # Add RPATH to libks.pc so libks.so can be found by freeswitch modules.
-      inreplace libexec/"libks/lib/pkgconfig/libks.pc",
+      # Add RPATH to libks2.pc so libks2.so can be found by freeswitch modules.
+      inreplace libexec/"libks/lib/pkgconfig/libks2.pc",
                 "-L${libdir}",
                 "-Wl,-rpath,${libdir} -L${libdir}"
     end
@@ -159,9 +158,9 @@ class Freeswitch < Formula
 
       ENV.append_path "PKG_CONFIG_PATH", libexec/"signalwire-c/lib/pkgconfig"
 
-      # Add RPATH to signalwire_client.pc so libsignalwire_client.so
+      # Add RPATH to signalwire_client2.pc so libsignalwire_client2.so
       # can be found by freeswitch modules.
-      inreplace libexec/"signalwire-c/lib/pkgconfig/signalwire_client.pc",
+      inreplace libexec/"signalwire-c/lib/pkgconfig/signalwire_client2.pc",
                 "-L${libdir}",
                 "-Wl,-rpath,${libdir} -L${libdir}"
     end
@@ -177,7 +176,8 @@ class Freeswitch < Formula
     args << "--disable-libvpx" if Hardware::CPU.arm?
 
     ENV.append_to_cflags "-D_ANSI_SOURCE" if OS.linux?
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     system "./configure", *std_configure_args, *args
     system "make", "all"
     system "make", "install"
