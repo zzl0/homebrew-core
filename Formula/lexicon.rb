@@ -3,8 +3,8 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/AnalogJ/lexicon"
-  url "https://files.pythonhosted.org/packages/09/79/fbc54f9399a5861d625ba5db9ea26f182b904b07b63569dcfda95be62fa8/dns_lexicon-3.13.0.tar.gz"
-  sha256 "38e1db9f325e6dc92e8e5c80da24f1e15ab59598a67911e7aad987c2ff3456f6"
+  url "https://files.pythonhosted.org/packages/68/d0/0b67536c916324c37d4d53ecdc82dae8c683c2be7d4cac95820d812df127/dns_lexicon-3.14.0.tar.gz"
+  sha256 "506dc3a4e0f8a33bee2f71d3f24228f0c0e5dc167353d3ed7116e4d9206edc3e"
   license "MIT"
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
@@ -41,13 +41,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/44/0c/b3146986fc4ea93b5d4fa3097417a1ae3a215ac54745fc28ffe390d2accc/boto3-1.28.21.tar.gz"
-    sha256 "0ad6932b2469f4fa4e63f4baf8508ccc1b1bc215b9c835df73505aa85210fc27"
+    url "https://files.pythonhosted.org/packages/f7/d9/eafe5695c2db98f686b962a6985a8f41843da1dd2f5710311804eb885aea/boto3-1.28.25.tar.gz"
+    sha256 "20feedb753e87d6dd55665e2e9dda08b031518291350c9c57b552c86a537fd4e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5a/ef/af6816f51dd07c8013686806a33ed80e878b714fb87a015d8315ba4c28c7/botocore-1.31.21.tar.gz"
-    sha256 "9a13736b16aea3f16829b00edfb2c656fee72ecbfe5eb396cc2f8632e31fd524"
+    url "https://files.pythonhosted.org/packages/bf/9c/4b5d7f9197510a898215becf62fd9862be3fb0a2a63af5b656d24daf9de0/botocore-1.31.25.tar.gz"
+    sha256 "b8a40b0ca1e3c8290a4c0d473c8e1575d2e8b2ddc3c61dd8814c3976357cac84"
   end
 
   resource "charset-normalizer" do
@@ -66,8 +66,8 @@ class Lexicon < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/78/ad/db7b362200e11378d1d286a4452c7050dab47b0e6d99afa51364ad95a9f9/dnspython-2.4.1.tar.gz"
-    sha256 "c33971c79af5be968bb897e95c2448e11a645ee84d93b265ce0b7aabe5dfdca8"
+    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "filelock" do
