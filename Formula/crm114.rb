@@ -1,6 +1,6 @@
 class Crm114 < Formula
   desc "Examine, sort, filter or alter logs or data streams"
-  homepage "https://crm114.sourceforge.io/"
+  homepage "https://crm114.sourceforge.net/"
   url "https://crm114.sourceforge.io/tarballs/crm114-20100106-BlameMichelson.src.tar.gz"
   sha256 "fb626472eca43ac2bc03526d49151c5f76b46b92327ab9ee9c9455210b938c2b"
   license "GPL-3.0-only"
