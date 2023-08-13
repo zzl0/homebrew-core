@@ -17,6 +17,12 @@ class Brook < Formula
 
   depends_on "go" => :build
 
+  # quic-go patch for go1.21.0 build
+  patch do
+    url "https://github.com/txthinking/brook/commit/3b8488e9138393b63da3a1f090e0f0fb109f12d1.patch?full_index=1"
+    sha256 "8974cc16188269daabd84950aac061cf3af827bb1d9a713c66647511011829a7"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/brook"
   end
