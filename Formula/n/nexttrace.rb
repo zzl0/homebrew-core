@@ -2,7 +2,7 @@ class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https://github.com/sjlleo/nexttrace-core"
   url "https://github.com/sjlleo/nexttrace-core/archive/refs/tags/v1.1.7-1.tar.gz"
-  sha256 "1c937a9f7c2f1d4a3e71e63db2929a5b24d438c63efd9715b00277f1b3add4cb"
+  sha256 "506db2d92404b8923dd3caaaeab2f3ba2b828e018d3a9721419802a17e828057"
   license "GPL-3.0-only"
   head "https://github.com/sjlleo/nexttrace-core.git", branch: "main"
 
