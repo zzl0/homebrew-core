@@ -3,8 +3,8 @@ require "language/node"
 class SqlLanguageServer < Formula
   desc "Language Server for SQL"
   homepage "https://github.com/joe-re/sql-language-server"
-  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.6.0.tgz"
-  sha256 "7b8f5e0fdb33eca26e23f6746d83bda049aeb30f61e14e0f43008a7b50f19dff"
+  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.7.0.tgz"
+  sha256 "c66e8d94863c52c34cab0865be3bac61f152e8029ba32d95778d984c8e0a49b1"
   license "MIT"
 
   bottle do
