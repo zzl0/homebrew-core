@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.35.0",
-      revision: "5abdc505a8fe8e663e50beb10b92edb9d990ffa5"
+      tag:      "v1.36.0",
+      revision: "52543b77abc9cb2ca5122aa2e71593318a368e19"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -126,8 +126,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https://files.pythonhosted.org/packages/a9/50/1dd5ea74c559df4afb8391f8d05f0fec685dbe8effba13bb9072901eb288/peewee-3.16.2.tar.gz"
-    sha256 "10769981198c7311f84a0ca8db892fa213303a8eb1305deb795a71e7bd606a91"
+    url "https://files.pythonhosted.org/packages/e2/1e/6455dc3c759af3e565414985c5c6f845d3e5f83bbf4a24cdd0aef9cc3f83/peewee-3.16.3.tar.gz"
+    sha256 "12b30e931193bc37b11f7c2ac646e3f67125a8b1a543ad6ab37ad124c8df7d16"
   end
 
   resource "python-lsp-jsonrpc" do
