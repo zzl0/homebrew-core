@@ -1,10 +1,9 @@
 class Jxrlib < Formula
   desc "Tools for JPEG-XR image encoding/decoding"
   homepage "https://tracker.debian.org/pkg/jxrlib"
-  url "https://deb.debian.org/debian/pool/main/j/jxrlib/jxrlib_1.1.orig.tar.gz"
-  sha256 "c7287b86780befa0914f2eeb8be2ac83e672ebd4bd16dc5574a36a59d9708303"
+  url "http://deb.debian.org/debian/pool/main/j/jxrlib/jxrlib_1.2~git20170615.f752187.orig.tar.xz"
+  sha256 "3e3c9d3752b0bbf018ed9ce01b43dcd4be866521dc2370dc9221520b5bd440d4"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "6dd0a252b9af046d657a6fe9e9e65092d4c756295202b74ac9ae41d896850014"
@@ -27,9 +26,10 @@ class Jxrlib < Formula
   end
 
   def install
-    inreplace "CMakeLists.txt", "@VERSION@", version
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    inreplace "CMakeLists.txt", "@VERSION@", version.to_s
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
