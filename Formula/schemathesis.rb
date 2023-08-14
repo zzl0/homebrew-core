@@ -3,10 +3,9 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/d6/0b/f71302789035165c317944c150fd0f4f805d6b177b38f7d16156d74501f9/schemathesis-3.19.5.tar.gz"
-  sha256 "0570a2d6f0672e360acd5334e428eb20bb5f77565e60d02280fab558afef43cc"
+  url "https://files.pythonhosted.org/packages/89/6f/fcacedbf74d97dd0a0714d72647cdf27775660117eb4ac7458a9abf92daf/schemathesis-3.19.6.tar.gz"
+  sha256 "6c24017a8696ef8811f5a2f713b1bc5f4a3679cbac785be92053f252c8cf04cc"
   license "MIT"
-  revision 1
 
   bottle do
     rebuild 1
@@ -82,8 +81,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/06/49/6ec0235c7d486b3694387551320475f0ebe3f9f9a8c3881545c9ebde768b/hypothesis-6.82.0.tar.gz"
-    sha256 "ffece8e40a34329e7112f7408f2c45fe587761978fdbc6f4f91bf0d683a7d4d9"
+    url "https://files.pythonhosted.org/packages/00/a9/f0d28e1c4e41458468a0c8332aa98c84c1306f07d554500c5db60ea3b4c8/hypothesis-6.82.4.tar.gz"
+    sha256 "11f32a66cf361a72f2a36527a15639ea6814d1dbf54782c3a8ea31585d62ab27"
   end
 
   resource "hypothesis-graphql" do
@@ -107,8 +106,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
+    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
   end
 
   resource "jsonschema-specifications" do
@@ -157,8 +156,8 @@ class Schemathesis < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "requests" do
@@ -207,8 +206,8 @@ class Schemathesis < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz"
-    sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
+    url "https://files.pythonhosted.org/packages/ef/56/0acc9f560053478a4987fa35c95d904f04b6915f6b5c4d1c14dc8862ba0a/werkzeug-2.3.7.tar.gz"
+    sha256 "2b8c0e447b4b9dbcc85dd97b6eeb4dcbaf6c8b6c3be0bd654e25553e0a2157d8"
   end
 
   resource "yarl" do
