@@ -3,8 +3,8 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/90/59/a2f01e9488669fbccf2aecf5931c6f97bffe3452c27b495062373c22ae4d/sqlfluff-2.2.1.tar.gz"
-  sha256 "93b4c49a6640e15fa5fddbc022d0544675b9d4ac382d68da029d07c713cb6e7e"
+  url "https://files.pythonhosted.org/packages/d5/5d/10c1a8ee562e3df426a91e955324a8f1e2bf4651b556ada5528e04d2a982/sqlfluff-2.3.0.tar.gz"
+  sha256 "bd9d3667db9eaf349665ba1d1cba90b3cbadc106a96f1740d0a1dbb776b4e380"
   license "MIT"
 
   bottle do
@@ -93,8 +93,8 @@ class Sqlfluff < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/f1/fb/6f40278d3b74f1486147aebf828ad081226f4f80b5b31a042386acc76dde/tqdm-4.66.0.tar.gz"
-    sha256 "cc6e7e52202d894e66632c5c8a9330bd0e3ff35d2965c93ca832114a3d865362"
+    url "https://files.pythonhosted.org/packages/62/06/d5604a70d160f6a6ca5fd2ba25597c24abd5c5ca5f437263d177ac242308/tqdm-4.66.1.tar.gz"
+    sha256 "d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
   end
 
   def install
