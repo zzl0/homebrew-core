@@ -8,6 +8,16 @@ class Dnsrobocert < Formula
   license "MIT"
   head "https://github.com/adferrand/dnsrobocert.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "fd3444ec747ba671a8fdd25928d40aed369c7ffbe354802ecb0632cdc4f391ca"
+    sha256 cellar: :any,                 arm64_monterey: "340d66d05df057a2336a255e8c2934498c35a49e21569524be5e3b0680ded8b1"
+    sha256 cellar: :any,                 arm64_big_sur:  "6d47fefb5dd1f87cdaab45b9da68f424795e97390207b7010e002ab9c9cf1c37"
+    sha256 cellar: :any,                 ventura:        "afef1a1ae397a8d60f86e361073f26ae2b45245467c5dce320f680c9665d7267"
+    sha256 cellar: :any,                 monterey:       "11c8291c48ab00352a0fc080468912a5f18d9f76b9a683353fc191a772f26c08"
+    sha256 cellar: :any,                 big_sur:        "c0e359b81d8e497b874e1a0c3538d2b8a12d1f22471899355083361dd88751dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fca5d3976a41352991dc60aeafc1c521cffce737ad0003c3660302bdebfeb83"
+  end
+
   depends_on "rust" => :build
   depends_on "certbot"
   depends_on "cffi"
