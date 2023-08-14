@@ -1,8 +1,8 @@
 class Quantumxx < Formula
   desc "Modern C++ quantum computing library"
   homepage "https://github.com/softwareQinc/qpp"
-  url "https://github.com/softwareQinc/qpp/archive/v4.3.3.tar.gz"
-  sha256 "8a43ea7f1a3d1679016ad04cbbfb079284efdc6048784d126f7b04481d573958"
+  url "https://github.com/softwareQinc/qpp/archive/v4.3.4.tar.gz"
+  sha256 "efa6b440c1dae2bcdd230c1e1fd400de0d994809e4227f12c2d780b1254169d1"
   license "MIT"
 
   bottle do
