@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.1.77",
-      revision: "c9880372b6bc9b3b4d3a0d0e1392c36f9b995dd9"
+      tag:      "v0.1.78",
+      revision: "99362bd29223783a99914becf9c9493787a8bebc"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -22,7 +22,8 @@ class Flyctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e22b1de36c1de0fa81f96251b7402f31e0379dba8a6ab21a8c56516c1d0f05c"
   end
 
-  depends_on "go" => :build
+  # go 1.21.0 support bug report, https://github.com/superfly/flyctl/issues/2688
+  depends_on "go@1.20" => :build
 
   def install
     ENV["CGO_ENABLED"] = "0"
