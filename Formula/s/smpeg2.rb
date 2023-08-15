@@ -1,12 +1,19 @@
 class Smpeg2 < Formula
   desc "SDL MPEG Player Library"
   homepage "https://icculus.org/smpeg/"
-  url "svn://svn.icculus.org/smpeg/tags/release_2_0_0/", revision: "408"
-  head "svn://svn.icculus.org/smpeg/trunk"
+  # license change was done in 2021 Aug, which is 8 years after 2.0.0 release
+  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
+  url "https://github.com/icculus/smpeg/archive/refs/tags/release_2_0_0.tar.gz"
+  sha256 "fdd431bd607efcf0f35789fb3105d7535d4f0e8b46e673e9c0051726e8d1e701"
+  license "LGPL-2.0-or-later"
+  head "https://github.com/icculus/smpeg.git", branch: "main"
 
   livecheck do
-    url "https://svn.icculus.org/smpeg/tags/"
-    regex(%r{href=.*?release[._-]v?(2(?:[._]\d+)+)/}i)
+    url :stable
+    regex(/^release[._-]v?(2(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
 
   bottle do
