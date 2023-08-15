@@ -1,9 +1,12 @@
 class Uniutils < Formula
   desc "Manipulate and analyze Unicode text"
   homepage "https://billposer.org/Software/unidesc.html"
-  url "https://billposer.org/Software/Downloads/uniutils-2.27.tar.gz"
-  sha256 "c662a9215a3a67aae60510f679135d479dbddaf90f5c85a3c5bab1c89da61596"
-  license "GPL-3.0"
+  url "https://billposer.org/Software/Downloads/uniutils-2.28.tar.gz"
+  sha256 "41c14c0223376f2d96c80c2ba1b1494fc74cd8982d561630e688e2245aaf3364"
+  license all_of: [
+    "GPL-2.0-or-later",
+    "GPL-3.0-only",
+  ]
 
   livecheck do
     url :homepage
@@ -25,17 +28,35 @@ class Uniutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cf517fda500768eb4c44d1595e4f49bd4b9bb20c94981a11db42ac8aded62d7"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+
+  on_macos do
+    depends_on "gettext" # for libintl
+  end
+
   # Allow build with clang. This patch was reported to debian here:
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=740968
   # And emailed to the upstream source at billposer@alum.mit.edu
   patch :DATA
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    # fix `./install-sh: Permission denied` issue
+    system "autoreconf", "--force", "--install", "--verbose"
+
+    # workaround for Xcode 14.3
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    # fix `_libintl_bindtextdomain` and `_libintl_textdomain` symbols not found
+    gettext = Formula["gettext"]
+    ENV.append "CFLAGS", "-I#{gettext.include}"
+    ENV.append "LDFLAGS", "-L#{gettext.lib}"
+    ENV.append "LDFLAGS", "-lintl" if OS.mac?
+
+    system "./configure", "--disable-silent-rules",
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install"
   end
 
