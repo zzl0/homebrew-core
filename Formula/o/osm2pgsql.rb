@@ -1,10 +1,9 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
   homepage "https://osm2pgsql.org"
-  url "https://github.com/openstreetmap/osm2pgsql/archive/1.8.1.tar.gz"
-  sha256 "9e3cd9e13893fd7a153c7b42089bd23338867190c91b157cbdb4ff7176ecba62"
+  url "https://github.com/openstreetmap/osm2pgsql/archive/1.9.0.tar.gz"
+  sha256 "f568618809930d550fc21a1951180b58b72c091235e4b0bc93477e4c27d54e88"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
 
   bottle do
@@ -19,6 +18,7 @@ class Osm2pgsql < Formula
 
   depends_on "cmake" => :build
   depends_on "lua" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "boost"
   depends_on "geos"
   depends_on "libpq"
@@ -34,10 +34,14 @@ class Osm2pgsql < Formula
     inreplace "cmake/FindLua.cmake", /set\(LUA_VERSIONS5( \d\.\d)+\)/,
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
-    mkdir "build" do
-      system "cmake", "-DWITH_LUAJIT=ON", "-DUSE_PROJ_LIB=6", "..", *std_cmake_args
-      system "make", "install"
-    end
+    args = %w[
+      -DWITH_LUAJIT=ON
+      -DUSE_PROJ_LIB=6
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
