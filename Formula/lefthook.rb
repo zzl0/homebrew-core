@@ -7,13 +7,13 @@ class Lefthook < Formula
   head "https://github.com/evilmartians/lefthook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68d4976bbe876c6f64b173d7c6b687b082fe258f904093e57804fccabb6bd6f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68d4976bbe876c6f64b173d7c6b687b082fe258f904093e57804fccabb6bd6f0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68d4976bbe876c6f64b173d7c6b687b082fe258f904093e57804fccabb6bd6f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "7fc715f9291fcd08aea37e03d9deb568c8ad1ab560188459a7b02663389a488c"
-    sha256 cellar: :any_skip_relocation, monterey:       "7fc715f9291fcd08aea37e03d9deb568c8ad1ab560188459a7b02663389a488c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7fc715f9291fcd08aea37e03d9deb568c8ad1ab560188459a7b02663389a488c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2156ec2ef2aa5a1703779b38ffafbf684bd7310e5829d9ddfb790ced975786ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b388397e3776db9abbd06a0d2aca86b180d7c5e2bdf9ca85ff02a078214b58d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f19f7b44a3e1e9bbec41a50a58127d3e95537552d752dbc975bd0063e93a3a41"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1693ae2f6258162f7500f7969dfd83143e981da6eb6d0e73ad332dcf8a0b88eb"
+    sha256 cellar: :any_skip_relocation, ventura:        "1435e7d563dd6c0d2c7123e91b3316d239a7c042fb71e71d2b2801643f93f1a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e5d528e20d1e789d7090bab1a30fbaa70bd0c88266dae73e9601aebf8988c19"
+    sha256 cellar: :any_skip_relocation, big_sur:        "23307118ac5ca48b56a9fbea10b788ec24234dbb182934f83fd41e90d91d786b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3884badc77a3a98a47263f8ee2afcdef3f126493a4c5a46ff9096f296d38b20"
   end
 
   depends_on "go" => :build
