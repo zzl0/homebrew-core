@@ -1,12 +1,19 @@
 class Smpeg < Formula
   desc "SDL MPEG Player Library"
   homepage "https://icculus.org/smpeg/"
-  url "svn://svn.icculus.org/smpeg/tags/release_0_4_5/", revision: "399"
+  url "https://github.com/icculus/smpeg/archive/refs/tags/release_0_4_5.tar.gz"
+  sha256 "e2e53bfd2e6401e2c29e5eb3929be0e8698bc9e4c9d731751f67e77b408f1f74"
+  # license change was done in 2021 Aug, which is 8 years after 0.4.5 release
+  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
+  license "LGPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://svn.icculus.org/smpeg/tags/"
-    regex(%r{href=.*?release[._-]v?([01](?:[._]\d+)+)/}i)
+    url :stable
+    regex(/^release[._-]v?([01](?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
 
   bottle do

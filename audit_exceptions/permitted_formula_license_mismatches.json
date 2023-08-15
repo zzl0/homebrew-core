@@ -1,4 +1,5 @@
 [
   "opencv@3",
+  "smpeg",
   "synergy-core"
 ]
