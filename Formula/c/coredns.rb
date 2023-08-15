@@ -1,19 +1,10 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
   homepage "https://coredns.io/"
+  url "https://github.com/coredns/coredns/archive/v1.11.1.tar.gz"
+  sha256 "4e1cde1759d1705baa9375127eb405cd2f5031f9152947bb958a51fee5898d8c"
   license "Apache-2.0"
   head "https://github.com/coredns/coredns.git", branch: "master"
-
-  stable do
-    url "https://github.com/coredns/coredns/archive/v1.11.0.tar.gz"
-    sha256 "967c12d2b170b7eb46314edf01013d1547932f62e963a68b5e57cc4c10f966b6"
-
-    # quic-go patch for go 1.21.0
-    patch do
-      url "https://github.com/coredns/coredns/commit/93139841965d8a4e6791dbe2e4d154991fc6a59b.patch?full_index=1"
-      sha256 "74f86412ec909879cb690958bc1efe387df045c9f7e6143dc258c1db0673fd88"
-    end
-  end
 
   livecheck do
     url :stable
