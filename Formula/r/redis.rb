@@ -12,13 +12,13 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9ff5688661993866a7a07172908466da206436dc14aea1031522438ac01feacb"
-    sha256 cellar: :any,                 arm64_monterey: "6f241d7717d26da9cd931991d94af40c12bb56cbd5e4f819a92079f2f1b0cca7"
-    sha256 cellar: :any,                 arm64_big_sur:  "850b84d77dc26cffa3b81fda408f911a148aa8e814e926ca4342fa89583ae137"
-    sha256 cellar: :any,                 ventura:        "6aae34879ec42527a23db42e739d65dd6b5aaa7eb6b32799899357d3cfdd02b6"
-    sha256 cellar: :any,                 monterey:       "d27f1e41bb6383a03f6c60657a63a70f0ee265e58f8f6efcb2df6f96ec582d86"
-    sha256 cellar: :any,                 big_sur:        "8e4103613def796b0ef1fc3c0b2b091f0d00baffa30f84112c4dae9272970c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "629240f5d87cab1d9f60ab0a8641eaf5da7720e4ef984bb7dfaf829b44c89d47"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0a32e5294d7642be65b7689407e396f3d94551db91dc8eefa938e064b515633"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf51bb6fdc6d9216342f0c4535f9bd8d93b209636bebe2f084e21c18f7f502a6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3eebc0b5ec9d6258e71572302f6ab7709f8b23eb5478308cbbb27e8a0aa36e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "44213e6b3a631c81dc353765b9e6b5b2d29337375233d3238e35244ab15b387e"
+    sha256 cellar: :any_skip_relocation, monterey:       "b14bd0a0594e9999e0f365d96ea20e8ed972a9161b4e6d67c9c2a28a994905e3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84f4ce12fb9d27b70c71d7eef7b32143fdfd1cdb275ec431f952ca57eb8109a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c14da3d835526b61ffec4ae8a0ec7460a1247e4b0f8e3a5009f0449c282812e"
   end
 
   depends_on "openssl@3"
