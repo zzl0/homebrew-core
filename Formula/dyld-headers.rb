@@ -6,7 +6,7 @@ class DyldHeaders < Formula
   license "APSL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f833f5fe92cca8a389b735cb6510db079819a7d68659665af1fc79f29569114b"
+    sha256 cellar: :any_skip_relocation, all: "bff7b89e1c914658557b63f7ec38df39414c8b2239e3e6d9f5ecf73c4e41f286"
   end
 
   keg_only :provided_by_macos
