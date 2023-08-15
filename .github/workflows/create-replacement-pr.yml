@@ -154,7 +154,7 @@ jobs:
             --committer="$BREWTESTBOT_NAME_EMAIL" \
             --root-url="https://ghcr.io/v2/homebrew/core" \
             ${{ inputs.autosquash && '--autosquash' || '--clean --no-cherry-pick' }} \
-            ${{ inputs.upload && '' || '--no-upload' }} \
+            ${{ !inputs.upload && '--no-upload' || '' }} \
             ${{ inputs.warn_on_upload_failure && '--warn-on-upload-failure' || '' }} \
             ${{ inputs.message && '--message="$MESSAGE"' || '' }} \
             "$PR"
