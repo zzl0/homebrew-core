@@ -7,14 +7,13 @@ class LicenseEye < Formula
   head "https://github.com/apache/skywalking-eyes.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcb1c4e71c6ba8f95cd8e5a3575203a23aa902c75ad54d09e609cd92223ee471"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b529d2b2a6acd07e456679165c835f6746831461c01091b734cdf078739fcc0d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "817bb92ef9bedf40930575884c6a3cb56f60b58e30883dff98e5567e9020a3a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "15be89303dc6e43bcefb640562fa2ad3c4b2e621e3ad9766ed52471f7b921016"
-    sha256 cellar: :any_skip_relocation, monterey:       "987285c263d671d34283c78f7bbc8a59f07cad99d042afa38dc63921c02f0b08"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a1e8fc941f02819d1290f6dad173561c0640d579173f52b77001e1f4a18f4f40"
-    sha256 cellar: :any_skip_relocation, catalina:       "be68a423bcecb7cb02498285af32a9a4d1381fcd62978d0f2aa22d5aa8bdec4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad8dddc59e2730c36de89b1a9600143ea56e4fd336c29b2cd0b0d64f08b31391"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f339ed1b317b4808321cfe52277b1d9bfd7d3d03e17778df9fc6346f0a0852e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e08bb9ec8ee2552e03a1d337834c82e91784a05eeaf3e120eb96257a8a826db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00f90e9799e968c3feef373bc9b058c92cadeba1d112383044de8b3157f06db1"
+    sha256 cellar: :any_skip_relocation, ventura:        "79f1888e1863ed28d1e49f65e1235a163081232a0c8f3530103c0c7a2986a3c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "445e3e0be3cef0314058978131b05951d16778ec3204ac7beafe413f17679e10"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bba970717efacdc752616f343cc47df5548618e23bae55746aeef05fc0f1bcb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b0e51348d0fe83a655c7976b60fbf689584930b4c40b736d49caa005fc1f14"
   end
 
   depends_on "go" => :build
