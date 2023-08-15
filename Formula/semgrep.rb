@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.35.0",
-      revision: "5abdc505a8fe8e663e50beb10b92edb9d990ffa5"
+      tag:      "v1.36.0",
+      revision: "52543b77abc9cb2ca5122aa2e71593318a368e19"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9a0d23bffd408361a3022c7ab48b4ecb6a9ffb7835fb482d66efb9ad8418d60c"
-    sha256 cellar: :any, arm64_monterey: "b5c4d0f15ababc66914f1ae0695df2e605f30c35f8867a2d1f4bd35f2921eb1a"
-    sha256 cellar: :any, arm64_big_sur:  "0eac0a3f2a501e28404194abdccca3141331f526d36121c7a5e0881f96c7d62b"
-    sha256 cellar: :any, ventura:        "4822a35e5c06f38f46f15154dc150b6afef8dd6cd54358cfc2dc84521d4b76e3"
-    sha256 cellar: :any, monterey:       "f2bdda9b394abcfc446a1383de6b219960cb6e4fc396fd149f3a71a443b56f3b"
-    sha256 cellar: :any, big_sur:        "d4819233d4a9e109a3ddd7effdf163b512c9db509dd6bc0da336e84261d17895"
-    sha256               x86_64_linux:   "feaa4fff5bb3978b07fe75af0e995e562e56e5920e6e604c300ef0b96023fe8f"
+    sha256 cellar: :any, arm64_ventura:  "9ee40ae9261a01064d89b48471e474aa8c9ec09f36e3b2730dbdb8eceecd7eb7"
+    sha256 cellar: :any, arm64_monterey: "04cee372b1fb8a6db0f93de4ac0ae293142ee3b8082356c3b947b4818ee271d8"
+    sha256 cellar: :any, arm64_big_sur:  "ff2ee50c5dbddbf1d38d971e1bdac8a518701263b130307077a0e32c901b0494"
+    sha256 cellar: :any, ventura:        "2a31dc17a3cabd84386f215dca5c890fee2588ba30b2e572840e50193124266c"
+    sha256 cellar: :any, monterey:       "4537080236d0b98200e02cce15389348562899e3492f1d45434ec5dc90566197"
+    sha256 cellar: :any, big_sur:        "c3ec216bc5d090bc35537f944b63fe460ef0bfabf83f39646e6f9cd80329c668"
+    sha256               x86_64_linux:   "fceed14b6b5590911c89a47270a2d707cc225fdc1904c7baa19c72c479a42b74"
   end
 
   depends_on "autoconf" => :build
@@ -126,8 +126,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https://files.pythonhosted.org/packages/a9/50/1dd5ea74c559df4afb8391f8d05f0fec685dbe8effba13bb9072901eb288/peewee-3.16.2.tar.gz"
-    sha256 "10769981198c7311f84a0ca8db892fa213303a8eb1305deb795a71e7bd606a91"
+    url "https://files.pythonhosted.org/packages/e2/1e/6455dc3c759af3e565414985c5c6f845d3e5f83bbf4a24cdd0aef9cc3f83/peewee-3.16.3.tar.gz"
+    sha256 "12b30e931193bc37b11f7c2ac646e3f67125a8b1a543ad6ab37ad124c8df7d16"
   end
 
   resource "python-lsp-jsonrpc" do
