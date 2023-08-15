@@ -2,9 +2,9 @@ class Hof < Formula
   desc "Flexible data modeling & code generation system"
   homepage "https://hofstadter.io/"
   url "https://github.com/hofstadter-io/hof.git",
-      tag:      "v0.6.7",
-      revision: "5f6770b9628cd46a4caa24594e052dd715ac2dca"
-  license "BSD-3-Clause"
+      tag:      "v0.6.8",
+      revision: "112659fe982a3efbe0acdb151c659e0b8b2e081f"
+  license "Apache-2.0"
   head "https://github.com/hofstadter-io/hof.git", branch: "_dev"
 
   # Latest release tag contains `-beta`, which is not ideal
@@ -15,14 +15,13 @@ class Hof < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "201fc39b5bfa2a144cf714cd8c974ab4d7c40bc73fe3c0ffb880f2d910759463"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "201fc39b5bfa2a144cf714cd8c974ab4d7c40bc73fe3c0ffb880f2d910759463"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "201fc39b5bfa2a144cf714cd8c974ab4d7c40bc73fe3c0ffb880f2d910759463"
-    sha256 cellar: :any_skip_relocation, ventura:        "682e97ef134c35fae44303613bf5153d778c043ce4bd82269f9d5c53a9348e2f"
-    sha256 cellar: :any_skip_relocation, monterey:       "17049cc5cb7f04eebe8de0ec4353c77df7cf04466b91ab84fe982f0b8b7cd7e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17049cc5cb7f04eebe8de0ec4353c77df7cf04466b91ab84fe982f0b8b7cd7e2"
-    sha256 cellar: :any_skip_relocation, catalina:       "17049cc5cb7f04eebe8de0ec4353c77df7cf04466b91ab84fe982f0b8b7cd7e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "222943c19066f222fefcd9530b28f0024e74bea67395ecb57107bf9d11451754"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2ec0beb3aeb76431ec6291dc649f6e306498979957bd1e26cc69aff4a43ec99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2ec0beb3aeb76431ec6291dc649f6e306498979957bd1e26cc69aff4a43ec99"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2ec0beb3aeb76431ec6291dc649f6e306498979957bd1e26cc69aff4a43ec99"
+    sha256 cellar: :any_skip_relocation, ventura:        "15a46e02722ff5b6da468434960d2b7f102502ff28a00a9e787d8029ab294731"
+    sha256 cellar: :any_skip_relocation, monterey:       "15a46e02722ff5b6da468434960d2b7f102502ff28a00a9e787d8029ab294731"
+    sha256 cellar: :any_skip_relocation, big_sur:        "15a46e02722ff5b6da468434960d2b7f102502ff28a00a9e787d8029ab294731"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3774eb841173eb8615417658f1c0c1588ad2ca86ce8ffa3766337890b1ec8214"
   end
 
   depends_on "go" => :build
@@ -50,10 +49,11 @@ class Hof < Formula
 
   test do
     ENV["HOF_TELEMETRY_DISABLED"] = "1"
-    assert_match "v#{version}", shell_output("#{bin}/hof version")
+    # upstream bug report, https://github.com/hofstadter-io/hof/issues/257
+    # assert_match "v#{version}", shell_output("#{bin}/hof version")
 
-    system bin/"hof", "mod", "init", "cue", "brew.sh/brewtest"
-    assert_predicate testpath/"cue.mods", :exist?
-    assert_equal "module: \"brew.sh/brewtest\"", (testpath/"cue.mod/module.cue").read.chomp
+    system bin/"hof", "mod", "init", "brew.sh/brewtest"
+    assert_predicate testpath/"cue.mod", :exist?
+    assert_match 'module: "brew.sh/brewtest"', (testpath/"cue.mod/module.cue").read
   end
 end
