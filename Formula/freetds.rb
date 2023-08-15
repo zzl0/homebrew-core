@@ -2,11 +2,10 @@ class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://www.freetds.org/files/stable/freetds-1.3.18.tar.bz2", using: :homebrew_curl
-    sha256 "1d8561d57c71991a28f4681343785c23a6a3eb54d5bcd23897d07e3825ff2d56"
+    url "https://www.freetds.org/files/stable/freetds-1.3.19.tar.bz2", using: :homebrew_curl
+    sha256 "35e69ae5ccd7045c8a5291e9fc2b23844a9fdfef6b4e0ee7f62a069579012b85"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,13 +20,13 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "401fbc78a90d1ac0f10cd33f3f2e9dd994cb24a8ee3935239c27af169b256c92"
-    sha256 arm64_monterey: "a476ecce2a3cdcdd655170d2384af73ff18c358a4afb8f9ce8a3b06c4006c8b8"
-    sha256 arm64_big_sur:  "d868ad79b732ec26cf234fa55bd5d1575d947b0975ae64e0114179a0fbb42f58"
-    sha256 ventura:        "1ae9e66836c282ef743a2ded9663c950660ede445d7b2884079c3f29d23aeae9"
-    sha256 monterey:       "a34e1b15d64308cf342814dab06b9134c8f020b848be14fe0cef949523c12edc"
-    sha256 big_sur:        "c28a7fa03042955bba685aa60f930f23929f322f87f32ec8453718e41113a139"
-    sha256 x86_64_linux:   "173faab88de808f8b3b517d2d6ac381cddcce95f85abf9bcce80da2bcdcd0188"
+    sha256 arm64_ventura:  "b695d5f390d024b8ff8cea4971aa07ae7a008c90ea4f155420a3808f08221f36"
+    sha256 arm64_monterey: "8ee494b9f729e5f005275e6a7a6d90b594fd4730456ff60d454ba4ffa98deb5c"
+    sha256 arm64_big_sur:  "3ad4bf87dae6562e91cd73638ff210bf3d6d431aa20e7a8163dd5abcf6668353"
+    sha256 ventura:        "77e436bd5a5b5d048ba54a128838aa74b10ba8bad3aefcbef57f2a1c05cccb44"
+    sha256 monterey:       "9bba20ed20b88ed0e2415a5d4816e2aef37e6e9669b363d65148e10018ade8bb"
+    sha256 big_sur:        "c19add5431c9e776f33f4b7d8ebc29ac6d4b559980fb70185b3e4275f2bb32e5"
+    sha256 x86_64_linux:   "33c5b54fcf00715384da5de2ebc063361cf1b2250b418e77813102d17bda03ff"
   end
 
   head do
