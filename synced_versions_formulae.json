@@ -5,6 +5,7 @@
     "arm-linux-gnueabihf-binutils",
     "arm-none-eabi-binutils",
     "i686-elf-binutils",
+    "riscv64-elf-binutils",
     "x86_64-elf-binutils",
     "x86_64-linux-gnu-binutils"
   ],
