@@ -8,13 +8,13 @@ class Mongosh < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_ventura:  "69ab42f888d1c73eb375251fa9f089f93db39d66a858d24301ec1c4426b7e278"
-    sha256                               arm64_monterey: "365c5e1a67e7a409e132b7bbd6608dfa3a089091ae488ec29c9d18f6070f6519"
-    sha256                               arm64_big_sur:  "f278895e8e55c97a54a3efed23c73d484d378fc400cf43a232c5b95f0d7d3092"
-    sha256                               ventura:        "8180607e1eb90a36c274b25de39dc1a1223ef3e759173d7b4dd8e13c16c31974"
-    sha256                               monterey:       "b814abd74c5c8fe41073f0f105d85fa9db48d3832da49dc57aad36bceb6f881f"
-    sha256                               big_sur:        "b567cd46146c86e74f523f437b152446733a655aa9757868f95c2b13125dd1fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3fed1bf9809f70d95a168dc0c3070ef6e72409421ffc315309b5d6f01b01355"
+    sha256                               arm64_ventura:  "44aebe4a05dc8d023672d0544c442ec630e61cf3a791e5d5ba7552f33a433099"
+    sha256                               arm64_monterey: "18626161ca4ca78ddebb906b5bd1a0038ac40adaf41497f8b7bd8cf553c1e10a"
+    sha256                               arm64_big_sur:  "5aa8625d2e97fa8075beaecab7ad0d82cb8fea0548d5df24a920fce14a0f5c60"
+    sha256                               ventura:        "b6ad6c99de6d54dccebe2d58c75da8acae5a4d4d7c477d6e71ed2e13abab4d86"
+    sha256                               monterey:       "a86cb35035ecd27d1797ea465b6eeacc4e853f61403c3f2f89e1040cf512662c"
+    sha256                               big_sur:        "6c18f6933d5712c4f25895b3487b2f383a5d16e1785ca4a9e2c0355ddfc3748b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ee303353559e82befade4d8f6cd05b0c492ac6b055de96e1446bf6d4d3f0135"
   end
 
   depends_on "node@16" # try `node` after https://jira.mongodb.org/browse/MONGOSH-1391
