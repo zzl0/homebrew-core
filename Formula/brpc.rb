@@ -4,20 +4,22 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.6.0/apache-brpc-1.6.0-src.tar.gz"
   sha256 "06ff4adebc720bf1529b03ade872cbd41c6ed69971e6e0d210d57d7b72856bd4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "39fe097809985948cc09a95d7eb1d4129dae953e8bbfe2110505a0646d969a1b"
-    sha256 cellar: :any,                 arm64_monterey: "22a3e4d69677e808b8818bbb13b3802837ee5205da638bf5457d3029cd067dae"
-    sha256 cellar: :any,                 arm64_big_sur:  "2eed67dd7aae9ed66a49bb0edb543e33e1ce42f6d6834edc0d92079773b6514b"
-    sha256 cellar: :any,                 ventura:        "e545840858bf28dbf18ed87ee02d52134de197879dda5f8626b59034378eac8e"
-    sha256 cellar: :any,                 monterey:       "ca32482113f63bb3780ed60179a97338773b87a8d7b81313a9d5b89c0b146047"
-    sha256 cellar: :any,                 big_sur:        "b0804f2363d8569c3b5592b279cc8bec108e2123718d1167d7fb53c5e15d4394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "586e212491d35c2f25f454ca07de3d61642303547d8f466c6f4da76d7a9a3536"
+    sha256 cellar: :any,                 arm64_ventura:  "416efe5f9ad82c73e8e014765b9a86013602d12614093a616a7fe65a9b6b4ab3"
+    sha256 cellar: :any,                 arm64_monterey: "7d548498fe23338a9b037bb7acb16737435ae5ad4f33de8f1044ab91dfb8d9dc"
+    sha256 cellar: :any,                 arm64_big_sur:  "67a025037aa2fabd36b5a4aec29c022a3ec7fff9a47e90152a0ba27e3619d786"
+    sha256 cellar: :any,                 ventura:        "1cc8d7c34068d97ee7d5aca3fb6d7174cc563c7b66b80a35b17b1fcbd358736b"
+    sha256 cellar: :any,                 monterey:       "e08fdd6ae58eb71138754e7e4ebdd594bac9b7a9572e0c7e071024340d539e68"
+    sha256 cellar: :any,                 big_sur:        "eaff28b5d66368f73e6d559e8e6af03c9ffafe1c6ce5b0fcaac5775a755df6fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79e57115da4a1f549c4f5d919754cf5693536fd199c30d1747f6b5059032477f"
   end
 
   depends_on "cmake" => :build
   depends_on "gflags"
+  depends_on "gperftools"
   depends_on "leveldb"
   depends_on "openssl@3"
   depends_on "protobuf@21"
@@ -25,6 +27,14 @@ class Brpc < Formula
   def install
     inreplace "CMakeLists.txt", "/usr/local/opt/openssl",
                                 Formula["openssl@3"].opt_prefix
+
+    # `leveldb` links with `tcmalloc`, so should `brpc` and its dependents.
+    # Fixes: src/tcmalloc.cc:300] Attempt to free invalid pointer 0x143e0d610
+    inreplace "CMakeLists.txt", "-DNO_TCMALLOC", ""
+    tcmalloc_ldflags = "-L#{Formula["gperftools"].opt_lib} -ltcmalloc"
+    ENV.append "LDFLAGS", tcmalloc_ldflags
+    inreplace "cmake/brpc.pc.in", /^Libs:(.*)$/, "Libs:\\1 #{tcmalloc_ldflags}"
+
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_UNIT_TESTS=OFF
@@ -65,13 +75,16 @@ class Brpc < Formula
       }
     EOS
     protobuf = Formula["protobuf@21"]
+    gperftools = Formula["gperftools"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}
       -L#{lib}
       -L#{protobuf.opt_lib}
+      -L#{gperftools.opt_lib}
       -lbrpc
       -lprotobuf
+      -ltcmalloc
     ]
     system ENV.cxx, "-std=c++11", testpath/"test.cpp", "-o", "test", *flags
     assert_equal "200", shell_output("./test")
