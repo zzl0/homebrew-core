@@ -1,10 +1,9 @@
 class NetSnmp < Formula
   desc "Implements SNMP v1, v2c, and v3, using IPv4 and IPv6"
   homepage "http://www.net-snmp.org/"
-  url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz"
-  sha256 "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
+  url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.4/net-snmp-5.9.4.tar.gz"
+  sha256 "8b4de01391e74e3c7014beb43961a2d6d6fa03acc34280b9585f4930745b0544"
   license "Net-SNMP"
-  revision 1
   head "https://github.com/net-snmp/net-snmp.git", branch: "master"
 
   livecheck do
