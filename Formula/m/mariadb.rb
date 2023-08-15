@@ -1,10 +1,9 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-11.0.2/source/mariadb-11.0.2.tar.gz"
-  sha256 "3c71576cad0ea416882270e383f94cc89693b7fbcce1fa4f306fe3e931e464ae"
+  url "https://archive.mariadb.org/mariadb-11.1.2/source/mariadb-11.1.2.tar.gz"
+  sha256 "19a9e980e57fa332931f643b48ad7390528c889ff6ea8b0e16fd306aa3088238"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
@@ -54,6 +53,17 @@ class Mariadb < Formula
   conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
+
+  # Fix libfmt usage.
+  # https://github.com/MariaDB/server/pull/2732
+  patch do
+    url "https://github.com/MariaDB/server/commit/f4cec369a392c8a6056207012992ad4a5639965a.patch?full_index=1"
+    sha256 "1851d5ae209c770e8fd1ba834b840be12d7b537b96c7efa3d4e7c9523f188912"
+  end
+  patch do
+    url "https://github.com/MariaDB/server/commit/cd5808eb8da13c5626d4bdeb452cef6ada29cb1d.patch?full_index=1"
+    sha256 "4d288f82f56c61278aefecba8a90d214810b754e234f40b338e8cc809e0369e9"
+  end
 
   def install
     ENV.cxx11
@@ -110,11 +120,14 @@ class Mariadb < Formula
     rm_rf prefix/"data"
 
     # Save space
-    (prefix/"mysql-test").rmtree
+    (prefix/"mariadb-test").rmtree
     (prefix/"sql-bench").rmtree
 
-    # Link the setup script into bin
-    bin.install_symlink prefix/"scripts/mysql_install_db"
+    # Link the setup scripts into bin
+    bin.install_symlink [
+      prefix/"scripts/mariadb-install-db",
+      prefix/"scripts/mysql_install_db",
+    ]
 
     # Fix up the control script and link into bin
     inreplace "#{prefix}/support-files/mysql.server", /^(PATH=".*)(")/, "\\1:#{HOMEBREW_PREFIX}/bin\\2"
