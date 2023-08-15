@@ -2,8 +2,8 @@ class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https://www.emqx.io/"
   # TODO: Check if we can use unversioned `erlang` at version bump
-  url "https://github.com/emqx/emqx/archive/refs/tags/v5.1.2.tar.gz"
-  sha256 "b9ecb6275386b410e9c330b4c5b3d30acf377627d41e73c00c6460b4d8fd5f0b"
+  url "https://github.com/emqx/emqx/archive/refs/tags/v5.1.4.tar.gz"
+  sha256 "e9c5a8f98a3b142211fcc83de6b6c7251677a71d27b207d08ca6cb07c77afc0d"
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
@@ -38,20 +38,38 @@ class Emqx < Formula
 
   def install
     ENV["PKG_VSN"] = version.to_s
+    ENV["BUILD_WITHOUT_QUIC"] = "1"
     touch(".prepare")
-    system "make", "emqx"
+    system "make", "emqx-rel"
     prefix.install Dir["_build/emqx/rel/emqx/*"]
     %w[emqx.cmd emqx_ctl.cmd no_dot_erlang.boot].each do |f|
       rm bin/f
     end
     chmod "+x", prefix/"releases/#{version}/no_dot_erlang.boot"
     bin.install_symlink prefix/"releases/#{version}/no_dot_erlang.boot"
+    return unless OS.mac?
+
+    # ensure load path for libcrypto is correct
+    crypto_vsn = Utils.safe_popen_read("erl", "-noshell", "-eval",
+                                       'io:format("~s", [crypto:version()]), halt().').strip
+    libcrypto = Formula["openssl@3"].opt_lib/shared_library("libcrypto", "3")
+    %w[crypto.so otp_test_engine.so].each do |f|
+      dynlib = lib/"crypto-#{crypto_vsn}/priv/lib"/f
+      old_libcrypto = dynlib.dynamically_linked_libraries(resolve_variable_references: false)
+                            .find { |d| d.end_with?(libcrypto.basename) }
+      next if old_libcrypto.nil?
+
+      dynlib.ensure_writable do
+        dynlib.change_install_name(old_libcrypto, libcrypto.to_s)
+        MachO.codesign!(dynlib) if Hardware::CPU.arm?
+      end
+    end
   end
 
   test do
     exec "ln", "-s", testpath, "data"
     exec bin/"emqx", "start"
-    system bin/"emqx_ctl", "status"
+    system bin/"emqx", "ctl", "status"
     system bin/"emqx", "stop"
   end
 end
