@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.36.0/deno_src.tar.gz"
-  sha256 "b8a0f4ab3a21a0fb488f2c7ed97192203bf4ccacb85141e6bcecc486616ca889"
+  url "https://github.com/denoland/deno/releases/download/v1.36.1/deno_src.tar.gz"
+  sha256 "d3262bb024eb4aacf2090cdca66059a90a3176c07ebe1fcc0abcd4d83f2b047c"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -16,12 +16,19 @@ class Deno < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1f773f373890a387fb710b8a51f62d4915a71c13de29083b2e0fbb6324057da"
   end
 
+  depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "ninja" => :build
   depends_on "python@3.11" => :build
   depends_on "rust" => :build
+  # TODO: after https://github.com/Homebrew/homebrew-core/pull/139382 is merged,
+  # add "depends_on `sqlite` # needs `sqlite3_unlock_notify`" to try linking
+  # with brewed `sqlite`.
+  # Make sure to uncomment the related lines in `install` and `test` blocks too.
 
+  uses_from_macos "libffi"
   uses_from_macos "xz"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on xcode: ["10.0", :build] # required by v8 7.9+
@@ -44,8 +51,8 @@ class Deno < Formula
 
   # Use the latest tag in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/refs/tags/11.6.189.15-denoland-d0a43945465192a91d49.tar.gz"
-    sha256 "132908752efc44693d04f832749a9c21b43c0c3931a14268cb491353952bb3ef"
+    url "https://github.com/denoland/v8/archive/refs/tags/11.7.439.2-denoland-9fcf117b2e045094627c.tar.gz"
+    sha256 "20661cff2d5f5fe7393d992225f7098bede350bc9415068a811ef08e95205b1b"
   end
 
   # To find the version of gn used:
@@ -72,6 +79,17 @@ class Deno < Formula
     inreplace "Cargo.toml",
               /^v8 = { version = ("[\d.]+"),.*}$/,
               "v8 = { version = \\1, path = \"./v8\" }"
+
+    # Avoid vendored dependencies.
+    inreplace "ext/ffi/Cargo.toml",
+              /^libffi-sys = "(.+)"$/,
+              'libffi-sys = { version = "\\1", features = ["system"] }'
+    inreplace "ext/node/Cargo.toml",
+              /^libz-sys = { version = "(.+)", features = \["static"\] }$/,
+              'libz-sys = "\\1"'
+    # inreplace "Cargo.toml",
+    #           /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
+    #           'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
 
     if OS.mac? && (MacOS.version < :mojave)
       # Overwrite Chromium minimum SDK version of 10.15
@@ -103,6 +121,14 @@ class Deno < Formula
     generate_completions_from_executable(bin/"deno", "completions")
   end
 
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
+  end
+
   test do
     (testpath/"hello.ts").write <<~EOS
       console.log("hello", "deno");
@@ -111,5 +137,19 @@ class Deno < Formula
     assert_match "console.log",
       shell_output("#{bin}/deno run --allow-read=#{testpath} https://deno.land/std@0.50.0/examples/cat.ts " \
                    "#{testpath}/hello.ts")
+
+    linked_libraries = [
+      # Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
+    ]
+    unless OS.mac?
+      linked_libraries += [
+        Formula["libffi"].opt_lib/shared_library("libffi"),
+        Formula["zlib"].opt_lib/shared_library("libz"),
+      ]
+    end
+    linked_libraries.each do |library|
+      assert check_binary_linkage(bin/"deno", library),
+              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+    end
   end
 end
