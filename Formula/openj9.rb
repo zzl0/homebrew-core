@@ -2,8 +2,8 @@ class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
   url "https://github.com/eclipse-openj9/openj9.git",
-      tag:      "openj9-0.39.0",
-      revision: "088b83604033f2e4f0edb2d267b1f8b2a2450e91"
+      tag:      "openj9-0.40.0",
+      revision: "d12d10c9ea2de2cf363095e609536ffe451bd25f"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -17,11 +17,11 @@ class Openj9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "634d1ba21afd7593f7a9dd0738d8ef2ef3eca2232634f49123b2a669479d3d66"
-    sha256 cellar: :any, arm64_big_sur:  "a15b058b69186f82f80380d89a0a484f02b491ecf246b1533c53b070c0393f93"
-    sha256 cellar: :any, ventura:        "e2d8252a2d1d60cb63266302e4a56a40131add600df4406ab1ca7a3475a5c6cd"
-    sha256 cellar: :any, monterey:       "a21b5c578663507ab630ac148e131ff65a3b39fe014612281b3227c354f96bc6"
-    sha256 cellar: :any, big_sur:        "90b4d6d01fc3a6f17d2478d60fd93fd6c9254c582b564a5ab1c5ec78d5bb042c"
+    sha256 cellar: :any, arm64_monterey: "aed97a9ad250d831d56e98fe4cc42a04accc9573105d35b720786e97615f53f9"
+    sha256 cellar: :any, arm64_big_sur:  "6c138a8cb5d443c3f3fedf74a820cfe7dacc8c3f1dd8fdd633cd3bbf93a829a1"
+    sha256 cellar: :any, ventura:        "d03b9d60f11cd19ccb14438849675d1314c2306a7091b6d6ca16a2d1c9d6bd72"
+    sha256 cellar: :any, monterey:       "506c3ce6be273f87b953d5b7820aa567e29693e39243ed120f9d06c0031c8cda"
+    sha256 cellar: :any, big_sur:        "bd6cfe66db144260f4d961b4a462414de966f5ab585c05b2850ab9c1d99db65b"
   end
 
   keg_only :shadowed_by_macos
@@ -67,30 +67,30 @@ class Openj9 < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_aarch64_mac_20.0.1_9_openj9-0.39.0.tar.gz"
-        sha256 "2d65da1e167ce21d325e546799aecd45e5a1d3e5314a5bda09f1d5bcae0a2d8f"
+        url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_aarch64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
+        sha256 "e9c7df3897877350b577d80a47cbc9a7b4589419ca0c2df7c185a20bca8423dd"
       end
       on_intel do
-        url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_x64_mac_20.0.1_9_openj9-0.39.0.tar.gz"
-        sha256 "7ec6980c124a322954b701887869a10986639c27df5add60300bdf62cf07d9e4"
+        url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_x64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
+        sha256 "ece0d6e2a5cd07b2e0e05a6361026c73838cfd14556c0aeb7f9367a13d19de38"
       end
     end
     on_linux do
-      url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_x64_linux_20.0.1_9_openj9-0.39.0.tar.gz"
-      sha256 "aef46e2a06b8671369783c85a473aefd586fffb720abf654f45e4940b2c81df2"
+      url "https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_x64_linux_20.0.2_9_openj9-0.40.0.tar.gz"
+      sha256 "925b555050eb3ad9bcb444c4713f5bb221025ba9c309e95235d4b2e060c84ee0"
     end
   end
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        tag:      "openj9-0.39.0",
-        revision: "e4f52d2e479f7e64e092dcec573f1fae864395cb"
+        tag:      "openj9-0.40.0",
+        revision: "e80bff83b7fda8875071d89de7c73184d847085d"
   end
 
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk20.git",
-        tag:      "openj9-0.39.0",
-        revision: "6cb177ca6cae7e0a63fccb800236019062c2690a"
+        tag:      "openj9-0.40.0",
+        revision: "19eb54abdace78d5009138c6e27457dfe2df6cf1"
   end
 
   def install
