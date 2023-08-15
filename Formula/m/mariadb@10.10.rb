@@ -1,10 +1,9 @@
 class MariadbAT1010 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.10.5/source/mariadb-10.10.5.tar.gz"
-  sha256 "91cd4d426d38af09852ebdaf00e74211775ec6cc907f74c1aee0d45cdf5d996b"
+  url "https://archive.mariadb.org/mariadb-10.10.6/source/mariadb-10.10.6.tar.gz"
+  sha256 "e1e53011979d29f0ec26e13ab8caf613481bf029520566fb96817546103938d5"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
@@ -55,6 +54,17 @@ class MariadbAT1010 < Formula
   end
 
   fails_with gcc: "5"
+
+  # Fix libfmt usage.
+  # https://github.com/MariaDB/server/pull/2732
+  patch do
+    url "https://github.com/MariaDB/server/commit/f4cec369a392c8a6056207012992ad4a5639965a.patch?full_index=1"
+    sha256 "1851d5ae209c770e8fd1ba834b840be12d7b537b96c7efa3d4e7c9523f188912"
+  end
+  patch do
+    url "https://github.com/MariaDB/server/commit/cd5808eb8da13c5626d4bdeb452cef6ada29cb1d.patch?full_index=1"
+    sha256 "4d288f82f56c61278aefecba8a90d214810b754e234f40b338e8cc809e0369e9"
+  end
 
   def install
     ENV.cxx11
@@ -114,8 +124,11 @@ class MariadbAT1010 < Formula
     (prefix/"mysql-test").rmtree
     (prefix/"sql-bench").rmtree
 
-    # Link the setup script into bin
-    bin.install_symlink prefix/"scripts/mysql_install_db"
+    # Link the setup scripts into bin
+    bin.install_symlink [
+      prefix/"scripts/mariadb-install-db",
+      prefix/"scripts/mysql_install_db",
+    ]
 
     # Fix up the control script and link into bin
     inreplace "#{prefix}/support-files/mysql.server", /^(PATH=".*)(")/, "\\1:#{HOMEBREW_PREFIX}/bin\\2"
