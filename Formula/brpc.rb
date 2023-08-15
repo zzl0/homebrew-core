@@ -4,6 +4,7 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.6.0/apache-brpc-1.6.0-src.tar.gz"
   sha256 "06ff4adebc720bf1529b03ade872cbd41c6ed69971e6e0d210d57d7b72856bd4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
@@ -18,6 +19,7 @@ class Brpc < Formula
 
   depends_on "cmake" => :build
   depends_on "gflags"
+  depends_on "gperftools"
   depends_on "leveldb"
   depends_on "openssl@3"
   depends_on "protobuf@21"
@@ -25,6 +27,14 @@ class Brpc < Formula
   def install
     inreplace "CMakeLists.txt", "/usr/local/opt/openssl",
                                 Formula["openssl@3"].opt_prefix
+
+    # `leveldb` links with `tcmalloc`, so should `brpc` and its dependents.
+    # Fixes: src/tcmalloc.cc:300] Attempt to free invalid pointer 0x143e0d610
+    inreplace "CMakeLists.txt", "-DNO_TCMALLOC", ""
+    tcmalloc_ldflags = "-L#{Formula["gperftools"].opt_lib} -ltcmalloc"
+    ENV.append "LDFLAGS", tcmalloc_ldflags
+    inreplace "cmake/brpc.pc.in", /^Libs:(.*)$/, "Libs:\\1 #{tcmalloc_ldflags}"
+
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_UNIT_TESTS=OFF
@@ -65,13 +75,16 @@ class Brpc < Formula
       }
     EOS
     protobuf = Formula["protobuf@21"]
+    gperftools = Formula["gperftools"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}
       -L#{lib}
       -L#{protobuf.opt_lib}
+      -L#{gperftools.opt_lib}
       -lbrpc
       -lprotobuf
+      -ltcmalloc
     ]
     system ENV.cxx, "-std=c++11", testpath/"test.cpp", "-o", "test", *flags
     assert_equal "200", shell_output("./test")
