@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.29.0.tar.gz"
-  sha256 "ce3e493566144542788435c3f790cb738461e5808baf059381b9a446935efb91"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.30.0.tar.gz"
+  sha256 "3aa07d189ef7d03064ad006c654cca686ffb7dd2f9b47320ab060cdeeadc53f9"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "df1526df640c743464697d22c694950904e02b5a887524db0aab9e8ba6176025"
-    sha256 cellar: :any,                 arm64_monterey: "1e66e5686ed550c8378a5f1265c39146da7142ca757c356939f17ee719ce2b50"
-    sha256 cellar: :any,                 arm64_big_sur:  "ed2ee91a288ffb74b84931b293a3d190d1c682accf14f057375c2def6dd2e1e2"
-    sha256 cellar: :any,                 ventura:        "bda0a47de7ed7f9455905a4ee44a40e6b887727e0ad97e4680c2db9103d03323"
-    sha256 cellar: :any,                 monterey:       "6f32674b1520682f9f4e974372c900d9777b6ec938471cfaf202c3b3eb1d9104"
-    sha256 cellar: :any,                 big_sur:        "347a0450438530ab70b81b7a4aa2a132fd550601813f60340e0a4b656031cfc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d1bd1a49b4230cd78e18c6dbfab8e40cf817ededb7041364f19b5214b149d7"
+    sha256 cellar: :any,                 arm64_ventura:  "7b8365c9d00cbcd0f30f3c8dde66335a150ff30f9bbaeeb4fa7163f9efdefa1f"
+    sha256 cellar: :any,                 arm64_monterey: "9b592d7fbd21eae9a2fd063b6a6c85fc5978430c42b7ae1dadd4f9373825335e"
+    sha256 cellar: :any,                 arm64_big_sur:  "d92b75b946a7b509ee2820f96ad732e3e004f259794e5ae8b709e9b4f284cc9f"
+    sha256 cellar: :any,                 ventura:        "406a18201942125960948a8cae5eebe1cd3b5d1d8f569b31b5880f7938c6d994"
+    sha256 cellar: :any,                 monterey:       "5dc65b52238c18489040c871d9765d33f070920e16dba251f6ef746c09a08fa1"
+    sha256 cellar: :any,                 big_sur:        "700e2bd85c797dc6729318aaa3a22f82be1d68cdc2045abaa387075532302711"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4f2587dccab5016e62520deb3ff216aac5e5864d1e8dcd23110b5da5994a080"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -39,13 +39,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/c4/a1c823a0c7425b4a352601156e8be7998d966c84c6b7aeb5de4d6415a6db/boto3-1.28.8.tar.gz"
-    sha256 "cf88309d9b8cd9a2fb0c8049cb4b217b4e9dcb55bf670d6054b0bbe2eef25e57"
+    url "https://files.pythonhosted.org/packages/f7/d9/eafe5695c2db98f686b962a6985a8f41843da1dd2f5710311804eb885aea/boto3-1.28.25.tar.gz"
+    sha256 "20feedb753e87d6dd55665e2e9dda08b031518291350c9c57b552c86a537fd4e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/51/cb/fdbc87199900625dc7c9a15312f72fa5fdfe216d149492702d95a0d14113/botocore-1.31.8.tar.gz"
-    sha256 "092baa2168ae78080b0c28011527bfc11d8debd3767aa1e9a4ce8a91fd9943a2"
+    url "https://files.pythonhosted.org/packages/bf/9c/4b5d7f9197510a898215becf62fd9862be3fb0a2a63af5b656d24daf9de0/botocore-1.31.25.tar.gz"
+    sha256 "b8a40b0ca1e3c8290a4c0d473c8e1575d2e8b2ddc3c61dd8814c3976357cac84"
   end
 
   resource "docutils" do
@@ -64,8 +64,8 @@ class C7n < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
+    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
   end
 
   resource "jsonschema-specifications" do
@@ -79,8 +79,8 @@ class C7n < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "rpds-py" do
