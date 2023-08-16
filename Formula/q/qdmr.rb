@@ -4,15 +4,16 @@ class Qdmr < Formula
   url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.11.3.tar.gz"
   sha256 "bad499faec7533c460e72c121716141f8cca0ea613ed55143ba1780b06a49b9a"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "df447c2ae8b3fc9f9697c39c934265c45bbb910757973ade6ba3ff40f54f5216"
-    sha256 arm64_monterey: "70e9ad8679d64908a03670a671670dedbeae1711f9d66e68d95670ab1161d6f8"
-    sha256 arm64_big_sur:  "062476c03b8f68f2bcbef933e323fe6e01a7e0afc565f494d45edd8f7bc0aefe"
-    sha256 ventura:        "e9d886c2bf5be3fbc692d94e5c0c5040370efeda60cbfe38d575f97910e0c21c"
-    sha256 monterey:       "32d57276d9bd1f9379d1c90e3722696cf7643b6c81b52c9ee2b94b9cef4fa8ff"
-    sha256 big_sur:        "e89c5695aaf36dc9a7be755bed644a36985784a3e01c974672e198332de15e03"
-    sha256 x86_64_linux:   "fb8dd4f1683d5a796416977e4722ae1a1a2cf227041ce253e5735c44983c5831"
+    sha256 arm64_ventura:  "a3d47d1a4f74f29d7205b551e09602e0d7459677f25653fc788e3bf8fe3cbd6f"
+    sha256 arm64_monterey: "b825f13edb4f363391a354ff6c99b1f117dbc07ea222804ddeade267642fafc6"
+    sha256 arm64_big_sur:  "e24d6e79da29b3e49aa5e727b89aa6c41cfc8d87d6d731576ad643507701a867"
+    sha256 ventura:        "96a334c4673dd26658fac496c7788bb27f4efcdf0b1bf8f2b720888a435e2cbb"
+    sha256 monterey:       "7702c73879f9acdbab76b3fdfa684533f674a6b36f35ed23ae91ae1c983f73a7"
+    sha256 big_sur:        "0115dad9c598ae7fd2ebcf0127d5daaf87db0bb324698ff99dd6e8e9d3c99d86"
+    sha256 x86_64_linux:   "f63dfccf38fe9a7542be3adec7d0ca85777c566a8a92fd3a9e5f527ad8db270e"
   end
 
   depends_on "cmake" => :build
