@@ -4,6 +4,7 @@ class Graphicsmagick < Formula
   url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.41/GraphicsMagick-1.3.41.tar.xz"
   sha256 "b741b11ba86162db4d4ec1b354989a773f73c40722d1148239f6c69c9f04a6aa"
   license "MIT"
+  revision 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -36,6 +37,13 @@ class Graphicsmagick < Formula
   uses_from_macos "zlib"
 
   skip_clean :la
+
+  # See https://sourceforge.net/p/graphicsmagick/bugs/718/.
+  # Remove in next release.
+  patch do
+    url "https://sourceforge.net/p/graphicsmagick/bugs/718/attachment/002-tiff-transparency.patch"
+    sha256 "e040ba17c50391d03322e9f47ca5876385e8f1a984ec96856276a97f2794be16"
+  end
 
   def install
     args = %W[
