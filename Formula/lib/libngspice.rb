@@ -1,18 +1,9 @@
 class Libngspice < Formula
   desc "Spice circuit simulator as shared library"
   homepage "https://ngspice.sourceforge.io/"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41.tar.gz"
+  sha256 "1ce219395d2f50c33eb223a1403f8318b168f1e6d1015a7db9dbf439408de8c4"
   license :cannot_represent
-
-  stable do
-    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/40/ngspice-40.tar.gz"
-    sha256 "e303ca7bc0f594e2d6aa84f68785423e6bf0c8dad009bb20be4d5742588e890d"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     formula "ngspice"
@@ -30,16 +21,17 @@ class Libngspice < Formula
 
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
-  depends_on "flex" => :build
-  depends_on "libtool" => :build
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
-    system "./autogen.sh"
+    system "./autogen.sh" if build.head?
 
     args = %w[
       --with-ngshared
