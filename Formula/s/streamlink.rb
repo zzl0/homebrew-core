@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/41/71/1349b3230de702b65e792718b193102b065209c8332799743fd50d7a569f/streamlink-6.0.1.tar.gz"
-  sha256 "d10a6297f6e1d85f96686d33bf8cb1133c7a7b57efdedf7179dfa7853f8d0bb5"
+  url "https://files.pythonhosted.org/packages/1c/90/566646a689c4533204f00885928892cdf63bac21cde55bbd325b9118401f/streamlink-6.1.0.tar.gz"
+  sha256 "170b2027d4d8073087c58941c31aec384cbf9901fcb401f824e919ae387c4385"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -43,8 +43,8 @@ class Streamlink < Formula
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/55/09/5d2079ecab0ca483e527a1707a483562bdc17abf829d3e73f0c1a73b61c7/exceptiongroup-1.1.2.tar.gz"
-    sha256 "12c3e887d6485d16943a309616de20ae5582633e0a2eda17f4e10fd61c1e8af5"
+    url "https://files.pythonhosted.org/packages/c2/e1/5561ad26f99b7779c28356f73f69a8b468ef491d0f6adf20d7ed0ac98ec1/exceptiongroup-1.1.3.tar.gz"
+    sha256 "097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"
   end
 
   resource "h11" do
@@ -132,8 +132,8 @@ class Streamlink < Formula
   end
 
   test do
-    system "#{bin}/streamlink", "https://youtu.be/he2a4xK8ctk", "360p", "-o", "video.mp4"
-    assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
+    system "#{bin}/streamlink", "https://youtu.be/he2a4xK8ctk", "audio_mp4a", "-o", "video.mp4"
+    assert_match "video.mp4: ISO Media, MPEG v4 system", shell_output("file video.mp4")
 
     url = OS.mac? ? "https://ok.ru/video/3388934659879" : "https://www.youtube.com/watch?v=pOtd1cbOP7k"
     output = shell_output("#{bin}/streamlink --ffmpeg-no-validation -l debug '#{url}'")
