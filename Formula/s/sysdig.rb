@@ -4,8 +4,8 @@ class Sysdig < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.0.tar.gz"
-    sha256 "478c5667b0936af827b87357a785069350514fd503e3eea55e9092be7bd22853"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.1.tar.gz"
+    sha256 "463ea62f3bc870b4dfaa5143abd6b790efb2219f86e8799792768d06de4169f9"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
@@ -21,13 +21,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "3e945b514c31143703b2beea929910d015ee2c3086225d1936a7b830caae32fc"
-    sha256                               arm64_monterey: "8248ff72d2d0812a6e5f6a266a701204f001b8bb6471341765f1d7c89d6d3b37"
-    sha256                               arm64_big_sur:  "143a9ed0ecae7a5117e3097068b4ac738338586dcb6442f949e259b6cf28c409"
-    sha256                               ventura:        "4580c14685d82fae649c5b748215812f16b565e604ddcc7138149047772a3f42"
-    sha256                               monterey:       "a5398df4a2d656707ffe3ff8bd4389f5130e321643c713f8dd6672251c19f9d7"
-    sha256                               big_sur:        "91c53f4a6e827ac15307eb649533c82874023ee404d0b9cc56b339ccc7598b2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a4936ce794d314160fbbc3e5c46215d371d02820e23a004ea055ff627cab60e"
+    sha256                               arm64_ventura:  "2b3f77790dc4b4199130b78ac97505df9f2fb81b0818bf2a943a2e2438c48913"
+    sha256                               arm64_monterey: "a245d55c643101ed62bf8caa1c36444d8c66d1d595b0cc4b781ec21ead7dd334"
+    sha256                               arm64_big_sur:  "8afcfc9ca54fd422705f91e6d26beddc131c0b9735cf509cfc6b40dc24c52fa1"
+    sha256                               ventura:        "b41766d7da6997647cc2b45c8d05b46eae5102a30b904da114d5a10f5b5772b1"
+    sha256                               monterey:       "d2dd65f80f0b8c658fcc9e56e53243d1a4b5c3940c6429835e361b816764cd32"
+    sha256                               big_sur:        "edc71218e74df73c24ebc131b10b04207321bf0bfbd4c3acf99c8dd8a761d5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42bb2635d57351e87c3b6e0c800c8177c997803e511a95e130a51a403bc0c599"
   end
 
   head do
@@ -60,6 +60,7 @@ class Sysdig < Formula
     depends_on "jq"
     depends_on "openssl@3"
     depends_on "protobuf@21"
+    depends_on "zstd"
   end
 
   fails_with gcc: "5" # C++17
@@ -72,6 +73,10 @@ class Sysdig < Formula
 
   def install
     (buildpath/"falcosecurity-libs").install resource("falcosecurity-libs")
+
+    # fix `libzstd.so.1: error adding symbols: DSO missing from command line` error
+    # https://stackoverflow.com/a/55086637
+    ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
