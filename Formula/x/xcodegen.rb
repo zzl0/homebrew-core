@@ -7,10 +7,10 @@ class Xcodegen < Formula
   head "https://github.com/yonaskolb/XcodeGen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12b1320bab438cbd448699463bf2bb9b6869fe99070d42c8c3b888788bda8dcc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37a7029ac73b043b71040c38dceaf1baa966f24890e4bbb0290c29a2010875e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "360f6df7a49c2b9faba923afcc776133d029ae523d7e2d4cb5c8ca437b316eee"
-    sha256 cellar: :any_skip_relocation, monterey:       "0bfb411442ebbec7cb2142c8dce875f758f53fed02bd50c51b8a5be76391017f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d147d0bbde8f76fe1c88da308c1f99e866d1702458e82b685a164505de10093"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9058c7b14f8ea6e8457c808db3329eb0b2f7aa3de00d147e931501dcc2e26874"
+    sha256 cellar: :any_skip_relocation, ventura:        "caddccdd2b82aef7ae9221d1249b0af14bf5c4befe8ceb5445d55a9150649ed6"
+    sha256 cellar: :any_skip_relocation, monterey:       "54fefbac5d69356b64354c1e7b281feeee2ae27ee79cf34505a0e23a3d2196a9"
   end
 
   depends_on xcode: ["14.0", :build]
