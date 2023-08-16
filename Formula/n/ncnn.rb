@@ -1,11 +1,9 @@
 class Ncnn < Formula
   desc "High-performance neural network inference framework"
   homepage "https://github.com/Tencent/ncnn"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://github.com/Tencent/ncnn/archive/refs/tags/20230517.tar.gz"
-  sha256 "71c1960e5fbbe68d2c3cf572cbf4dd08bb387ef20d2c560c074c5969c6b44bde"
+  url "https://github.com/Tencent/ncnn/archive/refs/tags/20230816.tar.gz"
+  sha256 "6b14105b6aba1e5fc87321b161c1d996c507f9b671a961831c8cd9987e807aa1"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
@@ -19,7 +17,7 @@ class Ncnn < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "protobuf@21"
+  depends_on "protobuf"
 
   on_macos do
     depends_on "glslang" => :build
@@ -29,6 +27,10 @@ class Ncnn < Formula
   end
 
   def install
+    # fix `libabsl_log_internal_check_op.so.2301.0.0: error adding symbols: DSO missing from command line` error
+    # https://stackoverflow.com/a/55086637
+    ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
+
     args = std_cmake_args + %w[
       -DCMAKE_CXX_STANDARD=11
       -DCMAKE_CXX_STANDARD_REQUIRED=ON
