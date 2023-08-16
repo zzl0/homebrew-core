@@ -1,8 +1,8 @@
 class Hmmer < Formula
   desc "Build profile HMMs and scan against sequence databases"
   homepage "http://hmmer.org/"
-  url "http://eddylab.org/software/hmmer/hmmer-3.3.2.tar.gz"
-  sha256 "92fee9b5efe37a5276352d3502775e7c46e9f7a0ee45a331eacb2a0cac713c69"
+  url "http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz"
+  sha256 "ca70d94fd0cf271bd7063423aabb116d42de533117343a9b27a65c17ff06fbf3"
   license "BSD-3-Clause"
 
   livecheck do
