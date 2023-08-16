@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.27.4",
-      revision: "fa3d7990104d7c1f16943a67f11b154b71f6a132"
+      tag:      "v1.28.0",
+      revision: "855e7c48de7388eb330da0f8d9d2394ee818fb8d"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -48,8 +48,8 @@ class KubernetesCli < Formula
     run_output = shell_output("#{bin}/kubectl 2>&1")
     assert_match "kubectl controls the Kubernetes cluster manager.", run_output
 
-    version_output = shell_output("#{bin}/kubectl version --client 2>&1")
-    assert_match "GitTreeState:\"clean\"", version_output
+    version_output = shell_output("#{bin}/kubectl version --client --output=yaml 2>&1")
+    assert_match "gitTreeState: clean", version_output
     if build.stable?
       revision = stable.specs[:revision]
       assert_match revision.to_s, version_output
