@@ -7,13 +7,13 @@ class Vvenc < Formula
   head "https://github.com/fraunhoferhhi/vvenc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ecfe2b5d545259933c801b393c2bd3e7a54414a71a8cdb53a0ba50f47a5b760e"
-    sha256 cellar: :any,                 arm64_monterey: "8e6228f077cf83571ad12a696ba30d65178d501b7b62ec773c20472655126b24"
-    sha256 cellar: :any,                 arm64_big_sur:  "db2b61f9eb87e5fef99cd20dba0f30a5f2edda2d8e39a208a3bf28f4c8d97d26"
-    sha256 cellar: :any,                 ventura:        "eab513161cc50d914f87a9636690638a98602d3e46b06d1a5e13d75fc5d69522"
-    sha256 cellar: :any,                 monterey:       "33357da3c451e6adeb7e1a841f3b28f894202e6a9a24eb686656f9aad8160430"
-    sha256 cellar: :any,                 big_sur:        "3b37cbb5281175e0f2abdf71548adccb6e1935f789be069f89e165852002ea33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1cbbed66a84f67a944f46dfa1b56d32e6c20b45c4daca6286d1faadea6325b4"
+    sha256 cellar: :any,                 arm64_ventura:  "7da685c30ffce37ad820283633f326a9f4796b41c0e4cdae3a795c3a9893cd4f"
+    sha256 cellar: :any,                 arm64_monterey: "a0814b9491e1f492ee907a9c5540f550f364f7bb639a72b1230d6ddb0b58440a"
+    sha256 cellar: :any,                 arm64_big_sur:  "89bcfdf23109dd2be872f74339acbdced01635230af469725cd70d553a73cbf2"
+    sha256 cellar: :any,                 ventura:        "ffc6ef53b94a8f2298159b53c1610766d06cc3aabd09829874f2bab61914e5af"
+    sha256 cellar: :any,                 monterey:       "47c42bd96a026d25d88d4bc1a3f4e1b33147f53d60f6420c07ef14ae2b75c528"
+    sha256 cellar: :any,                 big_sur:        "1150b649bdd233056809f89830e4f6f72c4bbe2d8af6cd6df955623f51486220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79eba07adde3b8af1ee50868d8ed9b3600f1f6828125f7a5cdecdcc0d7be1077"
   end
 
   depends_on "cmake" => :build
