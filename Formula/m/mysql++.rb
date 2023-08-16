@@ -4,7 +4,7 @@ class Mysqlxx < Formula
   url "https://tangentsoft.com/mysqlpp/releases/mysql++-3.3.0.tar.gz"
   sha256 "449cbc46556cc2cc9f9d6736904169a8df6415f6960528ee658998f96ca0e7cf"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
