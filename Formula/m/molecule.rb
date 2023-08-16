@@ -3,8 +3,8 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e2/c9/91cc4a5078a2c16ccaf2a147446b594c15585fd5c4d642c55b5ee6749e5e/molecule-6.0.0.tar.gz"
-  sha256 "23d466fd36fbca0d4f8de5cd5a6132aacbe52c5252c05f37afea1eb6e5e740c4"
+  url "https://files.pythonhosted.org/packages/d1/99/ff56d9f55f81f63d965a4402bee4145d741ad451b39ae83104a1dae4b850/molecule-6.0.1.tar.gz"
+  sha256 "b2c0111d5b44a77a56ef7eb85a1c61b470165b97d11578a2a168047334c8df23"
   license "MIT"
 
   bottle do
@@ -39,8 +39,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/e9/cf/a169a1f505c15d92bcff3a08b68ed5646f0a8262c74a7a2de11ecd3efe81/ansible-core-2.15.2.tar.gz"
-    sha256 "84251b001f2f9c0914beedffcf19529e745a13108159d1fe27de9e3a6a63ac5a"
+    url "https://files.pythonhosted.org/packages/3c/4d/892b2c2211af9bea68e79b9899921cf96f370361bdd3355d1d84801d40bb/ansible-core-2.15.3.tar.gz"
+    sha256 "261bc01a15274fc5a6950d5b92b9aa1b7d7c6e8f7543c914505e5bfd9744793a"
   end
 
   resource "attrs" do
