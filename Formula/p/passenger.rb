@@ -4,7 +4,7 @@ class Passenger < Formula
   url "https://github.com/phusion/passenger/releases/download/release-6.0.18/passenger-6.0.18.tar.gz"
   sha256 "dfcd9bcae364ce09b6ae59ea598f9dcad3e27a980b12c4b245acd336fa02c5a2"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
@@ -93,7 +93,7 @@ class Passenger < Formula
 
     system "./bin/passenger-config", "compile-nginx-engine",
       "--nginx-tarball", buildpath/"nginx.tar.gz",
-      "--nginx-version", Formula["nginx"].version
+      "--nginx-version", Formula["nginx"].version.to_s
     cp Dir["buildout/support-binaries/nginx*"], libexec/"buildout/support-binaries", preserve: true
 
     nginx_addon_dir.gsub!(/^#{Regexp.escape Dir.pwd}/, libexec)
