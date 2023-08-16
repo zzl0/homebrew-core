@@ -3,8 +3,8 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/ab/4f/e8ce49c5582ccf43d9b968ebc4cc8fe24c3ece2900afaed927db65453a70/xonsh-0.14.0.tar.gz"
-  sha256 "45a8aaabb17ce0d6d4eca9b709ecfd7ce1c8fb92162decd29a45bf88a60e9bf1"
+  url "https://files.pythonhosted.org/packages/f2/72/478183446101120a8ec1544d8611e5b47f2a0469745dd5e511dc367942d4/xonsh-0.14.1.tar.gz"
+  sha256 "81dbf5b5d4d23fe780c7ee5b4ded4f41239e8a8945b1742bf77ee030bdf9f9e5"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
@@ -25,8 +25,8 @@ class Xonsh < Formula
   # See https://xon.sh/osx.html#dependencies
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
-    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
+    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
+    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
   resource "pyperclip" do
