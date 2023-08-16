@@ -9,13 +9,13 @@ class Nvchecker < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "032f85663c8dc8edd0dc3808e570e53f8002dac929a6c46e897988bdca4cc93b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2f31a6ec4887267eef12a2d32e13c72bc213f8fe46fcaf37eca6a049e77b865"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b12a5c47df011037d4c11a08e0cce96c9ff4d537a19b37faa91dea1ae9a4f76f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c1a9c37a798380b9022880e0a07c464c290fe391d24fca91d13e0a67aab9a6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "198e8966be7816da1eb7ce3b3dc79ae10cb8df67c7699f5f90e1ed5b95fac591"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0e776bd3afa1bf05782377eb18183b53308413a61170520fea3e90943cd55c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4ec3b2cc4fd127b86abe31e28ce727cb28af55f6ea628a1267b142d45baafd6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47288b1fa808ce67e7b7fe0063784ed04add719e1387ab780191bce931a2aa21"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1bffe2dc457ed6797fc8de6e6c116762e8b1013718f45dcc517da6c7f02d5c6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "641aea8c3cb378d81b4ecb08317e20813d9ce1698ac3e54b712cc6dbd69744fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "7530ac266b3423319cd11f41681e0aff6ade71ab241e75c6ab04d7a13ca868bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "07f9f6e6255f1cfb8a75abbbd5b61e8f6895715e2d125ed57f8e3f790b057310"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4a5dacaa160b2d7b9aeb242fe8e54d505780d9849d3ffd1ed92ef7d4aebeacc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "608784a3a5b015876a0480013b6e9de9a36c6ddb5eb829dbdeac1d52bdc25688"
   end
 
   depends_on "jq" => :test
