@@ -4,6 +4,7 @@ class Diesel < Formula
   url "https://github.com/diesel-rs/diesel/archive/v2.1.0.tar.gz"
   sha256 "0c530935a45876006417e8c9668088de7bd7445e8846ea859ea66f98d6e667cd"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/diesel-rs/diesel.git", branch: "master"
 
   bottle do
