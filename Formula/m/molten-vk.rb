@@ -4,8 +4,8 @@ class MoltenVk < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/KhronosGroup/MoltenVK/archive/v1.2.4.tar.gz"
-    sha256 "80a33cc9a9f83df3623e2ed9e21ac6226746d37021423a9722c7dde1668898f4"
+    url "https://github.com/KhronosGroup/MoltenVK/archive/v1.2.5.tar.gz"
+    sha256 "b4468aee1abf7dcc79dc12a817b1eb3b8fcef9e44f547f32ea1fdcd7a9d2c8ba"
 
     # MoltenVK depends on very specific revisions of its dependencies.
     # For each resource the path to the file describing the expected
@@ -13,19 +13,19 @@ class MoltenVk < Formula
     resource "SPIRV-Cross" do
       # ExternalRevisions/SPIRV-Cross_repo_revision
       url "https://github.com/KhronosGroup/SPIRV-Cross.git",
-          revision: "12542fc6fc05000e04742daf93892a0b10edbe80"
+          revision: "bccaa94db814af33d8ef05c153e7c34d8bd4d685"
     end
 
     resource "Vulkan-Headers" do
       # ExternalRevisions/Vulkan-Headers_repo_revision
       url "https://github.com/KhronosGroup/Vulkan-Headers.git",
-          revision: "9e61870ecbd32514113b467e0a0c46f60ed222c7"
+          revision: "85c2334e92e215cce34e8e0ed8b2dce4700f4a50"
     end
 
     resource "Vulkan-Tools" do
       # ExternalRevisions/Vulkan-Tools_repo_revision
       url "https://github.com/KhronosGroup/Vulkan-Tools.git",
-          revision: "695887a994ef9cc00a7aa3f9c00b31a56ea79534"
+          revision: "300d9bf6b3cf7b237ee5e2c1d0ae10b9236f82d3"
     end
 
     resource "cereal" do
@@ -37,19 +37,19 @@ class MoltenVk < Formula
     resource "glslang" do
       # ExternalRevisions/glslang_repo_revision
       url "https://github.com/KhronosGroup/glslang.git",
-          revision: "d1517d64cfca91f573af1bf7341dc3a5113349c0"
+          revision: "76b52ebf77833908dc4c0dd6c70a9c357ac720bd"
     end
 
     resource "SPIRV-Tools" do
       # known_good.json in the glslang repository at revision of resource above
       url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-          revision: "e7c6084fd1d6d6f5ac393e842728d8be309688ca"
+          revision: "v2023.4.rc2"
     end
 
     resource "SPIRV-Headers" do
       # known_good.json in the glslang repository at revision of resource above
       url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-          revision: "268a061764ee69f09a477a695bf6a11ffe311b8d"
+          revision: "124a9665e464ef98b8b718d572d5f329311061eb"
     end
   end
 
