@@ -6,8 +6,7 @@ class XcbProto < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7aff8671654c8a9bde8b257cff31f05a6f09a322f35c16c5d985eb525faae8f2"
+    sha256 cellar: :any_skip_relocation, all: "1b6168c2541cdc925dcb4de03e071365e60ed74d39173c8bc136424b01d2ecb2"
   end
 
   depends_on "pkg-config" => [:build, :test]
