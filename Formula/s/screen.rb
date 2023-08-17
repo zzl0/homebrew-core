@@ -2,13 +2,12 @@ class Screen < Formula
   desc "Terminal multiplexer with VT100/ANSI terminal emulation"
   homepage "https://www.gnu.org/software/screen"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://git.savannah.gnu.org/git/screen.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/screen/screen-4.9.0.tar.gz"
-    mirror "https://ftpmirror.gnu.org/screen/screen-4.9.0.tar.gz"
-    sha256 "f9335281bb4d1538ed078df78a20c2f39d3af9a4e91c57d084271e0289c730f4"
+    url "https://ftp.gnu.org/gnu/screen/screen-4.9.1.tar.gz"
+    mirror "https://ftpmirror.gnu.org/screen/screen-4.9.1.tar.gz"
+    sha256 "26cef3e3c42571c0d484ad6faf110c5c15091fbf872b06fa7aa4766c7405ac69"
 
     # This patch is to disable the error message
     # "/var/run/utmp: No such file or directory" on launch
