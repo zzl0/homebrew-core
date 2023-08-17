@@ -3,10 +3,10 @@ class GimmeAwsCreds < Formula
 
   desc "CLI to retrieve AWS credentials from Okta"
   homepage "https://github.com/Nike-Inc/gimme-aws-creds"
-  url "https://files.pythonhosted.org/packages/fe/01/cdf8901f4c2a3f17974811e1e6669e655f7401111fa033bf07e5192086bd/gimme%20aws%20creds-2.7.0.tar.gz"
-  sha256 "a290e0de76c231a923c59fd2d7422331a94f64920aa972971d2c8ece7c461a23"
+  # upstream bug report about the pypi sdist missing, https://github.com/Nike-Inc/gimme-aws-creds/issues/423
+  url "https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.1.tar.gz"
+  sha256 "3a0c688e99aa5f05a79b5c09271e68980481840c39be28a761b9c29aa5c9b7b8"
   license "Apache-2.0"
-  revision 3
 
   bottle do
     rebuild 2
@@ -52,13 +52,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1b/f9/889e0c7d07bc5616d193d63b9600145d2d83f21a09fca40be078ef9323eb/boto3-1.28.17.tar.gz"
-    sha256 "90f7cfb5e1821af95b1fc084bc50e6c47fa3edc99f32de1a2591faa0c546bea7"
+    url "https://files.pythonhosted.org/packages/b8/6b/96460736f7fd725d1a47932b6c55b1bb07db32dbcd14c82ba285604adbb4/boto3-1.28.28.tar.gz"
+    sha256 "4a435fdbd77628e3d32cfbc8b6225e779d8f789027fadb6a51fe1b456e15ef54"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
-    sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
+    url "https://files.pythonhosted.org/packages/f7/46/44a76f62605e8dee2cafd65ba71a33675bdb455dd0258001d0c392673e04/botocore-1.31.28.tar.gz"
+    sha256 "1fcfbd23c7f1f66f16c5c1a1e8565ee8ff68429cc0ee9d2acfb1b55739584cbd"
   end
 
   resource "charset-normalizer" do
@@ -107,8 +107,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "okta" do
@@ -152,8 +152,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/49/bd/def2ab4c04063a5e114963aae90bcd3e3aca821a595124358b3b00244407/s3transfer-0.6.1.tar.gz"
-    sha256 "640bb492711f4c0c0905e1f62b6aaeb771881935ad27884852411f8e9cacbca9"
+    url "https://files.pythonhosted.org/packages/5a/47/d676353674e651910085e3537866f093d2b9e9699e95e89d960e78df9ecf/s3transfer-0.6.2.tar.gz"
+    sha256 "cab66d3380cca3e70939ef2255d01cd8aece6a4907a9528740f668c4b0611861"
   end
 
   resource "secretstorage" do
