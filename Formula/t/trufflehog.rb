@@ -8,13 +8,13 @@ class Trufflehog < Formula
   head "https://github.com/trufflesecurity/driftwood.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd3957a97c027b278f6346dbcec5dcb8909afbad3dbe8ab75ab64f1ad5ac1609"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad97ae1701c173838c066e596d11b28f0a81b6951a9c84b488597d9b2153191a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ba96c07a80dd7ef1461527e54dd59da8b58b6c480e005ea8980f55b59aeda15f"
-    sha256 cellar: :any_skip_relocation, ventura:        "0128d16fef574324118b67c23a9e1ca8922ba93fec52d2b0b8bbf92254c43a07"
-    sha256 cellar: :any_skip_relocation, monterey:       "4223b538e75ea08402a6bd586b48f8d9cc0bee0ee9bf37f850e265663b309e04"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ede18b89e9a6f125a27d47709ce47dc0331d2496a55f9e5c71dbc489463c1e55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3caf17a0dbee1f86720c5cdc2ed138245823dfff72bee28e0f8df1a032a94303"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98049053efc505db4ef485509c694576d8201b1d6203f6b7fc1d764bd2555437"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba655bd3ffe1107848795a1bf4cbcc28e80d099580ee7c1fda8bfff9ed5b1814"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "372f17635d5eca566208062e09e15849ac8eb435a5c59bef706e161666900e60"
+    sha256 cellar: :any_skip_relocation, ventura:        "9245db68f517d2c014af295eb515707b097025a981e0d07bd3baf8c32675c813"
+    sha256 cellar: :any_skip_relocation, monterey:       "48ce8dc5123d31a287e24c8c02776d5e97fabc54bb4d224a04b29c9e48962a73"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac722d3515d015d10795c3c94a38420e99417387b93d35c82dd80ec07094eea1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80b8376e967f810f4da6e245e075e3dcd002f1ca3af23e252cd58d55602a8b99"
   end
 
   depends_on "go" => :build
