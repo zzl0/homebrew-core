@@ -11,13 +11,13 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, ventura:        "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, monterey:       "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, big_sur:        "141292264542b0e23e1e7d52995ceaeb66457383b9643f3dd73c9c9a70e07c74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa414982c8077eb1e146d22192378eb375c247091fa6b3c1378258334eae648f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1ca0160169bd726debf09886f280dacb70548298c57301afbbff4605e9337cc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aee449ec71fa6e129bfc75f774aca679cd1b3d4680a27889dd20cfcdf3f327ca"
   end
 
   head do
