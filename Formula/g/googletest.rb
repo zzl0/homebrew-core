@@ -19,7 +19,8 @@ class Googletest < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+      "-DCMAKE_CXX_STANDARD=17", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -30,15 +31,30 @@ class Googletest < Formula
 
   test do
     (testpath/"test.cpp").write <<~EOS
+      #include <string>
+      #include <string_view>
+      #include <vector>
       #include <gtest/gtest.h>
       #include <gtest/gtest-death-test.h>
+      #include "gmock/gmock.h"
 
       TEST(Simple, Boolean)
       {
         ASSERT_TRUE(true);
       }
+      TEST(Simple, Cpp17StringView)
+      {
+        const char* c = "test";
+        std::string s{c};
+        std::string_view sv{s};
+        std::vector<std::string_view> vsv{sv};
+        EXPECT_EQ(sv, s);
+        EXPECT_EQ(sv, s.c_str());
+        EXPECT_EQ(sv, "test");
+        EXPECT_THAT(vsv, testing::ElementsAre("test"));
+      }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lgtest", "-lgtest_main", "-pthread", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lgtest", "-lgtest_main", "-pthread", "-o", "test"
     system "./test"
   end
 end
