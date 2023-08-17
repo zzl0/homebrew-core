@@ -1,8 +1,8 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https://github.com/cocogitto/cocogitto"
-  url "https://github.com/cocogitto/cocogitto/archive/refs/tags/5.4.0.tar.gz"
-  sha256 "93065217191d3e1739e6bca78b0b6de7d7dd1b5334229702fff9e84162060feb"
+  url "https://github.com/cocogitto/cocogitto/archive/refs/tags/5.5.0.tar.gz"
+  sha256 "709c54c6c64463af607590ac970dc5a45cbcc0236a5a15d609d9a77461f11325"
   license "MIT"
 
   bottle do
