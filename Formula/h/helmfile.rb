@@ -1,8 +1,8 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/v0.155.1.tar.gz"
-  sha256 "33c6856e49bf5293a1ad11578b2b5b8b9ed5407483f1cf461857f9d4b0f7c2f9"
+  url "https://github.com/helmfile/helmfile/archive/refs/tags/v0.156.0.tar.gz"
+  sha256 "8189bc46e885ba3acbe7f5ae58bf41114b48614d0841abb15acfef3dcb4fd654"
   license "MIT"
   version_scheme 1
 
@@ -34,19 +34,19 @@ class Helmfile < Formula
   end
 
   test do
-    (testpath/"helmfile.yaml").write <<-EOS
-    repositories:
-    - name: stable
-      url: https://charts.helm.sh/stable
+    (testpath/"helmfile.yaml").write <<~EOS
+      repositories:
+      - name: stable
+        url: https://charts.helm.sh/stable
 
-    releases:
-    - name: vault                            # name of this release
-      namespace: vault                       # target namespace
-      createNamespace: true                  # helm 3.2+ automatically create release namespace (default true)
-      labels:                                # Arbitrary key value pairs for filtering releases
-        foo: bar
-      chart: stable/vault                    # the chart being installed to create this release, referenced by `repository/chart` syntax
-      version: ~1.24.1                       # the semver of the chart. range constraint is supported
+      releases:
+      - name: vault            # name of this release
+        namespace: vault       # target namespace
+        createNamespace: true  # helm 3.2+ automatically create release namespace (default true)
+        labels:                # Arbitrary key value pairs for filtering releases
+          foo: bar
+        chart: stable/vault    # the chart being installed to create this release, referenced by `repository/chart` syntax
+        version: ~1.24.1       # the semver of the chart. range constraint is supported
     EOS
     system Formula["helm"].opt_bin/"helm", "create", "foo"
     output = "Adding repo stable https://charts.helm.sh/stable"
