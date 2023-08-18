@@ -7,6 +7,12 @@ class Rpmspectool < Formula
   sha256 "359ab2c743bfe19cde5758e27d798e276aff63e1b9c8bb1bd307e89c07200ed6"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6a3984ff1a7e27b7434158d82a9c424d0413aa1b2d5e31c7418d591aec57e40"
+    sha256 cellar: :any_skip_relocation, ventura:       "0bb3455e3b2f5f36ff74f4fbfd74ab0ba3e06905d97ad4add24b0d8cf6130f58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2806fc85d5ea031c34610e073d70f601c15433d5c3e4f6beb6abc3c9aeb1fd97"
+  end
+
   depends_on "python@3.11"
   depends_on "rpm"
   uses_from_macos "curl"
