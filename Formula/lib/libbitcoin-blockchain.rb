@@ -1,10 +1,9 @@
 class LibbitcoinBlockchain < Formula
   desc "Bitcoin Blockchain Library"
   homepage "https://github.com/libbitcoin/libbitcoin-blockchain"
-  url "https://github.com/libbitcoin/libbitcoin-blockchain/archive/v3.6.0.tar.gz"
-  sha256 "18c52ebda4148ab9e6dec62ee8c2d7826b60868f82710f21e40ff0131bc659e0"
+  url "https://github.com/libbitcoin/libbitcoin-blockchain/archive/v3.8.0.tar.gz"
+  sha256 "e7a3f2d2ea8275946218d734cd3d5d805c61e69eb29d1fb16e3064554bd2b584"
   license "AGPL-3.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "c1f50e84c1b0143b39d7c5c4bc9335fa5dcd1ae111ea353f262ac87be739c95e"
@@ -53,7 +52,7 @@ class LibbitcoinBlockchain < Formula
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
                     "-I#{libexec}/include",
-                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
+                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-L#{libexec}/lib", "-lbitcoin-blockchain",
                     "-L#{boost.lib}", "-lboost_system"
     system "./test"
