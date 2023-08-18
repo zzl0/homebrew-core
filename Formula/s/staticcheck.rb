@@ -1,19 +1,19 @@
 class Staticcheck < Formula
   desc "State of the art linter for the Go programming language"
   homepage "https://staticcheck.io/"
-  url "https://github.com/dominikh/go-tools/archive/2023.1.4.tar.gz"
-  sha256 "f112ab27150d654626ac26236d658ea7882f68ec23164827ef586ef1c4c4ce7c"
+  url "https://github.com/dominikh/go-tools/archive/2023.1.5.tar.gz"
+  sha256 "fd231014b8d9668dc3d2d583a54c7988453c9b5a42e4ba681a9b4c5be6744546"
   license "MIT"
   head "https://github.com/dominikh/go-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebebd2082c5dbcd2febffdd222cf03e7b8f26f173e21bfbd7c4377dcdefde69f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53dbb06e569cd5193d1704880b19a57db90b70c5447481b75f726e9555141495"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dadee762aa80bbbb98ebc1e19059da8151f9f6570cd4b621fdf53ac057741050"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e603300b567fc76aac9a5d648990feff1bff97f64809496235358b58625b2ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "5297a6e2cbc4aec6aa6950672b30e1d357788ff5ff12c3a04c866a73c0310091"
-    sha256 cellar: :any_skip_relocation, big_sur:        "df528df77c5bf7ae657b600d228cea5c116fe1fd952b5ee1632a0e23d85557a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "515055a7094e0eb9a78575a78128c2c3b726d02d2e428051605fe1e00ca6a3d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "770befb587e5853b5b4d54068c6ebbecd7db8a2f42628ae27ee979c3a425a93f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aedbe1af0e12720454a9b2c4728525ba23208865c38ff448d6285d51c3edb558"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3afc69cc2d66a64b0dcf966df1a89b7a5d083245b2cd0840a49b1fb46545592"
+    sha256 cellar: :any_skip_relocation, ventura:        "1edb5c68d15764852ca462097e53d7c5b618388b7222435d7e3cacdb84056fe0"
+    sha256 cellar: :any_skip_relocation, monterey:       "001e8cc21cb9f26545aa03a1caef8c74eea0ae14a55c4453ef9d3713650c2c5d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a3b4eeb1ead02433dd055be5bbecf6cbbcf00f3dad46e1da42a42beaa549abf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e499c2bdb9a2a3eb352879b1fac8592b1bb0422522c24eb370c8d95988c8689e"
   end
 
   depends_on "go"
