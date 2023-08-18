@@ -9,14 +9,13 @@ class GimmeAwsCreds < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f9ce8ff0cc909ceda8757c291125d68c36bce089b8651195729a410dfb034e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce60a1eb54ceb6963dfcb8bdba5b25c55c197ce3fd3773d1981a53fc157f1ee8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b238e36d26c91ccb4afecd785a0ed9e3cc520f8c2f6119a5441bf75712e8e5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "976b2763177d96ca3466fee2f7a403eb280b0a9ed0e5353d4232eb31590b66ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "faec9c692c0f832ad492558e6ce1f6f3818c1caf3f484efdd878c09b10752606"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77919e3df2c4ca7484d2dd153d55f0212ecaae07c80f6b639a13b4a21e0e61b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "059903421eb03dc71500713573547a8049f41febceb6ad98fa9c20408e5d645e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1c29f6e9b9b0840d43a465f1254d764beac15c5b5496ac3fe703f76d737770e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dec7d7edb2449aaee91fac9fcccc2af08563c0cb1bec52d21af5f2b7ce5302f9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27a51978f3af1a15e84e73719555169aecc81574b5d3d55bc0d8ab9f9d84dd1b"
+    sha256 cellar: :any_skip_relocation, ventura:        "50a6a1faf1da1f3d60f9175c1a10d2e43206d86038143cf1a26aff6d14070cd8"
+    sha256 cellar: :any_skip_relocation, monterey:       "d420f75204b69c5a2d71d6978683bd6347d48fe9cd45b8b3050e67cf4138827c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aff46d3df62dc8bbed04b01ec6206da28d561f6635bee621711f0c5e31285f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "feccb0b3995582083d58da98e8c393f6902ed71fe81ad736fb3e8316da2b8363"
   end
 
   depends_on "cffi"
