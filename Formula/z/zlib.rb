@@ -1,11 +1,11 @@
 class Zlib < Formula
   desc "General-purpose lossless data-compression library"
   homepage "https://zlib.net/"
-  url "https://zlib.net/zlib-1.2.13.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.2.13/zlib-1.2.13.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/zlib-1.2.13.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.2.13.tar.gz"
-  sha256 "b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30"
+  url "https://zlib.net/zlib-1.3.tar.gz"
+  mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.3/zlib-1.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zlib-1.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.3.tar.gz"
+  sha256 "ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e"
   license "Zlib"
   head "https://github.com/madler/zlib.git", branch: "develop"
 
