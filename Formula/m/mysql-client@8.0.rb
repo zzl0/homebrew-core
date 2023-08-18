@@ -9,6 +9,16 @@ class MysqlClientAT80 < Formula
     formula "mysql@8.0"
   end
 
+  bottle do
+    sha256 arm64_ventura:  "87ab7064db0bac620bb7fba66062e594c71ce86a87f29729f4b452169501104c"
+    sha256 arm64_monterey: "248eb2aa4f84e2b9c4cbf1f2775d538fcf7171494d6f3b8ad2632d428d5f7714"
+    sha256 arm64_big_sur:  "24028a62c41a83bdb66e80a6147d7d8af2dbb42c9846f0249b4ce2808738b862"
+    sha256 ventura:        "6c1c5391dc81e2ad3f6000e21f82c273434801cc560a53c4f1d9e7188df11618"
+    sha256 monterey:       "21f0930daa861c9a6e14c67092618a2b3aae5ee974e986dc71cb90738a1bd09d"
+    sha256 big_sur:        "cbab29dc7390154cbd61c1c5653cad983dc69640484cbaf4163c867c0ea2d969"
+    sha256 x86_64_linux:   "ccf8919d07249e0cf0279282590b22a4c3fc1c8affe81e6b19f2852f2ffbd80b"
+  end
+
   keg_only :versioned_formula
 
   depends_on "bison" => :build
