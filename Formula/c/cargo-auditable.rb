@@ -6,6 +6,16 @@ class CargoAuditable < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rust-secure-code/cargo-auditable.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d41197793c5a2d1ce91b79fe73fdecb43cd3b6c6b18a70fe03f1b49fc0a83c55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0917467a0e24accccdc96c275fb0e7391b6259a318c3f92969c3bf67f060c140"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f33e9bfb8c93a6a7d791f71e065c2f9e637b7ec509239a73707d15e5a97bfbb1"
+    sha256 cellar: :any_skip_relocation, ventura:        "29bad4be60aa150cd04578d81d53ff18526b62c3bfed7fb12bb8816b755b6070"
+    sha256 cellar: :any_skip_relocation, monterey:       "ecc1f87a0d5ffb886dcd9529efdde947a3d74620fdefbb7eb0825f4fbc772d76"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b3be96740b3423596798aee06c96b83e3668b3583294cfe0b0d40bd84d810783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e770fd3d8ce7ee24020d2eda3c2fc6e9c142558a96b2527e12315eda28c8dee"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
 
