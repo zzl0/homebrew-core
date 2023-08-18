@@ -1,10 +1,11 @@
 class Packer < Formula
   desc "Tool for creating identical machine images for multiple platforms"
   homepage "https://packer.io"
-  # NOTE: Do not bump to new release as license changed to BUSL-1.1
+  # NOTE: Do not bump to 1.10.0 as license changed to BUSL-1.1
   # https://github.com/hashicorp/packer/pull/12568
-  url "https://github.com/hashicorp/packer/archive/v1.9.3.tar.gz"
-  sha256 "d13035521bb352b79fe9a09a0cb84f5d0a4619df06f71a5f8c22fbe6fbf922a4"
+  # https://github.com/hashicorp/packer/pull/12575
+  url "https://github.com/hashicorp/packer/archive/v1.9.4.tar.gz"
+  sha256 "c07db8375190668571077784f4a650514d6ef879ae45cb4c3c1717ad8308c47e"
   license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git", branch: "main"
 
