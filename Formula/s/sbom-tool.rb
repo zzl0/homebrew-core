@@ -7,10 +7,10 @@ class SbomTool < Formula
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "50d1385d899e90a2aa57b398ed0537a0d34cbfbd5a82fbe65405c342d9bd7e56"
-    sha256 cellar: :any_skip_relocation, monterey:     "50d1385d899e90a2aa57b398ed0537a0d34cbfbd5a82fbe65405c342d9bd7e56"
-    sha256 cellar: :any_skip_relocation, big_sur:      "50d1385d899e90a2aa57b398ed0537a0d34cbfbd5a82fbe65405c342d9bd7e56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6fc10976256bf74d5703df0d7ae6d5e94ec110dde7a64b0fda92b0238686f39e"
+    sha256 cellar: :any_skip_relocation, ventura:      "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
+    sha256 cellar: :any_skip_relocation, monterey:     "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
+    sha256 cellar: :any_skip_relocation, big_sur:      "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7097725fda79fb57dcc71f0073312db48f19fed5b24874313e9efb9b5ff067bb"
   end
 
   depends_on "dotnet" => :build
