@@ -5,7 +5,7 @@ class MoltenVk < Formula
 
   stable do
     url "https://github.com/KhronosGroup/MoltenVK/archive/v1.2.5.tar.gz"
-    sha256 "b4468aee1abf7dcc79dc12a817b1eb3b8fcef9e44f547f32ea1fdcd7a9d2c8ba"
+    sha256 "946d8f0e7ae3b47774b03a610d3a3e7e4bcbef3e667e1362325936839035a115"
 
     # MoltenVK depends on very specific revisions of its dependencies.
     # For each resource the path to the file describing the expected
