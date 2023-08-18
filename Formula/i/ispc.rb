@@ -1,9 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/ispc/ispc/archive/v1.20.0.tar.gz"
-  sha256 "28a1de948fb8b6bbe81d981a4821306167c64c305e839708423abb6322cf3b22"
+  url "https://github.com/ispc/ispc/archive/v1.21.0.tar.gz"
+  sha256 "fc170dafd4e1fba1d193d772d8346114136a132b0d8a8c3a1f3c3f821a615722"
   license "BSD-3-Clause"
 
   bottle do
@@ -20,7 +19,7 @@ class Ispc < Formula
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.11" => :build
-  depends_on "llvm@15"
+  depends_on "llvm"
 
   on_linux do
     depends_on "tbb"
@@ -33,10 +32,6 @@ class Ispc < Formula
   end
 
   def install
-    # FIXME: Set correct RPATH on macOS
-    inreplace "ispcrt/CMakeLists.txt", "set(CMAKE_INSTALL_RPATH $ORIGIN)",
-                                       "set(CMAKE_INSTALL_RPATH #{loader_path})"
-
     # Force cmake to use our compiler shims instead of bypassing them.
     inreplace "CMakeLists.txt", "set(CMAKE_C_COMPILER \"clang\")", "set(CMAKE_C_COMPILER \"#{ENV.cc}\")"
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_COMPILER \"clang++\")", "set(CMAKE_CXX_COMPILER \"#{ENV.cxx}\")"
