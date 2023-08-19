@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v23.4/protobuf-23.4.tar.gz"
-  sha256 "a700a49470d301f1190a487a923b5095bf60f08f4ae4cac9f5f7c36883d17971"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v24.2/protobuf-24.2.tar.gz"
+  sha256 "39b52572da90ad54c883a828cb2ca68e5ac918aa75d36c3e55c9c76b94f0a4f7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,17 +20,11 @@ class Protobuf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6376391a61c411ad6cb76936abb98c1e0fb3e368a3fa9bb2668a8d169a4581d6"
   end
 
-  head do
-    url "https://github.com/protocolbuffers/protobuf.git", branch: "main"
-    depends_on "jsoncpp"
-  end
-
   depends_on "cmake" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "abseil"
-  # TODO: Add the dependency below in Protobuf 24+. Also remove `head` block.
-  # TODO: depends_on "jsoncpp"
+  depends_on "jsoncpp"
 
   uses_from_macos "zlib"
 
@@ -41,7 +35,6 @@ class Protobuf < Formula
   end
 
   def install
-    odie "Dependencies need adjusting!" if build.stable? && version >= "24"
     # Keep `CMAKE_CXX_STANDARD` in sync with the same variable in `abseil.rb`.
     abseil_cxx_standard = 17
     cmake_args = %w[
