@@ -1,10 +1,9 @@
 class Angband < Formula
   desc "Dungeon exploration game"
   homepage "https://angband.github.io/angband/"
-  url "https://github.com/angband/angband/releases/download/4.2.4/Angband-4.2.4.tar.gz"
-  sha256 "a07c78c1dd05e48ddbe4d8ef5d1880fcdeab55fd05f1336d9cba5dd110b15ff3"
+  url "https://github.com/angband/angband/releases/download/4.2.5/Angband-4.2.5.tar.gz"
+  sha256 "c4cacbdf28f726fcb1a0b30b8763100fb06f88dbb570e955232e41d83e0718a6"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/angband/angband.git", branch: "master"
 
   livecheck do
