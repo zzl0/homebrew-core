@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M4h",
-      revision: "b5fca58162798dc8635bedd200eb735a707a7fe8"
-  version "M4h"
+      tag:      "release/M5c",
+      revision: "5e428a7701005710ac05e9bf30d1547edd8f25e9"
+  version "M5c"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -24,7 +24,7 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae23dafd3afa7e35fe6c3c98d1db200fd0b1a8ff4a23e0dd40263e20397558be"
   end
 
-  depends_on "ghc@8.10" => :build # GHC 9.2 open PR: https://github.com/unisonweb/unison/pull/3642
+  depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
   depends_on "node@18" => :build
 
@@ -32,10 +32,18 @@ class Unisonlang < Formula
   uses_from_macos "xz" => :build
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "ncurses"
+  end
+
+  on_arm do
+    depends_on "elm" => :build
+  end
+
   resource "local-ui" do
-    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M4h.tar.gz"
-    version "M4h"
-    sha256 "cac7ddd1cbac628e54dbf56d879cb0a22f2b70ef3e711cf51b9e05cd5e409e44"
+    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5c.tar.gz"
+    version "M5c"
+    sha256 "efcb1fa73d37da47cc7145d5923c2a2077bdc5f9863db0673c1a694eac544694"
   end
 
   def install
@@ -45,6 +53,12 @@ class Unisonlang < Formula
     # Build and install the web interface
     resource("local-ui").stage do
       system "npm", "install", *Language::Node.local_npm_install_args
+      if Hardware::CPU.arm?
+        # Replace x86_64 elm binary to avoid dependency on Rosetta
+        elm = Pathname("node_modules/elm/bin/elm")
+        elm.unlink
+        elm.parent.install_symlink Formula["elm"].opt_bin/"elm"
+      end
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.
       # Issue ref: https://github.com/zwilias/elm-json/issues/50
@@ -75,10 +89,6 @@ class Unisonlang < Formula
     # Ensure the local-ui version matches the ucm version
     assert_equal version, resource("local-ui").version
 
-    # Initialize a codebase by starting the server/repl, but then run the "exit" command
-    # once everything is set up.
-    pipe_output("#{bin}/ucm -C ./", "exit")
-
     (testpath/"hello.u").write <<~EOS
       helloTo : Text ->{IO, Exception} ()
       helloTo name =
@@ -89,6 +99,15 @@ class Unisonlang < Formula
         helloTo "Homebrew"
     EOS
 
-    assert_match "Hello Homebrew", shell_output("#{bin}/ucm -C ./ run.file ./hello.u hello")
+    (testpath/"hello.md").write <<~EOS
+      ```ucm
+      .> project.create test
+      test/main> load hello.u
+      test/main> add
+      test/main> run hello
+      ```
+    EOS
+
+    assert_match "Hello Homebrew", shell_output("#{bin}/ucm --codebase-create ./ transcript.fork hello.md")
   end
 end
