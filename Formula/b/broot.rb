@@ -1,8 +1,8 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/v1.24.2.tar.gz"
-  sha256 "cf223710bd75362d37312ef50b4966d57a79b36e3e645f940fd34569075f3974"
+  url "https://github.com/Canop/broot/archive/v1.25.0.tar.gz"
+  sha256 "5b34f7e975e6bbf954f81f87af720559aa6a5916950275242d43fade906f20b1"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
@@ -27,7 +27,7 @@ class Broot < Formula
 
     # Replace man page "#version" and "#date" based on logic in release.sh
     inreplace "man/page" do |s|
-      s.gsub! "#version", version
+      s.gsub! "#version", version.to_s
       s.gsub! "#date", time.strftime("%Y/%m/%d")
     end
     man1.install "man/page" => "broot.1"
