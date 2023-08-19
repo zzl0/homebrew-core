@@ -14,13 +14,13 @@ class Kcov < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b56293d52b8d2b3591baccec7f8143aec6fe9b8dc832c5accf5c92fd92f6f3c5"
-    sha256 arm64_monterey: "68a6853a5064d77b60aa89e7b1767b9be1505a5c848e9012be017c6d11d55272"
-    sha256 arm64_big_sur:  "f9d812f5775df049096ab757479b152f7fc3ccedf25ed18fdec9e027f7210712"
-    sha256 ventura:        "d7a061859b7948722c56dd458509476340eee62d4aacd5c496cc8d2514e559e5"
-    sha256 monterey:       "3a4aa6158fcf675c5246ae2b45dba40e5054692cb26c6eeabae907293a016ad1"
-    sha256 big_sur:        "8ab0e4c6e2716dbf7d8ee4382c06af38d2312e9f877366a05e2529913592747c"
-    sha256 x86_64_linux:   "aa3efcf2ba34eb00534fe3a16c8d1dd3e53476dca3819744b9b3f1e8f826df66"
+    sha256 arm64_ventura:  "251550248b21e155d44d5677e4bc4a4ab58cc376c296ff4631ecaf29d8d3b81e"
+    sha256 arm64_monterey: "42dc756dc1b009db595a122342809b542f92cf75e51a70679c70bd1e15e719be"
+    sha256 arm64_big_sur:  "e162f14944c8588bef39cd000f8182d80706a05cd151d9179f9c7d4e0e0b6b2d"
+    sha256 ventura:        "dd235dd9938c6efab9cf22a27a1479f978b4988f0a1b24309ae129717d937b46"
+    sha256 monterey:       "f6eea5f30cfdfb9a99e9c15c6b2f8a496d64977accc78cd7237322e57619a1b7"
+    sha256 big_sur:        "c88b2f16ebc426158e17f36a932ff63f5a3a42cc225d6c365b0ae73c0abe2275"
+    sha256 x86_64_linux:   "2e6db1f8477d1bd9daa60af0f3e39634be0e2c42335f6a4a09a5e67d63287171"
   end
 
   depends_on "cmake" => :build
