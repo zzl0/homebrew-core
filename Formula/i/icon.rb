@@ -1,9 +1,9 @@
 class Icon < Formula
   desc "General-purpose programming language"
   homepage "https://www.cs.arizona.edu/icon/"
-  url "https://github.com/gtownsend/icon/archive/v9.5.22e.tar.gz"
-  version "9.5.22e"
-  sha256 "e09ab5a7d4f10196be0e7ca12624c011cd749fc93e50ad4ed87bd132d927c983"
+  url "https://github.com/gtownsend/icon/archive/v9.5.23a.tar.gz"
+  version "9.5.23a"
+  sha256 "0c2e8b70a19e476c7a5a4aaaa46160f2f6197d14d6f8e01e164b6a3fff8c210a"
   license :public_domain
 
   livecheck do
