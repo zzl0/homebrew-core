@@ -7,6 +7,16 @@ class Dolphie < Formula
   sha256 "27370681b718b4e51a7fcc53c424e2b58af84231383c109f569eee14e99065dc"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d38e41d3d283d39f06104a827f34bc9fe1328c7904482a6c3138cccd2615add1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e886734af807a8f0858cac30dcebc21170e2485a647787f609a8883ea2c61a9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14519b6a2b230fca8a8a37856bdfee878e2a813728582014c856d8029cb85117"
+    sha256 cellar: :any_skip_relocation, ventura:        "8243b9806d1840f35706265edcff688ab3d520c05064d5c0a7b760ca573a7856"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a53ceedea40307bf2d4e957bde5e8b722b3c56517b20af89485db779c26c8be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "911246f4e4fada030100011baf32a1563e1d8e6e3781da770d756e751f31725c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab0aff57e11077e2910393991944a7f0994b3e0626cfac018882c8a5cb673b75"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "pygments"
