@@ -5,12 +5,14 @@ class VulkanValidationlayers < Formula
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
   stable do
-    url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.250.tar.gz"
-    sha256 "1c3609321c1167f9af5d3687a443885e2cb1e8e5150df16356200e84bef685f3"
+    url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.261.tar.gz"
+    sha256 "ab769d9d7550e1636c9309387a7e53be5ba89f0b19f810bb40caa1b6eaefe8ee"
 
-    # upstream commit ref, https://github.com/KhronosGroup/SPIRV-Tools/commit/d4c0abdcad60325a2ab3c00a81847e2dbdc927a2
-    # remove in next release
-    patch :DATA
+    # revert vulkan-utility-libraries dependency, remove in next release
+    patch do
+      url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/commit/e6bdb8d71409a96a4174589ea195d0dc1e920625.patch?full_index=1"
+      sha256 "5bc8e5bbae533f4d2586055fd4eccc93c2e4d7bccf5faea1fca8bae9f332246c"
+    end
   end
 
   bottle do
@@ -30,7 +32,6 @@ class VulkanValidationlayers < Formula
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
   depends_on "spirv-headers"
-  depends_on "spirv-tools"
   depends_on "vulkan-headers"
 
   on_linux do
@@ -41,11 +42,28 @@ class VulkanValidationlayers < Formula
     depends_on "wayland" => :build
   end
 
+  # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L57
+  resource "SPIRV-Tools" do
+    url "https://github.com/KhronosGroup/SPIRV-Tools.git",
+        revision: "e553b884c7c9febaa4e52334f683641fb5f196a0"
+  end
+
   def install
+    resource("SPIRV-Tools").stage do
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DSPIRV-Headers_SOURCE_DIR=#{Formula["spirv-headers"].prefix}",
+                      "-DSPIRV_WERROR=OFF",
+                      "-DSPIRV_SKIP_TESTS=ON",
+                      "-DSPIRV_SKIP_EXECUTABLES=ON",
+                      *std_cmake_args(install_prefix: buildpath/"third_party/SPIRV-Tools")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
     args = [
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
       "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].prefix}",
-      "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].prefix}",
+      "-DSPIRV_TOOLS_INSTALL_DIR=#{buildpath}/third_party/SPIRV-Tools",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
       "-DBUILD_LAYERS=ON",
       "-DBUILD_LAYER_SUPPORT_FILES=ON",
@@ -78,23 +96,9 @@ class VulkanValidationlayers < Formula
     expected = <<~EOS
       Instance Layers: count = 1
       --------------------------
-      VK_LAYER_KHRONOS_validation Khronos Validation Layer \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_validation Khronos Validation Layer #{version}  version 1
     EOS
     actual = shell_output("vulkaninfo --summary")
-    assert_match Regexp.new(expected), actual
+    assert_match expected, actual
   end
 end
-
-__END__
-diff --git a/layers/gpu_validation/gpu_validation.h b/layers/gpu_validation/gpu_validation.h
-index 8183fdf..0f2ea6b 100644
---- a/layers/gpu_validation/gpu_validation.h
-+++ b/layers/gpu_validation/gpu_validation.h
-@@ -330,3 +330,7 @@ class GpuAssisted : public GpuAssistedBase {
-     bool descriptor_indexing = false;
-     bool buffer_device_address;
- };
-+
-+namespace spvtools {
-+    static const int kDebugInputBindlessMaxDescSets = 32;
-+}
