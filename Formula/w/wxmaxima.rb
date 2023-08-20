@@ -1,8 +1,8 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-23.04.1.tar.gz"
-  sha256 "869e20a02e0da97bd92da20e8a9b8a04facaea387feb09c16c5f23445b4e163f"
+  url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-23.08.0.tar.gz"
+  sha256 "f45fc63aab68e39501500fe2f24021915cfdbc1d2650443d88e42a223c8df517"
   license "GPL-2.0-or-later"
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
@@ -26,7 +26,23 @@ class Wxmaxima < Formula
   depends_on "maxima"
   depends_on "wxwidgets"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  end
+
+  fails_with :clang do
+    build 1300
+    cause <<~EOS
+      .../src/MathParser.cpp:1239:10: error: no viable conversion from returned value
+      of type 'CellListBuilder<>' to function return type 'std::unique_ptr<Cell>'
+        return tree;
+               ^~~~
+    EOS
+  end
+
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
+
     system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
