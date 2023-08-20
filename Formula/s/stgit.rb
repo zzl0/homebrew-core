@@ -1,8 +1,8 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://github.com/stacked-git/stgit/releases/download/v2.3.1/stgit-2.3.1.tar.gz"
-  sha256 "edf590f9ffaea1c235aec11c411cee12486f354b3235fa9e84bec26e735f997c"
+  url "https://github.com/stacked-git/stgit/releases/download/v2.3.2/stgit-2.3.2.tar.gz"
+  sha256 "8d337a9e998c8b7e5ad5b0d061aa65c241071b6af5274ab2bc796fc1e8c808d5"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
