@@ -6,15 +6,13 @@ class LibbitcoinConsensus < Formula
   license "AGPL-3.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "46734a045992d1a1e2cba4689ab58537f5e7729310d6acb476178d170c54d63d"
-    sha256 cellar: :any,                 arm64_monterey: "1a6488ba887d026f465280fc3f2c27847d539eca7c3ab733eff3e4bed89d6c26"
-    sha256 cellar: :any,                 arm64_big_sur:  "b2a70f871df4a376246e9882383751a65d04e7f30ff1b0c7abab507cf3d80e49"
-    sha256 cellar: :any,                 ventura:        "c1fa7160b3b53e24caf0b92cc8cd1276f859966a15aac8e2950b67bf2e301ac3"
-    sha256 cellar: :any,                 monterey:       "357a443d52c298a45747b15297806704f3bcf81c43f0ccf7066f9e4653356e5a"
-    sha256 cellar: :any,                 big_sur:        "31b62a85a41d440a6f2772c348288c89b8ff0de5c6eaaf911b4891a3796c6c60"
-    sha256 cellar: :any,                 catalina:       "c45b5944cedcd5ad9733ea30e49a644851264abf40f8d38cbc8b67ddf33ce21c"
-    sha256 cellar: :any,                 mojave:         "b6d7bed977f2e337a0fd2da7f56035323ba8c1d59503ccdb3fef5f6033cf7eef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ccf6f4e46745f168dbf5c77f36d30041138b8c0a9a7c3de27060fd5627b7270"
+    sha256 cellar: :any,                 arm64_ventura:  "495b1ee3bc1d01755b48ced48c019b2bf40f1361c529a1186c66449801f25708"
+    sha256 cellar: :any,                 arm64_monterey: "82cdc41015f185c56a5c317ec125d1f6d74e298611afd8e0efb05135668c9a47"
+    sha256 cellar: :any,                 arm64_big_sur:  "dbb11bd9f43f28ff31be7248a0c443d7359c7ceeb01227c1c099ea613d869f35"
+    sha256 cellar: :any,                 ventura:        "2f8f5925ff397fd8b1f6f1c499e3828c25830b551e678bbb24898912825fc328"
+    sha256 cellar: :any,                 monterey:       "3b0a76702e478bae5a2b864b2bfaf4cbc2f658582454fa4ab0ccf534d4c9fae5"
+    sha256 cellar: :any,                 big_sur:        "1ef57e9412ff7a67edd7e7557b8848f321f1355c0841dfb0cf6167a0d2e37447"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b0d72b5ff1f2de8effc219182d08b8e3a4a92ec714ddea76691196ca42df61"
   end
 
   depends_on "autoconf" => :build
