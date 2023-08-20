@@ -7,13 +7,13 @@ class Hebcal < Formula
   head "https://github.com/hebcal/hebcal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f314943ba063fc38c148435930ae54d713c521bffba09d3b783f448ffdf3a956"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f314943ba063fc38c148435930ae54d713c521bffba09d3b783f448ffdf3a956"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f314943ba063fc38c148435930ae54d713c521bffba09d3b783f448ffdf3a956"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ad9e2e90b0982fa477f31b268755d97f0481fb4df06fd83505f81be435eec63"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ad9e2e90b0982fa477f31b268755d97f0481fb4df06fd83505f81be435eec63"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0ad9e2e90b0982fa477f31b268755d97f0481fb4df06fd83505f81be435eec63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8781cd6b1684f34af41fb7b1580ce921b589970c747371bfe91a4bff47f7e2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "120da2732c8aab36db530ce1317ae79c39be2937f1836a1a60189e53aa1a32cb"
   end
 
   depends_on "go" => :build
