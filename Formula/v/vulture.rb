@@ -3,8 +3,8 @@ class Vulture < Formula
 
   desc "Find dead Python code"
   homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/f8/12/a4f70dc86015a76d66785e2dbc3a03e00fb6ff70a4d039dd8ed14a9df03a/vulture-2.8.tar.gz"
-  sha256 "393293f183508064294b0feb4c8579e7f1f27e5bf74c9def6a3d52f38b29b599"
+  url "https://files.pythonhosted.org/packages/a1/e4/456ff34fd6bbdd7695a8b5b06f5b2370ab000ee3f07c33ff8d13e1e0f659/vulture-2.9.tar.gz"
+  sha256 "0f4d86ba515e67db2860539894edb4e387b25696f831234826dd72c636f0331f"
   license "MIT"
   head "https://github.com/jendrikseipp/vulture.git", branch: "main"
 
@@ -21,14 +21,21 @@ class Vulture < Formula
   depends_on "python-toml"
   depends_on "python@3.11"
 
+  resource "toml" do
+    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
+    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    assert_equal "vulture #{version}\n", shell_output("#{bin}/vulture --version")
+    # upstream bug, https://github.com/jendrikseipp/vulture/issues/321
+    assert_equal "vulture #{version}\n", shell_output("#{bin}/vulture --version", 2)
+
     (testpath/"unused.py").write "class Unused: pass"
-    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}/vulture #{testpath}/unused.py", 1)
+    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}/vulture #{testpath}/unused.py", 3)
     (testpath/"used.py").write "print(1+1)"
     assert_empty shell_output("#{bin}/vulture #{testpath}/used.py")
   end
