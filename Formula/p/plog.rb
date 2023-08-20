@@ -6,13 +6,7 @@ class Plog < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, ventura:        "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, monterey:       "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "add968eb36e5f301923bc3d3cf3ff85c502137840b5a5016b167722a9ac7df30"
+    sha256 cellar: :any_skip_relocation, all: "ee9e1fc1f2fb038c2432470cd3fda51be3fb90638f48a90f69fea2139053f48d"
   end
 
   depends_on "cmake" => [:build, :test]
