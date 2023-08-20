@@ -16,13 +16,13 @@ class VulkanValidationlayers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a344fc4bccbf4505caa2a700a21f46e147a9e79f6876809b40967fb169d8fd37"
-    sha256 cellar: :any,                 arm64_monterey: "a2744ddfcec7ddc534e933aec54a3a361bd7c78a5943db20ff5c566400341bb1"
-    sha256 cellar: :any,                 arm64_big_sur:  "9931def5297dce6d87327d64093555a060132ba7d98d54da3e8afba43c250fb0"
-    sha256 cellar: :any,                 ventura:        "3f6dc678afd4b1355875746df32e6bcc7eda0c83e7d8a3b92e573564f18af2b5"
-    sha256 cellar: :any,                 monterey:       "65c790510017b6ae55e0666a26b00bcbc52b75c9ecc1ed2d420bc3abe7d5d64b"
-    sha256 cellar: :any,                 big_sur:        "6b3a8ab678a607bd891ab85acece74fd8f91139de5812ebf70fe49b19eee4067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e834d1d737fbc101412b4c784435bc3ae1611deee28a3c7299559453efee41f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f37fe2ee839a27f8f4133a2c3e789a438b79853f40f476d5435db15b88668ab6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21430d3ef63936fff9b4cebaefb99c7d83afd8faee28c516acf34fa49f481cd9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38fcd518903434385edcaa079c188b18c4ac1d328f9d3c1122eaaf0b8aa85925"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a1898951bfd3aafc075080a28f827e31692f2723291c0a28cce4bc5e17720f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d9f8172eae3fc6ddc1a0a745424c3f1e1cdaa72c85f9a9c694eaeb3a7acccb3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37649c4755647960b8ea4c5251a2c2c9f75c13fdd1d9b475304c402df0d91b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "304b76b07443da42bbd9590d719233665405123c58eeb44a68d64c78f6b00b0b"
   end
 
   depends_on "cmake" => :build
