@@ -3,8 +3,8 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/01/74/b42da2690d994ff3d1998417d63682bd42600b2fc49cc8a3e90db5246247/johnnydep-1.20.2.tar.gz"
-  sha256 "21d361ca4c25ffc043e7a47acd9c619c68880bef91cb4be820e4ce2d085726d0"
+  url "https://files.pythonhosted.org/packages/ac/4f/a6e38abe80edd42b366fc3420542e548ac1039f514126db605ee5a09c4c9/johnnydep-1.20.3.tar.gz"
+  sha256 "0f26a9e50e8f4d20eb7abbd2bd85fe352a6f28b5630999ee470c0d0c76c10911"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Johnnydep < Formula
   depends_on "six"
 
   resource "anytree" do
-    url "https://files.pythonhosted.org/packages/d8/45/de59861abc8cb66e9e95c02b214be4d52900aa92ce34241a957dcf1d569d/anytree-2.8.0.tar.gz"
-    sha256 "3f0f93f355a91bc3e6245319bf4c1d50e3416cc7a35cc1133c1ff38306bbccab"
+    url "https://files.pythonhosted.org/packages/ed/20/560b2c0801762f3de73ce04dd20d50ec39c2cdae83f23b6ed81cc72c7558/anytree-2.9.0.tar.gz"
+    sha256 "06f7bc294293da2755f4699cc5da5c92d9182a5cfae2842c83fb56f02bd427c8"
   end
 
   resource "cachetools" do
@@ -53,8 +53,8 @@ class Johnnydep < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
-    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
+    url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
+    sha256 "12b911f083e876e10c595779709f8a88a59f45aacc646492a67fe9ef796c1b47"
   end
 
   resource "wimpy" do
