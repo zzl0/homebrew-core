@@ -1,15 +1,9 @@
 class Yash < Formula
   desc "Yet another shell: a POSIX-compliant command-line shell"
   homepage "https://yash.osdn.jp/"
-  # Canonical: https://osdn.net/dl/yash/yash-*
-  url "https://dotsrc.dl.osdn.net/osdn/yash/78345/yash-2.54.tar.xz"
-  sha256 "44a0ac1ccf7c3acecfbea027d8c0c930f13a828065be318055ce113015391839"
+  url "https://github.com/magicant/yash/releases/download/2.55/yash-2.55.tar.xz"
+  sha256 "97cd809d5e216b3c4afae42379f1bd4f5082b7c16d51e282d60a5014fbc9e1f6"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url "https://osdn.net/projects/yash/releases/rss"
-    regex(%r{(\d+(?:\.\d+)+)</title>}i)
-  end
 
   bottle do
     sha256 arm64_ventura:  "825e7b433ab67cedb8bda81d53a97daa4d3193735121f661a2133631c0d8950c"
@@ -30,11 +24,14 @@ class Yash < Formula
   depends_on "gettext"
 
   def install
-    system "sh", "./configure", "--prefix=#{prefix}"
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog" if build.head?
+
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/yash", "-c", "echo hello world"
+    system bin/"yash", "-c", "echo hello world"
+    assert_match version.to_s, shell_output("#{bin}/yash --version")
   end
 end
