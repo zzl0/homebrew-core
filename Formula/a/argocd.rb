@@ -2,9 +2,17 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v2.8.0",
-      revision: "804d4b8ca6bc4c2cf02c5c971aa923ec5b8623f0"
+      tag:      "v2.8.1",
+      revision: "2bc94af7bd081bc4682c2c6dc005f6336c754c2b"
   license "Apache-2.0"
+
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cac8b1eb73747e1ca686f8ce880fb8842f50de73338f3d7d6972bba78cd49dd"
