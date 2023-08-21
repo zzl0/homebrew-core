@@ -1,8 +1,8 @@
 class InotifyTools < Formula
   desc "C library and command-line programs providing a simple interface to inotify"
   homepage "https://github.com/inotify-tools/inotify-tools"
-  url "https://github.com/inotify-tools/inotify-tools/archive/refs/tags/3.22.6.0.tar.gz"
-  sha256 "c6b7e70f1df09e386217102a1fe041cfc15fa4f3d683d2970140b6814cf2ed12"
+  url "https://github.com/inotify-tools/inotify-tools/archive/refs/tags/4.23.8.0.tar.gz"
+  sha256 "8ad8b72a146af57688f3289b33b92a026915fc677997147071887b65b603d20a"
   license "GPL-2.0-or-later"
 
   bottle do
