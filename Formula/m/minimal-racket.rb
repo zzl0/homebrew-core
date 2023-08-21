@@ -15,13 +15,13 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0faa098de9064789e3d608f4ab6c8d638418bb1b7b0324feab6ae94a3b73c5b5"
-    sha256 arm64_monterey: "83db9beef938a8b1245ba6004c17d8ec019a700d23fae489e3303e38b39d89d7"
-    sha256 arm64_big_sur:  "350622655ed8f8ef992ca4b30350170cdfb20b24c1ed7508e1cd8a5e95d522c4"
-    sha256 ventura:        "f025ca1028e508d6bab0b7d5ca98bd4fb39bb59955abc3f7dacdc00b084cb6b5"
-    sha256 monterey:       "3f854eceb75c80c617fbd6bbed6210cbb82af3120cbfd2afc893531e7da51746"
-    sha256 big_sur:        "2527195aac9778d6a01aaf334f72661f1c722e18b28d168fadac42dd5dd744b0"
-    sha256 x86_64_linux:   "ab38b51e93153f97c0939cf3be8da9bb70574fe08c3bf56777cc2ce86df9e233"
+    sha256 arm64_ventura:  "cea1af4de3e74fbee75b3b95f1f37883118f88b088ead31b5f5c924b6bdd130d"
+    sha256 arm64_monterey: "c633be11e598f579656445128082a6cfd8c00d166e644d952eb3c1e7ed70da4c"
+    sha256 arm64_big_sur:  "04735ab34c59cdf2f401e70718812ac157686912105135061ebdd3d0a985f829"
+    sha256 ventura:        "1b757c2e8208c5622636625b04e853d8dec84da20c43944f1c61ed4d6b4e5c3e"
+    sha256 monterey:       "4c3a14e521d3229c34ca9dce4c0d600d0651c7e67b32ca48acb14590963da966"
+    sha256 big_sur:        "729eca5613020c1bf6ceb19311cc601aeace343771d5b9cb9593870314baff4d"
+    sha256 x86_64_linux:   "b3ba24168e281895a9b5a71f5d1e21e4e074036819014ccbee31b4168e91910f"
   end
 
   depends_on "openssl@1.1"
