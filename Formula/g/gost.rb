@@ -1,10 +1,20 @@
 class Gost < Formula
   desc "GO Simple Tunnel - a simple tunnel written in golang"
   homepage "https://github.com/ginuerzh/gost"
-  url "https://github.com/ginuerzh/gost/archive/v2.11.5.tar.gz"
-  sha256 "dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7"
   license "MIT"
+  revision 1
   head "https://github.com/ginuerzh/gost.git", branch: "master"
+
+  stable do
+    url "https://github.com/ginuerzh/gost/archive/v2.11.5.tar.gz"
+    sha256 "dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7"
+
+    # go1.20 build patch, remove in next release
+    patch do
+      url "https://github.com/ginuerzh/gost/commit/0f7376b.patch?full_index=1"
+      sha256 "091eceef591810a383b1082ba2677503f9cb39a971a8098ebaecd3cd02dd18db"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -17,13 +27,10 @@ class Gost < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "19b99cc2fdc814773ed05924490b3896473889ad7a933b7ce1c80e53127fae5c"
   end
 
-  # Support for go 1.20 is merged upstream but not yet landed in a tag:
-  # https://github.com/ginuerzh/gost/commit/0f7376bd10c913c7e6b1e7e02dd5fd7769975d78
-  # Remove on next release.
-  depends_on "go@1.19" => :build
+  depends_on "go@1.20" => :build
 
   def install
-    system "go", "build", *std_go_args, "./cmd/gost"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gost"
     prefix.install "README_en.md"
   end
 
