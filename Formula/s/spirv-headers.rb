@@ -1,8 +1,8 @@
 class SpirvHeaders < Formula
   desc "Headers for SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Headers"
-  url "https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.250.1.tar.gz"
-  sha256 "442c3b329c0c1ef82a778c55b794410474c69bc08f8fb6cffaacf92c73af6f14"
+  url "https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.261.0.tar.gz"
+  sha256 "846d60811fb696b517e1e30073320f4e12572be57f1f4c9572843f87f2d07f81"
   license "MIT"
   head "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
 
