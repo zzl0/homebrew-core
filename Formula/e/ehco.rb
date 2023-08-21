@@ -22,14 +22,13 @@ class Ehco < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "adc2421757412baad839943b30e3bd213b52f1171771881b211926506174b1e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ecd00961cfe17e5062878d61d3fa2553a659c43a2e1712f355a6ff706f2ed38"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10eb331567404c720188b82e8d8e0f11471af79ce6798370eac2d1d3ab47f59e"
-    sha256 cellar: :any_skip_relocation, ventura:        "655e6f2667f39ddee1bd70c116782e98003bd5d5f19bb0c95f4b2efdced38833"
-    sha256 cellar: :any_skip_relocation, monterey:       "e240c690c54ed6a593b6a56414c5b0c134336487ab5c4f10cd39ecf139e2eac1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a82d6204833781c529f828e61833a5a62aaaa06bee39bc417f3749d7da429ac3"
-    sha256 cellar: :any_skip_relocation, catalina:       "a34305a19622c8cf08f7992bc34e0b47202fb35a7187e7c90b50055613457252"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "566974576744f5056e4a7d4f5d3b14b0b6a4af3f25a8751f5fa5c1cf901c6e83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "160dad33d85042932828946aa471dedf9b4e7b7ecc3bb7373028cc41b20e137b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4a07a01a296fea82d902512cfba70c690dd78316c651498a4f547d9970aa0f6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf3a460190a6e3a371e2438b652291d87813a3ad330b921fa75c2d572c1805d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "cfe40d06528a0a3de3fcf2104798bd16bf1c983336388ad55fa768242656703b"
+    sha256 cellar: :any_skip_relocation, monterey:       "07d03ba1e3d42a0d642eb5ae5d1542e4182fb65dbefa19aed3282fae4698ce99"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50868b237dec60e966853112729055bbbd905e76a24e2775a4db4ba783137c7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3569c5b299625b6d80c20fc187a0e48b109a307addda8dd3729e0f82ad519ceb"
   end
 
   depends_on "go@1.20" => :build
