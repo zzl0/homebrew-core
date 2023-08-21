@@ -2,10 +2,18 @@ class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
   url "https://github.com/twpayne/chezmoi.git",
-      tag:      "v2.37.0",
-      revision: "552d2556aa4b53ecd2677f9ef811376c42fc6c8e"
+      tag:      "v2.38.0",
+      revision: "0ce82b3a958191ee441034ee78da4b9440b51dc0"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
+
+  # Upstream uses GitHub releases to indicate that a version is released,
+  # so the `GithubLatest` strategy is necessary.
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "245e97074135fca7afecf36f028e5fe22e459d375bda0125b856762c6bb3f2a4"
