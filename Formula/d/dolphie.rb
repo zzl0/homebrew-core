@@ -3,8 +3,8 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/bd/a3/e987f0ea5918ac8058e0af01186ce1fcbeb16293dee327470a4f4625a845/dolphie-3.0.4.tar.gz"
-  sha256 "27370681b718b4e51a7fcc53c424e2b58af84231383c109f569eee14e99065dc"
+  url "https://files.pythonhosted.org/packages/e0/4c/2d117f4c2f860c35b82873ff98dcf088d24185d450786e57400df7014901/dolphie-3.0.5.tar.gz"
+  sha256 "80ecafd3d5d25ff4b6024ab156d43599a48ea4d20480b9c1f9573dd9446b57fc"
   license "GPL-3.0-or-later"
 
   bottle do
