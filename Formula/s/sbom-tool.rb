@@ -1,10 +1,18 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "6997e195ce2cb0902d913ec23cec0ebb015f90d1ab26c861beaaaadf4f456391"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "ebc52490acbe7509f880c93737b5051202a2173215ddb975550f61ea3f3b1a2d"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
+
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, ventura:      "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
