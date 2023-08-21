@@ -1,8 +1,8 @@
 class Nickle < Formula
   desc "Desk calculator language"
   homepage "https://www.nickle.org/"
-  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.92.tar.xz"
-  sha256 "51f1ae85a17acc0d8736ab73f4ec2478cd3358c0911b498ef9382c0438437d72"
+  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.93.tar.xz"
+  sha256 "a8dafb5f3e42528c212046a24559cbdbcb5d197c71b24f3e61543b85d3842beb"
   license "MIT"
   head "https://keithp.com/cgit/nickle.git", branch: "master"
 
@@ -29,12 +29,6 @@ class Nickle < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "libedit"
-
-  # Add math-tables.c to fix build issue, remove in next release
-  patch do
-    url "https://keithp.com/cgit/nickle.git/patch/?id=ecddca204fd83d2a7a3af76accf57d77d8b9fd64"
-    sha256 "3459fef502825faeadd8fde120ee4c22c8f6ad52fd0c3a1e026b02d21ba89c4a"
-  end
 
   def install
     ENV["CC_FOR_BUILD"] = ENV.cc
