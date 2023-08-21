@@ -3,8 +3,8 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/a5/ef/88950afa00b4bb9f574edc71c5becf1a6d45180d9ab9381586a02b995c80/llm-0.7.1.tar.gz"
-  sha256 "7e148b4b2935436fef88ea1eb133335458a7f176955c347d39ef401d80f28282"
+  url "https://files.pythonhosted.org/packages/13/da/a32c8fcd60e9e6d67a54c5ee5f0dc2f1bf78919f0ea925ef87c38f2be027/llm-0.8.tar.gz"
+  sha256 "551020e3b5b34f4fd9f753708b93f5c46c05d43b92783ab8f38c7579a299feaf"
   license "Apache-2.0"
 
   bottle do
