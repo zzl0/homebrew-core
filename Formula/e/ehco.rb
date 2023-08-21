@@ -1,10 +1,20 @@
 class Ehco < Formula
   desc "Network relay tool and a typo :)"
   homepage "https://github.com/Ehco1996/ehco"
-  url "https://github.com/Ehco1996/ehco.git",
-      tag:      "v1.1.2",
-      revision: "3f649b356a33e317e4eaeeeca4590eedbd360892"
   license "GPL-3.0-only"
+  revision 1
+  head "https://github.com/Ehco1996/ehco.git", branch: "master"
+
+  stable do
+    url "https://github.com/Ehco1996/ehco/archive/refs/tags/v1.1.2.tar.gz"
+    sha256 "064f80a267e22206033c62f5cd61b01172cd7cac532679669474e22993c4884b"
+
+    # go@1.20 build patch, remove in next release
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/cb97010/ehco/1.1.2-go-1.20-build.patch"
+      sha256 "47444d6fba83b0f1e02bd42cdc32842f3134ae2a92c029184fd2daa099b25f07"
+    end
+  end
 
   livecheck do
     url :stable
@@ -22,22 +32,15 @@ class Ehco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "566974576744f5056e4a7d4f5d3b14b0b6a4af3f25a8751f5fa5c1cf901c6e83"
   end
 
-  depends_on "go@1.19" => :build
+  depends_on "go@1.20" => :build
 
   uses_from_macos "netcat" => :test
-
-  # Backport quic-go update to support Go 1.19
-  # Remove in the next release
-  patch do
-    url "https://github.com/Ehco1996/ehco/commit/2f739a4279f9defaeb8beac9e97e82851e0dd995.patch?full_index=1"
-    sha256 "43235566b344e0d125d79719800f1de61cd032f89892b183adf8220b1c5cd298"
-  end
 
   def install
     ldflags = %W[
       -s -w
       -X github.com/Ehco1996/ehco/internal/constant.GitBranch=master
-      -X github.com/Ehco1996/ehco/internal/constant.GitRevision=#{Utils.git_short_head}
+      -X github.com/Ehco1996/ehco/internal/constant.GitRevision=#{tap.user}
       -X github.com/Ehco1996/ehco/internal/constant.BuildTime=#{time.iso8601}
     ]
 
