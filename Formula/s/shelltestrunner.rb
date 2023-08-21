@@ -1,10 +1,9 @@
 class Shelltestrunner < Formula
   desc "Portable command-line tool for testing command-line programs"
   homepage "https://github.com/simonmichael/shelltestrunner"
-  url "https://hackage.haskell.org/package/shelltestrunner-1.9/shelltestrunner-1.9.tar.gz"
-  sha256 "cbc4358d447e32babe4572cda0d530c648cc4c67805f9f88002999c717feb3a8"
+  url "https://hackage.haskell.org/package/shelltestrunner-1.9.0.1/shelltestrunner-1.9.0.1.tar.gz"
+  sha256 "12d7f30a620c6bb77a763a3f269e8d1c031376bbc3a9cdc436dcd70a93b15aa8"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     rebuild 1
