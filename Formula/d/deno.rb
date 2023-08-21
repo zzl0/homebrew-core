@@ -21,10 +21,7 @@ class Deno < Formula
   depends_on "ninja" => :build
   depends_on "python@3.11" => :build
   depends_on "rust" => :build
-  # TODO: after https://github.com/Homebrew/homebrew-core/pull/139382 is merged,
-  # add "depends_on `sqlite` # needs `sqlite3_unlock_notify`" to try linking
-  # with brewed `sqlite`.
-  # Make sure to uncomment the related lines in `install` and `test` blocks too.
+  depends_on "sqlite" # needs `sqlite3_unlock_notify`
 
   uses_from_macos "libffi"
   uses_from_macos "xz"
@@ -87,9 +84,9 @@ class Deno < Formula
     inreplace "ext/node/Cargo.toml",
               /^libz-sys = { version = "(.+)", features = \["static"\] }$/,
               'libz-sys = "\\1"'
-    # inreplace "Cargo.toml",
-    #           /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
-    #           'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
+    inreplace "Cargo.toml",
+              /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
+              'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
 
     if OS.mac? && (MacOS.version < :mojave)
       # Overwrite Chromium minimum SDK version of 10.15
@@ -139,7 +136,7 @@ class Deno < Formula
                    "#{testpath}/hello.ts")
 
     linked_libraries = [
-      # Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
+      Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
     ]
     unless OS.mac?
       linked_libraries += [
