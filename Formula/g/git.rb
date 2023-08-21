@@ -13,14 +13,13 @@ class Git < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "4bea6de3334de088b716f05aef9a95d185af6ed1237aebc97be1824b1d223584"
-    sha256 arm64_monterey: "8ff4e3a966efd6dea5544633195122994a942027722878949ca06b263f5827e2"
-    sha256 arm64_big_sur:  "03c655c2028b4a0c3cd188c80ab0efb04f9b97d7833d0bb4eadd2e31bd20bd47"
-    sha256 ventura:        "b2660c95dac23a5c7fdef545399b5eff987cc78755a29e7a8fe87afef35f177c"
-    sha256 monterey:       "36cb8b459b3ac11131ec58b663d6dc7209b0ea2e3b26de16fe7486308b4148e0"
-    sha256 big_sur:        "7c446d04c50a6473bd6d0859b5a4601245363b69baffb757ef7d8ea85788e3ae"
-    sha256 x86_64_linux:   "03b0f32b3507b1f9bef265af06ee501905c9087c831f4405e9474f9cf18b7a4b"
+    sha256 arm64_ventura:  "285e7a1328068c872a3a3a57ea0b08520c876e941c0fbf271a24a8684873de83"
+    sha256 arm64_monterey: "2b914b565eed8da4c619abf5d400bc92f54ede50c7c4c1d79b3414a477426e36"
+    sha256 arm64_big_sur:  "e6d1c14112176353897d8b6783193b95fa06afb03e1ca75f08e71c6a3e0305c8"
+    sha256 ventura:        "9363a5d645af38968922ab9c1977dbd9253e9c65d1217823713eaf1bca4c3e11"
+    sha256 monterey:       "6c0fa517a1bf6714d541aeaa2292b0004d0aebedf3ac9da8187e72c35e988fb8"
+    sha256 big_sur:        "7bac9c239924f340325d2546e7704bc02d855741426388a0eb1ee2b76f73b03e"
+    sha256 x86_64_linux:   "90ebffb7885c78afb540c6d36cfdf80b65b62db3288f204eb4975ea20e7c1fc0"
   end
 
   depends_on "gettext"
