@@ -12,7 +12,7 @@ class SpirvHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "488c30a6e310ff51eff27143a0e1f5e9056e8269ed7c613a459b652c98c7c4b0"
+    sha256 cellar: :any_skip_relocation, all: "3573f6c5ae558e5b2756a3620fe15b29edd5e10cd62fc749b18bf1c4ec1d035c"
   end
 
   depends_on "cmake" => [:build, :test]
