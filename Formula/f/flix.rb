@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://github.com/flix/flix/archive/refs/tags/v0.39.0.tar.gz"
-  sha256 "7d073816b7db1e67ce7d374e898b3c1f859a4c73d0b768a9af0beaaaa2f087ab"
+  url "https://github.com/flix/flix/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "77161350c30e543d86779ad8cfdfcede221fca2f61d46d24a0a66073f94a319a"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -33,7 +33,7 @@ class Flix < Formula
 
   test do
     system bin/"flix", "init"
-    assert_match "Hello World!", shell_output("#{bin/"flix"} run")
-    assert_match "Running 1 tests...", shell_output("#{bin/"flix"} test")
+    assert_match "Hello World!", shell_output("#{bin}/flix run")
+    assert_match "Running 1 tests...", shell_output("#{bin}/flix test 2>&1")
   end
 end
