@@ -1,8 +1,8 @@
 class Groovysdk < Formula
   desc "SDK for Groovy: a Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-4.0.13.zip"
-  sha256 "fe85b76daab5ef9c27f39f7245c9bfc5e4c29580cdccfc2f60e279857d9e2154"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-4.0.14.zip"
+  sha256 "80f889881b4bf20aaf212b9206c10334fd2c7f2a38d979a82baa883976116e2b"
   license "Apache-2.0"
 
   livecheck do
