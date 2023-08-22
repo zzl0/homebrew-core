@@ -8,6 +8,16 @@ class Wtfis < Formula
   license "MIT"
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "dd9352f26c7f9717451c62344209297534dd7ad13ba7a280544c6f1ff31b9346"
+    sha256 cellar: :any,                 arm64_monterey: "b137854775af1c7153d99bf3d51222bec2c75dc125022afc32e455627af203a8"
+    sha256 cellar: :any,                 arm64_big_sur:  "17fb4507dee3bf99529280ed4efa7e33f69839abad582136387a952ae6dcd681"
+    sha256 cellar: :any,                 ventura:        "e1607866490b048c4af83db5d9d8825b273b0eaa5f669527f3e910d804c593af"
+    sha256 cellar: :any,                 monterey:       "3e7e1a17f88ba22bae30c77f215ca1f1edc4f3e256c9b68befcf5ee6f6e49fe2"
+    sha256 cellar: :any,                 big_sur:        "b12fbaeedb31129b79f75b035a6e9044cd4e155cc9f9d342f19b807fabd46676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df8d8727077b074656f9bac4fdded4b351b2ae0088a24b174acd5d6022db9d7"
+  end
+
   depends_on "rust" => :build
   depends_on "pygments"
   depends_on "python-certifi"
