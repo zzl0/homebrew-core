@@ -1,9 +1,9 @@
 class Chuck < Formula
   desc "Concurrent, on-the-fly audio programming language"
   homepage "https://chuck.cs.princeton.edu/"
-  url "https://chuck.cs.princeton.edu/release/files/chuck-1.5.1.0.tgz"
-  mirror "http://chuck.stanford.edu/release/files/chuck-1.5.1.0.tgz"
-  sha256 "28989b36624848f6a18883d12b757c7c623338f066b16618960efdf1cfa7588b"
+  url "https://chuck.cs.princeton.edu/release/files/chuck-1.5.1.1.tgz"
+  mirror "http://chuck.stanford.edu/release/files/chuck-1.5.1.1.tgz"
+  sha256 "0bddcb545975536a3471d7c3a21a6cc8d4555bc06a4af0d2f5032aebaa1362dc"
   license "GPL-2.0-or-later"
   head "https://github.com/ccrma/chuck.git", branch: "main"
 
