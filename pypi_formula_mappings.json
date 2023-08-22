@@ -948,6 +948,9 @@
     "exclude_packages": ["pillow", "Pygments", "PyYAML", "six"],
     "extra_packages": ["certifi", "colorama"]
   },
+  "wtfis": {
+    "exclude_packages": ["certifi", "pygments", "typing-extensions"]
+  },
   "wxpython": {
     "exclude_packages": ["numpy", "pillow", "six"]
   },
