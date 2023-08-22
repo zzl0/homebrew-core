@@ -1,4 +1,7 @@
 {
+  "aerleon": {
+    "exclude_packages": ["pyyaml", "typing-extensions"]
+  },
   "airshare": {
     "exclude_packages": ["certifi"]
   },
