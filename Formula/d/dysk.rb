@@ -16,7 +16,7 @@ class Dysk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c194666082291116b60ad82bb453c5eefe1c6170abbedb688a60ea58fad7277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bc801aeacb48fd45b77acca02c29fcc6d8d26aa0f6c4ef529272a57dd8901915"
   end
 
   depends_on "rust" => :build
