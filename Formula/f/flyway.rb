@@ -11,13 +11,7 @@ class Flyway < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, ventura:        "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, monterey:       "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4489b415bfe86f09c5a7a91a3fa025b872bc660f8394005aa00dec6da8702a85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b974493ea4fc5f03eec222b2c7cc62a8072d8422c60afd606588ebb296c9ce86"
+    sha256 cellar: :any_skip_relocation, all: "1cd9ce3e2d096c34c08a9ffeb29b97eeefdcc22e442cf325fd12755ff83ce1d2"
   end
 
   depends_on "openjdk"
