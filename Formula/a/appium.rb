@@ -9,11 +9,11 @@ class Appium < Formula
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "52a9cdac20f2cfc3a80c2d537d893baa3c9de1dfa95bd6402c312343ceb615a7"
-    sha256                               arm64_monterey: "60f21fd15ad8b65b0fb38f2ace227ae49c63ce8369a8cfc93747fa012396cf52"
-    sha256                               arm64_big_sur:  "1bfb68e837a8232d2cddf4afcd177437289e1e64c012cfa26d14e456b64d09e7"
-    sha256                               ventura:        "9aafb831b2cf2f5d81ee11eef5ee204ec0e78ca4bdc02d94cc350b9fed1d84ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "350a3b834c225e3b8901f8e21388f8df94f8da98832f5e5965094f920d6ea5c1"
+    sha256                               arm64_ventura:  "40b47f8617f606977258b6c365c00a703641dd0dd3ececb1a3361de7182d1f92"
+    sha256                               arm64_monterey: "656bf4d253fe28e54e5f2770e47188afb2e6f507840383f6788e72ccfe2b441c"
+    sha256                               arm64_big_sur:  "138a4d399e09d002c00e07e5d08579d552f8a0c4720ee703052b0cb06f4f0ee3"
+    sha256                               ventura:        "af2f4e927b75115f2916d1f153f3346d3a1ac5e04b91ae4a3b567b1face99c6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b47f0dd464f9e749ad0187b51cbb5ac1d8a53e1b05674b0a8e026f0fdcc6e1e8"
   end
 
   depends_on "node"
