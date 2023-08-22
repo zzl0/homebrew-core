@@ -3,8 +3,8 @@ class Fypp < Formula
 
   desc "Python powered Fortran preprocessor"
   homepage "https://fypp.readthedocs.io/en/stable/"
-  url "https://github.com/aradi/fypp/archive/refs/tags/3.1.tar.gz"
-  sha256 "0f66e849869632978a8a0623ee510bb860a74004fdabfbfb542656c6c1a7eb5a"
+  url "https://github.com/aradi/fypp/archive/refs/tags/3.2.tar.gz"
+  sha256 "33f48c8d2337db539865265ce33c7c50e4d521aacbd31ac7b7e8b189d771ce1d"
   license "BSD-2-Clause"
   head "https://github.com/aradi/fypp.git", branch: "main"
 
