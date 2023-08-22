@@ -7,13 +7,7 @@ class Nvm < Formula
   head "https://github.com/nvm-sh/nvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce7a3f249619df50c1ab12a5a5d19487926380365ffe0571e659cd9389c3ff1"
+    sha256 cellar: :any_skip_relocation, all: "2290c2b0f95c6ba0c10d18b286bb8e4022126177d356eb395f0db76202df4642"
   end
 
   def install
