@@ -6,13 +6,13 @@ class LxiTools < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ad1eacf1e8ae219d14d1d0584f97da77fb4f866dcb2deb63b5a64278c21c492"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74f67748c50df2d75290b85eee36792ea4c8eb1b767a1fe81802a0aacf1d8170"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df3254a41c62da6bfa63e8d7da78e9fb45cc2347710a3fd09dafa91e5d027a62"
-    sha256 cellar: :any_skip_relocation, ventura:        "910d48ed42f6cdf76d6166df6343309d2e50a60550a44b7137cdf9d5000916be"
-    sha256 cellar: :any_skip_relocation, monterey:       "4349534c758dad9cf5cbae6f2d799d5fb3be25887cd69d683ce921890ab55be8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0f31f8dba717b9434e3798f090f68503aa633b44a4247bdc8a13a39c24961fcc"
-    sha256                               x86_64_linux:   "4f84ffcf6baa6e46f5fa3d3555496db4f9dd3f0815a7f4faee51dae80bd77ad2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ca1f9223772ee912d686f6652c7b699324850fb4dccc03d5a77be23c66afcf3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6090dd52015d0d7d17a705742793a8986b9339d5e2c9aed7595f0a9b142b992"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1531d09c7f93a01b13b413a708f076c05c08c828c6e42092cd8e670c8aca36c"
+    sha256 cellar: :any_skip_relocation, ventura:        "69b704762e5a07d767978da9109a8980bcf86374c4d537b5eb034f7dbdd31413"
+    sha256 cellar: :any_skip_relocation, monterey:       "acd842a43b3b4c9e2476728f8e40884b701d31c6a85452559cb61a89adfbc0ce"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9bcbc6c149c2ca24dbcb1cae8f07b0ccba087cd1d6fe4c2ebe1b479b17fe842"
+    sha256                               x86_64_linux:   "4dd930cc0b1e29dbdbe11595e0112fd420729776cf0dedcdb76bc73d092a1df6"
   end
 
   depends_on "meson" => :build
