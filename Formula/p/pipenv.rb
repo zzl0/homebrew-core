@@ -3,18 +3,18 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/00/3f/a9004468a2db290113d29954bb3c894098f1828388350bcbfdf4bf3ffb5e/pipenv-2023.8.20.tar.gz"
-  sha256 "3b680e5659c4bbb065f51091d54fe519608cd03cfa10aa9c98b9cd9540a0853f"
+  url "https://files.pythonhosted.org/packages/59/1e/826d2687d941ff4b53e40c0a991f31d3b808c45410793748620c8e701106/pipenv-2023.8.21.tar.gz"
+  sha256 "fd61dcf257d0e4185e08fac44af1bea8e721ff32f94935f32ba3103dea2e08f7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "106a9e2d92596a8e1b1c1ccfbdcc547f900c98556a05674256db28e60cf12e08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f666c5f0a2c816ef9eb612e647897e921cda444a5bc232567a88211a366d8edb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "631351dc2dd6c212837fcf1e69e733f285f5f1b608445abefcaa573d8fef9cb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "a55ee692dc22e795ca9c46eda17b68693ebf2bd9b54863b07aee346cb8af99ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "02aeedc0f40c49d356d5eb6e6e3c9dd00f8d61f41e74d1487c6caaadcf83e5eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4bbd454ea63388f34f7dfbf11f49f8ac50d91ee86e992cfc699ee38c993ff9ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "739eb7f8a01352ece7d67bbb7ff3ed41e8a3c5633f963a9647177cc35e73b5d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c9f3cdf9a6d1e0d28a9da3ed8394fef11762780307d16bf08cf2e4b6c00c1bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0b31e0c046338ebe2c7c0b7a181e35f46862ec3bd617e8a759b90bcbd9f1721"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec2f2af35c7de2e8de4bf614a48e19d3cb3633f505f7e505db8e601854a88300"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b9c7a02523b65898b6bfa363855e31d7c757596916896f380662f0aceffe830"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e698b9e3c59eee08012284fe0775f5500de98ec3210caad8f2c5004feb2d894"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4c9a4f327b39c5bece701fd53164070c730ada2d2140d02289b7fd7d6d413d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "474d4417aea07e0a5d896d7a1b1274bf00891781b443da1eb3d1a13a63876cab"
   end
 
   depends_on "python-certifi"
