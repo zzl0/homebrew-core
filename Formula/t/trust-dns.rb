@@ -1,8 +1,8 @@
 class TrustDns < Formula
   desc "Rust based DNS client, server, and resolver"
   homepage "https://github.com/bluejekyll/trust-dns"
-  url "https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "48debc51079b43a942f05f51dfd6d7ea900ed21f6db72e3136f100cb35263a15"
+  url "https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "258c33f0d0e6a6007afcce1dd9453b14bf4d4f074111ec4488f24be0f11645dd"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/bluejekyll/trust-dns.git", branch: "main"
 
@@ -30,7 +30,7 @@ class TrustDns < Formula
   test do
     test_port = free_port
     cp_r pkgshare/"test-data", testpath
-    test_config_path = testpath/"test-data/named_test_configs"
+    test_config_path = testpath/"test-data/test_configs"
     example_config = test_config_path/"example.toml"
 
     pid = fork do
@@ -41,7 +41,7 @@ class TrustDns < Formula
     expected = "www.example.com.	86400	IN	A	127.0.0.1"
     assert_match expected, output
 
-    assert_match "trust-dns #{version}", shell_output("#{bin}/trust-dns --version")
+    assert_match "Trust-DNS named server #{version}", shell_output("#{bin}/trust-dns --version")
   ensure
     Process.kill "SIGTERM", pid
     Process.wait pid
