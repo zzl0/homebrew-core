@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://github.com/coder/coder/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "b836ca77640384716fc6a8188f89cfbe6af9c92bc947aef5ef767e6854b37fde"
+  url "https://github.com/coder/coder/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "10d0e7f84c045788cb0d7d58c828fba25b5f6bb80a8d9b41cbbd7fbc92eb563e"
   license "AGPL-3.0-only"
 
   bottle do
@@ -20,7 +20,7 @@ class Coder < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/coder/coder/buildinfo.tag=#{version}
+      -X github.com/coder/coder/v2/buildinfo.tag=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/coder"
   end
