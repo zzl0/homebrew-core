@@ -2,9 +2,10 @@ class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
   homepage "https://github.com/aws/aws-sdk-cpp"
   # aws-sdk-cpp should only be updated every 5 releases on multiples of 5
+  # TODO: when 1.11.150 is released, re-throttle this in throttled_formulae.json.
   url "https://github.com/aws/aws-sdk-cpp.git",
-      tag:      "1.11.145",
-      revision: "d87ca7241f36ce4c7015eaf06b77f586049b11a6"
+      tag:      "1.11.147",
+      revision: "61ab9c1dc84264a5e0f166895d64cff1a0652a11"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
