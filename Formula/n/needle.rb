@@ -6,10 +6,10 @@ class Needle < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9d36075eb688cbb3bc7ee5c8ce3842059f6633d1a9651a19203540832be0781b"
-    sha256 cellar: :any, arm64_monterey: "582013f3c319c53d9e890417a421614191c25967a5e0210f98f6e77a517ae28c"
-    sha256 cellar: :any, ventura:        "89a92a4e64b6356e56fac67816f6dd7b6f351dbc49c257102ff9dece34f022cd"
-    sha256 cellar: :any, monterey:       "ed684d01c9d0284002e201806ea57df88ab25ba750f9a7669d10d40c695831ef"
+    sha256 cellar: :any, arm64_ventura:  "2b953b5225793b663e30652c4dcf15af21883f3161e1424cf3ae4884def4fc85"
+    sha256 cellar: :any, arm64_monterey: "f5336518cc424b2a5daf3400d9968035966226f1372d75ad4e8d950a5bfced93"
+    sha256 cellar: :any, ventura:        "4a2e37bdcfa6fd09d7a6115ef0d61ed067f6c32ff336513a0e48efc7ce4e502c"
+    sha256 cellar: :any, monterey:       "0a7abfa75a75acf3773fc1bef1ed9e268ddda7da6ceafb2c5f74c6d36a4922c8"
   end
 
   depends_on xcode: ["14.0", :build]
