@@ -1,8 +1,8 @@
 class Pgrok < Formula
   desc "Poor man's ngrok, multi-tenant HTTP/TCP reverse tunnel solution"
   homepage "https://github.com/pgrok/pgrok"
-  url "https://github.com/pgrok/pgrok/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "2da14eeae3d9678bffd27ca5cf3900bf2c041628cbccae939137d73f0522d747"
+  url "https://github.com/pgrok/pgrok/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "c1e9b3b506b39c5a1e6d9d31e78ba28c1c62ff698ceab8ba5f30881bfd8af6ad"
   license "MIT"
 
   bottle do
@@ -26,7 +26,7 @@ class Pgrok < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/pgrok"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./pgrok/cli"
 
     etc.install "pgrok.example.yml"
   end
