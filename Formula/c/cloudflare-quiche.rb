@@ -2,8 +2,8 @@ class CloudflareQuiche < Formula
   desc "Savoury implementation of the QUIC transport protocol and HTTP/3"
   homepage "https://docs.quic.tech/quiche/"
   url "https://github.com/cloudflare/quiche.git",
-      tag:      "0.17.2",
-      revision: "a4ac85642eca40e45cc6e0cfd916d55b81537e2c"
+      tag:      "0.18.0",
+      revision: "28ef289f027713cb024e3171ccfa2972fc12a9e2"
   license "BSD-2-Clause"
   head "https://github.com/cloudflare/quiche.git", branch: "master"
 
@@ -24,7 +24,7 @@ class CloudflareQuiche < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "apps")
 
-    system "cargo", "build", "--offline", "--lib", "--features", "ffi", "--release"
+    system "cargo", "build", "--lib", "--features", "ffi", "--release"
     lib.install "target/release/#{shared_library("libquiche")}"
     include.install "quiche/include/quiche.h"
   end
