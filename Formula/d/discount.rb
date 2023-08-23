@@ -12,13 +12,13 @@ class Discount < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03a512e21fb2f05d4d2e35e5b3f75199a61e0fa2ed44f7461c9405caa694a73c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47ced80d8c7d86e2621ec51d2c0a4f6a8908c6b411809f14ad8ada82c58d73fe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78123c680c39668f0d37eeebe400ad5314fc78f4df38076aa77dd7e69eb67c38"
-    sha256 cellar: :any_skip_relocation, ventura:        "8eeb94fd9c35339a0282c884eab1f11bb535274128a9e836f00406e41ee6d970"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd4569f09f12e8f69b39fa4cd2813515b050a228465549298409f6fe9fc24d3b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3be94be78ab2d85a8503f893527c62efe438ca127873d0a03336e9e131a2783b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17289c8fe47a7c9f6b3cd8a5d79a608c382402abeeed6fc9b9c2ad4de4178dd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "130512a4b6b48f7dc9352cf9591b27f1f3083a2ff22d88e71f47507178a87e43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19bff1a2b50eae855a70eb7e6ed839f37891b9001f77780245a8c484b009a108"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49f9e9459165f07289b9e418e1db9398e94acd67fa480d50c2fc6951bd9f4bf8"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa3f9a506863629ddcb54c8f52193e4bcf55563d2ad0a6e610bb84b262dad679"
+    sha256 cellar: :any_skip_relocation, monterey:       "698db890a09df9b32fdaa93ac1f178cfbaf497a5b93ede5380c00ea539bcbcc1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1cfca46da847dcd5346cecf299b699b6f72826f3f5ab7a25ede643de3c26945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ec0cbcf4b9024c8f51ff944c335c2469b85082f8599b34b5b74046c9512afd2"
   end
 
   conflicts_with "markdown", because: "both install `markdown` binaries"
