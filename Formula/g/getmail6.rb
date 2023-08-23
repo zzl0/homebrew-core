@@ -3,9 +3,17 @@ class Getmail6 < Formula
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
   homepage "https://getmail6.org/"
-  url "https://github.com/getmail6/getmail6/archive/refs/tags/v6.18.12.tar.gz"
-  sha256 "419dc11184b147ef4daac2ec9f136b1b37e6450e2f44099629a6b7650deb044a"
+  url "https://github.com/getmail6/getmail6/archive/refs/tags/v6.18.13.tar.gz"
+  sha256 "977a8fbf63494b6278c30f225c7bfbc7cbdfdffddbd2f29fcd887dfb6ce0d509"
   license "GPL-2.0-only"
+
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b78657f43b1b31999bdec34a6919fe344b3287e9c41abed5b8091c3b116f530"
