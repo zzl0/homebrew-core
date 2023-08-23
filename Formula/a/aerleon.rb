@@ -8,6 +8,16 @@ class Aerleon < Formula
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6847834748fdd745d42e0ca963a7cacc699707199a377e6658d80fc6e51dcac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "051fac2f89d56a418c5cde48768479f038c71fc571252651ad600ac2a3008f4d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e548c1af039af07f01d3d881c9e90a382e7ad3aa960e3364e3ba0baba79aa8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "35878db50f5e33672f839c968610c279702a3a05bf41f401cb5f8fbe3d00c3e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ffc3088afcab16ed2c3ba02fe823898a7efc8ae254ff1f8498e6ef31f2737081"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a6560522546c2d71f5a0ac8fad24095359cca98a1836404f5c764471235fe108"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23f9976dc3f0d80e5c34f0fe64f3e36a962bff4011b29765def501bb26e48aec"
+  end
+
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
