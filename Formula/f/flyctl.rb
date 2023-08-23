@@ -13,13 +13,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d637a5f2b1f1165c1e98097bffec3dbae200e4d92a3a6e91d8afee2774167a67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d637a5f2b1f1165c1e98097bffec3dbae200e4d92a3a6e91d8afee2774167a67"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d637a5f2b1f1165c1e98097bffec3dbae200e4d92a3a6e91d8afee2774167a67"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ccbe8135a5b1bfa07ca2f053e39dbec1c183afa9f99c367e928134a9888a52a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ccbe8135a5b1bfa07ca2f053e39dbec1c183afa9f99c367e928134a9888a52a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ccbe8135a5b1bfa07ca2f053e39dbec1c183afa9f99c367e928134a9888a52a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6633aef0bb280431f33f01ecd4bd5ad34ca50c34ad9f3c507e81ae8c47ba3f91"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19255a0edd71f0dbfe21a20c63abf0193ab47b12d7d588e6cf404f3385ca0edd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19255a0edd71f0dbfe21a20c63abf0193ab47b12d7d588e6cf404f3385ca0edd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19255a0edd71f0dbfe21a20c63abf0193ab47b12d7d588e6cf404f3385ca0edd"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9fb8af70d5bd7893248bfe8e22ec2884ef359039310229d3d60affea6f08a3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a9fb8af70d5bd7893248bfe8e22ec2884ef359039310229d3d60affea6f08a3c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a9fb8af70d5bd7893248bfe8e22ec2884ef359039310229d3d60affea6f08a3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "858c147ccfc4dc147d03bc0e0e6d048fdb5c246bfd970b871138a6a7080e4784"
   end
 
   # go 1.21.0 support bug report, https://github.com/superfly/flyctl/issues/2688
