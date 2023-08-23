@@ -1,8 +1,8 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.10/sile-0.14.10.tar.xz"
-  sha256 "208ac6030d3a6f3922fa4addc5ede75aa3c3931cf681c5437c7f0c8f69ca5816"
+  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.11/sile-0.14.11.tar.xz"
+  sha256 "25796088ad57c996527b9417cf4eb3c0402755886221986121a0667f1020452e"
   license "MIT"
 
   bottle do
@@ -97,8 +97,8 @@ class Sile < Formula
 
   # depends on luasocket
   resource "luasec" do
-    url "https://luarocks.org/manifests/brunoos/luasec-1.2.0-1.src.rock"
-    sha256 "82d9ea7d11688a2b11fc1c4549a2e7b0aca00790b49e67a41dac0c81f2890f1c"
+    url "https://luarocks.org/manifests/brunoos/luasec-1.3.1-1.src.rock"
+    sha256 "234353b695cdec264b22e6ff5472f4f7f70cd10a9b65f6fd4ad65652c786bb20"
   end
 
   # depends on luafilesystem
@@ -126,8 +126,8 @@ class Sile < Formula
   end
 
   resource "luautf8" do
-    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.5-1.src.rock"
-    sha256 "33ce04dad817a9d9b05ea5e14663aa4b83da6f8a82dea594e556693fd0b8e42a"
+    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.5-2.src.rock"
+    sha256 "68bd8e3c3e20f98fceb9e20d5a7a50168202c22eb45b87eff3247a0608f465ae"
   end
 
   resource "vstruct" do
