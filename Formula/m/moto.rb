@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/40/e0/1b2377fb291807d5e24b45a72f887cdc7747a15e429d83df1550f46f030a/moto-4.1.15.tar.gz"
-  sha256 "272236d312457b324c645741ee589924fd61a96b84680dc2e607f8663c563551"
+  url "https://files.pythonhosted.org/packages/91/f5/91eb46de58d31e0dfa5f53e724dc34fdd734f284584e4d88f8d777bfafe0/moto-4.2.0.tar.gz"
+  sha256 "00fbae396fc48c3596e47b4e3267c1a41ca01c968de023beb68e774c63910b58"
   license "Apache-2.0"
 
   bottle do
@@ -48,13 +48,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/63/4f/9c4da723f23ed567a986e730116f153a4cfaf4cb5c83c6c9133d01766c0d/boto3-1.28.31.tar.gz"
-    sha256 "dc6d72470f6d8926b8cdc10ee7708d7ccdd36d6313c7aa298bc1cf6bedb8921e"
+    url "https://files.pythonhosted.org/packages/5e/df/633a1b388f463bc00f75835c248f4b9f7097bcbf340bae4f5e3c805853b2/boto3-1.28.32.tar.gz"
+    sha256 "b505faa126db84e226f6f8d242a798fae30a725f0cac8a76c6aca9ace4e8eb28"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/b5/6e763068b2569c711ca876d097dbfedfb2f08ed0e8aff71044e1dcb3c2f1/botocore-1.31.31.tar.gz"
-    sha256 "950a49c5286fe1f6d72cfbe2910b9ddbdfbb907975ddc41cf38ac9709b4d1291"
+    url "https://files.pythonhosted.org/packages/04/d2/0dba3773944bc972c4fa7f5b43651c256688444ee2198b42afc7d3ed2ee3/botocore-1.31.32.tar.gz"
+    sha256 "7a07d8dc8cc47bf23af39409ada81f388eb78233e1bb2cde0c415756da753664"
   end
 
   resource "charset-normalizer" do
@@ -288,8 +288,8 @@ class Moto < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
-    sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
+    url "https://files.pythonhosted.org/packages/38/44/d747807b707465625ba5e18371bc7c448925314d7217ced1801162b74ca6/websocket-client-1.6.2.tar.gz"
+    sha256 "53e95c826bf800c4c465f50093a8c4ff091c7327023b10bfaff40cf1ef170eaa"
   end
 
   resource "werkzeug" do
