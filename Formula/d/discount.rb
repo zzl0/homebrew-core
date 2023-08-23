@@ -1,18 +1,14 @@
 class Discount < Formula
   desc "C implementation of Markdown"
   homepage "https://www.pell.portland.or.us/~orc/Code/discount/"
-  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7b.tar.bz2"
-  sha256 "b9368cc2063831635f9e790d0c4c338c2b4b72658cdc244323241bfcddf6ffd5"
+  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7d.tar.bz2"
+  sha256 "12a2041e96ae8cde17e08ff1a215d331580a5c58688daa5a18842b6bb5b77b52"
   license "BSD-3-Clause"
   head "https://github.com/Orc/discount.git", branch: "main"
 
-  # We check the upstream GitHub repository because the homepage doesn't always
-  # update to list the latest version in a timely manner. As of writing, the
-  # homepage has been showing an older version for months, so it doesn't seem
-  # like a reliable source for the latest version information, unfortunately.
   livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+[a-z]?)$/i)
+    url :homepage
+    regex(/href=.*?discount[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
   bottle do
