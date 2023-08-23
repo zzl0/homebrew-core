@@ -1,8 +1,8 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.7.3.tar.gz"
-  sha256 "772ddcb721f5b479192117d1156b1091505721aa81d6bab3de9577176b930191"
+  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.8.0.tar.gz"
+  sha256 "37844b536f40d31d2eafa62c7d2f543d8ec23cf35185f3b0d2b9d0a72cccf78d"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
@@ -16,7 +16,8 @@ class Cloudflared < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a7cf25bbb6d92b0b3f98ca5df20badd95f6f7997651b5c26256cd527422ca0d"
   end
 
-  depends_on "go" => :build
+  # upstream go1.21 support issue, https://github.com/cloudflare/cloudflared/issues/1054
+  depends_on "go@1.20" => :build
 
   def install
     system "make", "install",
