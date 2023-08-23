@@ -11,13 +11,13 @@ class Libzip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7396ff8c885b5b409971c8f1327d8f5053d8d06e840e6bc6b993150c77cb663f"
-    sha256 cellar: :any,                 arm64_monterey: "5bf073278ba871965559111f2f8be014817649c92059a46b3f9b82162d5163f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "43a494470436568645796a9387c1693c23123928bb87a85c404e5760456ab4be"
-    sha256 cellar: :any,                 ventura:        "c7260f05af8676b4556a4f8257d04f0e88a49d6ea5a515abd4a4902bba8fef48"
-    sha256 cellar: :any,                 monterey:       "c1d53223d07bea7473df733d36b446a80498b06c719e70403b619f969075235f"
-    sha256 cellar: :any,                 big_sur:        "87f5c908912692fe28e548d51d96c8659d500bfb991784796ec149201a9a9e79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eb7d9dff36b2fe8809015f1b1bf3f8cc6635a4b8db3b86ec6cdf7bc4e4858e2"
+    sha256 cellar: :any,                 arm64_ventura:  "c7ad6f3d539228628f0ccafd7bd17cc57dc6c49021dd162a9414fcdd01160240"
+    sha256 cellar: :any,                 arm64_monterey: "3511bb753f885c7107e6969065d04a26a2c1daa35aea702d918d92a145df227a"
+    sha256 cellar: :any,                 arm64_big_sur:  "d5de82dd71926d71671e6d60c2ab471dc96aece2205fd991b7ad3ae396c7ffa8"
+    sha256 cellar: :any,                 ventura:        "b5243e86143979663899b53bea2468c33c2dd7a497af084e42311446715a7863"
+    sha256 cellar: :any,                 monterey:       "7ca407427007d96a3f2920d9b476a39c687b42827e57be8e98d7cd1da7aaefed"
+    sha256 cellar: :any,                 big_sur:        "abc497fb00cf2e73e552ed0d29a0d05a8b1f44f3f37a240d81f809803cfa5cf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "104ff0ed39185eb3a1606909a977a7f78d446d4c716608fe635732648a0cdff8"
   end
 
   depends_on "cmake" => :build
