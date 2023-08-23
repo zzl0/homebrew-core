@@ -1,8 +1,8 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/"
-  url "https://github.com/phrase/phrase-cli/archive/refs/tags/2.8.4.tar.gz"
-  sha256 "a14ac39d1dbda17258da2c845a08991b883550657c4d40654940cde183b3f709"
+  url "https://github.com/phrase/phrase-cli/archive/refs/tags/2.9.1.tar.gz"
+  sha256 "ae25ee4521b70141ff474e698bf4e9f91985f24fde4752ecd6e587270d8649bc"
   license "MIT"
 
   bottle do
@@ -19,9 +19,8 @@ class PhraseCli < Formula
 
   def install
     ldflags = %W[
-      -s
-      -w
-      -X=github.com/phrase/phrase-cli/cmd.PHRASE_CLIENT_VERSION=#{version}
+      -s -w
+      -X github.com/phrase/phrase-cli/cmd.PHRASE_CLIENT_VERSION=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
     bin.install_symlink "phrase-cli" => "phrase"
