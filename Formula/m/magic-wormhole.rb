@@ -8,14 +8,13 @@ class MagicWormhole < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b9a294c04aee3ca050179db71d59cd47bf0f9ade402b85091cd4c33c85e010b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da90d1212043dd843f2044d5eebfdb1c575a780beb8cdf712769b0ad136a9150"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b9ce7303fcc6099a4c2dd76f7ac1277cf10cb876b4d77e07f2b87371068adfd"
-    sha256 cellar: :any_skip_relocation, ventura:        "943164ae830e047d11fe7a5d4b4545fbd12aab41213be0b56dbac72da5027af3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ba6a48bb65d8c344df8633c0d906c61dc757f439ac37682e8f925c9e22bdfef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7d1754c72a84e75575f8f32f9bdd90947f71e1dc84f84194791724a5fd582410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4811a9b8f02d0c7caa1befca720ad4ffd11583da40317dfb3b6a5f451c64ce85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b689f1eb8d6984e50f8ef2bd095f60ef3af431879875a8e02eeff801bb440d43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11491ccc6c93c02156c5d8ed26eec0bba942170c03a95824e247fd18946800ef"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "708ee97548814a029146d5ca16e48dab8059ddc3d1971aff4ebcee0a62435bd2"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ad83bc1b32dc11ef0ec119a66cb0281120a3ef69e2becc444fc2fefdfee4bb8"
+    sha256 cellar: :any_skip_relocation, monterey:       "155d3cb7fc10ba5ec3ea63f4986174abd14cf42070d5c114042a9d5b998ae879"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1adc0c43c716c7d6e3e4528d42e5fb511b60569b69874040a5c1520ee82786a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adc3e93358cf0ac665b257f3a434f4d8d9213b78c33b7ed146759ff99581da1b"
   end
 
   depends_on "cffi"
