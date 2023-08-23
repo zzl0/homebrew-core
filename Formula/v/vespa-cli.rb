@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.213.13.tar.gz"
-  sha256 "e046740fe961d3c41a97fb0e81040a0678f12f8545d1fc595e92d108842e21d9"
+  url "https://github.com/vespa-engine/vespa/archive/v8.215.17.tar.gz"
+  sha256 "22d527e1e6b3c71a0988a0c01907c17c1ef871b48639eddcb1f981d17ee3d3d3"
   license "Apache-2.0"
 
   livecheck do
@@ -37,7 +37,7 @@ class VespaCli < Formula
     assert_match "Vespa CLI version #{version}", shell_output("#{bin}/vespa version")
     doc_id = "id:mynamespace:music::a-head-full-of-dreams"
     output = shell_output("#{bin}/vespa document get #{doc_id} 2>&1", 1)
-    assert_match "Error: Get", output
+    assert_match "Error: deployment not converged after waiting 0s", output
     system "#{bin}/vespa", "config", "set", "target", "cloud"
     assert_match "target = cloud", shell_output("#{bin}/vespa config get target")
   end
