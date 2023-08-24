@@ -1,10 +1,9 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.9.tar.gz"
-  sha256 "cfa63d261488ac82adf4ed8efe18d39bcccaa40a5fda7b485b110abdb814b36b"
+  url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.5.0.tar.gz"
+  sha256 "0323e3a380d2a4b2bf20ef2520d271681480a6885b1505c3787e3683cbe58b17"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
   livecheck do
@@ -37,7 +36,7 @@ class Micromamba < Formula
   depends_on "zstd"
 
   uses_from_macos "python" => :build
-  uses_from_macos "curl", since: :monterey # uses CURLINFO_RETRY_AFTER, available since curl 7.66.0
+  uses_from_macos "curl", since: :ventura # uses curl_url_strerror, available since curl 7.80.0
   uses_from_macos "krb5"
   uses_from_macos "libarchive", since: :monterey
   uses_from_macos "zlib"
