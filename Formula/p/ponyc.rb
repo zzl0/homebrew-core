@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.55.0",
-      revision: "6a1b4c09b62f3ee8241a0376a993b3550efe16c4"
+      tag:      "0.55.1",
+      revision: "800527f783997c8a32066980a99fbffeeab10d11"
   license "BSD-2-Clause"
 
   bottle do
@@ -34,7 +34,9 @@ class Ponyc < Formula
   def install
     inreplace "CMakeLists.txt", "PONY_COMPILER=\"${CMAKE_C_COMPILER}\"", "PONY_COMPILER=\"#{ENV.cc}\"" if OS.linux?
 
+    ENV["CMAKE_FLAGS"] = "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
     ENV["MAKEFLAGS"] = "build_flags=-j#{ENV.make_jobs}"
+
     system "make", "libs"
     system "make", "configure"
     system "make", "build"
