@@ -2,16 +2,19 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v2.8.1",
-      revision: "2bc94af7bd081bc4682c2c6dc005f6336c754c2b"
+      tag:      "v2.8.2",
+      revision: "dbdfc712702ce2f781910a795d2e5385a4f5a0f9"
   license "Apache-2.0"
 
-  # Upstream uses GitHub releases to indicate that a version is released
-  # (there's also sometimes a notable gap between when a version is tagged and
-  # and the release is created), so the `GithubLatest` strategy is necessary.
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check releases instead of the Git
+  # tags. Upstream maintains multiple major/minor versions and the "latest"
+  # release may be for an older version, so we have to check multiple releases
+  # to identify the highest version.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do
