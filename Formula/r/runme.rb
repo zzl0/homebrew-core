@@ -1,9 +1,8 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
-  url "https://github.com/stateful/runme.git",
-      tag:      "v1.7.2",
-      revision: "4fdf96517c7a54aab95151e50319039fb0ef4417"
+  url "https://github.com/stateful/runme/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "b963215852a93c77a9117e494e6cbafe4e13b0ff1080502cfb1b389b3e4267af"
   license "Apache-2.0"
   head "https://github.com/stateful/runme.git", branch: "main"
 
@@ -24,11 +23,11 @@ class Runme < Formula
       -s -w
       -X github.com/stateful/runme/internal/version.BuildDate=#{time.iso8601}
       -X github.com/stateful/runme/internal/version.BuildVersion=#{version}
-      -X github.com/stateful/runme/internal/version.Commit=#{Utils.git_head}
+      -X github.com/stateful/runme/internal/version.Commit=#{tap.user}
     ]
 
-    system "go", "build", "-o", bin, *std_go_args(ldflags: ldflags), "./main.go"
-    generate_completions_from_executable(bin/"runme", "completion", shells: [:bash, :zsh, :fish])
+    system "go", "build", "-o", bin, *std_go_args(ldflags: ldflags)
+    generate_completions_from_executable(bin/"runme", "completion")
   end
 
   test do
