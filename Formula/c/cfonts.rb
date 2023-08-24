@@ -12,13 +12,13 @@ class Cfonts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edddb8d2de2f23efa697ad9ed7acca496d6128f9e8b5ec62d11c40b96c74f995"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6994a1c64a87e5def25a7dabed539b698e9d5d7674a238a4ef0f7c601e2a4ebc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ba18673cedf2dc92e4963e8a56626251b84604751fe1877fc879f70ff24af0e"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5991ee2bfd3324e787535b8533aa91fa45b66163f059f8ed5da5fd20de099e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "52ebaf310116a61341c46450e221dace609b984ad9d18046a5f59f1e62921bec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "195abb0316d11a1cd43100846bdd8dc21e0a27ed68c6d294d6ed0305586c8864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6941cb766fedc2b3eb2131cfbc237718214dbb448c89624de30fb0df32d6704e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36c04978df055ae08b4864d55033773dfd81f73d27ec683815ee0f20a420f5e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb1d6471019040416b3bf478c5cbdeecee74bc27f338c350e8d00434bba29592"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2337a3e30821276afe9fe0a540826d473327cfe7d4fbdebe0acd7f4b41ec959"
+    sha256 cellar: :any_skip_relocation, ventura:        "48a09335d873f511455b92a20429159a1c47d27fdb169a5e96122c3cda94a98a"
+    sha256 cellar: :any_skip_relocation, monterey:       "9dad9f65821401be63d05299587e420ff798e30b3c51574f3cac5f5efa23cf8a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40ae326a290c7c5acb24160e90a747b25d324171f553160bdd0f2c64814b73d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f24016210d611fbe6250c40570ca4d33bd91113f37f1938496fece7874428566"
   end
 
   depends_on "rust" => :build
