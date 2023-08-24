@@ -42,6 +42,7 @@ class Mpd < Formula
   depends_on macos: :mojave # requires C++17 features unavailable in High Sierra
   depends_on "opus"
   depends_on "sqlite"
+  depends_on "wavpack"
 
   uses_from_macos "curl"
 
@@ -71,6 +72,7 @@ class Mpd < Formula
       -Dshout=enabled
       -Dupnp=pupnp
       -Dvorbisenc=enabled
+      -Dwavpack=enabled
       -Dsystemd_system_unit_dir=#{lib}/systemd/system
       -Dsystemd_user_unit_dir=#{lib}/systemd/user
     ]
@@ -104,6 +106,8 @@ class Mpd < Formula
     # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
     # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    assert_match "[wavpack] wv", shell_output("#{bin}/mpd --version")
 
     require "expect"
 
