@@ -4,8 +4,8 @@ class Gperftools < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.11/gperftools-2.11.tar.gz"
-    sha256 "8ffda10e7c500fea23df182d7adddbf378a203c681515ad913c28a64b87e24dc"
+    url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.12/gperftools-2.12.tar.gz"
+    sha256 "fb611b56871a3d9c92ab0cc41f9c807e8dfa81a54a4a9de7f30e838756b5c7c6"
   end
 
   livecheck do
