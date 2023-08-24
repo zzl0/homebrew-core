@@ -3,8 +3,8 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/85/f9/f3e1e7b2f0615cded9c555aa75692a1004cdce765eccff9f6245473f3657/sphinx-7.2.2.tar.gz"
-  sha256 "1c0abe6d4de7a6b2c2b109a2e18387bf27b240742e1b34ea42ac3ed2ac99978c"
+  url "https://files.pythonhosted.org/packages/9f/4f/999e29fbb0998b666a3488d19db0470dbaf340492228f2ce73e2528598a1/sphinx-7.2.3.tar.gz"
+  sha256 "ece68bb4d77b7dc090573825db45a6f9183e74098d1c21573485de250b1d1e3f"
   license "BSD-2-Clause"
 
   bottle do
@@ -108,8 +108,8 @@ class SphinxDoc < Formula
   end
 
   resource "sphinxcontrib-serializinghtml" do
-    url "https://files.pythonhosted.org/packages/a0/a3/4bd9d8c5c97312bf46b059bcf76eab42ce6ffb12560b7ce9a247e2e524a3/sphinxcontrib_serializinghtml-1.1.8.tar.gz"
-    sha256 "aaf3026335146e688fd209b72320314b1b278320cf232e3cda198f873838511a"
+    url "https://files.pythonhosted.org/packages/5c/41/df4cd017e8234ded544228f60f74fac1fe1c75bdb1e87b33a83c91a10530/sphinxcontrib_serializinghtml-1.1.9.tar.gz"
+    sha256 "0c64ff898339e1fac29abd2bf5f11078f3ec413cfe9c046d3120d7ca65530b54"
   end
 
   resource "urllib3" do
