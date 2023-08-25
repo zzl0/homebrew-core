@@ -6,6 +6,16 @@ class Counts < Formula
   license "Unlicense"
   head "https://github.com/nnethercote/counts.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38f55c6b7c4726093d387407511155d010fd2cbaa152b1b982bd8cfd54643a47"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66941009740d7b6325920ab2a9e301a6fc06cd48713e202999dd9b021b2829b3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "070aab378598e36db9ab4c2699ecb4a572a0235f4ef04c4fb7f19abffc95adeb"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d66e4a9002d52c3647195978ecb223dc76634a9e577a8980768d50ea5645b4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "89dc49546d6510e8ac7901ae163a68af0ab763a85645dd7efe898c3d5b01cda1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "22c64e5c8b35fa8ed743c14e67326177b2823aa116c0416534e96e6aed59c191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23345f07529c12d512021a15737266205a16d176eca74c07c84c39dea4638856"
+  end
+
   depends_on "rust" => :build
 
   def install
