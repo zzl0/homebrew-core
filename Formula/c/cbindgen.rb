@@ -1,8 +1,8 @@
 class Cbindgen < Formula
   desc "Project for generating C bindings from Rust code"
   homepage "https://github.com/mozilla/cbindgen"
-  url "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.24.6.tar.gz"
-  sha256 "af0591e687128f7fb4300b0fe24c6091f24593d3a8acadf4fe860bd82c20c4c5"
+  url "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "363ac6317a5788de8f2b0104a472a747883d4b9126fa119c681879509dbdbc28"
   license "MPL-2.0"
 
   bottle do
