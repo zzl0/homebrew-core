@@ -7,6 +7,16 @@ class Codelimit < Formula
   sha256 "2791dded3c894a44525bcb9d354088626d1627272137b8273513bfb704efbfea"
   license "ISC"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f423f175a27699173edad109327fe2d1245e8ff64cab0e81f6617455a0c6ea11"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "027012bbeade70cd4cb881100e853c5cfcca24c2ade52844257a00d98fa205e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22d430c5cdf93d74761f3a9f3a1b665350e978de1c9caa82ec3c85e2af398696"
+    sha256 cellar: :any_skip_relocation, ventura:        "492ae9a8dd6a0849c64d18ca63cd3065642c8c04df108c018c431bf0b308b68d"
+    sha256 cellar: :any_skip_relocation, monterey:       "eb3246af12bd573d93c64cc5bd4d0c4e41d8f79d9aa530f9b76d30d870471a28"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a695b33f1f1278cb4f8c34777c4bb8a8dc1ccdd58f60a6647ed2172386fd844d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a198eff559add1e5a05f7454216e31c4bf3c8f2226b739c3f605a47002e43fd"
+  end
+
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
