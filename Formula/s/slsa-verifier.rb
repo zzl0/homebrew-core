@@ -1,10 +1,18 @@
 class SlsaVerifier < Formula
   desc "Verify provenance from SLSA compliant builders"
   homepage "https://github.com/slsa-framework/slsa-verifier"
-  url "https://github.com/slsa-framework/slsa-verifier/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "56f4ef585269a49f5af42cf19f0683b1593ec57f516ff2d426cd81623d4ce6ec"
+  url "https://github.com/slsa-framework/slsa-verifier/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "8588428d22f931b751dcdc7d9b0489e11840efe91c5074ec3fb84b9d4206a52f"
   license "Apache-2.0"
   head "https://github.com/slsa-framework/slsa-verifier.git", branch: "main"
+
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef2c9e94be3d84837f663d99d4a34cf01484823a8bfc05bd81c719b6433d1723"
