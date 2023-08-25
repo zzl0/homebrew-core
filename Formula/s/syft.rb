@@ -1,9 +1,8 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://github.com/anchore/syft.git",
-      tag:      "v0.87.1",
-      revision: "4762ba0943785fe778276893388e839e01787b45"
+  url "https://github.com/anchore/syft/archive/refs/tags/v0.88.0.tar.gz"
+  sha256 "37b2c4a3ba555351ffe164293d6f2fdaebf2dbeab69f6ffe8e18b85d4dcebc9e"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
@@ -19,16 +18,17 @@ class Syft < Formula
 
   depends_on "go" => :build
 
-  resource "homebrew-micronaut.cdx.json" do
-    url "https://raw.githubusercontent.com/anchore/syft/934644232ab115b2518acdb5d240ae31aaf55989/syft/pkg/cataloger/java/test-fixtures/graalvm-sbom/micronaut.json"
-    sha256 "c09171c53d83db5de5f2b9bdfada33d242ebf7ff9808ad2bd1343754406ad44e"
+  # patch to build with go1.21, upstream PR, https://github.com/anchore/syft/pull/2067
+  patch do
+    url "https://github.com/anchore/syft/commit/aef33a0effe14830347867f24ab18aaac2d679a8.patch?full_index=1"
+    sha256 "c78f11977678e324b550dddd0e1b3a18051cc015c4156792c72553b3c6ff14d0"
   end
 
   def install
     ldflags = %W[
       -s -w
       -X github.com/anchore/syft/internal/version.version=#{version}
-      -X github.com/anchore/syft/internal/version.gitCommit=#{Utils.git_head}
+      -X github.com/anchore/syft/internal/version.gitCommit=#{tap.user}
       -X github.com/anchore/syft/internal/version.buildDate=#{time.iso8601}
     ]
 
@@ -43,6 +43,11 @@ class Syft < Formula
   end
 
   test do
+    resource "homebrew-micronaut.cdx.json" do
+      url "https://raw.githubusercontent.com/anchore/syft/934644232ab115b2518acdb5d240ae31aaf55989/syft/pkg/cataloger/java/test-fixtures/graalvm-sbom/micronaut.json"
+      sha256 "c09171c53d83db5de5f2b9bdfada33d242ebf7ff9808ad2bd1343754406ad44e"
+    end
+
     testpath.install resource("homebrew-micronaut.cdx.json")
     output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json")
     assert_match "netty-codec-http2  4.1.73.Final  UnknownPackage", output
