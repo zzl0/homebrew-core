@@ -6,13 +6,13 @@ class JfrogCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e16e8055205917d483223cdecff9f8ad42a801f0cd8c84a2c1f93a73d22cad4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7f0ca9b99a24c6367988a6a37b7cbb0cd827238a711e1e8de0100add791c6d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "629c6764c9a0259d477ca2fc8933c595a2a71ad234a0b5c02bdc75070ed261ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "57095f80fc1309bf578d8637a200a4b182c5c9fd7608f612082fd721fdf93220"
-    sha256 cellar: :any_skip_relocation, monterey:       "81929667060ed69de036ea7c98c063f1f03d6bd318acbd6848aa74e7ea7c3438"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cdde5c96899d6eb73e31a15dca3377dcfe805ff4ff55e8a49874a67827f618a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b64b20e948987a872b36b3d1a3d43ad7db633c0d3c87fc912bb58436f460db3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "862661e727b8993f7982e8d8ced18b88977507d2f52ef71a6f6d15bf1399131c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d7437bd18c561b58179e85632fa4e8489f43d950c42b9ca5348ad29b10fcacf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0da9a5b1596eb3df91b129bb5efe55fca9c7f2c34c4d6e07503c4eddff6cba1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2afead67b31406d4332424c7de964ca2e4d3407300e862006d02690eb852adf0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4314acc82d63d7cf678227f267f5a80e402903eaaf3124238debfb9ea1ce10f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7bc843325f8f359cb963e1016092d3f85a168ac037032cc20ce458a3e3c3bc51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93bf55258983085ffd9b6735675f6c4b79ad3a08e989e77ea02f1158a41cb9a5"
   end
 
   depends_on "go" => :build
