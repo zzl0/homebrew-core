@@ -1,8 +1,8 @@
 class Buildifier < Formula
   desc "Format bazel BUILD files with a standard convention"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v6.3.2.tar.gz"
-  sha256 "b7187e0856280feb0658ab9d629c244e638022819ded8243fb02e0c1d4db8f1c"
+  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v6.3.3.tar.gz"
+  sha256 "42968f9134ba2c75c03bb271bd7bb062afb7da449f9b913c96e5be4ce890030a"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
