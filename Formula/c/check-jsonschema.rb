@@ -9,13 +9,13 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "88eaaad6f0e28f14115534f20731025665d9f17dac44947463aff601fb397f28"
-    sha256 cellar: :any,                 arm64_monterey: "3b51dcc9b70a838639a1c06cda294fe3c61e4b6c6ecabbd685e82be29b21f3c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "2485953298c725fd1f76da36a934651c8779ab483df238c877cbd6ef1d3c0cb6"
-    sha256 cellar: :any,                 ventura:        "e5fad49bbcd24498afde401ccd87f813922cbbe5b29b431120cb3084d6e9bea5"
-    sha256 cellar: :any,                 monterey:       "07476aaa0dc01195843a5c6265074565d75645a8ec4a03f8858788a7c606c80e"
-    sha256 cellar: :any,                 big_sur:        "e6ba470504cee0bd2d161542d52dc611a75ae655f43aa75a73b37e0f9d01da24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d42bd64a12e7d14f5d9c359141187ec3672284961e4479e0b2cab8e18c9ea2d6"
+    sha256 cellar: :any,                 arm64_ventura:  "22070cba5b50cb599812b77b05d179e13487fca5aee335110d5ca708fc2dbe7c"
+    sha256 cellar: :any,                 arm64_monterey: "2c8fbe69af3dce05a4055c17f3f12aa39c4495748e1e0e8425b17ca47b48eb2d"
+    sha256 cellar: :any,                 arm64_big_sur:  "34b48aa5785ce60161e8283cb9fd65bca5eeb1c788edbcc6b7b10058dfd05977"
+    sha256 cellar: :any,                 ventura:        "05a12ee7e991e71d04285f710c84d286c1d86e096c120d0bd4594cb1bc3239e4"
+    sha256 cellar: :any,                 monterey:       "1aad8486e544b2e3403cc4a00073d5e3fd5a2ad43055c4ddc6ff5998f5a49fc0"
+    sha256 cellar: :any,                 big_sur:        "704a094aa9e126ddbb9129cfcb436b29e76f706b8650af27e91ef8afac552807"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43a1533afd4fe835eda954ad25d8fd6701248835ec89b0ee2100ad473272ef67"
   end
 
   depends_on "rust" => :build
