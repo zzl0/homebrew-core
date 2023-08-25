@@ -419,6 +419,9 @@
     "package_name": "huggingface-hub",
     "exclude_packages": ["certifi", "PyYAML", "typing-extensions"]
   },
+  "hyfetch": {
+    "exclude_packages": ["typing-extensions"]
+  },
   "instalooter": {
     "exclude_packages": ["certifi", "six"]
   },
