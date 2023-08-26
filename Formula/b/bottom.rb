@@ -1,10 +1,18 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://github.com/ClementTsang/bottom/archive/0.9.4.tar.gz"
-  sha256 "199123ef354bcabaa8a2e3b7b477b324f5b647d503a2599d08296733846eea6e"
+  url "https://github.com/ClementTsang/bottom/archive/refs/tags/0.9.5.tar.gz"
+  sha256 "538a8fce1f9a65c1c84811f0b89db083301fea06364ff725cca1a776b9e4ee3c"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "master"
+
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6d1ae0fdc270d7223157fd4bc4a85526f435f8270ea5c58133eba86a6c2d739"
