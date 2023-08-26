@@ -1,13 +1,13 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://dlcdn.apache.org/druid/26.0.0/apache-druid-26.0.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/26.0.0/apache-druid-26.0.0-bin.tar.gz"
-  sha256 "535424284c141ce9736e3a4c198fc367707b9471a4c739d13d1cb8b142d945b0"
+  url "https://dlcdn.apache.org/druid/27.0.0/apache-druid-27.0.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/27.0.0/apache-druid-27.0.0-bin.tar.gz"
+  sha256 "c6f1a3bb207ff82a93357959d9504cf639bd58623d08a765cdfda71c76f5e729"
   license "Apache-2.0"
 
   livecheck do
-    url "https://druid.apache.org/downloads.html"
+    url "https://druid.apache.org/downloads/"
     regex(/href=.*?druid[._-]v?(\d+(?:\.\d+)+)-bin\.t/i)
   end
 
@@ -43,7 +43,8 @@ class Druid < Formula
     end
 
     inreplace libexec/"bin/node.sh" do |s|
-      s.gsub! "nohup $JAVA", "nohup $JAVA -Ddruid.extensions.directory=\"#{libexec}/extensions\""
+      s.gsub! "nohup \"$BIN_DIR/run-java\"",
+              "nohup \"$BIN_DIR/run-java\" -Ddruid.extensions.directory=\"#{libexec}/extensions\""
       s.gsub! ":=lib", ":=#{libexec}/lib"
       s.gsub! ":=conf/druid", ":=#{libexec}/conf/druid"
       s.gsub! ":=${WHEREAMI}/log", ":=#{var}/druid/log"
