@@ -3,8 +3,8 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/cf/eb/eb7d38a75bd835392c894554e7d9c8fcd3fadcfd294b3bd83c0d36453d0a/check-jsonschema-0.25.0.tar.gz"
-  sha256 "6f5e86d942ef7b3f9dd8e6a596046851eaf1ca803359c07301f83ddd91d9ad10"
+  url "https://files.pythonhosted.org/packages/4c/47/430e92bec86978ab05fd94facdf13aac0fa546e3e677fb1bdeced83382d5/check-jsonschema-0.26.0.tar.gz"
+  sha256 "45dbccca7e356c1b525155195238e136e02650f55234a6bc10f43a6723ba60e6"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
@@ -81,6 +81,11 @@ class CheckJsonschema < Formula
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
     sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
+  end
+
+  resource "regress" do
+    url "https://files.pythonhosted.org/packages/9a/33/7060b1f95953ea0943c2e34e9d9548f963c4019e4515e3f4f8536a360a1e/regress-0.4.0.tar.gz"
+    sha256 "5ebb0c5a092b524e7a49f899be06f6ce0291eecf23366ac87cb743e52a824dd8"
   end
 
   resource "requests" do
