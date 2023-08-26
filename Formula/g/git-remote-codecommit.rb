@@ -3,8 +3,8 @@ class GitRemoteCodecommit < Formula
 
   desc "Git Remote Helper to interact with AWS CodeCommit"
   homepage "https://github.com/aws/git-remote-codecommit"
-  url "https://files.pythonhosted.org/packages/2c/d2/bdf76a090f4b0afe254b03333bbe7df2a26818417cbb6f646dc1888104b7/git-remote-codecommit-1.16.tar.gz"
-  sha256 "f8e10cc5c177486022e4e7c2c08e671ed35ad63f3a2da1309a1f8eae7b6e69da"
+  url "https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz"
+  sha256 "fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e"
   license "Apache-2.0"
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
@@ -23,8 +23,8 @@ class GitRemoteCodecommit < Formula
   depends_on "six"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/1c/4f/c2755bd8a1636f17c470dc4c57ddd390b2c5f6505041c70133f7fa151815/botocore-1.29.36.tar.gz"
-    sha256 "5cb1fb381c427fe12274eb866f2ff739169e0e1f33c2481a474ba2ff8ca43f75"
+    url "https://files.pythonhosted.org/packages/b8/7e/989d7fdebd245cc392995fd6720f2f7769f7caa7aac434887e54a1c6d320/botocore-1.31.35.tar.gz"
+    sha256 "7e4534325262f43293a9cc9937cb3f1711365244ffde8b925a6ee862bcf30a83"
   end
 
   resource "jmespath" do
@@ -38,8 +38,8 @@ class GitRemoteCodecommit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   def install
