@@ -1,11 +1,10 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://github.com/lierdakil/pandoc-crossref"
-  url "https://github.com/lierdakil/pandoc-crossref/archive/v0.3.16.0e.tar.gz"
-  version "0.3.16.0e"
-  sha256 "7a3101189660358fa5738717464fd49da3197ccb1417ef9f2d90e50fab75e3c3"
+  url "https://github.com/lierdakil/pandoc-crossref/archive/v0.3.16.0f.tar.gz"
+  version "0.3.16.0f"
+  sha256 "1239cd17197f6685bf29e842d02618d0d2fd3220a469970f4200af5176638515"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "84c01be42f81d4aaf087d41fe41a173867deb2e9beea1eab438ce57eeb4e7690"
