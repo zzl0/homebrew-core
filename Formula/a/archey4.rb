@@ -3,8 +3,8 @@ class Archey4 < Formula
 
   desc "Simple system information tool written in Python"
   homepage "https://github.com/HorlogeSkynet/archey4"
-  url "https://files.pythonhosted.org/packages/f7/af/f674dccea083f60f39649de5104bc5e2120d9540b3e136578510407d16a7/archey4-4.14.1.0.tar.gz"
-  sha256 "cb321e67154c730726c3757672a46c3af9b2ffe1af7f295830f9c061fd7a69ea"
+  url "https://files.pythonhosted.org/packages/b3/76/21850b7c2b5967326c13fac40a60e9d49295e971ec5b5398780da9d5ee04/archey4-4.14.2.0.tar.gz"
+  sha256 "afbc9f66e0ff85bfff038b9a8a401cb269a28a9024b2ce29ad382e07443eae9d"
   license "GPL-3.0-or-later"
 
   bottle do
