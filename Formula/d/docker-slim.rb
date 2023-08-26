@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.3.tar.gz"
-  sha256 "7b72b423ba3d031cbd5113ad35bf2ef1e8f2088f7dbb37e348ca5cd8292af1bc"
+  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.4.tar.gz"
+  sha256 "92256e0ac5375949ded34381d0c4efbc580c81a7666c1cb704717f446a16bcb8"
   license "Apache-2.0"
 
   livecheck do
@@ -50,7 +50,7 @@ class DockerSlim < Formula
     EOS
 
     output = shell_output("#{bin}/slim lint #{testpath}/Dockerfile")
-    assert_match "id='ID.10001' name='Missing .dockerignore'", output
-    assert_match "id='ID.20006' name='Stage from latest tag'", output
+    assert_match "Missing .dockerignore", output
+    assert_match "Stage from latest tag", output
   end
 end
