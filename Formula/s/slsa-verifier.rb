@@ -15,13 +15,13 @@ class SlsaVerifier < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef2c9e94be3d84837f663d99d4a34cf01484823a8bfc05bd81c719b6433d1723"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef2c9e94be3d84837f663d99d4a34cf01484823a8bfc05bd81c719b6433d1723"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef2c9e94be3d84837f663d99d4a34cf01484823a8bfc05bd81c719b6433d1723"
-    sha256 cellar: :any_skip_relocation, ventura:        "6842d91f8a81df33035a444af23f65fe2149c42eedf58ef5fd115368d45f3fef"
-    sha256 cellar: :any_skip_relocation, monterey:       "32806b0a61ab0028ad8f7864d29af5589e96be6e3d2086f8b246526d9a07acaf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7e46674e80decb52e1734444291bedbc989cda454975a42869426ba50d2c17a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eca13cc4e327e705e5dcc5109ee6588f3c839c82d8dbf08136daee7bc065e86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d42a4343dbb0f18108faf80fa71f3a5a01ab9d67bc0134c104ac4b952b60de4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d75c507634ec7ffbb8f117ef1d37186f222b12760938a7fa225459a8468034dd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f329c0aa0b2a8d7513040272bb07dc6a4168969016fc92581682044cda39b2ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "2ac447f426b4c461d5c3b857dc878a62932e3fb4c960a641d8bf314595d9aac4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b01c7c7b5d18701275e9358b96fef1921cd4b0a697119caa81acd8faa6256996"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8a8680a86d01243fe13ddb6b3c73af02abe22dda9a1b543f0c48ce075cce9839"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d430eb83cbaad15ea0929fcc1c4155b4e981e3246a690fdacabc8907bcb68b5"
   end
 
   depends_on "go" => :build
