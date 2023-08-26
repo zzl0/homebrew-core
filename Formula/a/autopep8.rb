@@ -3,8 +3,8 @@ class Autopep8 < Formula
 
   desc "Automatically formats Python code to conform to the PEP 8 style guide"
   homepage "https://github.com/hhatto/autopep8"
-  url "https://files.pythonhosted.org/packages/05/e9/f42b5233dc0d68c747d3dfc03ef191f3935211f9dedf66fa94e8ea9ac58f/autopep8-2.0.3.tar.gz"
-  sha256 "ba4901621c7f94c6fce134437d577009886d5e3bfa46ee64e1d1d864a5b93cc2"
+  url "https://files.pythonhosted.org/packages/e0/8a/9be661f5400867a09706e29f5ab99a59987fd3a4c337757365e7491fa90b/autopep8-2.0.4.tar.gz"
+  sha256 "2913064abd97b3419d1cc83ea71f042cb821f87e45b9c88cad5ad3c4ea87fe0c"
   license "MIT"
 
   bottle do
@@ -19,14 +19,9 @@ class Autopep8 < Formula
 
   depends_on "python@3.11"
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
   resource "pycodestyle" do
-    url "https://github.com/PyCQA/pycodestyle/archive/2.11.0.tar.gz"
-    sha256 "757a3dba55dce2ae8b01fe7b46c20cd1e4c0fe794fe6119bce66b942f35e2db0"
+    url "https://files.pythonhosted.org/packages/c1/2d/022c78a6b3f591205e52b4d25c93b7329280f752b36ba2fc1377cbf016cd/pycodestyle-2.11.0.tar.gz"
+    sha256 "259bcc17857d8a8b3b4a2327324b79e5f020a13c16074670f9c8c8f872ea76d0"
   end
 
   def install
