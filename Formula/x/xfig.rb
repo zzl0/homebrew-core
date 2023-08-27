@@ -11,13 +11,13 @@ class Xfig < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "941c7128195ecda9f0a5bb082a2c97e68d5fedf24bc12dfb026a576e3d081475"
-    sha256 arm64_monterey: "4b0a5046a49eb1a199b0e510026b3fe7535595b689c9ab6b55b5d745e835f064"
-    sha256 arm64_big_sur:  "27a8617539bd153050335ea7ccdff58f017a3530b7df277dcb135d708c0d95e7"
-    sha256 ventura:        "ba40317eabb65806ee84ce46b434b64d240b578efd2a479ffbee6b48905b1b99"
-    sha256 monterey:       "884daf8e46154273f9ae6c2cb8f9d0a6d0ecf96f31f9b8690efa571fb52f2e53"
-    sha256 big_sur:        "7173fb6938b4050bc4abbdccb644baeed38b88e3cceaba3e90c3867e415ba1c5"
-    sha256 x86_64_linux:   "eb8139430792390d9fb6e0657d3a45081fe11f1aa74092a431fef71f614daf1b"
+    sha256 arm64_ventura:  "ab1c86c5044e495596fe576e1c053478251d70a5faece3f221d165d29b9c3ee5"
+    sha256 arm64_monterey: "39f08a4ba5383fa90cb2a4b76d0b8b5d6929843f6fac04450249e85ef647ac43"
+    sha256 arm64_big_sur:  "7626ebc11c73a512392640c29e57a1579ef4cfc4bbfe1ec774cc42692c44554d"
+    sha256 ventura:        "680fc82cd8fb6aeb17cfc09c4de0d98eeec23a86e71d580757bebaf857fe0688"
+    sha256 monterey:       "18fff7f110a0e27f75e4a99c3116900af986814aa1dadd3fc7cb947bffca2852"
+    sha256 big_sur:        "0ff1ddc946b12ba65d183737b31678b6c4baedcb0cc012557bec0128f74b28f7"
+    sha256 x86_64_linux:   "b07b185ca2339fe988e5b4b379da797c1760874feead0d5029131953e4a78427"
   end
 
   depends_on "fig2dev"
