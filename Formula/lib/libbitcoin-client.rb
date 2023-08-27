@@ -4,6 +4,7 @@ class LibbitcoinClient < Formula
   url "https://github.com/libbitcoin/libbitcoin-client/archive/v3.8.0.tar.gz"
   sha256 "cfd9685becf620eec502ad53774025105dda7947811454e0c9fea30b27833840"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "ae151e3611130709138e23c7eae49727ac39f065ae5d2b4a70889486c4acdc9b"
