@@ -102,6 +102,7 @@
   "latexila": "gnome-latex",
   "ledger26": "ledger@2.6",
   "letsencrypt": "certbot",
+  "libbitcoin": "libbitcoin-system",
   "libcppa": "caf",
   "libmongoclient": "mongo-cxx-driver",
   "libpython-tabulate": "python-tabulate",
