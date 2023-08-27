@@ -4,6 +4,7 @@ class LibbitcoinDatabase < Formula
   url "https://github.com/libbitcoin/libbitcoin-database/archive/v3.8.0.tar.gz"
   sha256 "37dba4c01515fba82be125d604bbe55dbdcc69e41d41f8cf6fbaddaaab68c038"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "085d60b4ff75bcb02c2c24f8b36e12a6804587823d7bce47c87a2ce365aeee93"
@@ -21,7 +22,7 @@ class LibbitcoinDatabase < Formula
   depends_on "pkg-config" => :build
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
-  depends_on "libbitcoin"
+  depends_on "libbitcoin-system"
 
   def install
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
