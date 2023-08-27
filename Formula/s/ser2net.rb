@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.4.0.tar.gz"
-  sha256 "2abef00ee6481b072bdc290422983b2374cee1ccb5a565e9b378ce7428b074dd"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.5.0.tar.gz"
+  sha256 "6ee1b217aad026948fd17ea00c5ecf6e982de822384c4349118461ad83caa0da"
   license "GPL-2.0-only"
 
   livecheck do
@@ -46,13 +46,6 @@ class Ser2net < Formula
     ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/gensio/lib/pkgconfig"
     ENV.append_path "CFLAGS", "-I#{libexec}/gensio/include"
     ENV.append_path "LDFLAGS", "-L#{libexec}/gensio/lib"
-
-    if OS.mac?
-      # Patch to fix compilation error
-      # https://sourceforge.net/p/ser2net/discussion/90083/thread/f3ae30894e/
-      # Remove with next release
-      inreplace "addsysattrs.c", "#else", "#else\n#include <gensio/gensio.h>"
-    end
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
