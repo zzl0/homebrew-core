@@ -4,6 +4,7 @@ class LibbitcoinNode < Formula
   url "https://github.com/libbitcoin/libbitcoin-node/archive/v3.8.0.tar.gz"
   sha256 "49a2c83a01c3fe2f80eb22dd48b2a2ea77cbb963bcc5b98f07d0248dbb4ee7a9"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "86822901903e146be4fb9399f903cf1059731f1d0a086500436d64dea831cbad"
