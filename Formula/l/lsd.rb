@@ -1,8 +1,8 @@
 class Lsd < Formula
   desc "Clone of ls with colorful output, file type icons, and more"
   homepage "https://github.com/lsd-rs/lsd"
-  url "https://github.com/lsd-rs/lsd/archive/0.23.1.tar.gz"
-  sha256 "9698919689178cc095f39dcb6a8a41ce32d5a1283e6fe62755e9a861232c307d"
+  url "https://github.com/lsd-rs/lsd/archive/v1.0.0.tar.gz"
+  sha256 "ab34e9c85bc77cfa42b43bfb54414200433a37419f3b1947d0e8cfbb4b7a6325"
   license "Apache-2.0"
 
   bottle do
@@ -18,6 +18,8 @@ class Lsd < Formula
 
   depends_on "pandoc" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
 
   def install
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
