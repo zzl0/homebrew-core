@@ -3,9 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/2a/76/11bb2030c19c9858aa12d2070c40c8b5970bd8476ef08815b8f8d0e166b3/checkov-2.4.0.tar.gz"
-  sha256 "3e030856b4f76d3aa5bf992bb67f4c837f1b62af90e02efaa8272d39d0c6b08b"
+  # checkov should only be updated every 10 releases on multiples of 10
+  url "https://files.pythonhosted.org/packages/9e/c1/ab4adf405d7f2131af38220d844c304c97412b2a6cc41fb8c2ed377b1e74/checkov-2.4.10.tar.gz"
+  sha256 "864be8388a31a6ff6be1ff7627d3143481ae7204140e9b7960eaef3f78250460"
   license "Apache-2.0"
 
   bottle do
@@ -96,13 +96,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/de/e2/e051a446118e159b16d1c76ec3f539b295abe69a6507685426ccad9dc55a/boto3-1.28.27.tar.gz"
-    sha256 "a336cf53a6d86ee6d27b2f6d8b78ec9b320209127e5126359881bbd68f33d0b9"
+    url "https://files.pythonhosted.org/packages/77/57/32ed300facd766f9e0ae52792fafd429525c23aef28c7df4940682edc4c2/boto3-1.28.35.tar.gz"
+    sha256 "580b584e36967155abed7cc9b088b3bd784e8242ae4d8841f58cb50ab05520dc"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2d/6e/27f7d6f3745bd0129d25f8713426fbd0f371d54c80ba323338c09874f701/botocore-1.31.27.tar.gz"
-    sha256 "739d09e13751e3b9b0f341b5ffe5bf8d0452b8769d435c4084ee88739d42b7f7"
+    url "https://files.pythonhosted.org/packages/b8/7e/989d7fdebd245cc392995fd6720f2f7769f7caa7aac434887e54a1c6d320/botocore-1.31.35.tar.gz"
+    sha256 "7e4534325262f43293a9cc9937cb3f1711365244ffde8b925a6ee862bcf30a83"
   end
 
   resource "cached-property" do
@@ -121,8 +121,8 @@ class Checkov < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-option-group" do
@@ -266,8 +266,8 @@ class Checkov < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/89/ee/84bbd0161090f0f24e8a2ac175e6b6a936289ee02e9d5da414ce14d3d332/openai-0.27.8.tar.gz"
-    sha256 "2483095c7db1eee274cebac79e315a986c4e55207bb4fa7b82d185b3a2ed9536"
+    url "https://files.pythonhosted.org/packages/d6/31/c3edee8d000a1f533fde75a86bd5313c03efcdd4bb492c19f97bda648cb9/openai-0.27.9.tar.gz"
+    sha256 "b687761c82f5ebb6f61efc791b2083d2d068277b94802d4d1369efe39851813d"
   end
 
   resource "packageurl-python" do
@@ -286,13 +286,13 @@ class Checkov < Formula
   end
 
   resource "policy-sentry" do
-    url "https://files.pythonhosted.org/packages/30/a9/cb31f88f691b90bf4d596be369bff6f66051a17c2bd30564b4761bf7aba2/policy_sentry-0.12.7.tar.gz"
-    sha256 "776f8a44d1e6f82cce3eee267cd1c1f4744d23584ae0965d95aaae380ce5c2ac"
+    url "https://files.pythonhosted.org/packages/51/39/dd00a5913cdc6e7d4ca875728447e259d662caf7e9a6e9bf0e8c533aa241/policy_sentry-0.12.8.tar.gz"
+    sha256 "0efc4218ef999e069a36676f9e58ef56b45fc8f10b97d6e7df67932175c0ace5"
   end
 
   resource "policyuniverse" do
-    url "https://files.pythonhosted.org/packages/71/d0/e2d27f185dbb186932c3588be6ee9fddfe71ec32ef26f75ee878987b4641/policyuniverse-1.5.1.20230813.tar.gz"
-    sha256 "5ca6fc9804b9f47f4878dc968a5b587fc40f0f2cd99e2e4900b580e04e7c8b6b"
+    url "https://files.pythonhosted.org/packages/18/47/e58a8e38dd0d69500b473b8d9bc549bb468af037220279c59d9affe84041/policyuniverse-1.5.1.20230817.tar.gz"
+    sha256 "7920896195af163230635f1a5cee0958f56003ef8c421f805ec81f134f80a57c"
   end
 
   resource "prettytable" do
@@ -376,8 +376,8 @@ class Checkov < Formula
   end
 
   resource "spdx-tools" do
-    url "https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz"
-    sha256 "66809bf78783b47147dcaf69a63bb9d561eb45e6b2ec15c2e8fe1550e24ae1cd"
+    url "https://files.pythonhosted.org/packages/28/2d/c3982e35bea2be16c529074a668acd851e8381acd9e2acaa830cc36bd039/spdx-tools-0.8.1.tar.gz"
+    sha256 "c83652cd65b5726058dcbdaab85839dbe484c43ea6f61046137516aa1b8428ae"
   end
 
   resource "termcolor" do
@@ -426,8 +426,8 @@ class Checkov < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
-    sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
+    url "https://files.pythonhosted.org/packages/38/44/d747807b707465625ba5e18371bc7c448925314d7217ced1801162b74ca6/websocket-client-1.6.2.tar.gz"
+    sha256 "53e95c826bf800c4c465f50093a8c4ff091c7327023b10bfaff40cf1ef170eaa"
   end
 
   resource "xmltodict" do
