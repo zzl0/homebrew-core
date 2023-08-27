@@ -4,6 +4,7 @@ class LibbitcoinServer < Formula
   url "https://github.com/libbitcoin/libbitcoin-server/archive/v3.8.0.tar.gz"
   sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "082bea2bfaedf6c6f3a4ee4a12645b75aedfced2341f513042a99517e06ab8d5"
