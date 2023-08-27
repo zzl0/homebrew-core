@@ -4,6 +4,7 @@ class LibbitcoinNetwork < Formula
   url "https://github.com/libbitcoin/libbitcoin-network/archive/v3.8.0.tar.gz"
   sha256 "d317582bc6d00cba99a0ef01903a542c326c2a4262ef78a4aa682d3826fd14ad"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "cbc95be566837d05ab7081b500cbc521d3b635bef0f150e7fb3b24b3fd26ba81"
@@ -21,7 +22,7 @@ class LibbitcoinNetwork < Formula
   depends_on "pkg-config" => :build
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
-  depends_on "libbitcoin"
+  depends_on "libbitcoin-system"
 
   def install
     ENV.cxx11
