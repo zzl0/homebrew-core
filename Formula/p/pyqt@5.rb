@@ -6,13 +6,13 @@ class PyqtAT5 < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3e36ecd411d274f6c728ee7be982673d8a843795909a1e6a7294a9c287445292"
-    sha256 cellar: :any,                 arm64_monterey: "65d02cc59037ca2eb5dd5ac2d5e19fb46debba9a4b418764592b1cec2fdf0975"
-    sha256 cellar: :any,                 arm64_big_sur:  "054b7a3aac3ae4030c2989aca8120e97aa347ac8a8341add5b3358a298fda543"
-    sha256 cellar: :any,                 ventura:        "6f3b970bf51f05674d2d7e3a50aee7cd2fe8e68e36d2167781714579d9412d7a"
-    sha256 cellar: :any,                 monterey:       "d42f26eec225db2710a8e29939d04ab779b3487c7bc614db576c5d44110419c4"
-    sha256 cellar: :any,                 big_sur:        "08f088f6a293b8f0246afe3d25142e0d1faf43012d876bd500b979bdcdd9aca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3c706d51bb7d4f4fd8f7839be6a65060267d0939aa8cba042eb4e40f0a8ad49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdebe6cce54a45c856b8b2237308f4ba53e45ea0bc460769b615f557bc69ac09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83b6ea13c4b1389d0fe758bcd9f83b8d6564b8b6abbfc05c57ce102d4734940d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0926e76447c749f669f1a2cc13c9fa06ff2da0ae8071c62d1e96f8ea1357227f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e05bf795d62839535e0e0e6ee6c70a6bef82bc90a953de0393c21ed1f870b4bb"
+    sha256 cellar: :any_skip_relocation, monterey:       "04905257fd09737552946add20a940e065cbe973080bc60c63022f0b5cacc939"
+    sha256 cellar: :any_skip_relocation, big_sur:        "25533e0e23fb89a027e17c991cc9ddd0dc76c3d4805acc4f1d6f3e506bde88b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf729fadf5aec8e76778c9ea6cc1abe3a1abe6c19016a56a4a7713348dcd45f"
   end
 
   depends_on "pyqt-builder" => :build
