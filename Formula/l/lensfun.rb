@@ -3,17 +3,25 @@ class Lensfun < Formula
 
   desc "Remove defects from digital images"
   homepage "https://lensfun.github.io/"
-  url "https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "57ba5a0377f24948972339e18be946af12eda22b7c707eb0ddd26586370f6765"
   license all_of: [
     "LGPL-3.0-only",
     "GPL-3.0-only",
     "CC-BY-3.0",
     :public_domain,
   ]
-  revision 1
   version_scheme 1
   head "https://github.com/lensfun/lensfun.git", branch: "master"
+
+  stable do
+    url "https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.4.tar.gz"
+    sha256 "dafb39c08ef24a0e2abd00d05d7341b1bf1f0c38bfcd5a4c69cf5f0ecb6db112"
+
+    # upstream cmake build change, https://github.com/lensfun/lensfun/pull/1983
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/86b624c/lensfun/0.3.4.patch"
+      sha256 "8cc8af937d185bb0e01d3610fa7bb35905eb7d4e36ac4c807a292f1258369bdb"
+    end
+  end
 
   # Versions with a 90+ patch are unstable and this regex should only match the
   # stable versions.
@@ -41,14 +49,6 @@ class Lensfun < Formula
   depends_on "python@3.11"
 
   def install
-    # setuptools>=60 prefers its own bundled distutils, which breaks the installation
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
-
-    # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
-    site_packages = prefix/Language::Python.site_packages("python3.11")
-    inreplace "apps/CMakeLists.txt", "${SETUP_PY} install ", "\\0 --install-lib=#{site_packages} "
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
