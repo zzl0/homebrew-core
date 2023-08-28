@@ -9,8 +9,12 @@ class Tccutil < Formula
   head "https://github.com/jacobsalmela/tccutil.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "27033a9fedb26e4ea0087263ed08c2ab7136ca8258ac08f2fd0e6511d217c481"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1aafbd63cacbfe93a5b73db49233dd31cc2baa9a1d4c971b18b7db1cc5e620de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6abb29de36bab0c0b4a6a700b9d53ba3d5d2c60afebf1c5f783d7a08e4618014"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c73485c2e63ce837d7c4bf8aac4d9a8fd87294e9ec551f416b85a5dd188109bd"
+    sha256 cellar: :any_skip_relocation, ventura:        "2416cb241f6a8e985f94aca9c270fa5d38e3c49ccd159fb8d859efcbda32d027"
+    sha256 cellar: :any_skip_relocation, monterey:       "a6a65e5366da57ad3defe1ede9fb4b01333f94b1e98c7ba4d4a552f92155fd12"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8ae37f45387baeb609da0fc88b3d812fe3707100fefed42ca4e506276632f9d4"
   end
 
   depends_on :macos
