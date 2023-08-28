@@ -13,13 +13,14 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5194aa98020269afb8a2450d7a8747ad1878fc743cd857f8d7644e805c228ef8"
-    sha256 arm64_monterey: "f4b3ed41d8e758fed857ea1ab5a41e56cd4225b8a6a5186de26ba5eacca66ab9"
-    sha256 arm64_big_sur:  "7b5d40aa551adbf8b3d983a93e2d1ca3530dfc0da2994a603da87c728593cfc8"
-    sha256 ventura:        "9082a0867fb6fad925bf1b76f90670ef8e47ab8d26a66d1d883810c1e8a26479"
-    sha256 monterey:       "5717d61c4985d14a257c5393d52d92524e029ff0e53b59ba81c3a11413e60d32"
-    sha256 big_sur:        "2e410fc13fe5840db87a67df754a6c073dac843197cf3b0b1fc6ea1646c9ec40"
-    sha256 x86_64_linux:   "63b340a256ef3e6701e9c6228338853e1e94a1043f5d78174d4fb0e5948954d6"
+    rebuild 1
+    sha256 arm64_ventura:  "9b96017b8a7d8235275108a23224a388cb8b9a7276c76dcf876dc11eae372562"
+    sha256 arm64_monterey: "af679e6c1a3809f746cc738de3f6a240f63f865539dd7d2f642a630583514c2a"
+    sha256 arm64_big_sur:  "ec7c065b872400d74bddbabbb800cd03ccc4e415af028511b03a8e14c03bb19d"
+    sha256 ventura:        "845671e9625736ab6a15108d369e47f5a6b20b8f6d0e99ba1a3f39d18df1c94d"
+    sha256 monterey:       "246862506a64cbe52bce23f20ca8b1b7474618a00e2114c2ab9c06066ac58dde"
+    sha256 big_sur:        "7e809a87f13451bd5ea006234391e88b70eea2087dd0d7cbc0363254e9a96eb8"
+    sha256 x86_64_linux:   "44b2c6359b908b47b23d6c781a704371cf3b4e0e6a3e740511329d28c77f6980"
   end
 
   depends_on "libtool" => :build
@@ -29,6 +30,7 @@ class Qemu < Formula
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
+  depends_on "dtc"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
@@ -73,6 +75,7 @@ class Qemu < Formula
       --enable-slirp
       --enable-capstone
       --enable-curses
+      --enable-fdt=system
       --enable-libssh
       --enable-vde
       --enable-virtfs
