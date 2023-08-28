@@ -1,10 +1,9 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/3.1.2.tar.gz"
-  sha256 "5f94e98480bd8576a64cd1d59649f34b09b4e02a81f1d983c92af1113e061fc3"
+  url "https://github.com/rizsotto/Bear/archive/refs/tags/3.1.3.tar.gz"
+  sha256 "8314438428069ffeca15e2644eaa51284f884b7a1b2ddfdafe12152581b13398"
   license "GPL-3.0-or-later"
-  revision 8
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
@@ -38,18 +37,6 @@ class Bear < Formula
       Undefined symbols for architecture x86_64:
         "std::__1::__fs::filesystem::__current_path(std::__1::error_code*)"
     EOS
-  end
-
-  # Add support for fmt 10
-  patch do
-    url "https://github.com/rizsotto/Bear/commit/46a032fa0fc8131779ece13f26735ec84be891e8.patch?full_index=1"
-    sha256 "af2a1bb3feb008f2ed354c6409b734f570a89caf8bcc860d9ccf02ebe611d167"
-  end
-
-  # Add support for fmt 10.1 https://github.com/rizsotto/Bear/pull/543
-  patch do
-    url "https://github.com/rizsotto/Bear/commit/00636df012c251a99157e76401f0d595efef85fc.patch?full_index=1"
-    sha256 "f0b003aef6c2ad04086dad064ff5af6d0745b1353c8e0ff19a75a3e812969568"
   end
 
   def install
