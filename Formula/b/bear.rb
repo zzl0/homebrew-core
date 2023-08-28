@@ -7,13 +7,13 @@ class Bear < Formula
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "de24837278d844b667ccdad3efb38e3004064549c58a8cd40fac4aa5522fcb65"
-    sha256 arm64_monterey: "fee200d29359732114e9fd115d3f5f3211fbcba708c0929d73bfeaab70791f30"
-    sha256 arm64_big_sur:  "b72f7c81a7bef584efe90196245078f0e0c5e235fc02d4635e17de5a01c4c8c1"
-    sha256 ventura:        "ecc17cb9ccc86953ef8d1091df2591c219d5f51e3b39d341f24bbd2561c741e9"
-    sha256 monterey:       "da796509abf3875aae9eaa28db7954c108ff51cbeb2a3d2ab8a6d2d20bdec509"
-    sha256 big_sur:        "ffef1938aa287b15ff802f05f3e457cfdead8aa12c169b4ff040de99aec54684"
-    sha256 x86_64_linux:   "f17cc600fe96a850bf06560bc0813f3e9c0a6a40322baff2104fcc1ae33da521"
+    sha256 arm64_ventura:  "c6f8fd9e69298c7726eecdc0231026c2043d6aa47d157d7ceba45a09ba12505a"
+    sha256 arm64_monterey: "4e413a3697e29d7d1ac03b6fb08ea281cae14a067d40d0e311be579b19ea450d"
+    sha256 arm64_big_sur:  "d5ba429389988cb2912d74db6e0392804537998d8f927a8622e3da7c6a35a8b9"
+    sha256 ventura:        "ae11ca5b00c22afb121f39ea112f6c512c594d7993f6cd70bc0283a67aba4579"
+    sha256 monterey:       "ca8f59d5177d8eb45bbebfb6a4199b2a170dfddf143117059e489561577e75c9"
+    sha256 big_sur:        "fd8feedc1ba933fc06441a85d3c514e32d9d176762a2585161ca80af3b9053c7"
+    sha256 x86_64_linux:   "57667159f433bcb08a959ad6d407389665d653d60d2d135846af5b2a573820c4"
   end
 
   depends_on "cmake" => :build
