@@ -3,7 +3,7 @@ class MariadbAT106 < Formula
   homepage "https://mariadb.org/"
   url "https://archive.mariadb.org/mariadb-10.6.15/source/mariadb-10.6.15.tar.gz"
   sha256 "b2f6bdba17ead4d91c4d254fafc34a728ac6b027dd1d7178bc26758dce694335"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"

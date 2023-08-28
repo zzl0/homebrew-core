@@ -3,7 +3,7 @@ class MariadbAT103 < Formula
   homepage "https://mariadb.org/"
   url "https://archive.mariadb.org/mariadb-10.3.39/source/mariadb-10.3.39.tar.gz"
   sha256 "18bd51c847565af4da18748b052ab9bcbb569ab6e6766ca8da7dcca1f941f876"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   bottle do
     rebuild 1
