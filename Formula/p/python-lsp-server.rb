@@ -21,15 +21,9 @@ class PythonLspServer < Formula
 
   depends_on "black"
   depends_on "mypy"
-  depends_on "pycodestyle"
   depends_on "pydocstyle"
   depends_on "python@3.11"
   depends_on "ruff"
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
 
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
@@ -47,8 +41,8 @@ class PythonLspServer < Formula
   end
 
   resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/f3/70/4e0e841e35ac450ca7f994020887c05aeb4d0cd25e8d53901f448dd43acb/lsprotocol-2023.0.0a2.tar.gz"
-    sha256 "80aae7e39171b49025876a524937c10be2eb986f4be700ca22ee7d186b8488aa"
+    url "https://files.pythonhosted.org/packages/1c/a3/146d67e3433bacda203206284fdb420468b89dfd8afc5a710a73bc6a5ace/lsprotocol-2023.0.0a3.tar.gz"
+    sha256 "d704e4e00419f74bece9795de4b34d02aa555fc0131fec49f59ac9eb46816e51"
   end
 
   resource "parso" do
@@ -66,6 +60,16 @@ class PythonLspServer < Formula
     sha256 "06ba6d09bdd6ec29025ccc952dd66a849361a224a9f04cebd69b9f45f7d4a064"
   end
 
+  resource "pylsp-rope" do
+    url "https://files.pythonhosted.org/packages/fe/25/1935fc44a596427d50be237658a8fd23302a7904705422a5f1e39468e921/pylsp-rope-0.1.11.tar.gz"
+    sha256 "48aadf993dafa5e8fca1108b4a5431314cf80bc78cffdd56400ead9c407553be"
+  end
+
+  resource "pytoolconfig" do
+    url "https://files.pythonhosted.org/packages/aa/ce/ac21cf0549ae05d8924e91f02f8b406e43beb42e605dc732fdf700f8cd8c/pytoolconfig-1.2.5.tar.gz"
+    sha256 "a50f9dfe23b03a9d40414c1fdf902fefbeae12f2ac75a3c8f915944d6ffac279"
+  end
+
   resource "python-lsp-black" do
     url "https://files.pythonhosted.org/packages/ad/1b/f20e612a33f9dcc2a0863a42ee62cc4f30ee724f1e7cc869b92c786c8ebd/python-lsp-black-1.3.0.tar.gz"
     sha256 "5aa257e9e7b7e5a2316ef2a9fbcd242e82e0f695bf1622e31c0bf5cd69e6113f"
@@ -79,6 +83,15 @@ class PythonLspServer < Formula
   resource "python-lsp-ruff" do
     url "https://files.pythonhosted.org/packages/de/26/6fb2d8525c3ada0112d85a161f73e39270a37190fad0ed32691d8f0559cf/python-lsp-ruff-1.5.1.tar.gz"
     sha256 "caf1b8427f5aca6d2b4c300b511c47ad6b4384eee0d9562c23eccb81bf33fa01"
+
+    # this depends on `ruff` solely to install the binary,
+    # but we can just depend on the `ruff` formula in Homebrew
+    patch :DATA
+  end
+
+  resource "rope" do
+    url "https://files.pythonhosted.org/packages/3d/1f/d61b1e57a148cbc7c0d01437df44d276bed97bf043efb81abbeba1ba0a8c/rope-1.9.0.tar.gz"
+    sha256 "f48d708132c0e062b411308732ca13933b976486b4b53d1e804f94ed08d69503"
   end
 
   resource "ujson" do
@@ -100,7 +113,7 @@ class PythonLspServer < Formula
 
     # link dependent virtualenvs to this one
     site_packages = Language::Python.site_packages(python3)
-    paths = %w[black mypy pycodestyle pydocstyle].map do |package_name|
+    paths = %w[black mypy pydocstyle].map do |package_name|
       package = Formula[package_name].opt_libexec
       package/site_packages
     end
@@ -120,7 +133,32 @@ class PythonLspServer < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}/pylsp", input)
+    output = pipe_output("#{bin}/pylsp -v 2>&1", input)
     assert_match(/^Content-Length: \d+/i, output)
+
+    expected_plugins = %w[
+      pydocstyle
+      pylsp_black
+      pylsp_mypy
+      pylsp_rope
+      ruff
+    ]
+    expected_plugins.each do |plugin_name|
+      assert_match("Loaded pylsp plugin #{plugin_name}", output)
+    end
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index 4c133c7..205d9e3 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -13,7 +13,6 @@ readme = "README.md"
+ requires-python = ">=3.7"
+ license = {text = "MIT"}
+ dependencies = [
+-  "ruff>=0.0.267",
+   "python-lsp-server",
+   "lsprotocol>=2022.0.0a1",
+   "tomli>=1.1.0; python_version < '3.11'",
