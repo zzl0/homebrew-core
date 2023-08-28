@@ -3,7 +3,7 @@ class MariadbAT108 < Formula
   homepage "https://mariadb.org/"
   url "https://downloads.mariadb.com/MariaDB/mariadb-10.8.8/source/mariadb-10.8.8.tar.gz"
   sha256 "8de1a151842976a492d6331b543d0ed87259febbbc03b9ebce07c80d754d6361"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   revision 1
 
   bottle do
