@@ -18,7 +18,7 @@
   ["buildifier", "buildozer"],
   ["cmake", "cmake-docs"],
   ["cython", "libcython"],
-  ["dbhash", "sqldiff", "sqlite", "sqlite-analyzer"],
+  ["dbhash", "lemon", "sqldiff", "sqlite", "sqlite-analyzer"],
   ["dmd", "dtools"],
   ["docker", "docker-completion"],
   ["easyrpg-player", "liblcf"],
