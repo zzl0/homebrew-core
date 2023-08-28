@@ -6,6 +6,16 @@ class CargoDeps < Formula
   license "BSD-3-Clause"
   head "https://github.com/mrcnski/cargo-deps.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbfa6ef183d5a237a74186f332915c4704ce9926be46f30bf67d21a93443fc50"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72e3032013ef5a554be4c6c0d1ce750a863cc8d6ba0d5aeb631bac9f96dbe832"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d6a439a94c145edf47da3e56d8ddc476d7d70e6f02e0e25bb62b5ef2436859ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "dac2b73dceb1fd9ac07d9ef73b5c087c909c11af4cc67965be784628c2aea806"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f0b24ef58ceba9d2232c3ddf0f826b94c0a9347d0c9bc84055c1445d57a9972"
+    sha256 cellar: :any_skip_relocation, big_sur:        "524f11ed7795845ff1014f495a783b0c3db46900b14c6e7490b093fbe4656308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "205f88a20c0bf8fdabc555ecd1ec72a6103f65dcaaf5dc8c23f687e6d78249d3"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
 
