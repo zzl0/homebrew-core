@@ -23,7 +23,13 @@ class Luau < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "build/luau", "build/luau-analyze"
+    bin.install %w[
+      build/luau
+      build/luau-analyze
+      build/luau-ast
+      build/luau-compile
+      build/luau-reduce
+    ]
   end
 
   test do
