@@ -12,13 +12,14 @@ class GnuCobol < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c04cb267f5f67d73c5b0a767b63197da96dec54ce813217759120a4f92a654a8"
-    sha256 arm64_monterey: "bd5300d24e94a25f53c97ce6168d7ed2fde90be9eca29bea70443927c8936746"
-    sha256 arm64_big_sur:  "f0b1a2b68a171c912545b818a80c36a317e1d6c3d3e8d19caad482fe2de3d71e"
-    sha256 ventura:        "95f1fe3c827987acabadd7254d1fb220fd1339e5e7e23f4db06703023437dfcd"
-    sha256 monterey:       "11dcc824e7db792595d399cdd692dd45e0b6d023554ebdd54782e18fd2f8e1c8"
-    sha256 big_sur:        "a7798d2cc900be3cc77e7adc6231e3bd651b00f2eebb19235b1f0df22812ad3c"
-    sha256 x86_64_linux:   "4bf957f586d155f1034ac90ac24edff1253e9de935336680689d85f0bbdcf45c"
+    rebuild 1
+    sha256 arm64_ventura:  "d01c72df3a149061c95811e7796a6de37fea2eb38e3dc7ff792c4c8b021e3ae5"
+    sha256 arm64_monterey: "1ea182723a1ff54e10c49cb133af6baf21f1e0e3f97ece6d51e46796d7f8de19"
+    sha256 arm64_big_sur:  "0bacd95ade364209c06081b2ae6255acf393502ac8c0130d37a2f86aa9dee5df"
+    sha256 ventura:        "b284db83cc174f2db09b0f7ee799d43512645969ec5a9ad00542c549f640fb14"
+    sha256 monterey:       "6209c9f8ccb8a34e1da4d936d521d9fde5b74cd4e3aebf0df010c5d76659f2e0"
+    sha256 big_sur:        "ad2f3b544b029285ac0e6ac318c0233588cf7c194ec61ee32fe343abcd046c99"
+    sha256 x86_64_linux:   "c763f44853c5ab079d4a101c283214713faa5b79fcd5610402587b22f00085e3"
   end
 
   head do
