@@ -2,10 +2,9 @@ class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
   # TODO: Check if this can use unversioned ffmpeg at version bump.
-  url "https://github.com/FreeRDP/FreeRDP/archive/2.10.0.tar.gz"
-  sha256 "88fa59f8e8338d5cb2490d159480564562a5624f3a3572c89fa3070b9626835c"
+  url "https://github.com/FreeRDP/FreeRDP/archive/2.11.0.tar.gz"
+  sha256 "ccc342d4616c89323c355704d47ab45f6a770559cfff1b3965356d2313d3c3cc"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "f1db8f50c5fe4ff993c6a6b72d8e6873fe8aff3e9edb6aeab8132a5b90c57604"
