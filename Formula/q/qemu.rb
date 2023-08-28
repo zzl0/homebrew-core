@@ -29,6 +29,7 @@ class Qemu < Formula
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
+  depends_on "dtc"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
@@ -73,6 +74,7 @@ class Qemu < Formula
       --enable-slirp
       --enable-capstone
       --enable-curses
+      --enable-fdt=system
       --enable-libssh
       --enable-vde
       --enable-virtfs
