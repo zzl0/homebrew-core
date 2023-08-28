@@ -7,13 +7,13 @@ class Fizz < Formula
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7fc38349aed3276fe8b242baa48c672c405a78b20334f489eb574d41217fd7cb"
-    sha256 cellar: :any,                 arm64_monterey: "aad53fc356bf6b509efec939b444a5e3bef74fc3fab545a22a5cfee05d78c324"
-    sha256 cellar: :any,                 arm64_big_sur:  "46238fad734f8b557cfc6e974916aae5056783f1d21ae079764ab6feae8b9b20"
-    sha256 cellar: :any,                 ventura:        "7c66527708cc982967af8cc315b575a161a422f8f8a4588ade66bdd7f68d66a5"
-    sha256 cellar: :any,                 monterey:       "320472ced313d4650db4ca9787bbb5af691b147d88d8853fc87e92c05fd4e064"
-    sha256 cellar: :any,                 big_sur:        "f9cea70444ae5b22efb396ae4fcea0955b62af473ffa3231aa69050cbc42eada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fe62747cb51a865dc1328135fc7beeb424f44ce4abec62de94c1028cb8a1b36"
+    sha256 cellar: :any,                 arm64_ventura:  "cb95b898e95679876e55b0be0c4a6a41f36b31d8a21b376fe7f7bd7ad6200525"
+    sha256 cellar: :any,                 arm64_monterey: "cb99030622d15ee9a7e32e125be96eb6d5ada58ec2fc8616f0fc2cd6cf22e827"
+    sha256 cellar: :any,                 arm64_big_sur:  "0752b0e6f04053aeb09ca8cfd0031c1f20dbfa78c372ddcce6fc030b2966d044"
+    sha256 cellar: :any,                 ventura:        "f9b1bff94be31c6aa57eff3142d46aa46b80ba5c575eb0bf7e975847b2ace2b4"
+    sha256 cellar: :any,                 monterey:       "06d2b7dfefa50a4b0c29dac677d7f7aa79db8b274f889567bb09fc2fb2cfafda"
+    sha256 cellar: :any,                 big_sur:        "ef8e51cc34aa231176b0a74f840d9ec7bae393fd7eade65d9a7dac0e8753d340"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "191ac5a5097aba199f7a14baa1a796b42b708459f22ab82ec519a26181c9293b"
   end
 
   depends_on "cmake" => :build
