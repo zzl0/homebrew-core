@@ -12,13 +12,7 @@ class Glassfish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, monterey:       "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b24f7470842debfe625465cc06ecc808abdf720a4240b1ef5804a4a7300e750f"
+    sha256 cellar: :any_skip_relocation, all: "acb208104a2319421d51c84f585d357a4bfb9b03535b8a5f8dbe169a9c3aa99b"
   end
 
   depends_on "openjdk@17"
