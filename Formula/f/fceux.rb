@@ -1,12 +1,21 @@
 class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
-  url "https://github.com/TASEmulators/fceux.git",
-      tag:      "v2.6.5",
-      revision: "ea6ed69b874e3ae94072f1b4f14b9a8f0fdd774b"
+
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
+
+  stable do
+    url "https://github.com/TASEmulators/fceux.git",
+        tag:      "v2.6.6",
+        revision: "34eb7601c415b81901fd02afbd5cfdc84b5047ac"
+
+    # patch for `New timeStamp.cpp file renders fceux x86-only` issue
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/cd40795/fceux/2.6.6-arm.patch"
+      sha256 "0890494f4b5db5fa11b94e418d505cea87dc9b9f55cdc6c97e9b5699aeada4ac"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "29c17d2846c4209b08c59d20f1dd79326c6bb7b59155e8cf1d3b0b28943fcd9d"
