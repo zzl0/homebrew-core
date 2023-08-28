@@ -1,8 +1,8 @@
 class Omniorb < Formula
   desc "IOR and naming service utilities for omniORB"
   homepage "https://omniorb.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.0/omniORB-4.3.0.tar.bz2"
-  sha256 "976045a2341f4e9a85068b21f4bd928993292933eeecefea372db09e0219eadd"
+  url "https://downloads.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.1/omniORB-4.3.1.tar.bz2"
+  sha256 "0f42bc3eb737cae680dafa85b3ae3958e9f56a37912c5fb6b875933f8fb7390d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
@@ -24,8 +24,8 @@ class Omniorb < Formula
   depends_on "python@3.11"
 
   resource "bindings" do
-    url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.0/omniORBpy-4.3.0.tar.bz2"
-    sha256 "fffcfdfc34fd6e2fcc45d803d7d5db5bd4d188a747ff9f82b3684a753e001b4d"
+    url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.1/omniORBpy-4.3.1.tar.bz2"
+    sha256 "9da34af0a0230ea0de793be73ee66dc8a87e732fec80437ea91222e272d01be2"
   end
 
   def install
@@ -49,6 +49,8 @@ class Omniorb < Formula
   end
 
   test do
+    assert_equal version, resource("bindings").version, "`bindings` resource needs updating!"
+
     system "#{bin}/omniidl", "-h"
     system "#{bin}/omniidl", "-bcxx", "-u"
     system "#{bin}/omniidl", "-bpython", "-u"
