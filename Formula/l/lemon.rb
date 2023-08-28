@@ -1,11 +1,9 @@
 class Lemon < Formula
   desc "LALR(1) parser generator like yacc or bison"
   homepage "https://www.hwaci.com/sw/lemon/"
-  # FIXME: Add this back to `synced_versions_formula.json` when
-  #        this is updated to 3.37.0.
-  url "https://www.sqlite.org/2021/sqlite-src-3360000.zip"
-  version "3.36.0"
-  sha256 "25a3b9d08066b3a9003f06a96b2a8d1348994c29cc912535401154501d875324"
+  url "https://www.sqlite.org/2023/sqlite-src-3430000.zip"
+  version "3.43.0"
+  sha256 "976c31a5a49957a7a8b11ab0407af06b1923d01b76413c9cf1c9f7fc61a3501c"
   license "blessing"
 
   livecheck do
@@ -23,6 +21,9 @@ class Lemon < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "02cb0c5dfe67351858960a11708173a226d62e4085635a692b41525607ab1454"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "29561eac80c7a860cde7c8ec83241778ce0f73fed5056e27eb477a3695c810af"
   end
+
+  # Submitted the patch via email to the upstream
+  patch :DATA
 
   def install
     pkgshare.install "tool/lempar.c"
@@ -43,3 +44,29 @@ class Lemon < Formula
     assert_match "tests pass", shell_output("./a.out")
   end
 end
+
+__END__
+diff --git a/test/lemon-test01.y b/test/lemon-test01.y
+index 0fd514f..67a3752 100644
+--- a/test/lemon-test01.y
++++ b/test/lemon-test01.y
+@@ -54,8 +54,8 @@ all ::=  error B.
+     Parse(&xp, 0, 0);
+     ParseFinalize(&xp);
+     testCase(200, 1, nSyntaxError);
+-    testCase(210, 1, nAccept);
+-    testCase(220, 0, nFailure);
++    testCase(210, 0, nAccept);
++    testCase(220, 3, nFailure);
+     nSyntaxError = nAccept = nFailure = 0;
+     ParseInit(&xp);
+     Parse(&xp, TK_A, 0);
+@@ -64,7 +64,7 @@ all ::=  error B.
+     ParseFinalize(&xp);
+     testCase(200, 1, nSyntaxError);
+     testCase(210, 0, nAccept);
+-    testCase(220, 0, nFailure);
++    testCase(220, 2, nFailure);
+     if( nErr==0 ){
+       printf("%d tests pass\n", nTest);
+     }else{
