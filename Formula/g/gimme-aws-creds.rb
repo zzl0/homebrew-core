@@ -4,8 +4,8 @@ class GimmeAwsCreds < Formula
   desc "CLI to retrieve AWS credentials from Okta"
   homepage "https://github.com/Nike-Inc/gimme-aws-creds"
   # upstream bug report about the pypi sdist missing, https://github.com/Nike-Inc/gimme-aws-creds/issues/423
-  url "https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "3a0c688e99aa5f05a79b5c09271e68980481840c39be28a761b9c29aa5c9b7b8"
+  url "https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "f4de154d449a8daa6ae7d810517e54a6e9415cec32e101dbf9075e47cd58dd4a"
   license "Apache-2.0"
 
   bottle do
@@ -51,13 +51,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b8/6b/96460736f7fd725d1a47932b6c55b1bb07db32dbcd14c82ba285604adbb4/boto3-1.28.28.tar.gz"
-    sha256 "4a435fdbd77628e3d32cfbc8b6225e779d8f789027fadb6a51fe1b456e15ef54"
+    url "https://files.pythonhosted.org/packages/77/57/32ed300facd766f9e0ae52792fafd429525c23aef28c7df4940682edc4c2/boto3-1.28.35.tar.gz"
+    sha256 "580b584e36967155abed7cc9b088b3bd784e8242ae4d8841f58cb50ab05520dc"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f7/46/44a76f62605e8dee2cafd65ba71a33675bdb455dd0258001d0c392673e04/botocore-1.31.28.tar.gz"
-    sha256 "1fcfbd23c7f1f66f16c5c1a1e8565ee8ff68429cc0ee9d2acfb1b55739584cbd"
+    url "https://files.pythonhosted.org/packages/b8/7e/989d7fdebd245cc392995fd6720f2f7769f7caa7aac434887e54a1c6d320/botocore-1.31.35.tar.gz"
+    sha256 "7e4534325262f43293a9cc9937cb3f1711365244ffde8b925a6ee862bcf30a83"
   end
 
   resource "charset-normalizer" do
