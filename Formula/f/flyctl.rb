@@ -22,8 +22,7 @@ class Flyctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e89c6552c85c7972b7f7f7df1521f8ce694de36005415e49813a2a62465cbf8"
   end
 
-  # go 1.21.0 support bug report, https://github.com/superfly/flyctl/issues/2688
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
 
   def install
     ENV["CGO_ENABLED"] = "0"
