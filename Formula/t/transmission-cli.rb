@@ -1,10 +1,9 @@
 class TransmissionCli < Formula
   desc "Lightweight BitTorrent client"
   homepage "https://www.transmissionbt.com/"
-  url "https://github.com/transmission/transmission/releases/download/4.0.3/transmission-4.0.3.tar.xz"
-  sha256 "b6b01fd58e42bb14f7aba0253db932ced050fcd2bba5d9f8469d77ddd8ad545a"
+  url "https://github.com/transmission/transmission/releases/download/4.0.4/transmission-4.0.4.tar.xz"
+  sha256 "15f7b4318fdfbffb19aa8d9a6b0fd89348e6ef1e86baa21a0806ffd1893bd5a6"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 1
 
   livecheck do
     url :stable
