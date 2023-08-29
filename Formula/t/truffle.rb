@@ -3,8 +3,8 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.11.2.tgz"
-  sha256 "e23937734dd7e56d3235919d9aae1ef1b1d96a804bc176947a5f6ba49c7739dc"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.11.3.tgz"
+  sha256 "9f916d813817c0a6c61aee67906b5da71e7c8ba9bcb091ff2342d02eb6177961"
   license "MIT"
 
   bottle do
@@ -44,7 +44,12 @@ class Truffle < Formula
     end
 
     # Replace remaining universal binaries with their native slices
-    deuniversalize_machos truffle_dir/"node_modules/fsevents/fsevents.node"
+    %W[
+      #{truffle_dir}/node_modules/fsevents/fsevents.node
+      #{truffle_dir}/node_modules/ganache/node_modules/fsevents/fsevents.node
+    ].each do |f|
+      deuniversalize_machos f
+    end
 
     # Remove incompatible pre-built binaries that have arbitrary names
     truffle_dir.glob("node_modules/ganache/dist/node{/,/F/}*.node").each do |f|
