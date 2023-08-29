@@ -41,6 +41,7 @@ class Luarocks < Formula
       loader
     ].map { |file| share/"lua"/luaversion/"luarocks/#{file}.lua" }
     inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
+    generate_completions_from_executable(bin/"luarocks", "completion")
   end
 
   def caveats
