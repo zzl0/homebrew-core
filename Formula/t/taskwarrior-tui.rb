@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.25.2.tar.gz"
-  sha256 "d594c63ad2191dbebd0842790f64c73b28de00074f7b20c10e8326d78db039c1"
+  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.25.3.tar.gz"
+  sha256 "6bd6e838ee867a8ca6f3dd51823f8f17447471405d82c612ce21e938a41c4255"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"
 
@@ -12,13 +12,13 @@ class TaskwarriorTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19de8cddfa9ea7da09df4e1cffd209b59c49a29b65d8a091f9eea92d423717bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "506e6cd55eba0f7f661704b829cea2687bfbde2558b4d82d07fc58b4a99c4f17"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbd7d3bbdb51871db1a40e3511586baf681b7380fa62bb056dfb3f5954e63b06"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ae1944e6541ff4d769165881781a2214e127f9a77aaa16decf623678c59c6d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "a28119875b522ca1019e72542480578047fcdb47d3e4462fee5d01c78fe28ed6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42be6d405f3f657b2597c2029ee2398b5c99a4d92dd967b19d9f3f8cff5add70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2a3b137c54cf2d9882a0d9ad0b154dbdc07a6fbc8d9addb6dceb11f4e0dc9d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe752cc0b823b16572dca11fa5d8e153b964faf02f4beb8360762717546e08af"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba66301851aa3e0c314d77611cc013e4add8045a1c5d7ae7ce0f8437e74be888"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa90e65b4317226a431703102587905a85cb49391e979d541cb839f0ec5c43d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "b8d8ab0e12d990f8820cbadda47bd975a208924731818bfc6a9a6fb996b7982c"
+    sha256 cellar: :any_skip_relocation, monterey:       "243ba9a2ebf270ca0325844859a03b3bbbf794906b6c1f4dc6b85e3a0e04f4cd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c5ac29a968ca11333590b1623f41d8034e7032fe01c80451235389713f904cdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a56378236be078ad3c1bd98c7abe8d39f06be08261818fa4c8e3de08214e0da"
   end
 
   depends_on "rust" => :build
