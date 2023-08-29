@@ -9,6 +9,16 @@ class ApifyCli < Formula
   sha256 "28d4e8b032992560a4f842a44e8d107693b1a031560325b90967245c4ed7b628"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "802f8c1cf03eeb7659b20f828cdcc159e0a7b997740588d6425ebff59b25d125"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "802f8c1cf03eeb7659b20f828cdcc159e0a7b997740588d6425ebff59b25d125"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "802f8c1cf03eeb7659b20f828cdcc159e0a7b997740588d6425ebff59b25d125"
+    sha256 cellar: :any_skip_relocation, ventura:        "3af99666d80914b27b55b280f24a6df0bae6ba2a152aceec5745858793291e01"
+    sha256 cellar: :any_skip_relocation, monterey:       "3af99666d80914b27b55b280f24a6df0bae6ba2a152aceec5745858793291e01"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3af99666d80914b27b55b280f24a6df0bae6ba2a152aceec5745858793291e01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af7b7e58cf0ac81b7ab3530dc45c154ac023ca8b46ef1bc5d946936dbae01a55"
+  end
+
   depends_on "node"
 
   def install
