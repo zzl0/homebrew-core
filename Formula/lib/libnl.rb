@@ -6,8 +6,7 @@ class Libnl < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "f8763b4ead5dedac63ba5721a5c52981bf14e76ec89ffaafa7e65398f87d54e3"
+    sha256 x86_64_linux: "2e884272eb8cb2d928b3ec6daefb1d2aaa570bde55ff64a95587b28ce4b2dac1"
   end
 
   depends_on "pkg-config" => :test
