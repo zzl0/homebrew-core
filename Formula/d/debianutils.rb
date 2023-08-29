@@ -1,8 +1,8 @@
 class Debianutils < Formula
   desc "Miscellaneous utilities specific to Debian"
   homepage "https://packages.debian.org/sid/debianutils"
-  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_4.11.2.tar.xz"
-  sha256 "3b680e81709b740387335fac8f8806d71611dcf60874e1a792e862e48a1650de"
+  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_5.10.tar.xz"
+  sha256 "55258f9955912fde0702a77db4d924ac0bce30548950320c9fef2bec520edc2a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -23,7 +23,14 @@ class Debianutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fd96fb4733f4fc575514e778d83ee69006440d867df416ed58b45bfb954ae30"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "gettext" => :build # for libintl
+  depends_on "libtool" => :build
+  depends_on "po4a" => :build
+
   def install
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
