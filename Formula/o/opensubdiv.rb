@@ -1,8 +1,8 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
   homepage "https://graphics.pixar.com/opensubdiv/docs/intro.html"
-  url "https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_5_0.tar.gz"
-  sha256 "8f5044f453b94162755131f77c08069004f25306fd6dc2192b6d49889efb8095"
+  url "https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_5_1.tar.gz"
+  sha256 "42c7c89ffa552f37e9742d1ecfa4bd1d6a2892e01b68fc156775d104154d3d43"
   license "Apache-2.0"
 
   livecheck do
