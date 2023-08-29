@@ -1,8 +1,8 @@
 class Highlight < Formula
   desc "Convert source code to formatted text with syntax highlighting"
   homepage "http://www.andre-simon.de/doku/highlight/en/highlight.php"
-  url "http://www.andre-simon.de/zip/highlight-4.7.tar.bz2"
-  sha256 "61db00b817bf76f22b1a3331af9e33705682f05bc1e63d4a0f5c24ff2e0e82b2"
+  url "http://www.andre-simon.de/zip/highlight-4.8.tar.bz2"
+  sha256 "5ab252d33884acb5c79b8e9a2510b335f874ba69de85c2c20fdf5dc4086fefc5"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/saalen/highlight.git", branch: "master"
 
