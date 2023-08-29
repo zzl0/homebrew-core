@@ -941,6 +941,9 @@
   "vulture": {
     "exclude_packages": ["toml"]
   },
+  "vunnel": {
+    "exclude_packages": ["certifi", "pyyaml", "six", "typing-extensions"]
+  },
   "watson": {
     "exclude_packages": ["certifi", "six"]
   },
