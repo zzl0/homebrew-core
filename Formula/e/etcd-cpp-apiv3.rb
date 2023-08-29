@@ -4,15 +4,16 @@ class EtcdCppApiv3 < Formula
   url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.3.tar.gz"
   sha256 "1a6f4ed634f3c75cbfaa2768917e280c6df77cac2af5d945ad67ef20d53d8b60"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9e6bcc365b9e839fe7f1107e813f9ff1fb5105800783ed0154cdb51a2b2cb2fe"
-    sha256 cellar: :any,                 arm64_monterey: "88e27d9f0791238266ed5cc3d81a5f88edce3d0ecf54df6136b942f85d4343dd"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8aa4b03f58419883f1f1b182d3f128f1a78b62e3dd8fd2ce04e3319c9121294"
-    sha256 cellar: :any,                 ventura:        "f76c3bee74a2bec3013bbc432600959a69c9c1093f032007685cbd39d31defcb"
-    sha256 cellar: :any,                 monterey:       "a7bb00ff67bd68a6c757372707a08493b7b4117e225d231610320cb06e975a55"
-    sha256 cellar: :any,                 big_sur:        "37f33202aa68c49b581a98f000664da4f6670e57052e7ebbc1be91e88272c5a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1089119445965fc006756f16f9b8233c5bce1c8fc8e9dcde78e9b0860c5a51ad"
+    sha256 cellar: :any,                 arm64_ventura:  "d59583ffeab2e421f01c113ca504f4f11ee3dfa1727067ae377807bd08c4f49d"
+    sha256 cellar: :any,                 arm64_monterey: "7665d232d609b6c484499bfb2f50dbf2495096541a9310c7033534b08b874962"
+    sha256 cellar: :any,                 arm64_big_sur:  "b946920e3f4826b97637f8d92131c17a75f977d7cd1f564519692fbb43004902"
+    sha256 cellar: :any,                 ventura:        "9f00fef8477a7f88e721df38501661a101eaf5348e6e57a67296431846065fd4"
+    sha256 cellar: :any,                 monterey:       "74b1086d8662f42b17444a14d38fd722915e54740731505feb5d810bff1a20e6"
+    sha256 cellar: :any,                 big_sur:        "6fe4ae2494be5c3936badcdca4aaac0282d4586c5192353357598debb0215291"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24e98e7f35089f526fca19592243bdee39c18e9f2d3298e8596620f4c4dd0161"
   end
 
   depends_on "cmake" => :build

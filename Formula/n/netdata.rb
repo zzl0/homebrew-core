@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://github.com/netdata/netdata/releases/download/v1.42.1/netdata-v1.42.1.tar.gz"
   sha256 "2728f74ec499bb8cce4d046b1ed3980bf3c84ad225a77d0be3b70f653a787a76"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "af3b71eec91cc275534f4f77972587a83fb7caf69576fd1beed5c067ef9e2701"
-    sha256 arm64_monterey: "35f5b866dbe86c5c52aab19ab29d8f912ff77abb2bf62179db6a2113cf6447ff"
-    sha256 arm64_big_sur:  "a18685fea5ccb403cb4066643a3fe690f814e15e1b38893b71347c13bac59733"
-    sha256 ventura:        "7d4443b9663d4fd3da3eb5607f6ecce1a9196e6c69c198559d5b93946363ca22"
-    sha256 monterey:       "131ced78f12f3523c2aa210528f6417f48fbf2eaa2ad44c9e999c202239a992f"
-    sha256 big_sur:        "9911bccc4d422f4f6bb8ed90a20c1e644117bdcfd800cda5da7dafaa970e8f88"
-    sha256 x86_64_linux:   "db919e17f5809b9f6896d49f90038fd6df837eb86a97133fd32ac15312f3e19b"
+    sha256 arm64_ventura:  "ea4dd696bd1f87bfdd0e86d891e07f91f0e7083734d7899f7f22ccd3cbb05bf3"
+    sha256 arm64_monterey: "380928a5d8b687e4178ff0bc9e16def9b303b8d8907e920eab2d4f68faca06c3"
+    sha256 arm64_big_sur:  "4d8a53a993dbc609faf2c1801140a78e3ff254bbd607a80167ea0744fed95a65"
+    sha256 ventura:        "b02124f2d5a6a6577e9894ea19383f80dd0d81a92aef41c767c322a7d37e7197"
+    sha256 monterey:       "3329cfa77d0b0b5ffd7c730cf7ecf45cfe0d4e615e8da357f27457e02f76d68a"
+    sha256 big_sur:        "2320fd5129bd615b5dc294a3c7373a484740b1eb775df583bd6ce6cf12f3661e"
+    sha256 x86_64_linux:   "3a75c4ae7d2adbcd65f9586a192f82cae191fa59af7535de00403f558c6b648e"
   end
 
   depends_on "autoconf" => :build
@@ -44,6 +45,11 @@ class Netdata < Formula
   end
 
   def install
+    # daemon/buildinfo.c saves the configure args and certain environment
+    # variables used to build netdata. Remove the environment variable that may
+    # reference `HOMEBREW_LIBRARY`, which can make bottling fail.
+    ENV.delete "PKG_CONFIG_LIBDIR"
+
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
 
