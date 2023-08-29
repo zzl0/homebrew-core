@@ -3,10 +3,9 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/8d/ad/cd854d9a763c61e14451ae0c37edb5b9346bc6a852d9460541c0faf0eda1/dvc-3.16.0.tar.gz"
-  sha256 "0e54ee4b185065a45d2aa8b44db819a1d05f24b9cd6e085327784e872a2d6057"
+  url "https://files.pythonhosted.org/packages/e3/2b/cf6e6b723a0f1ca00dcf4da25c69a0f41f59190a8dc55b8a2383957b6755/dvc-3.17.0.tar.gz"
+  sha256 "db751d340e342cdbfdaf8e3fdb51a4211f93db3edfe653a8dc053955301c2a3c"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "2c56b8f2a2763ee033aefebb1a83b17565201f5e72f67fdf591d8b2f0f9444b4"
@@ -284,8 +283,8 @@ class Dvc < Formula
   end
 
   resource "dvc-oss" do
-    url "https://files.pythonhosted.org/packages/a9/76/1f612a3e4c9c734ae8fa091cb9199c1c2ea1d498415ba1ccbb50ef8d6805/dvc-oss-2.19.0.tar.gz"
-    sha256 "0927f3b0346a59fd31685ecbda2d6f099b74b3def7d574a6af23992ef3851b4b"
+    url "https://files.pythonhosted.org/packages/c2/fe/bd18852700460221cbd9e2ea3cbeabc9aae21ffc53e3acd8206470625424/dvc-oss-2.21.0.tar.gz"
+    sha256 "b1aae395a60db04500c6b6ee14df3270f48be7e2009b74a237635bb1acf6a4ec"
   end
 
   resource "dvc-render" do
@@ -324,8 +323,8 @@ class Dvc < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/0b/c506e9e44e4c4b6c89fcecda23dc115bf8e7ff7eb127e0cb9c114cbc9a15/filelock-3.12.2.tar.gz"
-    sha256 "002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"
+    url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
+    sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
   end
 
   resource "flatten-dict" do
