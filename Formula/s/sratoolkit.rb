@@ -4,12 +4,12 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.6.tar.gz"
-    sha256 "9fecfd819ee9beaf8a1d3e4b76a5d49e747bc064525b40416e0730a168986348"
+    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.7.tar.gz"
+    sha256 "8c4f242e7540ccf94c9d145e40ae564ccd48a26a2e90c1453af4716a35ed1537"
 
     resource "ncbi-vdb" do
-      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.6.tar.gz"
-      sha256 "4b6f93336bf8664fdcc151d41ea0793f0b0f88cfcb7c2aa049f162a72f905223"
+      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.7.tar.gz"
+      sha256 "357f9648e824ae860eb8433c04099d748b804d76bdcfd05e41857eee098869ee"
     end
   end
 
