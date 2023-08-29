@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https://github.com/v6d-io/v6d/releases/download/v0.16.5/v6d-0.16.5.tar.gz"
   sha256 "03245928b3c429920d750ab3e3f8ed1f3d68e58c024f32647971a35f34260714"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256                               arm64_ventura:  "42b4b716dbf1afb833fc1bc7498f86f66594e11965ad473af0a0c610c9fdd4d7"
-    sha256                               arm64_monterey: "b4c41dd0e67c434e5300932e44518b42c34a66919592927457207acff46bb71b"
-    sha256                               arm64_big_sur:  "3b134c7d405c224ad2957507fc37c10c645e200cef96d16e93cfe5163e634e93"
-    sha256                               ventura:        "a740c317ad6335d635906f3ea21a27cd67c83a5e15c76b08ce25ef241fa3db76"
-    sha256                               monterey:       "6d7570c03fc6264f837e38ef3ecb72a6f56e03202d696dda73fce9bf4167d959"
-    sha256                               big_sur:        "3a2453e45ad13e444f0701ce38cb07ef4bc53147af6169a471c05e671bf35d0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9616da1ad8eddc33927b4369f08612389d52eb4602e7ed9622c02106e1a01a43"
+    sha256                               arm64_ventura:  "2b45604d68b83c152cdc048628a349d904ce0f4af1a20ed0ffb1d17ac8ac82b4"
+    sha256                               arm64_monterey: "dd0805d085cea76357f7b570d1d6a57423950cd4e74200679c5df1a8d3f45779"
+    sha256                               arm64_big_sur:  "6d92fb30bbcf328ad46d3840968b5901d44c80018fdf1070cf9700e6e69a7d6a"
+    sha256                               ventura:        "b90d5d9a1974b3904e0bbdf6059c9ed08a7bf7f6e6b3df6e41f85d61e74b24a5"
+    sha256                               monterey:       "b2fe0dbfd6cfe2d3e9384f5a69492b1d7146c8588443412f70cd61bdfa513575"
+    sha256                               big_sur:        "e7ee6fd542df9c0b0ee7957c2e76686cbb9188fb390fa328b1ca7a68dfc1585f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa342f739a390560536abe76bfb5e48739d94bd316a3d984d99e56190c0a6ab2"
   end
 
   depends_on "cmake" => :build
