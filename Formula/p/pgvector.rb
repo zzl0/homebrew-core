@@ -1,8 +1,8 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
   homepage "https://github.com/pgvector/pgvector"
-  url "https://github.com/pgvector/pgvector/archive/v0.4.4.tar.gz"
-  sha256 "1cb70a63f8928e396474796c22a20be9f7285a8a013009deb8152445b61b72e6"
+  url "https://github.com/pgvector/pgvector/archive/v0.5.0.tar.gz"
+  sha256 "d8aa3504b215467ca528525a6de12c3f85f9891b091ce0e5864dd8a9b757f77b"
   license "PostgreSQL"
 
   bottle do
@@ -28,6 +28,7 @@ class Pgvector < Formula
     (lib/postgresql.name).install "vector.so"
     (share/postgresql.name/"extension").install "vector.control"
     (share/postgresql.name/"extension").install Dir["sql/vector--*.sql"]
+    (include/postgresql.name/"server/extension/vector").install "src/vector.h"
   end
 
   test do
