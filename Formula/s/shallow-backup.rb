@@ -3,10 +3,9 @@ class ShallowBackup < Formula
 
   desc "Git-integrated backup tool for macOS and Linux devs"
   homepage "https://github.com/alichtman/shallow-backup"
-  url "https://files.pythonhosted.org/packages/96/d7/c59ad086eabfc1b2984e32cc2615368f9ab0b375b8fc5a7a63e5ca81c017/shallow-backup-5.3.tar.gz"
-  sha256 "0af200e5c2d1887e9209bfd970a6835d1d304cc22183569613f378f00848cfe1"
+  url "https://files.pythonhosted.org/packages/eb/33/4b56af73e95125cd6d92972a3e55c82f3ac9386d3401dd198f886a99bb0e/shallow-backup-6.0.tar.gz"
+  sha256 "8fa5b8052c9f9c4f4ef456cf2f0163ef0fffb5c3a96e506665bae7899b5cc72c"
   license "MIT"
-  revision 1
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
@@ -28,8 +27,8 @@ class ShallowBackup < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -87,6 +86,6 @@ class ShallowBackup < Formula
     assert_predicate testpath/".config/shallow-backup.conf", :exist?
 
     # Checks if the test file is in the config
-    assert_match "test.svg", shell_output("#{bin}/shallow-backup -show")
+    assert_match "test.svg", shell_output("#{bin}/shallow-backup --show")
   end
 end
