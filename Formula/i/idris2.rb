@@ -4,6 +4,7 @@ class Idris2 < Formula
   url "https://github.com/idris-lang/Idris2/archive/v0.6.0.tar.gz"
   sha256 "7f5597652ed26abc2d2a6ed4220ec28fafdab773cfae0062a8dfafe7d133e633"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   bottle do
@@ -30,8 +31,8 @@ class Idris2 < Formula
 
     resource "chezscheme" do
       url "https://github.com/racket/ChezScheme.git",
-          tag:      "racket-v8.6",
-          revision: "9383dda64db9f430a95bb5cf014af2afdc71fb0c"
+          tag:      "racket-v8.9",
+          revision: "baa880391bdb6b1e24cd9bb2020c6865a0fa065a"
     end
   end
 
