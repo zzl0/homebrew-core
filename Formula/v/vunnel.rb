@@ -8,6 +8,16 @@ class Vunnel < Formula
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "aa766b3d1bb511a4130963b51012661f859202d743ec78990f54f2df2cf4e387"
+    sha256 cellar: :any,                 arm64_monterey: "8cf715f7210bdee5e6b7e6e27b6834ccc548d8a1b66587e3af98e07f352cba13"
+    sha256 cellar: :any,                 arm64_big_sur:  "03246afa9a26f045a7151c453367dbdfa18e10fcf80c17e770d59061aff3c7a2"
+    sha256 cellar: :any,                 ventura:        "59411429cdd066915fc857c9bee807fb798dde467ad9e15c6f9eb83957bb0759"
+    sha256 cellar: :any,                 monterey:       "90834f317901e4bab34f73c1483684c8c0a77cc70d69d513d9d5283d4d383c3f"
+    sha256 cellar: :any,                 big_sur:        "03af223554227d3eb72bae484d70986ad4dc9c4ddc4e553582c9133c0c2a9802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab17bc6e4998c56e0bccaa903b693a72359cf36559d7b7b1a9bdecc1dcf45ca9"
+  end
+
   depends_on "rust" => :build
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
