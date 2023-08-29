@@ -4,6 +4,7 @@ class Webkitgtk < Formula
   url "https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz"
   sha256 "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://webkitgtk.org/releases/"
@@ -47,6 +48,7 @@ class Webkitgtk < Formula
   depends_on "woff2"
   depends_on "wpebackend-fdo"
 
+  uses_from_macos "gperf" => :build
   uses_from_macos "perl" => :build
   uses_from_macos "ruby" => :build
   uses_from_macos "unifdef" => :build
