@@ -6,11 +6,10 @@ class Chezscheme < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256                               ventura:      "03e2531cac39490b88689ab4b887b8bfa68fbbe36b82b021ae3fc9f2ff07781b"
-    sha256                               monterey:     "1730b158fadf948716473ffe46fef88c2f1790edc5b75e3acfeb35d4549a6c2d"
-    sha256                               big_sur:      "c3a055f85922bd002eb6725a89c3e077bea3222111ca0140d875e72742e6a84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6bc534bc7a88a469fd6ab1a5680f79876b94c5ef1d568d0bdc9ed720bbcb1fec"
+    sha256                               ventura:      "de3207d1764457f734baf69cef36ff9a4d3512010a676050f814f5084297ab9a"
+    sha256                               monterey:     "78c14c05babdad4d67dc783d3f9642c2b7216ec6810825b00095b3086d507c2f"
+    sha256                               big_sur:      "54934c125ba9a227ad14f7900627e6358df60d603073a8f38da780a4b212fad2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5628b64b2c41f53dd15835b09342a1dcbdd6871f2e3d13451bcc3a9935cee4f"
   end
 
   depends_on "libx11" => :build
