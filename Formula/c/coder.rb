@@ -6,13 +6,13 @@ class Coder < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "183848c663a78135359273d835dab6d55291635047b7b77e59695baa3b18df61"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "222b5a377b1849047d908f2718730ca46e7d094d2810fad9e326f7633a9afa5f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a36223bad91b4962693a104f2e37d16dcabbdbdd808dec31b300e4c05273c663"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ad87e05e10b3fbaf084ef86bf46edeb74f4e6ba80db31dfc1877bb8733bd406"
-    sha256 cellar: :any_skip_relocation, monterey:       "7453b6f7114f33ad52e2f9124383c9f72727d47162a7863f9aa1551cad695a54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a02b51521ec659ca3c8a6c147e540c6cc9bd7e9e6365c12d3c116bb977d77ab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef48d792ef5aaec9b61ae48255193532a12e47993ce93cf053782194a30f87a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4633bfba8d871f77230a9504a5d82157dca41ee110f5eddaeed73276cced669"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2a588961b03936840780b516534346c93a24d70553f7efe736f34c829c3236b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7974c279221874aa4ba85caa2332b7d056b1114513b76f12441ef233868a62e8"
+    sha256 cellar: :any_skip_relocation, ventura:        "4acee70284a5a4b032e7aa0888fb86310039a5c8c1dc4b970bf4815c88c6f08e"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ebf714c86439c37b0d4da106d31e4e43de918daa46a1d0672c55dcdbbcacc10"
+    sha256 cellar: :any_skip_relocation, big_sur:        "97789af65ad39ca0616c3debbbe7892c9aab94e6674a141f00e1651ebd9a98af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9123125e87a256d6177d50c8b2b392d3c198b1fdd323e2c658ab2c50bec72751"
   end
 
   depends_on "go" => :build
