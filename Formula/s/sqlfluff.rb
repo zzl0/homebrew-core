@@ -8,13 +8,13 @@ class Sqlfluff < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51c161213518657d2e5de5be68b66b59d7914268ca14d9a31c9eb131c52bfe03"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "60e4fab5b20da35c02dafb245a03e51909b090eb8cbe7780d61b6a4e526ea40b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "678316bfdb7b9969f29ab25dccc20a1a0f98a0df729e0d707673d1056934bc17"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0220d8d5ed494ce9e848cef8f8a8640dea32b5e0bbde6b55ed2caa5c3b95cb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8662f09d52cd9fc7d1d680d038f2c6df9fa3cb91a480a703bacb10f245ef979d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "be0994be1b2229d7e78060f2f08dc66a201d2a4b517ce290b39f0f5ebf2ef984"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ce93c679dbbcc1f7b0261d85313b5d75ed166d6e5062507a402ebd8c518c3d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58fa78983fcd56e42288027fc9cd68099180fb72b777ffca90c0a19241b722bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f1d08a19c1272dbbda56f7c87773d0adea0077e7d5046bbb0ef71437bdd7c4d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11a9e8270f7c01cc5b40b9afbebe1070841035cf504f34e0d245c08404c0c1d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "b44c58ba76733bc35fe1c36aaddb3b58c1d88806017d2721e3dc4590e064f54c"
+    sha256 cellar: :any_skip_relocation, monterey:       "277a358583d12514eea7d11e18b7ba6f877ed093d6f3ad4a208a9def2c8a9140"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2368063bc58e6f46c5261fa9f4c4237ac706a7be458c7a609ae0d6f8bf768436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd07d0375761cf9a08ac6134620dbcf242a5509fd8ecf97280dcdf97dd132226"
   end
 
   depends_on "pygments"
