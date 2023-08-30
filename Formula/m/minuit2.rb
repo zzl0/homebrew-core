@@ -1,11 +1,13 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
-  homepage "https://root.cern.ch/doc/master/md_math_minuit2_doc_Minuit2.html"
-  url "https://root.cern.ch/download/root_v6.26.06.source.tar.gz"
-  sha256 "b1f73c976a580a5c56c8c8a0152582a1dfc560b4dd80e1b7545237b65e6c89cb"
+  homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
+  url "https://root.cern.ch/download/root_v6.28.06.source.tar.gz"
+  sha256 "af3b673b9aca393a5c9ae1bf86eab2672aaf1841b658c5c6e7a30ab93c586533"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
-
+  # Should be removed with new version
+  # https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032
+  # https://github.com/root-project/root/commit/01d07d5b33ee91cd7fd6c6e615cd4c940710c397
   livecheck do
     formula "root"
   end
@@ -25,15 +27,22 @@ class Minuit2 < Formula
 
   depends_on "cmake" => :build
 
+  # Fixes missing header MnMatrixfwd.h
+  # Remove in next release
+  patch do
+    url "https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032.patch?full_index=1"
+    sha256 "25a5e3fa2846c83e824bd0a21003658f4c03b6096aa52573179c8aea6228a604"
+  end
+
   def install
     system "cmake", "-S", "math/minuit2", "-B", "build/shared", *std_cmake_args,
-                    "-Dminuit2_standalone=ON", "-DBUILD_SHARED_LIBS=ON",
+                    "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
     system "cmake", "-S", "math/minuit2", "-B", "build/static", *std_cmake_args,
-                    "-Dminuit2_standalone=ON", "-DBUILD_SHARED_LIBS=OFF"
+                    "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build/static"
     lib.install Dir["build/static/lib/libMinuit2*.a"]
 
@@ -42,7 +51,7 @@ class Minuit2 < Formula
 
   test do
     cp Dir[pkgshare/"MnTutorial/{Quad1FMain.cxx,Quad1F.h}"], testpath
-    system ENV.cxx, "-std=c++11", "Quad1FMain.cxx", "-o", "test", "-I#{include}/Minuit2", "-L#{lib}", "-lMinuit2"
+    system ENV.cxx, "-std=c++14", "Quad1FMain.cxx", "-o", "test", "-I#{include}/Minuit2", "-L#{lib}", "-lMinuit2"
     assert_match "par0: -8.26907e-11 -1 1", shell_output("./test")
   end
 end
