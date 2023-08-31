@@ -1,6 +1,4 @@
 class Aws2Wrap < Formula
-  include Language::Python::Virtualenv
-
   desc "Script to export current AWS SSO credentials or run a sub-process with them"
   homepage "https://github.com/linaro-its/aws2-wrap"
   url "https://files.pythonhosted.org/packages/db/07/db4c98b4d44ee824ad21563910d198f0da2561a6c7cfeaef1b954979c5c6/aws2-wrap-1.3.1.tar.gz"
@@ -18,15 +16,16 @@ class Aws2Wrap < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "769da6fea14e74a0dda2a14b9706922add37f0533bf145d10ef56e92d9183a31"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-psutil"
   depends_on "python@3.12"
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+  def python3
+    which("python3.12")
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
