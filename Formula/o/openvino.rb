@@ -1,8 +1,8 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.0.1.tar.gz"
-  sha256 "c14cb22f5191a75ea15659c62baceb71333dc9ecf62139ce513f3e81e4544651"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.0.2.tar.gz"
+  sha256 "7f09b795f9261e9dc4a49eeec572a07910f90702142ad4ae164ddf214edaa9d4"
   license "Apache-2.0"
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
@@ -26,14 +26,13 @@ class Openvino < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "protobuf@21" => :build
   depends_on "python@3.11" => :build
-  depends_on "xbyak" => :build
   depends_on "pugixml"
   depends_on "snappy"
   depends_on "tbb"
 
   on_linux do
-    depends_on "opencl-clhpp-headers"
-    depends_on "opencl-headers"
+    depends_on "opencl-clhpp-headers" => :build
+    depends_on "opencl-headers" => :build
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
@@ -51,6 +50,10 @@ class Openvino < Formula
     end
   end
 
+  on_intel do
+    depends_on "xbyak" => :build
+  end
+
   resource "ade" do
     url "https://github.com/opencv/ade/archive/refs/tags/v0.1.1f.tar.gz"
     sha256 "c316680efbb5dd3ac4e10bb8cea345cf26a6a25ebc22418f8f0b8ca931a550e9"
@@ -64,6 +67,13 @@ class Openvino < Formula
   resource "onnx" do
     url "https://github.com/onnx/onnx/archive/refs/tags/v1.13.1.tar.gz"
     sha256 "090d3e10ec662a98a2a72f1bf053f793efc645824f0d4b779e0ce47468a0890e"
+  end
+
+  # Fix build with static protobuf from brew (https://github.com/openvinotoolkit/openvino/pull/19590)
+  # Remove patch when available in release.
+  patch do
+    url "https://github.com/openvinotoolkit/openvino/commit/6fbcb94e202fd1036f674a7f00b5c03ffdc8132a.patch?full_index=1"
+    sha256 "065ba52a2e74516ddcc51184d30c51c76ab2e6f9bfede03900641ca1bfda7761"
   end
 
   def install
@@ -161,7 +171,7 @@ class Openvino < Formula
       project(openvino_frontends_test)
       set(CMAKE_CXX_STANDARD 11)
       add_executable(${PROJECT_NAME} openvino_available_frontends.cpp)
-      find_package(OpenVINO REQUIRED COMPONENTS Runtime ONNX TensorFlow Paddle)
+      find_package(OpenVINO REQUIRED COMPONENTS Runtime ONNX TensorFlow TensorFlowLite Paddle PyTorch)
       target_link_libraries(${PROJECT_NAME} PRIVATE openvino::runtime)
     EOS
 
