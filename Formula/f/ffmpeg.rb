@@ -47,6 +47,7 @@ class Ffmpeg < Formula
   depends_on "libvpx"
   depends_on "opencore-amr"
   depends_on "openjpeg"
+  depends_on "openvino"
   depends_on "opus"
   depends_on "rav1e"
   depends_on "rubberband"
@@ -136,6 +137,7 @@ class Ffmpeg < Formula
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
       --enable-libopenjpeg
+      --enable-libopenvino
       --enable-libspeex
       --enable-libsoxr
       --enable-libzmq
