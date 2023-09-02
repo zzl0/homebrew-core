@@ -5,7 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -60,6 +60,13 @@ class TclTk < Formula
     patch :p0 do
       url "https://raw.githubusercontent.com/macports/macports-ports/db4f8f774193/x11/tk/files/fix-themechanged-error.patch"
       sha256 "2a75496dc597dec9d25401ab002f290be74d4acd5566793c5114e75a154c280a"
+    end
+
+    # Bugfix for KVO crash; will be in Tk 8.6.14
+    # See https://core.tcl-lang.org/tk/info/310c74ecf4
+    patch :p0 do
+      url "https://raw.githubusercontent.com/macports/macports-ports/6a93695d61d3/x11/tk/files/fix-kvo-crash.diff"
+      sha256 "ec9a9234b4a326e5621fe78e078c29aa4784b6dc88c59a43d828639ebae0af41"
     end
   end
 
