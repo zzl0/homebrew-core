@@ -1,8 +1,8 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "http://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.3.4/sbcl-2.3.4-source.tar.bz2"
-  sha256 "f11b4764c6eabdb27e5a9c46b217204d11bcda534e73bf97073d57831d209c4e"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.3.8/sbcl-2.3.8-source.tar.bz2"
+  sha256 "421571b2ac916e58be8ebcea5ef4abf8d7902863db6a1d0a5efa9500adca0d29"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
@@ -42,7 +42,7 @@ class Sbcl < Formula
       "--with-sb-thread",
     ]
 
-    ENV["SBCL_MACOSX_VERSION_MIN"] = MacOS.version
+    ENV["SBCL_MACOSX_VERSION_MIN"] = MacOS.version.to_s
     system "./make.sh", *args
 
     ENV["INSTALL_ROOT"] = prefix
