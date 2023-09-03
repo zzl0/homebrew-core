@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
-  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.23.tar.gz"
-  sha256 "5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114"
+  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz"
+  sha256 "ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132"
   license "BSD-3-Clause"
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
@@ -31,7 +31,7 @@ class Openblas < Formula
     ENV.deparallelize # build is parallel by default, but setting -j confuses it
 
     # The build log has many warnings of macOS build version mismatches.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
     ENV["DYNAMIC_ARCH"] = "1"
     ENV["USE_OPENMP"] = "1"
     # Force a large NUM_THREADS to support larger Macs than the VMs that build the bottles
@@ -42,6 +42,10 @@ class Openblas < Formula
     else
       Hardware.oldest_cpu.upcase.to_s
     end
+
+    # Apple Silicon does not support SVE
+    # https://github.com/xianyi/OpenBLAS/issues/4212
+    ENV["NO_SVE"] = "1" if Hardware::CPU.arm?
 
     # Must call in two steps
     system "make", "CC=#{ENV.cc}", "FC=gfortran", "libs", "netlib", "shared"
