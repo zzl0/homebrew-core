@@ -4,7 +4,6 @@ class Mdv < Formula
   desc "Styled terminal markdown viewer"
   homepage "https://github.com/axiros/terminal_markdown_viewer"
   # TODO: Remove `depends_on "python-tabulate"` on the next release
-  # TODO: Remove "Markdown==2.6.11" and "tabulate" from pypi_formula_mappings.json on the next release
   # Ref: https://github.com/axiros/terminal_markdown_viewer/commit/d2e8d26f39590fdc9c0b9ec0b80b578c7e260c6c
   url "https://files.pythonhosted.org/packages/70/6d/831e188f8079c9793eac4f62ae55d04a93d90979fd2d8271113687605380/mdv-1.7.4.tar.gz"
   sha256 "1534f477c85d580352c82141436f6fdba79d329af8a5ee7e329fea14424a660d"
@@ -27,8 +26,8 @@ class Mdv < Formula
   depends_on "pyyaml"
 
   resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/b3/73/fc5c850f44af5889192dff783b7b0d8f3fe8d30b65c8e3f78f8f0265fecf/Markdown-2.6.11.tar.gz"
-    sha256 "a856869c7ff079ad84a3e19cd87a64998350c2b94e9e08e44270faef33400f81"
+    url "https://files.pythonhosted.org/packages/d6/58/79df20de6e67a83f0d0bbfe6c19bb82adf68cdf362885257eb01099f930a/Markdown-3.3.7.tar.gz"
+    sha256 "cbb516f16218e643d8e0a95b309f77eb118cb138d39a4f27851e6a63581db874"
   end
 
   # Upstream fix for code blocks not being indexed like expected.
