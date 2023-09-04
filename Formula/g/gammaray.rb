@@ -7,15 +7,13 @@ class Gammaray < Formula
   head "https://github.com/KDAB/GammaRay.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d6c6176b66638be42f13801d7656142157daffdfbf384bd39033851b3a48cafb"
-    sha256 cellar: :any,                 arm64_monterey: "e84fc150dc66a7e32b44546f038cb32bb156aae65688f14055f4182fa9cba79d"
-    sha256 cellar: :any,                 arm64_big_sur:  "7de52e10f8bbe77f1104f358602c4b25613c8f9d874d5ab2fa53828941cb1e23"
-    sha256 cellar: :any,                 ventura:        "ce96ecccdb25b4e68292d30ae7f78deb57fa744f42f5f5c28cfff0ad990952a0"
-    sha256 cellar: :any,                 monterey:       "f7e0316e417b5e6518acf88f61615cc274a7724bff18e5a7c923fd0af1684c49"
-    sha256 cellar: :any,                 big_sur:        "0d62f89cc2cd25a325d136fe6d2989d449265b01c023369da60b94955bafa58f"
-    sha256 cellar: :any,                 catalina:       "355dff5be6e35a6d5e4bb182d63eb88813c6db74b196b49109513612a7406b84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4872f5bb91e7ecc4589bcad43a2cabef330548c52e89413fd0d9c8e8c0676ab2"
+    sha256 cellar: :any,                 arm64_ventura:  "cdfa6f0b7d9259d1521dbc72848acc0cf6c4d849cf0e4839abf8c5917d1b0d0c"
+    sha256 cellar: :any,                 arm64_monterey: "bd87853b2ed17be73eeb30d1c92dfdeb440b10a2bc07abcc218e8aaab124b7f7"
+    sha256 cellar: :any,                 arm64_big_sur:  "4e9ef40af8d3d6cd265d229493fbd29c1d63b620e2f84cc5feaa433db00f07d0"
+    sha256 cellar: :any,                 ventura:        "493a498c3c596ed32bc22e09098ff16e1480ac7b0070718ca3b6a104b41589f6"
+    sha256 cellar: :any,                 monterey:       "6c29e287992d0fc20bca5c82ec8ea1b549d80b84684cf3232c98949736e5e52e"
+    sha256 cellar: :any,                 big_sur:        "cd970b55b98e116fbbe42db084a04909944c4b909ef332a7ba1837b69e09b1eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df768d78cb513480ebf945214f26c7a350875990fe146c8e92531fc924674389"
   end
 
   depends_on "cmake" => :build
