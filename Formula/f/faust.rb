@@ -1,8 +1,8 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
-  url "https://github.com/grame-cncm/faust/releases/download/2.54.9/faust-2.54.9.tar.gz"
-  sha256 "29cfb88f87fd93a55620c18f58ec585a31b6f8106a9fd3528db8340048adef28"
+  url "https://github.com/grame-cncm/faust/releases/download/2.60.3/faust-2.60.3.tar.gz"
+  sha256 "1088b31ad2a6175ff27807afc33c5929c33e97a7d09a1995e126bdda9940fc1e"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -19,20 +19,44 @@ class Faust < Formula
   depends_on "pkg-config" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm@14" # Needs LLVM 14 for `csound`.
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
-  # upstream patch, https://github.com/grame-cncm/faust/pull/844
-  patch do
-    url "https://github.com/grame-cncm/faust/commit/ca013457c9d52bdc0101c9d31fc3621fe3e1b103.patch?full_index=1"
-    sha256 "e2f39b34d744cd79178e9e581f63af9076d04b3c01edc19799e2fe2d5ea18814"
-  end
-
   def install
-    ENV.delete "TMP" # don't override Makefile variable
-    system "make", "world"
-    system "make", "install", "PREFIX=#{prefix}"
+    system "cmake", "-S", "build", "-B", "homebrew_build",
+                    "-DC_BACKEND=COMPILER DYNAMIC",
+                    "-DCODEBOX_BACKEND=COMPILER DYNAMIC",
+                    "-DCPP_BACKEND=COMPILER DYNAMIC",
+                    "-DCMAJOR_BACKEND=COMPILER DYNAMIC",
+                    "-DCSHARP_BACKEND=COMPILER DYNAMIC",
+                    "-DDLANG_BACKEND=COMPILER DYNAMIC",
+                    "-DFIR_BACKEND=COMPILER DYNAMIC",
+                    "-DINTERP_BACKEND=COMPILER DYNAMIC",
+                    "-DJAVA_BACKEND=COMPILER DYNAMIC",
+                    "-DJAX_BACKEND=COMPILER DYNAMIC",
+                    "-DJULIA_BACKEND=COMPILER DYNAMIC",
+                    "-DJSFX_BACKEND=COMPILER DYNAMIC",
+                    "-DLLVM_BACKEND=COMPILER DYNAMIC",
+                    "-DOLDCPP_BACKEND=COMPILER DYNAMIC",
+                    "-DRUST_BACKEND=COMPILER DYNAMIC",
+                    "-DTEMPLATE_BACKEND=OFF",
+                    "-DWASM_BACKEND=COMPILER DYNAMIC WASM",
+                    "-DINCLUDE_EXECUTABLE=ON",
+                    "-DINCLUDE_STATIC=OFF",
+                    "-DINCLUDE_DYNAMIC=ON",
+                    "-DINCLUDE_OSC=OFF",
+                    "-DINCLUDE_HTTP=OFF",
+                    "-DOSCDYNAMIC=ON",
+                    "-DHTTPDYNAMIC=ON",
+                    "-DINCLUDE_ITP=OFF",
+                    "-DITPDYNAMIC=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "homebrew_build"
+    system "cmake", "--install", "homebrew_build"
+
+    system "make", "--directory=tools/sound2faust", "PREFIX=#{prefix}"
+    system "make", "--directory=tools/sound2faust", "install", "PREFIX=#{prefix}"
   end
 
   test do
@@ -41,6 +65,6 @@ class Faust < Formula
       process = no.noise;
     EOS
 
-    system "#{bin}/faust", "noise.dsp"
+    system bin/"faust", "noise.dsp"
   end
 end
