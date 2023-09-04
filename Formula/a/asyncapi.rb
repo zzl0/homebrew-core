@@ -3,8 +3,8 @@ require "language/node"
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.54.4.tgz"
-  sha256 "81bcc1f90cfec9de401d9be340f58452ae051ae315d273d802ba6be9c8b8663f"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.54.5.tgz"
+  sha256 "d8cced0ef1235d5f19bcd6f7f8990d7246bda71689e64bf486b5d79b050cd3d9"
   license "Apache-2.0"
 
   bottle do
@@ -20,8 +20,6 @@ class Asyncapi < Formula
   depends_on "node"
 
   def install
-    # Call rm -f instead of rimraf, because devDeps aren't present in Homebrew at postpack time
-    inreplace "package.json", "rimraf oclif.manifest.json", "rm -f oclif.manifest.json"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
