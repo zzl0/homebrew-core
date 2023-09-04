@@ -129,7 +129,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six"]
   },
   "bzt": {
-    "exclude_packages": ["certifi", "numpy", "six", "Cython", "PyYAML"]
+    "exclude_packages": ["certifi", "numpy", "six", "Cython", "PyYAML", "pytz"]
   },
   "ccm": {
     "extra_packages": ["cassandra-driver"],
@@ -316,7 +316,7 @@
   },
   "fdroidserver": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "fonttools", "ipython", "lxml", "numpy", 
+      "certifi", "cffi", "cryptography", "fonttools", "ipython", "lxml", "numpy",
       "pillow", "pygments", "pyyaml", "six", "typing-extensions", "yamllint"
     ]
   },
