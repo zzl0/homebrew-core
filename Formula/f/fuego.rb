@@ -2,9 +2,16 @@ class Fuego < Formula
   desc "Collection of C++ libraries for the game of Go"
   homepage "https://fuego.sourceforge.net/"
   url "https://svn.code.sf.net/p/fuego/code/trunk", revision: "1981"
-  version "1.1.SVN"
-  revision 7
+  version "1.1"
+  license any_of: ["GPL-3.0-only", "LGPL-3.0-only"]
+  revision 8
+  version_scheme 1
   head "https://svn.code.sf.net/p/fuego/code/trunk"
+
+  livecheck do
+    url "https://sourceforge.net/projects/fuego/rss?path=/fuego"
+    regex(%r{url=.*?/fuego[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     sha256 arm64_ventura:  "d8993888e70b3d837703995f7750bade1ecaed8f9a4a5cbcb3e833e74a79ff38"
@@ -21,9 +28,8 @@ class Fuego < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
                           "--with-boost=#{Formula["boost"].opt_prefix}"
     system "make", "install", "LIBS=-lpthread"
   end
@@ -34,7 +40,7 @@ class Fuego < Formula
       genmove black
     EOS
     output = pipe_output("#{bin}/fuego 2>&1", input, 0)
-    assert_match "Forced opening move", output
+    assert_match(/^=\s+\w+$/, output)
     assert_match "maxgames", shell_output("#{bin}/fuego --help")
   end
 end
