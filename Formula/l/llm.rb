@@ -3,8 +3,8 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/15/8a/e300b7e9865ca41e16198d1e659d7a6ede6e5b5fad2f9c0f69797b78c62f/llm-0.8.1.tar.gz"
-  sha256 "3360b4df917660d59180dcde5748a2b3f5d51a80b82485a93845eb32dba03a23"
+  url "https://files.pythonhosted.org/packages/10/d4/d2e0afafe54d904c848ab24dfbc9e72f459f3a92920bb4c26b39e9490752/llm-0.9.tar.gz"
+  sha256 "a8b60750ea03c9e9cc3cc05ba777711bdc6853c63d366a378431f70e1186126f"
   license "Apache-2.0"
 
   bottle do
@@ -119,6 +119,11 @@ class Llm < Formula
   resource "sqlite-fts4" do
     url "https://files.pythonhosted.org/packages/c2/6d/9dad6c3b433ab8912ace969c66abd595f8e0a2ccccdb73602b1291dbda29/sqlite-fts4-1.0.3.tar.gz"
     sha256 "78b05eeaf6680e9dbed8986bde011e9c086a06cb0c931b3cf7da94c214e8930c"
+  end
+
+  resource "sqlite-migrate" do
+    url "https://files.pythonhosted.org/packages/9e/33/0b0fc2ac04f91b0cde409ec1a177753a2ff46a7f211116d511dde2e6d2a2/sqlite-migrate-0.1a2.tar.gz"
+    sha256 "c33b40a9edd35b4490e095f55cf59e03828d25c8b97377cd8a1f7b72694fc111"
   end
 
   resource "sqlite-utils" do
