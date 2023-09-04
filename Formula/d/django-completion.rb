@@ -12,13 +12,7 @@ class DjangoCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d91db70d0cb4e6f10054f3ee5d686241776d880e73eef2e4b669c89735927b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cb5630970238a6e665b498bc7e5daa3d6e0b6e9d756ede9ca9676fde0c40c4c"
+    sha256 cellar: :any_skip_relocation, all: "12ef3d977f17edc2988a24091216cb5a7753f2dfbdb2b31febe6f4a51c00e942"
   end
 
   def install
