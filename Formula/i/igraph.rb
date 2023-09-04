@@ -6,13 +6,13 @@ class Igraph < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e10244de3673bf2fde324005b37476540892c6e68f30355fef88ed13b555a697"
-    sha256 cellar: :any,                 arm64_monterey: "f24c299005b9e663e2e14de8461b4dbe143bc3e08bc4c09357037effe9c56796"
-    sha256 cellar: :any,                 arm64_big_sur:  "3d02b491006491e7772ef025ddd931bd863af41c5866c4eea375998d912bfc9f"
-    sha256 cellar: :any,                 ventura:        "ccf938c082f023eb1b8944ef83719ef12a2b453420d7193a05063dc40ff5bbe5"
-    sha256 cellar: :any,                 monterey:       "3b4ab17615d83c15bbc977c27854826b22c87f4cdf8b4eb8861eff39de7fc95a"
-    sha256 cellar: :any,                 big_sur:        "bcfd5323ae2dc53658f5c62d23c686c69df8d52dfff93c2bd1d8262d833f5785"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f13c975e2f6b2a76e908eaa0c91aaf1cbaf975d73d8a8f3d02cd9f7af4e955f6"
+    sha256 cellar: :any,                 arm64_ventura:  "49020dadfecfbd851179096fe42425f85c97a683579c95db38aa5292901c5c08"
+    sha256 cellar: :any,                 arm64_monterey: "26b016bbdf93559f0f5d00332238bc1f11da04039728183c8eaa7138cbbd4aee"
+    sha256 cellar: :any,                 arm64_big_sur:  "2ea5120c3ee598d518ac861d015057aa8076b260ced5799253d2354c561baad3"
+    sha256 cellar: :any,                 ventura:        "08f3e8bdac296dac446a462551fc8e69c4546d619b0df87957e7ac093a87fc78"
+    sha256 cellar: :any,                 monterey:       "dc040a9e757957789671c17fa78351b19fe439f633cfeec555ad0518fb8e90fa"
+    sha256 cellar: :any,                 big_sur:        "fc26790b7c8ab086a321d789fe1df52e67a61eecc954072d9c9660eb365cc6cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d1babcd095b75507ebc19635ee6f42ecb2e8c250cd54fe57034de4df96121b5"
   end
 
   depends_on "cmake" => :build
