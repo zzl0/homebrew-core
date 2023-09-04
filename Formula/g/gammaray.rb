@@ -1,8 +1,8 @@
 class Gammaray < Formula
   desc "Examine and manipulate Qt application internals at runtime"
   homepage "https://www.kdab.com/gammaray"
-  url "https://github.com/KDAB/GammaRay/releases/download/v2.11.3/gammaray-2.11.3.tar.gz"
-  sha256 "03d7ca7bd5eb600c9c389d0cf071960330592f1f392a783b7fec5f9eaa5df586"
+  url "https://github.com/KDAB/GammaRay/releases/download/v3.0.0/gammaray-3.0.0.tar.gz"
+  sha256 "acd27dbbcbdf73fed497e0b5d6c477f2e11b59c48499752602677037dcd64ba5"
   license "GPL-2.0-or-later"
   head "https://github.com/KDAB/GammaRay.git", branch: "master"
 
@@ -20,18 +20,18 @@ class Gammaray < Formula
 
   depends_on "cmake" => :build
   depends_on "graphviz"
-  depends_on "qt@5"
+  depends_on "qt"
 
   fails_with gcc: "5"
 
   def install
-    # For Mountain Lion
-    ENV.libcxx
-
-    system "cmake", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_DISABLE_FIND_PACKAGE_Graphviz=ON",
-                    "-DCMAKE_DISABLE_FIND_PACKAGE_VTK=OFF"
-    system "make", "install"
+                    "-DCMAKE_DISABLE_FIND_PACKAGE_VTK=OFF",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
