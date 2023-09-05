@@ -19,13 +19,8 @@ class Nvchecker < Formula
   end
 
   depends_on "jq" => :test
+  depends_on "python-pycurl"
   depends_on "python@3.11"
-
-  uses_from_macos "curl"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
@@ -35,11 +30,6 @@ class Nvchecker < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
     sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
-  end
-
-  resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/a8/af/24d3acfa76b867dbd8f1166853c18eefc890fc5da03a48672b38ea77ddae/pycurl-7.45.2.tar.gz"
-    sha256 "5730590be0271364a5bddd9e245c9cc0fb710c4cbacbdd95264a3122d23224ca"
   end
 
   resource "structlog" do
