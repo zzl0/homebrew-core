@@ -63,7 +63,7 @@ class TclTk < Formula
     end
 
     # Bugfix for KVO crash; will be in Tk 8.6.14
-    # See https://core.tcl-lang.org/tk/info/310c74ecf4
+    # See https://core.tcl-lang.org/tk/info/ef5d3e29a4
     patch :p0 do
       url "https://raw.githubusercontent.com/macports/macports-ports/6a93695d61d3/x11/tk/files/fix-kvo-crash.diff"
       sha256 "ec9a9234b4a326e5621fe78e078c29aa4784b6dc88c59a43d828639ebae0af41"
