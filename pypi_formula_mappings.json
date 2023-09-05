@@ -849,7 +849,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "todoman": {
-    "exclude_packages": ["six", "tabulate"]
+    "exclude_packages": ["six", "tabulate", "pytz"]
   },
   "toot": {
     "exclude_packages": ["certifi"]
