@@ -5,6 +5,7 @@ class OpenjdkAT8 < Formula
   version "1.8.0-382"
   sha256 "a000ec82e594ccfe46ac1a4aa3d7399532aa53875042f22f16eae9367c4b20eb"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url :stable
