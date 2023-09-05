@@ -5,6 +5,7 @@ class Dump1090Mutability < Formula
   version "1.15_20180310-4a16df3-dfsg"
   sha256 "778f389508eccbce6c90d7f56cd01568fad2aaa5618cb5e7c41640a2473905a6"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     rebuild 1
