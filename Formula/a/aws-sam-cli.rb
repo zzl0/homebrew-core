@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/65/43/f871c15eec7a22efe3573be104afccbee1e699503cf5291c1e8feeb2a478/aws-sam-cli-1.96.0.tar.gz"
-  sha256 "19f3795ffc1c084121e60c3b6047a090df8a42fc1b804fef8518eb64228a655e"
+  url "https://files.pythonhosted.org/packages/98/eb/c807322fd41cfe2c1b5bc85f4e909cf60deb74bfd935a7e229b7acd3e282/aws-sam-cli-1.97.0.tar.gz"
+  sha256 "204b7c240de24b466169310a7873492ca2ce39f0f643745867663ad6ea62ff1b"
   license "Apache-2.0"
 
   bottle do
