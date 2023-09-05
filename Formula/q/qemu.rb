@@ -31,13 +31,13 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1d77e290fda1f2a711f80af61152982030e14e06fedd3007385267a1e72d09d4"
-    sha256 arm64_monterey: "13cab8c3a046244e14da5679f9851db2d432835ada2da665b4767b5c16868789"
-    sha256 arm64_big_sur:  "8e74dacf72b976b25a7fe20fa7ae29078e77065263821ab79352586e6e7a1d31"
-    sha256 ventura:        "5cfd8dc3360b0bc9bb2eb2bcab26580adc5b88ed4907214db7e024fc21d9fc12"
-    sha256 monterey:       "9796e925d5e8fa9bcb347b55dad73e31b123fed6f30f22ee6dd38d61e39a8334"
-    sha256 big_sur:        "6362f9ec44a6004f77da034ced700cf187734ca14b39def3b9ae57db8840a703"
-    sha256 x86_64_linux:   "fc6bb461bfac99403d29d2a095c0d1fc0054e131b031f40ea85fffb11e906367"
+    sha256 arm64_ventura:  "b2b3fee79154afc750f70332197ecf41bafd88bcd899a584e40d73b5849331f5"
+    sha256 arm64_monterey: "28f287543f9a852be6124c4fc44b098a10351012858d31439ae08c283afa376c"
+    sha256 arm64_big_sur:  "c0e9985a96f81480ea974755e54bcb4af6a867f9420378a350773bedf22fc845"
+    sha256 ventura:        "9b72779ef74ac740b988d46c8cb945b0ec86accc0c83c9fc7f3e238408b8f202"
+    sha256 monterey:       "8a0b351a62b804a22bbf6d62b83eb47e1bfaf303939b0a4331d618f21c42ec5e"
+    sha256 big_sur:        "8a9381e9a384fdb025275fb9cbb29f61bf0690b5ac56a4ccd48f837938630580"
+    sha256 x86_64_linux:   "8c89582a207b015206bd911adbe4d87356da62a3f61eb09c0403a8d57285a5ca"
   end
 
   depends_on "libtool" => :build
