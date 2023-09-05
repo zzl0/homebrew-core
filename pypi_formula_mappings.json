@@ -559,7 +559,10 @@
   "nox": {
     "exclude_packages": ["six", "virtualenv"]
   },
-  "nvchecker": "nvchecker[pypi]",
+  "nvchecker": {
+    "package_name": "nvchecker[pypi]",
+    "exclude_packages": ["pycurl"]
+  },
   "oci-cli": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "PyYAML", "six"]
   },
