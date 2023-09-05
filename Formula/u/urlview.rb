@@ -2,7 +2,7 @@ class Urlview < Formula
   desc "URL extractor/launcher"
   homepage "https://packages.debian.org/sid/misc/urlview"
   url "https://deb.debian.org/debian/pool/main/u/urlview/urlview_0.9.orig.tar.gz"
-  version "0.9-23"
+  version "0.9-24"
   sha256 "746ff540ccf601645f500ee7743f443caf987d6380e61e5249fc15f7a455ed42"
   license "GPL-2.0-or-later"
 
@@ -32,18 +32,23 @@ class Urlview < Formula
   end
 
   patch do
-    url "https://deb.debian.org/debian/pool/main/u/urlview/urlview_0.9-23.diff.gz"
-    sha256 "32dcff6d032ae23f100a42cb7b23573338033b5e0613b20813324ddb417ce86f"
+    url "http://ftp.debian.org/debian/pool/main/u/urlview/urlview_0.9-24.debian.tar.xz"
+    sha256 "2dd710baa5af98f5dc32ffedfa051220a83cb8b1d7250e75966d7658cf2e2228"
+    apply "patches/debian.patch",
+          "patches/Fix-warning-about-implicit-declaration-of-function.patch",
+          "patches/invoke-AM_INIT_AUTOMAKE-with-foreign.patch",
+          "patches/Link-against-libncursesw-setlocale-LC_ALL.patch",
+          "patches/Allow-dumping-URLs-to-stdout.patch"
   end
 
   def install
+    man1.mkpath
+
     url_handler = OS.mac? ? "open" : etc/"urlview/url_handler.sh"
     inreplace "urlview.man", "/etc/urlview/url_handler.sh", url_handler
     inreplace "urlview.c",
       '#define DEFAULT_COMMAND "/etc/urlview/url_handler.sh %s"',
       %Q(#define DEFAULT_COMMAND "#{url_handler} %s")
-
-    man1.mkpath
 
     unless OS.mac?
       touch("NEWS") # autoreconf will fail if this file does not exist
@@ -54,7 +59,9 @@ class Urlview < Formula
       (etc/"urlview").install "url_handler.sh"
     end
 
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
+    system "./configure", "--disable-dependency-tracking",
+                          "--prefix=#{prefix}",
+                          "--mandir=#{man}",
                           "--sysconfdir=#{etc}"
     system "make", "install"
   end
