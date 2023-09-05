@@ -3,8 +3,8 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/ae/8c/5bf7d63b129e3f11a78d24861eb676e986d166e4fbf6d8eab728fd63e9b1/mvt-2.4.1.tar.gz"
-  sha256 "a9033686b9ca640dbc631d0ac1db6193cdd0b2d48ea67e3c1cbf4300873ced67"
+  url "https://files.pythonhosted.org/packages/50/50/e405c534c489801620762c1358ba40ef11bee3bb35d6cdf1245189d3f3c9/mvt-2.4.2.tar.gz"
+  sha256 "b97e4f4732d61da4a2b69b7029c37e4d5442353a3e109855fe77c782e9c4cc7f"
   license :cannot_represent # Adaptation of MPL-2.0
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
@@ -28,8 +28,8 @@ class Mvt < Formula
   depends_on "pyyaml"
 
   resource "adb-shell" do
-    url "https://files.pythonhosted.org/packages/9d/ba/7cdd068d6ac371c9de00c52262b27c1648248bb3cd6386e94a890a2cf045/adb_shell-0.4.3.tar.gz"
-    sha256 "1cc7847cbd901b1419fe48664bffbe2481b4fa1bba03fe3074abd97228535a82"
+    url "https://files.pythonhosted.org/packages/8f/73/d246034db6f3e374dad9a35ee3f61345a6b239d4febd2a41ab69df9936fe/adb_shell-0.4.4.tar.gz"
+    sha256 "04c305f30a2ca25d5c54b3cd6ce9bb64c36e5f07967b23b3fb6aaecc851b90b6"
   end
 
   resource "appdirs" do
@@ -43,8 +43,8 @@ class Mvt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "idna" do
@@ -98,8 +98,8 @@ class Mvt < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "rsa" do
