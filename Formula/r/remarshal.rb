@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/90/f5/f1ba99f0d6178fca1070acc0dd107efed7dddc74d999c773cc514fc4add9/remarshal-0.17.0.tar.gz"
-  sha256 "c52689848453d4763c45eafff5ee9dc07ae8ac0b1814438a48abd21cbbc9e869"
+  url "https://files.pythonhosted.org/packages/55/39/d638b7d8012468fe13c072bfb283cd917b12dbcb8e7a10b414d5109b0852/remarshal-0.17.1.tar.gz"
+  sha256 "826a41d3e3ed9d45422811488d7b28cc146a8d5b2583b18db36302f87091a86d"
   license "MIT"
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
@@ -40,13 +40,13 @@ class Remarshal < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/8a/42/8f2833655a29c4e9cb52ee8a2be04ceac61bcff4a680fb338cbd3d1e322d/pluggy-1.2.0.tar.gz"
-    sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
+    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
+    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a7/f3/dadfbdbf6b6c8b5bd02adb1e08bc9fbb45ba51c68b0893fa536378cdf485/pytest-7.4.0.tar.gz"
-    sha256 "b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"
+    url "https://files.pythonhosted.org/packages/5b/a2/4db5b065b0694b330f2b3c47e64abda0a470839da5119a404610d6349a11/pytest-7.4.1.tar.gz"
+    sha256 "2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"
   end
 
   resource "python-dateutil" do
