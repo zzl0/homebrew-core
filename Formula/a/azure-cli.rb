@@ -15,13 +15,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3a43627756fc066cfb06867e9f55666bac1856a23afab4a8245fa81fae315127"
-    sha256 cellar: :any,                 arm64_monterey: "b01ab5827af902822fc93d53340918eb6fcf09edc24ea2b63dad5085d732bdd3"
-    sha256 cellar: :any,                 arm64_big_sur:  "9260b52803155d1ba37a18735cb66a31703adda57aa15386518c34d31145a0c4"
-    sha256 cellar: :any,                 ventura:        "41d8e281b12c06286501323b37644a98f8aba772fa4fb0ea0e9c963bd071291a"
-    sha256 cellar: :any,                 monterey:       "f7165a3bb3ec269ab50e1f4df7a9e775c7769bb144079127938769379df10290"
-    sha256 cellar: :any,                 big_sur:        "caaa1577628651756482300586672a6f57dfad3380e69cda05788f8a44dac796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7e710a10d050c889e7c1ce128912f7aeba2bdbcc373c9a071d6f7d5c375a2bd"
+    sha256 cellar: :any,                 arm64_ventura:  "6472d449eba62f4183d9c2dbd71e4772d8feb7ba1487320ab6ade6f09b04f833"
+    sha256 cellar: :any,                 arm64_monterey: "09c14238544a66e2402225a2060a6d0ea2b0e3c8675f4c52c23004703364cfeb"
+    sha256 cellar: :any,                 arm64_big_sur:  "c1be41cc8328682c3085e30f2c4c2add0333d478f9057db2c0eb548b08f7ac97"
+    sha256 cellar: :any,                 ventura:        "07735dd6cbcafb05bcbc31dcf5d88dbdf491f34b378a5f9f48fc88053a39915f"
+    sha256 cellar: :any,                 monterey:       "08b436f0b8bf222770e27b06078edd0ed8c1d89a2d3d8c93fd463d3c2bc72f1e"
+    sha256 cellar: :any,                 big_sur:        "7e164020358a63b3f35376aca6c13099942655b052ac14d8b31d7c05df2d04c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cdb7805c1b0b3d596d50acc17d724f2cc90543aefe42d6a40fd3163d0031632"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
