@@ -6,7 +6,7 @@ class Rtmpdump < Formula
   version "2.4-20151223"
   sha256 "5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 2
+  revision 3
   head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   livecheck do
