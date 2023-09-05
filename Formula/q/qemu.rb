@@ -1,11 +1,29 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-8.1.0.tar.xz"
-  sha256 "710c101198e334d4762eef65f649bc43fa8a5dd75303554b8acfec3eb25f0e55"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https://git.qemu.org/git/qemu.git", branch: "master"
+
+  stable do
+    url "https://download.qemu.org/qemu-8.1.0.tar.xz"
+    sha256 "710c101198e334d4762eef65f649bc43fa8a5dd75303554b8acfec3eb25f0e55"
+
+    patch do
+      # "softmmu: Assert data in bounds in iotlb_to_section"
+      # Needed for cherry-pick of the next commit "softmmu: Use async_run_on_cpu in tcg_commit".
+      url "https://gitlab.com/qemu-project/qemu/-/commit/86e4f93d827d3c1efd00cd8a906e38a2c0f2b5bc.diff"
+      sha256 "c7b30eafb40b893d1245af910a684899a1cbcfad9435a782e2c1088e36242533"
+    end
+
+    patch do
+      # "softmmu: Use async_run_on_cpu in tcg_commit"
+      # Needed for running x86_64 VM with TCG and SMP.
+      # https://gitlab.com/qemu-project/qemu/-/issues/1864#note_1543993006
+      url "https://gitlab.com/qemu-project/qemu/-/commit/0d58c660689f6da1e3feff8a997014003d928b3b.diff"
+      sha256 "b0f9f899f269074304d59dedf980fa83296c806f705b16a5164ba4d34aad1382"
+    end
+  end
 
   livecheck do
     url "https://www.qemu.org/download/"
