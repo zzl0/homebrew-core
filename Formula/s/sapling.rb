@@ -5,7 +5,7 @@ class Sapling < Formula
   version "0.2.20230523-092610-f12b7eee"
   sha256 "57a04327052f900d95d0dd3800d8b13a411b08222307bb141109afca1d1d0eaf"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   livecheck do
