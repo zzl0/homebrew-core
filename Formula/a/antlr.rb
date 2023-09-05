@@ -1,8 +1,8 @@
 class Antlr < Formula
   desc "ANother Tool for Language Recognition"
   homepage "https://www.antlr.org/"
-  url "https://www.antlr.org/download/antlr-4.13.0-complete.jar"
-  sha256 "bc6f4abc0d225a27570126c51402569f000a8deda3487b70e7642840e570e4a6"
+  url "https://www.antlr.org/download/antlr-4.13.1-complete.jar"
+  sha256 "bc13a9c57a8dd7d5196888211e5ede657cb64a3ce968608697e4f668251a8487"
   license "BSD-3-Clause"
 
   livecheck do
