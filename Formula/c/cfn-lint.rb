@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/ea/fd/4ce6ae00ba6686530945c68655d073760c0c79753e0064b9b2b7f54ab9e9/cfn-lint-0.79.8.tar.gz"
-  sha256 "d121fe4fac7690247e5124644509e5c8ca9eabb9d7508d28b66c6d3f8c45629e"
+  url "https://files.pythonhosted.org/packages/1a/82/56adeb16c2a73c6d6e468a25e88f423f9b11b1744e8eefe458d463a2df7f/cfn-lint-0.79.9.tar.gz"
+  sha256 "fb8a5fc674ce39469a66d37de19130f4b31fbe4685a19b65ec51c8c8f35e8990"
   license "MIT-0"
 
   bottle do
@@ -29,18 +29,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/44/a0/16e847f550dca486926a1cbe54596ba5bc6ed8a4579a792533ce5396d931/aws-sam-translator-1.73.0.tar.gz"
-    sha256 "bfa7cad3a78f002edeec5e39fd61b616cf84f34f61010c5dc2f7a76845fe7a02"
+    url "https://files.pythonhosted.org/packages/93/3d/f249415d02f5343e453162f16cddad11c089c3fa318b66259904f17646be/aws-sam-translator-1.74.0.tar.gz"
+    sha256 "6975ddf0798f45952554d6ea2d5e95de8f321ecb7d3299bb127073d4ffb53c90"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/20/a6/c1fab54e40fdae8d2c835e97c79d5051f59df427222f5adf5b6ed14f6405/boto3-1.28.38.tar.gz"
-    sha256 "cdb466e51ebe4c99640269d88d5450328271437d58e6ce089690d0485bef6174"
+    url "https://files.pythonhosted.org/packages/15/d8/941c274e7e53ecc98179369f917dd0ea62f24b4b75e204153fe1e7713d09/boto3-1.28.41.tar.gz"
+    sha256 "2f655ab7e577c7543f9ee4e42d98641ccf02230d2f33695a6b39617b765401f5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bf/d9/e1f6a770eac0e6f1e2bd4913d3758fae36785e33150db19a35d5d5956fd2/botocore-1.31.38.tar.gz"
-    sha256 "b02de7898f0a7de0f6569be1c87046035a974006c31fd641f4b97a8dba1fad21"
+    url "https://files.pythonhosted.org/packages/48/b7/ef48fae435742bb890b0d4d8b095f06fe8e92beb275e906e1a851469c340/botocore-1.31.41.tar.gz"
+    sha256 "4dad7c5a5e70940de54ebf8de3955450c1f092f43cacff8103819d1e7d5374fa"
   end
 
   resource "jmespath" do
