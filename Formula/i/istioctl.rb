@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://github.com/istio/istio/archive/refs/tags/1.18.2.tar.gz"
-  sha256 "f0f9b7bda20cd8af7e7cebfa1704f0eca2ae32581057664d27c92f87dcd20e1e"
+  url "https://github.com/istio/istio/archive/refs/tags/1.19.0.tar.gz"
+  sha256 "7d9b78d01ac4aaf2a2c4512591314033b8a2d5e2911fab623f97ba43445181ef"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -21,10 +21,11 @@ class Istioctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X istio.io/pkg/version.buildVersion=#{version}
-      -X istio.io/pkg/version.buildStatus=#{tap.user}
-      -X istio.io/pkg/version.buildTag=#{version}
-      -X istio.io/pkg/version.buildHub=docker.io/istio
+      -X istio.io/istio/pkg/version.buildVersion=#{version}
+      -X istio.io/istio/pkg/version.buildGitRevision=#{tap.user}
+      -X istio.io/istio/pkg/version.buildStatus=#{tap.user}
+      -X istio.io/istio/pkg/version.buildTag=#{version}
+      -X istio.io/istio/pkg/version.buildHub=docker.io/istio
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./istioctl/cmd/istioctl"
 
