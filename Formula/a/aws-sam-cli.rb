@@ -8,13 +8,14 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ba0c0a47c7a11f6cc97b20cec4bdbbae7f77be09aee649ab2ccd0d03869b123"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03b320a62c97b7dfbe270bed705e2ead72f777810073e67b98d393863ba3ed28"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84f15abc2631af94a10cfdb5e145af69d04b5d58cb7b3540325e5751a7dd485c"
-    sha256 cellar: :any_skip_relocation, ventura:        "78993768d2620440ba596daa664c66ebd798db146fc9adcdc7a5d96e5c65363d"
-    sha256 cellar: :any_skip_relocation, monterey:       "920e3f030b84f81243675e0d1864bc49bd3300220143c0da83d7946a635c0eca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "108959dc21511d78442f30189c6ceefd64ff114b5fecaf0c7884756b1b077f6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdaae5091238101bd1a4d2ae399f292f7fae3b88c52734fb657bc1147fe3c8c3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e49cbe01089c466cfef3dd6c6877f1ad2e59850d0799438510982dbfbd1840b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ee70e0176ec8def6538160c293d6f25954e86c37a1ff3ae4f7467042a994de8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e4df1048412a36f0eb26bcd611f2b9b24609c98d720ce5fc63937715a88f636"
+    sha256 cellar: :any_skip_relocation, ventura:        "d6d4bbdb41c9e4c82182998a9f5775c46b6b025357cf0f857704c58d0bc283ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "467c9cd9d40d5be759550f63a7e6d0161f3d86449ed6aa5948672339ea3917fb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "81dfdc21b960acbacab659a201f7c94eb836740a29db21ee28eb5b1bbd5c2a5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f8cc4caa61da2d421dc892b818952b6606805e0e91262878305abc022955a7d"
   end
 
   depends_on "cffi"
