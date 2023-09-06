@@ -25,16 +25,10 @@ class FbClient < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "curl"
-  depends_on "openssl@3"
+  depends_on "python-pycurl"
   depends_on "python@3.11"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
-
-  resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/09/ca/0b6da1d0f391acb8991ac6fdf8823ed9cf4c19680d4f378ab1727f90bd5c/pycurl-7.45.1.tar.gz"
-    sha256 "a863ad18ff478f5545924057887cdae422e1b2746e41674615f687498ea5b88a"
-  end
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
@@ -42,14 +36,8 @@ class FbClient < Formula
   end
 
   def install
-    # avoid pycurl error about compile-time and link-time curl version mismatch
-    ENV.delete "SDKROOT"
-
     python3 = "python3.11"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
-
-    # avoid error about libcurl link-time and compile-time ssl backend mismatch
-    ENV["PYCURL_CURL_CONFIG"] = Formula["curl"].opt_bin/"curl-config"
     resources.each do |r|
       r.stage do
         system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec/"vendor"), "."
