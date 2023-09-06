@@ -1,8 +1,8 @@
 class Pluto < Formula
   desc "CLI tool to help discover deprecated apiVersions in Kubernetes"
   homepage "https://fairwinds.com"
-  url "https://github.com/FairwindsOps/pluto/archive/v5.18.3.tar.gz"
-  sha256 "8c76b4f4fafdec1d50cc3ccb951b434c8607d699598839f9d461849303a5e036"
+  url "https://github.com/FairwindsOps/pluto/archive/v5.18.4.tar.gz"
+  sha256 "680a475c85774db90de310a883bfb3d1ee374074ff74061315c1b50a006fa2f0"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
@@ -35,6 +35,6 @@ class Pluto < Formula
         name: homebrew-test
       spec: {}
     EOS
-    assert_match "homebrew-test", shell_output("#{bin}/pluto detect deployment.yaml")
+    assert_match "homebrew-test", shell_output("#{bin}/pluto detect deployment.yaml", 3)
   end
 end
