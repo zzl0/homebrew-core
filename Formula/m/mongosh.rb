@@ -3,8 +3,8 @@ require "language/node"
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://github.com/mongodb-js/mongosh#readme"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.10.6.tgz"
-  sha256 "e5e0ed2b2990e0a6666e7452a71789b75c40e573d2f2cf815973bc46377c8b49"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.0.0.tgz"
+  sha256 "202d0b1decd6abdd4c8de25cc2e56ad749f9552a8493a042c9d1175337de2a9c"
   license "Apache-2.0"
 
   bottle do
@@ -17,11 +17,11 @@ class Mongosh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f767dab25c0fe933e4741b89f4cd5fd020b994bcabbbb1b3cb29ed03b8cc5f4f"
   end
 
-  depends_on "node@16" # try `node` after https://jira.mongodb.org/browse/MONGOSH-1391
+  depends_on "node"
 
   def install
-    system "#{Formula["node@16"].bin}/npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"mongosh").write_env_script libexec/"bin/mongosh", PATH: "#{Formula["node@16"].opt_bin}:$PATH"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    bin.install_symlink Dir[libexec/"bin/*"]
   end
 
   test do
