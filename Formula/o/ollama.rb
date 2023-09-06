@@ -1,8 +1,9 @@
 class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
-  url "https://github.com/jmorganca/ollama/archive/refs/tags/v0.0.17.tar.gz"
-  sha256 "b3e749d27db645e30c4fba5da0a0601e928dc7cf2b6105b85728a18e21977344"
+  url "https://github.com/jmorganca/ollama.git",
+      tag:      "v0.0.18",
+      revision: "83c6be1666e8ccf9055e8b7813064644f0a1ad69"
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
@@ -16,9 +17,13 @@ class Ollama < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "26b581ff90d73f5aa739bfa23fb3bb10f2911e85797bc378d9d5b0e5094bcc65"
   end
 
+  depends_on "cmake" => :build
   depends_on "go" => :build
 
   def install
+    # Fix build on big sur by setting SDKROOT
+    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version == :big_sur
+    system "go", "generate", "./..."
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
