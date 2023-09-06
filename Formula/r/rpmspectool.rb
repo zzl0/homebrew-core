@@ -13,22 +13,16 @@ class Rpmspectool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2806fc85d5ea031c34610e073d70f601c15433d5c3e4f6beb6abc3c9aeb1fd97"
   end
 
+  depends_on "python-pycurl"
   depends_on "python@3.11"
   depends_on "rpm"
-  uses_from_macos "curl"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/54/c9/41c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4/argcomplete-3.1.1.tar.gz"
     sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
   end
 
-  resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/a8/af/24d3acfa76b867dbd8f1166853c18eefc890fc5da03a48672b38ea77ddae/pycurl-7.45.2.tar.gz"
-    sha256 "5730590be0271364a5bddd9e245c9cc0fb710c4cbacbdd95264a3122d23224ca"
-  end
-
   def install
-    ENV["PYCURL_SSL_LIBRARY"] = "openssl"
     virtualenv_install_with_resources
   end
 
