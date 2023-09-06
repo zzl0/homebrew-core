@@ -1,10 +1,20 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
-  url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
-  sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
   license "BSD-2-Clause"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
+
+  stable do
+    url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
+    sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
+
+    # https://gitlab.freedesktop.org/mesa/waffle/-/merge_requests/128
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/bce1f755b129aff34c21236bfa3b915f08b7246f/waffle/meson-fix-macOS-typo.patch"
+      sha256 "a072865ad22a4828e92b0e945d185feacd2596cd7d0e09828e5fb954e3b453d9"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "c49b293a55d1fc03a49c27f2932fedab240aaae603bf6de8c713a3f4472575b5"
@@ -14,8 +24,9 @@ class Waffle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d8a1781ff86d13b723a635387f6a47c67c2133e0a786ada9e4b4233dedcdd19"
   end
 
-  depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
 
   uses_from_macos "libxslt" => :build
@@ -34,17 +45,16 @@ class Waffle < Formula
     # error: unknown type name 'u_char'; did you mean 'char'?
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
 
-    args = std_cmake_args + %w[
-      -Dwaffle_build_examples=1
-      -Dwaffle_build_htmldocs=1
-      -Dwaffle_build_manpages=1
+    args = %w[
+      -Dbuild-examples=true
+      -Dbuild-htmldocs=true
+      -Dbuild-manpages=true
     ]
 
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -58,6 +68,7 @@ class Waffle < Formula
       inreplace "Makefile.example", "$(LDFLAGS) -o simple-x11-egl simple-x11-egl.c",
                 "simple-x11-egl.c $(LDFLAGS) -o simple-x11-egl"
     end
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
     system "make", "-f", "Makefile.example"
   end
 end
