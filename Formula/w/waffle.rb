@@ -17,11 +17,13 @@ class Waffle < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c49b293a55d1fc03a49c27f2932fedab240aaae603bf6de8c713a3f4472575b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "44e6ed255b8ddafc5572f25b1f65cc59477e2961176eda549aa558e54a6b44f6"
-    sha256 cellar: :any,                 monterey:       "2f6bb76c9f4c50e79c627b6e2c2e954f128df89ff86ac3bda0a9007948290ae1"
-    sha256 cellar: :any,                 big_sur:        "9753062a77bcff11767245914b40ba773844a58f0991cb0487c8b76d07a34cec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d8a1781ff86d13b723a635387f6a47c67c2133e0a786ada9e4b4233dedcdd19"
+    sha256 cellar: :any, arm64_ventura:  "721f578546fef947d5988c423d62edbf5ca4df91bf23132edd0a3dba96e415f3"
+    sha256 cellar: :any, arm64_monterey: "bd5edd13379bac6277403de70afc6a513ab780f0aaf19ee40c0e56487a1fb7b4"
+    sha256 cellar: :any, arm64_big_sur:  "3fdbf3b04577f26ecc7b15bb75ccb973157a3aea16e76b604627c215e4b79fa4"
+    sha256 cellar: :any, ventura:        "88d13319655ba24a51c7de5342d3e01a90ec5e74abd415f2d5a6ac5f5d601ff6"
+    sha256 cellar: :any, monterey:       "9675280d92c77e188cf93c766040a4f713a9e387817183c3cc646dd581a876a4"
+    sha256 cellar: :any, big_sur:        "cfda02466d84027d572e6c524bda6041d9f3e401f5ff8a7994cdffdaca0be1d8"
+    sha256               x86_64_linux:   "ef964770f31d2fdae40b23efc0b3b1c1fffdfa8430eb125adf9a9d8c805f0bb1"
   end
 
   depends_on "docbook-xsl" => :build
