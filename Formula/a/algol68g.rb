@@ -11,13 +11,13 @@ class Algol68g < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "533e87ea5d4c2ce76d16e735a775f106805c70d2e947a45578a6ce8f77ee5e14"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9fe9c9f6e0a6c9555125ea105292b90572ae105b048acaa9607f4b601a669606"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c7aec16aab92decca17b8e4c89341542bccdf6b6173b633667c4ca51e206bb1b"
-    sha256                               ventura:        "d7f49c4c010ee4b98bcaa88102b4cb259ec459f140702050c928372c925c7c69"
-    sha256                               monterey:       "e1dce05e6516c3cf8241f7e2e515c542e2fa4d5d3777f57c7a943ceca458b2db"
-    sha256                               big_sur:        "f2e30a35e1e7187fab6ef04f783b9443e823f6b6f2c6f7e9f2a946bac95b1c5b"
-    sha256                               x86_64_linux:   "364aa86ad4ab526e3c6c965d928221116f5971e74c0f8164fa8950932b076054"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "831f86edc6e5e0a150830a5fee4164377ae381f4413f5aafe272288bb92c82be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb0170b16b42a6e19230efcd7f9972492a0b54aad3d27372f286e2618a299f50"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8de641f4a3b74e9d7d36dc7c36d40800e53e1641ba649ac60837210695a0a19"
+    sha256                               ventura:        "aba39347426683c4859ab87e61013715877bd3432897dd8c8b9bf77d071ed0f6"
+    sha256                               monterey:       "96bafc29dd1bc750868ecfaab83192ad2927831faed2feb74f1ec11e41d0f9cd"
+    sha256                               big_sur:        "5165ff6ef0af2120cf2c5904b0e6c9024c4fe193fceba3956d50d5d0fe7a7fbb"
+    sha256                               x86_64_linux:   "2f5bda330bdacf0ccfaee149af9413ca6216438eefc257c152914ba1beec6315"
   end
 
   on_linux do
