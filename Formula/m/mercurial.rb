@@ -3,8 +3,8 @@
 class Mercurial < Formula
   desc "Scalable distributed version control system"
   homepage "https://mercurial-scm.org/"
-  url "https://www.mercurial-scm.org/release/mercurial-6.5.1.tar.gz"
-  sha256 "33f7de8d8b3607fa2b408cde4b8725e117eb0ad41926a787eaab409ca8a4fc2f"
+  url "https://www.mercurial-scm.org/release/mercurial-6.5.2.tar.gz"
+  sha256 "afc39d7067976593c8332b8e97a12afd393b55037c5fb9c3cab1a42c7560f60a"
   license "GPL-2.0-or-later"
 
   livecheck do
