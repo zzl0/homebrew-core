@@ -12,12 +12,12 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "01dc9ce1e4298c83b018f327f2dce8f706144d8ae0e38afa5b9457de247bdec0"
-    sha256 arm64_monterey: "699cae9eda02efb7b714f53320a368ca0a5d82d02f20321dde020af059e67716"
-    sha256 arm64_big_sur:  "b2514504bd74cf508ae162483f122f35da37d7e47cc8e41e139fb6c73e7d2d93"
-    sha256 ventura:        "12aa5e57847bac51599e1e4d41971804bfac67fda4af027f50bbb5e9f1aba68f"
-    sha256 monterey:       "9079d6d8a42483b2330b7617b2cdda35be15dfa18288482b59718dd3769c9286"
-    sha256 big_sur:        "ad310c0fd8747e4ed8f771091e94aabf66e529fb9ec2f6fb4b0519078a3ce764"
+    sha256 arm64_ventura:  "5aa0984656d62d72a79e205b577dacc995cb6f9e4f4cfcbb129dac93221b6316"
+    sha256 arm64_monterey: "1f36bcd5d91d0b01739ff6d0c3c75ee92122a14da2886d0c04eca55b54f42025"
+    sha256 arm64_big_sur:  "0d09ddf5ad1bcf9dabb051453a64434653d93ca286d18f6b67a2b3c60eb84ea5"
+    sha256 ventura:        "9ec3cfb3798eb008e9df24173dfcd4ddbe8731be897512047e0d50734fdec88e"
+    sha256 monterey:       "ff72155120c98985b3f4cfa1caa63e2788e1416b02ef1a6cad2f886d01a0df61"
+    sha256 big_sur:        "a1db524bc151e79ca4730bd24b9e523ebdafb7a89cc3a949856b3a59bda70368"
   end
 
   depends_on "cmake" => :build
