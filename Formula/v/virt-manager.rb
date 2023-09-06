@@ -52,8 +52,8 @@ class VirtManager < Formula
   end
 
   resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/bb/1a/d1cf7c8b988cfbbfcc3d6fb1e4e2216690ff64453d3488c9c9e1dfa1e8e2/libvirt-python-9.6.0.tar.gz"
-    sha256 "53422d8e3110139655c3d9c2ff2602b238f8a39b7bf61a92a620119b45550a99"
+    url "https://files.pythonhosted.org/packages/29/38/c1129145b981e4da22a63ef7429b74903ef8771be121d189749561eb209f/libvirt-python-9.7.0.tar.gz"
+    sha256 "d8be9eaa75bad75641e13b608285926cde46d6440a239f106277a6dd55235470"
   end
 
   resource "requests" do
@@ -61,7 +61,7 @@ class VirtManager < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
-  # requests require "urllib3>=1.21.1,<3"
+  # requests require "urllib3>=1.21.1,<1.27"
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
     sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
