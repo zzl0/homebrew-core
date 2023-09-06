@@ -5,6 +5,16 @@ class Eza < Formula
   sha256 "fdaaf450cfaaa41d6ea8ae12fbb8e41e955e255b1169022a7675ca29d7d621c0"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "311f5e0b71948ba646711dca93f6bdbf06f44a1271f67582490039f82457c487"
+    sha256 cellar: :any,                 arm64_monterey: "5b0eafcf88ec260f84606986dcd8e8d7ae1a8c58bc05098cbb4cb4872f0f42c2"
+    sha256 cellar: :any,                 arm64_big_sur:  "a891a78b12fef218239c3d4a3814057359b3ba47c3aedb9f1a0ff86788cb4104"
+    sha256 cellar: :any,                 ventura:        "bc631f12244ad3cc79f9018ec312a109af45b27144d931aecb7359dfcbcd9c55"
+    sha256 cellar: :any,                 monterey:       "3b27552d47fbf679f1b7ccc95b82e0f27ecbd7a64e69092bb3c717b260e7b5a7"
+    sha256 cellar: :any,                 big_sur:        "30d988f922e1b29012e141c0992f8414248165e6bbd83ce0dafdb0bc25026458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2845fc8e6570c70d907d0452f078cc8aac5d6cc98bc5f122553c65151c33cc6"
+  end
+
   depends_on "just" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
