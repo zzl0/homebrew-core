@@ -1,8 +1,8 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.261.tar.gz"
-  sha256 "970944aebdc8cabcfc381ea722e67576e243bc3cde7ec71e6f2dd9e026d50b2a"
+  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.263.tar.gz"
+  sha256 "7396834f65401055762e852df61378a1a0a410d1c3214cca4b2201fc251b1392"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
@@ -59,7 +59,7 @@ class VulkanExtensionlayer < Formula
     expected = <<~EOS
       Instance Layers: count = 3
       --------------------------
-      VK_LAYER_KHRONOS_shader_object      Shader object layer              \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_shader_object      Khronos Shader object layer      \\d\\.\\d\\.\\d+  version 1
       VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   \\d\\.\\d\\.\\d+  version 1
       VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer \\d\\.\\d\\.\\d+  version 1
     EOS
