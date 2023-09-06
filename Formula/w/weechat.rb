@@ -1,8 +1,8 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-3.8.tar.xz"
-  sha256 "f7cb65c200f8c090c56f2cf98c0b184051e516e5f7099a4308cacf86f174bf28"
+  url "https://weechat.org/files/src/weechat-4.0.4.tar.xz"
+  sha256 "ae5f4979b5ada0339b84e741d5f7e481ee91e3fecd40a09907b64751829eb6f6"
   license "GPL-3.0-or-later"
   head "https://github.com/weechat/weechat.git", branch: "master"
 
@@ -47,8 +47,10 @@ class Weechat < Formula
       -DENABLE_PHP=OFF
     ]
 
-    # Fix system gem on Mojave
-    ENV["SDKROOT"] = ENV["HOMEBREW_SDKROOT"]
+    if OS.linux?
+      args << "-DTCL_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
+      args << "-DTK_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
