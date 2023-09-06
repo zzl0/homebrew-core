@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/c0/a5/f32e6f6b69d126acf88c3655e3148492a61c3d2d6b5b1c976fb5c10a5945/esphome-2023.8.2.tar.gz"
-  sha256 "ba24394167daa454237064de6c2f91c09e33cbc5f9d38dc9bd2936ef82f9a798"
+  url "https://files.pythonhosted.org/packages/99/0f/7cb7c2049ec6705dc021ea06444e13fe43a268ace5c30041dc84fbe0af86/esphome-2023.8.3.tar.gz"
+  sha256 "f0ada0daf124d31f6436d396ba888e18359f137097d82b3e0c02ffcf32c061fa"
   license "MIT"
 
   bottle do
@@ -43,8 +43,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
-    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
+    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
+    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
   end
 
   resource "async-timeout" do
@@ -53,13 +53,13 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/62/de/40c5dda9e95144943dae72f475c71294a3cc36440b255df4b53b867f0bac/bitarray-2.8.0.tar.gz"
-    sha256 "cd69a926a3363e25e94a64408303283c59085be96d71524bdbe6bfc8da2e34e0"
+    url "https://files.pythonhosted.org/packages/2b/22/b33fdaea9cb2de8a5b00b4b57bc91edef10c7e4aebec1f5c6235d501ba91/bitarray-2.8.1.tar.gz"
+    sha256 "e68ceef35a88625d16169550768fcc8d3894913e363c24ecbf6b8c07eb02c8f3"
   end
 
   resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/20/4b/852dcabc994aeb4a112f9decd9600c610c59b07e530c1c07aef77c9a1e26/bitstring-4.1.0.tar.gz"
-    sha256 "b1672fb31721dbb6c809e76a3a19ac76a608e1f8fcacce9349ae2b72b1917b20"
+    url "https://files.pythonhosted.org/packages/4a/a5/4e6c8ec7cadd227ceb387b334a067ee19386a09841b527e5f5bc1d9455d9/bitstring-4.1.1.tar.gz"
+    sha256 "a9c97fdf9fe38f27ea0ac2b4cf2a3f5bce5ccc23b863082582b9f48b22274528"
   end
 
   resource "bottle" do
