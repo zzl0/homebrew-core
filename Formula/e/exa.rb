@@ -22,6 +22,9 @@ class Exa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f246ae588fc60262256922e351c4d6df6bac9bc5bd475accf33103912288518"
   end
 
+  # https://github.com/ogham/exa/commit/fb05c421ae98e076989eb6e8b1bcf42c07c1d0fe
+  deprecate! date: "2023-09-05", because: :unmaintained
+
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
