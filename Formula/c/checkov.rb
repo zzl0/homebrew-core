@@ -4,10 +4,9 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/bc/86/f26132d8e1e62784b01397ca2830e64b2e93bdaf0aaeeea9efc1c220ebe7/checkov-2.4.20.tar.gz"
-  sha256 "b27633b340f4dd62a35e2dbb64e1535b275c82f5d0dba01378b95ebf106234e3"
+  url "https://files.pythonhosted.org/packages/c5/5f/663f4917c1470cd5c45f5e60c2def1f91d0f70a4a33b05a194b6a7bdff4c/checkov-2.4.30.tar.gz"
+  sha256 "8a8f7a55f61fd42ea4d14df2d402dde079220155962f227fe0353065cc367057"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "adfe3bdef9d34abb728b7ea7bf3e497b8c3197296065642e5295fdde8123a650"
@@ -192,8 +191,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "idna" do
