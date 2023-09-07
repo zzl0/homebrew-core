@@ -1,8 +1,8 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https://tavianator.com/projects/bfs.html"
-  url "https://github.com/tavianator/bfs/archive/3.0.1.tar.gz"
-  sha256 "a38bb704201ed29f4e0b989fb2ab3791ca51c3eff90acfc31fff424579bbf962"
+  url "https://github.com/tavianator/bfs/archive/3.0.2.tar.gz"
+  sha256 "d3456a9aeecc031064db0dbe012e55a11eb97be88d0ab33a90e570fe66457f92"
   license "0BSD"
 
   bottle do
@@ -17,12 +17,18 @@ class Bfs < Formula
 
   depends_on "oniguruma"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  end
+
   on_linux do
     depends_on "acl"
     depends_on "libcap"
   end
 
   def install
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
+
     system "make", "release"
     system "make", "install", "PREFIX=#{prefix}"
   end
