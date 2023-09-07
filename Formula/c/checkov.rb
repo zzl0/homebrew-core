@@ -4,19 +4,18 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/bc/86/f26132d8e1e62784b01397ca2830e64b2e93bdaf0aaeeea9efc1c220ebe7/checkov-2.4.20.tar.gz"
-  sha256 "b27633b340f4dd62a35e2dbb64e1535b275c82f5d0dba01378b95ebf106234e3"
+  url "https://files.pythonhosted.org/packages/c5/5f/663f4917c1470cd5c45f5e60c2def1f91d0f70a4a33b05a194b6a7bdff4c/checkov-2.4.30.tar.gz"
+  sha256 "8a8f7a55f61fd42ea4d14df2d402dde079220155962f227fe0353065cc367057"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "adfe3bdef9d34abb728b7ea7bf3e497b8c3197296065642e5295fdde8123a650"
-    sha256 cellar: :any,                 arm64_monterey: "2ad2cc6454cace35777903a64d8303dc582975d439693222a9b507c37a9a9da4"
-    sha256 cellar: :any,                 arm64_big_sur:  "86aeabf48209256823815742fa0cc0d940a1ed236df21fb35bcd087609750e16"
-    sha256 cellar: :any,                 ventura:        "932eec9f9182b8b2bf67dcda059bca3dc619bf1f055b8396900f892bf870a45d"
-    sha256 cellar: :any,                 monterey:       "5121b0414865c59d33a5ea542bd4583a9e60abf66358cbd518584e2292451575"
-    sha256 cellar: :any,                 big_sur:        "aeefb93107212ba9ee7171f43d6a543ead1e7202bb7223e2fee2fe042f872faf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f921e9fd00cf71635ef94114b4651527789a24f4cf4356426296db47972cd7e4"
+    sha256 cellar: :any,                 arm64_ventura:  "1fbddf8225ba08bb90559ef885676037957a2f7f514613f6d216a960bd5096aa"
+    sha256 cellar: :any,                 arm64_monterey: "da706c35da008bc890bcfd49d59554fd989bdb8ebed96d4ae30db69594bef344"
+    sha256 cellar: :any,                 arm64_big_sur:  "5090a80444afd3400ac6545c2963d6d33cc4fb6609b277c3674bc29b04a45c6d"
+    sha256 cellar: :any,                 ventura:        "4fd1cc81bb0c9aedb4615a3a4dff20109c615e2583314c619137e56a45673a11"
+    sha256 cellar: :any,                 monterey:       "9f7c7247fa5519f8254dee56b104d7e99981d9791952fd5b294a33c3ef92d1ec"
+    sha256 cellar: :any,                 big_sur:        "2dabde98dfd128affc94d0afc8197a23ed1de48d56ce94241e93eb1f8ee44edf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66ff6a19acc895cd8d170d3c0bd4c93038b96d94779e4be7685a2ecdde27cd3e"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -192,8 +191,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "idna" do
