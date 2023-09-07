@@ -8,13 +8,7 @@ class Prettierd < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e3a1de65c229f2439c2bf07971d8b73a932c6cd275f293a7406f56cbfe799637"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57feb7a5c0c9bb1581c07c1c1efbf3d1342735184389f8f92d77057709b53379"
+    sha256 cellar: :any_skip_relocation, all: "487c5759fb9a22fd4f4cf389997d66e88c57f078bd9e21233d18cea82e8c4581"
   end
 
   depends_on "node"
