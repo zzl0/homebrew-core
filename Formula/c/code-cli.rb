@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://github.com/microsoft/vscode/archive/refs/tags/1.81.1.tar.gz"
-  sha256 "2e25a4fff2977f231136e6283583f986ec45604187f411eba1617f4584a32b76"
+  url "https://github.com/microsoft/vscode/archive/refs/tags/1.82.0.tar.gz"
+  sha256 "bd4b50e7325a458d37fdb6bd1ed243611d5fa4676434c2f6ee91ee640b64d68a"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -23,6 +23,8 @@ class CodeCli < Formula
 
   depends_on "rust" => :build
   depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkg-config" => :build
