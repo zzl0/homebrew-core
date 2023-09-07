@@ -1,8 +1,9 @@
 class Vectorscan < Formula
   desc "High-performance regular expression matching library"
   homepage "https://github.com/VectorCamp/vectorscan"
-  url "https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.9.tar.gz"
-  sha256 "e61c78f26a9d04ccffab0df1159885c4503fc501172402c57f7357a2126ea3c6"
+  # TODO: update version check for new release
+  url "https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.10.1.tar.gz"
+  sha256 "ed4fb5aafecca155c4ce2f9b2c0ab781dc92fee720f77f4f4d56b651787ae118"
   license "BSD-3-Clause"
 
   bottle do
@@ -40,6 +41,6 @@ class Vectorscan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    assert_match "hyperscan v#{version}", shell_output("./test")
+    assert_match version.major_minor_patch.to_s, shell_output("./test")
   end
 end
