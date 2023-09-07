@@ -74,7 +74,10 @@
     "exclude_packages": ["certifi", "keyring", "lxml", "pillow", "six", "tabulate"]
   },
   "aws-sam-cli" : {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "Pygments", "PyYAML", "six", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "cffi", "cryptography", "pycparser", "pytz", "Pygments",
+      "PyYAML", "six", "typing-extensions"
+    ]
   },
   "aws-shell" : {
     "exclude_packages": ["six", "Pygments", "docutils"]
