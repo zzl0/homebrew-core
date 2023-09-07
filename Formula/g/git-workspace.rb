@@ -1,10 +1,9 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
-  url "https://github.com/orf/git-workspace/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "42413850a298f8d82737b7b1370b8c15be55927368d109eba7a599e498a441c1"
+  url "https://github.com/orf/git-workspace/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "fa89f047bdf5654cc5090cd72fcf0c599cce4182ae0db42bf7eea8c89f387d47"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a2c447c385aa68c56fcd263065f94d84e977902ec91ea4b6053a1cb6174f8859"
@@ -18,9 +17,10 @@ class GitWorkspace < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
 
   def install
+    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     system "cargo", "install", *std_cargo_args
   end
 
@@ -35,7 +35,7 @@ class GitWorkspace < Formula
     linkage_with_libgit2 = (bin/"git-workspace").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.5"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
