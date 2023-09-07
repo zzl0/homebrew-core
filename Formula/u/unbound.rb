@@ -1,10 +1,20 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
-  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.18.0.tar.gz"
-  sha256 "3da95490a85cff6420f26fae0b84a49f5112df1bf1b7fc34f8724f02082cb712"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/NLnetLabs/unbound.git", branch: "master"
+
+  stable do
+    url "https://nlnetlabs.nl/downloads/unbound/unbound-1.18.0.tar.gz"
+    sha256 "3da95490a85cff6420f26fae0b84a49f5112df1bf1b7fc34f8724f02082cb712"
+
+    # https://github.com/NLnetLabs/unbound/issues/928
+    patch do
+      url "https://github.com/NLnetLabs/unbound/commit/17a557dfd5eadb8f0b812d25cea28deccaa62de9.patch?full_index=1"
+      sha256 "59710836ece231ff89c2cdf7257723f30e9f18527076b4a5bd7b6b3c0e494112"
+    end
+  end
 
   # We check the GitHub repo tags instead of
   # https://nlnetlabs.nl/downloads/unbound/ since the first-party site has a
