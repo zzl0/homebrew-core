@@ -6,6 +6,10 @@ class Asn < Formula
   license "MIT"
   head "https://github.com/nitefood/asn.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "5c22617139aab30b4e22917f8c1201ba9b3df3a83ed03d431273d4a8020508e2"
+  end
+
   depends_on "aha"
   depends_on "bash"
   depends_on "coreutils"
