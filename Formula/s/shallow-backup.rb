@@ -6,7 +6,7 @@ class ShallowBackup < Formula
   url "https://files.pythonhosted.org/packages/eb/33/4b56af73e95125cd6d92972a3e55c82f3ac9386d3401dd198f886a99bb0e/shallow-backup-6.0.tar.gz"
   sha256 "8fa5b8052c9f9c4f4ef456cf2f0163ef0fffb5c3a96e506665bae7899b5cc72c"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
@@ -43,8 +43,8 @@ class ShallowBackup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
-    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
+    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
+    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
   end
 
   resource "inquirer" do
