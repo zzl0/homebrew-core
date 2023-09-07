@@ -10,13 +10,13 @@ class Gitup < Formula
   head "https://github.com/earwig/git-repo-updater.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcba5e76d7c052d219e08391fe6d705931fcf8cce08e46e449af5064e373df17"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e969c6934b4c308eda5f759121ca83202959be69ebd397789b6eb9c645a2f6aa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "945a153029ead3bfd4fc5737e404b198800732f7525550c9db30531a04182e6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "622b7a38fb765cb1689a66d2e0dd31f5ac329c83cbbd40de72ec5b219ffc91e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc7028a5274556e42c9576adc311b9c2aad899f881d350d37b0ef3aff824ee95"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d7cd56708a1df5e16bc8eddcf3ff0942e195a2987ace2450afa9c3c7f2e696f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8bdb3bb455f0626d7fb5c5ee8793763eed575ff59a28b523e85d8e620010853"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3fd4d20fe43e22811b9c88f534f49174d7615156468062447ff39e5fd24c0e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c55701fb2e8a02c5d945fc66a621444d729f18eb8fd60d76576358036144b993"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d809057c6d2dd1322525c4df8cdae82cb8505fa65ea0fd24a0a6681c1f1cba6"
+    sha256 cellar: :any_skip_relocation, ventura:        "95ae3ae553e64eaa3b951b201061d3b64d338de42924e805d448fd86d8833f39"
+    sha256 cellar: :any_skip_relocation, monterey:       "09ebaf983b0f644685ae22216cae93873409cbc2fb663fdaabc132b81fc4d397"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ed4b2111cb0f515cf4b23162c9c59be9d061c66fac2c78fc7089fd8887d6ed5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fd20ccbc473ba71bd82f4405a5bd649f0554eb0673156c923dbc7af91057b66"
   end
 
   depends_on "python@3.11"
