@@ -1,8 +1,8 @@
 class QuickLintJs < Formula
   desc "Find bugs in your JavaScript code"
   homepage "https://quick-lint-js.com/"
-  url "https://c.quick-lint-js.com/releases/2.15.0/source/quick-lint-js-2.15.0.tar.gz"
-  sha256 "2e3935d4433d3699638f7b82a88058fbd6f33da64f065412e23ded65b4797f1a"
+  url "https://c.quick-lint-js.com/releases/2.16.0/source/quick-lint-js-2.16.0.tar.gz"
+  sha256 "bab8fce32b9f481d07bb94ce8158d6fdb8bf5200c308beb326ecbf1ecfca57f5"
   license "GPL-3.0-or-later"
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
@@ -19,7 +19,6 @@ class QuickLintJs < Formula
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "pkg-config" => :build
-  depends_on "boost"
   depends_on "simdjson"
 
   fails_with :gcc do
@@ -33,7 +32,6 @@ class QuickLintJs < Formula
                     "-DQUICK_LINT_JS_ENABLE_BENCHMARKS=OFF",
                     "-DQUICK_LINT_JS_INSTALL_EMACS_DIR=#{elisp}",
                     "-DQUICK_LINT_JS_INSTALL_VIM_NEOVIM_TAGS=ON",
-                    "-DQUICK_LINT_JS_USE_BUNDLED_BOOST=OFF",
                     "-DQUICK_LINT_JS_USE_BUNDLED_GOOGLE_BENCHMARK=OFF",
                     "-DQUICK_LINT_JS_USE_BUNDLED_GOOGLE_TEST=OFF",
                     "-DQUICK_LINT_JS_USE_BUNDLED_SIMDJSON=OFF",
