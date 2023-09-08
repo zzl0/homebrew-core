@@ -7,6 +7,16 @@ class Json2ts < Formula
   sha256 "8b70c473a916f88813ae182aa0c970edba2fb1eda031a46f72e0691631b72e0a"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
+    sha256 cellar: :any_skip_relocation, ventura:        "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"
+    sha256 cellar: :any_skip_relocation, monterey:       "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
+  end
+
   depends_on "node"
 
   def install
