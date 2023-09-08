@@ -6,7 +6,7 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/66/aa/0a1fd9601299384a87706463254a0cdd682fa982585ab6a8e872fa1e7d1c/cycode-1.1.0.tar.gz"
   sha256 "d9a359be988a09b96fc487b958b515a62447bb1871cf3b77a17c4f47a8c4e782"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8afddda8216df210db283579598722a799bd5c651e2440443995118ba6be87fd"
@@ -59,8 +59,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "idna" do
