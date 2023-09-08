@@ -6,7 +6,7 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/6e/14/07b0cfc648c0317021bdd9c40d26b83f2a3f13f3585a0d8294ca414239d9/snakemake-7.32.3.tar.gz"
   sha256 "cbe586fe28349982307f008ca40e839d569cf5d540008b0c91ebfef689b49b18"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
@@ -73,8 +73,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "humanfriendly" do
