@@ -3,8 +3,8 @@ class GobjectIntrospection < Formula
 
   desc "Generate introspection data for GObject libraries"
   homepage "https://gi.readthedocs.io/en/latest/"
-  url "https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz"
-  sha256 "196178bf64345501dcdc4d8469b36aa6fe80489354efe71cb7cb8ab82a3738bf"
+  url "https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.0.tar.xz"
+  sha256 "84f5bd2038bd52abbce74a639832c5b46a2d17e9c5a8ae14f9788e8516c04166"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
@@ -18,6 +18,7 @@ class GobjectIntrospection < Formula
   end
 
   depends_on "bison" => :build
+  depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "cairo"
@@ -37,16 +38,19 @@ class GobjectIntrospection < Formula
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
   end
 
-  def install
-    python3 = "python3.11"
+  def python3
+    which("python3.11")
+  end
 
+  def install
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
+
     inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
     inreplace "meson.build",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}/lib')"
 
-    system "meson", "setup", "build", "-Dpython=#{which(python3)}",
+    system "meson", "setup", "build", "-Dpython=#{python3}",
                                       "-Dextra_library_paths=#{HOMEBREW_PREFIX}/lib",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
