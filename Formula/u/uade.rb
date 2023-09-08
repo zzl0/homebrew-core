@@ -4,11 +4,19 @@ class Uade < Formula
   license "GPL-2.0-only"
 
   stable do
-    url "https://zakalwe.fi/uade/uade3/uade-3.02.tar.bz2"
-    sha256 "2aa317525402e479ae8863222e3c341d135670fcb23a2853ac93075ac428f35b"
+    url "https://zakalwe.fi/uade/uade3/uade-3.03.tar.bz2"
+    sha256 "e0a091cdbd5a11d314f48526212ba34cdb71bbdf5622dfc1f28aa6291c93ede8"
 
+    # release tag request, https://gitlab.com/hors/libzakalwe/-/issues/1
+    resource "libzakalwe" do
+      url "https://gitlab.com/hors/libzakalwe.git",
+        revision: "521bc3ba81d78859fb3cabae88dae6ebe41f9c03"
+    end
+
+    # release tag request, https://gitlab.com/heikkiorsila/bencodetools/-/issues/13
     resource "bencode-tools" do
-      url "https://gitlab.com/heikkiorsila/bencodetools.git", revision: "5a1ccf65393ee50af3a029d0632f29567467873c"
+      url "https://gitlab.com/heikkiorsila/bencodetools.git",
+        revision: "ffde760bcb83182f6a4994f585773d5af264601d"
     end
   end
 
@@ -31,6 +39,10 @@ class Uade < Formula
   head do
     url "https://gitlab.com/uade-music-player/uade.git", branch: "master"
 
+    resource "libzakalwe" do
+      url "https://gitlab.com/hors/libzakalwe.git", branch: "master"
+    end
+
     resource "bencode-tools" do
       url "https://gitlab.com/heikkiorsila/bencodetools.git", branch: "master"
     end
@@ -40,6 +52,19 @@ class Uade < Formula
   depends_on "libao"
 
   def install
+    lib.mkdir # for libzakalwe
+
+    resource("libzakalwe").stage do
+      # Workaround for Xcode 14.3
+      if DevelopmentTools.clang_build_version >= 1403
+        inreplace "Makefile", "CFLAGS = -W -Wall", "CFLAGS = -Wno-implicit-function-declaration -W -Wall"
+      end
+
+      inreplace "Makefile", "-Wl,-soname,$@", "-Wl"
+      system "./configure", *std_configure_args
+      system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}"
+    end
+
     resource("bencode-tools").stage do
       system "./configure", "--prefix=#{prefix}", "--without-python"
       system "make"
@@ -47,12 +72,15 @@ class Uade < Formula
     end
 
     system "./configure", "--prefix=#{prefix}",
-           "--without-write-audio"
+                          "--libzakalwe-prefix=#{prefix}",
+                          "--without-write-audio"
     system "make", "install"
   end
 
   test do
     output = shell_output("#{bin}/uade123 --get-info #{test_fixtures("test.mp3")} 2>&1", 1).chomp
     assert_equal "Unknown format: #{test_fixtures("test.mp3")}", output
+
+    assert_match version.to_s, shell_output("#{bin}/uade123 --version")
   end
 end
