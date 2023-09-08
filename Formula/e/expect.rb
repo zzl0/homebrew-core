@@ -40,6 +40,13 @@ class Expect < Formula
     sha256 "7a4d5c958b3e51a08368cae850607066baf9c049026bec11548e8c04cec363ef"
   end
 
+  # Fix a segfault in exp_getptymaster()
+  # Commit taken from Iain Sandoe's branch at https://github.com/iains/darwin-expect
+  patch do
+    url "https://github.com/iains/darwin-expect/commit/2a98bd855e9bf2732ba6ddbd490b748d5668eeb0.patch?full_index=1"
+    sha256 "deb83cfa2475b532c4e63b0d67e640a4deac473300dd986daf650eba63c4b4c0"
+  end
+
   def install
     tcltk = Formula["tcl-tk"]
     args = %W[
