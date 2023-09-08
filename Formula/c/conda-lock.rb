@@ -3,10 +3,9 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/ea/f8/74337684545c97f1695381060df8c49f6e74f159b0ef8a94ccf5a4236843/conda_lock-2.2.0.tar.gz"
-  sha256 "0cfe264457b60a02fa7d6d740a2270a8c91f0c3f952b87447535583973490c96"
+  url "https://files.pythonhosted.org/packages/4d/9b/7fd9f0314a9b17ba43af1117af9e78dca44939637387b1a7e11274a4927f/conda_lock-2.2.1.tar.gz"
+  sha256 "5fe13e49877c7770d205e38e58ba2a4b6f98a88ebfe87576bac37ea55a6ae217"
   license "MIT"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "12d4f50f69e457d025c925372f0d7962538516ab464f2b5b5c8901abba19dc23"
