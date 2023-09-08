@@ -1,8 +1,8 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https://github.com/leanprover/elan"
-  url "https://github.com/leanprover/elan/archive/v2.0.1.tar.gz"
-  sha256 "f241cf15a8d18def76311862a5eea5b72d7fabd22bdf88397031e119d0675169"
+  url "https://github.com/leanprover/elan/archive/v3.0.0.tar.gz"
+  sha256 "d1862df96e98515c5799bff168987e69382d824222e3fdebb4f41c63ef75d32c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/leanprover/elan.git", branch: "master"
 
@@ -20,6 +20,7 @@ class ElanInit < Formula
   depends_on "coreutils"
   depends_on "gmp"
 
+  uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
