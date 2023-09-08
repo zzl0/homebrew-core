@@ -1,22 +1,10 @@
 class Ecl < Formula
   desc "Embeddable Common Lisp"
   homepage "https://ecl.common-lisp.dev"
+  url "https://ecl.common-lisp.dev/static/files/release/ecl-23.9.9.tgz"
+  sha256 "c51bdab4ca6c1173dd3fe9cfe9727bcefb97bb0a3d6434b627ca6bdaeb33f880"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https://gitlab.com/embeddable-common-lisp/ecl.git", branch: "develop"
-
-  stable do
-    url "https://ecl.common-lisp.dev/static/files/release/ecl-21.2.1.tgz"
-    sha256 "b15a75dcf84b8f62e68720ccab1393f9611c078fcd3afdd639a1086cad010900"
-
-    # Backport fix for bug that causes errors when building `sbcl`.
-    # Issue ref: https://gitlab.com/embeddable-common-lisp/ecl/-/issues/667
-    # Remove in the next release along with the stable block
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/7cb53af69947e9e452d43f334577adb74011fe9e/ecl/sbcl.patch"
-      sha256 "04fbdabd084d45144b931c49ad656f8d552b5e99857ed6de003daee8e6e3bd48"
-    end
-  end
 
   livecheck do
     url "https://ecl.common-lisp.dev/static/files/release/"
@@ -42,9 +30,6 @@ class Ecl < Formula
 
   def install
     ENV.deparallelize
-
-    # Avoid -flat_namespace usage on macOS
-    inreplace "src/configure", "-flat_namespace -undefined suppress ", "" if OS.mac?
 
     libffi_prefix = if MacOS.version >= :catalina
       MacOS.sdk_path
