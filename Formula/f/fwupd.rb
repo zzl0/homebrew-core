@@ -8,6 +8,16 @@ class Fwupd < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
+  bottle do
+    sha256 arm64_ventura:  "d7e7a0edf5ef48f47ce9b6e37b4b87207707ed39131da80f7838c4a36707ed61"
+    sha256 arm64_monterey: "a4efadea9daad726dbafcfac8735b5dbef3097a1c57475e20e8f28633712f731"
+    sha256 arm64_big_sur:  "fbe7b8db9ff110c503d2e5be8e2743f6fcadfb5df4fab347e0957d160a715a64"
+    sha256 ventura:        "3c29e2ec08d286e953a08bc35889bf3c966033c2732d7be14c17aa8c165c113e"
+    sha256 monterey:       "6702bfba9db5eaf60ac52d9664ef931b6e27c51195aedebbddfdf56d302290f7"
+    sha256 big_sur:        "c69745c9eb39c5c38f3ba701ffa073b936eb0ebba67738ada40683609c36dce0"
+    sha256 x86_64_linux:   "9be49b476d7d147431e63ac7cd0c87d759eb3b55f2f63daa0cac85e4cfceeadc"
+  end
+
   depends_on "gi-docgen" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
