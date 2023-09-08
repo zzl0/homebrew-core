@@ -2,8 +2,8 @@ class ErlangAT25 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.5/otp_src_25.3.2.5.tar.gz"
-  sha256 "1f899b4b1ef8569c08713b76bc54607a09503a1d188e6d61512036188cc356db"
+  url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.6/otp_src_25.3.2.6.tar.gz"
+  sha256 "14f519bb63f9cc8d1db62ef7c58abc56fa94f8f76d918d23acad374f38434088"
   license "Apache-2.0"
 
   livecheck do
@@ -30,8 +30,8 @@ class ErlangAT25 < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.5/otp_doc_html_25.3.2.5.tar.gz"
-    sha256 "9e9fcac4f545947bdbe9105ae3b5150b7390ffb4bef74ae8de4a3cad194adf4a"
+    url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.6/otp_doc_html_25.3.2.6.tar.gz"
+    sha256 "b7c7f2a8a4c9cb84e4e7f86645b1ffb5a7cff57f712c5a1cb1a7056692ac7184"
   end
 
   def install
