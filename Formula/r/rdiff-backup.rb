@@ -6,13 +6,13 @@ class RdiffBackup < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2d2877894989ffa17a12b7ff85dc033ed4674f80ff0985868fc24c5147ceabe8"
-    sha256 cellar: :any,                 arm64_monterey: "c0d1d60d0e87b916d2e6d68c1098d3c1cf2adba542d231ffb3b482370f58ef35"
-    sha256 cellar: :any,                 arm64_big_sur:  "b46a63968555ef77bf46d611b38b8e1812374dadaae58f5fc87effcd3ccfa0e8"
-    sha256 cellar: :any,                 ventura:        "2bb7ed15b8918441f8a7a8f3ff818bacef4a187db469acf9b4f4c8080278a9a8"
-    sha256 cellar: :any,                 monterey:       "83509a3b88f86bd949f58fd8bcbb87cc1249ba7ba87f4b818debbd3471ce5fd2"
-    sha256 cellar: :any,                 big_sur:        "7d0f2d26e70a4048246f7c083783783eeb2a7be1605fa8784265ef21deca8e40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70686f1def5208b45dc7f0b896ae5619b0db76be125a82ad9b2443ab14eeef04"
+    sha256 cellar: :any,                 arm64_ventura:  "a1a6059b860c19580ee73dd95380bd38f94d6b400bb172bab07b42da6650307f"
+    sha256 cellar: :any,                 arm64_monterey: "985a81f2183cac7d2a8d016d9c990f61801b320f27df21c0eb5a3f068068434a"
+    sha256 cellar: :any,                 arm64_big_sur:  "42cb546126b06033e25040430acd50360b623ce474fc3b35fca697b91294c415"
+    sha256 cellar: :any,                 ventura:        "d43a0aca5449acf0abf915b4cfae232329999fd49d0ed4a15d9cf58b9972591f"
+    sha256 cellar: :any,                 monterey:       "172de9fcd3da2877e2b0718647d30f3df5f64a13c2327c235b6db289ba9de5bc"
+    sha256 cellar: :any,                 big_sur:        "a9406a53d7ac5fe450d34c9b75c6cf974de62268b96c1cf2f8d4cc975848dbac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaae5a0df1be561eafe424de6ba531a0a6d044f82789caecacc33ae125602643"
   end
 
   depends_on "librsync"
