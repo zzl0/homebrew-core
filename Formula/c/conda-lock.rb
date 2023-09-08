@@ -6,7 +6,7 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/ea/f8/74337684545c97f1695381060df8c49f6e74f159b0ef8a94ccf5a4236843/conda_lock-2.2.0.tar.gz"
   sha256 "0cfe264457b60a02fa7d6d740a2270a8c91f0c3f952b87447535583973490c96"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
@@ -86,8 +86,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "html5lib" do
