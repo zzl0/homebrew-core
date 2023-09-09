@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "02baf24d3ab7f4f264cf8f205fb7f03e4e4aacfaace58bb07f0cfafc58ae2b78"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "5aed29a68016cd248592735319ddebed25dc8d98957925f92791ecb1b91d9a53"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -22,9 +22,6 @@ class SbomTool < Formula
   end
 
   depends_on "dotnet" => :build
-  # currently does not support arm build
-  # upstream issue, https://github.com/microsoft/sbom-tool/issues/223
-  depends_on arch: :x86_64
 
   uses_from_macos "icu4c" => :test
   uses_from_macos "zlib"
@@ -32,17 +29,13 @@ class SbomTool < Formula
   def install
     bin.mkdir
 
+    dotnet_version = Formula["dotnet"].version.to_s
+    inreplace "./global.json", "7.0.400", dotnet_version
+
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
-    # the architecture is hardcoded to x64 for macOS due to to an issue with
-    # the inclusion of dynamic libraries for the self-contained executable, for
-    # details see: https://github.com/microsoft/sbom-tool/issues/223#issuecomment-1644578606
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
-    arch = if OS.mac? || Hardware::CPU.intel?
-      "x64"
-    else
-      Hardware::CPU.arch.to_s
-    end
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
     args = %W[
       --configuration Release
