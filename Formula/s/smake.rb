@@ -1,8 +1,9 @@
 class Smake < Formula
   desc "Portable make program with automake features"
   homepage "https://s-make.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/s-make/smake-1.2.5.tar.bz2"
-  sha256 "27566aa731a400c791cd95361cc755288b44ff659fa879933d4ea35d052259d4"
+  url "https://codeberg.org/schilytools/schilytools/archive/2023-04-19.tar.gz"
+  version "1.7-2023-04-19"
+  sha256 "a4270cdcca5dd69c0114079277b06e5efad260b0a099c9c09d31e16e99a23ff5"
   license "GPL-2.0-only"
 
   bottle do
@@ -22,13 +23,25 @@ class Smake < Formula
   end
 
   def install
-    # ARM fails to build with Os
-    ENV.O1 if Hardware::CPU.arm?
+    cd "psmake" do
+      system "./MAKE-all"
+    end
 
-    system "make", "GMAKE_NOWARN=true", "INS_BASE=#{libexec}", "INS_RBASE=#{libexec}", "install"
-    bin.install_symlink libexec/"bin/smake"
-    man1.install_symlink Dir["#{libexec}/share/man/man1/*.1"]
-    man5.install_symlink Dir["#{libexec}/share/man/man5/*.5"]
+    cd "libschily" do
+      system "../psmake/smake"
+    end
+
+    cd "smake" do
+      system "../psmake/smake"
+    end
+
+    cd "man" do
+      system "../psmake/smake"
+    end
+
+    bin.install Dir.glob("smake/OBJ/*/smake")
+    man1.install Dir.glob("smake/OBJ/*/*/*.1")
+    man5.install Dir.glob("man/man5/OBJ/*/*/*.5")
   end
 
   test do
