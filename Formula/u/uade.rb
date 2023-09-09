@@ -26,14 +26,13 @@ class Uade < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "a120ed8c02bbd11a0ebf992ba23ee980082bfc5c04021b14c9cba788fb993d11"
-    sha256 arm64_monterey: "1fa83a9d0afe0133189cc075e9eb0e8822e21baa01d0e568e768f65949cfd567"
-    sha256 arm64_big_sur:  "9e2786bddc15f0864674e26e53032af89c07490f7aca0aff307186cdd0eef283"
-    sha256 ventura:        "43340e7315dc521c2c924279faf3c62bb02d014786bad9d61faf0a2a8c039c0d"
-    sha256 monterey:       "d58fbf04c9fcb13f046a76110aeebf25cb93c3d812ed2a5ec04f3d93cc82424e"
-    sha256 big_sur:        "42cef81cd6f1792dc53c8e14a8fc416dadac072bf08a8bbf568838c9ae758ea1"
-    sha256 catalina:       "923523028dcc4fd1e98df962874d7385bfbc658c894216ff64dac85ab13616fd"
-    sha256 x86_64_linux:   "b570d5bee780acb48d04b1915026fbbbea8bf38ec3f217e24129bd4904470174"
+    sha256 arm64_ventura:  "ff3b1f1c5f687a21cd58cf8b27a057dde20cc10f416bc88dcf0397c58f9bbbe0"
+    sha256 arm64_monterey: "9af83e4001e9d24b2fc574e0c878e7d4d30df953cb343d5538cc3cb4b8487daa"
+    sha256 arm64_big_sur:  "ce39bfc4de99db6404766c3922d6592bdba45c1149dea31561a87561bfc247f1"
+    sha256 ventura:        "666c380c57fe9e14b2f3852de79e8c77933300fbcf636d1cd20abec84c3cd7e3"
+    sha256 monterey:       "d8892c99c748919747c3b80898256647642ebad0078aed6c9f3db7bce2693561"
+    sha256 big_sur:        "ccfc305a99a2b9e01ea0e61e2d9d90494822da2029411e19a7c8b9e0adb24bc6"
+    sha256 x86_64_linux:   "6a5220023b7fb15a23f57a52f7c73c42e547264ee0682177f612046f907519ab"
   end
 
   head do
