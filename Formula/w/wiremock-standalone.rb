@@ -11,13 +11,13 @@ class WiremockStandalone < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f98c022ebeea015ad9119e9c23c9f4e36df3add8741b7c13cdde3d0aa1ad52ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "329b7dc029ebfdcce8f39f2472a3b5a87f1d51d43c91cd456fd84a9f2d003850"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, ventura:        "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, monterey:       "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4defdea3724d4e6ab337f006774bee908c35e880b035ac1b6410e525d0d77304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b85682df733283292ac8356b0c5a429801fa432d4a717f8476659507d509c6be"
   end
 
   depends_on "openjdk"
