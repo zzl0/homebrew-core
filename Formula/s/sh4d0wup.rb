@@ -1,8 +1,8 @@
 class Sh4d0wup < Formula
   desc "Signing-key abuse and update exploitation framework"
   homepage "https://github.com/kpcyrd/sh4d0wup"
-  url "https://github.com/kpcyrd/sh4d0wup/archive/v0.9.0.tar.gz"
-  sha256 "ec6aa007417e76338bc903d969e88f038ba982eb603f227f85caea5b8ad715c3"
+  url "https://github.com/kpcyrd/sh4d0wup/archive/v0.9.1.tar.gz"
+  sha256 "5f74ad2cfc4babf0a718003e9940892250715f413efa321e0c53aedaed568f65"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,7 +15,7 @@ class Sh4d0wup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0373bf97b519aa3acbd7e3eb987bea9209a3d7f13675664cac467b8ce80d47d2"
   end
 
-  depends_on "llvm@15" => :build # for libclang
+  depends_on "llvm" => :build # for libclang
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "pgpdump" => :test
