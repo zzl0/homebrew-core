@@ -1,8 +1,8 @@
 class Kdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.109/kdoctools-5.109.0.tar.xz"
-  sha256 "a44e5b5e02ba5857d9dabe391672e889a1cbcd18e4b6a0794f9778af5250e69d"
+  url "https://download.kde.org/stable/frameworks/5.110/kdoctools-5.110.0.tar.xz"
+  sha256 "923c7e2edbe948275317014ac3c57897ebc657f556a1d0c353f363c3ee7d05bc"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
@@ -44,8 +44,8 @@ class Kdoctools < Formula
   fails_with gcc: "5"
 
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz"
-    sha256 "8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.21.tar.gz"
+    sha256 "96265860cd61bde16e8415dcfbf108056de162caa0ac37f81eb695c9d2e0ab77"
   end
 
   def install
