@@ -1,8 +1,8 @@
 class ExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://api.kde.org/frameworks/extra-cmake-modules/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.109/extra-cmake-modules-5.109.0.tar.xz"
-  sha256 "1526b557cf9718e4d3bf31ff241578178d1ee60bdfb863110c97d43d478b7fb7"
+  url "https://download.kde.org/stable/frameworks/5.110/extra-cmake-modules-5.110.0.tar.xz"
+  sha256 "7746f5db3e230ee2485e603580cc4c7cec636c3258c0a909766fb281913f6438"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT"]
   head "https://invent.kde.org/frameworks/extra-cmake-modules.git", branch: "master"
 
