@@ -687,6 +687,9 @@
   "pyqt-builder": {
     "exclude_packages": ["packaging", "pyparsing", "sip", "toml"]
   },
+  "pyspelling": {
+    "exclude_packages": ["lxml", "markdown", "PyYAML", "six"]
+  },
   "python-build": {
     "exclude_packages": ["packaging", "pyproject-hooks"]
   },
