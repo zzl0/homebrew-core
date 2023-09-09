@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https://github.com/sjlleo/nexttrace-core"
-  url "https://github.com/sjlleo/nexttrace-core/archive/refs/tags/v1.1.7-1.tar.gz"
-  sha256 "506db2d92404b8923dd3caaaeab2f3ba2b828e018d3a9721419802a17e828057"
+  url "https://github.com/sjlleo/nexttrace-core/archive/refs/tags/v1.2.1.1.tar.gz"
+  sha256 "56fe2986067ed8f84bb30d533309a79f901d9a182f25afb71a8354e5bfad6b5d"
   license "GPL-3.0-only"
   head "https://github.com/sjlleo/nexttrace-core.git", branch: "main"
 
@@ -38,12 +38,7 @@ class Nexttrace < Formula
 
   test do
     # requires `sudo` to start
-    output = if OS.mac?
-      shell_output(bin/"nexttrace --language en 1.1.1.1 2>&1")
-    else
-      shell_output(bin/"nexttrace --language en 1.1.1.1 2>&1", 1)
-    end
-
+    output = shell_output(bin/"nexttrace --language en 1.1.1.1 2>&1", 1)
     assert_match "traceroute to 1.1.1.1", output
     assert_match version.to_s, shell_output(bin/"nexttrace --version")
   end
