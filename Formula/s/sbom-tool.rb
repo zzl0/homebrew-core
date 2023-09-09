@@ -15,10 +15,13 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "6f7c90590af038b4eea59f833f61005a8aaf1f30c20fc1b3a4dd526bb3f32b54"
-    sha256 cellar: :any_skip_relocation, monterey:     "6f7c90590af038b4eea59f833f61005a8aaf1f30c20fc1b3a4dd526bb3f32b54"
-    sha256 cellar: :any_skip_relocation, big_sur:      "6f7c90590af038b4eea59f833f61005a8aaf1f30c20fc1b3a4dd526bb3f32b54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "028572f64904918548611554ddeb1e99d36397028c7ccc45770989a3a4f2dc05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
+    sha256 cellar: :any_skip_relocation, ventura:        "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
+    sha256 cellar: :any_skip_relocation, monterey:       "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312a889d39c979b8e1e06747a145e84c2b671f4c04890b13f106c8a98b2cde66"
   end
 
   depends_on "dotnet" => :build
