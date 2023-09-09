@@ -14,13 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f8e64b5a7a9c49aec2df24641d24cef896420a549246032b83236018e074616"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "794e66410875662e10740df89d57babf4dfe6e68bae5817ecc2bd05c9185a99e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd9fb9e3efe2fa0306fb4c8c487cfaa65cd4a06c017d3b448c2423f10aab3405"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c12dd7000d8fa10b5cb31bedba009e2d16ec1cc923a296f0168861a5db30687"
-    sha256 cellar: :any_skip_relocation, monterey:       "0de3102d5af78206e3e0bb9175138f7bf713998cec6fd6c8c31d50b3a0441c0a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "521b407a21c4c2966931e78149c0aac9bd5329b539c627c7ee04403f9315f994"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9260ffc5dc625bef41ff6467c8dd6eaa4e54323dfc91b623096fd8d70bdad868"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8dc6bba4df31cb2ca5ae8853474fffbf2de52b0dc5766925a8709ddf03d1bb5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cd59ed65ba7800ce8b3404693adb208b6377d3b48d2b9a2dae5117b370af93e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b34debf0985a10873a8de8595e571bcbb6776b9c72eff8e8ec639d7914c0158"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab8b3e0c800800ae29f2b776d151bbd6a4b0c668c981d0cc0a8ccb9f00a8332a"
+    sha256 cellar: :any_skip_relocation, monterey:       "126681569cfc3906468262855a5ad26522cc4d8c2a4f67d2abaf0916b1f7c8b3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "36942d7ee3211ccec5260f8a22829e4ad1a065cf597a0dff80bf5a927647e003"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63c1f349b41c3f652d73f2d05b78d4492daf55f5391619f50784943e85a3a964"
   end
 
   depends_on "python@3.11"
