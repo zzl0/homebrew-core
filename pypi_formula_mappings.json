@@ -750,7 +750,7 @@
     "exclude_packages": ["six"]
   },
   "s4cmd": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "pytz"]
   },
   "sail": {
     "package_name": "sailed-io",
