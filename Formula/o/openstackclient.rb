@@ -23,6 +23,7 @@ class Openstackclient < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -240,11 +241,6 @@ class Openstackclient < Formula
   resource "python-swiftclient" do
     url "https://files.pythonhosted.org/packages/51/8a/fc31e8e08bff444ddd5b2ac483320f301999c43c82bebd1bd5461ff5ce08/python-swiftclient-4.3.0.tar.gz"
     sha256 "1e3ddf998ccbea7dc25aa6df8eb3df7d38bf4bc96b065f2f84431e8259817b33"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "requests" do
