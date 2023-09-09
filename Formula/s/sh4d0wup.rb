@@ -6,13 +6,13 @@ class Sh4d0wup < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "625ff1831dd74f6c363af58e947abe676698b3bdc8bcfde737bc98d97f1425e8"
-    sha256 cellar: :any,                 arm64_monterey: "5151c364135e7352f65ec4fa83f6aee4cc7a68692d439cbf1ef99228edffb2e6"
-    sha256 cellar: :any,                 arm64_big_sur:  "968a6376b01399c0b866a6993399236ce9388e6e27edf8906ae8bb31d31632c1"
-    sha256 cellar: :any,                 ventura:        "8ccc23105a48b12adc77df6c21da9784f3126a4593e461b5e9917dc09a72567b"
-    sha256 cellar: :any,                 monterey:       "ee4c5964a3380280f9354764b5e0637d591e2cc821fdc97493a4439d264e5e2c"
-    sha256 cellar: :any,                 big_sur:        "3314e6a51d3eb84fbbf0e5db0be16769cbd2000487af1e7c685cd3e6942839d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0373bf97b519aa3acbd7e3eb987bea9209a3d7f13675664cac467b8ce80d47d2"
+    sha256 cellar: :any,                 arm64_ventura:  "13ff5c3264c8f0f0aa7346187878c106cf0cfdeb22a71073bfe9f079a1d34b5b"
+    sha256 cellar: :any,                 arm64_monterey: "ead75ff629bb3cb07de41b95217f339197ae801d30c01ba15b5e62f20a3043e0"
+    sha256 cellar: :any,                 arm64_big_sur:  "2f5a4688a8812b7ba813e5e1cd6dbf78047aa343b9f6cf45fe56eef2035a8402"
+    sha256 cellar: :any,                 ventura:        "faeb7450ab29de66331ad4959b09db604d48655431e190a32f90dd0eb4a7e563"
+    sha256 cellar: :any,                 monterey:       "93750a112ed06d0cdf94e57ae34a252bf328af8e51263e3ae5ecd6232ff32dc0"
+    sha256 cellar: :any,                 big_sur:        "df3e6dc8f5fdbc83c8da9a7acc11b59b21db5bfadc6d82b5413c2a787c20951b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6ce00ce216375ef4eef7f499ff6d0ea0639923dd3e46df43d5e661c86e2ac80"
   end
 
   depends_on "llvm" => :build # for libclang
