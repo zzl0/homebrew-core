@@ -9,14 +9,13 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89f9021239e699fb18c19b354ba9cd82e4f1941702221a713a814f59fef10c0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dabd803ad235cea55ad451b04227a6852a8ce900a0bbbcc1b0ed011fbca835d6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b809892606d5f231a1a46db44c72f11f7f0f67991d4cc429423679e51191588"
-    sha256 cellar: :any_skip_relocation, ventura:        "f48e1ccffbef502fdf4ad56ca8e724524801b32c6225d92de1b3485ef5699528"
-    sha256 cellar: :any_skip_relocation, monterey:       "ede25a9040a902a2a58aa23ae29b75760a8f80dd947ff18b2cbb175ace7eb2e4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "858ae3d10a1615b8ad6bb96941bfdec86faa4a212607a0e2f27be5066630db7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f85b2e9abf7559951a595a05d363d7a6058a2468796c7b69c31314d562d9f00e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ae8591f550ba6a5f4e177c2b7a149b139c5b8cff2e90455168994fc60a2af46"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d02b6a42656989f59e3b238281042b26764596cc6ab0b35f268c0545381b8ab3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97185c6cc2c94c72f3acbe49c537bd6ddff0fe39beac9b0cf46a69857290f984"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b22243ef9eebd6785b760f4c600eda536882e69c9cfdfa4d5d7e34a943cc62b"
+    sha256 cellar: :any_skip_relocation, monterey:       "82cb9c20dec1e73d79fdd401b2f52d85d89afd43a66cb08c4c325b136427af72"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6a2b3571942870b9269c79409b97fbcdc0ed2deb7714f11af3d1b7ee1d6a3abb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "205991b425d12700528cbdce6c2b6010c75db354806bc146a465892ca689bd40"
   end
 
   depends_on "black"
