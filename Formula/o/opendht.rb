@@ -1,8 +1,8 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v2.5.5.tar.gz"
-  sha256 "ef30dc5249dda1a4032f5dbba525988ba253d7a76a24183062960693367fa0fe"
+  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v2.6.0.4.tar.gz"
+  sha256 "7afbe6bba1df0ee8a35f6c29a9d250de03555c39aa6c94152f1e34e9abcb6488"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -19,6 +19,7 @@ class Opendht < Formula
   depends_on "pkg-config" => :build
   depends_on "argon2"
   depends_on "asio"
+  depends_on "fmt"
   depends_on "gnutls"
   depends_on "msgpack-cxx"
   depends_on "nettle"
