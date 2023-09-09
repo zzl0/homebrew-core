@@ -7,14 +7,13 @@ class Mysqltuner < Formula
   head "https://github.com/major/MySQLTuner-perl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f48fec89712f94d011cba520736fafad466bc9f33eddb580b1b2dbe8dfc4e83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f48fec89712f94d011cba520736fafad466bc9f33eddb580b1b2dbe8dfc4e83"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f48fec89712f94d011cba520736fafad466bc9f33eddb580b1b2dbe8dfc4e83"
-    sha256 cellar: :any_skip_relocation, ventura:        "dde5020c41fd2f0a91dc626bff3a72649f78498d5bdcd7098dc60ef7cb323381"
-    sha256 cellar: :any_skip_relocation, monterey:       "dde5020c41fd2f0a91dc626bff3a72649f78498d5bdcd7098dc60ef7cb323381"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dde5020c41fd2f0a91dc626bff3a72649f78498d5bdcd7098dc60ef7cb323381"
-    sha256 cellar: :any_skip_relocation, catalina:       "dde5020c41fd2f0a91dc626bff3a72649f78498d5bdcd7098dc60ef7cb323381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f48fec89712f94d011cba520736fafad466bc9f33eddb580b1b2dbe8dfc4e83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98d7ffd6b70d13f6dc196a3123a6714ce3df78e6f0ee7d69f330c5378b76b99a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98d7ffd6b70d13f6dc196a3123a6714ce3df78e6f0ee7d69f330c5378b76b99a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98d7ffd6b70d13f6dc196a3123a6714ce3df78e6f0ee7d69f330c5378b76b99a"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e9380ae45cc0494ebd7d96a4a8f140406c78f014756258a5e5e5839a130adbe"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e9380ae45cc0494ebd7d96a4a8f140406c78f014756258a5e5e5839a130adbe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e9380ae45cc0494ebd7d96a4a8f140406c78f014756258a5e5e5839a130adbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98d7ffd6b70d13f6dc196a3123a6714ce3df78e6f0ee7d69f330c5378b76b99a"
   end
 
   def install
