@@ -9,14 +9,13 @@ class Xdot < Formula
   head "https://github.com/jrfonseca/xdot.py.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34ec125d9822fb012b35f6edf42243d043c0ba3493abcb752fd9255d2101f8e3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34ec125d9822fb012b35f6edf42243d043c0ba3493abcb752fd9255d2101f8e3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34ec125d9822fb012b35f6edf42243d043c0ba3493abcb752fd9255d2101f8e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7a0b7332146b6a22a1a5c20e76568530ee48377bc43da7e07e2bfa4d4101776"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7a0b7332146b6a22a1a5c20e76568530ee48377bc43da7e07e2bfa4d4101776"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f7a0b7332146b6a22a1a5c20e76568530ee48377bc43da7e07e2bfa4d4101776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "171aefa6d629d12a896bc37037afae817dcfd71a4a80285a154ca1729e5657b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e2e3c088fc43db9fd8d2b2ebfa02e729a533ef3e8562a78e06cb2652dc8a873"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f6bb055d3e4b04f798da20971c16d3ea67b3464d892592db34c23bbad3dcc35"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "724df2bb58f5435fa527b1e2f8863071f369178bb7becf1d07e583b6eb0b98ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1f0e861109fab15e0bcd39fe16c3aec5496d7bac450d9229c315efc07c2dbe6"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c74b79c48f9d6181e9182f154c4f8612db08f0ce53eee1e8cd1687ca8ead32d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a9458a255391d1ddc5e7770d16e971e38ad7746928afef9022a85a223cba1a60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5038c9497d3a17f42998673271a3546ac00a01dbdb15a11bae99f7e9a99bf458"
   end
 
   depends_on "adwaita-icon-theme"
