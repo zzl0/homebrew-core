@@ -465,7 +465,7 @@
     "exclude_packages": ["cffi", "cryptography", "pycparser"]
   },
   "khal": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "pytz"]
   },
   "khard": {
     "exclude_packages": ["six"]
