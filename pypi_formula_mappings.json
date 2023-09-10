@@ -534,7 +534,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "protobuf", "pycparser"]
   },
   "mkdocs": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["markdown", "markupsafe", "six", "packaging", "PyYAML"]
   },
   "molecule": {
     "extra_packages": ["docker-py", "molecule-vagrant", "python-vagrant"],
