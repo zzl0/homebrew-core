@@ -18,6 +18,7 @@ class Khal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c12dbd958e173b54baee81c0d71790e1ebfdc567488f82e6570cd42ccf4559fe"
   end
 
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -49,11 +50,6 @@ class Khal < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "pyxdg" do
