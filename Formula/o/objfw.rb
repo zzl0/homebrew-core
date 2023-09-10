@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
-  homepage "https://objfw.nil.im/doc/trunk/README.md"
-  url "https://objfw.nil.im/downloads/objfw-0.90.2.tar.gz"
-  sha256 "4de24703d45638093a5196eba278a05b3643e8be0ae2eece5c81ba3e2c20bdbb"
+  homepage "https://objfw.nil.im/"
+  url "https://objfw.nil.im/downloads/objfw-1.0.1.tar.gz"
+  sha256 "953fd8a7819fdbfa3b3092b06ac7f43a74bac736c120a40f2e3724f218d215f1"
   license any_of: ["QPL-1.0", "GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -26,10 +26,10 @@ class Objfw < Formula
 
   head do
     url "https://github.com/ObjFW/ObjFW.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
   end
+
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
 
   on_linux do
     depends_on "llvm"
@@ -37,16 +37,33 @@ class Objfw < Formula
 
   fails_with :gcc
 
+  patch :DATA
+
   def install
-    system "./autogen.sh" if build.head?
+    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
     inreplace bin/"objfw-config", "llvm_clang", "clang" if OS.linux?
   end
 
   test do
-    system "#{bin}/objfw-new", "app", "Test"
+    system "#{bin}/objfw-new", "--app", "Test"
     system "#{bin}/objfw-compile", "-o", "t", "Test.m"
     system "./t"
   end
 end
+
+__END__
+diff --git a/build-aux/m4/buildsys.m4 b/build-aux/m4/buildsys.m4
+index b4f03a72..5ca65cb2 100644
+--- a/build-aux/m4/buildsys.m4
++++ b/build-aux/m4/buildsys.m4
+@@ -323,7 +323,7 @@ AC_DEFUN([BUILDSYS_FRAMEWORK], [
+ 			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/Frameworks/$$out/$${out%.framework}'
+ 		], [
+ 			FRAMEWORK_LDFLAGS='-dynamiclib -current_version ${LIB_MAJOR}.${LIB_MINOR} -compatibility_version ${LIB_MAJOR}'
+-			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/../Frameworks/$$out/$${out%.framework}'
++			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,${prefix}/Library/Frameworks/$$out/$${out%.framework}'
+ 		])
+ 
+ 		AC_SUBST(FRAMEWORK_LDFLAGS)
