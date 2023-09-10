@@ -1,8 +1,8 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.10.1/zig-0.10.1.tar.xz"
-  sha256 "69459bc804333df077d441ef052ffa143d53012b655a51f04cfef1414c04168c"
+  url "https://ziglang.org/download/0.11.0/zig-0.11.0.tar.xz"
+  sha256 "72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951"
   license "MIT"
 
   livecheck do
@@ -22,15 +22,24 @@ class Zig < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@15" => :build
+  depends_on "llvm" => :build
   depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
+  depends_on "z3"
   depends_on "zstd"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  fails_with gcc: "5" # LLVM is built with GCC
+  fails_with :gcc
 
   def install
+    # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
+    # This will likely be fixed upstream by https://github.com/ziglang/zig/pull/16062.
+    if OS.linux?
+      ENV["NIX_LDFLAGS"] = ENV["HOMEBREW_RPATH_PATHS"].split(":")
+                                                      .map { |p| "-rpath #{p}" }
+                                                      .join(" ")
+    end
+
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     else Hardware.oldest_cpu
