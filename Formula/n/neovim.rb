@@ -148,6 +148,7 @@ class Neovim < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DLUV_LIBRARY=#{Formula["luv"].opt_lib/shared_library("libluv")}",
                     "-DLIBUV_LIBRARY=#{Formula["libuv"].opt_lib/shared_library("libuv")}",
+                    "-DLPEG_LIBRARY=#{Formula["lpeg"].opt_lib/shared_library("liblpeg")}",
                     *std_cmake_args
 
     system "cmake", "--build", "build"
