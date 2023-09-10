@@ -10,14 +10,14 @@ class Alot < Formula
   head "https://github.com/pazz/alot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cdc89be7f995438bdd714f6718acbd2fc5f90ff5e2c5e7e0cfb9b0f46e12b94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0ae5aed969d45e939f646c90119fd440e19b179e569ec937ac88611ebccc5a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62e87074af09ebeddef08123d59b8ccbf13abc2e896bb3350e37e76900a9cfe6"
-    sha256 cellar: :any_skip_relocation, ventura:        "016bb81b78a4bff6e11fd7af9a59974e10fc74fd694b6e70c6800dd13c4b8d51"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdc22fc59e24c7c2f1ff306f3a2e6d6f71666d7b03f07f4f29950b31c7cfb461"
-    sha256 cellar: :any_skip_relocation, big_sur:        "791bb9dcebb72f6a9eec467ed697a362aafc3f1e611be077c2a115c4cf2da35a"
-    sha256 cellar: :any_skip_relocation, catalina:       "b2a3fc9bf1323700553e37941f2d3c2db4d00de34d815fc949072331c0f8c98f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67b829bcff2abe5428d6dbb11a6a59a0d3c81ff3f1e7b522cb11d847a08031da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbc27be19820f2ed61e791dd3e2c8971fd774958e1138c6f8d9bc75a51de3246"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "904705776c6822e74b2ccd669522d0d5d8ebc50d897d84ae4a18d224e94369e0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc3065c6a113ae5444dd8773b756f0bab98e22d01e9d453dcd47c61273ecb74c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6dcfd106f5fc14934312343aa07ed2832d1b3f687c898ad68875ef0d50366810"
+    sha256 cellar: :any_skip_relocation, monterey:       "cdcfffd6db99d900cd0b400c0fda246ca55d6eb03e03cd2a65dc74481197f48e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "911f53e8988cb79626167fd5a7ec16aa8597f0729bc334217a193a29872e9263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f7d297ebe88d841b19c3ad745661e2ca0b7e75129f99e1d166cb0883c2fb8f"
   end
 
   depends_on "sphinx-doc" => :build
