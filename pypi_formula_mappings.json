@@ -340,7 +340,7 @@
     "extra_packages": ["Brotli"]
   },
   "ford": {
-    "exclude_packages": ["pygments"]
+    "exclude_packages": ["markdown", "markupsafe", "pygments"]
   },
   "fred": {
     "exclude_packages": ["certifi"]
