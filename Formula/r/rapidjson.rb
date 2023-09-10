@@ -22,10 +22,12 @@ class Rapidjson < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-DRAPIDJSON_BUILD_DOC=OFF",
+                    "-DRAPIDJSON_BUILD_EXAMPLES=OFF",
+                    "-DRAPIDJSON_BUILD_TESTS=OFF",
+                    ".", *std_cmake_args
     system "make", "install"
   end
 
