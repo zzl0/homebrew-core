@@ -20,16 +20,12 @@ class Redo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ff5f989f702472df0da1a1a6fa57b1648226cbc302f434f3f89678f39375764"
   end
 
+  depends_on "python-markdown"
   depends_on "python@3.11"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
     sha256 "ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"
-  end
-
-  resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/d6/58/79df20de6e67a83f0d0bbfe6c19bb82adf68cdf362885257eb01099f930a/Markdown-3.3.7.tar.gz"
-    sha256 "cbb516f16218e643d8e0a95b309f77eb118cb138d39a4f27851e6a63581db874"
   end
 
   resource "soupsieve" do
