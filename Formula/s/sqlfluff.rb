@@ -3,8 +3,8 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/2f/b5/6423d77ce994f1d6f5bd2e4105cd3429a281203b322abc96f423245c1f7c/sqlfluff-2.3.1.tar.gz"
-  sha256 "52b872acf3a6bbab240415ce797722bf6eeab83361f2755acc465e393f6efde8"
+  url "https://files.pythonhosted.org/packages/33/f8/c42fc747dd37b95c50408d1ba9c62aab09c3cc30ba4542cf9be25378ec7c/sqlfluff-2.3.2.tar.gz"
+  sha256 "3403ce7e9133766d7336b7e26638657ec6cc9e5610e35186b7f02cc427dd49b7"
   license "MIT"
 
   bottle do
@@ -78,8 +78,8 @@ class Sqlfluff < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a7/f3/dadfbdbf6b6c8b5bd02adb1e08bc9fbb45ba51c68b0893fa536378cdf485/pytest-7.4.0.tar.gz"
-    sha256 "b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"
+    url "https://files.pythonhosted.org/packages/e5/d0/18209bb95db8ee693a9a04fe056ab0663c6d6b1baf67dd50819dd9cd4bd7/pytest-7.4.2.tar.gz"
+    sha256 "a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"
   end
 
   resource "regex" do
