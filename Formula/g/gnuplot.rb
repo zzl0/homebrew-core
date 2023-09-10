@@ -11,13 +11,13 @@ class Gnuplot < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d40df5c11e7f90b5ef3c489dff54bf405cf9125cda3de61f8fc24d0b3fcafd05"
-    sha256 arm64_monterey: "2b0b0ae3446b80af02452bb2ff1f2a787c41ac3627bd7499bbb96ce35bac62ae"
-    sha256 arm64_big_sur:  "52ed9426cb08b1bf9140ba75dcd6ef7b398fcf00c8f7246f1c93868f7b6570ab"
-    sha256 ventura:        "3bea5e9917bda062beed8195e92bf1a4a723d344a522d1d1cd028e393e65d797"
-    sha256 monterey:       "d416ea34c5dced922f6044f8d7ad0e273de282cd50182292f404bb0e5ff00d0f"
-    sha256 big_sur:        "7d3ec01a6fc4c7ead43f764f26153a7c4346a84fecb87e4c015ac661074fdc2e"
-    sha256 x86_64_linux:   "8a135d55cfe11b50e512cdad44b0a4be38bafa39d13f5828027fee46057cc032"
+    sha256 arm64_ventura:  "a9969d9124b0a9ac3c3bc5a5f19e215bc3757a34e142beb888f76cd631441f66"
+    sha256 arm64_monterey: "23519be29392ea57db23622bd5ed5cfc413c7a653bd3fd8b87f31489db326d2a"
+    sha256 arm64_big_sur:  "895fe52a242f77ee6cb9e241980f803fe35d20318bb1fa6d4628a8c9e234d288"
+    sha256 ventura:        "dce9d5e1c207f5742c204324b9a6cb97aff7f474ffa7725da510c7c82f7970e0"
+    sha256 monterey:       "70543600a2b405793486fa519819fc8872edad5a12f0a4886e3b1d3a97ef5f02"
+    sha256 big_sur:        "ae3a916cbce4f6b4fd55c694c147cba837be988ef9a1a4bb0f6d17683bceaa21"
+    sha256 x86_64_linux:   "90328aa900398f630f6ef936f94c4c2298c3140d3146573fbca25da28813b119"
   end
 
   head do
