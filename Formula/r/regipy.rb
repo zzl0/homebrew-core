@@ -9,13 +9,14 @@ class Regipy < Formula
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1b052bd53472b1147ac579e177aed6e33928509a493840a142baf2ad0542fec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac231a88e8a51997fbf43eae246f1b304523f701ed31ac0e7d1e4adfeb83db23"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c04755aff613cc591a95327b562b1cca802cc6ed270e348bf6ae7708bce8006c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f5be65d31a8260064599211abff2f1140d9b84d586d25d9ed0151ff417a3302"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b2c6d2893f7d082bf580c92de1194f5bd74389b00a40ecd3e9f317fdea22be0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e1fd84bce3ba58d93cd13c60b3ddd9e9b43c3990fe1596b37cc3ca57aa0ba37f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98a2138104bcf2fd926b940d9dd11b430df67ece72b71eb07ff79ab61decd492"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52230b24a98fee373f2ac1c31a2201305805fd9ea42753c0662066d4f2e8d950"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52ef445e8ede15b5290cb3b666375b45bf460042569799491732359c9fc88f01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "742f3e46a6323c2e26f01195d72a17f15a9f4b1461c8c710e9f2d8155cc85c3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "36c82ae06f653cc2bca956a7b658f864ce1055cc7130b10ac3f80cdb3a7d8999"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7386b0e830d654eec78f9d921ee05b53684d2f45411d32b63da5fd75bf2f91b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3e09699a9518bf88789d87cef68c49b035eccea88411124623aa245db79a8bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80b37ae8e56b2fac41fa904ef956035fcd881fdea7386604561ce57824b2dfce"
   end
 
   depends_on "python-pytz"
