@@ -17,6 +17,7 @@ class Csvkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "180194a1809964c842e8e8be14a5e9c7c77d1bb3a3d154ec26333a581f09e519"
   end
 
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -93,11 +94,6 @@ class Csvkit < Formula
   resource "pytimeparse" do
     url "https://files.pythonhosted.org/packages/37/5d/231f5f33c81e09682708fb323f9e4041408d8223e2f0fb9742843328778f/pytimeparse-1.1.8.tar.gz"
     sha256 "e86136477be924d7e670646a98561957e8ca7308d44841e21f5ddea757556a0a"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
-    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
   end
 
   resource "SQLAlchemy" do
