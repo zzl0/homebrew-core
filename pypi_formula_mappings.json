@@ -200,7 +200,7 @@
     "exclude_packages": ["certifi", "cffi", "markdown", "pycparser", "PyYAML", "six", "tabulate", "typing-extensions"]
   },
   "cloudiscovery": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "pytz"]
   },
   "conan": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"],
