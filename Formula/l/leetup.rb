@@ -1,8 +1,8 @@
 class Leetup < Formula
   desc "Command-line tool to solve Leetcode problems"
   homepage "https://github.com/dragfire/leetup"
-  url "https://github.com/dragfire/leetup/archive/v1.2.3.tar.gz"
-  sha256 "b3f57dd96d2b823afe99e5c990ee09e90e19627dce722aa9407f23b516e7342d"
+  url "https://github.com/dragfire/leetup/archive/v1.2.4.tar.gz"
+  sha256 "cc5bc54eadff45bec29eb056f8882dbf9bb506837273f17b7a609754eba418b1"
   license "MIT"
   head "https://github.com/dragfire/leetup.git", branch: "master"
 
