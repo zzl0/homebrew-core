@@ -1,23 +1,11 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/llvm-project-17.0.1.src.tar.xz"
+  sha256 "b0e42aafc01ece2ca2b42e3526f54bebc4b1f1dc8de6e34f46a0446a13e882b9"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
-
-  # Remove stable block when patch is no longer needed.
-  stable do
-    # TODO: Remove `six` dependency and `LLDB_USE_SYSTEM_SIX` at next release.
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz"
-    sha256 "ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e"
-
-    # Fixes https://github.com/mesonbuild/meson/issues/11642
-    # Remove at next release.
-    patch do
-      url "https://github.com/llvm/llvm-project/commit/ab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
-      sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
-    end
-  end
 
   livecheck do
     url :stable
@@ -42,12 +30,10 @@ class Llvm < Formula
   keg_only :provided_by_macos
 
   # https://llvm.org/docs/GettingStarted.html#requirement
-  # We intentionally use Make instead of Ninja.
-  # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "swig" => :build
   depends_on "python@3.11"
-  depends_on "six" # TODO: Remove at next release.
   depends_on "z3"
   depends_on "zstd"
 
@@ -132,7 +118,6 @@ class Llvm < Formula
       -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_LUA=OFF
       -DLLDB_ENABLE_LZMA=ON
-      -DLLDB_USE_SYSTEM_SIX=ON
       -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}
@@ -205,8 +190,6 @@ class Llvm < Formula
 
     # Skip the PGO build on HEAD installs or non-bottle source builds
     # Catalina and earlier requires too many hacks to build with PGO.
-    # FIXME: The Linux build appears to have a parallelisation issue,
-    #        so avoid a painfully slow serial build until that's resolved.
     pgo_build = build.stable? && build.bottle? && (MacOS.version > :catalina)
     lto_build = pgo_build && OS.mac?
 
@@ -245,7 +228,7 @@ class Llvm < Formula
 
       # Our stage1 compiler includes the minimum necessary to bootstrap.
       # `llvm-profdata` is needed for profile data pre-processing, and
-      # `compiler-rt` to consumer profile data.
+      # `compiler-rt` to consume profile data.
       stage1_targets = ["clang", "llvm-profdata", "compiler-rt"]
       stage1_targets += if OS.mac?
         extra_args << "-DLLVM_ENABLE_LIBCXX=ON"
@@ -276,7 +259,7 @@ class Llvm < Formula
       # to avoid incompatibilities from generating profile data with a newer Clang than
       # the one we consume the data with.
       mkdir llvmpath/"stage1" do
-        system "cmake", "-G", "Unix Makefiles", "..", *extra_args, *std_cmake_args
+        system "cmake", "-G", "Ninja", "..", *extra_args, *std_cmake_args
         system "cmake", "--build", ".", "--target", *stage1_targets
       end
 
@@ -327,7 +310,7 @@ class Llvm < Formula
         instrumented_cxxflags = cxxflags + %w[-Xclang -mllvm -Xclang -vp-counters-per-site=6]
         instrumented_extra_args = extra_args.reject { |s| s[/CMAKE_C(XX)?_FLAGS/] }
 
-        system "cmake", "-G", "Unix Makefiles", "..",
+        system "cmake", "-G", "Ninja", "..",
                         "-DCMAKE_C_COMPILER=#{llvmpath}/stage1/bin/clang",
                         "-DCMAKE_CXX_COMPILER=#{llvmpath}/stage1/bin/clang++",
                         "-DLLVM_BUILD_INSTRUMENTED=IR",
@@ -348,7 +331,7 @@ class Llvm < Formula
 
       # Then, generate the profile data
       mkdir llvmpath/"stage2-profdata" do
-        system "cmake", "-G", "Unix Makefiles", "..",
+        system "cmake", "-G", "Ninja", "..",
                         "-DCMAKE_C_COMPILER=#{llvmpath}/stage2/bin/clang",
                         "-DCMAKE_CXX_COMPILER=#{llvmpath}/stage2/bin/clang++",
                         "-DLLVM_BUILD_RUNTIMES=OFF",
@@ -385,19 +368,17 @@ class Llvm < Formula
 
     # Now, we can build.
     mkdir llvmpath/"build" do
-      system "cmake", "-G", "Unix Makefiles", "..", *(std_cmake_args + args)
-      # Linux fails with:
-      # No rule to make target '#{buildpath}/llvm/build/lib/libunwind.so'
-      ENV.deparallelize if OS.linux?
+      system "cmake", "-G", "Ninja", "..", *(std_cmake_args + args)
       system "cmake", "--build", "."
       system "cmake", "--build", ".", "--target", "install"
     end
 
     if OS.mac?
-      # Get the version from `llvm-config` to get the correct HEAD version too.
-      llvm_version = Version.new(Utils.safe_popen_read(bin/"llvm-config", "--version").strip)
-      soversion = llvm_version.major.to_s
-      soversion << "git" if build.head?
+      # Get the version from `llvm-config` to get the correct HEAD or RC version too.
+      llvm_version = Utils.safe_popen_read(bin/"llvm-config", "--version").strip
+      soversion = Version.new(llvm_version).major.to_s
+      soversion << "git" if llvm_version.end_with?("git")
+      soversion << "rc" if llvm_version.end_with?("rc")
 
       # Install versioned symlink, or else `llvm-config` doesn't work properly
       lib.install_symlink "libLLVM.dylib" => "libLLVM-#{soversion}.dylib"
@@ -456,11 +437,18 @@ class Llvm < Formula
   end
 
   test do
-    llvm_version = Version.new(Utils.safe_popen_read(bin/"llvm-config", "--version").strip)
-    soversion = llvm_version.major.to_s
-    soversion << "git" if head?
+    llvm_version = Utils.safe_popen_read(bin/"llvm-config", "--version").strip
+    llvm_version_major = Version.new(llvm_version).major.to_s
+    soversion = llvm_version_major.dup
 
-    assert_equal version, llvm_version unless head?
+    if llvm_version.end_with?("git")
+      soversion << "git"
+    elsif llvm_version.end_with?("rc")
+      soversion << "rc"
+    else
+      assert_equal version, llvm_version
+    end
+
     assert_equal prefix.to_s, shell_output("#{bin}/llvm-config --prefix").chomp
     assert_equal "-lLLVM-#{soversion}", shell_output("#{bin}/llvm-config --libs").chomp
     assert_equal (lib/shared_library("libLLVM-#{soversion}")).to_s,
@@ -480,7 +468,7 @@ class Llvm < Formula
     EOS
 
     system "#{bin}/clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
-                           "-I#{lib}/clang/#{llvm_version.major}/include",
+                           "-I#{lib}/clang/#{llvm_version_major}/include",
                            "omptest.c", "-o", "omptest"
     testresult = shell_output("./omptest")
 
@@ -694,7 +682,7 @@ class Llvm < Formula
     # Check that lldb can use Python
     lldb_script_interpreter_info = JSON.parse(shell_output("#{bin}/lldb --print-script-interpreter-info"))
     assert_equal "python", lldb_script_interpreter_info["language"]
-    python_test_cmd = "import sys; print(sys.prefix)"
+    python_test_cmd = "import pathlib, sys; print(pathlib.Path(sys.prefix).resolve())"
     assert_match shell_output("#{python3} -c '#{python_test_cmd}'"),
                  pipe_output("#{bin}/lldb", <<~EOS)
                    script
