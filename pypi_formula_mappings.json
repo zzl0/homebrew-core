@@ -231,6 +231,10 @@
   "csvkit": {
     "exclude_packages": ["six"]
   },
+  "cyclonedx-python": {
+    "package_name": "cyclonedx-bom",
+    "exclude_packages": ["packaging", "toml"]
+  },
   "cycode": {
     "exclude_packages": ["certifi", "PyYAML", "six"]
   },
