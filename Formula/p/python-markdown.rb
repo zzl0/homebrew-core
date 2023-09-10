@@ -1,6 +1,4 @@
 class PythonMarkdown < Formula
-  include Language::Python::Virtualenv
-
   desc "Python implementation of Markdown"
   homepage "https://python-markdown.github.io"
   url "https://files.pythonhosted.org/packages/87/2a/62841f4fb1fef5fa015ded48d02401cd95643ca03b6760b29437b62a04a4/Markdown-3.4.4.tar.gz"
@@ -20,12 +18,18 @@ class PythonMarkdown < Formula
 
   depends_on "python@3.11"
 
+  def python3
+    which("python3.11")
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     (testpath/"test.md").write("# Hello World!")
     assert_equal "<h1>Hello World!</h1>", shell_output(bin/"markdown_py test.md").strip
+
+    system python3, "-c", "import markdown;"
   end
 end
