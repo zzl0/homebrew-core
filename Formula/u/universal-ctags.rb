@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https://github.com/universal-ctags/ctags"
-  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20230827.0.tar.gz"
-  version "p6.0.20230827.0"
-  sha256 "d7e05a91785c14200496d4fb5573084387f86c09c5b730c19d41681da5fab26b"
+  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20230910.0.tar.gz"
+  version "p6.0.20230910.0"
+  sha256 "4436ebdeefc6089380655ccc4ca1d97d9662478b7b0ce3269564ea46c65d18dd"
   license "GPL-2.0-only"
   head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
