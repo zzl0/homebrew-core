@@ -18,6 +18,7 @@ class Regipy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "98a2138104bcf2fd926b940d9dd11b430df67ece72b71eb07ff79ab61decd492"
   end
 
+  depends_on "python-pytz"
   depends_on "python-tabulate"
   depends_on "python@3.11"
 
@@ -39,11 +40,6 @@ class Regipy < Formula
   resource "inflection" do
     url "https://files.pythonhosted.org/packages/e1/7e/691d061b7329bc8d54edbf0ec22fbfb2afe61facb681f9aaa9bff7a27d04/inflection-0.5.1.tar.gz"
     sha256 "1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "test_hive" do

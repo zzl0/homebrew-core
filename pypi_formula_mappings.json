@@ -732,7 +732,7 @@
   },
   "regipy": {
     "package_name": "regipy[cli]",
-    "exclude_packages": ["tabulate"]
+    "exclude_packages": ["tabulate", "pytz"]
   },
   "remarshal": {
     "exclude_packages": ["six", "PyYAML"]
