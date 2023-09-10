@@ -12,7 +12,7 @@ class NodeBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "48a40e7e00e2c584d4f6a83e214b8288220594f01519db8233ca9988974f70fb"
+    sha256 cellar: :any_skip_relocation, all: "2f2fbad0df17f05aae7158d87356baea18c5cd0ce406ca83a96175ea0a366f10"
   end
 
   depends_on "autoconf"
