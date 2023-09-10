@@ -11,17 +11,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0fd7eba37d5517c35a6088c4320513fbe96de81f592a19a7f2d54ff617317b22"
-    sha256 arm64_monterey: "83b505efb37df36fe0dba40337409835856293328b2977f28d0ef8868e1d250e"
-    sha256 arm64_big_sur:  "59dd4798a6017b6062614f70004c87feb3bbf7aecb9ac2165b5b6f92353c6361"
-    sha256 ventura:        "e1acd1fa4297e992242864af7d3406bb7ef7b66e1035fbcf3ba66f1bc031f8e8"
-    sha256 monterey:       "af63eb9a8b2ba6a183ef1bafc61cc7a527ee1d4088e073095d625051f7ca4c79"
-    sha256 big_sur:        "d0ef5bb1b837ab3ebebc3737361bd65f739d9592f8e0b139a7786a19df8108c9"
-    sha256 catalina:       "07ede29c16dec01d6eb8dd2dca6f79ec993f99298b38a78276f6257ebfb71c6a"
-    sha256 mojave:         "abc09195b6abf66d1d638af2999abe712a41cdcbb4bbf8d7ea422443150ae637"
-    sha256 high_sierra:    "33c72d86bb5a56ff4a2c9607707edb31f7af21bf863c8d34d95f6c527d9ee483"
-    sha256 sierra:         "2369c4233bafe95aeea87f678cc5e0f0b001d36b5aeff6a7b6512f766d77eb5e"
-    sha256 x86_64_linux:   "57dcb7565015413f1fb668f18b03af564e8b631b47e051c6b98dfb57d1530fa0"
+    sha256 arm64_ventura:  "d3c3b5581d03ec4e98be3493fdf6e612eacfa8de6e9d6621ddababd45f6e1649"
+    sha256 arm64_monterey: "99bd64c40550a77d46b94f80702b5ea4a23d06d602b851ce2912f306ed746aed"
+    sha256 arm64_big_sur:  "8b8309305bc3752ea58f7e46d4145c70518f11bd8e269708cb1cc7ef97fa914f"
+    sha256 ventura:        "f9a8bc67b44b0a383edb9f19c9eee72d69ac19f3444b54f646edfa0c4b9abfdf"
+    sha256 monterey:       "e4c3c34888fb08c99f3d45e71858641e50ba56b55596fdb69f18e680afd4546d"
+    sha256 big_sur:        "a725b773d836fd29b3ac590060037360f9851ad4464a225bf369158621b00247"
+    sha256 x86_64_linux:   "1e535f44961165f3c6df2aaf5f8867b06511d4820cc100611170d9ac58ec4ac3"
   end
 
   head do
