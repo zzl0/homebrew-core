@@ -344,7 +344,7 @@
     "extra_packages": ["Brotli"]
   },
   "ford": {
-    "exclude_packages": ["pygments"]
+    "exclude_packages": ["markdown", "markupsafe", "pygments"]
   },
   "fred": {
     "exclude_packages": ["certifi"]
@@ -391,7 +391,7 @@
     "exclude_packages": ["certifi"]
   },
   "grip": {
-    "exclude_packages": ["certifi", "Pygments"]
+    "exclude_packages": ["certifi", "markdown", "markupsafe", "Pygments"]
   },
   "grokmirror": {
     "exclude_packages": ["certifi"]
@@ -541,7 +541,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "protobuf", "pycparser"]
   },
   "mkdocs": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["markdown", "markupsafe", "six", "packaging", "PyYAML"]
   },
   "molecule": {
     "extra_packages": ["docker-py", "molecule-vagrant", "python-vagrant"],
