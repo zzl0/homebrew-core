@@ -1,8 +1,8 @@
 class Boolector < Formula
   desc "SMT solver for fixed-size bit-vectors"
   homepage "https://boolector.github.io/"
-  url "https://github.com/Boolector/boolector/archive/refs/tags/3.2.2.tar.gz"
-  sha256 "9a5bdbacf83f2dd81dbed1e1a9f923766807470afa29b73729c947ae769d42b9"
+  url "https://github.com/Boolector/boolector/archive/refs/tags/3.2.3.tar.gz"
+  sha256 "9862134d33cb3ed0aeb6be3c9b154a4d0a90fd076f46ef97cf872813109cc5d9"
   license "MIT"
 
   livecheck do
@@ -51,7 +51,11 @@ class Boolector < Formula
       (deps_dir/"include/btor2parser").install "src/btor2parser/btor2parser.h"
     end
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %W[
+      -DBtor2Tools_INCLUDE_DIR=#{deps_dir}/include/btor2parser
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
