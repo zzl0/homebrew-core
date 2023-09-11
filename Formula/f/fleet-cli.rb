@@ -2,8 +2,8 @@ class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://github.com/rancher/fleet"
   url "https://github.com/rancher/fleet.git",
-      tag:      "v0.7.1",
-      revision: "991b71316757bbec6a3737f3bf3cd80205218978"
+      tag:      "v0.8.0",
+      revision: "23e1c146755af159dafd3c88d4b92094772c99fc"
   license "Apache-2.0"
   head "https://github.com/rancher/fleet.git", branch: "master"
 
@@ -29,7 +29,7 @@ class FleetCli < Formula
       -X github.com/rancher/fleet/pkg/version.Version=#{version}
       -X github.com/rancher/fleet/pkg/version.GitCommit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(output: bin/"fleet", ldflags: ldflags)
+    system "go", "build", *std_go_args(output: bin/"fleet", ldflags: ldflags), "./cmd/fleetcli"
 
     generate_completions_from_executable(bin/"fleet", "completion", base_name: "fleet")
   end
