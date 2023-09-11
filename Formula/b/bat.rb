@@ -9,13 +9,14 @@ class Bat < Formula
   head "https://github.com/sharkdp/bat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8177a3ddab18619e77116cbfe59d4d2c03a6aaeba042601390a92d22aa08a46d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "276919443822ce3cc55843e43843b811cf8db79dcc879d287158753ec1cd4075"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8433bab46de75d78ea184a79662a74c8fa7cc087236fe5b29f1a48f5d06c94ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ff93e5f116859666cf9f147d90c06e0fe53b80d31370b20f0f123ae322f68fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "863269989acbd5d931811547313b6fd98f9acbaeb483cd254ecf418b9d19c4f2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28aba91680d3a12e54157f6ee7dda049198509a0a4bfdf14a44248a4a9597022"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "062b61c453c47e891a03cf9000b319d30f71988acd4b9cd8a083071d0f831028"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "715bd9459d6ad4d47292666ecd86ac44da11875f417701e84762d74040eb71ba"
+    sha256 cellar: :any,                 arm64_monterey: "d9cd7ef7a71c8a68a0684f4b09adf24d4df64ec4fbd70b39fe81a6d8c3cbf201"
+    sha256 cellar: :any,                 arm64_big_sur:  "b00b1ebb963536f84c3eeb36fcf8f243ddf0fec4488f41661bae074b9301b46f"
+    sha256 cellar: :any,                 ventura:        "8b9e019fbd1cdeb8aeff993fecc9ef411c9793e15bf86553dee983812d683de3"
+    sha256 cellar: :any,                 monterey:       "e60e9f641cf9f3f896fec2fd9585fe2459471b0a7f4149e64a91e49ada5886ba"
+    sha256 cellar: :any,                 big_sur:        "226c3f635e4b5a0f0acf1f5758dc6d9705b564af7c4593bd78f664387cfca6a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33a7bfc707c3fcc316912a68c4aa4e0f1a2417a5626e637316b20792d747aadc"
   end
 
   depends_on "pkg-config" => :build
