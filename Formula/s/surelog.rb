@@ -8,6 +8,16 @@ class Surelog < Formula
   license "Apache-2.0"
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "2815c9dc77e307fd8e074c359c9dcc9a8b73750da31c9a02c4ebc9decd19368d"
+    sha256 cellar: :any,                 arm64_monterey: "8cb72c3a4b6760a636992e26cdfa288905de25d295b00ff3bd6fede8d8cdcf2b"
+    sha256 cellar: :any,                 arm64_big_sur:  "bcb2b836d9e990ede654e6852e855a9f1cb481b5edda27b24bb16065a0bced94"
+    sha256 cellar: :any,                 ventura:        "6098ca48b2524e6aff517a9ae877d65417a8ea33e393b6590e883e4806c13ddc"
+    sha256 cellar: :any,                 monterey:       "a351929ab584d8bda2cc5d77fae50c597bcc9db68432203a3421f6d94fb6ef37"
+    sha256 cellar: :any,                 big_sur:        "4b45bdcd7d15ef0b4ad3af6092c5ba26fd389330efadf19a50a2e8b9b1ab1fa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "883735da2c198ca50c5b8adccd5d82eecd59aaae1da3f59a4cc164e473f08c7d"
+  end
+
   depends_on "antlr" => :build
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
