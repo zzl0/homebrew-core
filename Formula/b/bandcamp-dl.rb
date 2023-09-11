@@ -22,6 +22,7 @@ class BandcampDl < Formula
 
   depends_on "python-certifi"
   depends_on "python-lxml"
+  depends_on "python-mutagen"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -58,11 +59,6 @@ class BandcampDl < Formula
   resource "mock" do
     url "https://files.pythonhosted.org/packages/66/ab/41d09a46985ead5839d8be987acda54b5bb93f713b3969cc0be4f81c455b/mock-5.1.0.tar.gz"
     sha256 "5e96aad5ccda4718e0a229ed94b2024df75cc2d55575ba5762d31f5767b8767d"
-  end
-
-  resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/b1/54/d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9/mutagen-1.46.0.tar.gz"
-    sha256 "6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58"
   end
 
   resource "requests" do
