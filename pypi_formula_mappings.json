@@ -984,7 +984,7 @@
     "exclude_packages": ["certifi", "cffi", "pycparser"]
   },
   "yt-dlp": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "mutagen"]
   },
   "zabbix-cli": {
     "exclude_packages": ["certifi"]
