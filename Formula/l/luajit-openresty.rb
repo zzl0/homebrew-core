@@ -19,13 +19,13 @@ class LuajitOpenresty < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e534584c7c3b7eb3a137649e7e6801b98799a1d863466d8db8b09343134f2a9b"
-    sha256 cellar: :any,                 arm64_monterey: "2e11555a5d4d0be559d01145726d068c4125172532ac5f51bb849f761fe80650"
-    sha256 cellar: :any,                 arm64_big_sur:  "83badf175a69ce7883c267ab0307204358fa5c705f5e7a004ac8088afb69a15c"
-    sha256 cellar: :any,                 ventura:        "02a45febeb8a172ebba48830de9f9c80853efe1382c9723e51b13f40c85b3fc0"
-    sha256 cellar: :any,                 monterey:       "99fdd703af20ec78bd845c3d6bf6f47b8c150ec425985549e8cd6389afc26628"
-    sha256 cellar: :any,                 big_sur:        "c5ed3c1c9b13b347a14fcb35c053fab22a1cca47a382cc0aa323e6d357dd61dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3db66a26e9cbbce3acb24f279da334ebae69d6f319a3f93425aea13490a75c86"
+    sha256 cellar: :any,                 arm64_ventura:  "c1cf1893f73e17e35d32dd654a653b054ab342adc8541a7c1ce40c0eb3616d66"
+    sha256 cellar: :any,                 arm64_monterey: "722a0d4852476c3b1c829175325df6a3a25fb1944c6c189018945e1a6d20c73b"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ead2380ce5d009aa15b9413d4b7c7ee8b153be5c0940188c64e20e3f9415dd2"
+    sha256 cellar: :any,                 ventura:        "3ab4983b69821739f67695ad5733cbb087e4b34ebe368bc0b5f1586d05aa7386"
+    sha256 cellar: :any,                 monterey:       "557e13824af8c5963314e78f432c6ff802c2c490a849877caf2f0bb988a919fa"
+    sha256 cellar: :any,                 big_sur:        "fd43b09d15522ae7cbe24d5e621e62dee5d5745c6619eaa4f3bb5e1d046d0e48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8fbcafee63968330cb82eb32827463dd427424d4d7e6008e67491072c8ea95a"
   end
 
   keg_only "it conflicts with the LuaJIT formula"
