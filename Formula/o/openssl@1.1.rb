@@ -29,7 +29,7 @@ class OpensslAT11 < Formula
   keg_only :versioned_formula
 
   # See: https://www.openssl.org/policies/releasestrat.html
-  deprecate! date: "2023-09-11", because: :unsupported
+  deprecate! date: "2023-11-11", because: :unsupported
 
   depends_on "ca-certificates"
 
