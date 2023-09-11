@@ -8,13 +8,13 @@ class Zls < Formula
   head "https://github.com/zigtools/zls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57e41a00eacea3a15f363470b5a64f6da2a7002cd69692df83910cbeee3bbe0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f7686c0ea862ad5ab3ae4431dafadf9a28951bb7854e7e7c02c359d63caf0dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c75a6b48d33d6b129b020c0e227f6df7107dcbbf9a296d74f52397d8b2234836"
-    sha256 cellar: :any_skip_relocation, ventura:        "ba4279657dc4293a8261202ba7553a3f72254556e7b32b0c49586090f0ccb9af"
-    sha256 cellar: :any_skip_relocation, monterey:       "035e8403b2a33986d35251e49a1db2e18f1892bd1a3f029e069e44179537d5ca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8883d3da3be2111f3b1c569027d6454ac627891de95d3268303275f995473ff3"
-    sha256                               x86_64_linux:   "96c162fc09934028b9d3e2f10703e1f2f23c4ce8c9737b5e62fc4b54805f075e"
+    sha256 arm64_ventura:  "ed5d2f6503f42691ac89599e5cafc87e220c0b72f90b59108a3212faccbf5990"
+    sha256 arm64_monterey: "9119d879e10ebfe1de831340e2a4abb70d97c96e3af87f05b99e24b29db44bc4"
+    sha256 arm64_big_sur:  "706e23ca5c57b425e55109c98caababa09ac7ca8377554218a809f0d8fb122d2"
+    sha256 ventura:        "30505ce3201a97387aa696eaa2dcc6055a46ff8dd8ec96c26afc8723c932da76"
+    sha256 monterey:       "3f2555ad020179925949d6f972f0aed5f706f5eb8cfc4306a3b779e6b07eff03"
+    sha256 big_sur:        "01e0af8de1a237b5a1cf702a3a011968e145193d17607ffbe656c28d956b2c8a"
+    sha256 x86_64_linux:   "d09a679d60dd36ed4e02b56af14628af478678ccf049885d0c2922cccc85d443"
   end
 
   depends_on "zig"
