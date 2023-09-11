@@ -1,10 +1,9 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/archive/2.0.0.1.tar.gz"
-  sha256 "58825b40fdbcffb8ad8690ec95c3ec82dfc5ba63cd19f2e50f1ea4dca10b2ea9"
+  url "https://github.com/haskell/haskell-language-server/archive/2.3.0.0.tar.gz"
+  sha256 "cb8248aacac0ad02cf3f9d9904c54cd5527c08e47b91cf032ace732d910198a4"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -26,8 +25,8 @@ class HaskellLanguageServer < Formula
 
   depends_on "cabal-install" => [:build, :test]
   depends_on "ghc" => [:build, :test]
-  depends_on "ghc@8.10" => [:build, :test]
   depends_on "ghc@9.2" => [:build, :test]
+  depends_on "ghc@9.4" => [:build, :test]
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
@@ -39,6 +38,8 @@ class HaskellLanguageServer < Formula
   end
 
   def install
+    # Fixes https://github.com/Homebrew/homebrew-core/pull/141617#issuecomment-1748282534
+    inreplace "cabal.project", "stm-hamt < 1.2.0.10,", ""
     system "cabal", "v2-update"
 
     ghcs.each do |ghc|
