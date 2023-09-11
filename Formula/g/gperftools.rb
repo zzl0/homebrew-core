@@ -1,12 +1,9 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https://github.com/gperftools/gperftools"
+  url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.13/gperftools-2.13.tar.gz"
+  sha256 "4882c5ece69f8691e51ffd6486df7d79dbf43b0c909d84d3c0883e30d27323e7"
   license "BSD-3-Clause"
-
-  stable do
-    url "https://github.com/gperftools/gperftools/releases/download/gperftools-2.12/gperftools-2.12.tar.gz"
-    sha256 "fb611b56871a3d9c92ab0cc41f9c807e8dfa81a54a4a9de7f30e838756b5c7c6"
-  end
 
   livecheck do
     url :stable
@@ -43,7 +40,7 @@ class Gperftools < Formula
   def install
     ENV.append_to_cflags "-D_XOPEN_SOURCE" if OS.mac?
 
-    system "autoreconf", "-fiv" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     args = [
       "--disable-dependency-tracking",
