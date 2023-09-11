@@ -2,8 +2,8 @@ class Zls < Formula
   desc "Language Server for Zig"
   homepage "https://github.com/zigtools/zls"
   url "https://github.com/zigtools/zls.git",
-      tag:      "0.10.0",
-      revision: "7ef224467ab2f3179058981740e942977892e7b9"
+      tag:      "0.11.0",
+      revision: "5bfff2a4b9ee01a7bab5fc26fad6e174f289c28d"
   license "MIT"
   head "https://github.com/zigtools/zls.git", branch: "master"
 
@@ -27,7 +27,7 @@ class Zls < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[--prefix #{prefix} -Drelease-fast=true]
+    args = %W[--prefix #{prefix} -Doptimize=ReleaseFast]
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     system "zig", "build", *args
@@ -54,7 +54,7 @@ class Zls < Formula
     JSON
 
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}/zls --config-path #{testpath}", input, 0)
+    output = pipe_output("#{bin}/zls --config-path #{test_config}", input, 1)
     assert_match(/^Content-Length: \d+/i, output)
 
     assert_match version.to_s, shell_output("#{bin}/zls --version")
