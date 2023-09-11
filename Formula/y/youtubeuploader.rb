@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https://github.com/porjo/youtubeuploader"
-  url "https://github.com/porjo/youtubeuploader/archive/refs/tags/23.03.tar.gz"
-  sha256 "5cf1e4a410b92e920be7802ea2de59882395d529029fae2144bb72ed78aaca91"
+  url "https://github.com/porjo/youtubeuploader/archive/refs/tags/23.04.tar.gz"
+  sha256 "e9c0e6fbcbacbeed8da144bdd4ffddda17af3920ad926a18335751a2381800d7"
   license "Apache-2.0"
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
