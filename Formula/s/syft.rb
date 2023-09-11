@@ -1,8 +1,8 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://github.com/anchore/syft/archive/refs/tags/v0.89.0.tar.gz"
-  sha256 "e8b4bf1481f3101adb2881f35f95528cceb58470f1c568c7c05c2864031dfdaa"
+  url "https://github.com/anchore/syft/archive/refs/tags/v0.90.0.tar.gz"
+  sha256 "50b5e499948d06905e4e188d4189d4520aa0e28d7470c9a459a12b26af28caf9"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
@@ -17,12 +17,6 @@ class Syft < Formula
   end
 
   depends_on "go" => :build
-
-  # patch to build with go1.21, upstream PR, https://github.com/anchore/syft/pull/2067
-  patch do
-    url "https://github.com/anchore/syft/commit/aef33a0effe14830347867f24ab18aaac2d679a8.patch?full_index=1"
-    sha256 "c78f11977678e324b550dddd0e1b3a18051cc015c4156792c72553b3c6ff14d0"
-  end
 
   def install
     ldflags = %W[
