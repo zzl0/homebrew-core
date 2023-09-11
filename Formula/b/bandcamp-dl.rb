@@ -10,14 +10,14 @@ class BandcampDl < Formula
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a25bb6e7b509c689214bbb76a3b1d65749a175227e76d909650e3a6bc9c5a4fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b08597bc816d5bf8000d41b78d134cd87a44faa538205109c347526300de5312"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "958a773139a146f7b203da5cdb16877b8ee391e82829e2db1fc34812b0906cc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "b21dae6509ee5d8aadbbf6246e1614783058ac48551b4ba87fc5be5f325983aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "32b19551b72383f9929e5704584495b08e6838e8ccffbb3ce0a21aa0325b0f7f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "43fbf2f3567ceb55c051208e9873b920b19872d4296c33295750559fcd74b0a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7032b7b27f79a6c064d955ac5e5164790342ea06280c37a20b3cbdd13565dbfe"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bfca2bc474dd918d164b7778384d1396eb25eda1212318c4b16108b40172b00"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e89544228cec16160da75506b77650136c052dc98b88a5f087c1b9baeb6b90df"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1dd0ab56e61066a38893ea57cc5909afabe06df93a5fc123a5dab05135973da"
+    sha256 cellar: :any_skip_relocation, ventura:        "1c960807100c592ed10a4e29a7949c979c83e6010f4ff24975f2c60f6ac6ed7d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f11bfd55e7a20eced7eaab59ce462baa13306d97ac43521213334c115935537e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "edf1c27f8ca55f14d55136dd31c9d9ca73c355c5567b6fe9b07a19b54ade2973"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ee9332fae15b90363e5f6186b9e0dfc7b4072ab43ec3b0301da5577f10eee4c"
   end
 
   depends_on "python-certifi"
