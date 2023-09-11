@@ -31,13 +31,13 @@ class Fwupd < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
+  depends_on "libarchive"
   depends_on "libcbor"
   depends_on "libgusb"
   depends_on "libjcat"
   depends_on "libxmlb"
   depends_on "protobuf-c"
   uses_from_macos "curl"
-  uses_from_macos "libarchive"
   uses_from_macos "sqlite"
 
   resource "jinja2" do
@@ -56,6 +56,7 @@ class Fwupd < Formula
 
     system "meson", "setup", "build",
                     "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
+                    "-Dlibarchive=enabled", # fail if missing
                     "-Dpython=#{venv_root}/bin/python",
                     "-Dsupported_build=enabled",
                     "-Dplugin_dell=disabled",
