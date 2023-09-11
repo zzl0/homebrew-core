@@ -3,10 +3,9 @@ class CargoRelease < Formula
   homepage "https://github.com/crate-ci/cargo-release"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.24.11.tar.gz"
-  sha256 "cbbc04f7faadd2202b36401f3ffafc8836fb176062d428d2af195c02a2f9bd58"
+  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.24.12.tar.gz"
+  sha256 "2b0e88b1ce96a95a97c4b136a6084d81916bb68de49bac70dd2d48e299bac654"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
