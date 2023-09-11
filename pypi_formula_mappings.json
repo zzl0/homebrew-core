@@ -58,6 +58,9 @@
       "ansible-core", "black", "certifi", "pygments", "pyyaml", "yamllint"
     ]
   },
+  "apprise": {
+    "exclude_packages": ["certifi", "markdown", "PyYAML"]
+  },
   "arjun": {
     "exclude_packages": ["certifi"]
   },
