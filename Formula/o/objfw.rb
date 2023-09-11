@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
   homepage "https://objfw.nil.im/"
-  url "https://objfw.nil.im/downloads/objfw-1.0.1.tar.gz"
-  sha256 "953fd8a7819fdbfa3b3092b06ac7f43a74bac736c120a40f2e3724f218d215f1"
+  url "https://objfw.nil.im/downloads/objfw-1.0.2.tar.gz"
+  sha256 "b680be08bfade376d17958f3ceadaf223ac5d08df71a4bd787a42640a86db7cb"
   license any_of: ["QPL-1.0", "GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -51,15 +51,16 @@ end
 
 __END__
 diff --git a/build-aux/m4/buildsys.m4 b/build-aux/m4/buildsys.m4
-index b4f03a72..5ca65cb2 100644
+index 3ec1cc5c..c0c31cac 100644
 --- a/build-aux/m4/buildsys.m4
 +++ b/build-aux/m4/buildsys.m4
 @@ -323,7 +323,7 @@ AC_DEFUN([BUILDSYS_FRAMEWORK], [
+ 		AS_IF([test x"$host_is_ios" = x"yes"], [
  			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/Frameworks/$$out/$${out%.framework}'
  		], [
- 			FRAMEWORK_LDFLAGS='-dynamiclib -current_version ${LIB_MAJOR}.${LIB_MINOR} -compatibility_version ${LIB_MAJOR}'
 -			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/../Frameworks/$$out/$${out%.framework}'
 +			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,${prefix}/Library/Frameworks/$$out/$${out%.framework}'
  		])
  
  		AC_SUBST(FRAMEWORK_LDFLAGS)
+
