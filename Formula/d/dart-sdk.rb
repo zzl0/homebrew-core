@@ -1,8 +1,8 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.1.0.tar.gz"
-  sha256 "ab104a71e4f50bf152c8afce738ad12ea6ed882d5b9ed17122ff9763b2c98cff"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.1.1.tar.gz"
+  sha256 "85a376e98a22cd8ebccbb9f0e9289582800d59f8a41eeb6c282dabf03340c646"
   license "BSD-3-Clause"
 
   bottle do
@@ -24,14 +24,18 @@ class DartSdk < Formula
 
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "1c4052d88ac510a3db4351e52c088cac524c726c"
+        revision: "8babcb7e2ec9ffe4e0394a66378423242dd66e6c"
   end
 
   def install
     resource("depot-tools").stage(buildpath/"depot-tools")
 
+    ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", "#{buildpath}/depot-tools"
-    system "fetch", "--no-history", "dart"
+
+    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    system "gclient", "sync", "--no-history"
+
     chdir "sdk" do
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
       system "./tools/build.py", "--no-goma", "--mode=release", "--arch=#{arch}", "create_sdk"
