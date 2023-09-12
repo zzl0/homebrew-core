@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://github.com/bloomberg/bde/archive/3.117.0.0.tar.gz"
-  sha256 "7dcea8f13105df27f2207fc80e271f97314e763ee573ad936f9b8d7f076b57bb"
+  url "https://github.com/bloomberg/bde/archive/3.123.0.0.tar.gz"
+  sha256 "17254dc8bedd081e18c118881df13bffe42b6175836f998e87cc27ea0c4d8949"
   license "Apache-2.0"
 
   livecheck do
@@ -26,8 +26,8 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https://github.com/bloomberg/bde-tools/archive/3.117.0.0.tar.gz"
-    sha256 "9f92f4c2cf1fc96d483743a367ed42f929dc0f41a6c0a8a8b7f72099bd52f28b"
+    url "https://github.com/bloomberg/bde-tools/archive/3.123.0.0.tar.gz"
+    sha256 "9dac9d89e8485595a92db9d5464d5f54e487879382cd8dd708e20f5d022ca531"
   end
 
   def install
@@ -58,6 +58,8 @@ class Bde < Formula
   end
 
   test do
+    assert_equal version, resource("bde-tools").version, "`bde-tools` resource needs updating!"
+
     # bde tests are incredibly performance intensive
     # test below does a simple sanity check for linking against bsl.
     (testpath/"test.cpp").write <<~EOS
