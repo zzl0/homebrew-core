@@ -154,6 +154,9 @@
   "cffi": {
     "exclude_packages": ["pycparser"]
   },
+  "checkdmarc": {
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser"]
+  },
   "coconut": {
     "exclude_packages": ["Pygments", "typing-extensions"]
   },
