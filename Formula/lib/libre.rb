@@ -6,13 +6,13 @@ class Libre < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9a4da52a62a88fb485fb17c7833c64becf7a6b06700e5a1f2bc2fba95ceb2712"
-    sha256 cellar: :any,                 arm64_monterey: "a419f1dcee9d25d6fee1a456a6a9f14a380a1750204fd810710eda9479465cb8"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5622e30523d8189b2f73c9ba4b51207c2ce689119ca5b507b9a64c5c1dcd409"
-    sha256 cellar: :any,                 ventura:        "4e3e663815b96b920e58ee5a21a40603d55e6501e2f7fa715a1adcd0417d37ac"
-    sha256 cellar: :any,                 monterey:       "dfb1e6083d667149a739728f38e0e9393364805fa33390cc744497c26f6b5978"
-    sha256 cellar: :any,                 big_sur:        "79f3eba2d9611a83da41d1cd4933d4e1638c4f8a48b4c6a23cb1360c5fc9c030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44c833ef100a0ca56d9e9dc613bc9d5e42fc514f2fc909bc94649517442d0b92"
+    sha256 cellar: :any,                 arm64_ventura:  "1342ebd62049107fa5c78740d0ddde34637e9280dd47ca21056fe49911a106d7"
+    sha256 cellar: :any,                 arm64_monterey: "458540a7e59627348817c9eef0460a1bcb50a8cfc6399f1df81b3cb963e08eee"
+    sha256 cellar: :any,                 arm64_big_sur:  "d4818ab3c1caab097289484e72e9ae1cc39a597aa82ab889e080b5180cc25536"
+    sha256 cellar: :any,                 ventura:        "8f666b83be92cac42a5a6d578c4ce812849d698aaf16a178ff98ae9970b2e83d"
+    sha256 cellar: :any,                 monterey:       "42bba09cfcb6920dea7ec71b37f5b490480d39cb937b5d60926670d59ecc3049"
+    sha256 cellar: :any,                 big_sur:        "5a0b7e0a6c10ef37c0bbf3087052943ac623f7d76a39df1a44fb0d719ada6432"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f29d5f352c2d0c456b417cb2f716ad0144ec09532965d6270deceab58f77dc"
   end
 
   depends_on "cmake" => :build
