@@ -6,6 +6,16 @@ class Gotestwaf < Formula
   license "MIT"
   head "https://github.com/wallarm/gotestwaf.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a61479a2941132c45e27793db1ad58ef336c412f9c0369a22c2802edce4351f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98e850ab7f725bf1ac7f4b3b0c72de691361fb53e24d942f16019312ae03c07e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b93586c4d52fefa208d841da07c4ebbf71482912489600dad9d56a9b4bbee37"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf118301e24e3cc231f82c44238222007c056a6db10377136626eb82e65a7d9d"
+    sha256 cellar: :any_skip_relocation, monterey:       "df6744c768034bb2d99804bbc8129cf63a1040995b73b17183e37b2181034bc9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4c46d921e2c4885400afe8b456ae198e5811c4dfcd6d5fc55a61f4cb5e2c6eed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d037638b4f0f687b8d0f8fd5c5ea34e2496490f4d42db5ec2617cbcd774afb99"
+  end
+
   depends_on "go" => :build
 
   def install
