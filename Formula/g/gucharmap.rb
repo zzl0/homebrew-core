@@ -1,8 +1,8 @@
 class Gucharmap < Formula
   desc "GNOME Character Map, based on the Unicode Character Database"
   homepage "https://wiki.gnome.org/Apps/Gucharmap"
-  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.0.4/gucharmap-15.0.4.tar.bz2"
-  sha256 "ddd219ffd22ff72ae9c938d7bd0192a3d63b04bc570ee8214790298418b02078"
+  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.1.0/gucharmap-15.1.0.tar.bz2"
+  sha256 "8d9b4a5fb2179dcd483490a4fca567aec23b9ee96d0bc39b3fe73a3152feab00"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -30,13 +30,13 @@ class Gucharmap < Formula
   end
 
   resource "ucd" do
-    url "https://www.unicode.org/Public/15.0.0/ucd/UCD.zip"
-    sha256 "5fbde400f3e687d25cc9b0a8d30d7619e76cb2f4c3e85ba9df8ec1312cb6718c"
+    url "https://www.unicode.org/Public/15.1.0/ucd/UCD.zip"
+    sha256 "cb1c663d053926500cd501229736045752713a066bd75802098598b7a7056177"
   end
 
   resource "unihan" do
-    url "https://www.unicode.org/Public/15.0.0/ucd/Unihan.zip", using: :nounzip
-    sha256 "24b154691fc97cb44267b925d62064297086b3f896b57a8181c7b6d42702a026"
+    url "https://www.unicode.org/Public/15.1.0/ucd/Unihan.zip", using: :nounzip
+    sha256 "a0226610e324bcf784ac380e11f4cbf533ee1e6b3d028b0991bf8c0dc3f85853"
   end
 
   def install
