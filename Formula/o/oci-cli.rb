@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/e1/18/9248a5a9d397dc63cde3248c7eda1cf6fcc4da04e61f221b83ad5c862eaf/oci-cli-3.33.0.tar.gz"
-  sha256 "f2eb1042a9fae425e3047bd25d32c3881e34bb0f7480d74dc6e7bd2f3fd20c7e"
+  url "https://files.pythonhosted.org/packages/32/f3/dde15b042e153769434a58f426b58975ad8ec284e63a6787bcad24672511/oci-cli-3.33.1.tar.gz"
+  sha256 "95c0f1231d3205b86fa4404bc59b4cd103696f2ab272ee1901520d79fdcf85af"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -21,6 +21,7 @@ class OciCli < Formula
 
   depends_on "cffi"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-pytz"
   depends_on "python@3.11"
@@ -37,19 +38,14 @@ class OciCli < Formula
     sha256 "80b7bda803d9a20e568453eb26f3530cd9bf602d6414f6ff6a74c611603396d2"
   end
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
-    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
-  end
-
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
     sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/4f/13/b6de155bd0f59620470d7b35c609f461ff50b2ed6b58e067247c4ae3806b/oci-2.112.0.tar.gz"
-    sha256 "ebea8141dce7ff209db51d81cae5dca5128a4ac57adae5cd677e16494997aa05"
+    url "https://files.pythonhosted.org/packages/36/8f/09ee38a0c2c76c167872a571c382ec20c085c8bb9c40fc5be043155352ba/oci-2.112.1.tar.gz"
+    sha256 "7721a03a843eb5a807e869ca067d121598d9c9170f9565b84790309a8778041b"
   end
 
   resource "prompt-toolkit" do
