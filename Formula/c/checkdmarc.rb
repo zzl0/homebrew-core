@@ -8,6 +8,16 @@ class Checkdmarc < Formula
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8388de3d57a79fc6e661e5dc304b0351cde20a0dda04cb265ec1f55483613275"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fcac4af44a5d893f21712f4c7de1fe0caec6f904955a33bd47202660614c6bea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6484761f998c4395a364db1f68529478e4d12afdc1d0dcffb7d9ac1d70e75185"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ce66e8a68dacce25ae15b5e2851897d793e279742aa8e62699746f85574a265"
+    sha256 cellar: :any_skip_relocation, monterey:       "93606155d96975ea016242d1f50830aefb9355453bc4bb6eb0202cbfec7e9bbd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9d281094380b572a6aa8607fa8a1202703cf8460104d1c9979fb0b70ca8b3cfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95159a0df50a7d3dcb0b2a349d21e2f9d50d32cc1efb64e64290b37bf08415b5"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
