@@ -15,13 +15,7 @@ class Jdtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, ventura:        "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, monterey:       "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f45e4ec39d771696280c31dd488a3e7b8f5f5776df32672541a0c87793e72c71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f868841a92203f21d389942ab1ae48aa1cb07c4306bc3f5447347784dd2ba19"
+    sha256 cellar: :any_skip_relocation, all: "8ed1f8479b401a90642e3935531f8623e0d6eb19ba6b1d8451aa2dcffb4fddfc"
   end
 
   depends_on "openjdk"
