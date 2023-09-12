@@ -1,9 +1,8 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://github.com/cert-manager/cert-manager.git",
-      tag:      "v1.12.4",
-      revision: "fe419511b51c162b59f8f431d7768cd7acc48678"
+  url "https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.12.4.tar.gz"
+  sha256 "c2dfbc4997c46a81a10d9ae8837fa20fc612abeffdd71bc938b7bd8874aa86d7"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cert-manager.git", branch: "master"
 
@@ -25,7 +24,7 @@ class Cmctl < Formula
       -X github.com/cert-manager/cert-manager/cmd/ctl/pkg/build.name=cmctl
       -X github.com/cert-manager/cert-manager/cmd/ctl/pkg/build/commands.registerCompletion=true
       -X github.com/cert-manager/cert-manager/pkg/util.AppVersion=v#{version}
-      -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{Utils.git_head}
+      -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{tap.user}
     ]
 
     cd "cmd/ctl" do
