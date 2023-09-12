@@ -12,7 +12,12 @@ class Naturaldocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, all: "567b95832d650915a5e845129d79a4cfdc0f0cab20870fad118425fd048e69db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46d41e17b53b336d1db203a705164e735af1db6021cc973d126de1091fb8ce0c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46d41e17b53b336d1db203a705164e735af1db6021cc973d126de1091fb8ce0c"
+    sha256 cellar: :any_skip_relocation, ventura:        "46d41e17b53b336d1db203a705164e735af1db6021cc973d126de1091fb8ce0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "46d41e17b53b336d1db203a705164e735af1db6021cc973d126de1091fb8ce0c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "46d41e17b53b336d1db203a705164e735af1db6021cc973d126de1091fb8ce0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44e058e2339a3d6113ac8564fa1b9557c1b93783f541a82a463d03b82f45fb8e"
   end
 
   depends_on "mono"
