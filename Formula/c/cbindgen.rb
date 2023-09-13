@@ -5,6 +5,14 @@ class Cbindgen < Formula
   sha256 "363ac6317a5788de8f2b0104a472a747883d4b9126fa119c681879509dbdbc28"
   license "MPL-2.0"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "52f6ca3f265b412a45ffcd347b0e83a75c9240d0b6c020e6d7d0f1ee5a885860"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e5625fbed66548ef4f47c8a8f8f5a9a49d595d17f4e003f2f21c5a7977d30b46"
