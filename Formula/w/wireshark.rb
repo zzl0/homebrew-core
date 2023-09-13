@@ -5,6 +5,7 @@ class Wireshark < Formula
   mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.1.0.tar.xz"
   sha256 "9a32ae59f0a843aefd8856c0d208fc464b93ce9415fb8da8723c550c840ab1d5"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
   livecheck do
@@ -67,17 +68,7 @@ class Wireshark < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Install headers
-    (include/"wireshark").install Dir["*.h"]
-    (include/"wireshark/epan").install Dir["epan/*.h"]
-    (include/"wireshark/epan/crypt").install Dir["epan/crypt/*.h"]
-    (include/"wireshark/epan/dfilter").install Dir["epan/dfilter/*.h"]
-    (include/"wireshark/epan/dissectors").install Dir["epan/dissectors/*.h"]
-    (include/"wireshark/epan/ftypes").install Dir["epan/ftypes/*.h"]
-    (include/"wireshark/epan/wmem").install Dir["epan/wmem/*.h"]
-    (include/"wireshark/wiretap").install Dir["wiretap/*.h"]
-    (include/"wireshark/wsutil").install Dir["wsutil/*.h"]
+    system "cmake", "--install", "build", "--component", "Development"
   end
 
   def caveats
@@ -94,6 +85,19 @@ class Wireshark < Formula
   end
 
   test do
+    (testpath/"test.cpp").write <<~EOS
+      #include <stdio.h>
+      #include <ws_version.h>
+
+      int main() {
+        printf("%d.%d.%d", WIRESHARK_VERSION_MAJOR, WIRESHARK_VERSION_MINOR,
+               WIRESHARK_VERSION_MICRO);
+        return 0;
+      }
+    EOS
+    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}/wireshark", "-o", "test"
+    output = shell_output("./test")
+    assert_equal version.to_s, output
     system bin/"randpkt", "-b", "100", "-c", "2", "capture.pcap"
     output = shell_output("#{bin}/capinfos -Tmc capture.pcap")
     assert_equal "File name,Number of packets\ncapture.pcap,2\n", output
