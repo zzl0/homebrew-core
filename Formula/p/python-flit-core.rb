@@ -6,6 +6,7 @@ class PythonFlitCore < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99f506823b56ed90a242ad9b6c32901e44ade90e65923f1843760e90d8d7ed0f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a16f4279d40d8da93f3d79cd3d57efd4d13d60f5c69a2d05384984704a23f92e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3875414eb6da4a27a6f44355a755733603c3bbb1a0dc3764ebb3eb0749b836c9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a684150f99c000a712972736e5a43def33a8290e70e295dac841370ed7397918"
