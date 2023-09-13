@@ -27,8 +27,10 @@ class Cabocha < Formula
     ENV["LIBS"] = "-liconv" if OS.mac?
 
     inreplace "Makefile.in" do |s|
-      s.change_make_var! "CFLAGS", ENV.cflags
-      s.change_make_var! "CXXFLAGS", ENV.cflags
+      if ENV.cflags.present?
+        s.change_make_var! "CFLAGS", ENV.cflags
+        s.change_make_var! "CXXFLAGS", ENV.cflags
+      end
     end
 
     args = %W[
