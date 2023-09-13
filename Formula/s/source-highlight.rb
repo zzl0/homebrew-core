@@ -13,6 +13,7 @@ class SourceHighlight < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "5557d46ba18cdfe9bd4d7ea968bc8cc913170860a9267663a6eac1bcccee7d06"
     sha256 arm64_ventura:  "dddc83be2e682364f8d04b17885d93a5413b9b2978190e584f35fb48f1f36538"
     sha256 arm64_monterey: "b9eb7acf4fe56cfe110ac6fae44645dc71f4b7dde15ed02573b985354753b488"
     sha256 arm64_big_sur:  "5571281923274d301cadd6ea132603c76a8865fe222b1f9b912ed54618ce8944"
