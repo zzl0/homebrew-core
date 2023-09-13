@@ -3,10 +3,9 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https://github.com/Garmelon/PFERD"
-  url "https://files.pythonhosted.org/packages/f4/67/72c34ac306296b5aee22f8894d1e45be95b88174398b01c1b19961d5acc8/pferd-3.4.3.tar.gz"
-  sha256 "ca5b26f45edff90a2dd4ef384599775ceb7caf35c4cb2e17da1fbe1f46bf5eca"
+  url "https://files.pythonhosted.org/packages/65/50/fae763bf94e3d9a25716f1a8b36481b1196bb64b5ac226286f3ad588dc81/pferd-3.5.0.tar.gz"
+  sha256 "90170cb5b7b5421193ba8b73d66899fc2027f3a8f595c10ac97fc6de756df7cf"
   license "MIT"
-  revision 2
 
   bottle do
     rebuild 1
@@ -34,8 +33,8 @@ class Pferd < Formula
   end
 
   resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/54/6e/9678f7b2993537452710ffb1750c62d2c26df438aa621ad5fa9d1507a43a/async-timeout-4.0.2.tar.gz"
-    sha256 "2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15"
+    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
+    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
   end
 
   resource "attrs" do
@@ -89,8 +88,8 @@ class Pferd < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "multidict" do
@@ -99,13 +98,13 @@ class Pferd < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
-    sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
+    url "https://files.pythonhosted.org/packages/ce/21/952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717b/soupsieve-2.5.tar.gz"
+    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
   end
 
   resource "yarl" do
