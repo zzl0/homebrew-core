@@ -55,7 +55,7 @@ jobs:
                                                 .filter(Boolean)
                                                 .map(s => {
               if (macOSRegex.test(s) && s != "11-arm64") // Ephemeral runners
-                return {runner: `${s}-${context.runId}`};
+                return {runner: `${s}-${context.runId}`, cleanup: false};
               else if (linuxRegex.test(s))
                 return {
                   runner:    s,
@@ -63,10 +63,11 @@ jobs:
                     image:   "ghcr.io/homebrew/ubuntu22.04:master",
                     options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
                   },
-                  workdir:   "/github/home"
+                  workdir:   "/github/home",
+                  cleanup:   false
                 };
               else
-                return {runner: s};
+                return {runner: s, cleanup: true};
             });
 
   bottle:
@@ -102,6 +103,7 @@ jobs:
         uses: Homebrew/actions/pre-build@master
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
+          cleanup: ${{ matrix.cleanup }}
 
       - working-directory: ${{ env.BOTTLES_DIR }}
         run: |
@@ -118,6 +120,7 @@ jobs:
         uses: Homebrew/actions/post-build@master
         with:
           runner: ${{ matrix.runner }}
+          cleanup: ${{ matrix.cleanup }}
           bottles-directory: ${{ env.BOTTLES_DIR }}
           logs-directory: ${{ env.BOTTLES_DIR }}/logs
 
