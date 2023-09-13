@@ -7,9 +7,14 @@ class Flyctl < Formula
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
+  # Upstream tags versions like `v0.1.92` and `v2023.9.8` but, as of writing,
+  # they only create releases for the former and those are the versions we use
+  # in this formula. We could omit the date-based versions using a regex but
+  # this uses the `GithubLatest` strategy, as the upstream repository also
+  # contains over a thousand tags (and growing).
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
