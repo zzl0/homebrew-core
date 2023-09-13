@@ -26,6 +26,9 @@ on:
         default: true
         required: false
 
+# Intentionally the same as dispatch-build-bottle
+concurrency: bottle-${{ github.event.inputs.formula }}
+
 permissions:
   contents: read
 

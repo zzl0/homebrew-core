@@ -31,6 +31,9 @@ env:
   HOMEBREW_NO_INSTALL_FROM_API: 1
   RUN_URL: ${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}
 
+# Intentionally the same as dispatch-rebottle
+concurrency: bottle-${{ github.event.inputs.formula }}
+
 permissions:
   contents: read
 
