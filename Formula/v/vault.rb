@@ -8,8 +8,8 @@ class Vault < Formula
   # https://github.com/hashicorp/vault/pull/22290
   # https://github.com/hashicorp/vault/pull/22357
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.14.2",
-      revision: "16a7033a0686eca50ee650880d5c55438d274489"
+      tag:      "v1.14.3",
+      revision: "56debfa71653e72433345f23cd26276bc90629ce"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
