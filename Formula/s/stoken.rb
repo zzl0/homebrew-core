@@ -1,9 +1,9 @@
 class Stoken < Formula
   desc "Tokencode generator compatible with RSA SecurID 128-bit (AES)"
-  homepage "https://stoken.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/stoken/stoken-0.92.tar.gz"
-  sha256 "aa2b481b058e4caf068f7e747a2dcf5772bcbf278a4f89bc9efcbf82bcc9ef5a"
-  revision 1
+  homepage "https://github.com/stoken-dev/stoken"
+  url "https://github.com/stoken-dev/stoken/archive/refs/tags/v0.93.tar.gz"
+  sha256 "102e2d112b275efcdc20ef438670e4f24f08870b9072a81fda316efcc38aef9c"
+  license "LGPL-2.1-only"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "620455231b34b4e2c51dc636d2a2c34d7c17edca87e38b6c268b3cb11dc59bc7"
@@ -18,20 +18,18 @@ class Stoken < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "76dc36073ec825c62714e281e7e02cf6a159a5f43a27c2011440cc683cebb3ed"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "nettle"
 
   uses_from_macos "libxml2"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --disable-debug
-      --disable-silent-rules
-      --prefix=#{prefix}
-    ]
-
-    system "./configure", *args
+    system "./autogen.sh"
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules"
     system "make", "check"
     system "make", "install"
   end
