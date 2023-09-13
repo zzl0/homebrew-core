@@ -1,8 +1,8 @@
 class Doggo < Formula
   desc "Command-line DNS Client for Humans"
   homepage "https://doggo.mrkaran.dev/"
-  url "https://github.com/mr-karan/doggo/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "1965f4c909991bc38b65784ccbc03f4760214bca34f1bb984999f1fc8714ff96"
+  url "https://github.com/mr-karan/doggo/archive/refs/tags/v0.5.7.tar.gz"
+  sha256 "3f70c40ccc9ffba539fd37c0ed8c5a1a0ab89f29815994826bfeb8e0b60e2eff"
   license "GPL-3.0-or-later"
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
@@ -18,12 +18,6 @@ class Doggo < Formula
   end
 
   depends_on "go" => :build
-
-  # quic-go patch for go1.21.0 build
-  patch do
-    url "https://github.com/mr-karan/doggo/commit/b296706c7b25a9bfa40fd927af9280b836c03c3a.patch?full_index=1"
-    sha256 "27f3444ec7e3629665dad7a767990cb118807575894bd7dfd13ce481a937eaa9"
-  end
 
   def install
     ldflags = %W[
