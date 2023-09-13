@@ -1,8 +1,8 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.12.4.tar.gz"
-  sha256 "c2dfbc4997c46a81a10d9ae8837fa20fc612abeffdd71bc938b7bd8874aa86d7"
+  url "https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "572801b99ddab89e1fba09d8142c8ba9bb681d2ee1464e57f959ccbb4562d7d5"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cert-manager.git", branch: "master"
 
@@ -41,7 +41,7 @@ class Cmctl < Formula
     assert_match "cmctl", shell_output("#{bin}/cmctl help")
     # We can't make a Kubernetes cluster in test, so we check that when we use a remote command
     # we find the error about connecting
-    assert_match "Not ready: error finding the scope of the object", shell_output("#{bin}/cmctl check api 2>&1", 1)
+    assert_match "error: error finding the scope of the object", shell_output("#{bin}/cmctl check api 2>&1", 1)
     # The convert command *can* be tested locally.
     (testpath/"cert.yaml").write <<~EOF
       apiVersion: cert-manager.io/v1beta1
