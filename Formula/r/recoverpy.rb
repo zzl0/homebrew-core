@@ -8,6 +8,10 @@ class Recoverpy < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/PabloLec/recoverpy.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7980c2dcd884fa754d918ea593d43076af674178e9c31f4edb0a2bceb475fe53"
+  end
+
   depends_on :linux
   depends_on "pygments"
   depends_on "python-typing-extensions"
