@@ -3,10 +3,9 @@ class Uhd < Formula
   homepage "https://files.ettus.com/manual/"
   # The build system uses git to recover version information
   url "https://github.com/EttusResearch/uhd.git",
-      tag:      "v4.4.0.0",
-      revision: "5fac246bc18ab04cb4870026a630e46d0fd87b17"
+      tag:      "v4.5.0.0",
+      revision: "471af98f6b595f5fd52d62303287d968ed2a8d0b"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 2
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
@@ -29,35 +28,25 @@ class Uhd < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "libusb"
+  depends_on "python-markupsafe"
   depends_on "python@3.11"
 
   fails_with gcc: "5"
 
-  resource "Mako" do
+  resource "mako" do
     url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
     sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
   end
 
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
-  # See https://github.com/EttusResearch/uhd/commit/c385d20eeea717b3859ac6a2bcc247b69fc66003
-  # The above is not yet reflected in 4.4.0.0.
-  patch do
-    url "https://github.com/EttusResearch/uhd/commit/c385d20eeea717b3859ac6a2bcc247b69fc66003.patch?full_index=1"
-    sha256 "57d86301e0bb1562cd03cdd51fea891629278a6304326bea9843ac32d46a7e63"
+  def python3
+    "python3.11"
   end
 
   def install
-    python = "python3.11"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python)
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
 
-    resources.each do |r|
-      r.stage do
-        system python, *Language::Python.setup_install_args(libexec/"vendor", python)
-      end
+    resource("mako").stage do
+      system python3, *Language::Python.setup_install_args(libexec/"vendor", python3)
     end
 
     system "cmake", "-S", "host", "-B", "host/build", "-DENABLE_TESTS=OFF", *std_cmake_args
