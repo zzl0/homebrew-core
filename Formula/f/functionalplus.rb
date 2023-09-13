@@ -17,7 +17,7 @@ class Functionalplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "75932df0bb790fd5795b12c967931873d950a7e47c551138675ea2a08216bead"
+    sha256 cellar: :any_skip_relocation, all: "8d8940d663021face917360b84a68f9ae83f230976cbb9495e8ef43b50a173ed"
   end
 
   depends_on "cmake" => :build
