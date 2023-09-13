@@ -55,8 +55,8 @@ class Lua < Formula
     inreplace "src/Makefile" do |s|
       s.gsub! "@OPT_LIB@", opt_lib if OS.mac?
       s.remove_make_var! "CC"
-      s.change_make_var! "MYCFLAGS", ENV.cflags if ENV.cflags.present?
-      s.change_make_var! "MYLDFLAGS", ENV.ldflags if ENV.ldflags.present?
+      s.change_make_var! "MYCFLAGS", ENV.cflags || ""
+      s.change_make_var! "MYLDFLAGS", ENV.ldflags || ""
     end
 
     # Fix path in the config header
