@@ -426,7 +426,7 @@
   },
   "huggingface-cli": {
     "package_name": "huggingface-hub",
-    "exclude_packages": ["certifi", "PyYAML", "typing-extensions"]
+    "exclude_packages": ["certifi", "packaging", "PyYAML", "typing-extensions"]
   },
   "hyfetch": {
     "exclude_packages": ["typing-extensions"]
