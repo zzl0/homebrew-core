@@ -11,13 +11,13 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b1679237851a718cafccc0d3b370ee2d6765c8c760c3d99937919b651646fedf"
-    sha256 cellar: :any,                 arm64_monterey: "49fc4d0090609edb8c9d2c6a5240ced923bed07b2fc30b00f2d391009f3fc51b"
-    sha256 cellar: :any,                 arm64_big_sur:  "9c6bb275b3a89931f35402651f1bfb6c28cc75886dd0d2b3165f2c5b113ba9cf"
-    sha256 cellar: :any,                 ventura:        "79a48920dd89808d8494da3d4f58c6aaaeb7fc08b5075b15bb02af04d1e73fc4"
-    sha256 cellar: :any,                 monterey:       "2f34464dbfc78d9fa25c5b4a884be9c86672e6123dad19e541213297cbb5f3f3"
-    sha256 cellar: :any,                 big_sur:        "2ecefe667657bbc48d9edf7c4bca1138829ce9766128c991dafb226560302910"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f42eee624b7ce9c2ff47d2f7f0478abd6d6f42733198dc03227ef5f63096658"
+    sha256 cellar: :any,                 arm64_ventura:  "a2faae4d134eeb5460b19f98d0b504f539575965415681ff3d1285b3b3c21c78"
+    sha256 cellar: :any,                 arm64_monterey: "3dac610064d8a92260f060190c3b7decda2b9583177ae3e55cb1a5f0052b5dcc"
+    sha256 cellar: :any,                 arm64_big_sur:  "41a1c5e694874952b7edc3c8eb760182cf5d4245016e162a16ae6254ad5f263f"
+    sha256 cellar: :any,                 ventura:        "25a22343e97f06ec995f1b7730b54ae9745eddf40e4e78b3cca834594ab34715"
+    sha256 cellar: :any,                 monterey:       "39a513696e2135e80891e613bd17eb904d7e395d6f279446ade54d1722ebf69f"
+    sha256 cellar: :any,                 big_sur:        "737642d50c0885af0af2f795305bf84b9e22e2cba9625d1ad2bebf04a10ba25d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9784c26d446e87a346a04a04616f8a087138d20f0ef44409305a64869c82c1b9"
   end
 
   depends_on "cmake" => :build
