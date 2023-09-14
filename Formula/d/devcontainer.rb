@@ -8,13 +8,13 @@ class Devcontainer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67ea8088224a52b45bf4233b27eaaac1c9892ec185d9b92111e53ab5a65bcdcd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67ea8088224a52b45bf4233b27eaaac1c9892ec185d9b92111e53ab5a65bcdcd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "67ea8088224a52b45bf4233b27eaaac1c9892ec185d9b92111e53ab5a65bcdcd"
-    sha256 cellar: :any_skip_relocation, ventura:        "55a0beafcce1935b4bb67a45af42ed53275549846eea280e3a92803e785009c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "55a0beafcce1935b4bb67a45af42ed53275549846eea280e3a92803e785009c5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "55a0beafcce1935b4bb67a45af42ed53275549846eea280e3a92803e785009c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3f7667437747f6af07056c915632d76bf0dd2d102c8e9d63222fd92d9a602a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79d4adfdbaba2a43254522649be21ff78c00a3cc9ce4c508638a0c251567d3dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79d4adfdbaba2a43254522649be21ff78c00a3cc9ce4c508638a0c251567d3dd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "79d4adfdbaba2a43254522649be21ff78c00a3cc9ce4c508638a0c251567d3dd"
+    sha256 cellar: :any_skip_relocation, ventura:        "4950af82bdc20be1a991efa4830fdfbfbeb791c87278ba7067a2b8eb7637ab58"
+    sha256 cellar: :any_skip_relocation, monterey:       "4950af82bdc20be1a991efa4830fdfbfbeb791c87278ba7067a2b8eb7637ab58"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4950af82bdc20be1a991efa4830fdfbfbeb791c87278ba7067a2b8eb7637ab58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff0395311ca44162251f1c96ef8c381c8f65407bea28b51af87fa9849fe6370d"
   end
 
   depends_on "node"
