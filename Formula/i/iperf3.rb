@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.14.tar.gz"
-  sha256 "723fcc430a027bc6952628fa2a3ac77584a1d0bd328275e573fc9b206c155004"
+  url "https://downloads.es.net/pub/iperf/iperf-3.15.tar.gz"
+  sha256 "bdb77c11f72bce90214883159577fa24412013e62b2083cf5f54391d79b1d8ff"
   license "BSD-3-Clause"
 
   livecheck do
