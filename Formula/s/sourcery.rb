@@ -1,8 +1,8 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https://github.com/krzysztofzablocki/Sourcery"
-  url "https://github.com/krzysztofzablocki/Sourcery/archive/2.0.3.tar.gz"
-  sha256 "3779a52e2f7d87d9616ec467344930b27d84ae1e8c57799b77f305bddf6ee297"
+  url "https://github.com/krzysztofzablocki/Sourcery/archive/2.1.0.tar.gz"
+  sha256 "656f3b8b9463ae3a2afaf0bdcd55a03e7141d52a49e7fce1f4092991c14897e1"
   license "MIT"
   version_scheme 1
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
@@ -16,10 +16,11 @@ class Sourcery < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "23a3b64d05a689bbeada45f2db507059b12baa261860de81acad9c2e67f86308"
   end
 
-  depends_on :macos # Linux support is still a WIP: https://github.com/krzysztofzablocki/Sourcery/issues/306
-  depends_on xcode: "13.3"
+  depends_on xcode: "14.3"
 
   uses_from_macos "ruby" => :build
+  uses_from_macos "sqlite"
+  uses_from_macos "swift"
 
   def install
     system "rake", "build"
