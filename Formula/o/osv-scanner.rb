@@ -7,13 +7,13 @@ class OsvScanner < Formula
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "792e7ce252cc396cd2138af129f0d76c2c0da557af085a6b4a522a8d257adbf8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "792e7ce252cc396cd2138af129f0d76c2c0da557af085a6b4a522a8d257adbf8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "792e7ce252cc396cd2138af129f0d76c2c0da557af085a6b4a522a8d257adbf8"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b19d81f08a5f5e3557d038acecd2f5ae4095856ac1e5640bca39da67a63564d"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b19d81f08a5f5e3557d038acecd2f5ae4095856ac1e5640bca39da67a63564d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b19d81f08a5f5e3557d038acecd2f5ae4095856ac1e5640bca39da67a63564d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7a87a7bbf5008320eb1eccba4dac980ede6fea533724818be03b76dbbd91ac2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d42c1224892f1b163fd80d9bd55389ed0b18e322ffdcac6bb53838f81a5344c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "14475967067e7e8bfd6a8cfb0cc9b18accd3b116b419fd3fa8417dfae9a57253"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a34e1f2c4e14c160a217e38cd1abd2f62988f5f58d7bd75c1dba5d64a8783a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bd223824a92dc5ca16956cbd15c0803c26462321e6593190a5208cd7143a612"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b04439fff4d7bcb7eacbfdc30e527f56beb43845a3de6ba5b15cda1a305c2f0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ef93a169e496148593f2dc2b2573acee3c42d3ab40f9b696850cb49d3e53565"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ff5ecf39a0ffcb55eed6f745ac6fb1bc59307bfd577affaa766563f40410d5e"
   end
 
   depends_on "go" => [:build, :test]
