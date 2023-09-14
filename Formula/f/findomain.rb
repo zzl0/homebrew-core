@@ -1,8 +1,8 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
   homepage "https://github.com/Findomain/Findomain"
-  url "https://github.com/Findomain/Findomain/archive/9.0.0.tar.gz"
-  sha256 "98cdb137ea96acfcc4739718d9abedc9982a01b367e921cefae8516271d9739e"
+  url "https://github.com/Findomain/Findomain/archive/9.0.1.tar.gz"
+  sha256 "76fc0d63e615abf0cf3b57715ec9be18cd08e6e4d4e1d43a69618fa2b2709d49"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,9 +15,15 @@ class Findomain < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fcc7a3fe3746ff274ff41d6b5ea4d0bb20fd0ee750fdc118108796706488267"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 
