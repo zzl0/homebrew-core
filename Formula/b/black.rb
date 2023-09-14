@@ -23,6 +23,7 @@ class Black < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfca7f3ac5ea582c9415e26d7728a0f3632aa2849caf77cdc195937bf34f4cd1"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "aiohttp" do
@@ -73,11 +74,6 @@ class Black < Formula
   resource "mypy-extensions" do
     url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
     sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pathspec" do
