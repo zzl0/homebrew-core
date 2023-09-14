@@ -1,8 +1,8 @@
 class Pget < Formula
   desc "File download client"
   homepage "https://github.com/Code-Hex/pget"
-  url "https://github.com/Code-Hex/pget/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "34d674dc48144c84de72d525e67d96500243cc1d1c4c0433794495c0846c193f"
+  url "https://github.com/Code-Hex/pget/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "3619c32ed021f22262d19edadc678620e2cf2d69acecf31c044e5dc60899d485"
   license "MIT"
   head "https://github.com/Code-Hex/pget.git", branch: "master"
 
