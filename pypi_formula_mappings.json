@@ -648,6 +648,9 @@
     "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
+  "pipx": {
+    "exclude_packages": ["packaging"]
+  },
   "platformio": {
     "exclude_packages": ["certifi", "tabulate", "typing-extensions"]
   },
