@@ -7,9 +7,11 @@ class Webp < Formula
   head "https://chromium.googlesource.com/webm/libwebp.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "47ca7e11b4c06d638c857a72c9383b7d528a013b7aaafbde33d4cf59f91359ed"
     sha256 cellar: :any,                 arm64_ventura:  "e36770b86bd3d3a71469dc66bd2fe5070f80d8d1f4dab1c6ff2d9732bd9e0ed3"
     sha256 cellar: :any,                 arm64_monterey: "1d7039a4068e31d4643eba3e516b72df0bfede9c800dda4ff4c08de927f1947a"
     sha256 cellar: :any,                 arm64_big_sur:  "419842fa92f7b818f452628a80ef4391f8d1b947b602f0cf84f486a458c4a721"
+    sha256 cellar: :any,                 sonoma:         "1acdc37723e07cf0acc3eade96fa8cc1e5e7c6e6176c84b61a0813cb07a61368"
     sha256 cellar: :any,                 ventura:        "9296ad4f9d17026fa88995b9fb79c942179e6bad159b1d4a36827e8d9bc57c19"
     sha256 cellar: :any,                 monterey:       "4de31743324ead0cd7978083192bb107f6cd09b11d4a81be4b6c550b91a2136c"
     sha256 cellar: :any,                 big_sur:        "28cbb05c0cc1d30882e1511b6790300f3bcc82a0bc38031e55f0222c875a877f"
