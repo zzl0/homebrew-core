@@ -5,6 +5,16 @@ class Modsecurity < Formula
   sha256 "d5d459f7c2e57a69a405f3222d8e285de419a594b0ea8829058709962227ead0"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "74daa8baf155a510aacaddebd4167c30cf505cafe362ec6a20d32275643fef10"
+    sha256 cellar: :any,                 arm64_monterey: "a64c4749d95e04cdc07464c83552825bde05f70386fa0c2fb4e43d39afeccb5f"
+    sha256 cellar: :any,                 arm64_big_sur:  "a43c52792a2b656c82996afefb8248b77cf26a950d00ab4376e1d0084ce3f2a4"
+    sha256 cellar: :any,                 ventura:        "cb90defa1cdf7988987e463594ff42d56294233c4e15a4dd8fdaf4e1cbf1bbad"
+    sha256 cellar: :any,                 monterey:       "4ba84464d43d3eda060ce94864ea6fe6cafaf6ffa365295fce20d6673285ecf3"
+    sha256 cellar: :any,                 big_sur:        "ecf3b809af81c2a7c8dc5a3067a1b0d9da346d0455567f52c0642a2de23a1a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "444547afdca675abe0c154f9aaa1bdc5fa7b384f95c24e78e3d032062754cd5a"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
