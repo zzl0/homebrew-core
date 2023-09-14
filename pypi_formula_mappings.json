@@ -336,7 +336,7 @@
   "fdroidserver": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "fonttools", "ipython", "lxml", "numpy",
-      "pillow", "pygments", "pyyaml", "six", "typing-extensions", "yamllint"
+      "packaging", "pillow", "pygments", "pyyaml", "six", "typing-extensions", "yamllint"
     ]
   },
   "flintrock": {
