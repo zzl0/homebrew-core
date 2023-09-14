@@ -121,7 +121,10 @@
   "bilix": {
     "exclude_packages": ["certifi", "typing-extensions", "Pygments"]
   },
-  "black": "black[d]",
+  "black": {
+    "package_name": "black[d]",
+    "exclude_packages": ["packaging"]
+  },
   "borgmatic": {
     "extra_packages": ["ruamel.yaml.clib"],
     "exclude_packages": ["certifi"]
