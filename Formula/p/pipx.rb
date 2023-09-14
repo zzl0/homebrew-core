@@ -18,6 +18,7 @@ class Pipx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c30124af6c8342b431b958cc4ecc8d2e8098275c72bf26784b430d71896d0d0"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "argcomplete" do
@@ -28,11 +29,6 @@ class Pipx < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
     sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
   end
 
   resource "userpath" do
