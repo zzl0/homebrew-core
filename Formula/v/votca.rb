@@ -4,7 +4,7 @@ class Votca < Formula
   url "https://github.com/votca/votca/archive/refs/tags/v2022.1.tar.gz"
   sha256 "4710a7552f94789936324d76d2e0830b576de8d3f1c605748e2d20947d018100"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "04b9715c8b76a72d8996a0f6265a905b17b7ddeca633f7dce4d0ee0ca446d408"
@@ -29,12 +29,19 @@ class Votca < Formula
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"
+  depends_on "numpy"
   depends_on "python@3.11"
 
   uses_from_macos "expat"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  # patch for boost 1.83, remove in next release
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/81862a091ac2fc2df5c5d79a28bb95fee0a67e7c/votca/boost-1.83.patch"
+    sha256 "c0701fd6a86b2227a4b3af5af296cddf6e40c48d4f118cb23f2f104b4d334a15"
   end
 
   def install
