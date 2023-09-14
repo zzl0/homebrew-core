@@ -894,6 +894,9 @@
   "touca": {
     "exclude_packages": ["certifi", "pygments"]
   },
+  "tox": {
+    "exclude_packages": ["packaging"]
+  },
   "trailscraper": {
     "exclude_packages": ["six", "pytz"]
   },

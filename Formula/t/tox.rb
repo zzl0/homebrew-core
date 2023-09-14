@@ -17,6 +17,7 @@ class Tox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf071aaac1a8322f558b3756cb6fa9659c6fe3e94743bf54d1067ce630a0eaa6"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "cachetools" do
@@ -42,11 +43,6 @@ class Tox < Formula
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
     sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "platformdirs" do
