@@ -662,7 +662,7 @@
     "extra_packages": ["pyOpenSSL", "jq"]
   },
   "poetry": {
-    "exclude_packages": ["certifi", "cffi", "pycparser", "six", "virtualenv"]
+    "exclude_packages": ["certifi", "cffi", "packaging", "pycparser", "six", "virtualenv"]
   },
   "pre-commit": {
     "exclude_packages": ["PyYAML", "virtualenv"]
