@@ -42,6 +42,7 @@ class Nmap < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "libpcap"
   uses_from_macos "zlib"
 
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
@@ -49,17 +50,23 @@ class Nmap < Formula
   def install
     ENV.deparallelize
 
+    libpcap_path = if OS.mac?
+      MacOS.sdk_path/"usr/"
+    else
+      Formula["libpcap"].opt_prefix
+    end
+
     args = %W[
-      --prefix=#{prefix}
       --with-liblua=#{Formula["lua"].opt_prefix}
       --with-libpcre=#{Formula["pcre"].opt_prefix}
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-libpcap=#{libpcap_path}
       --without-nmap-update
       --disable-universal
       --without-zenmap
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
 
