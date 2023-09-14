@@ -1,8 +1,8 @@
 class Tfmigrate < Formula
   desc "Terraform state migration tool for GitOps"
   homepage "https://github.com/minamijoyo/tfmigrate"
-  url "https://github.com/minamijoyo/tfmigrate/archive/v0.3.15.tar.gz"
-  sha256 "548109032024278a2838c1c8bb2b7b874981daedafc1887c155812dd56e8940f"
+  url "https://github.com/minamijoyo/tfmigrate/archive/v0.3.16.tar.gz"
+  sha256 "4d25b6e22557ce4d558b7bbb07f827d8467d698a8c9d54380a627bdd8ae74177"
   license "MIT"
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
