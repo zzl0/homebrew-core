@@ -4,6 +4,7 @@ class Sn0int < Formula
   url "https://github.com/kpcyrd/sn0int/archive/refs/tags/v0.26.0.tar.gz"
   sha256 "4ce71f69410a9c9470edf922c3c09b6a53bfbf41d154aa124859bbce8014cf13"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6415a95bd619a030f851a83a60f405c23d5ea4492263b51eeb6c137e0101785a"
