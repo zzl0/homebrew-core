@@ -7,9 +7,11 @@ class GoTask < Formula
   head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49e9267245c37d7f1591142333f12f17976eadd74326fb52056afa9fa7e9c0dc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2598123fa18cfded604f8d3b167ec0af42422202155bdffb8113ee916227eea5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0a441d984ce9b2d3d31e2dd2a100775359167aab9efcbc55d2a344a0b4321380"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c49baf0899dc9e28934922ebdba8440e312e4e8711e0fdf3477aa0661d92b8b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f2f658cee1396cfc331a2e775eb637542647c197bb60c3d1bea9eaf8ddb32263"
     sha256 cellar: :any_skip_relocation, ventura:        "ac38572a44e4cfb2a7c801c2e4042e20e32d208da97c88e8e8007585418d5592"
     sha256 cellar: :any_skip_relocation, monterey:       "43e376ba4ae9747980caf0adf6586711797d94596bd3d101a48001e8329776fe"
     sha256 cellar: :any_skip_relocation, big_sur:        "cb5384e348216512ed69b1184f332bb2ace3b0890fa4eae48d2a31a19f8b8473"
