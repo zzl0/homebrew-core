@@ -4,7 +4,7 @@ class PureFtpd < Formula
   url "https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.51.tar.gz"
   sha256 "4160f66b76615eea2397eac4ea3f0a146b7928207b79bc4cc2f99ad7b7bd9513"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "ISC"]
-  revision 1
+  revision 2
 
   livecheck do
     url "https://download.pureftpd.org/pub/pure-ftpd/releases/"
