@@ -2,6 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.3/Agda-2.6.3.tar.gz"
@@ -10,6 +11,20 @@ class Agda < Formula
     resource "stdlib" do
       url "https://github.com/agda/agda-stdlib/archive/v1.7.2.tar.gz"
       sha256 "d86a41b9d2e1d2e956ec91bdef9cb34646da11f50f76996761c9a1562c3c47a2"
+    end
+
+    # Use Hackage metadata revision to support GHC 9.6.
+    # TODO: Remove this resource on next release along with corresponding install logic
+    resource "cabal-install.cabal" do
+      url "https://hackage.haskell.org/package/Agda-2.6.3/revision/4.cabal"
+      sha256 "908b41a77d70c723177ff6d4e2be22ef7c89d22587d4747792aac07215b1d0f5"
+    end
+
+    # Use Hackage metadata revision to support GHC 9.6.
+    # TODO: Remove this resource on next release along with corresponding install logic
+    resource "agda-stdlib-utils.cabal" do
+      url "https://raw.githubusercontent.com/agda/agda-stdlib/fe151ddebedafe80c358bfc1fbcf3cea42a58db7/agda-stdlib-utils.cabal"
+      sha256 "91be962de76b0d9a06d5286afdb13b3738aef1f7d7f6feb58ac55594a86c1394"
     end
   end
 
@@ -39,13 +54,21 @@ class Agda < Formula
   uses_from_macos "zlib"
 
   def install
+    resource("cabal-install.cabal").stage { buildpath.install "4.cabal" => "Agda.cabal" } unless build.head?
     system "cabal", "v2-update"
     system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
 
     # generate the standard library's documentation and vim highlighting files
-    resource("stdlib").stage lib/"agda"
-    cd lib/"agda" do
+    agdalib = lib/"agda"
+    resource("stdlib").stage agdalib
+    cd agdalib do
       cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
+      unless build.head?
+        resource("agda-stdlib-utils.cabal").stage do
+          agdalib.install "agda-stdlib-utils.cabal" => "agda-stdlib-utils.cabal"
+        end
+      end
+      system "cabal", "v2-update"
       system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}/agda"
       system "./GenerateEverything"
       system bin/"agda", "-i", ".", "-i", "src", "--html", "--vim", "README.agda"
@@ -125,10 +148,12 @@ class Agda < Formula
     # test the GHC backend
     cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
     system "cabal", "v2-update"
+    system "cabal", "install", "--lib", "base"
     system "cabal", "v2-install", "ieee754", "--lib", *cabal_args
+    system "cabal", "v2-install", "text", "--lib", *cabal_args
 
     # compile and run a simple program
-    system bin/"agda", "-c", iotest
+    system bin/"agda", "--ghc-flag=-fno-warn-star-is-type", "-c", iotest
     assert_equal "", shell_output(testpath/"IOTest")
   end
 end
