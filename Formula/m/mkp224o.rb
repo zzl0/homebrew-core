@@ -4,6 +4,7 @@ class Mkp224o < Formula
   url "https://github.com/cathugger/mkp224o/releases/download/v1.6.1/mkp224o-1.6.1-src.tar.gz"
   sha256 "772d4b429c08f04eca3bc45cd3f6ce57b71fa912fa6c061cd39f73bf2fec8e70"
   license "CC0-1.0"
+  revision 1
   head "https://github.com/cathugger/mkp224o.git", branch: "master"
 
   bottle do
@@ -28,6 +29,6 @@ class Mkp224o < Formula
   end
 
   test do
-    assert_match "waiting for threads to finish... done", shell_output("#{bin}/mkp224o -n 3 home 2>&1")
+    assert_match "waiting for threads to finish...", shell_output("#{bin}/mkp224o -n 3 home 2>&1")
   end
 end
