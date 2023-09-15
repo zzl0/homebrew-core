@@ -5,7 +5,7 @@ class Monero < Formula
       tag:      "v0.18.3.1",
       revision: "2656cdf5056c07684741c4425a051760b97025b0"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
