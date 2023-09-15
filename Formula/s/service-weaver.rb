@@ -4,8 +4,8 @@ class ServiceWeaver < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/ServiceWeaver/weaver/archive/refs/tags/v0.20.0.tar.gz"
-    sha256 "a869d139a3b47b7ec38f3b72a6ae81be5278d19dbed5e65727d1c183d2e4c9fa"
+    url "https://github.com/ServiceWeaver/weaver/archive/refs/tags/v0.21.2.tar.gz"
+    sha256 "369a487cbaa57fe96ca9b6354b8157a028c91ff28850742f51cfaf4fc4b99f07"
 
     resource "weaver-gke" do
       url "https://github.com/ServiceWeaver/weaver-gke/archive/refs/tags/v0.20.0.tar.gz"
@@ -13,12 +13,14 @@ class ServiceWeaver < Formula
     end
   end
 
-  # Upstream does not create releases for all tags (and it's unclear whether we
-  # should use stable version tags that don't have a release), so we use the
-  # `GithubLatest` strategy for now.
+  # Upstream only creates releases for x.x.0 but said that we should use the
+  # latest tagged version, regardless of whether there is a GitHub release.
+  # With that in mind, we check the Git tags and ignore whether the version is
+  # the "latest" release on GitHub.
+  # See: https://github.com/ServiceWeaver/weaver/issues/603#issuecomment-1722048623
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
