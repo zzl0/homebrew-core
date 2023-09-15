@@ -4,6 +4,7 @@ class Edencommon < Formula
   url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.10.30.00.tar.gz"
   sha256 "e692de0b6ddb97d6415c11e9ea349da30cc95a9aa9af0d2e70b52038862d69bd"
   license "MIT"
+  revision 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
@@ -21,6 +22,7 @@ class Edencommon < Formula
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "libsodium"
   depends_on "openssl@3"
 
   def install
