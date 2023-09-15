@@ -5,6 +5,7 @@ class Vim < Formula
   url "https://github.com/vim/vim/archive/refs/tags/v9.0.2050.tar.gz"
   sha256 "0387014cba4283d55e3b6611b7b574c81670fbb5d195d0fc7b264b94e95592e3"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
@@ -33,6 +34,10 @@ class Vim < Formula
   depends_on "perl"
   depends_on "python@3.12"
   depends_on "ruby"
+
+  on_linux do
+    depends_on "acl"
+  end
 
   conflicts_with "ex-vi",
     because: "vim and ex-vi both install bin/ex and bin/view"
