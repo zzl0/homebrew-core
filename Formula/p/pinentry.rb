@@ -31,10 +31,11 @@ class Pinentry < Formula
   end
 
   def install
-    args = %W[
-      --disable-dependency-tracking
+    # Workaround for Xcode 14.3+
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    args = %w[
       --disable-silent-rules
-      --prefix=#{prefix}
       --disable-pinentry-fltk
       --disable-pinentry-gnome3
       --disable-pinentry-gtk2
@@ -44,7 +45,7 @@ class Pinentry < Formula
       --enable-pinentry-tty
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
