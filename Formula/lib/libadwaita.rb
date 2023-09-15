@@ -1,8 +1,8 @@
 class Libadwaita < Formula
   desc "Building blocks for modern adaptive GNOME applications"
   homepage "https://gnome.pages.gitlab.gnome.org/libadwaita/"
-  url "https://download.gnome.org/sources/libadwaita/1.3/libadwaita-1.3.5.tar.xz"
-  sha256 "faa3ff0f36db18ab4942f4904a295293ccb144755b9bb85131393f201926b586"
+  url "https://download.gnome.org/sources/libadwaita/1.4/libadwaita-1.4.0.tar.xz"
+  sha256 "e51a098a54d43568218fc48fcf52e80e36f469b3ce912d8ce9c308a37e9f47c2"
   license "LGPL-2.1-or-later"
 
   # libadwaita doesn't use GNOME's "even-numbered minor is stable" version
@@ -25,13 +25,17 @@ class Libadwaita < Formula
     sha256 x86_64_linux:   "9c9ed668d719bab47cc21c920d3214de8c81b9447232ba8f0bce968053a41b05"
   end
 
+  depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+  depends_on "appstream"
   depends_on "gtk4"
+
+  uses_from_macos "python" => :build
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
