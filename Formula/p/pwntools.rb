@@ -3,10 +3,9 @@ class Pwntools < Formula
 
   desc "CTF framework used by Gallopsled in every CTF"
   homepage "https://github.com/Gallopsled/pwntools"
-  url "https://files.pythonhosted.org/packages/fa/76/aed9a42988214d6af85aa650a90be6225cfc689ad5f5c3c3b61059668f4b/pwntools-4.10.0.tar.gz"
-  sha256 "588e89ea678527c0b5b6caeeee7e76e31352e78e2f1cf3dda7bc9acf526e446d"
+  url "https://files.pythonhosted.org/packages/cf/ce/5b44dc18f0090a2f7188f0a8b98f00aebaa10537fffa3e66351b6972c02e/pwntools-4.11.0.tar.gz"
+  sha256 "a85f1e777f343f91e221d175e1523d006eef1c8106c10fd2e338280bab273fa6"
   license "MIT"
-  revision 4
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
@@ -40,8 +39,8 @@ class Pwntools < Formula
   end
 
   resource "capstone" do
-    url "https://files.pythonhosted.org/packages/de/04/4c2ae5ef70dadd773b39d39d30f1cab54d4a27aa0af69ac1414e2338434e/capstone-5.0.0.post1.tar.gz"
-    sha256 "fe0affca395c09ce76a21c5f0fac026e74396839a220798ca5e57c54305bcf65"
+    url "https://files.pythonhosted.org/packages/7a/fe/e6cdc4ad6e0d9603fa662d1ccba6301c0cb762a1c90a42c7146a538c24e9/capstone-5.0.1.tar.gz"
+    sha256 "740afacc29861db591316beefe30df382c4da08dcb0345a0d10f0cac4f8b1ee2"
   end
 
   resource "charset-normalizer" do
@@ -95,8 +94,8 @@ class Pwntools < Formula
   end
 
   resource "pyelftools" do
-    url "https://files.pythonhosted.org/packages/0e/35/e76da824595452a5ad07f289ea1737ca0971fc6cc7b6ee9464279be06b5e/pyelftools-0.29.tar.gz"
-    sha256 "ec761596aafa16e282a31de188737e5485552469ac63b60cfcccf22263fd24ff"
+    url "https://files.pythonhosted.org/packages/84/05/fd41cd647de044d1ffec90ce5aaae935126ac217f8ecb302186655284fc8/pyelftools-0.30.tar.gz"
+    sha256 "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40"
   end
 
   resource "pynacl" do
@@ -125,8 +124,8 @@ class Pwntools < Formula
   end
 
   resource "ropgadget" do
-    url "https://files.pythonhosted.org/packages/9a/f3/b9d945c624b6df35a36d52b97719ba93c0d81484a5b51c3829ac7caf620f/ROPGadget-7.3.tar.gz"
-    sha256 "4078e70601a2dc869123dfa352812dcc44767a4bbde482b7059d34b33bb67850"
+    url "https://files.pythonhosted.org/packages/0f/5f/55add023bd2af62dc25f17bb0f26360e228ecb5cb4c0182a714a01672000/ROPGadget-7.4.tar.gz"
+    sha256 "a40626a32cf867d06192ef24e16221b2b7ba82e2ec84ab5bfdfb0b017559342f"
   end
 
   resource "rpyc" do
