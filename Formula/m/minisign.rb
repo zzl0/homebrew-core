@@ -4,6 +4,7 @@ class Minisign < Formula
   url "https://github.com/jedisct1/minisign/archive/refs/tags/0.11.tar.gz"
   sha256 "74c2c78a1cd51a43a6c98f46a4eabefbc8668074ca9aa14115544276b663fc55"
   license "ISC"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8aeb7785a0ee08c48d84a487bcc68bdafc4a1cbeec5c94fec250d286cd187b18"
