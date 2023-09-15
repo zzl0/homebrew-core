@@ -4,6 +4,7 @@ class Bupstash < Formula
   url "https://github.com/andrewchambers/bupstash/releases/download/v0.12.0/bupstash-v0.12.0-src+deps.tar.gz"
   sha256 "e3054c03b0d57ba718bd2cab8c24df13153369dea311e5a595d586ad24865793"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "35d85bb020d1597e862ddd4e69525d4fa74de8f0fc2a277bac3ddf15a62aa075"
