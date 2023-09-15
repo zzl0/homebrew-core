@@ -4,6 +4,7 @@ class CoreLightning < Formula
   url "https://github.com/ElementsProject/lightning/releases/download/v23.08.1/clightning-v23.08.1.zip"
   sha256 "3e89e0ce0afe54cae9f27ae99d1d1009aacc59404f3e34dda1e6efa56ad2cbac"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -26,7 +27,6 @@ class CoreLightning < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "gnu-sed" => :build
-  depends_on "libsodium" => :build
   depends_on "libtool" => :build
   depends_on "lowdown" => :build
   depends_on "pkg-config" => :build
@@ -35,6 +35,7 @@ class CoreLightning < Formula
 
   depends_on "bitcoin"
   depends_on "gmp"
+  depends_on "libsodium"
   depends_on "python@3.11"
   uses_from_macos "sqlite"
 
