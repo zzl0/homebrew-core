@@ -4,7 +4,7 @@ class LibbitcoinExplorer < Formula
   url "https://github.com/libbitcoin/libbitcoin-explorer/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_sonoma:   "a77f5daa4276b5b3de16eda7f1a7cdb493c41b3ee3b41d98465879f89fc0656f"
@@ -24,6 +24,8 @@ class LibbitcoinExplorer < Formula
   depends_on "pkg-config" => :build
   depends_on "libbitcoin-client"
   depends_on "libbitcoin-network"
+  depends_on "libsodium"
+  depends_on "zeromq"
 
   def install
     ENV.cxx11
