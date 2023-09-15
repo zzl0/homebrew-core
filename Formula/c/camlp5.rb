@@ -1,8 +1,8 @@
 class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
-  url "https://github.com/camlp5/camlp5/archive/refs/tags/rel8.00.04.tar.gz"
-  sha256 "bddbcb5c3c2d410c9a61c4dfb6e46e3bbe984d25ac68221a7a65c82a29956b1d"
+  url "https://github.com/camlp5/camlp5/archive/refs/tags/8.02.01.tar.gz"
+  sha256 "58d4bce0c20fa1151fc2c15f172f5884472e2044a4b0da22aababf46c361e515"
   license "BSD-3-Clause"
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
@@ -22,13 +22,23 @@ class Camlp5 < Formula
   end
 
   depends_on "ocaml-findlib" => :build
+  depends_on "opam" => :build
   depends_on "camlp-streams"
   depends_on "ocaml"
 
+  uses_from_macos "m4" => :build
+
   def install
+    opamroot = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot
+    ENV["OPAMYES"] = "1"
+
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
+
     system "./configure", "--prefix", prefix, "--mandir", man
-    system "make", "world.opt"
-    system "make", "install"
+    system "opam", "exec", "--", "make", "world.opt"
+    system "opam", "exec", "--", "make", "install"
     (lib/"ocaml/camlp5").install "etc/META"
   end
 
