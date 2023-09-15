@@ -4,6 +4,7 @@ class Adios2 < Formula
   url "https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.9.2.tar.gz"
   sha256 "78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -25,6 +26,7 @@ class Adios2 < Formula
   depends_on "gcc" # for gfortran
   depends_on "libfabric"
   depends_on "libpng"
+  depends_on "libsodium"
   depends_on "mpi4py"
   depends_on "numpy"
   depends_on "open-mpi"
