@@ -4,6 +4,7 @@ class Fb303 < Formula
   url "https://github.com/facebook/fb303/archive/refs/tags/v2023.10.30.00.tar.gz"
   sha256 "aac921b0df5e6300e294657245a3b1d49663f58e7907f0aae68f60288a3b8c11"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
@@ -24,6 +25,7 @@ class Fb303 < Formula
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "libsodium"
   depends_on "openssl@3"
   depends_on "wangle"
 
