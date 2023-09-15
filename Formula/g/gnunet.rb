@@ -5,6 +5,7 @@ class Gnunet < Formula
   mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.20.0.tar.gz"
   sha256 "56029e78a99c04d52b1358094ae5074e4cd8ea9b98cf6855f57ad9af27ac9518"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d89d3de6ce37b653142678e5a08bbcc457521fa2220f7b7c40bfc6851fa9829f"
