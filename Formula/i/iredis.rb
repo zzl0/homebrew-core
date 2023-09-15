@@ -9,13 +9,13 @@ class Iredis < Formula
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6141d1b7f8beb87a0540b8dab2da2434c1929cd7f98277e38bf53246b8906bac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83e3f1a43cf5a7bb3c82288b36a1438897b9e29f3672f7e8ae1d4591b22fdbc9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7bed9184bbc1f5228b76c5f636df41f2ebc2632ec34e9004bf32245fb5012f91"
-    sha256 cellar: :any_skip_relocation, ventura:        "a51ca95cf032e43bce04881a11145f5b9ca45cd9258685afef44ef1e6e4e8346"
-    sha256 cellar: :any_skip_relocation, monterey:       "728c58b2563a3f529f9075890c2a862d1abe557e58bfdc464cbbcec0b965c544"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07b0b93399c43ee4808b0ba96665590f3bb1223ed22b5aa3f0d09ea44d451607"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fa23c2b94cf34914269a16c8a30cd0d6588a11feb092a05c8b634ea623d0a6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b906bf824b8b55ae5da4e36ed97fc91df4b4185b0f13490aa52f1531f9b5e21"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26804f1bfe18b0a747415690e288612661463eac14186cbd084b2da41b88f107"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa168c5d49740166313eaefe13c23ccab59151fecd1cec37cd1f74f8786664c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "583312f7a8cef8bfd8ecbd515f3d4fdc703ad620352435245dd9c10b802f7431"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f2d111e436fdd0c9f61f583872a86f85df15a7f0933f068a58afe3057251e6e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "58d718b3b4d240a9171b408b518b6cacd43a4ce83dbc0a217d9e40f1f6123c8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2430b7d0e7ef3a5bbac0e3dbda84ca13a4417fce08ff6202566f65300cb01b07"
   end
 
   depends_on "pygments"
