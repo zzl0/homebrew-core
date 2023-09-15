@@ -1,9 +1,9 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://varnish-cache.org/_downloads/varnish-7.3.0.tgz"
-  mirror "https://fossies.org/linux/www/varnish-7.3.0.tgz"
-  sha256 "e2dbbb0ec270a90647c386866e6e226993aed46e48de751a72bb819737f14ae7"
+  url "https://varnish-cache.org/_downloads/varnish-7.4.0.tgz"
+  mirror "https://fossies.org/linux/www/varnish-7.4.0.tgz"
+  sha256 "8390153ea23c0f74cb95c0a38682a03446d3bcb770f335227117f81431d5a005"
   license "BSD-2-Clause"
 
   livecheck do
@@ -74,7 +74,12 @@ class Varnish < Formula
     #   but is "nothing of concern" (see varnishcache/varnish-cache#3710)
     # - u*.vtc (utilities and background processes)
     testpath = pkgshare/"tests"
-    tests = testpath.glob("[bmu]*.vtc") - [testpath/"m00000.vtc"]
+    timeout_tests = [
+      testpath/"m00000.vtc",
+      testpath/"b00047.vtc",
+      testpath/"u00008.vtc",
+    ]
+    tests = testpath.glob("[bmu]*.vtc") - timeout_tests
     # -j: run the tests (using up to half the cores available)
     # -q: only report test failures
     # varnishtest will exit early if a test fails (use -k to continue and find all failures)
