@@ -4,7 +4,7 @@ class ShadowsocksLibev < Formula
   url "https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz"
   sha256 "cfc8eded35360f4b67e18dc447b0c00cddb29cc57a3cec48b135e5fb87433488"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d202507f9360f6289c0e1c576d2a47daf3644279c1e70289acbd99fdc3a9a541"
