@@ -1,8 +1,8 @@
 class Libgweather < Formula
   desc "GNOME library for weather, locations and timezones"
   homepage "https://wiki.gnome.org/Projects/LibGWeather"
-  url "https://download.gnome.org/sources/libgweather/4.2/libgweather-4.2.0.tar.xz"
-  sha256 "af8a812da0d8976a000e1d62572c256086a817323fbf35b066dbfdd8d2ca6203"
+  url "https://download.gnome.org/sources/libgweather/4.4/libgweather-4.4.0.tar.xz"
+  sha256 "366e866ff2a708b894cfea9475b8e8ff54cb3e2b477ea72a8ade0dabee5f48a4"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   version_scheme 1
 
@@ -40,6 +40,10 @@ class Libgweather < Formula
 
   def install
     ENV["DESTDIR"] = "/"
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "meson", *std_meson_args, "build", "-Dgtk_doc=false", "-Dtests=false"
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
