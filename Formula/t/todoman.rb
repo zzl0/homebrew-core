@@ -3,8 +3,8 @@ class Todoman < Formula
 
   desc "Simple CalDAV-based todo manager"
   homepage "https://todoman.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/5c/18/25c3aa629d9894e2d4631385ea776414f29254936c42b4c5b6f19d228504/todoman-4.3.1.tar.gz"
-  sha256 "d03c73773ca108f59383f3d950186f8978e98ed9a9657e2c89f1f8bb1da6679a"
+  url "https://files.pythonhosted.org/packages/98/3d/db9427c5612c2ba2313b7782ee1f1e28a9c4995d54727d7e9ea23ab131ae/todoman-4.3.2.tar.gz"
+  sha256 "370aae24d2e7ff1ab377c26e38d13556aab917db83f9527c72abac9636fae628"
   license "ISC"
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
@@ -32,8 +32,8 @@ class Todoman < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-log" do
@@ -42,8 +42,8 @@ class Todoman < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/69/86/34d04afc5c33a31f4e9939f857e28fc9d039440f29b99a34f2190f0ab0ac/humanize-4.7.0.tar.gz"
-    sha256 "7ca0e43e870981fa684acb5b062deb307218193bca1a01f2b2676479df849b3a"
+    url "https://files.pythonhosted.org/packages/0c/84/e58c665f4ebb03d2fbeb28b51afb0743f846db18a5b594ed8b8973676ddf/humanize-4.8.0.tar.gz"
+    sha256 "9783373bf1eec713a770ecaa7c2d7a7902c98398009dfa3d8a2df91eec9311e8"
   end
 
   resource "icalendar" do
