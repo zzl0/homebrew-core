@@ -44,6 +44,6 @@ class Libfyaml < Formula
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lfyaml", "-o", "test"
     assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal version.to_s, shell_output("#{testpath}/test").strip
-    assert_equal version.to_s, shell_output("fy-tool --version").strip
+    assert_equal version.to_s, shell_output("#{bin}/fy-tool --version").strip
   end
 end
