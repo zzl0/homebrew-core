@@ -11,14 +11,13 @@ class Dovecot < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "c9e2fc781d0b0a896294e5619d85d19c0d01d0d4e5a833e6b380ba792dc2fa2c"
-    sha256 arm64_monterey: "b911df521e2e6961d5db4553b92e009aa9cce6f84d3fb7a5d5fda0115e3c8355"
-    sha256 arm64_big_sur:  "4c0cacdc42c3170b298fc0a88f5085a51a51ee052b04956fe2d1067b630a0819"
-    sha256 ventura:        "81a94d994329d3a3c8b2ff8f1774a280ae54330174bd1dfad2826fec54287a7b"
-    sha256 monterey:       "b323934b7d27693e28a8d0047576dff6f8029d721e0d6d5d97d6b1afeca30a4a"
-    sha256 big_sur:        "0c9fbdb439b3e781d23ecc4a4f65c81f11ad6a3d238d217eae5918916658bf61"
-    sha256 x86_64_linux:   "8a23a5a515f5f09cc8bbfc9302cc4e0d9cb23ed3368a5eb0241edaded1882759"
+    sha256 arm64_ventura:  "b89589ccfe9620e87c163c99ed504fb875585dd23d4a53487dc7935b02866c0e"
+    sha256 arm64_monterey: "5ae2a7172bf487a36f90ee0115e57572f7a52e5b1dabdfd8929ee4f01b78d2be"
+    sha256 arm64_big_sur:  "ff928eaeb4ec664bd5e8cba3060a4745a9f6a34f667ff288e0f119c930692f3a"
+    sha256 ventura:        "5c6db5e542ce460ccfc2168b3f14ec80279a621cd076fc5836bad88eb93f5d55"
+    sha256 monterey:       "dd17baa57200f7d95ebc5f8870cca4cf9e48c570840e42c9b1f51d02ec1dbbec"
+    sha256 big_sur:        "e3cba8498560c19191205b503aad5093a1dde6bf45c3e01319f94d89f554321d"
+    sha256 x86_64_linux:   "9740a847f5221216150086de18bd43e93500f6d988ad8989f9f98f9458392097"
   end
 
   depends_on "openssl@3"
