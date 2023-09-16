@@ -3,13 +3,17 @@ class Libbladerf < Formula
   homepage "https://nuand.com/"
   url "https://github.com/Nuand/bladeRF.git",
       tag:      "2023.02",
-      revision: "82c5bfd68d1937542a508f031d536fdccabb3985"
+      revision: "41ef63460956e833c9b321252245257ab3946055"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   head "https://github.com/Nuand/bladeRF.git", branch: "master"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # and they may retag a stable version before release, so the `GithubLatest`
+  # strategy is necessary.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
