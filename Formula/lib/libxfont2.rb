@@ -35,7 +35,6 @@ class Libxfont2 < Formula
       --enable-unix-transport
       --enable-tcp-transport
       --enable-ipv6
-      --enable-local-transport
     ]
 
     system "./configure", *configure_args
