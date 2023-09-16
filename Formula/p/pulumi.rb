@@ -8,15 +8,13 @@ class Pulumi < Formula
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6eddf653976601c9f0c9232af457eb62bd906f83d197d673cb4d619f2661f9d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9445232ba36abe1822258c1a6842781520148a51e165f6cb30f19fc70fb6c32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9358c96678161419c7c58d2c45e14a8c4b714d2548bef077af2468b6b5275d20"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "646fc9fef28bce80ed2b2d920e985e605311e2728723033a4989b1b4b78cab37"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4a0b7ea55bff7584f26487738be1ac246c1f94b938c6cbbe2620426f7fc64eb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "6da8e0d620cfe2509ad28d47846ac29e0ba09373ed52b4ed8641c72ade636bd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "7290c46f2d50279bcd52bade13e248002174c59e6e54d5f967cc8e96e1314a23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5d1b0f5ccd606b4d4b1254deea11c2c8510351312316cfe29f2ddb7888fceb9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "077d412ccc1545c7db637e2cd36f1096ad4284fe54f52190ab4d0be4f1728608"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe55ea1c5dcbf1d65cba7a059d56e1f0288ea155056fc69ae08091b62a31e0c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fe46bf563fa27e22e3aa83a9bcf4043a7c966852fd306ab5afeba01a8b32c59"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08b0e8759924ed19be54672847b33ae79c57ab0e38654e89c1d458910008f2ee"
+    sha256 cellar: :any_skip_relocation, ventura:        "26b47df3c5f8af5b86eec08120bef631b5ffa86d74a21d3e72b804a9d38167c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a7ba6d499499ef0f399b2f1b99e46554fae12bc8c54a36a104d13fb7e05a0cf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "abf3291394b36137f35d81abcb35a8fe673bbc7fd7fbaba60013da4796f55e75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f69b831976a395864e995b94358081d8b9a02eb2e211724ae09a10b41d3f0228"
   end
 
   depends_on "go" => :build
