@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/96/74/5498a2a2c4412360901cbd969b603d46b9950754b5ba83c464ffca84a373/dvc-3.20.0.tar.gz"
-  sha256 "70d0a2e5f2be58dffe0ea16f54767f62dc0268a91cc12b589a8aa789a2def9c9"
+  url "https://files.pythonhosted.org/packages/f7/0e/caa24ec2985efe59c9c452ea75a9094e4f6665e6414dc2ca8efad23db97c/dvc-3.21.1.tar.gz"
+  sha256 "2e9671002adafea1750c2d5a70873637be61e7df2bd5b05958c07867d71e3a73"
   license "Apache-2.0"
 
   bottle do
@@ -288,8 +288,8 @@ class Dvc < Formula
   end
 
   resource "dvc-render" do
-    url "https://files.pythonhosted.org/packages/90/bf/09a963c059405d188dd9290f26855893f0b8fa91e839f4631293ef94449d/dvc-render-0.5.3.tar.gz"
-    sha256 "009dc09db44e416285c719324d8e101f675a58d7d846822a9faef307df22c7f2"
+    url "https://files.pythonhosted.org/packages/9c/5e/a5a30613a1f069a50df71433c706ac209ae3e2cd3a8004e3ce91d26ecf29/dvc-render-0.6.0.tar.gz"
+    sha256 "69b7dfdadf890beb6d7fa5b3d4bd33323d78fc4c3ce33ed1bf777026192f9b4d"
   end
 
   resource "dvc-s3" do
