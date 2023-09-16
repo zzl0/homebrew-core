@@ -9,15 +9,13 @@ class AwsSdkCpp < Formula
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "21d23d82fe0f7fac6323ed292e80fb5a77205786008187c6accb5699e458d5e6"
-    sha256 cellar: :any,                 arm64_ventura:  "e74332e5f492b9a2cca95bfea41dc575ad669b551fcd42dbedb2fb63a19e0e53"
-    sha256 cellar: :any,                 arm64_monterey: "5ed062de991716ef57e04925401f8bf8e55fb40f60a39dfaf94435f5c99481cb"
-    sha256 cellar: :any,                 arm64_big_sur:  "f9aa40fd93627659c4690578473814f934e8c7cdfcc99ebeb799a468c3f0dd9d"
-    sha256 cellar: :any,                 sonoma:         "3f18a9dad4e63cafb9a1bf1fa54d7967eb44d4df231b978914ef641144389291"
-    sha256 cellar: :any,                 ventura:        "7944ce0a2c154499fc980f6ea38b31a63db0d9de05387739596b20e47acb5038"
-    sha256 cellar: :any,                 monterey:       "4dd9ee34a44719094730ffcc2b50ad0500d54ed03f58b647686f4891987848fb"
-    sha256 cellar: :any,                 big_sur:        "45eec8291415a5f3af88850d730d5a381c5656a245ee5b3ad347df9910d9b609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1a95b7f9f88a843bfb7f481b4c53ae33a46738cb919e8857546b58c196e7dc1"
+    sha256 cellar: :any,                 arm64_ventura:  "4c26a01a85cbfa93422ccb38438eb02ed77b7ada2fc2e4f449e4646bbafbfae6"
+    sha256 cellar: :any,                 arm64_monterey: "7edf044d56420d357c0c4b3ec00d258b33c8d23af718a0cb95079888206bc1cb"
+    sha256 cellar: :any,                 arm64_big_sur:  "3f1c2fce79920bf49dfb95f27a5e318647f16071c245b7ee9fa7217c577ba33c"
+    sha256 cellar: :any,                 ventura:        "d00cdfabdb9f6ad1a99577c4626d6f5f42eda656539d5e79de52bf80143147cb"
+    sha256 cellar: :any,                 monterey:       "54e5e2d397fa40cdad44327565bb9249dec2cc5f02d493570fa24e99f992133d"
+    sha256 cellar: :any,                 big_sur:        "9fb5fa7cddd12297f983da3c0bfa3a53463a4196ba4a30cac1203e086098c9a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e2cc3df1efa8500026f318731112a0caa3b5c9d5293dbf8bf375564c5aeca84"
   end
 
   depends_on "cmake" => :build
