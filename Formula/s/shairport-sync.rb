@@ -12,13 +12,13 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "02af2fdef1c90aff5e30b840d57634287b7909a02b4b2c5f54c63a044c549030"
-    sha256 arm64_monterey: "0cfbcf05b63c13426bb961dee8bf9804ce684dfc38f1d27ed43bb9861063f1a3"
-    sha256 arm64_big_sur:  "fc6fa4449dff305a72e037805682e41ce4d002ceb965d680b3b2357456a5dacd"
-    sha256 ventura:        "b691cf9ace12fdd87ef2cee18d16d51b404432bc9e8bbf8570571da5e9b1731d"
-    sha256 monterey:       "eba80c010d90826bad8eb4bf849eb3a9f52cd3718acbe47f7bcdf628127328a2"
-    sha256 big_sur:        "5752154c7630d643d76fccee165a09e12ed817cff6014bf4581a72bf2b5af006"
-    sha256 x86_64_linux:   "7d4de3b05ac115645ef2dda082508b540d468de7532a9dd6ce09fe326201405f"
+    sha256 arm64_ventura:  "557d7e53af59825f71c9854ae30bcff7a564b61694ac22490d36ae5f97cb0052"
+    sha256 arm64_monterey: "be5dcf43197f7273a776ca089b8e19e2e15f2113eb30417e86cc58a040dabaab"
+    sha256 arm64_big_sur:  "b089212d4d835f1c5a5aeb0b899a55e1fce6d86dacd7c9717ebc9c34d4940712"
+    sha256 ventura:        "8bed261f1e43bdb2278b490b8349945f3426bb16d8aa7fd38cbf05752be36374"
+    sha256 monterey:       "07561e5d96c41b20e1b607cbf57d2932c83ef531b025765bc649ee3a7cce4090"
+    sha256 big_sur:        "2c3bd6fa8dfbca7a303fd9e960a23e401ecc640069d8ed827ffaade3d542576a"
+    sha256 x86_64_linux:   "fb40d633dc925b198da26961e76d67d495ff9a1f14d0de71c63ac474ba4c55da"
   end
 
   depends_on "autoconf" => :build
