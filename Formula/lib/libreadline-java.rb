@@ -32,7 +32,7 @@ class LibreadlineJava < Formula
     # adjust gnu install parameters to bsd install
     inreplace "Makefile" do |s|
       s.change_make_var! "PREFIX", prefix
-      s.change_make_var! "JAVAC_VERSION", Formula["openjdk"].version
+      s.change_make_var! "JAVAC_VERSION", Formula["openjdk"].version.to_s
       s.change_make_var! "JAVALIBDIR", "$(PREFIX)/share/libreadline-java"
       s.change_make_var! "JAVAINCLUDE", ENV["JAVAINCLUDE"]
       s.change_make_var! "JAVANATINC", ENV["JAVANATINC"]
