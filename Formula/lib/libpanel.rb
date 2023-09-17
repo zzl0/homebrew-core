@@ -1,8 +1,8 @@
 class Libpanel < Formula
   desc "Dock/panel library for GTK 4"
   homepage "https://gitlab.gnome.org/GNOME/libpanel"
-  url "https://download.gnome.org/sources/libpanel/1.2/libpanel-1.2.0.tar.xz"
-  sha256 "d9055bbbab9625f3f5ce6d1fd7132eb6ea34a6ba07a87e9938901fb8b31581e2"
+  url "https://download.gnome.org/sources/libpanel/1.4/libpanel-1.4.0.tar.xz"
+  sha256 "80f143d900e8ced8ff84fa86fe34eb6b48323cb610bcfb6858ea65d8b98f152c"
   license "LGPL-3.0-or-later"
 
   bottle do
