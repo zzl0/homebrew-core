@@ -3,8 +3,9 @@ class Libimobiledevice < Formula
   homepage "https://www.libimobiledevice.org/"
   url "https://github.com/libimobiledevice/libimobiledevice/releases/download/1.3.0/libimobiledevice-1.3.0.tar.bz2"
   sha256 "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
-  license "LGPL-2.1"
-  revision 1
+  license "LGPL-2.1-or-later"
+  revision 2
+  head "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "8b0bc526c6c835d2520e0639f3d69878d36924ff027cdf37079b4e13c1c3c811"
@@ -16,13 +17,9 @@ class Libimobiledevice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb10c484ec49f216384ad7e80d309e026178359df395892b28400f24cb7fedf5"
   end
 
-  head do
-    url "https://git.libimobiledevice.org/libimobiledevice.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libplist"
   depends_on "libtasn1"
@@ -30,14 +27,21 @@ class Libimobiledevice < Formula
   depends_on "openssl@3"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          # As long as libplist builds without Cython
-                          # bindings, libimobiledevice must as well.
-                          "--without-cython",
-                          "--enable-debug-code"
+    # Make libimobiledevice work with libplist 2.3.0
+    # Remove this once libimobiledevice gets a new release
+    inreplace "common/utils.h", "PLIST_FORMAT_XML", "PLIST_FORMAT_XML_" if build.stable?
+    inreplace "common/utils.h", "PLIST_FORMAT_BINARY", "PLIST_FORMAT_BINARY_" if build.stable?
+
+    # As long as libplist builds without Cython bindings,
+    # so should libimobiledevice as well.
+    args = %w[
+      --disable-silent-rules
+      --without-cython
+      --enable-debug
+    ]
+
+    system "./autogen.sh", *std_configure_args, *args if build.head?
+    system "./configure", *std_configure_args, *args if build.stable?
     system "make", "install"
   end
 
