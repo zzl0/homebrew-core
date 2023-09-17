@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https://geth.ethereum.org/"
-  url "https://github.com/ethereum/go-ethereum/archive/v1.12.2.tar.gz"
-  sha256 "5301e2b830dc78a357778e22876b746dd41bacdc4748798e2560ed7e44bd121b"
+  url "https://github.com/ethereum/go-ethereum/archive/v1.13.1.tar.gz"
+  sha256 "7f215fd8c5a2dc6f474339d9091427554572faf1eda26393066e8502db74f6d9"
   license "LGPL-3.0-or-later"
   head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
@@ -53,7 +53,7 @@ class Ethereum < Formula
       }
     EOS
     system "#{bin}/geth", "--datadir", "testchain", "init", "genesis.json"
-    assert_predicate testpath/"testchain/geth/chaindata/000002.log", :exist?,
-                     "Failed to create log file"
+    assert_predicate testpath/"testchain/geth/chaindata/000004.log", :exist?
+    assert_predicate testpath/"testchain/geth/lightchaindata/000002.log", :exist?
   end
 end
