@@ -23,9 +23,11 @@ class Gcc < Formula
   end
 
   bottle do
+    sha256                               arm64_sonoma:   "211b73183975d66eaab45edc85e2a18602677f89a005eac756392e3c9172558b"
     sha256                               arm64_ventura:  "afe400078e0c19c878b507959533dd36cb782fa75bdf8594b3597e03736bf70d"
     sha256                               arm64_monterey: "5bac1f03f4313dc556c76e5af8f13e8aed69a1f57065cb7420acba5f95f15fce"
     sha256                               arm64_big_sur:  "04eb9a4151aa07b6d81c138ad1bbddd7d31a6cf1da3e66c93f4d7bda1ce34320"
+    sha256                               sonoma:         "badd6d8ffb5fb6730ea9716d5634a1df740197d0bbc75f82a9e7fa4cde9b49d7"
     sha256                               ventura:        "1d2be1d2dda6027674ec62f007d6a55b532ef92b1479ebf7c7b25d3103d2f6f0"
     sha256                               monterey:       "4e3f760fedf41958965f60dd20998ddfecc4bf180c92a23df1e20a7e8a5a8bf5"
     sha256                               big_sur:        "54f6b374634ff87a36ebb7f7fe0f6dd72450cc83bab23bba04f8f0daf7889b57"
