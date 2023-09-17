@@ -22,14 +22,14 @@ class Libxmi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a82bdaa8f3c6d1d63dc572bf315c10418d39a0f1e12407dc187f793d8e6e9609"
   end
 
-  on_linux do
+  on_system :linux, macos: :ventura_or_newer do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if OS.linux?
+    system "autoreconf", "--force", "--install", "--verbose" if OS.linux? || (OS.mac? && MacOS.version >= :ventura)
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--infodir=#{info}"
     system "make", "install"
