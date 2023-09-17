@@ -3,7 +3,9 @@ class Ideviceinstaller < Formula
   homepage "https://www.libimobiledevice.org/"
   url "https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2"
   sha256 "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
+  revision 1
+  head "https://github.com/libimobiledevice/ideviceinstaller.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "fb42f5fc7e6da997dc22dd68fe9c57a711250259c737992eeb162cfe871cce99"
@@ -18,22 +20,17 @@ class Ideviceinstaller < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e225e3d9f0e6508b4fb73d9e7ea5eaec71b75d9d7ca7ac591adcfb3b9fd324fc"
   end
 
-  head do
-    url "https://git.sukimashita.com/ideviceinstaller.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libimobiledevice"
   depends_on "libplist"
   depends_on "libzip"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./autogen.sh", *std_configure_args if build.head?
+    system "./configure", *std_configure_args if build.stable?
     system "make", "install"
   end
 
