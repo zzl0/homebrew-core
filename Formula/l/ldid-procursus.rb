@@ -6,6 +6,7 @@ class LdidProcursus < Formula
      revision: "aaf8f23d7975ecdb8e77e3a8f22253e0a2352cef"
   version "2.1.5-procursus7"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://github.com/ProcursusTeam/ldid.git", branch: "master"
 
   bottle do
