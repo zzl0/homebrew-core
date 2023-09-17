@@ -8,13 +8,13 @@ class Libimobiledevice < Formula
   head "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b0bc526c6c835d2520e0639f3d69878d36924ff027cdf37079b4e13c1c3c811"
-    sha256 cellar: :any,                 arm64_monterey: "fbb4fb23c2748673e31c493b5e0cf96d95004e6ab5dd68be83a6544153499ba7"
-    sha256 cellar: :any,                 arm64_big_sur:  "a65ec432835dd253158a5044dfd7fafaab256467973b8a01f066fd6e29cedba7"
-    sha256 cellar: :any,                 ventura:        "9f4d061e7b5acbc2b923417015ace4bd8612a5c15da38e0499ae6835b449b890"
-    sha256 cellar: :any,                 monterey:       "d896a569b513227dae0b0db4a2b2ae3117b1a7330be096bc9a2d791a925c232b"
-    sha256 cellar: :any,                 big_sur:        "62ea023e2c7fa38577a731e0d19e97d7e0a109beb6da1ea9b1a3c5baee6f034e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb10c484ec49f216384ad7e80d309e026178359df395892b28400f24cb7fedf5"
+    sha256 cellar: :any,                 arm64_ventura:  "70b129a29fcade5e0717d8f7b747158294bcc81be05163c072b1f8bb069489de"
+    sha256 cellar: :any,                 arm64_monterey: "307443c3218998505bc71579e9f7ba270f17d825dc59f7cbdac51705cba14760"
+    sha256 cellar: :any,                 arm64_big_sur:  "b9b7296bb7f0573e62bdd3d6f9637b6206455b7628a80db653f5636e13bbc6a3"
+    sha256 cellar: :any,                 ventura:        "bf17ea268adc5a0e2f0a20fe0a54cadfddd93694034571958492f33337ce201e"
+    sha256 cellar: :any,                 monterey:       "fa00bbc261ab959da8712ddcdf118019321870216d6d92eb5243273598ebbe84"
+    sha256 cellar: :any,                 big_sur:        "fb8e517ba7c3d558f22513d32844c6810c49c37a59241191b7ee6e2a509775f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9543f31389a43c41fafeed7e92c477aa9fb936ecd75de0397c3bf337c49ee1c9"
   end
 
   depends_on "autoconf" => :build
