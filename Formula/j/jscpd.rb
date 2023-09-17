@@ -8,13 +8,13 @@ class Jscpd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ffdb869994ed687e2ba055b34db404126b4c2f2eb897e21144a06fe17f063ad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ffdb869994ed687e2ba055b34db404126b4c2f2eb897e21144a06fe17f063ad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ffdb869994ed687e2ba055b34db404126b4c2f2eb897e21144a06fe17f063ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8769fe5ac5ac82db915f871d0970dc003d62bde9edd9921db5632f9dc9f8ffa"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8769fe5ac5ac82db915f871d0970dc003d62bde9edd9921db5632f9dc9f8ffa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8769fe5ac5ac82db915f871d0970dc003d62bde9edd9921db5632f9dc9f8ffa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ffdb869994ed687e2ba055b34db404126b4c2f2eb897e21144a06fe17f063ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e51ad448745846c94b3c51ec46d753c43059b732cf9e1fb94971d5c3a0e32bc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e51ad448745846c94b3c51ec46d753c43059b732cf9e1fb94971d5c3a0e32bc5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e51ad448745846c94b3c51ec46d753c43059b732cf9e1fb94971d5c3a0e32bc5"
+    sha256 cellar: :any_skip_relocation, ventura:        "423d5ece361e23e2c768e51265446c3d5d394193284cde28eac3e3eb5374391a"
+    sha256 cellar: :any_skip_relocation, monterey:       "423d5ece361e23e2c768e51265446c3d5d394193284cde28eac3e3eb5374391a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "423d5ece361e23e2c768e51265446c3d5d394193284cde28eac3e3eb5374391a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e51ad448745846c94b3c51ec46d753c43059b732cf9e1fb94971d5c3a0e32bc5"
   end
 
   depends_on "node"
