@@ -1,9 +1,10 @@
 class Libplist < Formula
   desc "Library for Apple Binary- and XML-Property Lists"
   homepage "https://www.libimobiledevice.org/"
-  url "https://github.com/libimobiledevice/libplist/archive/2.2.0.tar.gz"
-  sha256 "7e654bdd5d8b96f03240227ed09057377f06ebad08e1c37d0cfa2abe6ba0cee2"
-  license "LGPL-2.1"
+  url "https://github.com/libimobiledevice/libplist/releases/download/2.3.0/libplist-2.3.0.tar.bz2"
+  sha256 "4e8580d3f39d3dfa13cefab1a13f39ea85c4b0202e9305c5c8f63818182cac61"
+  license "LGPL-2.1-or-later"
+  head "https://github.com/libimobiledevice/libplist.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "01262690c3dea33ba8d621b5f9e748c84f7e38a3b6648425bf5a97493a9d3ccf"
@@ -20,10 +21,6 @@ class Libplist < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6677078ae6fbcfeabfee04dcb64e405f1bfcea07643752e3b5db89780404d5e"
   end
 
-  head do
-    url "https://git.sukimashita.com/libplist.git"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
@@ -32,16 +29,15 @@ class Libplist < Formula
   def install
     ENV.deparallelize
 
-    args = %W[
-      --disable-dependency-tracking
+    args = %w[
       --disable-silent-rules
-      --prefix=#{prefix}
       --without-cython
     ]
 
-    system "./autogen.sh", *args
+    system "./autogen.sh", *std_configure_args, *args if build.head?
+    system "./configure", *std_configure_args, *args if build.stable?
     system "make"
-    system "make", "install", "PYTHON_LDFLAGS=-undefined dynamic_lookup"
+    system "make", "install"
   end
 
   test do
