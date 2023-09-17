@@ -11,13 +11,13 @@ class QuiltInstaller < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, ventura:        "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, monterey:       "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3eb174a7330aad00dfb973b0b87f77256f51c9a2b071d95995ef5737d4e3ac36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42af4249d7fc720a96ff5f8357726bf43c6efa617dd0b02bd00fa3d32fad8212"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, ventura:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, monterey:       "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11796b3e945ef4f3904a271feb4e1aeb5abea87729443695e8a31be2eea78542"
   end
 
   depends_on "openjdk"
