@@ -6,13 +6,13 @@ class Orcania < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3ffdd4597c4a406080c55e7f90ec6b828f4470785a88f728171c8c35cb849d02"
-    sha256 cellar: :any,                 arm64_monterey: "2ace03709d138b7f31997e0b234639ab95ad03f5b990109b7c7f38978dd11af0"
-    sha256 cellar: :any,                 arm64_big_sur:  "3edaf141533a0dc536a8c15a21f296c4791bb54562a4fdd657772111680aa59b"
-    sha256 cellar: :any,                 ventura:        "a7fcd700be673057f42d686f0d70634fca36966e88e1cdde5392e18a678eb661"
-    sha256 cellar: :any,                 monterey:       "4cf4296cc33f227e026673ffb6566a76089c83ac4ca975e6cc8149d596769cad"
-    sha256 cellar: :any,                 big_sur:        "cc43d837ed6e0ffb20f1203b7f41f47e1d32b7d0415dc81e1becc6eaaf8da815"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7189034df3337410a04cc1a9bbdb73f7c97ff165a4f6e1261b6f0c85ade1b137"
+    sha256 cellar: :any,                 arm64_ventura:  "8b7f8c6ad6bef28777ffa342338aae906c0c8d62c060fd66b89f7b5219e39a0e"
+    sha256 cellar: :any,                 arm64_monterey: "60cca6feb94ed04aed4ee902980e7f98115efe4f44c03d3279c217776dfe23d3"
+    sha256 cellar: :any,                 arm64_big_sur:  "1f29dc9ca40b0b9411705a5b55db2739be4d8e72db4f311d48892a192ec91232"
+    sha256 cellar: :any,                 ventura:        "04e91894340f16e77b29b974885922c8812a8c4d94fc3098ff21ca948747d1df"
+    sha256 cellar: :any,                 monterey:       "49b66d5ad6ad86a71a736c8e171843d4d6d0e83a23d94f4acd78cd90269e761a"
+    sha256 cellar: :any,                 big_sur:        "18f44c9ca72121336f4333774fcc6cd09c8abcebd36a2e0a4877dfcc91a7cd86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd436eb031d76eb857b159813bee79f30712400f420072ef8b57476b3ff26851"
   end
 
   depends_on "cmake" => :build
