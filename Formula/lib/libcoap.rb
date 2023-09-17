@@ -7,9 +7,11 @@ class Libcoap < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "1ea3ea4ca1340cb2ca65bf3b51c6c50358e6872e65f038ac76248d84bf82ee9a"
     sha256 cellar: :any,                 arm64_ventura:  "d580428f27677c98234f1171468b3af17b6903b95b6767eec31949e3ff7b804e"
     sha256 cellar: :any,                 arm64_monterey: "017f40cb804950fd70584d910712be4bc69cadb28c2a7ce31b339c50c5733c1c"
     sha256 cellar: :any,                 arm64_big_sur:  "f1554992af4f5e8fcf912311e14adf5afadbeed43f06fb817ffa4a7c06b7fb84"
+    sha256 cellar: :any,                 sonoma:         "b44d8a2d910abceaf71260605b963ab1988a808a374eb201126d3bd705dd9292"
     sha256 cellar: :any,                 ventura:        "3f92e8acf0c477578a1100307bc975018eb67df3cd638997b60fa962a1ba6b73"
     sha256 cellar: :any,                 monterey:       "53024969c090b3a9b09458541c51d4c631e959c8c1d91408e01981198cb6ed02"
     sha256 cellar: :any,                 big_sur:        "08694760319148b26549e9804c03387fe066ebddd207ad1c1005c8feb341dfe3"
