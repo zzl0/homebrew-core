@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20230723.tar.gz"
-  sha256 "c42a0d951ba23f7665331309fbbe21edc01136a23cb9416850b4315be5fb5904"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20230909.tar.gz"
+  sha256 "1e5e6c76540dfe8104426cd7fd3f715cc6404f9039c9203447012b8f2f6b7b86"
   license "BSD-3-Clause"
 
   livecheck do
@@ -21,6 +21,8 @@ class Bmake < Formula
     sha256                               big_sur:        "72fe87d4361be9f31ed1141a81ae90f3925b84e9a9ea1879cd09258ba0a56eef"
     sha256                               x86_64_linux:   "574792eacc0a610a05e7f6aca7bc9ac658ec80308007ba021928af605d615de4"
   end
+
+  uses_from_macos "bc" => :build
 
   def install
     # Don't pre-roff cat pages.
