@@ -1,8 +1,8 @@
 class Ulfius < Formula
   desc "HTTP Framework for REST Applications in C"
   homepage "https://github.com/babelouest/ulfius/"
-  url "https://github.com/babelouest/ulfius/archive/refs/tags/v2.7.13.tar.gz"
-  sha256 "b1679bc0885acedff66abad84b51f492497ab1114d6911d07d2cf7eb77ccadce"
+  url "https://github.com/babelouest/ulfius/archive/refs/tags/v2.7.14.tar.gz"
+  sha256 "b102cf591ea6526831d72367388bd48dd3ffa3e610513b633ca6cb245dfc07b2"
   license "LGPL-2.1-only"
 
   bottle do
@@ -20,6 +20,8 @@ class Ulfius < Formula
   depends_on "gnutls"
   depends_on "jansson"
   depends_on "libmicrohttpd"
+  depends_on "orcania"
+  depends_on "yder"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
