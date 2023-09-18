@@ -32,6 +32,9 @@ class Libicns < Formula
       "png_set_gray_1_2_4_to_8",
       "png_set_expand_gray_1_2_4_to_8"
 
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"

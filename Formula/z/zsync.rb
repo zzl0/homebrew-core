@@ -26,6 +26,9 @@ class Zsync < Formula
   end
 
   def install
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"

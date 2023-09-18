@@ -39,6 +39,10 @@ class Libtecla < Formula
 
     # Fix hard coded flat namespace usage in configure.
     inreplace "configure", "-flat_namespace -undefined suppress", "-undefined dynamic_lookup"
+
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"
   end

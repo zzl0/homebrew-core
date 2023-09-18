@@ -36,6 +36,10 @@ class Freeimage < Formula
     # https://sourceforge.net/p/freeimage/bugs/325/
     # https://sourceforge.net/p/freeimage/discussion/36111/thread/cc4cd71c6e/
     ENV["CFLAGS"] = "-O3 -fPIC -fexceptions -fvisibility=hidden -DPNG_ARM_NEON_OPT=0" if Hardware::CPU.arm?
+
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     # Fix build error on Linux: ImathVec.h:771:37: error: ISO C++17 does not allow dynamic exception specifications
     ENV["CXXFLAGS"] = "-std=c++98" if OS.linux?
     system "make", "-f", "Makefile.gnu"

@@ -32,6 +32,9 @@ class Libsmi < Formula
   depends_on "libtool" => :build
 
   def install
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

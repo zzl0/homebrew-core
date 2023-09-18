@@ -43,6 +43,9 @@ class Libdv < Formula
       system "autoreconf", "-fvi"
     end
 
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-gtktest",
