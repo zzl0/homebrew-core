@@ -1,8 +1,8 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.09.04.00.tar.gz"
-  sha256 "d42f71d2e3f334d1a0797922abe04b16a1bd0b2c7914bf5c8c801d8a7538f9e5"
+  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.09.18.00.tar.gz"
+  sha256 "edb6d391d545c6039d9f8a56e5e3cf5b5ead928f1f468bd09e596b78119e65af"
   license "MIT"
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
@@ -34,6 +34,9 @@ class Edencommon < Formula
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
+    inreplace buildpath.glob("eden/common/{os,utils}/test/CMakeLists.txt"),
+              /gtest_discover_tests\((.*)\)/,
+              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
     inreplace "eden/common/utils/test/CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
@@ -45,25 +48,16 @@ class Edencommon < Formula
 
   test do
     (testpath/"test.cc").write <<~EOS
-      #include <eden/common/utils/ProcessNameCache.h>
+      #include <eden/common/utils/ProcessInfo.h>
       #include <cstdlib>
       #include <iostream>
 
       using namespace facebook::eden;
 
-      ProcessNameCache& getProcessNameCache() {
-        static auto* pnc = new ProcessNameCache;
-        return *pnc;
-      }
-
-      ProcessNameHandle lookupProcessName(pid_t pid) {
-        return getProcessNameCache().lookup(pid);
-      }
-
       int main(int argc, char **argv) {
         if (argc <= 1) return 1;
         int pid = std::atoi(argv[1]);
-        std::cout << lookupProcessName(pid).get() << std::endl;
+        std::cout << readProcessName(pid) << std::endl;
         return 0;
       }
     EOS
