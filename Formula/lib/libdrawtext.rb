@@ -20,6 +20,10 @@ class Libdrawtext < Formula
 
   def install
     system "./configure", "--disable-dbg", "--enable-opt", "--prefix=#{prefix}"
+
+    # Avoid errors with Xcode 15
+    inreplace "Makefile", "CFLAGS =", "CFLAGS = -Wno-implicit-function-declaration"
+
     system "make", "install"
     system "make", "-C", "tools/font2glyphmap"
     system "make", "-C", "tools/font2glyphmap", "PREFIX=#{prefix}", "install"
