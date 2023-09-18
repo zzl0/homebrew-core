@@ -1,7 +1,7 @@
 class Cycode < Formula
   include Language::Python::Virtualenv
 
-  desc "Boost software development security via secret scanning, SAST, SCA, and IaC"
+  desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq-public/cycode-cli"
   url "https://files.pythonhosted.org/packages/66/aa/0a1fd9601299384a87706463254a0cdd682fa982585ab6a8e872fa1e7d1c/cycode-1.1.0.tar.gz"
   sha256 "d9a359be988a09b96fc487b958b515a62447bb1871cf3b77a17c4f47a8c4e782"
