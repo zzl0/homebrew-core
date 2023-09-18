@@ -5,6 +5,16 @@ class Uffizzi < Formula
   sha256 "83d5b590f4f888638fd347c9b02cb075aaf8943450f799a17bd72db61ef79476"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c64408fadc1c794443ac0e39642f1b53cc18b2159a2c7807265840386fc5881"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c64408fadc1c794443ac0e39642f1b53cc18b2159a2c7807265840386fc5881"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c64408fadc1c794443ac0e39642f1b53cc18b2159a2c7807265840386fc5881"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9a5d6f46a4ebafb0f1c52e58dcb643bf0c03beed3a30718cbebc8d0b60b5acd"
+    sha256 cellar: :any_skip_relocation, monterey:       "b9a5d6f46a4ebafb0f1c52e58dcb643bf0c03beed3a30718cbebc8d0b60b5acd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9a5d6f46a4ebafb0f1c52e58dcb643bf0c03beed3a30718cbebc8d0b60b5acd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c64408fadc1c794443ac0e39642f1b53cc18b2159a2c7807265840386fc5881"
+  end
+
   depends_on "ruby@3.0"
 
   resource "activesupport" do
