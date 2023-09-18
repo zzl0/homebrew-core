@@ -11,15 +11,13 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, ventura:        "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, monterey:       "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, big_sur:        "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92bcca09b7189d9c85b5cb2579a1e29c6221ed630bd1cbff38c272c9363d71c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, ventura:        "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c38d38ec763fe238fd23a15f5f96c08cb10569b03330a52f08346ed7bd817c0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec53090bfa42eb7ef8474d5d71adfa23c7a48252ced07dd1bc268386ecf4ebb9"
   end
 
   head do
