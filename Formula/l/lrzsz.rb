@@ -45,6 +45,11 @@ class Lrzsz < Formula
     sha256 "16c2097ceb2c5c9a6c4872aa9f903b57b557b428765d0f981579206c68f927b9"
   end
 
+  patch :p0 do
+    url "https://raw.githubusercontent.com/macports/macports-ports/1dc9c770d34f9f235e5ed619d9284e521d4bbeb8/comms/lrzsz/files/implicit.patch"
+    sha256 "215bcf3d21f8cb310c1a3de9a35184effe7f10d2e6ab4d91a65cfb436ddc5c4e"
+  end
+
   # Patch CVE-2018-10195.
   # https://bugzilla.novell.com/show_bug.cgi?id=1090051
   patch :p0 do
