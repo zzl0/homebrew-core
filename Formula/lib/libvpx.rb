@@ -36,6 +36,14 @@ class Libvpx < Formula
       args << "--enable-runtime-cpu-detect"
     end
 
+    if OS.mac?
+      inreplace "build/make/Makefile" do |s|
+        s.gsub! "-Wl,--no-undefined", "-Wl,-undefined,error"
+        s.gsub! "-Wl,-soname,", "-Wl,-install_name,"
+        s.gsub!(/-Wl,--version-script,[^\s,-]+?/, "")
+      end
+    end
+
     mkdir "macbuild" do
       system "../configure", *args
       system "make", "install"
