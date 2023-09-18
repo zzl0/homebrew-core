@@ -6,13 +6,13 @@ class Sqlpage < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80c96bfb60aecdfc8e6c7d193a49a6f4bb1273797c0e2bdbd799053f3e4aa919"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f53b92f0818097ce45233c0c4f360f5e49eaf3c102bae699c6d5e64ee7f0aca"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8cfe246238f5640155a45c12da62cbd2ecabc0a1f8d879b4af9fa24a335abe6"
-    sha256 cellar: :any_skip_relocation, ventura:        "286b8232d39c00f153d8a421605c86219fdeab98a2a2c51a136c45b8317138ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "c83b579950ea966066e23c475f70d0595581783b1b32813e52710fee6ab6abdd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a1f7a10fde5b6407461d3f34afbbdc7812e888f608a18b2cb58406ac60da759e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc6e75a4f42b93baaf32eae4c22a39bc46efbde84dafeba9c3034e3d9930b63"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "557f08fabeba38549c643ccb91e60027e0f97dd35c027cda1315f859f24292ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9723b2b04b486acada6d551ec6b382e44b6f29b572cf5dc4b994f0a6a0bf092c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59f141e6f4321be45fc836af774ba82de03bfbed574a8f7ac4c77ccbd486b5a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "7135cc83148f6f9657d7246b5d41abd28c852b2ae4b4755746f9a7916eb18e11"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb2b307faf34e39cc68a6faa0495258493fa9c373299de8f4ccc1be00d6f4b8e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c5ead479f9d84857e1727e738cba5fb3fae77982ce619a803b3098dba3a2c07d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14c7d00beba0de9c83e98bf57291ef96f184f266cef021bcc9d03e6b8803f6df"
   end
 
   depends_on "rust" => :build
