@@ -72,6 +72,7 @@ class JpegXl < Formula
                     "-DJPEGXL_VERSION=#{version}",
                     "-DJPEGXL_ENABLE_MANPAGES=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DPython_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python"}",
                     "-DPython3_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python3"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
