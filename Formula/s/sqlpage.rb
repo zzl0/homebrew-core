@@ -1,18 +1,18 @@
 class Sqlpage < Formula
   desc "Web application framework, for creation of websites with simple database queries"
   homepage "https://sql.ophir.dev/"
-  url "https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "c45943483027a7932fb72c6935fa92f10927c50ed57830e77865e85bd96b2123"
+  url "https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "5709f5a5fe4c6eae29994c90573ac364dabc4f060b99932c8abe120486865df7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "557f08fabeba38549c643ccb91e60027e0f97dd35c027cda1315f859f24292ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9723b2b04b486acada6d551ec6b382e44b6f29b572cf5dc4b994f0a6a0bf092c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59f141e6f4321be45fc836af774ba82de03bfbed574a8f7ac4c77ccbd486b5a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "7135cc83148f6f9657d7246b5d41abd28c852b2ae4b4755746f9a7916eb18e11"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb2b307faf34e39cc68a6faa0495258493fa9c373299de8f4ccc1be00d6f4b8e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c5ead479f9d84857e1727e738cba5fb3fae77982ce619a803b3098dba3a2c07d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14c7d00beba0de9c83e98bf57291ef96f184f266cef021bcc9d03e6b8803f6df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a06d9fbecddb14b9fb76ff8e798e8a7d38b19a44a441b6bf3e0cb8a5433b5d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44730c20406f49bc21d636bcc7e2dfb3b8e01ebb07c406f4af0905e0cac40597"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "679596defb801396ce0da0c5bf83e6b89de05eb60318f6d00e55c5318d93d82c"
+    sha256 cellar: :any_skip_relocation, ventura:        "50997a2e71ebf9d8f7bcb1d4f690b470c0729e38a01dfe0f22052c17130fa3ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e485c50cb7d7576f6eeb6db450a73e944a11e03e351cc94d3d24782abed1fd5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c3e0422c603a98d13e6b0807b9cafdc9423e307b4f7b3b972cc06f37d1ba4645"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f7f7403fc0e8eaacdcfd907e2bd9cd30d36487e2709e316b791fba61e8183f7"
   end
 
   depends_on "rust" => :build
