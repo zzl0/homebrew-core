@@ -14,13 +14,13 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "29b300dbfcdf66a9788c47d34b004597b335a0fa337db83ede9fd5058341106a"
-    sha256                               arm64_monterey: "dfa02759e46a2d6b9a63c68554de28f5ebc73c39bf297b310dac77f2ee975cf4"
-    sha256                               arm64_big_sur:  "1b04324e5aa82f65af4d99f49ace42c0b943d4a9588a46aeb47e0bb53e5ca713"
-    sha256                               ventura:        "0127e9ebfb2bbdc8bdeabcd80c1cb657417d05887404e38fd02b59a1112bc69e"
-    sha256                               monterey:       "6939bafb4effca4d8397b88fe37cdbf6cc2c30ee05874c47b6ae0035d468c4aa"
-    sha256                               big_sur:        "c5b1344c9a6e7553d4356533d75b0e8ac51aa046baf27736bb18c11232c66deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "276a65970d0340ba9c8cfdbcf10a56421be409920f02c1c9e02fdf771189cc24"
+    sha256                               arm64_ventura:  "6db5381e512659b8320d83fc752d25080fbbde6d7db529113d9bc0e653ceeee8"
+    sha256                               arm64_monterey: "328a6e3e2669f0fc6773db0ae03d24d24d30cde3d4fc153c282885e752130cd1"
+    sha256                               arm64_big_sur:  "f152097880272bd8295ffe86037f582026cc8717183f389e682a4e66ddaf7468"
+    sha256                               ventura:        "48c07ebec0010af5f97efd18a38900e2ed88c999ab7364ec7666ee2903bda31c"
+    sha256                               monterey:       "3db805ae9444acfd8fe58b42a1d30e245b3fd62a8f7e155ff1df9fdf2c5e38c6"
+    sha256                               big_sur:        "95dce7c79103a61049e7750be7665f6de877181753a827abf83f92c94f767b9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "757e56afe26f46ad893658d93a57d92eca3bd759c19f5fe42d45f4dfde21f20a"
   end
 
   depends_on "cmake" => :build
