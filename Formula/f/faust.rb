@@ -6,13 +6,13 @@ class Faust < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9f669ca4385f8ad64cf744fa728318e7e25554742596b8f16ac6378ddbc34316"
-    sha256 cellar: :any,                 arm64_monterey: "b432e5ac62d28d69b4e917e21a3b6965c4a5eba1efef19601d3627da6be3a240"
-    sha256 cellar: :any,                 arm64_big_sur:  "c74cc1f70e889a90c7b19fcaa8ee9093c4ad4eb292c82bbd4ffd39b4f4dfe0a6"
-    sha256 cellar: :any,                 ventura:        "915550621389f81fbc7fc7e227b5ea7f2c9e604dc286e2488b25069c89a438e6"
-    sha256 cellar: :any,                 monterey:       "b95166a7064904dd6eca10fe79fa5573fe1a2131dc4ab2f7213cb16c80eb5c97"
-    sha256 cellar: :any,                 big_sur:        "8356978a5748505893e7688f65b383d07c87d83281e7ea15e4cff4c7e5a557d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "336240c1d431644a6e29a9adf0741427e6496c230abfe128bf35ef83eb1b0a70"
+    sha256 cellar: :any,                 arm64_ventura:  "b45850608b669abcaefa6099dfee88d8764535be63a74303d013ff1c80adc4ba"
+    sha256 cellar: :any,                 arm64_monterey: "bccd0d3ea0ba6960e305bfc2e5e9c3766be367d292e3d57e6001785f67634b78"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ea493bf42bdf6d80e42b2cd4a5fad15a481fc513435d0f509a43479d077eb3e"
+    sha256 cellar: :any,                 ventura:        "c5bb3f47a95767ddcff657283c1bc71a3072e287c8ab631b5d349556cdfc6faa"
+    sha256 cellar: :any,                 monterey:       "5b6547c0a22ffa0727458d5e3c1551d89a55333d979aba4a7113975e59b065ed"
+    sha256 cellar: :any,                 big_sur:        "95673475939bf786e04159be8d99e4be2e1ee27a2690235895d85c3b208fa662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c99d180157e67a5dd0e8b2eea2a915ce46a3af0b447b9628799c1ddf41e330c5"
   end
 
   depends_on "cmake" => :build
