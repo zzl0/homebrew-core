@@ -1,8 +1,8 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
-  url "https://github.com/grame-cncm/faust/releases/download/2.68.0/faust-2.68.0.tar.gz"
-  sha256 "423bba0bc218348d24dbcf3838a0be315b1f20e0a8f97f42741284f0ee815e07"
+  url "https://github.com/grame-cncm/faust/releases/download/2.68.1/faust-2.68.1.tar.gz"
+  sha256 "d4ee30e2444bed55b593c6c70ec4e330b71260819d4011b37d8c9b9c061e810f"
   license "GPL-2.0-or-later"
 
   bottle do
