@@ -1,9 +1,11 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/grame-cncm/faust/releases/download/2.68.1/faust-2.68.1.tar.gz"
   sha256 "d4ee30e2444bed55b593c6c70ec4e330b71260819d4011b37d8c9b9c061e810f"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "b45850608b669abcaefa6099dfee88d8764535be63a74303d013ff1c80adc4ba"
@@ -19,7 +21,7 @@ class Faust < Formula
   depends_on "pkg-config" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   fails_with gcc: "5"
 
