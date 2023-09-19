@@ -40,7 +40,7 @@ class Xidel < Formula
     end
 
     cd "programs/internet/xidel" unless build.head?
-    inreplace "build.sh", "$fpc ", "$fpc -k-rpath -k#{sh_quote Formula["openssl@3"].opt_lib} "
+    inreplace "build.sh", "$fpc ", "$fpc -k-rpath -k#{sh_quote Formula["openssl@3"].opt_lib.to_s} "
     system "./build.sh"
     bin.install "xidel"
     man1.install "meta/xidel.1"
