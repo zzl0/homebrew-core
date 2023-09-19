@@ -3,8 +3,8 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/19/68/72790a7b45433ab70131548020b61765680f30b5881c6decebdb1ff808f8/huggingface_hub-0.17.1.tar.gz"
-  sha256 "dd828d2a24ee6af86392042cc1052c482c053eb574864669f0cae4d29620e62c"
+  url "https://files.pythonhosted.org/packages/76/ef/02edc4ffe8f06e118da66279b2fa31e5323d3c82b75d9a5482b67c10f76a/huggingface_hub-0.17.2.tar.gz"
+  sha256 "51b0257ff75b422d3cb0662db799c7a03fdc72b8f84a09ce3ff7655dca1958b2"
   license "Apache-2.0"
 
   bottle do
@@ -31,13 +31,13 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
-    sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
+    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
+    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/1d/0d/fcbbc5b104a745982118283f07c427a355bf76b8b595005f6b1b9add6b9f/fsspec-2023.9.0.tar.gz"
-    sha256 "4dbf0fefee035b7c6d3bbbe6bc99b2f201f40d4dca95b67c2b719be77bcd917f"
+    url "https://files.pythonhosted.org/packages/ca/2f/93a4a8eed0234a6b20a32c718ddd0ab712c66b4bda6ce4c3bcd51b279a66/fsspec-2023.9.1.tar.gz"
+    sha256 "da8cfe39eeb65aaa69074d5e0e4bbc9b7ef72d69c0587a31cab981eefdb3da13"
   end
 
   resource "idna" do
