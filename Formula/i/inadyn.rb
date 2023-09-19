@@ -6,13 +6,13 @@ class Inadyn < Formula
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
   bottle do
-    sha256 arm64_ventura:  "698ac07a4d325652848e18f45a209fd5ae07bcf02ffed533183d2ae466ef2150"
-    sha256 arm64_monterey: "5e45cd2280d8920b15fce3d5825fba0f705506fc430e8b65d0cdec466c1805a2"
-    sha256 arm64_big_sur:  "f9c7ff2d284b203e63793ee34fc56a171acdc99e7ccbb893e4fc7ce5c3624c33"
-    sha256 ventura:        "7853e374a5991661db97cc58e9e6c5d37b76308c0e99cd1f093c88ac980ef836"
-    sha256 monterey:       "b884d4ccafd28876a4bb6ff25aa6db00dc15dd7f87a77163a53393d8bf17d123"
-    sha256 big_sur:        "97e02510700ff61ca2b0932273d15e03159cf01a38df843350868ba4cda095cc"
-    sha256 x86_64_linux:   "dd28084bcb90b80a67470ae446b87acfb980ae49228abb6a5a422085684ddaff"
+    sha256 arm64_ventura:  "174182adaa5fe0f4109350449a22af67979963cfff2d1c061ea2831c1657921c"
+    sha256 arm64_monterey: "11427c528e6354558c3031729130274e52d3fa304801523c0bc9305a11ea0352"
+    sha256 arm64_big_sur:  "17bdc871fa2a0195a3fc5aad3a3088d3fd82bf82373abab194cd886a34fe8f72"
+    sha256 ventura:        "37916b230975cb4d718b41108b1e6a98b475f27e9c731285fd286e572af414ec"
+    sha256 monterey:       "b50296e99a5e8841ffa158c7d29a0ad6532cd5cbcc430dd1dabee8a8c792d22f"
+    sha256 big_sur:        "e026b42611ff126596674a9aee10b6c33321bb471d8ed3f27836014dec1b4eeb"
+    sha256 x86_64_linux:   "056482287ad8f58d2ffd63ab62d28f9e0d136ddfce39eb884265e9e9c7ffafe9"
   end
 
   head do
