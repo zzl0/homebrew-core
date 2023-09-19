@@ -16,10 +16,16 @@ class XmlrpcC < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cd0152929227f84c1f2ec41591f0d9484b82054d75aa99a1ac908df9ac634db"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "openssl@3"
+
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
   def install
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     ENV.deparallelize
     # --enable-libxml2-backend to lose some weight and not statically link in expat
     system "./configure", "--enable-libxml2-backend",
