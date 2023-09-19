@@ -1,8 +1,8 @@
 class CreateDmg < Formula
   desc "Shell script to build fancy DMGs"
   homepage "https://github.com/create-dmg/create-dmg"
-  url "https://github.com/create-dmg/create-dmg/archive/v1.1.0.tar.gz"
-  sha256 "d50e14a00b73a3f040732b4cfa11361f5786521719059ce2dfcccd9088d3bf32"
+  url "https://github.com/create-dmg/create-dmg/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "359263a9d586f10107c6b77178bf57a9658917bf57db44d350b35a50002810c8"
   license "MIT"
 
   bottle do
