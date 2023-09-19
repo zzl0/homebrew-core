@@ -2,12 +2,13 @@ class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
   license "NCSA"
-  revision 1
+  revision 2
 
   stable do
+    # TODO: Check if we can use unversioned `llvm` at version bump.
     url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
     sha256 "75fce1e6485f280f8f13f4c2d090b11d2fd2102b50857507c8413a919b7af899"
-    depends_on "llvm"
+    depends_on "llvm@16"
   end
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
@@ -47,11 +48,16 @@ class IncludeWhatYouUse < Formula
   end
 
   def install
+    # FIXME: CMake stripped out our `llvm` rpath; work around that.
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath(source: libexec/"bin", target: llvm.opt_lib)}
+    ]
+
     # We do not want to symlink clang or libc++ headers into HOMEBREW_PREFIX,
     # so install to libexec to ensure that the resource path, which is always
     # computed relative to the location of the include-what-you-use executable
     # and is not configurable, is also located under libexec.
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec)
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec), *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
