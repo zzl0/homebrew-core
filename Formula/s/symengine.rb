@@ -1,9 +1,11 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/symengine/symengine/releases/download/v0.10.1/symengine-0.10.1.tar.gz"
   sha256 "9c007c99e9633f5549a55fa7a66ebcbcf9e04092eb55f7bb781c22b9cf0570c4"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "068f145d1f1cb87416969785f5b346dda3a22149b16cb941b7a9081cbfc6c286"
@@ -20,7 +22,7 @@ class Symengine < Formula
   depends_on "flint"
   depends_on "gmp"
   depends_on "libmpc"
-  depends_on "llvm"
+  depends_on "llvm@16"
   depends_on "mpfr"
 
   fails_with gcc: "5"
