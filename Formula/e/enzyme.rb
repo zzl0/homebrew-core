@@ -1,9 +1,11 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.84.tar.gz", using: :homebrew_curl
   sha256 "1615288f06de51372c3500f77656b155dc42a6dec34e288dd0856cbd376b464c"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
@@ -17,7 +19,7 @@ class Enzyme < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   fails_with gcc: "5"
 
