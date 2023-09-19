@@ -32,6 +32,9 @@ class Xdotool < Formula
   end
 
   def install
+    # Avoid errors with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "make", "PREFIX=#{prefix}", "INSTALLMAN=#{man}", "install"
   end
 
