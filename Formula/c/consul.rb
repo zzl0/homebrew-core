@@ -4,8 +4,8 @@ class Consul < Formula
   # NOTE: Do not bump to 1.17.0+ as license changed to BUSL-1.1
   # https://github.com/hashicorp/consul/pull/18443
   # https://github.com/hashicorp/consul/pull/18479
-  url "https://github.com/hashicorp/consul/archive/refs/tags/v1.16.1.tar.gz"
-  sha256 "9fec1683131ff122a43512f265131729e20212e26353d017805c5566dfec2333"
+  url "https://github.com/hashicorp/consul/archive/refs/tags/v1.16.2.tar.gz"
+  sha256 "0dacc7eeacd19a687e20fa83ae88444d2a5336a9150cfc116d39a39b31d5829d"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul.git", branch: "main"
 
