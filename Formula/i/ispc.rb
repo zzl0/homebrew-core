@@ -1,9 +1,11 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://github.com/ispc/ispc/archive/v1.21.0.tar.gz"
-  sha256 "fc170dafd4e1fba1d193d772d8346114136a132b0d8a8c3a1f3c3f821a615722"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
+  url "https://github.com/ispc/ispc/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "ac0941ce4a0aae76901133c0d65975a17632734534668ce2871aacb0d99a036c"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "8dc0287eeb379ffda4eb6ad17fcfe14f6ed1f8a20511229e54174e8e9b29ff08"
@@ -19,7 +21,7 @@ class Ispc < Formula
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.11" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   on_linux do
     depends_on "tbb"
