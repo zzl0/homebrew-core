@@ -2,29 +2,19 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 2
 
   stable do
-    # TODO: check if we can use unversioned `llvm` and `libgit2` at version bump.
-    # See comments below for details on `libgit2`.
-    url "https://static.rust-lang.org/dist/rustc-1.72.0-src.tar.gz"
-    sha256 "ea9d61bbb51d76b6ea681156f69f0e0596b59722f04414b01c6e100b4b5be3a1"
+    # TODO: try switching to `llvm` 17 at 1.73.0.
+    # See: https://github.com/rust-lang/rust/issues/116020
+    url "https://static.rust-lang.org/dist/rustc-1.72.1-src.tar.gz"
+    sha256 "7f48845f6a52cdbb5d63fb0528fd5f520eb443275b55f98e328159f86568f895"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
+    # When bumping to a new version, check if we can use unversioned `libgit2`.
+    # See comments below for details.
     resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git",
-          tag:      "0.73.1",
-          revision: "26bba48309d080ef3a3a00053f4e1dc879ef1de9"
-    end
-
-    # Fix for a compiler issue that may cause some builds to spin forever.
-    # Remove on 1.73.0 release.
-    # https://github.com/rust-lang/rust/pull/114948
-    # https://github.com/rust-lang/rust/issues/115297
-    # https://github.com/kpcyrd/sh4d0wup/issues/12
-    patch do
-      url "https://github.com/rust-lang/rust/commit/0f7f6b70617fbcda9f73755fa9b560bfb0a588eb.patch?full_index=1"
-      sha256 "549f446612bef10a1a06a967f61655b59c1b6895d762d764ca89caf65c114fe9"
+      url "https://github.com/rust-lang/cargo/archive/refs/tags/0.73.1.tar.gz"
+      sha256 "976fb6f3e773319e60875772478645297d9eacc852857e288e8cec65399d2c88"
     end
   end
 
@@ -48,7 +38,6 @@ class Rust < Formula
     end
   end
 
-  depends_on "python@3.11" => :build
   # To check for `libgit2` version:
   # 1. Search for `libgit2-sys` version at https://github.com/rust-lang/cargo/blob/#{cargo_version}/Cargo.lock
   # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
@@ -61,6 +50,7 @@ class Rust < Formula
   depends_on "openssl@3"
   depends_on "pkg-config"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
@@ -90,8 +80,6 @@ class Rust < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
-
     # Ensure that the `openssl` crate picks up the intended library.
     # https://docs.rs/openssl/latest/openssl/#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -208,7 +196,9 @@ class Rust < Formula
     missing_linkage = []
     expected_linkage.each do |binary, dylibs|
       dylibs.each do |dylib|
-        missing_linkage << "#{binary} => #{dylib}" unless check_binary_linkage(binary, dylib)
+        next if check_binary_linkage(binary, dylib)
+
+        missing_linkage << "#{binary} => #{dylib}"
       end
     end
     assert missing_linkage.empty?, "Missing linkage: #{missing_linkage.join(", ")}"
