@@ -8,9 +8,11 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c5e39e0b3eef29b9521e4bad2508f0b9c782f1b7a02d20483847b68b2a13ffef"
     sha256 cellar: :any,                 arm64_ventura:  "4a53a10d59bb01d1b17208b6b0cf40fce01cd5adb8f68a34d4cfab7757abc4f2"
     sha256 cellar: :any,                 arm64_monterey: "09c0ff9590e3958f8f69ca462b9444464d584ab6e218ed5257df3a0ba0fb23a7"
     sha256 cellar: :any,                 arm64_big_sur:  "9d54881b3a3fb71645a1a0f520af930fe80137b4a29f7e07e9bb4c8f8eeb418e"
+    sha256 cellar: :any,                 sonoma:         "e346bd11e973bcb4535787d9c5f3a5d9358f9f002ab33707fcf19efb8bfacbe8"
     sha256 cellar: :any,                 ventura:        "d1b499f34443d37e81f57302a9318ac001a253bfd61760a3cf9901dd9e393110"
     sha256 cellar: :any,                 monterey:       "ddb41e324291b58a0fdd500b260b701fdc5eef19babec95c4b41ded9566e9e2c"
     sha256 cellar: :any,                 big_sur:        "847b9a0408e4d8c06aae7d4a98f1891bec5e13107309d9b3e41c1020f479068c"
