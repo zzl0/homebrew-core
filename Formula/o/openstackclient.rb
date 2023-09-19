@@ -211,6 +211,11 @@ class Openstackclient < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
+  resource "python-designateclient" do
+    url "https://files.pythonhosted.org/packages/77/39/256c2c4a54c5d9efe64a9c711f49d7756a4b59c802649ead4787ab24a599/python-designateclient-5.3.0.tar.gz"
+    sha256 "ee7ae841eabff1cc389dc4582387366ed574a353c46b16a96fb411253d469844"
+  end
+
   resource "python-heatclient" do
     url "https://files.pythonhosted.org/packages/09/ac/6707625482f57612aaeee9b39c5b830b8cb6c10a937b1574867e5c70acd4/python-heatclient-3.3.0.tar.gz"
     sha256 "a2905bf597fad2480cb41362b3673edb65464bba6c1440cf62f973ed6c8a207b"
