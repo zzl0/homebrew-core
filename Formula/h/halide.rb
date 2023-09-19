@@ -1,9 +1,11 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/halide/Halide/archive/v16.0.0.tar.gz"
   sha256 "a0cccee762681ea697124b8172dd65595856d0fa5bd4d1af7933046b4a085b04"
   license "MIT"
+  revision 1
   head "https://github.com/halide/Halide.git", branch: "main"
 
   livecheck do
@@ -25,7 +27,7 @@ class Halide < Formula
   depends_on "pybind11" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "llvm"
+  depends_on "llvm@16"
   depends_on "python@3.11"
 
   fails_with :gcc do
