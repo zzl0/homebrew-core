@@ -2,11 +2,11 @@ class Fortls < Formula
   include Language::Python::Virtualenv
 
   desc "Fortran language server"
-  homepage "https://gnikit.github.io/fortls"
+  homepage "https://fortls.fortran-lang.org/"
   url "https://files.pythonhosted.org/packages/38/04/db988efbcaac142999af91888e9750dfa422108a318ec3038c2cd42ecf04/fortls-2.13.0.tar.gz"
   sha256 "23c5013e8dd8e1d65bf07be610d0827bc48aa7331a7a7ce13612d4c646d0db31"
   license "MIT"
-  head "https://github.com/gnikit/fortls.git", branch: "master"
+  head "https://github.com/fortran-lang/fortls.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -20,6 +20,7 @@ class Fortls < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ba1a8b8188320fa146ab8ae10b970a539e8514ca07daa43a427479447bd204c"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   conflicts_with "fortran-language-server", because: "both install `fortls` binaries"
@@ -27,11 +28,6 @@ class Fortls < Formula
   resource "json5" do
     url "https://files.pythonhosted.org/packages/47/12/611bf15000c1fc54af909565aed1ad045e5ae1890d8c56cbfe5ceaf52446/json5-0.9.10.tar.gz"
     sha256 "ad9f048c5b5a4c3802524474ce40a622fae789860a86f10cc4f7e5f9cf9b46ab"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
   resource "pyparsing" do
