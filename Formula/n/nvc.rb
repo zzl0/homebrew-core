@@ -1,9 +1,11 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/nickg/nvc/releases/download/r1.10.3/nvc-1.10.3.tar.gz"
   sha256 "b5e6cdc6f62a1496e652cfd571f40d6112277e8a9b077690a21d54015562f64e"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "85473f7cec74ccf730b01d08608471561b4c706ac1757dca9f8adcc51d6d88ab"
@@ -24,7 +26,7 @@ class Nvc < Formula
 
   depends_on "check" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   uses_from_macos "flex" => :build
 
@@ -43,7 +45,7 @@ class Nvc < Formula
 
     # In-tree builds are not supported.
     mkdir "build" do
-      system "../configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
+      system "../configure", "--with-llvm=#{Formula["llvm@16"].opt_bin}/llvm-config",
                              "--prefix=#{prefix}",
                              "--with-system-cc=#{ENV.cc}",
                              "--disable-silent-rules"
