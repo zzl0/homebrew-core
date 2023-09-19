@@ -43,7 +43,9 @@ class Ykdl < Formula
   end
 
   test do
-    system bin/"ykdl", "--info", "https://v.youku.com/v_show/id_XNTAwNjY3MjU3Mg==.html"
+    video_url = "https://v.youku.com/v_show/id_XNTAwNjY3MjU3Mg==.html"
+    output = shell_output("#{bin}/ykdl --info #{video_url} 2>&1", 1)
+    assert_match "CRITICAL:YKDL", output
     assert_match version.to_s, shell_output("#{bin}/ykdl -h")
   end
 end
