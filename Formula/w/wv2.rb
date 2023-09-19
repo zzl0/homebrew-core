@@ -102,7 +102,7 @@ class Wv2 < Formula
       }
     EOS
 
-    wv2_flags = shell_output("wv2-config --cflags --libs").chomp.split
+    wv2_flags = shell_output("#{bin}/wv2-config --cflags --libs").chomp.split
     system ENV.cxx, "test.cpp", "-L#{Formula["libgsf"].lib}",
            "-L#{Formula["glib"].lib}", *wv2_flags, "-o", "test"
     assert_match "Done", shell_output("#{testpath}/test 2>&1 testole.doc")
