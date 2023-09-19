@@ -1,20 +1,11 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
+  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.19.x/rpm-4.19.0.tar.bz2"
+  sha256 "b30916dc148cbeab077797e9fc365702931e3a9a7eacf70add84153b549b3f77"
   license "GPL-2.0-only"
   version_scheme 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
-
-  stable do
-    url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.1.tar.bz2"
-    sha256 "37f3b42c0966941e2ad3f10fde3639824a6591d07197ba8fd0869ca0779e1f56"
-
-    # Fix an "expected expression" error. Remove on next release.
-    patch do
-      url "https://github.com/rpm-software-management/rpm/commit/b960c0b43a080287a7c13533eeb2d9f288db1414.patch?full_index=1"
-      sha256 "28417a368e4d4a6c722944a8fe325212b3cea96b6d355437c6366606a7ca0d00"
-    end
-  end
 
   # Upstream uses a 90+ patch to indicate prerelease versions (e.g., the
   # tarball for "RPM 4.19 ALPHA" is `rpm-4.18.90.tar.bz2`).
@@ -30,30 +21,31 @@ class Rpm < Formula
     sha256 x86_64_linux:  "f7021265bd0654607b2e50709a8e29f0be08e3da8ca407566b04109fa0d176e8"
   end
 
+  depends_on "cmake" => :build
+  depends_on "doxygen" => :build
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "acl"
+  depends_on "bzip2"
+  depends_on "dbus"
+  depends_on "elfutils"
   depends_on "gettext"
   depends_on "libarchive"
+  depends_on "libcap"
   depends_on "libmagic"
+  depends_on :linux
   depends_on "lua"
-  depends_on macos: :ventura
   depends_on "openssl@3"
   depends_on "pkg-config"
   depends_on "popt"
   depends_on "sqlite"
   depends_on "xz"
-  depends_on "zstd"
+  depends_on "zlib"
 
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "libomp"
+  on_linux do
+    conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
   end
 
-  conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
-
   def install
-    ENV.append "LDFLAGS", "-lomp" if OS.mac?
-
     # only rpm should go into HOMEBREW_CELLAR, not rpms built
     inreplace ["macros.in", "platform.in"], "@prefix@", HOMEBREW_PREFIX
 
@@ -61,30 +53,23 @@ class Rpm < Formula
     inreplace "scripts/pkgconfigdeps.sh",
               "/usr/bin/pkg-config", Formula["pkg-config"].opt_bin/"pkg-config"
 
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--localstatedir=#{var}",
-                          "--sharedstatedir=#{var}/lib",
-                          "--sysconfdir=#{etc}",
-                          "--with-path-magic=#{HOMEBREW_PREFIX}/share/misc/magic",
-                          "--enable-nls",
-                          "--disable-plugins",
-                          "--with-external-db",
-                          "--with-crypto=openssl",
-                          "--without-apidocs",
-                          "--with-vendor=#{tap.user.downcase}",
-                          # Don't allow superenv shims to be saved into lib/rpm/macros
-                          "__MAKE=/usr/bin/make",
-                          "__GIT=/usr/bin/git",
-                          "__LD=/usr/bin/ld",
-                          # GPG is not a strict dependency, so set stored GPG location to a decent default
-                          "__GPG=#{Formula["gpg"].opt_bin}/gpg"
-
-    system "make", "install"
-
-    # NOTE: We need the trailing `/` to avoid leaving it behind.
-    inreplace lib/"rpm/macros", "#{Superenv.shims_path}/", ""
-    inreplace lib/"rpm/brp-remove-la-files", "--null", "-0"
+    # WITH_INTERNAL_OPENPGP and WITH_OPENSSL are deprecated
+    args = %W[
+      -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
+      -DCMAKE_INSTALL_SHAREDSTATEDIR=#{var}/lib
+      -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
+      -DENABLE_NLS=ON
+      -DENABLE_PLUGINS=OFF
+      -DWITH_AUDIT=OFF
+      -DWITH_INTERNAL_OPENPGP=ON
+      -DWITH_OPENSSL=ON
+      -DWITH_SELINUX=OFF
+      -DRPM_VENDOR=#{tap.user}
+      -DENABLE_TESTSUITE=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
   end
 
   def post_install
@@ -150,5 +135,7 @@ class Rpm < Formula
 
     files = shell_output(bin/"rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match (HOMEBREW_PREFIX/"share/doc/test").to_s, files
+
+    system "python3.11", "-c", "import rpm"
   end
 end
