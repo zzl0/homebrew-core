@@ -1,11 +1,9 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v16.0.0.tar.gz"
-  sha256 "305fac5bb8efdad9054f0d27b5b765aca8b3349a500e2ba0c927763e42badc2b"
+  url "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v17.0.0.tar.gz"
+  sha256 "eba381e1dd99b4ff6c672a28f52755d1adf2d810a97b51e6074ad4fa67937fb2"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bcf217abc3cf6dff0301f12d3cc96361e4795d98b36d7db301e5db06421c4fb0"
@@ -20,7 +18,8 @@ class SpirvLlvmTranslator < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@16"
+  depends_on "pkg-config" => :build
+  depends_on "llvm"
 
   # See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56480
   fails_with gcc: "5"
