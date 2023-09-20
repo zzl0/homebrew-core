@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://github.com/google/libphonenumber/archive/v8.13.20.tar.gz"
-  sha256 "81ac6371367912463c612a4b4a6942ab10b7faf800b8dc026d6db3d157bed9b5"
+  url "https://github.com/google/libphonenumber/archive/v8.13.21.tar.gz"
+  sha256 "bca757a8e04849c8158bbbc243c500699daa7601d1fd23a1277fc2643188b44b"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -33,8 +32,6 @@ class Libphonenumber < Formula
   depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
-
-  patch :DATA
 
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.
@@ -73,35 +70,3 @@ class Libphonenumber < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
-index d2d111d..5b7d2b2 100644
---- a/cpp/CMakeLists.txt
-+++ b/cpp/CMakeLists.txt
-@@ -19,8 +19,8 @@ cmake_minimum_required (VERSION 3.11)
- project (libphonenumber VERSION 8.13.0)
-
- # Pick the C++ standard to compile with.
--# Abseil currently supports C++11, C++14, and C++17.
--set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ standard used to compile this project")
-+# Abseil currently supports C++14, and C++17.
-+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard used to compile this project")
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
- set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
-
-diff --git a/tools/cpp/CMakeLists.txt b/tools/cpp/CMakeLists.txt
-index 91c9052..ae8db75 100644
---- a/tools/cpp/CMakeLists.txt
-+++ b/tools/cpp/CMakeLists.txt
-@@ -17,8 +17,8 @@
- cmake_minimum_required (VERSION 3.11)
-
- # Pick the C++ standard to compile with.
--# Abseil currently supports C++11, C++14, and C++17.
--set(CMAKE_CXX_STANDARD 11)
-+# Abseil currently supports C++14, and C++17.
-+set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
- project (generate_geocoding_data)
