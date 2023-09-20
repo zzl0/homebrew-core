@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/37/01/2e1cfb6b008696d47e21a5f35298484988a2f3900985aeb4409cb557b302/linode-cli-5.44.0.tar.gz"
-  sha256 "3c6882de9abad950491218c7c2aa900db4493e12c1c1896b98a2aaa1d2b9f56d"
+  url "https://files.pythonhosted.org/packages/83/e2/0d6f0a5b664c757c22d030463281da6ae5cdbcdc830d99f0fda0a06c0229/linode-cli-5.44.1.tar.gz"
+  sha256 "bb3f4f0dbaf1a61d378d37a759f179694706a742e381813193ff1216f1a1df76"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -66,8 +66,8 @@ class LinodeCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
+    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
   end
 
   def install
