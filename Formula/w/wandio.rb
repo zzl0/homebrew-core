@@ -15,9 +15,11 @@ class Wandio < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "3653ed92c97fe1d0574bb854a16e54fce8c25740a75aaf6989bc065fbfe5477b"
     sha256 cellar: :any,                 arm64_ventura:  "ad3894a632efe3456a375e96358f0f1719a57856d8bce53d4d7f13095a3b62f8"
     sha256 cellar: :any,                 arm64_monterey: "755dd52c90ec7a3db4b475f24ebe60805b0d1ca1812cc65a2764e12bdbbcba54"
     sha256 cellar: :any,                 arm64_big_sur:  "036e3e338d06911199aee8d98a813cdfb89e5cf462193a7073f881e81bbe81aa"
+    sha256 cellar: :any,                 sonoma:         "e4169552ae06821d31de301c7a2eec3d7bb733c72684386044e403521c4d531a"
     sha256 cellar: :any,                 ventura:        "3309dcd938ca538d3d9f35added3121069cee9f269fe95a153e0d0739a6cbe6d"
     sha256 cellar: :any,                 monterey:       "cb8eae9bae43a9cb8e6a39aa0a130170a0c41e5451fde7071aba2bc858ce5bd8"
     sha256 cellar: :any,                 big_sur:        "e1f3714ad297b93d897a9e291793e458084f380b253e7082f612dc35990464a4"
