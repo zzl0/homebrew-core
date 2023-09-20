@@ -13,9 +13,11 @@ class WasmMicroRuntime < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "eb7548ab97f95d4a6d4d0f43c4c7fb261374e9134d9b27e92084abbffb8ae273"
     sha256 cellar: :any,                 arm64_ventura:  "3975c84c868b6eec78e1b075da8bad7a235616c01d83c4e0ab808990f989f01d"
     sha256 cellar: :any,                 arm64_monterey: "1747204fb53f6c96551610a2b8226a8b2277656a096b03c60d81975c74e66ace"
     sha256 cellar: :any,                 arm64_big_sur:  "c8e7c910470047d01fd23a25c4172b328cb6a4566c4128a76e9b6df8f0d61a49"
+    sha256 cellar: :any,                 sonoma:         "adbbc9412f0c212865d6ceaffe5f84b32293db00aec063a09baaeeb23d5d6bc7"
     sha256 cellar: :any,                 ventura:        "85a5dfdc98032dd9d044330cb1fe46d83cae68acfd21dbe44895b5a3c245e879"
     sha256 cellar: :any,                 monterey:       "cd963081401046b3282637eb84cd9ed6aa1e6f9e0a777504de2457c6a37352a4"
     sha256 cellar: :any,                 big_sur:        "e263f0708d0534cc0004964292889c610d9cc9f58a4502475f10b581ceddb646"
