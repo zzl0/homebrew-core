@@ -1,8 +1,8 @@
 class Vvdec < Formula
   desc "Fraunhofer Versatile Video Decoder"
   homepage "https://github.com/fraunhoferhhi/vvdec"
-  url "https://github.com/fraunhoferhhi/vvdec/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "82339389e8656b1e3923a42b5a99f960337906bc61473ce53b9b602fe7964cdf"
+  url "https://github.com/fraunhoferhhi/vvdec/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "721a144ac8888ab4fa06a3d11ff6b4e1ecc010f85a214d20f10bbdad61402e51"
   license "BSD-3-Clause-Clear"
   head "https://github.com/fraunhoferhhi/vvdec.git", branch: "master"
 
