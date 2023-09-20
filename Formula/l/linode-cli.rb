@@ -20,6 +20,7 @@ class LinodeCli < Formula
 
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -51,11 +52,6 @@ class LinodeCli < Formula
   resource "openapi3" do
     url "https://files.pythonhosted.org/packages/94/0a/e7862c7870926ecb86d887923e36b7853480a2a97430162df1b972bd9d5b/openapi3-1.8.2.tar.gz"
     sha256 "a21a490573d89ca69ada7cbe585adb2fca4964257f6f3a1df531f12815455d2c"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "requests" do
