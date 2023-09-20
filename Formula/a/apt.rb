@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
-  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.5.tar.xz"
-  sha256 "cf71e91550282c67b2ff745df6cef04eb8b04001e2c3d635e989567ce1f85f3f"
+  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.6.tar.xz"
+  sha256 "8683f54eff0bf54e51e025b348bd0774d0fd437799616f48512956cf15c05f67"
   license "GPL-2.0-or-later"
 
   livecheck do
