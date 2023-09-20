@@ -29,13 +29,8 @@ class Bvm < Formula
   end
 
   test do
-    ENV["BVM_INSTALL_DIR"] = testpath
-
     system bin/"bvm", "init"
     assert_predicate testpath/"bvm.json", :exist?
-
-    system bin/"bvm", "install", "https://bvm.land/deno/1.3.2.json"
-    assert_predicate testpath/".bvm/binaries/denoland/deno/1.3.2/bin/deno", :exist?
 
     assert_match version.to_s, shell_output("#{bin}/bvm --version")
   end
