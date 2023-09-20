@@ -43,6 +43,9 @@ class Ngrep < Formula
       "--with-pcap-includes=#{Formula["libpcap"].opt_include}/pcap"
     end
 
+    # Resolve implicit `stdlib.h` function declarations
+    args << "ac_cv_header_stdc=yes" if OS.mac?
+
     system "./configure", *args
 
     system "make", "install"
