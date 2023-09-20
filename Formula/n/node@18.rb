@@ -11,9 +11,11 @@ class NodeAT18 < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "9bb2c47bb5f23c65da39685c4b7a24f7295fac3684f1682a12abd2b9c6162773"
     sha256 arm64_ventura:  "ac6dadf19ea6e50d06ca132206c380d01a78b142979489c2aa7f658b98f81eeb"
     sha256 arm64_monterey: "43098ad5cb44c079e9e7bd286f44228fe1175b68f5339292484b1c5f86f4050f"
     sha256 arm64_big_sur:  "8cda899ab9d2fc77195161a7ea38bd5528408d8eb2ac53b803d9e31007ae5d6d"
+    sha256 sonoma:         "f1da2e36b5f8465f63cb20c36ff695c53ebada398ac6f3ae4c4b1c20229d17a8"
     sha256 ventura:        "414a29831f37ab25f9c5336a4c4a46cb3a3a2f2ce48b337cb80f51954cdf2984"
     sha256 monterey:       "c05bf23ba6ded8d8d46a796e54f92941a511f36928aaeb7ea02ce685746ba7c4"
     sha256 big_sur:        "0d8b2a95fa6858574ca66f3c7a13d9ed1a5996d2bc236087f5e1477b36bd3127"
