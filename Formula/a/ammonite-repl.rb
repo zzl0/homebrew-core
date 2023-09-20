@@ -13,7 +13,8 @@ class AmmoniteRepl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "16fae29b00bbce7d4ee0df2dce4b7a1bea69fc8264fc35488896114385fc3da7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3e9cb15604ec2bc9038ce20600af80f8234dac7a51df7f812f7a108068684da3"
   end
 
   depends_on "openjdk@17"
