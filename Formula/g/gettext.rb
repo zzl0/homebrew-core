@@ -8,9 +8,11 @@ class Gettext < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "a73c646625fe97ee22d498644e7c7f4ff1697f0ee817acbb7205921675f1ccd2"
     sha256 arm64_ventura:  "7dc306a073a88a53e457afd750139cf73785c299dd112cbeae051e114249ba38"
     sha256 arm64_monterey: "7fe0c884f86c98ff759c6a97e1ab1627de063b18c8b7b680a3f2d9c75832283f"
     sha256 arm64_big_sur:  "7c4aaea1463292d29ba3fe0d081abbae1e965e470cb4e4acd69432f87932e544"
+    sha256 sonoma:         "befd20cde015ca6994d0e35574433a740bf996f96c951095b88b9721b6546be3"
     sha256 ventura:        "b6bf2952286f24785b3e1bb6604f5d5c5e922e02d3e62aa3c92793a960421340"
     sha256 monterey:       "57ddf5a74671707ef8d69a46abf4848ffe2f98313e74cd08afaca1597cdfbf55"
     sha256 big_sur:        "cfa5dcfd468ed1ae9598870d76c6e132a9599cef62bc35852f18da9e7e420675"
