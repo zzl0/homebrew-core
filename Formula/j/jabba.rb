@@ -2,8 +2,8 @@ class Jabba < Formula
   desc "Cross-platform Java Version Manager"
   # fork blessed by previous maintener https://github.com/shyiko/jabba/issues/833#issuecomment-1338648294
   homepage "https://github.com/Jabba-Team/jabba"
-  url "https://github.com/Jabba-Team/jabba/archive/0.12.2.tar.gz"
-  sha256 "44bd276fde1eaab56dc8a32ec409ba6eee5007f3a640951b3e8908c50f032bcd"
+  url "https://github.com/Jabba-Team/jabba/archive/0.13.0.tar.gz"
+  sha256 "113124e3235cce0e8d66425ceef541c664f2dd8034c611caf04f566191d2628c"
   license "Apache-2.0"
   head "https://github.com/Jabba-Team/jabba.git", branch: "main"
 
@@ -21,21 +21,8 @@ class Jabba < Formula
 
   def install
     ENV["JABBA_GET"] = "false"
-
-    # Customize install locations
-    # https://github.com/Jabba-Team/jabba/pull/17
     inreplace "Makefile", " bash install.sh", " bash install.sh --skip-rc"
-    inreplace "install.sh" do |s|
-      s.gsub! "  rm -f", "  command rm -f"
-      s.gsub! "$JABBA_HOME_TO_EXPORT/bin/jabba", "#{opt_bin}/jabba"
-      s.gsub! "${JABBA_HOME}/bin", bin.to_s
-      s.gsub! "${JABBA_HOME}/jabba.sh", "#{pkgshare}/jabba.sh"
-      s.gsub! "${JABBA_HOME}/jabba.fish", "#{pkgshare}/jabba.fish"
-    end
-
-    pkgshare.mkpath
-
-    system "make", "VERSION=#{version}", "install"
+    system "make", "install", "VERSION=#{version}", "JABBA_HOME=#{prefix}"
   end
 
   def caveats
