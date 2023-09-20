@@ -11,9 +11,11 @@ class Libphonenumber < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "5118b6bad63f63b6d7622764178be5f2a26e407dc74b431a562ce9c04ed445c1"
     sha256 cellar: :any,                 arm64_ventura:  "21a3a475b9b870a53540ceb6dba7f20740b5a1c735c2d0afe7dffeda616a1b61"
     sha256 cellar: :any,                 arm64_monterey: "7ce9fe50a39ae9db051868b9556f2bbb6c3091661fcca726778a8670a079e260"
     sha256 cellar: :any,                 arm64_big_sur:  "fedf724d2955f069ee9a513babe657b1300d55f66fb5fa64dd0d44718d60d6f7"
+    sha256 cellar: :any,                 sonoma:         "d93656b2580ee70b076313691ef8df1cf574f5d7e8bebe0b7209534206116557"
     sha256 cellar: :any,                 ventura:        "77b45e40d790accc6663fa77496bed64163dfab386a68a2aab74d8ee2c54ddb4"
     sha256 cellar: :any,                 monterey:       "61c27850633c036763947c586bf2c247d60ee2371508e4caf34dc2025c959d08"
     sha256 cellar: :any,                 big_sur:        "99b5759b5f8645392176418c42b2ee0e29c496ae4054d2fa762156b024bc80ea"
