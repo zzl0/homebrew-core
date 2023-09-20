@@ -355,6 +355,9 @@
   "ford": {
     "exclude_packages": ["markdown", "markupsafe", "pygments"]
   },
+  "fortls": {
+    "exclude_packages": ["packaging"]
+  },
   "fred": {
     "exclude_packages": ["certifi"]
   },
