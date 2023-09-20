@@ -293,6 +293,9 @@
       "PyYAML", "six", "typing-extensions", "pytz"
     ]
   },
+  "dunamai": {
+    "exclude_packages": ["packaging"]
+  },
   "duplicity": {
     "extra_packages": [
       "azure-storage-blob", "b2sdk", "boto", "boto3", "boxsdk[jwt]",

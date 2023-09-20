@@ -17,12 +17,8 @@ class Dunamai < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcd88fccf7512658a531acd4c1c21c7183a74a50ebcb59bc1699c6fa5f8f674e"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
 
   def install
     virtualenv_install_with_resources
