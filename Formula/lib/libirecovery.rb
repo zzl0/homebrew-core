@@ -1,9 +1,10 @@
 class Libirecovery < Formula
   desc "Library and utility to talk to iBoot/iBSS via USB"
   homepage "https://www.libimobiledevice.org/"
-  url "https://github.com/libimobiledevice/libirecovery/releases/download/1.0.0/libirecovery-1.0.0.tar.bz2"
-  sha256 "cda0aba10a5b6fc2e1d83946b009e3e64d0be36912a986e35ad6d34b504ad9b4"
+  url "https://github.com/libimobiledevice/libirecovery/releases/download/1.1.0/libirecovery-1.1.0.tar.bz2"
+  sha256 "ee3b1afbc0cab5309492cfcf3e132c6cc002617a57664ee0120ae918318e25f9"
   license "LGPL-2.1-only"
+  head "https://github.com/libimobiledevice/libirecovery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f3ff5f59adbeb27276dd027588f872ee412ccbfe47fe288e552bd842caacc8ed"
@@ -20,25 +21,23 @@ class Libirecovery < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a46932a6963064dee3ffdf461ef4e2d3e495b8f3d6f13a860794bc698624416"
   end
 
-  head do
-    url "https://git.libimobiledevice.org/libirecovery.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "libimobiledevice-glue"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "libusb"
     depends_on "readline"
   end
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--enable-debug-code"
+    if build.head?
+      system "./autogen.sh", *std_configure_args, "--disable-silent-rules"
+    else
+      system "./configure", *std_configure_args, "--disable-silent-rules"
+    end
     system "make", "install"
   end
 
