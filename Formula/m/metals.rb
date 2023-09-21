@@ -1,9 +1,11 @@
 class Metals < Formula
   desc "Scala language server"
   homepage "https://github.com/scalameta/metals"
+  # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
   url "https://github.com/scalameta/metals/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "5912c3cf0a8c2e430a6733998445b724b2f8192cccc8afe5816daa5146753d1f"
   license "Apache-2.0"
+  revision 1
 
   # Some version tags don't become a release, so it's necessary to check the
   # GitHub releases instead.
@@ -23,7 +25,7 @@ class Metals < Formula
   end
 
   depends_on "sbt" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@17"
 
   def install
     ENV["CI"] = "TRUE"
@@ -44,12 +46,10 @@ class Metals < Formula
     (libexec/"lib").install buildpath.glob("mtags-shared/target/scala-*/mtags-shared_*-#{version}.jar")
     (libexec/"lib").install "mtags-interfaces/target/mtags-interfaces-#{version}.jar"
 
-    (bin/"metals").write <<~EOS
-      #!/bin/bash
-
-      export JAVA_HOME="#{Language::Java.java_home}"
-      exec "${JAVA_HOME}/bin/java" -cp "#{libexec/"lib"}/*" "scala.meta.metals.Main" "$@"
-    EOS
+    args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.Main]
+    env = Language::Java.overridable_java_home_env("17")
+    env["PATH"] = "$JAVA_HOME/bin:$PATH"
+    (bin/"metals").write_env_script "java", args.join(" "), env
   end
 
   test do
