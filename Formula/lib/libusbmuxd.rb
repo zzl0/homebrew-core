@@ -5,7 +5,6 @@ class Libusbmuxd < Formula
   sha256 "8ae3e1d9340177f8f3a785be276435869363de79f491d05d8a84a59efc8a8fdc"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
-  head "https://github.com/libimobiledevice/libusbmuxd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b7febe75e6292367794866227f674d10ddf7691b47818a2a5a1394bf51723142"
@@ -19,12 +18,18 @@ class Libusbmuxd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad184b5e9e783b812d7650059b43918680f15f400accc7813fba239a9c25e81"
   end
 
+  # libimobiledevice-glue is required for building future versions
+  # Move outside of HEAD clause when there's a new release.
+  head do
+    url "https://github.com/libimobiledevice/libusbmuxd.git", branch: "master"
+    depends_on "libimobiledevice-glue"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libplist"
-  depends_on "libusb"
 
   uses_from_macos "netcat" => :test
 
