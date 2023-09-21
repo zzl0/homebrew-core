@@ -22,7 +22,11 @@ class V2ray < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c09457ba4832a2d44e7bf70be876b04d5de9a4f49bb7a2ac135d96fa86c8a9e"
   end
 
-  depends_on "go" => :build
+  # This requires Go 1.20 until there is a `v2ray` release that supports Go
+  # 1.21 (or newer): https://github.com/v2fly/v2ray-core/issues/2644
+  # We may want to try to update this to depend on `go` on the next `v2ray`
+  # release.
+  depends_on "go@1.20" => :build
 
   resource "geoip" do
     url "https://github.com/v2fly/geoip/releases/download/202307060057/geoip.dat"
