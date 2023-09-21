@@ -22,7 +22,11 @@ class Jdtls < Formula
   depends_on "python@3.11"
 
   def install
-    libexec.install %w[bin config_mac config_linux features plugins]
+    libexec.install %w[
+      bin features plugins
+      config_mac config_mac_arm config_ss_mac config_ss_mac_arm
+      config_linux config_linux_arm config_ss_linux config_ss_linux_arm
+    ]
     rewrite_shebang detected_python_shebang, libexec/"bin/jdtls"
     (bin/"jdtls").write_env_script libexec/"bin/jdtls", Language::Java.overridable_java_home_env
   end
