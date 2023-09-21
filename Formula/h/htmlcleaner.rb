@@ -1,9 +1,11 @@
 class Htmlcleaner < Formula
   desc "HTML parser written in Java"
   homepage "https://htmlcleaner.sourceforge.net/"
+  # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
   url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.29/htmlcleaner-src-2.29.zip"
   sha256 "9fc68d7161be6f34f781e109bf63894d260428f186d88f315b1d2e3a33495350"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c69fec74c6bdd85bc1e50f84ca5530753edd8f3138658ada3afbe5a3f5d6120d"
@@ -16,13 +18,13 @@ class Htmlcleaner < Formula
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@17"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
     system "mvn", "clean", "package", "-DskipTests=true", "-Dmaven.javadoc.skip=true"
     libexec.install "target/htmlcleaner-#{version}.jar"
-    bin.write_jar_script libexec/"htmlcleaner-#{version}.jar", "htmlcleaner"
+    bin.write_jar_script libexec/"htmlcleaner-#{version}.jar", "htmlcleaner", java_version: "17"
   end
 
   test do
