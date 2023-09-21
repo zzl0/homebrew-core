@@ -2,8 +2,8 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.15.1",
-      revision: "baeece44ba075009c6bfe95891a8c1b3d4571cb3"
+      tag:      "v1.16.0",
+      revision: "e7a0495a874251e9747b2ce0683e0580282c54df"
   license "MIT"
 
   livecheck do
@@ -42,7 +42,7 @@ class Onnxruntime < Formula
 
   test do
     (testpath/"test.c").write <<~EOS
-      #include <onnxruntime/core/session/onnxruntime_c_api.h>
+      #include <onnxruntime/onnxruntime_c_api.h>
       #include <stdio.h>
       int main()
       {
