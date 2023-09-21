@@ -2,8 +2,8 @@ class Whalebrew < Formula
   desc "Homebrew, but with Docker images"
   homepage "https://github.com/whalebrew/whalebrew"
   url "https://github.com/whalebrew/whalebrew.git",
-      tag:      "0.4.0",
-      revision: "bdf94887abf0397341c1d241974eea790626ae7c"
+      tag:      "0.4.1",
+      revision: "8137e562f38ce32d425df4a3676143c2d631d0f1"
   license "Apache-2.0"
   head "https://github.com/whalebrew/whalebrew.git", branch: "master"
 
