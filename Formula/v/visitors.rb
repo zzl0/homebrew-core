@@ -6,8 +6,10 @@ class Visitors < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e1aae609608d2f53749194133b9bb082a46590773c2cfadedddfd3742573b60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f5992ea6583760c5b87589f1fda08a9ffdb56cd7c55d554f4d4ccbdafc90714"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f901c7f277a2215bd3e661ff7a97dc23b117fbcc0f45ec5a24757d39a29b8946"
+    sha256 cellar: :any_skip_relocation, sonoma:         "31baac816cac5474a74918035d1ab377e75652d74c0650a66a90feaf1d2c05f8"
     sha256 cellar: :any_skip_relocation, monterey:       "651cb26363851f55473a3e8b4fa870c5db143a1059989808a9c63a73c57723ee"
     sha256 cellar: :any_skip_relocation, big_sur:        "e8c69ef9994a57cad52a506f7d8a3fe8443cedb617d11ad9a56256868d67fd87"
     sha256 cellar: :any_skip_relocation, catalina:       "b5ccfb951446080490b3f9b4a4c3bf48222bfd6258df87f11bd50bcab41736d9"
