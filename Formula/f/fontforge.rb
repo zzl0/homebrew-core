@@ -38,16 +38,19 @@ class Fontforge < Formula
 
   uses_from_macos "libxml2"
 
-  resource "homebrew-testdata" do
-    url "https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
-    sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
+  # build patch for po translation files
+  # upstream bug report, https://github.com/fontforge/fontforge/issues/5251
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/9403988/fontforge/20230101.patch"
+    sha256 "e784c4c0fcf28e5e6c5b099d7540f53436d1be2969898ebacd25654d315c0072"
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-GNinja",
-                    "-DENABLE_GUI=OFF",
-                    "-DENABLE_FONTFORGE_EXTRAS=ON"
+    args = %w[
+      -DENABLE_GUI=OFF
+      -DENABLE_FONTFORGE_EXTRAS=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -67,6 +70,11 @@ class Fontforge < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
+      sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
+    end
+
     python = Formula["python@3.11"].opt_bin/"python3.11"
     system bin/"fontforge", "-version"
     system bin/"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
