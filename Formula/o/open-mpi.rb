@@ -40,6 +40,10 @@ class OpenMpi < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
     end
 
+    # Work around asm incompatibility with new linker (FB13194320)
+    # https://github.com/open-mpi/ompi/issues/11935
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+
     # Avoid references to the Homebrew shims directory
     inreplace_files = %w[
       ompi/tools/ompi_info/param.c
@@ -63,6 +67,7 @@ class OpenMpi < Formula
       --enable-ipv6
       --enable-mca-no-build=reachable-netlink
       --sysconfdir=#{etc}
+      --with-hwloc=#{Formula["hwloc"].opt_prefix}
       --with-libevent=#{Formula["libevent"].opt_prefix}
       --with-sge
     ]
