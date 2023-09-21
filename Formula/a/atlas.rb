@@ -1,8 +1,10 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.14.0.tar.gz"
-  sha256 "43a1c770e4638d9b09ee61d9547aae848c24629693bced3c578228b26fef18b7"
+  # Upstream may not mark patch releases as latest on GitHub; it is fine to ship them.
+  # See https://github.com/ariga/atlas/issues/1090#issuecomment-1225258408
+  url "https://github.com/ariga/atlas/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "28a19054c724e65e0907c56f571f6cca2c26bbd69a863d249381a91f0f8d063c"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
