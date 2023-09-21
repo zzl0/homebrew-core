@@ -22,11 +22,17 @@ class Whalebrew < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = %W[
+      -s -w
+      -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
     generate_completions_from_executable(bin/"whalebrew", "completion")
   end
 
   test do
+    assert_match "Whalebrew #{version}+homebrew", shell_output("#{bin}/whalebrew version")
+
     output = shell_output("#{bin}/whalebrew install whalebrew/whalesay -y", 255)
     assert_match(/connect to the Docker daemon|operation not permitted/, output)
   end
