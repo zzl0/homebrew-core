@@ -71,7 +71,7 @@ class Volk < Formula
   end
 
   test do
-    system "volk_modtool", "--help"
-    system "volk_profile", "--iter", "10"
+    system "#{bin}/volk_modtool", "--help"
+    system "#{bin}/volk_profile", "--iter", "10"
   end
 end
