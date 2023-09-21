@@ -1,10 +1,19 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
-  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.7/hopenpgp-tools-0.23.7.tar.gz"
-  sha256 "b04137b315106f3f276509876acf396024fbb7152794e1e2a0ddd3afd740f857"
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
+
+  stable do
+    url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.7/hopenpgp-tools-0.23.7.tar.gz"
+    sha256 "b04137b315106f3f276509876acf396024fbb7152794e1e2a0ddd3afd740f857"
+
+    # Fixes https://salsa.debian.org/clint/hopenpgp-tools/-/issues/5
+    patch do
+      url "https://salsa.debian.org/clint/hopenpgp-tools/-/commit/fc4214399f06d4ddeb2ecf93ddd3d9bc9ed140bc.patch"
+      sha256 "56f1666227d421b42f375c53b5e747090418a2f669b1e7df285c11bdb23d6390"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5bba29c5fe72093581be4ee0cf64fe345b7f366b9784f4cf9071674c7c720bbf"
@@ -29,13 +38,8 @@ class HopenpgpTools < Formula
   end
 
   def install
-    # hOpenPGPTools's dependency hOpenPGP has conflict instance (Hashable Set) w/ hashable above 1.3.4.0
-    # remove when hOpenPGP remove conflict instance or add upper bound of hashable
-    # aeson has breaking change of 2.x.x.x
-    # remove when hopenpgp-tools adopt aeson 2.x.x.x or add upper bound of aeson
-    cabal_args = std_cabal_v2_args + ["--constraint=hashable<1.3.4.0", "--constraint=aeson<1.6"]
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *cabal_args
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do
