@@ -26,13 +26,14 @@ class Libgccjit < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e3eed781f22e42b9007f39c29b38fb3f3d842f022f53d5ae6972f6ea20a2dab0"
-    sha256 arm64_monterey: "065e4e5ac5affa47ca2c0f24167126e9bc34caed2abd9a83a812ceed3b3205e6"
-    sha256 arm64_big_sur:  "56255d7cf3b4367abf4250981c4006a73267d1575a6cde47b7ad04a7d53ecae8"
-    sha256 ventura:        "dd21a623693aeb88c39c3e2cd2bcd1e6af0f175aa305ddf287f4412e04894223"
-    sha256 monterey:       "4423db4f757f18f76de6d995cf66b32d7324d054941dd80cfa5fbbbf4f369dcb"
-    sha256 big_sur:        "7b562c31193634feb387ec43b40398e7e4f5621c720ad735ed3ba7c1e88b50c6"
-    sha256 x86_64_linux:   "d668066aefdcb8de227bb6f4221d6ede91fc8e42ead20fbe82d773a33a7ffebf"
+    rebuild 1
+    sha256 arm64_ventura:  "f23a372d2d5650e06559a7fb8421a4e29d4d2e8ad97d00e208a3371675f9677a"
+    sha256 arm64_monterey: "09c4e1474f48eac7ec6c665b0780c6278f66affaae315efcf49d3dcc2c4d3d14"
+    sha256 arm64_big_sur:  "524fdd67751f3e38fc4ddde62ed84030c2af8225c119a6e11fffac37c679acd5"
+    sha256 ventura:        "a5556233e7155e3079024c1623b48d8b927a6f4dadf9a49a17571dbcc344c03e"
+    sha256 monterey:       "c9117c34aa462bbf78a88c7ca1d92e4d0e8befe943f08e41de8d1c841ff4d258"
+    sha256 big_sur:        "acd8bc22b30e2d6bbe07b4e19d86fc09f07ca5307994cfb318782349092a1443"
+    sha256 x86_64_linux:   "810bbac04a101d01b17bbf3a5e46d54f6d99534c26a343fa1e1e4e628400779b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
