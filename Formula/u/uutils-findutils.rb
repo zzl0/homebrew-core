@@ -16,11 +16,14 @@ class UutilsFindutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ce4cb813793fe4d60014fc621a9e74ff93c6c1f3eb3f0217423d5e8ed120d4"
   end
 
+  # Use `llvm@15` to work around build failure with Clang 16 described in
+  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
+  # updated to 0.62.0 or newer. There is a check in the `install` method.
+  depends_on "llvm@15" => :build # for libclang
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "llvm@15" => :build
-  end
+  depends_on "oniguruma"
 
   def unwanted_bin_link?(cmd)
     %w[
@@ -29,7 +32,19 @@ class UutilsFindutils < Formula
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm@15"].opt_lib.to_s if OS.linux?
+    bindgen_version = Version.new(
+      (buildpath/"Cargo.lock").read
+                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+    )
+    if bindgen_version >= "0.62.0"
+      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
+           'this check and try switching to `uses_from_macos "llvm" => :build`.'
+    end
+
+    ENV["LIBCLANG_PATH"] = Formula["llvm@15"].opt_lib.to_s
+    ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
+    ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
+
     system "cargo", "install", *std_cargo_args(root: libexec)
     mv libexec/"bin", libexec/"uubin"
     Dir.children(libexec/"uubin").each do |cmd|
@@ -46,9 +61,35 @@ class UutilsFindutils < Formula
     EOS
   end
 
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
+  end
+
   test do
     touch "HOMEBREW"
     assert_match "HOMEBREW", shell_output("#{bin}/ufind .")
     assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
+
+    expected_linkage = {
+      libexec/"uubin/find"  => [
+        Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      ],
+      libexec/"uubin/xargs" => [
+        Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      ],
+    }
+    missing_linkage = []
+    expected_linkage.each do |binary, dylibs|
+      dylibs.each do |dylib|
+        next if check_binary_linkage(binary, dylib)
+
+        missing_linkage << "#{binary} => #{dylib}"
+      end
+    end
+    assert missing_linkage.empty?, "Missing linkage: #{missing_linkage.join(", ")}"
   end
 end
