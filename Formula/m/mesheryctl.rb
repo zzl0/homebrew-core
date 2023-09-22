@@ -8,15 +8,13 @@ class Mesheryctl < Formula
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e871e322ffcb29e1e617c8c86b59af9a91a1f8ad85060c74bad648f62fdbda3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e871e322ffcb29e1e617c8c86b59af9a91a1f8ad85060c74bad648f62fdbda3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e871e322ffcb29e1e617c8c86b59af9a91a1f8ad85060c74bad648f62fdbda3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e871e322ffcb29e1e617c8c86b59af9a91a1f8ad85060c74bad648f62fdbda3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ea7bee86c004dc89b8bca723544eeab431735255a277610b84ff47f06b806b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ea7bee86c004dc89b8bca723544eeab431735255a277610b84ff47f06b806b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ea7bee86c004dc89b8bca723544eeab431735255a277610b84ff47f06b806b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3ea7bee86c004dc89b8bca723544eeab431735255a277610b84ff47f06b806b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6df93c7e0856843f11116a411ce2f452731ca157ecd63885eeb006185eb098e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d654e6e2f07b0961b8de0caf31f3ba11109f070c1b0a28bf5dd1329f5162e22"
   end
 
   depends_on "go" => :build
