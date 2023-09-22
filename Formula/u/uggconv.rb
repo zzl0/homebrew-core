@@ -26,6 +26,9 @@ class Uggconv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70d91fd685adcb8943530056934bc1e8f0ed0c5502a9205c6b1c8fa982fdec53"
   end
 
+  # Add missing `#include`.
+  patch :DATA
+
   def install
     system "make"
     bin.install "uggconv"
@@ -37,3 +40,15 @@ class Uggconv < Formula
       shell_output("#{bin}/uggconv -s 7E00CE:03")
   end
 end
+
+__END__
+--- a/uggconv.c
++++ b/uggconv.c
+@@ -47,6 +47,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+ 
