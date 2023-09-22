@@ -1,8 +1,8 @@
 class Gtranslator < Formula
   desc "GNOME gettext PO file editor"
   homepage "https://wiki.gnome.org/Design/Apps/Translator"
-  url "https://download.gnome.org/sources/gtranslator/42/gtranslator-42.0.tar.xz"
-  sha256 "2a67bcbfe643061b0696d89a10847d50bf35905ff3361b9871357d3e3422f13b"
+  url "https://download.gnome.org/sources/gtranslator/45/gtranslator-45.1.tar.xz"
+  sha256 "3acedb9abe614d7cdc9d2faa86e84874379b67102b7a2ae5e211b4973366fa1b"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -23,9 +23,10 @@ class Gtranslator < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "gspell"
-  depends_on "gtk+3"
-  depends_on "gtksourceview4"
+  depends_on "gtk4"
+  depends_on "gtksourceview5"
   depends_on "json-glib"
+  depends_on "libadwaita"
   depends_on "libgda"
   depends_on "libhandy"
   depends_on "libsoup"
