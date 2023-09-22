@@ -11,15 +11,13 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "64b6186894adaafa11fa8d41fcdbab692d611d19752b917a4327d631bc1c9ddd"
-    sha256 arm64_ventura:  "c47ac4aa69a6d18ee6df3b0f762a4b7ee28babe92f4475920f2dd1d28e32d5c9"
-    sha256 arm64_monterey: "7a2569d8f05765e37f10efd5a046c2c8b4d927cc503e03dd56ed0c0b6719c534"
-    sha256 arm64_big_sur:  "a01d6933f141aabad04f103c219690aca91b6d6975b423997f158e6738ede9f4"
-    sha256 sonoma:         "ee0d66bcc9afceb2a79dc6ab7b4eb8b085bfde547b8da2a70eb46aa23eb5fdbd"
-    sha256 ventura:        "f2b7f9198b27be2030dc5d3f14ebf526f246913e63e658243fe5f857d310b136"
-    sha256 monterey:       "9dbee05dcc878b808d70fcfcfb27077cfa31fc5676d75d60555cf66800072071"
-    sha256 big_sur:        "55ecdc4cda9a0848dcc0fe2b7daa24c53b47f9b2f17880db19e2ee6d4b7eb2df"
-    sha256 x86_64_linux:   "31fcaf2c3cf8c6b1b2a7841fc39adf86d16e37096b686708ef3cbf066f651c67"
+    sha256 arm64_ventura:  "04f2cc489486610519c3e716eea580d6f24ab9d231c1c04e76a318850eae53a4"
+    sha256 arm64_monterey: "3ab7583d13292e2a49531ce0bc0f43cdec19478590fe51374717a97affc04e03"
+    sha256 arm64_big_sur:  "548ebe2602d96b6336103b5d5c7275744b27f80a3f1f467dfa62f7c01a13001c"
+    sha256 ventura:        "db2e695b151cf359b8334547ef99794bde92d0cdadf388624a7b3a1f1dec0674"
+    sha256 monterey:       "a8231753ece49dbf4f9efbe4b1c3e3aede96927162b23c545d885141681bdbb4"
+    sha256 big_sur:        "f9ec52d75825e92140cb32dc0a911d3d5d2fe80f24d9b2fd63dabaa6f1a8282a"
+    sha256 x86_64_linux:   "2a67be5464bbd532ef77d005d4996068e29cd7047147028b59620d519c49cebf"
   end
 
   depends_on "pkg-config" => :build
