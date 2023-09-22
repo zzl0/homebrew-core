@@ -13,15 +13,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "67351b3e51cc9e5bc7d4941cd007fda80c0927e3fbd3a2f10feb885a876bfb86"
-    sha256 cellar: :any,                 arm64_ventura:  "4c667405d232b5764d5faed87e3c462085e45c4e1c2559f9c88009a98d66af0f"
-    sha256 cellar: :any,                 arm64_monterey: "c1a04891b33fb6cce160a572f2424f505a7736415d1dc90299bcee3743e51290"
-    sha256 cellar: :any,                 arm64_big_sur:  "72982f15a23ac9442c843ce899cccb1018d47cb3f20cd1d45294f17bb0a255a1"
-    sha256 cellar: :any,                 sonoma:         "7a41890617405476a0238a42c0862a246bb8b4863fda439371eaa8a28b8e6668"
-    sha256 cellar: :any,                 ventura:        "ee50dde4d1998630ff40c9cce19b0f180c36ef58b8d8e627be5e44d4902ed3fc"
-    sha256 cellar: :any,                 monterey:       "ab4d69c11183a536f52dfd4eb8c14f3fc047b8433b03eff99cea76f778e61305"
-    sha256 cellar: :any,                 big_sur:        "6ed8c0fd73a1686429627e036ef4adb43a11a7dd753cdb4631451d2a01e35124"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eac29c15c4e506aa90ab2b95d2845fea812aee43a957e3b0ce807d30cad8a254"
+    sha256 cellar: :any,                 arm64_ventura:  "69eff5a857c65f50be42a0eb710f43ccb45c5dd5680f39546a50d394361a5608"
+    sha256 cellar: :any,                 arm64_monterey: "221fe00969e0c9d7087ec190da6dced30138e4e27464cfe65a82e62de36fcc89"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f3ed3015d777f9a047d62a50f78c91fc63d382856f7491bc1e00ac3d133458d"
+    sha256 cellar: :any,                 ventura:        "5eca42c94fd36993f555d6dd44554cbc7c2f4f9c8f11f01c96d050b447978dc2"
+    sha256 cellar: :any,                 monterey:       "67c96213969230688ece9fac81ba6b45b44f57ff46bd15d9f89f2a8ae2ccd710"
+    sha256 cellar: :any,                 big_sur:        "b3f8a1185a8adc92a994092391a1812652078882788fa9b49a45cc5bcc4eb5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "122b88090b1df07be022d5974f2becb268532d07982e0d9e1ba033d1b37509a7"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
