@@ -1,8 +1,8 @@
 class Mods < Formula
-  desc "GPT-4 on the command-line"
+  desc "AI on the command-line"
   homepage "https://github.com/charmbracelet/mods"
-  url "https://github.com/charmbracelet/mods/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "553a405cd496b85fbcaa29aa2ad0c1170b55063f63903050eb886eb976e2b55e"
+  url "https://github.com/charmbracelet/mods/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "7272c4062095c63e6c8a2cc3b5233bf9261a027237512123c073c2128284e6d0"
   license "MIT"
 
   bottle do
@@ -20,10 +20,9 @@ class Mods < Formula
   def install
     ldflags = %W[
       -s -w
-      -X main.version=#{version}
-      -X main.commit=homebrew
-      -X main.date=#{time.iso8601}
-      -X main.builtBy=homebrew
+      -X main.Version=#{version}
+      -X main.CommitSHA=#{tap.user}
+      -X main.CommitDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
