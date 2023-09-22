@@ -9,16 +9,13 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7e847890fee0373206b0ca46559455f674c14a57cf3f2fffed516190e957d99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25ed4f331d65e8e36885130f051c9491e88d471cb466a48c3368488539a5debe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "97beccf38516180946b34f8885b862d80db1721636a96e331a39e6cf1432330d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d56a78657182e337637ace314436dd493c671bf74551713ddb936e2bcb08c0df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4564fe60dfb252dd9763aabbaff509aa510f280397d9b5ad4731566ad79a7c70"
-    sha256 cellar: :any_skip_relocation, ventura:        "3422996524a43ef9ed6d75b1d646e1f0d9c2281043ed1d061c060a9562963997"
-    sha256 cellar: :any_skip_relocation, monterey:       "2dd3a9e418383799542febefe48a891e6d86708db492ce21b88169371ace274c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a3f3fbc36d949dce1650dfe06337e17ab437184dc9ea25f695af37d9e300a91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdb40423bfa8f0d753991c6e3ed46c022579925db11f669b38dccb43b544e5f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdc7c1b33a0e4c96658a059e78f1e26417eb8855a723cf9124a7cdfa1d3a445d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "634837753c0a03fb939ea70f68900b7cea12757d2f8b9e9dd4a3a9c94dbdf066"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d2fa6e3878b9b9f476d1c3a3a4e279b43e8db5e123a3145d53ce4a9bb8d5362"
+    sha256 cellar: :any_skip_relocation, ventura:        "134c194e3c8a08637c5bcf95a453c7736d20b506b8d9fb64bd37cd789608f5de"
+    sha256 cellar: :any_skip_relocation, monterey:       "bab5a3253bfd1284372f61311627e567f23c8bab30b4dd22af9cac387bee900f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6708929048c1b9d598ef75b6491dcb908d2a13e7fb78c76940f4d2df81521e00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d2daae698e24a2e8489cd25c64902c8cb4b67f6c1968a02bfb8c7dfcaa4bfb"
   end
 
   depends_on "pygments"
