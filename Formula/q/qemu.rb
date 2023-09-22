@@ -2,19 +2,11 @@ class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
   license "GPL-2.0-only"
-  revision 3
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   stable do
-    url "https://download.qemu.org/qemu-8.1.0.tar.xz"
-    sha256 "710c101198e334d4762eef65f649bc43fa8a5dd75303554b8acfec3eb25f0e55"
-
-    patch do
-      # "softmmu: Assert data in bounds in iotlb_to_section"
-      # Needed for cherry-pick of the next commit "softmmu: Use async_run_on_cpu in tcg_commit".
-      url "https://gitlab.com/qemu-project/qemu/-/commit/86e4f93d827d3c1efd00cd8a906e38a2c0f2b5bc.diff"
-      sha256 "c7b30eafb40b893d1245af910a684899a1cbcfad9435a782e2c1088e36242533"
-    end
+    url "https://download.qemu.org/qemu-8.1.1.tar.xz"
+    sha256 "37ce2ef5e500fb752f681117c68b45118303ea49a7e26bd54080ced54fab7def"
 
     patch do
       # "softmmu: Use async_run_on_cpu in tcg_commit"
