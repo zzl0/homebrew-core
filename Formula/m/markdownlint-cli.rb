@@ -8,13 +8,13 @@ class MarkdownlintCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65d645bc14ddafa08c0c1057c87f123602a039cd2dca2e4a6df8878f9de29e0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65d645bc14ddafa08c0c1057c87f123602a039cd2dca2e4a6df8878f9de29e0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65d645bc14ddafa08c0c1057c87f123602a039cd2dca2e4a6df8878f9de29e0a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac0408c7b4f59bb3d2f07a398678d75f44661c4110691db27115910c929500a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac0408c7b4f59bb3d2f07a398678d75f44661c4110691db27115910c929500a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac0408c7b4f59bb3d2f07a398678d75f44661c4110691db27115910c929500a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65d645bc14ddafa08c0c1057c87f123602a039cd2dca2e4a6df8878f9de29e0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
   end
 
   depends_on "node"
