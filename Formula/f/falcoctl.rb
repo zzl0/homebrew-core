@@ -7,13 +7,13 @@ class Falcoctl < Formula
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3141a736c359763582a218fd85774c9d5d230492613d02c4c58132b8bd683bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a90af7ff6c9aee113ebd2b085c18ae6534660c1a8db94aa93e00f95f713e542"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f261e6511d710e602d1dc329f6af0c27d3242071f6f8825ea87897609eb2cec"
-    sha256 cellar: :any_skip_relocation, ventura:        "dde359a9d5cb54fdbd14625a21caacf20ff06f8e7c00d7d70e0ebd7b3cf4da53"
-    sha256 cellar: :any_skip_relocation, monterey:       "545d01a5a705690f3be20a3e33b886b7f002784f9bac2195cdaa1f2716ed5576"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ab3f6243db917d2c2eed7acf4f12f5261f38558af77e860a7ed5d18824f9b64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3de1c682d9bacdda13f40f74cb58d28010bcfbcb71adfaa29a1572d77941726"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d44b89e2e12c3cff50212ba09a9068ca90005c8306abbb8ef0ab969ba71e76e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c83212de152508e09c03ae14fd7c5f04f1273702d9588dfe454640f7eafb7caf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55427f13df37bb6699013b9e1772bc604ddecf520aa4a49ed63880d7d1916c0e"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2b7bfd8895bcbea45d35546d3f9444c42d5f101d1805133705182b9159f0e9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "d78575a5478ba20a7afdbfc261d77c3d3cf0b968e25229769e1c2ba2acf3729a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b18098e32463439796b4ef499973db4ffba36a0e8778efb0b8fc349b7c7c64d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc2ba852a61ddc0bad33e2d7db77bfefd230d738db36c13d79dc1ebf289c4fd4"
   end
 
   depends_on "go" => :build
