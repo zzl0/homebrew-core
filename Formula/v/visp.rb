@@ -1,10 +1,9 @@
 class Visp < Formula
   desc "Visual Servoing Platform library"
   homepage "https://visp.inria.fr/"
-  url "https://visp-doc.inria.fr/download/releases/visp-3.5.0.tar.gz"
-  sha256 "494a648b2570da2a200ba326ed61a14e785eb9ee08ef12d3ad178b2f384d3d30"
+  url "https://visp-doc.inria.fr/download/releases/visp-3.6.0.tar.gz"
+  sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 9
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -22,7 +21,7 @@ class Visp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "eigen"
   depends_on "gsl"
   depends_on "jpeg-turbo"
@@ -120,7 +119,8 @@ class Visp < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-o", "test"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs visp").chomp.split
+    system ENV.cxx, "test.cpp", "-o", "test", *pkg_config_flags
     assert_equal version.to_s, shell_output("./test").chomp
   end
 end
