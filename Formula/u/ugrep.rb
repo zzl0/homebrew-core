@@ -6,15 +6,13 @@ class Ugrep < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256                               arm64_sonoma:   "144dc26421034c6dd7999415575634aaac63101635efe65d241c779d65e2ee4c"
-    sha256                               arm64_ventura:  "22248c350eea9f4abca783e9333b54acc8f970ba708f3d2ca739d667f0ec6516"
-    sha256                               arm64_monterey: "8d4548b4760a52c2e43c997045ed68780cf957d8e41339d3fbdebf535f4c1e72"
-    sha256                               arm64_big_sur:  "fdec263fc19d22a606bba7fb4f3893469ea52e15311a7c7c5619c256ac7a6a1e"
-    sha256                               sonoma:         "39d0d143b7dfc5ecfa4434230d185252be5616c6977a5134126fc04b17cbcd5a"
-    sha256                               ventura:        "7c25fd4a2aab0f5f25cf18aa7c001d3ba692f405b1d96d3ec8e82cdf105e3579"
-    sha256                               monterey:       "d1e0dc6b61ddc1199eb603d2223a1bded18d2bf4f0de01d4aa87348236faa129"
-    sha256                               big_sur:        "1f6718fdfd76d40f3d0e59b12f2adba2060fbe372a5666c23a1e54a083112357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1a08e2b7ed921370722b7d2da801b978f6378d71d22b9aab6d1b2f7a1b1c39e"
+    sha256                               arm64_ventura:  "a85d5938f6c36f68b06e41f457ba8e3d2bea4d54c7b9f69512853ff0c564c766"
+    sha256                               arm64_monterey: "5800a020f5c74a2b34000b613328ea0d3ffaf12e6211a37173f1c6f442caed07"
+    sha256                               arm64_big_sur:  "f4fa4ab4fc9c32056f59c929b5ab48185e3d7a659f75856c1170ff3a606d9817"
+    sha256                               ventura:        "340082f9bbe172cc9b0eb82ce76c3682370b74071ed068fb63a487bbe7bcb64d"
+    sha256                               monterey:       "750c52e5d97b4b95ee2ce23f89978f237f0805b18bada612787393941c21dd25"
+    sha256                               big_sur:        "16ae90ba7640d0f4300630b0caa8b24f7b90c3ae47b2b365c8ccd20babf21c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "763f6edc6cccd538311cf859db6503581d61e1d54c7391597edd9391d7c8e035"
   end
 
   depends_on "pcre2"
