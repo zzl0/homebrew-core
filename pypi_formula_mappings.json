@@ -181,7 +181,7 @@
     "extra_packages": ["appdirs", "pydantic"],
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "keyring", "pycparser", "PyYAML",
-      "pytz", "six", "tabulate", "typing-extensions"
+      "pytz", "six", "tabulate", "typing-extensions", "packaging"
     ]
   },
   "check-jsonschema": {
