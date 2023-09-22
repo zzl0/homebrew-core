@@ -3,8 +3,8 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/ec/c9/e0fb1360e4a6bd7df422fc473200f0edb45027e59d97d16f72384645577c/bzt-1.16.25.tar.gz"
-  sha256 "0c6ecfb3ce35158f4c4e9f4b45e404a96eddd819090004d53135c8f0c7960b77"
+  url "https://files.pythonhosted.org/packages/14/4c/165bae628e701289998b003d723d0648df19fe6975020b0113a686a26454/bzt-1.16.26.tar.gz"
+  sha256 "279fdedd7db45c8bcaaca2867884203e5dc5f7ba9f5eee1022c69d59ad053166"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
@@ -99,6 +99,11 @@ class Bzt < Formula
     sha256 "71f08c69ece31e73631f402ee532f74115255290819747d25e55661b5029cfb5"
   end
 
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
+    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+  end
+
   resource "hdrpy" do
     url "https://files.pythonhosted.org/packages/47/8c/159be762f787888651f9895a60d8564d2c1df5b2581cc733823b45759cfd/hdrpy-0.3.3.tar.gz"
     sha256 "8461ed2c0d577468e5499f8b685d9bf9660b72b8640bff02c78ba1f1b9bf5185"
@@ -130,8 +135,8 @@ class Bzt < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+    url "https://files.pythonhosted.org/packages/ea/bf/47afb03ba397adced887ccc4adf2e7b7e8c59b220f5a25d6c99bdd03565e/msgpack-1.0.6.tar.gz"
+    sha256 "25d3746da40f3c8c59c3b1d001e49fd2aa17904438f980d9a391370366df001e"
   end
 
   resource "multidict" do
@@ -165,8 +170,8 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/48/81/9432274cde756b04a17ae6420639fe3190bcb09eb090dee546586be9aabb/python-engineio-4.7.0.tar.gz"
-    sha256 "8b4f30ba58a5bff001801127227f44a1da0c0a22045f798c1a13ebb0d618e2a3"
+    url "https://files.pythonhosted.org/packages/42/47/e7700d320c633191e86b516c8aa535e2fafdd3cd2020ed44ef0eb4d546b6/python-engineio-4.7.1.tar.gz"
+    sha256 "a8422e345cd9a21451303380b160742ff02197975b1c3a02cef115febe2b1b20"
   end
 
   resource "python-socketio" do
@@ -180,13 +185,18 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/77/76/224d6eeab59c705bb7c1986b91b3e756dd65efbcf5bda148d39c3cbf402b/rapidfuzz-3.2.0.tar.gz"
-    sha256 "448d031d9960fea7826d42bd4284156fc68d3b55a6946eb34ca5c6acf960577b"
+    url "https://files.pythonhosted.org/packages/20/ab/f7f65cfeb2d9dda1fcf4190ccd3bfe8e4bfd4bce00375d90e20926fe7a28/rapidfuzz-3.3.0.tar.gz"
+    sha256 "5e71bc5829f41e78b2d009431aedeb308ee3699d2bbbc68b7739db9b40bd1465"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+  end
+
+  resource "simple-websocket" do
+    url "https://files.pythonhosted.org/packages/83/32/873782daaed90ec068948e6de8fb3b527d357642cf4a7948a9a1a7243c7a/simple-websocket-0.10.1.tar.gz"
+    sha256 "0ab46c8ffa51a46dc95eed94608b3b722841c0bf849def71d465c5c356679c82"
   end
 
   resource "terminaltables" do
@@ -210,13 +220,18 @@ class Bzt < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/38/44/d747807b707465625ba5e18371bc7c448925314d7217ced1801162b74ca6/websocket-client-1.6.2.tar.gz"
-    sha256 "53e95c826bf800c4c465f50093a8c4ff091c7327023b10bfaff40cf1ef170eaa"
+    url "https://files.pythonhosted.org/packages/44/34/551f30cbdc0515c39c2e78ef5919615785cd370844e40ada82367c1fab3f/websocket-client-1.6.3.tar.gz"
+    sha256 "3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"
   end
 
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/a4/99/78c4f3bd50619d772168bec6a0f34379b02c19c9cced0ed833ecd021fd0d/wheel-0.41.2.tar.gz"
     sha256 "0c5ac5ff2afb79ac23ab82bab027a0be7b5dbcf2e54dc50efe4bf507de1f7985"
+  end
+
+  resource "wsproto" do
+    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
+    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
   end
 
   resource "yarl" do
