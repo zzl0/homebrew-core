@@ -15,12 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "9a7f63b4f48d4a1f17c84a2c5d82c6a6f4810d52efede9a5164da556ace72ee8"
-    sha256 arm64_monterey: "c8f5b189d1bf513dc5364f7eb59bda7c2a6e371e396921840a01c8d7c381c65d"
-    sha256 arm64_big_sur:  "8c40d0287a364b615ae3cdc19299c08b08f4b486d2aea634a994157a64bcff21"
-    sha256 ventura:        "439a87fd71be71e698e8a1e3e2e77bd866e1193745e0c31c783c1dc4a04fa933"
-    sha256 monterey:       "116b0975551c682829afabb60a9468c04a6d45d55076fa1ab04f4d9c5da8314a"
-    sha256 big_sur:        "98444e149c138c4f07d626fc93c44226933d08d966aa0945cca70957dede0357"
+    sha256 arm64_ventura:  "3014c8d983209f274ea11ecb083270a840b6d3625519c60709e0c276c2d68e13"
+    sha256 arm64_monterey: "3ae3aec1ce5aec5dca74a146eb15c4f50e203b962299a134d1c855f2d672d514"
+    sha256 arm64_big_sur:  "98aa1bf5a2713e90c028d738c4f0b1e8e29952ac4ec8c7b233e077ed286b2f21"
+    sha256 ventura:        "38eba991e027f38d40aa0c6ad561f52673a6a0eaf01e61bb224a5d307c8cf981"
+    sha256 monterey:       "bc9a2362b26f94b57c28138bbc07daf904f25d92812374aebcd83faf947d8d75"
+    sha256 big_sur:        "c3408f666240f788efe6c0b852aab6458ddebb1c605f65e17dcb61d8eceee56a"
   end
 
   depends_on "cmake" => :build
