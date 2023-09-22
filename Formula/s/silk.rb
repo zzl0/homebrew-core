@@ -1,8 +1,8 @@
 class Silk < Formula
   desc "Collection of traffic analysis tools"
   homepage "https://tools.netsa.cert.org/silk/"
-  url "https://tools.netsa.cert.org/releases/silk-3.21.0.tar.gz"
-  sha256 "312cc4041e8f36f6586c54af861df6ceef7927693db23c164363f38c8ef13bf6"
+  url "https://tools.netsa.cert.org/releases/silk-3.22.0.tar.gz"
+  sha256 "15cff02484a75ba3c297067d57111f29751f1c94d6f66a5f4c27877268713e80"
 
   livecheck do
     url :homepage
