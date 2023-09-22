@@ -1,8 +1,8 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
   homepage "https://github.com/tenox7/ttyplot"
-  url "https://github.com/tenox7/ttyplot/archive/1.4.tar.gz"
-  sha256 "11974754981406d19cfa16865b59770faaf3ade8d909d9a0134dc56e00d29bd4"
+  url "https://github.com/tenox7/ttyplot/archive/refs/tags/1.5.tar.gz"
+  sha256 "c494c31e7808a6e3bf8e3c399024b9aeb7d77967db6008a62d110ad9ed1b8bec"
   license "Apache-2.0"
 
   bottle do
@@ -20,6 +20,7 @@ class Ttyplot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e786cc0a83fc20c09842a6fb7b411504ab45e85c7714e63afc31408eba5ede5b"
   end
 
+  depends_on "pkg-config" => :build
   uses_from_macos "ncurses"
 
   def install
@@ -28,9 +29,7 @@ class Ttyplot < Formula
   end
 
   test do
+    # `ttyplot` writes directly to the TTY, and doesn't stop even when stdin is closed.
     system "#{bin}/ttyplot", "--help"
-    # ttyplot normally reads data over time:
-    # piping lines to it will just let it start and immediately exit successfully.
-    system "echo 1 2 3 | #{bin}/ttyplot"
   end
 end
