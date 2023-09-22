@@ -6,13 +6,13 @@ class SevenKingdoms < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 arm64_ventura:  "05ea4b89e312f6cced18edea416fcd33e142f10cec22f78ab16adcb94492cd9a"
-    sha256 arm64_monterey: "613f58345758d0fd913e9136ab673f6dc9c433165510bacffdd8e004b23cc95c"
-    sha256 arm64_big_sur:  "25b48e0d70033d97c5539c1c858d0676a91a40a63027f5f11a8282e17ca7ea46"
-    sha256 ventura:        "f8c1a6666f7447c60e31483b06dee85ab1fc49cb9035eb170ceb0d8b3b6ac5eb"
-    sha256 monterey:       "61b66a2490d0c657995107d54372edd509ad6ba0ec76014894f279a7b29979ec"
-    sha256 big_sur:        "f4d74a93301d7e892ba17788c52ce4ab1591f554085f521f9426a6e1f47d357c"
-    sha256 x86_64_linux:   "19d0c4d79b46c67fe55393e48a10f02f3768a2778fcca2732203e78204636a65"
+    sha256 arm64_ventura:  "7f964ac849ddfcb41f1deb913ac3f87e4d426a0caabb2f327ef2aa9f1820d29c"
+    sha256 arm64_monterey: "368104c0637397af096cf0c77a02c16360e94e7007906a910f2d32588876a597"
+    sha256 arm64_big_sur:  "b8cb6def3fcc6b7d7f501825caea49f9a79e11c8233a9b7f5c2c8330ed12e209"
+    sha256 ventura:        "caccaab293176a553d5de69b2ad00b641292e8a716ab670c55cf4eecd2ea9946"
+    sha256 monterey:       "de4af0d1f139d9315cdc9e026885bbae192c0d0a8bc7258760fad0010b273109"
+    sha256 big_sur:        "38ef036f2d21f70bc7a89a7603ec581dc185e076a747200630a7f55f6b835b29"
+    sha256 x86_64_linux:   "b3ba3202ca789169da6b0eb0173e686b97866e37ac12f0f10429e747c4ce0751"
   end
 
   depends_on "pkg-config" => :build
