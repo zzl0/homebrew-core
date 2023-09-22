@@ -1,8 +1,8 @@
 class SevenKingdoms < Formula
   desc "Real-time strategy game developed by Trevor Chan of Enlight Software"
   homepage "https://7kfans.com"
-  url "https://github.com/the3dfxdude/7kaa/releases/download/v2.15.5/7kaa-2.15.5.tar.xz"
-  sha256 "350a2681985feb4b71d20677d1a6d11921b9e3d97facbc94e4f020e848d8ab2b"
+  url "https://downloads.sourceforge.net/project/skfans/7KAA%202.15.6/7kaa-2.15.6.tar.gz"
+  sha256 "2c79b98dc04d79e87df7f78bcb69c1668ce72b22df0384f84b87bc550a654095"
   license "GPL-2.0-only"
 
   bottle do
