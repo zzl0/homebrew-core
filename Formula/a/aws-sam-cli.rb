@@ -25,6 +25,7 @@ class AwsSamCli < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -264,11 +265,6 @@ class AwsSamCli < Formula
   resource "networkx" do
     url "https://files.pythonhosted.org/packages/fd/a1/47b974da1a73f063c158a1f4cc33ed0abf7c04f98a19050e80c533c31f0c/networkx-3.1.tar.gz"
     sha256 "de346335408f84de0eada6ff9fafafff9bcda11f0a0dfaa931133debb146ab61"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pbr" do
