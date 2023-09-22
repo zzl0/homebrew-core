@@ -25,10 +25,17 @@ class Vmdktool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c1d93d16f35a13226a5b332895c50d04badd06732ff6b69094dc1844db8c98d"
   end
 
+  depends_on "groff" => :build
+
   uses_from_macos "zlib"
 
   def install
-    system "make", "CFLAGS='-D_GNU_SOURCE -g -O -pipe'"
+    # Fixes "call to undeclared library function 'tolower' with type 'int (int)'".
+    inreplace "expand_number.c",
+              "#ifndef __APPLE__\n#include <ctype.h>\n#endif",
+              "#include <ctype.h>"
+
+    system "make", "CFLAGS=-D_GNU_SOURCE -g -O -pipe"
 
     # The vmdktool Makefile isn't as well-behaved as we'd like:
     # 1) It defaults to man page installation in $PREFIX/man instead of
