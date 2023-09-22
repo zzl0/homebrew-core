@@ -23,8 +23,10 @@ class GitAnnex < Formula
   depends_on "libmagic"
 
   def install
+    # https://github.com/aristidb/aws/issues/288
+    cabal_args = std_cabal_v2_args + ["--constraint=attoparsec-aeson<2.2.0.0"]
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
+    system "cabal", "v2-install", *cabal_args, "--flags=+S3"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 
