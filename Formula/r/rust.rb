@@ -29,15 +29,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fce6b47072113251c40f1fc942b3493615c0c48dd46c14c123550dcf21940a40"
-    sha256 cellar: :any,                 arm64_ventura:  "da3cc5cdc2d6200c8b692ddd38f06b35f73ed4521e33b4fb019f1d887b8c1f45"
-    sha256 cellar: :any,                 arm64_monterey: "389b05ad8cb33c862279ccab174118580dc44f0b736729cb2d3779ebfe712fea"
-    sha256 cellar: :any,                 arm64_big_sur:  "f138aa23c66f8818e5545be2b1294fd940d40370fadbe431160877424f786261"
-    sha256 cellar: :any,                 sonoma:         "1614a467051b31ddfe2782a60b139063a5b379dfb7a6acee17858d5a42e52f59"
-    sha256 cellar: :any,                 ventura:        "dfe9048cdb4e153ef0b16c915adfb47fca3d07c39241601f2c96c7ed5e46d595"
-    sha256 cellar: :any,                 monterey:       "9857814f1e00f63f0e35c77f63697def916f96e88ff5f766893cc1b6f0fa918e"
-    sha256 cellar: :any,                 big_sur:        "32c58867be17708f066d735024c755d0165683ebb56f3c5e78fa5a0fbfa34702"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa7272644a7bd61217aa864015a39dda2056562015a18f7fcc1199efd39991e7"
+    sha256 cellar: :any,                 arm64_ventura:  "978d086a7856eb8b7bb482d5e81dd71143e766f0e5dac42cf6751a9237b74248"
+    sha256 cellar: :any,                 arm64_monterey: "2fa0718333121859bf2004cd41fa4c11662c7eff0e6f47ab2adb9702ef57fc5b"
+    sha256 cellar: :any,                 arm64_big_sur:  "26cae92e11eed4491e0539437e8bcb9b6909d4646b632c2dfb695de02a5cd101"
+    sha256 cellar: :any,                 ventura:        "8ddd9fdb4a87318da3cf8738da78a2be4588b0dc327dc0be6c399ba867a56154"
+    sha256 cellar: :any,                 monterey:       "f085460f847f4ded3206fb97ae7c629ca053bb2391eb8dfba2cdeebd638530a5"
+    sha256 cellar: :any,                 big_sur:        "03a163badeaa7f8b812697a55e07ae3cb985a0a7f8a7272fceadaa68202ba839"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f631ff2c09e49f25fe956ef663ee2c1aacb6c7a03a5eb68fa174344ed220f84"
   end
 
   head do
