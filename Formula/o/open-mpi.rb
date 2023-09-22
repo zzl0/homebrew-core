@@ -12,9 +12,11 @@ class OpenMpi < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "4f19a00c09adbcbefde645a06ebdccc7624e441757e2f06e6f0becd6e6844814"
     sha256 arm64_ventura:  "ba0d2a31bdcf30e06dc2b8793c088e3ebb4921175e0557aa3a537d2bab595431"
     sha256 arm64_monterey: "9d7da2a349c2adc8c134cd031e54c6a87ebbd7c8e97212f675bbfa57f747dc75"
     sha256 arm64_big_sur:  "edb6c5b489554507387f3682b14c6a7f14df19d45b12cb784c58ae791906fbcd"
+    sha256 sonoma:         "a8172d75f4f3aa6bfcd183d956dd933fed21bfbc1fe4359e61af72e5cbb6e9f1"
     sha256 ventura:        "2e009961c61e90e5fb94ed58a1ce6a5a60f73e69ae977d99a740ce8dc544a1ac"
     sha256 monterey:       "fee37523af6d3fe9f32cf524d84be442d6e1e0fb18ff976f21e42780624a7e23"
     sha256 big_sur:        "d71af07cbd0a8c8312ca8962d08eacf008ddac97f6ebf2c4c21989d2a118ad96"
