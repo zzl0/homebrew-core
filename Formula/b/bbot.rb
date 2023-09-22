@@ -27,6 +27,7 @@ class Bbot < Formula
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-lxml"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -160,11 +161,6 @@ class Bbot < Formula
   resource "ordered-set" do
     url "https://files.pythonhosted.org/packages/4c/ca/bfac8bc689799bcca4157e0e0ced07e70ce125193fc2e166d2e685b7e2fe/ordered-set-4.1.0.tar.gz"
     sha256 "694a8e44c87657c59292ede72891eb91d34131f6531463aab3009191c77364a8"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pexpect" do
