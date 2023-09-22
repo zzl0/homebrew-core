@@ -15,9 +15,11 @@ class Werf < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a164341feb5633c837729cc431eeb3a186ab61e0afdef7be1c47990e06df0f75"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f351afe876f03fd006d376722b8138a041fac939732d2ff11065ce095a889d02"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "73a57f7ad2015874bd2aed3919f6bae09c370a007b0e03938ee4a9ba18da9575"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08af8009f536714c9b4c19017df79b8fa90ac450fc2484bc86b2cc07de9fa792"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d103009dd05ddcaa6dc3e2583e9e313c1dab9af06ac03592e8391629d95f3a09"
     sha256 cellar: :any_skip_relocation, ventura:        "0b47821c9d7e7b599489906be50c103c797bca74eb3f6b96cfb4b357a362587b"
     sha256 cellar: :any_skip_relocation, monterey:       "95688e70f3e98354173979a6685d0a662861aabe464681c053474955e539cfaa"
     sha256 cellar: :any_skip_relocation, big_sur:        "4f8284c23c277d58b228432e377ec382247e03e2e8f0a5cffd55c4d5f6f4f424"
