@@ -18,15 +18,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4548966ef7878e00641e16b847f5f0c54a018db82772bf686a157172d3a0b0bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4548966ef7878e00641e16b847f5f0c54a018db82772bf686a157172d3a0b0bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4548966ef7878e00641e16b847f5f0c54a018db82772bf686a157172d3a0b0bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4548966ef7878e00641e16b847f5f0c54a018db82772bf686a157172d3a0b0bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "822c78c5883b035bd0b012b6c7d1c9dde903cc5c66dd09410d6afc0d71cb8a0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "822c78c5883b035bd0b012b6c7d1c9dde903cc5c66dd09410d6afc0d71cb8a0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "822c78c5883b035bd0b012b6c7d1c9dde903cc5c66dd09410d6afc0d71cb8a0d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "822c78c5883b035bd0b012b6c7d1c9dde903cc5c66dd09410d6afc0d71cb8a0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e223b9ee4560a3a08dc666234a6b8b517a4c2a6479dfb67be3dffa2570b7cd8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84994991e396a60121bba53550784f5cb55592a9809dd78252ac1bf40e151eb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84994991e396a60121bba53550784f5cb55592a9809dd78252ac1bf40e151eb7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84994991e396a60121bba53550784f5cb55592a9809dd78252ac1bf40e151eb7"
+    sha256 cellar: :any_skip_relocation, ventura:        "e433179eeee9be2545c6310c9d114d8105604b04ec7f0e3b5c91ffeb42390282"
+    sha256 cellar: :any_skip_relocation, monterey:       "e433179eeee9be2545c6310c9d114d8105604b04ec7f0e3b5c91ffeb42390282"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e433179eeee9be2545c6310c9d114d8105604b04ec7f0e3b5c91ffeb42390282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e772dd5d485d489495587eae6b4010e8407a212c833d07af05cd9a03c6607b1e"
   end
 
   depends_on "go" => :build
