@@ -1,8 +1,8 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.1.0.tar.gz"
-  sha256 "ff88596b342440185874ddbe22874b47ad7b923f14671921af760b15c98aacd6"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.2.0.tar.gz"
+  sha256 "419b3137a1a549fc5054edbba5b71da76cbde730e8a271769126e021477ad47b"
   license "Apache-2.0"
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
@@ -38,11 +38,12 @@ class Openvino < Formula
   on_linux do
     depends_on "opencl-clhpp-headers" => :build
     depends_on "opencl-headers" => :build
+    depends_on "rapidjson" => :build
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https://github.com/oneapi-src/oneDNN/archive/4b82a66ed38ecaa993352e5cc6ed7753656b8a26.tar.gz"
-      sha256 "cb17c003fe51bc9b4e20189573956b4446468162adf0fc4cea2ee0820cff0cd0"
+      url "https://github.com/oneapi-src/oneDNN/archive/284ad4574939fa784e4ddaa1f4aa577b8eb7a017.tar.gz"
+      sha256 "16f36078339cd08b949efea1d863344cb0b742d9f5898937d07a591b0c4da517"
     end
   end
 
@@ -50,8 +51,8 @@ class Openvino < Formula
     depends_on "scons" => :build
 
     resource "arm_compute" do
-      url "https://github.com/ARM-software/ComputeLibrary/archive/refs/tags/v23.02.1.tar.gz"
-      sha256 "c3a443e26539f866969242e690cf0651ef629149741ee18732f954c734da6763"
+      url "https://github.com/ARM-software/ComputeLibrary/archive/refs/tags/v23.08.tar.gz"
+      sha256 "62f514a555409d4401e5250b290cdf8cf1676e4eb775e5bd61ea6a740a8ce24f"
     end
   end
 
@@ -60,34 +61,27 @@ class Openvino < Formula
   end
 
   resource "ade" do
-    url "https://github.com/opencv/ade/archive/refs/tags/v0.1.2c.tar.gz"
-    sha256 "1387891c707c6e5c76448ea09e2df2e8bce1645c11f262c10b3f3ebec88749c2"
+    url "https://github.com/opencv/ade/archive/refs/tags/v0.1.2d.tar.gz"
+    sha256 "edefba61a33d6cd4b78a9976cb3309c95212610a81ba6dade09882d1794198ff"
   end
 
   resource "mlas" do
-    url "https://github.com/openvinotoolkit/mlas/archive/c7c8a631315000f17c650af34431009d2f22129c.tar.gz"
-    sha256 "7b790dfeef8e1dd612f920c85186c52ad3a3e2245e2a2afd6cc91ce4b1dc64a9"
+    url "https://github.com/openvinotoolkit/mlas/archive/f6425b1394334822390fcd9da12788c9cd0d11da.tar.gz"
+    sha256 "707a6634d62ea5563042a67161472b4be3ffe73c9783719519abdd583b0295f4"
   end
 
   resource "onednn_cpu" do
-    url "https://github.com/openvinotoolkit/oneDNN/archive/a1aa20ca8f19465dc2fd18389953ed83798b2fd3.tar.gz"
-    sha256 "d97ebb36cec6df7ba5473ecee38f0e49e6bda731b0414331b531dc8d1b5b227a"
+    url "https://github.com/openvinotoolkit/oneDNN/archive/2ead5d4fe5993a797d9a7a4b8b5557b96f6ec90e.tar.gz"
+    sha256 "3c51d577f9e7e4cbd94ad08d267502953ec64513241dda6595b2608fafc8314c"
   end
 
   resource "onnx" do
-    url "https://github.com/onnx/onnx/archive/refs/tags/v1.13.1.tar.gz"
-    sha256 "090d3e10ec662a98a2a72f1bf053f793efc645824f0d4b779e0ce47468a0890e"
+    url "https://github.com/onnx/onnx/archive/refs/tags/v1.14.1.tar.gz"
+    sha256 "e296f8867951fa6e71417a18f2e550a730550f8829bd35e947b4df5e3e777aa1"
   end
 
   def python3
     "python3.11"
-  end
-
-  # Fix build with macOS 14 and clang 15 (https://github.com/openvinotoolkit/openvino/pull/19947)
-  # Remove patch when available in release.
-  patch do
-    url "https://github.com/openvinotoolkit/openvino/commit/b2217fdafd988b62910f05e0aa99a2bc562ef4e7.patch?full_index=1"
-    sha256 "e75bbf232704ab89d0ed492babc425821d67c2642a8fb19faf0f56e078fc3c1c"
   end
 
   def install
@@ -99,6 +93,7 @@ class Openvino < Formula
                       thirdparty/onnx/onnx thirdparty/flatbuffers
                       src/plugins/intel_cpu/thirdparty/mlas
                       src/plugins/intel_cpu/thirdparty/onednn
+                      src/plugins/intel_gpu/thirdparty/rapidjson
                       src/plugins/intel_gpu/thirdparty/onednn_gpu
                       src/plugins/intel_cpu/thirdparty/ComputeLibrary]
     dependencies.each { |d| (buildpath/d).rmtree }
