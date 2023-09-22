@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/85/b4/687be0ff0214ad110a4439877d7fb0e71bcbe78a556854484ceb5a892960/cfn-lint-0.80.2.tar.gz"
-  sha256 "3da65b097fe9be335d3d6a797797d8af3e304f449d48df354a6eff8f005d0bb9"
+  url "https://files.pythonhosted.org/packages/a1/34/067cf6a5a900bbbe787558a1a6bec80976e2454fef439e4680e849363267/cfn-lint-0.80.3.tar.gz"
+  sha256 "da3aaf75a398c2959c6a9bcb487f5fdcfde9d8b6b1eaa00958c9c8d8627db857"
   license "MIT-0"
 
   bottle do
@@ -25,24 +25,29 @@ class CfnLint < Formula
   depends_on "pyyaml"
   depends_on "six"
 
+  resource "annotated-types" do
+    url "https://files.pythonhosted.org/packages/42/97/41ccb6acac36fdd13592a686a21b311418f786f519e5794b957afbcea938/annotated_types-0.5.0.tar.gz"
+    sha256 "47cdc3490d9ac1506ce92c7aaa76c579dc3509ff11e098fc867e5130ab7be802"
+  end
+
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/93/3d/f249415d02f5343e453162f16cddad11c089c3fa318b66259904f17646be/aws-sam-translator-1.74.0.tar.gz"
-    sha256 "6975ddf0798f45952554d6ea2d5e95de8f321ecb7d3299bb127073d4ffb53c90"
+    url "https://files.pythonhosted.org/packages/8e/db/852dbb2962c4b113af1faf7f0ec9258b6ba5d9e405b6e9c7396237d28f86/aws-sam-translator-1.75.0.tar.gz"
+    sha256 "18c83abcae594de084947befb9c80f689f8b99ece2d38729d27a9cea634da15c"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/d5/be/19790e1d72d326ae66c16928a7370158b9f6441434662a87cdba9137e8f0/boto3-1.28.50.tar.gz"
-    sha256 "33062ab3801029ab7b2cb35b6bf4768715d13c5f9ea7d5dce22ace6219c1dc7a"
+    url "https://files.pythonhosted.org/packages/e6/af/318cbf0767cc21c94e5ff4e8b81188ccb869d8226be4ddcccac6e8d7fe8f/boto3-1.28.52.tar.gz"
+    sha256 "a34fc153cb2f6fb2f79a764286c967392e8aae9412381d943bddc576c4f7631a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/67/98/1418d326f5e10c8b86ccc0cc5651d2d348fed137328cd0ce627031eeae79/botocore-1.31.50.tar.gz"
-    sha256 "a1343f2e38ea86e11247d61bd37a9d5656c16186f4a21b482c713589a054c605"
+    url "https://files.pythonhosted.org/packages/59/8e/ad7fb6342a6f2bd6b9a48174eed6d0be998a88d9f997e6d501e5a099cbc9/botocore-1.31.52.tar.gz"
+    sha256 "6d09881c5a8be34b497872ca3936f8757d886a6f42f2a8703411928189cfedc0"
   end
 
   resource "jmespath" do
@@ -71,8 +76,8 @@ class CfnLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
-    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
+    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
+    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
   end
 
   resource "jsonschema-specifications" do
@@ -101,8 +106,13 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3b/9b/a7631bf35e55326fd74654fe6bd896478f47d65e97ca69e60ddb1b3823ee/pydantic-1.10.12.tar.gz"
-    sha256 "0fe8a415cea8f340e7a9af9c54fc71a649b43e8ca3cc732986116b3cb135d303"
+    url "https://files.pythonhosted.org/packages/fd/fe/8f08bf18b2c53afb4b358fae6e9b3501e169a2c1c9c0cd96f21a40bb7abd/pydantic-2.3.0.tar.gz"
+    sha256 "1607cc106602284cd4a00882986570472f193fde9cb1259bceeaedb26aa79a6d"
+  end
+
+  resource "pydantic-core" do
+    url "https://files.pythonhosted.org/packages/cb/fe/8c9363389f8f303fb151895af83ac30e06c0406779fe188b4281a64e4c50/pydantic_core-2.6.3.tar.gz"
+    sha256 "1508f37ba9e3ddc0189e6ff4e2228bd2d3c3a4641cbe8c07177162f76ed696c7"
   end
 
   resource "python-dateutil" do
