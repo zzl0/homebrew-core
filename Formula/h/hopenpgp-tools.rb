@@ -1,19 +1,10 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.8/hopenpgp-tools-0.23.8.tar.gz"
+  sha256 "158be5544d28fcb3989376b6aee700aa6eed8390ffb8d41146b0aeff09433401"
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
-
-  stable do
-    url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.7/hopenpgp-tools-0.23.7.tar.gz"
-    sha256 "b04137b315106f3f276509876acf396024fbb7152794e1e2a0ddd3afd740f857"
-
-    # Fixes https://salsa.debian.org/clint/hopenpgp-tools/-/issues/5
-    patch do
-      url "https://salsa.debian.org/clint/hopenpgp-tools/-/commit/fc4214399f06d4ddeb2ecf93ddd3d9bc9ed140bc.patch"
-      sha256 "56f1666227d421b42f375c53b5e747090418a2f669b1e7df285c11bdb23d6390"
-    end
-  end
 
   bottle do
     rebuild 1
