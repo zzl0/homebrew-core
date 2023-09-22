@@ -5,7 +5,6 @@ class Libimobiledevice < Formula
   sha256 "53f2640c6365cd9f302a6248f531822dc94a6cced3f17128d4479a77bd75b0f6"
   license "LGPL-2.1-or-later"
   revision 2
-  head "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d455f6c2631261d5698d731d55794f12352a38b4eaa10f9058b1f5276332fdee"
@@ -17,6 +16,13 @@ class Libimobiledevice < Formula
     sha256 cellar: :any,                 monterey:       "fa00bbc261ab959da8712ddcdf118019321870216d6d92eb5243273598ebbe84"
     sha256 cellar: :any,                 big_sur:        "fb8e517ba7c3d558f22513d32844c6810c49c37a59241191b7ee6e2a509775f4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9543f31389a43c41fafeed7e92c477aa9fb936ecd75de0397c3bf337c49ee1c9"
+  end
+
+  # libimobiledevice-glue is required for building future versions
+  # Move outside of HEAD clause when there's a new release.
+  head do
+    url "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
+    depends_on "libimobiledevice-glue"
   end
 
   depends_on "autoconf" => :build
