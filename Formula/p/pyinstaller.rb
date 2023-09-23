@@ -3,8 +3,8 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/bd/23/c5f0163b2049699cdbb511eac72798f017d4c9a3f4ba571fbef398156e3d/pyinstaller-5.13.2.tar.gz"
-  sha256 "c8e5d3489c3a7cc5f8401c2d1f48a70e588f9967e391c3b06ddac1f685f8d5d2"
+  url "https://files.pythonhosted.org/packages/2f/51/ee0bc47505096f474390d62500befadc532a9cdd77460d6c46aa1b4e1c51/pyinstaller-6.0.0.tar.gz"
+  sha256 "d702cff041f30e7a53500b630e07b081e5328d4655023319253d73935e75ade2"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
@@ -18,6 +18,7 @@ class Pyinstaller < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b580361f0650fdb9b79c52f8d06dd48c3531bdfdfe90523abc9222abdb7638e"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "altgraph" do
