@@ -1,8 +1,9 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "d12b97f39147c52ae49ef56c439cf2519d11a0de4cbf1af636c156d746149233"
+  # LICENSE change from MIT to Apache-2.0 in v0.5+
+  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "1aad8715071852f4a3d3950af1ab7db49eef423c5db1f739238415051310ff72"
   license "MIT"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
@@ -19,7 +20,14 @@ class Copa < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    ldflags = %W[
+      -s -w
+      -X github.com/project-copacetic/copacetic/pkg/version.GitVersion=#{version}
+      -X github.com/project-copacetic/copacetic/pkg/version.GitCommit=#{tap.user}
+      -X github.com/project-copacetic/copacetic/pkg/version.BuildDate=#{time.iso8601}
+      -X main.version=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
@@ -34,5 +42,7 @@ class Copa < Formula
     output = shell_output("#{bin}/copa patch --image=mcr.microsoft.com/oss/nginx/nginx:1.21.6  \
                           --report=report.json 2>&1", 1)
     assert_match "Error: no scanning results for os-pkgs found", output
+
+    assert_match version.to_s, shell_output("#{bin}/copa --version")
   end
 end
