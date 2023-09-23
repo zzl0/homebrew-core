@@ -8,13 +8,13 @@ class Copa < Formula
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1e3d30b97181b93dcb12d038081dc30c3ac12954283cc040d6be0a56d1596e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd09f0a31b320a5669e97054e2db7b134e205a017886d7e93213f2103c5a799a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5da779727c2f3ceaebbc5801110d2122814ee8380d9973021bff10a9fcc0dd6"
-    sha256 cellar: :any_skip_relocation, ventura:        "e118acad73b72b5b248a271cf38a44f2a37d2315f9c848db4e3f7e74da5a3eb4"
-    sha256 cellar: :any_skip_relocation, monterey:       "357abb73928c6a045f8aeab4f919578b03758ca3d8f51b62c1cadb3f9848eff2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2589ff135ff1b7ff01789178dbbee15dbf454eff4fa23844405b4e16611c0c18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3805fe9a2278cdd553202cf86a23111576933ef6df3f8ccaa7c155f680e297a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3667231786301df5bdca39a6ac904ca2ec79229662ad2e6c71cdb1324a5ef96"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d95ccee0202f096779a4f75197a6d9c526b3c15f18e6798abf40a2080a5e6ecb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c237ea9ad722f6b5aa0359b616722f9b58639aa94b23652b7133ddef3e1b3e8f"
+    sha256 cellar: :any_skip_relocation, ventura:        "14f651023f64a2eba0e98806771cb6cd5533f9ec0ac98a20dd92f3394b22d82d"
+    sha256 cellar: :any_skip_relocation, monterey:       "206e617d60efec58055088a3ddcd7e40310cf0ede918a4a7659595e5dd0435e7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0e8f3d933e3c9ef810f8070867794f6d119943e5f2633d58afa38080991cae07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "965aedfebd7cfb92c22a4229427ae30d1f2f5ef1cab0d88d3caddd106e1f27a3"
   end
 
   depends_on "go" => :build
