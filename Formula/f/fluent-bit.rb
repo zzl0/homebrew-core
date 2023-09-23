@@ -30,6 +30,10 @@ class FluentBit < Formula
   depends_on "openssl@3"
   uses_from_macos "zlib"
 
+  # Avoid conflicts with our `luajit` formula.
+  # We don't need to set LDFLAGS because LuaJIT is statically linked.
+  patch :DATA
+
   def install
     # Prevent fluent-bit to install files into global init system
     # For more information see https://github.com/fluent/fluent-bit/issues/3393
@@ -51,3 +55,25 @@ class FluentBit < Formula
     assert_match "Fluent Bit v#{version}", output
   end
 end
+
+__END__
+--- a/lib/luajit-cmake/LuaJIT.cmake
++++ b/lib/luajit-cmake/LuaJIT.cmake
+@@ -569,13 +569,13 @@ set(luajit_headers
+   ${LJ_DIR}/luaconf.h
+   ${LJ_DIR}/luajit.h
+   ${LJ_DIR}/lualib.h)
+-install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/luajit)
++install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/include/luajit)
+ install(TARGETS libluajit
+-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib)
+ 
+ # Build the luajit binary
+-if (LUAJIT_BUILD_EXE)
++if (FALSE)
+   add_executable(luajit ${LJ_DIR}/luajit.c)
+   target_link_libraries(luajit libluajit)
+   if(APPLE AND ${CMAKE_C_COMPILER_ID} STREQUAL "zig")
