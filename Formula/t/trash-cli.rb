@@ -9,9 +9,11 @@ class TrashCli < Formula
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43401ed349e19afa6a651f0e76dd22447de8eee4b24047ee9f53eeca7cf1fa85"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7d1ec026acbd79807e3b461c27e7226a595b6a17ffcc5d9baf1f9d1ebbf7964"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fa37b58adc8ace3027b92219ad07fd99de428e0f9002c91b9403038f98c419f5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb481500d369930d7f1bb9f7f8e785c8865d06e7d0759ebfde1d00c0218fc346"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b9a694c7bef102fd3172bd1ca3778bb40ca79ce3de506638e6784b54490349d"
     sha256 cellar: :any_skip_relocation, ventura:        "1254f1309c742387d0efe032cfd15350ee40916f25788f7c73a71a7f3fda7bd5"
     sha256 cellar: :any_skip_relocation, monterey:       "e027eac6d5d625c2d9c27e1cf954bf86d648588c75fab3803a9dff84a7fdfccc"
     sha256 cellar: :any_skip_relocation, big_sur:        "0365e789e4a0a454b81388bee217ff7ad72029bd37cbe76fb446db182d0c996c"
