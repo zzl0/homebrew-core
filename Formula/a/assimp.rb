@@ -1,8 +1,8 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https://www.assimp.org/"
-  url "https://github.com/assimp/assimp/archive/v5.2.5.tar.gz"
-  sha256 "b5219e63ae31d895d60d98001ee5bb809fb2c7b2de1e7f78ceeb600063641e1a"
+  url "https://github.com/assimp/assimp/archive/v5.3.1.tar.gz"
+  sha256 "a07666be71afe1ad4bc008c2336b7c688aca391271188eb9108d0c6db1be53f1"
   license :cannot_represent
   head "https://github.com/assimp/assimp.git", branch: "master"
 
@@ -26,12 +26,6 @@ class Assimp < Formula
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
-
-  # Fix for macOS 13, remove in next version
-  patch do
-    url "https://github.com/assimp/assimp/commit/5a89d6fee138f8bc979b508719163a74ddc9a384.patch?full_index=1"
-    sha256 "a5fa5be12dd782617d81cc867b40a0bca32718fda0c6cedcca60e2325de03453"
-  end
 
   def install
     args = %W[
