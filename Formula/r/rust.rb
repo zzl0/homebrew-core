@@ -19,15 +19,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8c4b3bceff159ef0302921ee2dde39b1fde602334ad4e06bbaf8a9bec2b3ca9f"
-    sha256 cellar: :any,                 arm64_ventura:  "978d086a7856eb8b7bb482d5e81dd71143e766f0e5dac42cf6751a9237b74248"
-    sha256 cellar: :any,                 arm64_monterey: "2fa0718333121859bf2004cd41fa4c11662c7eff0e6f47ab2adb9702ef57fc5b"
-    sha256 cellar: :any,                 arm64_big_sur:  "26cae92e11eed4491e0539437e8bcb9b6909d4646b632c2dfb695de02a5cd101"
-    sha256 cellar: :any,                 sonoma:         "3708edb19eca2727fbd3344ceb510577c0fcba7b2c636dcc6d6359df981ffd18"
-    sha256 cellar: :any,                 ventura:        "8ddd9fdb4a87318da3cf8738da78a2be4588b0dc327dc0be6c399ba867a56154"
-    sha256 cellar: :any,                 monterey:       "f085460f847f4ded3206fb97ae7c629ca053bb2391eb8dfba2cdeebd638530a5"
-    sha256 cellar: :any,                 big_sur:        "03a163badeaa7f8b812697a55e07ae3cb985a0a7f8a7272fceadaa68202ba839"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f631ff2c09e49f25fe956ef663ee2c1aacb6c7a03a5eb68fa174344ed220f84"
+    sha256 cellar: :any,                 arm64_ventura:  "be9922a4b56016f18d209067f5a4d148d2aad4db3061092f848744aff41e337d"
+    sha256 cellar: :any,                 arm64_monterey: "a9ada0e355a336a55545a16e615daa051c5a675dc05c63793a77b8bac98ba04e"
+    sha256 cellar: :any,                 arm64_big_sur:  "9bfc9baf003134053944ad145cc48155a23607ff73fecd6d45d1e4d3b429d6fd"
+    sha256 cellar: :any,                 ventura:        "4cd3be4492eae97232dd1d868fb40f849882724688c4bd792f1e720d8710803d"
+    sha256 cellar: :any,                 monterey:       "f7b8d6dc15d845f4ad715706542237386f97cf045e9168b34876bccb060e0e26"
+    sha256 cellar: :any,                 big_sur:        "20214e26fbc77ef51e3be59c970ed9a109f3c13cfa7331a973d60d06b907760a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36b6bb23066fccd7b3c9311d5c671768133bbe5c27cce132376c4c0ec30abf9c"
   end
 
   head do
