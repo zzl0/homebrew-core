@@ -6,9 +6,11 @@ class GsettingsDesktopSchemas < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, ventura:        "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, monterey:       "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
     sha256 cellar: :any_skip_relocation, big_sur:        "9b07d5867f7317b046208fdacf52f9c780a9bbd6264bab81dba80268b13dbe76"
