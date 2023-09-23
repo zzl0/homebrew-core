@@ -14,6 +14,7 @@ class Rpmspectool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b27e1de9b1da031214a7cfd84e39491faca0f84fa616f1f358b8602c7961bca"
   end
 
+  depends_on :linux
   depends_on "python-pycurl"
   depends_on "python@3.11"
   depends_on "rpm"
