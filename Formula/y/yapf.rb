@@ -3,8 +3,8 @@ class Yapf < Formula
 
   desc "Formatter for python code"
   homepage "https://github.com/google/yapf"
-  url "https://files.pythonhosted.org/packages/e0/7a/9020bfa17d294b5d0d8bf26bb175ad4c90d1e3ad4039001f621ef046cb06/yapf-0.40.1.tar.gz"
-  sha256 "958587eb5c8ec6c860119a9c25d02addf30a44f75aa152a4220d30e56a98037c"
+  url "https://files.pythonhosted.org/packages/b9/14/c1f0ebd083fddd38a7c832d5ffde343150bd465689d12c549c303fbcd0f5/yapf-0.40.2.tar.gz"
+  sha256 "4dab8a5ed7134e26d57c1647c7483afb3f136878b579062b786c9ba16b94637b"
   license "Apache-2.0"
 
   bottle do
@@ -22,13 +22,13 @@ class Yapf < Formula
   depends_on "python@3.11"
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/a3/82/f6e29c8d5c098b6be61460371c2c5591f4a335923639edec43b3830650a4/importlib_metadata-6.7.0.tar.gz"
-    sha256 "1aaf550d4f73e5d6783e7acb77aec43d49da8017410afae93822cc9cca98c4d4"
+    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
+    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/05/31/793923615e85deef0c25abf5d044b3f99f1348b620122ab184b7d3f70f21/platformdirs-3.6.0.tar.gz"
-    sha256 "57e28820ca8094678b807ff529196506d7a21e17156cb1cddb3e74cebce54640"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "tomli" do
@@ -37,8 +37,8 @@ class Yapf < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/00/27/f0ac6b846684cecce1ee93d32450c45ab607f65c2e0255f0092032d91f07/zipp-3.15.0.tar.gz"
-    sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
+    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
+    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
   def install
