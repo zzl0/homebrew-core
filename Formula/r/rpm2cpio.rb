@@ -25,7 +25,9 @@ class Rpm2cpio < Formula
   depends_on "libarchive"
   depends_on "xz"
 
-  conflicts_with "rpm", because: "both install `rpm2cpio` binaries"
+  on_linux do
+    conflicts_with "rpm", because: "both install `rpm2cpio` binaries"
+  end
 
   def install
     tar = OS.mac? ? "tar" : "bsdtar"
@@ -36,7 +38,7 @@ class Rpm2cpio < Formula
   test do
     resource "homebrew-testdata" do
       url "https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/h/hello-2.12.1-2.fc39.x86_64.rpm"
-      sha256 "10f9944f95ca54f224133cffab1cfab0c40e3adb64e4190d3d9e8f9dbed680f9"
+      sha256 "38f610ff8d5d543eb2715046fb8603f777c42b78d7a8f15c14ab5f6606245caa"
     end
 
     testpath.install resource "homebrew-testdata"
