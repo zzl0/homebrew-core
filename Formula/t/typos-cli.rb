@@ -11,9 +11,11 @@ class TyposCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b3663e29770626243d6adc852464a38ef2d34995600369ce052fba8a368bd88"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "83b152724268f689805e1fdb2b71820e4dc004746fc3d3b864f805affb3f5b3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "77aaffb4fb5b7382f26b07ecdb5a79dcf840dce75b02c777a616bbce84026db1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01ce5766602a33faa5968c5756848d8df2f894f740bb2726cb81de189a2b7e0e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "23cd113b416f12bffa26ac4ba5478890da7aba4b2b619cebd9c07f43b2587977"
     sha256 cellar: :any_skip_relocation, ventura:        "ae62544d707dc28494e892dc567b243735d2a09a89c6433b5eab3e5c4368658a"
     sha256 cellar: :any_skip_relocation, monterey:       "e483ee8823103404b93d8c8bbde68881a05dcfa4ec6dfede99f0d32a2f88e3c2"
     sha256 cellar: :any_skip_relocation, big_sur:        "62812b83627b95f0c5129b55732725df968c599423d769f2a8ad043a2ec6ac26"
