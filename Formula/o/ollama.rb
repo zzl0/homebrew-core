@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
   url "https://github.com/jmorganca/ollama.git",
-      tag:      "v0.0.19",
-      revision: "45ac07cd025f9d1e84917db3f00e0f3e5651aede"
+      tag:      "v0.0.21",
+      revision: "01c44d687eca23bf101c9617c6db26683c2c8c9e"
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
@@ -37,8 +37,7 @@ class Ollama < Formula
 
   test do
     port = free_port
-    ENV["OLLAMA_HOST"] = "localhost"
-    ENV["OLLAMA_PORT"] = port.to_s
+    ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
     pid = fork { exec "#{bin}/ollama", "serve" }
     sleep 1
