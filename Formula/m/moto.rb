@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/31/0a/d20087b369d1084c6b344b69b75a3009be53afdcc45d512814a78cfbe544/moto-4.2.3.tar.gz"
-  sha256 "4caab0145d557d102fe79d0ce3b73d6bf1d916d29ad03c14da15f7da66429cdb"
+  url "https://files.pythonhosted.org/packages/6b/15/565f7a29a974ae41d820e16ed2ee9b15e0ba888eab315b6df27e456d10be/moto-4.2.4.tar.gz"
+  sha256 "eea3c5b29987e8b12816b355dfdcca5d7a815a9d9f17208af31fa32acbe8b389"
   license "Apache-2.0"
 
   bottle do
@@ -93,8 +93,8 @@ class Moto < Formula
   end
 
   resource "jsonschema-spec" do
-    url "https://files.pythonhosted.org/packages/a3/d5/b1c6171af26a3086189c45fcc7145cb40cdb7ab6779806e9e321501f5251/jsonschema_spec-0.1.6.tar.gz"
-    sha256 "90215863b56e212086641956b20127ccbf6d8a3a38343dad01d6a74d19482f76"
+    url "https://files.pythonhosted.org/packages/85/bf/5e9a059f611e8950eec986385892f9d596e4936fa58a37bf295789197f77/jsonschema_spec-0.2.4.tar.gz"
+    sha256 "873e396ad1ba6edf9f52d6174c110d4fafb7b5f5894744246a53fe75e5251ec2"
   end
 
   resource "lazy-object-proxy" do
@@ -108,13 +108,13 @@ class Moto < Formula
   end
 
   resource "openapi-schema-validator" do
-    url "https://files.pythonhosted.org/packages/f6/bc/ea1c532bba227c61cf57f228790b3544e73fa1f82832bb59f3272672d239/openapi_schema_validator-0.4.4.tar.gz"
-    sha256 "c573e2be2c783abae56c5a1486ab716ca96e09d1c3eab56020d1dc680aa57bf8"
+    url "https://files.pythonhosted.org/packages/9a/8f/4c5653f78960e8ab83387c46909b71f2db6fd41f32c5e3d4437e3b16c737/openapi_schema_validator-0.6.1.tar.gz"
+    sha256 "b8b25e2cb600a0ed18452e675b5dd8cbb99009909c2641c973a4b02c93e33ca2"
   end
 
   resource "openapi-spec-validator" do
-    url "https://files.pythonhosted.org/packages/27/e5/9fe67dfd403777d500abb5cd650c16ef9d4918a6c12e87731c3a4feeb4ff/openapi_spec_validator-0.5.7.tar.gz"
-    sha256 "6c2d42180045a80fd6314de848b94310bdb0fa4949f4b099578b69f79d9fa5ac"
+    url "https://files.pythonhosted.org/packages/3f/87/733b5e5ccd80fc28046b3fbe559d54068094261d931a909e880c99bdcfe9/openapi_spec_validator-0.6.0.tar.gz"
+    sha256 "68c4c212c88ef14c6b1a591b895bf742c455783c7ebba2507abd7dbc1365a616"
   end
 
   resource "packaging" do
