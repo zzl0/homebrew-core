@@ -10,9 +10,11 @@ class Scrapy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fb3f41d3c2fef67c182e9baefd299d58a5f6c43a12894eef8feb5107d9659f2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "153ef7384f330e18f9f82e712ae53ff631eca7b83118826ea8d1dafed59b7b67"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "177e0dd17ef638fc70115ff722529891381512be6cede628065812ccd0f3c3e5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25057cfd228a2af7ae2de5021e7fd955358bc5dd700c9d1a423deefcf5c27d37"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ec11454e1bb0827c06b6132d9631a0fbed0cea4c93d9099c7e4ae6892e172fc"
     sha256 cellar: :any_skip_relocation, ventura:        "9f4a59bb0dfaee12ef353cc03f133540526b2086e9c630f53ade5f346c499c09"
     sha256 cellar: :any_skip_relocation, monterey:       "ee2f13039557e00fb3f36f59049469f276ba603d2c02fc8494bf895c5aa1eaad"
     sha256 cellar: :any_skip_relocation, big_sur:        "2bd5153e794a061ba2e4275c23c963aa3c390c83a1ddf499e845eecbcec0662c"
