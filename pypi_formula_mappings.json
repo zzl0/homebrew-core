@@ -223,7 +223,7 @@
     "extra_packages": ["distro"]
   },
   "commitizen": {
-    "exclude_packages": ["PyYAML", "typing-extensions"]
+    "exclude_packages": ["PyYAML", "typing-extensions", "packaging"]
   },
   "cookiecutter": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
