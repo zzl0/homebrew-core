@@ -1,8 +1,8 @@
 class TemporalTables < Formula
   desc "Temporal Tables PostgreSQL Extension"
   homepage "https://pgxn.org/dist/temporal_tables/"
-  url "https://github.com/arkhipov/temporal_tables/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "e3711797aa5def8f4974215bb5557204b2bc8e5e94201167eb95246a112b8138"
+  url "https://github.com/arkhipov/temporal_tables/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "85517266748a438ab140147cb70d238ca19ad14c5d7acd6007c520d378db662e"
   license "BSD-2-Clause"
 
   livecheck do
