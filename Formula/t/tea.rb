@@ -8,9 +8,11 @@ class Tea < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c846ba5d6f06a8023e00fb1660ab42fe5b5721bec548d4ad8d081f1f1162808"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "101a036947f27a6850e4356266d655f3a9eca0e4ddf945d03a0e87edd44c77b5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fa5154683b587810feeff9fb1610addacb6f767458615b16cdf7f2716b8f8bc7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "836a04b635e7169f1f65c915e42be219955ad8f2ae9ee277d8d4aa385146c7e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "56633d78a45649bd716f7f555c861d9bbe2778888d0cd8f97008036e127975f1"
     sha256 cellar: :any_skip_relocation, ventura:        "8cbab052ee3eb98001849dafd4a7e2eb61825e136fd329959d676dff58dc86b0"
     sha256 cellar: :any_skip_relocation, monterey:       "dcba430684c199e5c6a59598d575162b349a554fb228ef6b0f021ddfaf48b527"
     sha256 cellar: :any_skip_relocation, big_sur:        "5f5ff51cd8dc6135d4a19f48773e6787721ff23c8a659e4c6b9b3cc64f35b1f5"
