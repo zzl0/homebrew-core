@@ -5,6 +5,16 @@ class Blake3 < Formula
   sha256 "f506140bc3af41d3432a4ce18b3b83b08eaa240e94ef161eb72b2e57cdc94c69"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "e59ac72e04980fb310ced2cc7912c5c86950b39ccc81e286a4ffe222ef653f51"
+    sha256 cellar: :any,                 arm64_monterey: "8487a126819d36da442ceeeb3c1af4fd1ff5255cedf7ced3f12be817a043fa89"
+    sha256 cellar: :any,                 arm64_big_sur:  "0d5d99d1b8330e0a42b29b047d0b139e35f1b34709efae83d67cd4ce33d34a05"
+    sha256 cellar: :any,                 ventura:        "babb670730a53c2ded50ef12a539db9f7692d5a16034e23d6fd2d732f1c5e593"
+    sha256 cellar: :any,                 monterey:       "cf4edc0afc3fb61589af6340a9516ebeeb6518c148382181b4a823ec198f63bd"
+    sha256 cellar: :any,                 big_sur:        "dc0681c2c905aa9c7dc295bfc9ba35900e0423e55816cf3892a9ef683226b9e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "073d1b30e6ffb685609beb059da688a18f097674c3600555a779faa9bb717a24"
+  end
+
   depends_on "cmake" => :build
 
   def install
