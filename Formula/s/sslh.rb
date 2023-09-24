@@ -1,8 +1,8 @@
 class Sslh < Formula
   desc "Forward connections based on first data packet sent by client"
   homepage "https://www.rutschle.net/tech/sslh.shtml"
-  url "https://www.rutschle.net/tech/sslh/sslh-v2.0.0.tar.gz"
-  sha256 "5231dd575885024ed4b8217fdc6105d27b5780a538be4bee999610837ee71eb1"
+  url "https://www.rutschle.net/tech/sslh/sslh-v2.0.1.tar.gz"
+  sha256 "d88d43ee11cf1324983c196c894b41766c33d957b6af53b62c8479703bbbd26c"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   head "https://github.com/yrutschle/sslh.git", branch: "master"
 
