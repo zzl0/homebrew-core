@@ -7,9 +7,11 @@ class Hurl < Formula
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ffa5e43f3010b45c01ddc39bb3a93dbb252a1725373c8a4f11abba4c0b7ea8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d082dae01d806d74726a8da68aef0a616c382eb2759e5b3512d62c7c9a4ef29b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "be207c134e75c207390a606632e9e8ca43c5effe6c51b33f207720979b485d45"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f4d689d7d49782d8d2500fdd914db6a6b42d46ef4eac745393115c3f63a9202"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dd24dec5e5b6b6c4422f144bc769c049f33d6b0d29f8e5e1465ed1daa04b027a"
     sha256 cellar: :any_skip_relocation, ventura:        "087460804017a0c82bcc77c9d5d86199a497bbaf39111a79c8060a6e244091a5"
     sha256 cellar: :any_skip_relocation, monterey:       "c2f473d0077aa7a3b05ffc8fdacac23aefffde6108cc0d43e0898ed92a1c4af4"
     sha256 cellar: :any_skip_relocation, big_sur:        "270debc26fba57ea84f71063168cab45dbce99d8ea76fddb5aa4ed94ba603ee8"
