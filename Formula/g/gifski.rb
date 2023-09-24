@@ -1,8 +1,8 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https://gif.ski/"
-  url "https://github.com/ImageOptim/gifski/archive/refs/tags/1.11.0.tar.gz"
-  sha256 "adf9ff87c43900925ac1e0a34cfbccf01072a4b7bfac586d41902fc894a2e457"
+  url "https://github.com/ImageOptim/gifski/archive/refs/tags/1.12.2.tar.gz"
+  sha256 "daaeefd21d8328282d2c1082faddbc1f4870c60c1453e6e85e1a421aa77738d6"
   license "AGPL-3.0-only"
 
   bottle do
@@ -24,10 +24,6 @@ class Gifski < Formula
   fails_with gcc: "5" # rubberband is built with GCC
 
   def install
-    # Delete config.toml to avoid targeting newer CPU. Remove in the next release.
-    # Fixed upstream: https://github.com/ImageOptim/gifski/commit/7e31a4c45def29b9e9c082460ab02a28f0e8730e
-    (buildpath/".cargo/config.toml").unlink
-
     system "cargo", "install", "--features", "video", *std_cargo_args
   end
 
