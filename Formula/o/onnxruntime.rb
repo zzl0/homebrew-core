@@ -12,9 +12,11 @@ class Onnxruntime < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "88f39807aa56ad40a61c0f8b216797554c51c9b393aa87bdd8c0b57fed435a73"
     sha256 cellar: :any,                 arm64_ventura:  "3534474544df8e8e6d10f340d341d81f83ed8b492982a669c0516a73e7fd4137"
     sha256 cellar: :any,                 arm64_monterey: "f9d45e3f7763567b953d358e8d3a24c9c82bdb9f06d09310ceb23dc9f8eab37c"
     sha256 cellar: :any,                 arm64_big_sur:  "6093903661103fa77352b07e9a6932989695d2298e2ef488caab3d1c74194b7e"
+    sha256 cellar: :any,                 sonoma:         "2f5374af8403eb2a284601e5e571f09acfae49c433d4ffbf5fda3f03843152c6"
     sha256 cellar: :any,                 ventura:        "66d48c55a268609aa8701bda90cfa74f77226cce38f385c1739682c16af442b2"
     sha256 cellar: :any,                 monterey:       "661fc8fa556feacaf74bc5bf80a4b25949e35401042722eb9652a66c9c4732d0"
     sha256 cellar: :any,                 big_sur:        "f3a34bf25e11b8bec74a90d50792b40bebca0e93c90ae951bb44cdc0a257b575"
