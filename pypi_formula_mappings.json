@@ -119,7 +119,7 @@
     ]
   },
   "beancount": {
-    "exclude_packages": ["certifi", "six"]
+    "exclude_packages": ["certifi", "six", "packaging"]
   },
   "bilix": {
     "exclude_packages": ["certifi", "typing-extensions", "Pygments"]
