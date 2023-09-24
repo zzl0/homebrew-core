@@ -251,7 +251,7 @@
     "exclude_packages": ["certifi", "PyYAML", "six"]
   },
   "datalad": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "packaging"]
   },
   "datasette": {
     "exclude_packages": ["certifi", "PyYAML", "six", "typing-extensions"]
