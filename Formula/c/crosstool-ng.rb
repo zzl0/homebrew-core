@@ -1,8 +1,8 @@
 class CrosstoolNg < Formula
   desc "Tool for building toolchains"
   homepage "https://crosstool-ng.github.io/"
-  url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.25.0.tar.xz"
-  sha256 "68162f342243cd4189ed7c1f4e3bb1302caa3f2cbbf8331879bd01fe06c60cd3"
+  url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.xz"
+  sha256 "e8ce69c5c8ca8d904e6923ccf86c53576761b9cf219e2e69235b139c8e1b74fc"
   license "GPL-2.0-only"
   head "https://github.com/crosstool-ng/crosstool-ng.git", branch: "master"
 
@@ -73,7 +73,7 @@ class CrosstoolNg < Formula
     system "make"
     system "make", "install"
 
-    inreplace [bin/"ct-ng", pkgshare/"paths.sh"], Superenv.shims_path/"make", "make" unless OS.mac?
+    inreplace [bin/"ct-ng", pkgshare/"paths.sh"], Superenv.shims_path/"gmake", "gmake" unless OS.mac?
   end
 
   test do
