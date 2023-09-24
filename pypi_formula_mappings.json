@@ -573,7 +573,10 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["certifi", "cffi", "cfn-lint", "cryptography", "pycparser", "PyYAML", "six", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "cffi", "cfn-lint", "cryptography", "pycparser", "PyYAML",
+      "six", "typing-extensions", "packaging"
+    ]
   },
   "mvt": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "Pygments", "PyYAML"]
