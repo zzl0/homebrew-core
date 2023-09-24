@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://github.com/rui314/mold/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "a32bec1282671b18ea4691855aed925ea2f348dfef89cb7689cd81273ea0c5df"
+  url "https://github.com/rui314/mold/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "78ddddaaa004e50f8d92a13d8e792a46a1b37745fab48d39ad16aeb5a776e7c6"
   license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
@@ -19,6 +19,7 @@ class Mold < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "blake3"
   depends_on "tbb"
   depends_on "zstd"
   uses_from_macos "zlib"
@@ -29,7 +30,6 @@ class Mold < Formula
 
   on_linux do
     depends_on "mimalloc"
-    depends_on "openssl@3" # Uses CommonCrypto on macOS
   end
 
   fails_with :clang do
@@ -49,7 +49,7 @@ class Mold < Formula
     # This helps make the bottle relocatable.
     inreplace "common/config.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
     # Ensure we're using Homebrew-provided versions of these dependencies.
-    %w[mimalloc tbb zlib zstd].map { |dir| (buildpath/"third-party"/dir).rmtree }
+    %w[blake3 mimalloc tbb zlib zstd].each { |dir| (buildpath/"third-party"/dir).rmtree }
     args = %w[
       -DMOLD_LTO=ON
       -DMOLD_USE_MIMALLOC=ON
