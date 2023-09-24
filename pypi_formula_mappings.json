@@ -402,6 +402,9 @@
   "gitlint": {
     "exclude_packages": ["six"]
   },
+  "glances": {
+    "exclude_packages": ["packaging"]
+  },
   "goolabs": {
     "exclude_packages": ["certifi", "six"]
   },
