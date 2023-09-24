@@ -1,8 +1,8 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
   homepage "https://graphics.pixar.com/opensubdiv/docs/intro.html"
-  url "https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_5_1.tar.gz"
-  sha256 "42c7c89ffa552f37e9742d1ecfa4bd1d6a2892e01b68fc156775d104154d3d43"
+  url "https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_6_0.tar.gz"
+  sha256 "bebfd61ab6657a4f4ff27845fb66a167d00395783bfbd253254d87447ed1d879"
   license "Apache-2.0"
 
   livecheck do
@@ -25,7 +25,7 @@ class Opensubdiv < Formula
 
   def install
     glfw = Formula["glfw"]
-    args = std_cmake_args + %W[
+    args = %W[
       -DNO_CLEW=1
       -DNO_CUDA=1
       -DNO_DOC=1
@@ -37,13 +37,11 @@ class Opensubdiv < Formula
       -DGLFW_LOCATION=#{glfw.opt_prefix}
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-      pkgshare.install bin/"tutorials/hbr_tutorial_0"
-      rm_rf "#{bin}/tutorials"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    pkgshare.install bin/"tutorials/hbr_tutorial_0"
+    rm_rf "#{bin}/tutorials"
   end
 
   test do
