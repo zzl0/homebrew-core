@@ -3,8 +3,8 @@ require "language/node"
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https://cdk8s.io/"
-  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.102.0.tgz"
-  sha256 "33ebef61cb94d436f887367a2f8886f0cd4c010be1adbbf395b59610c2708857"
+  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.103.0.tgz"
+  sha256 "09c35a1ad3a0df992661d7cfe00f71b0d2c235798c1ee617cf17fbe7962b9500"
   license "Apache-2.0"
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac6523cc726a63ec0dae6c8eac27f48f711c7ff1a4a8e6e43e3c7fc7ac210a2f"
