@@ -5,7 +5,7 @@ class Freetds < Formula
 
   stable do
     url "https://www.freetds.org/files/stable/freetds-1.4.tar.bz2", using: :homebrew_curl
-    sha256 "1dd62979822d46ca67635bf7114f84255016b49bd9e262f254067455238dbb70"
+    sha256 "35cb55743c5c2e0b579caf180eebb5cb4a65155b7c7aa3428c1b6b5d3cc291f4"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
