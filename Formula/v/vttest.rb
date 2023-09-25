@@ -1,8 +1,8 @@
 class Vttest < Formula
   desc "Test compatibility of VT100-compatible terminals"
   homepage "https://invisible-island.net/vttest/"
-  url "https://invisible-mirror.net/archives/vttest/vttest-20230201.tgz", using: :homebrew_curl
-  sha256 "27f4300791e7cbcf9d15f88421f98e35d3aee66311368430624e2c1a5a8be683"
+  url "https://invisible-mirror.net/archives/vttest/vttest-20230924.tgz", using: :homebrew_curl
+  sha256 "be8b07cb590976d1f42af8597ddadac808d08b0a268bb6304a887dab3f13a228"
   license "BSD-3-Clause"
 
   livecheck do
