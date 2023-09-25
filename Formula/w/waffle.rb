@@ -1,20 +1,10 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
+  url "https://waffle.freedesktop.org/files/release/waffle-1.8.0/waffle-1.8.0.tar.xz"
+  sha256 "29f462b5ea93510f585ae59b09f1aef6f9bad7287c7b82a7e8bd88f766e3afc7"
   license "BSD-2-Clause"
-  revision 1
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
-
-  stable do
-    url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
-    sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
-
-    # https://gitlab.freedesktop.org/mesa/waffle/-/merge_requests/128
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/bce1f755b129aff34c21236bfa3b915f08b7246f/waffle/meson-fix-macOS-typo.patch"
-      sha256 "a072865ad22a4828e92b0e945d185feacd2596cd7d0e09828e5fb954e3b453d9"
-    end
-  end
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "f885c9317964ed3b841645b75b5c929d98c5457ed0911c41a586d4e436913669"
@@ -44,11 +34,6 @@ class Waffle < Formula
   end
 
   def install
-    # https://gitlab.freedesktop.org/mesa/waffle/-/issues/115
-    # Fix: Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/include/netinet/ip.h:102:2:
-    # error: unknown type name 'u_char'; did you mean 'char'?
-    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
-
     args = %w[
       -Dbuild-examples=true
       -Dbuild-htmldocs=true
@@ -64,8 +49,7 @@ class Waffle < Formula
   test do
     cp_r prefix/"share/doc/waffle1/examples", testpath
     cd "examples"
-    # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
-    # Remove after migration to 18.04.
+    # Homebrew-specific work around for linker flag ordering problem in Ubuntu.
     unless OS.mac?
       inreplace "Makefile.example", "$(LDFLAGS) -o gl_basic gl_basic.c",
                 "gl_basic.c $(LDFLAGS) -o gl_basic"
