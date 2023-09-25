@@ -6,9 +6,11 @@ class Enchant < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "87cc14b7ea2f853a38808aef390503316d0ef66407d39665f01297e04dac837f"
     sha256 arm64_ventura:  "823bbb3f99b42ad0166ad71fc633e618f1924fbb43d1649518c94f76495d97e4"
     sha256 arm64_monterey: "2a0522e912ccfaf35d55e5dc78bbdd5de47f66338cc7f3c216f0c1b12ac61ed2"
     sha256 arm64_big_sur:  "01a03e1177d717c4f72ed163a5e6ddf92840e6362ac9c55a7c6ab661eb3264de"
+    sha256 sonoma:         "886265261a046ce8c2382e21df1faf78558d3f5d9de53114d0dbcdaa5125ca8c"
     sha256 ventura:        "bd7d7322789a19456eedc5a1faa312631bfb282e35711a499f3f00d235560d3e"
     sha256 monterey:       "45ceea44ccb9cc1a2d85c437ca809b872abd14259ac46984affc7e2ea8df28a7"
     sha256 big_sur:        "3d070c8586b3eaad737ceff6bef6dafcb3cac3ced5cbcf943936a1127bb3a593"
