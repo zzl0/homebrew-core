@@ -6,9 +6,11 @@ class Opendht < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "4750d21f1e46f87f3374812f3b9fea6804a5060b5d8ab3c2ce0624dd472a3a26"
     sha256 cellar: :any,                 arm64_ventura:  "3b4b7ad45085e3b510a46e26d8f2086b0cbec19bb21244fe4ebc92419d0269e2"
     sha256 cellar: :any,                 arm64_monterey: "2c36c8601453b589583dc9749e6184a7e6eb60359dc2a6ce10d7c2ef157c1c98"
     sha256 cellar: :any,                 arm64_big_sur:  "26d4c68ed334c7e118a0b92a886a2526b38a231a83c223d2c369d0bd5edcc97d"
+    sha256 cellar: :any,                 sonoma:         "812bad73f038625715ed45791c91bd5368ffc2e175c87c5d2cc5a26239a22951"
     sha256 cellar: :any,                 ventura:        "c029e89706e8ea1b9695d90579f93e84f2b42ed3965b26287a1d3337ddd60ee1"
     sha256 cellar: :any,                 monterey:       "dfbb8d2fb0e85dc154089b727702b5cad9fd1f6170e9dd95f504755c4cf31c18"
     sha256 cellar: :any,                 big_sur:        "c297e770b7760b2ff8f6999b7a9fb2fa1de3068647a1f68645300ad10ff17e7e"
