@@ -38,7 +38,7 @@ class Fwknop < Formula
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     # Fix failure with texinfo while building documentation.
-    inreplace "doc/libfko.texi", "@setcontentsaftertitlepage", "" unless OS.mac?
+    inreplace "doc/libfko.texi", "@setcontentsaftertitlepage", ""
 
     system "./autogen.sh"
     args = *std_configure_args + %W[
