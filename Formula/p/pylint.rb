@@ -8,15 +8,13 @@ class Pylint < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83e87ec6451c77bd9a214def899b36bec69eba2fe202fc8c564bf6ed699cf795"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab8d91dbb49eb4fe66b153818afd66c513c3ad35ced1afd49b2600a6562da7f4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9989317985417afcb54c1d095d0e609f447450647923cff32f19ddf72fa8b40c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6213efa70cf099d60a5e28e9cae12b13bf1eda2613f19fa1a6876909ccc1bb0a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "48f70bbad1828cac86251a3b2fe78f81000aaedb58ef25f1137a1b8b9aace1d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "daae604ce2431f5cafa4112c0a152fa7152811e78c083158c52e3fdf26e889ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "619d50e3edc3012c41ef59c7eb906a74337cfac58d0465016c6fc42e945217d5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d63d4465b38635228fde71bde319251ade97c447318d9cd5d5cffe89abe60e8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd185f1f408d5bb4228d9422c2ccd3685fdda9514f06d46a7cc7212684122c51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7d1b54a25478385c9308d5761e483da6224a3c4a05a504bb60b0fbc4d455682"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02ee10f3a469a5db540ab7ac810db193335a2eec518844b861103f51a492c025"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12bcfdc52f5fbab00323f5a77c312ca81bff63201e0d2feb00da0ce55f4697b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "260e7ebcfec9374a2f461df8de1967f5c2fca1ca36e434fc812cc0227d2fb2ef"
+    sha256 cellar: :any_skip_relocation, ventura:        "8a7530ae225101d635f969be73e28bf9caca9aaa2e0b13e228c1a76c5639ea9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3324e751a2d0a2c466d6ed04723de3b6090cfcb5004a7f0fac0f7765dbf3ec51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33d00993ecd053817c7c2a98093dc0415eb47bae642bd8734a92d8a0b84dd49f"
   end
 
   depends_on "isort"
