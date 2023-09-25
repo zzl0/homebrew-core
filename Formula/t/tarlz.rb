@@ -1,9 +1,9 @@
 class Tarlz < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/tarlz.html"
-  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
-  sha256 "3cefb4f889da25094f593b43a91fd3aaba33a02053a51fb092e9b5e8adb660a3"
+  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
+  sha256 "49838effe95acb29d548b7ef2ddbb4b63face40536df0d9a80a62900c7170576"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -24,6 +24,12 @@ class Tarlz < Formula
   end
 
   depends_on "lzlib"
+
+  # patch for missing major/minor/makedev for osx builds
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/0fe617f/tarlz/0.24.patch"
+    sha256 "289a90c49c6ae7990debca5d4516cbb2c17d64d7e8ab23564e65b12d1f2feb9c"
+  end
 
   def install
     system "./configure", *std_configure_args
