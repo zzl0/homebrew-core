@@ -3,8 +3,8 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/1d/69/11343bbb46d4f2a311677058e19cc2f7bc55a769b64c547a64ea1e2b6045/weasyprint-59.0.tar.gz"
-  sha256 "223a76636b3744eaa4ab8a2885f50cf46cf8ebb1acb99b5276d02feccf507492"
+  url "https://files.pythonhosted.org/packages/9f/df/10704378a7d6cd452f59fc832a513b5533972946fc301b279c79eba390b2/weasyprint-60.0.tar.gz"
+  sha256 "2a6befe33b5f18c8a24302577bf23d00c8533d0121175da3cfaf07870fa1787f"
   license "BSD-3-Clause"
 
   bottle do
@@ -38,8 +38,8 @@ class Weasyprint < Formula
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/9d/c5/d5e4536968c36c0838459b5c482b9228e9aae839847837623d0d04576ba0/pydyf-0.6.0.tar.gz"
-    sha256 "b44a38855d7e47b740b3cd31ab63a2f5b9b2793931d50b0ccaed3bb7b86912fc"
+    url "https://files.pythonhosted.org/packages/18/dc/b607bbc7c15327c5d5ec25681a3707c847906134925d21a26ec6e7416a4a/pydyf-0.8.0.tar.gz"
+    sha256 "b22b1ef016141b54941ad66ed4e036a7bdff39c0b360993b283875c3f854dd9a"
   end
 
   resource "pyphen" do
@@ -58,8 +58,8 @@ class Weasyprint < Formula
   end
 
   resource "zopfli" do
-    url "https://files.pythonhosted.org/packages/9a/ed/d004d5737f9546167eecf0ecd995ee1a796703e512deb2f2ea26cdbe4b3e/zopfli-0.2.2.zip"
-    sha256 "2d49db7540d9991976af464ebc1b9ed12988c04d90691bcb51dc4a373a9e2afc"
+    url "https://files.pythonhosted.org/packages/92/d8/71230eb25ede499401a9a39ddf66fab4e4dab149bf75ed2ecea51a662d9e/zopfli-0.2.3.zip"
+    sha256 "dbc9841bedd736041eb5e6982cd92da93bee145745f5422f3795f6f258cdc6ef"
   end
 
   def install
