@@ -1,8 +1,8 @@
 class Cppinsights < Formula
   desc "See your source code with the eyes of a compiler"
   homepage "https://cppinsights.io/"
-  url "https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_0.9.tar.gz"
-  sha256 "cebb6a062677ee3975ff757e4300a17f42e3fab6da02ad01f3f141fb91f09301"
+  url "https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_0.10.tar.gz"
+  sha256 "996d6f219600d03f2be1e2e34adb23ae57a591b6ef7bf4582cb74042fce430f9"
   license "MIT"
 
   bottle do
@@ -16,7 +16,7 @@ class Cppinsights < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@15"
+  depends_on "llvm@16"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
