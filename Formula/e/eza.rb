@@ -1,8 +1,8 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
   homepage "https://github.com/eza-community/eza"
-  url "https://github.com/eza-community/eza/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "3b774d1396f7aa5382d358133f2923a49639b1c615fea0942cbc63042c15830b"
+  url "https://github.com/eza-community/eza/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "f175e21114cbea292fab35145428a54c58a69c22d871786eb6b0d7248f874ccf"
   license "MIT"
 
   bottle do
@@ -15,7 +15,6 @@ class Eza < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "02e550785e27ca1e262f711cd513ad03725e9ed7a5cf5c8ed31133ebbeecd047"
   end
 
-  depends_on "just" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
@@ -25,12 +24,20 @@ class Eza < Formula
     system "cargo", "install", *std_cargo_args
 
     bash_completion.install "completions/bash/eza"
-    zsh_completion.install  "completions/zsh/_eza"
     fish_completion.install "completions/fish/eza.fish"
+    zsh_completion.install  "completions/zsh/_eza"
 
-    system "just", "man"
-    man1.install (buildpath/"target/man").glob("*.1")
-    man5.install (buildpath/"target/man").glob("*.5")
+    args = %w[
+      --standalone
+      --from=markdown
+      --to=man
+    ]
+    system "pandoc", *args, "man/eza.1.md", "-o", "eza.1"
+    system "pandoc", *args, "man/eza_colors.5.md", "-o", "eza_colors.5"
+    system "pandoc", *args, "man/eza_colors-explanation.5.md", "-o", "eza_colors-explanation.5"
+
+    man1.install buildpath.glob("*.1")
+    man5.install buildpath.glob("*.5")
   end
 
   test do
@@ -40,13 +47,13 @@ class Eza < Formula
 
     # Test git integration
     flags = "--long --git --no-permissions --no-filesize --no-user --no-time --color=never"
-    exa_output = proc { shell_output("#{bin}/eza #{flags}").lines.grep(/#{testfile}/).first.split.first }
+    eza_output = proc { shell_output("#{bin}/eza #{flags}").lines.grep(/#{testfile}/).first.split.first }
     system "git", "init"
-    assert_equal "-N", exa_output.call
+    assert_equal "-N", eza_output.call
     system "git", "add", testfile
-    assert_equal "N-", exa_output.call
+    assert_equal "N-", eza_output.call
     system "git", "commit", "-m", "Initial commit"
-    assert_equal "--", exa_output.call
+    assert_equal "--", eza_output.call
 
     linkage_with_libgit2 = (bin/"eza").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
