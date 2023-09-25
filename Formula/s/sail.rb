@@ -8,16 +8,13 @@ class Sail < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d43cc4bbf0031e18e2f697aa052aeaa52e78e8996dcc08df17355875139c825"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efb5f18e4d823c4dcea9f12e61c95ffc9010826c0155f826c67598e4f0d49d33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d542509ad41d2e51ad10782f3a652b12857899294ca1b6813b117ca121744d13"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4a645e7ea98481bd3a587d7902ba35ad1818572634524434418ad73c794c88ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af14cbca5161659e3a9436872ec91a8443e5fb23cd4b6b3d6c5d4c0ac73a37f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "f29e3950d5265d00e20c5ae91bec6a9cf2ab312b0dc137c7bd6ac9a763de8af3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0759c1c4df48e2bd52cd4ebace9f0b2e5a6597e2197eeded9e1b2d28f34f030f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc5326982b63afe92fee3b20e0637aecb9f6ea5ec5e0dcc7323b076745b03008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6bc5bb62fe902f46d45e4cc41cbf0356c9a9e6cba87fd2eda01ca7088337732"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a41c948046df6d63628747ceddf84b21602913a7028fab98a3beecabb088308d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae89031ce466a6620562c6fd68fd8f68e29cc549ad1e15cd98f0d023d73d7b93"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9fa833e7e91c5e6e3321ed53ec3cf97e42682442e888e85689b8a422c2f55b09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "22b6638a8a35e1eb1a03f50dec9b6a06dd22705811989de7aa3c41141cf8fbc9"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1c3b91b435fb9fa1d3ab586bd2e19fc3e6c8eb8d86afdfe91da7af54f031977"
+    sha256 cellar: :any_skip_relocation, monterey:       "10af2cc9f1d0bc217dce8e36b2c625c0abd2cfa4d21928c0ff7936ba85c011f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a5968faee4bdd933886b9eddc09d1cd60a46b0e68cb8970c21374abd612a8b5"
   end
 
   depends_on "fabric"
