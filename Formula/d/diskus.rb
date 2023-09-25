@@ -23,6 +23,7 @@ class Diskus < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    man1.install "doc/diskus.1"
   end
 
   test do
