@@ -10,9 +10,11 @@ class Iredis < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40c23e2293bdf121aa868f0609e3332b77578552ced5cd108752727454cc645b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "da261678196e2f5a48d098ce37d5c53e0eeebb5b5f900bcccde30eb3fcf36b8c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fab7656bd49fcbf0fc015402b0250f414443d288d0ad400ef6e0457005feb614"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7faf3bfa27350a3b72cca62ebea4006db909d4dde6816476b9c0a9cb22069af4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "26f219100729b4f46bca1fc7f8dcc9cb87ff65d8008b7fbc28156e02003f2492"
     sha256 cellar: :any_skip_relocation, ventura:        "28cb02efa43e6b1d61a15ecb2489e1c3f7e2f4bc295a22c4aa0e2f889fd007bc"
     sha256 cellar: :any_skip_relocation, monterey:       "52a5366fa52afe2a1111a9200e76a598dd247d186bad4fd0b2618f80a067da94"
     sha256 cellar: :any_skip_relocation, big_sur:        "66fa258a69f44fa0a93d9cf7d9a634b307898bad4fbc8d007a021417212689c5"
