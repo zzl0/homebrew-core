@@ -9,10 +9,13 @@ class OpensearchDashboards < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "e9253c3bd182860c2b05e743a5defed8cf495e9ded59ca0a1d10be84e1b336cf"
-    sha256 cellar: :any_skip_relocation, monterey:     "ebbc42e505b435503ea8ca8e84ad58ab5fd95150d0aab67a33fe9230d13e4cfb"
-    sha256 cellar: :any_skip_relocation, big_sur:      "ebbc42e505b435503ea8ca8e84ad58ab5fd95150d0aab67a33fe9230d13e4cfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0964149b822339ee6fd07743db63a9c9fced4ed1143ef5f111da67b64598e623"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f192b7a34e44485cfec8f401efdd6d97853b466d0da8044bfb0efcd4d5ab4e54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f32056afbdc16c8365757c4bcd8043503fbe265114ba54002dbd74efd6a8eee9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f32056afbdc16c8365757c4bcd8043503fbe265114ba54002dbd74efd6a8eee9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6119a106c09b8b770922def5c0faef6d2573110b03cc8252d5e7678abce2ca13"
+    sha256 cellar: :any_skip_relocation, ventura:        "32657df0541e5ffeb77f7282ec4f8299ee4a675dd8f72581c918e5def4e21ddb"
+    sha256 cellar: :any_skip_relocation, monterey:       "32657df0541e5ffeb77f7282ec4f8299ee4a675dd8f72581c918e5def4e21ddb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e586f12c14391805663b4b6577c8fd0df7326d9b436a90ed00c3c60f44b34d8"
   end
 
   # Match deprecation date of `node@18`.
