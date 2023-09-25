@@ -23,6 +23,7 @@ class MongodbAtlasCli < Formula
 
   depends_on "go" => :build
   depends_on "mongosh"
+  depends_on "podman"
 
   def install
     with_env(
