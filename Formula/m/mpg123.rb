@@ -12,15 +12,13 @@ class Mpg123 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5985103db9b6b8b0fb8742a6c6036694ee685d8dd7d55ffe75283cc9275dfc31"
-    sha256 arm64_ventura:  "75c31cb53a4d459ffa6669195b66499715960876258fead02b3008ab633998ec"
-    sha256 arm64_monterey: "4d95f9f748bc4924f0352f5b3271bd43a4094f31ac4863aab449b29d226ef8bb"
-    sha256 arm64_big_sur:  "7f702bbc78b4fa5cea936da495727450db90c1c290bf4b2e27d41952e802158d"
-    sha256 sonoma:         "3f5f60550b7f931db3fd29d3928dfbbba291c7df7721e8aa6f3b605252129d7f"
-    sha256 ventura:        "9949adf544c414f4c3bb6059d75deb507e7e2759410600aab6ff2c36e48042e8"
-    sha256 monterey:       "d9b3a61716f0dcf3e5836910168953a93a2b39c67da0402582ba16fd720ced44"
-    sha256 big_sur:        "967d0a0a3cafc99c6176bc6cb447da62e5d60ea55237d525fa4028b822f305c2"
-    sha256 x86_64_linux:   "767e4600540461561e997ddef4e49ad254099948dabc7fa0e26f4d0f01e5cc21"
+    sha256 arm64_ventura:  "7b0db2565a633fc6eb2b6d8c082145f787eb92f6a16a086a8fb07b12dcffa35b"
+    sha256 arm64_monterey: "f9c7b552d04aade6e221bd0b9a3514f9e6bf7a2dbbc3e4a8acfe2f1bb5947d5a"
+    sha256 arm64_big_sur:  "4216d2721eb01f741304c853d31abc34c7f348bdc39de5a65164e545a9fd86c2"
+    sha256 ventura:        "d3f4630322b95f6b5d47084232ef81cf07eb077cf885921eaf9fc0b3c1de7f6e"
+    sha256 monterey:       "1ae9b78c91f8ff821b47fbc7141eff2489ee15b1e1622c05c6fa596a7144d772"
+    sha256 big_sur:        "428ef3bebf139f1230ea3e5bef5f8f5c182c332b24526a2c5d30602dc3828d84"
+    sha256 x86_64_linux:   "3ed0c5d1cbd668c32c396f87af814896744d7c6839fa441ee488ecf1eeb8ee94"
   end
 
   def install
