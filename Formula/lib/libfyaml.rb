@@ -1,8 +1,8 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
   homepage "https://github.com/pantoniou/libfyaml"
-  url "https://github.com/pantoniou/libfyaml/releases/download/v0.8/libfyaml-0.8.tar.gz"
-  sha256 "dc4d4348eedca68e8e2394556d57f71410e7d61791a71cbe178302ebe5f26b99"
+  url "https://github.com/pantoniou/libfyaml/releases/download/v0.9/libfyaml-0.9.tar.gz"
+  sha256 "7731edc5dfcc345d5c5c9f6ce597133991a689dabede393cd77bae89b327cd6d"
   license "MIT"
 
   bottle do
@@ -14,12 +14,6 @@ class Libfyaml < Formula
     sha256 cellar: :any, ventura:        "03600f95a70968eb1769442bad770abe8a872c4d0ed0d175cb19cc2f359acbfb"
     sha256 cellar: :any, monterey:       "2abbe7b8e83aa2f820ef0096f8bf2eedccb134f732dd7c819c64406a81a78883"
     sha256 cellar: :any, big_sur:        "e64216b07a8bcc58d1fd8186721901a91feb5b7d67389220f479cb5ea2ae2fab"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
