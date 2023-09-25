@@ -6,13 +6,11 @@ class Eza < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "152f8f4eff8fe2692b5e17de5dd0e0a1b6466d46751f540f43bdffcaa24846c0"
-    sha256 cellar: :any,                 arm64_monterey: "c65f4b66b4c4b4893e11527b96577b15bbbaa28b59f313e3eb1c1b60e697f571"
-    sha256 cellar: :any,                 arm64_big_sur:  "3e53f0369476b20573591b186cf9c59e614af9200b41d5a4233db1535f521d0d"
-    sha256 cellar: :any,                 ventura:        "e03e871cd4020d2343437e928b0d3da64ed4231c93e4075e48cde84e49c9238d"
-    sha256 cellar: :any,                 monterey:       "3bf49eb11d085c06100a26abb10a482a1406ea018083d90116c713856b0d3499"
-    sha256 cellar: :any,                 big_sur:        "fca6c8aa6dab59d38bb781f2dfd8e25a740fbf57a87a938a15e2cea1b3f8c143"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02e550785e27ca1e262f711cd513ad03725e9ed7a5cf5c8ed31133ebbeecd047"
+    sha256 cellar: :any,                 arm64_ventura:  "40f40db53fe4b1f0eb317616e0b18d94ce8b3579c8160682b7e0d60a4247e0b5"
+    sha256 cellar: :any,                 arm64_monterey: "d6bfa6bb483181680e858ea1797a37861b2ca9db1f5f402ad90ef073e2680d80"
+    sha256 cellar: :any,                 ventura:        "a3304d733a77501b006c379fc87ccfeede3d642913f9dbde88334644d2878fbc"
+    sha256 cellar: :any,                 monterey:       "1b60f38239373ece20eb6904112b46f46c1641bf2ad6caa11dfc4589f24f4d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc7f8d706c17454d3b68b38682452c69b183a9d5d48d9c8132854fb66b6a2905"
   end
 
   depends_on "pandoc" => :build
