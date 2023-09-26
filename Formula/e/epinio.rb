@@ -1,8 +1,8 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://github.com/epinio/epinio/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "f4e8bd1daf855be98a389920a2d3ea504b7a33e01f0aa8b14a9e536e2232696e"
+  url "https://github.com/epinio/epinio/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "afe69c38a0f9e2adcfcd55fdbf1688024529a29e4d1ead0827dadaf5ad80c44e"
   license "Apache-2.0"
 
   # Upstream creates a stable version tag ahead of release but a version isn't
@@ -34,8 +34,7 @@ class Epinio < Formula
     output = shell_output("#{bin}/epinio version 2>&1")
     assert_match "Epinio Version: v#{version}", output
 
-    output = shell_output("#{bin}/epinio settings update-ca 2>&1")
-    assert_match "failed to get kube config", output
-    assert_match "no configuration has been provided", output
+    output = shell_output("#{bin}/epinio settings show 2>&1")
+    assert_match "Show Settings", output
   end
 end
