@@ -15,15 +15,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ae594535225f7ba35a3f083b22226101e2dd64eaed06826cdd8dd05beec055d"
-    sha256 cellar: :any,                 arm64_ventura:  "adb08ae8fff8c761c3a942c8445a4c476903d0b6e5ddd5b0df19cffee9150371"
-    sha256 cellar: :any,                 arm64_monterey: "b120a038501eba0dba56bab5b6f985c3d60a8cc6bcb419e9f64f053bc57a4b5c"
-    sha256 cellar: :any,                 arm64_big_sur:  "7d93177359ab0c90577aaf49886a22cbff22386b4669530542f5552acfa0860f"
-    sha256 cellar: :any,                 sonoma:         "a1614d6a51f93a076b9676fc2d0c1acff85ea0ccf4fd95e402e09c0564a4223a"
-    sha256 cellar: :any,                 ventura:        "1d8f0fcaa11e479d0b941941b84393bd178f41b8603de60bab255645f20b430c"
-    sha256 cellar: :any,                 monterey:       "9f78bc985b0f7464547d4cb5298c5fc539f58a32aa9efa41aadad1e5c2285f62"
-    sha256 cellar: :any,                 big_sur:        "6afe040deb434a3ad43043a730e4beaf50df80606d82a637f29f314573819310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8bc941b2cca17887758501afe516b6f3afe0360b1b4de0f8071e630f356762"
+    sha256 cellar: :any,                 arm64_sonoma:   "a3d09b2b057a132b832fe5eda69ea987189b55b5c976c87b27a42073c20100d4"
+    sha256 cellar: :any,                 arm64_ventura:  "166d5f49911be6551a8ff948a20cbbfada59cac0e8aa44b77d644ff70a13535e"
+    sha256 cellar: :any,                 arm64_monterey: "2d815b1e9cf31d96304c493196a8edf92026af70f368483540eb74c33aabada5"
+    sha256 cellar: :any,                 sonoma:         "422ce59279b0964a39c22086ae262994486d1f0af03dac8d508428b18337dc9c"
+    sha256 cellar: :any,                 ventura:        "76d18647d5f2453ace9f1dceabfc1bb401fa94c22b8300a455f3ec7b201d3000"
+    sha256 cellar: :any,                 monterey:       "c3cf5b2d649ff7956e551c1f2e3e32acead40cc53029d8e9367e4df013e4b0c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31fdc1ed412509e1917a0e55d0e1ecc124ff4bacc4c1ce665b099f93a500fa86"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
