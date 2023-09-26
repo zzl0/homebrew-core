@@ -379,6 +379,12 @@
   "gcovr": {
     "exclude_packages": ["pygments"]
   },
+  "ggshield": {
+    "exclude_packages": [
+      "certifi", "cffi", "click", "cryptography", "packaging", "pycparser", 
+      "pyyaml", "pygments", "typing-extensions"
+    ]
+  },
   "gi-docgen": {
     "exclude_packages": ["markdown", "pygments", "smartypants", "toml"]
   },
