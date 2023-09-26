@@ -7,15 +7,8 @@ class Solr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, ventura:        "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2d708a2c93ad59b9b7899896db6024c4127a63fa32b9363ee0d5c5d98fd19d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ff2fe53ee2eec9494475d77fcf7f472139384310928869e632203e7af97cf15e"
   end
 
   depends_on "openjdk"
