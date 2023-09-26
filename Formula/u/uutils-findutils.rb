@@ -42,6 +42,10 @@ class UutilsFindutils < Formula
            'this check and try switching to `uses_from_macos "llvm" => :build`.'
     end
 
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
     ENV["LIBCLANG_PATH"] = Formula["llvm@15"].opt_lib.to_s
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
