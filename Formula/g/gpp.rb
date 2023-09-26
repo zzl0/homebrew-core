@@ -1,8 +1,8 @@
 class Gpp < Formula
   desc "General-purpose preprocessor with customizable syntax"
   homepage "https://logological.org/gpp"
-  url "https://files.nothingisreal.com/software/gpp/gpp-2.27.tar.bz2"
-  sha256 "49eb99d22af991e7f4efe2b21baa1196e9ab98c05b4b7ed56524a612c47b8fd3"
+  url "https://files.nothingisreal.com/software/gpp/gpp-2.28.tar.bz2"
+  sha256 "343d33d562e2492ca9b51ff2cc4b06968a17a85fdc59d5d4e78eed3b1d854b70"
   license "GPL-3.0"
 
   livecheck do
