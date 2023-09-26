@@ -4,6 +4,7 @@ class Latexml < Formula
   url "https://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.7.tar.gz"
   sha256 "25da9d9440779dec0dadd4cc2d4227e8eab87437c0719877274dcfb906a4cc79"
   license :public_domain
+  revision 1
   head "https://github.com/brucemiller/LaTeXML.git", branch: "master"
 
   livecheck do
