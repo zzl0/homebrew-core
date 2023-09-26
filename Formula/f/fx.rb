@@ -1,18 +1,18 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https://fx.wtf"
-  url "https://github.com/antonmedv/fx/archive/refs/tags/30.1.1.tar.gz"
-  sha256 "650f8e1079256b8c97d57eb7963c81763ab63096edbf10bb145246e495f6cdc4"
+  url "https://github.com/antonmedv/fx/archive/refs/tags/30.2.0.tar.gz"
+  sha256 "36f2c3fb6e349f3bc2b416c1ccdc2a17a93912fb6d1d7cf72941cabd467b9922"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "376986ca283f4a51763a4529c164ec37a46a40ef8ad33f2e4dfef25d96837183"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "376986ca283f4a51763a4529c164ec37a46a40ef8ad33f2e4dfef25d96837183"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "376986ca283f4a51763a4529c164ec37a46a40ef8ad33f2e4dfef25d96837183"
-    sha256 cellar: :any_skip_relocation, sonoma:         "81b78b6d385bf2b2a30d8a3220b95d8c238e5cb1cfd0519a0d4a32f70c7f0da3"
-    sha256 cellar: :any_skip_relocation, ventura:        "81b78b6d385bf2b2a30d8a3220b95d8c238e5cb1cfd0519a0d4a32f70c7f0da3"
-    sha256 cellar: :any_skip_relocation, monterey:       "81b78b6d385bf2b2a30d8a3220b95d8c238e5cb1cfd0519a0d4a32f70c7f0da3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dcc7e7ccd90b604a7e36911d6418cf080124b24e51c0fb12f5ed7a6ea905ed0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1624df276e66cac0371cc67bf3a201934abf092d6d720f038eda7d2ad57bb8dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1624df276e66cac0371cc67bf3a201934abf092d6d720f038eda7d2ad57bb8dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1624df276e66cac0371cc67bf3a201934abf092d6d720f038eda7d2ad57bb8dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "081b5cf7c25d3e1dd72bfe54f3aacf14eed39358d42b238ad7c35b7fda413861"
+    sha256 cellar: :any_skip_relocation, ventura:        "081b5cf7c25d3e1dd72bfe54f3aacf14eed39358d42b238ad7c35b7fda413861"
+    sha256 cellar: :any_skip_relocation, monterey:       "081b5cf7c25d3e1dd72bfe54f3aacf14eed39358d42b238ad7c35b7fda413861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef6797b1f0adf558d9630dd4fd205ad0a2d854d28007f111a4d105ec1684820b"
   end
 
   depends_on "go" => :build
