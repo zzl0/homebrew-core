@@ -116,6 +116,10 @@ class Deno < Formula
     # Build with llvm and link against system libc++ (no runtime dep)
     ENV["CLANG_BASE_PATH"] = Formula["llvm"].prefix
 
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+
     resource("gn").stage buildpath/"gn"
     cd "gn" do
       system python3, "build/gen.py"
