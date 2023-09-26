@@ -6,9 +6,11 @@ class PhpCsFixer < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
+    sha256 cellar: :any_skip_relocation, sonoma:         "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, ventura:        "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, monterey:       "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
     sha256 cellar: :any_skip_relocation, big_sur:        "293f46415fff158e1d7dc6a99e0738ab251f1f653484ac713976c4922c107926"
