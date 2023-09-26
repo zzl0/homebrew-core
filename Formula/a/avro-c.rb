@@ -1,9 +1,12 @@
 class AvroC < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.2/c/avro-c-1.11.2.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.11.2/c/avro-c-1.11.2.tar.gz"
-  sha256 "9f1f99a97b26712d2d43fe7e724f19d7dbdd5cef35478bae46a1920df20457f5"
+  # Upstreams tar.gz can't be opened by bsdtar on macOS
+  # https://github.com/Homebrew/homebrew-core/pull/146296#issuecomment-1737945877
+  # https://apple.stackexchange.com/questions/197839/why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
+  url "https://github.com/apache/avro.git",
+      tag:      "release-1.11.3",
+      revision: "35ff8b997738e4d983871902d47bfb67b3250734"
   license "Apache-2.0"
 
   bottle do
@@ -27,9 +30,11 @@ class AvroC < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    cd "lang/c" do
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
   end
 
   test do
