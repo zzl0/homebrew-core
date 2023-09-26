@@ -13,9 +13,11 @@ class MongodbAtlasCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ac9d8def9825497a836f576ded64a52dd781914d40ac6f21b2d0eb3a1a114a6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d89846f5ae215963c38e7b5520f4751374ce2ea086dcb5acfec71925356feaa0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "636b8e606d69a15dbc57ccf493a154a38cb02b366b9f290f109d0fc4cf87933a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d84a9c803cab442b276772ad00f18ebd4f4a95f617c4759535e4830640e7a41b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a040b8319cf3217c6d651ff1789fbf0537f2b47bea9c3f0b918a960bc52d7f4e"
     sha256 cellar: :any_skip_relocation, ventura:        "20f59898d8f0393f80fe968ace0df42bfa73638ce94d3e3f025162283ff9ddb5"
     sha256 cellar: :any_skip_relocation, monterey:       "bee58d8705a42b4696b379e7f0ecf430ab9884f8bad7c48705aec88feeef5c76"
     sha256 cellar: :any_skip_relocation, big_sur:        "0fd1d78f60c79ade2228825acc4f98fca8c4922dfbafc90cd6b64c0a16079191"
