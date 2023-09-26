@@ -24,6 +24,12 @@ class Snow < Formula
   end
 
   def install
+    # main.c:180:10: error: call to undeclared library function 'strcmp' with type 'int (const char *, const char *)'
+    # main.c:180:10: note: include the header <string.h> or explicitly provide a declaration for 'strcmp'
+    inreplace "main.c",
+              "#include \"snow.h\"\n",
+              "#include \"snow.h\"\n#include <string.h>\n"
+
     system "make"
     bin.install "snow"
     man1.install "snow.1"
