@@ -2,8 +2,8 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.8.1",
-      revision: "6536a772329002b05decbfc0a9d3f606e0ec7f55"
+      tag:      "v0.9.0",
+      revision: "0d84ccf478578278b2d1168675b8b93c60f78a5e"
   license "MIT"
 
   bottle do
@@ -22,7 +22,8 @@ class Duckdb < Formula
     mkdir "build"
     cd "build" do
       system "cmake", "..", *std_cmake_args, "-DBUILD_ICU_EXTENSION=1", "-DBUILD_JSON_EXTENSION=1",
-             "-DBUILD_PARQUET_EXTENSION=1"
+             "-DBUILD_PARQUET_EXTENSION=1", "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
+             "-DENABLE_EXTENSION_AUTOINSTAll=1"
       system "make"
       system "make", "install"
       bin.install "duckdb"
