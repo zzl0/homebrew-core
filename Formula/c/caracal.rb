@@ -6,6 +6,16 @@ class Caracal < Formula
   license "AGPL-3.0-only"
   head "https://github.com/crytic/caracal.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482e4c1e69d93c493507e9fbe032bff7aeca02921d40b0c373e2585be19a4d0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92a5ff19dd0d6fd14b436879ecac677c3f30c151d68174e25591bce5d2bfa083"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32a3b3b4e413ed14934b66cb0f0b478944cdb9a2f3f204400b6295935c529546"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f6f19d743a65d0693132ef5e981d4bad9f9d7f8a89d52cc5d0eb27d40b8221d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f763de6fcf0c5a065374339a2e768284717da802ec406a9f3130976872ebabab"
+    sha256 cellar: :any_skip_relocation, monterey:       "bdea46ab0aa7517e1e331ebc7195d88338750b34ecdf64bd702312cd6faf258a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ae53402991870c0172b448e6a0babb91705b2282278402a1e0e3e889c99c79"
+  end
+
   depends_on "rust" => :build
 
   def install
