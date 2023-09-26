@@ -1,10 +1,9 @@
 class Flac123 < Formula
   desc "Command-line program for playing FLAC audio files"
-  homepage "https://flac-tools.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/flac-tools/flac123/flac123-0.0.12-release.tar.gz"
-  sha256 "1976efd54a918eadd3cb10b34c77cee009e21ae56274148afa01edf32654e47d"
-  license "GPL-2.0"
-  revision 1
+  homepage "https://github.com/flac123/flac123"
+  url "https://github.com/flac123/flac123/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "c09676dce51383ce4fe7a553e67f4369918cf40ee6d922e585e50c11bce9e227"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "7dbcf8228ae81f22b3163fa6ce76d5fc4ac68fe49f19a7921e5e3904bc09c28c"
