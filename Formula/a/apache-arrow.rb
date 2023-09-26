@@ -43,6 +43,10 @@ class ApacheArrow < Formula
     # https://github.com/Homebrew/homebrew-core/issues/76537
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
 
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DARROW_ACERO=ON
