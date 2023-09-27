@@ -24,6 +24,10 @@ class Redis < Formula
 
   depends_on "openssl@3"
 
+  # Upstream fix for compilation on macOS Sonoma
+  # https://github.com/redis/redis/issues/12585
+  patch :DATA
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 
@@ -53,3 +57,16 @@ class Redis < Formula
     %w[run db/redis log].each { |p| assert_predicate var/p, :exist?, "#{var/p} doesn't exist!" }
   end
 end
+__END__
+diff --git a/src/config.h b/src/config.h
+index 3c9a2701..4607c177 100644
+--- a/src/config.h
++++ b/src/config.h
+@@ -31,6 +31,7 @@
+ #define __CONFIG_H
+
+ #ifdef __APPLE__
++#define _DARWIN_C_SOURCE
+ #include <fcntl.h> // for fcntl(fd, F_FULLFSYNC)
+ #include <AvailabilityMacros.h>
+ #endif
