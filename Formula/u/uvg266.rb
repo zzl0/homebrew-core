@@ -1,10 +1,19 @@
 class Uvg266 < Formula
   desc "Open-source VVC/H.266 encoder"
   homepage "https://github.com/ultravideo/uvg266"
-  url "https://github.com/ultravideo/uvg266/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "9d4decb1b9141ce7a439710a747db7ef0983fa647255972294879122642b8f2b"
   license "BSD-3-Clause"
   head "https://github.com/ultravideo/uvg266.git", branch: "master"
+
+  stable do
+    url "https://github.com/ultravideo/uvg266/archive/refs/tags/v0.8.0.tar.gz"
+    sha256 "27e4306577fe646951bd3c12685c1527b41385bfcb95262233669fc7f44f21bd"
+
+    # Fix attempts to build AVX2 code on arm64 - remove on next release
+    patch do
+      url "https://github.com/ultravideo/uvg266/commit/e5e32d67f43ba73db4a1a17aa975a070f15496be.patch?full_index=1"
+      sha256 "2b2e0938eeab7ea9900ec2f40e09debdcd908e13fffb44f66556baa904edaeff"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7447c677f57e8570f39824a9be8409e2fb2b2b0e8f9babcee42f105532360237"
