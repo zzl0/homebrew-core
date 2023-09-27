@@ -8,6 +8,16 @@ class Ggshield < Formula
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20baeef2ed8c8ef5bb386484af4f600bb68b38a5a43e6da2f28d6017d8cfec9e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "336ae28f0290546c8434cee0b3e3f1e39a29fcd4d9195a7ed4288da1d5c4b567"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "296a31bff31607ba2afbe49b405343f03d5abea431fa8d58cd206254d64f3d22"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ef6ddf23beade1d36a0cf127105dad189878cafbebae433739fdc1b9c713da8"
+    sha256 cellar: :any_skip_relocation, ventura:        "3084473e68261406323311d545167ecb89632022b30f2ca8b8db1231bd1fa8a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "4313cd655a3a622ab8323a4fbb1e9eacf607c573b7d6ba1f13a5203ff143ddb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a42d787edeb641a5603f2f295f4bc7e88e98752e505a1b42f3a2852ba0d01cc"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "pygments"
