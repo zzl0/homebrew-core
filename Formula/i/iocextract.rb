@@ -8,6 +8,16 @@ class Iocextract < Formula
   license "GPL-2.0-only"
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c1ac38aaa6be1144bf9bbb0176f70abfcc55a84e85f8a2e8994d86b061a3570"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "679d075bf58aadd276dd80f807bfdb17b52aec1f1f51cafc8b1889ce1469288e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "439f2d901c852e5fa55b7ae0c1c36e65bcb6f6fea8945e1a3cff3c321d3607b0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a7f7ab1dfdadc8ba2917d6b3c51474c49271a8374094929517c84993d26789d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ff8fa8d75a0a4f5b4c0ab12ba040f3ccea20585c7f043a0cf548ee59e3f83772"
+    sha256 cellar: :any_skip_relocation, monterey:       "819a0a723380dcb53fccba6e151487b72903c42d097eb4253b744d2746cdced7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e39ab16fa4d8d87df528c45e12cdb50ebe3f1f12476af74bf5491e7d89914ef8"
+  end
+
   depends_on "python-certifi"
   depends_on "python@3.11"
 
