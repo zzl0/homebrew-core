@@ -9,15 +9,13 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4807c9bdf405ddb0eb1aa6ddcdd247da5b87e44ca280b27957e92b670aac5ce7"
-    sha256 cellar: :any,                 arm64_ventura:  "b7f909024fb95aef923623418029bdc4bb7384de0df0a7a59eefb0260b5d3b62"
-    sha256 cellar: :any,                 arm64_monterey: "6ebab4af7f08d9f44ea559f66550d752fdf1903c74d15815735151ea17bf2b95"
-    sha256 cellar: :any,                 arm64_big_sur:  "7c63df5ca91712a01a3741c4866137de42bd7313e0884d125db38679e1a6c48a"
-    sha256 cellar: :any,                 sonoma:         "fad1d03f5674edf5f9ad1e1b779fa9823005adf0abd40c46e292d7fd79033e2a"
-    sha256 cellar: :any,                 ventura:        "08d9e86adddd107417a0fafa3f5dbf8997d1e747bbea2ad3a28d59471891d124"
-    sha256 cellar: :any,                 monterey:       "c4645469d267975e48624eb56381269573165184f44fbd31bdeed0749f688b96"
-    sha256 cellar: :any,                 big_sur:        "ec9710760da9db209b113108dfd0320fb91724c2807344d45a6e5be4ae3b3e30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72fa54ba1f691c6a30d1badec8ef56e822598874ba735c1ffc2e2deb6d1ae753"
+    sha256 cellar: :any,                 arm64_sonoma:   "9edac786e10613fb120d37bf1d1b4d188315bca680b6fe4bd9e784cb5d2fa50e"
+    sha256 cellar: :any,                 arm64_ventura:  "2729fd10e3a47f5b7998b10c3019157503400f45ea31ef8f9af28d578d8a3821"
+    sha256 cellar: :any,                 arm64_monterey: "3ab64e6ea199132917ce027d4f5078268480e0e24ae019274ef0f74a64511a93"
+    sha256 cellar: :any,                 sonoma:         "01ec472c9dd2f2940b9bb6b235e18d932edd3565f7fb6f29dd37bcc7aaa3a03c"
+    sha256 cellar: :any,                 ventura:        "deeca000be8d363e6a20179793c58be6f98a9460482805a900a93cc55e984239"
+    sha256 cellar: :any,                 monterey:       "46c20135a454bbc77df4a6c6d75289b2e363e85d5ac3933882f8f496cf2dde0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d985b112ad2dee1a53edaad0c030c109b34705830dcacacd0518705a02f0e845"
   end
 
   depends_on "cmake" => :build # for igraph
