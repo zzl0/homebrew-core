@@ -30,9 +30,8 @@ class Lynx < Formula
   uses_from_macos "zlib"
 
   def install
-    # Workaround for implicit-function-declaration error, still unfixed by lynx:
-    # https://lists.gnu.org/archive/html/info-gnu/2021-11/msg00001.html
-    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Using --with-screen=ncurses to due to behaviour change in Big Sur
     # https://github.com/Homebrew/homebrew-core/pull/58019
