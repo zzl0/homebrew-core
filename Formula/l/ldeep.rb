@@ -8,6 +8,16 @@ class Ldeep < Formula
   license "MIT"
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1dba80505242cb7649f3d4b7338c09dc7c4841879eaac08bd5c90da8bc88b66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e95022c925924e1e47e149102701250f4d558201220b2250e4fb865d40b69419"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "215b8b7a1ec5dd37f63b702c01af035a3c02a44d16402cf344bf9bf2532df95d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3d9e42b4c6b4b37da59c0c506c61818625c28e8deedd9c4fd48c25edf9afb1b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d7616b4a1bffdda1bbc3b2d46f1cf13d119ce3faf885eab3f8f2ffdb00d91996"
+    sha256 cellar: :any_skip_relocation, monterey:       "18998d55a20e0a1d1d107b5c3bf99f365c454654dac17a1dce29bf4db0f72b01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b6711fca68c33d4ba384817f2a26bb5f8235d42a36a03f51c4290938b09d96"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
