@@ -505,6 +505,9 @@
   "khard": {
     "exclude_packages": ["six"]
   },
+  "ldeep": {
+    "exclude_packages": ["cffi", "cryptography", "pycparser", "six"]
+  },
   "lexicon": {
     "package_name": "dns-lexicon[full]",
     "exclude_packages": [
