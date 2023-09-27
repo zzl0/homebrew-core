@@ -9,15 +9,13 @@ class Pyright < Formula
   head "https://github.com/microsoft/pyright.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a391771668e5e449676cca29d67a0fbc3eb102c73e15ea911d1e0eaccc72ed4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a391771668e5e449676cca29d67a0fbc3eb102c73e15ea911d1e0eaccc72ed4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a391771668e5e449676cca29d67a0fbc3eb102c73e15ea911d1e0eaccc72ed4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a391771668e5e449676cca29d67a0fbc3eb102c73e15ea911d1e0eaccc72ed4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "576c8464157339dd4eeea66f8f314c9157448a12d2da2ce596f972759dafb92c"
-    sha256 cellar: :any_skip_relocation, ventura:        "576c8464157339dd4eeea66f8f314c9157448a12d2da2ce596f972759dafb92c"
-    sha256 cellar: :any_skip_relocation, monterey:       "576c8464157339dd4eeea66f8f314c9157448a12d2da2ce596f972759dafb92c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "576c8464157339dd4eeea66f8f314c9157448a12d2da2ce596f972759dafb92c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "541a9953d79138d509ff04b0014ee630023e7cc13f5a598ac52434bdf6917468"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dad69b844a6435e7cacc64654f84b18ac5ca22ccac3556466e57ca11035a0499"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dad69b844a6435e7cacc64654f84b18ac5ca22ccac3556466e57ca11035a0499"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dad69b844a6435e7cacc64654f84b18ac5ca22ccac3556466e57ca11035a0499"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e6bfc7f93158d319e1198d6a310c12c2557afb22ba5f1614b0d898c74519950"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e6bfc7f93158d319e1198d6a310c12c2557afb22ba5f1614b0d898c74519950"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e6bfc7f93158d319e1198d6a310c12c2557afb22ba5f1614b0d898c74519950"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62726d2fae1d1efa064e949383ed317a699ad542fe1017dc4ad413916672fa3"
   end
 
   depends_on "node"
