@@ -21,9 +21,9 @@ class Duckdb < Formula
   def install
     mkdir "build"
     cd "build" do
-      system "cmake", "..", *std_cmake_args, "-DBUILD_ICU_EXTENSION=1", "-DBUILD_JSON_EXTENSION=1",
-             "-DBUILD_PARQUET_EXTENSION=1", "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
-             "-DENABLE_EXTENSION_AUTOINSTAll=1"
+      system "cmake", "..", *std_cmake_args, "-DBUILD_EXTENSIONS='autocomplete;icu;parquet;json'",
+             "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
+             "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
       system "make", "install"
       bin.install "duckdb"
