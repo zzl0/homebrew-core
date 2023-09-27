@@ -1,10 +1,9 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/refs/tags/4.8.0.tar.gz"
-  sha256 "cbf47ecc336d2bff36b0dcd7d6c179a9bb59e805136af6b9670ca944aef889bd"
+  url "https://github.com/opencv/opencv/archive/refs/tags/4.8.1.tar.gz"
+  sha256 "62f650467a60a38794d681ae7e66e3e8cfba38f445e0bf87867e2f2cdc8be9d5"
   license "Apache-2.0"
-  revision 7
 
   livecheck do
     url :stable
@@ -47,8 +46,8 @@ class Opencv < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.0.tar.gz"
-    sha256 "b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb"
+    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.1.tar.gz"
+    sha256 "0c082a0b29b3118f2a0a1856b403bb098643af7b994a0080f402a12159a99c6e"
   end
 
   # Fix static build with OpenVINO (https://github.com/opencv/opencv/pull/23963)
