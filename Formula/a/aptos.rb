@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptoslabs.com/"
-  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.1.0.tar.gz"
-  sha256 "3a35b68d8587be1ac2bea99535a1f77832a267962117b5a36ac6fd5842190bc7"
+  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.1.1.tar.gz"
+  sha256 "a7da6602c70e22d38bb6759d9f86bbcbd1c066e5bbe17f258b6185258f379558"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -24,7 +24,6 @@ class Aptos < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "rustfmt" => :build
-  depends_on "openssl@3"
   uses_from_macos "llvm" => :build
 
   on_linux do
@@ -34,10 +33,6 @@ class Aptos < Formula
   end
 
   def install
-    # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-
     # FIXME: Figure out why cargo doesn't respect .cargo/config.toml's rustflags
     ENV["RUSTFLAGS"] = "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
@@ -53,14 +48,5 @@ class Aptos < Formula
 
   test do
     assert_match(/output.pub/i, shell_output("#{bin}/aptos key generate --output-file output"))
-
-    linked_libraries = [
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-    ]
-    linked_libraries.each do |library|
-      assert check_binary_linkage(bin/"aptos", library),
-             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
-    end
   end
 end
