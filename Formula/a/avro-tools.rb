@@ -1,9 +1,12 @@
 class AvroTools < Formula
   desc "Avro command-line tools and utilities"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.2/java/avro-tools-1.11.2.jar"
-  mirror "https://archive.apache.org/dist/avro/avro-1.11.2/java/avro-tools-1.11.2.jar"
-  sha256 "b8f2fb2a7e7e2cf734eaaa56b4b730be6d9efd73b5a4f0bc95f38944b8883fec"
+  # Upstreams tar.gz can't be opened by bsdtar on macOS
+  # https://github.com/Homebrew/homebrew-core/pull/146296#issuecomment-1737945877
+  # https://apple.stackexchange.com/questions/197839/why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
+  url "https://github.com/apache/avro.git",
+      tag:      "release-1.11.3",
+      revision: "35ff8b997738e4d983871902d47bfb67b3250734"
   license "Apache-2.0"
 
   bottle do
@@ -18,11 +21,15 @@ class AvroTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be9d8acd4a357b1f9ee3eb77a8eb5db5bbd20cfd838c97de0474b86da031a64c"
   end
 
+  depends_on "maven" => :build
   depends_on "openjdk"
 
   def install
-    libexec.install "avro-tools-#{version}.jar"
-    bin.write_jar_script libexec/"avro-tools-#{version}.jar", "avro-tools"
+    cd "lang/java" do
+      system "mvn", "clean", "--projects", "tools", "package", "-DskipTests"
+      libexec.install "#{buildpath}/lang/java/tools/target/avro-tools-#{version}.jar"
+      bin.write_jar_script libexec/"avro-tools-#{version}.jar", "avro-tools"
+    end
   end
 
   test do
