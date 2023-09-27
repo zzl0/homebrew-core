@@ -21,8 +21,15 @@ class Unibilium < Formula
   def install
     # Check Homebrew ncurses terminfo if available.
     terminfo_dirs = [Formula["ncurses"].opt_share/"terminfo"]
+
     terminfo_dirs += if OS.mac?
-      [Utils.safe_popen_read("ncurses5.4-config", "--terminfo-dirs").strip]
+      if MacOS.version == :sonoma
+        # There is a bug in ncurses5.4-config in the 14.0 SDK (FB13204756)
+        # We know what it should output, so enforce it.
+        ["/usr/share/terminfo"]
+      else
+        [Utils.safe_popen_read("ncurses5.4-config", "--terminfo-dirs").strip]
+      end
     else
       # Unibilium's default terminfo path
       %w[
