@@ -10,15 +10,13 @@ class Volatility < Formula
   head "https://github.com/volatilityfoundation/volatility3.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c538869fed9b1dbaa1d26426c0b35da2051f0dbf06059c74f81eec6661feb493"
-    sha256 cellar: :any,                 arm64_ventura:  "84169fb0c2f5256739a5efbaacc20afdd6a2520d8a1fc75566bbea54aabe276f"
-    sha256 cellar: :any,                 arm64_monterey: "278ef9645c21d5e6216c3ef14378a9ce948e08ecb73e7b35a7895443df4a1a69"
-    sha256 cellar: :any,                 arm64_big_sur:  "28aa39120fd031bec31651009a78e57546067a4f97d033f72e7cafea9e97d765"
-    sha256 cellar: :any,                 sonoma:         "77b56ffa37390b2eeb37f6cbb010767b5864ee0de6e670ce7ca5f2f6ceb8399f"
-    sha256 cellar: :any,                 ventura:        "c1e75daf12354e2b7d76c0caf9715f6a6b606944a9ae5c3fa6868d116b7b03cb"
-    sha256 cellar: :any,                 monterey:       "63eb9b1ee8ac526599759a7fbfc076f5a261439b06a1d62d814ad59ba259a9e5"
-    sha256 cellar: :any,                 big_sur:        "dcb494ef9063ff0e44c1d893238526663555523b8a7aefeddc3853375e8fe49b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8764ec7aee8a099ef2bdb19c7d97220bd0e0f4ed469ffd17faf76b6c3c8cbcc9"
+    sha256 cellar: :any,                 arm64_sonoma:   "6910cee250c0795b6d434f3090aa3f115d71f651cd2f71c1f069a25de3e3369a"
+    sha256 cellar: :any,                 arm64_ventura:  "84345ca24790a5cd4d361b74df7241c8eab711f8f0a7ec3c2b3b8c0c357206c3"
+    sha256 cellar: :any,                 arm64_monterey: "bc93a09f12b75eb2845f4016d260777f1c5e6edcd0780b5c49a1aa16e9ad6b11"
+    sha256 cellar: :any,                 sonoma:         "8bbee362fd636f8c98dd6c76180b6345b26154fcdd19bb283df228069e3b0cb7"
+    sha256 cellar: :any,                 ventura:        "b58ca3e9a42576018f9c57a51491993376a2a8720bc2242f32d0b0d7dceeee84"
+    sha256 cellar: :any,                 monterey:       "df03a23332d36291cea51a77f7252c3fe5761c0ded9ee2943d13479315cfef80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a90648bbfbb03d8e4c3782dcf5f8d6fc4b505654a511788359566a1fcdd41994"
   end
 
   depends_on "rust" => :build # for rpds-py
