@@ -3,10 +3,9 @@ class Joern < Formula
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
   # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://github.com/joernio/joern/archive/refs/tags/v2.0.90.tar.gz"
-  sha256 "abf053caf4749acf3b23a35a844b2a29307fcb982564924cb0c8702ac169537f"
+  url "https://github.com/joernio/joern/archive/refs/tags/v2.0.100.tar.gz"
+  sha256 "0961415d883064beba7ed79d4701738734d225f663f03606ef15eb0ed2c735ca"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
