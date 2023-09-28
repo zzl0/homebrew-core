@@ -24,6 +24,10 @@ class CargoC < Formula
   end
 
   depends_on "rust" => :build
+  # The `cargo` crate requires http2, which `curl-config` from macOS reports to
+  # be missing despite its presence.
+  # Try switching to `uses_from_macos` when that's resolved.
+  depends_on "curl"
   # To check for `libgit2` version:
   # 1. Check for `cargo` version at https://github.com/lu-zero/cargo-c/blob/v#{version}/Cargo.toml
   # 2. Search for `libgit2-sys` version at https://github.com/rust-lang/cargo/blob/#{cargo_version}/Cargo.lock
@@ -65,6 +69,7 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
 
     [
+      Formula["curl"].opt_lib/shared_library("libcurl"),
       Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
