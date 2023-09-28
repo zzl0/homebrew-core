@@ -1,8 +1,8 @@
 class Arttime < Formula
   desc "Clock, timer, time manager and ASCII+ text-art viewer for the terminal"
   homepage "https://github.com/poetaman/arttime"
-  url "https://github.com/poetaman/arttime/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "47f02b21f7a11dc636f3f34d11f35c149e0ead50b0919ed9e49a3c1d6c99b66f"
+  url "https://github.com/poetaman/arttime/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "672ff70cdac1a9359ce71c0cfbfc2d94b4ea91ce894d3da999ecdd8d80aa71ae"
   license "GPL-3.0-only"
   head "https://github.com/poetaman/arttime.git", branch: "main"
 
