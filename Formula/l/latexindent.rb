@@ -6,9 +6,11 @@ class Latexindent < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3938c2e7d4a696bd15ad902ea7739806cc42e35050a8b3bcc6389be34096f7d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "70ad25d77f8e9edac1cdd042eff2bec117355ec72587a2f88882db16f95c1f82"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4a099c96d6a31571600f4b2f01fde90be1c4cb8d781b8fa56029f6b1d2accae9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de6f43e30c821d7c2f8bb221afea7f3a6e07346a6c33d00994de373963e0d8b4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b47cfed239c010dc3deaa97e0fd8b859e9a5e97af3a7417951b58f3cba4f766"
     sha256 cellar: :any_skip_relocation, ventura:        "dcb9d3650269589bf388b9f618ee567ce113ba5bdad29c5a8f5b2eaca30302af"
     sha256 cellar: :any_skip_relocation, monterey:       "0eba507049354d510c971de62b0e2481940bedb0ed54ce5f263ec0014390782e"
     sha256 cellar: :any_skip_relocation, big_sur:        "511a978b3999e6c4759b07197c35316e5ab8fa9f0601636151fca7fe770d9066"
