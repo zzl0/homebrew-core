@@ -11,15 +11,13 @@ class WiremockStandalone < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f088f12405212925a9a3fca4e043206e0cc608b85ea1c139d5dd7b6dc28299e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, ventura:        "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "83a7c8f364c54adae2d86e11585727bb90d1c5d987a553b5004c3d029f505f6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4ff5c2edef9d32ba6aee4de6bcb625df4a8a76443a048db96b46268a3943f09"
   end
 
   depends_on "openjdk"
