@@ -7,15 +7,13 @@ class Scipy < Formula
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "189535fb6377593bfd7fb235e691efc2f5f01b6ec6566b5c237d520567fe5d37"
-    sha256                               arm64_ventura:  "f7787de170ca640e8c7bd39d827e559a7c042836059fb2bfc08055f656434cc5"
-    sha256                               arm64_monterey: "7b67ca107ddff3187ee21f43c85da04519da5f40d833d9aef47aa9349b12e4b0"
-    sha256                               arm64_big_sur:  "0cb8876bfeb7b2677793a2c1c66036434fa35b26004cbe84ebbc822ffd142af5"
-    sha256 cellar: :any,                 sonoma:         "15f30896c147148b7241b6f8ad1a59b45c42fbc18bf45c7ff2595ed4a83a04ee"
-    sha256                               ventura:        "cec1b1041514017e7c0bebc80a3feb3e7cb5f4618c7b3b86b3fc6c6d5d863ff4"
-    sha256                               monterey:       "371e080a6f3dcfc720ed1a3bd347088689621edb31705be8081b2c22c3b1d0bc"
-    sha256                               big_sur:        "1a18627dd982bbff60a3c639628660c0dc5cddfd7d90f6a33808a0c30b8a41d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38a71fc17322aba7a79cf52adad58df2c1bf3b42691a269a779a2b56d0671d46"
+    sha256 cellar: :any,                 arm64_sonoma:   "ebe5a63603e24a4ca17131c957e72f93aa49bc101c8c08798c1f57e12405915a"
+    sha256 cellar: :any,                 arm64_ventura:  "c001e62674458c5875cf06f301c86ab9b14d4e71a7e24eaaa83ec908aba8d716"
+    sha256 cellar: :any,                 arm64_monterey: "cfe4ada39860d229ea94632e6c7292a9192ab0a3e77c4c516fd247dda5bd8c2d"
+    sha256 cellar: :any,                 sonoma:         "a9fb9a36174436e19ba946afec394f6b404835580115ff8d84d6be7d2eab12ba"
+    sha256 cellar: :any,                 ventura:        "d6b1da45259ebd8cda4b6258b848f88b55a2bd8f7cfa29949facd7279c33c735"
+    sha256 cellar: :any,                 monterey:       "cd2528d95402ca7608e07e976a7dc67bbec2a68f4876ea52a4fed23d2f20e30b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb9ce8dabb7b29350e92e51a0192907f4f65bc3fa9e428ad5daa212ce065bfe9"
   end
 
   depends_on "libcython" => :build
