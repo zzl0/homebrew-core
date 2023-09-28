@@ -8,15 +8,13 @@ class AnsibleLint < Formula
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "56799256a79ee368c629202c89b4a9a52bd63495539f249ab9ca248cd2102910"
-    sha256 cellar: :any,                 arm64_ventura:  "b38a9aee4c3dfa68b53b7598093010cf8e671e29ea2cf2356ebd16080fc31f3b"
-    sha256 cellar: :any,                 arm64_monterey: "8905b050d055b6e06ac300ec38daec2fdcef03a9bf3ca3faa09bcf7eadd5baf2"
-    sha256 cellar: :any,                 arm64_big_sur:  "77fae3c900fc3fb2587d9b352c4e695baae83109a25108a0121a253674d44d93"
-    sha256 cellar: :any,                 sonoma:         "a595b5c4015899a72f754ff3d89a93e6287ef93714fa4f9d4275177da981bb13"
-    sha256 cellar: :any,                 ventura:        "a43bede02ba6a0ea812cc0c4dca4bf3271b6d582ba8293c50df1b150df89abe1"
-    sha256 cellar: :any,                 monterey:       "819cb23a1a8619822286ea94c82c69678d8a1878d48988400fecf02a974986d1"
-    sha256 cellar: :any,                 big_sur:        "1afb95eda5067e8d539d5c01ab627de948640f3969edbfe291744292510205fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4743467e7a8a6ad21cec587ffb7089a6bb41e819409df29bf22fbad349f8f39a"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ef113561b4e8d3b32192725e4db174621abafca66733c34c46734e1f950a811"
+    sha256 cellar: :any,                 arm64_ventura:  "29955f3f277395f94fbb54b9c209a8a164a79dd2f2390f9f2eb4242223d3366c"
+    sha256 cellar: :any,                 arm64_monterey: "ff2b6f9909449f0534ebf1f1bb4078e7e3326d2e0958317a7767c87cbb5d57a6"
+    sha256 cellar: :any,                 sonoma:         "c55e7cffd065f1c20295a5864c5f293271acb065134111b7f2ad422c7aa78678"
+    sha256 cellar: :any,                 ventura:        "15a9f4beebb1720da7af25e07a5a6e81c1376b7f4767ab0fe20594d84c50a2e0"
+    sha256 cellar: :any,                 monterey:       "fe2f00d3da91374f8e33e3a907ce1bf818f12b0d1079bf737221f9c8fc25a5d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5dc71bc0056f9dc239326d7e74303e3ca5472fefc75704c9029716913fdcd85"
   end
 
   depends_on "pkg-config" => :build
