@@ -1,8 +1,8 @@
 class Nest < Formula
   desc "Neural Simulation Tool (NEST) with Python3 bindings (PyNEST)"
   homepage "https://www.nest-simulator.org/"
-  url "https://github.com/nest/nest-simulator/archive/v3.5.tar.gz"
-  sha256 "4504ff7f9cfa051c91a5e85a0761bdd09d23aeeadac22c45f6be18b7fbe2db43"
+  url "https://github.com/nest/nest-simulator/archive/v3.6.tar.gz"
+  sha256 "68d6b11791e1284dc94fef35d84c08dd7a11322c0f1e1fc9b39c5e6882284922"
   license "GPL-2.0-or-later"
 
   bottle do
