@@ -2,8 +2,8 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https://odo.dev"
   url "https://github.com/redhat-developer/odo.git",
-      tag:      "v3.14.0",
-      revision: "471928fead1450a64117411cfa328636ae244cc9"
+      tag:      "v3.15.0",
+      revision: "10b5e8a8f5011703a8cb62b4001eead5ae58cf45"
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
@@ -29,6 +29,9 @@ class OdoDev < Formula
   conflicts_with "odo", because: "odo also ships 'odo' binary"
 
   def install
+    # Replace `-dirty` suffix in `--version` output with `-Homebrew`.
+    inreplace "Makefile", "--dirty", "--dirty=-Homebrew"
+
     system "make", "bin"
     bin.install "odo"
   end
@@ -42,7 +45,7 @@ class OdoDev < Formula
 
     # test version
     version_output = shell_output("#{bin}/odo version --client 2>&1").strip
-    assert_match(/odo v#{version} \([a-f0-9]{9}\)/, version_output)
+    assert_match(/odo v#{version} \([a-f0-9]{9}-Homebrew\)/, version_output)
 
     # try to create a new component
     system bin/"odo", "init", "--devfile", "nodejs", "--name", "test", "--devfile-registry", "StagingRegistry"
