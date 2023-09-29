@@ -32,9 +32,12 @@ class Pngnq < Formula
     # is no longer included internally by libpng.
     # See: https://sourceforge.net/p/pngnq/bugs/13/
     # See: https://sourceforge.net/p/pngnq/bugs/14/
+    #
+    # strncmp(3) is declared in <string.h>.
+    # See: https://sourceforge.net/p/pngnq/patches/6/
     inreplace "src/rwpng.c",
               "#include <stdlib.h>\n",
-              "#include <stdlib.h>\n#include <zlib.h>\n"
+              "#include <stdlib.h>\n#include <string.h>\n#include <zlib.h>\n"
 
     # The Makefile passes libpng link flags too early in the
     # command invocation, resulting in undefined references to
