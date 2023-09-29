@@ -8,8 +8,10 @@ class Ocrmypdf < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c49a0866c230aba5e73a63cfdf08eb046474af86d24856d38dccbefa5695bac1"
     sha256 cellar: :any,                 arm64_ventura:  "247a0d2f5dea8ddbc991ad2c5bd30bf6f9e187668627acd172249ae18a8a68d6"
     sha256 cellar: :any,                 arm64_monterey: "004da2655c72aece2492fb54a36f217a63ac45f26042754c3c53f929b4258738"
+    sha256 cellar: :any,                 sonoma:         "19c86eb2386e84e0a343cc692a061169b59dd1089e0ccb9f8e91bed7e2d3d762"
     sha256 cellar: :any,                 ventura:        "0ce6fdce1c3c574506b0f18afc086de7ca9bdac779e7de64df27599c8708e1d7"
     sha256 cellar: :any,                 monterey:       "02a49682761fa995124804fbd7164de33a2daa1d5d2e409e79744ed2fc204c6a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "05dfdc3be706260d1211d59bba4fe3eb211afd5625e0fe0dcd653cf58aa30ae1"
