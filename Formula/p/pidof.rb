@@ -30,12 +30,19 @@ class Pidof < Formula
   depends_on :macos
 
   def install
+    # Fix "error: call to undeclared function 'strcasestr'" and "error: call to undeclared function 'kill'"
+    # Contacted the upstream author via email on 2023-09-29
+    inreplace "pidof.c",
+              "#import <stdarg.h>\n",
+              "#import <stdarg.h>\n#import <string.h>\n#import <signal.h>\n"
+
     system "make", "all", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
     man1.install Utils::Gzip.compress("pidof.1")
     bin.install "pidof"
   end
 
   test do
+    assert_match "pidof version #{version}", shell_output(bin/"pidof -v")
     (testpath/"homebrew_testing.c").write <<~EOS
       #include <unistd.h>
       #include <stdio.h>
