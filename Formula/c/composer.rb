@@ -11,15 +11,13 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e69c8ccba062f1049717ce26ecf500ba70ac06c3a62978aba764a63b81027c7b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e69c8ccba062f1049717ce26ecf500ba70ac06c3a62978aba764a63b81027c7b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e69c8ccba062f1049717ce26ecf500ba70ac06c3a62978aba764a63b81027c7b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e69c8ccba062f1049717ce26ecf500ba70ac06c3a62978aba764a63b81027c7b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0cea852bd0a0942b5c3c64f9144fc3520a95a18966b09b69a81c8a6e1603b34"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0cea852bd0a0942b5c3c64f9144fc3520a95a18966b09b69a81c8a6e1603b34"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0cea852bd0a0942b5c3c64f9144fc3520a95a18966b09b69a81c8a6e1603b34"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a0cea852bd0a0942b5c3c64f9144fc3520a95a18966b09b69a81c8a6e1603b34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69c8ccba062f1049717ce26ecf500ba70ac06c3a62978aba764a63b81027c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0c67fc65291abff625c54f30e1a314d48f7671172ae420582408bde3e49ffe5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0c67fc65291abff625c54f30e1a314d48f7671172ae420582408bde3e49ffe5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0c67fc65291abff625c54f30e1a314d48f7671172ae420582408bde3e49ffe5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c4b1a3f959adf03a482b6c263750869215a1e3fdce64caf60dc058ba3ca7532"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c4b1a3f959adf03a482b6c263750869215a1e3fdce64caf60dc058ba3ca7532"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c4b1a3f959adf03a482b6c263750869215a1e3fdce64caf60dc058ba3ca7532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0c67fc65291abff625c54f30e1a314d48f7671172ae420582408bde3e49ffe5"
   end
 
   depends_on "php"
