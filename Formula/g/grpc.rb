@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.58.1",
-      revision: "0f8cb206ef897f9cff2206e06a1a5303dbd4aeef"
+      tag:      "v1.59.0",
+      revision: "08cc1787de022069135004adfdd17938b5062319"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -53,13 +53,6 @@ class Grpc < Formula
   end
 
   fails_with gcc: "5" # C++17
-
-  # Fix `find_dependency` call in gRPCConfig.cmake
-  # https://github.com/grpc/grpc/pull/33361
-  patch do
-    url "https://github.com/grpc/grpc/commit/117dc80eb43021dd5619023ef6d02d0d6ec7ae7a.patch?full_index=1"
-    sha256 "826896efc97e6c3bd3c38fc5e09642db4c6c4ec54597624ee8905da89e1ba7b6"
-  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
