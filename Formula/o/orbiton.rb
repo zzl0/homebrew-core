@@ -7,9 +7,11 @@ class Orbiton < Formula
   head "https://github.com/xyproto/orbiton.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ba4d22468d957e92c0b999c78aeae92a4aa5fa040dfacd40718aa9f9aaa2b71"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c6ae09b5490e33f813851676405e5b75d6a652db6d112d554ad4a82f337d9f0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "166f74a1573fe95fd2da8593d42275926bbd823b58b8e58413eb645a7ca85ac5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a31baebfb33bd1a67d90366f1f717af2da8faeb7d1d25425a9318e2ca1d80c60"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc088849ffd132865d55a49c3c884b2d9510c8c81c9204857a185bc7d5d73bc9"
     sha256 cellar: :any_skip_relocation, ventura:        "e84e6daf3f1aceb3483ccb34958b6d9535081363cf37bf47874d5a8b92c4b5fc"
     sha256 cellar: :any_skip_relocation, monterey:       "d793cddf697d36c3bb907d9a8b228128a42c09bd195f018c8d71bfbf53d56450"
     sha256 cellar: :any_skip_relocation, big_sur:        "488ddb6a832ac3fc552a931f94d12fe16d788067ee44d1ee72033c46c566ffd3"
