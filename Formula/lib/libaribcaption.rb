@@ -1,8 +1,8 @@
 class Libaribcaption < Formula
   desc "Portable ARIB STD-B24 Caption Decoder/Renderer"
   homepage "https://github.com/xqq/libaribcaption"
-  url "https://github.com/xqq/libaribcaption/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "f7086598374d2f978d8bb1b675b082de2740a1792ed9c03838caa9ef58d7b51b"
+  url "https://github.com/xqq/libaribcaption/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "278d03a0a662d00a46178afc64f32535ede2d78c603842b6fd1c55fa9cd44683"
   license "MIT"
   head "https://github.com/xqq/libaribcaption.git", branch: "master"
 
