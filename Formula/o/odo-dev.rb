@@ -16,13 +16,13 @@ class OdoDev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "299c455e9c6eced42e36312b933123511c834933edea9818477601e8d647dd43"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45679b9ac766d0e80ddc61819cd0b82801c78868250b4a5961a5630cbec85e8e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7eb2574ebd198878284bd314286a6153796d7923e796f5c40d8e151135ed04e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "8a3b1d0b586218cec48224a15fcd938d1ffa114d5d969d37f2833a0efc896ad9"
-    sha256 cellar: :any_skip_relocation, monterey:       "9243a016b0cf8146179ee13cd4d25175ec9f3215b3d5e370bc33f0c845e4183a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9f783d91eede961b45239f970c305a3cea4280a7ef5af2e4c727f2e6e14a5d65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b538842c3b49e0134b079428c0732b89ba009b30042e8d065b599ff66bb2e6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c672d0069308c1021b684553cff3478d6a335240b90918a0821618739321a709"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "525b18a5939bfecc93f7a12d377c1f0f1af1b212ed730f206320a2df119e87b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce5cd354eb624a92e8190aa6ca61e9d24c91138e7e6ae6e9220f2790a032d689"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a48ad8fde2769145ad4d4c60304efb7796aa66dba65a13c7f750e8717c2cc995"
+    sha256 cellar: :any_skip_relocation, ventura:        "964c60a044e232330130dc4b9f793f571dde674d6d38c96b08b9af97f63e490f"
+    sha256 cellar: :any_skip_relocation, monterey:       "164c403bacadbed169f696d62c4273737ae01ec6f42410dc57e83b9720bb68f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fee6ebc1a8c640152fe665029fac051c07c554d8221d766c006510815a34bebd"
   end
 
   depends_on "go" => :build
