@@ -8,6 +8,16 @@ class Scoutsuite < Formula
   license "GPL-2.0-only"
   head "https://github.com/nccgroup/ScoutSuite.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "494ba9e15c403f8d5e7d24f523f08a01b511902c6b45f68604334485a7948c5f"
+    sha256 cellar: :any,                 arm64_ventura:  "4d7d0006dd539778d07c66b8ba7a767431c9a00a4f2c37472687852509e8446d"
+    sha256 cellar: :any,                 arm64_monterey: "7f832e705ef21c803d4c6b417bdad10f69a664cb04d5bff5077d6c33d552815f"
+    sha256 cellar: :any,                 sonoma:         "cd1840bc6f83fd50725a9932806ecfecca3f3116b346733c5e825ce611c610e3"
+    sha256 cellar: :any,                 ventura:        "dd9b0335771312f63651348207d09e217707950e5bb20c4bd4abf30acd7d5d3d"
+    sha256 cellar: :any,                 monterey:       "6794b87137b9cc6585e4ee779841bbeb291d8a25032b7d7ca05a2aef80b6f869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f58f70b6dde7d2d024ebe0dcd6634a812ab7696d71229041a9f3ffe9952a5938"
+  end
+
   depends_on "rust" => :build # for pydantic-core
   depends_on "cffi"
   depends_on "pycparser"
