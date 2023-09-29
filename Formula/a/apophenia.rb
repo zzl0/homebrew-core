@@ -6,9 +6,11 @@ class Apophenia < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e4bba2d4900aa22557d6b3dcc7015de6b195c990cb9df78c7a7838c0ef87aae9"
     sha256 cellar: :any,                 arm64_ventura:  "f41ec39ddf34211bf5689b608a4f6cd86b14f0933e1931a57aaf6ebfde511311"
     sha256 cellar: :any,                 arm64_monterey: "bfa9a7f6b132f1b892a36476b75f16422b97d3dc60b312e46c4ae53f8be733f7"
     sha256 cellar: :any,                 arm64_big_sur:  "dcae1c229f1768e8cac6f01cc1cf26c46d3773613e3d151ba2c597c196683832"
+    sha256 cellar: :any,                 sonoma:         "0a7b632754790b9a13ad9fa73cfc84f48e7cfa48a15a8b0bcfc362a6ada5bba8"
     sha256 cellar: :any,                 ventura:        "35b4555478efe07e652b58ccdd5091f166de91f1d63d52569666e6118a46bb40"
     sha256 cellar: :any,                 monterey:       "f1c89d71177bf8a59c85f5d74579d58d3186bf1aa352bf645c02ff4fce24da42"
     sha256 cellar: :any,                 big_sur:        "3d9e51918d69791a400e6d422bef5523d0f2fa023b584eb7ccf66a5c76def9c9"
