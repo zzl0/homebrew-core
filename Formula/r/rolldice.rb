@@ -24,6 +24,13 @@ class Rolldice < Formula
     depends_on "readline"
   end
 
+  # Submitted upstream at https://github.com/sstrickl/rolldice/pull/25
+  # Remove if merged and included in a tagged release
+  patch do
+    url "https://github.com/sstrickl/rolldice/commit/5e53bade81d0fc972857889c1b690dcd830b439b.patch?full_index=1"
+    sha256 "133214dcc8c8d8e4620205273c6c932cc0674e11717bf4b2fa432a205e825cc5"
+  end
+
   def install
     system "make", "CC=#{ENV.cc}"
     bin.install "rolldice"
