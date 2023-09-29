@@ -23,6 +23,7 @@ class Aptos < Formula
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
+  depends_on "rustfmt" => :build
   depends_on "openssl@3"
   uses_from_macos "llvm" => :build
 
