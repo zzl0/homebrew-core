@@ -1,8 +1,8 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
   homepage "https://github.com/Azure/azure-storage-azcopy"
-  url "https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.20.1.tar.gz"
-  sha256 "c9d5ba8e81eff6820d8d6b6797461fdbb772616f5eae913e6c6c4a7b2fd78ec0"
+  url "https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.21.0.tar.gz"
+  sha256 "a7a81921ac48aa6663912e498ee578cc62a09161f7523ce8019fe341d6ea7922"
   license "MIT"
 
   livecheck do
@@ -24,8 +24,14 @@ class Azcopy < Formula
 
   depends_on "go" => :build
 
+  # Build patch, upstream ref, https://github.com/Azure/azure-storage-azcopy/pull/2393
+  patch do
+    url "https://github.com/Azure/azure-storage-azcopy/commit/99f2bd8af8d55cbc2cba7320636af880f2e84955.patch?full_index=1"
+    sha256 "6142ddf542b8f9ae1b92095c93402e00883b266099b1f17e1f0779ce2628c580"
+  end
+
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
 
     generate_completions_from_executable(bin/"azcopy", "completion")
   end
