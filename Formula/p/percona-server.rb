@@ -2,10 +2,9 @@ class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.33-25/source/tarball/percona-server-8.0.33-25.tar.gz"
-  sha256 "9871cac20c226bba7607f35c19ee23516a38c67573dd48618727c74eae22912e"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.34-26/source/tarball/percona-server-8.0.34-26.tar.gz"
+  sha256 "c4e6977e787f960fd3bad6a7c06b7e126c46e1403ca133dd8a5da7bd4dcd6574"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-server/latest/"
@@ -29,6 +28,7 @@ class PerconaServer < Formula
     sha256 x86_64_linux:   "17d4881e1e4fd06bcb8845f165284611a976b0dd3793977324b8b51ccb4e8409"
   end
 
+  depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -78,14 +78,6 @@ class PerconaServer < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
-  end
-
-  # Fix for "Cannot find system zlib libraries" even though they are installed.
-  # https://bugs.mysql.com/bug.php?id=110745
-  # https://bugs.mysql.com/bug.php?id=111467
-  patch do
-    url "https://bugs.mysql.com/file.php?id=32361&bug_id=111467"
-    sha256 "3fe1ebb619583fc1778b249042184ef48a4f85555c573fb3618697cf024d19cc"
   end
 
   def install
