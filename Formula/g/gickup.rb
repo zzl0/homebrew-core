@@ -1,8 +1,8 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
   homepage "https://cooperspencer.github.io/gickup-documentation/"
-  url "https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.18.tar.gz"
-  sha256 "197c8311d2e8b9bfb922b3d1fd7d7eb58951f5076296b2c5a20eca49092c98e5"
+  url "https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.20.tar.gz"
+  sha256 "4301301c3fc44d3dd9123e88415821a3f89d1d1e05aa9c7bd9a38f07e0ce0a0c"
   license "Apache-2.0"
   head "https://github.com/cooperspencer/gickup.git", branch: "main"
 
