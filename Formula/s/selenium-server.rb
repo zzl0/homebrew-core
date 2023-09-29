@@ -11,15 +11,13 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a8de811c0a5922437f34774efbdd77559d6f26c48aca4ac97c7925b5faa09fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bfa91930f9679f92b03054e0401b1dbe6372c101e36ba7f593888e345b21085"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, sonoma:         "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, ventura:        "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, monterey:       "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "466fec427a869eb07579d38e529a9771afc752f5f2e5f0589163a8c458d15f54"
   end
 
   depends_on "openjdk"
