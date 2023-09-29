@@ -10,6 +10,16 @@ class Build2 < Formula
     regex(/^# (\d+\.\d+\.\d+)(?:\+\d+)?$/i)
   end
 
+  bottle do
+    sha256 arm64_sonoma:   "cfcd09aa221a08dd5b190e1d471822946c7e08210f74dc3be4ef8f89f088d937"
+    sha256 arm64_ventura:  "fc0c8d37ea3a336f182133daeb135699a45b34d8fa02af56dbc104fff33d6f3c"
+    sha256 arm64_monterey: "93e00c45fcac69a862a26b5e39004c1217675f6a482812107b27d85ff9ab2318"
+    sha256 sonoma:         "aa3e700461c6a0c2052cb3d89a78f9f37bd65e9b8a6fcb9191a5a0b2f3d29540"
+    sha256 ventura:        "61a7a28750af25b609ed325f532773d2624e23ca6ebfb616574cce759f8a4bc0"
+    sha256 monterey:       "1f90f3b72cadd6d429164f3db7f49a200e72da2faa1316a0f113bbe2d264b287"
+    sha256 x86_64_linux:   "92b0ca8b79c117d3e4b0462cf0ab7e1d2d4fffe7c17331e02a7e0b336ac505ab"
+  end
+
   depends_on "pkgconf"
 
   uses_from_macos "curl"
