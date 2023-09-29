@@ -7,6 +7,16 @@ class Pter < Formula
   sha256 "29672889f0a2fe77a327621a436f0a7a08735fea923966d905f9d1e615815334"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9a9fb8fe3ce2a59e9e5fde58b927438fa53051fdef5ac3011527bbd4d3f0a7d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67e60d35c745292727261f6f0948051b69ffc7cc3e55747e83b9bbb2f63da3dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0be0b3addf7b0367c3fcd2e84ac5d30a7ae6210b3e96085b9c5d719de3e59e49"
+    sha256 cellar: :any_skip_relocation, sonoma:         "343b8dd67d1235a25c6322dec7efc1e8cbe87431b9b358fa22106cb81daed254"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a033cc775af0d571f72cf1c2734cd51c765164ae6d118f9e1b75c250a1115b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "3bb569c79fae91d5e0c5d48296759e1c8bce4651108b6cf9dbf19a978aa388b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa36fd9f0bfb9508b1a1830ca8904200da3cdc464f3f7ea3f2c2ec2dcf49b7dd"
+  end
+
   depends_on "python@3.11"
 
   resource "cursedspace" do
