@@ -1,8 +1,8 @@
 class Btpd < Formula
   desc "BitTorrent Protocol Daemon"
   homepage "https://github.com/btpd/btpd"
-  url "https://github.com/downloads/btpd/btpd/btpd-0.16.tar.gz"
-  sha256 "296bdb718eaba9ca938bee56f0976622006c956980ab7fc7a339530d88f51eb8"
+  url "https://github.com/btpd/btpd/archive/refs/tags/v0.16.tar.gz"
+  sha256 "9cda656f67edb2cdc3b51d43b7f0510c4e65a0f55cd1317a7113051429d6c9e5"
   license "BSD-2-Clause"
   revision 2
 
@@ -18,9 +18,13 @@ class Btpd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "483442aed198f237fd3d92bde41c2b12db3e150e44bab84bd2fab6d96a25d8c5"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "openssl@3"
 
   def install
+    system "autoreconf", "-fiv"
     system "./configure", *std_configure_args
     system "make", "install"
   end
