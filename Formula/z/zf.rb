@@ -1,11 +1,8 @@
 class Zf < Formula
   desc "Command-line fuzzy finder that prioritizes matches on filenames"
   homepage "https://github.com/natecraddock/zf"
-  # zf requires git submodules for dependencies until the Zig package manager is able
-  # to resolve pure Zig dependencies, likely in Zig version 0.11.0
-  url "https://github.com/natecraddock/zf.git",
-      tag:      "0.8.0",
-      revision: "fb66faf9258ebad06ac06c8d2a597b869b72069b"
+  url "https://github.com/natecraddock/zf/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "a40caf5b9ed2c45a703b10d214f513cfc004489330db8202d3834ba9c824ee92"
   license "MIT"
   head "https://github.com/natecraddock/zf.git", branch: "master"
 
@@ -22,7 +19,7 @@ class Zf < Formula
   depends_on "zig" => :build
 
   def install
-    system "zig", "build", "-Drelease-fast=true"
+    system "zig", "build", "-Doptimize=ReleaseSafe"
 
     bin.install "zig-out/bin/zf"
     man1.install "doc/zf.1"
