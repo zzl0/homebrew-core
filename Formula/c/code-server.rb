@@ -3,8 +3,8 @@ require "language/node"
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.16.1.tgz"
-  sha256 "9fb4ffa24159d24856e357b1633d22672c82404d1ca5e8888e57f66c567ab8b1"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.17.1.tgz"
+  sha256 "4cb41305a7e86aca3656a3e2a9d797baa983e56b31fbb3400bbb4d0e6ef2503b"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class CodeServer < Formula
   end
 
   depends_on "yarn" => :build
-  depends_on "node@16" # Use `node@18` after https://github.com/coder/code-server/issues/6230
+  depends_on "node@18"
 
   uses_from_macos "python" => :build
 
@@ -30,7 +30,7 @@ class CodeServer < Formula
   end
 
   def install
-    node = Formula["node@16"]
+    node = Formula["node@18"]
     system "npm", "install", *Language::Node.local_npm_install_args, "--unsafe-perm", "--omit", "dev"
 
     # @parcel/watcher bundles all binaries for other platforms & architectures
