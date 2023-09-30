@@ -209,7 +209,10 @@
     "exclude_packages": ["certifi", "pygments", "PyYAML"]
   },
   "checkov": {
-    "exclude_packages": ["certifi", "cffi", "markdown", "pycparser", "PyYAML", "six", "tabulate", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "cffi", "markdown", "packaging", "pycparser", "PyYAML", "six",
+      "tabulate", "typing-extensions"
+    ]
   },
   "cloudiscovery": {
     "exclude_packages": ["six", "pytz"]
@@ -381,7 +384,7 @@
   },
   "ggshield": {
     "exclude_packages": [
-      "certifi", "cffi", "click", "cryptography", "packaging", "pycparser", 
+      "certifi", "cffi", "click", "cryptography", "packaging", "pycparser",
       "pyyaml", "pygments", "typing-extensions"
     ]
   },
