@@ -3,8 +3,8 @@ class Emqx < Formula
   homepage "https://www.emqx.io/"
   # TODO: Check if we can use unversioned `erlang` at version bump:
   #   https://github.com/emqx/emqx/blob/v#{version}/scripts/ensure-rebar3.sh#L9
-  url "https://github.com/emqx/emqx/archive/refs/tags/v5.2.1.tar.gz"
-  sha256 "46513ebb562913d3fc945520a4bb77f3ae43578b2931daf44f3df7f909198e18"
+  url "https://github.com/emqx/emqx/archive/refs/tags/v5.3.0.tar.gz"
+  sha256 "086b1df81a7e5c93c7838a79076dacd2c2ce0371031991f239b6b5a628ecd08f"
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
