@@ -130,7 +130,7 @@
   },
   "borgmatic": {
     "extra_packages": ["ruamel.yaml.clib"],
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "packaging"]
   },
   "bpython": {
     "exclude_packages": ["certifi", "Pygments", "six"]
