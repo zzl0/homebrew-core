@@ -3,8 +3,8 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/5b/9e/2c392565603e3678b1f04836d6c1f898a4f5e7813f6364a6b8c835cdad4b/ansible-lint-6.20.1.tar.gz"
-  sha256 "d0b927ea0cca9dbbc3899996dcf3ababa1518ac4a785db2b7cda09ea02a579ed"
+  url "https://files.pythonhosted.org/packages/f3/2d/6f60d6f91089e96191da9518563d6d8e4d81c24bc85a5e8d0ce2980d24d0/ansible-lint-6.20.2.tar.gz"
+  sha256 "13991d1cba5d69e704a0465b8d5f0e082c3c04e7664dedbbd2d9e4ebc6afd745"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
@@ -43,8 +43,8 @@ class AnsibleLint < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "filelock" do
@@ -88,8 +88,8 @@ class AnsibleLint < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/1d/d6/9773d48804d085962c4f522db96f6a9ea9bd2e0480b3959a929176d92f01/rich-13.5.3.tar.gz"
-    sha256 "87b43e0543149efa1253f485cd845bb7ee54df16c9617b8a893650ab84b4acb6"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "rpds-py" do
