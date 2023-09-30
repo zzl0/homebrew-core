@@ -9,9 +9,11 @@ class Moto < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85354f0a5a3d809d4fb8437f926d75326e7c2411315aa2fa0eb682f8fd3b8aa5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "473d38c327f172f0016ecbfba0839c19d7285ac22b50db25cc902a2d9834a941"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "333938fb08a6643282ab22b10125bf86c4ed52db3e059b95456827a9b6156d88"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c07f29dc1e375913799b4ed5bb504b6231cf301b707d57636c09ba9eee3d4325"
+    sha256 cellar: :any_skip_relocation, sonoma:         "12a28ed16308d9d5a53c408df620cd59de075ea805cad27a9c17a78da90435e7"
     sha256 cellar: :any_skip_relocation, ventura:        "6adafe27c53907437e9ddb9ca2acebc206da84ad4d78a0d2b5c0e0719b9b40f1"
     sha256 cellar: :any_skip_relocation, monterey:       "29a1b3339744efe190ac1860977f4c7e26a0af8d8054753e2c09b5ec161410f3"
     sha256 cellar: :any_skip_relocation, big_sur:        "18bd829a0cb8df9a32007d37a82f371049abf142f4b206a092adb526b28409aa"
