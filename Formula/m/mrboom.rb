@@ -8,9 +8,11 @@ class Mrboom < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3eab030d8927c1bf307a6912abaa2a350b44ac62a0fd0fad5187273dc9bec5e5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "90b91f583d2e1e4a613ac864ca3fa48465057d16810a5077013c8d93bd7b62a7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bd5b5ec729889a0abe7b4c97a4ebbed82fe36d9e85a745bc59bfb32994198dac"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8b8a1256014093b7946f4bb1dfefc7f435ba8a0e4884cd2378a90879b88a8d6"
+    sha256 cellar: :any,                 sonoma:         "820d39b489639d6549d69e13ed261b6bd640b81c32b47db74b7a4d75da49d55a"
     sha256 cellar: :any_skip_relocation, ventura:        "a0fd60e4cfeaae4d0858f0135ac4d08fc929b7f93909e0b3f7f3113ced889eff"
     sha256 cellar: :any_skip_relocation, monterey:       "b6d0d0f72bb83338b61a8c94a3e4072f37e909aa000ce52f4731c5e2b2973225"
     sha256 cellar: :any_skip_relocation, big_sur:        "c646553ede84d787e4d1b356a6d4e22139e6eb451a772a7e3e605bbed034bb6a"
