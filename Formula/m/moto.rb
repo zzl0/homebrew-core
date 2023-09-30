@@ -8,16 +8,13 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85354f0a5a3d809d4fb8437f926d75326e7c2411315aa2fa0eb682f8fd3b8aa5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "473d38c327f172f0016ecbfba0839c19d7285ac22b50db25cc902a2d9834a941"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "333938fb08a6643282ab22b10125bf86c4ed52db3e059b95456827a9b6156d88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c07f29dc1e375913799b4ed5bb504b6231cf301b707d57636c09ba9eee3d4325"
-    sha256 cellar: :any_skip_relocation, sonoma:         "12a28ed16308d9d5a53c408df620cd59de075ea805cad27a9c17a78da90435e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6adafe27c53907437e9ddb9ca2acebc206da84ad4d78a0d2b5c0e0719b9b40f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "29a1b3339744efe190ac1860977f4c7e26a0af8d8054753e2c09b5ec161410f3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18bd829a0cb8df9a32007d37a82f371049abf142f4b206a092adb526b28409aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4467c2356b441684f3b8296e98a5e604f1bb23060a6bbe0e51f94810d180c2d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc591b9708ed5c52357c79764b282ee72f49d7b6b578ff48ee40a14101e31c1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc39fe3f037744695e9c0283171f5a44bf5cdfd31c5b13db33008d888b71126e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98d74ccccfc9dc1d13f75923b8a1033c6807b9dd12cdb43c56e3281bc9e86b2a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0f14841bee18bc8db24afe139b0b5aacaff168182cd933338744bb1fbb1a7ed1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6348453a247e6158a4d0a41810cd771e537868b9acc5b9a433f49dcb2575b4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a3073a0de76221e4ef97493dabf0280a4b4207726c8060944a1097d7a8362d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b35f562a2f6064cd7560534daaada7c8fa2d96c021b530257e9bac8b36871f4"
   end
 
   depends_on "cffi"
