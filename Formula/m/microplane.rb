@@ -34,9 +34,9 @@ class Microplane < Formula
       hashicorp/terraform
     EOF
     # create mp/init.json
-    shell_output("mp init -f #{testpath}/repos.txt")
+    system bin/"mp", "init", "-f", testpath/"repos.txt"
     # test command
-    output = shell_output("mp plan -b microplaning -m 'microplane fun' -r terraform -- sh echo 'hi' 2>&1")
+    output = shell_output("#{bin}/mp plan -b microplaning -m 'microplane fun' -r terraform -- sh echo 'hi' 2>&1")
     assert_match "planning", output
   end
 end
