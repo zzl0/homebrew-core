@@ -1,8 +1,8 @@
 class TomlTest < Formula
   desc "Language agnostic test suite for TOML parsers"
   homepage "https://github.com/burntsushi/toml-test"
-  url "https://github.com/BurntSushi/toml-test/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "737604b374669975fd8d80c562124e2ff4913217aeadbb14ff07033c52fe09ac"
+  url "https://github.com/BurntSushi/toml-test/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "3717163777494016243a47261500bbbed6a59c89e232f9f969b3dd849c12db63"
   license "MIT"
 
   bottle do
