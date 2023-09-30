@@ -1,10 +1,9 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
   homepage "https://tgui.eu"
-  url "https://github.com/texus/TGUI/archive/v0.9.5.tar.gz"
-  sha256 "819865bf13661050161bce1e1ad68530a1f234becd3358c96d8701ea4e76bcc1"
+  url "https://github.com/texus/TGUI/archive/v1.0.0.tar.gz"
+  sha256 "ceb3ad89308ae1b1e22bdcd6d476ff5b91b41d0449853d5644845de93d346088"
   license "Zlib"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "5da105c55051c087107f92dbe077cfe6433ff18b346615b604030dd0180f5ebd"
@@ -24,6 +23,7 @@ class Tgui < Formula
   def install
     args = %W[
       -DTGUI_MISC_INSTALL_PREFIX=#{pkgshare}
+      -DTGUI_BACKEND=SFML_GRAPHICS
       -DTGUI_BUILD_FRAMEWORK=FALSE
       -DTGUI_BUILD_EXAMPLES=TRUE
       -DTGUI_BUILD_GUI_BUILDER=TRUE
@@ -39,6 +39,7 @@ class Tgui < Formula
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <TGUI/TGUI.hpp>
+      #include <TGUI/Backend/SFML-Graphics.hpp>
       int main()
       {
         sf::Text text;
