@@ -9,15 +9,13 @@ class Quicktype < Formula
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "648468e92114507cb9ecff77e2b747f7b306cfbb50cb40be860837b51e79d0b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bab139097c829a003bf91b326708cc42cfb67710b084cf61c6c9d9826cb70420"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bab139097c829a003bf91b326708cc42cfb67710b084cf61c6c9d9826cb70420"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bab139097c829a003bf91b326708cc42cfb67710b084cf61c6c9d9826cb70420"
-    sha256 cellar: :any_skip_relocation, sonoma:         "71ffabdc6dbd52fbcfa6ccd66f53ca719748f8029d5c88ced960416d68512bba"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6545d2a41a932a3dedc3ed9af61ec5ae907a512751151b7ddcdb909048f0e81"
-    sha256 cellar: :any_skip_relocation, monterey:       "f6545d2a41a932a3dedc3ed9af61ec5ae907a512751151b7ddcdb909048f0e81"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f6545d2a41a932a3dedc3ed9af61ec5ae907a512751151b7ddcdb909048f0e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bab139097c829a003bf91b326708cc42cfb67710b084cf61c6c9d9826cb70420"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e16bf0a4bef00d435af28ee4172b3e4b84289684e69e39946c2186aab6eb959"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e16bf0a4bef00d435af28ee4172b3e4b84289684e69e39946c2186aab6eb959"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e16bf0a4bef00d435af28ee4172b3e4b84289684e69e39946c2186aab6eb959"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96e7edb41408254c774ffb3ae3725b8cbdc6c256d1752febebc53afbb1548ac2"
+    sha256 cellar: :any_skip_relocation, ventura:        "96e7edb41408254c774ffb3ae3725b8cbdc6c256d1752febebc53afbb1548ac2"
+    sha256 cellar: :any_skip_relocation, monterey:       "96e7edb41408254c774ffb3ae3725b8cbdc6c256d1752febebc53afbb1548ac2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e16bf0a4bef00d435af28ee4172b3e4b84289684e69e39946c2186aab6eb959"
   end
 
   depends_on "node"
