@@ -1,8 +1,8 @@
 class Irssi < Formula
   desc "Modular IRC client"
   homepage "https://irssi.org/"
-  url "https://github.com/irssi/irssi/releases/download/1.4.4/irssi-1.4.4.tar.xz"
-  sha256 "fefe9ec8c7b1475449945c934a2360ab12693454892be47a6d288c63eb107ead"
+  url "https://github.com/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz"
+  sha256 "72a951cb0ad622785a8962801f005a3a412736c7e7e3ce152f176287c52fe062"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   # This formula uses a file from a GitHub release, so we check the latest
@@ -29,17 +29,18 @@ class Irssi < Formula
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
+  uses_from_macos "perl"
 
   def install
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
       --sysconfdir=#{etc}
-      --with-bot
       --with-proxy
       --enable-true-color
       --with-socks=no
-      --with-perl=no
+      --with-perl=yes
+      --with-perl-lib=#{lib}/perl5/site_perl
     ]
 
     system "./configure", *args
@@ -51,9 +52,17 @@ class Irssi < Formula
   test do
     require "pty"
 
+    assert_match version.to_s, shell_output("#{bin}/irssi --version")
+
     stdout, = PTY.spawn("#{bin}/irssi -c irc.freenode.net -n testbrew")
     assert_match "Terminal doesn't support cursor movement", stdout.readline
 
-    assert_match version.to_s, shell_output("#{bin}/irssi --version")
+    # This is not how you'd use Perl with Irssi but it is enough to be
+    # sure the Perl element didn't fail to compile, which is needed
+    # because upstream treats Perl build failures as non-fatal.
+    # To debug a Perl problem copy the following test at the end of the install
+    # block to surface the relevant information from the build warnings.
+    ENV["PERL5LIB"] = lib/"perl5/site_perl"
+    system "perl", "-e", "use Irssi"
   end
 end
