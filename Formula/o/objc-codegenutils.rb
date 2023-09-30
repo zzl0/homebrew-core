@@ -25,14 +25,27 @@ class ObjcCodegenutils < Formula
   depends_on :macos
 
   def install
-    xcodebuild "-arch", Hardware::CPU.arch, "-project", "codegenutils.xcodeproj", "-target", "assetgen",
-               "-configuration", "Release", "SYMROOT=build", "OBJROOT=build"
+    xcodebuild "-arch", Hardware::CPU.arch,
+               "-project", "codegenutils.xcodeproj",
+               "-target", "assetgen",
+               "-configuration", "Release",
+               "SYMROOT=build",
+               "OBJROOT=build",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "build/Release/objc-assetgen"
-    xcodebuild "-arch", Hardware::CPU.arch, "-target", "colordump", "-configuration", "Release", "SYMROOT=build",
-               "OBJROOT=build"
+    xcodebuild "-arch", Hardware::CPU.arch,
+               "-target", "colordump",
+               "-configuration", "Release",
+               "SYMROOT=build",
+               "OBJROOT=build",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "build/Release/objc-colordump"
-    xcodebuild "-arch", Hardware::CPU.arch, "-target", "identifierconstants", "-configuration", "Release",
-               "SYMROOT=build", "OBJROOT=build"
+    xcodebuild "-arch", Hardware::CPU.arch,
+               "-target", "identifierconstants",
+               "-configuration", "Release",
+               "SYMROOT=build",
+               "OBJROOT=build",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "build/Release/objc-identifierconstants"
   end
 
