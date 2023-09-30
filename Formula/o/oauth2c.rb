@@ -1,8 +1,8 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https://github.com/cloudentity/oauth2c"
-  url "https://github.com/cloudentity/oauth2c/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "db77d4fb21f000589535b135a4a32c7965d3cbf21d92b1d428d4bba60743baec"
+  url "https://github.com/cloudentity/oauth2c/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "804b5f504e10d9b4c8fc21d9c936863a934847c8b6aa787cde10b0a264e23a26"
   license "Apache-2.0"
   head "https://github.com/cloudentity/oauth2c.git", branch: "master"
 
@@ -25,7 +25,7 @@ class Oauth2c < Formula
   end
 
   test do
-    assert_match "Authorization completed",
+    assert_match "\"access_token\":",
       shell_output("#{bin}/oauth2c https://oauth2c.us.authz.cloudentity.io/oauth2c/demo " \
                    "--client-id cauktionbud6q8ftlqq0 " \
                    "--client-secret HCwQ5uuUWBRHd04ivjX5Kl0Rz8zxMOekeLtqzki0GPc " \
