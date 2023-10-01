@@ -87,7 +87,7 @@ jobs:
             - label: no ARM bottle
               path: Formula/.+
               content: '\n    sha256.* (?!.*(?:arm64_|_linux)).+: +"[a-fA-F0-9]+"\n'
-              missing_content: '\n    sha256.* arm64_.+: +"[a-fA-F0-9]+"\n'
+              missing_content: '\n    sha256.* (arm64_.+|all): +"[a-fA-F0-9]+"\n'
 
             - label: no Linux bottle
               path: Formula/.+
