@@ -8,15 +8,13 @@ class Borgmatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f218c30f53c40bec8b1dbcf95e819f81a275346408f5271f2372cf6d94096a13"
-    sha256 cellar: :any,                 arm64_ventura:  "5ddd571bfd666f0f642db25a36f2697ca59534cee8a306812a1fc0530c96feb1"
-    sha256 cellar: :any,                 arm64_monterey: "b4e82232d4be9989889b5440a31247063738d13a7250cd27280481b8a980a3eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "edf37f77e21ac11f69c0f07cfd1c52db0bd840fe4eceb2d12087f92e89ee5a8a"
-    sha256 cellar: :any,                 sonoma:         "86f72c23305c0ebe23fc51916fbb343ad493ca355cf7ffda5567f328f33fdfaa"
-    sha256 cellar: :any,                 ventura:        "93847561672ece3e1aabe7e854ce002dd6a451584f4f146b81e3f61119d8084e"
-    sha256 cellar: :any,                 monterey:       "7f1da123457c41471866ac4ee91fa2a51239b5a60e9f1354e96f78f9d6ae781e"
-    sha256 cellar: :any,                 big_sur:        "4da5aab97d55595c81af191ca0619039309382cd7f7ecdf736821558657de710"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16cd09e100562cf3b13306e8201a4326622ba67cb58a067d9798797d359cb5aa"
+    sha256 cellar: :any,                 arm64_sonoma:   "28ef568525b89923b491beee684b89d36b4b5760ca56b1d758a003e3ae95c2ea"
+    sha256 cellar: :any,                 arm64_ventura:  "f07741f167151277129a62ce5f6f16d3f7b44349ce9f80dd06a3819d900189e0"
+    sha256 cellar: :any,                 arm64_monterey: "87774a8f1557a365fc11b3ec0befbe60e788ee12d545d4fc11b1e2888c5e831e"
+    sha256 cellar: :any,                 sonoma:         "31a91a1b5e6edaca77ed518b78eeb8fdf972dcc827dfbf37187254f13bf05b9f"
+    sha256 cellar: :any,                 ventura:        "b5c9683e99a2f899a54ee35de11357ceec96ab3556036e3137ab7dcd110af0f4"
+    sha256 cellar: :any,                 monterey:       "8751ec45bbc61b5c4c87f158e2003f188b03cb978618a9fcff77af3cb7782be5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00b4d27562aaa134be58503b89a0f9a86f46abd12a37a2ec9500366156ca6854"
   end
 
   depends_on "rust" => :build # for rpds-py
