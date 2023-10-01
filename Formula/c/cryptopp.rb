@@ -1,10 +1,10 @@
 class Cryptopp < Formula
   desc "Free C++ class library of cryptographic schemes"
   homepage "https://cryptopp.com/"
-  url "https://cryptopp.com/cryptopp880.zip"
-  mirror "https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_8_0/cryptopp880.zip"
-  version "8.8.0"
-  sha256 "ace1c7b010a409eba5e86c4fd5a8845c43a6ac39bb6110e64ca5d7fea08583f4"
+  url "https://cryptopp.com/cryptopp890.zip"
+  mirror "https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_9_0/cryptopp890.zip"
+  version "8.9.0"
+  sha256 "4cc0ccc324625b80b695fcd3dee63a66f1a460d3e51b71640cdbfc4cd1a3779c"
   license all_of: [:public_domain, "BSL-1.0"]
   head "https://github.com/weidai11/cryptopp.git", branch: "master"
 
