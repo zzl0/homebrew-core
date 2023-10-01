@@ -32,15 +32,13 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7b8924949ce4f6ea2c8bd8e9c47e5b06c108891c5590d193c7bb8fb2162b3a1d"
-    sha256 cellar: :any,                 arm64_ventura:  "d39fd06d944a02a6a4524999e97002eb089ad206a5efea6d43d19667417e10e4"
-    sha256 cellar: :any,                 arm64_monterey: "fee86a840f4eb479d542ebf23cc2919cebaa038cc655e7bc03cf5a20dba6ee97"
-    sha256 cellar: :any,                 arm64_big_sur:  "f9970f6b25f49516e84f773c326533cd895c1a5cdb09870ffefe442df5cd682f"
-    sha256 cellar: :any,                 sonoma:         "fdccd4f5c326dd6d5b16a5b94369fbbdb5d3f4878a440659b99f46a15bd819ec"
-    sha256 cellar: :any,                 ventura:        "1ece32e31129e380dbb56346ae9498b1e26170b8c184f57f690bf7c0f18656f4"
-    sha256 cellar: :any,                 monterey:       "3de6a1292e3389365d91fa4bd1eebc64a3160d39c270ad59b28999f02a5a1357"
-    sha256 cellar: :any,                 big_sur:        "b269179f597f0c09a6b3b145b26067fd4301ebfc1233f2871e2ee98e296bf0be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa0d0c2daaffd9007311137995a02b2d1dc468ef847d51405aa3af865e5ecb09"
+    sha256 cellar: :any,                 arm64_sonoma:   "f5c9a06e13dd825f4d48e82ea6002fd4d7d8883d41f1b32c850ef711be01d1ce"
+    sha256 cellar: :any,                 arm64_ventura:  "68223c2bd93eaebfe65e4c1cf4451ba30c6a580b872f3ced4927a3c01d71b503"
+    sha256 cellar: :any,                 arm64_monterey: "919337809c0a2b87539ffd9b848af5537869598834e0b0a99281ee2930b74a15"
+    sha256 cellar: :any,                 sonoma:         "3a3375f51275ed05ddba0c4058272bc7286e05a973da9e490531418ee79053e8"
+    sha256 cellar: :any,                 ventura:        "844927cb7086ffaef1d3e5d56028494ecdc7dacb63bbb39a47fff95a7817e8bd"
+    sha256 cellar: :any,                 monterey:       "8aadca199d518901febb930669278ed4bd877308722c443e55021c82d74add17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a180e51555a44b34fac243cdd5bb8878c4bea545de37526f2b43b90d8bb14d7"
   end
 
   depends_on "meson" => :build
