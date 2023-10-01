@@ -20,12 +20,8 @@ class SolcSelect < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b78982e23ddd3d162e641bc3a0071fccc6291716ac2833e5215a17df892a102e"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
 
   resource "pycryptodome" do
     url "https://files.pythonhosted.org/packages/b9/05/0e7547c445bbbc96c538d870e6c5c5a69a9fa5df0a9df3e27cb126527196/pycryptodome-3.18.0.tar.gz"

@@ -882,6 +882,9 @@
     "exclude_packages": ["docutils", "pytz", "pyyaml", "six", "tabulate", "typing-extensions"],
     "extra_packages": ["catkin_pkg", "pydantic-yaml[yaml]<1", "setuptools<60"]
   },
+  "solc-select": {
+    "exclude_packages": ["packaging"]
+  },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"],
     "exclude_packages": ["certifi", "docutils", "packaging", "Pygments"]
