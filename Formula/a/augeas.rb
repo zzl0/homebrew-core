@@ -33,16 +33,17 @@ class Augeas < Formula
 
   uses_from_macos "libxml2"
 
-  def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+  # Fixes `implicit-function-declaration` error
+  # Remove when merged and released
+  patch do
+    url "https://github.com/hercules-team/augeas/commit/26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
+    sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
+  end
 
+  def install
     if build.head?
       system "./autogen.sh", *std_configure_args
     else
-      # autoreconf is needed to work around
-      # https://debbugs.gnu.org/cgi/bugreport.cgi?bug=44605.
-      system "autoreconf", "--force", "--install"
       system "./configure", *std_configure_args
     end
 
