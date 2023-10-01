@@ -1,8 +1,8 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://github.com/bensadeh/circumflex/archive/refs/tags/3.2.tar.gz"
-  sha256 "b48cde13d031b7f5a4b3b6e656307fea100c0c57202f714ac612295e1d40f45e"
+  url "https://github.com/bensadeh/circumflex/archive/refs/tags/3.3.1.tar.gz"
+  sha256 "949dde816b75b85ec48bb0158931d540f6bc07606d92f441881201d4b8680a49"
   license "AGPL-3.0-only"
 
   bottle do
@@ -29,6 +29,6 @@ class Circumflex < Formula
     assert_match "List of visited IDs cleared", shell_output("#{bin}/clx clear 2>&1")
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    assert_match "Y Combinator", shell_output("#{bin}/clx view 1")
+    assert_match "Y Combinator", shell_output("#{bin}/clx article 1")
   end
 end
