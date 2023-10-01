@@ -9,16 +9,13 @@ class Dooit < Formula
   head "https://github.com/kraanzu/dooit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fcb9d7c0a8b878d105baa91bdd4675fd8fe641c022c7fedddecfff7f0c4e059d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbe8ad4bf5c7beb2d311ffeb98f54633a7167f6518b9aab6c829597786a2b870"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67821f831096f513b730b6732f727fa5a310878d24fc895c1a6df9049a66652a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56a73c794ae86b504b99131998b4042cf51aa09539f9d5272d0bf956903e3b80"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8818a0f839b1cf2b3191f66968af0b2edc25011d6838dfd8f6327f73fbade4d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "99ed48530b2f4c98e27a13e2e4fe5ce34c8ef35c3d995793663a6595e8423f5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca87f4e9445c0a7a332c49c0ac52f020c6048d19f736bd89f14d4fc2249bad7e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44b728a8b73123ffaa24e48f9043e7b3208f3c6638ef6ea1c5340f16df305178"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6352582928aa3bc58bfa8af6e960b61b6f14984c33715cf97c91d02f73b3fe63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df114a5785a311e1fac2e06b617f6ceafabc6e52322baa75eff4a552aa517bb3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4dcb0c3456451f88f1725fcee8dbe50d2d17abf5da0258092d9f816a6368b993"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa322851a8aef284f2a4d35ccd572c2185255035d9e0e50bb945a6c656acef13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42638336cc79a01a8a1734baaf5f7840b25b0f7eb2e1f8c24f0cb779910477cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6b3107a0b41c2074e86377e2cc12dcf78713e2158229a4af057be921ce793f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "07140dc860b11d0a047d559ef3b0d92d563186de43b3f2369247abe8536f72c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bff0a41917fd66f034757ba62fa666a94927737ef4bc639b8db23f3fb2895a0"
   end
 
   depends_on "cmake" => :build
