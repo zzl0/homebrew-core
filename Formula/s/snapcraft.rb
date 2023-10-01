@@ -24,6 +24,7 @@ class Snapcraft < Formula
 
   depends_on "libsodium"
   depends_on "lxc"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
@@ -249,11 +250,6 @@ class Snapcraft < Formula
   resource "overrides" do
     url "https://files.pythonhosted.org/packages/4d/27/30c865a1e62f1913a0730e667e94459ca038392b6f44d69ef7a585690337/overrides-7.4.0.tar.gz"
     sha256 "9502a3cca51f4fac40b5feca985b6703a5c1f6ad815588a7ca9e285b9dca6757"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "platformdirs" do
