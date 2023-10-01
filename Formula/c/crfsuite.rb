@@ -6,9 +6,11 @@ class Crfsuite < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "80a144cb4f7425ae6d43e321080cbaad697626aba0356c787ab62a53514a5804"
     sha256 cellar: :any,                 arm64_ventura:  "7c00ca61a741c84e661cb89f208a79105453f051fb766390ca4afb6d5cbc815c"
     sha256 cellar: :any,                 arm64_monterey: "de3937f3b5caa7a27f48b183cca1a3dbe64fe0ba642f624f35a5d3e1827fa13f"
     sha256 cellar: :any,                 arm64_big_sur:  "8f4faf686ec2dd149e8c55505fb18f4f2fd246cf0966ed315c19eb811855aeb1"
+    sha256 cellar: :any,                 sonoma:         "80c120367694a16a8aa47bea0107a4bbdf34cd765b1cb111e6ee59bc76815df3"
     sha256 cellar: :any,                 ventura:        "9044e7b8b91b781be38409cc180e7889fdf5430699025628726dc21919324704"
     sha256 cellar: :any,                 monterey:       "72d451e62bf3ab7b5b2d73d9cb4757946e1c0aa75c3c5f28c1c2d899d052bdd1"
     sha256 cellar: :any,                 big_sur:        "72b8c9d618a16bd4287990ae6c7b46bfdfd964cbe20582d4fa10f5b4b12f09ba"
