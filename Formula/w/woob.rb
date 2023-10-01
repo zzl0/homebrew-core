@@ -25,6 +25,7 @@ class Woob < Formula
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -70,11 +71,6 @@ class Woob < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pycountry" do
