@@ -1,8 +1,8 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "441526df3c62efe2ddf2421bc2ecfa727c80219957e2a01af4a0fa600a7c356e"
+  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "d6b115553c0b061691069ebf71093d185d86939148c699f31f6c3fc8882dcca7"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -37,8 +37,8 @@ class SignalCli < Formula
   #   tar -tz |
   #   grep libsignal-client
   resource "libsignal-client" do
-    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.30.0.tar.gz"
-    sha256 "a9fe90f35c87c85d30efed3ffa0f717196e10eba4d2a9c95fa8129e88847f7f0"
+    url "https://github.com/signalapp/libsignal/archive/refs/tags/v0.32.1.tar.gz"
+    sha256 "4751e197d798555c6e8c9a869c41692ed3c72a4d34738c28c6f6a1761044e777"
   end
 
   def install
