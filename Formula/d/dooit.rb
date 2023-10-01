@@ -10,9 +10,11 @@ class Dooit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fcb9d7c0a8b878d105baa91bdd4675fd8fe641c022c7fedddecfff7f0c4e059d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbe8ad4bf5c7beb2d311ffeb98f54633a7167f6518b9aab6c829597786a2b870"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "67821f831096f513b730b6732f727fa5a310878d24fc895c1a6df9049a66652a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56a73c794ae86b504b99131998b4042cf51aa09539f9d5272d0bf956903e3b80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8818a0f839b1cf2b3191f66968af0b2edc25011d6838dfd8f6327f73fbade4d5"
     sha256 cellar: :any_skip_relocation, ventura:        "99ed48530b2f4c98e27a13e2e4fe5ce34c8ef35c3d995793663a6595e8423f5d"
     sha256 cellar: :any_skip_relocation, monterey:       "ca87f4e9445c0a7a332c49c0ac52f020c6048d19f736bd89f14d4fc2249bad7e"
     sha256 cellar: :any_skip_relocation, big_sur:        "44b728a8b73123ffaa24e48f9043e7b3208f3c6638ef6ea1c5340f16df305178"
