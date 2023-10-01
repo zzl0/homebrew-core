@@ -9,15 +9,13 @@ class GitlabCiLocal < Formula
   head "https://github.com/firecow/gitlab-ci-local.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6203ca1101adda9a6e6c09a086a57496b4fad63388253145f68b94b67df9c16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "016cae4d3ea3a99445cccb3de755092d1d201fa921ec86d1caabc42f8c747eca"
-    sha256 cellar: :any_skip_relocation, ventura:        "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
-    sha256 cellar: :any_skip_relocation, monterey:       "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f48ca6c21777ebfab2a9ab1daac94d16a8dc6bef29899bca3c47473654851d9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f48ca6c21777ebfab2a9ab1daac94d16a8dc6bef29899bca3c47473654851d9b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f48ca6c21777ebfab2a9ab1daac94d16a8dc6bef29899bca3c47473654851d9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fcc70061b78db1424a330f68f26ed80e8e9d30e080fc5b84e6b97aff5efb2ae2"
+    sha256 cellar: :any_skip_relocation, ventura:        "fcc70061b78db1424a330f68f26ed80e8e9d30e080fc5b84e6b97aff5efb2ae2"
+    sha256 cellar: :any_skip_relocation, monterey:       "fcc70061b78db1424a330f68f26ed80e8e9d30e080fc5b84e6b97aff5efb2ae2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f48ca6c21777ebfab2a9ab1daac94d16a8dc6bef29899bca3c47473654851d9b"
   end
 
   depends_on "node"
