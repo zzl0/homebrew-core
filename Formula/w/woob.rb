@@ -9,16 +9,14 @@ class Woob < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9765ebcc6bb85bf334060c289b2587456d03cc2bfe560bfae29181069f4af0fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c97975ba764c1ed4bea18a81765f8df592eafad056a3adf27a77536e65ac6bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7cd596d44b9db8163f87e782a2295f1bcc1dc555e994adcb579ee3c3ef46b5d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9513ff24e3fba7b0de377f719a75cbe05758c48c3cc41cca4299c624d97b41e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4175933e9edd58db3e006b940280d5eb043b314664094e281ea28fb16a4d39ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "948c26886f17bff9c235a8991d26573a6443605d619f1719e719ddce5ba34f7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc26c1a50926cd5d41aee212aa2e2fa65fb45b29f7f4fbc68abab5edb68a1d35"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6829614e07810612a5f6b760ee4c005054c687d2729867077c43c344d44c75bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8ae239facfe2ff6f68b607486b5845d79ea19cdc61b50eebecb5fbccaccca91"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39a4bdd79a61e91ccccd0adb6accd033adebe13a6ec6733aac5f2f06e1a781c1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ca76c157d80aacea0a73a5c2fc5be943d01e20565ed409f4858ed502d18afb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7923f30a4cf53b80da61e4fc066b7bf189406ffa914edcbd52f3db46bc28ff79"
+    sha256 cellar: :any_skip_relocation, sonoma:         "63de9811877f640f01b14968c87d7ef6a7a0589c60f6bc05138e6f51e69cf521"
+    sha256 cellar: :any_skip_relocation, ventura:        "b51f3d1173dcff40a7bbf4b3d238e0fd47ddc6895ce0dc0d9e0b6f90dc639c13"
+    sha256 cellar: :any_skip_relocation, monterey:       "87aee8dd26c439570d20d0451442ae22cd77e94f2710040a791928d6610e2039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d8801c2d20e8eb0704089787da695e3470b5b42e2954f6dc85ef5491650cbae"
   end
 
   depends_on "gnupg"
