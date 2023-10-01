@@ -1,10 +1,9 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
   homepage "https://getclipboard.app"
-  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.1.tar.gz"
-  sha256 "f7ceb2dbb76bc094ac8afbef97bdef0f1a9451ca7dd1a4a181f3b2a859a2f094"
+  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.3.tar.gz"
+  sha256 "d2f13e66e4b45d2084e2f88b992b36f07faf649fa1a1c5e0acfca303270a988c"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
   livecheck do
