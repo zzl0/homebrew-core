@@ -1,8 +1,8 @@
 class Crfsuite < Formula
   desc "Fast implementation of conditional random fields"
   homepage "https://www.chokkan.org/software/crfsuite/"
-  url "https://github.com/downloads/chokkan/crfsuite/crfsuite-0.12.tar.gz"
-  sha256 "e7fc2d88353b1f4de799245f777d90f3c89a9d9744ba9fbde8c7553fa78a1ea1"
+  url "https://github.com/chokkan/crfsuite/archive/refs/tags/0.12.tar.gz"
+  sha256 "ab83084ed5d4532ec772d96c3e964104d689f2c295915e80299ea3c315335b00"
   license "BSD-3-Clause"
 
   bottle do
@@ -15,6 +15,9 @@ class Crfsuite < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "45a6dd13114c20e2a4bd3d82033e463316b635d8c7a61c582e299bca8832ec58"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "liblbfgs"
 
   uses_from_macos "python" => :test
@@ -24,13 +27,20 @@ class Crfsuite < Formula
     sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
   end
 
+  # Fix autoconf failure.
+  patch do
+    url "https://github.com/chokkan/crfsuite/commit/a6a4a38ccc4738deb0e90fc9ff2c11868922aa11.patch?full_index=1"
+    sha256 "8c572cb9d737e058b0a86c6eab96d1ffa8951016b50eee505491c2dae7c7c74d"
+  end
+
   def install
+    system "autoreconf", "-fiv"
+
     args = std_configure_args
     args << "--disable-sse2" if Hardware::CPU.arm?
-
     system "./configure", *args
-    system "make", "install"
 
+    system "make", "install"
     pkgshare.install "example"
   end
 
