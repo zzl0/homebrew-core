@@ -1,8 +1,8 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://github.com/tkuchiki/alp/archive/v1.0.19.tar.gz"
-  sha256 "a336776379a9d46222ac7d8309714772b848d95111a482b0a1526dde5af81dec"
+  url "https://github.com/tkuchiki/alp/archive/v1.0.20.tar.gz"
+  sha256 "a8477fe3fb1fb2f1e4e64d00697b743b6fe542e10325a65efac0f25524d36084"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
