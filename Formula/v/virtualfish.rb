@@ -21,6 +21,7 @@ class Virtualfish < Formula
   end
 
   depends_on "fish"
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "distlib" do
@@ -31,11 +32,6 @@ class Virtualfish < Formula
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
     sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pkgconfig" do
