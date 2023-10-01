@@ -32,6 +32,7 @@ module Homebrew
                     workflowRun {
                       event
                       databaseId
+                      createdAt
                       workflow {
                         name
                       }
@@ -70,12 +71,15 @@ module Homebrew
     response = GitHub::API.open_graphql(GRAPHQL_WORKFLOW_RUN_QUERY, variables: variables, scopes: ["repo"].freeze)
     commit_node = response.dig("repository", "pullRequest", "commits", "nodes", 0)
     check_suite_nodes = commit_node.dig("commit", "checkSuites", "nodes")
-    ci_node = check_suite_nodes.find do |node|
+    ci_nodes = check_suite_nodes.select do |node|
       workflow_run = node.fetch("workflowRun")
       next false if workflow_run.blank?
 
       workflow_run.fetch("event") == "pull_request" && workflow_run.dig("workflow", "name") == "CI"
     end
+    # There can be multiple CI nodes when a PR is closed and reopened.
+    # Make sure we use the latest one in this case.
+    ci_node = ci_nodes.max_by { |node| DateTime.parse(node.dig("workflowRun", "createdAt")) }
     return [nil, nil] if ci_node.blank?
 
     check_run_nodes = ci_node.dig("checkRuns", "nodes")
