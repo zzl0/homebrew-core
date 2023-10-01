@@ -870,7 +870,7 @@
     ]
   },
   "slither-analyzer": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "packaging"]
   },
   "snakefmt": {
     "exclude_packages": ["black", "toml"]
