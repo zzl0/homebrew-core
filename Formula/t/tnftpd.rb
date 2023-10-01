@@ -1,9 +1,9 @@
 class Tnftpd < Formula
   desc "NetBSD's FTP server"
   homepage "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/"
-  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftpd-20200704.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftpd-20200704.tar.gz"
-  sha256 "92de915e1b4b7e4bd403daac5d89ce67fa73e49e8dda18e230fa86ee98e26ab7"
+  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftpd-20231001.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftpd-20231001.tar.gz"
+  sha256 "24a51bd2e5818ddb8c2479df9c8175a78dd8a5ef49ee3ab09f5f39c35069826e"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "ISC"]
 
   livecheck do
@@ -27,6 +27,7 @@ class Tnftpd < Formula
   end
 
   uses_from_macos "bison" => :build
+  uses_from_macos "libxcrypt"
 
   def install
     system "./configure", "--prefix=#{prefix}"
