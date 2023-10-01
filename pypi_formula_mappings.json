@@ -980,6 +980,9 @@
   "virtualenvwrapper": {
     "exclude_packages": ["six", "virtualenv"]
   },
+  "virtualfish": {
+    "exclude_packages": ["packaging"]
+  },
   "volatility": {
     "extra_packages": ["capstone", "pycryptodome", "yara-python", "jsonschema"]
   },
