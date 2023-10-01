@@ -9,16 +9,13 @@ class Lexicon < Formula
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b058e5559646dd58339b9977e4e1545889859a5b10e0711a8aa192161f25cbd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d7eda1500299e2faf1459bd5eb8b6a50bec971adff482c905b786ea69853408"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fccf7e8d6e222e34fca3d88eef9ace7a99fa48c0197ec88b5a3ae4f6445712df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2e0f6a9a1fd0d4be785a32d6ae53f2dbc943fe2df39a2ca4322c652bcac0d18f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e283553b54d78e0d239fd23cfe745a4aaac3d6730d4a235448de6bcc5f8e5f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "190db50dceb4a3f63939ff222b3c0028b7547177911eb1fab9da1e02848566f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "e9b3459c315d8eaff85b5659d5d1ecde17fb75fc8ca34211bd6e4662d1059158"
-    sha256 cellar: :any_skip_relocation, big_sur:        "317e01d970daa292604c64f04da26d8d3773f78e23cb83b14fe6ea5773cb779f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19459dbdf49c74e8a66e69d7f2480fcfbc6b0ab7a4057561523371265d635aa2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7c0f02e6646fd1c3d4caf1743f1c4be0eff64706e824cf4a9c0d1176b7bbaa3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc37168469c89a6ab000684011c7b27a985f0b753848928a2e00a9322c7c3fa6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "276f4b6b52b92e782bf8ee0fd4f816d7667280e2461602ebddcef7e02910a07e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6da479ac3f0c467d223803d88e2bdc9eb552c93fa4676ee7805163e7be4a861c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ab8ff317fd753c57a205d5135c56a8ccbe5d440a40e93dd4f4e684098254358"
+    sha256 cellar: :any_skip_relocation, monterey:       "225fcf8d435ab116227c014086263557963214d8269ef8214bd044ebc4fd0a1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ed6174f318d6e5899297136edbbdafe8a5b8f585d1d52c7062101f1b8015f6f"
   end
 
   depends_on "cffi"
