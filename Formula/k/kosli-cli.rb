@@ -1,9 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https://docs.kosli.com/client_reference/"
-  url "https://github.com/kosli-dev/cli.git",
-      tag:      "v2.6.8",
-      revision: "741fef7326b4b4b47f5fc593231772a60932ca81"
+  url "https://github.com/kosli-dev/cli/archive/refs/tags/v2.6.9.tar.gz"
+  sha256 "776405a6bad26f61ea81647ebc11daeb8dd95a9ae195cb7f165471ac0aff1b2b"
   license "MIT"
   head "https://github.com/kosli-dev/cli.git", branch: "main"
 
@@ -23,7 +22,7 @@ class KosliCli < Formula
     ldflags = %W[
       -s -w
       -X github.com/kosli-dev/cli/internal/version.version=#{version}
-      -X github.com/kosli-dev/cli/internal/version.gitCommit=#{Utils.git_head}
+      -X github.com/kosli-dev/cli/internal/version.gitCommit=#{tap.user}
       -X github.com/kosli-dev/cli/internal/version.gitTreeState=clean
     ]
     system "go", "build", *std_go_args(output: bin/"kosli", ldflags: ldflags), "./cmd/kosli"
