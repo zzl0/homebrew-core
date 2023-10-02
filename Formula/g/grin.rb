@@ -34,6 +34,10 @@ class Grin < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
     # Fixes compile with newer Rust.
     # REMOVE ME in the next release.
     system "cargo", "update", "--package", "socket2", "--precise", "0.3.16"
