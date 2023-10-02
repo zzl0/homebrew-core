@@ -8,6 +8,14 @@ class Onionprobe < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3046ebb969556c4a609f35bdb97caa5a65faa731139fc5507f3908c1dd1d2af4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2def0255ff04cd60eec01d66de965cc945f69f3ebce902f0456c2ccbef0187bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "e96f059e3f20d96a9b4481d915c7c1eb3492e1b339d68978b3da38190a0a7fee"
+    sha256 cellar: :any_skip_relocation, monterey:       "70054bd46186256f9b1ba7dd74796a665ac4eb871aeb465f63c8e54890f2699e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35dbd4b1eb07e3d9650716c8db6aa5a6848be4369bce2939a48148a7d3788f46"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
