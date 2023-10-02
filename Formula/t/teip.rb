@@ -16,12 +16,29 @@ class Teip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "009824a80a45f6f54c8b70bd337358dfdcc636e86651e76a546c873bfbfaa25a"
   end
 
+  # Use `llvm@15` to work around build failure with Clang 16 described in
+  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
+  # updated to 0.62.0 or newer. There is a check in the `install` method.
+  depends_on "llvm@15" => :build # for libclang
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
-  uses_from_macos "llvm" => :build # for libclang
 
   def install
+    bindgen_version = Version.new(
+      (buildpath/"Cargo.lock").read
+                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+    )
+    if bindgen_version >= "0.62.0"
+      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
+           'this check and try switching to `uses_from_macos "llvm" => :build`.'
+    end
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", "--features", "oniguruma", *std_cargo_args
@@ -31,8 +48,23 @@ class Teip < Formula
     bash_completion.install "completion/bash/teip"
   end
 
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
+  end
+
   test do
     ENV["TEIP_HIGHLIGHT"] = "<{}>"
     assert_match "<1>23", pipe_output("#{bin}/teip -c 1", "123", 0)
+
+    [
+      Formula["oniguruma"].opt_lib/shared_library("libonig"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"teip", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+    end
   end
 end
