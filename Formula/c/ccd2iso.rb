@@ -3,7 +3,7 @@ class Ccd2iso < Formula
   homepage "https://ccd2iso.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/ccd2iso/ccd2iso/ccd2iso-0.3/ccd2iso-0.3.tar.gz"
   sha256 "f874b8fe26112db2cdb016d54a9f69cf286387fbd0c8a55882225f78e20700fc"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e1e557828fbb5b8b991d0710a5e2489a82bc8dad3b6136d2ddd17f2ced86c5a"
@@ -21,6 +21,9 @@ class Ccd2iso < Formula
   end
 
   def install
+    # Missing <string.h> header file, see https://sourceforge.net/p/ccd2iso/bugs/11/
+    inreplace "src/ccd2iso.c", "#include <stdlib.h>\n", "#include <stdlib.h>\n#include <string.h>\n"
+
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
