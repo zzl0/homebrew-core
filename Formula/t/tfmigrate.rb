@@ -7,15 +7,13 @@ class Tfmigrate < Formula
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
-    sha256 cellar: :any_skip_relocation, ventura:        "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
-    sha256 cellar: :any_skip_relocation, monterey:       "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e385b1192d1d88bcf3cb517b0fa884104609d3bd6519fcaa99370fe76bccc886"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2dcd7c0538abe80fcc5096acce051af2e21e9fe3986ef8d7cd81529627b6a30a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2dcd7c0538abe80fcc5096acce051af2e21e9fe3986ef8d7cd81529627b6a30a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dcd7c0538abe80fcc5096acce051af2e21e9fe3986ef8d7cd81529627b6a30a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3223a3d046832f9b1d903aee1035f255694233ea78edeb543943122fb6147d41"
+    sha256 cellar: :any_skip_relocation, ventura:        "3223a3d046832f9b1d903aee1035f255694233ea78edeb543943122fb6147d41"
+    sha256 cellar: :any_skip_relocation, monterey:       "3223a3d046832f9b1d903aee1035f255694233ea78edeb543943122fb6147d41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46eb125b055b5302f4bbdade9c40572accf80f830c14e691f4f22fdeb3fda68a"
   end
 
   depends_on "go" => :build
