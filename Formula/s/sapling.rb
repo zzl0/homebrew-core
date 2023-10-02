@@ -27,10 +27,18 @@ class Sapling < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "yarn" => :build
+  # The `cargo` crate requires http2, which `curl-config` from macOS reports to
+  # be missing despite its presence.
+  # Try switching to `uses_from_macos` when that's resolved.
+  depends_on "curl"
   depends_on "gh"
   depends_on "node"
   depends_on "openssl@3"
   depends_on "python@3.11"
+
+  on_linux do
+    depends_on "pkg-config" => :build # for `curl-sys` crate to find `curl`
+  end
 
   # `setuptools` 66.0.0+ only supports PEP 440 conforming version strings.
   # Modify the version string to make `setuptools` happy.
@@ -48,6 +56,17 @@ class Sapling < Formula
   end
 
   def install
+    if OS.mac?
+      # Avoid vendored libcurl.
+      inreplace %w[
+        eden/scm/lib/http-client/Cargo.toml
+        eden/scm/lib/doctor/network/Cargo.toml
+        eden/scm/lib/revisionstore/Cargo.toml
+      ],
+        /^curl = { version = "(.+)", features = \["http2"\] }$/,
+        'curl = { version = "\\1", features = ["http2", "force-system-lib-on-osx"] }'
+    end
+
     python3 = "python3.11"
 
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -56,6 +75,14 @@ class Sapling < Formula
     # Don't allow the build to break our shim configuration.
     inreplace "eden/scm/distutils_rust/__init__.py", '"HOMEBREW_CCCFG"', '"NONEXISTENT"'
     system "make", "-C", "eden/scm", "install-oss", "PREFIX=#{prefix}", "PYTHON=#{python3}", "PYTHON3=#{python3}"
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
@@ -67,6 +94,13 @@ class Sapling < Formula
       system "#{bin}/sl", "add"
       system "#{bin}/sl", "commit", "-m", "first"
       assert_equal("first", shell_output("#{bin}/sl log -l 1 -T {desc}").chomp)
+    end
+
+    [
+      Formula["curl"].opt_lib/shared_library("libcurl"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"sl", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
