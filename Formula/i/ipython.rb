@@ -3,8 +3,8 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/bc/7f/33ab8dfcf529b9bd0220792a26378b722999fc2b857ce4b06f6e0030ed98/ipython-8.16.0.tar.gz"
-  sha256 "7a1b2e1e6a3ec5baa466163c451335081f31859883889ff0289c6b21f7a095e2"
+  url "https://files.pythonhosted.org/packages/17/ff/23116d95eeb974bd08b57b7d477fb57d68446e04718b6c330d2854ad9923/ipython-8.16.1.tar.gz"
+  sha256 "ad52f58fca8f9f848e256c629eff888efc0528c12fe0f8ec14f33205f23ef938"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
@@ -43,13 +43,13 @@ class Ipython < Formula
   end
 
   resource "executing" do
-    url "https://files.pythonhosted.org/packages/8f/ac/89ff37d8594b0eef176b7cec742ac868fef853b8e18df0309e3def9f480b/executing-1.2.0.tar.gz"
-    sha256 "19da64c18d2d851112f09c287f8d3dbbdf725ab0e569077efb6cdcbd3497c107"
+    url "https://files.pythonhosted.org/packages/11/e3/207e956e01bd4a7809a1d7c4302fd2a64ab0b7a56c40711252a2d5d41ba7/executing-2.0.0.tar.gz"
+    sha256 "0ff053696fdeef426cda5bd18eacd94f82c91f49823a2e9090124212ceea9b08"
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/57/38/4ac6f712c308de92af967142bd67e9d27e784ea5a3524c9e84f33507d82f/jedi-0.19.0.tar.gz"
-    sha256 "bcf9894f1753969cbac8022a8c2eaee06bfa3724e4192470aaffe7eb6272b0c4"
+    url "https://files.pythonhosted.org/packages/d6/99/99b493cec4bf43176b678de30f81ed003fd6a647a301b9c927280c600f0a/jedi-0.19.1.tar.gz"
+    sha256 "cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"
   end
 
   resource "matplotlib-inline" do
@@ -88,8 +88,8 @@ class Ipython < Formula
   end
 
   resource "stack-data" do
-    url "https://files.pythonhosted.org/packages/db/18/aa7f2b111aeba2cd83503254d9133a912d7f61f459a0c8561858f0d72a56/stack_data-0.6.2.tar.gz"
-    sha256 "32d2dd0376772d01b6cb9fc996f3c8b57a357089dec328ed4b6553d037eaf815"
+    url "https://files.pythonhosted.org/packages/28/e3/55dcc2cfbc3ca9c29519eb6884dd1415ecb53b0e934862d3559ddcb7e20b/stack_data-0.6.3.tar.gz"
+    sha256 "836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9"
   end
 
   resource "traitlets" do
@@ -98,8 +98,8 @@ class Ipython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/7c/67/31b3c1411efeb4b95e0a1c63c263c07676c49f59375d31a21b11ff16f9dc/wcwidth-0.2.7.tar.gz"
-    sha256 "1b6d30a98ddd5ce9bbdb33658191fd2423fc9da203fe3ef1855407dcb7ee4e26"
+    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
+    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
   def install
