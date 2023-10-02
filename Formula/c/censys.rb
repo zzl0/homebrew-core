@@ -8,15 +8,13 @@ class Censys < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d3a110b8d0680a604069aa2019d01265261912f8370ab388f6a88535091d53e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b56b8b05538dc67440fb82af69f60fbcd28c1358cb335e0f84f9e481c94e4fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8dd1022f9d5efa6a55a391947249c9fbb79add49af246f9323e52adf77a462ae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ed95fb642d3d19bcbcd3b0e6c5f1b4b1c0a3654b80ac4599fd1e7dc17612987"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f39b683f57cf818eb048678ac44d1e9b175b03eea31c0cf60c6f9417ffd12eb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "439cfc6fc31aa756ebf337c598f1d9995a197ef45b5fb74ec27b602822fe292b"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec44caa4333e6c76dbf51b6ca142816cc6bda902647868182f248dac2459e2fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a40c96b900b8094bfd68a7050dce12d79211e1880c5e9c5ce9f94ee2641adc42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a59f2d92be5d5644e491f1c6632b0535f0ea539ba088d2c2bfa2f1dae38c62ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a7e38ecc9dbb05df021bbbec6528755bebf07986c246c5f456e5f2a5b0dbdeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f347cb60c12dc09cd910daadf313f626f095a1a4e2a0876efa83449b2d036e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "086bb86feb934518083551be2e611bd5b0db95a281a01c6dbfa76668044ffae9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2e9f3969522e518607932abc2f8113a748b3f2b403dd8208b10197d4d0b65d4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d14e7897437aca1900cb0be8a238dea77bd18a59c605bd4bb502db9a37ecc984"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc07396258bf4bb1e3dea19fbcaaa9c6206b042df6de1d0074ae1fae2c234533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4497bf0d5dfb92c500f1964b5931b9ebc8e560eed5d38d6ec5ff50280de24d0f"
   end
 
   depends_on "pygments"
