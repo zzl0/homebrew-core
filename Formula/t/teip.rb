@@ -7,13 +7,14 @@ class Teip < Formula
   head "https://github.com/greymd/teip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "76306929a61d06bed2d50e7104f81fd38be5a4256f25b7c5bd4f59df0fc721e7"
-    sha256 cellar: :any,                 arm64_monterey: "862454d4a7446db7996612e4ff3593e1861e8d2851be1c5d57afcde2ca79e229"
-    sha256 cellar: :any,                 arm64_big_sur:  "847c470c7cef50c85c278209412a2bb1694527e0a44011e891ba37401a62ea9e"
-    sha256 cellar: :any,                 ventura:        "c412035b3c7484fd79ca768dd7102d805af464ba0c46774a497544b58ae5baf2"
-    sha256 cellar: :any,                 monterey:       "a3ae1dbbd8a3c7d8f0ea1e5713ce669b7184dfa375ee2466923baccb44882138"
-    sha256 cellar: :any,                 big_sur:        "58d3e48e0feb2b60cf56f522ac1517dc3952f505298a30159211874f431bef62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "009824a80a45f6f54c8b70bd337358dfdcc636e86651e76a546c873bfbfaa25a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b8236a3ce68ab2062bf453517e5eeee3ca58edd543db01c1065bab68913d5419"
+    sha256 cellar: :any,                 arm64_ventura:  "3318cc516cddaa7ab4a31c63edfe1db4a1e911d846c06fa47f582af4b4b36edb"
+    sha256 cellar: :any,                 arm64_monterey: "88b1bd22cd5f91736a977181d132ce58aeac3ddbad78a72fb58d50cf8b49e45a"
+    sha256 cellar: :any,                 sonoma:         "8e469e75ba52cafb414cda79b1577d6a7a0092a97cfc3a192e8546fd5695c417"
+    sha256 cellar: :any,                 ventura:        "1fa2d3d2b009360140e0990c12558ce68843793a560443aed94506b0ac6a1745"
+    sha256 cellar: :any,                 monterey:       "b4c73b82a3010e8c2307fbbf1f1cb82cecdbb417654c2be13f39b113d91ed9bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "945a2668be5d0d4d6a81dbab65a76cf8bd6ba7c12708020623cdee8b4cc24b96"
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
