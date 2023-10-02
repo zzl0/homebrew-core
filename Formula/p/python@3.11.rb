@@ -1,8 +1,8 @@
 class PythonAT311 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz"
-  sha256 "a12a0a013a30b846c786c010f2c19dd36b7298d888f7c4bd1581d90ce18b5e58"
+  url "https://www.python.org/ftp/python/3.11.6/Python-3.11.6.tgz"
+  sha256 "c049bf317e877cbf9fce8c3af902436774ecef5249a29d10984ca3a37f7f4736"
   license "Python-2.0"
 
   livecheck do
@@ -74,8 +74,8 @@ class PythonAT311 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/19/20/d8dd9d8becaf3e2d6fdc17cc41870d5ada5ceda518996cf5968c2ca71bd8/setuptools-68.1.2.tar.gz"
-    sha256 "3d4dfa6d95f1b101d695a6160a7626e15583af71a5f52176efa5d39a054d475d"
+    url "https://files.pythonhosted.org/packages/ef/cc/93f7213b2ab5ed383f98ce8020e632ef256b406b8569606c3f160ed8e1c9/setuptools-68.2.2.tar.gz"
+    sha256 "4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"
   end
 
   resource "pip" do
@@ -101,6 +101,12 @@ class PythonAT311 < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/a1618a5005d0b01d63b720321806820a03432f1a/python/3.10-distutils-scheme.diff"
     sha256 "d1a29b3c9ecf8aecd65e1e54efc42fb1422b2f5d05cba0c747178f4ef8a69683"
+  end
+
+  # Fix build with newer editline
+  patch do
+    url "https://github.com/Bo98/cpython/commit/96d015e375135e5ebc387a55ed838d00d963dc8a.patch?full_index=1"
+    sha256 "2164a7ba4fd7b934514e87681908bb3e36cfd28ba53511ea631c6e24aa356a21"
   end
 
   def lib_cellar
@@ -498,6 +504,7 @@ class PythonAT311 < Formula
     system python3, "-c", "import _ctypes"
     system python3, "-c", "import _decimal"
     system python3, "-c", "import pyexpat"
+    system python3, "-c", "import readline"
     system python3, "-c", "import zlib"
 
     # tkinter is provided in a separate formula
