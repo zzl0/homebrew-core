@@ -1,8 +1,8 @@
 class VapoursynthOcr < Formula
   desc "VapourSynth filters - Tesseract OCR filter"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vs-ocr/archive/R2.tar.gz"
-  sha256 "64ee82a6c9c59ab2aa0f5ab54224e42b027e39ea44be9784861d9e11c8532fb0"
+  url "https://github.com/vapoursynth/vs-ocr/archive/R3.tar.gz"
+  sha256 "e9da11b7f5f3e4acfee5890729769217aa5b385bb573cb303c2661d8d8a83712"
   license "MIT"
   version_scheme 1
 
