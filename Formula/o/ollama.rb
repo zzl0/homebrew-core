@@ -7,6 +7,14 @@ class Ollama < Formula
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b339a472504d8f48d6201f70aa6beba835f516cb0125ef7b854010748e44e9f2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b558949f95f9f9f66c6445252cab95ad17dd6e10a47ebb0b2e3013130166acf"
