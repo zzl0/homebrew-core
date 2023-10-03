@@ -14,15 +14,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "afe39142c7c9a6ba66b0b0a864b0ec48b59c8db5a9838ba18533650c6403c301"
-    sha256 cellar: :any,                 arm64_ventura:  "d1d845bf7a85341830315115f4c796b8148054bd5d339d930ae7882ae65fa8cf"
-    sha256 cellar: :any,                 arm64_monterey: "184b1814d4ada071dad931b572e8d3d05d307f46cdd9f1b9fe3b56abeea81372"
-    sha256 cellar: :any,                 arm64_big_sur:  "044601b908d46d0029fa664c4f817884f41a03d4600e584bb77166f9779f6267"
-    sha256 cellar: :any,                 sonoma:         "b9066c6e115ed4ba7c74bdae7b11b8ef4631a1e8acbb4af3e4d14f78a056aeb1"
-    sha256 cellar: :any,                 ventura:        "425e3b811908786ab3c8ba3b498a3a903dc7e7169cf0dfc14277c92b1d5ec92b"
-    sha256 cellar: :any,                 monterey:       "15d703b4b0f0bd0ff5fb01716be46a576ad8b88be50ee86052a33372c6249e1a"
-    sha256 cellar: :any,                 big_sur:        "361d51976c28e3d1ffb7fb3c0c761f543e73e6cdfdd5ba174ee798a24b33dc43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25957856506db6fad4a65766e25cc87b0c0828c635a173580881e2cd3ddfb1c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "213d30b3defca92e8d39939e14d116e592c4a205bb408c1a94b5c3b6bb26e937"
+    sha256 cellar: :any,                 arm64_ventura:  "a8a1ed29f04f7e4ba6db3255ad4d087c76a05460a237c6e9ae1af16deb1ef72e"
+    sha256 cellar: :any,                 arm64_monterey: "6ad0e85b3520d6358994b72a78b89de7ad802a0d4360a9f3de2d29f880782e47"
+    sha256 cellar: :any,                 sonoma:         "90f2aabe97467821d8d3091c5bc7254212d7b9764574f2fe65b3d8efe7c2ba5e"
+    sha256 cellar: :any,                 ventura:        "f999057caedf2118dcc2979b93170352552aae3d00ca27a6c4c62e5bd5144cb5"
+    sha256 cellar: :any,                 monterey:       "bd8a455ab97b64769038c706dfcfaf71da4dc10d56a2b51467ddc25590c46cfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9075b3eeb6ca59d25b2d40559b2ff20a5e197be35288022c645628f11c1bde12"
   end
 
   depends_on "rust" => :build # for rpds-py
