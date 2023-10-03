@@ -1,8 +1,8 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
   homepage "https://pcapplusplus.github.io"
-  url "https://github.com/seladb/PcapPlusPlus/archive/v22.11.tar.gz"
-  sha256 "3172f12f2f8a8902ae1ad6be5d65c3059c42c49c1a28e97e5d8d25a48b05e44f"
+  url "https://github.com/seladb/PcapPlusPlus/archive/v23.09.tar.gz"
+  sha256 "608292f7d2a2e1b7af26adf89347597a6131547eea4e513194bc4f584a40fe74"
   license "Unlicense"
 
   bottle do
@@ -18,22 +18,29 @@ class Pcapplusplus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e527e2a551782daefe43ec2ba951d2ba1cadfec0d3602c9dffb2e61cc4573877"
   end
 
+  depends_on "cmake" => [:build, :test]
   uses_from_macos "libpcap"
 
   def install
-    os = OS.mac? ? "mac_os_x" : OS.kernel_name.downcase
-    system "./configure-#{os}.sh", "--install-dir", prefix
-
-    # library requires to run 'make all' and
-    # 'make install' in two separate commands.
-    system "make", "all"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    (testpath/"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.12)
+      project(TestPcapPlusPlus)
+      find_package(PcapPlusPlus CONFIG REQUIRED)
+
+      add_executable(test test.cpp)
+      target_link_libraries(test PUBLIC PcapPlusPlus::Pcap++)
+      set_target_properties(test PROPERTIES NO_SYSTEM_FROM_IMPORTED ON)
+    EOS
+
     (testpath/"test.cpp").write <<~EOS
-      #include "stdlib.h"
-      #include "PcapLiveDeviceList.h"
+      #include <cstdlib>
+      #include <pcapplusplus/PcapLiveDeviceList.h>
       int main() {
         const std::vector<pcpp::PcapLiveDevice*>& devList =
           pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDevicesList();
@@ -46,14 +53,8 @@ class Pcapplusplus < Formula
       }
     EOS
 
-    (testpath/"Makefile").write <<~EOS
-      include #{etc}/PcapPlusPlus.mk
-      all:
-      \tg++ $(PCAPPP_BUILD_FLAGS) $(PCAPPP_INCLUDES) -c -o test.o test.cpp
-      \tg++ -L#{lib} -o test test.o $(PCAPPP_LIBS)
-    EOS
-
-    system "make", "all"
-    system "./test"
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build", "--target", "test"
+    system "./build/test"
   end
 end
