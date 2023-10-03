@@ -10,16 +10,13 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55fd19c2d4956f6bdd187554939e5c5a8732df11c08db3758315d7060ea0273a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69f7336da23ed6be7393b0bdf17fd0a471da6613e376ccfc4d06b5781b73eb98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2672943e06f2d4f40efbe1595129e6a33e944649838c9f6edcfc06b9202a869c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2dbc11bab91ebc8658b72ea97aed4e0d59d35a7cd25021f48f8543915c7486f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09d5d7da3e38da3a3edb0cdd9919c687badadbeccc1a2596765c9486bd9cdcc3"
-    sha256 cellar: :any_skip_relocation, ventura:        "719649540a3131a8156f170239fb1205b5db63d7e01a20b3a141fcd8e9595de7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f57561bfb38e98c74f6cba5fb8c47e66691e09b49ac3ff73f97f835cd2fa6b3b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "12a5619a1abccd610ade6ad3a7d48153abaebb776efa758cd53c4530e5118228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fe2cb30496aa396d061e6a24c5497a99f1c0dfe88ed834f09ea383a25322f73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7dc4170d6a598dbdb8c3df8ee1ecb4b8ca3b0c12a2667d5d9480bf1476eb695"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "805652e51cd1144b384470bb74f7ed0a84c4037703d1079288ec3456926ae7c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2248d94ae0de1a52ef2d6003bd3d998f63af5a9100019e451d1dc63abe2e27fb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c57cf7f5d6e763f81f349fdddfce96852dacd72090f90e6e1ea54bf6cf16406d"
+    sha256 cellar: :any_skip_relocation, ventura:        "88dfc12ddc5b64fa5e261a3e731e2b8f73dee9a203beaec0e417cfff4bc5d23d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0c874d95d4bde03c7906a16e0cb2744f6e45355da882cdd293c9a2ef287b240"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18040f2819011401a29897135b402900db0b7eefaa157fdbca61c2beaee5c322"
   end
 
   depends_on "python-certifi"
