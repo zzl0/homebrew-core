@@ -1,8 +1,8 @@
 class Libnet < Formula
   desc "C library for creating IP packets"
   homepage "https://github.com/libnet/libnet"
-  url "https://github.com/libnet/libnet/releases/download/v1.2/libnet-1.2.tar.gz"
-  sha256 "caa4868157d9e5f32e9c7eac9461efeff30cb28357f7f6bf07e73933fb4edaa7"
+  url "https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.gz"
+  sha256 "ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f"
   license "BSD-2-Clause"
 
   bottle do
@@ -21,16 +21,28 @@ class Libnet < Formula
   end
 
   depends_on "doxygen" => :build
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
+  depends_on "pkg-config" => :test
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    flags = shell_output("pkg-config --libs --cflags libnet").chomp.split
+    (testpath/"test.c").write <<~EOS
+      #include <stdio.h>
+      #include <stdint.h>
+      #include <libnet.h>
+
+      int main(int argc, const char *argv[])
+      {
+        printf("%s", libnet_version());
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "test.c", *flags, "-o", "test"
+    assert_match version.to_s, shell_output("./test")
   end
 end
