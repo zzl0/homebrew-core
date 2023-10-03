@@ -7,6 +7,16 @@ class Trafilatura < Formula
   sha256 "a984630ad9c54d9fe803555d00f5a028ca65c766ce89bfd87d976f561c55b503"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "207d37b656abe6b21804304cc829b492b3ba46eb73e8288b9145385218f80f01"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4da8f60737dacdfd825f79953bdd2076fb1d9e3709e1b533d7b8fb98f6b4565b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2d22475b7800854fef8c514492d810f82994c09bf9028e18af9f486a4b453e4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02025798c1acfa41a50465467b72fd91a78ae5219506270b598723ee0f1be81a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4255d7187591832a718a5aef5379d621da1eae301888df4bce8a5753fb8faca6"
+    sha256 cellar: :any_skip_relocation, monterey:       "639c2f2a40071a0c4ac2603199348d1f25c83aebeb686fe3b073bb9bb0209f52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d79c4d15a4c4bc173b0e71a3c2b1a0bbf23ae3489938e98c280870123009db1f"
+  end
+
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python@3.11"
