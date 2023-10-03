@@ -9,15 +9,13 @@ class CfnLint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4835bf396382fa4aab4c1b0a9fb5c26bd8aa48f2d87e0b02371e977a6fd02cad"
-    sha256 cellar: :any,                 arm64_ventura:  "644cf0fe95286f5d35efac4075062806bc9a17091c075f6b8ad36a29041c36d9"
-    sha256 cellar: :any,                 arm64_monterey: "bf893230f8a68da20accd0e95d0d980531c30d157f8744e0957375e178478c57"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2bd8be395e91e1ad4561665e2f27075da21907470bf15d98d91fded8094e88d"
-    sha256 cellar: :any,                 sonoma:         "59390ee3dd5aa413126c0995c4f703369e41a42378b111980f9d2764d5c25034"
-    sha256 cellar: :any,                 ventura:        "5ae3b6e14708bef99d2e75b3d300617bbc542942e50566cea77064f717805269"
-    sha256 cellar: :any,                 monterey:       "cf0754f396ffbd2f8687700e02f7a3d09fc3fac6122f9c1a3ce22d5dc4025c73"
-    sha256 cellar: :any,                 big_sur:        "2fe05e56d826d0d67186ee12b961f00499939c46d8cc482981c19654025f2d39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1692135f9d11137db6957145eae08ab5eedae38e7066acd6b909c22b37eea139"
+    sha256 cellar: :any,                 arm64_sonoma:   "a255a70473365523b8c7f6f48e089aaa98ce44cfc31b8be2bfb3669e76a27e54"
+    sha256 cellar: :any,                 arm64_ventura:  "94183aef892bcc783c450b774f5a938b62c78fd8a02d50088c2ad97dc677812b"
+    sha256 cellar: :any,                 arm64_monterey: "db073a7cbeb9bd1fdcc385c33f318716226075b403c52bffc3c544be6487dc25"
+    sha256 cellar: :any,                 sonoma:         "409bc021001cfa4e7cc67e6f02e0c2c3a920d31c248ccf70ce4c02cb435c3495"
+    sha256 cellar: :any,                 ventura:        "2ab09ef9737c5ac3fe59e92d696cd91c96d67d34d2b7b3a9985470997355bb91"
+    sha256 cellar: :any,                 monterey:       "5fb2b3fff0dc7eff9da4faee4c55f5a64552e1ca7af04fb49af2a3e99397046b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48b151a31e496c251406a457f2eefb43c0ee30b619e9cb8195e9a0376115ec82"
   end
 
   depends_on "rust" => :build
