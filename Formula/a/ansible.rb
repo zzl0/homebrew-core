@@ -10,16 +10,13 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "de1fa44939234de1c2059b00d91475e0119886ba8d9e0311718862712b9d64d5"
-    sha256 cellar: :any,                 arm64_ventura:  "26f5d24fe16505f11440c1295648741b2c14f5ba9f00080fd7553feb1a6fdce9"
-    sha256 cellar: :any,                 arm64_monterey: "dedaa2f9a3d05b1b19167ae2c075945614f5f008af2b7f4ba13933a4fc7954a4"
-    sha256 cellar: :any,                 arm64_big_sur:  "930ff7df2b3b842f2b631d1bf031ac4a75997f7119f55d74f481232e68b3b669"
-    sha256 cellar: :any,                 sonoma:         "1639a5b55fb54e4ea1b39ef5407bb9f880e5d696df835d59e9071fb45b9173b3"
-    sha256 cellar: :any,                 ventura:        "39f584720c69f73bf6d009a6b18125adf4ea9cdf28a85e2d34a2a2bb9c812122"
-    sha256 cellar: :any,                 monterey:       "15f655237af2328f6d9bb4dd71df2dfd927b37c333648c121bda80eb24963558"
-    sha256 cellar: :any,                 big_sur:        "8f339abe8aebffce2015b67e34a4c5f0cd30c9be6ded65e03a56c648d26427cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9689b001d4d6f03f6f175695c1b4728f27855fe3ef3bfc63bf36c5ad3ada3b3"
+    sha256 cellar: :any,                 arm64_sonoma:   "817b79c82f62b8fc4258c422a3d3900223deadb812c2c9840bf8bfe59f6e3352"
+    sha256 cellar: :any,                 arm64_ventura:  "d21d4b44c4b5f1cb51e4448cadfc9255b006ae19d361afb15ffdd0e0c45ca72a"
+    sha256 cellar: :any,                 arm64_monterey: "f5d15df86adaefdd5a765e31790937f526b86780ee04d26c4a3886040fc35c05"
+    sha256 cellar: :any,                 sonoma:         "68b4f68db5f6d992d1414df79665069ce6803eb006c4ac66a510581698b3d94e"
+    sha256 cellar: :any,                 ventura:        "a0fe080ead826aa96d1dbcc2c60250900ed62847d5a88c08536eb7d020463a85"
+    sha256 cellar: :any,                 monterey:       "f4207e49d4b47c7a962d6f571257f423284e7daddc54bc273bb6a9d74e9e1102"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "099b1eee5baad67157b67943d2d1e338f1efb3fe9dba2afbee80b52385409c95"
   end
 
   # `pkg-config` and `rust` are for bcrypt
