@@ -566,8 +566,7 @@
   },
   "mdv": {
     "package_name": "mdv[yaml]",
-    "exclude_packages": ["tabulate", "PyYAML", "Pygments"],
-    "extra_packages": ["Markdown==2.6.11"]
+    "exclude_packages": ["Pygments", "PyYAML"]
   },
   "meta-package-manager": {
     "exclude_packages": [
