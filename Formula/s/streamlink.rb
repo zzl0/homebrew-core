@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/83/de/789bbd4e7eefbb32f9e4d4c6439e13ef22fd46360bdd84060e60fb01958c/streamlink-6.2.0.tar.gz"
-  sha256 "aeae1b7848446f90998c62324e7107c8f41f8c08266dbc419b81e1cc1b35559a"
+  url "https://files.pythonhosted.org/packages/36/ac/ea24a0645b016559a04c776abde7622c354ffb6a5c383d04bed418fccd12/streamlink-6.2.1.tar.gz"
+  sha256 "eb826692f6bb2f4a1a8a4d547024d0954ae270bdaeb3e3b908473aa55b209d12"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -38,13 +38,8 @@ class Streamlink < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
-  end
-
-  resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/c2/e1/5561ad26f99b7779c28356f73f69a8b468ef491d0f6adf20d7ed0ac98ec1/exceptiongroup-1.1.3.tar.gz"
-    sha256 "097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "h11" do
@@ -78,8 +73,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/b9/05/0e7547c445bbbc96c538d870e6c5c5a69a9fa5df0a9df3e27cb126527196/pycryptodome-3.18.0.tar.gz"
-    sha256 "c9adee653fc882d98956e33ca2c1fb582e23a8af7ac82fee75bd6113c55a0413"
+    url "https://files.pythonhosted.org/packages/1a/72/acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025b/pycryptodome-3.19.0.tar.gz"
+    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
   end
 
   resource "pysocks" do
@@ -108,13 +103,13 @@ class Streamlink < Formula
   end
 
   resource "trio-websocket" do
-    url "https://files.pythonhosted.org/packages/b2/9e/a529b1bb6289e252112c96929380d93a59c084bea90707701b9e7ee1af59/trio-websocket-0.10.4.tar.gz"
-    sha256 "e66b3db3e2453017431dfbd352081006654e1241c2a6800dc2f43d7df54d55c5"
+    url "https://files.pythonhosted.org/packages/dd/36/abad2385853077424a11b818d9fd8350d249d9e31d583cb9c11cd4c85eda/trio-websocket-0.11.1.tar.gz"
+    sha256 "18c11793647703c158b1f6e62de638acada927344d534e3c7628eedcb746839f"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "websocket-client" do
