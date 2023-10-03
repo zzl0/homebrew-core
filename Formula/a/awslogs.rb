@@ -10,16 +10,13 @@ class Awslogs < Formula
   head "https://github.com/jorgebastida/awslogs.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8c13bf3f6ee08a6ab1e0ffd278857c342dd40ed941c79ce01d8c6aa9ea3b592"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d903b045b2d7f2b6240eefd864cccfe0438c2ad36018d2d61079d9254203575"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1efe03135ba5ff520a19fbe02d27510b7c1a04b77052a00994407a2e04ef3553"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb58f1336ed1a9d4c8b393390e00e9ff85f01ec99d6ae561cf6103e2171d6a6d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8aa086c0ca98addb3ff42e474ff78f30962789ac0924220f7fe56fe449c3a246"
-    sha256 cellar: :any_skip_relocation, ventura:        "050eb23a706b239e08b4ca6e8cbcec2d158351aebfb7e17d771f163dffc9ae16"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0546faa28ea19e19406712f90f96e7f4e9a5205383825f0f634106e782b3574"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e9c85e3d53f2f3a715cfaa91165b4e722cf57197d09b2fc0341833ba6307221c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "355a36b81ab65751d6c9b9389b7e3e86c2506bae285916fab7ac61bf84b3575c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a2bb4c0751fb4d856947b645dced24c26e5ce5a789c2266023f6a47968e6da6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64c83ab8bd1f827bf2ede1380326b314f767aff77b209e2e4bb2cf0d0fce5ff7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5aad6efb56affb3a35f850a3fd8f1c9dec9bb6384a9c8e55d8fdb0e8cb25396e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4fd2343cf17cb25720a24619ee266273a3e889fbf87c93d3ea02dec35e839276"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a0917a93a6e3667a602eaf5e4e69e3dbef20dd1197896360d8a4287f763eec4"
+    sha256 cellar: :any_skip_relocation, monterey:       "a82cf35960b3e54a5d6da97844d0b8873919a65818f6c16fc8f071659329611a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc8c374da7de91b1289cc6ef625154bf5f3117d7c6dcc1c033a86d194b2efb9"
   end
 
   depends_on "python@3.11"
