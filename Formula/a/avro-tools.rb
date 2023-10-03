@@ -10,15 +10,13 @@ class AvroTools < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ea5f0b58805e405927762ab943ae04e8a2722d792925148e118b4331fe6384"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26ea5f0b58805e405927762ab943ae04e8a2722d792925148e118b4331fe6384"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c4dc1a7ac00b8a93c0e1b3dd863a3febd200481b1c181760e758b31b310e346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be9d8acd4a357b1f9ee3eb77a8eb5db5bbd20cfd838c97de0474b86da031a64c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "057e636f05ecbb4b3bc843446726e58a763fc09fa96fa48b75811ca7824975bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bea5aa11cdf528f3c6de08510048a4f1d58e9a1055cb14b591ba7cc4512470c"
   end
 
   depends_on "maven" => :build
