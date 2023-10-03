@@ -9,16 +9,13 @@ class AwsSamCli < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "052d0c6ef6a1847c23cd89e4e1a71c0a0c231a9d597a9215ba2685204d35b652"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e253e6bbfadbc8de146e54472a3039fa0cb0df28dd42f80e0eef14be94bf50f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6be5210be942b26e4a1377ebaf4476de66f6ca5a2975663c3442ddff660b1355"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0138c5152c90c02f64f1f77db7695f2c7ad57dbaea0a9e1411fdd731eb8f249a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "476912fb4e202c2dd40f406ee25b506dec9ab66beb95abd7f8c75806d3d22280"
-    sha256 cellar: :any_skip_relocation, ventura:        "89c4ff3145438f41e52289072d85c11b543f365656221514613e9cf544246bc1"
-    sha256 cellar: :any_skip_relocation, monterey:       "034227c87eb29e39a84d88904224cc42da60010fe709e74bfa1324fa18e0d0c6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fbe89151ed12f45224042bd149ce728c7ace852e0ada9fb9c36b069bfd61a8c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a883b4a31a0f6eb0330002b380b943a647738e58c7f0b4999f290c3c4332f31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29036f1ea4ac8adcc45c2bc0fd742054d2d2970012202ae947382e8ac2f06aef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0e70c846528da7df9f4c2c6226ebaecf53835fb52ae1a5072eb1d81e0f98dc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "132b9a974dc667f0019b9d8a9ac8ac4c2a47ab31d40f0f45611d02c0457a4e17"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a324f38f86f5a0a8d93110818d68c79fde0104c349145992816102327c38eb7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f15ab24dfb3dc48892110b6aadf8cd99ce9bca3daeec4d7f35724a9c68960c79"
+    sha256 cellar: :any_skip_relocation, monterey:       "e04cad12badd4782beb903cc5e7977043cc0553e5c85c27a5a854c413e0120dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad429b76a9dd438dd9dd87bd9f27763af3caeea529a9fdc4bb191857189f35de"
   end
 
   depends_on "cffi"
