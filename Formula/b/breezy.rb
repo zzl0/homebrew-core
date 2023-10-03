@@ -9,15 +9,13 @@ class Breezy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a8ea48eeda10863066ca916ba3e566c95cf963f81a99d9d9d6a85d2454ef2751"
-    sha256 cellar: :any,                 arm64_ventura:  "8c16ebb435bfb13ecdbd387d0cbad06c68c1d52e2a2f3979b5cadd0d6a186534"
-    sha256 cellar: :any,                 arm64_monterey: "ec239319c1488a8de5059dbaf1f5558bc8a0df6f74b1fb5142cf10159e5e0008"
-    sha256 cellar: :any,                 arm64_big_sur:  "0be58a2d62beeb5069d0bae721408d5b7e141db0739ea64a281918588eb7bd01"
-    sha256 cellar: :any,                 sonoma:         "47c28571f6d005e738febaea4d8c2fe649fb0bea1d7b780c4f9bacc7e9b3b68d"
-    sha256 cellar: :any,                 ventura:        "72f9c1fe8aec34dfbe33710570244ce167b23e6fc44a212d73a3e191458eba6f"
-    sha256 cellar: :any,                 monterey:       "c59f159ba005d99c3e8dd98ccc211387bdf84e7a7d390b6eb4c09a2e824cdffa"
-    sha256 cellar: :any,                 big_sur:        "c0f61ac752a36e933fc8e98c647c8fd8cf46d48cdba4e267ba81616e31fb88d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df9c59819d0fa034007f44f2486607ebe1339a5e64e1757d9bfb55e1bcc3cf4c"
+    sha256 cellar: :any,                 arm64_sonoma:   "cac19aa8b102cded2c2d7fc56a1de901b7f851d08c9f48a596c93899851e30c7"
+    sha256 cellar: :any,                 arm64_ventura:  "d693bf66d30a8b1f6e65515c8bfb93d073022e3b9d25ce1d80fdb6f0715a5b80"
+    sha256 cellar: :any,                 arm64_monterey: "2aa6b4fc390a6993fcb729b7752787c44ae58552624c9fcf35642f082d5ba781"
+    sha256 cellar: :any,                 sonoma:         "26f9a64f29f38544214db194b53e2cf644d68b5999fa6d43f75a352f71780c92"
+    sha256 cellar: :any,                 ventura:        "e2f8e39753f2c63db4ed0271b3b15e56a0a13a3bd25b6ffabd48ef227bb2373c"
+    sha256 cellar: :any,                 monterey:       "9f8abd88062b832263d84b00ec671a98abbf95af28b33e68516c1384d54ea778"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "178fcc89becef0d2eadfa1f8b32282005fa48c5c312b44e71c76e1319940472f"
   end
 
   depends_on "gettext" => :build
