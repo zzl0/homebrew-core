@@ -3,10 +3,9 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/a1/34/067cf6a5a900bbbe787558a1a6bec80976e2454fef439e4680e849363267/cfn-lint-0.80.3.tar.gz"
-  sha256 "da3aaf75a398c2959c6a9bcb487f5fdcfde9d8b6b1eaa00958c9c8d8627db857"
+  url "https://files.pythonhosted.org/packages/44/e8/f677fb4b83bbad27986acee442907848ff853c9eedbb465b3936cd390f70/cfn-lint-0.80.4.tar.gz"
+  sha256 "53589cc4c2002bdf6c21c91f43e78a17dfbef2e870d7f45b0cbcb57bc76418d0"
   license "MIT-0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a255a70473365523b8c7f6f48e089aaa98ce44cfc31b8be2bfb3669e76a27e54"
