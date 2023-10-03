@@ -136,7 +136,6 @@ class QtAT5 < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/086e8cf/qt5/qt5-qmake-xcode15.patch"
     sha256 "802f29c2ccb846afa219f14876d9a1d67477ff90200befc2d0c5759c5081c613"
-    directory "qtbase/mkspecs/features"
   end
 
   def install
