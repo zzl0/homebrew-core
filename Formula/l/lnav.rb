@@ -4,6 +4,7 @@ class Lnav < Formula
   url "https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2.tar.gz"
   sha256 "3aae3b0cc3dbcf877ecaf7d92bb73867f1aa8c5ad46bd30163dcd6d787c57864"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -31,6 +32,7 @@ class Lnav < Formula
   end
 
   depends_on "libarchive"
+  depends_on "ncurses"
   depends_on "pcre2"
   depends_on "readline"
   depends_on "sqlite"
@@ -40,12 +42,11 @@ class Lnav < Formula
 
   def install
     system "./autogen.sh" if build.head?
-    ENV.append "LDFLAGS", "-L#{Formula["libarchive"].opt_lib}"
     system "./configure", *std_configure_args,
                           "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
                           "--with-libarchive=#{Formula["libarchive"].opt_prefix}",
-                          "LDFLAGS=#{ENV.ldflags}"
+                          "--with-ncurses=#{Formula["ncurses"].opt_prefix}"
     system "make", "install", "V=1"
   end
 
