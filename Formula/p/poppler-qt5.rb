@@ -1,8 +1,8 @@
 class PopplerQt5 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-23.09.0.tar.xz"
-  sha256 "80d1d44dd8bdf4ac1a47d56c5065075eb9991790974b1ed7d14b972acde88e55"
+  url "https://poppler.freedesktop.org/poppler-23.10.0.tar.xz"
+  sha256 "31a3dfdea79f4922402d313737415a44d44dc14d6b317f959a77c5bba0647dd9"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -32,6 +32,7 @@ class PopplerQt5 < Formula
   depends_on "freetype"
   depends_on "gettext"
   depends_on "glib"
+  depends_on "gpgme"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
