@@ -9,15 +9,13 @@ class CharmTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46b0efd348ba9f374b0ec6c3a5d09cb73065cc2cd1ec8cb1e3c45a55c453a8b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94531214d8fba88d06cca157455e2b722dbfdde7b55f986769d24fc31319402d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "963e2a11e98364a7a3572b45a300e4eeb93b6464b9afe6f46e5e4bb1175806ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84baa4e78140a908e10c592892e97eb2e8c86db1ac4f39933ca9278966e5d677"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87b22942959ba09870a33ee4477cd460b7fa4dde4c2729bf144a68035dda1db7"
-    sha256 cellar: :any_skip_relocation, ventura:        "2fc0cd62517d7d5e7e7601165ecf3e13ed9c4c03745ac0b6c7fbe0761b429222"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c9786aef398613ccb9957e1c39f47a1a4b723970f25ca2d3b1a72cb3f053359"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e5d4a106e3be5939857ac8b0670dd5801cf0ba64f27c0bb781a4d8c25ca7d48c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4f39cbaf8cd0bee33c62de26b8a7670654448104635be7df866d2729120d8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1ebc5b1c207084871bc9f11f22cf93b616b140ef38800395e398f27467c9107"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f4d454a9753150db3d2da0350501d5d8190bea6e4611220ba65c3dca7aac641"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6da039dc61724448b5bffda814bcd32b872e86f32143af2df1b59d9ca8ed589c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "daf9154a22e33ef1b70056e40f0a311525fbc3f901c62993057cbaebc8925d82"
+    sha256 cellar: :any_skip_relocation, ventura:        "8e1c900c882b34a24a10dba1827b0310380975593d7e90b844a7e944fc4ce6fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "816b3c27b9c10ec017caac8814b5a5da70cdd7ba7bcc0ba57a0f920494425f6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6f3c479f1cba585352d03fe957840f68bfbeccf45d63a20cdfb72e666a79208"
   end
 
   # `pkg-config` and `rust` are for `rpds-py`
