@@ -9,16 +9,13 @@ class Chatblade < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c538f814bac85ec478c5e7553e0380c04a0c9101c5e50fbf5c32f9750e5a56f5"
-    sha256 cellar: :any,                 arm64_ventura:  "be159c5b785e725032f2f4331e71b01f89d637baba34fd58fa135831f5b14fee"
-    sha256 cellar: :any,                 arm64_monterey: "2383ff68bbf2dd4f78df6eec7a5e886372e4f8f701aab138045cff04d73931cb"
-    sha256 cellar: :any,                 arm64_big_sur:  "4cb3e9654db21f76489123da21a957f69b047b12d5109cd3c5a4fba2bb1729d4"
-    sha256 cellar: :any,                 sonoma:         "dd0132d9c60373d29d1708e27e9fbde3ebd12f6502db63e32dc824e7d4b52b4f"
-    sha256 cellar: :any,                 ventura:        "5f81c7a51e514164c964915c6ae4fa20f56da06878d6578ccc9efcbd87470ce8"
-    sha256 cellar: :any,                 monterey:       "79945074a464b0743d92cfd7478d9eb988f516e51e8a464d943ed43588d6a235"
-    sha256 cellar: :any,                 big_sur:        "ba0d61f080ca3e9eb0e9a0bdec426068ee10c11881641d2fb84eeef93139d198"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f742a937a3ef573ec7c2e665c3c2f3048da1675e8a48af3a3c912137f78a7c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "60d974f6d09425b6b60d0dc0235b196a7246f81cafb3ea9aaf4f315a57227e06"
+    sha256 cellar: :any,                 arm64_ventura:  "31cdb72fa3c9914ca2e3e9aa0b76631764fdd0e756f04351b8c40b4470e1afd7"
+    sha256 cellar: :any,                 arm64_monterey: "ae4878a782199543036652520b0cef50475fc81b7e6350e72b64445d272b2a3a"
+    sha256 cellar: :any,                 sonoma:         "071053edffb2cf43de93484662fd69695bf811c098de6088752626c0bc85f074"
+    sha256 cellar: :any,                 ventura:        "c16248a67ab00ce7f83f4d9c60c9ff0788cfe57e0e70dff30e4780bdf7f6956d"
+    sha256 cellar: :any,                 monterey:       "61855b11e3e29e30a9c9e41252d4bde5bad2f1484134dba6916160bd14f4a790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ea373991282d2d25636de68b2545fe782b30e64245759353ebc36df72df4f2e"
   end
 
   depends_on "rust" => :build
