@@ -943,6 +943,9 @@
   "tox": {
     "exclude_packages": ["packaging"]
   },
+  "trafilatura": {
+    "exclude_packages": ["certifi", "lxml", "six"]
+  },
   "trailscraper": {
     "exclude_packages": ["six", "pytz"]
   },
