@@ -10,15 +10,13 @@ class AivenClient < Formula
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32e5bf7ce5041eb5c43e1e69d173f272f696d45e186bae09aacd21678de01ec0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7c16f9dbfd52d600d7b400b2a3571ef389d18d627fbe32219ad47083e03936a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f92d8ad9582026d3471263fbe23a303b417b250b0da77cc0f8eedf1c018a4fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c02141476bbc4e43ee80fb6a24515068c3375b31d2bc2a459aa96ae5dd949a5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02b21259e52064886d8e08d5b8e12789974bb5071edd292b88a1d276162e5bfe"
-    sha256 cellar: :any_skip_relocation, ventura:        "e066461ad2d864184d333b4b79d8ac88fc7dcc01b00dadb356104a8734865efe"
-    sha256 cellar: :any_skip_relocation, monterey:       "5aa10a0dbe616ae15a67804b890678394835b82f8c60b866e8d7d4bcc3063841"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e5ad7dd0115793bb9a5bb54a4255635ee3ff2581bb72cb5ac2073233dc95577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9e1e98cea896ce9bae947f62a42f05e218914456afef4ea47c4074c45f90ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46cdbbd41f6f6af1fd800435cb6511c7d32bb574b6d262d3a2f52960a9792c7d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7091ec3d90be6d5adf419aeda57e0b4c0736e23909d55d17b372731600809ea6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "254c45f94e28baaa9b7fa8149f8d7a9c3eb49505b5d93152df8fa5a53c1f804f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7e5401598e2f8efb7f0f21963ae6957afc909a8cd89a83e6dd66b9886ead346"
+    sha256 cellar: :any_skip_relocation, ventura:        "77e8151f5511e6ba444aadb85baa3e88a516e5379a82af6172f858771e3e731b"
+    sha256 cellar: :any_skip_relocation, monterey:       "009187ab4dccc4d231c11b511c5344f498a18913d2dedae3a4567de872aeeb6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e438338c91e0b0156633015f62d5eaa08bde64f27e119c609051e49bd6cb20"
   end
 
   depends_on "python-certifi"
