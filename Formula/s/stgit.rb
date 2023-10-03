@@ -18,18 +18,19 @@ class Stgit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12e5ab3b82281bdeb188c5586f177eca73926df1e68a39ca9c220198b303f0c4"
   end
 
+  depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "xmlto" => :build
   depends_on "git"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "make", "prefix=#{prefix}", "install-bin", "install-man"
     generate_completions_from_executable(bin/"stg", "completion")
-
-    system "make", "-C", "contrib", "prefix=#{prefix}", "all"
   end
 
   test do
@@ -45,5 +46,6 @@ class Stgit < Formula
     (testpath/"test").append_lines "a change"
     system "#{bin}/stg", "refresh"
     system "#{bin}/stg", "log"
+    system "man", "#{man}/man1/stg.1"
   end
 end
