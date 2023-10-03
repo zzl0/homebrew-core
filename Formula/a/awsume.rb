@@ -10,16 +10,13 @@ class Awsume < Formula
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "091600515f6ef774162a6ab8682e4be717a3c76ffdd3f5fe8da2c94a1286cb2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34cc433dbf4dd082d192a7862cb3e67b04552e55b3ebc14543b74d87833af34b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ed015b727191d782e1c4141b4c7daf098df5a0ad09d106db91890b725c8ed78"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb9b656e36b784a100ab2271b8c1a749cff32f50b74cacfabf165134145e6af6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd7eb2898a6bd40682344a08c8f9b5688f26d31f710d78694f65a430bdb51f68"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf65963314679dfb6443327920402a9b63d23474a9a29a036addcb2a0bc09a7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "e29cbf8fed2726d1f43723ab239d9892b0ff129b182e40c287e52b49bbdd6cf2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9e09f9f12828086b892e57cc1295aa84bdc74bb4b1182757ba48639ff0873f5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ab02ad5f98ce499784d7601b8cf4304544a17247f286764c14a3919d3688037"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf523e1f1c45fb23b30d4234987cf90ea6a5f072e87d82433295d26eb5cac208"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44975438f353a07a721fea6fd0040f6185b319b8c03d29f5e8a3cf319c18f467"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd4549aa9e802a30a02b587ac73e488468dc72ff40a6d4f81d8e37c326d91321"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ea71fb4f78a7346bbf26df06bfa30bf372fdc84a3b65d0f53da9045b22aafa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "a294cc7f0160391ce49472735e114a764f374f0eb592f5df4b7eece515987b3d"
+    sha256 cellar: :any_skip_relocation, monterey:       "21279412dc620393c4263554cf01145222d207bd5cac339f0eed8951b6c1d615"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb58373e8452f0237eb43c8f2968e76843629d94c9aa95115ba3b09d9ea44e4c"
   end
 
   depends_on "python@3.11"
