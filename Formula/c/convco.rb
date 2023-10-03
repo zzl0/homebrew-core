@@ -1,12 +1,9 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for details.
-  url "https://github.com/convco/convco/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "1e63e07e3d98aa0bcce10824d9aa2de89f0bda90bad3a322311dba4efe7a1d13"
+  url "https://github.com/convco/convco/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "8e5253e5968f364f86d2f1cfb24c95a68890bf620886c644c7df981b803bb808"
   license "MIT"
-  revision 1
   head "https://github.com/convco/convco.git", branch: "master"
 
   bottle do
@@ -23,16 +20,10 @@ class Convco < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/convco/convco/blob/v#{version}/Cargo.lock
-  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Use the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
 
   def install
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
 
     bash_completion.install "target/completions/convco.bash" => "convco"
@@ -50,7 +41,7 @@ class Convco < Formula
     linkage_with_libgit2 = (bin/"convco").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.6"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
