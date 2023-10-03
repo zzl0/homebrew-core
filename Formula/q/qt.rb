@@ -146,6 +146,22 @@ class Qt < Formula
     directory "qtbase"
   end
 
+  # build patch for qmake with xcode 15
+  # https://bugreports.qt.io/browse/QTBUG-117225
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/086e8cf/qt5/qt5-qmake-xcode15.patch"
+    sha256 "802f29c2ccb846afa219f14876d9a1d67477ff90200befc2d0c5759c5081c613"
+  end
+
+  # build patch for qtmultimedia with xcode 15
+  # https://github.com/hmaarrfk/qt-main-feedstock/blob/0758b98854a3a3b9c99cded856176e96c9b8c0c5/recipe/patches/0014-remove-usage-of-unary-operator.patch
+  # https://bugreports.qt.io/browse/QTBUG-113782
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/7f1cffaf/qt/6.5.1-QTBUG-113782.patch"
+    sha256 "aea3967b0f7b3047ce6c2a487b37c071f89fb642f8502bd1c4934c8cff7e4ed7"
+    directory "qtmultimedia"
+  end
+
   def install
     # Allow -march options to be passed through, as Qt builds
     # arch-specific code with runtime detection of capabilities:
