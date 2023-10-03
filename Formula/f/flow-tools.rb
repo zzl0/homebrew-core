@@ -25,6 +25,9 @@ class FlowTools < Formula
   end
 
   def install
+    # Fix for newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # Work around failure from GCC 10+ using default of `-fno-common`
     # /usr/bin/ld: acl2.o:(.bss+0x0): multiple definition of `acl_list'
     ENV.append_to_cflags "-fcommon" if OS.linux?
