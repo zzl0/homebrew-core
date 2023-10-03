@@ -5,6 +5,15 @@ class Bandicoot < Formula
   sha256 "e53fa0db2cd890475ad41452b0a70b036315e32dcbe45687f149789e341a85f6"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "a7fe2789a120b069cdf356e97f48e83ace1a27cca513fe75ea298218566f3343"
+    sha256 cellar: :any,                 arm64_monterey: "fbce0613203005d485e5903eddcbb0a65af5cb3465f4a0954a1cfe0ba097c91c"
+    sha256 cellar: :any,                 sonoma:         "e0e92e27c8eab643de8ace1a4dfbb76a25c5d875bffdd7b5e2fed5818eb0f47f"
+    sha256 cellar: :any,                 ventura:        "e9d073a3f19b5bb9c733d18edd2df0b2a0a28ce08f76f47b6c96d45d0110a236"
+    sha256 cellar: :any,                 monterey:       "184a6f22baf4c5d19704e3b0a15e7e6b1921810fd8edd008aa5e96ef4c4ec767"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0af67180b4874f79cff2c316db4ed782032b9ecaeebdc1acee3d0462ac46e424"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "clblas"
