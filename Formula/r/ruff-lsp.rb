@@ -8,15 +8,13 @@ class RuffLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4f309ea68ae0d340efd2e58ca92752cc6bca7503c18ed5d18a90613feb63338"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc8c5627a6f33240c38feadfc0f4026f8664df730b2f6d8b9fe649afa02e3ba5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c17956893524120c3c96a56477bbdfc4fc7c6207c114489d1f8b26ebe426fd09"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fd1cc0963223c61dab983dacaf1bb8902cdec6217fe657f542e9702832445a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "29874af4a5a5f7b5bff32a0821d3d363ce466a85197db5da94763eb013896af0"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb695f0022471e29b72696c734a34059d61bc2e8d1113f01838f3435e30763a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d1e2cbeeb04c590be5cfdf81d55dc75929f687a688dbe4ec53d049b87f0a664"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f0f99f778460c815d2b96f4a49348cedd993d007b3a05c715075f64714f265c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb1afb02d215293725b2addc5c7994947457e3120147265582008303ee4aac42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a8708674d50dcc5a697d02e75ad717bbf38a679e751c9c23f1c088d46c390d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf05f1dc699a28b06b4e096d37ad0839c353b015738644f5b2f4b6feba76927b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdd534f02e1a245ab00b42480cced751cafcd83e52ed2eb3f6405b20ab273cad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7e03a6714609f7ccf7f823cea3eac0cdc3a58bea92eb3a325493ebf51ed8cff8"
+    sha256 cellar: :any_skip_relocation, ventura:        "77abff0aa91e51f6e395462317b5ac7201316a0fa26c95715f4ac662d1e02227"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f12e56e7772ae5ea28034af69d2ec8bf174d6f85db58315944451cbc5b51982"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3384cb7690d38228874ed16c5e4839140d3db3ea898e7c319822531fbc0fdd0a"
   end
 
   depends_on "python-typing-extensions"
