@@ -136,6 +136,17 @@ class MoltenVk < Formula
                "SYMROOT=External/build", "OBJROOT=External/build",
                "build"
 
+    if DevelopmentTools.clang_build_version >= 1500
+      # Required to build xcframeworks with Xcode 15
+      # https://github.com/KhronosGroup/MoltenVK/issues/2028
+      xcodebuild "-create-xcframework", "-output", "./External/build/Release/SPIRVCross.xcframework",
+                "-library", "./External/build/Intermediates/XCFrameworkStaging/Release/Platform/libSPIRVCross.a"
+      xcodebuild "-create-xcframework", "-output", "./External/build/Release/SPIRVTools.xcframework",
+                "-library", "./External/build/Intermediates/XCFrameworkStaging/Release/Platform/libSPIRVTools.a"
+      xcodebuild "-create-xcframework", "-output", "./External/build/Release/glslang.xcframework",
+                "-library", "./External/build/Intermediates/XCFrameworkStaging/Release/Platform/libglslang.a"
+    end
+
     # Build MoltenVK Package
     xcodebuild "ARCHS=#{Hardware::CPU.arch}", "ONLY_ACTIVE_ARCH=YES",
                "-project", "MoltenVKPackaging.xcodeproj",
