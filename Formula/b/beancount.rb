@@ -10,16 +10,13 @@ class Beancount < Formula
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33bd940de51dbad15ff80a1ed2313cf5a6e4d22b8cd583c65be244b056c607c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85b4e8da406e9d747b3f5b5feb1f10bf5fcbd49c8156a7d7611f54f35759ef02"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4902eff120777a381b0102b3677b94ec09bda58e2a6eada7a680e6b874e78d2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97d8c421970ca06031cdbdd198fd876fe126dbd2d5ce248e400695568f8f2c43"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4338c5e101c8aeb7b219733db47435d9e691c03b2b42429b3bef620dacc655b"
-    sha256 cellar: :any_skip_relocation, ventura:        "42d2757ff54f67813350039a8b5f05b6b16f5fdbce3e70bcb4ae6cbdbb47826a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1715a664675b5f5fc23a43854892967151b9ea6cf878f2605167a6c8286efe90"
-    sha256 cellar: :any_skip_relocation, big_sur:        "716f0ec46ec0594b19fc02e06885426bfd914add259e3416fb1ec52332083573"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4265db479794935c86e1d9cb03eb72f1fbbc317fd1290ffaa5ff05e9079935f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a60e9bb2a68c6194583ab24c72bfa40d0f982da339f06d81ed8c3a8933647a37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a12ef4406ad867fa04481c2e46dd954e253dcfc3d43950074df9f5c5e4c1bd78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc95fe3af132ed64795db1dc7eda6ff319aa4869623050fab71872825b5cdef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a2b75c22df6dcc92dade0b5317c31e1b517c7b6f50b2ad5f13374d70900052b"
+    sha256 cellar: :any_skip_relocation, ventura:        "7782dd135d6469274614b748a9c844672072d7b4d9d3c110426d6900b235b8a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c1673a8f7329bbbb30efcf96855ded448b03ff6340b0b036eeb0e35e40cb24c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cf47803ee85d0f74511d77dd72e5392447281240f3c8ecc1c64f42ca4f0c222"
   end
 
   depends_on "python-certifi"
