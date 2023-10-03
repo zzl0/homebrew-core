@@ -3,8 +3,8 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/d1/12/2cf4f22e8f57e55ea8b68cd92700ce3c683be588dceaf6d71dbe10ce1e2e/localstack-2.3.1.tar.gz"
-  sha256 "c65a84d6754f0967e0b23ef11dc44dc321329e5b92b184b6fedef81993bcb6b6"
+  url "https://files.pythonhosted.org/packages/76/93/9852e0007fcbbd8274f7fcf8b3e1461e5e3d5a2591d4a929e54dea5f7a5a/localstack-2.3.2.tar.gz"
+  sha256 "fe9e929b34bea2ed329c787ade6a51886a58cbe1f1008ebd016a8b4511c57f8e"
   license "Apache-2.0"
 
   bottle do
@@ -35,8 +35,8 @@ class Localstack < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "dill" do
@@ -65,13 +65,13 @@ class Localstack < Formula
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/9b/af/52cfe801390be8d23f135407831f9f93ebf0436a7d1727553d34795b685c/localstack-core-2.3.1.tar.gz"
-    sha256 "2dbd2abc6448189adfc5e06bf7dd6eba41b3d5cc6a787de0cb03420e95fe6a7d"
+    url "https://files.pythonhosted.org/packages/9e/6a/a7143ff89ac04515962832ea74d300661d7f50f9712e313b063e7851108c/localstack-core-2.3.2.tar.gz"
+    sha256 "c453e6a4ee8a1c9ba47ad96cab897f718fe35754e4e1f043a8a711d3c9c45a7d"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/f4/30/b49f3e86fa999b052628f1012d74c9566e9d494680de2c437e8199f9fc3c/localstack-ext-2.3.1.tar.gz"
-    sha256 "22d3169f70d68d00204e8cc57b22f544c2d9d12e04b0ba50a413e0545661f270"
+    url "https://files.pythonhosted.org/packages/fb/d9/69922b1220f164cf719e8908c0e911160a3526344d400f6cfdac1486c5d3/localstack-ext-2.3.2.tar.gz"
+    sha256 "131e593e5b5e0da8b27b1f7442e9ae7157534dba69f6e5a206bbf0d6432bfbef"
   end
 
   resource "markdown-it-py" do
@@ -130,8 +130,8 @@ class Localstack < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/1d/d6/9773d48804d085962c4f522db96f6a9ea9bd2e0480b3959a929176d92f01/rich-13.5.3.tar.gz"
-    sha256 "87b43e0543149efa1253f485cd845bb7ee54df16c9617b8a893650ab84b4acb6"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "rsa" do
@@ -155,8 +155,8 @@ class Localstack < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
-    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   def install
