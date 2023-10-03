@@ -11,7 +11,7 @@ class Dex2jar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4ff845a14eb6055275b1144eb77d19334d57b2074bc7347136e23da4a180396f"
+    sha256 cellar: :any_skip_relocation, all: "e531f001f490218f7fc03902fa6012bcefd611ff63dadfb1caa057d4a8fc4978"
   end
 
   depends_on "openjdk"
