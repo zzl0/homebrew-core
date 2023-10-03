@@ -1,8 +1,9 @@
 class Star < Formula
   desc "Standard tap archiver"
-  homepage "https://cdrtools.sourceforge.net/private/star.html"
-  url "https://downloads.sourceforge.net/project/s-tar/star-1.5.3.tar.bz2"
-  sha256 "070342833ea83104169bf956aa880bcd088e7af7f5b1f8e3d29853b49b1a4f5b"
+  homepage "https://codeberg.org/schilytools/schilytools"
+  url "https://codeberg.org/schilytools/schilytools/archive/2023-09-28.tar.gz"
+  version "2023-09-28"
+  sha256 "564ea2365876a53eba02f184c565016399aee188c26d862589906cf3f92198e6"
   license "CDDL-1.0"
 
   bottle do
@@ -24,24 +25,24 @@ class Star < Formula
   depends_on "smake" => :build
 
   def install
-    ENV.deparallelize # smake does not like -j
+    deps = %w[libdeflt librmt libfind libschily]
+    deps.each { |dep| system "smake", "-C", dep }
 
-    system "smake", "GMAKE_NOWARN=true", "INS_BASE=#{prefix}", "INS_RBASE=#{prefix}", "install"
+    system "smake", "-C", "star", "INS_BASE=#{prefix}", "INS_RBASE=#{prefix}", "install"
 
     # Remove symlinks that override built-in utilities
-    (bin+"gnutar").unlink
-    (bin+"tar").unlink
-    (man1+"gnutar.1").unlink
-
-    # Remove useless files
-    lib.rmtree
-    include.rmtree
-
-    # Remove conflicting files
-    %w[makefiles makerules].each { |f| (man5/"#{f}.5").unlink }
+    (bin/"gnutar").unlink
+    (bin/"tar").unlink
+    (man1/"gnutar.1").unlink
   end
 
   test do
     system "#{bin}/star", "--version"
+
+    (testpath/"test").write("Hello Homebrew!")
+    system bin/"star", "-c", "-z", "-v", "file=test.tar.gz", "test"
+    rm "test"
+    system bin/"star", "-x", "-z", "file=test.tar.gz"
+    assert_equal "Hello Homebrew!", (testpath/"test").read
   end
 end
