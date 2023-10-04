@@ -3,8 +3,9 @@ class GitlabRunner < Formula
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
       tag:      "v16.4.0",
-      revision: "4e724e030caf32c8183d1a0a02c3e647ea56ea65"
+      revision: "6e766faf8f13dff6d05d0b4617fb4744a2149b52"
   license "MIT"
+  revision 1
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
   livecheck do
