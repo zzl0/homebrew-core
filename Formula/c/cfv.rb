@@ -19,7 +19,7 @@ class Cfv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f25c7b64de0e58996b6b1f0315799082bea2149a2be5e88aafe6355b7cf50d41"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
