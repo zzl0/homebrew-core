@@ -7,15 +7,13 @@ class Convco < Formula
   head "https://github.com/convco/convco.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7222ad5da0cc693ff86101262b1b73e72998f2838c7ce4e0f602c833623731bf"
-    sha256 cellar: :any,                 arm64_ventura:  "5ec15b1b11435483d4d7a81a2e98ce1950c9553d86923c02a4964b8de294ce27"
-    sha256 cellar: :any,                 arm64_monterey: "537fcd66c7b4037c20a7a3ef2733f491b45fb7fa06811c4bca0c7abf4d7ce7ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "6cdd65b054adf85300d597a22e6012a60cbcdf3c8665e20b866d052515b4894e"
-    sha256 cellar: :any,                 sonoma:         "48de67fcf3ac289bf202c1385af9afe472a3a6f3c3034a6af66f3b2e4643a8fd"
-    sha256 cellar: :any,                 ventura:        "5ae7a3541673b37d05c5787d199ada0a77b40328f1d454d3e472429b23159595"
-    sha256 cellar: :any,                 monterey:       "f8336b6db3727aebbdf842e065afa37de43432440823be5c7c3b57e3748e2585"
-    sha256 cellar: :any,                 big_sur:        "048861dbb45f7afb2742d11b6cbc5fc0675e1ff44c11fcf7000c07a6e595d2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7e2b5ccfa0ec16df1acd12a522d4ad935a13ab19cdd530f35a769e77d22a019"
+    sha256 cellar: :any,                 arm64_sonoma:   "03f8bd556d6e1e6efb6a8aac33ccd0ca45a89f9e654c57eb88c2eea888a75046"
+    sha256 cellar: :any,                 arm64_ventura:  "499362d8549e6af75ce8d5de9c19ef00e697ef98509bd915a1e27506c9c19959"
+    sha256 cellar: :any,                 arm64_monterey: "9728b6d25e3802f369f8065e0e11047c99568c687996713dd3295b262d980b73"
+    sha256 cellar: :any,                 sonoma:         "23a3641904c75d4cc837550888e462a1dc267ec72442ef20c3257ea555ff3909"
+    sha256 cellar: :any,                 ventura:        "379c20a8ca3430d9ecd09fbade806215ccd2accf4a5bc90acf77bc5db8ae3622"
+    sha256 cellar: :any,                 monterey:       "d490765dd9212c0ec3aa63d1be7e1282bc31e991a9fba1a043aaed7c2357d31f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46ab12a175a90de764e3ba2e95da151cd96ae54d413f16cdfdc47f15e0d64a25"
   end
 
   depends_on "pkg-config" => :build
