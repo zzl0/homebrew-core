@@ -19,7 +19,7 @@ class EgExamples < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "63d235ccf95c73511899a4de3ec81424dc71d2b264167ffe3e0a7e173e183676"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
