@@ -12,9 +12,11 @@ class Zig < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2045088ae2dc8f88dcb6e10a508d677a622e01c0082e9eb4def0e4629d968028"
     sha256 cellar: :any,                 arm64_ventura:  "c86f263129502db9b998b279c79ba373a6d9e88e2e47e4492ed696a004d21980"
     sha256 cellar: :any,                 arm64_monterey: "fbc4211c5beacb7cc1c7c36ba1db931492fb3289bbcbc2b085f0e5af6ab40659"
     sha256 cellar: :any,                 arm64_big_sur:  "472a2c08984811317234c134d7347266ce8e30c24ef75076f397d8b50b474e3b"
+    sha256 cellar: :any,                 sonoma:         "81b7a46ac4198743b53d92e02f20215a6505feb33c753ee6618528d3fbfc3ed6"
     sha256 cellar: :any,                 ventura:        "9adbe95444f3b648d1cd2ae2f8dc07891f7527cb1da369fd3f5db6c75ace1079"
     sha256 cellar: :any,                 monterey:       "172f93925e39207a580e1d5a71b211415364e8756e0a02386c9e5f6be99b1ea5"
     sha256 cellar: :any,                 big_sur:        "00002da55679b70ef280b06f67154a449876c5ab08b13cbdaa261bacca07fa74"
