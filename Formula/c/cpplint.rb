@@ -21,7 +21,7 @@ class Cpplint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2e0f14d6f474777b906407a39771c7a0ae66aaf49069079f4852498babffc56"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
