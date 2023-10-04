@@ -20,7 +20,7 @@ class Asciinema < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f12203e93e58b0f689d3c4ebac81bc2d507bee2ff38278023f68852b8c19de61"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
