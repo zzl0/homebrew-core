@@ -9,16 +9,14 @@ class PipAudit < Formula
   version_scheme 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac82040418ea7cb7bba0a475f586a6097bdd744b9c330e05974208ac7dfb249d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c766a569cf207c0037899b744d9d3bdf19bd83551b7863ceabeb47834b62fe33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e806c0d1c276e48e944594d3e12aad583ca5d45a4efc298bc0ccb3514405d6b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "651cdad878a1949d5399d73cf070e511ea73c5fde2cabb927563fd203f580f2b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "263a3b76db1458e7ea8e6e50771a9f330e878bbc184868f34ee0751a3e60ae33"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd2294d5013a25a4eb83c3f17f6a9e2ba3eecee2532f61ae3cbf2fe4899eb6ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "6dab01163eff1fa103020bfea772b4fadcad32ff66e63ec10785108acad44451"
-    sha256 cellar: :any_skip_relocation, big_sur:        "84757652e6877fcf8bfa55ae1e1c72d94a8dad072a0349d3c21c23a41a6b1f04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c406df572fad31b261ec6c690e1a657f1485ab5edde5da0589b3b6b0cce05f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eaa4a646bbe2a6f149bc78b94e1655e4af19661a58bb6f28d5a3d6138367d09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a990ca60c45e373e59c68db714676f6b9a09c5a36378fd887ea4cb30f44e3268"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "701fcb68b2661272774ac0365355efae571e30fabb45ebd7163e8862ea7a82d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec46e86273adb444f1839577e38725c2ce7e76ce314bae86ca265da6d357cd25"
+    sha256 cellar: :any_skip_relocation, ventura:        "a31d82002baed3626e0d9b3bfd997be2e9d190526a380294fbda8add2de6106a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7258f78610bd6d53517e07677b0dcd8756c73141411e4b59201fd15b57b0a10a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba92e295d41e3ced61f0615f416ceddfa32a0cbb1f417c13f47673bcaffe4b46"
   end
 
   depends_on "pygments"
