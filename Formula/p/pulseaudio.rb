@@ -101,8 +101,9 @@ class Pulseaudio < Formula
       args << "--with-udev-rules-dir=#{lib}/udev/rules.d"
     end
 
-    # Workaround for Xcode 14.3.
-    ENV.append_to_cflags "-Wno-strict-prototypes" if DevelopmentTools.clang_build_version == 1403
+    # Fix compilation with Xcode 14.3 and later
+    ENV.append_to_cflags "-Wno-strict-prototypes" if DevelopmentTools.clang_build_version >= 1403
+
     if build.head?
       # autogen.sh runs bootstrap.sh then ./configure
       system "./autogen.sh", *args
