@@ -19,10 +19,11 @@ class Fades < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dee2d857138f7d8038bc46934a7e1f4bd517891f44b293014c8f0963e10b1f36"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
