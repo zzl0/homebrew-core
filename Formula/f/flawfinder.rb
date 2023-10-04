@@ -28,7 +28,7 @@ class Flawfinder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa4ede546ed9ce3bc3283002cde1fb529a6c91030614df0a5e30adadf38b933"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     rewrite_shebang detected_python_shebang, "flawfinder.py"
