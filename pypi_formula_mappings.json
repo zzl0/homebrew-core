@@ -195,8 +195,9 @@
   },
   "checkov": {
     "exclude_packages": [
-      "certifi", "cffi", "markdown", "packaging", "pycparser", "PyYAML", "six",
-      "tabulate", "typing-extensions"
+      "certifi", "cffi", "markdown", "numpy",
+      "packaging", "pycparser", "pyparsing", "PyYAML", "six",
+      "tabulate", "toml", "typing-extensions"
     ]
   },
   "ciphey": {
