@@ -20,6 +20,7 @@ class Platformio < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python@3.11"
 
@@ -66,11 +67,6 @@ class Platformio < Formula
   resource "marshmallow" do
     url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
     sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pyelftools" do
@@ -120,6 +116,8 @@ class Platformio < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"pio", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
