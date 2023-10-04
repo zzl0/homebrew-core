@@ -47,6 +47,13 @@ class Zip < Formula
     ]
   end
 
+  # Fix compile with newer Clang
+  # Otherwise configure thinks memset() and others are missing
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/d2b59930/zip/xcode15.diff"
+    sha256 "99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c"
+  end
+
   def install
     system "make", "-f", "unix/Makefile", "CC=#{ENV.cc}", "generic"
     system "make", "-f", "unix/Makefile", "BINDIR=#{bin}", "MANDIR=#{man1}", "install"
