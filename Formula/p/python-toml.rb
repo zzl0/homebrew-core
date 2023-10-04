@@ -18,23 +18,32 @@ class PythonToml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4af3afd961e422d62ca04300144dd06e722e617b8ca90d0e66177980d306c66"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
-    system python3, "-c", <<~PYTHON
-      import toml
-      toml_string = """
-      title = "TOML Example"
-      """
-      parsed_toml = toml.loads(toml_string)
-    PYTHON
+    pythons.each do |python|
+      system python, "-c", <<~PYTHON
+        import toml
+        toml_string = """
+        title = "TOML Example"
+        """
+        parsed_toml = toml.loads(toml_string)
+      PYTHON
+    end
   end
 end
