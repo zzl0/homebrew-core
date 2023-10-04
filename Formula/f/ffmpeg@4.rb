@@ -71,6 +71,12 @@ class FfmpegAT4 < Formula
 
   fails_with gcc: "5"
 
+  # Fixes assembling with binutil as >= 2.41
+  patch do
+    url "https://github.com/FFmpeg/FFmpeg/commit/effadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
+    sha256 "9800c708313da78d537b61cfb750762bb8ad006ca9335b1724dbbca5669f5b24"
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}
@@ -130,6 +136,10 @@ class FfmpegAT4 < Formula
       # Since libvmaf v2.0.0, `.pkl` model files have been deprecated in favor of `.json` model files.
       inreplace f, "vmaf_v0.6.1.pkl", "vmaf_v0.6.1.json"
     end
+
+    # The new linker leads to duplicate symbol issue
+    # https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     system "./configure", *args
     system "make", "install"
