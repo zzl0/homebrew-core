@@ -48,6 +48,7 @@ class Figlet < Formula
     bin.mkpath
 
     system "make", "prefix=#{prefix}",
+                   "CFLAGS=-Wno-implicit-function-declaration",
                    "DEFAULTFONTDIR=#{pkgshare}/fonts",
                    "MANDIR=#{man}",
                    "install"
