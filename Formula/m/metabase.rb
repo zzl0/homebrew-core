@@ -11,15 +11,13 @@ class Metabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9ce04ebc6493e6be13ad9e2a7440d3e7329bf96d7093ae26e546f3cb27c2c198"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8baf06f41e7d0971c3ab469630f59507dfa8dcdafa116d94ad1f09ee71a2606f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, monterey:       "8b49a3a7c39483a29e5ab7cfcfc2ccf7835d26f158a4b704d138b980795e4a48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da327cf737d35decb6c689547881a8b0552d465eec11db0339b358b1723faa09"
   end
 
   head do
