@@ -49,7 +49,6 @@ class QwtQt5 < Formula
     else
       "macx-g++"
     end
-    spec << "-arm64" if Hardware::CPU.arm?
     args << spec
 
     qt5 = Formula["qt@5"].opt_prefix
