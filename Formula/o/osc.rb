@@ -14,15 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "269709d25fffe18a00c3c79d85cb0256053fb484d8f201c1b14a0ff0813069a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba87f53d181c1feb7e4d7a8503c9ef6b0e248d5c3659d72d865547e8a5dfdcb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "444e7a6b88fd425d0af40acbd57a304f079ebeabdd650b97c11f8a8c04bce8dc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4552d489269cdb724a5ee65ab916c4a41f0a3a4baf50fcd9d65d5f44a41749c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4749b99baa9d2a6030cf8130a2391cd9b763d8d6ec912d89eb7cb40db6c7e34"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8bf22d523c081adbf36e0e8a9b8ac0349ea6af0bf1c9515a2ee2c0ccf7fdcb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "34b219fca71847b18fec439feabe73a686df04f3c7e91c184fde2f873dcd8093"
-    sha256 cellar: :any_skip_relocation, big_sur:        "377b241e75fc821c90df9fa35255361eff998770dc42e7412d788e075d910f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "352bf366e1130d660d2cfbafe91e56c1b8dfc530401e4c6a37a09ba1bb98a65c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d882b017ab67c6b48406592474634a864733758c063505055bde44f96f5d93a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "adc105a87f219e8e7142950c19860a009520347fd2c694795cb0863775be4b72"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f46812a1f97e48013cb311cff9ea54a92020c9e8cef2ada8865f3c85b0ac544"
+    sha256 cellar: :any_skip_relocation, sonoma:         "883ab3dc854782884e4fe02e896db8be444cb3b9e7dc17d7a7ac80a6a661e55d"
+    sha256 cellar: :any_skip_relocation, ventura:        "affa1c92df934838b3b1472b2a47573104b916edc3741a56a96dfe26b481801f"
+    sha256 cellar: :any_skip_relocation, monterey:       "601007eedeb2136b459924ba55151c4b7a40ed2beff944b951eda7c6687b49ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcd35c3de2718bf85aa742666bc5b9eafbb7cf1803286ffaefd863c039967185"
   end
 
   depends_on "cffi"
