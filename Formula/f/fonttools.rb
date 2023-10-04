@@ -6,6 +6,7 @@ class Fonttools < Formula
   url "https://files.pythonhosted.org/packages/43/bc/6051ee22b88c5d9d39ea68e8e2422d3036d9b52ac2afc559f7397d59bc64/fonttools-4.43.1.tar.gz"
   sha256 "17dbc2eeafb38d5d0e865dcce16e313c58265a6d2d20081c435f84dc5a9d8212"
   license "MIT"
+  revision 1
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
@@ -18,7 +19,7 @@ class Fonttools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "033a0eea986c0cc4192336caa6007e7b6a94aade8805c7c395c69efabe17ee2d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
