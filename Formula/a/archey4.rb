@@ -19,7 +19,7 @@ class Archey4 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "41647f3b70ab43873f22623333be083aeb62e447e2d0b6d885dc13b1e013c1c1"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "distro" do
     url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
