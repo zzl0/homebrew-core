@@ -18,23 +18,23 @@ class PythonPackaging < Formula
   depends_on "python-flit-core" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
-    deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      system python, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-c", "import packaging"
+      system python, "-c", "import packaging"
     end
   end
 end
