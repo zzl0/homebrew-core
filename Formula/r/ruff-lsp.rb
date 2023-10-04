@@ -17,6 +17,7 @@ class RuffLsp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3384cb7690d38228874ed16c5e4839140d3db3ea898e7c319822531fbc0fdd0a"
   end
 
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "ruff"
@@ -34,11 +35,6 @@ class RuffLsp < Formula
   resource "lsprotocol" do
     url "https://files.pythonhosted.org/packages/22/a1/4df53bbe3663de65ad90c6bbc2e6e8779b61fba1e13ee9a21a0f2f7db8f9/lsprotocol-2023.0.0b1.tar.gz"
     sha256 "f7a2d4655cbd5639f373ddd1789807450c543341fa0a32b064ad30dbb9f510d4"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pygls" do
