@@ -10,6 +10,16 @@ class PythonAT312 < Formula
     regex(%r{href=.*?v?(3\.12(?:\.\d+)*)/?["' >]}i)
   end
 
+  bottle do
+    sha256 arm64_sonoma:   "648679739d92f416efbba6d16301e3d4346b1db244edc55f8d27d99adfec13b3"
+    sha256 arm64_ventura:  "bf8264659e1a706e885dc6f20d265c1a3371a7ca683116b5614988be1e334ddf"
+    sha256 arm64_monterey: "83ba055c2e901f0b565a688b4b66fc69b46aacaf10bec077238cac1573cba0b8"
+    sha256 sonoma:         "0742a12a41a4ab588a454a0ee3a229320a783202b62fc3e1c30ef8c7cbaa6b8c"
+    sha256 ventura:        "8d76fdc54b06ec47bf00acfd5e831a9609b324368ec005e7ccef24ae0de3eada"
+    sha256 monterey:       "b45d7a351be94de58193b7da0278f9fe2f2e65fc289f4b61aa803773a5897430"
+    sha256 x86_64_linux:   "3292fb503860878bc713768eca77989885df778421cfba5331d566b0ab4d50dd"
+  end
+
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? only_if: :clt_installed
