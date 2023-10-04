@@ -15,17 +15,14 @@ class EyeD3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bed925f4d24643284e9214be4f6000ade5a25eb0f29a4b6dbfdc824952b35a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f4883bcbee1f7a8c72a814ceda0bdd774dab13090f5788abe618e27a20c75dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd6b0258622b3307eb3bf54bcabcd8cf62c1585d77656817a25281fc387a9903"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f7f2c3f630ae636d131e25e7c6751e7e303c93853078ff5d91ec1a48fdb6ec1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d41afb4fbced1aaf98744fcb318f2369a6aedf726ef413e57945de9b8ff344f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "2eeb90f36cce98ebb93f4b9ce76118449e38f7736a7a1d6a6d77839110decec0"
-    sha256 cellar: :any_skip_relocation, monterey:       "b1e52d17783493b79d1c3ee81dcec2d3ea807c8593e436f0507dc95f5e96b683"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aaffc02514d0c8810236b9a67650e67c3b76e41057afc6f15429102c28a3571c"
-    sha256 cellar: :any_skip_relocation, catalina:       "ef09a7738882c59ae2adf8939dd5237118668c7fe11e61c953f36c992d3648c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b3f33169eb14293fbcea9aa6e15b03ba6eb883f6ca6c2d18121656e4c8da9ae"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82de04337c58285d3e4abcfb67a60272f03c1ce916fa35dbe61498c9588b8af0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34ae7dc502d54944b88aecf0fbe5e6ac8ab2aae47aad909349a9b8aac5d0554f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9500fc35318cdeec986c0aacdb289357aeb8493711753f7d7b31b2c89d120c31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b40280bcfd1888396cb45cefa346437aab970870ba033bf4c4fde30d4909cdb6"
+    sha256 cellar: :any_skip_relocation, ventura:        "96bd883c69dde8ff0cf42d94e922820288b606626abced08ee8e7ed44aeb1092"
+    sha256 cellar: :any_skip_relocation, monterey:       "77c5ea63850535725c13d37b5f20e513fac18a0107a2c73d4764cc0878060ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "599358308609858956faa08bbc1e00c50893d7cb743f475823f1ef79ce8a71ce"
   end
 
   depends_on "python@3.12"
