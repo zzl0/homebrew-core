@@ -1,8 +1,8 @@
 class Gitea < Formula
   desc "Painless self-hosted all-in-one software development service"
   homepage "https://about.gitea.com/"
-  url "https://dl.gitea.com/gitea/1.20.4/gitea-src-1.20.4.tar.gz"
-  sha256 "f7a2c8effe05672d7b2840f6c5ce141725b87b8ec364cb929ccc3b96861807c7"
+  url "https://dl.gitea.com/gitea/1.20.5/gitea-src-1.20.5.tar.gz"
+  sha256 "707fc01ec15739dbdf49f8fd01951dde5fd1958134ea8d41c99bb4bef190b97c"
   license "MIT"
   head "https://github.com/go-gitea/gitea.git", branch: "main"
 
@@ -52,7 +52,7 @@ class Gitea < Formula
     pid = fork do
       exec bin/"gitea", "web", "--port", port.to_s, "--install-port", port.to_s
     end
-    sleep 2
+    sleep 5
 
     output = shell_output("curl -s http://localhost:#{port}/api/settings/api")
     assert_match "Go to default page", output
