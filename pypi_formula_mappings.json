@@ -799,7 +799,7 @@
     "exclude_packages": ["docutils"]
   },
   "ruff-lsp": {
-    "exclude_packages": ["ruff", "typing-extensions"]
+    "exclude_packages": ["ruff", "packaging", "typing-extensions"]
   },
   "s3cmd": {
     "exclude_packages": ["six"]
