@@ -38,6 +38,13 @@ class Openconnect < Formula
     sha256 "4e0d4367806c8b54da76aaae4bb550993d8155894006705d21b16eabdbf47559"
   end
 
+  # Fix for GnuTLS v3.8.1
+  # https://gitlab.com/openconnect/openconnect/-/merge_requests/490
+  patch do
+    url "https://gitlab.com/openconnect/openconnect/-/commit/7512698217c4104aade7a2df669a20de68f3bb8c.diff"
+    sha256 "8a26be2116b88bf9ad491b56138498a2a18bd80bb081e90a386ee8817a1314c3"
+  end
+
   def install
     (etc/"vpnc").install resource("vpnc-script")
     chmod 0755, etc/"vpnc/vpnc-script"
