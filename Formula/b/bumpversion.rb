@@ -24,7 +24,7 @@ class Bumpversion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a45afe9a5c2eb4f45044b2e7661f1f95d70e1f6d0518a4ffe0e62c205de364d2"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
