@@ -22,7 +22,7 @@ class Csvtomd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6c324ebdfa22e9e83a7c6603910e86b2787afca3cda9df5284ea98976ac7e95"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # ValueError: invalid mode: 'rU'
   patch :DATA
