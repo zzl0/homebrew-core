@@ -19,7 +19,7 @@ class Bashate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5969e7badb3d13d8392e1672235b959e0eed7f36545fd5ecf3a861cf4c8cfb80"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "pbr" do
     url "https://files.pythonhosted.org/packages/02/d8/acee75603f31e27c51134a858e0dea28d321770c5eedb9d1d673eb7d3817/pbr-5.11.1.tar.gz"
@@ -27,7 +27,6 @@ class Bashate < Formula
   end
 
   def install
-    ENV["PBR_VERSION"] = version.to_s
     virtualenv_install_with_resources
   end
 
