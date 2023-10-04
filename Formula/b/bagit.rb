@@ -29,7 +29,14 @@ class Bagit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc9585e81bfa176935a810e61cedbcddb08e5f82e96ae24496d1d11ad6e0f318"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  # Replace pkg_resources with importlib
+  # https://github.com/LibraryOfCongress/bagit-python/pull/170
+  patch do
+    url "https://github.com/LibraryOfCongress/bagit-python/commit/de842aad182c74de21d09d108050740affb94f2e.patch?full_index=1"
+    sha256 "f7fab3dead0089f44e6e65930a267f6d69f2589845e9ea4c1d6bbb3847f5ff3a"
+  end
 
   def install
     virtualenv_install_with_resources
