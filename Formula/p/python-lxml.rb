@@ -17,9 +17,10 @@ class PythonLxml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ea4c4dabb7b024ff08a7ff531de53948e73d06b79b0da31ea3281c052106574"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
