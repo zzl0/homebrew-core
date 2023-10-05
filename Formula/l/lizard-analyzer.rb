@@ -21,7 +21,7 @@ class LizardAnalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade75fa3f82899c4daeb28b9901b582f43465065bb03d2c48719d691f6986211"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
