@@ -864,6 +864,9 @@
       "six", "typing-extensions"
     ]
   },
+  "sip": {
+    "exclude_packages": ["packaging"]
+  },
   "slither-analyzer": {
     "exclude_packages": ["certifi", "packaging"]
   },
