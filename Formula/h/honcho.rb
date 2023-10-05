@@ -22,7 +22,14 @@ class Honcho < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f996e71e6519ada288e46a31eea25d58fac4feab9f9742feaba3f24190d163"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  # Replace pkg_resources with importlib for 3.12
+  # https://github.com/nickstenning/honcho/pull/236
+  patch do
+    url "https://github.com/nickstenning/honcho/commit/ce96b41796ad3072abc90cfab857063a0da4610f.patch?full_index=1"
+    sha256 "a20f222f57d23f33e732cc23ba4cc22000eb38e2f9cd5c71fdbc6321e0eb364f"
+  end
 
   def install
     virtualenv_install_with_resources
