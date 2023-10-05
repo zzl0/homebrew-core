@@ -17,9 +17,10 @@ class PythonMarkupsafe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81ec603d54ee57cdb6d26e68e4dac2598139747f2540cc032aaf59f5d937541d"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
