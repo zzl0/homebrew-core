@@ -54,6 +54,11 @@ class Keyring < Formula
     sha256 "cabaa341ad0389ea83c17a94566a53ae4c9d07349861ecb14dc6d0345cf9ac5d"
   end
 
+  resource "shtab" do
+    url "https://files.pythonhosted.org/packages/72/5c/6614a030e5308c244f3fb7ada978d3860720d8dc69522c651d3052c50e8c/shtab-1.6.4.tar.gz"
+    sha256 "aba9e049bed54ffdb650cb2e02657282d8c0148024b0f500277052df124d47de"
+  end
+
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/00/27/f0ac6b846684cecce1ee93d32450c45ab607f65c2e0255f0092032d91f07/zipp-3.15.0.tar.gz"
     sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
@@ -61,6 +66,8 @@ class Keyring < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"keyring", "--print-completion", shells: [:bash, :zsh])
   end
 
   test do
