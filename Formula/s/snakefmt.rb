@@ -3,8 +3,8 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/36/9c/00be291ff608ca73cbc9662c1c59cddef20279298e0fb410ca1ec1875c99/snakefmt-0.8.4.tar.gz"
-  sha256 "277eb436d4d61161d2c75c6eece44df34bcbb6299bc3f4fffafb0976e16afe40"
+  url "https://files.pythonhosted.org/packages/40/bd/86b3e22ada4ced9529739b6ec7004c3f5b3cadf31c83bb4ce3e9650b5a2e/snakefmt-0.8.5.tar.gz"
+  sha256 "5aa5182dbbbeb84d477dd0f5a9eeeba41bac1f185cfd4897a0b005d4af59ba71"
   license "MIT"
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
@@ -24,13 +24,6 @@ class Snakefmt < Formula
   depends_on "black"
   depends_on "python-toml"
   depends_on "python@3.11"
-
-  # Switch build-system to poetry-core to avoid rust dependency on Linux.
-  # https://github.com/snakemake/snakefmt/pull/199
-  patch do
-    url "https://github.com/snakemake/snakefmt/commit/cee8a662c286fc78a593534f5700e08a7096c822.patch?full_index=1"
-    sha256 "094e56dd75bf2506ac3c73ab9877cd2a56137092c98bd8063404f57a77825536"
-  end
 
   def install
     virtualenv_install_with_resources
