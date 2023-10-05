@@ -109,6 +109,8 @@ class Pgcli < Formula
     skip = %w[psycopg pytzdata]
     venv.pip_install resources.reject { |r| skip.include? r.name }
     venv.pip_install_and_link buildpath
+
+    generate_completions_from_executable(bin/"pgcli", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
