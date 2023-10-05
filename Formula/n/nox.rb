@@ -19,6 +19,7 @@ class Nox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "10bee3f89607504f58651106c059b3563f9fcd870bfe7c7553dd4c56f2950bc1"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "virtualenv"
@@ -31,11 +32,6 @@ class Nox < Formula
   resource "colorlog" do
     url "https://files.pythonhosted.org/packages/78/6b/4e5481ddcdb9c255b2715f54c863629f1543e97bc8c309d1c5c131ad14f2/colorlog-6.7.0.tar.gz"
     sha256 "bd94bd21c1e13fac7bd3153f4bc3a7dc0eb0974b8bc2fdf1a989e474f6e582e5"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   def install
