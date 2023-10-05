@@ -8,15 +8,14 @@ class GitDeleteMergedBranches < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5cf4cb8f786e72e3297a960b340f1ebed926b559fbddbbd2fd0b78e8ca7eb81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1f4cadd23d7ae986e1cd277b4671285c5cb9d37b82a56cf5d5bded60c2c66dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ba8bdbfd1e8a48055f4ccf9c80555f30493b81d22275ea8c6f1f068aea5993b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ee73deb52b0d188264da540f96117a68ec47a23b5d48bcff443a30051fe1fd3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60b2fa65f86e932d3931d477fbe68b5966cbcdc470d34443c5b52fdb6adf7c5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "32b93603171ff630752789326d73133cfd34d82992d441adbc24fb8141ff3919"
-    sha256 cellar: :any_skip_relocation, monterey:       "b03b8a74a640775cad3e87ae9f57b78f3e9fc25d369fa52997edfc3e6614a53b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d03ae011563b36c9bb3a21b0d409de1c93d17b2e064fdb217edf46604bb34104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60d1a952e80df638527282ce31225320e9300227fcfacbbf8ba36135cdab8441"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3752fa27f6c46d580d98c2d24228fd5685629fec778a1f1d82e03e9308b7aea4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32a55097c34e9df80eb06db35a8282834cecab1b976815997f4c5ad5823b9517"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c4c3e401baa24ecf07d031ac6031920508e8eb0dee82f675f509378e7fbc203"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c768fb1021ad94916518b18842d1483ed470794d2dbc8b39697f73db100be0df"
+    sha256 cellar: :any_skip_relocation, ventura:        "b79be0099c5dae02d3a867b26723dcc719bda2052a120968e2a5007a1d674a94"
+    sha256 cellar: :any_skip_relocation, monterey:       "618cf5607d3e2529d07746eade8ab5109b4a312cb675b1c815a6926c94b1d375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1979eb7353922d1985d55ec9dd94b8e2291ebe63661d72e75be77902bf30ba6"
   end
 
   depends_on "python@3.12"
