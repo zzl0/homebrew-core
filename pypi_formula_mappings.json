@@ -667,6 +667,9 @@
   "pip-audit": {
     "exclude_packages": ["certifi", "Pygments", "six"]
   },
+  "pip-tools": {
+    "exclude_packages": ["build", "packaging"]
+  },
   "pipenv": {
     "exclude_packages": ["certifi"]
   },
