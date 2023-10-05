@@ -37,6 +37,15 @@ class Colima < Formula
     generate_completions_from_executable(bin/"colima", "completion")
   end
 
+  service do
+    run [opt_bin/"colima", "start", "-f"]
+    keep_alive successful_exit: true
+    environment_variables PATH: std_service_path_env
+    error_log_path var/"log/colima.log"
+    log_path var/"log/colima.log"
+    working_dir Dir.home
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/colima version 2>&1")
     assert_match "colima is not running", shell_output("#{bin}/colima status 2>&1", 1)
