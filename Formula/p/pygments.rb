@@ -4,6 +4,7 @@ class Pygments < Formula
   url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
   sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
@@ -18,11 +19,13 @@ class Pygments < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f5931cbf1c8329172ba638a022190b042ae9eab47b141a43148c811928432ea"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
-    deps.select { |dep| dep.name.start_with?("python") }
+    deps.select { |dep| dep.name.start_with?("python@") }
         .map(&:to_formula)
         .sort_by(&:version)
   end
