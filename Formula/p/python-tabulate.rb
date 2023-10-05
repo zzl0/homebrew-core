@@ -18,8 +18,10 @@ class PythonTabulate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "47496825538f1a5d0ab294a6fd11f303db31bdfbc88703df81603b903ba8815f"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
-  depends_on "python@3.11" => [:build, :test] # FIXME: should be runtime dependency
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test] # FIXME: should be runtime dependency
 
   def pythons
     deps.map(&:to_formula)
