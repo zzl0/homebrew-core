@@ -21,7 +21,7 @@ class Ly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dd0337b0b409bba2cc68d2639d74de072eba648a12dfd212f4813b479dd0ddb"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
     deps.map(&:to_formula)
