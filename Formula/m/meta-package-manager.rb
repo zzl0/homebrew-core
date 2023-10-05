@@ -24,6 +24,7 @@ class MetaPackageManager < Formula
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -122,11 +123,6 @@ class MetaPackageManager < Formula
   resource "packageurl-python" do
     url "https://files.pythonhosted.org/packages/33/34/a7843f732e1e0b01e961f6ae835b3fd6bd4e361c1a3a72debd31244cb718/packageurl-python-0.11.2.tar.gz"
     sha256 "01fbf74a41ef85cf413f1ede529a1411f658bda66ed22d45d27280ad9ceba471"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pallets-sphinx-themes" do
