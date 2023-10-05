@@ -341,7 +341,6 @@ class PythonAT312 < Formula
     # listed in the easy_install.pth. This can break setuptools build with
     # zipimport.ZipImportError: bad local file header
     # setuptools-0.9.8-py3.3.egg
-    rm_rf Dir["#{site_packages}/setuptools[-_.][0-9]*", "#{site_packages}/setuptools"]
     rm_rf Dir["#{site_packages}/distribute[-_.][0-9]*", "#{site_packages}/distribute"]
     rm_rf Dir["#{site_packages}/pip[-_.][0-9]*", "#{site_packages}/pip"]
     rm_rf Dir["#{site_packages}/wheel[-_.][0-9]*", "#{site_packages}/wheel"]
