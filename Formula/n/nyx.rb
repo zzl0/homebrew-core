@@ -22,7 +22,7 @@ class Nyx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "38098429261a50eaa8e1256002a97b4940172d36b7676e3aee11fb26002f5c94"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "stem" do
     url "https://files.pythonhosted.org/packages/b2/66/c5515de764bffae1347e671819711268da5c02bfab8406223526822fe5f6/stem-1.8.1.tar.gz"
