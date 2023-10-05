@@ -13,15 +13,13 @@ class Irssi < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4eb3e56f00e5beeb3164b1f0d5a869087e7b4d90dca54681446e5b13836ea834"
-    sha256 arm64_ventura:  "fd81cf719504dda54a2335a49c745870b6996326096ded24504094a0df531ae3"
-    sha256 arm64_monterey: "837aed2e22573fca9cc4ca6d7ed520a0c05e8160aa0df094f5531f4e281c48eb"
-    sha256 arm64_big_sur:  "d3b5e6066a0e40f5cf365ae955e30a26a110ea4ef4687c44b3e6d0ee6cb729e4"
-    sha256 sonoma:         "e827032f7cba05ba9148cde7ed74b028d289775118bff7608e125ba2ec269a4e"
-    sha256 ventura:        "3301c9947b6a95f068203b20511d0df67bff7165420cd4360189558e4e3f7522"
-    sha256 monterey:       "d2846432df35bd76a9f268bb77227494e4f3cb12904c8d5dcb67aceb58915c0a"
-    sha256 big_sur:        "7c0df2821bcdc4e622b87b39ff409f68097cdc60834c8aaa98a7c513ff1ef830"
-    sha256 x86_64_linux:   "be737d817ac2d417e733e9feee98f64ce76428928cdabd9e88bba235fb700dee"
+    sha256 arm64_sonoma:   "9376608f394ab71d9f3ed2f89f39fb26d6673626f49b931028f0368599113ddc"
+    sha256 arm64_ventura:  "46c6000387e22c3492210d205c60d371836a79070f4c9f28d1cba742bddb7c14"
+    sha256 arm64_monterey: "5fa2114a1ed6bcfb0e7c0236b3f8411cf5d6bcec87d352f0a50ba2ee89ed7a37"
+    sha256 sonoma:         "7ae1eee9a714ca68ee92db0cb1940b0f66631a444002303218b41fb2f3aca3e6"
+    sha256 ventura:        "2ee0a18af53baa8656b69a40163a44fb303c2d65378844812b30f56f25fa5df5"
+    sha256 monterey:       "7f006a852802e1b8e650b0e4a47bcce7814a5954eedf82e71f29a45ec2f9993d"
+    sha256 x86_64_linux:   "4e0e4585630510c4b4df61c02103c0018f2e7fb6f1f94c4861655dd73a2f3e00"
   end
 
   depends_on "pkg-config" => :build
