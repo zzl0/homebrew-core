@@ -17,9 +17,10 @@ class PythonPytz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "82f97ef75ba53f915206d40121cfc4b474f916122f2cb154e780880ac185b24a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
