@@ -4,6 +4,7 @@ class PythonTypingExtensions < Formula
   url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
   sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   license "Python-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "929bc38a9d739276be2baa68ff25d7adcbd469ed6f4c35d0f3e596d91b5b686f"
@@ -17,22 +18,21 @@ class PythonTypingExtensions < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5fee2c9238e8843366be019c746f480444d351f80e39c0454def672d3d4e79d"
   end
 
-  depends_on "flit" => :build
+  depends_on "python-flit-core" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "mypy" => :test
 
   def pythons
-    deps.select { |dep| dep.name.start_with?("python") }
+    deps.select { |dep| dep.name.start_with?("python@") }
         .map(&:to_formula)
         .sort_by(&:version)
   end
 
   def install
-    system Formula["flit"].opt_bin/"flit", "build", "--format", "wheel"
-    wheel = Pathname.glob("dist/typing_extensions-*.whl").first
     pythons.each do |python|
-      system python.opt_libexec/"bin/pip", "install", *std_pip_args, wheel
+      system python.opt_libexec/"bin/pip", "install", *std_pip_args, "."
     end
   end
 
