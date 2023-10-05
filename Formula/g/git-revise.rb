@@ -22,7 +22,7 @@ class GitRevise < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fd6f6b10d6617c98b3ecf7752848224130a1ad14cc776888d17d65bf0360554"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
