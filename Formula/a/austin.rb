@@ -1,8 +1,8 @@
 class Austin < Formula
   desc "Python frame stack sampler for CPython"
   homepage "https://github.com/P403n1x87/austin"
-  url "https://github.com/P403n1x87/austin/archive/v3.5.0.tar.gz"
-  sha256 "b9cad3670c5f6f750d2c8dc6869a7c5b45fe42305185a0cd3f249e1aa017a7ea"
+  url "https://github.com/P403n1x87/austin/archive/v3.6.0.tar.gz"
+  sha256 "c29bcd84ff0060efbb282c3f36666de9049dcdb4ae57e26a844d8f4219f3b6f4"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Austin < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.11" => :test
+  depends_on "python@3.12" => :test
 
   def install
     system "autoreconf", "--install"
@@ -31,8 +31,13 @@ class Austin < Formula
   end
 
   test do
-    assert_match "need either a command to run or a PID to attach to",
-      shell_output(bin/"austin --gc 2>&1", 255)
+    if OS.mac?
+      assert_match "Insufficient permissions. Austin requires the use of sudo",
+        shell_output(bin/"austin --gc 2>&1", 37)
+    else
+      assert_match "need either a command to run or a PID to attach to",
+        shell_output(bin/"austin --gc 2>&1", 255)
+    end
     assert_equal "austin #{version}", shell_output(bin/"austin --version").chomp
   end
 end
