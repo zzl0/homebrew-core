@@ -37,6 +37,9 @@ class Cmockery < Formula
   end
 
   def install
+    # workaround for Xcode 14.3
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # Fix -flat_namespace being used on Big Sur and later.
     # Need to regenerate configure since existing patches don't apply.
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
