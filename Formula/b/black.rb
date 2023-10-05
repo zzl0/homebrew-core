@@ -96,6 +96,8 @@ class Black < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"black", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   service do
