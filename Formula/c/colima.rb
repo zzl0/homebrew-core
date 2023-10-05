@@ -1,10 +1,9 @@
 class Colima < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https://github.com/abiosoft/colima/blob/main/README.md"
-  # TODO: Try switching to unversioned `go` (or `go@1.21`) at next version bump.
   url "https://github.com/abiosoft/colima.git",
-      tag:      "v0.5.5",
-      revision: "6251dc2c2c5d8197c356f0e402ad028945f0e830"
+      tag:      "v0.5.6",
+      revision: "ceef812c32ab74a49df9f270e048e5dced85f932"
   license "MIT"
   head "https://github.com/abiosoft/colima.git", branch: "main"
 
@@ -25,7 +24,7 @@ class Colima < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b57362e532cd6000de79d535fc740b511ece5cf0f086276768a2b4abe18e03f8"
   end
 
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
   depends_on "lima"
 
   def install
