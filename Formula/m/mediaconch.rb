@@ -1,8 +1,8 @@
 class Mediaconch < Formula
   desc "Conformance checker and technical metadata reporter"
   homepage "https://mediaarea.net/MediaConch"
-  url "https://mediaarea.net/download/binary/mediaconch/23.07/MediaConch_CLI_23.07_GNU_FromSource.tar.bz2"
-  sha256 "3e1bbed484d211a17c829f725c45e67a2debfe72e8ee096609e3a42d09f2fa16"
+  url "https://mediaarea.net/download/binary/mediaconch/23.10/MediaConch_CLI_23.10_GNU_FromSource.tar.bz2"
+  sha256 "c044830cc4ea3b4f947dc356d394760457388d53c58dcb173744dfbed5433200"
   license "BSD-2-Clause"
 
   livecheck do
