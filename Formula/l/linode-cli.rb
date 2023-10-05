@@ -9,15 +9,13 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1306bdb16185525b85c1a620bf20297a37624b0b0e8147e509da79882da1fcd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f785b6cec0e0fa2b5c64486a9c2685325690f6e594f49f7cef3c9080d16701fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc998a6314852a40f08b5d3e18031644fbc8f05e59802f44b1e0335a62f0017"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b663920fe6477cc402722dfc843037db72464d79ed67810cdddac76454256602"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e845e671e5b3f4af0f266bedb8dc3c66c2e3a104276646a7f056d64cc73fc9cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "86a8a0458de7324448e48b8feb50e7e9cd08e33aff603322c30489f5c6361bc7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0cebb1407788d88afa228b9cb658901eeae969e1ae41ad2bcde03cf1f8e196f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d8babe679a240039d389be645c44f2a393673b16bec0c37d8356e0c15a6bca7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42ae0d4916c2c618622e308b5877baa54ecbc246e3f91bc419b2da2d98b71b6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6b9770322fae5ba7d0cb35240a2923e7b3bc3edd42845b56db6db9ed3b4a3f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b91e88015f33f1424ba317fc8faf6245186c9ad237e783fd3b8cb28499d6518"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "069595e1881473c9ecedf9a31048f92ef2a00d0bab2d890a3e9a0a6399558d56"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ba413e7c990b80582289a48049b31ce41fd39d83e6591d8fcd600f5beeec867"
+    sha256 cellar: :any_skip_relocation, ventura:        "0bf76392d612c502106c80d47979539203ece24dd4fc88008fb3dc75cb99a5b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "9913b1cdafc8795d551743654a1363035b648bc615c9a36d325c74a78162a3ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeb9b6d3aeed2525b94801d16eb777eb5bbabf740098b9b77363bfbe6e349282"
   end
 
   depends_on "pygments"
