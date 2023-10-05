@@ -21,6 +21,7 @@ class Hatch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea329f5262f17cd78fb3dfe25dded22f4f6a0279dfabeb0c942dff1d781af54"
   end
 
+  depends_on "keyring"
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
@@ -30,17 +31,6 @@ class Hatch < Formula
   on_linux do
     depends_on "cffi"
     depends_on "pycparser"
-    depends_on "python-cryptography"
-
-    resource "jeepney" do
-      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-    end
-
-    resource "SecretStorage" do
-      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-    end
   end
 
   resource "anyio" do
@@ -98,21 +88,6 @@ class Hatch < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/e2/d8/3d431bade4598ad9e33be9da41d15e6607b878008e922d122659ab01b077/importlib_metadata-6.1.0.tar.gz"
-    sha256 "43ce9281e097583d758c2c708c4376371261a02c34682491a8e98352365aad20"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz"
-    sha256 "89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/55/fe/282f4c205add8e8bb3a1635cbbac59d6def2e0891b145aa553a0e40dd2d0/keyring-23.13.1.tar.gz"
-    sha256 "ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
     sha256 "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
@@ -121,11 +96,6 @@ class Hatch < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2e/d0/bea165535891bd1dcb5152263603e902c0ec1f4c9a2e152cc4adff6b3a38/more-itertools-9.1.0.tar.gz"
-    sha256 "cabaa341ad0389ea83c17a94566a53ae4c9d07349861ecb14dc6d0345cf9ac5d"
   end
 
   resource "pathspec" do
@@ -198,18 +168,13 @@ class Hatch < Formula
     sha256 "04233d2fcfe5cff911c1e4fb7189755640e1524ff87a4b82ab9d6b875fee5787"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/00/27/f0ac6b846684cecce1ee93d32450c45ab607f65c2e0255f0092032d91f07/zipp-3.15.0.tar.gz"
-    sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
-  end
-
   def install
     virtualenv_install_with_resources
 
-    # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
+    # install a `.pth` file to link separate formulae
     site_packages = Language::Python.site_packages("python3.11")
-    virtualenv = Formula["virtualenv"].opt_libexec
-    (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
+    paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     generate_completions_from_executable(bin/"hatch", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
