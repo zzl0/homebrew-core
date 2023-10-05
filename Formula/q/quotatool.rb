@@ -1,14 +1,10 @@
 class Quotatool < Formula
   desc "Edit disk quotas from the command-line"
   homepage "https://quotatool.ekenberg.se/"
-  url "https://quotatool.ekenberg.se/quotatool-1.6.2.tar.gz"
-  sha256 "e53adc480d54ae873d160dc0e88d78095f95d9131e528749fd982245513ea090"
+  url "https://github.com/ekenberg/quotatool.git",
+    tag:      "v1.6.3",
+    revision: "a32e83b5cc414a0a28d4e703f6012349a92c2d4d"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url "https://quotatool.ekenberg.se/index.php?node=download"
-    regex(/href=.*?quotatool[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf56e937cd7f4f84c141caecfbd5717fb0ea4df36e3c5b65dad9a5e1f2740e07"
@@ -27,11 +23,11 @@ class Quotatool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "296d3ea40771bb113792f0bd6b57cbcba371d9c80d95271b29474a1bbcd16194"
   end
 
-  def install
-    # workaround for Xcode 14.3
-    # https://github.com/ekenberg/quotatool/issues/24
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+  on_macos do
+    depends_on "coreutils" => :build # make install uses `-D` flag
+  end
 
+  def install
     system "./configure", "--prefix=#{prefix}"
     sbin.mkpath
     man8.mkpath
