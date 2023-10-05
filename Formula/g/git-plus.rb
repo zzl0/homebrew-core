@@ -20,7 +20,7 @@ class GitPlus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58dd04bb2b4161b60ace6be84dce6a355d093c4a0312a03010b7d39b20e7ab0d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
