@@ -221,6 +221,11 @@
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"],
     "extra_packages": ["distro"]
   },
+  "conda-lock": {
+    "exclude_packages": [
+      "certifi", "keyring", "packaging", "pycparser", "pyyaml", "six", "typing-extensions", "virtualenv"
+    ]
+  },
   "cookiecutter": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
   },
