@@ -19,7 +19,7 @@ class Hy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "173fa3e81b16d33395011549ee1d90c0ced357e83008975715a37f01f8541fa8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "funcparserlib" do
     url "https://files.pythonhosted.org/packages/93/44/a21dfd9c45ad6909257e5186378a4fedaf41406824ce1ec06bc2a6c168e7/funcparserlib-1.0.1.tar.gz"
@@ -31,7 +31,7 @@ class Hy < Formula
   end
 
   test do
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     (testpath/"test.hy").write "(print (+ 2 2))"
