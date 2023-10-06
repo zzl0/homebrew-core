@@ -10,16 +10,13 @@ class HomeassistantCli < Formula
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0e6456e0e775a9f1dd749a95b2638af0ed5840c26c2d6938f4586d200eb9aa2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa3b66a08ae9996863ed3f6d26afc62d24f877abe48928a40c6116e316957a95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f97b0da614f3399a0ddfe3a0085f54a6d459d4f71f5ee7465858a9a47f7088f1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18c394ed2f4f11d4be008774d0c7ecaf663358810bd1ba22225ca24b2dc26596"
-    sha256 cellar: :any_skip_relocation, sonoma:         "41bd13388bb5c2de3b94b72fe4e91e2777dd2523fafecac8bb7a500d962f1959"
-    sha256 cellar: :any_skip_relocation, ventura:        "4196b504da31a0957915a1b2227e0a671c43472fa8046a45207c08b161c7e6aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a817fd64bde83eb39b48b9433cf55bb7fe257f1dbc344d216f2e73b60afb8e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7e160a421211774f2d4d6c3270aead44f5740343a1e5fdae7105ff6439ffe17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84292248ed95210656c82a41d84bee1ac3b1149874f5a3f0c8c428ef2efdc1a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf942a8fe64ed7420f4c93d56c86fb0095063f1a3840b7004303751e1b1eb3c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e67db8601d1f4dee708a8aa068504a30967bd2ccfb9ac0b7b54bb29b913b731b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b71efc120a329bfbddf14b6426c29db801589457f7ebbd99161ec1913033b62e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f9e385c4af3edcf533ff1a4cea0949509cb93a3da984a7b15bdceb4c6bb6601"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce6dab837b4716cef4da1c657868633744a8882c5c968c19c9496ba53d970bd2"
+    sha256 cellar: :any_skip_relocation, monterey:       "98425b2c5d5ec10ecf9ba2e1da2ef31303964b7326bc0fdf007e41e6ccba6cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57edabc8c02e49cc0d50e27b8e4443d8f2d022099c2a6cec44d6501e72f9f290"
   end
 
   depends_on "python-certifi"
