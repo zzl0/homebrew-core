@@ -9,18 +9,17 @@ class Urlwatch < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77194d4e19bf9dd7d2211c4bbd33c887985f144b1e93356da7f0a8b107e753ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71dd07637cb16e9fdefe88a6b7c3b185e75e8273cf1df0b66ff9aed362173a35"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "346745e6576fd05d96567290492324e45a5c93bc8ca6116f72445b78d67eda21"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ee392529d83ef5de6ca571a5848a2be41cb5a81b2f3808f6057d0e6d6fdf153"
-    sha256 cellar: :any_skip_relocation, sonoma:         "028897df9d8dbae2d09507fa8a5f7aa9b0444bf25c1e8858ae35b6f56bb849da"
-    sha256 cellar: :any_skip_relocation, ventura:        "438fc2c114c69e0b3db0c1682c57aaea47cbda8df582be9e9f2f29418a80275a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b52021d6a5c4e5a4bc769240816ab7339a993322dc62a482d83e3aac4d43f53"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4bc363086d04a2ecdcbaec79471ed87066e468dac74376d3e757def0eab76878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1876b0b2ab9d4e7e6e44c941422a7eaf451305b472dcc8c35f73986aa9401f9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2df1b2813ba9f42cec41dc2c051986d79ab02e80cfb5c3c9522a75096e24bd8d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55592654f29d94fa3e5c470fab6ccb2c152b8852880dbcf80ef470242b428ea6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d64c1516c4b8abdaf30633c4a03ba930495cdd6e0108d4c672dff294448a20"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80304a5d0e2d191d4ca4f7571bd62ff7aa29329b4b02cd132296045dde5e21aa"
+    sha256 cellar: :any_skip_relocation, ventura:        "1200dc7c4a1b01bf633751875eaf6e7aee69d037fca3b692da9d4465e19aa68b"
+    sha256 cellar: :any_skip_relocation, monterey:       "138b9c1ec5569d643d1b5a00363bf5a4e127aa53ed4903b6277b12821b83099a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62b12461c99498a1e19f57e5f11b4410d3640b35ab92f4eb173e599a431690f"
   end
 
+  depends_on "keyring"
   depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -48,21 +47,6 @@ class Urlwatch < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
     sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
@@ -71,11 +55,6 @@ class Urlwatch < Formula
   resource "minidb" do
     url "https://files.pythonhosted.org/packages/20/d4/915ac3b905cf33f3a0df5c92619fad66ae2e23cecd8f21dbfa76a9a27133/minidb-2.0.7.tar.gz"
     sha256 "339fd231e3b34daecd3160946e0141585666ac57583882a14c4c69e597accca1"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
   end
 
   resource "requests" do
@@ -88,13 +67,13 @@ class Urlwatch < Formula
     sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
-  end
-
   def install
     virtualenv_install_with_resources
+
+    # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    paths = %w[keyring].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do
