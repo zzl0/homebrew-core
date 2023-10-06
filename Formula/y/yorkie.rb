@@ -2,8 +2,8 @@ class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
   url "https://github.com/yorkie-team/yorkie.git",
-    tag:      "v0.4.6",
-    revision: "0817ad989d0450d7f681fa904cdb07498edaab42"
+    tag:      "v0.4.7",
+    revision: "aac916faf8ad7dd61958e0bfd829f20669771c1e"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -49,7 +49,7 @@ class Yorkie < Formula
     system bin/"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"
 
     test_project = "test"
-    output = shell_output("#{bin}/yorkie project create #{test_project} --insecure 2>&1")
+    output = shell_output("#{bin}/yorkie project create #{test_project} 2>&1")
     project_info = JSON.parse(output)
     assert_equal test_project, project_info.fetch("name")
   ensure
