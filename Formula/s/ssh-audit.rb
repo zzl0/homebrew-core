@@ -20,7 +20,7 @@ class SshAudit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "883a310a7ea3133c68213aca91d8589153bc0a525854a6ef087250e3baf8f7ef"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
