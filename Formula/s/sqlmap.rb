@@ -9,15 +9,14 @@ class Sqlmap < Formula
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74089bb68fd0569194235aea2736899bd8a1e3b94d733365047734000202e98f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74089bb68fd0569194235aea2736899bd8a1e3b94d733365047734000202e98f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74089bb68fd0569194235aea2736899bd8a1e3b94d733365047734000202e98f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74089bb68fd0569194235aea2736899bd8a1e3b94d733365047734000202e98f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7cdcfe492cbee0fa7e22c6244237d5d36266333215349313d9cdef54358297bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cdcfe492cbee0fa7e22c6244237d5d36266333215349313d9cdef54358297bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cdcfe492cbee0fa7e22c6244237d5d36266333215349313d9cdef54358297bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7cdcfe492cbee0fa7e22c6244237d5d36266333215349313d9cdef54358297bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddfe260de08abbfdc24ad8c6726986f11169ae0fc215653e416244e973952d2d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "629a6288ed42f61220a1686d43323542a2377142839117fda7db11654c216072"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "629a6288ed42f61220a1686d43323542a2377142839117fda7db11654c216072"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "629a6288ed42f61220a1686d43323542a2377142839117fda7db11654c216072"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bffeac0ff40484deeffdd1198678f2ca1554dddb3b8f8ffaded009bf11fff512"
+    sha256 cellar: :any_skip_relocation, ventura:        "bffeac0ff40484deeffdd1198678f2ca1554dddb3b8f8ffaded009bf11fff512"
+    sha256 cellar: :any_skip_relocation, monterey:       "bffeac0ff40484deeffdd1198678f2ca1554dddb3b8f8ffaded009bf11fff512"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee375f9e3001f906f39239adfb85e0bd366c725cd13c8e05a01da0674fa31a02"
   end
 
   depends_on "python@3.12"
