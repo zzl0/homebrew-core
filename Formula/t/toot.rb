@@ -10,16 +10,13 @@ class Toot < Formula
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75bda65a1f381b5cf5d52f5874e1b5c62415362a351a42b846651f616bd287d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17a7dbd166167a09a52e7c2d45e8288d8e06e16ae4b9fe86fd4ec666680ffc41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e17338f76dbd549882bd9f3062abff662eeb0b5243e2c0cac8203dfdd7413f8c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "546603f95616c539116a91f1f7008a24f2b0ec4adcb9740ad141598ee717a515"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ddd3af29ee3bb9ffd13e23ff3637281a4fc4344b59d9e00286481c68182c66d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d11bff20289b2910be00e4868e7dd4b92062fea533d2225ded1e108ceda7130b"
-    sha256 cellar: :any_skip_relocation, monterey:       "67fc899488859cbc3e6f935ae7eb3df86d20bc711de07b4d765fdc34599045a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd48c86a0793dabb210e3ca16e5e7bf9bb480cc205a7313679663d5e6b05cedf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "085ff020ab583f26042053be48ea8d26f67da45f2749fd38757f90d99114bc9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a289a1adf4cd38bbbd9ba544589032d05f499d1ca1d714d278ea4725b74688f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14087b7fbb60d4dc07d1e85d8d4611f8a9fe232a29c9928abf2bf1dbb3916fda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2daae3d36ecdb53745a29d7d5be387ac246e4c17879d8fbd67286177c50cfa3e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a7eef640e83b3a87b81ad96e48c0e6845f2ff5f63bebb43f41015caae9d06b4f"
+    sha256 cellar: :any_skip_relocation, ventura:        "4755835c07faa9e3b10f89927f89899c321c05f0e6035cba1897fef08e7ed467"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa13a0a5bb11e24f50f464eb69dee48b480b8804d961464a14f9e42e3669eeb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a20b9c05c1f4a113943285818a0939c9ecceb64cb1f9630ad4e4b7399b139130"
   end
 
   depends_on "python-certifi"
