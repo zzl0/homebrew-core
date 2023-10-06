@@ -19,11 +19,11 @@ class Ykdl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcff8c2fb5974a8b76afe84436346f39295e613b9a947e57bab68b8650cd972c"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "iso8601" do
-    url "https://files.pythonhosted.org/packages/27/23/97cd1cb5792ece594ec5cf16cc4921f91838c689c82c8078ee442751f8dc/iso8601-2.0.0.tar.gz"
-    sha256 "739960d37c74c77bd9bd546a76562ccb581fe3d4820ff5c3141eb49c839fda8f"
+    url "https://files.pythonhosted.org/packages/b9/f3/ef59cee614d5e0accf6fd0cbba025b93b272e626ca89fb70a3e9187c5d15/iso8601-2.1.0.tar.gz"
+    sha256 "6b1d3829ee8921c4301998c909f7829fa9ed3cbdac0d3b16af2d743aed1ba8df"
   end
 
   resource "jsengine" do
@@ -32,8 +32,8 @@ class Ykdl < Formula
   end
 
   resource "m3u8" do
-    url "https://files.pythonhosted.org/packages/05/97/e1279c9f025838df264c6643b132a6f3778f8215281fc501644547a821a9/m3u8-3.5.0.tar.gz"
-    sha256 "b2eeaa768de574c9d05aad135b1073992927ce0a20b968ebb13f3a183fa92488"
+    url "https://files.pythonhosted.org/packages/29/6a/ddad4d36396fb3daf12c79c075a0a35b6eb01e9d0cb9ae742401e8aacb08/m3u8-3.6.0.tar.gz"
+    sha256 "d7f17e357e63f90400ae9804bcd193b8935fcca4eb18659aa94f1d7af3b36451"
   end
 
   def install
