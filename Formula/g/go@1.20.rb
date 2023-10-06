@@ -7,8 +7,16 @@ class GoAT120 < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://go.dev/dl/"
-    regex(/href=.*?go[._-]?v?(1\.20(?:\.\d+)*)[._-]src\.t/i)
+    url "https://go.dev/dl/?mode=json"
+    regex(/^go[._-]?v?(1\.20(?:\.\d+)*)[._-]src\.t.+$/i)
+    strategy :json do |json, regex|
+      json.map do |release|
+        next if release["stable"] != true
+        next if release["files"].none? { |file| file["filename"].match?(regex) }
+
+        release["version"][/(\d+(?:\.\d+)+)/, 1]
+      end
+    end
   end
 
   bottle do
