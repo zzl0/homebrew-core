@@ -9,16 +9,14 @@ class Hatch < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5086f3d1e1188776844435f2cd816a39e9916e19dd72f23ecdb2ca8872498e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a57d8bc12bfe3656a9ec833d6e966bc909bf85fe2b9582e944cc4a8e7ff163d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "246be0dbf7e34fc51da93226d88ca80780b349717b137c417e65c0c4ae86c7dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f8ef7c934c5d7446456f86f4676d27b619d7077fe90f92625f30fd640e730e6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "19e35a7299b4567f9905e2122a5b54c09fd72c15335d6289bec789b6f750d27a"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c453a376801bd5bb48d9c56f9b25fc1de77a0a87e41464c41e5a27d6ee14ede"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d3ba80d718a647b402e28bd20bea4f96dcd4c086a78a3be3b7eae82cbe20990"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a5db978126d656683c01f6b5633b289e1f4c6b799def250245a1bd0b1da6886"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea329f5262f17cd78fb3dfe25dded22f4f6a0279dfabeb0c942dff1d781af54"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f63c894aaf0aa08e1b1dbf95e1a65392b5ab683c325b70bf64dc1cadc28d637d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "566b9cd8194678656d5e01780c90d20073b73aed5eec035124fae20547d1e8f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69686b2f5f34c9e7aab654df6e9facb04e27a6fbed6c452d8c1016faec63f064"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48d8e889236773c485801693dc79efae2c9f56cb867a854f56c5e1aebe93e09c"
+    sha256 cellar: :any_skip_relocation, ventura:        "331f3a7159272c99d5b9f37927727993e9e2dd4d09e82165fa1d4069b743ba94"
+    sha256 cellar: :any_skip_relocation, monterey:       "986f951ec4f3e4eaab5c323359e3e9a8d73f57e8d25ad029e87c8bdda93e15e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff140095bfa80fe6da51daceec9776af0ecc80dce1982e327dddd1ab43b204d5"
   end
 
   depends_on "keyring"
