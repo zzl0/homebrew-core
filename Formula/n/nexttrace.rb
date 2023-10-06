@@ -1,10 +1,10 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
-  homepage "https://github.com/sjlleo/nexttrace-core"
-  url "https://github.com/sjlleo/nexttrace-core/archive/refs/tags/v1.2.1.1.tar.gz"
-  sha256 "56fe2986067ed8f84bb30d533309a79f901d9a182f25afb71a8354e5bfad6b5d"
+  homepage "https://github.com/nxtrace/NTrace-core"
+  url "https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.2.2.0.tar.gz"
+  sha256 "1bf4b23c8ae96bd0e084d15f107c35563954a268a1d3fd222fcdad77c873741f"
   license "GPL-3.0-only"
-  head "https://github.com/sjlleo/nexttrace-core.git", branch: "main"
+  head "https://github.com/nxtrace/NTrace-core.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e4666dad1dc6b1a37a49a50917be6c7baf5d1ce519e127a299d36e81cd2d1c2"
@@ -23,9 +23,9 @@ class Nexttrace < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/xgadget-lab/nexttrace/config.Version=#{version}
-      -X github.com/xgadget-lab/nexttrace/config.CommitID=brew
-      -X github.com/xgadget-lab/nexttrace/config.BuildDate=#{time.iso8601}
+      -X github.com/nxtrace/NTrace-core/config.Version=#{version}
+      -X github.com/nxtrace/NTrace-core/config.CommitID=brew
+      -X github.com/nxtrace/NTrace-core/config.BuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
