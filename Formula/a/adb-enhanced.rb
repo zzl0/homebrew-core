@@ -39,6 +39,6 @@ class AdbEnhanced < Formula
     # ADB is not intentionally supplied
     # There are multiple ways to install it and we don't want dictate
     # one particular way to the end user
-    assert_match "not found", shell_output("#{bin}/adbe devices", 1)
+    assert_match(/(not found)|(No attached Android device found)/, shell_output("#{bin}/adbe devices", 1))
   end
 end
