@@ -9,11 +9,11 @@ class Locust < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93783c821f08172ed5a96def30b67829ce3a8a1a321669fee05ccb28a83cfb28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e8bcaa5804d8bf4c0b52430b9b6db46006ab24d7e9a141b7d8aa23bcdde0491"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd0bff3867bb0e34d6d0e392703c0bb27710c6aa6adf4460b2504078d9c02066"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6ed91890786a6fedc7ed7dacccd43377af809a1ece3ffbd3046f3b59ff347bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af491dafd1e59e685eb2ca8b280770f604f9507200fe120a2f67229fbbe7db8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec0907566674dc95aafd967c4c28f6a160e58ab7428ceb47adbf69d7db2afc5b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6294bf1ccc3e90758ed01e5dc8372ceeb6832a93d140137618ad909ac7e9345"
+    sha256 cellar: :any_skip_relocation, ventura:        "900d3d5b5f15f1e6ae2ffa71afa955fa7c564bc386b63f6a4d49d7491f8fc581"
+    sha256 cellar: :any_skip_relocation, monterey:       "eb119b479294fdb37d88c90b823895f9aaa84fa30df92a5a1be989d960e5efa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eca376cbdfa5fb473711a7945f4cbfbc26dcc314f9a5af21c1a31d8ad2b8aa35"
   end
 
   depends_on "python-certifi"
