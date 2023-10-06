@@ -1,8 +1,8 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
-  url "https://github.com/stateful/runme/archive/refs/tags/v1.7.5.tar.gz"
-  sha256 "b79f6b0102761c3da66472f6bc3bd8c9dec13953416be82ecb515820dc7ef0eb"
+  url "https://github.com/stateful/runme/archive/refs/tags/v1.7.6.tar.gz"
+  sha256 "32b75f73c4183abdf65828a280982b834e7011c1bde27d305d09368b216931d3"
   license "Apache-2.0"
   head "https://github.com/stateful/runme.git", branch: "main"
 
