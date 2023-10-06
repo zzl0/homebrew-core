@@ -111,9 +111,9 @@ jobs:
                 - Formula/b/bash-completion@2.rb
                 - Formula/o/openssl@3.rb
                 - Formula/p/postgresql@15.rb
-                - Formula/p/python@3.11.rb
-                - Formula/p/python-gdbm@3.11.rb
-                - Formula/p/python-tk@3.11.rb
+                - Formula/p/python@3.12.rb
+                - Formula/p/python-gdbm@3.12.rb
+                - Formula/p/python-tk@3.12.rb
 
             - label: missing license
               path: Formula/.+
