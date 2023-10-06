@@ -10,16 +10,13 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eae5285a6b1a9e8458d380ee269e0e3ec25c7c139b16c2eaa006fb7a35ee477e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b87fec044a26e2e3fd333c9614df8e26ec569f75d5657cc42434b8332e90b735"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfda67fe5f3bd69b46ad613853a5e85804fe8bed4b46dfd57a105214025e3dad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f434396c02fc132f82b07e91ed32fae472f5232a1f3932d1d41a4b0c0942724b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adfc0accf2e278a96deb554a65a83fd1b41e764601bbf879231477247aa2a45f"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9846d052fa51ef60c87e10742c6bd74f9de402d110e5655a1f04a038c8ffe22"
-    sha256 cellar: :any_skip_relocation, monterey:       "da647ab846459c5d3dd6c8d9ea1ca01b20a53401162c86bf483152ac0b6f1f73"
-    sha256 cellar: :any_skip_relocation, big_sur:        "617829de5e4c30181e71c7a21e142d0ba14eb4604655b3707b0ac2ba93a2feea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d4ec4ad084fff4058d9cb8010f6d33b3e3c1d18d119f5b48cd603ea79472433"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6889bdebbb4c97b02d54c64bccc9580e9f4337c8f4d459e8dc3b265d21958628"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d43e634fce2caab83ab0d568354bdeb23882db1092959331d0f0afb6068a2934"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "333bba84a5322f49fe4325fe0357525b7b61f62a031b9f7e8b7e81a77fb21e00"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb5ec4e516608bada1b57bf1140dd77944c7c7742f80aee28f3198aa15f8f925"
+    sha256 cellar: :any_skip_relocation, ventura:        "b13d7d98f7e30e789e98f6e0fd271a2003357e8ed83e5783256f4655169fc199"
+    sha256 cellar: :any_skip_relocation, monterey:       "f6d018ab2df77e047c92756a74473ca1e33409478808f7e2c7a8061c2d8a957b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "579dccb856d62b2854705cf125c4de5f40b6309ca085dfc073f84087f07e82e6"
   end
 
   depends_on "python-pytz"
