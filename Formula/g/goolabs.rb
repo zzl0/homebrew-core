@@ -9,16 +9,13 @@ class Goolabs < Formula
   revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b67021d2f89441ffec0ad4ca7b0f9dea61b146991f08549f09514d12b5c73be2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e658052b927f381ded8fb29e51fb483413f4dfd2d968deb0f3b4655917246a00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6545d30e95c943fa46d1481957ecea03ec0d709ffc62d144ea2ae828ade14ff7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfcb5b0d948d2d06610af5886da741a7fa508070b6ef21a5d9faeb5e5c1a9f2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b658665f8582fa30429602caa683e061c3125c1c099d57c1e100db3be7172621"
-    sha256 cellar: :any_skip_relocation, ventura:        "f11c2742812fa86aaf19206ddeb4556579cc4e96da09ef131fc228def2d083fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cc76a7b0ce3b7e4356d8a36835a88bf4cb6478c8f83b78b9be37187119ff61c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3b62af966862d5608ac825a11735bedc17f57a2274be3297b7e091740a9014e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce094e87867d9b40980d969a9f5b5fe12f0062b604289fcdeeaf62ff8510faf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a1d34da66fd03fa5da047b4e6144c7acf4f15309d70a4faa9f3bf0fdbed8851"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce3eb814ae9d895ae64c6c0ce255992c9ffff1c5dabaed134322046896865758"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26ec88dd65e045f3b875f514f7e234a414fde1ec2514677eb3118bc8d1c4d449"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02b38c406170fec8af8fdbb31172fa993b491a68534d81d0b0f87a0b5b40b371"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf5a204e2a42c48c5da2639eb7bf7324fc786abd461ef3c57912a81c92f15549"
+    sha256 cellar: :any_skip_relocation, monterey:       "0fcda3bfe1bcd8b2150eaed557a2d7e17c47d1c568bce8154396e0ee76baac86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f647470a7f7edba2ec6930191481d2d5f4982531457def2a54d5caa646bdf70b"
   end
 
   depends_on "python-certifi"
