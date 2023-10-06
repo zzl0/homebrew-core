@@ -10,16 +10,13 @@ class Grokmirror < Formula
   head "https://github.com/mricon/grokmirror.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5ffc59c67820633cc877e4d325bf268882e20a0957e9beddaf0938894a8455a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b98b7d2ae38776e116471d4aa93752179dd6cf0178ca2c963dab1a5ce149af8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cd1c6f82c4b6786747aadd7c66a184874290c6ebaf2140900b23c6fa4a62917"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e71ad6585d8fdbe72e5dd132cf4d20482002c569f3fb9ce83e0be0efc8b7f75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0ed2e41bac9ea83ea2df5180f0a2181edd52051dcc4cff32a0b4f1d0265505a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "acae5a92fa6062106d7abe579db63da6e252a7c90173a2d76c9521aaa2ee46c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8a222768f1fa3ded6b38fea8c5963d27e4ce80d496fbaaf8f26f1c8b2be18dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "99ce644f6574c85120f619b503f80f729d82d1472d6e53d54edb15640bd0a94b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3749e3ddcf48a04513d603e2d533c998fde630c106117a11c506450b39c8af81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef1d4b709d1fceca4f2c2cc39eb43074e48ab9f680585b4f4788fc1120eeec80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64e3c29c56eae36b617df6db8389dc4d8ff364026681ded0de27b941f4189b80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a61a39deb01b9a9dd00484c0dec31b2b27ba6258e83294209f60f76db385bd2c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96685ffb7a72eb253bb7712ffd7159e63c1d39a65ab0b0457b464482a1980251"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ebdc17a922df27df570508f86e2719861b0c7292f1211a5f74d5026a73b22a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec643a42b4f7223da4990f56e669caca035168485afcf228f763a83bd971e780"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df68ad710d46204f7957be01fad0edf5373ee252878e4e740e10c43fecd6c728"
   end
 
   depends_on "python-certifi"
