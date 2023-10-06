@@ -10,16 +10,13 @@ class DetectSecrets < Formula
   head "https://github.com/Yelp/detect-secrets.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c52a490e637286e1f8085413c0aa2391c731725fedd05b811d23c87b5ebd9ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7d406f96b55d25c172002af752f055d8b16cb941c1c8f71b1f109c34f01618f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a360bf8ffe9ddf0fc025431061a6f155dfb65e2f59febc53f55316ede82eb801"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f631142f552c0d1a03258b135963a753cbff2297602384142b2f8cc886deec5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18973a0ac282869bdf63b5f7f8dc740d9f07bab936576765404b5062408fb62a"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f51a6d84d1c69b8121340b12648e71c900a8c073f027caac8e4eba0e7935792"
-    sha256 cellar: :any_skip_relocation, monterey:       "1dabc85eca7b07da8551ffd5951ddeffe52c20772e626e184fe5273c411984c4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f3165fd88b2217ed08c8cb860ab03f9f45c84c8b756867a2f83f0c8f9d8c6b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42a0f337444e9930d38bc5e8df2eb26fbe3c9f8952c842f153cdbce5aab55adc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef654869fd6f2c61ad9c5bc9af706c79a2e836672de72356fba891f4d6354ff2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bc89867c5500ed09d2851c3cc678bc1a11f845c230bc6fe6628468b44d59dc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be5a6b6bfb144ee3c91bacca0d4ac565d7e0157c5ac15f2f3d43a11aae487ad5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8d199e035a9258b168dae7a38dd7f8f80bc91930bfe7fc1ed1b851bbc7f5712"
+    sha256 cellar: :any_skip_relocation, ventura:        "6939d0013b6dd944397a03f705396d4d6f22ecf9e77d55e5c4fa5ca325eb5ad1"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f8b5ca88444faefc5735e6fc8e2017e0eee51a458f25d5c8c886d735b85f7ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e55cc963109f5adf53fc8ac9d4af58ec9b0c6cce5672e480053c5e73afd9f4"
   end
 
   depends_on "python-certifi"
