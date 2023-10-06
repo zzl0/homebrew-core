@@ -20,7 +20,7 @@ class TranslateToolkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eba4521ada490ff2244dfc082160842a5cb9467ca970090e09aa7aa9356d0fc0"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
