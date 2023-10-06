@@ -10,16 +10,13 @@ class Gcalcli < Formula
   head "https://github.com/insanum/gcalcli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0d4eb60e067e9b0a660355ff4401292cfab1d5b14ae6a0d30eca76f80e44fa6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e7ae215c9b4b0b6bf398e2ae53615898157083b0f15ef6a351139d771060167"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c609f00c7be05b920f09a8502393d9365e735730a89dfe3de7008e28621a4503"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b24b74e5187e22ba7c48858c30508ed1bce75b5dd8fcbcc0446b64c2d082762a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a924839878d4642387ab8551b65057be9e473df8cc580b72abf0d40acf4c4135"
-    sha256 cellar: :any_skip_relocation, ventura:        "46c3156be7d24ab384444030f1c79df3814a2885f961a806be8a66bbb446b30d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e41cb12e77ed4c00d26d5a44b196f9346c24a07dda0acdaf848a625e7816b306"
-    sha256 cellar: :any_skip_relocation, big_sur:        "779c47ce1fcae48d80d26ec5dbc1e64074565255ff38648f5b05f8d42adaaa43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79faebd9a12ad1877c0f8272acbc92265380576137d010d4311c6d72810c5a44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b07c6f314e5d7f12c025be5a017cdc839206c8b5ff6968b878df1313440ca04"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28504f87b0b5eaf5a090b34be7ea38dfd7ba92dc22aeb6fc09d1e40a143027c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08912833bce22a4217938356f8fb980e2ec236416b57ce34595d972b8ef449d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "09d037d9a3a5076ca0068b689a0efca43697de8191c7982635ae467911cd309c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f4dfcfcb664b97d26a59d31db8219dd7e0c8a966dcf376a580039f3d841c235"
+    sha256 cellar: :any_skip_relocation, monterey:       "274014ca9766e2650f42ff0d2f2969a890e3bc15af95b3e51a9137868b3783e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a84f9473bd5810c8e0140ce2651472fe3103e6c8a0200a7d0488d2f44be72f1c"
   end
 
   depends_on "python-certifi"
