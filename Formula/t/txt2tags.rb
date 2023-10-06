@@ -8,18 +8,17 @@ class Txt2tags < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a077c94ce334013b2d57aa9bf2b6fabe262b30973a5008e82fb952f2b937ccc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "01277a5e867e5c200b1bd4ceaa141f6ac03bfcddd0f84d7a3757b4328161ba59"
-    sha256 cellar: :any_skip_relocation, ventura:        "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbe92bcad887b8e2d4f32d1b2afe040e2577852d6d1eb4ec327ef62f05c4a826"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e25da3bd37834c96469ce32b195353728175cc3d1fdd37acfd7791c6c65f2883"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdb5181c1343eceb89f6dd5321569b96a4c71ab5be79e2bbfd22ca6237a3508e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22720ae006780efef0a675ca7cf7e477bc4371dfaee25efb4cf627444430b3be"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ddb84e6a2c62887122832feb6bc121a1059a0a794b55365196e05f78939676c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "fddccc19e1ff4fc3e2583f8dd15c1c0e1bc6ebd283321623eaa45308a4b9fda3"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab9be9c291e92b9fd03775a494b1f1712382e733f8bc99900f5c40f65437417f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "693ddde81b03c0cb80ef193154b9ec72d0f233e32c59757054126409c7d32729"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
