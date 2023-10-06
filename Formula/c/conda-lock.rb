@@ -8,15 +8,14 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "85419ad7837675572a6a4514461067fdce63e827bfeb2a88612e12b9cfa65880"
-    sha256 cellar: :any,                 arm64_ventura:  "c6b68799cb02818e774df9e13c4adc35887bf6dfc3321984abacfd000678ebae"
-    sha256 cellar: :any,                 arm64_monterey: "914496a37ff51a13f5e581561f7055788e93079234c39c29569c3e5a21720ec6"
-    sha256 cellar: :any,                 arm64_big_sur:  "1b0b298c92185f61b43fe56a16db42a891dd1a2197a0d1e04ee4bd33700c7e8d"
-    sha256 cellar: :any,                 sonoma:         "0c696ce87a6762b5b0638acb974dadc5dba58b43740ef8d39f0451c4660dc594"
-    sha256 cellar: :any,                 ventura:        "3929d4ef8f2c3aa70c4895ec81089235b8ef8a17600061d51abe804816e5b383"
-    sha256 cellar: :any,                 monterey:       "a8c33bc93ea18647a38aaf097a5d3064a977724304cee1f5790215420548ff1d"
-    sha256 cellar: :any,                 big_sur:        "01ec9210d6d4d2397a7facf47a8b68195ed1bd604ddb461c306f439194e401a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a5bd184c13c7d2dba5833dd291a402d9a89f3e7d708c7cbfb3a145af4bcb04f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "03c3d988ebde027a0875ea675c4017e538f33f20dbfb3ce8c253bffbda8fa0c8"
+    sha256 cellar: :any,                 arm64_ventura:  "218025eeb3aac6fc906674ae61359bd60d8e67ed4ef30cf351440824836efa76"
+    sha256 cellar: :any,                 arm64_monterey: "7a22d6f6535a62ffa85a19f5bd68b0de0971c999d2e5d12db44d708c90889d49"
+    sha256 cellar: :any,                 sonoma:         "7072f986be3c520bfb4f268febf06fe898fd9332c07e6a9ac63236a3723fd3f1"
+    sha256 cellar: :any,                 ventura:        "6938ab0568c1b20c1004c061f372c36fc716386c25dd1f3f7b1de7a5fad97d0f"
+    sha256 cellar: :any,                 monterey:       "08f9dfe3f072abb77bf4f370111131968479b1856a36f4ee52c67b78855b8f7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d82009f70344d1c57b4e1e65b5ee2672e1979e5d94fc925978d802e70c0a8675"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -24,6 +23,7 @@ class CondaLock < Formula
   depends_on "keyring"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -113,11 +113,6 @@ class CondaLock < Formula
   resource "msgpack" do
     url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
     sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pastel" do
