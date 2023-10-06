@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://sdk.operatorframework.io/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.31.0",
-      revision: "e67da35ef4fff3e471a208904b2a142b27ae32b1"
+      tag:      "v1.32.0",
+      revision: "4dcbbe343b29d325fd8a14cc60366335298b40a3"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
