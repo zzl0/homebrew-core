@@ -9,14 +9,11 @@ class Datalad < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81c5ee22515c65a69df1779786a41bac580e9d4ca63f15d997ca561e84d38a25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fd94837e53143ab40ae54f39bc1c12721e47a483c98d246e2a9870c23247e00"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8da40e3d3f0e460c7b5b6adacd850e74dc6648cf562fa99b981a77abfff7aab2"
-    sha256 cellar: :any_skip_relocation, ventura:        "f049cfba07a7fe9549b3b5271220d57cb0f948263f4f8ba1bda15b2fe66f78fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd36068a4b8af333204059dd9e4ad8df85407f707a134c560b8aaa47883f946b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ceb9a2035b4ccf19f3aebe8ffd0a05cb56bb1bf6be31777b61d4c553c4362408"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59328dd2df851e4c75055952b1eb4a21cc752917d0d5c36d3b5ced2e8f6fd1fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2fba6dd8b5eb1cb30a3ffe8c1932aca0108288da94b01e5540abf2596166dfc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aac4c7dc240c47f10fdb45fa6a368675d5ebcd3a16d2b8dca6a88036763c7ac0"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb7591f30f921846eca5eb77fd21952aac7ffcd22027217afafdb9a2188ab2ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "32f0c14c229cc770aab5d04c30539a6c63e139ea88ae787fef775f0be7b16333"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c950dba17d4aadfc9cf981fc0a4690d42516cac7c1e934ebfbce9ab5397d79d"
   end
 
   depends_on "rust" => :build # for cryptography
