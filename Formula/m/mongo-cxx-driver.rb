@@ -1,8 +1,8 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-cxx-driver"
-  url "https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.8.0/mongo-cxx-driver-r3.8.0.tar.gz"
-  sha256 "60c7a53a0f6b984aab0b231dc0b31c85c8950059f42a354fb522672b059d5089"
+  url "https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.8.1/mongo-cxx-driver-r3.8.1.tar.gz"
+  sha256 "b12c96670e1e68bae1a6f5cb08541f3da52f5ddeb5def274d2cf5d662ef73160"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
 
