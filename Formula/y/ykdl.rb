@@ -8,15 +8,14 @@ class Ykdl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e518af017c28127eae157236fe069b98e544ceaa5557b0f1d385880604624629"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bfd95765b3413aae9546fe898949ee266661a4d6bf7251ecedfa7e80d3d85d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9669d8abc2e7007ab762d54ac5f46d2c06d6414945f93d676614761290e9042"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6577df8df4b3a354e9457740ae9c97249062195f8db9ea293238ac664aab15d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40eb478a3218e795d9b35ac00336947fbf26c486410253ebba3739b82026aae9"
-    sha256 cellar: :any_skip_relocation, ventura:        "25267a1e6a5b19996364dc210a820182dbd979c802a157fa9f063438b6a5eda9"
-    sha256 cellar: :any_skip_relocation, monterey:       "40352d2bfbc62a67104fac49ce087902e0f617b1805106a93d834c6fedf48c60"
-    sha256 cellar: :any_skip_relocation, big_sur:        "899a254962e5978a6c267a1fbab79aa69870c19c3d542b46da81fbe9d120b74f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcff8c2fb5974a8b76afe84436346f39295e613b9a947e57bab68b8650cd972c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac74e40632118de8e802dae515a8179a20d27c5053a9c58d0ffaf408352ba4e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deff9a5bc7f1bd56701715ef0ea1bb360279df66f53cbf6f252678af23f740f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b98c04c184ca52d926b022f434b66d297b4d4a21acba1ad9a44b931a8b379255"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ccf9026d461d265992da9d43084cfdff410ebb8a0d6e56f2ff8b8957e2ec4d24"
+    sha256 cellar: :any_skip_relocation, ventura:        "439dab5539656306042453e2a2d9827ab853856514a913b5a1cc7e9e5281c116"
+    sha256 cellar: :any_skip_relocation, monterey:       "6088be7d6f4cd9e2bf4d897eb24f85364b350cc0f4cc267bc905f3c63f4af741"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "586d3eb95083a2bfdfbba2a180268220319f11489a2a2fad66a478119a5b0458"
   end
 
   depends_on "python@3.12"
