@@ -9,16 +9,13 @@ class SvtplayDl < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ba4cd1e85e503c4f4fbec7810b57e8b7cf122d5ae2317fb220d32e32660ad54"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3556dabf73bdd8b4033788ab18a90dd1f15ba3e4872887e27e4723595f05897a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "627a68708597f6fe8f71510f148976abf6b6546fb1240e734d542755ac76581f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0b7153a9c6ee58b8d0e41fdceabf9e03a39d2c38e44347fe3c3dd78084a0688"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46c04a8ffbda66ec22eed14e56e5845c9de016b4ce4f8aa5c3ea6404a7d90857"
-    sha256 cellar: :any_skip_relocation, ventura:        "80760363a1bee78f62d2a9f125d3b74a71a293776ecb131e289cf21e1983422c"
-    sha256 cellar: :any_skip_relocation, monterey:       "561803dc76bd866b78e01428fed6971585c38f12ebcb521034218126ff90fa43"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ee393b08f40d5be7ed378b937690f5279e52b869f489fec87e2b5a5280b897c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b99d0e88d268b75d56ef76dfd5ecc9deaa4e788bcd0df7cc48237fafc86841f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "823ca2830b88371d12f01dcb9376de4283be384b38e8845113632b3ef1baabd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d2ceb49d1d2240fb105b026899abe18728c285c2a201f65a4dfa11a341133d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e36cc3eda2e7576cd1459066d5bb32e58bbe9b9840d63ef59d705ba52ae59c53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70aa6b965b894aba966298c7fdb027049570e6b21496f68f551c88236698d679"
+    sha256 cellar: :any_skip_relocation, ventura:        "495acc324c8b45347b51800ce8a251489e809655ca4747fd8eadbc657d1e56a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "a05c39ae318b600fd4b0401b4b8376a89894c486d57f78ecf39b491a72733b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7a673a55aaaeeb2a28e50b3e7a5e155656b4ea175bbab479a4f3fea6932b8da"
   end
 
   depends_on "cffi"
