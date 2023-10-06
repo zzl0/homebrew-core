@@ -9,16 +9,13 @@ class RichCli < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13aab5e328aa67ad5f12a13ae0939444127059e885e92bf40eede6425f3f2b36"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c40cd3a2281e69781faeeded8fe14785a1cb10ed9d9ffb6e9fac3593a215efb1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2b29139a36d82363f829d3f69a7bfd35eaae27179b7e14affe762b78dcc69c2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cad5798a07679c79423c2b1a87c0be0290e931d048810f4641757605bb4d0cf5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9782e7f3646bb3cacc5cad4144c565e609c44cbca3a8245ca1959feb1596e050"
-    sha256 cellar: :any_skip_relocation, ventura:        "600d6ebe25ff45c5bcac4ed52dc505813b21362fb1ffd56c5e9c232cc2e982c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "575e2dcb16079752251854dbf0b417146f7bc566477c7ebb2607bb19c26583cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "81a19b363401f828ba2a74359a245b8ff5c4ed9c4193d366a7a4353b2a0f86e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa69de718e5db682820fe77e6e7f69552798a495e8550f30aed683be5ef98622"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e31571f000cbf0d5688d0af6ef4e33f18f90aa18e0ec8680fca1d5cc93563794"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c48b1acb9c3b4edb15a1af12135d1dbdfbd32f769b167965fe113d6eb14eb71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b74562fe26545db08cae77d9cc79843cb321b3f02a07d2c14798ae5bd868a6e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "554771d511efa70f707d60390b4e7a2531d7c128639b7bd98646dcf84da677e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fc357b34eb0daf1d2ed1c7a28e6cdb2ea1208bc99d0d0b64918ff9bed6ed9b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a8e3e09bc1b314a462809e8966c3a4e74843e3c67217a86cdb9c8596d609446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eec52f301c7b50b8729f1c4c9fd00a4002a58e078bc79b25a530b9bc4277aaf1"
   end
 
   depends_on "docutils"
