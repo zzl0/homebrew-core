@@ -563,7 +563,7 @@
   },
   "meta-package-manager": {
     "exclude_packages": [
-      "certifi", "docutils", "Pygments", "PyYAML", "tabulate", "typing-extensions"
+      "certifi", "docutils", "packaging", "Pygments", "PyYAML", "tabulate", "typing-extensions"
     ]
   },
   "mitmproxy": {
