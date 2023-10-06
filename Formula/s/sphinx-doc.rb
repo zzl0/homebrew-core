@@ -9,15 +9,13 @@ class SphinxDoc < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6416263dde3ef4450ed561967d30a2d42e16c62b2c574ca0fa9cd3b752f89108"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43d9aade8a7bd14b4a4872bb8f983d9f54f6e9c1a69802bb9d02462d331b6456"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d81cf0a4e3b6283fc1be0a4b4532c28195381655b10ef50593bebd07fc31c3e0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "faaed42485012afd211340d0be16e47ca3f02e7f8949b0d5e9813ca79aced72d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a6cf1aebca4dce7848dccbcf513a7b1d5989bfd812d0447b3d5157ef294f36b"
-    sha256 cellar: :any_skip_relocation, ventura:        "675fdf20e3920b32e5eb544a26ae651fa05b98b96ca2e6adc3ba2177edabef35"
-    sha256 cellar: :any_skip_relocation, monterey:       "d531521fad65df5b2b1c8b3a1fb1e0b14aa2c29903005bb00bdd70906fd84a18"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94baf12a48e8f732b430972b619129dfb49da667c897f333c638d57cfa9f1076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a59a538214bdae0b50e986b5b35a1c3df39cc9164c6c067e758007efd94ec44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0b328086e32e085705834e8837c514545c437133b75aab45efd07bf3aaf7129"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e919e06c447a5e282fac72d82c58e968dd5d527677ba7b2ec85be61c4f1e7b4a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e889347c3e0723fffae2eaeb533400736cfaa848734f1ce70d2faa25e53c858a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9f72cf127f4fa194cf0acacea074a06709ceed60e5dbcbef3febefcc80306363"
+    sha256 cellar: :any_skip_relocation, ventura:        "9eac6a9922b6ab14d60c0e5f016ea62d7ec3e9352ed05a6a1daf9845daee0241"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ae008b58c302b3643f3b50c38774845383ac7c062f325225da39204f3aed0b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cde650997e21e518b96790dcecfc522fc4dfd0193a5a91badd94af577997b61"
   end
 
   keg_only <<~EOS
