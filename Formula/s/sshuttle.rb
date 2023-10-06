@@ -22,7 +22,7 @@ class Sshuttle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "89386b334888a8effeca3997f8910b1a4543ca37cae33a50d80f047b4b65576e"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     # Building the docs requires installing
