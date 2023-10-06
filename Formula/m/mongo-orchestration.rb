@@ -10,16 +10,13 @@ class MongoOrchestration < Formula
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80ba9af4e2c6e96aef35f50bab5eecaa69040a651c87027601b2ae890fc25ca8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0884101bc25982a442d27a1503f42a4a95d3b62f56ec3f91e010bf3f58746814"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f3a32fd2fdf01f8c1ba8b95f525e3a7168f1abc8914d14e715dc76350e9a0f7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4afc69e2e454af89a58911bf0308794d03a628fd90b974e28a4ebf2b01ce8e93"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4219c11be5e37a97f93dee627bfb239b8c8dffc483e30b102627827f108d2e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "69d7e56f87266880d7430f0a226c07631968d937567786a733e827e30cc7e73d"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e533ffc23e27afbc26e5b1b713bbddc24dd12ce523cdbb22a35dc3271658a02"
-    sha256 cellar: :any_skip_relocation, big_sur:        "15a1d3f33b5f7dd2a8e8de50a3092a37c119863fd1a2f442e96be01d5b22de64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b4a2428b60fe93108e399f4576b733d8a31dcb9ffcdeda0121ca428b644f490"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4547e932836b3d9d38f6199b174f1267dc6ba49bf46bb5b649fee461342d4bfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da29974c8ce64b019de806808608cde7ad1547ba291bf4e4aea2cab529bcf6fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81a2be6824b095463fb0f8542b1a4deab0e47f59ff8c1a8524c0dfd2b6a3d6f4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "521e4956de0c06a663b0d22c375d24a04973c960a9cbdbd512c2229c03594656"
+    sha256 cellar: :any_skip_relocation, ventura:        "35ad6617737719ab8589338bd601b5e28fdcf7bb76784b7baf1a926fe12eb156"
+    sha256 cellar: :any_skip_relocation, monterey:       "657f4be44297cf4914a8182fbd40dd6ecd1f47b929dc99a2762a7d7c62de22a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e213e01945e80249f23659325cb13bce5c191e9386f822b608197e3fa21e63f0"
   end
 
   depends_on "python-certifi"
