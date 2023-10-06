@@ -10,15 +10,13 @@ class Platformio < Formula
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c435f08169d89fa5504e9f63f282bce0b1b9c40dec6f323b838e121570477bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29fcb281fc6c6b614ce81aec6e6d63022b985ee4bd6143adbcb110b25d8a2183"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cb2f3f512c9522b753cd17d4dea74dfc9761abe255974a9e6b7853536e7ab59"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43609e10c55fbc9534ba3f2704d5a421ba79f5aa6f744a586c35644c098606f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "37ecacf07a256dafd3fc6c6b54b3bc143c91c3500e4fb0fffc386d7d8e40b6d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "2849f990c2fe85285af38d244eb63f130eec8e03a1983ba72bfda17d27156849"
-    sha256 cellar: :any_skip_relocation, monterey:       "e12acb50db6d7bead7496dd12dc6d2166b301a49f1831200f86912d3b6847f88"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b3717f7128208c6d941512b27f4514a97e16b8edcc36237132aee595b2186b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e67ce19a0fb3e16049a88a83331ef494387046f2703cdce747402e6c75ec994"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0c6648d78a0d75d52ad258ea79dedfbe5a5bf355aae3b96c49d06056e8373da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e70812f64dafadbdcb9993942423f1296d81b6a339e4c5b11216fd140b83d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25375e2e1f78f2813d07f59417460d60ee26015c8dd0aedc68dc463e18efca2e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "865fe1d99a833fd52acc24d0b38e4562def0d58001a7e6ae81dc38c7863c9f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c948715148340515aeb392e3195e34d9f3158c0611cfd0a3d5aaa19b9cd693a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f410f71e027d202286338ed74d9b7d500c7e2e421194c9bf99d06368e8424ae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1742f23171f2e9384b3438c62510db4f12c3424d730cf1be7b49e47058a86bf8"
   end
 
   depends_on "python-certifi"
