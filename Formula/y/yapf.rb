@@ -19,7 +19,7 @@ class Yapf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0096f1ba0a8ada09d41a5ad0ff4a1759b96888a492694f309594ed8de7c2678"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "importlib-metadata" do
     url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
@@ -27,8 +27,8 @@ class Yapf < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
-    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "tomli" do
