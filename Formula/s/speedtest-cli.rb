@@ -14,7 +14,7 @@ class SpeedtestCli < Formula
     sha256 cellar: :any_skip_relocation, all: "dbe544f6837c7157450533ffc8a0e40166790b7b8c79f24e9aa759fd66888c23"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # Support Python 3.10, remove on next release
   patch do
