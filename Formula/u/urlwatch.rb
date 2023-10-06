@@ -9,14 +9,13 @@ class Urlwatch < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2df1b2813ba9f42cec41dc2c051986d79ab02e80cfb5c3c9522a75096e24bd8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55592654f29d94fa3e5c470fab6ccb2c152b8852880dbcf80ef470242b428ea6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d64c1516c4b8abdaf30633c4a03ba930495cdd6e0108d4c672dff294448a20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80304a5d0e2d191d4ca4f7571bd62ff7aa29329b4b02cd132296045dde5e21aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "1200dc7c4a1b01bf633751875eaf6e7aee69d037fca3b692da9d4465e19aa68b"
-    sha256 cellar: :any_skip_relocation, monterey:       "138b9c1ec5569d643d1b5a00363bf5a4e127aa53ed4903b6277b12821b83099a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62b12461c99498a1e19f57e5f11b4410d3640b35ab92f4eb173e599a431690f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d00d4c5b4e62dfd5ca9321fd881291e3a6763716f4db77c7798b3da82ec7ab59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b51ef7667d85414aab742de66ec248a77ea88e747c43a0b96b008ee5abd3602d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2699fcc2c87ff27786869460e5aea19a0d2998c6e6b8c49a8aaafdb358170a7e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70728853d1a818d2fcdb52dff6f745995304043adc7e27174ee35253c2ec0ba5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b14a76bf36b800483e208d666cfe492ca392c7bcb338429d196bfdd15cf06251"
+    sha256 cellar: :any_skip_relocation, monterey:       "4af180a8abbf009362f2544350a79550e634f9373899de7bfe7e5572368b5975"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6cf3f8e83ffce0376deac7e889f55db80ba19fd0f8c0f7c990d6dfbb77ef309"
   end
 
   depends_on "keyring"
