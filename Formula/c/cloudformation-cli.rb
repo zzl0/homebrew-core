@@ -9,15 +9,13 @@ class CloudformationCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2be2b98ebdc9490357fb192a3c310bc6e50d4c4b5ba6001d45f5067714d95df1"
-    sha256 cellar: :any,                 arm64_ventura:  "04c8ec916c48b4e89d63790f2370438a84d2c4f2a78344caddec2d8873feeb66"
-    sha256 cellar: :any,                 arm64_monterey: "557e8900862245ca57941b7aa0769ccb2f0694c3d48f947d2dc1dcc42f6cb96b"
-    sha256 cellar: :any,                 arm64_big_sur:  "bac95551a1ce11012374d56fdc34d75bf5a229e1618bedfd039facb8903827be"
-    sha256 cellar: :any,                 sonoma:         "bec05c94c2501bdcee4eecf47986648a90fe3c8181ee755b429339b7cc44dfe5"
-    sha256 cellar: :any,                 ventura:        "ba910e700fb8b7189ebc704225215b397fc1ac2e0d4e4656759df7756ceab3b0"
-    sha256 cellar: :any,                 monterey:       "d912d6d267457a566ba833fd362035efcdaad7ad97f81a4ad02bea4eedd27bf5"
-    sha256 cellar: :any,                 big_sur:        "d18edefdab8ce9d3ddba1c8e8d9d2912d37a53923f9e231512686a59651de57d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33dd218a85cbc797788bf70cb154495208e89be03ab1b68e9f419b607b286108"
+    sha256 cellar: :any,                 arm64_sonoma:   "1db314b021b081a039123d499747b175d19d8a99ae06bcbf4b8692d18650b991"
+    sha256 cellar: :any,                 arm64_ventura:  "c469fe831e13d7414e1becbdd868b334409d8d6aac990b276235e8a2139dabc2"
+    sha256 cellar: :any,                 arm64_monterey: "6a3a035f4e20f9aa83e033d3ca55070a9e46d132c2604edb36946c0083d358cf"
+    sha256 cellar: :any,                 sonoma:         "af8cee30e85cbc5f6835f2a36ae495158a788e3dead9696d3cf4bc8f1cb5c64d"
+    sha256 cellar: :any,                 ventura:        "ee3a81970926eb8100e605de87532372f7dc5e5a34dfab8b01dd9920be202259"
+    sha256 cellar: :any,                 monterey:       "14da076bea8df4e55fef3822e08fb913a0e92bfd15fd0c48fe1358997a5d23fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ded110c67e0bafee45a27329b42c442cce0e39b7cc144c1910f2e5bd7aa9414b"
   end
 
   depends_on "rust" => :build # for pydantic
