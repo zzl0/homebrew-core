@@ -696,7 +696,9 @@
     "exclude_packages": ["PyYAML"]
   },
   "poetry": {
-    "exclude_packages": ["certifi", "cffi", "packaging", "pycparser", "six", "virtualenv"]
+    "exclude_packages": [
+      "build", "certifi", "cffi", "keyring", "packaging", "pycparser", "six", "virtualenv"
+    ]
   },
   "pre-commit": {
     "exclude_packages": ["PyYAML", "virtualenv"]

@@ -9,21 +9,21 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ac1dd3ad3f60e5fc8473beac495b6abfc40288c4e13ca67c6220ac7f5898f78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a57d4c10d52881ea192dacc269d21247a79df759ce509c1699ec12e49587a1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53b9d994d9e6c7f0be39723cb464cff7a3eec7b08dd45c0a8dbb27f18c96c577"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b2cbda9066b10c355be77d593b801be982bddbc47d0bd51e17c5c06348b9ff0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fcf4b9a3a47464b6c959766d315b58bd2ecae4b59b3809f78f25290a302fb1ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "e91571f32c6fa981fa7b3ab2223b642032cb1d6d0ba18069b1f604681fe7bb6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a831a704d88cea4eeca99018d96151623065a379ad5d69b3b9b930ef7e912caa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f666bbe5fb29f53891e8467a3e767dd5273147d11c84d3c2c46a968f830bfcb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65e1ce4d876575d4c6018a87bb5a567c292f61808a94c4e6b9d709f158968711"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8449b40685afcfc46d7cd1cf5eef9d16922688bfb457356244d380dbc54df3b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "221542a011ede75d9f8adec510ccdb1f676f75cc48bab51f8490367fb77e6b16"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f93696542f2ecb7b65cd670c18878ed0964de1ebfd0241c1c19a53ff0a6d1b0b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ecafaaaa2e7ba52f4c7fc6e14c4b0117f823ebb12f191fc7869908625ff9c29"
+    sha256 cellar: :any_skip_relocation, ventura:        "6001404d188284cdae27923350b938d27ada6e65f0e6b45c8caae30860035502"
+    sha256 cellar: :any_skip_relocation, monterey:       "64acf4c8d49c86311f39e2098578af0845d5c645bf4af0fdb56bb8d1e2c42558"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c9224a1c1e126a562e90487a0ed8b4af8f43756ab38e03bf0da09534889185a"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
   depends_on "cffi"
+  depends_on "keyring"
   depends_on "pycparser"
+  depends_on "python-build"
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python@3.11"
@@ -32,11 +32,6 @@ class Poetry < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "build" do
-    url "https://files.pythonhosted.org/packages/de/1c/fb62f81952f0e74c3fbf411261d1adbdd2d615c89a24b42d0fe44eb4bcf3/build-0.10.0.tar.gz"
-    sha256 "d5b71264afdb5951d6704482aac78de887c80691c52b88a9ad195983ca2c9269"
   end
 
   resource "cachecontrol" do
@@ -79,34 +74,14 @@ class Poetry < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
   resource "installer" do
     url "https://files.pythonhosted.org/packages/05/18/ceeb4e3ab3aa54495775775b38ae42b10a92f42ce42dfa44da684289b8c8/installer-0.7.0.tar.gz"
     sha256 "a26d3e3116289bb08216e0d0f7d925fcef0b0194eedfa0c944bcaaa106c4b631"
   end
 
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
     sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "msgpack" do
@@ -194,19 +169,12 @@ class Poetry < Formula
     sha256 "c12e7d81ffaa0605b3ac8c22c2994a8e18a9cf1c59287a1b7722a2289c952ec5"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
-  end
-
   def install
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.11")
-    %w[virtualenv].each do |package_name|
-      package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
-    end
+    paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     generate_completions_from_executable(bin/"poetry", "completions")
   end
