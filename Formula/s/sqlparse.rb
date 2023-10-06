@@ -19,7 +19,7 @@ class Sqlparse < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca4b5b97c59bfd1dc543b12cb6ed23b98feb5ec991e824ad442c171dc8a04103"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
