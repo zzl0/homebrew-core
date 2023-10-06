@@ -3,17 +3,16 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/dd/28/76e9923d20c1dbf82e968adc39c35bfcf2f78efd72a77f385f3db074da20/locust-2.16.1.tar.gz"
-  sha256 "cd54f179b679ae927e9b3ffd2b6a7c89c1078103cfbe96b4dd53c7872774b619"
+  url "https://files.pythonhosted.org/packages/2f/f2/8228f690df243562edf03f5b42d2542f868903ebd123cdb97c47ab3e14c3/locust-2.17.0.tar.gz"
+  sha256 "e50bb4647370c22d27010cd700cc87a519a0f25fef012efa7b42af68982b58f0"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec0907566674dc95aafd967c4c28f6a160e58ab7428ceb47adbf69d7db2afc5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6294bf1ccc3e90758ed01e5dc8372ceeb6832a93d140137618ad909ac7e9345"
-    sha256 cellar: :any_skip_relocation, ventura:        "900d3d5b5f15f1e6ae2ffa71afa955fa7c564bc386b63f6a4d49d7491f8fc581"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb119b479294fdb37d88c90b823895f9aaa84fa30df92a5a1be989d960e5efa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eca376cbdfa5fb473711a7945f4cbfbc26dcc314f9a5af21c1a31d8ad2b8aa35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6700f52718b21a50b6322e6639a9a0a77dd70aedf292f93615bd577d0b7d133"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bce00d84ab62d932f7917e1471eccb858b381bdfd0ddce1bfca66ab56879eab"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a82b371fd587a754634caabf02cf36d7ff5e3e2c22f35f9f3fb630944ef483a"
+    sha256 cellar: :any_skip_relocation, monterey:       "3131eec65c151d9391d6452b4dbbd44807fd03b7c485a9098b27bf60edcfccae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6507a4a16d602486101d2be88b1c0318087b108bf53dbb430e40f6ded364543b"
   end
 
   depends_on "python-certifi"
