@@ -23,7 +23,8 @@ class Unoconv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "436ea616c97c3d252b6575df52641d54fd5900b78ab329b12671c13061762f5d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def install
     rewrite_shebang detected_python_shebang, "unoconv"
