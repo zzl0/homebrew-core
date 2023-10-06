@@ -9,14 +9,13 @@ class MetaPackageManager < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0ea204536cef3cff59d9e1c98a7e8e754118bd897f90a8a78f0263f4659f545"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e23c6dcf0aff9f10482834af3d74c3153f4f1932897daf28d1decb1e7932b799"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f5bf2cbce63bcd35b83f94cdcfd65140ce996cc3a34577bd0257b99eef88311"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5510e650995b4e951facecdf8698150a986890647de7d55101d5ca65d74b0495"
-    sha256 cellar: :any_skip_relocation, ventura:        "59c453917cb56a850094a8749b857fa1e6f3bea6564ede63a950c6c2d0c7daf4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c22fbbb360cc4d06e61bed8285fa402dee79df54ff5da26c492ce467c007d48d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab66584fa1d1438859eba632e48111d1a1ab3d07bd0bc2118135558c85685456"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ed10dce0a8da2dab64ade65994add7ed4c58253f3a074f9b98f342dc2a08921"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "003057beee036bdf14623e4f0c88bf25621ad17f815e65eddb6ba00ff497b0c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87f705d2fa66a2cada6cba27e92360c2e307405f5c545ed91eb6efb9bcac777e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "73d7652908ad0ad99ac28a719782290dad9a38de7e29b37714ce0a42adf18a7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ecafeec7aff17331f65b8771ceae6473e14a574f49aff7b6535cbf07a286f3fc"
+    sha256 cellar: :any_skip_relocation, monterey:       "91254e2e1bc3ae834c0187409b7883d99bd29442d73d2486db3a554096623a5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f53794ae1da403d7a988e282505af01cedcf44c93212a263128a01b3bb02f22b"
   end
 
   depends_on "docutils"
