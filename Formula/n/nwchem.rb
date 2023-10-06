@@ -1,9 +1,9 @@
 class Nwchem < Formula
   desc "High-performance computational chemistry tools"
   homepage "https://nwchemgit.github.io"
-  url "https://github.com/nwchemgit/nwchem/releases/download/v7.2.0-release/nwchem-7.2.0-release.revision-d0d141fd-src.2023-03-10.tar.bz2"
-  version "7.2.0"
-  sha256 "f756073ab3206571a22ec26cc95dac674fed9c4c959f444b8a97df059ffa3456"
+  url "https://github.com/nwchemgit/nwchem/releases/download/v7.2.1-release/nwchem-7.2.1-release.revision-487f8b94-src.2023-10-04.tar.bz2"
+  version "7.2.1"
+  sha256 "ee3f0da0bb8f9b366dc6960d79af61bbfead3290779c77b975b1df020394c6ad"
   license "ECL-2.0"
 
   livecheck do
@@ -63,6 +63,8 @@ class Nwchem < Formula
       ENV["USE_HWOPT"] = "n"
       ENV["LIBXC_LIB"] = Formula["libxc"].opt_lib.to_s
       ENV["LIBXC_INCLUDE"] = Formula["libxc"].opt_include.to_s
+      ENV.append "OMPI_FCFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+      ENV.append "OMPI_CFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
       os = OS.mac? ? "MACX64" : "LINUX64"
       system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol", "USE_MPI=Y"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
