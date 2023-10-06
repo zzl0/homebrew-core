@@ -18,9 +18,10 @@ class MesonPython < Formula
   end
 
   depends_on "python-flit-core" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "meson"
   depends_on "python-packaging"
 
