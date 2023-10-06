@@ -12,10 +12,11 @@ class Twoping < Formula
     sha256 cellar: :any_skip_relocation, all: "4a8be32ba927a46659b03b82082dfe5477e5e84ae24b7a1185330ca5a6ac0b34"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
     system python3, *Language::Python.setup_install_args(libexec, python3)
     man1.install "doc/2ping.1"
