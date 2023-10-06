@@ -10,15 +10,13 @@ class Checkdmarc < Formula
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24b0983a28c82a19e8ba36fbe343dd8a461551b4bd8004f332bcd3af52f74006"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0e87300638710f8eb888814b0cad7ca22319654e7834f6e80c39cb9c1c1562a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b780c58fe6a1b04b0bac4cc4df06ea681d3583d8e678d2be523830fed51d588"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab53148f5c5a969e7682f6a09a0cf3f2e21d7d1c1a46bfa847bc3b26a9b0bf9a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1855b2ee099375080683e987e2488b68d77495df6b0206a7ac3c3b8dc7406cd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3b6432cb3e6575b2155cd999a62d8198c092d6ae57d04f492c5c722d0cb707f"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f11a0bc35651b702872e89a329605dff932898d187531ef4b3d5dba19eaffb7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "71140bc82af59a2095a04e3ef60186536bdd94b74a8500fb30421b7ddaa6782a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c43827c3a11062b0c8e82004cccd526ff6aae2a0fdcf2bef6c4c530d0f93267"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8858319e444d36531fbc3a8bce68e434d15eb96ea016d7cb07ee5a8daefedbf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3de8bdd48e112b15332b20345362c1141dcf7c58acbedce80fdc2e5b82da42c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4e597452f9a120cd14d16b5a88140335bd6b4324b3902d4657506d0707a3e19"
+    sha256 cellar: :any_skip_relocation, sonoma:         "11a23f8476b964b1a8e63630245874110f8718978eccc02a92c16384e6a20105"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc04b183f6435b314fc3331cf9968fc761616674b71ef728cb87cd1aec9fe6e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c2316f23b0db854692b10f4ed72d24965d8744750b5c6cc4ae40b8db674bd44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86678ab032daaf8b71f2729e38cd0d0aa494fa649471ba99f530401280b31696"
   end
 
   depends_on "cffi"
