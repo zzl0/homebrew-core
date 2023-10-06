@@ -9,16 +9,14 @@ class Urlwatch < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77194d4e19bf9dd7d2211c4bbd33c887985f144b1e93356da7f0a8b107e753ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71dd07637cb16e9fdefe88a6b7c3b185e75e8273cf1df0b66ff9aed362173a35"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "346745e6576fd05d96567290492324e45a5c93bc8ca6116f72445b78d67eda21"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ee392529d83ef5de6ca571a5848a2be41cb5a81b2f3808f6057d0e6d6fdf153"
-    sha256 cellar: :any_skip_relocation, sonoma:         "028897df9d8dbae2d09507fa8a5f7aa9b0444bf25c1e8858ae35b6f56bb849da"
-    sha256 cellar: :any_skip_relocation, ventura:        "438fc2c114c69e0b3db0c1682c57aaea47cbda8df582be9e9f2f29418a80275a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b52021d6a5c4e5a4bc769240816ab7339a993322dc62a482d83e3aac4d43f53"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4bc363086d04a2ecdcbaec79471ed87066e468dac74376d3e757def0eab76878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1876b0b2ab9d4e7e6e44c941422a7eaf451305b472dcc8c35f73986aa9401f9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2df1b2813ba9f42cec41dc2c051986d79ab02e80cfb5c3c9522a75096e24bd8d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55592654f29d94fa3e5c470fab6ccb2c152b8852880dbcf80ef470242b428ea6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d64c1516c4b8abdaf30633c4a03ba930495cdd6e0108d4c672dff294448a20"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80304a5d0e2d191d4ca4f7571bd62ff7aa29329b4b02cd132296045dde5e21aa"
+    sha256 cellar: :any_skip_relocation, ventura:        "1200dc7c4a1b01bf633751875eaf6e7aee69d037fca3b692da9d4465e19aa68b"
+    sha256 cellar: :any_skip_relocation, monterey:       "138b9c1ec5569d643d1b5a00363bf5a4e127aa53ed4903b6277b12821b83099a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62b12461c99498a1e19f57e5f11b4410d3640b35ab92f4eb173e599a431690f"
   end
 
   depends_on "keyring"
