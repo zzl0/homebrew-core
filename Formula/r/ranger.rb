@@ -23,10 +23,11 @@ class Ranger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a4d109e42f3146daeb999e613a9cedca98cbd851f98f950f54cfaab5e872c58"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def python
-    Formula["python@3.11"].opt_libexec/"bin/python"
+    Formula["python@3.12"].opt_libexec/"bin/python"
   end
 
   def install
