@@ -9,16 +9,13 @@ class Howdoi < Formula
   revision 5
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "febcb7a46195a3676b248c5b31eb800b25eebf1c34968798ccc3360cc6ea981f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c67a026b9b0cc0841066a58e3183d47c2839118cc820f41d1a4dacccc123953a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "235c81462e7fc3b3a3c822b51aa95ba55c749574bf40aa419251bce7c69987e6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b0636bffb88bac42470c12b829478b1696bff91e8d9a5dac9ad2ed097f8be22"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d889601ba08914bd50a6d40131b3d87609334b623283b348428eadca8752b1db"
-    sha256 cellar: :any_skip_relocation, ventura:        "e09e4ea1b0e39d0a561251dab53243bdca1dddbe018686e6cbe229746dfacea3"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d4a4b417003feee30d8d20c3ff4f5d6fc734458f3d0b201afa62b9ea0c2b2a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9f9fed5ac1396cf0d9807e4b3c5f49c1a818086569b3c3d7d755be84293aef8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ebcd9370c8f4ff7d67741d17267c6bcd60015f340622a678c0a7dfcf585b501"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd85b378b89eb71c34720a6bde889d064c34ac344c22ad518098e25bb2b29089"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64b6328f193b18bb0060306b6aa7bf8ce69459751a901c219a64fcbdd262c54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ad7b26ee13a778b13a315d42fc461c3ac138f766d85fc16808374c43522b98e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f53d0bd3a568c07ada70e98ec2ce331836b148b7a977992568362391c46eb21"
+    sha256 cellar: :any_skip_relocation, ventura:        "601ca1bafc280c90711c56e0c2fa6e98ed4c660d8e4f51a0cb5c103fb6415df2"
+    sha256 cellar: :any_skip_relocation, monterey:       "982ccaf768e20d0d9dbee4a7a0e50ea7f8ccbad447ff94e9ecac10560a6c8f85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81cd8933c3ccce662969043af636c746a4f2c6d77defa97d8100817122ba6d92"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
