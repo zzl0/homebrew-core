@@ -14,15 +14,13 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "480510503714d9025ca5c190f49dba737a4dc7af745f00de52aa24323bc11f6d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1163d5ea8663f52408c270f3eee4b8497704a32798957cb572f7c5bfb22d9c3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d146a72a173394fc4858c2de4e4c990efdafce2ba2fe54065f82481b083b3e4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd91fd589efce9a2d6ef647b286a519b605a37656fb954d82ad0a81fb60b93f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b304012c395c313eb8f8385ceae4337a425b581ca2ff52ad46971eb3c7f514b"
-    sha256 cellar: :any_skip_relocation, ventura:        "c27fc513c141ebd99d3eca78eeef2b11bf34b61c09e1707c0bd42e81a4df8952"
-    sha256 cellar: :any_skip_relocation, monterey:       "491ef0a794349fd44b3d6fb7adc9dd7bf1c0d6576d59bd19f905c83ea52e6021"
-    sha256 cellar: :any_skip_relocation, big_sur:        "14daafcf9066b9da9beaa9a1331c3f8230759817f0ff410e579646ccc1fc554f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c3b19ab39a59e67e83d89d5bd90faf7ceb9785bf10ab5d778e0fa92eb1958b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b85ce35f8a539e7097b10e3cb88335e18e95546573ef4b00e388cdab40bb5e4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "844814015ef178793acaa05d76a4c4b524541fd86057e035c534c1e7b855207e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17b4e9f02faae20a8a45c891f16419daa28040b49a31ce6b72d2c0a5c214b954"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3bdf597e6b388017b769070351f4d150463855fd9663f9c2ff5df6b04c06640"
+    sha256 cellar: :any_skip_relocation, ventura:        "175cbfe16c490c947079a9e7e964aeeb447066ea3deb9d0c98c8c590e05174b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "f273df737dc3936849b3939a3be2085fa9673beddb909bf20669e50aaafdf1c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87872ff851df00c0fb9bb5ce9f8c5f7739575ff35f0a04c917ee9f6a706690df"
   end
 
   keg_only :versioned_formula
