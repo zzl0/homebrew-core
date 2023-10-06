@@ -10,16 +10,13 @@ class Credstash < Formula
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d664a1db5cc06cdfe123be195526a719cf10aba04bf94e5252346c41ba390e83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b86ad1d335d4746f547947fc9b42ce6addc5f1c29463c8218c15fc334c8e1715"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f77105f741e79810e8dfba34cacd76a0f9966426815b62c408fec2bba5348fb3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0391a96475de52009bc689bbaa4472a876a79d211873a89a4038d5e75087d75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de83502f77b844ae67d1e96631d926c2e7e424fdbb307269596b5f48e2149ba3"
-    sha256 cellar: :any_skip_relocation, ventura:        "2986114fe1b33be3e0122e3810e14b4efa2486028b2cc99500aca94f448def5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "126c705b846615953eae6057d205728c479236eeb8081c23203022aadd2ac273"
-    sha256 cellar: :any_skip_relocation, big_sur:        "386372a295a6b8a73f1f1f6824e70d5ceff72be362c442f82f79495894ccf177"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20e8270eec392ff8bb5d99862f81a9dd3d8831c22fcd2992d0175ede9b4ad3ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c854434b876dd214277f3336444688e5a4961a276fe907964721dbac7b54c071"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5ab6a017376ea7f2429313acfa03935e1e3840020323d3e2a6b14b42258bab4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53e1a9166a66989696cd0c3d7d172ee4cec8e19e3ebbde55d951f7226461dfc5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ed209e95cdecec887f3c619f2341ad567420b76be3d5a8e05afd83d5894c0a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "8bd21419bdebbfdf519302d3f78e37de9e8c8cc235bd74570d5e73f8e52121b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0480b79cbed85178242dbb079beee67f0322c4af0160884ab3e0a0ac2581037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b1b65915d7050a334a7cc0b58335e79a9aa234687c452a7e6ae785035585935"
   end
 
   depends_on "cffi"
