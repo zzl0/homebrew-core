@@ -21,7 +21,8 @@ class Diceware < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf96f6848831e2b09a09cea6559df72f621314df4c567b3313dc6404fdb04845"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" # remove for v0.11+
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
