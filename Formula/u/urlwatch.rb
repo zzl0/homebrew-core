@@ -6,17 +6,16 @@ class Urlwatch < Formula
   url "https://files.pythonhosted.org/packages/ef/6d/28df22a0912d40e294cfde709ead82e36441018ff9c0137c9e768ce9084e/urlwatch-2.28.tar.gz"
   sha256 "911df3abbd8923e46ec167a9657a812436caf93f7f9917cb7c95ebd73d28cce5"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2df1b2813ba9f42cec41dc2c051986d79ab02e80cfb5c3c9522a75096e24bd8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55592654f29d94fa3e5c470fab6ccb2c152b8852880dbcf80ef470242b428ea6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d64c1516c4b8abdaf30633c4a03ba930495cdd6e0108d4c672dff294448a20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80304a5d0e2d191d4ca4f7571bd62ff7aa29329b4b02cd132296045dde5e21aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "1200dc7c4a1b01bf633751875eaf6e7aee69d037fca3b692da9d4465e19aa68b"
-    sha256 cellar: :any_skip_relocation, monterey:       "138b9c1ec5569d643d1b5a00363bf5a4e127aa53ed4903b6277b12821b83099a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62b12461c99498a1e19f57e5f11b4410d3640b35ab92f4eb173e599a431690f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d00d4c5b4e62dfd5ca9321fd881291e3a6763716f4db77c7798b3da82ec7ab59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b51ef7667d85414aab742de66ec248a77ea88e747c43a0b96b008ee5abd3602d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2699fcc2c87ff27786869460e5aea19a0d2998c6e6b8c49a8aaafdb358170a7e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70728853d1a818d2fcdb52dff6f745995304043adc7e27174ee35253c2ec0ba5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b14a76bf36b800483e208d666cfe492ca392c7bcb338429d196bfdd15cf06251"
+    sha256 cellar: :any_skip_relocation, monterey:       "4af180a8abbf009362f2544350a79550e634f9373899de7bfe7e5572368b5975"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6cf3f8e83ffce0376deac7e889f55db80ba19fd0f8c0f7c990d6dfbb77ef309"
   end
 
   depends_on "keyring"
@@ -33,8 +32,8 @@ class Urlwatch < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "cssselect" do
@@ -63,8 +62,8 @@ class Urlwatch < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   def install
