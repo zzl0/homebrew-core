@@ -10,15 +10,13 @@ class Pdm < Formula
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed8f8c0cf951c53694a53924dbfea00b35ef0487f15093ebdd103654b84159fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9575e9fb086318f52d7bb1c20536bcafa0423c11a55e5928ffcbe0d2d8c8e15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b7fbbbd3353911164de1ee580e2bca76be3ef8ead2c50e5da15207296a6b894"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f8e2c40419d0d1695869f545eea29cbcbd6b2ee297065f4761118c4878abbc9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "63f85dda78eee5451b348d1c8c44f13fc9a3d0f3611514aa66edffc77962b340"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7e320e2753a87ccb2a0253760926e2a9ba596d1d3dffd15be710345b0c5338b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2dcbe138bdefd307453987887e6d6e31407f1c08c748c09b67b4a6c87bbd3466"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9af45482fb38904ea8fbd0b34ed5033d5678467a3ccea7f7fefa40b373cd74f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "592291128ce1441a12bcac8b2cf3c38aa54b58e924c89674c9316fbe7c6fcadc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2def5b86f2b303363d0286a29dd8f3bc4f3100953ff45008d8d52318f4d96ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2eca96e928814af0ca04bcdd8a438e177eb9d834ab3aa50f3fc502a65ac91bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55c20094ba7c449d6a9c989658b41d05fac88e02c30c93eed51402483498ac52"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b8da1d29477abee5a5e26a99dbb848835f12cb01e99d6e852e89a79f2a537bdf"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b08c68b6991fa15c8b2cb80e270d7a9bbbb294808e793ccd0be546c006e09c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "5b280bb6e28df8b999cfb71abecd2f3e1384363ccddecd55a13c33f3918989b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbc2f73be748f8f355ee36675255805449145feb85c9f5d58431f68cf480684f"
   end
 
   depends_on "pygments"
