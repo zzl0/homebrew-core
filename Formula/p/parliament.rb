@@ -10,15 +10,13 @@ class Parliament < Formula
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "600c80ed332cc5a9808adba20a4910a6576bf11983abb5aa84eae6d8ad1d5afd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "793aaf3ec629b551aef846cf197c6eed1333b11bdf77b87849f665daa4ece393"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "deebfe54315a56ed439cf8c65b3b1adae33aa1fbf3c4f39b4cf14caf5313401f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "249f3257fbc3aa941a84be43b1c6feaede1eb6a47eed1005c958bd7c4409f4a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cda6aaa44affb4e044bbf218fca2b4823c13703beeb7903b376e43b4b1668ed2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d62c6315016bfce9e2b866b8668d275bab7fe1d6c5fb57eaac49e836af5a971"
-    sha256 cellar: :any_skip_relocation, monterey:       "67a3074ef1ab056322eb9c205fe698dbc0fcecdb79d787c6e6565f8de30d0403"
-    sha256 cellar: :any_skip_relocation, big_sur:        "530a75b7270e1132fed8dab200c248b05b523acf274dd9e0f283804c413552b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e5aa8d443888fe5c664cc1e2859877c9cba2b60bb13fd5641f872799c4760fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe5c0b6d766a6b539043b5ebc43cad8aeebd2a0349434fe65bed49fd8e4eb242"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "326f9d7e4764cd679f76b55328f835097aff2fdbe42adfcdc2ec5577c888c2c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ac49bb16f7641ca3b4e8de5f97df65f05e0cc8033d43355fa93c1af4a364f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ee290a61e5174c9d65535276648c6bac78475e79ac8c69210b6f790e1b35898c"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d83e90f69aa19f234c27488b5858158bb253d9a3ed6705d343051184052999a"
+    sha256 cellar: :any_skip_relocation, monterey:       "bcac289b8dcf56695891908a4bf3bbe31226db649e05a90cc7053d36b0a0f3d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22a8c80dbde299ab9b4a82acf4af154ed0783d2e3645c5f5bdd5329e3879a400"
   end
 
   depends_on "python@3.11"
