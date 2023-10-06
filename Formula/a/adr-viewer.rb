@@ -8,15 +8,14 @@ class AdrViewer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e52200c176a82cadb06bbad80ba940caffc3d23ab310cc3ed761f5dc5af6cc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5f4f03e050f02f910d3bf2d6a59c548926dfd3984769bb765b2078a6dc36444"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "662edfd417b450c86b4e7e466d7d0b238eafa79b7390cdda6db7318592fffbb2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc0056ec85ae8e7d337212989d2545bb85fc6c6d86cb6591c687fd5204905b9a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2cb4e44b96ab97b75eea8ad2faebd83d3c0f31ce2f3b4f78c209ed3d1e3aac88"
-    sha256 cellar: :any_skip_relocation, ventura:        "9b6515a202d51a07b7ee99539b4418ada56e8666b6566ef49bb970aa519b49fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "c48703b191914a07393cc44051ae9c2fa2fcfd3eb5b4c0ce06f07fc1b28836a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8fa60fb1ffd33f03e899a3f85533f326c6e1ebdb29f1ea92aeabe6acf456b29e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1304be0eb77dcfad374566b67f29a513fdc69863eaed9c49837a8dc8f9caed6c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd7c760f6b3d5720772fe6722f226927a6b5b1ca7d1f4a4b5f058efa24bb14d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e791ad8f2ad9ff0e9c586d97b4a3dbfb1c969315f454f3d63e900dc2665bb5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdbe0e6aaba4a04d2798ebf39afdc3433c07302153d6fefe8fdc193ee69daf6b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e28911a829f2eef391d4b319e8843a34119b91d5fefb97cd06548a774613d40"
+    sha256 cellar: :any_skip_relocation, ventura:        "20ac16155c9b2efc7fe126f8ffdcb13786effe5db0f75d74cf348b14c3a73f80"
+    sha256 cellar: :any_skip_relocation, monterey:       "0cc97504088ca3a89dace6f4875842b78bde01fcb2061c43479603294d3946d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "673ee30b217f61c2f5b56f683fc382dc0c400f0629fa72f493369d6031f4e595"
   end
 
   depends_on "python@3.12"
