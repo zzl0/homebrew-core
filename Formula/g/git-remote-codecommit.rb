@@ -10,15 +10,13 @@ class GitRemoteCodecommit < Formula
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13821d67f996636ff9cb63e803f938ff7cc1b8d1c5e5148324dcacf9a4db0a76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5fa7fb4190f083a0487f6cd76d81de5fff0b2de1560f3a4ed2771813c718740"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "851d49753d31c586baf66b4ae9bf2999f540949cd3f0a34991043baa096d8f64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43ee82fc6d2d60575f2b829d469f9e38117d872afa3a8d58af122848e92563f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2495f76ee6af5064bf5d4cafe080384d45e294d69de346d23195a05a26d0f03f"
-    sha256 cellar: :any_skip_relocation, ventura:        "28035b9e540732924cc603921de59f82c8d47d58ada794f04868f83b13aa74fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "74d2eb666a5449f280e64642b401dfcd97b51f0ffbe754ebbefbc5f19090a98d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "32033eb6caa3f053f5af34ab88594a79d5c5386288dbd3275a4c5c02993009d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ae4a5512f35a3b453ebe79ddc4e923a987b4bd92734e8b229e56719dcdb015a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfb0fbc091015095948385efcbbb0394d9c403c7d399a50d89082cb7b552cd2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c07270ba5b504729e9dfade32954b2f1918783e6f40507ed1d916943059ba6c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f89d42ef2c608cee219f062e8147993d5a797781ea44236f152e1bca1a1ab4b6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8feb59d01c9c7c047915bf79bf7273ed20005ea79db3a856db9df6a256b1b92"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8bd1a9ae39fa3ec4e97ca6a0a598ed775f3e4f555bb13a8890cf8b788537382"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e814fe3f325495bd4c00243536e4fa7fa081156c384b9d8bcbd3015c3da461d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6553210dc4414e1e4aafef03bf836cba9f9459ec5bb2b4ecc3bd6c3b479863ef"
   end
 
   depends_on "python@3.11"
