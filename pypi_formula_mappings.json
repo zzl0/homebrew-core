@@ -268,7 +268,7 @@
     "exclude_packages": ["docutils", "Pygments"]
   },
   "docker-squash": {
-    "exclude_packages": ["certifi", "six"]
+    "exclude_packages": ["certifi", "packaging", "six"]
   },
   "doitlive": {
     "exclude_packages": ["six"]
