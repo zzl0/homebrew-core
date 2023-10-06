@@ -8,15 +8,14 @@ class PipTools < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3bec39e5c4482d9aae424cad1f1f9d1f42e6e6da330510156bd1a400d917277d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5a87e49ded3a833a5f2164b780767766be1d95b2c21e28a943a9fbb78184867"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b8f7e01939d417be4c86416ff48229f7b6899fd020b79adb634dfce68670b4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e9c65943403e4e2f73f87d87dd20501cf36968c8518e7c626fc53705a5ff8fa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4ec76dfbd0abf331182518c650bc686f09cc24f2e76dbc7848c0783b466cb08"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f0bbd89c3e25c5b3efdd64b4ec5685c23fd200b723fd55333bf7bd3dcefafa1"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0baaabdb842e6c156c7b89ac693f2c7dcc515035e25ce18ffc3044047b33d2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dbe3335b21cd09571ebd3a70576557a3a7b3bede918b6bf3d688ead5e90bb0ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d3b7eac1386ee0ba793f4068ffc0b630aca310dd320414eaac53e910a5ae4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51d348029b31f2a4d9bedb4440279041c692fabf1b028391f182fa57d3c93f90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7d42fcc1d9cf18973401be08a7bdb4c5fec00c34640c2b3a93ef085c27310cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b91f9a23407da6137e482c615f3a446f3752db42f85622788d262f3204bda8f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a178cc9d0c1152401b7c83fd4e5c075fce1004086055266006a414f24d0e6214"
+    sha256 cellar: :any_skip_relocation, ventura:        "853386f9765cbe1cc8a1431512995145dfcb9457c3bd6df9652c8d941422e943"
+    sha256 cellar: :any_skip_relocation, monterey:       "05441fcb88918ab4608ca4e3b894c7f46e629e83f4d13aab1b2bbb2aabb68a2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec734235c6bdc7fc1913f9a71bc2f2afce0b290fdc5cf7b878a8e3fdbf2b59aa"
   end
 
   depends_on "python-build"
