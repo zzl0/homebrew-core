@@ -25,11 +25,11 @@ class YoutubeDl < Formula
     depends_on "pandoc" => :build
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     if build.head?
-      python = Formula["python@3.11"].opt_bin/"python3"
+      python = Formula["python@3.12"].opt_bin/"python3"
       system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python}", "install"
       fish_completion.install prefix/"etc/fish/completions/youtube-dl.fish"
       (prefix/"etc/fish").rmtree
@@ -37,7 +37,7 @@ class YoutubeDl < Formula
       virtualenv_install_with_resources
       # Handle "ERROR: Unable to extract uploader id" until new release
       # https://github.com/ytdl-org/youtube-dl/issues/31530
-      inreplace libexec/"lib/python3.11/site-packages/youtube_dl/extractor/youtube.py",
+      inreplace libexec/"lib/python3.12/site-packages/youtube_dl/extractor/youtube.py",
                 "owner_profile_url, 'uploader id')",
                 "owner_profile_url, 'uploader id', fatal=False)"
       man1.install_symlink libexec/"share/man/man1/youtube-dl.1" => "youtube-dl.1"
