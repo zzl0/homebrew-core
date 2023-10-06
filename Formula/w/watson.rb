@@ -10,16 +10,13 @@ class Watson < Formula
   head "https://github.com/TailorDev/Watson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6fea2dfd7ad274a7f05761909c2c981d771ac14d4ec7c04ebac641fe35000b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a49bb663f5754f6c48efaa796e52da88947ee4859a3431f7dc0ddfc342225b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebc300c1bea8d6c1fa24023ee0b03b20d4e96cd202ad6655df1777997b4c3dac"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82529e1e4ab72e0afb728aeb860aace2c6c8cf141aa694a2bd937fb8ff62894f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a883f0035dd0efe8300ffa2cf899259898a2900e3ad4daa5433bbac763bd1404"
-    sha256 cellar: :any_skip_relocation, ventura:        "6299cb9603b6d92df078dcad6335d9e0a2c0f168152f943f33c18fa8ab78d160"
-    sha256 cellar: :any_skip_relocation, monterey:       "75c274f6c607e113dfbca8ec5c1233ea7998078f6dff734951caa51247a62147"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd88430fdf3a321c7c8b689ae07970592fc2d7a4920357b29345afc451a1bc42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bcaea26d29b856fcabe61586a819c6e0e7570e4fbc0eb7be46e73d6eecd211a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cac7ed2d1dff5080e79590a4a9f51b2566b42e0c32dccd6546dae3acf0d46021"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1038152a7a3203f736d14933db754f1d9aebafdcb4a7fdfadcf6a84c85588d07"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "196a26c6f86468ab95f39c68c7365091af2efe12490a9df1cc61788829c5362b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5e10c296a3ff1b3ca5c26c5a26ad22344256c0e1fe92e88a808ec244702d897e"
+    sha256 cellar: :any_skip_relocation, ventura:        "863e303a10c0638901fe9484ae8f4d29713b524ba7183993cdfc0bf8700c7c14"
+    sha256 cellar: :any_skip_relocation, monterey:       "34de00527f994934082c70413727f2fa92113e736468cbc4bb578b224da204a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e94d2b1e0dac856620977322f69bced0a63d536b956c974dd003f23c60d2a70"
   end
 
   depends_on "python-certifi"
