@@ -20,14 +20,14 @@ class Vermin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8453b63b554fc3c1da3b0a44f49b3e54458e48e545b39662413e3ae1a2fa5e6f"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    path = libexec/Language::Python.site_packages("python3.11")/"vermin"
+    path = libexec/Language::Python.site_packages("python3.12")/"vermin"
     assert_match "Minimum required versions: 2.7, 3.0", shell_output("#{bin}/vermin #{path}")
   end
 end
