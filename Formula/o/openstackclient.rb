@@ -8,22 +8,21 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01905accaf8c789023576877e66d94be10f540913b7cfa6fd2dfa81fa08e67d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b284254ee393289bfa767899788dd734765f81730293be08c8f3e02c477c727"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d452f24daa0f57c52344860dbc828efed19d858a1da1a5b8a36e15b5100a7ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76a52f4320934610e7dcf0f729efb90fd5c6e3b5a5471d141ac47f539ae687b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cfe5b9bce0d355ec49de8a36e90f34ddbee1726c6b668ae26a0c9db89019576e"
-    sha256 cellar: :any_skip_relocation, ventura:        "509b08b7727974e7db5668a064ed7d00d0400b88c407e40f2c176309c014ba57"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c251c5b5a95f9134dfd35fdfa8e30d1a26e1f2eb9a6330e3e13545e6694980e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "992ce4b5523116d723c938e0b6a4a894e6a29ae50edf0e7ffbf74b173f8fcf57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c54efbca7584b83d70a11186a73e4aa32fc5b7f63e31e9e9f2320379c5c288c9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0871675464df9400be2b646dcef3eb2663334e52e4344c90202745984cac90f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "645049ddac0d5231ee7faf008132df61390fbd90b3803ed8d4452a5bd8e4e978"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd1d04cdd780f1744a806e9323817a02fb43d3f6b94e83673152e1797ae99ac5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "db8e5526e563d69206f50ddd61bb27d46e94703e949885296271ee30563963cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "994fcc1bfa690b2844772dd73f418f550ccc3c644dc6a90502ff2d2777c0ba8f"
+    sha256 cellar: :any_skip_relocation, monterey:       "820e1071344f7c22c11e92f14019fd64597a91f1c470f633cfa5120956e28713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7028c7908e047e0fc081b7e003fdf25f66b4591055dd429fdbdc6e54f991a1f7"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -177,11 +176,6 @@ class Openstackclient < Formula
   resource "oslo-utils" do
     url "https://files.pythonhosted.org/packages/4b/d0/efe8943f8f4130708440870bb8f8167b16204b556fb94236554f4b213756/oslo.utils-6.2.1.tar.gz"
     sha256 "1322ba05fa0ff3c1a8afc727fcf945df5aa82d6584727d2e04af038b5ae84244"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pbr" do
