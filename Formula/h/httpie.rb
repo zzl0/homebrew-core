@@ -10,16 +10,13 @@ class Httpie < Formula
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e59f9ee7b6d4c14cf63699fc36b58e5aafcf37b6a7431faf727a316255e5d6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad6c60de07befbb3c1b87cad3f1032468830cba7886f319bfc85b002a782a7b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1e782c6824b44e97cb2f7c941f9b89eed6bd5ab208d74e9e3e97c554bca5a42"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c135c3c2784bb3cb989908a41e54d55d3122a764445211f15b3ff4c14903623d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "af6d660b474a740e160632ce61fc2862611b2149ed3cd8cbc4738c83b67c8950"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae9d268bd8a3f16e8bd05c99177821c5d3b0b71bb15b3f1d2abd904e5576ada3"
-    sha256 cellar: :any_skip_relocation, monterey:       "adcb363b996c5a3335559070c43a3a1c7ef153913756a461a1cb94a789373b47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e009834aab9dfdf9279914245b3519bbbd5ed2cbf93eec703747e1b8ddc51e02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d66026d7c87e9f5347934a96d9f4717987f098765ea04436765e81b691ab68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3e85aae8da6a3434a7c361f8c3a207d7036003ce7bab173ab9adabbd2a3afe7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd835699130bca00f5b34eeba0c13b3c5ccbb24da93a729efbee1339b37d385e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "926ce32af2713648623f31ef04817cd89100d7bd236fbad6faded17625d3f1af"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c8805aca4645dd3bb835943692eac548fe49ee81e694b3b4fac2102414d10276"
+    sha256 cellar: :any_skip_relocation, ventura:        "363f75a19dd3ca01a93e3e460434a3995b418438378d2eec7aa55e0b99df46f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "28b3fd2d141b186f4d78bfad16f64c3f724ce7af9b4a92116a050a119fa0d0db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9affaf6988e6a1c63e9ed9402bb653620e2c8b792fa50af6f9a696b1d186e706"
   end
 
   depends_on "pygments"
