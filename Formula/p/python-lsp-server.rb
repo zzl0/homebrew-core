@@ -3,8 +3,8 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/7f/38/9c7196124b2b36088b8c0b83fe4c117f02dd0bfae64473b51cd09628af08/python-lsp-server-1.8.0.tar.gz"
-  sha256 "807b0347cf83f02cbd9113a68624ac5dbf8b01854a3b11dd03c3bbbdff4e5d89"
+  url "https://files.pythonhosted.org/packages/51/bf/5184e8f1bfe59239b3d08de96fbbf83fba0fb0c233e84f9b32830d4b7679/python-lsp-server-1.8.1.tar.gz"
+  sha256 "6f282af95880a98b833645f42bd9d3aa045378cf08b0c2c1c50966a65f521237"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
@@ -42,13 +42,13 @@ class PythonLspServer < Formula
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/57/38/4ac6f712c308de92af967142bd67e9d27e784ea5a3524c9e84f33507d82f/jedi-0.19.0.tar.gz"
-    sha256 "bcf9894f1753969cbac8022a8c2eaee06bfa3724e4192470aaffe7eb6272b0c4"
+    url "https://files.pythonhosted.org/packages/d6/99/99b493cec4bf43176b678de30f81ed003fd6a647a301b9c927280c600f0a/jedi-0.19.1.tar.gz"
+    sha256 "cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"
   end
 
   resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/1c/a3/146d67e3433bacda203206284fdb420468b89dfd8afc5a710a73bc6a5ace/lsprotocol-2023.0.0a3.tar.gz"
-    sha256 "d704e4e00419f74bece9795de4b34d02aa555fc0131fec49f59ac9eb46816e51"
+    url "https://files.pythonhosted.org/packages/22/a1/4df53bbe3663de65ad90c6bbc2e6e8779b61fba1e13ee9a21a0f2f7db8f9/lsprotocol-2023.0.0b1.tar.gz"
+    sha256 "f7a2d4655cbd5639f373ddd1789807450c543341fa0a32b064ad30dbb9f510d4"
   end
 
   resource "parso" do
@@ -77,13 +77,13 @@ class PythonLspServer < Formula
   end
 
   resource "python-lsp-jsonrpc" do
-    url "https://files.pythonhosted.org/packages/cd/71/b5e98d6b2b76e3cf0cba9e5f5298eed44008f7651ff93bdf97b5a3584eea/python-lsp-jsonrpc-1.1.0.tar.gz"
-    sha256 "93a29ef906e4f370f4811f6c7ebd1e8b3e7687ab0dfe81716c696db20bff8043"
+    url "https://files.pythonhosted.org/packages/48/b6/fd92e2ea4635d88966bb42c20198df1a981340f07843b5e3c6694ba3557b/python-lsp-jsonrpc-1.1.2.tar.gz"
+    sha256 "4688e453eef55cd952bff762c705cedefa12055c0aec17a06f595bcc002cc912"
   end
 
   resource "python-lsp-ruff" do
-    url "https://files.pythonhosted.org/packages/de/26/6fb2d8525c3ada0112d85a161f73e39270a37190fad0ed32691d8f0559cf/python-lsp-ruff-1.5.1.tar.gz"
-    sha256 "caf1b8427f5aca6d2b4c300b511c47ad6b4384eee0d9562c23eccb81bf33fa01"
+    url "https://files.pythonhosted.org/packages/d4/e6/58bf4c349843548fdba5279821a4c8830464821705973b3b2f577a28ba46/python-lsp-ruff-1.5.2.tar.gz"
+    sha256 "eef8a5228d4f1e01d9eb2691c5356dfdb3f01adf60eeb1afaeaf387b2203201c"
 
     # this depends on `ruff` solely to install the binary,
     # but we can just depend on the `ruff` formula in Homebrew
@@ -96,8 +96,8 @@ class PythonLspServer < Formula
   end
 
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/3d/1f/d61b1e57a148cbc7c0d01437df44d276bed97bf043efb81abbeba1ba0a8c/rope-1.9.0.tar.gz"
-    sha256 "f48d708132c0e062b411308732ca13933b976486b4b53d1e804f94ed08d69503"
+    url "https://files.pythonhosted.org/packages/3e/bc/821e7c8e556a13014702fb81ae97da868fbbe0bab8cc38d9600309fabf91/rope-1.10.0.tar.gz"
+    sha256 "14bfcc7dfea69fa32c53db0667e86e321ef059de555c7f8101a0cb91c8d85a55"
   end
 
   resource "ujson" do
