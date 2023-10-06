@@ -9,16 +9,13 @@ class Waybackpy < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cf8ce5b70329254d2ec655017e529b2925e1ccc3668dc03e754e54547277073"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cee3fd02b5fc9ad049d1130db0488a65ad08e13f6b81411dde2609900067ce6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae7d64e2524ddcf10a79ba79a52ce9f01d387103910573453e510fcfed17291c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61293dba2227e814a19a931971360cba689fdd41d8b44d16ef1465d45ae8bedb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "295a27b2cf818076ea3fd42a015d3ee27a6d47e8776113c8a195ce59818be0a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "70a1154f2875c283a7da59c0ba37abc1d60087bbc15b8e34ba30a4b029c2ebcf"
-    sha256 cellar: :any_skip_relocation, monterey:       "8735878f425e79efcaeb853740a3a461df46c5e9c16c1ec59a6f977b9806722f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3abb26084ba0405de912914b10e5b9b1e048a0cfe5fb2c2fbc2605238e912e17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5cdcc28a4667af82170728c43d6f8fa0e5816f31ebab66b19174dea9aa49388"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94729c3f0a1c8ec3f00e8545cc0f938d0e031ecae55a83389e296c6c08d39fad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da7d857e07527d1d43d055ed20223ba719e54ef3b8e12c5a5fe88c03f694bb18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7adc26cad963cc10962654057cc90d786fdd50d42c265f379adf13bb91eb96b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "540e6127774b5c696b908b41a210fa7a5a1ce12e9f07393832530ad8150bfc25"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b467b6a7d35cf27f4636b70426ceb3bd5a8db68a97067012fb2598e7a4b483e"
+    sha256 cellar: :any_skip_relocation, monterey:       "7fb8d59b584b1684bf87e9cf9754c7c8e16c814bd29867c6240282b1a3b9a7a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c82503b70655f0e813647bd368366b9cc852044c67342d557824cd5e2877c51"
   end
 
   depends_on "python-certifi"
