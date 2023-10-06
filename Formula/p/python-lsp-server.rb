@@ -9,15 +9,13 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a146785d918755688f5d4955ac2cd3aadec27565df6d18ab8c73a230244df94b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ae8591f550ba6a5f4e177c2b7a149b139c5b8cff2e90455168994fc60a2af46"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d02b6a42656989f59e3b238281042b26764596cc6ab0b35f268c0545381b8ab3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97185c6cc2c94c72f3acbe49c537bd6ddff0fe39beac9b0cf46a69857290f984"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98aaba1985f06842d8a4f420ae121460d4bd14f70c6c06cbc3ac5a83438531be"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b22243ef9eebd6785b760f4c600eda536882e69c9cfdfa4d5d7e34a943cc62b"
-    sha256 cellar: :any_skip_relocation, monterey:       "82cb9c20dec1e73d79fdd401b2f52d85d89afd43a66cb08c4c325b136427af72"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6a2b3571942870b9269c79409b97fbcdc0ed2deb7714f11af3d1b7ee1d6a3abb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "205991b425d12700528cbdce6c2b6010c75db354806bc146a465892ca689bd40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de10449a065b7017d01baa5dbb23d5579614ed50374dd6850132e8f5d1b5213b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9748cb271bded4d2f81b95a8cdceaf1ef1021d74fce4aa9da629ae741f9e49ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bafdd489f6fd692637595d5c6580644882cbd35eecbed2a44ebfe994e9d45433"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7028ce6f710bb6cd4b59858c43fe314735047db5f4842efaaa3b6bb64dd2af55"
+    sha256 cellar: :any_skip_relocation, ventura:        "25770f464e1e766ec50755fc475f587e2df077fedb69e4279ab6da35da3650cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5ea836414d736ed9be2c4b8f70a342a00d9697cbaea3214c0a1fb71295aafca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5aad8437e5c3e00d1a93be3dedf36a3db42be4800212060fba5d7d18d8f8152"
   end
 
   depends_on "black"
