@@ -9,16 +9,14 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ac1dd3ad3f60e5fc8473beac495b6abfc40288c4e13ca67c6220ac7f5898f78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a57d4c10d52881ea192dacc269d21247a79df759ce509c1699ec12e49587a1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53b9d994d9e6c7f0be39723cb464cff7a3eec7b08dd45c0a8dbb27f18c96c577"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b2cbda9066b10c355be77d593b801be982bddbc47d0bd51e17c5c06348b9ff0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fcf4b9a3a47464b6c959766d315b58bd2ecae4b59b3809f78f25290a302fb1ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "e91571f32c6fa981fa7b3ab2223b642032cb1d6d0ba18069b1f604681fe7bb6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a831a704d88cea4eeca99018d96151623065a379ad5d69b3b9b930ef7e912caa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f666bbe5fb29f53891e8467a3e767dd5273147d11c84d3c2c46a968f830bfcb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65e1ce4d876575d4c6018a87bb5a567c292f61808a94c4e6b9d709f158968711"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8449b40685afcfc46d7cd1cf5eef9d16922688bfb457356244d380dbc54df3b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "221542a011ede75d9f8adec510ccdb1f676f75cc48bab51f8490367fb77e6b16"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f93696542f2ecb7b65cd670c18878ed0964de1ebfd0241c1c19a53ff0a6d1b0b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ecafaaaa2e7ba52f4c7fc6e14c4b0117f823ebb12f191fc7869908625ff9c29"
+    sha256 cellar: :any_skip_relocation, ventura:        "6001404d188284cdae27923350b938d27ada6e65f0e6b45c8caae30860035502"
+    sha256 cellar: :any_skip_relocation, monterey:       "64acf4c8d49c86311f39e2098578af0845d5c645bf4af0fdb56bb8d1e2c42558"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c9224a1c1e126a562e90487a0ed8b4af8f43756ab38e03bf0da09534889185a"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
