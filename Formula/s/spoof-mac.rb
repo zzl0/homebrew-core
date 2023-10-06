@@ -23,7 +23,7 @@ class SpoofMac < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd9e7adf1d19f3476bb1ac66ee70ef913837b2f719bf076a4cf4ae98ee14c8a7"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "net-tools"
