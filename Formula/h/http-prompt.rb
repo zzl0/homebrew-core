@@ -10,16 +10,13 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50b52369cb3c28b0ca7d3fd82d0849d0e7dca9138472ccae8f4e9491e9c5e3ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0243bff4c459ec06d95cb9bbe363da88f3bc14549cd1bdb137034b4da4d50b26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d6793a641af9530355cf99e3f68761d85c86197b6b2cc817ad17389bbc1b4f1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac1dab37dacdb90d9bc6edbac6b7d954e3d0d460035a636b92f389b81789a1e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2349b7aa0b9df83582eba1da3585885fa7b2d6d73094797c36aa0387361d842b"
-    sha256 cellar: :any_skip_relocation, ventura:        "af0a36e2f69ee45e5d5071cb780824c217a424bec500ee855fb9a4bed49257dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "4d09271f94ae0c247ca89b30dbfbd39a702e6e66051404b4d84dd2f50f3be2ef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "37de4fcdcf11a918adacd6c3507dd891f3dd3438593b8adb6b578d90042d9e9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ba78935f049ee10fb3022e05c2c15c0576fc5731854c52caeeb49b6649feffd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "214b507f6aa5b7780b60913afc2da6d77f61712701ef70ef60ecfdb3e0e3dfe0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c2188cd4638315ca48f50c4cd3479d6717b165c578fbde8b8484cd2d272e971"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8a0b14cddbdd53f9be893d1e3e13416f9833de5b3222e9213fce6fff5f49d6d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a6f5180875b58a91061be4996cc5f5671f1338d6038c57968911ec79f35ac3e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "66631e2a38fa74279ff51c5656a42c7bdfba212a846d9af9f0900fe35eb997dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "856657546ac65e9ca9b4c64c19aff615df3a7de0bf65109712d3c18f7c7ec457"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45ff09d231661ff92611a2c04432601719afec03fc56904ae3cb1e32464d65bb"
   end
 
   depends_on "pygments"
