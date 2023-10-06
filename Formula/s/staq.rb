@@ -1,8 +1,8 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
   homepage "https://github.com/softwareQinc/staq"
-  url "https://github.com/softwareQinc/staq/archive/v3.2.3.tar.gz"
-  sha256 "048bba1c2d78bc6b641ee9ba71788cb66847e78e8b47ca54effea49e76c4565d"
+  url "https://github.com/softwareQinc/staq/archive/v3.3.tar.gz"
+  sha256 "2a1232474f7b7fc0153c18f49e6231e82b6f9c3d1f9ed506bbbb578972cf5067"
   license "MIT"
 
   bottle do
