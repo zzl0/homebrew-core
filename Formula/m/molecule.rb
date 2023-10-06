@@ -9,16 +9,13 @@ class Molecule < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "972457ba5f6974f13c7a45fd5b9d0cef4cf372abc11f5b48cd4159d281a7740c"
-    sha256 cellar: :any,                 arm64_ventura:  "a6c61cdfe4fcf5d99dd758da28f0cd89bcf7461776532d8ff0ca5128a8683593"
-    sha256 cellar: :any,                 arm64_monterey: "bb49453c82a4515486b0350a51c8ea3464f1a467a1cc1c6881382d4560de1e17"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd5a8938cd02e1214f443dcea2b3d7f346dfee7ce3a907a848626656e334dc0b"
-    sha256 cellar: :any,                 sonoma:         "50d48a5396eb4249204726d98015b72fe9b9cc96452d554cde43714e9a0d7e26"
-    sha256 cellar: :any,                 ventura:        "21d98f7e43a05c9b676931704b7fb580670e61607bc19442f2fb61ad6e82925f"
-    sha256 cellar: :any,                 monterey:       "c016297438af25c704f6bbe6e63fded563af1c6f32cb2e695a60b9b27874c2a3"
-    sha256 cellar: :any,                 big_sur:        "2d4526bd7dc11a43113ab8d2c812be358eb60dee4772bc2b6f18a91514718110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cec90e709c5dfa4fd9149d458e30fbb981daa6b2779653804112b723357c096a"
+    sha256 cellar: :any,                 arm64_sonoma:   "43802cc774444a047e2235f1067292c11da35456b31a7f7122f04b3c4ee63a53"
+    sha256 cellar: :any,                 arm64_ventura:  "9d90cac8be4002a6933cbe1a9926731849ce8bd46f0fd57650a9f98ebd6c0aeb"
+    sha256 cellar: :any,                 arm64_monterey: "3a457e4fc3d82da78f95e3b0be372964ceb2bc794c9607c22211a3c06e2fe765"
+    sha256 cellar: :any,                 sonoma:         "3c28ad472a40141a28c3d6a41563d9505029ac4e4ce3113a47326d776cffa34c"
+    sha256 cellar: :any,                 ventura:        "dafb3454bbe6e3d3c6da317670cb6e55d73256a1e11eed15af16f8184f3e007f"
+    sha256 cellar: :any,                 monterey:       "8ff314ad7716ab95ecbcf4e3901cd26aa5116ba34fe8c963e5620c32f93303ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fa5eeae17d297eba41ceedfde49692b88cf565b2f6e5bc6aceb035f53b13bf7"
   end
 
   depends_on "rust" => :build # for rpds-py
