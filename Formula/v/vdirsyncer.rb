@@ -10,16 +10,13 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d51d19b6d8be89a3ba45ecf479da1b7c228e9500be8a92ae9dc421b32c756c8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f0ecd49b147e3b0116412406ba1308a4ac0bb273a9695f58dbdb4eae434c279"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c408b7c1e2b0a84ed67f8aa352f9a741e78d2b3e1570a74e4f20d3acd15ce22"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6bb4a9602d1893bf961ae6219c452f3183afc08b27b8172f872ecfecafe7cf5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25c9b57e8ba69cee11f1dee4e897ee55a163fb54a3e06c1dbb58daa7a8760694"
-    sha256 cellar: :any_skip_relocation, ventura:        "1971b7aa4cf71d872575fdeaf6d0d4b70afc7afb179e94faae5988cbc1b86c46"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b3ed98d98b78b944b5c44f94aaf96b78a7e357900aa3daa01e66672cf2999e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a67a07ab286aa69850023ba7c35bce6a405ede079bfd6102ac3e88ffab7278eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04599396ea7aea2d9f1d4141619c39e4fe9cecc7325bb61dfc703a791634ad70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ea8c383cee138d2dc47c81ba9e90452ffa151b7fb0142911ae55a67824de3ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7ba64054151207fa3e5c1e5b8ac4211e57e3cfde2e2bb75edb14f5dcd9dd418"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06b856e22815b8e2c5614edbc9fa421fe27b412f932cb100e44dfcd62146fb5b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "081ecfaf806b5da722cc1956ae0f770a397fb1711b45d17886666e9216ea9157"
+    sha256 cellar: :any_skip_relocation, ventura:        "29a54f6fbf8fd98093573cfae80ff786c409c2cae77b143046623f25feee5d16"
+    sha256 cellar: :any_skip_relocation, monterey:       "b66ebff06241d6033928db12aa5dd6275fad2dc6235cbf1f08bd009b989ef48c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad3e5f91a0a492f4a9764209576d88404c56dd16f76c625c9fe741640f2dd95"
   end
 
   depends_on "python-certifi"
