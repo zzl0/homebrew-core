@@ -9,15 +9,14 @@ class Animdl < Formula
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b7f4eb539688deaaa12a6cce70c6ea8f670fff8d2c162cee77f4932c4c85b83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfddb9d0c6a99a9698955b27d69f23e52ab7b0b4598d72d33f5a2f52bfad0c81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "469f0730ff5a0aea2b9e63d5c94f8aad7f738173c9ce0aea9450a499800a3478"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "818dca6cd99b1b67ba1f48a36ae41db139d4e92f01614963545f8518a27f4bcd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e050cc9e650c3626f07702a432a8f2209a06220b563ea0f28c535b758879ece"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a25312bcf45f40974fa7b7469a95fcf27e89ee91bee4514c8ec748e0f604e21"
-    sha256 cellar: :any_skip_relocation, monterey:       "b95f5252df652707aa354f5e5ea88a970028be83e07706987a521204986ce000"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd6e0b9b119bb4f9d052da4812748c926dcc9f63538eaa5396094fd10187ee9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90ff5576f17d118249f409b09358f21520d6a23b3cc0345117e337aa1f1fa98a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7e0b839fa6f5bf0d5214d1a32eec64bc01e23db7b39c622a20d2546247f0605"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e945ecb233147f325c5804d46b55181d5a7d894a1b1fda07ed8b607f8e446e0b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "807db811fcd9170fb96b7ce855ab4c04c50b9ad1a63c2310ae914538cd6a2f5a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0859221a0407440e82330e80e6fe54d5ef1a9fd1af163624ff41246db80f0f69"
+    sha256 cellar: :any_skip_relocation, ventura:        "90a3356c825a409a7e9f4d412b5e9bfb0a2123b18206f7fa5c156de2ed962b58"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bcfc31c18b75f9319cfac9c4ef356bffe1e358aca9d199e94444ee5d7a68850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48086f27e403b732ce67c4bc791cf3f2d873c1c60b3b1e34e91b261e018d9055"
   end
 
   depends_on "pygments"
