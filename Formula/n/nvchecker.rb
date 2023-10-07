@@ -22,13 +22,9 @@ class Nvchecker < Formula
   end
 
   depends_on "jq" => :test
+  depends_on "python-packaging"
   depends_on "python-pycurl"
   depends_on "python@3.11"
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
 
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"

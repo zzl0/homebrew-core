@@ -621,7 +621,7 @@
   },
   "nvchecker": {
     "package_name": "nvchecker[pypi]",
-    "exclude_packages": ["pycurl"]
+    "exclude_packages": ["packaging", "pycurl"]
   },
   "oci-cli": {
     "exclude_packages": ["certifi", "cffi", "click", "cryptography", "pycparser", "PyYAML", "six", "pytz"]
