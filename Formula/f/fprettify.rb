@@ -9,17 +9,14 @@ class Fprettify < Formula
   head "https://github.com/pseewald/fprettify.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbad627df9aa001ef5e0f032e942ae8732e9d33868a33e75009491eb1f5486d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "27105d6edbd98e3c71bf26cc306073c5b831934c8a6944c669a188fe42e99b5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
-    sha256 cellar: :any_skip_relocation, catalina:       "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51fb193432c7ed43d63e9b13a8e946058f91277e3d601abfa7f5de25f56a4b70"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27bfb5c470eeb3ab6bdae65b9fd1c58b6c44eb358c159f9ca0611333ddf3c6ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c40bc2e5dd99d941bea03a38817fd148c1584a85c4b0ec37c3fe32ff2a8aabb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a101c7b0dfd55728979e0fff9eeedf52967cb67d4351a74c0c114a3854ff3bc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f3fd405fa4587e33aa07426cba0252284bbdaf5471b5d303321c13d01bf179c7"
+    sha256 cellar: :any_skip_relocation, ventura:        "d76d7a276834cd2f4a2ded83fe4815e7ab23cfee7140bd5f85fbf9409a9be5fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "8b307249b02b0a4e2828ca9f6e4cf44c52f77edb1974e9afc9c169cabec647da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "504f99c368a69c813ada09fe586a0e241691177cab747f40b7100423b9886a6a"
   end
 
   depends_on "gcc" => :test
