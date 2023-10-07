@@ -3,8 +3,8 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://github.com/fwupd/fwupd/releases/download/1.9.5/fwupd-1.9.5.tar.xz"
-  sha256 "201ec20538044749c96dbff708e52f7d79038de787b90a2762e76793080aa37c"
+  url "https://github.com/fwupd/fwupd/releases/download/1.9.6/fwupd-1.9.6.tar.xz"
+  sha256 "c5fe96634bf6c5af7641cd08a48c6348aadd32d5f09ff8491e633f3c3a6bc0a1"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
@@ -62,7 +62,6 @@ class Fwupd < Formula
                     "-Dlibarchive=enabled", # fail if missing
                     "-Dpython=#{venv_root}/bin/python",
                     "-Dsupported_build=enabled",
-                    "-Dplugin_dell=disabled",
                     "-Dplugin_flashrom=disabled",
                     "-Dplugin_gpio=disabled",
                     "-Dplugin_modem_manager=disabled",
