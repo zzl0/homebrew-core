@@ -850,7 +850,7 @@
   "scrapy": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "pycparser", "six", "typing-extensions",
-      "packaging"
+      "packaging", "lxml"
     ]
   },
   "search-that-hash": {
