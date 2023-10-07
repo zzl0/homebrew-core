@@ -711,7 +711,7 @@
     "exclude_packages": ["PyYAML", "virtualenv"]
   },
   "principalmapper": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["packaging", "six"]
   },
   "proselint": {
     "exclude_packages": ["six"]

@@ -18,6 +18,7 @@ class Principalmapper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23fe818031a72f40f92849e0574fc8a831d5c8c5ba3aa856b3979e7acc8b11e6"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -29,11 +30,6 @@ class Principalmapper < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pydot" do
