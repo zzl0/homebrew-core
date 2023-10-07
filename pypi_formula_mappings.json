@@ -858,7 +858,7 @@
   },
   "semgrep": {
     "package_name": "semgrep",
-    "exclude_packages": ["certifi", "Pygments", "typing-extensions"]
+    "exclude_packages": ["certifi", "packaging", "Pygments", "typing-extensions"]
   },
   "sgr": {
     "exclude_packages": [
