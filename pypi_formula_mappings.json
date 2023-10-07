@@ -797,7 +797,7 @@
     "exclude_packages": ["tabulate", "pytz"]
   },
   "remarshal": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["six", "packaging", "PyYAML"]
   },
   "restview": {
     "exclude_packages": ["six", "Pygments", "docutils"]
