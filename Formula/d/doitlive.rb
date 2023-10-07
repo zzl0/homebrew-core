@@ -21,6 +21,7 @@ class Doitlive < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb7433cf1708e3ed401318149c637a3e13fde41fae0360b2be50959e5138a4af"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -47,11 +48,6 @@ class Doitlive < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
     sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
   resource "pyparsing" do
