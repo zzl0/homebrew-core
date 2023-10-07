@@ -4,6 +4,7 @@ class PythonPycurl < Formula
   url "https://files.pythonhosted.org/packages/a8/af/24d3acfa76b867dbd8f1166853c18eefc890fc5da03a48672b38ea77ddae/pycurl-7.45.2.tar.gz"
   sha256 "5730590be0271364a5bddd9e245c9cc0fb710c4cbacbdd95264a3122d23224ca"
   license any_of: ["LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6d5f52282dd74ad2726a0210330d5228aa756933ff42968ad6a49b000e29d362"
@@ -17,9 +18,10 @@ class PythonPycurl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5073a93f1b02cbf305d5c28dad1316927ab5d20e1dc2ce4e5220a68df21a3fba"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "curl"
   depends_on "openldap"
   depends_on "openssl@3"
