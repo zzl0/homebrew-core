@@ -8,16 +8,13 @@ class Csvkit < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13b9a2e9b4022200d1e35de22f2b2e16130261af6aa545cf236e1b65ab3c7965"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2354de99715a1fb49c4bac1733342e9fa0a03362331285585c52995ab80af912"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be164b5368c18bbf619b2db25dc9232c1789b0f98e7d1ebe2e2e004d9b90a72c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69e4329d1167be75c7114845a9cb12b32754f78fb4c90984d4101680c0bd0ece"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be26d16c4e059fb3304b8db579850e5a78ef0c61a6a03e8b95e08ce60c9031ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "fcf5bc85fc59217273b39a30bfe86afc28e14e2881fe8049a6f930f85f9adaab"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f84dc71634e60dfc737bb2d903b9bf87052b869d2f72533d7fc6c3775b9bb34"
-    sha256 cellar: :any_skip_relocation, big_sur:        "72dfc3e2926749768272733bb6c8a8b476c9420825a167471ee96281887b37cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cbc803897042b40376ef2e5b69b03dfceea13086f141b888e99b7c8ae3b4614"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c5380cf9e6b182f8b5cce974713e3768f758f0dd003948f16895593c901359b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ffaaeb89fbd0d01e910de40481a87540e8935f00fade64ecba6cd6ed1c9a9b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20e0b7496dbb60ee62e54b514a4004aa42390ae196cd25078f77ad6cd0be2aff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "18c9b6d650718a5c414fe219f3a3c9457b9edd46f9f05b3dbfba83f6ee1bd1f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab607be4715d5af70ede8caff88dbc7194fbecb448275a57653482d977a7f37a"
+    sha256 cellar: :any_skip_relocation, monterey:       "573f310716cd9f2e2f7b44093be46acaa69fa0f223329740b31f0c3905141677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f186621e020f0615ed196664644839a939643b450c55b3a233ca46559073b8a"
   end
 
   depends_on "python-pytz"
