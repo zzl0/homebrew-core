@@ -9,15 +9,14 @@ class Remarshal < Formula
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f47d4d6a3e837702bcc6c74deb0d707cdd9df8ad26d7bf4e4dcb1f56b62274d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "607638802a9dfd178b40a5c34457b5a3e9198fb4cd746b01ec34e688c12b43ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ace154efdbeb9ec7707f91285ef27ffaed18d462919af65ce5b9eecbbae5522a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75653f097087df6528b02ae5a91883174f90ff2451ab4522afb07eac0e519d27"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03bb245981b0d78c855fa05f7e1ca79b0ef43f543e3b6b42d6be15985f08c789"
-    sha256 cellar: :any_skip_relocation, ventura:        "7daba016136490845fedfe33a1ac5ecf5b12ccc9395e5a183b2ae246da0f8da7"
-    sha256 cellar: :any_skip_relocation, monterey:       "df698cf43430fd252e08fd9d6d076af64bcd6e3b7caf6b85f0842b8751983886"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38d1cf8116ce176a28f6d2aa89100428b5eecb7fe200720e8152decb58ed1106"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5707da17ed3fe940822bad61d32aba6b76fe02e2610d08274cdf45301c797e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbc4d08801da5f3502afb1ef7a87e91141d9920414cbb79be206670df6a8cc80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "509df010573b5c4850255938b1fd4c92e885252a0310029f4a4d3f977218b575"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbd77782401027ea9519f3df181ae8d34443a37f1c0c4868ea0616d8760ab3bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1fe139e6d7f125f0f1b1ed4f07af2f6eeadd84297055bf8b84251ca3a32dfa5b"
+    sha256 cellar: :any_skip_relocation, ventura:        "f13d13779df302074bd7daf26dd7ee4156d08bf59ad8ef78673afabf67db2120"
+    sha256 cellar: :any_skip_relocation, monterey:       "b58c1be20919590386fea2de12a7de953ee18092ea99d7e2d0c8a1b6ec58e96e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afdd307624aeeb6c87190a12ca40e900d6979ed7b7de0e9fb389f314e53c5e58"
   end
 
   depends_on "python@3.11"
