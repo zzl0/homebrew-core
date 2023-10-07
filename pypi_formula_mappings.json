@@ -450,6 +450,9 @@
   "hyfetch": {
     "exclude_packages": ["typing-extensions"]
   },
+  "img2pdf": {
+    "exclude_packages": ["lxml", "packaging"]
+  },
   "instalooter": {
     "exclude_packages": ["certifi", "six"]
   },
