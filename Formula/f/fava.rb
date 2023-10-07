@@ -9,15 +9,14 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c655488c250543f81f846bbbbb5b807d834fd9ef890c905668764b9a190e44cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c204f51d2002dee6acb40b341182958a91be97ec80555603aff77593c1ce3c40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2ce342456aaa5615b630204a31b29cdf780d7114890c967c9e281e48daa6eb5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c8badbb017b3b6393af82993bb6e24c3a49dfeacc1cd49ebf4cba3434b92a1c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b28cf5e5db6214d8d0cd4a9d5ace0b6ae5342a4ed43e2f0b1d1d0e2d349e4169"
-    sha256 cellar: :any_skip_relocation, ventura:        "123ebc9f6ca5ac3ecb11c29c6ed45633d949c40bff45e6867e6484cce2ea5455"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd44f259092b0a2f18ca1c4cb71bd4990ed269e8d0f6a52029247de425601849"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58718da78c24b5a1ef9c6eeb1c6b38a78c53b26c61f95e02738c5fd2bc61802a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dc0478789ebf8d98ec32de14055882cba563c188e51e924f5fa50b3dc983327"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "940ee3157d27b69424b239c6513ee9cfe34b1781070fdefb1cc89fb9e7d32468"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1d1934db702cee62a3787011beaa46f620d66895156c0c083169ca08fe65cc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e1ddd68d385c7f296e5869902cd3a7611362f6ab5e90cfbabe9342c13d4dfb9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52fb65e69ec3dc88c4101e3a665025ede9392306418857e421e63af001d4e325"
+    sha256 cellar: :any_skip_relocation, ventura:        "867f1dc39738d15fda4425563c63420f3b5779ac1d5fa4c60e7509aff6b24dee"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d394730a6f1573b3e66f314e8acf78ad6f0b3f00b109a5e0a285edbfebb81be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4855b7f60ce4384e863106bd215d9c3f0bba93ec5ad8a81d68fa759310607ba"
   end
 
   depends_on "python-certifi"
