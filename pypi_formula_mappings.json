@@ -425,7 +425,7 @@
     "exclude_packages": ["certifi", "six"]
   },
   "grayskull": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "packaging", "typing-extensions"]
   },
   "grip": {
     "exclude_packages": ["certifi", "markdown", "markupsafe", "Pygments"]
