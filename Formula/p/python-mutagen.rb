@@ -4,6 +4,7 @@ class PythonMutagen < Formula
   url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
   sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bb9813af217934300c0fbb2fb869e0613cb72893ece0f72e24721c5198c6abb"
@@ -17,9 +18,10 @@ class PythonMutagen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "39cfb9e9d27a7ca07dc9dd542fedbe8aed6ba481d84491b4f1faba08ee5c35aa"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
