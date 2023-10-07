@@ -6,6 +6,7 @@ class CryticCompile < Formula
   url "https://files.pythonhosted.org/packages/3a/9c/e100d2dbc90471010716e56766ef6608717c44d7278eea3dacb5bb48276a/crytic-compile-0.3.5.tar.gz"
   sha256 "f9b2bf3dc8c99fbc58c4ae6f82b3e8e378f56e107e37fd8786a36567dd68fa6e"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
@@ -18,8 +19,9 @@ class CryticCompile < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "896dcb009a5b771ad9b7f92cc0f94d7090e0f2e7744fdb2f9aa524f67c5412ac"
   end
 
+  depends_on "python-setuptools"
   depends_on "python-toml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "solc-select"
 
   resource "cbor2" do
@@ -29,7 +31,7 @@ class CryticCompile < Formula
 
   def install
     virtualenv_install_with_resources
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     solc_select = Formula["solc-select"].opt_libexec
     (libexec/site_packages/"homebrew-solc-select.pth").write solc_select/site_packages
   end
