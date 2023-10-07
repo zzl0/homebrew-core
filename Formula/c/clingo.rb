@@ -32,8 +32,9 @@ class Clingo < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "python-setuptools" => :build
   depends_on "lua"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # This formula replaced the clasp & gringo formulae.
   # https://github.com/Homebrew/homebrew-core/pull/20281
@@ -43,6 +44,16 @@ class Clingo < Formula
   link_overwrite "bin/lpconvert"
   link_overwrite "bin/reify"
 
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz"
+    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCLINGO_BUILD_WITH_PYTHON=ON",
@@ -50,7 +61,7 @@ class Clingo < Formula
                     "-DPYCLINGO_USE_INSTALL_PREFIX=ON",
                     "-DPYCLINGO_USER_INSTALL=OFF",
                     "-DCLINGO_BUILD_WITH_LUA=ON",
-                    "-DPython_EXECUTABLE=#{which("python3.11")}",
+                    "-DPython_EXECUTABLE=#{which("python3.12")}",
                     "-DPYCLINGO_DYNAMIC_LOOKUP=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
