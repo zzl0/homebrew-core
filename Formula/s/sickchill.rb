@@ -24,6 +24,7 @@ class Sickchill < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -201,11 +202,6 @@ class Sickchill < Formula
   resource "oauthlib" do
     url "https://files.pythonhosted.org/packages/6d/fa/fbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670/oauthlib-3.2.2.tar.gz"
     sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pbr" do
