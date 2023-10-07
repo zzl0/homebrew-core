@@ -1,8 +1,8 @@
 class Libxrandr < Formula
   desc "X.Org: X Resize, Rotate and Reflection extension library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXrandr-1.5.3.tar.xz"
-  sha256 "897639014a78e1497704d669c5dd5682d721931a4452c89a7ba62676064eb428"
+  url "https://www.x.org/archive/individual/lib/libXrandr-1.5.4.tar.xz"
+  sha256 "1ad5b065375f4a85915aa60611cc6407c060492a214d7f9daf214be752c3b4d3"
   license "MIT"
 
   bottle do
