@@ -25,6 +25,7 @@ class EyeD3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "599358308609858956faa08bbc1e00c50893d7cb743f475823f1ef79ce8a71ce"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.12"
 
   # Looking for documentation? Please submit a PR to build some!
@@ -43,11 +44,6 @@ class EyeD3 < Formula
   resource "filetype" do
     url "https://files.pythonhosted.org/packages/bb/29/745f7d30d47fe0f251d3ad3dc2978a23141917661998763bebb6da007eb1/filetype-1.2.0.tar.gz"
     sha256 "66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "toml" do
