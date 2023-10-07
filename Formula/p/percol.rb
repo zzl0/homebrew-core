@@ -23,7 +23,7 @@ class Percol < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ae72d152ad18f4f8565828e7da87ab3ad7839c8f59021c4fadb60ab4e59737"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "expect" => :test
