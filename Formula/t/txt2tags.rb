@@ -3,19 +3,18 @@ class Txt2tags < Formula
 
   desc "Conversion tool to generating several file formats"
   homepage "https://txt2tags.org/"
-  url "https://files.pythonhosted.org/packages/a3/91/3522a1fbefcc02d3d496854aea81b2b01a6e388bdb27ca0be39a91a43711/txt2tags-3.8.tar.gz"
-  sha256 "379869e866ed85225181ac65583827781a166c907de8bb40a9f3daf7b16c3483"
+  url "https://files.pythonhosted.org/packages/27/17/c9cdebfc86e824e25592a20a8871225dad61b6b6c0101f4a2cb3434890dd/txt2tags-3.9.tar.gz"
+  sha256 "7e4244db6a63aaa58fc17fa4cdec62b6fb89cc41d3a00ba4edaffa37f27d6746"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e25da3bd37834c96469ce32b195353728175cc3d1fdd37acfd7791c6c65f2883"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdb5181c1343eceb89f6dd5321569b96a4c71ab5be79e2bbfd22ca6237a3508e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "22720ae006780efef0a675ca7cf7e477bc4371dfaee25efb4cf627444430b3be"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ddb84e6a2c62887122832feb6bc121a1059a0a794b55365196e05f78939676c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "fddccc19e1ff4fc3e2583f8dd15c1c0e1bc6ebd283321623eaa45308a4b9fda3"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab9be9c291e92b9fd03775a494b1f1712382e733f8bc99900f5c40f65437417f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "693ddde81b03c0cb80ef193154b9ec72d0f233e32c59757054126409c7d32729"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "834f5b3ff1ff7933cd7c9421a31cc2c77ccb354093c9323aca86772ef70bec96"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbb22dcc68e0184645065d84171197251a31c5479a6e65725f9aeb7ab02fb82b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73a1318632dd5895e35ee09bd6e2fd11d1982b11d01affce8acb7d409f069a75"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f2c99b59a535f8f8aaf130a0a5d0744e903e08f0f1ce2d9bf038386446aa7181"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a126fb2632a8bfb9f256b4d2ce7f5ea48d43c5c7afcfafeb7eb420a18faf6b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "667c1960e75ecdd6987943d0ed760df1255584d739d70dcaabc3a72c46cea6e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6f9061ed2a899e6af3ddbbf20bbac612ebfed7e81023a8fa2724dea339474a0"
   end
 
   depends_on "python@3.12"
