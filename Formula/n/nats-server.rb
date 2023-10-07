@@ -1,8 +1,8 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https://nats.io"
-  url "https://github.com/nats-io/nats-server/archive/refs/tags/v2.10.1.tar.gz"
-  sha256 "98f89c6fb1776d219476b1053adf0c21cd8fef9f1bb1efda654986dd11c8bafa"
+  url "https://github.com/nats-io/nats-server/archive/refs/tags/v2.10.2.tar.gz"
+  sha256 "dbd18fa0a639bc5747b12faefb152c0edbd2a2d0c8a0b84c4b63e0af58224795"
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-server.git", branch: "main"
 
