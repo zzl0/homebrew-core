@@ -22,30 +22,32 @@ class Cassandra < Formula
   end
 
   depends_on "libcython" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "libev"
   depends_on "openjdk@11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/f5/ab/417dc6c1bfea24042c97e381036b02864db8d918d3f65926e1884b98f086/cassandra-driver-3.28.0.tar.gz"
-    sha256 "64ff130d19f994b80997c14343a8306be52a0e7ab92520a534eed944c88d70df"
+    url "https://files.pythonhosted.org/packages/59/28/3e0ea7003910166525304b65a8ffa190666b483c2cc9c38ed5746a25d0fd/cassandra-driver-3.29.0.tar.gz"
+    sha256 "0a34f9534356e5fd33af8cdda109d5e945b6335cb50399b267c46368c4e93c98"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "geomet" do
-    url "https://files.pythonhosted.org/packages/7a/27/f6fc66e0629cfdcd301ebcb737b55041c238742420dce7728f208d75731c/geomet-1.0.0.tar.gz"
-    sha256 "0020a4426469934fb58f541cdc23f27c0c0fbbb3d003ee2cb76bb7ffa96a7506"
+    url "https://files.pythonhosted.org/packages/2a/8c/dde022aa6747b114f6b14a7392871275dea8867e2bd26cddb80cc6d66620/geomet-1.1.0.tar.gz"
+    sha256 "51e92231a0ef6aaa63ac20c443377ba78a303fd2ecd179dc3567de79f3c11605"
   end
 
   def install
     (var/"lib/cassandra").mkpath
     (var/"log/cassandra").mkpath
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec/"vendor", python3)
     venv.pip_install resources
 
