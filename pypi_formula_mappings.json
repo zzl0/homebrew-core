@@ -230,7 +230,7 @@
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
   },
   "copier": {
-    "exclude_packages": ["PyYAML", "typing-extensions", "Pygments"]
+    "exclude_packages": ["packaging", "PyYAML", "typing-extensions", "Pygments"]
   },
   "cppman": {
     "exclude_packages": ["six"]
