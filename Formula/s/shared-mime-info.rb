@@ -1,8 +1,8 @@
 class SharedMimeInfo < Formula
   desc "Database of common MIME types"
   homepage "https://wiki.freedesktop.org/www/Software/shared-mime-info"
-  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/shared-mime-info-2.2.tar.bz2"
-  sha256 "418c480019d9865f67f922dfb88de00e9f38bf971205d55cdffab50432919e61"
+  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.3/shared-mime-info-2.3.tar.bz2"
+  sha256 "96ac085d82e2e654e40e34c13d97b74f6657357ee6b443d922695adcf548961c"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/xdg/shared-mime-info.git", branch: "master"
 
@@ -33,6 +33,20 @@ class SharedMimeInfo < Formula
   depends_on "glib"
 
   uses_from_macos "libxml2"
+
+  # Fix string literal concatenation
+  # https://gitlab.freedesktop.org/xdg/shared-mime-info/-/merge_requests/251
+  patch do
+    url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/commit/12a3a6b1141c704fc594379af1808bb9008d588c.diff"
+    sha256 "a63b61be35711561d819d68747c0cec1228819832f1062a8095bed73aad4c746"
+  end
+
+  # Fix false positive fdatasync detection on darwin
+  # https://gitlab.freedesktop.org/xdg/shared-mime-info/-/merge_requests/252
+  patch do
+    url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/commit/7499ac1a85b2487b94e315e6b55c34bcf220295f.diff"
+    sha256 "750630319628c3e313b633913873fccaf0ac640a0acd5953085733ec18bb1289"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
