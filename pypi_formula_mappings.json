@@ -680,7 +680,7 @@
     "exclude_packages": ["certifi"]
   },
   "pipgrip": {
-    "exclude_packages": ["six"],
+    "exclude_packages": ["six", "packaging"],
     "extra_packages": ["wheel"]
   },
   "pipx": {
