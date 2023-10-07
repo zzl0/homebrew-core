@@ -10,16 +10,13 @@ class TwinePypi < Formula
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1238109f38f2c034b68e30598f6fc5f3d8733087d5841d588a2caa5426a2c4c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2f327598fecd5b4871b4f954def4746899b415f4e70c64e5340d8a1a3606af9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5cc62bf96699b0e5c67fa468a0eb1fa98ec49096a09d5a1df5dc13c396d380a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "822895d53e88e0461d4a5c43fdd84a0aaa303716bff456fd4ab0fd5127e11c5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2aafc30bbaba73c7f2abc885c1285a547e1b7d52687ad99191a0a39564ee80e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c2d9683fd2878415416a921162357ea3bf96c3e3fb3091a7304e6f03c5023a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c1cfdbb06092e712dc90250e38597f1183f7bde9cc508d14f9966fe4e1b9db5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ea3ec56a24e5739d76cb700c21f88168961838596289be639e0c69e6d44386d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0500f7b47639803958a2a8a5a5f02db6b3324d468f96d756168ecafda7373400"
+    sha256 cellar: :any,                 arm64_sonoma:   "5186fc127b4cf7f776a797056eb8565107defbcda1dd6ebe81502f5ec13e997e"
+    sha256 cellar: :any,                 arm64_ventura:  "ebb1154d9318dd23905c3b6810d585c7191ab50987d959da4dd095f3ff085af0"
+    sha256 cellar: :any,                 arm64_monterey: "3516768bcec5b955a7588c2e5c9efbeb9e065d6dbd286924239908b333e16c66"
+    sha256 cellar: :any,                 sonoma:         "d7f00f8e3654a753311d8d4d304e269e2b138d278077cf3f7e0b7ba932bba1cd"
+    sha256 cellar: :any,                 ventura:        "a9bd4f947ed1d8c1165fdc25acba75c38b5b8c845c94d53688d3dc51b7ba3c44"
+    sha256 cellar: :any,                 monterey:       "1715d6843250b8e478304d40843de591bd5dce6d1c82e8dbdef27264051f5ab9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a53b68de723d8ec963d5d0b0e923e78d1f3908d484565daf4fd8cc034f6ff49"
   end
 
   depends_on "rust" => :build
