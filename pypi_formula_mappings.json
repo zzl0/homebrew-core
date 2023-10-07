@@ -676,6 +676,9 @@
   "pgcli": {
     "exclude_packages": ["six", "tabulate", "typing-extensions", "Pygments"]
   },
+  "pgxnclient": {
+    "exclude_packages": ["six"]
+  },
   "pip-audit": {
     "exclude_packages": ["certifi", "packaging", "Pygments", "six"]
   },
