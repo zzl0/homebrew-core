@@ -8,13 +8,13 @@ class Codelimit < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8980bc14dee6888940d3e2b39dccf5d37470539155513757973601516422f3da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6386aef2b9bd1da835adc685abe1c91829fd1b05e995d4ec17db786adf252c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d260b0e6470f4b954d4fb7ff05a0e722ba1f11d9986d42e8458f302a885acfb0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fcdfb73deaca619cea38715dd2ffd5d0269a65e9267c308b0d94e5ce2066d253"
-    sha256 cellar: :any_skip_relocation, ventura:        "43d1721a725b7cd7531235b033c72e53971a092d2a7126d63aeb720011b9ae86"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2b6d9f7ecec79a334eac8ddb0e7cb1c1e4c3ee3dc8cd8be53afc7b61d8d9f57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c40655a2818a129a1ba2df4efe3ab492b3be116f0359ffb96e35e2b3ff70efd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "883b5f50aa8452588df1bc7ac64e0f630b7212c3b0461faeec9ae08cefa8f511"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a023ccd8ca65c535513e752573177c7e3f0a85f9bc97ea96b92eecc7ce96ddc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30a22c8361727be4f5da25e892a3ebe949b62d832e83cb66b288065f0a6872e1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80ee603ee0aa105667b59a0d3dca77df5e4be4f9d45c0baee0e62a48b9c75766"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ec39ff82b1eda91633c0dddd34a8b7c2d264ea7cbcedd73d7a134a1dcbab79f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cffd9c2e2b53d62a26c7944a25dd495ec869410a0db6a5281e929910a6d5417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef18bf33ae94745dc174a47a0791fa91e82823ef5a8de0631e7a4dcc433778e5"
   end
 
   depends_on "pygments"
