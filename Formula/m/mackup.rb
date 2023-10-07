@@ -20,7 +20,7 @@ class Mackup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8a14270ae10d3498bddea759d152b70a333b614f894fcf3d1e23622f2dc695c"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "docopt" do
