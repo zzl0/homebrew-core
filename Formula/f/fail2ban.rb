@@ -25,11 +25,12 @@ class Fail2ban < Formula
   end
 
   depends_on "help2man" => :build
+  depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV["PYTHON"] = which(python3)
 
     rm "setup.cfg"
