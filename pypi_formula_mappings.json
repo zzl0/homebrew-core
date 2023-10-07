@@ -861,7 +861,9 @@
     "exclude_packages": ["certifi", "Pygments", "typing-extensions"]
   },
   "sgr": {
-    "exclude_packages": ["certifi", "cryptography", "six", "tabulate", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "cryptography", "packaging", "pycparser", "six", "tabulate", "typing-extensions"
+    ]
   },
   "shallow-backup": {
     "exclude_packages": ["six"]
