@@ -20,6 +20,7 @@ class Dotdrop < Formula
 
   depends_on "libmagic"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "charset-normalizer" do
@@ -50,11 +51,6 @@ class Dotdrop < Formula
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "python-magic" do
