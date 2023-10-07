@@ -21,8 +21,9 @@ class CyclonedxPython < Formula
   end
 
   depends_on "python-packaging"
+  depends_on "python-setuptools"
   depends_on "python-toml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "cyclonedx-python-lib" do
     url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"
