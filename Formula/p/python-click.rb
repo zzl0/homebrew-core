@@ -17,9 +17,10 @@ class PythonClick < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b1403e5776526c2e9285201bc1f0f15f3fa9b20794bcec536fd9dd4626189d"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
