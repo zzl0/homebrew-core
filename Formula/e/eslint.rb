@@ -8,15 +8,13 @@ class Eslint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9cb65dd976dd6a885943cc427aba3989268497bc40cd9f62f6e0f68f668aeae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9cb65dd976dd6a885943cc427aba3989268497bc40cd9f62f6e0f68f668aeae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9cb65dd976dd6a885943cc427aba3989268497bc40cd9f62f6e0f68f668aeae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9cb65dd976dd6a885943cc427aba3989268497bc40cd9f62f6e0f68f668aeae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f39115d127f86b5bf98ebed0e2f35af90ff95d6b103ff1a70f4757e6df0143b"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f39115d127f86b5bf98ebed0e2f35af90ff95d6b103ff1a70f4757e6df0143b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f39115d127f86b5bf98ebed0e2f35af90ff95d6b103ff1a70f4757e6df0143b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1f39115d127f86b5bf98ebed0e2f35af90ff95d6b103ff1a70f4757e6df0143b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9cb65dd976dd6a885943cc427aba3989268497bc40cd9f62f6e0f68f668aeae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e17f13ab1fb8986c4dd3dcbd9ff84a3019a88004f8d920c35aa19f3411cfa30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e17f13ab1fb8986c4dd3dcbd9ff84a3019a88004f8d920c35aa19f3411cfa30"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e17f13ab1fb8986c4dd3dcbd9ff84a3019a88004f8d920c35aa19f3411cfa30"
+    sha256 cellar: :any_skip_relocation, sonoma:         "23d8907a722f3aec673c7419bd567a66ce86c3169c482b6b580bea620d166cf1"
+    sha256 cellar: :any_skip_relocation, ventura:        "23d8907a722f3aec673c7419bd567a66ce86c3169c482b6b580bea620d166cf1"
+    sha256 cellar: :any_skip_relocation, monterey:       "23d8907a722f3aec673c7419bd567a66ce86c3169c482b6b580bea620d166cf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e17f13ab1fb8986c4dd3dcbd9ff84a3019a88004f8d920c35aa19f3411cfa30"
   end
 
   depends_on "node"
