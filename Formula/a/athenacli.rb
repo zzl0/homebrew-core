@@ -19,17 +19,17 @@ class Athenacli < Formula
   end
 
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a8/23/ef75674c1ef3bf77479a5566a1a7c642206298feec1f7012e4710a5b35f4/boto3-1.28.58.tar.gz"
-    sha256 "2f18d2dac5d9229e8485b556eb58b7b95fca91bbf002f63bf9c39209f513f6e6"
+    url "https://files.pythonhosted.org/packages/68/83/eacc938d3a931ffda361f72d72b4ca09b32e453038becf9f02091a97f749/boto3-1.28.62.tar.gz"
+    sha256 "148eeba0f1867b3db5b3e5ae2997d75a94d03fad46171374a0819168c36f7ed0"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/77/1d/bd7a7383a2aff3cbf01c758a5507106ac7459707b241d8afbf336520f142/botocore-1.31.58.tar.gz"
-    sha256 "002f8bdca8efde50ae7267f342bc1d03a71d76024ce3949e4ffdd1151581c53e"
+    url "https://files.pythonhosted.org/packages/02/d8/f7d2a1247b9430c0e8be761b4b2485930d2b45f14ec912ce0fdb4aeec348/botocore-1.31.62.tar.gz"
+    sha256 "272b78ac65256b6294cb9cdb0ac484d447ad3a85642e33cb6a3b1b8afee15a4c"
   end
 
   resource "cli-helpers" do
@@ -93,8 +93,8 @@ class Athenacli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "wcwidth" do
