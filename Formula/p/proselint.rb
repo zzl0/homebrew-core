@@ -2,7 +2,7 @@ class Proselint < Formula
   include Language::Python::Virtualenv
 
   desc "Linter for prose"
-  homepage "http://proselint.com"
+  homepage "https://github.com/amperser/proselint"
   url "https://files.pythonhosted.org/packages/a2/be/2c1bcc43d85b23fe97dae02efd3e39b27cd66cca4a9f9c70921718b74ac2/proselint-0.13.0.tar.gz"
   sha256 "7dd2b63cc2aa390877c4144fcd3c80706817e860b017f04882fbcd2ab0852a58"
   license "BSD-3-Clause"
@@ -22,12 +22,12 @@ class Proselint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "801bbc1c0af4b44e9770f872b6cfa289d59745fd1f84b4f40d34c9b009b6e500"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "future" do
