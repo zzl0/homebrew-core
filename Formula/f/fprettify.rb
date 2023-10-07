@@ -23,7 +23,12 @@ class Fprettify < Formula
   end
 
   depends_on "gcc" => :test
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  resource "configargparse" do
+    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
+    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+  end
 
   def install
     virtualenv_install_with_resources
