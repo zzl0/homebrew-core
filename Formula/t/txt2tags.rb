@@ -3,8 +3,8 @@ class Txt2tags < Formula
 
   desc "Conversion tool to generating several file formats"
   homepage "https://txt2tags.org/"
-  url "https://files.pythonhosted.org/packages/a3/91/3522a1fbefcc02d3d496854aea81b2b01a6e388bdb27ca0be39a91a43711/txt2tags-3.8.tar.gz"
-  sha256 "379869e866ed85225181ac65583827781a166c907de8bb40a9f3daf7b16c3483"
+  url "https://files.pythonhosted.org/packages/27/17/c9cdebfc86e824e25592a20a8871225dad61b6b6c0101f4a2cb3434890dd/txt2tags-3.9.tar.gz"
+  sha256 "7e4244db6a63aaa58fc17fa4cdec62b6fb89cc41d3a00ba4edaffa37f27d6746"
   license "GPL-2.0-or-later"
 
   bottle do
