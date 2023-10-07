@@ -19,6 +19,7 @@ class Johnnydep < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb95e640ed28b4059c5a6a7941ef97cc7932ba91d7cc09bdb2e1e71abf058b79"
   end
 
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -37,11 +38,6 @@ class Johnnydep < Formula
   resource "oyaml" do
     url "https://files.pythonhosted.org/packages/00/71/c721b9a524f6fe6f73469c90ec44784f0b2b1b23c438da7cc7daac1ede76/oyaml-1.0.tar.gz"
     sha256 "ed8fc096811f4763e1907dce29c35895d6d5936c4d0400fe843a91133d4744ed"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "structlog" do

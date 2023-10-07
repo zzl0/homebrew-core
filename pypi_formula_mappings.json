@@ -480,7 +480,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "johnnydep": {
-    "exclude_packages": ["six", "tabulate", "PyYAML"]
+    "exclude_packages": ["six", "tabulate", "packaging", "PyYAML"]
   },
   "jrnl": {
     "exclude_packages": ["cffi", "cryptography", "keyring", "pygments", "six"]
