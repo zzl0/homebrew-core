@@ -25,6 +25,7 @@ class Mvt < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -71,11 +72,6 @@ class Mvt < Formula
   resource "nskeyedunarchiver" do
     url "https://files.pythonhosted.org/packages/e8/d9/227a00737de97609b0b2d161905f03bb8e246df0498ec5735b83166eef8f/NSKeyedUnArchiver-1.5.tar.gz"
     sha256 "eeda0480021817336e0ffeaca80377c1a8f08ecc5fc06be483b48c44bad414f4"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pyahocorasick" do
@@ -131,6 +127,10 @@ class Mvt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    %w[mvt-android mvt-ios].each do |script|
+      generate_completions_from_executable(bin/script, shells: [:fish, :zsh], shell_parameter_format: :click)
+    end
   end
 
   test do
