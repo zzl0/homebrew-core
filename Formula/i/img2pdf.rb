@@ -8,15 +8,14 @@ class Img2pdf < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bdc204dd718ac66723a786ab956331a85756f4a5f25068480e6d99c6e0221d00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c8e3cb9c1b3514b7819bdd313028d27b1ec78802a4131d6959f3164fdf874bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d83dba107045082f836bd9f2e5e7b306c4666305257225ac7529d11f2f53200"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "266344cec47449db6d83bf6ce3edeb6b5c8c7ccfa2296eccb04ca6bfb2177a86"
-    sha256 cellar: :any,                 sonoma:         "c30db9d54e7ff2c3e6f1eb9640d8a8c73dc2c5f6cb904c334b40a84815b9ac5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b98cdd0bd60b4418985eaa5e0d6288b94d35466f5c75ea132394d25d248539b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "79e765982507d9dcb34087f631f324cfa31878e59996d8bade4a40ca10fd7c1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04b58a1110326cf84d83ef5447f0df8d6d3ff43d6c626b908b5e3f5b1f5ed7b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c237ce7d11cc856e78825f611775ecf78c385fd90739ad3cd9ad493d7937b6cb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "83543aafc2b842e677726ed4afc43e3bf25bd836e3d8ae3648894dc9264ee224"
+    sha256 cellar: :any,                 arm64_ventura:  "0c49c0cb4274a79378c9640264bbd04cd7bddfd4d35c69b344438887d868ad1f"
+    sha256 cellar: :any,                 arm64_monterey: "77c8bd45f602e7192fe734c89dfc752e140cce963f5260d39d45a846d1d6b2a0"
+    sha256 cellar: :any,                 sonoma:         "4a86fa2455b2bbbaa1d32d6c9f707ff6ba5d837a53ea304ff5b0dc887e8b31cc"
+    sha256 cellar: :any,                 ventura:        "fcbf8a53b23c1329b184c475316864cf62a1900d0e15d5ac0d6409256b9061e9"
+    sha256 cellar: :any,                 monterey:       "30837a428470d2600616b09f979ac631f50fdf416abee96b5ce75dafe2e83042"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8893acca7dcecba310733d84246e18b061ae84de185bf688da0f9651eb7ffdd0"
   end
 
   depends_on "pillow"
