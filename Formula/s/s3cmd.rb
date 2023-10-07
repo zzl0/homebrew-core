@@ -22,7 +22,7 @@ class S3cmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "24ff4870317c568b8cdef59aa0c83c587ecd0539a9d231597ace36a25f78a6f0"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "python-dateutil" do
