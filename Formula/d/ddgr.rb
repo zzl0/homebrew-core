@@ -12,7 +12,7 @@ class Ddgr < Formula
     sha256 cellar: :any_skip_relocation, all: "19ece8c05b5b538dd4f3dff9b379fb29a77afab06f916393dcb273a19583cde8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     rewrite_shebang detected_python_shebang, "ddgr"
