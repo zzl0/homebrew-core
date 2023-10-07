@@ -836,7 +836,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "sceptre": {
-    "exclude_packages": ["certifi", "six", "PyYAML"]
+    "exclude_packages": ["certifi", "packaging", "six", "PyYAML"]
   },
   "schemathesis": {
     "exclude_packages": ["certifi", "click", "markupsafe", "six", "packaging", "PyYAML", "typing-extensions"]

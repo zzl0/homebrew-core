@@ -20,6 +20,7 @@ class Sceptre < Formula
 
   depends_on "libyaml"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -104,11 +105,6 @@ class Sceptre < Formula
     sha256 "694a8e44c87657c59292ede72891eb91d34131f6531463aab3009191c77364a8"
   end
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
-  end
-
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
     sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
@@ -151,6 +147,8 @@ class Sceptre < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"sceptre", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
