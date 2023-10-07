@@ -21,6 +21,7 @@ class Sail < Formula
   depends_on "fabric"
   depends_on "pyinvoke"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -60,11 +61,6 @@ class Sail < Formula
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
   resource "python-digitalocean" do
     url "https://files.pythonhosted.org/packages/f8/f7/43cb73fb393c4c0da36294b6040c7424bc904042d55c1b37c73ecc9e7714/python-digitalocean-1.17.0.tar.gz"
     sha256 "107854fde1aafa21774e8053cf253b04173613c94531f75d5a039ad770562b24"
@@ -102,6 +98,8 @@ class Sail < Formula
     end
 
     venv.pip_install_and_link buildpath
+
+    generate_completions_from_executable(bin/"sail", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
