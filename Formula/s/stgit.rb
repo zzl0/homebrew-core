@@ -28,6 +28,7 @@ class Stgit < Formula
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "make", "prefix=#{prefix}", "install-bin", "install-man"
+    system "make", "prefix=#{prefix}", "-C", "contrib/vim", "install"
     generate_completions_from_executable(bin/"stg", "completion")
   end
 
