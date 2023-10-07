@@ -3,10 +3,9 @@ class Wownero < Formula
   homepage "https://wownero.org"
   # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://git.wownero.com/wownero/wownero.git",
-      tag:      "v0.11.0.3",
-      revision: "e921c3b8a35bc497ef92c4735e778e918b4c4f99"
+      tag:      "v0.11.1.0",
+      revision: "1b8475003c065b0387f21323dad8a03b131ae7d1"
   license "BSD-3-Clause"
-  revision 3
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
