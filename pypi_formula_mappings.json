@@ -144,7 +144,7 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six"]
   },
   "bzt": {
-    "exclude_packages": ["certifi", "numpy", "six", "Cython", "PyYAML", "pytz"]
+    "exclude_packages": ["certifi", "lxml", "numpy", "six", "Cython", "PyYAML", "pytz"]
   },
   "c7n": {
     "exclude_packages": ["pyyaml", "six", "tabulate"]

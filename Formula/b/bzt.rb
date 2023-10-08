@@ -27,13 +27,11 @@ class Bzt < Formula
   depends_on "libcython"
   depends_on "numpy"
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "aiodogstatsd" do
     url "https://files.pythonhosted.org/packages/8d/ea/d2d79661f213f09df0e9f56d25dbae41501880822e5c85a0a6d6857baa55/aiodogstatsd-0.16.0.post0.tar.gz"
@@ -123,11 +121,6 @@ class Bzt < Formula
   resource "influxdb" do
     url "https://files.pythonhosted.org/packages/86/4f/a9c524576677c1694b149e09d4fd6342e4a1d9a5f409e437168a14d6d150/influxdb-5.3.1.tar.gz"
     sha256 "46f85e7b04ee4b3dee894672be6a295c94709003a7ddea8820deec2ac4d8b27a"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "molotov" do
