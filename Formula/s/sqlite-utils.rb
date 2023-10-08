@@ -19,7 +19,7 @@ class SqliteUtils < Formula
   end
 
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "click" do
