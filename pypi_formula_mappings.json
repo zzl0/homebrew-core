@@ -634,7 +634,7 @@
     "exclude_packages": ["certifi", "cffi", "click", "cryptography", "pycparser", "PyYAML", "six", "pytz"]
   },
   "ocrmypdf": {
-    "exclude_packages": ["cffi", "cryptography", "pycparser", "pillow", "packaging"]
+    "exclude_packages": ["cffi", "cryptography", "img2pdf", "pycparser", "pillow", "packaging", "pygments"]
   },
   "offlineimap": {
     "exclude_packages": ["certifi"]
