@@ -444,7 +444,10 @@
     "exclude_packages": ["certifi", "six", "tabulate", "pytz"]
   },
   "howdoi": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "Pygments", "six"]
+    "exclude_packages": [
+      "certifi", "cffi", "cryptography", "lxml", "pycparser", "Pygments",
+      "six", "typing-extensions"
+    ]
   },
   "http-prompt": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]

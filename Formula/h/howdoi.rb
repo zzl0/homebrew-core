@@ -26,12 +26,10 @@ class Howdoi < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
-
-  # For `lxml` resource.
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -76,11 +74,6 @@ class Howdoi < Formula
   resource "keep" do
     url "https://files.pythonhosted.org/packages/6d/f2/2c35a4bb1332d81f2b1d94725a9ede4d44902fa8ec11b25dedd210394c2f/keep-2.10.1.tar.gz"
     sha256 "3abbe445347711cecd9cbb80dab4a0777418972fc14a14e9387d0d2ae4b6adb7"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "markdown-it-py" do
@@ -131,11 +124,6 @@ class Howdoi < Formula
   resource "terminaltables" do
     url "https://files.pythonhosted.org/packages/f5/fc/0b73d782f5ab7feba8d007573a3773c58255f223c5940a7b7085f02153c3/terminaltables-3.1.10.tar.gz"
     sha256 "ba6eca5cb5ba02bba4c9f4f985af80c54ec3dccf94cfcd190154386255e47543"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do
