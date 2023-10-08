@@ -25,13 +25,12 @@ class Pocsuite3 < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
 
   uses_from_macos "libffi"
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -75,11 +74,6 @@ class Pocsuite3 < Formula
   resource "jq" do
     url "https://files.pythonhosted.org/packages/6e/b1/44632550d22e1a151273ad0555c8149656c6fd019f5fad0b9cd789059a2b/jq-1.4.1.tar.gz"
     sha256 "52284ee3cb51670e6f537b0ec813654c064c1c0705bd910097ea0fe17313516d"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "mmh3" do
