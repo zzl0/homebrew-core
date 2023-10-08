@@ -20,12 +20,10 @@ class Beancount < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
@@ -90,11 +88,6 @@ class Beancount < Formula
   resource "iniconfig" do
     url "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz"
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "pluggy" do
