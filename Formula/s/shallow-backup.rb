@@ -10,15 +10,14 @@ class ShallowBackup < Formula
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ed2d637b66d0f4d800f78839704bc66bf5a99a4564d7f0a7235eaf8d7179af9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb3d661397d58d168f7b3146349dce7e565dabbbeba44afda6936f4fc3104b83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cecc68834a84d16b44349c0d80275ffcb5303d4e82036c42c3d4504221579e7e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7710d31693e747268bc7b1a8cb2a0fd51a6439dbe6d51b22cc8109125878ac5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "912cd965f609698965cc79e370f61d2b40950ca0f4b3124c0bc34ce7ce1d966e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d77961f5be211310d1e24010341fd783991f133d5e0b0ad56a8cd9f661aba4d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e081053882a3c86c21f413cd9804a6e5b4fb2d86cddb74d8439e68e7a15d089"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58b91f7a6d818ca3699e2561c13b89bd98cb693d648149a47e4d73f0bed48d4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fe6f9a0627ef39a20c963d6411d7ea9974852daea5163de7c0694d2d9849ddc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8d724b4b026d20c62495c2652e896bf3acfa8e4e81d4cfa3dc4264e055e2e92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2613e74af6a3d9199e46883b09c95178cd74667d22d8e56f69c993df864a9218"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e76a8f891ea5e97d0ed18e671572fb0777b6a089f6f1d67dfa3ce2d1564f4152"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac1d24115ea3dd8e129f4bf19f1cc1ec98c2eaff00196c1313a48e8aac7c2f65"
+    sha256 cellar: :any_skip_relocation, ventura:        "b518a273984cac67f1cffe3acbdc4fe0fa337e4749ae4bce6cf94a9455c8057c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3ffb30d7fe69773ca9235c7494c6fed5cf38acddad7a1af3a6dc40a36b400a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d056dd75c7eefa3faa3a5d2d5ad40b5a47eb7f75e4371bba728f4a7cf21555da"
   end
 
   depends_on "python@3.12"
