@@ -27,7 +27,8 @@ class Ats2Postiats < Formula
   def install
     ENV.deparallelize
     system "./configure", "--prefix=#{prefix}"
-    system "make", "all", "install"
+    # -Wno-implicit-function-declaration is added to fix compilation with newer Clang
+    system "make", "all", "install", "CFLAGS=-I. -I./ccomp/runtime -Wno-implicit-function-declaration"
   end
 
   test do
