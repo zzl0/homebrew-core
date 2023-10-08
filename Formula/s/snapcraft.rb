@@ -13,14 +13,14 @@ class Snapcraft < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3870e810580c1820294f357275186b7662264de427357fb6ae37eb15692d2822"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "652971226f3ba8ab2ba36980d063c5585d606990a6089240f0d09bbf9852aa6a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd5214bb3f72365d655610218bdebc0b62869038223f125d551f3aa973f68cd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eed148347343a7d38c07086ef838ff11304b8e959e15103832084360b509cb6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4e594343cabeda8415776b368f015059b2687cee985ba8c42120a8e07284a34"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c9d54cd56a0d9af2ae6f7090a0ac71ff78e83dbcb4d9220f513bc6ec772c905"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "769d137e2ac61dad6d019a2592b2961c9aa787dcb0a3a57e4204d2fa0b1687d0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6eac6e17d174da2b20875bb76cc30765fceb0545632815fa84d269b3719c8a28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d22c6fef49e9d81a0d00097de10c21177de5921a73b80cb8a325854454b13090"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e2dda14ddbe75e38f5d619c457ea77795b15c9d95a78d3f2e987b1546d1dd48"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57f03b9e0f099ebb87d3caa9e111a8917824613bbfed86470c6047e4b931c70d"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c3a82b92020b3570d6c3e3245e2d61c335a330489deb42e0c9b215039f967d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e4f6aff92f657325e6a22f9db561bd3476d23ccb2a4bebc3795672dc41ff4fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af2c59001b2f87573dc8abbbc2af25fb690b2a51d585905fe0947fbb346869c2"
   end
 
   depends_on "cffi"
