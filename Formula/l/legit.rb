@@ -10,15 +10,14 @@ class Legit < Formula
   head "https://github.com/frostming/legit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e76c5f438e540ae273fbc73bf5d025df9238ecc846d2c63b8bbcb47441b1c07"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b835900ae7b1678c8ef172b0eff89f3a3362826f5147bb59ccc19e32377e03d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e84db292857d0f157444bb83d756c3ac7e4204a2d53ba62157949e74594e943"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd3628086fa6c180d33f8f880ff7eaf791fbe9c0f0ec0bdfc61a188a2229b5ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f36b38b0ca43c869e1be054b1a2222b1e26cb32b757b68185ee6375138123ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "228b599fc45b39c91864af5c3523037e80063aeb540fa5b1fdf037f6a889348b"
-    sha256 cellar: :any_skip_relocation, monterey:       "93de7a67085e641ac6cab09912a3c5f73ad801319d4a12824ecb839ca22b84ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0273518a985eefaae71e5c7b11c0c3bf3381a0b85afb09e4b3485e09ded48ac2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49a2e6f268fafcfb0fec40e1a1be1433d2c9563625a75018748dea7ddc4ab68b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de1256c035d9d9d140b5e8e19eec366334cfc5fa20901a7592c9f605c359d39e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b389f70a2b3eb6080055a29724d4f3533e2b28e0c5b711ee2ab7711686a8c9ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac92781fb16e2c1db5644d0828d12561c39b2e2e428a10ea97875dc1416bd4d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4645d428550ae6eb55299e7085330663863dc1e1b618bedb4d329be21ed24418"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2f5f48190278ce8dbd35b3e4ba8334ea7c2b21616cf12276bfdd543f072bf33"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d7e295236957f97569d268b7c4db9c72cbb5682a7b01f84e502019ea5cae5f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04dfe5a5abd7397eda6defe29d091ea14c7726f4173efd735d7df018611d7f4e"
   end
 
   depends_on "python@3.12"
