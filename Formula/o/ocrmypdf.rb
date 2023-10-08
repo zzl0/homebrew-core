@@ -20,12 +20,14 @@ class Ocrmypdf < Formula
   depends_on "cffi"
   depends_on "freetype"
   depends_on "ghostscript"
+  depends_on "img2pdf"
   depends_on "jbig2enc"
   depends_on "libpng"
   depends_on "pillow"
   depends_on "pngquant"
   depends_on "pybind11"
   depends_on "pycparser"
+  depends_on "pygments"
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python@3.11"
@@ -34,29 +36,12 @@ class Ocrmypdf < Formula
   depends_on "unpaper"
 
   uses_from_macos "libffi", since: :catalina
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   fails_with gcc: "5"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "deprecation" do
-    url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
-    sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
-  end
-
-  resource "img2pdf" do
-    url "https://files.pythonhosted.org/packages/95/b5/f933f482a811fb9a7b3707f60e28f2925fed84726e5a6283ba07fdd54f49/img2pdf-0.4.4.tar.gz"
-    sha256 "8ec898a9646523fd3862b154f3f47cd52609c24cc3e2dc1fb5f0168f0cbe793c"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "markdown-it-py" do
@@ -74,19 +59,9 @@ class Ocrmypdf < Formula
     sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
   end
 
-  resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/ec/48/a9b6acd89aa6fb4cc2203be6c91992d5008a3c2a261322e47a2456cc692c/pikepdf-8.5.0.tar.gz"
-    sha256 "827abbb105450ba59f9399344c0c5e09246b372366ec6e2a612d3e315f95bd8c"
-  end
-
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
-    sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
   end
 
   resource "reportlab" do
@@ -111,6 +86,10 @@ class Ocrmypdf < Formula
     end
     venv.pip_install resources.reject { |r| r.name == "reportlab" }
     venv.pip_install_and_link buildpath
+
+    site_packages = Language::Python.site_packages("python3.11")
+    paths = %w[img2pdf].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     bash_completion.install "misc/completion/ocrmypdf.bash" => "ocrmypdf"
     fish_completion.install "misc/completion/ocrmypdf.fish"
