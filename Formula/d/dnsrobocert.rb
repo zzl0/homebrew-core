@@ -9,15 +9,14 @@ class Dnsrobocert < Formula
   head "https://github.com/adferrand/dnsrobocert.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ea26069c9a6c6b6405f8cbb425ee155caffe5e977b93a9cf262d3f6747ffd8ca"
-    sha256 cellar: :any,                 arm64_ventura:  "20d81495675dcac9740e7e2ee5bd4de5ec2beeca7cd51323bd1be131d38aa9a0"
-    sha256 cellar: :any,                 arm64_monterey: "15f059a3c76524d489f3b358f682365926074e3c90e95b015e61742159136666"
-    sha256 cellar: :any,                 arm64_big_sur:  "97f8e150559a0b048b412cdb42091462fc443fae26ca82baa388b30d6a6ba7bb"
-    sha256 cellar: :any,                 sonoma:         "023ca6fee54072c82ace70ffa5b747256eb10843e5e4c02359d2d7edf72a1a0d"
-    sha256 cellar: :any,                 ventura:        "71bd9c765d169c97587b9ae872a8ae2908938b496045759f934f95ccdc5208d5"
-    sha256 cellar: :any,                 monterey:       "98abde39492b99a9492207779855335ad02f8a1953963408503e6110547dfc48"
-    sha256 cellar: :any,                 big_sur:        "c46ee3cb7fc5c61f9ef18e4b93311190d6da28fbf8dd3e1f13e9ccd190b043b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e62632826d365389fb5266b56ab63fdbaa4b4357872855b772986985165afb9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c398a4b16c79f3e425955d60abf0b2c87c435723aa799003767dc2bdbb30ff98"
+    sha256 cellar: :any,                 arm64_ventura:  "a3fd8fa84841c4f10214cb4a26fd68decfea66b1d1bd8387b2f9fe0caa2eadf6"
+    sha256 cellar: :any,                 arm64_monterey: "f85a5f7965d5a1a6c8e27500762e59037764d3dd5950546f93557d1111ee1613"
+    sha256 cellar: :any,                 sonoma:         "03fb8557dcb1102d5bf08e76a926e1f19ec7dd4a27c5877d2d8610ef40c291e1"
+    sha256 cellar: :any,                 ventura:        "f57d42442d6d82419f44730baf16b6d472a811808e85922ec9f12503fa2863fa"
+    sha256 cellar: :any,                 monterey:       "1d5108726fa81ca605cff31a86b1e10466e5bcd86d05738c5ea3352eec616959"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "634434a27f47961f655d7acd8b29d10a557c487fd779eed50731828b2be9a592"
   end
 
   depends_on "rust" => :build
