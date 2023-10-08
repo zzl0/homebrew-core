@@ -19,13 +19,9 @@ class Pipx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b13abbbcd60c20adba7685337ee1fa5b75833f1babd93e870fb1eb71d8f073"
   end
 
+  depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python@3.12"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
@@ -39,9 +35,9 @@ class Pipx < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink libexec/"bin/register-python-argcomplete"
 
-    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipx", "--shell",
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(register_argcomplete, "pipx", "--shell",
                                          shells: [:bash, :fish])
   end
 
