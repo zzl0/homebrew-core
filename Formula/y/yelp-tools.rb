@@ -1,6 +1,5 @@
 class YelpTools < Formula
   include Language::Python::Shebang
-  include Language::Python::Virtualenv
 
   desc "Tools that help create and edit Mallard or DocBook documentation"
   homepage "https://gitlab.gnome.org/GNOME/yelp-tools"
@@ -27,15 +26,8 @@ class YelpTools < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "itstool"
-  depends_on "libxml2"
-  depends_on "python@3.11"
-
-  uses_from_macos "libxslt"
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/70/bb/7a2c7b4f8f434aa1ee801704bf08f1e53d7b5feba3d5313ab17003477808/lxml-4.9.1.tar.gz"
-    sha256 "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
-  end
+  depends_on "python-lxml"
+  depends_on "python@3.12"
 
   resource "yelp-xsl" do
     url "https://download.gnome.org/sources/yelp-xsl/42/yelp-xsl-42.0.tar.xz"
@@ -43,12 +35,6 @@ class YelpTools < Formula
   end
 
   def install
-    python = "python3.11"
-
-    venv = virtualenv_create(libexec, python)
-    venv.pip_install resource("lxml")
-    ENV.prepend_path "PATH", libexec/"bin"
-
     resource("yelp-xsl").stage do
       system "./configure", *std_configure_args, "--disable-silent-rules"
       system "make", "install"
@@ -59,8 +45,9 @@ class YelpTools < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    # Replace shebang with virtualenv python
-    rewrite_shebang python_shebang_rewrite_info("#{libexec}/bin/#{python}"), *bin.children
+    # Replace shebang with Homebrew python
+    python_bin = Formula["python@3.12"].opt_bin/"python3.12"
+    rewrite_shebang python_shebang_rewrite_info(python_bin), *bin.children
   end
 
   test do
