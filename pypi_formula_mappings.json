@@ -1038,8 +1038,8 @@
     "exclude_packages": ["six", "PyYAML", "packaging"]
   },
   "woob": {
-    "exclude_packages": ["packaging", "pillow", "Pygments", "PyYAML", "six"],
-    "extra_packages": ["certifi", "colorama"]
+    "exclude_packages": ["certifi", "lxml", "packaging", "pillow", "Pygments", "PyYAML", "six"],
+    "extra_packages": ["colorama"]
   },
   "wtfis": {
     "exclude_packages": ["certifi", "pygments", "typing-extensions"]
