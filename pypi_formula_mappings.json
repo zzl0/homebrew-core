@@ -385,7 +385,7 @@
     "exclude_packages": ["certifi", "six"]
   },
   "gcovr": {
-    "exclude_packages": ["pygments"]
+    "exclude_packages": ["lxml", "pygments"]
   },
   "gdbgui": {
     "exclude_packages": ["six"]
