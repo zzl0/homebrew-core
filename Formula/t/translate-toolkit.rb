@@ -19,15 +19,8 @@ class TranslateToolkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b47538f8ca17e76d26c6ef45db890c4e2195721b8bac247e28aa6c94c2954ed1"
   end
 
+  depends_on "python-lxml"
   depends_on "python@3.12"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
-  end
 
   def install
     # Workaround to avoid creating libexec/bin/__pycache__ which gets linked to bin
