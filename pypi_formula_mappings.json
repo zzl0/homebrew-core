@@ -263,7 +263,9 @@
   "diffoscope": "diffoscope[cmdline]",
   "dnsrobocert": {
     "exclude_packages": [
-      "certbot", "certifi", "cffi", "cryptography", "dns-lexicon", "pycparser", "pygments", "pyyaml", "six"]
+      "certbot", "certifi", "cffi", "cryptography", "dns-lexicon", "lxml",
+      "pycparser", "pygments", "pyyaml", "six"
+    ]
   },
   "dnstwist": {
     "package_name": "dnstwist[full]",
