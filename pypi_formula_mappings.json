@@ -912,7 +912,10 @@
     "exclude_packages": ["certifi", "tabulate", "PyYAML", "docutils", "packaging"]
   },
   "snapcraft": {
-    "exclude_packages": ["docutils", "packaging", "pytz", "pyyaml", "six", "tabulate", "typing-extensions"],
+    "exclude_packages": [
+      "cffi", "certifi", "docutils", "lxml", "packaging", "pytz", "pyyaml",
+      "six", "tabulate", "typing-extensions"
+    ],
     "extra_packages": ["catkin_pkg", "pydantic-yaml[yaml]<1", "setuptools<60"]
   },
   "solc-select": {
