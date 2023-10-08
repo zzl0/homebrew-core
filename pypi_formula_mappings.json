@@ -889,8 +889,8 @@
   },
   "sickchill": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "packaging", "pycparser", "pytz", "PyYAML",
-      "six", "typing-extensions"
+      "certifi", "cffi", "cryptography", "lxml", "packaging", "pycparser",
+      "pytz", "PyYAML", "six", "typing-extensions"
     ]
   },
   "sip": {
