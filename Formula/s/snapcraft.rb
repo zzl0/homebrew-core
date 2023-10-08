@@ -23,8 +23,11 @@ class Snapcraft < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "769d137e2ac61dad6d019a2592b2961c9aa787dcb0a3a57e4204d2fa0b1687d0"
   end
 
+  depends_on "cffi"
   depends_on "libsodium"
   depends_on "lxc"
+  depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-tabulate"
@@ -34,9 +37,6 @@ class Snapcraft < Formula
   depends_on "six"
   depends_on "snap"
   depends_on "xdelta"
-
-  uses_from_macos "libxml2" # for lxml
-  uses_from_macos "libxslt" # for lxml
 
   on_linux do
     depends_on "intltool" => :build # for python-distutils-extra
@@ -105,16 +105,6 @@ class Snapcraft < Formula
   resource "catkin-pkg" do
     url "https://files.pythonhosted.org/packages/b0/c3/c2f0de6be573b2209e229f7c65e54123f1a49a24e2d25698e5de05148a17/catkin_pkg-0.5.2.tar.gz"
     sha256 "5d643eeafbce4890fcceaf9db197eadf2ca5a187d25593f65b6e5c57935f5da2"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -221,11 +211,6 @@ class Snapcraft < Formula
   resource "lazr-uri" do
     url "https://files.pythonhosted.org/packages/a6/db/310eaccd3639f5a8a6011c3133bb1cac7fd80bb46f8a50406df2966302e4/lazr.uri-1.0.6.tar.gz"
     sha256 "5026853fcbf6f91d5a6b11ea7860a641fe27b36d4172c731f4aa16b900cf8464"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "macaroonbakery" do
