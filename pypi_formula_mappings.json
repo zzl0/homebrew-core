@@ -534,7 +534,7 @@
   "lexicon": {
     "package_name": "dns-lexicon[full]",
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "pycparser", "Pygments", "PyYAML",
+      "certifi", "cffi", "cryptography", "lxml", "pycparser", "Pygments", "PyYAML",
       "pytz", "six"
     ]
   },
