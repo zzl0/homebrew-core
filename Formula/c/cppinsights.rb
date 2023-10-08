@@ -1,8 +1,8 @@
 class Cppinsights < Formula
   desc "See your source code with the eyes of a compiler"
   homepage "https://cppinsights.io/"
-  url "https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_0.10.tar.gz"
-  sha256 "996d6f219600d03f2be1e2e34adb23ae57a591b6ef7bf4582cb74042fce430f9"
+  url "https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_16.0.tar.gz"
+  sha256 "5cb850ed35f33edb322ec5ddd7ddca9caec6eefb7550632226630e70f6ab4e0e"
   license "MIT"
 
   bottle do
