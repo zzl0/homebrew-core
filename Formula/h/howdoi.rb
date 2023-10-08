@@ -9,13 +9,14 @@ class Howdoi < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd85b378b89eb71c34720a6bde889d064c34ac344c22ad518098e25bb2b29089"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64b6328f193b18bb0060306b6aa7bf8ce69459751a901c219a64fcbdd262c54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ad7b26ee13a778b13a315d42fc461c3ac138f766d85fc16808374c43522b98e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f53d0bd3a568c07ada70e98ec2ce331836b148b7a977992568362391c46eb21"
-    sha256 cellar: :any_skip_relocation, ventura:        "601ca1bafc280c90711c56e0c2fa6e98ed4c660d8e4f51a0cb5c103fb6415df2"
-    sha256 cellar: :any_skip_relocation, monterey:       "982ccaf768e20d0d9dbee4a7a0e50ea7f8ccbad447ff94e9ecac10560a6c8f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81cd8933c3ccce662969043af636c746a4f2c6d77defa97d8100817122ba6d92"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "477d1c5a448b1846e0f8356eddde9c7d7737d33d31616643da4eb7f8a4ed9a38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "047b0a762e80c1f023808278d3d9f8df336907b032d95b419271fa68eeb26c94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bc197d3669ae4babe626a4f7d605d4fe2dcd6c82a8f809ff60feb25eab76355"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2572f120b9ee123197a7133ea4cc233fa344fbf3dce44bd784663b8e3a6923b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "e82b258a0a29c3fa0878e50236cea86b0e7be180c58a05a85d4deb0dc42f8e6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e1747a46881e8a923658f6272a45e88324e99da90c9c4badcab0b5d744790da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cb83ff4cff0805df0ff4496e480a2eae2170699dac7b7e2e41e983f2ab7382"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
