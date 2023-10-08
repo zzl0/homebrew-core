@@ -33,21 +33,14 @@ class GtkDoc < Formula
   depends_on "pkg-config" => :build
   depends_on "docbook"
   depends_on "docbook-xsl"
-  depends_on "libxml2"
   depends_on "pygments"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "six" # for anytree
-
-  uses_from_macos "libxslt"
 
   resource "anytree" do
     url "https://files.pythonhosted.org/packages/d8/45/de59861abc8cb66e9e95c02b214be4d52900aa92ce34241a957dcf1d569d/anytree-2.8.0.tar.gz"
     sha256 "3f0f93f355a91bc3e6245319bf4c1d50e3416cc7a35cc1133c1ff38306bbccab"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
-    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
   end
 
   def install
