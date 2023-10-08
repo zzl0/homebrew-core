@@ -3,10 +3,9 @@ class Beancount < Formula
 
   desc "Double-entry accounting tool that works on plain text files"
   homepage "https://beancount.github.io/"
-  url "https://files.pythonhosted.org/packages/77/51/2acc2741fa2937a3a1123fd00e6e76e6d6f27c46579ea53705c49bd221ec/beancount-2.3.5.tar.gz"
-  sha256 "14e35625a2e9cbd43cae6178da08cb3f1224f6261e541ca6726df35d98e9c36a"
+  url "https://files.pythonhosted.org/packages/f6/b1/2587862caf3367f2d421be9da278f547296b00b7f9610ca9a94fddd8c709/beancount-2.3.6.tar.gz"
+  sha256 "801f93bed6b57d2e22436688c489d5a1bf1f76e210f3ced18680757e60d3475a"
   license "GPL-2.0-only"
-  revision 5
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
@@ -23,6 +22,7 @@ class Beancount < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -57,8 +57,8 @@ class Beancount < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/0a/4e/2a540cde984f3a3b6fb930e878b89e8227f9eef9fc7c6dabb47fe31a96fd/google-api-python-client-2.101.0.tar.gz"
-    sha256 "e9620a809251174818e1fce16604006f10a9c2ac0d3d94a139cdddcd4dbea2d8"
+    url "https://files.pythonhosted.org/packages/fa/6c/97e6eeac0959783c2ac21aea3c560f970327fbb0498a6011d58cbfbb30e8/google-api-python-client-2.102.0.tar.gz"
+    sha256 "906ff9b672a4d5ddad8f4073a040e59f1fba6734909c14cd49938e37be53691d"
   end
 
   resource "google-auth" do
@@ -91,6 +91,11 @@ class Beancount < Formula
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
   end
 
+  resource "pdfminer2" do
+    url "https://files.pythonhosted.org/packages/55/18/0a856200ff54db80612f66878f9b037ddb9c873f885bc58339b528611994/pdfminer2-20151206.tar.gz"
+    sha256 "7d05aa3dd1e779080fef13aef454501b51a3f7649d7f18e78c640bdbd34e1e77"
+  end
+
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
@@ -102,8 +107,8 @@ class Beancount < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/79/30/98dc7297ce8c3f0182800d2879703f0196e76d6a28e53ecaafc3901f8118/protobuf-4.24.3.tar.gz"
-    sha256 "12e9ad2ec079b833176d2921be2cb24281fa591f0b119b208b788adc48c2561d"
+    url "https://files.pythonhosted.org/packages/52/5c/f2c0778278259089952f94b0884ca27a001a17ffbd992ebe30c841085f4c/protobuf-4.24.4.tar.gz"
+    sha256 "5a70731910cd9104762161719c3d883c960151eea077134458503723b60e3667"
   end
 
   resource "pyasn1" do
@@ -114,11 +119,6 @@ class Beancount < Formula
   resource "pyasn1-modules" do
     url "https://files.pythonhosted.org/packages/3b/e4/7dec823b1b5603c5b3c51e942d5d9e65efd6ff946e713a325ed4146d070f/pyasn1_modules-0.3.0.tar.gz"
     sha256 "5bd01446b736eb9d31512a30d46c1ac3395d676c6f3cafa4c03eb54b9925631c"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pytest" do
