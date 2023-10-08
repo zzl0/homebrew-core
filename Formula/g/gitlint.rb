@@ -8,16 +8,14 @@ class Gitlint < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfa2f4df4ad580d962068df6ef5ef527adbd26e93309f63146f5deb17d1e531d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d405098bd2a0e76aa35c2c962a78047eb9813bd2e8137d32e77465ec65a1baa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "729efc2e3ad555e6d77fa801042a157bfa2182738794a1b80fd4345aa0b8ef30"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c0961fb81b39f533e9448b51f62579be7fd2870ad96b05bf06ece1dc0cf9d4a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17f708964fc124bca156a2bc139d1a5dd526c6f66a97a9ad633fea141cf0e3c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d3d8661621b9a761425df188984da146c615f5a2d9e89d29615f86d2ebb4ce2"
-    sha256 cellar: :any_skip_relocation, monterey:       "c25ba5a796a144b68544c08eb44a1d23f89448b42c7195e6637e3a21c214f710"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c75117e820488a1eeeef95548342f64632e626c8c31b2570f769faa15a3a6ec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e15b677036ec1ede61fdc4d533fc92f20e0faa99f29c2eeaa7b713b176ad1c0c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f132913229a824db2a1248037c6c68b292b86e25b20e9128940e84b6355ffac4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c840313e2c51eb693fd53bb0e74b2c5a480df3e87a268ed8bf9d84b36f0724eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "56254db8f4bafdc6ef946b5b3e56bc6afde3caab945abe60b67bb812eb5f99b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1cbf066c25cdd5cd4c06fd2c2ffbf3ca2022654dbaaa9949462768408e38ca13"
+    sha256 cellar: :any_skip_relocation, ventura:        "64c8eb03905ca67c27b5ef424561457d628fbbd8a6445ba04fe5f0f9408f8560"
+    sha256 cellar: :any_skip_relocation, monterey:       "a36ae1e591e705bca710102ce9cd1de8a25d624ab8978ec0e5f84879af798db2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7337c2a46eec782bcda2cb48ae2d1419bf14da25e6c5b32af324ad22a38f75b6"
   end
 
   depends_on "python@3.12"
