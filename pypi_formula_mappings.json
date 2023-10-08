@@ -705,7 +705,7 @@
     "extra_packages": ["wheel"]
   },
   "pipx": {
-    "exclude_packages": ["packaging"]
+    "exclude_packages": ["argcomplete", "packaging"]
   },
   "platformio": {
     "exclude_packages": ["certifi", "packaging", "tabulate", "typing-extensions"]
