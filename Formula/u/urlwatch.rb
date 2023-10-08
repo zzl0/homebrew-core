@@ -20,11 +20,9 @@ class Urlwatch < Formula
 
   depends_on "keyring"
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "pyyaml"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -44,11 +42,6 @@ class Urlwatch < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "minidb" do
