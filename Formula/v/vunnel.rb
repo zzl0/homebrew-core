@@ -21,14 +21,11 @@ class Vunnel < Formula
 
   depends_on "rust" => :build
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  # For `lxml` resource.
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
@@ -100,11 +97,6 @@ class Vunnel < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
-  end
-
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
@@ -172,6 +164,8 @@ class Vunnel < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"vunnel", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
