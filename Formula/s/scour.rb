@@ -24,7 +24,7 @@ class Scour < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e19831a0e171a39afba264fb8dec3ffbb825a9c6128c0ecf406f939253dd9f6"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   def install
