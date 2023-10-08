@@ -736,6 +736,9 @@
   "pwntools": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "packaging", "pycparser", "pygments", "six"]
   },
+  "px": {
+    "exclude_packages": ["six"]
+  },
   "pydocstyle": "pydocstyle[toml]",
   "pygit2": {
     "exclude_packages": ["cffi", "pycparser"]
