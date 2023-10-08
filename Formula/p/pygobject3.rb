@@ -4,6 +4,7 @@ class Pygobject3 < Formula
   url "https://download.gnome.org/sources/pygobject/3.46/pygobject-3.46.0.tar.xz"
   sha256 "426008b2dad548c9af1c7b03b59df0440fde5c33f38fb5406b103a43d653cafc"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "d966b22fcc02c79021526432ebc551d759391bc56e6a549bc6c19562da881925"
@@ -20,8 +21,10 @@ class Pygobject3 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "gobject-introspection"
   depends_on "py3cairo"
 
