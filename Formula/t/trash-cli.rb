@@ -20,7 +20,7 @@ class TrashCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58d352281618d62a2c6d20ced795fe9012b294fa821b03ceaf2adc7ee75dc9fd"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   conflicts_with "macos-trash", because: "both install a `trash` binary"
