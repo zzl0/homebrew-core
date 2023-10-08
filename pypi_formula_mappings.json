@@ -980,6 +980,9 @@
   "trailscraper": {
     "exclude_packages": ["six", "pytz"]
   },
+  "translate-toolkit": {
+    "exclude_packages": ["lxml"]
+  },
   "trash-cli": {
     "exclude_packages": ["six"]
   },
