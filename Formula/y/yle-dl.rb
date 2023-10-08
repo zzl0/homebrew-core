@@ -10,13 +10,14 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f4612e8837fce2f7414c6dbf5c24d7337604f72899dbac5804e7e2a0678ceed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0f96437531f3931ec8aae5c5aecd1e05013407588de94205ae2aa5f534f5a32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff0dc2840fceb0df1fc830baa63ffaef3373abfbe882a6daf00a9ceebb22e08a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "86c8281c80e99d282fba80102eb2e7d832952d5b6733fac9aaf9f69c1197888e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c668bc7ef686eef13c446bab839ceec07d076549f778ca679f16ec01704398d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "63d94c88d95c68368bd3ec93d243970b5c9100ac44eab4b71b07761b45d49b06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31664cd740ec24cf33195bc475a680d66bf11e8e037be05c9e124a6ecdd2990f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ece3822fe7734f87055ceaf0cf4cddac6fb6318ee5fbdc16eab5ec5670e2024"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "222754526c7799d19962cbded77900d7a2959ca6ae7c50666a31c3b60b2ba0c8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39a82297f83b4326ea14b9192c93bf296a61f1198fb99c280fbd0cf777ddbe02"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d51950b212404aed6710508af17aa74abd42927098fbac34644a9898ced77ca2"
+    sha256 cellar: :any_skip_relocation, ventura:        "2984322ae364ebc4d17bc92b946a390ec4dd1f12c13fb527c36b18e740cf166c"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fc1c4fe1a06fff1db85d7a099362b4b729b81293843b86aff20b7917fc9e290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4150cd6a7828f10a0f5eff4d750ff8232127e990a30c85681f6f62c7e0e1d91"
   end
 
   depends_on "cffi"
