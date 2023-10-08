@@ -22,13 +22,11 @@ class ReconNg < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   # See the REQUIREMENTS file in the archive for the top level of dependencies.
   # Please check for changes that may have been made since the last update.
@@ -106,11 +104,6 @@ class ReconNg < Formula
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
     sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
-    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
   end
 
   resource "MarkupSafe" do
