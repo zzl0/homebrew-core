@@ -8,15 +8,13 @@ class Neonctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a559af7dd2998008d1a9b5951c48db921ab3471dec8196fa79dae61643a0437"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6ed3e24f8d39a778b21f91750b7fa6c60f2d5b5dabab1fa73dcd79835bfc8bb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6ed3e24f8d39a778b21f91750b7fa6c60f2d5b5dabab1fa73dcd79835bfc8bb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6ed3e24f8d39a778b21f91750b7fa6c60f2d5b5dabab1fa73dcd79835bfc8bb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "145694f9e81fee06dd3c7b9a678de96293ff54a865037d693703593cbd6d41a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "b301daf538e2161694c4826f92bdff7ca10c7a858102c86bdde5d9569313d828"
-    sha256 cellar: :any_skip_relocation, monterey:       "b301daf538e2161694c4826f92bdff7ca10c7a858102c86bdde5d9569313d828"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b301daf538e2161694c4826f92bdff7ca10c7a858102c86bdde5d9569313d828"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6ed3e24f8d39a778b21f91750b7fa6c60f2d5b5dabab1fa73dcd79835bfc8bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22f5ebafc95c15e92482c369160235c5dac41982ee81529897934d394da8c180"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22f5ebafc95c15e92482c369160235c5dac41982ee81529897934d394da8c180"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22f5ebafc95c15e92482c369160235c5dac41982ee81529897934d394da8c180"
+    sha256 cellar: :any_skip_relocation, sonoma:         "24e55e8035418d9e5eefba3169f76f02ead80cec4e2b5a25e91feb29aefb4ac3"
+    sha256 cellar: :any_skip_relocation, ventura:        "24e55e8035418d9e5eefba3169f76f02ead80cec4e2b5a25e91feb29aefb4ac3"
+    sha256 cellar: :any_skip_relocation, monterey:       "24e55e8035418d9e5eefba3169f76f02ead80cec4e2b5a25e91feb29aefb4ac3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22f5ebafc95c15e92482c369160235c5dac41982ee81529897934d394da8c180"
   end
 
   depends_on "node"
