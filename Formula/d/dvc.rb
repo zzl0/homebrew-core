@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/b4/fd/cfc2c92c7c9b349983cd284d24742038a51bd2ee27e4188b51bd6d9192b1/dvc-3.24.0.tar.gz"
-  sha256 "e657bb08689e9c5c0395e4b1e618dc514189d6f9f663f3a1d08e947a629cbab0"
+  url "https://files.pythonhosted.org/packages/d5/fa/73b0242f7d171cc816d99b9abe4f1e0cdbb6d285801bb780aad034229c33/dvc-3.25.0.tar.gz"
+  sha256 "0dde72d185299aa7654616aadbb5c5f5d7cee9069a5e8b742266c18b498c5e15"
   license "Apache-2.0"
 
   bottle do
@@ -90,8 +90,8 @@ class Dvc < Formula
   end
 
   resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/42/97/41ccb6acac36fdd13592a686a21b311418f786f519e5794b957afbcea938/annotated_types-0.5.0.tar.gz"
-    sha256 "47cdc3490d9ac1506ce92c7aaa76c579dc3509ff11e098fc867e5130ab7be802"
+    url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
+    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
   end
 
   resource "antlr4-python3-runtime" do
@@ -435,8 +435,8 @@ class Dvc < Formula
   end
 
   resource "gto" do
-    url "https://files.pythonhosted.org/packages/e1/5e/e070ea2f82e3527c213784db9ef73fb9e0e59c6e6d35c2d672496b707d36/gto-1.3.0.tar.gz"
-    sha256 "f86c1f25ad5130020a4f1fb09c53500303c30cd65f4407f3bc1e66293d1a827f"
+    url "https://files.pythonhosted.org/packages/2c/77/6116e7d17ac99554acbbcba1dfd3c39b4b24e4d30b60102e8fe46e8ed904/gto-1.4.0.tar.gz"
+    sha256 "2bd2f67d172133584a47b2f3db906efb13a24258e094a930c4a1d800310d89d9"
   end
 
   resource "h11" do
@@ -685,8 +685,8 @@ class Dvc < Formula
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/46/30/a14b56e500e8eabf8c349edd0583d736b231e652b7dce776e85df11e9e0b/semver-3.0.1.tar.gz"
-    sha256 "9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"
+    url "https://files.pythonhosted.org/packages/41/6c/a536cc008f38fd83b3c1b98ce19ead13b746b5588c9a0cb9dd9f6ea434bc/semver-3.0.2.tar.gz"
+    sha256 "6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"
   end
 
   resource "shortuuid" do
