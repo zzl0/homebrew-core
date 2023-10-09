@@ -1,8 +1,8 @@
 class Pypy310 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.10-v7.3.12-src.tar.bz2"
-  sha256 "86e4e4eacc36046c6182f43018796537fe33a60e1d2a2cc6b8e7f91a5dcb3e42"
+  url "https://downloads.python.org/pypy/pypy3.10-v7.3.13-src.tar.bz2"
+  sha256 "4ac1733c19d014d3193c804e7f40ffccbf6924bcaaee1b6089b82b9bf9353a6d"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg, branch: "py3.10"
 
@@ -46,8 +46,8 @@ class Pypy310 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/fa/ee/74ff76da0ab649eec7581233daeb43d8aa35383d8f75317b2ab3b80c922f/pip-23.1.2.tar.gz"
-    sha256 "0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba"
+    url "https://files.pythonhosted.org/packages/ba/19/e63fb4e0d20e48bd2167bb7e857abc0e21679e24805ba921a224df8977c0/pip-23.2.1.tar.gz"
+    sha256 "fb0bd5435b3200c602b5bf61d2d43c2f13c02e29c1707567ae7fbc514eb9faf2"
   end
 
   # Build fixes:
