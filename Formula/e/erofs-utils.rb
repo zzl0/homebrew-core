@@ -24,6 +24,7 @@ class ErofsUtils < Formula
   depends_on "pkg-config" => :build
   depends_on "lz4"
   depends_on "util-linux" # for libuuid
+  depends_on "xz"
 
   on_linux do
     depends_on "libfuse@2"
@@ -34,7 +35,7 @@ class ErofsUtils < Formula
     args = std_configure_args + %w[
       --disable-silent-rules
       --enable-lz4
-      --disable-lzma
+      --enable-lzma
       --without-selinux
     ]
 
@@ -58,6 +59,11 @@ class ErofsUtils < Formula
     #   (Also tests that `lz4` support is properly linked.)
     system "#{bin}/mkfs.erofs", "--quiet", "-zlz4", "test.lz4.erofs", "in"
     assert_predicate testpath/"test.lz4.erofs", :exist?
+
+    # Test mkfs.erofs can make a valid erofsimg.
+    #   (Also tests that `lzma` support is properly linked.)
+    system "#{bin}/mkfs.erofs", "--quiet", "-zlzma", "test.lzma.erofs", "in"
+    assert_predicate testpath/"test.lzma.erofs", :exist?
 
     # Unfortunately, fsck.erofs doesn't support extraction for now, and
     # erofsfuse doesn't officially work on MacOS
