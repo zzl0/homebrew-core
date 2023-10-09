@@ -87,6 +87,14 @@ class Commitizen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(
+      python_exe, register_argcomplete, "cz",
+      base_name:              "cz",
+      shell_parameter_format: :arg
+    )
   end
 
   test do
