@@ -5,6 +5,10 @@ class Bashunit < Formula
   sha256 "0216d2c1e49ce0dd8303d01c076d24a5cb3fd54fd94634216887c6edbaf4a2f6"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "415c601e63ba36c9c8523e5c204e92743ab4c4976acad5d4e3779b42034f2cc9"
+  end
+
   def install
     bin.install "bashunit"
   end
