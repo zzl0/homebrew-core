@@ -6,14 +6,14 @@ class Aws2Wrap < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac724aeab03c7ebfcf1dd1822e1fd0aa22ee987932eef824a3ffb087fb0a46a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32c894850f3df13aec62e6411048e7ab3eafc8f8ef2cee2debbb1d614346c8b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1eeab4596abcdffdae902f240da50dd4c6735528a2f8b9c03dd4b844bf2cd8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d0333acbc490c8fe31b9b713cb9c2f1b39d90f9a0b03f4f1dd599345a136e118"
-    sha256 cellar: :any_skip_relocation, ventura:        "062a4be4a0d68d3ebc90597f87f2c92b831b0bee7915d7f807663ca8c2c8c2b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "62bcd44742300374609bf3d82bbf6c8eff3e6576b1d50f3ace283641d1045f60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "769da6fea14e74a0dda2a14b9706922add37f0533bf145d10ef56e92d9183a31"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "793be218f866d4a783f0ca49b32515c3be383e94c2f95386ae07338e6ace0de4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2500d4adce97d108fc21ed3f927a19a666781d136bbf85228c77c8c40bf36a10"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6007a99818a879b786fae8a01954cf4353e92c3a7fbc16f062f0139380baf26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "01279c6812af7aca180c3a6e4e3df527d662437ce04ecb87e0db5cac17d93ef4"
+    sha256 cellar: :any_skip_relocation, ventura:        "73eecd11ab6bb700c0622592ba1401da33a0c3ddf597ad3c906fcceb91dd3460"
+    sha256 cellar: :any_skip_relocation, monterey:       "6da87f5f87544ddd1cbfd54d563ebe8b201b45596068ca3d30825231008a578b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81966dff8907d3f9deef2f78a96119cd6bf4be9db9dd03ee414b542d542b5daf"
   end
 
   depends_on "python-setuptools" => :build
