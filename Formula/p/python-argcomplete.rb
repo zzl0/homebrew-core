@@ -29,6 +29,9 @@ class PythonArgcomplete < Formula
       python_exe = python.opt_libexec/"bin/python"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
+
+    bash_completion.install "argcomplete/bash_completion.d/_python-argcomplete" => "python-argcomplete"
+    zsh_completion.install_symlink bash_completion/"python-argcomplete" => "_python-argcomplete"
   end
 
   test do
