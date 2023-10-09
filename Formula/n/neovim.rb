@@ -4,16 +4,16 @@ class Neovim < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/v0.9.2.tar.gz"
-    sha256 "06b8518bad4237a28a67a4fbc16ec32581f35f216b27f4c98347acee7f5fb369"
+    url "https://github.com/neovim/neovim/archive/v0.9.4.tar.gz"
+    sha256 "148356027ee8d586adebb6513a94d76accc79da9597109ace5c445b09d383093"
 
     # Remove when `mpack` resource is removed.
     depends_on "luarocks" => :build
 
     # Remove in 0.10.
     resource "mpack" do
-      url "https://github.com/libmpack/libmpack-lua/releases/download/1.0.10/libmpack-lua-1.0.10.tar.gz"
-      sha256 "18e202473c9a255f1d2261b019874522a4f1c6b6f989f80da93d7335933e8119"
+      url "https://github.com/libmpack/libmpack-lua/releases/download/1.0.11/libmpack-lua-1.0.11.tar.gz"
+      sha256 "a2d9ec184867ab92ad86e251908619fa13e345b8f2c9bc99df4ac63c8039d796"
     end
 
     # Keep resources updated according to:
@@ -108,7 +108,7 @@ class Neovim < Formula
           ENV.prepend "LUA_PATH", deps_build/"share/lua/5.1/?.lua", ";"
           ENV.prepend "LUA_CPATH", deps_build/"lib/lua/5.1/?.so", ";"
 
-          rock = "mpack-1.0.10-0.rockspec"
+          rock = "mpack-1.0.11-0.rockspec"
           output = Utils.safe_popen_read("luarocks", "unpack", lua_path, rock, "--tree=#{deps_build}")
           unpack_dir = output.split("\n")[-2]
 
