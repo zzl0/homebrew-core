@@ -3,8 +3,8 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/51/bf/5184e8f1bfe59239b3d08de96fbbf83fba0fb0c233e84f9b32830d4b7679/python-lsp-server-1.8.1.tar.gz"
-  sha256 "6f282af95880a98b833645f42bd9d3aa045378cf08b0c2c1c50966a65f521237"
+  url "https://files.pythonhosted.org/packages/23/1f/41be2a7fd29d29bad4f186e25fa28e1faa121688d18a9b84cd8eb9b6fd9a/python-lsp-server-1.8.2.tar.gz"
+  sha256 "fd85e1c6ad95c1d276c82a33c2c85898f110afc3c7bfeaced79c0df095076fd1"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
