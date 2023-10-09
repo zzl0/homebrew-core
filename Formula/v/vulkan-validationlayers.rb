@@ -1,8 +1,8 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.266.tar.gz"
-  sha256 "6a8478ec4f9088a90effc63f48f2ce1c39e1d675daa8f5d4252b4b3e94dff540"
+  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.267.tar.gz"
+  sha256 "c954d9ca43683ddd51499a1b743af4d243b4432983906f87889be8ade2b3cc23"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
@@ -18,7 +18,7 @@ class VulkanValidationlayers < Formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "vulkan-loader" => :test
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
@@ -42,7 +42,7 @@ class VulkanValidationlayers < Formula
   # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L57
   resource "SPIRV-Tools" do
     url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-        revision: "ee7598d49798e7bf34fabe55b5a438a381d450c8"
+        revision: "847715d6c65200987c079fb13ca7925760faec23"
   end
 
   def install
