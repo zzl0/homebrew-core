@@ -24,6 +24,7 @@ class Libxp < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxext"
