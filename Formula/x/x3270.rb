@@ -22,13 +22,10 @@ class X3270 < Formula
     sha256 x86_64_linux:   "d743d4ac5943098c71ae80620159ecfce874088b4b323bd98832ccc8c52bf4a6"
   end
 
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "tcl-tk"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk"].opt_include}/tcl-tk" unless OS.mac?
