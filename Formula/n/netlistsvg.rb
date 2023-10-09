@@ -7,6 +7,10 @@ class Netlistsvg < Formula
   sha256 "b7f218f9d8f2b826d28bff6ebe1f5b1a4fb5b7c9465a034ae0a8fcd2b9d53a67"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "0db6e0d42e5a96a82499730ce2be1ae11af72f23b0d16e536eabf2e30c7d8983"
+  end
+
   depends_on "yosys" => :test
   depends_on "node"
 
