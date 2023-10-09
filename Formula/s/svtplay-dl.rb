@@ -3,19 +3,18 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/6d/67/11d664a155856ca12c3db4782288ea44c2ccb18793a8a58ab4b855bd267e/svtplay-dl-4.25.tar.gz"
-  sha256 "c6d0166ff059ee18017241bee5d7343be52cfc6e12939513ae26fdf5ad55508e"
+  url "https://files.pythonhosted.org/packages/cb/b5/563fe54a44d00575aa5ada6f3342f094a550f10a07db66375ce81611ae83/svtplay-dl-4.26.tar.gz"
+  sha256 "679494d281114a768e44dab88e96077ab4335c4c21a2e8f299bc8acfa21bd904"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "823ca2830b88371d12f01dcb9376de4283be384b38e8845113632b3ef1baabd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d2ceb49d1d2240fb105b026899abe18728c285c2a201f65a4dfa11a341133d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e36cc3eda2e7576cd1459066d5bb32e58bbe9b9840d63ef59d705ba52ae59c53"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70aa6b965b894aba966298c7fdb027049570e6b21496f68f551c88236698d679"
-    sha256 cellar: :any_skip_relocation, ventura:        "495acc324c8b45347b51800ce8a251489e809655ca4747fd8eadbc657d1e56a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "a05c39ae318b600fd4b0401b4b8376a89894c486d57f78ecf39b491a72733b3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7a673a55aaaeeb2a28e50b3e7a5e155656b4ea175bbab479a4f3fea6932b8da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62847a24367940a865cd71d6283b02dfcd5a591d9b436bb46858703d1d1538e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d143ce12eb6d2fdb3371745c6cae28afcc19a2094e247e544b322d863260cc57"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c44bad8a1e700a933db5f771258045a4240d9f75c862ffc820873bfef002695e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f743a67c99786c3fd6f564ca5a868b623a1f3e8c25de1639fd72560bd7dbd24"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c7fb82fb4f6bf1f0f70866ce3aa42d69dc50cd7b6510739045bd9dd7612e76b"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d778912518bbf6c6b98c6f2ab462a471654fd7cf280109b96cb4ecbbdb70ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c24c3d8fc78e8e4c9919c54938172f24f323a9bd96a1d9b2f89452c0524b2f10"
   end
 
   depends_on "cffi"
