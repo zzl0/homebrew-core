@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "6f94eae4ee8584fed7ea1b006abdc4ecacdc1f6b496270fd81e710473184e27a"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "aa7548ff0720a375984b25cddac4a8e252f85b9523a7a357ab20c3d282a5bb92"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -38,7 +38,7 @@ class SbomTool < Formula
     bin.mkdir
 
     dotnet_version = Formula["dotnet"].version.to_s
-    inreplace "./global.json", "8.0.100-rc.1.23463.5", dotnet_version
+    inreplace "./global.json", "7.0.400", dotnet_version
 
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
