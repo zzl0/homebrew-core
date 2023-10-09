@@ -1,8 +1,8 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.10.02.00.tar.gz"
-  sha256 "a37900e7fae549253fb58d4007f90bdcca05565b7dd55cee7c748d055ed8399c"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz"
+  sha256 "f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -47,6 +47,19 @@ class Watchman < Formula
   end
 
   def install
+    python3 = "python3.11"
+    xy = Language::Python.major_minor_version python3
+    python_path = if OS.mac?
+      Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}"
+    else
+      Formula["python@#{xy}"].opt_include/"python#{xy}"
+    end
+
+    # Make sure to pick up the intended Python version.
+    inreplace "CMakeLists.txt",
+              /set\(Python3_ROOT_DIR .*\)/,
+              "set(Python3_ROOT_DIR #{python_path})"
+
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
