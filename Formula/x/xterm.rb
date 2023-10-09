@@ -12,13 +12,13 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "44159ea3423ddfa4ba99a34210514f5fec54891b45ef691a02b0ba3733343baa"
-    sha256 arm64_ventura:  "9d2c78ee4f42c2be5949f25d0ff1a5f3fc7a78db78fecf8ee2a074b881897fd0"
-    sha256 arm64_monterey: "22cc7e39f20b9b5a1fef5a0afb65ea08bbca59cd45bc30e3a7747404feb332f5"
-    sha256 sonoma:         "b5fcaf1e25401e82c127579a9414d11f158b730ba55382d6dbe082b9b00665d1"
-    sha256 ventura:        "036ad3b95037f3cac8496853deae162940b76921a4b9254056af71cff1c81847"
-    sha256 monterey:       "4cca493f397d86bc7bcc08c2570a1e78cd5321ed6ebf3cfd2008ccd2c54a0aa1"
-    sha256 x86_64_linux:   "d964ee17912db4afee48794a42de076f3d5645847ab1d865f3aa9103231588a2"
+    sha256 arm64_sonoma:   "455fb22e784461f4792224e999ebcf0150e8a89aa8235499b3f8709c8e547039"
+    sha256 arm64_ventura:  "e1de74d679e372c394485d6bc88adb6f68743cb9b937eb76c9fe6f8037904ad8"
+    sha256 arm64_monterey: "79e1404ef47b6409c1892b7a114b8cfc6d23cd26bd0d53770f81c607e6a6c503"
+    sha256 sonoma:         "5147166cdbc1ef1954e4697e89b9e9bae92f042ca1265b1e42f266283dd7753c"
+    sha256 ventura:        "a424b28dfcafcb0ea0eb18056945a5d8c611c562a0e132434db18ec79ecda23d"
+    sha256 monterey:       "9a2b113527c050d2d938d240d61c3df0a60e7fd3371ebb6c4a1b6f7c14bc7559"
+    sha256 x86_64_linux:   "f075aca29e9de8f51e9ba171b31a08cf866516333bb1ddb5b533de51d1637c75"
   end
 
   depends_on "fontconfig"
