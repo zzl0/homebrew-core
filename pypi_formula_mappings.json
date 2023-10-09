@@ -119,7 +119,7 @@
     ]
   },
   "beancount": {
-    "exclude_packages": ["certifi", "lxml", "packaging", "six"]
+    "exclude_packages": ["certifi", "lxml", "packaging", "pyparsing", "six"]
   },
   "bilix": {
     "exclude_packages": ["certifi", "typing-extensions", "Pygments"]
