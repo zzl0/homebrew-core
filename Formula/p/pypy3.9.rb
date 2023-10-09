@@ -1,8 +1,8 @@
 class Pypy39 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.9-v7.3.12-src.tar.bz2"
-  sha256 "e7a2046c7e6c25fc386abbb5132e92a7cc2491e3935699a946cb5dcbb342c2aa"
+  url "https://downloads.python.org/pypy/pypy3.9-v7.3.13-src.tar.bz2"
+  sha256 "bc6147268105e7cb3bd57b401e6d97f66aa4ede269104b2712a7cdd9f02f68cd"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg, branch: "py3.9"
 
@@ -46,8 +46,8 @@ class Pypy39 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/fa/ee/74ff76da0ab649eec7581233daeb43d8aa35383d8f75317b2ab3b80c922f/pip-23.1.2.tar.gz"
-    sha256 "0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba"
+    url "https://files.pythonhosted.org/packages/ba/19/e63fb4e0d20e48bd2167bb7e857abc0e21679e24805ba921a224df8977c0/pip-23.2.1.tar.gz"
+    sha256 "fb0bd5435b3200c602b5bf61d2d43c2f13c02e29c1707567ae7fbc514eb9faf2"
   end
 
   # Build fixes:
