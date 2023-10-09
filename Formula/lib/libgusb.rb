@@ -3,8 +3,8 @@ class Libgusb < Formula
 
   desc "GObject wrappers for libusb1"
   homepage "https://github.com/hughsie/libgusb"
-  url "https://github.com/hughsie/libgusb/archive/refs/tags/0.4.6.tar.gz"
-  sha256 "0ad7e9f68b3e188149c583f411878db418d6f9600fd1b78e96fea11a8399ad0a"
+  url "https://github.com/hughsie/libgusb/archive/refs/tags/0.4.7.tar.gz"
+  sha256 "3c0f4a01144810ea1ea0c1a8ff7b84098fced7939d002c54a143145a6fbd94d8"
   license "LGPL-2.1-only"
   head "https://github.com/hughsie/libgusb.git", branch: "main"
 
