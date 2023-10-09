@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/pytorch/pytorch.git",
-      tag:      "v2.0.1",
-      revision: "e9ebda29d87ce0916ab08c06ab26fd3766a870e5"
+      tag:      "v2.1.0",
+      revision: "7bcf7da3a268b435777fe87c7794c382f444e86d"
   license "BSD-3-Clause"
 
   livecheck do
@@ -32,7 +31,7 @@ class Pytorch < Formula
   depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "pybind11"
   depends_on "python-typing-extensions"
   depends_on "pyyaml"
@@ -42,8 +41,8 @@ class Pytorch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
-    sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
+    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
+    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
   end
 
   resource "Jinja2" do
@@ -67,8 +66,8 @@ class Pytorch < Formula
   end
 
   resource "sympy" do
-    url "https://files.pythonhosted.org/packages/5a/36/4667b08bc45131fe655a27b1a112c1730f3244343c53a338f44d730bd6ba/sympy-1.11.1.tar.gz"
-    sha256 "e32380dce63cb7c0108ed525570092fd45168bdae2faa17e528221ef72e88658"
+    url "https://files.pythonhosted.org/packages/e5/57/3485a1a3dff51bfd691962768b14310dae452431754bfc091250be50dd29/sympy-1.12.tar.gz"
+    sha256 "ebf595c8dac3e0fdc4152c51878b498396ec7f30e7a914d6071e674d49420fb8"
   end
 
   def install
@@ -124,7 +123,7 @@ class Pytorch < Formula
         std::cout << tensor << std::endl;
       }
     EOS
-    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}/torch/csrc/api/include",
                     "-L#{lib}", "-ltorch", "-ltorch_cpu", "-lc10"
     system "./test"
