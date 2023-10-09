@@ -4,6 +4,7 @@ class Libcue < Formula
   url "https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz"
   sha256 "f27bc3ebb2e892cd9d32a7bee6d84576a60f955f29f748b9b487b173712f1200"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2cede6a029fa424a1e6d777d440c37f411be262cf8bdf342c17806f1a46120ed"
@@ -26,6 +27,12 @@ class Libcue < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+
+  # Fix CVE-2023-43641. Patch merged upstream, remove on next release.
+  patch do
+    url "https://github.com/lipnitsk/libcue/commit/fdf72c8bded8d24cfa0608b8e97f2eed210a920e.patch?full_index=1"
+    sha256 "93ada0f25cd890daaee4211b0935b875d92a52bc4b419dcb4bff5aec24a28caa"
+  end
 
   def install
     system "cmake", ".", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
