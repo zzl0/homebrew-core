@@ -8,16 +8,13 @@ class Duplicity < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "3809c2d6a84a0bb2fe08c6b03eb76fde3471bc09bd23e1be73c1b10281de523f"
-    sha256 cellar: :any,                 arm64_ventura:  "2b1d84cd13295a2520931905af9d059f5a5e09bd2fd974b7c80527f8072a9630"
-    sha256 cellar: :any,                 arm64_monterey: "9960df1366386dabab8522f979e433c9671c111fabc5eab6b58f37db576dfa4c"
-    sha256 cellar: :any,                 arm64_big_sur:  "71e3c04e40b5ce3adbc3c0f7c9cab3e26924c8ca4cb8a79bd841fc27b8a00ae3"
-    sha256 cellar: :any,                 sonoma:         "ca002a207618d2125a69f7b5a507d821e4d4ee2ca82ee955667b5e23d883304c"
-    sha256 cellar: :any,                 ventura:        "f5e8f8c15c97f1558eeb535d8f053fa9213f93f7117cf923ce6d98e9271704f0"
-    sha256 cellar: :any,                 monterey:       "9d463a8e17655009335faa89cb308f6ad1f258b1284681d2bc8e228c039052f0"
-    sha256 cellar: :any,                 big_sur:        "40089517908fe32cfa4c058e34133f4a50caf0ea9d8541337dc306ae449c3865"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d9857b151dff2e6d474071fe41c3d0ed802f4706d84538213c69147c40dbb0f"
+    sha256 cellar: :any,                 arm64_sonoma:   "ab81d9836e39eebba437e91015637094c90648ce2ec4889cce03a2533e7388f3"
+    sha256 cellar: :any,                 arm64_ventura:  "59135ba7bf5f165f5d7c55e68d676cf59d767507df0e1a0c033b0abb1eb46f25"
+    sha256 cellar: :any,                 arm64_monterey: "21c8a2bc9c329ab9d9f2baea506f20e85db9f31267ae5c63a9128b97d7d8601e"
+    sha256 cellar: :any,                 sonoma:         "7c4fb3d39d30aac2e9443f66f35329e32303a75fd79f42b8c493204e7f84dc6d"
+    sha256 cellar: :any,                 ventura:        "823e471139f193d3be9d67d4cec7197bba0a262e96f214c8d974d683bf89c8c8"
+    sha256 cellar: :any,                 monterey:       "0e7723e42e11d073287a3d8f865fea4ce3643f6ae7bcd9cba9e459e8caffb2ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bd82e4d495f592915e2973c9fcc1510c303fd21311f57d3129688246674d9b"
   end
 
   depends_on "gettext" => :build # for msgfmt
