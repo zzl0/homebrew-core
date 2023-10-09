@@ -37,8 +37,7 @@ class Pipx < Formula
     virtualenv_install_with_resources
 
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
-    generate_completions_from_executable(register_argcomplete, "pipx", "--shell",
-                                         shells: [:bash, :fish])
+    generate_completions_from_executable(register_argcomplete, "pipx", shell_parameter_format: :arg)
   end
 
   test do
