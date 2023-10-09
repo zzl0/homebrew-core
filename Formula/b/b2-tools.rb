@@ -18,6 +18,7 @@ class B2Tools < Formula
   end
 
   depends_on "docutils"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
@@ -25,11 +26,6 @@ class B2Tools < Formula
   depends_on "six"
 
   conflicts_with "boost-build", because: "both install `b2` binaries"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
-  end
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"

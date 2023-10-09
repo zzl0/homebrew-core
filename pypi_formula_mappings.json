@@ -104,7 +104,9 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "b2-tools": {
-    "exclude_packages": ["certifi", "docutils", "six", "tabulate", "typing-extensions"]
+    "exclude_packages": [
+      "argcomplete", "certifi", "docutils", "six", "tabulate", "typing-extensions"
+    ]
   },
   "bandcamp-dl": {
     "exclude_packages": ["certifi", "lxml", "mutagen", "six"]
