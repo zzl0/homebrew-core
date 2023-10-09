@@ -3,10 +3,9 @@ class ShallowBackup < Formula
 
   desc "Git-integrated backup tool for macOS and Linux devs"
   homepage "https://github.com/alichtman/shallow-backup"
-  url "https://files.pythonhosted.org/packages/eb/33/4b56af73e95125cd6d92972a3e55c82f3ac9386d3401dd198f886a99bb0e/shallow-backup-6.0.tar.gz"
-  sha256 "8fa5b8052c9f9c4f4ef456cf2f0163ef0fffb5c3a96e506665bae7899b5cc72c"
+  url "https://files.pythonhosted.org/packages/88/a3/95aba76be24bae02c9ada7f08a81475174853c633d6ea423abb97204fa6f/shallow-backup-6.1.tar.gz"
+  sha256 "2ee6ef89a5ab2708b428675c7a0b31f66545ab984819968a0151b8ded3e8017a"
   license "MIT"
-  revision 3
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
