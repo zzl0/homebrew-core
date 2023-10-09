@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.263.tar.gz"
-  sha256 "9c84474c9668946ad0ff291df3147e109ede5bd417e512cdfe6c71e2a231dc08"
+  url "https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.267.tar.gz"
+  sha256 "a5ddca95db1faa0bc3ad958d3979d063846252bd5dff1f3ed5833cb20dc0ace5"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
 
@@ -25,7 +25,7 @@ class VulkanLoader < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "vulkan-headers"
 
   on_linux do
@@ -44,8 +44,6 @@ class VulkanLoader < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    inreplace lib/"pkgconfig/vulkan.pc", /^Cflags: .*/, "Cflags: -I#{Formula["vulkan-headers"].opt_include}"
   end
 
   test do
