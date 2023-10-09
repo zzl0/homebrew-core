@@ -1,8 +1,8 @@
 class Gosec < Formula
   desc "Golang security checker"
   homepage "https://securego.io/"
-  url "https://github.com/securego/gosec/archive/v2.17.0.tar.gz"
-  sha256 "5826ccb9310f9327ed2e010617a4742c1b12d28c199d1fd256f78606cbfc3c9a"
+  url "https://github.com/securego/gosec/archive/v2.18.0.tar.gz"
+  sha256 "6b780dcd2270d5c95214c5e2c159b4eb86be5c5ec934bcbe583acb447597dce1"
   license "Apache-2.0"
   head "https://github.com/securego/gosec.git", branch: "master"
 
