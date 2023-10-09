@@ -3,8 +3,8 @@ class Pnpm < Formula
 
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-8.8.0.tgz"
-  sha256 "d713a5750e41c3660d1e090608c7f607ad00d1dd5ba9b6552b5f390bf37924e9"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-8.9.0.tgz"
+  sha256 "8f5264ad1d100da11a6add6bb8a94c6f1e913f9e9261b2a551fabefad2ec0fec"
   license "MIT"
 
   livecheck do
@@ -30,6 +30,13 @@ class Pnpm < Formula
     libexec.install buildpath.glob("*")
     bin.install_symlink "#{libexec}/bin/pnpm.cjs" => "pnpm"
     bin.install_symlink "#{libexec}/bin/pnpx.cjs" => "pnpx"
+
+    # remove non-native architecture pre-built binaries
+    (libexec/"dist").glob("reflink.*.node").each do |f|
+      next if f.arch == Hardware::CPU.arch
+
+      rm f
+    end
   end
 
   def caveats
