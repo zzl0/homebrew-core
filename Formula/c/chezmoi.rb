@@ -16,13 +16,13 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6306f3c075e815900601a445f3f7abf2442796b37ac413cbeb2728b1a9875dec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e222a15cd8c207e4a86c00c11ae52839d469c9bc4263196e46a890865d486b37"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0ece6bdbac1c673a0a76cbe18d64cc6590b9c25a42e47ed528ff81515c670b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5dd6c897ed71aa81cc3c4a60b57c667707178f8fe083d0481da7bd3ad276855f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6631beca0be1dcee098840b185afd0d84003fbcfb07284037df8f1aea2e1595"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a0c3e1df3ea5fc7c801758d1450b4217463e1c5f8b67be6e01a3b3a7fcbd7ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb65b49dc68b391c44a1878e26d7416b57f4685f45337c8ca6b720b3ace1dcc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5a388e8e25dcd2a554061cfaf5f28bf1a41e7f5d472fc8701c46ba802daef78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "329d10a137f1ee1d44a03b31559759ad624849472c058b4e6386b2824fd775bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34ee080b75eaa84e759767826c24713ede376bcd14b06c3fe31db0bbe7ffcbe3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab4d5bf0896f1a53a6d8bf1d76253597aa8cc1a1f4be1d72099adb33d675e71c"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb0301a83f374e7713041913b85b59b8491f80155ef48d81b6531ef43ab843a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "689d0be3028a2c793373a95bdeb4ce2ed129b527163068480cd86ebbeaa33515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3192a932bf927aa47665dd51c3c71ec0d645e99f2c5804bb1ca83dc4b5bf1f"
   end
 
   depends_on "go" => :build
