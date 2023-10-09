@@ -4,6 +4,7 @@ class Gnumeric < Formula
   url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.55.tar.xz"
   sha256 "c69a09cd190b622acca476bbc3d4c03d68d7ccf59bba61bf036ce60885f9fb65"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "5bff6b05940bdccf798dfc3b10213e9032bbc1ed4fe9a4b33661b6aca6e259b1"
@@ -36,8 +37,12 @@ class Gnumeric < Formula
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "perl-xml-parser"
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].opt_libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec/"lib/perl5" unless OS.mac?
 
     # ensures that the files remain within the keg
     inreplace "component/Makefile.in",
