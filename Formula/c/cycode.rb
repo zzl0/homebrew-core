@@ -8,15 +8,13 @@ class Cycode < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa492518d36f3ddeb47bd85906e30e355382f96049f90e48a83de5f1cf4e32db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67ca27d79d4f8545e891427cce7b91b832e5152f92a5353bbc14c64d15bb8bd3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a990d8a8c143ce9e1f003ffa2625a7fcdbfe6d09ba92a3084ba5758b978064e6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca297adcf9699467ff9fe1d07069827481df8d4ffd85bf6c2874805e962775bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6b225c7dead2b164e9efc13bbe24967ca2885d17015824f717724ff552dcdc06"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d9091e83c6bccf94c1ff1cbb396bee3971131fdd4bdf8cbc7da64c8db75dce9"
-    sha256 cellar: :any_skip_relocation, monterey:       "353ee2369966c09b0feb131b42ca215debaeb16ad6e1899f1b77cdfcce228720"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aae888cc51d00be052dcc7b966adb0d4b21e219e3e43f8d53cafa489cddb12ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93088e826daab9b2acfce0bc4049d5655b7c22af4fd3ef08897546ace0afcaf3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd4f8f5eb008211459989c28c7249d1e8807d256d8aa22c0a07a6de464060b36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e5cf8fd2ff696f87287b1500e626c62d80dae42ad18e0c0a81ccb061df1917c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e440ef984f45596f61b89fcaf813a21cbdf626482ab8edf2efe4a2dc165f85ff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d951c75fe716d7832baa7e8b11b9730465bd75ef523d44662996842770229b8d"
+    sha256 cellar: :any_skip_relocation, ventura:        "91d861545d132589c2e92b82a6ac113fe7a8a2e7ef890e07d7a7614a89eba394"
+    sha256 cellar: :any_skip_relocation, monterey:       "50a6e3b78ad71bb82e767bad08064fdc1a425ade714abfcdf22c2abb9bf935ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba9798417de30452c4b430f6f92d17d90fcc46b30843dde3444d8404b292801"
   end
 
   depends_on "python-certifi"
