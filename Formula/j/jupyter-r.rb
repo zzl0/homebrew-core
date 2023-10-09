@@ -5,6 +5,14 @@ class JupyterR < Formula
   sha256 "4ef2df1371e4b80dc1520da9186242998eb89eb0acfbc7d78de9aef4416bc358"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "0a87163b05cfc86db83fb1a1e78f379df9742d6a68c478ab8613e8d36c31564e"
+    sha256 cellar: :any,                 arm64_monterey: "e22aa03630e2d3370ebf6da043265a33e272f7f3531bdcb6f3e5c909bcd71945"
+    sha256 cellar: :any,                 ventura:        "b9bad93df13c5c3a8069c2a9444d893aa16b00bcda17cf69bf098325bfa754f1"
+    sha256 cellar: :any,                 monterey:       "31a1f3e18b2bbd06f6ac60e392faf5859e528b091a8d0c4dea41bcd17c8ef2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1ba5989e0c9ad5287b6a30c500e2b6ec36a5fb83408c68841740e6d94b81bc3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "jupyterlab"
   depends_on "r"
