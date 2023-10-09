@@ -19,14 +19,14 @@ class Cppcheck < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "pcre"
   depends_on "tinyxml2"
 
   uses_from_macos "libxml2"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
