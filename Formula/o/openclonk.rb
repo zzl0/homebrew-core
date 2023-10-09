@@ -90,6 +90,9 @@ class Openclonk < Formula
     inreplace "CMakeLists.txt", "install(TARGETS openclonk DESTINATION games)",
                                 "install(TARGETS openclonk DESTINATION bin)"
 
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV.cxx11
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
