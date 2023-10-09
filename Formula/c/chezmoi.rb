@@ -16,15 +16,13 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e8b651e295cf9aa2e729eb20a95369f40776c417967dfd548a8d099814555e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3110d532bce9e4b491947ed573cb8791b2e9686e8bc48ac3c9254c7821191f64"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d4f12c92e13b30f16f8590d3baf2f5023411487618fe95d56a97498719d2ca8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16b9f5098a7341449a6117b33f1d7f3c81e2bbe7931483542c61318f5dabfb95"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b8fea089285495c752425255a1f7991a38db1e7dccbfbfda1d80d292f1eb1375"
-    sha256 cellar: :any_skip_relocation, ventura:        "317ae3c957e7e47c9da148810cf6552806ada43bd64e06717a8d9d4ad29d34a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "fbc1730aa793c0cc4eba55de4ba917da49ab0a5bdec7f5fc6dd2dbf1a11cd74e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b103680ce7be96687331e6e4bd67179c36c029396e445ed4da28db0e3af99a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4033bf4f74a71d34ab9cae2a42572182c8e2f54c9c3cc8e959da6b41482b825f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6306f3c075e815900601a445f3f7abf2442796b37ac413cbeb2728b1a9875dec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e222a15cd8c207e4a86c00c11ae52839d469c9bc4263196e46a890865d486b37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0ece6bdbac1c673a0a76cbe18d64cc6590b9c25a42e47ed528ff81515c670b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5dd6c897ed71aa81cc3c4a60b57c667707178f8fe083d0481da7bd3ad276855f"
+    sha256 cellar: :any_skip_relocation, ventura:        "d6631beca0be1dcee098840b185afd0d84003fbcfb07284037df8f1aea2e1595"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a0c3e1df3ea5fc7c801758d1450b4217463e1c5f8b67be6e01a3b3a7fcbd7ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb65b49dc68b391c44a1878e26d7416b57f4685f45337c8ca6b720b3ace1dcc7"
   end
 
   depends_on "go" => :build
