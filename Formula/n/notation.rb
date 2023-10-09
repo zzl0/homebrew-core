@@ -25,7 +25,7 @@ class Notation < Formula
     ldflags = %W[
       -s -w
       -X #{project}/internal/version.Version=v#{version}
-      -X #{project}/internal/version.GitCommit=#{tap.user}
+      -X #{project}/internal/version.GitCommit=
       -X #{project}/internal/version.BuildMetadata=Homebrew
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/notation"
