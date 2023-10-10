@@ -25,7 +25,8 @@ class Ttf2pt1 < Formula
   end
 
   def install
-    system "make", "all", "INSTDIR=#{prefix}"
+    # CFLAGS_SYS is used to fix compilation with newer Clang
+    system "make", "all", "INSTDIR=#{prefix}", "CFLAGS_SYS=-Wno-implicit-function-declaration"
     bin.install "ttf2pt1"
     man1.install "ttf2pt1.1"
   end
