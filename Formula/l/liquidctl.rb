@@ -20,10 +20,11 @@ class Liquidctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "03ecd81baaef703520e0b01fda9f57f40f61239dc71f1906a34ffe0008630d7c"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "hidapi"
   depends_on "libusb"
   depends_on "pillow"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "i2c-tools"
@@ -65,7 +66,7 @@ class Liquidctl < Formula
     ENV["DIST_NAME"] = "homebrew"
     ENV["DIST_PACKAGE"] = "liquidctl #{version}"
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
 
     resource("hidapi").stage do
