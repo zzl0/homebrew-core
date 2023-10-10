@@ -12,15 +12,13 @@ class Pypy310 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e2a5a01d342c073af6915fe7ae7ac7742f2c709eb44e52d28612d951d554d6ba"
-    sha256 cellar: :any,                 arm64_ventura:  "6c0c8c9f4a10e56f024f04dba2a2adfbfee156abd5812962943dc50be93bb3f1"
-    sha256 cellar: :any,                 arm64_monterey: "f6cbdc0abe6d342b658aa846c0b24d9bc6700d4b0e54800bb2e5189d10e15c42"
-    sha256 cellar: :any,                 arm64_big_sur:  "e1c4ed4b83906edc359307ffa5deac15d533a903deaa3122b4fa6d2e58d1b8e5"
-    sha256 cellar: :any,                 sonoma:         "1803d1627ead7ab01af09c8a7b87b1192f63458498c8318247461cca41c9b690"
-    sha256 cellar: :any,                 ventura:        "648a56bfcc84f42be4544b3a456f247053699e67c8dbddeebda8389f4f217386"
-    sha256 cellar: :any,                 monterey:       "33632824363bb9591fd35a3ff21426cdd80d9c790d5eb5c36ec2f9245e4d1f63"
-    sha256 cellar: :any,                 big_sur:        "57caf67c9b2fb8f5aa90760135e0ca75b0b8b8c45815cd700ae2ad23832fb14b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03f719c28f00849ebc5cc511d9896c57df76a125ada2a3ba94f90cecad3ab600"
+    sha256 cellar: :any,                 arm64_sonoma:   "82ff0d22599bbf07dfb7546c5887dbe5afcac126521ae71097921272f043355c"
+    sha256 cellar: :any,                 arm64_ventura:  "e71004f94415dc2985c95bb8f1a0b9b9ba3fbf7ff805546f24ac39ddf250c60f"
+    sha256 cellar: :any,                 arm64_monterey: "ae317e5136d996242da542a9294c403abf9d442b7af3f055a72a6b49fef97fb1"
+    sha256 cellar: :any,                 sonoma:         "608ad6cf037d3bc5e38c6c1ea0076414f05fd71c7cd493cefa631175269ad87b"
+    sha256 cellar: :any,                 ventura:        "df239c85d864cedfd0bda09cc9dc346fba571f682eb863ea8f069deeb83af343"
+    sha256 cellar: :any,                 monterey:       "c91904344c75dddeb77a2c2230526a6f5d2865216f6b3b573f1d54e8efe5fb7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dd6897c538151dbca8233cb9af76286f8587a8b49a52cf28a604b1c94e2ac64"
   end
 
   depends_on "pkg-config" => :build
