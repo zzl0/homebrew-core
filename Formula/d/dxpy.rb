@@ -3,10 +3,9 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/a1/5a/8b049df51203ad2970d7c35bc4df7750149b0297fec719836cdda1f70302/dxpy-0.359.0.tar.gz"
-  sha256 "f26c520759358aaf32870ac690d20c770936a365aee8756a68d2ae33ed7f8496"
+  url "https://files.pythonhosted.org/packages/f3/e6/1e8f00bc128adbdf78e3a61a1dd1650ac1a939dcdeb993e49e3d8376d515/dxpy-0.359.1.tar.gz"
+  sha256 "3ea10e7e7b59634dc8514037465bdb8cedbf9988973262a4091478f3d680571e"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3942fbbc35bbc38759e471ca7d95d571a51afe48bfeab735b5e38033c25a4180"
@@ -21,7 +20,8 @@ class Dxpy < Formula
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
