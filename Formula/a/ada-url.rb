@@ -1,8 +1,8 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://github.com/ada-url/ada/archive/refs/tags/v2.6.10.tar.gz"
-  sha256 "a43e1ea0bcdd7585edf538afffe1fc3303b936752e18bac545fa11729de088bc"
+  url "https://github.com/ada-url/ada/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "08646b8a41cd6367b282aab2c87c82e5ce4876078a0cbe0799af7e51e4358591"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/ada-url/ada.git", branch: "main"
 
@@ -17,7 +17,7 @@ class AdaUrl < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on macos: :catalina
 
   def install
