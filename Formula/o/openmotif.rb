@@ -50,6 +50,9 @@ class Openmotif < Formula
         "\\1 -lX11"
     end
 
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
