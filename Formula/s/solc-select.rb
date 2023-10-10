@@ -6,6 +6,7 @@ class SolcSelect < Formula
   url "https://files.pythonhosted.org/packages/60/a0/2a2bfbbab1d9bd4e1a24e3604c30b5d6f84219238f3c98f06191faf5d019/solc-select-1.0.4.tar.gz"
   sha256 "db7b9de009af6de3a5416b80bbe5b6d636bf314703c016319b8c1231e248a6c7"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/crytic/solc-select.git", branch: "dev"
 
   bottle do
@@ -20,7 +21,7 @@ class SolcSelect < Formula
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "pycryptodome" do
     url "https://files.pythonhosted.org/packages/b9/05/0e7547c445bbbc96c538d870e6c5c5a69a9fa5df0a9df3e27cb126527196/pycryptodome-3.18.0.tar.gz"
