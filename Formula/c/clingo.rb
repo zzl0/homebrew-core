@@ -11,17 +11,14 @@ class Clingo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "e8535912cb450caa0a00319f6a963b79422c8ea9b89bf55fe122b6564d11f003"
-    sha256 cellar: :any,                 arm64_ventura:  "dfec1f0eb737df1bd9b4fad7cddf317b1ffb6955159d239a4365254d0377555e"
-    sha256 cellar: :any,                 arm64_monterey: "345c187bc69d49333751f96f99290c956b158e27866b3eabc435cdcfbc65292e"
-    sha256 cellar: :any,                 arm64_big_sur:  "5e2632bbee295c7cc2a9ba8eed350239727de547ba260a9a40b0f229b7cac832"
-    sha256 cellar: :any,                 sonoma:         "1952fbd16b543b5eaf4661bf75730450fbe943474bb3d574d98b84c182c3a8e1"
-    sha256 cellar: :any,                 ventura:        "70968734320df38092e4b76df17341d2a922af27f1ea5098a88ac92c9571986f"
-    sha256 cellar: :any,                 monterey:       "f2aeaa02f678c37d887abf3e7d21bb87415e52ab58b7ea06dc713ee31113c004"
-    sha256 cellar: :any,                 big_sur:        "8d6b17dde67f90a30393cf1d6a23eec982cf9ba7bad8ac3f3ea295f3212e8a08"
-    sha256 cellar: :any,                 catalina:       "b426635cba6344e6c8a3935652d2857b1b8b8bfd16686f772f08b969477aea73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "291dea6ecc98e356b73b7c2e85d062d6e8cd4a6b91e8e3fd220f38c4fcec4ef0"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "5fdce6f98b9e17062dca2b8aeb5cd544a71c16364319225602f480eef9b5e25f"
+    sha256 cellar: :any,                 arm64_ventura:  "fc2dec92576fc7c8e1d2908d1b3dc63ed227007105d05351ea7785d3f2955478"
+    sha256 cellar: :any,                 arm64_monterey: "934ce94683e8012945700adfb790f2d10b5e3f66298ada4b84ab4405328361db"
+    sha256 cellar: :any,                 sonoma:         "fa16c6237a73f7f37b24a1a6cf0e901c44d53b4dac4a2c4a91dd3bff5bde8b33"
+    sha256 cellar: :any,                 ventura:        "5434daa0b2a1790e5dd14b9796d86557f0fe80e2efb4d10c73eeed7c769f20ed"
+    sha256 cellar: :any,                 monterey:       "8ff16e0968a394d6501e99a75e3653b545f839be496d5fbcaae544c824bdd57f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf6da48f4dede7d2e5f504c9712c4ee44e7ab7918e8cf63a4b4b0f6ffa618bc5"
   end
 
   head do
