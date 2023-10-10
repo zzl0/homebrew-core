@@ -35,6 +35,12 @@ class Mpg321 < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    # Fix compilation with GCC 11
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-debug",
                           "--prefix=#{prefix}",

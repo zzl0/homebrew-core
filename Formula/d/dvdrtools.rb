@@ -45,6 +45,9 @@ class Dvdrtools < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV["LIBS"] = "-framework IOKit -framework CoreFoundation" if OS.mac?
 
     system "./configure", "--disable-debug",
