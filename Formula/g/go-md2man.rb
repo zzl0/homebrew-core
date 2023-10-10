@@ -2,8 +2,8 @@ class GoMd2man < Formula
   desc "Converts markdown into roff (man pages)"
   homepage "https://github.com/cpuguy83/go-md2man"
   url "https://github.com/cpuguy83/go-md2man.git",
-      tag:      "v2.0.2",
-      revision: "d97078115282836e16d0dca10b4b42ce60fc70e6"
+      tag:      "v2.0.3",
+      revision: "f67b5f6400a3ea2156517041a329ae5f5935395c"
   license "MIT"
 
   bottle do
