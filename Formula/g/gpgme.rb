@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.23.1.tar.bz2"
   sha256 "a0c316f7ab7d3bfb01a8753c3370dc906e5b61436021f3b54ff1483b513769bd"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -20,14 +21,15 @@ class Gpgme < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fcee13a18d690b7d8b6e7a0d49e6bbcfeb52c0571ef10abcaca06ab6a874182"
   end
 
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
+  depends_on "python-setuptools"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
