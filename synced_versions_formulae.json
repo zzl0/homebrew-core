@@ -57,5 +57,6 @@
   ["qwt", "qwt-qt5"],
   ["telnet", "telnetd"],
   ["tmuxinator", "tmuxinator-completion"],
+  ["vulkan-extensionlayer", "vulkan-headers", "vulkan-loader", "vulkan-tools", "vulkan-utility-libraries", "vulkan-validationlayers"],
   ["wp-cli", "wp-cli-completion"]
 ]
