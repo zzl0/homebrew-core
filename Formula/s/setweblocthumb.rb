@@ -22,6 +22,9 @@ class Setweblocthumb < Formula
   depends_on :macos
 
   def install
+    # https://github.com/ali-rantakari/setWeblocThumb/issues/3
+    inreplace "Makefile", "-force_cpusubtype_ALL -mmacosx-version-min=10.5 -arch i386", ""
+
     system "make"
     bin.install "setWeblocThumb"
   end
