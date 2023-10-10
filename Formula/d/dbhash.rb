@@ -11,15 +11,13 @@ class Dbhash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2feae9fa312b589a23a6cbcfecdb46a41e78ffa2cfd8404a53f599c3401264e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4f307e01428d3d1e5ab9e253cbad4b2a44504cee5f49ab345529fa94ed47732"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef0c30f6b59d9740a340fbc2ea779c5906834ed597d9e4399ac507fe157994f1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4c37eb6e375b147f5d58fe428a532c74b5d4b25c3012a92a7a10278c8783cfb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8fbd60dbe52a84b655e186ae3211a6f931ecb062b740c7549e68f12443e3f955"
-    sha256 cellar: :any_skip_relocation, ventura:        "78d8cb97dad3fb084ac548feae1bdcf4b180f07ac7379890bafa9f252326555f"
-    sha256 cellar: :any_skip_relocation, monterey:       "214570c379fd2a4c5b721e504b66875c2beeb5f8306693748458589403cbf87c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "802ed03c140c852ae0d68d3311f1789e1a4ba7e73550e50e7f4605c462782eb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17eceaf7be184dcd701867673effa3152e7d7c5683353f796fb028e6a27fd18f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97a4ee5bf146b965d46c9843414802c9142e5c1c4ae11c93e35657c6c8a10cc5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6e32db1d0646da10ed2e49f028acb1da2a9129cacc5be80b3e65d854048b685"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3bdd3c414c9b41b51fbee1d1fda9998ec169ae92600b7c771a73106d01b1f408"
+    sha256 cellar: :any_skip_relocation, sonoma:         "79a37b7ccb16066889d7839af19d4474b2631d7ccd2c168cf425474013e824b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "195bd16525cf1cfd1f1857378e6568249017de96ec978926a4a02acd27ea147f"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb0131c76a99302cb64d70a395f61ba7120ce675bc77ed735ae574f7dadc2c23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e79d66e01a75199d40d1797bd37d0b3bb1ffb64b947a207d3615a60a259468e"
   end
 
   uses_from_macos "tcl-tk" => :build
