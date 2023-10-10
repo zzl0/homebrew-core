@@ -7,15 +7,13 @@ class Okteto < Formula
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11a4f204b3dc8cc3afc07e8ae0a484a8c284b34915c204ab0b2c6e6d243384d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a732c8e8da1f13e9e2566eefc51958ea0cd875cfea1672e028eb2964ec04a675"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b296c0d0204e27bf1529cdb44c49d5d4d9827ff8d0740d6a289a9eb790b59ec4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8339f166e99c53515efa92676dbbed4c9485eb513f0715d413e760041c5d191d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98b1108cd6255c9f692036c8ee76eab082821e5008dd7e4c1caefada157dcd65"
-    sha256 cellar: :any_skip_relocation, ventura:        "2bcfd12a462f32562d78f2867fc40af45cbbdfe5c155942b49cc97663ea5fc27"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2771144198f2e677adb953af3756bcff4cc394a07b3f9d2a6b0f65164672ef3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2a642ecd2635c82c903ca4ce771ae5a3c77bcd278757072d7ab5bf38b95aa93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a64c8714f4fba0b37d7c971d4e6d00c6609d9f1147224a664554aee5cce1f1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15423ea8d894508c4e68a1becb53464642c40add4d5c5f8a59a4e33aebb1a33b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe0946f69686368497c7890e7cba4403c252e8bb2ce5e4e921983ccd0eed8b29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e74f17ee74e6f80e33976a5a7b4b33f17de613d1b464dd2d71fbb6e2126fe4d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b53f4236fad7c274703be0a3a6ff8dbd012dc3ae7a5e55015c1a788fd5492dd"
+    sha256 cellar: :any_skip_relocation, ventura:        "c31044eedd99c48016a5635dc0bf0b662991964728109554b12ebbd3b96e87b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8ee75254507da94cf0f17277e655c755f6e347131c93cb7450caeb5ec33710c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f847404180de48d3768fb177e0822a7d41f96114efb47aa361179d89786a4e0"
   end
 
   depends_on "go" => :build
