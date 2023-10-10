@@ -4,6 +4,7 @@ class Libxml2 < Formula
   url "https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.5.tar.xz"
   sha256 "3727b078c360ec69fa869de14bd6f75d7ee8d36987b071e6928d4720a28df3a6"
   license "MIT"
+  revision 1
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -35,9 +36,10 @@ class Libxml2 < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "pkg-config" => :test
   depends_on "icu4c"
   depends_on "readline"
@@ -77,7 +79,7 @@ class Libxml2 < Formula
                             "includes_dir = [#{includes}"
 
       pythons.each do |python|
-        system python, *Language::Python.setup_install_args(prefix, python)
+        system python, "-m", "pip", "install", *std_pip_args, "."
       end
     end
   end
