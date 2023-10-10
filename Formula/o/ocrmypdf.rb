@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/70/cd/84f3e47d290c0608c6435e7e917962edafb655b01ce43b3601bfd74b14aa/ocrmypdf-15.1.0.tar.gz"
-  sha256 "56a01b294a5535c69a3d8bd03a0e2e39fba891b897373abd1e4dc228c67829f0"
+  url "https://files.pythonhosted.org/packages/87/a1/20917b9b0c30f1dc57495409b8e4e0d12966d1bda8b7fe21f6939f54ea6f/ocrmypdf-15.2.0.tar.gz"
+  sha256 "4f618e555e607b4dccd45bcf3943d5a526f357002367d5c34b524853922a5bdf"
   license "MPL-2.0"
 
   bottle do
@@ -30,6 +30,7 @@ class Ocrmypdf < Formula
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "qpdf"
@@ -45,6 +46,11 @@ class Ocrmypdf < Formula
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
+  resource "deprecation" do
+    url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
+    sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
+  end
+
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
@@ -58,6 +64,11 @@ class Ocrmypdf < Formula
   resource "pdfminer-six" do
     url "https://files.pythonhosted.org/packages/ac/6e/89c532d108e362cbaf76fdb972e7a5e85723c225f08e1646fb86878d4f7f/pdfminer.six-20221105.tar.gz"
     sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
+  end
+
+  resource "pikepdf" do
+    url "https://files.pythonhosted.org/packages/10/44/27ab858d600b2196b6699dd854f2439826348fa62c305d83bb799b929bf9/pikepdf-8.5.1.tar.gz"
+    sha256 "f1a1de1a241912f96cb202b7ac28b4bc229d66c8bdf08d8dc25144f155adf653"
   end
 
   resource "pluggy" do
