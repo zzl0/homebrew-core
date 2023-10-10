@@ -11,13 +11,13 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6c0dd07284f7eec92074397b9a9a2726ddf6839b5071cea0736cc5bf8bc9b2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce5955fe03e402a5e754fcdf92ba0393696349ccd5f05be7637ca1bc20b4bb46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, ventura:        "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "e860cb250e0a67b33373d616d3d0f5ebe7965a060e7b8e59326512f20a24d3cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "febc3d6a0d034445dfd5abe9abd8926863cd99ad6cf4d03d4041b711e523e3f7"
   end
 
   head do
