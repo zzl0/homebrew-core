@@ -1,12 +1,12 @@
 class Libnghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.56.0/nghttp2-1.56.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.56.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.56.0.tar.gz"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.57.0/nghttp2-1.57.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.57.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.57.0.tar.gz"
   # this legacy mirror is for user to install from the source when https not working for them
   # see discussions in here, https://github.com/Homebrew/homebrew-core/pull/133078#discussion_r1221941917
-  sha256 "eb00ded354db1159dcccabc11b0aaeac893b7c9b154f8187e4598c4b8f3446b5"
+  sha256 "1e3258453784d3b7e6cc48d0be087b168f8360b5d588c66bfeda05d07ad39ffd"
   license "MIT"
 
   livecheck do
