@@ -4,6 +4,7 @@ class Maturin < Formula
   url "https://github.com/PyO3/maturin/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "9e4f6cf2b5127103042d7319e9cbeee3df5b429c3c29b930fd360cbf8da84828"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
@@ -17,9 +18,11 @@ class Maturin < Formula
   end
 
   depends_on "python-flit-core" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python-typing-extensions" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "rust"
 
   resource "semantic-version" do
@@ -28,8 +31,8 @@ class Maturin < Formula
   end
 
   resource "setuptools-rust" do
-    url "https://files.pythonhosted.org/packages/90/f1/70b31cacce03bf21fa645d359d6303fb5590c1a02c41c7e2df1c480826b4/setuptools-rust-1.7.0.tar.gz"
-    sha256 "c7100999948235a38ae7e555fe199aa66c253dc384b125f5d85473bf81eae3a3"
+    url "https://files.pythonhosted.org/packages/f2/40/f1e9fedb88462248e94ea4383cda0065111582a4d5a32ca84acf60ab1107/setuptools-rust-1.8.1.tar.gz"
+    sha256 "94b1dd5d5308b3138d5b933c3a2b55e6d6927d1a22632e509fcea9ddd0f7e486"
   end
 
   resource "tomli" do
@@ -62,11 +65,10 @@ class Maturin < Formula
   end
 
   test do
-    system "cargo", "new", "hello_world", "--bin"
-    system bin/"maturin", "build", "-m", "hello_world/Cargo.toml", "-b", "bin", "-o", "dist", "--compatibility", "off"
+    system "cargo", "init", "--name=brew", "--bin"
+    system bin/"maturin", "build", "-o", "dist", "--compatibility", "off"
     pythons.each do |python|
-      system python, "-m", "pip", "install", "hello_world", "--no-index", "--find-links", testpath/"dist"
-      system python, "-m", "pip", "uninstall", "-y", "hello_world"
+      system python, "-m", "pip", "install", "brew", "--prefix=./dist", "--no-index", "--find-links=./dist"
     end
   end
 end
