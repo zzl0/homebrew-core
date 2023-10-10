@@ -45,6 +45,9 @@ class Libcapn < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    inreplace "CMakeLists.txt", "-D_POSIX_C_SOURCE=200112L", "-D_POSIX_C_SOURCE=200809L"
+
     # head gets jansson as a git submodule
     (buildpath/"src/third_party/jansson").install resource("jansson") if build.stable?
 
