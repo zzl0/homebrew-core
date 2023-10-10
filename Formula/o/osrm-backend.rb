@@ -56,7 +56,7 @@ class OsrmBackend < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DENABLE_CCACHE:BOOL=OFF",
                     "-DLUA_INCLUDE_DIR=#{lua.opt_include}/lua#{luaversion}",
-                    "-DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua", luaversion)}",
+                    "-DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua", luaversion.to_s)}",
                     "-DENABLE_GOLD_LINKER=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
