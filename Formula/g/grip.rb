@@ -9,16 +9,13 @@ class Grip < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bed721c1ef6468c90fea4bb8dafbefecd3f91dfd3638aff7d469f9517a30e25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c799923362a18c5cc9835251d14ade71c69ad898333c891b2b252f040605311c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f21e46c38501eb76b7c4d04a540f6f699c02332eafc62f310c54e11bbc414fd0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2f0698cedd93da90d745538e17b86444e9e72adb1b25a1d1379bdbf27421eb4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1208c3fdc706a3bf5b404eb222cc39c0bd5764cd84351ab7a23670934ee2c14d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f8c869eae9a51fb2f4d994d22ca686f8984eba5cb421203af652a0efeaf6f5dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "834235cdc36f10575528c8c3d108b6b3e2304cd38df89221d390b2727e6e6eba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a6525546b3457842019ea88fc23d6a561b0240b0f8b1aeec88d464ac922b54b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "900f1e266b1bd0748e891c4b4e7fdabcec5138a6b898b99a410cd1507602b45b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a5dbaa5887352fc3256fcc7cb2d983dd9254b96e87c42d2431e2f5d7811d0d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6019de7889b87883584d57f184e11c79eeccd53e6bcdc3ecae91fcc75525e965"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ccc732e4c75a1f78ae7562718dc99b5e958335432f6aace2d917350633c9a9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3ce50ea5b84f4bfbe5ffe5ca6c93478cc2f7658734cab2731e3e8b8c0ae314b"
+    sha256 cellar: :any_skip_relocation, ventura:        "84ae00e27f8680b787574d67f3ff32341532943be310797628279bb3027e5aa6"
+    sha256 cellar: :any_skip_relocation, monterey:       "b62d1acc37e5fa2c1544a809aaa4d09dda3cd35a23af3e58fe42f9611f8f4850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f99f3a803de50a98e760377d412b98a266a9f86305fbc4e794cba8d5b9f5ffb7"
   end
 
   depends_on "pygments"
