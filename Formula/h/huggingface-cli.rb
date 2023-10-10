@@ -3,10 +3,9 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/13/d2/e0d36491422425bb882e4a6432a06aee9e56348aeefd9aab648a995d173b/huggingface_hub-0.17.3.tar.gz"
-  sha256 "40439632b211311f788964602bf8b0d9d6b7a2314fba4e8d67b2ce3ecea0e3fd"
+  url "https://files.pythonhosted.org/packages/c8/6e/95d9518908ec9dcf7a97c0b0a14ddbf07e17158b3d4cefc522b91f823ae5/huggingface_hub-0.18.0.tar.gz"
+  sha256 "10eda12b9c1cfa800b4b7c096b3ace8843734c3f28d69d1c243743fb7d7a2e81"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74fc8e12dbfc90ca617458fae8d4f4c4953578b4a4c3ced2c7c61f663b45c121"
