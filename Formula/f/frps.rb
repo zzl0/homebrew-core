@@ -2,8 +2,8 @@ class Frps < Formula
   desc "Server app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.51.3",
-      revision: "466d69eae08e44f118302cf433d3f4d6e8d04893"
+      tag:      "v0.52.0",
+      revision: "2d3af8a108518b7a9540592735274b34d7031bf0"
   license "Apache-2.0"
 
   bottle do
@@ -26,12 +26,11 @@ class Frps < Formula
 
     system "make", "frps"
     bin.install "bin/frps"
-    etc.install "conf/frps.ini" => "frp/frps.ini"
-    etc.install "conf/frps_full.ini" => "frp/frps_full.ini"
+    etc.install "conf/frps.toml" => "frp/frps.toml"
   end
 
   service do
-    run [opt_bin/"frps", "-c", etc/"frp/frps.ini"]
+    run [opt_bin/"frps", "-c", etc/"frp/frps.toml"]
     keep_alive true
     error_log_path var/"log/frps.log"
     log_path var/"log/frps.log"
