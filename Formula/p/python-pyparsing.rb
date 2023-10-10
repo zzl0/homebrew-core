@@ -1,9 +1,10 @@
 class PythonPyparsing < Formula
   desc "Python library for creating PEG parsers"
-  homepage "https://click.palletsprojects.com/"
+  homepage "https://github.com/pyparsing/pyparsing"
   url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
   sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18769ebaab1db3501664d664b4ecec95a3123008904c1dd095fcdd400ceedf65"
@@ -20,7 +21,7 @@ class PythonPyparsing < Formula
   depends_on "python-flit-core" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
