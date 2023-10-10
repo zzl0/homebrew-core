@@ -1,9 +1,9 @@
 class Glulxe < Formula
   desc "Portable VM like the Z-machine"
   homepage "https://www.eblong.com/zarf/glulx/"
-  url "https://eblong.com/zarf/glulx/glulxe-060.tar.gz"
-  version "0.6.0"
-  sha256 "74880ecbe57130da67119388f29565fbc9198408cc100819fa602d7d82c746bb"
+  url "https://eblong.com/zarf/glulx/glulxe-061.tar.gz"
+  version "0.6.1"
+  sha256 "f81dc474d60d7d914fcde45844a4e1acafee50e13aebfcb563249cc56740769f"
   license "MIT"
   head "https://github.com/erkyrath/glulxe.git", branch: "master"
 
@@ -29,6 +29,7 @@ class Glulxe < Formula
     inreplace "Makefile", "GLKINCLUDEDIR = ../cheapglk", "GLKINCLUDEDIR = #{glk.include}"
     inreplace "Makefile", "GLKLIBDIR = ../cheapglk", "GLKLIBDIR = #{glk.lib}"
     inreplace "Makefile", "Make.cheapglk", "Make.#{glk.name}"
+    inreplace "Makefile", "-DOS_MAC", "-DOS_UNIX -DUNIX_RAND_GETRANDOM" if OS.linux?
 
     system "make"
     bin.install "glulxe"
