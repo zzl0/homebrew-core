@@ -4,6 +4,7 @@ class Pillow < Formula
   url "https://files.pythonhosted.org/packages/64/9e/7e638579cce7dc346632f020914141a164a872be813481f058883ee8d421/Pillow-10.0.1.tar.gz"
   sha256 "d72967b06be9300fed5cfbc8b5bafceec48bf7cdc7dab66b1d2549035287191d"
   license "HPND"
+  revision 1
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
@@ -19,8 +20,10 @@ class Pillow < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "jpeg-turbo"
   depends_on "libimagequant"
   depends_on "libraqm"
@@ -40,19 +43,6 @@ class Pillow < Formula
   end
 
   def install
-    build_ext_args = %w[
-      --enable-tiff
-      --enable-freetype
-      --enable-lcms
-      --enable-webp
-      --enable-xcb
-    ]
-
-    install_args = %w[
-      --single-version-externally-managed
-      --record=installed.txt
-    ]
-
     ENV["MAX_CONCURRENCY"] = ENV.make_jobs.to_s
     deps.each do |dep|
       next if dep.build? || dep.test?
@@ -61,15 +51,15 @@ class Pillow < Formula
       ENV.prepend "LDFLAGS", "-L#{dep.to_formula.opt_lib}"
     end
 
-    # Useful in case of build failures.
-    inreplace "setup.py", "DEBUG = False", "DEBUG = True"
-
     pythons.each do |python|
-      prefix_site_packages = prefix/Language::Python.site_packages(python)
-      system python, "setup.py",
-                     "build_ext", *build_ext_args,
-                     "install", *install_args,
-                     "--install-lib=#{prefix_site_packages}"
+      system python, "-m", "pip", "install", *std_pip_args,
+                     "-C", "debug=true", # Useful in case of build failures.
+                     "-C", "tiff=enable",
+                     "-C", "freetype=enable",
+                     "-C", "lcms=enable",
+                     "-C", "webp=enable",
+                     "-C", "xcb=enable",
+                     "."
     end
   end
 
