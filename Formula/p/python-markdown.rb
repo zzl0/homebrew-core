@@ -4,6 +4,7 @@ class PythonMarkdown < Formula
   url "https://files.pythonhosted.org/packages/62/25/1b21a708e65a933e9e2ecf03bfc7fae7169981cc688155cdb581de3e86dc/Markdown-3.5.tar.gz"
   sha256 "a807eb2e4778d9156c8f07876c6e4d50b5494c5665c4834f67b06459dfd877b3"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/Python-Markdown/markdown.git", branch: "master"
 
   bottle do
@@ -16,20 +17,28 @@ class PythonMarkdown < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aedd14d13709d3e5f7fc764bdc71a01a545aaf75a25280acd7094e3d33a07970"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
     (testpath/"test.md").write("# Hello World!")
     assert_equal "<h1>Hello World!</h1>", shell_output(bin/"markdown_py test.md").strip
 
-    system python3, "-c", "import markdown;"
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", "import markdown;"
+    end
   end
 end
