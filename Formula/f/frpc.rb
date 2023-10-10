@@ -2,8 +2,8 @@ class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.51.3",
-      revision: "466d69eae08e44f118302cf433d3f4d6e8d04893"
+      tag:      "v0.52.0",
+      revision: "2d3af8a108518b7a9540592735274b34d7031bf0"
   license "Apache-2.0"
 
   bottle do
@@ -26,12 +26,11 @@ class Frpc < Formula
 
     system "make", "frpc"
     bin.install "bin/frpc"
-    etc.install "conf/frpc.ini" => "frp/frpc.ini"
-    etc.install "conf/frpc_full.ini" => "frp/frpc_full.ini"
+    etc.install "conf/frpc.toml" => "frp/frpc.toml"
   end
 
   service do
-    run [opt_bin/"frpc", "-c", etc/"frp/frpc.ini"]
+    run [opt_bin/"frpc", "-c", etc/"frp/frpc.toml"]
     keep_alive true
     error_log_path var/"log/frpc.log"
     log_path var/"log/frpc.log"
@@ -40,13 +39,6 @@ class Frpc < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/frpc -v")
     assert_match "Commands", shell_output("#{bin}/frpc help")
-    assert_match "local_port", shell_output("#{bin}/frpc http", 1)
-    assert_match "local_port", shell_output("#{bin}/frpc https", 1)
-    assert_match "local_port", shell_output("#{bin}/frpc stcp", 1)
-    assert_match "local_port", shell_output("#{bin}/frpc tcp", 1)
-    assert_match "local_port", shell_output("#{bin}/frpc udp", 1)
-    assert_match "local_port", shell_output("#{bin}/frpc xtcp", 1)
-    assert_match "admin_port", shell_output("#{bin}/frpc status -c #{etc}/frp/frpc.ini", 1)
-    assert_match "admin_port", shell_output("#{bin}/frpc reload -c #{etc}/frp/frpc.ini", 1)
+    assert_match "name should not be empty", shell_output("#{bin}/frpc http", 1)
   end
 end
