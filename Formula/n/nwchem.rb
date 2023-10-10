@@ -25,10 +25,17 @@ class Nwchem < Formula
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
+
+  # Adds Python 3.12 compatibility.
+  # Remove in next release.
+  patch do
+    url "https://github.com/nwchemgit/nwchem/commit/48fac057df694267c2422adc2b394a0ac0815c02.patch?full_index=1"
+    sha256 "5514e33185ca34c099d26806112b08c582a5f79e000184dfd1b8c9dfdd5cc1d9"
+  end
 
   def install
     pkgshare.install "QA"
@@ -51,7 +58,7 @@ class Nwchem < Formula
       inreplace "util/util_nwchemrc.F", "/etc/nwchemrc", "#{etc}/nwchemrc"
 
       # needed to use python 3.X to skip using default python2
-      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.11"
+      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.12"
       ENV["BLASOPT"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["LAPACK_LIB"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["BLAS_SIZE"] = "4"
