@@ -2,7 +2,7 @@ class Rtmidi < Formula
   desc "API for realtime MIDI input/output"
   homepage "https://www.music.mcgill.ca/~gary/rtmidi/"
   url "https://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-6.0.0.tar.gz"
-  sha256 "3336248e8c1f054ea5e51a4449558490dca51edd324fcde0eea27df33b80a9ed"
+  sha256 "5960ccf64b42c23400720ccc880e2f205677ce9457f747ef758b598acd64db5b"
   license "MIT"
 
   livecheck do
