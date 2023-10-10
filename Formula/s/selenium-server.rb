@@ -11,13 +11,13 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, sonoma:         "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, ventura:        "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, monterey:       "840a7383b2628161182512c717da1d7989b52da27c934a18d451db4f91f32330"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "466fec427a869eb07579d38e529a9771afc752f5f2e5f0589163a8c458d15f54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d70b3710f0ec6fe6c07cf9f52c202dac54f9dce19a2a8d1d6f25e16fd939659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f3eb44b971fae89bc4a4a48625ecf6c9e106e040950bc5bd3341dede36a0ac"
   end
 
   depends_on "openjdk"
