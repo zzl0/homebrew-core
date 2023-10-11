@@ -8,16 +8,13 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70aae34091608e45847960763b6708cd4ce3dfb59f238d816ddc745763cb7d10"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4a936fc2849892ea28bb13c26062388b91e5b0ba0cfdc077df4e4b42a14b3f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c7156c98eb8caca552ae4aba8749f15ef3d80ff27ca925924def5c7e32d0a7c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5533a3980355b09b0135028e1dcf56c93696f0271738bb784b20decb24abd212"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8042806ca30f920365f41b8d27c170d265a4d2ff90c28c580d5a2da65bd5f2ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e61f00146bb11dbebf86bee57c8495a6d460d8a42de17fc07384a1db73574ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "c950da3d0536f91a8fc73777bc3ae386bcd2f2c8de72c06e7388bcec6667f6bd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3defe47bc6835fb91bb74375669665c4ff44b559f68f60230e7d03b60dbbe63e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46b526c0e5dd9ec3dc247ea6058e8578510f7045338ca287eba40b6375d5c6dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0b2c7e081961d3fb00a3a1595173af6863805f12e4013b78551ff7faed8582a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ec39cdee7c40b25b96f892914f6ac633aea1a0eed7918b048e404d3d30adde5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11b3b65b4292693bceeb19094a32e5ab144400a772de37955e0685aa935ad502"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e5d123502c9b8a2cb469bb7e28ba03ebb36c5e27151e30b3ad945d1ea75acb5c"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1a5126551f9ef0f3ac2aef1832526a9a966097094411bda253c646cf714c1b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "19fe8ed8fbfbc7194b4724ef9302f1f54aca1417217224436759b2597bdeef5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d9e637bbe44133b7f48ea3c3d70f95c253590ebebcc9282546e4aa64fd8ee8b"
   end
 
   depends_on "openjdk" => :build # for omegaconf
