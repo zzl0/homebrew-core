@@ -13,14 +13,10 @@ class Rpmspectool < Formula
   end
 
   depends_on :linux
+  depends_on "python-argcomplete"
   depends_on "python-pycurl"
   depends_on "python@3.11"
   depends_on "rpm"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/54/c9/41c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4/argcomplete-3.1.1.tar.gz"
-    sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
-  end
 
   def install
     virtualenv_install_with_resources
