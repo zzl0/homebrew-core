@@ -9,13 +9,13 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8208f9986bc549def633ccbdd508a2b8c7896ab6c43f699a71df7b6ac8b9743"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1acb92ae8cf43bc0e18c3f686516fd18b6329758d360cfa5f7383027fdb99484"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac1d9cfeb64bb41802001dcccb9bbf5fa2eb3151532bdab13be79175be34a824"
-    sha256 cellar: :any_skip_relocation, sonoma:         "329ee56b64364dae0995986c8a33566d5f13e25beb7fc2a7b55258f4dd2dedb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "818fff63a8836eba670acc97204972dfdaa887d065c3124571a77bcbb1fa59d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fa1266e18b2b370097d6327a9fe58866e8687300e3dced4f01cdfe12494d33b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d671d041c642c25fb08ae441d92cecb05548c7eaded826fe4155b373e2314a26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce2243c8bca9901443f71077ab655a37455882aa08998e27f3970dba197c06ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abb446ce49bb5f586089bfb7ec9891eb1f4145326cda31ae4698e35223f784ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a96e8dd3abbadcc7431a9c2cc2c60c3f94ec44ddbf038764e752fbdafb5e1ab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7f2a35c5480db6fef5cde0ae97369e2d90ac27ed79682a4660c9be4a4037a5e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "89c50079919c1ff8744606d2a5419037a63aa1071e3a26535965dd6d01ac4c43"
+    sha256 cellar: :any_skip_relocation, monterey:       "d54fa8c6461325d2b84e2e73204599f8ac7c9a9b9f807d730d30cf4d1cb61d9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94abe6668915d1193bfbe10586d2f18ef09aa9eee330020fcb760a593c026f09"
   end
 
   depends_on "cffi"
