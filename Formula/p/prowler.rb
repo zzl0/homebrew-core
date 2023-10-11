@@ -3,10 +3,9 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/c9/03/c81571a91b5935b7707d94726f4e2e4f75fd4347da113e047ec02b3c8adb/prowler-3.9.0.tar.gz"
-  sha256 "7a105b1d09cde3e2cd8358c00598cbcdc1d346fbc833fb3771dd17ce6a3727fd"
+  url "https://files.pythonhosted.org/packages/a4/db/0208da6f6547c062b2efe785d259878bafc938b069bf19390d0470d6c4e2/prowler-3.10.0.tar.gz"
+  sha256 "278ca3de884f9cb112d5fea86d9d1f4c02c088c01b77d6ec06f3b4a7d2388b53"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2be7b6c5eafe84fffc488c8ce9650ea8207c323591ed5c27139cd715900ae924"
@@ -89,8 +88,8 @@ class Prowler < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/bd/5f/64a471e09f064b3b3a53529ecd9ed8facfebfafff3dad7ee9350f3a00a30/azure-storage-blob-12.17.0.zip"
-    sha256 "c14b785a17050b30fc326a315bdae6bc4a078855f4f94a4c303ad74a48dc8c63"
+    url "https://files.pythonhosted.org/packages/62/6e/93d698736a14c7d178de053316ac3b30c81140e716c52e3abc7e3779302b/azure-storage-blob-12.18.2.tar.gz"
+    sha256 "e11935348981ffc005b848b55db25c04f2d1f90e1ee33000659906b763cf14c8"
   end
 
   resource "boto3" do
@@ -149,13 +148,13 @@ class Prowler < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/ee/a4/d9dea148bc2776c467e1bddc04458462eebeadba80f1605f162b19c2ae6a/google-api-python-client-2.97.0.tar.gz"
-    sha256 "48277291894876a1ca7ed4127e055e81f81e6343ced1b544a7200ae2c119dcd7"
+    url "https://files.pythonhosted.org/packages/fa/6c/97e6eeac0959783c2ac21aea3c560f970327fbb0498a6011d58cbfbb30e8/google-api-python-client-2.102.0.tar.gz"
+    sha256 "906ff9b672a4d5ddad8f4073a040e59f1fba6734909c14cd49938e37be53691d"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/49/5c/537d35dbbd248cd58fa1014a9770063b103fa63a3d929bbcf739d2d731f9/google-auth-2.23.2.tar.gz"
-    sha256 "5a9af4be520ba33651471a0264eead312521566f44631cbb621164bc30c8fd40"
+    url "https://files.pythonhosted.org/packages/45/71/0f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1/google-auth-2.23.3.tar.gz"
+    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
   end
 
   resource "google-auth-httplib2" do
@@ -239,8 +238,8 @@ class Prowler < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3b/9b/a7631bf35e55326fd74654fe6bd896478f47d65e97ca69e60ddb1b3823ee/pydantic-1.10.12.tar.gz"
-    sha256 "0fe8a415cea8f340e7a9af9c54fc71a649b43e8ca3cc732986116b3cb135d303"
+    url "https://files.pythonhosted.org/packages/51/cd/721eb771f3f09f60de0807e240c3acf44c38828d0ced869fe8df7e79801b/pydantic-1.10.13.tar.gz"
+    sha256 "32c8b48dcd3b2ac4e78b0ba4af3a2c2eb6048cb75202f0ea7b34feb740efc340"
   end
 
   resource "pyjwt" do
@@ -294,13 +293,13 @@ class Prowler < Formula
   end
 
   resource "slack-sdk" do
-    url "https://files.pythonhosted.org/packages/67/db/a684491e6d791aa4052ccc49d11dc492d37cb2c9261e53fa87871553960a/slack_sdk-3.21.3.tar.gz"
-    sha256 "20829bdc1a423ec93dac903470975ebf3bc76fd3fd91a4dadc0eeffc940ecb0c"
+    url "https://files.pythonhosted.org/packages/00/5a/727f4621be0aa175248fce6d183707ab782f23d0ed5351a1092f1ed11cdc/slack_sdk-3.23.0.tar.gz"
+    sha256 "9d6ebc4ff74e7983e1b27dbdb0f2bb6fc3c2a2451694686eaa2be23bbb085a73"
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/ba/7a/dc3ffc0e333d33e8ccb63a14adc40180c29d89490a25ebe9f9ef01605c51/tldextract-3.6.0.tar.gz"
-    sha256 "a5d8b6583791daca268a7592ebcf764152fa49617983c49916ee9de99b366222"
+    url "https://files.pythonhosted.org/packages/1e/50/302c6a51837578a7504344bb0aab66f1f0c4d3b11c4dbd8cb18552f4cb0f/tldextract-5.0.0.tar.gz"
+    sha256 "959965f3a4715105c598ef44ef624db9c9f85ee201cbfc2e063a51f8f19b1a5b"
   end
 
   resource "uritemplate" do
@@ -314,8 +313,8 @@ class Prowler < Formula
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/e0/ab/bc8d317106c8ea5ff11a2394ae99cb9adf1a9d32c55d3b15eea2b505b875/XlsxWriter-3.1.6.tar.gz"
-    sha256 "2087abdaa4a5e981a3ae50b5c21ff1adae59c8fecb6157808585fc169a6bfcd9"
+    url "https://files.pythonhosted.org/packages/5c/77/956e6ab727d9e9ba29a718e172158814f7ded1670219e4366b8851fedc11/XlsxWriter-3.1.7.tar.gz"
+    sha256 "353042efb0f8551ce72baa087e98228f3394fcb380e8b96313edf1eec8d50823"
   end
 
   def install
