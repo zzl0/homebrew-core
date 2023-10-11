@@ -1,8 +1,8 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v2.10.4/traefik-v2.10.4.src.tar.gz"
-  sha256 "d47d61d1a240c4502a8a467987394f10ebf97554be2a93534df3eba3e32d5788"
+  url "https://github.com/traefik/traefik/releases/download/v2.10.5/traefik-v2.10.5.src.tar.gz"
+  sha256 "5cadd4a5aea784d13c99ded7da9e11c000f48180cf60f75a3c64f22e5b39a53e"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
@@ -19,8 +19,7 @@ class Traefik < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eee0330f8c7c7cc759c8834078d804a43c685ab6190bfae68dfcdff06fdd7484"
   end
 
-  # pin to 1.20 needed for release <= 2.10.4, which doesn't yet include https://github.com/traefik/traefik/pull/10078
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
 
   def install
     ldflags = %W[
