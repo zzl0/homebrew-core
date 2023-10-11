@@ -5,6 +5,11 @@ class Uffizzi < Formula
   sha256 "522177bbf2962f711bcc321502fc1e1773ff148a9e763ddb7f747b1af812de8c"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50ca0e2849b13b877619970dd18e1c806584b771cdb10f1e981a2692fa3325c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e0b5801b372f5aced9011e6d544d215f71d2e3f5372c55ea1c04ecb7d2813e"
