@@ -76,7 +76,29 @@ class FfmpegAT5 < Formula
 
   fails_with gcc: "5"
 
+  # Two upstream patches, fixing compilation with recent svt-av1 versions
+  # Remove in next version
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff_plain/bea695d54372b66a6b9b136982fc92adb63e4745?hp=33ed503e590c252ac5e191503ff45e67dc34c214"
+    sha256 "76b1916d710e01b79e20342de7fb0aa5b32bfcdc903d16bd3c1eafa10a555d60"
+  end
+
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff_plain/3344d47a88506aba060b5fd2a214cf7785b11483?hp=bea695d54372b66a6b9b136982fc92adb63e4745"
+    sha256 "1d46c3ba395710ba8ba440fa1e6a176dd063a74539d67365389cba6d015abaf3"
+  end
+
+  # Fix for binutils on Linux, remove on next release
+  # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
+  patch do
+    url "https://github.com/FFmpeg/FFmpeg/commit/effadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
+    sha256 "9800c708313da78d537b61cfb750762bb8ad006ca9335b1724dbbca5669f5b24"
+  end
+
   def install
+    # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+
     args = %W[
       --prefix=#{prefix}
       --datadir=#{share}/ffmpeg
