@@ -20,15 +20,11 @@ class Commitizen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0aecdaed5c2939a87904f343188b579e92faa6d36abfc2d00d0fb33bf0cc4334"
   end
 
+  depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
