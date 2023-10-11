@@ -22,6 +22,6 @@ class Symlinks < Formula
   end
 
   test do
-    assert_match "->", shell_output("#{bin}/symlinks -v #{__dir__}/../Aliases")
+    assert_match "->", shell_output("#{bin}/symlinks -v #{__dir__}/../../Aliases")
   end
 end
