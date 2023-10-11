@@ -1,8 +1,8 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/archive/refs/tags/2.3.0.0.tar.gz"
-  sha256 "cb8248aacac0ad02cf3f9d9904c54cd5527c08e47b91cf032ace732d910198a4"
+  url "https://github.com/haskell/haskell-language-server/archive/refs/tags/2.4.0.0.tar.gz"
+  sha256 "67bbfae1275aabbfdb26869bc6df91feb58e03427cb76df89f74b864dbb5d57b"
   license "Apache-2.0"
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
@@ -38,8 +38,6 @@ class HaskellLanguageServer < Formula
   end
 
   def install
-    # Fixes https://github.com/Homebrew/homebrew-core/pull/141617#issuecomment-1748282534
-    inreplace "cabal.project", "stm-hamt < 1.2.0.10,", ""
     system "cabal", "v2-update"
 
     ghcs.each do |ghc|
