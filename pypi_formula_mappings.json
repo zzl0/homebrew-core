@@ -952,6 +952,9 @@
   "schemathesis": {
     "exclude_packages": ["certifi", "click", "markupsafe", "six", "packaging", "PyYAML", "typing-extensions"]
   },
+  "scikit-image": {
+    "exclude_packages": ["numpy", "packaging", "pillow", "scipy"]
+  },
   "scipy": {
     "exclude_packages": ["numpy"]
   },
