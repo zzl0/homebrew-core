@@ -7,15 +7,13 @@ class AliyunCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1477a8a92cc069ba5c1d8be90ec0fa115e3767d538816d1e9b8c1d0630092ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c69dc397105b0f1413d116c475a2720537bfd2f979674666921d634760050342"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e79d613e26e7cffe8be32d543202993371b17f1afad25f102fa887b772c2b5d1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "110841a24cf848dfe64135ade816e9501aafca1fed8e110c059cec82c6db5ac7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14696c4dd85429ac06ea29086cae3ac62a3999474e76bbe23fb17ed563eef210"
-    sha256 cellar: :any_skip_relocation, ventura:        "807e0f0bedfee4a852cfee4e32d05ea1d5b7bbe98c5ee361f16fc1ba15cf7783"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e356beb7fa3d5e8e3b67c3683a8dd607598d8e59dc3882685845bf92f743ab9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c316182d86251a575bfc724bc2656b0ad1ab999311d16304b025de967b1de98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "363b59e5137b208c3a472a1e810f6e7fbbc6c342f9982e4174466829cdd55009"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97576a94a44492412b836b8e2bc55d19c60edb28bc79590c4ebb0190f9a4f8f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8b0776cb37566e287e681cbf03798c92cc3a7993590502706a836d6767f3b7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11280096332a6891bc0480866abd595652fb9e4c584403ecbfacc1d19ba15509"
+    sha256 cellar: :any_skip_relocation, sonoma:         "14b55e875cff0ff0b1478c977b8dad1f8bb8b49ac1467a2d97a8a6f726264acc"
+    sha256 cellar: :any_skip_relocation, ventura:        "1882d3d4785f7f179a60160a9d33b34b593294874aea44c09827307de9bfe93e"
+    sha256 cellar: :any_skip_relocation, monterey:       "e55608b934f1230db2860a0d7b06aaa77aaa8cd0339a4f1b570b7a00664ab70c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab5aee0513e97c6861a8f385107360bcad7c6efaefe5e090a461b410f86b5c84"
   end
 
   depends_on "go" => :build
