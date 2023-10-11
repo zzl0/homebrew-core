@@ -1,8 +1,8 @@
 class Fheroes2 < Formula
   desc "Free Heroes of Might and Magic II is a recreation of HoMM2 game engine"
   homepage "https://ihhub.github.io/fheroes2/"
-  url "https://github.com/ihhub/fheroes2/archive/1.0.8.tar.gz"
-  sha256 "44047c787597a2b4a1f57f6189c9c7b0248729932327aa0a7973b55e9889ae87"
+  url "https://github.com/ihhub/fheroes2/archive/1.0.9.tar.gz"
+  sha256 "22e73ee4ff8a38e9e648fcb8df681fbb309b136e68483639517dfc9f61f867df"
   license "GPL-2.0-or-later"
   head "https://github.com/ihhub/fheroes2.git", branch: "master"
 
