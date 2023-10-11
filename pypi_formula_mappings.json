@@ -213,7 +213,7 @@
     "exclude_packages": ["six", "pytz"]
   },
   "commitizen": {
-    "exclude_packages": ["PyYAML", "typing-extensions", "packaging"]
+    "exclude_packages": ["argcomplete", "PyYAML", "typing-extensions", "packaging"]
   },
   "conan": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"],
