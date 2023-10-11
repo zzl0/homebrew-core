@@ -19,7 +19,6 @@ class TerraformProviderLibvirt < Formula
   depends_on "pkg-config" => :build
 
   depends_on "libvirt"
-  depends_on "terraform"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
