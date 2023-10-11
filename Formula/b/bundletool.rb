@@ -6,15 +6,13 @@ class Bundletool < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa5b4b502e82d45e81793bf70a7666158fd1fd0c9a7966abdb23a2fc498e319f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, ventura:        "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, monterey:       "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbd08229dcc79dc71e217b4178e712a3f2899f7087a0ca91ea707ecaf49e07ee"
   end
 
   depends_on "openjdk"
