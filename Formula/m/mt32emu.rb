@@ -1,8 +1,8 @@
 class Mt32emu < Formula
   desc "Multi-platform software synthesiser"
   homepage "https://github.com/munt/munt"
-  url "https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_7_0.tar.gz"
-  sha256 "5ede7c3d28a3bb0d9e637935b8b96484fadb409c9e5952a9e5432b3e05e5dbc1"
+  url "https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_7_1.tar.gz"
+  sha256 "e4524d52d6799a4e32a961a2e92074f14adcb2f110a4e7a06bede77050cfdaf4"
   license "LGPL-2.1-or-later"
 
   livecheck do
