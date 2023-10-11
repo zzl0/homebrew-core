@@ -262,7 +262,10 @@
   "detect-secrets": {
     "exclude_packages": ["certifi", "PyYAML"]
   },
-  "diffoscope": "diffoscope[cmdline]",
+  "diffoscope": {
+    "package_name": "diffoscope[cmdline]",
+    "exclude_packages": ["argcomplete"]
+  },
   "dnsrobocert": {
     "exclude_packages": [
       "certbot", "certifi", "cffi", "cryptography", "dns-lexicon", "lxml",
