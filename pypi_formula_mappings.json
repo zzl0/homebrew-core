@@ -149,7 +149,7 @@
     "exclude_packages": ["certifi", "lxml", "numpy", "six", "Cython", "PyYAML", "pytz"]
   },
   "c7n": {
-    "exclude_packages": ["pyyaml", "six", "tabulate"]
+    "exclude_packages": ["argcomplete", "pyyaml", "six", "tabulate"]
   },
   "ccm": {
     "extra_packages": ["cassandra-driver"],
