@@ -9,16 +9,13 @@ class Cloudiscovery < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0b25395ac88e2b4f5d3df99b4078544aca3acecfb3eefe27679a5285db6f85e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54c8bb3eaf84b4c30ed099ab566ecd3bfc6bb62386eea997cf6d92bfc9f0d46d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0dc0e6fe74ac18974c14853b86a84d829e17f1f8aa45a6c25940e13fc8761c1e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd1849cfeb4c0b5b6fa0907eff03f5b4e55fdcf8851a71eb285cb240af6891b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a6d7ac4c0ad0b24d0cb7a0e066e3fe677cc5a3e5ad768bf3d1ed044d5917c03b"
-    sha256 cellar: :any_skip_relocation, ventura:        "76db217e282648101dc9a2fc7e0f9a451d8eb11529d227d7ea00ebb659fe7e70"
-    sha256 cellar: :any_skip_relocation, monterey:       "4700efbb294906114494c31e1cd057579d6364975da4c7753aa14ada27863366"
-    sha256 cellar: :any_skip_relocation, big_sur:        "118c08839dfbb217adda61e18fb1c1ab78f4e688ca656c693a6d6ad08981b8fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2915c7e6c77943189ae39a277eb5771403055b2453eb4ffc63b0654024d1fcba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0dca3bfe72b31c79887ed21371a1d1e82fdf67d198af0a5b3ea8fde9bdeb1361"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5478b5cb73a828b45e09007e5ffac44f79fe04b4fe1927d4f25ff5f68f31da86"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e673309867e6e6baa8086a25ec2dc73e06bbe7a608b1abb58abf659ab54f2e80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd0ae0c27eefa54d24e53f32aceaa4d560bc70e5a5d1f8f6e0e62adc121ac39a"
+    sha256 cellar: :any_skip_relocation, ventura:        "36278a51df1a124b4842367e2c2869f262669d8ed91d78ed7c1bdcff6100ea9a"
+    sha256 cellar: :any_skip_relocation, monterey:       "67355f131047af1dd4a502d4a980720cdea018b4e570fc954f6f46c058ff1439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09a970e2799657518e56006a5e7cd94fec5cc052fe7f5ab78cc5faac90c5f4f2"
   end
 
   depends_on "python-pytz"
