@@ -20,15 +20,11 @@ class PythonYq < Formula
   end
 
   depends_on "jq"
+  depends_on "python-argcomplete"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
   conflicts_with "yq", because: "both install `yq` executables"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/54/c9/41c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4/argcomplete-3.1.1.tar.gz"
-    sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
-  end
 
   resource "tomlkit" do
     url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"

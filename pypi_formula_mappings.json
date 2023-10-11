@@ -789,7 +789,7 @@
     "exclude_packages": ["black", "mypy", "ruff"]
   },
   "python-yq": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["argcomplete", "PyYAML"]
   },
   "pythran": {
     "exclude_packages": ["numpy", "six"]
