@@ -8,15 +8,14 @@ class PythonYq < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db3864640973d526af738763f6da4d807bd3b19c91dd1d172ac58c3aaa07e2ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "476feec14d96b655ff455e29c414d7e4f06332b00c2fe28045c842e7d92fb806"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f9732056b6f510c14477c7f892752e73168dd21ca69153592885f32fbf18f29"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c97e327af55020778a3bdfdf9c90f022b3f88f6dcf933982877dd6e566e0c015"
-    sha256 cellar: :any_skip_relocation, sonoma:         "edf692f05311402dad10d01cfcf17f9af83a1d46b29dc674e3f470de1486ce9d"
-    sha256 cellar: :any_skip_relocation, ventura:        "525a1bd76e8951314f4f5838f22bab9e8faefd72ee35a77731a5bc60dc0bf1b8"
-    sha256 cellar: :any_skip_relocation, monterey:       "829ded8db7bb36d0782733f442b590be0b8431559f07703fca947aff298a44eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94c7565cc78e0fcfd51c4308839f05d474b2bad98083098367b18edd148a5942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dff3e7410fcd55fd98ec77d1d2d267191c0a66cf61353f6045ce53eeb42d23df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6574c6cbda104497526069a2456d5d1240b8a6be3ed6e825103311a4d21ae146"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0f4e9b7a3f4dacc8cd3146dc8bc97897531557fd42ed0f689eba7a576f81f88"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ba2b2b9aecd31d9584bb01ce229e0d9627a0400a633a74d6ab58444bbe56e91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "75752c0236ad1b8e11bff43d60885fa6390003cf1c47bed3ced5fb3ae8bdfcb4"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ec6a60524dedfd296b4376c3455feefb72ad04cdeee7b6f32720989c7446739"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f3757e2c3a42b12f581e335a01c47fda679c4c9cd21f807d5e330ea65203b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73863bb1cda14a115569a3086daa1e8a6bdd16c84418403b967d589b1a0177c5"
   end
 
   depends_on "jq"
