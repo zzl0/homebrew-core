@@ -18,15 +18,11 @@ class Nox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c72763e65f0dab528889bf4c0816d1ff58742d4ca678c30e50b99a5eb5bddd17"
   end
 
+  depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "virtualenv"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/6e/5b/9eae020dad132502efdb51408ba8a5b21afedcb738a98a307c6bfc21aaa8/argcomplete-3.0.6.tar.gz"
-    sha256 "9fe49c66ba963b81b64025f74bfbd0275619a6bde1c7370654dc365d4ecc9a0b"
-  end
 
   resource "colorlog" do
     url "https://files.pythonhosted.org/packages/78/6b/4e5481ddcdb9c255b2715f54c863629f1543e97bc8c309d1c5c131ad14f2/colorlog-6.7.0.tar.gz"
