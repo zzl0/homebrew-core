@@ -24,6 +24,7 @@ class Theharvester < Formula
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-lxml"
@@ -85,11 +86,6 @@ class Theharvester < Formula
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
   end
 
   resource "async-timeout" do
