@@ -11,15 +11,13 @@ class Uffizzi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50ca0e2849b13b877619970dd18e1c806584b771cdb10f1e981a2692fa3325c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e0b5801b372f5aced9011e6d544d215f71d2e3f5372c55ea1c04ecb7d2813e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56e0b5801b372f5aced9011e6d544d215f71d2e3f5372c55ea1c04ecb7d2813e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56e0b5801b372f5aced9011e6d544d215f71d2e3f5372c55ea1c04ecb7d2813e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "965392d5c5b747afc9a95f6ca47a8b4f2c2e31f1e71173f5eb03cce8d17c8905"
-    sha256 cellar: :any_skip_relocation, ventura:        "e750853aa0a9a3247b12909405171a0c37643465a261217c81bc32dda3bb478a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e750853aa0a9a3247b12909405171a0c37643465a261217c81bc32dda3bb478a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e750853aa0a9a3247b12909405171a0c37643465a261217c81bc32dda3bb478a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56e0b5801b372f5aced9011e6d544d215f71d2e3f5372c55ea1c04ecb7d2813e"
+    sha256 cellar: :any,                 arm64_sonoma:   "3fed4b30383802eb053304ae47f4c4bf0c76b07c72335e53aa3280ebf0455dfd"
+    sha256 cellar: :any,                 arm64_ventura:  "aefd52da7526189015a23c3f4781137e39516c3df118ec59f9b47ac48b31a8ba"
+    sha256 cellar: :any,                 arm64_monterey: "aaf7f5edbc0c1faaa0e75883cdc31f26bdde39a8c27615f265579dce879241b7"
+    sha256 cellar: :any,                 sonoma:         "7d8d9baf206f6ea9713939ef65b83d6e131c9eb78fcee3cfa085b81e18b8993c"
+    sha256 cellar: :any,                 ventura:        "8a43987c0692ceb0c090003452248558e8fbf48983d111c9974959e664229cca"
+    sha256 cellar: :any,                 monterey:       "2e9d291ad6e7f8fcf3d42326d36a29754d4d013b512ec67d8b6861d5182b319d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "084b128edde35adc234edb6d7b73ea586cbf983bfb6cf655e7e00aa96e173203"
   end
 
   depends_on "ruby@3.0"
