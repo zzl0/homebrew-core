@@ -9,15 +9,13 @@ class Pygitup < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73e134b70437917d4a583e3a832ec20b2961f921df54413ea5b7c5c837ffe455"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "410b4b0c43dfba5d96493eed825c3f5787fcc9dfddaa8339a089acd639917c2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3caef7b708c7a4619c6c54ba91519f5a5286c72b42e538ce26b3e4ff5607f958"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "550ca56e0ca9bc748a14cf3191874f9fbcb5723c62f2cdfc5e4e551f455600bd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e1cadd899ecc83a203bbe154654e9a7a7ada1f201719a260d50570ee070d8f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "63c552de33d45c558d03215885bd18b4ac6cd3a547d68bd7789b39cdfec4d992"
-    sha256 cellar: :any_skip_relocation, monterey:       "f38ad79505b0ccd2fce9e1284eac12b1b1e38da4d8a878367d7ece456c3d7635"
-    sha256 cellar: :any_skip_relocation, big_sur:        "edeaae1dc183881ad5df88aebc6cc7752802a59218648945f2b95db1009bd409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5ff59a8b63cd8abf2fc1da78b5c08b75c60a48d36254cc2529581536ca78a18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6746d3c1acb5294ca7dcd7e7a085c110678fa5ffb9f8706a46708e62b930c06"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13d1719d8586becd76bddf9b43f915ef2ad0873f1f2ffbfd6e8107c8cd4286bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9b7d88bbb1adf87e846f096cdcfa465d61a6b2a13052e9554b45b7cc6be810c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "41b5d5e0f2280aee545a89c04e8f9eb653a910cfb035c9dcc3a9848510cc0a4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "0204d02a08f668f4cf792bd6dd1c3c735d854aa68ee34ffa4fdb541eeb698505"
+    sha256 cellar: :any_skip_relocation, monterey:       "438edf0db2170381b6b3c698ab2267d706a532e9aba6c3231d33b0a00dc5397f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13dad9f3c5e8548ab83d77c11f871e693551c5e580f9033c4c2db855f5eed0da"
   end
 
   depends_on "python-typing-extensions"
