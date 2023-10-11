@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.1.104",
-      revision: "682c341cb1b8fc0bc80589fd96d7cad34f1772f0"
+      tag:      "v0.1.107",
+      revision: "31d06138257c50b77db4b45b3a38e81869d0dfc7"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -33,12 +33,11 @@ class Flyctl < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.com/superfly/flyctl/internal/buildinfo.environment=production
       -X github.com/superfly/flyctl/internal/buildinfo.buildDate=#{time.iso8601}
-      -X github.com/superfly/flyctl/internal/buildinfo.version=#{version}
+      -X github.com/superfly/flyctl/internal/buildinfo.buildVersion=#{version}
       -X github.com/superfly/flyctl/internal/buildinfo.commit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "production"
 
     bin.install_symlink "flyctl" => "fly"
 
