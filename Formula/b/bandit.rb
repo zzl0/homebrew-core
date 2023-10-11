@@ -10,15 +10,13 @@ class Bandit < Formula
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99db09e424e18a339a3c1494c1a9ca21bf5965c33dd8adf3d75db38cace61252"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "179af6afa5976ed202d573ef6e503c35885fd2892ae1257df2dc901d587300ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fb548f724583650247870727893047b1fb90111500d8e302802725162557506"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6eb7bf83b4e5fa6aa765bda6b91b14a8c28bf01458a8670d3cfa53d21aa9e00"
-    sha256 cellar: :any_skip_relocation, sonoma:         "553aafd65d7dc023af22d1e31e439b76a311443d7e7682899511f70288bc961d"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8b04adb67f5bd0856e5cf0d8ee523a48037613673eb5234bd56d0fd24657f93"
-    sha256 cellar: :any_skip_relocation, monterey:       "b1a1b3ac0f880c5664d2ac13112b58a1462409ba28af4e5f3c0e4d60e9dd2fb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0c6de25b35fd39fb04ed1683731f5074a5753de4b158e25b099fc53d72ab39ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e169be9d32de17687809c91b68f4ef9f85066dd1c0a95e57e5c010268a01ed7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "410b008956eacb716a97faca1137aa45aa3e4a9d502d6162cbb4089acd2719b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fea939dfb07d7227d1d32c86aa5481b5854a2c36347073b832b4735873b68eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf2604921a99d117feedb1526da7d798ccdcd3cd09c7ade7ca3e4b8ba3d7c8a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8705089b3b147d9a7a0010cab601bee51322ea1f97dc365cc59f93aecca5819"
+    sha256 cellar: :any_skip_relocation, ventura:        "067fe1b0626f47b40ffd30383df6ca4bc03ae903c895e5a47cf6f66cda0e3517"
+    sha256 cellar: :any_skip_relocation, monterey:       "aeee854a685c6fabbd2a5fdd32eaf89e7636c8afd43cd656aba44700f532b591"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22967cb2a74dc0879b8b705a2960a2b6950b463616091fe67805f83072e77d00"
   end
 
   depends_on "pygments"
