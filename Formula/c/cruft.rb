@@ -10,15 +10,13 @@ class Cruft < Formula
   head "https://github.com/cruft/cruft.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6892a43c948000120534f59b16527d28d482a56fa4aea5019e02000904e6ea93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db9965b04a41d22b832d7577d603addcec08020f67bd1e7d70306b08557d2b79"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e56fa8b73b043e22323305817df1c7d4fcad18b985f80a8fd8e3b6eca47e1093"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82331c9593ab52350c1e734ee93814679bcd892509782ccd0c60f2527979fc91"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8977cbd9b2c237a5b289985904cc11e8a0aa5e10adcd9a3cbb883f9d9fc4dd6"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1a02c457851993c9f9a44815a3ed6998f5ee75eb2238f5e34ba265c5b601898"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f3e1d55220c514654bdab569c09da751e16b3acce2ffa1e9867c1f2ea4db293"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6d866955076136994bbb5cb667998d34b46bd849281f2f91950f870cacd03c1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d006f394191b34543c5a1b502cabc95c08f8fe928fee5079c9615818cca436"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ccbe5cd5c7a2dd59b0e19d2a68a64f20ff7891ffe6d25e2183f2c43f1d81726"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "231f6dffa97a5bd168c79e94210baf31f2e7fc4f8c1dee0198beadfd6d9c58ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "712ebb93a0ae59e0db2728e901aad5cec1c336c099c90aa28212b407841134f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "580de0fe4c9166e80265a7eb7e4028bb6d3b4690e70413191f3be801215b39d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "28f6a10838be10edc01e71b1e5cc0b16d508518874e7d81ae073b19b60667109"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b400634a2b61d422b155b251165d5bd03b64b01940f2d4f5ac9c05274b7a0f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "922750d6270bedad41f54b63e965e3692490a4ed751b806326c2414b90a02869"
   end
 
   depends_on "cookiecutter"
