@@ -12,15 +12,13 @@ class Kafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed0a3c868fe8ab3a415821898ac729d2f8a34f91d56539c0ebe62f634c484271"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed0a3c868fe8ab3a415821898ac729d2f8a34f91d56539c0ebe62f634c484271"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed0a3c868fe8ab3a415821898ac729d2f8a34f91d56539c0ebe62f634c484271"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed0a3c868fe8ab3a415821898ac729d2f8a34f91d56539c0ebe62f634c484271"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4f7e9ac5f162373207479e747655d132e135f8401e42595467a46408e42c247"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4f7e9ac5f162373207479e747655d132e135f8401e42595467a46408e42c247"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4f7e9ac5f162373207479e747655d132e135f8401e42595467a46408e42c247"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4f7e9ac5f162373207479e747655d132e135f8401e42595467a46408e42c247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed0a3c868fe8ab3a415821898ac729d2f8a34f91d56539c0ebe62f634c484271"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "970e301ed683c2cce91dda8be192bc3fea09ef011617aceb5efce3f8c8e1d508"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "970e301ed683c2cce91dda8be192bc3fea09ef011617aceb5efce3f8c8e1d508"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "970e301ed683c2cce91dda8be192bc3fea09ef011617aceb5efce3f8c8e1d508"
+    sha256 cellar: :any_skip_relocation, sonoma:         "087ff27b7e84531b1b3b755c75a175665dacfbd6e8a23487309c27a085342a4e"
+    sha256 cellar: :any_skip_relocation, ventura:        "087ff27b7e84531b1b3b755c75a175665dacfbd6e8a23487309c27a085342a4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "087ff27b7e84531b1b3b755c75a175665dacfbd6e8a23487309c27a085342a4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "970e301ed683c2cce91dda8be192bc3fea09ef011617aceb5efce3f8c8e1d508"
   end
 
   depends_on "openjdk"
