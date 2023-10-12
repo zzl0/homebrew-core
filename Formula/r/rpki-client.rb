@@ -4,6 +4,7 @@ class RpkiClient < Formula
   url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-8.6.tar.gz"
   sha256 "2342cb85eff65ac52fe9e52c2eebe05436af6c5661d649da8e922616ecc8693a"
   license "ISC"
+  revision 1
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/"
