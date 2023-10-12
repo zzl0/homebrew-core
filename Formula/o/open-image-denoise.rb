@@ -1,8 +1,8 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https://openimagedenoise.github.io"
-  url "https://github.com/OpenImageDenoise/oidn/releases/download/v2.0.1/oidn-2.0.1.src.tar.gz"
-  sha256 "328eeb9809d18e835dca7203224af3748578794784c026940c02eea09c695b90"
+  url "https://github.com/OpenImageDenoise/oidn/releases/download/v2.1.0/oidn-2.1.0.src.tar.gz"
+  sha256 "ce144ba582ff36563d9442ee07fa2a4d249bc85aa93e5b25fc527ff4ee755ed6"
   license "Apache-2.0"
 
   bottle do
@@ -19,7 +19,7 @@ class OpenImageDenoise < Formula
 
   depends_on "cmake" => :build
   depends_on "ispc" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   # clang: error: unknown argument: '-fopenmp-simd'
   # https://github.com/OpenImageDenoise/oidn/issues/35
   depends_on macos: :high_sierra
