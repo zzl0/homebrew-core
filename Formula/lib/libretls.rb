@@ -1,8 +1,8 @@
 class Libretls < Formula
   desc "Libtls for OpenSSL"
   homepage "https://git.causal.agency/libretls/about/"
-  url "https://causal.agency/libretls/libretls-3.7.0.tar.gz"
-  sha256 "9aa5d3a9133932c362075259b0b17bb0c89741fa1b2535136df2ded7a0c13392"
+  url "https://causal.agency/libretls/libretls-3.8.1.tar.gz"
+  sha256 "3bc9fc0e61827ee2f608e5e44993a8fda6d610b80a1e01a9c75610cc292997b5"
   license "ISC"
 
   livecheck do
