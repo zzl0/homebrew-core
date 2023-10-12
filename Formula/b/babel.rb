@@ -9,15 +9,13 @@ class Babel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e09a46c9ce56209b46e5ca0d92439c1e4011caa4683693ce36a55945ce01f40f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e09a46c9ce56209b46e5ca0d92439c1e4011caa4683693ce36a55945ce01f40f"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "898cd4eb1402795f4ce111c17e17458c022e1f8a6ae863e77218990e31b47e6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa378ea1dcef59ab709c55c2e3de076ad262616346978285dddfdf835c2391f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "174fe44e0a2c8d2e44848dfca87fed6caab376c8bc1f8a9784e9bba9bc47bfdd"
   end
 
   depends_on "node"
