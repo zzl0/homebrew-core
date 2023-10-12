@@ -1,12 +1,10 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/monero-project/monero.git",
-      tag:      "v0.18.2.2",
-      revision: "e06129bb4d1076f4f2cebabddcee09f1e9e30dcc"
+      tag:      "v0.18.3.1",
+      revision: "2656cdf5056c07684741c4425a051760b97025b0"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url :stable
@@ -32,7 +30,7 @@ class Monero < Formula
   depends_on "libsodium"
   depends_on "libusb"
   depends_on "openssl@3"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "readline"
   depends_on "unbound"
   depends_on "zeromq"
