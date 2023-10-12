@@ -2,8 +2,8 @@ class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https://ppsspp.org/"
   url "https://github.com/hrydgard/ppsspp.git",
-      tag:      "v1.15.4",
-      revision: "9a80120dc09997e40c0a73fda05c3e07a347259f"
+      tag:      "v1.16.6",
+      revision: "ba0ce344937d17e177ec8656ab957f6b82facdda"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
@@ -73,6 +73,7 @@ class Ppsspp < Formula
         -DUSE_SYSTEM_LIBPNG=ON
         -DUSE_SYSTEM_ZSTD=ON
         -DUSE_SYSTEM_MINIUPNPC=ON
+        -DUSE_WAYLAND_WSI=OFF
       ]
 
       system "cmake", "..", *args
