@@ -1,10 +1,10 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
-  homepage "https://github.com/NXPmicro/mfgtools"
-  url "https://github.com/NXPmicro/mfgtools/releases/download/uuu_1.5.21/uuu_source-1.5.21.tar.gz"
-  sha256 "600be50827b52df4dddf0c7d07da27b103a4576eb445890905c61780e3c36871"
+  homepage "https://github.com/nxp-imx/mfgtools"
+  url "https://github.com/nxp-imx/mfgtools/releases/download/uuu_1.5.125/uuu_source-uuu_1.5.125.tar.gz"
+  sha256 "085d7f6308ee6b77dfb131fac40704575525adf6da45cdc446c00a0b29e4c21a"
   license "BSD-3-Clause"
-  head "https://github.com/NXPmicro/mfgtools.git", branch: "master"
+  head "https://github.com/nxp-imx/mfgtools.git", branch: "master"
 
   livecheck do
     url :stable
