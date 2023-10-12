@@ -217,7 +217,7 @@ jobs:
               keep_if_no_match: true
 
             - label: large-bottle-upload
-              path: Formula/.+/(joern|nifi-registry|nifi|texlive).rb
+              path: Formula/.+/(joern|nifi-registry|nifi|prestodb|texlive).rb
               keep_if_no_match: true
 
             - label: bump-formula-pr
