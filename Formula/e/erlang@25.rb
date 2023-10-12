@@ -12,15 +12,13 @@ class ErlangAT25 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6aec05bd1b74ec79f87f614c44a0eafe0f57801d1204bc488b5c970da8d875d4"
-    sha256 cellar: :any,                 arm64_ventura:  "e85ccb61b541a57d7d59c64c1154d61fb34f0db4dad756bae3e2166b7551183d"
-    sha256 cellar: :any,                 arm64_monterey: "fb0b50c4b8a2cbdb1d7da017778441dc5d4f2a28f445e2a736184409d29a7b98"
-    sha256 cellar: :any,                 arm64_big_sur:  "bfaf67f49cfa58a5b18222efd765ea7043e7d5d0764fcd7078eda07ed0866b66"
-    sha256 cellar: :any,                 sonoma:         "36e50e43a02dc75bbc26e2ed1b46081d77f59a7ac215a99323673949b295f5ba"
-    sha256 cellar: :any,                 ventura:        "9b1739938cabe69579e0d3afc3516bbb2f60ee9584d0229f2890fcf4c4bf8abf"
-    sha256 cellar: :any,                 monterey:       "a31be924ee1d81d65ce41c1581fe262fab7e278dc0224dd55e6a5d6d9d5478fa"
-    sha256 cellar: :any,                 big_sur:        "56e395c46f65b9c3fdab13b6569325e12cfbe0c64d6c042fb04d9a8fbe7a7a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f7b330a42d26870d119a955b09655f2cb51898b1d21ad2186b6d29aba3a58c1"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3d037c80bf3f7b44238cccb732b48fa1a24ee7e061d431ef8cc59ef3e898a9a"
+    sha256 cellar: :any,                 arm64_ventura:  "e628b540f206df6e58baa1037406fbc9cd7838b8372d959c395fdf9ca4b07d11"
+    sha256 cellar: :any,                 arm64_monterey: "0d8d79411b04aeaa2f9fbdb34fd6afc9d6dc0ef13c7903329bd83115b5417db5"
+    sha256 cellar: :any,                 sonoma:         "e3a643da94fae147baacc97802497fb7db1be4cd628c919b5dca778fd7e61311"
+    sha256 cellar: :any,                 ventura:        "d5a08cb819390ba36e8c44aacefbdcff23a1064e58f54690de299e9dbcf8ed21"
+    sha256 cellar: :any,                 monterey:       "b33bddff8298eb03fd6befda1cb3a24effc78024cfa6fc37b05eedf6e668f9b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "700fd249a2e9ab4e5cb8788c686b0fff0d66e8f62c374de82e73ea235709e695"
   end
 
   keg_only :versioned_formula
