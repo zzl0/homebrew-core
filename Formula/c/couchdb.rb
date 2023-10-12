@@ -1,6 +1,7 @@
 class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
+  # TODO: Check if we can use unversioned `erlang` at version bump.
   url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
@@ -25,12 +26,7 @@ class Couchdb < Formula
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
-  # Use Erlang 24 to work around a sporadic build error with rebar (v2) and Erlang 25.
-  # beam/beam_load.c(551): Error loading function rebar:save_options/2: op put_tuple u x:
-  #   please re-compile this module with an Erlang/OTP 25 compiler
-  # escript: exception error: undefined function rebar:main/1
-  # Ref: https://github.com/Homebrew/homebrew-core/pull/105876
-  depends_on "erlang" => :build
+  depends_on "erlang@25" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -55,7 +51,7 @@ class Couchdb < Formula
       s.gsub! "-L/usr/local/lib", "-L#{spidermonkey.opt_lib} -L#{HOMEBREW_PREFIX}/lib"
     end
 
-    system "./configure", "--spidermonkey-version", spidermonkey.version.major
+    system "./configure", "--spidermonkey-version", spidermonkey.version.major.to_s
     system "make", "release"
     # setting new database dir
     inreplace "rel/couchdb/etc/default.ini", "./data", "#{var}/couchdb/data"
