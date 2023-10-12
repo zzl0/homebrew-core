@@ -1,8 +1,8 @@
 class Elfx86exts < Formula
   desc "Decodes x86 binaries (ELF and Mach-O) and prints out ISA extensions in use"
   homepage "https://github.com/pkgw/elfx86exts"
-  url "https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.5.0.tar.gz"
-  sha256 "e09c3b7a08b7034859d4d56d0fbfa1d0c45b3df3d4345af51cca05d1f7d80766"
+  url "https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.0.tar.gz"
+  sha256 "976f845635f08160c1330f3e70fd9b61bafbc26c76577bd278a7f2e8513d4130"
   license "MIT"
   head "https://github.com/pkgw/elfx86exts.git", branch: "master"
 
@@ -32,7 +32,9 @@ class Elfx86exts < Formula
 
   test do
     expected = <<~EOS
+      File format and CPU architecture: Elf, X86_64
       MODE64 (call)
+      Instruction set extensions used: MODE64
       CPU Generation: Intel Core
     EOS
     actual = shell_output("#{bin}/elfx86exts #{test_fixtures("elf/hello")}")
