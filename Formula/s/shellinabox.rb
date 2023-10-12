@@ -33,6 +33,10 @@ class Shellinabox < Formula
   end
 
   def install
+    # Workaround for Xcode 14.3
+    # https://github.com/shellinabox/shellinabox/issues/518
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # Force use of native ptsname_r(), to work around a weird XCode issue on 10.13
     ENV.append_to_cflags "-DHAVE_PTSNAME_R=1" if MacOS.version == :high_sierra
     system "autoreconf", "-fiv"
