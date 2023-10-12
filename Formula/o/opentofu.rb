@@ -11,6 +11,16 @@ class Opentofu < Formula
     regex(/^v?(\d+(?:\.\d+)+(?:[._-]alpha\d)?)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc75e7cfa974362a4972f6f80d728545b9a58c1f12696317a906e2ff16672e63"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "817a58487c2ee6958a767cf9f25445fe0013174d7646bc9774bb2d36d5d853a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "090061c2904d2b932f1d60a02284c4f4a6055fee66982dbe1e956549c5b0a647"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e1e4986fa9f0b0359d6b0154119f48a98ebd8bed2a85b9b2206984c83c94cf4"
+    sha256 cellar: :any_skip_relocation, ventura:        "a18cdb50c6f501eeaa6e79723a6474bb5c295a905f3c2ec2aeb0b3f002b36e0f"
+    sha256 cellar: :any_skip_relocation, monterey:       "08fe8e4fc36e096e38d54cb4503b36791477c1195092b67fafdae4e95d44785b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77e5088a2e80ead29d1b62e8c7aef48ded122379f01e095a5c1252ff67657d09"
+  end
+
   depends_on "go" => :build
 
   # Needs libraries at runtime:
