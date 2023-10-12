@@ -1,10 +1,9 @@
 class Openslide < Formula
   desc "C library to read whole-slide images (a.k.a. virtual slides)"
   homepage "https://openslide.org/"
-  url "https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz"
-  sha256 "9938034dba7f48fadc90a2cdf8cfe94c5613b04098d1348a5ff19da95b990564"
+  url "https://github.com/openslide/openslide/releases/download/v4.0.0/openslide-4.0.0.tar.xz"
+  sha256 "cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562"
   license "LGPL-2.1-only"
-  revision 8
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "afb277f95420c92e38e2735224127bfe63bbca01549c3ad63b2b1d110f85df3b"
@@ -18,11 +17,15 @@ class Openslide < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "34556c96b3b25692de68c4a7896f59ff5ce4a2d8940844e64b6ab6674fb6e40d"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "jpeg-turbo"
+  depends_on "libdicom"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libxml2"
@@ -36,13 +39,14 @@ class Openslide < Formula
   end
 
   def install
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
     resource("homebrew-svs").stage do
-      system bin/"openslide-show-properties", "CMU-1-Small-Region.svs"
+      system bin/"slidetool", "prop", "list", "CMU-1-Small-Region.svs"
     end
   end
 end
