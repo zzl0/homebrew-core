@@ -8,6 +8,16 @@ class Mentat < Formula
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "10be447639c4bbb7a654343b8f338da6137ce2aee5e43f088e9c8ab789baa0e6"
+    sha256 cellar: :any,                 arm64_ventura:  "da20bd8b54bc45509750637110d0e7387820b5adf90e673bb7493c7b979de718"
+    sha256 cellar: :any,                 arm64_monterey: "9ed28a7e896007ef6359a86398ce96202c52389596f2c45268fd24899d3e7793"
+    sha256 cellar: :any,                 sonoma:         "d440a7b155412686167374e0e05ed205c7074261fd8130c6d97a2f461c1a0ad7"
+    sha256 cellar: :any,                 ventura:        "60b61fd186abde9a590ea40d1e00aea1393762d083cc005079ad52fd0e4acb66"
+    sha256 cellar: :any,                 monterey:       "0429f145f6c6f51371bd7ebc0f0b8a18ffd67a594ceb2d13d3dedb2464acb80e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5bf4c27f62237284bb312abdb3f5f9b5051496b3b7842ea00c3805ba045a4ab"
+  end
+
   depends_on "rust" => :build # for tiktoken
   depends_on "pygments"
   depends_on "python-certifi"
