@@ -1,8 +1,8 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
   homepage "https://github.com/ledgerwatch/erigon"
-  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.52.0.tar.gz"
-  sha256 "06a968271d46982528dd9b69f1a5835a18c3e0f73ac00051c79009642c8715b7"
+  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.52.4.tar.gz"
+  sha256 "62357912c787258a555366768f92b1c3ca1daf30b0a7c9596ff81186be9837ac"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
 
@@ -22,8 +22,7 @@ class Erigon < Formula
   end
 
   depends_on "gcc" => :build
-  # upstream issue to support go 1.21, https://github.com/ledgerwatch/erigon/issues/7984
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
 
   conflicts_with "ethereum", because: "both install `evm` binaries"
 
