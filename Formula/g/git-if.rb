@@ -1,9 +1,9 @@
 class GitIf < Formula
   desc "Glulx interpreter that is optimized for speed"
   homepage "https://ifarchive.org/indexes/if-archiveXprogrammingXglulxXinterpretersXgit.html"
-  url "https://ifarchive.org/if-archive/programming/glulx/interpreters/git/git-137.zip"
-  version "1.3.7"
-  sha256 "b4a9356482e83080e4e9008ea4d0d05412e64564256c6b21709d8e253f217bef"
+  url "https://ifarchive.org/if-archive/programming/glulx/interpreters/git/git-138.zip"
+  version "1.3.8"
+  sha256 "59de132505fdf2d212db569211c18ff0f1f4c1032c5370b95272d2c2b4e95c00"
   license "MIT"
   head "https://github.com/DavidKinder/Git.git", branch: "master"
 
