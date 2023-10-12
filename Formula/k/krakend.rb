@@ -6,15 +6,13 @@ class Krakend < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2a346c9635e787afb0e9979929ae884548e050ae0453431417a523f2dabecfe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f177f258b90812573c13fb9abe7a6b79c5e421fa32328d2dc065b8715ae00fe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7ec19f4bbc12779b2e22b6c252b5a9968d89958514ddc1394438330d2cbcf41"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5bde8120cceddc6e5122ef71e8d7e030468aa0337cbfc46ec9e7915d817cd67b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1bff0a19e5fcc61bfe7ba798025baee263a6c330b2519cbc6f6dd985ed993184"
-    sha256 cellar: :any_skip_relocation, ventura:        "aceaf8463c1e0227611cc7c8808459ac442c82b2cd1ce1fe16ee5dd514e48cc8"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5ff63f7988d26281046b049dd3eac01f3ca503a81a2158fc8e46dd88c7e9627"
-    sha256 cellar: :any_skip_relocation, big_sur:        "60c389fb6fd8dceabb3d84107d126dbbd93e511915d9cc6bbf88136de93dd138"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70921de2c04c3bf0aa3690162a6f95e1a99bbfe268714f02695b113ad0542204"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f31544598a528d9c25da85284ada1722c125b7f3a4c2f9687b982b9f97b2ab3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "add71cb877826255a39fda3857a29929cd62e0d0ec1e115b7ffca64c2a6178d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27dbaa3c6524b750b3faa768ca2d1637f9860ae0280c09a31d4deb7ce313a16e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "505dfcab4ad08ed2ea77e77838e30755053c4088c3a1506231eed5b4e82e0fb1"
+    sha256 cellar: :any_skip_relocation, ventura:        "f815dddb0d088ad2ee3ec59730b936c0b6547d963ebea922545c2de43b98bfb9"
+    sha256 cellar: :any_skip_relocation, monterey:       "55ac111a64729ede8e299eb953154090fc043e17f64f688376654e1abe908e50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "751f50d3d3efd9ee53a94bf720b2ea43dfaa4c23e3317d2d3c8e78f46ca574b9"
   end
 
   depends_on "go" => :build
