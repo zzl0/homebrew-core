@@ -212,6 +212,9 @@
   "cloudiscovery": {
     "exclude_packages": ["six", "pytz"]
   },
+  "cloudsplaining": {
+    "exclude_packages": ["certifi", "click", "markdown", "markupsafe", "pyyaml", "six"]
+  },
   "commitizen": {
     "exclude_packages": ["argcomplete", "PyYAML", "typing-extensions", "packaging"]
   },
