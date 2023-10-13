@@ -8,6 +8,16 @@ class Cloudsplaining < Formula
   license "BSD-3-Clause"
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a867ec8f61d3b96d8ce0761ac97385d47099493a9c1e5a954a7c8e0ac8086c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed7ed6d38f4eed664b11ff1b4049ab000c6b01a9e7c28e5f14ea66469870433e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84ebf36438595ce7d813f200307fe567c5e8a62460c85350ab9cdab19baeaf69"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b5a02a0e9c6dfb44f10e551a13df1f26913750fb1dfcde471a6f96cbee22b1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "92b7e21e6c10a11d2e9b433db7b044b36a2e463daced17e523a729ceed8501c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "f4b087908de39612d24349b39fa72f4e53d7f914efee969ad978096a9b69d2ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "206e93598292a9e4a45cbc9ef398072bc3b1a5d04a3e92813834a958fc548969"
+  end
+
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-markdown"
