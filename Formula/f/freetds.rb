@@ -1,18 +1,9 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
+  url "https://www.freetds.org/files/stable/freetds-1.4.3.tar.bz2", using: :homebrew_curl
+  sha256 "12f8b55b1e1816aec60e0d067de939c09e3477363250be95755b9b36e1c3c5d3"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://www.freetds.org/files/stable/freetds-1.4.2.tar.bz2", using: :homebrew_curl
-    sha256 "8acd1339989c64709803e227d2082b7ad264be66aebd4dba2c69a768acb86713"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     url "https://www.freetds.org/files/stable/"
