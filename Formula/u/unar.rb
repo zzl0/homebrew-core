@@ -1,10 +1,9 @@
 class Unar < Formula
   desc "Command-line unarchiving tools supporting multiple formats"
   homepage "https://theunarchiver.com/command-line"
-  url "https://github.com/MacPaw/XADMaster/archive/refs/tags/v1.10.7.tar.gz"
-  sha256 "3d766dc1856d04a8fb6de9942a6220d754d0fa7eae635d5287e7b1cf794c4f45"
+  url "https://github.com/MacPaw/XADMaster/archive/refs/tags/v1.10.8.tar.gz"
+  sha256 "652953d7988b3c33f4f52b61c357afd1a7c2fc170e5e6e2219f4432b0c4cd39f"
   license "LGPL-2.1-or-later"
-  revision 4
   head "https://github.com/MacPaw/XADMaster.git", branch: "master"
 
   bottle do
