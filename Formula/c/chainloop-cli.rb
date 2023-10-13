@@ -6,6 +6,16 @@ class ChainloopCli < Formula
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "890f811d8a93f7f68d809f2822c68f2b9d2569f8731fb5d1f2d815194e79286b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2586670a71053157110c0eb30bbf8659d5630a0ea715f8784345b25aeead11c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8799b548488a713f240bf1c42b0c03bd0e979371cdcc75e4ac6824833dcfb353"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b5e8b9693c7df3b5a093d1ece8c539dfd6a65b3eb5da2eb0e7e1ddf728228e64"
+    sha256 cellar: :any_skip_relocation, ventura:        "c36470fe6b95fa9d849261f640f64212eda106765cdcceb3446a39561b51e4a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "fafb078e7bd99a67e7f793dcec6ae932ae3660135712b8643688fdeefbc525e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "329a64bd5c598c4f4cd6a96f6d3fa8ee4adbf489019be225d4519ded34f47a29"
+  end
+
   depends_on "go" => :build
 
   def install
