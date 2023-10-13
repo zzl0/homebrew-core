@@ -1,8 +1,8 @@
 class Beagle < Formula
   desc "Evaluate the likelihood of sequence evolution on trees"
   homepage "https://github.com/beagle-dev/beagle-lib"
-  url "https://github.com/beagle-dev/beagle-lib/archive/v4.0.0.tar.gz"
-  sha256 "d197eeb7fe5879dfbae789c459bcc901cb04d52c9cf5ef14fb07ff7a6b74560b"
+  url "https://github.com/beagle-dev/beagle-lib/archive/v4.0.1.tar.gz"
+  sha256 "9d258cd9bedd86d7c28b91587acd1132f4e01d4f095c657ad4dc93bd83d4f120"
   license "MIT"
 
   livecheck do
@@ -25,12 +25,6 @@ class Beagle < Formula
 
   depends_on "cmake" => :build
   depends_on "openjdk@11" => [:build, :test]
-
-  # Reinstate versioning for libhmsbeagle. Remove in the next release
-  patch do
-    url "https://github.com/beagle-dev/beagle-lib/commit/2af91163d48bed8edfbf64af46d5877305546fd1.patch?full_index=1"
-    sha256 "2b16b2441083890bacb85ed082b3a7667a83621564b30a132b7ba8538f7d1d6f"
-  end
 
   def install
     # Avoid building Linux bottle with `-march=native`. Need to enable SSE4.1 for _mm_dp_pd
