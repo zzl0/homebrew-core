@@ -9,33 +9,21 @@ class Luajit < Formula
   # Update this to the tip of the `v2.1` branch at the start of every month.
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
-  url "https://github.com/LuaJIT/LuaJIT/archive/72efc42ef2258086a9cb797c676e2916b0a9e7e1.tar.gz"
-  # Use the version scheme `2.1.0-beta3-yyyymmdd.x` where `yyyymmdd` is the date of the
-  # latest commit at the time of updating, and `x` is the number of commits on that date.
+  # This is a rolling release model so take care not to ignore CI failures that may be regressions.
+  url "https://github.com/LuaJIT/LuaJIT/archive/656ecbcf8f669feb94e0d0ec4b4f59190bcd2e48.tar.gz"
+  # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
+  # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.0-beta3-20230813.2"
-  sha256 "940b2afd480d0a6365fcae11415117b016e485f2bf8a68c7a12534b9ab42d35a"
+  version "2.1.1696795921"
+  sha256 "b73cc2968a16435e899a381d36744f65e3a2d6688213fcbce95aeac56ce38d53"
   license "MIT"
-  head "https://luajit.org/git/luajit-2.0.git", branch: "v2.1"
+  head "https://luajit.org/git/luajit.git", branch: "v2.1"
 
   livecheck do
     url "https://github.com/LuaJIT/LuaJIT/commits/v2.1"
     regex(/<relative-time[^>]+?datetime=["']?(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)["' >]/im)
     strategy :page_match do |page, regex|
-      newest_date = nil
-      commit_count = 0
-      page.scan(regex).map do |match|
-        date = Date.parse(match[0])
-        newest_date ||= date
-        break if date != newest_date
-
-        commit_count += 1
-      end
-      next if newest_date.blank? || commit_count.zero?
-
-      # The main LuaJIT version is rarely updated, so we recycle it from the
-      # `version` to avoid having to fetch another page.
-      version.to_s.sub(/\d+\.\d+$/, "#{newest_date.strftime("%Y%m%d")}.#{commit_count}")
+      page.scan(regex).map { |match| "2.1.#{DateTime.parse(match[0]).strftime("%s")}" }
     end
   end
 
@@ -76,12 +64,6 @@ class Luajit < Formula
     system "make", "install", "PREFIX=#{prefix}", *verbose_args
     doc.install (buildpath/"doc").children
 
-    # We need `stable.version` here to avoid breaking symlink generation for HEAD.
-    upstream_version = stable.version.to_s.sub(/-\d+\.\d+$/, "")
-    # v2.1 branch doesn't install symlink for luajit.
-    # This breaks tools like `luarocks` that require the `luajit` bin to be present.
-    bin.install_symlink "luajit-#{upstream_version}" => "luajit"
-
     # LuaJIT doesn't automatically symlink unversioned libraries:
     # https://github.com/Homebrew/homebrew/issues/45854.
     lib.install_symlink lib/shared_library("libluajit-5.1") => shared_library("libluajit")
@@ -98,6 +80,8 @@ class Luajit < Formula
   end
 
   test do
+    assert_includes shell_output("#{bin}/luajit -v"), " #{version} "
+
     system bin/"luajit", "-e", <<~EOS
       local ffi = require("ffi")
       ffi.cdef("int printf(const char *fmt, ...);")
