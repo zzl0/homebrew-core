@@ -1,8 +1,8 @@
 class SeleniumServer < Formula
   desc "Browser automation for testing purposes"
   homepage "https://www.selenium.dev/"
-  url "https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.14.0/selenium-server-4.14.0.jar"
-  sha256 "0a40132b35b9e9b78760d7f427369408c4d26395b51de928bc773f3ab143e26c"
+  url "https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.14.0/selenium-server-4.14.1.jar"
+  sha256 "dcf01b3109fefaab5cfa42bce545f1745421d7ce514083f6b2b327bbbaee54eb"
   license "Apache-2.0"
 
   livecheck do
