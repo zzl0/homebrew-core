@@ -4,6 +4,7 @@ class Pycparser < Formula
   url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
   sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     rebuild 1
@@ -18,19 +19,28 @@ class Pycparser < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1e7b30c1fb7012bc60b3e53ab282d2da37cf614282c4eec8cc11c686de441f8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
     pkgshare.install "examples"
   end
 
   test do
     examples = pkgshare/"examples"
-    system python3, examples/"c-to-c.py", examples/"c_files/basic.c"
+    pythons.each do |python|
+      system python, examples/"c-to-c.py", examples/"c_files/basic.c"
+    end
   end
 end
