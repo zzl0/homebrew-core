@@ -6,15 +6,13 @@ class Bfs < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6986bfa3c03893b6342d80df953cf65e0ec3f656a51d54998808ab505a7455ae"
-    sha256 cellar: :any,                 arm64_ventura:  "7148376fded74fd3657a1add436bac7c753a953794ea3daa9f8e89c9da141f53"
-    sha256 cellar: :any,                 arm64_monterey: "87f5f4edc4ea7672d220743758cb92821c2c0675bdaaf14550ea70924ade5c6f"
-    sha256 cellar: :any,                 arm64_big_sur:  "de40684b24ba7995138f33890a833f2868511b0afbed17b448f552c5da3f9eb3"
-    sha256 cellar: :any,                 sonoma:         "cb5ebe63127b821b492859878d5563c17ddc039aea2f41e7808bb96ba9cf4c93"
-    sha256 cellar: :any,                 ventura:        "4a4fc4a38a622394f37d7da8495c6d40179cf775cc551a764ada1cb70c35148a"
-    sha256 cellar: :any,                 monterey:       "f9abfddbadbc56ed5c6649a151974af6664886808a594b4092a4114589d9c14b"
-    sha256 cellar: :any,                 big_sur:        "6ae258f53edb86846f69be682e1b3d28000b11efa7d015373ca6e91c4c96f744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "070992b0d08308cdc650e24db2827b0218bfe6f0bb36483a41d32a23b944a71d"
+    sha256 cellar: :any,                 arm64_sonoma:   "3712919efb8b9412915adb24b05b2d09440b1d89c66ca31d67738c35b191cb76"
+    sha256 cellar: :any,                 arm64_ventura:  "bbce0db13af693dbafb1a6446bf061e40a725420ed09386e49e42969d33d7239"
+    sha256 cellar: :any,                 arm64_monterey: "5f66ea744bd1907f7b5826a7b71b84a2c3b812ca13572dbb509bd54f97ad417f"
+    sha256 cellar: :any,                 sonoma:         "a493a9a7edd398c67d4d94b9235ada1294c117a70d2087565fc1cf3c3dd4d505"
+    sha256 cellar: :any,                 ventura:        "9d8574ae854b5db01ecc000ee7e6995a3fce4ffb1fe7db651ac14de762b93632"
+    sha256 cellar: :any,                 monterey:       "a7979cbe57addcd23bf5837d1135c3c1b621c22e35992842c1030fafef9e0ad3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b8872d15af24b198ec2ea6984d097e27e88500e0c485b63aca2c9c5858265fb"
   end
 
   depends_on "oniguruma"
