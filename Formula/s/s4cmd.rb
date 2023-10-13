@@ -10,16 +10,13 @@ class S4cmd < Formula
   head "https://github.com/bloomreach/s4cmd.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64d6ba679835e76229529b3cf69343facc90aa06e2ccd9294285ae737c582b27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4330aa16ed535e58baec539539457273ca137b7fd940381a5ece53b5ed264377"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61b5e9c004791b55d9b448c58823c8e64766b8aae3f98b41d85c9225ea8d3a69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc21a20e8b4e7fc2df9e5f8f4be01ef866cb9c5ea2b59ffbc9912baf8b1a9f0e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34add3299f3dba73217668d597af0b3d82ff7c7d4d90e2c836eb25ff2250ad4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "89921083aec7aecee35c209b8f9507a4ca2d7a1b2ea1d8a025c63221f0751700"
-    sha256 cellar: :any_skip_relocation, monterey:       "02ba6c7b38706ba52e55eb92017eaab34ae59f9c5ae70742f5aeb6b015a8fb68"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e8c0d2faf3f76e97c7821d4c99b01d2751bc4d55bc9a2fb368b6dd15c2da4e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91ea903e1a7f0904623d53ed6f1b16dd33affcdd1c8c9a8db55f4b955b050f91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ee35d4a4d11c4297df0b6bf56ff1448616960db0a3f0afbd67291b66c353e65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0e2d3884cd5a992cd9423e76561be1e0de1fabaa724b7a7bfc2963fb6577b26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f5bdce73e592f7f2cab9b54e0d8b0b9540b4ebfb3419eee3ee5522c3ed8c2dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8752f2baff2da9bcabc021c1d683ca543331ee3f0e01564c458e115b2cfaa026"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd08c43715a3175b6e4f4a16111cf13e86f8848a58fad720bed8e5887d5d058d"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf90beebe88af4bddecbdc0417c5f5d7ed19de6291717621b64f79081062ae47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "251decd2246f8d66a5aca060fcd18300ba378993e8f1a59292e362f74ae500ca"
   end
 
   depends_on "python-pytz"
