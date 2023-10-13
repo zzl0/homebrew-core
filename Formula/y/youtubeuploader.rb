@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https://github.com/porjo/youtubeuploader"
-  url "https://github.com/porjo/youtubeuploader/archive/refs/tags/23.04.tar.gz"
-  sha256 "e9c0e6fbcbacbeed8da144bdd4ffddda17af3920ad926a18335751a2381800d7"
+  url "https://github.com/porjo/youtubeuploader/archive/refs/tags/23.05.tar.gz"
+  sha256 "d495a080bc5da4a852e8f9152cdabe937c9f218985151f98ccb26542a82ef9f9"
   license "Apache-2.0"
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
@@ -30,7 +30,8 @@ class Youtubeuploader < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -X main.appVersion=#{version}")
+    ldflags = "-s -X main.appVersion=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/youtubeuploader"
   end
 
   test do
