@@ -8,6 +8,16 @@ class Cf2tf < Formula
   license "GPL-3.0-only"
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d12ecb3b8761fffefe7f2e9bdf8d2e48074b8b3ede642f37d75aac292761fedd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e58dfea5827d33c9457d640c1577855fbaceb6237e03464edd4068f0dd286d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73d17bc78fc02f16d4716903353702fbab24ffbd3fcd10ce92d7c09dcc53272c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b01e7fb5a6cc6b0640bbbd67c10978f76739e7e4ae165d10e44ad9b76b08cd9"
+    sha256 cellar: :any_skip_relocation, ventura:        "e5da7f1f656f367531d85c0b38d2e82a98eaf2adeedd66f6fb1d263b5c9fdc8f"
+    sha256 cellar: :any_skip_relocation, monterey:       "04fe6dde398bdc27f2335ebd15fe73ed1f1d14e4b539c20f9357076a3a82c57e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f8fcf9333bdc7c4ee3de64b1ee6a2fa39506cd7b5a5bbd5364c3d8109d1483f"
+  end
+
   depends_on "cmake" => :build
   depends_on "python-certifi"
   depends_on "python-click"
