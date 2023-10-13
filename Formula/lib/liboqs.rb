@@ -1,8 +1,8 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
   homepage "https://openquantumsafe.org/"
-  url "https://github.com/open-quantum-safe/liboqs/archive/0.8.0.tar.gz"
-  sha256 "542e2d6cd4d3013bc4f97843cb1e9521b1b8d8ea72a55c9f5f040857486b0157"
+  url "https://github.com/open-quantum-safe/liboqs/archive/0.9.0.tar.gz"
+  sha256 "e6940b4d6dd631e88a2e42f137d12dc59babbd5073751846cabfb4221ece7ad0"
   license "MIT"
 
   livecheck do
@@ -30,17 +30,24 @@ class Liboqs < Formula
   fails_with gcc: "5"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-GNinja", "-DBUILD_SHARED_LIBS=ON"
-      system "ninja"
-      system "ninja", "install"
-    end
+    args = %W[
+      -DOQS_USE_OPENSSL=ON
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "tests"
   end
 
   test do
     cp pkgshare/"tests/example_kem.c", "test.c"
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-loqs", "-o", "test"
+    system ENV.cc, "test.c",
+                  "-I#{Formula["openssl@3"].include}", "-I#{include}",
+                  "-L#{Formula["openssl@3"].lib}", "-L#{lib}",
+                  "-loqs", "-lssl", "-lcrypto", "-o", "test"
     assert_match "operations completed", shell_output("./test")
   end
 end
