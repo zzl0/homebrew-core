@@ -7,7 +7,7 @@ class EmacsDracula < Formula
   head "https://github.com/dracula/emacs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "27ee077214351648848dd86db492cc00023c4dfc1c50d03e0ed431ce2fd319a9"
+    sha256 cellar: :any_skip_relocation, all: "12f38f30a3f1104f1ddff8a14528542903fda394603c88be82feb8c9b1081a82"
   end
 
   depends_on "emacs"
