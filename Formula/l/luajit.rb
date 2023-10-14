@@ -28,15 +28,13 @@ class Luajit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "57d50c2d1286f22e6aec725ea351ecd7dc094cf2a01765a27dc3d9cee4083b12"
-    sha256 cellar: :any,                 arm64_ventura:  "83ff44fbfaa9312b80ee92c80c2683eccdf7f997bdd6608d1b0bcf2057f48b9c"
-    sha256 cellar: :any,                 arm64_monterey: "46066e754a2d030fc781a9865cde2d50cc2eb76ba565005ec7ac3ffb7d0e298b"
-    sha256 cellar: :any,                 arm64_big_sur:  "e231ae553b2f134916e28bc43e34f82c1b99d2c22c4977ed03701224a37de8c5"
-    sha256 cellar: :any,                 sonoma:         "ef7255ee32feaa58467e4dc7f2fb0e41c47a0c511f017c82e5f93c9e6869d69f"
-    sha256 cellar: :any,                 ventura:        "7703055988274d4d9acd8e04b28a937db7a3e5d31531d8f555cb715c1e794cbc"
-    sha256 cellar: :any,                 monterey:       "ca3ac71bd6f9ae3854e046e7ebca55a9d427197d42b55e656c831fc9cc4f87b1"
-    sha256 cellar: :any,                 big_sur:        "98918574b3945dbdbab7f0e7952dd1482bdbffb0fd5fe26b3c806542bfb09222"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a3de845d0a769045d2bab5337762d7bcb6b31a52a1e28fcfa1ab0c308dc0db"
+    sha256 cellar: :any,                 arm64_sonoma:   "1027b27021dae7d24cfbd2c9442e57b7575333cc0d57b7e0b6906337e54d2f28"
+    sha256 cellar: :any,                 arm64_ventura:  "9a130c06aaa198255f0163b37600a37bd44ecae8c914b549deffc922e108faac"
+    sha256 cellar: :any,                 arm64_monterey: "5456a76e6e36b2019f0d41ac53552546202e1911b3924ea7ee901e479582eca7"
+    sha256 cellar: :any,                 sonoma:         "f7068b17e8a82eabfa84d90a2ec6bf264f9934508c04fb57c9c9f51bb438cac1"
+    sha256 cellar: :any,                 ventura:        "fcb8413972dc988572bf9faa969825a9df0d1fb7b6d75ad139fb21b24293cef8"
+    sha256 cellar: :any,                 monterey:       "7b7c6498813508d5e39dc0f0ab6036f802b7507ed009c17a284a63ac1a96e1c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e76e82cb555c5c85f3c27ba530f739fc1b5c11311b7eab79f2220bd3312ecc09"
   end
 
   def install
