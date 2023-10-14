@@ -1,8 +1,8 @@
 class PyqtBuilder < Formula
   desc "Tool to build PyQt"
   homepage "https://www.riverbankcomputing.com/software/pyqt-builder/intro"
-  url "https://files.pythonhosted.org/packages/cb/f0/dc998da4a3358249a0e53927c831a52bfc2aa070a96e8164fffcf3dce349/PyQt-builder-1.15.2.tar.gz"
-  sha256 "746cfe83c03ebff4458d478a1c06714790ef93e458ecd5a28bc2837bac88eb74"
+  url "https://files.pythonhosted.org/packages/21/e9/5ee4d76d3f4c566b090924e36da067748db948a5faeff4142d149a4d5a15/PyQt-builder-1.15.3.tar.gz"
+  sha256 "5b33e99edcb77d4a63a38605f4457a04cff4e254c771ed529ebc9589906ccdb1"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
@@ -23,11 +23,6 @@ class PyqtBuilder < Formula
 
   def python3
     "python3.11"
-  end
-
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
   end
 
   def install
