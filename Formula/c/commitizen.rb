@@ -3,20 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/6c/10/12363fdce5a2505994f2b8193e2f0e5722600eaf554d67fe607e9ffbc23e/commitizen-3.10.0.tar.gz"
-  sha256 "52c819e7b474520330c3d554e79cb1b0172f2d9e0b8c32902df9a69971a7cd5b"
+  url "https://files.pythonhosted.org/packages/ac/20/a2555498eabf54bc415495ee7a491455e4e5eae5ab61f16cdb49953a3801/commitizen-3.10.1.tar.gz"
+  sha256 "a185f79f92697f612bcea9ac9036dd21eadb66b2901ef5e1f99ab23b32178825"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c913a2eebdfd34402b962276c59ab4ad7c604fa1a352ad121830b03e38728035"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d056d949ce1a136ad3d9881b1e2e63170bd0ff40edd14854c6f805d03b67a4e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff7cb36b5d4e4d16c6861db26648e2e8ccb1a8895005955a535cd4f72973251b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9b45b959e1c332911b79fb14aaf7e99ab244de054d1c8fcca098ddfa11e376b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "398bd967b18dbc81b65f9021c29b48ca724aac79fdede8faf2b51b0309538c5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0f1dac5d13b305663afeba933e3af940bf3d9e688cd5d6b1a4a473903452409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7752d3428d237eb24d7e6b73c75746f058ad319e7f1fb2d0fb2f30b6455f0a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ac1d0cd3fc53ab8f81d6fed8b754d01eae37fd986c0447b056e15db9a2cc818"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb47f51d19f18f0156a5fa2113b54bba0c9d91240b3c3d691a32236c27ec07d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca613b5901b440fd21fd30208d5fb342189dd3945041f33525dfafdbf9fbc2f6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "05473b22d7df1e224ae460a2d3141cc41a8101ca98b8c53d74e9c761274a9e44"
+    sha256 cellar: :any_skip_relocation, ventura:        "d145da98b2ab8b9fbdb81c601ec3c6a521506ff0cecb52f7f1a4f7270a4791a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6c01a3432113b1bf3c1aefd6de7578252a50efe72a65ce4e94fa223d38784fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1be7577a0eb757603c5fb5744f2528631bee54e96ee3a0a3d65223700f7f47ce"
   end
 
   depends_on "python-argcomplete"
@@ -26,8 +25,8 @@ class Commitizen < Formula
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "colorama" do
@@ -76,8 +75,8 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
-    sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
+    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
+    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
   resource "zipp" do
