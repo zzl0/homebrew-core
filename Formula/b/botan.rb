@@ -22,7 +22,7 @@ class Botan < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
 
   uses_from_macos "bzip2"
@@ -39,6 +39,10 @@ class Botan < Formula
 
   fails_with gcc: "5"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
     ENV.cxx11
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1315
@@ -51,7 +55,7 @@ class Botan < Formula
       --with-sqlite3
     ]
 
-    system "python3.11", "configure.py", *args
+    system python3, "configure.py", *args
     system "make", "install"
   end
 
