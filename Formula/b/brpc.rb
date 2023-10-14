@@ -1,10 +1,9 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.6.0/apache-brpc-1.6.0-src.tar.gz"
-  sha256 "06ff4adebc720bf1529b03ade872cbd41c6ed69971e6e0d210d57d7b72856bd4"
+  url "https://dlcdn.apache.org/brpc/1.6.1/apache-brpc-1.6.1-src.tar.gz"
+  sha256 "7bea77e2f28d33480bf2c6dfe171077e0b51d5d56fcc5d7a1dd7cc5702620e4c"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
