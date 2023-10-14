@@ -7,15 +7,13 @@ class Geph4 < Formula
   head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1474ce7772df7648050377c2fd99036ff0069f2a24589294118a1a52a557661"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbba29bc3299286063537aa78c0de38e06b430945b97f0dc51c070db2b50bccb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df0d743e889c90b8aeec583747bc54b3ab60ed63bf6628f5182d9517b7471611"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d4ce91db857546aadf29c60311906b737acfbaf406bd2898ca6cbaf5082c0a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b72859496a1e0c2d0db201a47fb2f7523fda9382b08c2321d2f8977094dbc9a"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa305c96c087e5672862c176414fa1c24f48f560e6641ce2ae341c0d59438d17"
-    sha256 cellar: :any_skip_relocation, monterey:       "7743cb69bb35a763352fcb7db352401af88d7ce581756a3e23cffb8a15650bc6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7908384141d9c2c9f48850334272550be25b98cbda6a95fc7fb82218afc0294c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeda076799c39f886b13c302c3aeb8684dad4d684f7888c7026bb6600b40d8b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b71868aa4caa8e47f55800d4841d943539d4ced47c7d71ed1a31f618cf5f5c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de7d1b7fa613ecdaeb9eb0cd76d1b89651d337d9adc7d0e4e3a28ecf62dd800a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6e5373af90d8ac1a52e71ef6d371013b8d31f04384722c09d992bb93f2af3b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7625fb0438bba17ec6a1d00c25c39af97459504c06a0561a24ac82260aecacdb"
+    sha256 cellar: :any_skip_relocation, ventura:        "3643e7e01aba5c67d09c113537ea399ed68a894b40e3167bf117f5b055fb2470"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a8d90f9850a0c3597ba1c95a8e6b4e4cf3cb39be42db29ad7195d92b440cea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4750628beb596b6707b835367f85eeb9c0c69fdf0dd3312e2c3c33bc17c154ea"
   end
 
   depends_on "rust" => :build
