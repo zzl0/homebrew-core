@@ -339,7 +339,9 @@
     ]
   },
   "dxpy": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six"]
+    "exclude_packages": [
+      "argcomplete", "certifi", "cffi", "cryptography", "pycparser", "six"
+    ]
   },
   "enex2notion": {
     "exclude_packages": ["certifi", "PyMuPDF", "six"]
