@@ -22,7 +22,7 @@ class Duckdb < Formula
     mkdir "build"
     cd "build" do
       system "cmake", "..", *std_cmake_args, "-DBUILD_EXTENSIONS='autocomplete;icu;parquet;json'",
-             "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
+             "-DENABLE_EXTENSION_AUTOLOADING=1",
              "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
       system "make", "install"
