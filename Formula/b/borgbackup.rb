@@ -24,7 +24,7 @@ class Borgbackup < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xxhash"
   depends_on "zstd"
 
