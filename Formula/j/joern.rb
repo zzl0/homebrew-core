@@ -2,9 +2,8 @@ class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
-  # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://github.com/joernio/joern/archive/refs/tags/v2.0.110.tar.gz"
-  sha256 "aac6a6d59a0ac78b2085214b71febc5f44b5c77b8d902651b611d5f239e2e1df"
+  url "https://github.com/joernio/joern/archive/refs/tags/v2.0.120.tar.gz"
+  sha256 "1076e9974f2a2c7d104ad6ffa2dc4d23be33ad6affefc437fa56f318bb88e090"
   license "Apache-2.0"
 
   livecheck do
@@ -25,7 +24,7 @@ class Joern < Formula
   depends_on "sbt" => :build
   depends_on "astgen"
   depends_on "coreutils"
-  depends_on "openjdk@17"
+  depends_on "openjdk"
   depends_on "php"
 
   def install
@@ -45,7 +44,7 @@ class Joern < Formula
     end
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
-      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("17")
+      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env
     end
   end
 
