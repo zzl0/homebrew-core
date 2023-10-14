@@ -7,15 +7,13 @@ class PyqtBuilder < Formula
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba7beb7965ff432174084feef946b626188608dbac80e80964c8cb488b53978d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd19143846f1e0bfc9790662cb3235c8f22bf15ce47c7a01f12c5e03bc8cd08a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbef68c7e68dbefe9ae0fad92ecd31488ceb64077e7aee1a67426a5afc91a83e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d93a15947d1061a6cf97569b7fae79c3c272313c4d8e85ad131d9a0baebe9792"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af0f61e288f00fd96b1bd0962387c0cea61d11a52d62457e69b71f82081c7d9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06be2d06cb34b32d2bdcbff24b3a237dddc7e3618671df1ca8dccb5862e8e9c2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c191cce896cd8128abcfd74a528d15dd59e667afc8a7d6d20cec119732c68c78"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a6ce76309401aaff60574312d9eec0ae8e3d0dba89237336a9726e5f4869730"
+    sha256 cellar: :any_skip_relocation, monterey:       "d02d83c34d10db832755116c852a9829352191ae5beed08aef15ce8c4e25e500"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67a555c0f6971097fbeb140dc5bd01d16f576bf78d70b0e55d73a269e3366809"
   end
 
   depends_on "python@3.11"
