@@ -18,6 +18,7 @@ class Dxpy < Formula
   end
 
   depends_on "cffi"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-setuptools"
@@ -28,11 +29,6 @@ class Dxpy < Formula
 
   on_macos do
     depends_on "readline"
-  end
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
   end
 
   resource "charset-normalizer" do
