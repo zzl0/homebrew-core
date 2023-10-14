@@ -733,7 +733,7 @@
   },
   "poetry": {
     "exclude_packages": [
-      "build", "certifi", "cffi", "keyring", "packaging", "pycparser", "six", "virtualenv"
+      "certifi", "cffi", "keyring", "packaging", "pycparser", "six", "virtualenv"
     ]
   },
   "pre-commit": {
