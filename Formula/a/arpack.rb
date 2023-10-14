@@ -1,8 +1,8 @@
 class Arpack < Formula
   desc "Routines to solve large scale eigenvalue problems"
   homepage "https://github.com/opencollab/arpack-ng"
-  url "https://github.com/opencollab/arpack-ng/archive/3.9.0.tar.gz"
-  sha256 "24f2a2b259992d3c797d80f626878aa8e2ed5009d549dad57854bbcfb95e1ed0"
+  url "https://github.com/opencollab/arpack-ng/archive/3.9.1.tar.gz"
+  sha256 "f6641deb07fa69165b7815de9008af3ea47eb39b2bb97521fbf74c97aba6e844"
   license "BSD-3-Clause"
   head "https://github.com/opencollab/arpack-ng.git", branch: "master"
 
