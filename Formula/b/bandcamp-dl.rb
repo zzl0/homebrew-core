@@ -22,7 +22,7 @@ class BandcampDl < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-mutagen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do
