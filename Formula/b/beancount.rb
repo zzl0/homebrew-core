@@ -22,7 +22,7 @@ class Beancount < Formula
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do
