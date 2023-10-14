@@ -2,8 +2,8 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.7.0",
-      revision: "073183fe1723d7bda826b574437891976a958c65"
+      tag:      "v4.7.1",
+      revision: "ef83eeb9c7482826672f3efa12db3d61c88df6c4"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -43,35 +43,29 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "e526b8bf568a5145f4f265a8d450483be27c82717e60f4f22902589a78f68e1f"
+      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.1.tar.gz"
+      sha256 "cbc97a44b6ca8f6c427ac58e193aa39c28674e4f1d2af09b5a9e35d1d3bb7fd3"
     end
   end
 
   resource "catatonit" do
     on_linux do
-      url "https://github.com/openSUSE/catatonit/archive/refs/tags/v0.1.7.tar.gz"
-      sha256 "e22bc72ebc23762dad8f5d2ed9d5ab1aaad567bdd54422f1d1da775277a93296"
-
-      # Fix autogen.sh. Delete on next catatonit release.
-      patch do
-        url "https://github.com/openSUSE/catatonit/commit/99bb9048f532257f3a2c3856cfa19fe957ab6cec.patch?full_index=1"
-        sha256 "cc0828569e930ae648e53b647a7d779b1363bbb9dcbd8852eb1cd02279cdbe6c"
-      end
+      url "https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.0.tar.gz"
+      sha256 "d0cf1feffdc89c9fb52af20fc10127887a408bbd99e0424558d182b310a3dc92"
     end
   end
 
   resource "netavark" do
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v1.7.0.tar.gz"
-      sha256 "b0ed7d80fd96ef2af88e7a001d91024919125e5842d9772de94648044630e116"
+      url "https://github.com/containers/netavark/archive/refs/tags/v1.8.0.tar.gz"
+      sha256 "b1422ef6927458e9f80f7d322b751e29ab5d04d8ed6cb065baa82fa4291af10f"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.7.0.tar.gz"
-      sha256 "6ee7dfa8bab8040b917959a2f57f25496ad036a2d933c6225114e2c1e68bab0b"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.8.0.tar.gz"
+      sha256 "c9b818110e3d5d45f8bdb3c9ccc48c994aedb0b19fefcc7577fc1ef7ed294343"
     end
   end
 
