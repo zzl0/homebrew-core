@@ -1,8 +1,8 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.12.0.tar.gz"
-  sha256 "56584ece9d1522401d0855d3d103ee7e53fee74f12441a5e26b32f8d5eb934b8"
+  url "https://releases.inko-lang.org/0.13.0.tar.gz"
+  sha256 "1d63a1ac50abf2578ce69b0207f336d688dc9f745dcbb05c4090469cf824570e"
   license "MPL-2.0"
   head "https://github.com/inko-lang/inko.git", branch: "main"
 
@@ -32,7 +32,7 @@ class Inko < Formula
 
   test do
     (testpath/"hello.inko").write <<~EOS
-      import std::stdio::STDOUT
+      import std.stdio.STDOUT
 
       class async Main {
         fn async main {
