@@ -26,13 +26,17 @@ class BotanAT2 < Formula
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
+
+  def python3
+    which("python3.12")
+  end
 
   def install
     ENV.cxx11
@@ -45,7 +49,7 @@ class BotanAT2 < Formula
       --with-sqlite3
     ]
 
-    system "python3.11", "configure.py", *args
+    system python3, "configure.py", *args
     system "make", "install"
   end
 
