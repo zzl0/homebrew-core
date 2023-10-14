@@ -21,7 +21,7 @@ class Bpython < Formula
 
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "blessed" do
@@ -74,8 +74,11 @@ class Bpython < Formula
     sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    python3 = "python3.11"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install buildpath
