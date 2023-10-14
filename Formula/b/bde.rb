@@ -24,7 +24,7 @@ class Bde < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "pcre2"
 
   resource "bde-tools" do
@@ -47,7 +47,7 @@ class Bde < Formula
       -DCMAKE_MODULE_PATH=./bde-tools/cmake
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_TOOLCHAIN_FILE=#{toolchain_file}
-      -DPYTHON_EXECUTABLE=#{which("python3.11")}
+      -DPYTHON_EXECUTABLE=#{which("python3.12")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args
