@@ -26,18 +26,19 @@ class Afflib < Formula
   depends_on "libcython" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
-    # Fix build with Python 3.11 by regenerating cythonized file.
+    # Fix build with Python 3.12 by regenerating cythonized file.
     (buildpath/"pyaff/pyaff.c").unlink
     site_packages = Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
