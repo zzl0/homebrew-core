@@ -5,8 +5,8 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://github.com/morpheus65535/bazarr/releases/download/v1.3.0/bazarr.zip"
-  sha256 "7fd2ca2595fe7594541aafa0fcf1ef0b337c5290e2069115bea10ee8264fa001"
+  url "https://github.com/morpheus65535/bazarr/releases/download/v1.3.1/bazarr.zip"
+  sha256 "02150caef9d9a28d1731f27a17d062e260b4864e53dc49103d7fece2d1d67227"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
