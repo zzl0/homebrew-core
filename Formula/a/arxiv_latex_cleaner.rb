@@ -21,7 +21,7 @@ class ArxivLatexCleaner < Formula
   end
 
   depends_on "pillow"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
