@@ -22,7 +22,7 @@ class Bilix < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/af/41/cfed10bc64d774f497a86e5ede9248e1d062db675504b41c320954d99641/aiofiles-23.2.1.tar.gz"
