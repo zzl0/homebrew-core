@@ -22,9 +22,10 @@ class ArcadeLearningEnvironment < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on macos: :catalina # requires std::filesystem
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sdl2"
 
   uses_from_macos "zlib"
@@ -46,7 +47,7 @@ class ArcadeLearningEnvironment < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
