@@ -3,8 +3,8 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https://github.com/tfeldmann/organize"
-  url "https://files.pythonhosted.org/packages/a4/cb/8ed85e3a49976200f4b73fbfbe62bcd374aba8c74a0f263e9fb4c552f6ce/organize_tool-2.4.2.tar.gz"
-  sha256 "699580456bc41cd1bd7d8cdb60f2b58f42e8605b10953e794cf7833f2c67b9f2"
+  url "https://files.pythonhosted.org/packages/b7/f2/99a8dae09e1f597e7d134fbe8355c8456a9c08528cee00151b855157b1a9/organize_tool-2.4.3.tar.gz"
+  sha256 "4e82593b88bacc3a3103df567737d57891adbbeaf9f654af4c2be8c1cf755e11"
   license "MIT"
 
   bottle do
@@ -83,18 +83,18 @@ class OrganizeTool < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/48/d9/a13566ce8914746557b9e8637a5abe1caae86ed202b0fb072029626b8bb1/pyobjc-core-9.2.tar.gz"
-    sha256 "d734b9291fec91ff4e3ae38b9c6839debf02b79c07314476e87da8e90b2c68c3"
+    url "https://files.pythonhosted.org/packages/a4/ca/9f5f8aab90b7b9d006ee40e08dcfa1a5f74ab10b4504951bca97379016aa/pyobjc-core-10.0.tar.gz"
+    sha256 "3dd0a7b3acd7e0b8ffd3f5331b29a3aaebe79a03323e61efeece38627a6020b3"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/38/91/c54fdffda6d7cfad67ff617f19001163658d50bc72376d1584e691cf4895/pyobjc-framework-Cocoa-9.2.tar.gz"
-    sha256 "efd78080872d8c8de6c2b97e0e4eac99d6203a5d1637aa135d071d464eb2db53"
+    url "https://files.pythonhosted.org/packages/50/86/afa561caab8883b2ce155fd0067f6265bf10780a4db08bff3d76714c1dc4/pyobjc-framework-Cocoa-10.0.tar.gz"
+    sha256 "723421eff4f59e4ca9a9bb8ec6dafbc0f778141236fa85a49fdd86732d58a74c"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
-    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "schema" do
@@ -108,8 +108,8 @@ class OrganizeTool < Formula
   end
 
   resource "simplematch" do
-    url "https://files.pythonhosted.org/packages/1a/3d/4504e218fe50c988c8229fe4bfd5633ed43e1fa79de7147c5ddfec270fae/simplematch-1.3.tar.gz"
-    sha256 "ed1d17d842799ee2222de1ea5f7fc3b4b1317464852214dc7dd197c1332a9f3c"
+    url "https://files.pythonhosted.org/packages/d4/c5/209aa49f6c366f5b1d80e9eef2f75270079df3c9dec4658e0716e4bcd6ab/simplematch-1.4.tar.gz"
+    sha256 "55a77278b3d0686cb38e3ffe5a326a5f59c2995f1ba1fa1a4f68872c17caf4cb"
   end
 
   resource "xattr" do
