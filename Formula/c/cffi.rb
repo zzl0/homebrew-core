@@ -4,6 +4,7 @@ class Cffi < Formula
   url "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz"
   sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "055f741e8aea1859fef03a2411b8a212bfa52df2ef2af92e406a39da80c38bfc"
@@ -15,16 +16,24 @@ class Cffi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bebf686878c7eb40b83df3af01b0dbc94fd39c44dd5d19e8f2a7e7e122e1c2b"
   end
 
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "pycparser"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+
   uses_from_macos "libffi"
 
-  def python3
-    "python3.11"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
@@ -54,7 +63,9 @@ class Cffi < Formula
       ffibuilder.compile(verbose=True)
     PYTHON
 
-    system python3, "sum_build.py"
-    assert_equal 3, shell_output("#{python3} -c 'import _sum_cffi; print(_sum_cffi.lib.sum(1, 2))'").to_i
+    pythons.each do |python|
+      system python, "sum_build.py"
+      assert_equal 3, shell_output("#{python} -c 'import _sum_cffi; print(_sum_cffi.lib.sum(1, 2))'").to_i
+    end
   end
 end
