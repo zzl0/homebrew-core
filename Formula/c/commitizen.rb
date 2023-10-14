@@ -9,14 +9,14 @@ class Commitizen < Formula
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a77e3bc76f55c6359ab229b2a76efb2f861716b086a99ea57c198e0be2b2b727"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a73693a43abfe4d0e7311d22d8c3ab2fa2c3f2843a501dbd5647926916a474fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7803bee1819c0053357565a7687921428801ef033a3e71b276e3a30cfd1fd9f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03fc59477a244a59381b0220b2ff7024b64966d2b5965ef29e6636e2926e2e1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6a7f08e394070c0d6d76ad1333d19ba59f2f7834fb8d7b720c17fef63ce47cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "19653daaaac5aab0013418c6d2c4f4e2c6013ac3ff04ccc159b2580bab0cf154"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7151f742ed8bdab05ccac2058ea54d1f5d1f51f0efff2e571b6e0a1bc78752a0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c913a2eebdfd34402b962276c59ab4ad7c604fa1a352ad121830b03e38728035"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d056d949ce1a136ad3d9881b1e2e63170bd0ff40edd14854c6f805d03b67a4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff7cb36b5d4e4d16c6861db26648e2e8ccb1a8895005955a535cd4f72973251b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b45b959e1c332911b79fb14aaf7e99ab244de054d1c8fcca098ddfa11e376b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "398bd967b18dbc81b65f9021c29b48ca724aac79fdede8faf2b51b0309538c5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0f1dac5d13b305663afeba933e3af940bf3d9e688cd5d6b1a4a473903452409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7752d3428d237eb24d7e6b73c75746f058ad319e7f1fb2d0fb2f30b6455f0a1"
   end
 
   depends_on "python-argcomplete"
@@ -87,6 +87,14 @@ class Commitizen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(
+      python_exe, register_argcomplete, "cz",
+      base_name:              "cz",
+      shell_parameter_format: :arg
+    )
   end
 
   test do
