@@ -27,15 +27,13 @@ class Shaderc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ae34056e09ffb93d141da78673cb41446d5a081dcd384e600d8315d013644901"
-    sha256 cellar: :any,                 arm64_ventura:  "8dffc0cf4d1fb6e0e512f282b50738bbb758a365c9848f8363e8e3191b8e8158"
-    sha256 cellar: :any,                 arm64_monterey: "012cb597bab3326899b421fc557e8d448c38967801fdebffe20b3af6ddcad253"
-    sha256 cellar: :any,                 arm64_big_sur:  "1940d6e626ab52f840275f6eaac7567b865fd07951f04e996a144ded9b4399f2"
-    sha256 cellar: :any,                 sonoma:         "4a6b0ecc9ff57e75c8bb6abd8bd1eb8189f5055211b1c579b60da847ecccae3f"
-    sha256 cellar: :any,                 ventura:        "855d90d7e2bd7208510639342f12d95341e801c43c075a25b03d10db2dc5d5d2"
-    sha256 cellar: :any,                 monterey:       "f72d775abe1053fe7e9deaa7383753ff4fb62cea91315668ba64681887f33e96"
-    sha256 cellar: :any,                 big_sur:        "b58f91fba26173a7ee05a7bcf229d8b15a743bfce855eba803485267d00488d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a507c8adf294fa23564f31290811b8bb74f5976332e4457cc2d2d056f70f364"
+    sha256 cellar: :any,                 arm64_sonoma:   "33f9f476a1a57bb93e019deffadc69e788b1581e17df9f98f4648d053f83b424"
+    sha256 cellar: :any,                 arm64_ventura:  "f72e5f7f0da8b9b82cc8ca890760c6b33b1f5e041e3dcc1bdfc60c321ded25db"
+    sha256 cellar: :any,                 arm64_monterey: "b5c8b42e754bf4f348514efc19db6fb073d66f09447677f7e18d5b6dc3b7f64d"
+    sha256 cellar: :any,                 sonoma:         "271b067ae2f1438a5b2271b3a8d95d333f5658806677dfd590bf3d4db3fe89c3"
+    sha256 cellar: :any,                 ventura:        "953b737d858fb1a319d43e80b5231fdd8857775e9a489b464185d735d2085402"
+    sha256 cellar: :any,                 monterey:       "b47422248e90574c2d641f88c48491a3de899649c5a713d2655f88ec1426ff43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33e4d6ffb6dade9df0ed5aecb7e5538e5306638fccedc1f364fafdcef3744ecc"
   end
 
   head do
