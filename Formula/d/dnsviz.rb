@@ -23,7 +23,7 @@ class Dnsviz < Formula
   depends_on "bind" => :test
   depends_on "graphviz"
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     # Fix build error of m2crypto, see https://github.com/crocs-muni/roca/issues/1#issuecomment-336893096
@@ -31,18 +31,18 @@ class Dnsviz < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/99/fb/e7cd35bba24295ad41abfdff30f6b4c271fd6ac70d20132fa503c3e768e0/dnspython-2.2.1.tar.gz"
-    sha256 "0f7569a4a6ff151958b64304071d370daa3243d15941a7beedf0c9fe5105603e"
+    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "M2Crypto" do
-    url "https://files.pythonhosted.org/packages/2c/52/c35ec79dd97a8ecf6b2bbd651df528abb47705def774a4a15b99977274e8/M2Crypto-0.38.0.tar.gz"
-    sha256 "99f2260a30901c949a8dc6d5f82cd5312ffb8abc92e76633baf231bbbcb2decb"
+    url "https://files.pythonhosted.org/packages/16/49/bfeaf55da3378292e40e93319717bb4334400e86c00a57fc52677f11fb65/M2Crypto-0.39.0.tar.gz"
+    sha256 "24c0f471358b8b19ad4c8aa9da12e868030b65c1fdb3279d006df60c9501338a"
   end
 
   resource "pygraphviz" do
-    url "https://files.pythonhosted.org/packages/ee/7e/7366c082f959db7ee18a16fc38dc594158ede65ca789bef87751ed5130c7/pygraphviz-1.10.zip"
-    sha256 "457e093a888128903251a266a8cc16b4ba93f3f6334b3ebfed92c7471a74d867"
+    url "https://files.pythonhosted.org/packages/19/db/cc09516573e79a35ac73f437bdcf27893939923d1d06b439897ffc7f3217/pygraphviz-1.11.zip"
+    sha256 "a97eb5ced266f45053ebb1f2c6c6d29091690503e3a5c14be7f908b37b06f2d4"
   end
 
   def install
