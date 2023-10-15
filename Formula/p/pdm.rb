@@ -6,6 +6,7 @@ class Pdm < Formula
   url "https://files.pythonhosted.org/packages/10/6a/51f833b6dd9f4e65416c6b7b15c5ae9d8232d0cf58fc9bfeeb8dfe1c1120/pdm-2.10.0.tar.gz"
   sha256 "ce2249595af9f61b0926a0899632df49b1c711261e8056a4fae14b53f93d9193"
   license "MIT"
+  revision 1
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
@@ -22,7 +23,7 @@ class Pdm < Formula
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   resource "blinker" do
@@ -128,7 +129,7 @@ class Pdm < Formula
   def install
     virtualenv_install_with_resources
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
@@ -144,15 +145,14 @@ class Pdm < Formula
       license = {text = "MIT"}
 
       [build-system]
-      requires = ["pdm-pep517>=0.12.0"]
-      build-backend = "pdm.pep517.api"
-
+      requires = ["pdm-backend"]
+      build-backend = "pdm.backend"
     EOS
-    system bin/"pdm", "add", "requests==2.24.0"
-    assert_match "dependencies = [\n    \"requests==2.24.0\",\n]", (testpath/"pyproject.toml").read
+    system bin/"pdm", "add", "requests==2.31.0"
+    assert_match "dependencies = [\n    \"requests==2.31.0\",\n]", (testpath/"pyproject.toml").read
     assert_predicate testpath/"pdm.lock", :exist?
     assert_match "name = \"urllib3\"", (testpath/"pdm.lock").read
     output = shell_output("#{bin}/pdm run python -c 'import requests;print(requests.__version__)'")
-    assert_equal "2.24.0", output.strip
+    assert_equal "2.31.0", output.strip
   end
 end
