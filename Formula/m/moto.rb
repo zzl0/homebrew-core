@@ -6,6 +6,7 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/80/40/239f1834d73e92b5a071aa23373c5bb01ad7f97d4103c5d0ba5fabd5ea1e/moto-4.2.6.tar.gz"
   sha256 "ce0a55d7e756c59a5a4392c7097aa5ca53e00aa2dd3f7000093356be15e7aef9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83a7f4c24cb30f4388f8b81c2d95d9cc39d7cb33c8fbcdceb6148033b3a44133"
@@ -24,7 +25,7 @@ class Moto < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -198,11 +199,15 @@ class Moto < Formula
     sha256 "341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
     virtualenv_install_with_resources
 
     # link dependent virtualenvs to this one
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages(python3)
     paths = %w[cfn-lint].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
