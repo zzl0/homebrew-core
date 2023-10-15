@@ -6,6 +6,7 @@ class Ykman < Formula
   url "https://files.pythonhosted.org/packages/e4/25/3a42efa20f10f7bcec116ee678c36fb9a58b8cc12699be9603f1378d6f17/yubikey_manager-5.2.1.tar.gz"
   sha256 "35c5aa83ac474fd2434c33267dc0e33d312b3969b108f885e533463af3fbe4e1"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
@@ -23,7 +24,7 @@ class Ykman < Formula
   depends_on "keyring"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libffi"
   uses_from_macos "pcsc-lite"
@@ -48,7 +49,7 @@ class Ykman < Formula
     ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC" if OS.linux?
 
     # Fix `ModuleNotFoundError` issue with `keyring``
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     keyring_site_packages = Formula["keyring"].opt_libexec/site_packages
     ENV.prepend_path "PYTHONPATH", keyring_site_packages
 
