@@ -25,14 +25,15 @@ class Ldns < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6401729572e7c28d1d691e47a8bbcd7cfb88b9e1a2e1a2df0e6a3ec066286ff"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   conflicts_with "drill", because: "both install a `drill` binary"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     args = *std_configure_args + %W[
       --with-drill
       --with-examples
