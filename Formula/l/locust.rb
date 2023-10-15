@@ -8,14 +8,18 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6700f52718b21a50b6322e6639a9a0a77dd70aedf292f93615bd577d0b7d133"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bce00d84ab62d932f7917e1471eccb858b381bdfd0ddce1bfca66ab56879eab"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a82b371fd587a754634caabf02cf36d7ff5e3e2c22f35f9f3fb630944ef483a"
-    sha256 cellar: :any_skip_relocation, monterey:       "3131eec65c151d9391d6452b4dbbd44807fd03b7c485a9098b27bf60edcfccae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6507a4a16d602486101d2be88b1c0318087b108bf53dbb430e40f6ded364543b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e1c476f9bd7df7de08defc38be90a8e57b7b56307425dda9f1b4d8baf8674cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12a75c3a52d2f878cafee5838d609528baff5eed9818e3ab268256510282b17a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8e10fac984610b49d381223c129b8cd43f87cb4871b61ffabd8054103eec2bef"
+    sha256 cellar: :any_skip_relocation, monterey:       "8720936d78aee7602c05d6186c1bca9812a129797ecd66e7de9aff0d0edaa1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6efd1cd46d60a6d8212bd7a94095787570b8b8a3e09e74ba4bd61668d35ce37f"
   end
 
   depends_on "python-certifi"
+  depends_on "python-click"
+  depends_on "python-markupsafe"
+  depends_on "python-psutil"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -33,11 +37,6 @@ class Locust < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "configargparse" do
@@ -90,19 +89,9 @@ class Locust < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "msgpack" do
     url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
     sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
   end
 
   resource "pyzmq" do
