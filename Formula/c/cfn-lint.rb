@@ -6,6 +6,7 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/ec/bd/60a3f36b698caeec8f4e7e35e030e268c24701de4dcccd07a5e5e1626827/cfn-lint-0.81.0.tar.gz"
   sha256 "532cbfe076fa8b68e70ec67743e9086169ef6d15be3306cae8aa57b38994fd8f"
   license "MIT-0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6fad1ebdfe41790f79df17936eebe9d257aa4525b5adc39871f2ac931967b398"
@@ -19,7 +20,7 @@ class CfnLint < Formula
 
   depends_on "rust" => :build
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
