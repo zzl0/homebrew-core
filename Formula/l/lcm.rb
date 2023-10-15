@@ -28,7 +28,11 @@ class Lcm < Formula
   depends_on "glib"
   depends_on "lua"
   depends_on "openjdk"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  def python3
+    which("python3.12")
+  end
 
   def install
     # Adding RPATH in #{lib}/lua/X.Y/lcm.so and some #{bin}/*.
@@ -37,7 +41,7 @@ class Lcm < Formula
       -DLCM_ENABLE_EXAMPLES=OFF
       -DLCM_ENABLE_TESTS=OFF
       -DLCM_JAVA_TARGET_VERSION=8
-      -DPYTHON_EXECUTABLE=#{which("python3.11")}
+      -DPYTHON_EXECUTABLE=#{python3}
     ]
 
     # `lcm-lua/lualcm_lcm.c:577:9: error: ‘subscription’ may be used uninitialized`
