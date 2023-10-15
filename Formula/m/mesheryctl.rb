@@ -2,8 +2,8 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
-      tag:      "v0.6.158",
-      revision: "f2cf248fdd6002180d7a01121247b499e108aac1"
+      tag:      "v0.6.159",
+      revision: "08498c70346f5120a2e9319a7a47b2a207bedc98"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
