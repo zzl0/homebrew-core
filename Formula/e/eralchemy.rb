@@ -9,15 +9,14 @@ class Eralchemy < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5006be4e877efa026d83337d5414a7d0137db77c7851b778ca66344686d66986"
-    sha256 cellar: :any,                 arm64_ventura:  "d9a7e039613efb2f43aef46a1a5dbcfaa023492980669033c499f1a131fc1fdd"
-    sha256 cellar: :any,                 arm64_monterey: "fb737dbe25a1db5c7a9753b46accbb874e19e9c72aa8a7eecc265d87b4f8bdd2"
-    sha256 cellar: :any,                 arm64_big_sur:  "faf8dbcd53995a42dcefa37734951a6f406f394b682ee453c273634664977009"
-    sha256 cellar: :any,                 sonoma:         "e1008873b5e2571e01e6934ff9d1255eb6bd8c7eb81434ecff5b8e94e43050cb"
-    sha256 cellar: :any,                 ventura:        "3536df041f23e0ba8c2c83d8bf35c579985ef5bdbe748e056e84a684d31d1930"
-    sha256 cellar: :any,                 monterey:       "7b4299e2e6c576debd6b58fee020da258fe500829cf34c681b3840997f137c51"
-    sha256 cellar: :any,                 big_sur:        "4fd5a115f664cc215f443d1e6e5744c558579595bfa8b6bd8de9b56a684cde00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "272c801bd1fd6068dd1e9899ba3c08233c95d38e631e328b607fac4bb36af430"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a6ed7900c4ae0d86c0367a73d0ff6347b0d4926c1b5e7ff55585392749564758"
+    sha256 cellar: :any,                 arm64_ventura:  "07ddc38eec10f049dfc18f65a158110bba687de240a6019a98a79a1cd19bb346"
+    sha256 cellar: :any,                 arm64_monterey: "e45387cbdc1de739e84583380009217fe11afdd30afb49bac433760bb8e1b0d6"
+    sha256 cellar: :any,                 sonoma:         "acb34ace16cfeaeee0dbb47d5dcb7048aacced1f1d4c6904eab4b4d8c0cc9bf3"
+    sha256 cellar: :any,                 ventura:        "12ab1b4d747e635bb747b087e989b29c967eee5eab308af169d05a20d5616122"
+    sha256 cellar: :any,                 monterey:       "d7a3ef294cc855950faf77b476f3ff424559fbcbffae08dc32e6af938a81cd57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5593d71ebe46e3ddeef556375e808b01f9cba7726c61fb7ea7d00e7a825bd725"
   end
 
   depends_on "pkg-config" => :build
