@@ -28,7 +28,8 @@ class NodeAT16 < Formula
   # disable! date: "2023-09-11", because: :unsupported
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c"
@@ -47,7 +48,7 @@ class NodeAT16 < Formula
   fails_with gcc: "5"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which(python3)
 
