@@ -443,6 +443,9 @@
   "goolabs": {
     "exclude_packages": ["certifi", "six"]
   },
+  "gptline": {
+    "exclude_packages": ["certifi", "click", "lxml", "pygments", "pyyaml", "six"]
+  },
   "grayskull": {
     "exclude_packages": ["certifi", "packaging", "typing-extensions"]
   },
