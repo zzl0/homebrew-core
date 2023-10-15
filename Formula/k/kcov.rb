@@ -25,10 +25,10 @@ class Kcov < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "dwarfutils"
   depends_on "openssl@3"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
