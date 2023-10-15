@@ -181,7 +181,7 @@
   "charmcraft": {
     "extra_packages": ["appdirs", "pydantic"],
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "keyring", "pycparser", "PyYAML",
+      "certifi", "cffi", "cryptography", "pycparser", "PyYAML",
       "pytz", "six", "tabulate", "typing-extensions", "packaging"
     ]
   },
