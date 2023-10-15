@@ -6,6 +6,7 @@ class Isort < Formula
   url "https://files.pythonhosted.org/packages/a9/c4/dc00e42c158fc4dda2afebe57d2e948805c06d5169007f1724f0683010a9/isort-5.12.0.tar.gz"
   sha256 "8bef7dde241278824a6d83f44a544709b065191b95b6e50894bdc722fcba0504"
   license "MIT"
+  revision 1
   head "https://github.com/PyCQA/isort.git", branch: "main"
 
   livecheck do
@@ -25,7 +26,7 @@ class Isort < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5be5b318a34e64f4c13388e7fe8582eae88a5557fe6632d8ed402d3ff071c79"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
