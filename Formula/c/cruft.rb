@@ -6,7 +6,7 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d8/59/bb9e052fba37972e4b27db74d0bc770bade501d48336dec3c89fe57e9513/cruft-2.15.0.tar.gz"
   sha256 "9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/cruft/cruft.git", branch: "master"
 
   bottle do
@@ -21,7 +21,7 @@ class Cruft < Formula
 
   depends_on "cookiecutter"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "gitdb" do
@@ -44,11 +44,15 @@ class Cruft < Formula
     sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
     virtualenv_install_with_resources
 
     # we depend on cookiecutter, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages(python3)
     cookiecutter = Formula["cookiecutter"].opt_libexec
     (libexec/site_packages/"homebrew-cookiecutter.pth").write cookiecutter/site_packages
   end
