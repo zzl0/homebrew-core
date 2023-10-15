@@ -25,8 +25,9 @@ class C7n < Formula
 
   depends_on "rust" => :build # for rpds-py
   depends_on "python-argcomplete"
+  depends_on "python-setuptools"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
