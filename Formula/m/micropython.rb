@@ -16,9 +16,8 @@ class Micropython < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" # Requires python3 executable
-
-  uses_from_macos "libffi", since: :catalina # Requires libffi v3 closure API
+  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "python" # Requires libffi v3 closure API
 
   def install
     system "make", "-C", "ports/unix", "install", "PREFIX=#{prefix}"
