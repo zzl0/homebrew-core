@@ -21,7 +21,7 @@ class Commitizen < Formula
   depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
@@ -87,7 +87,7 @@ class Commitizen < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    python_exe = Formula["python@3.12"].opt_libexec/"bin/python"
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
     generate_completions_from_executable(
       python_exe, register_argcomplete, "cz",
