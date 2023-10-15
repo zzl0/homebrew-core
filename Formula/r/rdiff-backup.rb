@@ -15,12 +15,16 @@ class RdiffBackup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab812d3b5219a0ea3ed048ce216a04af62b77b44fb5f258dd286d22339a7f3bd"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "librsync"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    python3 = "python3.11"
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
