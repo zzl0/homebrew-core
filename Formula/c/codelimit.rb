@@ -23,12 +23,12 @@ class Codelimit < Formula
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "colorama" do
@@ -87,8 +87,8 @@ class Codelimit < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "spinners" do
@@ -117,14 +117,18 @@ class Codelimit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
     sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
+
+  # upstream py3.12 report, https://github.com/getcodelimit/codelimit/issues/26
+  # patch is already in the branch, https://github.com/getcodelimit/codelimit/tree/issue-26-Support_Python_3_12
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -139,3 +143,25 @@ class Codelimit < Formula
     assert_includes shell_output("#{bin}/codelimit check #{testpath}/test.py"), "Refactoring not necessary"
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index 0092882..1d9701c 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -9,13 +9,14 @@ readme = "README.md"
+ codelimit = "codelimit.__main__:cli"
+
+ [tool.poetry.dependencies]
+-python = ">=3.9,<3.12"
++python = ">=3.9,<=3.12"
+ halo = "^0.0.31"
+ plotext = "^5.2.8"
+ pygments = "^2.13.0"
+ textual = "^0.34.0"
+ requests = "^2.28.2"
+ typer = "^0.9.0"
++aiohttp = "^3.9.0b0"
+
+ [tool.poe.tasks.bundle]
+ help = "Create a binary executable using pyinstaller"
