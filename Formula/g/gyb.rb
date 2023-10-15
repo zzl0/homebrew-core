@@ -20,9 +20,10 @@ class Gyb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d86b45e5d406868cf9fb510d1ffc152953374e2b70e350d52b68c865e504751"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "altgraph" do
