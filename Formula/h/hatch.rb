@@ -6,7 +6,7 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/5a/ff/d0dc75f39798af1d3d2258c82c5fdeca2817cbfadba7c41e8fb7cf0db984/hatch-1.7.0.tar.gz"
   sha256 "7afc701fd5b33684a6650e1ecab8957e19685f824240ba7458dcacd66f90fb46"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 4
@@ -23,7 +23,7 @@ class Hatch < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   on_linux do
@@ -170,7 +170,7 @@ class Hatch < Formula
     virtualenv_install_with_resources
 
     # install a `.pth` file to link separate formulae
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
@@ -183,11 +183,11 @@ class Hatch < Formula
     assert_predicate testpath/"homebrew/pyproject.toml", :exist?
 
     cd testpath/"homebrew" do
-      inreplace "pyproject.toml", "dependencies = []", "dependencies = ['requests==2.24.0']"
+      inreplace "pyproject.toml", "dependencies = []", "dependencies = ['requests==2.31.0']"
       system bin/"hatch", "config", "set", "dirs.env.virtual", ".venv"
       system bin/"hatch", "env", "create"
       output = shell_output("#{bin}/hatch env run -- python -c 'import requests;print(requests.__version__)'")
-      assert_equal "2.24.0", output.strip.lines.last
+      assert_equal "2.31.0", output.strip.lines.last
     end
   end
 end
