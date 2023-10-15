@@ -3,8 +3,8 @@ class Uhdm < Formula
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
   homepage "https://github.com/chipsalliance/UHDM"
-  url "https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.75.tar.gz"
-  sha256 "7dcb999a6b04b1abe40d40db25e6269470313c09804ce8285cc450c2f0bcd446"
+  url "https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.76.tar.gz"
+  sha256 "72fffa0f53632716536ad70495749f460f90903650d41fe4d11e454b8b7de68a"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Uhdm < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "pkg-config" => :test
   depends_on "capnp"
@@ -29,8 +29,12 @@ class Uhdm < Formula
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
+    venv = virtualenv_create(buildpath/"venv", python3)
     resources.each do |r|
       venv.pip_install r
     end
