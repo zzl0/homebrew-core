@@ -13,7 +13,7 @@ class HgFastExport < Formula
   end
 
   depends_on "mercurial"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     # The Python executable is tested from PATH
@@ -21,7 +21,7 @@ class HgFastExport < Formula
     # See https://github.com/Homebrew/homebrew-core/pull/90709#issuecomment-988548657
     %w[hg-fast-export.sh hg-reset.sh].each do |f|
       inreplace f, "for python_cmd in ",
-                   "for python_cmd in '#{which("python3.11")}' "
+                   "for python_cmd in '#{which("python3.12")}' "
     end
 
     libexec.install Dir["*"]
@@ -44,7 +44,7 @@ class HgFastExport < Formula
       system "git", "config", "--global", "init.defaultBranch", "master"
       system "git", "init"
       system "git", "config", "core.ignoreCase", "false"
-      system "hg-fast-export.sh", "-r", "#{testpath}/hg-repo"
+      system bin/"hg-fast-export.sh", "-r", "#{testpath}/hg-repo"
       system "git", "checkout", "HEAD"
     end
 
