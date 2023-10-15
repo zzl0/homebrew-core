@@ -6,6 +6,7 @@ class Dooit < Formula
   url "https://files.pythonhosted.org/packages/c7/b3/8d73a4ed09c6589242adf005d3c83b662989ac944b983efbfe27fc6b3d93/dooit-2.0.1.tar.gz"
   sha256 "ebf1a83a1cd6f3a101cf7a4b122790d705905540ddf89b5a4a64a4de1199c983"
   license "MIT"
+  revision 1
   head "https://github.com/kraanzu/dooit.git", branch: "main"
 
   bottle do
@@ -22,7 +23,7 @@ class Dooit < Formula
   depends_on "pygments"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "virtualenv"
@@ -96,7 +97,7 @@ class Dooit < Formula
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     virtualenv = Formula["virtualenv"].opt_libexec
     (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
   end
