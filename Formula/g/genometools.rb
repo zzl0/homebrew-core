@@ -18,9 +18,10 @@ class Genometools < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "cairo"
   depends_on "pango"
-  depends_on "python@3.10"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "libpthread-stubs" => :build
@@ -29,7 +30,7 @@ class Genometools < Formula
   conflicts_with "libslax", because: "both install `bin/gt`"
 
   def python3
-    "python3.10"
+    which("python3.12")
   end
 
   def install
@@ -42,13 +43,13 @@ class Genometools < Formula
         "gtlib = CDLL(\"libgenometools\" + soext)",
         "gtlib = CDLL(\"#{lib}/libgenometools\" + soext)"
 
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args, "."
       system python3, "-m", "unittest", "discover", "tests"
     end
   end
 
   test do
-    system "#{bin}/gt", "-test"
+    system bin/"gt", "-test"
     system python3, "-c", "import gt"
   end
 end
