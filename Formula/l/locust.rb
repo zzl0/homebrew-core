@@ -8,12 +8,12 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e1c476f9bd7df7de08defc38be90a8e57b7b56307425dda9f1b4d8baf8674cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12a75c3a52d2f878cafee5838d609528baff5eed9818e3ab268256510282b17a"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e10fac984610b49d381223c129b8cd43f87cb4871b61ffabd8054103eec2bef"
-    sha256 cellar: :any_skip_relocation, monterey:       "8720936d78aee7602c05d6186c1bca9812a129797ecd66e7de9aff0d0edaa1cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6efd1cd46d60a6d8212bd7a94095787570b8b8a3e09e74ba4bd61668d35ce37f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a06ccfe542ff3e4a3fe4debfd6b57a446a7c6fc2d388700cf0a4d6c67961ca4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad78d7583e6a42e122aa237622b660fdcdd45779506499a08ca7765949a2554f"
+    sha256 cellar: :any_skip_relocation, ventura:        "df29e8a36935d037dcaf44d8a5e72024cd5a173236bfe427170fb04ba347a228"
+    sha256 cellar: :any_skip_relocation, monterey:       "891976fa70bdee97a2145b2112bb00030cc3b0092fe14718b66220189cc9c521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "258c8c9b65b620ea3f8ad4715b6b5e7f4b04423f54d391b5df078673914b394a"
   end
 
   depends_on "python-certifi"
@@ -21,7 +21,7 @@ class Locust < Formula
   depends_on "python-markupsafe"
   depends_on "python-psutil"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "blinker" do
