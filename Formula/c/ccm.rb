@@ -23,7 +23,8 @@ class Ccm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3e9f1a5872ef6102a0f2be3e44a4badd1fe2f6dbe2ddd49ce59650a80ff93c0"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
