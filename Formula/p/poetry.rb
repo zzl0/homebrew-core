@@ -6,7 +6,7 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/c6/5f/f60c900299e05736900a732f079a306b762d1343e47d965862d140b6e550/poetry-1.6.1.tar.gz"
   sha256 "0ab9b1a592731cc8b252b8d6aaeea19c72cc0a109d7468b829ad57e6c48039d2"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
@@ -25,7 +25,7 @@ class Poetry < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   resource "attrs" do
@@ -161,7 +161,7 @@ class Poetry < Formula
   def install
     virtualenv_install_with_resources
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
