@@ -22,14 +22,10 @@ class CfnFlip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "362d11490de8c297b78c382109f617f09beb4f8c38f40204923744844a1e1704"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
-  end
 
   def install
     virtualenv_install_with_resources
