@@ -3,6 +3,7 @@ class Gnuski < Formula
   homepage "https://gnuski.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/gnuski/gnuski/gnuski-0.3/gnuski-0.3.tar.gz"
   sha256 "1b629bd29dd6ad362b56055ccdb4c7ad462ff39d7a0deb915753c2096f5f959d"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da56e306a753eeae75d10c177c42a17698bdb41e0cfb9487f98af4347353510"
@@ -22,6 +23,8 @@ class Gnuski < Formula
   uses_from_macos "ncurses"
 
   def install
+    # https://sourceforge.net/p/gnuski/patches/2/
+    inreplace "objects.h", "#endif", "void setupColors ();\n#endif"
     system "make"
     bin.install "gnuski"
   end
