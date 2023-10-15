@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/d5/fa/73b0242f7d171cc816d99b9abe4f1e0cdbb6d285801bb780aad034229c33/dvc-3.25.0.tar.gz"
-  sha256 "0dde72d185299aa7654616aadbb5c5f5d7cee9069a5e8b742266c18b498c5e15"
+  url "https://files.pythonhosted.org/packages/20/98/d9eba51be3591c8f1ae4baf26e3cbffef2f203a7c9fe75d059d97fadb003/dvc-3.26.1.tar.gz"
+  sha256 "08f743a0507074c206c02f2a8e7cf0f21b91480c2c79e2a907be942a86b4a79a"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "49e10e0baaea5283a22bcc33e572c044d06266762548332acbfae67e0aceddd4"
-    sha256 cellar: :any,                 arm64_ventura:  "5e63979bb7368384a8ae79d9a4f6a018389f2d67ac0f19f2fcf993a09e8a66d4"
-    sha256 cellar: :any,                 arm64_monterey: "517c4ee9237586826cf62061ceb7010b4ab57683e9da28ee98908ca20d4e0239"
-    sha256 cellar: :any,                 sonoma:         "27149040896352beee8eb8dd6bf3a98d0d7df8ebaa5aa75edf2bf8f45fbd96e7"
-    sha256 cellar: :any,                 ventura:        "2947dbb4bbf86cd884e28d7323df9795d902c10a15d1a0a98ee35b63952646d4"
-    sha256 cellar: :any,                 monterey:       "69ef632a6fbaf681cad4ccfffc8066b6e1f2b85c691b17d1db8c892a4d5ea50f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b479e0e5cd073ceef8275452ac31d292690c23e6bd397665c6abe3b9b74cd00"
+    sha256 cellar: :any,                 arm64_sonoma:   "0cadb9fd153e99979ed6e844a6d9bff99b2a834047576058715b636ead902101"
+    sha256 cellar: :any,                 arm64_ventura:  "20667275374ea0b2fa5fa9ca3c15ef43fc4be10c4c69698c8f2241bb8fe01345"
+    sha256 cellar: :any,                 arm64_monterey: "c21709d89bb10dfa970b2e1a7281011d7cca89bd11ba604edd7ce920baaa445a"
+    sha256 cellar: :any,                 sonoma:         "a507c671582004a73c7e74dab5aa848850276a145224001c3a2d46ccc574019a"
+    sha256 cellar: :any,                 ventura:        "9064dc37df7f04f86d07631d9a7db44ebf9cd783bda7799491646124f1a6a3c5"
+    sha256 cellar: :any,                 monterey:       "2d73218e64ac5dad9647c7b3cc8dc6782c0b075afc9709be97fd2e2b8c7cd1d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26eb59ebe5a67616b31b1a3612b5e87135e60f6a7a6ac405699007c58c732aad"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -141,13 +140,13 @@ class Dvc < Formula
   end
 
   resource "azure-identity" do
-    url "https://files.pythonhosted.org/packages/e4/2c/f5e1b34c34c580d3d47ddaa75bc15374a1f601547bcbb1e1e366777e7995/azure-identity-1.14.0.zip"
-    sha256 "72441799f8c5c89bfe21026965e266672a7c5d050c2c65119ef899dd5362e2b1"
+    url "https://files.pythonhosted.org/packages/84/a5/2a20ec2e08eedaca9f4793a4005d6b1d904f068ea7a482a2cdc1327ef0a3/azure-identity-1.14.1.zip"
+    sha256 "48e2a9dbdc59b4f095f841d867d9a8cbe4c1cdbbad8251e055561afd47b4a9b8"
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/62/6e/93d698736a14c7d178de053316ac3b30c81140e716c52e3abc7e3779302b/azure-storage-blob-12.18.2.tar.gz"
-    sha256 "e11935348981ffc005b848b55db25c04f2d1f90e1ee33000659906b763cf14c8"
+    url "https://files.pythonhosted.org/packages/9d/f5/4ec0b5b3a99f6a4bb5c82f8dbab121bcd892c355ae363140558a164cff08/azure-storage-blob-12.18.3.tar.gz"
+    sha256 "d8ced0deee3367fa3d4f3d1a03cd9edadf4440c0a371f503d623fa6c807554ee"
   end
 
   resource "bcrypt" do
@@ -381,13 +380,13 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/fa/6c/97e6eeac0959783c2ac21aea3c560f970327fbb0498a6011d58cbfbb30e8/google-api-python-client-2.102.0.tar.gz"
-    sha256 "906ff9b672a4d5ddad8f4073a040e59f1fba6734909c14cd49938e37be53691d"
+    url "https://files.pythonhosted.org/packages/32/2f/e65cb23785d35c247e4e5211ce9643c769bac17c5acbeea408d85fb659d1/google-api-python-client-2.103.0.tar.gz"
+    sha256 "5b48dc23913b9a1b447991add03f27c335831559b5a870c522316eae671caf44"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/49/5c/537d35dbbd248cd58fa1014a9770063b103fa63a3d929bbcf739d2d731f9/google-auth-2.23.2.tar.gz"
-    sha256 "5a9af4be520ba33651471a0264eead312521566f44631cbb621164bc30c8fd40"
+    url "https://files.pythonhosted.org/packages/45/71/0f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1/google-auth-2.23.3.tar.gz"
+    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
   end
 
   resource "google-auth-httplib2" do
@@ -406,8 +405,8 @@ class Dvc < Formula
   end
 
   resource "google-cloud-storage" do
-    url "https://files.pythonhosted.org/packages/50/a5/6c9a105eabe77deeb313cbf1d13c2cda4444af7298e17d3ab350a0e5cfb9/google-cloud-storage-2.11.0.tar.gz"
-    sha256 "6fbf62659b83c8f3a0a743af0d661d2046c97c3a5bfb587c4662c4bc68de3e31"
+    url "https://files.pythonhosted.org/packages/7d/bb/cb35ab1fae6c270ae954b79af8b97e1c4a5007ddded0cf4893e97086b2a5/google-cloud-storage-2.12.0.tar.gz"
+    sha256 "57c0bcda2f5e11f008a155d8636d8381d5abab46b58e0cae0e46dd5e595e6b46"
   end
 
   resource "google-crc32c" do
@@ -421,8 +420,8 @@ class Dvc < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
-    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
+    url "https://files.pythonhosted.org/packages/95/41/f9d4425eac5cec8c0356575b8f183e8f1f7206875b1e748bd3af4b4a8a1e/googleapis-common-protos-1.61.0.tar.gz"
+    sha256 "8a64866a97f6304a7179873a465d6eee97b7a24ec6cfd78e0f575e96b821240b"
   end
 
   resource "grandalf" do
@@ -536,8 +535,8 @@ class Dvc < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/d9/e8/3b73e455a5f5f16ed70b364b5dbaec5691e7ae1d3c1e6cf8945735ec05a0/orjson-3.9.7.tar.gz"
-    sha256 "85e39198f78e2f7e054d296395f6c96f5e02892337746ef5b6a1bf3ed5910142"
+    url "https://files.pythonhosted.org/packages/d3/76/27ae074f0355712777632f3f123b66d21093a2a89532f600311c36de0d31/orjson-3.9.9.tar.gz"
+    sha256 "02e693843c2959befdd82d1ebae8b05ed12d1cb821605d5f9fe9f98ca5c9fd2b"
   end
 
   resource "oss2" do
