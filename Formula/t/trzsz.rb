@@ -8,15 +8,13 @@ class Trzsz < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "503be57d45d73c84986a629955482016551cf1366a96e8f4af8e69d9ff8869e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23f1f3bbcb09a8fd40f8aa2b3bccf7ccffbed8499fcbfe39010808262b75db00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cfd5f8c76416c5621dcfcd9601118e4f355b2efc363dd4f0e343610f4c59dae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d7d38c446d62110bc2d5083530a856446d763dd3cac57078b01c073898676be"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10d631ad2b6a24246d9b9881a00cc65c77a712335615a3d82114536fff5e3a91"
-    sha256 cellar: :any_skip_relocation, ventura:        "ecfa341ac34e13d455cc79b641cca9897fd48f8838de639cf1abb7a3527b1d0e"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c142278be05fd16fecbb6d88498ff47ad36b493ebe9df24069806ff84b3bd41"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1b23e8d8628a69bf4646ea779a9b4459dd3d92d93b696c20dc31ec70bbe571a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e0d119728b028fc04da77460caa7b93059a5ce3a75c00a13416dd53044a8003"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6faac52d1f634fcb27425604f334ccfa051322e2f5b1a191c36d63eeb1499bf9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "494a6a9aadac26916e2f9f0130e34e88356464dfc4d2fd40230fb7f31f50c293"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8c9d97288a52a4a0ac09ddefccf8bfe3aef297c764dfbbbc2af54277b981ed0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb3f2ab656976e358c5e52006f04f493124172d50aa4a8c25f285067e5acee62"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3af0e7ab1ac1d74c0f964b1dcaa5d2fffabbc977b99a46e5cc097496db6144e"
+    sha256 cellar: :any_skip_relocation, monterey:       "2cf45e2f85155e9d0c8084db93193a318ec266728c0bf71b158e308ff397be16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67d08eff71def03b6517e4085593ae2b6a955ee81a978e3f48d274bda46fd3fe"
   end
 
   depends_on "protobuf"
