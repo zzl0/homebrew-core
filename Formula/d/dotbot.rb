@@ -19,7 +19,7 @@ class Dotbot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1f2ccdcae669a30e68b3dfcb15a11c3c5dd5aae86920447d35af1df285f7f39"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install
