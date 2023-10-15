@@ -238,7 +238,7 @@
     ]
   },
   "cookiecutter": {
-    "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "click", "markupsafe", "Pygments", "PyYAML", "six"]
   },
   "copier": {
     "exclude_packages": ["markupsafe", "packaging", "Pygments", "PyYAML", "typing-extensions"]
