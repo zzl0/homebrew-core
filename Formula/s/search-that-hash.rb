@@ -6,7 +6,7 @@ class SearchThatHash < Formula
   url "https://files.pythonhosted.org/packages/5e/b9/a304a92ba77a9e18b3023b66634e71cded5285cef7e3b56d3c1874e9d84e/search-that-hash-0.2.8.tar.gz"
   sha256 "384498abbb9a611aa173b20d06b135e013674670fecc01b34d456bfe536e0bca"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
   head "https://github.com/HashPals/Search-That-Hash.git", branch: "main"
 
   bottle do
@@ -23,7 +23,7 @@ class SearchThatHash < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -91,7 +91,7 @@ class SearchThatHash < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
