@@ -1,8 +1,8 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
-  url "https://github.com/qarmin/czkawka/archive/refs/tags/6.0.0.tar.gz"
-  sha256 "32dc1d8a55bc3ce478246830a1f81679affa85735e69aa049fd83e30271e368f"
+  url "https://github.com/qarmin/czkawka/archive/refs/tags/6.1.0.tar.gz"
+  sha256 "63e64c717a93b3d5210d6a4718833fdbf3ad7b28c9b74a243d9de3ab1ee6ad5a"
   license all_of: ["MIT", "CC-BY-4.0"]
 
   bottle do
@@ -43,7 +43,9 @@ class Czkawka < Formula
   end
 
   test do
-    assert_match "Found 0 duplicated files in 0 groups",
-    shell_output("#{bin}/czkawka_cli dup --directories #{testpath}")
+    output = shell_output("#{bin}/czkawka_cli dup --directories #{testpath}")
+    assert_match "Not found any duplicates", output
+
+    assert_match version.to_s, shell_output("#{bin}/czkawka_cli --version")
   end
 end
