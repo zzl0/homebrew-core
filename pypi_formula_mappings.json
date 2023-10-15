@@ -514,7 +514,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "johnnydep": {
-    "exclude_packages": ["six", "tabulate", "packaging", "PyYAML"]
+    "exclude_packages": ["packaging", "PyYAML", "six", "tabulate", "toml"]
   },
   "jrnl": {
     "exclude_packages": ["cffi", "cryptography", "keyring", "pygments", "six"]
