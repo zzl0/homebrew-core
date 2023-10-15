@@ -9,16 +9,14 @@ class Iredis < Formula
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40c23e2293bdf121aa868f0609e3332b77578552ced5cd108752727454cc645b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da261678196e2f5a48d098ce37d5c53e0eeebb5b5f900bcccde30eb3fcf36b8c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fab7656bd49fcbf0fc015402b0250f414443d288d0ad400ef6e0457005feb614"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7faf3bfa27350a3b72cca62ebea4006db909d4dde6816476b9c0a9cb22069af4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26f219100729b4f46bca1fc7f8dcc9cb87ff65d8008b7fbc28156e02003f2492"
-    sha256 cellar: :any_skip_relocation, ventura:        "28cb02efa43e6b1d61a15ecb2489e1c3f7e2f4bc295a22c4aa0e2f889fd007bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "52a5366fa52afe2a1111a9200e76a598dd247d186bad4fd0b2618f80a067da94"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66fa258a69f44fa0a93d9cf7d9a634b307898bad4fbc8d007a021417212689c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce356782d7a76a37a4fdc05b9b49730e68a0f4fdf88399a98dba3c022f556831"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fade1399e18b59908d295ec1b759fc8169e81df014e578586986643c064bf67c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5a50008cee2da87dcafd7afb3c172809250a6b1b4ad81099cf385f7638f7513"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6847a48c56af908f0e493dc2491a85a02b970b33384021a0326c358dec4bc741"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6de51b264bade34980d373af935010c68fb05fee83ee988c1fa073d83c765cff"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6b3885e4698d3637c19438fdbedaa7e0b074e002255812b79686d71b69597f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ef581c30dfaaa29ab5f20c92766e803e908f83458d483821f9ebd2fb1610c1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b873556fa5ad46f33e10d99ba08ce768c59f11b1683ae3bb90ef95a73234d2b"
   end
 
   depends_on "pygments"
