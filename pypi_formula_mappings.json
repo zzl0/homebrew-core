@@ -565,7 +565,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "litecli": {
-    "exclude_packages": ["six", "tabulate", "Pygments"]
+    "exclude_packages": ["click", "Pygments", "six", "tabulate"]
   },
   "llm": {
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six", "tabulate", "typing-extensions"]
