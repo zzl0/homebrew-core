@@ -10,11 +10,12 @@ class Meson < Formula
     sha256 cellar: :any_skip_relocation, all: "cabd1b94cd0ce7fc292f809d1389f61aa13af4b63f50af45a83cf0fb08de8d93"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "ninja"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
-    python = "python3.11"
+    python = "python3.12"
     system python, *Language::Python.setup_install_args(prefix, python), "--install-data=#{prefix}"
 
     bash_completion.install "data/shell-completions/bash/meson"
