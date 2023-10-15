@@ -27,10 +27,11 @@ class Liblouis < Formula
 
   depends_on "help2man" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
