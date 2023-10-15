@@ -23,7 +23,8 @@ class JujuWait < Formula
   end
 
   depends_on "juju"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install
