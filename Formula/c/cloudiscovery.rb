@@ -18,8 +18,10 @@ class Cloudiscovery < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "09a970e2799657518e56006a5e7cd94fec5cc052fe7f5ab78cc5faac90c5f4f2"
   end
 
+  depends_on "python-markupsafe"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boto3" do
