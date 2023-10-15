@@ -6,6 +6,7 @@ class Nox < Formula
   url "https://files.pythonhosted.org/packages/e7/3b/529fa8920b18b92085ed5923caee4aee112c65a7af99b34bd5a868b82e3e/nox-2023.4.22.tar.gz"
   sha256 "46c0560b0dc609d7d967dc99e22cb463d3c4caf54a5fda735d6c11b5177e3a9f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 2
@@ -20,7 +21,7 @@ class Nox < Formula
 
   depends_on "python-argcomplete"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
   depends_on "virtualenv"
 
@@ -34,7 +35,7 @@ class Nox < Formula
     (bin/"tox-to-nox").unlink
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     virtualenv = Formula["virtualenv"].opt_libexec
     (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
   end
