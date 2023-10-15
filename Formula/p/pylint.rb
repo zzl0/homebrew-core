@@ -6,6 +6,7 @@ class Pylint < Formula
   url "https://files.pythonhosted.org/packages/9c/83/43e54a4168ef12f91a6609bd40a0ecfa6cb075eda43321ac96e57040f3ed/pylint-3.0.1.tar.gz"
   sha256 "81c6125637be216b4652ae50cc42b9f8208dfb725cdc7e04c48f6902f4dbdf40"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca6ce2b82c90eebd73649d49850f2c57f3435b7380c45f3b7819fd461611e882"
@@ -19,7 +20,7 @@ class Pylint < Formula
 
   depends_on "isort"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "astroid" do
     url "https://files.pythonhosted.org/packages/60/f7/536d171ce4e334b0ceec9720c016f59f2c75d986e4dbc52b34601cd7834a/astroid-3.0.0.tar.gz"
@@ -50,7 +51,7 @@ class Pylint < Formula
     virtualenv_install_with_resources
 
     # we depend on isort, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     isort = Formula["isort"].opt_libexec
     (libexec/site_packages/"homebrew-isort.pth").write isort/site_packages
   end
