@@ -29,7 +29,7 @@ class Halide < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "llvm@16"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   fails_with :gcc do
     version "6"
@@ -37,7 +37,7 @@ class Halide < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
