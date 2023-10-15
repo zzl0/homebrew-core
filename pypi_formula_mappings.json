@@ -169,7 +169,7 @@
     "exclude_packages": ["pycparser"]
   },
   "cfn-flip": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["click", "six", "PyYAML"]
   },
   "cfn-lint": {
     "exclude_packages": ["six", "PyYAML", "typing-extensions"]
