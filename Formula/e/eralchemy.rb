@@ -24,21 +24,17 @@ class Eralchemy < Formula
   depends_on "graphviz"
   depends_on "libpq"
   depends_on "openssl@3"
-  depends_on "python@3.11"
-
-  resource "psycopg2" do
-    url "https://files.pythonhosted.org/packages/fd/ae/98cb7a0cbb1d748ee547b058b14604bd0e9bf285a8e0cc5d148f8a8a952e/psycopg2-2.8.6.tar.gz"
-    sha256 "fb23f6c71107c37fd667cb4ea363ddeb936b348bbd6449278eb92c189699f543"
-  end
+  depends_on "python-typing-extensions"
+  depends_on "python@3.12"
 
   resource "pygraphviz" do
-    url "https://files.pythonhosted.org/packages/1e/19/acf3b8dbd378a2b38c6d9aaa6fa9fcd9f7b4aea5fcd3460014999ff92b3c/pygraphviz-1.6.zip"
-    sha256 "411ae84a5bc313e3e1523a1cace59159f512336318a510573b47f824edef8860"
+    url "https://files.pythonhosted.org/packages/19/db/cc09516573e79a35ac73f437bdcf27893939923d1d06b439897ffc7f3217/pygraphviz-1.11.zip"
+    sha256 "a97eb5ced266f45053ebb1f2c6c6d29091690503e3a5c14be7f908b37b06f2d4"
   end
 
-  resource "SQLAlchemy" do
-    url "https://files.pythonhosted.org/packages/69/ef/6d18860e18db68b8f25e0d268635f2f8cefa7a1cbf6d9d9f90214555a364/SQLAlchemy-1.3.20.tar.gz"
-    sha256 "d2f25c7f410338d31666d7ddedfa67570900e248b940d186b48461bd4e5569a1"
+  resource "sqlalchemy" do
+    url "https://files.pythonhosted.org/packages/ae/e2/47f40dc06472df5a906dd8eb9fe4ee2eb1c6b109c43545708f922b406acc/SQLAlchemy-2.0.22.tar.gz"
+    sha256 "5434cc601aa17570d79e5377f5fd45ff92f9379e2abed0be5e8c2fba8d353d2b"
   end
 
   resource "er_example" do
@@ -47,7 +43,7 @@ class Eralchemy < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources.reject { |r| r.name == "er_example" }
     venv.pip_install_and_link buildpath
   end
