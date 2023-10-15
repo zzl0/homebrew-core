@@ -900,7 +900,7 @@
     ]
   },
   "shallow-backup": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["click", "six"]
   },
   "shodan": {
     "exclude_packages": ["certifi", "click", "six"]

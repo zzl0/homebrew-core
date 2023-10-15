@@ -18,17 +18,13 @@ class ShallowBackup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a341724649f0e5dc9477700cc70071d672c84313d60cb4ec6677a11e5cf866"
   end
 
+  depends_on "python-click"
   depends_on "python@3.12"
   depends_on "six"
 
   resource "blessed" do
     url "https://files.pythonhosted.org/packages/25/ae/92e9968ad23205389ec6bd82e2d4fca3817f1cdef34e10aa8d529ef8b1d7/blessed-1.20.0.tar.gz"
     sha256 "2cdd67f8746e048f00df47a2880f4d6acbcdb399031b604e34ba8f71d5787680"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -79,6 +75,12 @@ class ShallowBackup < Formula
     inreplace libexec/Language::Python.site_packages("python3.12")/"editor.py",
       "from distutils.spawn import find_executable",
       "from shutil import which as find_executable"
+
+    generate_completions_from_executable(
+      bin/"shallow-backup",
+      shells:                 [:fish, :zsh],
+      shell_parameter_format: :click,
+    )
   end
 
   test do
