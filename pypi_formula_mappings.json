@@ -359,7 +359,7 @@
     "exclude_packages": ["cffi", "cryptography", "pycparser", "six", "PyYAML"]
   },
   "evernote-backup": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "click"]
   },
   "eye-d3": {
     "exclude_packages": ["packaging"]
