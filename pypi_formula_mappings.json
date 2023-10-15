@@ -222,7 +222,7 @@
     "exclude_packages": ["argcomplete", "PyYAML", "typing-extensions", "packaging"]
   },
   "conan": {
-    "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"],
+    "exclude_packages": ["certifi", "markupsafe", "Pygments", "PyYAML", "six"],
     "extra_packages": ["distro"]
   },
   "conan@1": {
