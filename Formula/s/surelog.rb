@@ -3,8 +3,8 @@ class Surelog < Formula
 
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https://github.com/chipsalliance/Surelog"
-  url "https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.75.tar.gz"
-  sha256 "4e6c44392dea7fba7bfc082459ab60458e91def59f3cdf0eccdad229d572829d"
+  url "https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.76.tar.gz"
+  sha256 "ddef62ff38f25bb1816f592b2ad0040507bbcdb268102b9b7555f592701a22dc"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
@@ -22,7 +22,7 @@ class Surelog < Formula
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "openjdk" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "googletest" => :test
   depends_on "pkg-config" => :test
@@ -35,8 +35,12 @@ class Surelog < Formula
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
+    venv = virtualenv_create(buildpath/"venv", python3)
     resources.each do |r|
       venv.pip_install r
     end
