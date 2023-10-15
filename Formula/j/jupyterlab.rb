@@ -30,6 +30,7 @@ class Jupyterlab < Formula
   depends_on "python-certifi"
   depends_on "python-lsp-server"
   depends_on "python-packaging"
+  depends_on "python-psutil"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -257,11 +258,6 @@ class Jupyterlab < Formula
   resource "prometheus-client" do
     url "https://files.pythonhosted.org/packages/f5/05/aee33352594522c56eb4a4382b5acd9a706a030db9ba2fc3dc38a283e75c/prometheus_client-0.17.1.tar.gz"
     sha256 "21e674f39831ae3f8acde238afd9a27a37d0d2fb5a28ea094f0ce25d2cbf2091"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
   end
 
   resource "python-dateutil" do

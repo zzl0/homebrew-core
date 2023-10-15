@@ -525,7 +525,8 @@
   "jupyterlab": {
     "extra_packages": ["jupyter-console", "notebook"],
     "exclude_packages": [
-      "certifi", "cffi", "ipython", "packaging", "pycparser", "pygments", "pyyaml", "six"
+      "certifi", "cffi", "ipython", "packaging", "psutil", "pycparser",
+      "pygments", "pyyaml", "six"
     ]
   },
   "keepkey-agent": {
