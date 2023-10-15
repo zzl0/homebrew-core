@@ -10,10 +10,10 @@ class XcbProto < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
