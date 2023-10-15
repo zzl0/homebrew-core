@@ -468,7 +468,7 @@
     ]
   },
   "http-prompt": {
-    "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "click", "Pygments", "PyYAML", "six"]
   },
   "httpie": {
     "package_name": "httpie",
