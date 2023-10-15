@@ -20,8 +20,9 @@ class Hyfetch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d04b2f649d0072c9f06b97161932ab857be775daaa4dd76f7a53c6c45603c4bd"
   end
 
+  depends_on "python-setuptools"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_macos do
     depends_on "screenresolution"
