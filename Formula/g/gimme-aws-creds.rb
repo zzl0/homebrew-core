@@ -6,7 +6,7 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/69/76/a6c0e4d65438ef3b95099c919388fbdc617d89afb40e024ec2c22665e3d5/gimme_aws_creds-2.7.2.tar.gz"
   sha256 "71526a98bd249bb3880cb2813817623d29ea880eaf260bbb5d1d366ccfae9474"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fea2d9bec04b3b14dc5f4ee335671f69a1e25700ea938ba58c5748217c50e90"
@@ -22,7 +22,7 @@ class GimmeAwsCreds < Formula
   depends_on "keyring"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -136,12 +136,12 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources.reject { |r| r.name.start_with?("pyobjc") && OS.linux? }
     venv.pip_install_and_link buildpath
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
