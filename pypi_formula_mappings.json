@@ -941,7 +941,9 @@
   },
   "sphinx-doc": {
     "extra_packages": ["numpydoc"],
-    "exclude_packages": ["certifi", "docutils", "packaging", "Pygments"]
+    "exclude_packages": [
+      "certifi", "docutils", "markupsafe", "packaging", "Pygments", "tabulate"
+    ]
   },
   "sqlfluff": {
     "exclude_packages": ["PyYAML", "typing-extensions", "Pygments", "packaging"]
