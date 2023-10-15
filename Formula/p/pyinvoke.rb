@@ -6,6 +6,7 @@ class Pyinvoke < Formula
   url "https://files.pythonhosted.org/packages/f9/42/127e6d792884ab860defc3f4d80a8f9812e48ace584ffc5a346de58cdc6c/invoke-2.2.0.tar.gz"
   sha256 "ee6cbb101af1a859c7fe84f2a264c059020b0cb7fe3535f9424300ab568f6bd5"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/pyinvoke/invoke.git", branch: "main"
 
   bottle do
@@ -20,10 +21,21 @@ class Pyinvoke < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a43a0061420c032e0bd06fb36ca360332a5f2048ac6f5a6fc7f95ec64fd53d59"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
+
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
+  end
 
   def install
-    virtualenv_install_with_resources
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
