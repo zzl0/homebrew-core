@@ -72,9 +72,6 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           def: |
-            # label PRs with `CI-no-fail-fast` label by default while CI issues being worked out
-            - label: CI-no-fail-fast
-
             - label: new formula
               status: added
               path: Formula/.+
