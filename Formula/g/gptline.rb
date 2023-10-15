@@ -8,6 +8,16 @@ class Gptline < Formula
   license "GPL-3.0-only"
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "958958078c7c1d0b69c5df831bd8cca2649b2605ef2e5c5a10d4030a0c2684fa"
+    sha256 cellar: :any,                 arm64_ventura:  "4dc4a470ed4eb3a7ba8b65a3b1abf78918858a7382187a32a9ea3a40553f0de2"
+    sha256 cellar: :any,                 arm64_monterey: "97624f2c2652b8a3a53aa8d9b3ab9258871d2a07d1d4b54b8d7cc8c44f999ebe"
+    sha256 cellar: :any,                 sonoma:         "a4188b4e81e61a07818d6b38d9d6b2963c86c03980bd90243d66a100f23d0fdb"
+    sha256 cellar: :any,                 ventura:        "79f3aa547dedb9dab923232a6bc5e084c731a01018af8354a9855887fcc5335e"
+    sha256 cellar: :any,                 monterey:       "e120832c49727af42d763cc9b40c0bdc1d13af573d125336959bc2a6aa1e0ab9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f763085cc08cbfce50f69d35c319b36096f945c59f96fe0b5c87d4ba06f03703"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for tiktoken
   depends_on "jpeg-turbo"
