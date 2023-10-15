@@ -6,6 +6,7 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/45/a0/825b63c665c97c5c4bb0f7feaca238307eb2dcfe952a71f7aa9584bdfff2/conda_lock-2.4.2.tar.gz"
   sha256 "3367b83ae3a6884a4214786349daacc1a3eba601755e335cb6008216de9e55db"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ec0b83d52ea798c148dddf0e4176b11ed5db20308c8591fd60164ce70ee756ae"
@@ -24,7 +25,7 @@ class CondaLock < Formula
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "virtualenv"
@@ -183,7 +184,7 @@ class CondaLock < Formula
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
@@ -196,7 +197,7 @@ class CondaLock < Formula
       channels:
         - conda-forge
       dependencies:
-        - python=3.11
+        - python=3.12
     EOS
     system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64"
     assert_path_exists testpath/"conda-lock.yml"
