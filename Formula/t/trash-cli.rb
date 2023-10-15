@@ -19,16 +19,12 @@ class TrashCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a09f356d0a5b6ea767a4e5230584f47827aa6a0e9a0c1f0c4fae19a50eec97fd"
   end
 
+  depends_on "python-psutil"
   depends_on "python@3.12"
   depends_on "six"
 
   conflicts_with "macos-trash", because: "both install a `trash` binary"
   conflicts_with "trash", because: "both install a `trash` binary"
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
-  end
 
   def install
     virtualenv_install_with_resources
