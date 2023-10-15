@@ -21,7 +21,8 @@ class LinodeCli < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
@@ -70,7 +71,7 @@ class LinodeCli < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources.reject { |r| r.name == "linode-api-spec" }
     buildpath.install resource("linode-api-spec")
 
