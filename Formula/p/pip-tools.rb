@@ -19,14 +19,10 @@ class PipTools < Formula
   end
 
   depends_on "python-build"
+  depends_on "python-click"
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
   depends_on "python@3.11"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
 
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
