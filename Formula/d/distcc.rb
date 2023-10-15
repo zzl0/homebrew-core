@@ -26,7 +26,8 @@ class Distcc < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   resource "libiberty" do
     url "https://ftp.debian.org/debian/pool/main/libi/libiberty/libiberty_20210106.orig.tar.xz"
@@ -40,7 +41,7 @@ class Distcc < Formula
   end
 
   def install
-    ENV["PYTHON"] = python3 = which("python3.11")
+    ENV["PYTHON"] = python3 = which("python3.12")
     site_packages = prefix/Language::Python.site_packages(python3)
 
     # While libiberty recommends that packages vendor libiberty into their own source,
