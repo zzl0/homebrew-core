@@ -241,7 +241,7 @@
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six"]
   },
   "copier": {
-    "exclude_packages": ["packaging", "PyYAML", "typing-extensions", "Pygments"]
+    "exclude_packages": ["markupsafe", "packaging", "Pygments", "PyYAML", "typing-extensions"]
   },
   "cppman": {
     "exclude_packages": ["six"]
