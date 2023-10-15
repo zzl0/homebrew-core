@@ -6,6 +6,16 @@ class Libnghttp3 < Formula
   license "MIT"
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "1f5a551e338a3830da79c5860b12cde79117aa3eced2e01df9aac92da7b0b5d3"
+    sha256 cellar: :any,                 arm64_ventura:  "2b6f6ed58591e784157a8d6ec51f5449d86f5ea4832469f40f76d1d62b36457d"
+    sha256 cellar: :any,                 arm64_monterey: "af79cfbd3df3732fa9a99f773fe1f09a354f323e35d4491418340fedd47bcdf6"
+    sha256 cellar: :any,                 sonoma:         "6548d3824898bc17bdf24c970e63021f2ffbe0c7e37e3b8e8b7a7411d0538f7f"
+    sha256 cellar: :any,                 ventura:        "adefa167217dc625432e727161b8479f1c75814467334fedbb44b871dcb07b24"
+    sha256 cellar: :any,                 monterey:       "0872cfbfb09f67e05f32fb76dabb30e6675919400e075d8def897622980fc6c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2819133f6438367824f47e3017dc9c815ca4eee1a03130f310a3ccf774490aad"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
 
