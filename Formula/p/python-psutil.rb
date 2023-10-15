@@ -16,17 +16,24 @@ class PythonPsutil < Formula
   end
 
   depends_on "python-setuptools" => :build
+  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.12")
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
-    system python3, "-c", "import psutil"
+    pythons.each do |python|
+      system python, "-c", "import psutil"
+    end
   end
 end
