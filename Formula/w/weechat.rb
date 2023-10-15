@@ -1,10 +1,9 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-4.0.5.tar.xz"
-  sha256 "3d72e61b05631dabdc283231768f938a85544b27e31fabfe13c57b4df5c5e3bb"
+  url "https://weechat.org/files/src/weechat-4.1.0.tar.xz"
+  sha256 "030482e5b8f0f69c6bfd4a636b6fa6d76b64a9ec1e179f1abaa35b1ab38d1e10"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
@@ -27,15 +26,18 @@ class Weechat < Formula
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
   depends_on "zstd"
 
   uses_from_macos "curl"
   uses_from_macos "tcl-tk"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    python3 = "python3.11"
     pyver = Language::Python.major_minor_version python3
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace "cmake/FindPython.cmake", " python3-embed ", " python-#{pyver}-embed "
