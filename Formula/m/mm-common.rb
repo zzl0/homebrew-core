@@ -6,8 +6,8 @@ class MmCommon < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "dcfddd3256b6c5898ca24e794643e64a3cfc7fd634718471680b509fe62553c0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "27e4057e962e1491e667eca0801ef83963e293234d6517d33a9b1da6caf7be86"
   end
 
   depends_on "meson" => :build
