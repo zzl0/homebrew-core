@@ -9,13 +9,14 @@ class OktaAwscli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3308176d21de2b826685cf2ad405cca3e46bc933a9bace9c7b8f6acad256639"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61cb7a9d4e0ba295e85b8151c8c3cd27d3b4d927c29648b1c37e2516a5cc61a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1b07245efe05de8b03caf091ad999129f1e72eace11aae53ddd6245bc4b8b70"
-    sha256 cellar: :any_skip_relocation, sonoma:         "645ed9e19f929c311bc3b6c3dfcda9a3866ec599a74c7675bf9653d0bd5dcb5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3214a9567df9e7bff5a22612278d6a8649f74b8509a882b8a9ea5bc0d296f05a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c7e168e47ed68517f8b74b315a077a58039fc60af965ee38772e8a2a0a5f61b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f85320796a80b73577b5f24b0dcd5010bb4e12e393be4d2161c10f88466f9997"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "699d84243902ad445497970a6e1752ff8dcc23ab93f53230d6c35c42c31d91e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7be9111236d535a5ccc967f0ab4793bd973ced2a3082877e0ef624a95ed5219b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2767c559fbe6a9bc9847f8051b36f6cb94cb76d8c022cf165f54c44eab38abcd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a948e9abf4b6f52cbc9f8fdea37ec930fa9c8dcabbab904d7c11c656f4ff8c3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed00b3909653699bba767736c201a6561c27766e14fb5937c89ff05d6c96be31"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b6d0016f1e0f1f5d81cb0aa3d2c11b7a0a77602f98c8654435f05b50d7eefe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "699f2a007dfc16e01efd94776b900e8ad7c1598e7f0bc72993a597de6c7e5c27"
   end
 
   depends_on "python-certifi"
