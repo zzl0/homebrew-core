@@ -30,7 +30,7 @@ class SphinxDoc < Formula
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "alabaster" do
     url "https://files.pythonhosted.org/packages/94/71/a8ee96d1fd95ca04a0d2e2d9c4081dac4c2d2b12f7ddb899c8cb9bfd1532/alabaster-0.7.13.tar.gz"
