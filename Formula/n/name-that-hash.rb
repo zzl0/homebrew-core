@@ -10,16 +10,13 @@ class NameThatHash < Formula
   head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e3b6908160d20dcb60261e789e56b696ac39d76d4dbc6e4331a890400766f84"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4020cbb09cbe8736a98bf84fce42b9a56391abc6cf425ce4b0891e758b10b7b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e6c3c27debfd317c58804ec0261ff40656d85672551c24eb120d7df4b8aca09"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b19a1655bc7711f5c231b30851812cd9e79e8af1a2733ad8f58796a4b9f693c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17bae696c071aa7d12b85e31de1999d71ef908c176ea70699613295a882cc2a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b12a7e90ccd7ff34b8f65a250ee64c6ad5e41d63e01c8b3d0651ea85b57913f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4cc533509369346aa8386b3e91327bc0b5a2838916229ce8d8fafac70ac239f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "504dbe235e16c8321c68bbcfce7258b24af6da3d754d5b9d11882da7c71d2c6a"
-    sha256 cellar: :any_skip_relocation, catalina:       "ad00a4e99937b98ac9c1e317e8d3e544bc954a46b9fcbc4fdef343ce381a97f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5635edb4f1faa51b8096a8b55e73e22e95319634a29421e800c808e15ba5a721"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "766c5c79c52c0f7245b5f44cffc17775e5bb6d18bcfbddeeb0ba1722f63c2e12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb37bf57449d7fece239db2426f9ab32c47ffe9fb569ae3c997dec35bb5745ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af6746b01f9ff889c5a18c6ae4f0171520fbbc831c970fbbe977fc98c085fa4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a47200d84de240fb4ab86fb31aa3eba4e3dffef0acf85c8e097590a1f3c6eeb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "a96f06925076b05c8b4050be22e8df0617f78b2e039122abd5482322293da5c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "1aea54b9face4783b7a1b031e734c352de7add4310d42c3a5b594d51b182d6b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1109a0e0fdb05230d9e6084dd2761590b5382f1786722c1c4afd75d32a23db1d"
   end
 
   depends_on "pygments"
