@@ -2,10 +2,9 @@ class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/nickg/nvc/releases/download/r1.10.3/nvc-1.10.3.tar.gz"
-  sha256 "b5e6cdc6f62a1496e652cfd571f40d6112277e8a9b077690a21d54015562f64e"
+  url "https://github.com/nickg/nvc/releases/download/r1.10.4/nvc-1.10.4.tar.gz"
+  sha256 "d4e2baf58b80a45cdfa5ca07b4c9648e438bdbc2b3f3ebeedb65426045fd27db"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "d0d7971301f9be2b2c6f6e2432bdb3e59230ced7ebc20e13c6406c4b9ac386fa"
