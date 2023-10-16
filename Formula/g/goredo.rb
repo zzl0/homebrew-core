@@ -11,13 +11,13 @@ class Goredo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80b5cdbf2b22d49c6c7700cd463ad573d5f058177546e2b76b3d5217f7f1e402"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59247e3d3e39982183393b01bb2e3a0460d2d0a09325e7d7a469efa14e9bf770"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98a8175bf5f262dd161280e599a8821187877124c9c2cb4ed7fc24b5d8043eae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "547d3ee54ae7df84f91287e3d2770030a983f0a508d1f90bd4a47dc999e3499c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ef634ddbf2ac8bc5b88adbebb5242e879303c6a2dfd895d063d63006d31406c"
-    sha256 cellar: :any_skip_relocation, monterey:       "05f2f520ffc6cf796a19803951f57a89fc217ea871ecfa05f18b00864bc54275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fede027caa759539259132fc46508937f146677b6672c491f8a8113324cb6f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a77f647fe279c95697b62daf45bc70f00400c93005fae388f6ca5e588d83f1cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af1d6ede9514a8d9ce245f2d1e845b2c07c4430cd779a4d9135ef6fecbc71986"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d232ea2d68b3ca4ed9431af8defaa9a5aeffb9b6ce638e8f846272a352f7d548"
+    sha256 cellar: :any_skip_relocation, sonoma:         "40b9949f79764e4c2ac5407176380d78e6e2a2cae7981f6daed5270f43921a66"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c4a4d781c29a4b0640b29f911ea531c35a17eaa4acc399947e67fd5e6c520a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "607d8dfd59dba3500117af5ad3469e2290004801386822d00097bfb9ffbbfc76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12676b8305b40385e7db2c78fee6730df3cd2d5de7e1170f8d3df51c92c7dc60"
   end
 
   depends_on "go" => :build
