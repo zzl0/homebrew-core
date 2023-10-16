@@ -4,6 +4,7 @@ class PythonCryptography < Formula
   url "https://files.pythonhosted.org/packages/ef/33/87512644b788b00a250203382e40ee7040ae6fa6b4c4a31dcfeeaa26043b/cryptography-41.0.4.tar.gz"
   sha256 "7febc3094125fc126a7f6fb1f420d0da639f3f32cb15c8ff0dc3997c4549f51a"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
+  revision 1
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
@@ -19,11 +20,13 @@ class PythonCryptography < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python-typing-extensions" => :build
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
-  depends_on "python@3.11"
 
   resource "semantic-version" do
     url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
@@ -35,21 +38,24 @@ class PythonCryptography < Formula
     sha256 "c7100999948235a38ae7e555fe199aa66c253dc384b125f5d85473bf81eae3a3"
   end
 
-  def python3
-    "python3.11"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    site_packages = buildpath/Language::Python.site_packages(python3)
-    ENV.append_path "PYTHONPATH", site_packages
+    pythons.each do |python3|
+      ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python3)
 
-    resources.each do |r|
-      r.stage do
-        system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath), "."
+      resources.each do |r|
+        r.stage do
+          system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath), "."
+        end
       end
-    end
 
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+      system python3, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
@@ -61,6 +67,8 @@ class PythonCryptography < Formula
       print(f.decrypt(token))
     EOS
 
-    assert_match "b'homebrew'", shell_output("#{python3} test.py")
+    pythons.each do |python3|
+      assert_match "b'homebrew'", shell_output("#{python3} test.py")
+    end
   end
 end
