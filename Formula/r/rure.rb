@@ -1,8 +1,8 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://github.com/rust-lang/regex/archive/1.10.1.tar.gz"
-  sha256 "5c74c089710d1f0639d5667efa698c758b07c8219c8d864ba60f41462df361d7"
+  url "https://github.com/rust-lang/regex/archive/1.10.2.tar.gz"
+  sha256 "ddd5a9267870129e037a03aa6073bac03308798492c2022c9fa426d264f587a8"
   license all_of: [
     "Unicode-TOU",
     any_of: ["Apache-2.0", "MIT"],
