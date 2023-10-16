@@ -6,6 +6,7 @@ class Weasyprint < Formula
   url "https://files.pythonhosted.org/packages/05/56/4a6733f43a357b99e6bb5e8c8fdb6d817e993367534e83df694dd2bb1604/weasyprint-60.1.tar.gz"
   sha256 "56b9812280118357b0f63b1efe18199e08343d4a56a3393c1d475ab878cea26a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "022e63cfda9893eb9fe9e827e31368febaa8266abc53e79da8c49097c0c7f992"
@@ -21,7 +22,7 @@ class Weasyprint < Formula
   depends_on "fonttools"
   depends_on "pango"
   depends_on "pillow"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -64,7 +65,7 @@ class Weasyprint < Formula
   def install
     virtualenv_install_with_resources
     # we depend on fonttools, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     fonttools = Formula["fonttools"].opt_libexec
     (libexec/site_packages/"homebrew-fonttools.pth").write fonttools/site_packages
   end
