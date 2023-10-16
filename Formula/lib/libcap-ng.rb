@@ -19,7 +19,8 @@ class LibcapNg < Formula
     depends_on "m4" => :build
   end
 
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
   depends_on :linux
 
@@ -45,6 +46,6 @@ class LibcapNg < Formula
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcap-ng", "-o", "test"
     assert_equal "ok", `./test`
-    system "python3.11", "-c", "import capng"
+    system "python3.12", "-c", "import capng"
   end
 end
