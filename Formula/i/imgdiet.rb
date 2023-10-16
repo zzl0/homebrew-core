@@ -1,8 +1,8 @@
 class Imgdiet < Formula
   desc "Optimize and resize images"
   homepage "https://git.sr.ht/~jamesponddotco/imgdiet-go"
-  url "https://git.sr.ht/~jamesponddotco/imgdiet-go/archive/v0.1.1.tar.gz"
-  sha256 "c503e03bb2b2bce9fce4bd71244af3ddec2ee920e31cfd7f1ca10da8ddf66784"
+  url "https://git.sr.ht/~jamesponddotco/imgdiet-go/archive/v0.1.2.tar.gz"
+  sha256 "3f15e5453195f0657322071541b0d086eb2bf2a0e39919c54f0b29b92b3ab18c"
   license "MIT"
   head "https://git.sr.ht/~jamesponddotco/imgdiet-go", branch: "trunk"
 
