@@ -8,16 +8,13 @@ class AwsElasticbeanstalk < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "77a32672ba85546f9d405bf30b779a89bd2b5571e059f8bf7cf0aa6c94c93dfa"
-    sha256 cellar: :any,                 arm64_ventura:  "0fa6662f7016f219e9ef28aa6ec12ebdfc34e6d849807a2fe3ddd62f6f1c59ca"
-    sha256 cellar: :any,                 arm64_monterey: "9f0ef26ec9ed9534a632280c11ec60bdf6f127aef6740ba9d0d878537d3745f6"
-    sha256 cellar: :any,                 arm64_big_sur:  "bff8553a218b227ae39bdf0fbc73275a59644fcbe31027f6e776aca14f71d82a"
-    sha256 cellar: :any,                 sonoma:         "793d36ea78e49472a4cb96888dc100c062f0389b5515752df6a339cd44ec9717"
-    sha256 cellar: :any,                 ventura:        "64296bea6913585e91136c69c00aef728417bb99670a7bb46e073f5500103f1e"
-    sha256 cellar: :any,                 monterey:       "975cffa344d6443a56925ca945f3888c2d8eb0d75dda136605ac067e0acefade"
-    sha256 cellar: :any,                 big_sur:        "a4514765bf73a6f5eeb6bbce657e9a4f5fdf54b65517c22bbb04e3e39cf314b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "493088327fb57f086c1fbc1b23b50729e3ba8eea675e35bbdb4ba684845cb0af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a12f4d4ac1d0790915f92be2fdbf7c51ee647e99b5d6a9453d60c4189dec3e27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97bfbdfbeca27f1081a451a7c4cea287c04c28582a32404e081ec5eccbe99018"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "924959bbd542719e462b60bc9cf86873070a6e2d69d18eb3fa2d79e0f6a09428"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e90e120ce5bcd8bbfc8e0d9a6a240613732cf7581f135702148589bee8edb7f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a08db6c1723e7f46fed50401220dfe076c139c15e4fd858376d93f2ba7f9b21"
+    sha256 cellar: :any_skip_relocation, monterey:       "75eca48534951b9210568dc7917a026cfcf7b03e25828568858a238662c866f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1f9c007347c4d9b3a53fe45b76daeea8244d25093ff45540260cb42580dee5c"
   end
 
   # `pkg-config` and `rust` are for bcrypt
