@@ -15,8 +15,7 @@ class Civl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aa660b8befed947bf367647349cbcd1dc0c04446f3f20a4235f7d6ead4831ef5"
+    sha256 cellar: :any_skip_relocation, all: "13b109036fb2d55100c62ddfa224135e0064fab3980bbba1648efc7cdaa96dcb"
   end
 
   depends_on "openjdk"
