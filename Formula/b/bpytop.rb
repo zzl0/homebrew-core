@@ -9,16 +9,14 @@ class Bpytop < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "becab23db91f8307110f48affbf8fbb7cd563687a3b2396cb8ebd6c3b495f22b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e1e60fabfc1c12c865fce8effc365fcf76650655004d63099c3799396785034"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de2bb84abd2e704d144218659c3e9c188304b170e9dd6187b22138158182c15c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "01432aef79149ed56b588bb1a99d0c9782646d9dc0b68e9990f0749a5c83b765"
-    sha256 cellar: :any_skip_relocation, ventura:        "df1e0d8d3777948aece75453634ddb2746c76a1795ad1fcc452cf4119604842f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b157751f5c2a3d8e7820356d2d49e29587d98ea93c82533605ca9429c4c1e36"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f14bd5dfed41695186fce259e9c974298da36cfbd47b9598af539c0fda697d9c"
-    sha256 cellar: :any_skip_relocation, catalina:       "7ec48aedfe22ed4f1eef9a79bf824f47c8dc31729ee66546c7edd2e985c0b6c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdb97df09c1d785d498ff04c87f219d0b5cfebc5cde09cb0039f879198746cc7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7653bbf2d74cc0b616b5f58311f6a964732367764d35bf82651640de534e8ccd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58a2fe2f58f33fda16a273c4a285a8df43b7105ec68b61e30a957969a78047b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "571a52528cbd3f3a0d05604cf9011caa42fa0d548f33f7743b3922a364b26362"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6edef42fa7ff2fc0b9a07289521f4e94f537ff36ea053fc7c7739977df15117c"
+    sha256 cellar: :any_skip_relocation, ventura:        "70303f33694f0ebe4ca372a70807a8ac183c6915f3cbc14d2e35ab098d76e95c"
+    sha256 cellar: :any_skip_relocation, monterey:       "08d583f8d9944fd437326a636b8ab02c4c150f41009ac2bc453c167fd3945da1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07be8a3c2e76de894f88040d89f9b45eac5dffc1256bad0987cfddcb3ba11989"
   end
 
   depends_on "python@3.12"
