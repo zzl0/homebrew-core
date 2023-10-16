@@ -3,8 +3,8 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https://github.com/astral-sh/ruff-lsp"
-  url "https://files.pythonhosted.org/packages/57/f0/e97753c41d07f90a3df653fe885c0ede54734e232728365e068573aaaa9b/ruff_lsp-0.0.40.tar.gz"
-  sha256 "15e7b4a500a11cca34040348a689830ea5739dc2edb0ad51a05deec293bfacf7"
+  url "https://files.pythonhosted.org/packages/0a/f5/ece4de09458e38d81e124936fecd74ca8b97f6ef02eaccac4fa39e56df86/ruff_lsp-0.0.41.tar.gz"
+  sha256 "76d235279e067995971ddfc840fa4950d479adb793cb511fc5a75c362beec0d6"
   license "MIT"
 
   bottle do
@@ -39,8 +39,8 @@ class RuffLsp < Formula
   end
 
   resource "pygls" do
-    url "https://files.pythonhosted.org/packages/10/1a/4994d487a7295a7c834a81003b83b00b26086dbd3747699ed3eb20e73fcc/pygls-1.1.0.tar.gz"
-    sha256 "eb19b818039d3d705ec8adbcdf5809a93af925f30cd7a3f3b7573479079ba00e"
+    url "https://files.pythonhosted.org/packages/b2/02/cedb2febde8ff53ec21d299159027dc8a9423118f2d3ab7151441a79e972/pygls-1.1.1.tar.gz"
+    sha256 "b1b4ddd6f800a5573f61f0ec2cd3bc7a859d171f48142b46e1de35a1357c00fe"
   end
 
   resource "typeguard" do
