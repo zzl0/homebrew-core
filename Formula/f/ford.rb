@@ -9,16 +9,13 @@ class Ford < Formula
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ef5ee8a7a4e174c91311b777662952c7aa0bccdfc333df3d7bcfe8a48412e4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ebf168d485bded0c51fa40ee69ee91b155d7a7e34f323d7585972d4053eb732"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4fbf95afb8a084c738f1d450ace10bedb5dd06dfbfde43654add76c0c12644d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e836d281dc9c6d54fcb310318196394446b3e05916dbdaac2d6da45b2635e077"
-    sha256 cellar: :any_skip_relocation, sonoma:         "730f3f16135b0ad60e9f4494d2cd616369d85b1affc2d568b0ee459b0c94573a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef26796d030e5dc19738a5e2fe831f085321bf37eaa4b21321d27dd9049e0d0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "7222ee74f230d94ed43f853ce6ce68f5539251c1ff7b5dbe1c0ceae0d2d04d0c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "be9ebc5b389125cf1fa6fba5d24df190827dd75656b3d374ced1ec57bbd826d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe447cdac85d7355d04d8e808f39123a924c27eb509dc7b1d779fb3f32c28130"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1823a19d47e1764f7f514a6a066b82fbf993ac6dff153b13f9b89b13559babd2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c222e067e96f8a40f7bf0d374f2264eb6d575764479bf38e896451e40eae0bf4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ca73edbd777f863181c4640929c0bf5f2ca3d822dca9ba92208f3963c778c10"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f19900fb8523f4041ffbb47d7d0357a4f7acf0d19ecc85ca0ae5ef0326edd0b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "42f719ee35c2d74ba3b4f85cac1144689de50ba42c4083c557564f53431c1f41"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b3f340c540305e8910a799d2e73b3198c316dda1a39c499bb006f4765ef0851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "322bfe669755be8144f14bde607ab1e2d09f57a4dfd20b9ec5f24fd416b487cb"
   end
 
   depends_on "graphviz"
