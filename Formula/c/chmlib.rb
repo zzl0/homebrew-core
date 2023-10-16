@@ -32,7 +32,9 @@ class Chmlib < Formula
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
+
   # Add aarch64 to 64-bit integer platform list.
+  # Fix implicit function declarations, for C99 compatibility: https://github.com/jedwing/CHMLib/pull/17
   patch :DATA
 
   def install
@@ -67,3 +69,29 @@ index 6c6736c..06908c0 100644
  typedef unsigned char           UChar;
  typedef short                   Int16;
  typedef unsigned short          UInt16;
+diff --git a/src/chm_http.c b/src/chm_http.c
+index 237e85a..1df2adb 100644
+--- a/src/chm_http.c
++++ b/src/chm_http.c
+@@ -43,6 +43,8 @@
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
++#include <unistd.h>
+ 
+ /* threading includes */
+ #include <pthread.h>
+diff --git a/src/chm_lib.c b/src/chm_lib.c
+index ffd213c..9eb9d1b 100644
+--- a/src/chm_lib.c
++++ b/src/chm_lib.c
+@@ -48,6 +48,8 @@
+  *                                                                         *
+  ***************************************************************************/
+ 
++#define _LARGEFILE64_SOURCE /* for pread64 */
++
+ #include "chm_lib.h"
+ 
+ #ifdef CHM_MT
