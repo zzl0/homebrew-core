@@ -25,7 +25,8 @@ class Woob < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -95,7 +96,7 @@ class Woob < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
