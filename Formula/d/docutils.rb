@@ -4,6 +4,7 @@ class Docutils < Formula
   url "https://downloads.sourceforge.net/project/docutils/docutils/0.20.1/docutils-0.20.1.tar.gz"
   sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
+  revision 1
 
   bottle do
     rebuild 1
@@ -18,14 +19,21 @@ class Docutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f62e7d49f5e36fc8b2621c919f0d531d1f9e1d29c7c18edb1076f34865f3c6e8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
 
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")
@@ -38,5 +46,8 @@ class Docutils < Formula
     touch testpath/"docs"/"header0.txt"
     system bin/"rst2man.py", testpath/"README.txt"
     system bin/"rst2man", testpath/"README.txt"
+    pythons.each do |python|
+      system python, "-c", "import docutils"
+    end
   end
 end
