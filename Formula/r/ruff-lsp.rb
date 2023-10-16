@@ -8,14 +8,13 @@ class RuffLsp < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c1c973ccb6f87f76701e708a640756eb0307ee84f23904d434abc333426be00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c451af62399969ddc7d2fd4b214d3a626cdba80f6af0b58d008b3fb64ad39fbe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8efb540deac738c7d898233a1a2d8191dfc1b910a53a4884d9be1f738946116d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2e70db033ee237fdf2cab67438ac18d4c6a673d2889f0ca763e9cfb620232e6"
-    sha256 cellar: :any_skip_relocation, ventura:        "40c2f0925c69c172b9c5ba66446bc722dad9da900a7125bdd0c5f828544966b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "4ad0995755858c3417e511ac09b83407bd26debaff8632cb1953717333c2bf21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca4bafed1d3e971b0ceabc6577b6702fee9313de7b2471cf1089623e8ed1fb0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b5282d9a08e529a5fa3b053800a2181236ab58602029efa35139327ab86cfff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a37c5dc84cffc8592737cf44e3c93eec2479655f3cf05d477779931121aa73b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58aa939a9c075a45d4d10cb888c03f98f5c5d8fdee4b93c580ecf4a239c40a85"
+    sha256 cellar: :any_skip_relocation, sonoma:         "16787a8f74a1f2f9a3610a5a7de28de5005aee0e98154bffbf3db8391a7c2f61"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d3412c0e79faeaa527cf867e8305fb0f716319e1ddd1bc656f5928d0dcc9111"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ea1909d178f5a649a8a718b610e585b4199f9cfde35c5f44dc204b0f6952f51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e730763b27531c6ebce3a9cbe566b879cc9e50114aa94767378fd6fae1e8934c"
   end
 
   depends_on "python-packaging"
