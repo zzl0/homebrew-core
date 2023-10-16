@@ -33,7 +33,7 @@ class Zeek < Formula
   depends_on "libmaxminddb"
   depends_on macos: :mojave
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libpcap"
   uses_from_macos "libxcrypt"
@@ -63,7 +63,7 @@ class Zeek < Formula
                     "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_lib/shared_library("libcares")}",
                     "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_lib/shared_library("libmaxminddb")}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-                    "-DPYTHON_EXECUTABLE=#{which("python3.11")}",
+                    "-DPYTHON_EXECUTABLE=#{which("python3.12")}",
                     "-DZEEK_ETC_INSTALL_DIR=#{etc}",
                     "-DZEEK_LOCAL_STATE_DIR=#{var}",
                     *std_cmake_args
