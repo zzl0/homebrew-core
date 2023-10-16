@@ -1068,7 +1068,7 @@
     "exclude_packages": ["certifi", "lxml", "pyyaml", "six", "typing-extensions"]
   },
   "watson": {
-    "exclude_packages": ["certifi", "six"]
+    "exclude_packages": ["certifi", "click", "six"]
   },
   "waybackpy": {
     "exclude_packages": ["certifi"]
