@@ -1,8 +1,8 @@
 class Goredo < Formula
   desc "Go implementation of djb's redo, a Makefile replacement that sucks less"
   homepage "http://www.goredo.cypherpunks.ru/"
-  url "http://www.goredo.cypherpunks.ru/download/goredo-2.1.0.tar.zst"
-  sha256 "8ad85be2088a380d1e825dc2bb3f09cf4dc1c09ed3496ba7f0ef28615aeb1137"
+  url "http://www.goredo.cypherpunks.ru/download/goredo-2.2.0.tar.zst"
+  sha256 "89f19c52dd7786b4124a161b1807426a0dc13cf2d730553957de3bcf252d982f"
   license "GPL-3.0-only"
 
   livecheck do
@@ -24,7 +24,7 @@ class Goredo < Formula
 
   def install
     cd "src" do
-      system "go", "build", *std_go_args, "-mod=vendor"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
     end
 
     ENV.prepend_path "PATH", bin
@@ -37,6 +37,8 @@ class Goredo < Formula
     (testpath/"gore.do").write <<~EOS
       echo YOU ARE LIKELY TO BE EATEN BY A GRUE >&2
     EOS
-    assert_equal "YOU ARE LIKELY TO BE EATEN BY A GRUE\n", shell_output("#{bin}/redo -no-progress gore 2>&1")
+    assert_match "YOU ARE LIKELY TO BE EATEN BY A GRUE\n", shell_output("#{bin}/redo -no-progress gore 2>&1")
+
+    assert_match version.to_s, shell_output("#{bin}/goredo -version")
   end
 end
