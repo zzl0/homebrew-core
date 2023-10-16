@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.10.tar.gz"
-  sha256 "6883b57615a990c990ca9974404df49c549c9ca5615be2b0ce257c5b5e861748"
+  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.11.tar.gz"
+  sha256 "4c0021ae152d4ffa107daa30d9828122a8670cfdf95a4a059cc4771dd34e2b2b"
   license "Apache-2.0"
 
   # Upstream uses GitHub releases to indicate that a version is released
