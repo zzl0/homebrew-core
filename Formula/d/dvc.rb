@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/20/98/d9eba51be3591c8f1ae4baf26e3cbffef2f203a7c9fe75d059d97fadb003/dvc-3.26.1.tar.gz"
-  sha256 "08f743a0507074c206c02f2a8e7cf0f21b91480c2c79e2a907be942a86b4a79a"
+  url "https://files.pythonhosted.org/packages/87/1a/c2068da711687f1e49df29c1cb6aca92ce601fe16ee92c5b75bb8ba2a831/dvc-3.26.2.tar.gz"
+  sha256 "1ffbef35d3f85fd9d01e0711c9715804be2f53343a0f2f7fe2dcd7599e2f26eb"
   license "Apache-2.0"
 
   bottle do
@@ -570,8 +570,8 @@ class Dvc < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
+    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "pyasn1" do
