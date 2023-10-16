@@ -6,6 +6,16 @@ class HickoryDns < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/hickory-dns/hickory-dns.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "061f24ba1aca3f9a2a68ccec68687654889883c96751a81e0b9085682dbb8043"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a37f168147a5d2db053bf360862c71561d6238203927c4be4f3c92f95b279e2e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "baa46265ba1dbc8a5445074473fb8bcbd6251318f57a01aa733ca4d1c99e5e77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e1088d39da8eac4f9c250eee1c8012c3f27b1a83783d66a72b2d3e884a8e546"
+    sha256 cellar: :any_skip_relocation, ventura:        "723523e388fe6b2da5b2a263c50aa1e67f3e7d3cb5f4e945c864bf76e62cbb5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3dbae32c4c47f6d73326a893a295ebf5786aae6e11816b70254b65874e3c818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cc4a411b7a2bd3677c473a8fcd0b47117becb11986409486b9084ae1da94708"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
