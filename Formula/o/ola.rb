@@ -31,13 +31,13 @@ class Ola < Formula
   depends_on "libusb"
   depends_on "numpy"
   depends_on "protobuf@21"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   # Remove when we use unversioned protobuf
