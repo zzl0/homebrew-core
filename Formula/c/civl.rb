@@ -1,15 +1,17 @@
 class Civl < Formula
   desc "Concurrency Intermediate Verification Language"
   homepage "https://vsl.cis.udel.edu/civl/"
-  url "https://vsl.cis.udel.edu/lib/sw/civl/1.20/r5259/release/CIVL-1.20_5259.tgz"
-  version "1.20-5259"
-  sha256 "15bf63b3a92300e8432e95397284e29aaa5897e405db9fc2d56cd086f9e330d3"
+  url "https://vsl.cis.udel.edu/lib/sw/civl/1.22/r5854/release/CIVL-1.22_5854.tgz"
+  version "1.22-5854"
+  sha256 "daf5c5a7295909d45a26d8775a8e7677495d69ab9c303638394ec189c4956b0e"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "BSD-3-Clause"]
-  revision 1
 
   livecheck do
     url "https://vsl.cis.udel.edu/lib/sw/civl/current/latest/release/"
     regex(/href=.*?CIVL[._-]v?(\d+(?:[._-]\d+)+)\.t/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_", "-") }
+    end
   end
 
   bottle do
