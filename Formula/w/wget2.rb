@@ -1,9 +1,14 @@
 class Wget2 < Formula
   desc "Successor of GNU Wget, a file and recursive website downloader"
   homepage "https://gitlab.com/gnuwget/wget2"
-  url "https://gitlab.com/gnuwget/wget2/uploads/83752270de83e103306576e67a1c7c80/wget2-2.0.1.tar.gz"
-  sha256 "0bb7fa03697bb5b8d05e1b5e15b863440826eb845874c4ffb5e32330f9845db1"
+  url "https://ftp.gnu.org/gnu/wget/wget2-2.1.0.tar.gz"
+  sha256 "a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7"
   license "GPL-3.0-or-later"
+
+  livecheck do
+    url :stable
+    regex(/href=.*?wget2[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 arm64_sonoma:   "b08443020816dc22cf93815c350b30f0861f005e23238c2d142db09dffebae25"
