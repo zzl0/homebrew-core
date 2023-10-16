@@ -24,7 +24,7 @@ class OpenAdventure < Formula
   end
 
   depends_on "asciidoc" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "pyyaml" => :build
 
   uses_from_macos "libxml2" => :build
@@ -35,7 +35,7 @@ class OpenAdventure < Formula
   end
 
   def install
-    python = Formula["python@3.11"].opt_bin/"python3.11"
+    python = Formula["python@3.12"].opt_bin/"python3.12"
     system python, "./make_dungeon.py"
     system "make"
     bin.install "advent"
