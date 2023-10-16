@@ -28,12 +28,12 @@ class Znc < Formula
   depends_on "pkg-config" => :build
   depends_on "icu4c"
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "zlib"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     xy = Language::Python.major_minor_version python3
 
     ENV.cxx11
