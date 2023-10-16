@@ -21,7 +21,7 @@ class Xonsh < Formula
   end
 
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # Resources based on `pip3 install xonsh[ptk,pygments,proctitle]`
   # See https://xon.sh/osx.html#dependencies
