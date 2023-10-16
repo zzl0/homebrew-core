@@ -22,12 +22,27 @@ class CloudflareQuiche < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
+  # Fix compilation on Linux. Remove in the next release.
+  patch do
+    url "https://github.com/cloudflare/quiche/commit/7ab6a55cfe471267d61e4d28ba43d41defcd87e0.patch?full_index=1"
+    sha256 "d768af974f539c10ab3be50ec2f4f48dc8e6e383aab11391a4bfcd39b7f49c34"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "apps")
 
-    system "cargo", "build", "--lib", "--features", "ffi", "--release"
+    system "cargo", "build", "--lib", "--features", "ffi,pkg-config-meta", "--release"
     lib.install "target/release/#{shared_library("libquiche")}"
     include.install "quiche/include/quiche.h"
+
+    # install pkgconfig file
+    pc_path = "target/release/quiche.pc"
+    # the pc file points to the tmp dir, so we need inreplace
+    inreplace pc_path do |s|
+      s.gsub!(/includedir=.+/, "includedir=#{include}")
+      s.gsub!(/libdir=.+/, "libdir=#{lib}")
+    end
+    (lib/"pkgconfig").install pc_path
   end
 
   test do
