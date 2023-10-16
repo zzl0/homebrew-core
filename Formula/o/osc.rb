@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://github.com/openSUSE/osc/archive/1.4.1.tar.gz"
-  sha256 "33d0f33fce7f9d85c07d4dde320dc2a9d2e7de3e23b3810149cb9a821ab6834d"
+  url "https://github.com/openSUSE/osc/archive/1.4.2.tar.gz"
+  sha256 "f5990b3f63fd085ff0d10af12581f8b37d65c3fdcdc56b9263fff85adaef2d33"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -26,7 +26,7 @@ class Osc < Formula
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "curl"
 
