@@ -1,21 +1,10 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
+  url "https://download.qemu.org/qemu-8.1.2.tar.xz"
+  sha256 "541526a764576eb494d2ff5ec46aeb253e62ea29035d1c23c0a8af4e6cd4f087"
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
-
-  stable do
-    url "https://download.qemu.org/qemu-8.1.1.tar.xz"
-    sha256 "37ce2ef5e500fb752f681117c68b45118303ea49a7e26bd54080ced54fab7def"
-
-    patch do
-      # "softmmu: Use async_run_on_cpu in tcg_commit"
-      # Needed for running x86_64 VM with TCG and SMP.
-      # https://gitlab.com/qemu-project/qemu/-/issues/1864#note_1543993006
-      url "https://gitlab.com/qemu-project/qemu/-/commit/0d58c660689f6da1e3feff8a997014003d928b3b.diff"
-      sha256 "b0f9f899f269074304d59dedf980fa83296c806f705b16a5164ba4d34aad1382"
-    end
-  end
 
   livecheck do
     url "https://www.qemu.org/download/"
