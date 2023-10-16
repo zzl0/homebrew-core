@@ -21,7 +21,6 @@ class Duplicity < Formula
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "gnupg"
-  depends_on "keyring"
   depends_on "librsync"
   depends_on "protobuf"
   depends_on "pycparser"
@@ -35,8 +34,17 @@ class Duplicity < Formula
   depends_on "pyyaml"
   depends_on "six"
 
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
+  on_linux do
+    resource "jeepney" do
+      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+    end
+
+    resource "secretstorage" do
+      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+    end
+  end
 
   resource "args" do
     url "https://files.pythonhosted.org/packages/e5/1c/b701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6b/args-0.1.0.tar.gz"
@@ -206,6 +214,11 @@ class Duplicity < Formula
   resource "jottalib" do
     url "https://files.pythonhosted.org/packages/aa/4b/7a5dea988a7a76842738fa23ff8e397109ccb0a85702d10153ce9e46c3ca/jottalib-0.5.1.tar.gz"
     sha256 "015c9a1772f06a2ad496278aff4b20ad41acc660304fa8f8b854932c662bb0a5"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
+    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   end
 
   resource "keystoneauth1" do
