@@ -7,6 +7,10 @@ class Nvimpager < Formula
   license "BSD-2-Clause"
   head "https://github.com/lucc/nvimpager.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "323b753e500c077e90388c784d2be86b63cf7fdc26874931df283712dcd1cc97"
+  end
+
   depends_on "scdoc" => :build
   depends_on "neovim"
 
