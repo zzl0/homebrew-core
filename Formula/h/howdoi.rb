@@ -29,7 +29,7 @@ class Howdoi < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "appdirs" do
