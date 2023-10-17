@@ -574,7 +574,10 @@
     "exclude_packages": ["certifi", "Pygments", "PyYAML", "six", "tabulate", "typing-extensions"]
   },
   "localstack": {
-    "exclude_packages": ["certifi", "click", "cffi", "cryptography", "pycparser", "Pygments", "PyYAML", "six", "tabulate"]
+    "exclude_packages": [
+      "certifi", "click", "cffi", "cryptography", "pycparser",
+      "Pygments", "psutil", "PyYAML", "six", "tabulate"
+    ]
   },
   "locust": {
     "exclude_packages": ["certifi", "click", "markupsafe", "psutil", "six", "typing-extensions"]
