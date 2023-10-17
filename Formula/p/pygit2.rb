@@ -18,37 +18,51 @@ class Pygit2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0aa0d8f151dd83a88d4eb24127d347d9746725657a94da91a6a40a044f6711f"
   end
 
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "cffi"
   depends_on "libgit2"
-  depends_on "python@3.11"
 
-  def python3
-    "python3.11"
+  def pythons
+    deps.select { |dep| dep.name.start_with?("python@") }
+        .map(&:to_formula)
+        .sort_by(&:version)
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
     assert_empty resources, "This formula should not have any resources!"
-    (testpath/"hello.txt").write "Hello, pygit2."
-    system python3, "-c", <<~PYTHON
-      import pygit2
-      repo = pygit2.init_repository('#{testpath}', False) # git init
 
-      index = repo.index
-      index.add('hello.txt')
-      index.write() # git add
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      pyversion = Language::Python.major_minor_version(python_exe)
 
-      ref = 'HEAD'
-      author = pygit2.Signature('BrewTestBot', 'testbot@brew.sh')
-      message = 'Initial commit'
-      tree = index.write_tree()
-      repo.create_commit(ref, author, author, message, tree, []) # git commit
-    PYTHON
+      (testpath/"#{pyversion}/hello.txt").write "Hello, pygit2."
+      mkdir pyversion do
+        system python_exe, "-c", <<~PYTHON
+          import pygit2
+          repo = pygit2.init_repository('#{testpath}/#{pyversion}', False) # git init
 
-    system "git", "status"
-    assert_match "hello.txt", shell_output("git ls-tree --name-only HEAD")
+          index = repo.index
+          index.add('hello.txt')
+          index.write() # git add
+
+          ref = 'HEAD'
+          author = pygit2.Signature('BrewTestBot', 'testbot@brew.sh')
+          message = 'Initial commit'
+          tree = index.write_tree()
+          repo.create_commit(ref, author, author, message, tree, []) # git commit
+        PYTHON
+
+        system "git", "status"
+        assert_match "hello.txt", shell_output("git ls-tree --name-only HEAD")
+      end
+    end
   end
 end
