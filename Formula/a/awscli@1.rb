@@ -7,6 +7,7 @@ class AwscliAT1 < Formula
   url "https://files.pythonhosted.org/packages/45/9f/6ecdff7f0f0fdd019844951d85f253b2dae74b6c5ca6902e66f9b62f6646/awscli-1.29.60.tar.gz"
   sha256 "a96a7db174dbdfd9338aa5459a75d11ae14f7e242181b440dda6776af0143f3a"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://github.com/aws/aws-cli.git"
@@ -68,8 +69,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   def install
