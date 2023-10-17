@@ -6,6 +6,7 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/87/a1/20917b9b0c30f1dc57495409b8e4e0d12966d1bda8b7fe21f6939f54ea6f/ocrmypdf-15.2.0.tar.gz"
   sha256 "4f618e555e607b4dccd45bcf3943d5a526f357002367d5c34b524853922a5bdf"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "43b6ccab138499a2b14db433c991d0103970b61518b3a74d278ebd4e63502c76"
@@ -31,7 +32,7 @@ class Ocrmypdf < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qpdf"
   depends_on "tesseract"
   depends_on "unpaper"
@@ -86,7 +87,7 @@ class Ocrmypdf < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     resource("reportlab").stage do
       (Pathname.pwd/"local-setup.cfg").write <<~EOS
         [FREETYPE_PATHS]
@@ -98,7 +99,7 @@ class Ocrmypdf < Formula
     venv.pip_install resources.reject { |r| r.name == "reportlab" }
     venv.pip_install_and_link buildpath
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[img2pdf].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
