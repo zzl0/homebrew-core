@@ -6,6 +6,7 @@ class Img2pdf < Formula
   url "https://files.pythonhosted.org/packages/95/b5/f933f482a811fb9a7b3707f60e28f2925fed84726e5a6283ba07fdd54f49/img2pdf-0.4.4.tar.gz"
   sha256 "8ec898a9646523fd3862b154f3f47cd52609c24cc3e2dc1fb5f0168f0cbe793c"
   license "LGPL-3.0-or-later"
+  revision 1
 
   bottle do
     rebuild 1
@@ -21,7 +22,7 @@ class Img2pdf < Formula
   depends_on "pillow"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qpdf"
 
   resource "deprecation" do
