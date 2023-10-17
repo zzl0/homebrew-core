@@ -21,7 +21,7 @@ class LiterateGit < Formula
   end
 
   depends_on "pygit2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "pkg-config" => :build
