@@ -20,12 +20,11 @@ class Ginac < Formula
 
   depends_on "pkg-config" => :build
   depends_on "cln"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "readline"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
