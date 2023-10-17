@@ -19,7 +19,8 @@ class Parliament < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "22a8c80dbde299ab9b4a82acf4af154ed0783d2e3645c5f5bdd5329e3879a400"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
