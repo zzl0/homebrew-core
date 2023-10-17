@@ -1,10 +1,18 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
   homepage "https://github.com/bufbuild/buf"
-  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.27.0.tar.gz"
-  sha256 "2a4ddbf3eeb914a88b732af6eefc80098febfa7537097fc2a507899361e37fc0"
+  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.27.1.tar.gz"
+  sha256 "ffe3f817527c3c92e26f88d85b8abf2f414071074e30ef2f7597e3e9dc69492c"
   license "Apache-2.0"
   head "https://github.com/bufbuild/buf.git", branch: "main"
+
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb38dfbe6467ff98d0148e2f6d10f9005553d1ecf779237336768cee99fd20b7"
