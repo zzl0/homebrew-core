@@ -20,7 +20,7 @@ class GitBigPicture < Formula
   end
 
   depends_on "graphviz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
