@@ -21,9 +21,10 @@ class B2Tools < Formula
   depends_on "docutils"
   depends_on "python-argcomplete"
   depends_on "python-certifi"
+  depends_on "python-setuptools"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   conflicts_with "boost-build", because: "both install `b2` binaries"
@@ -54,8 +55,8 @@ class B2Tools < Formula
   end
 
   resource "phx-class-registry" do
-    url "https://files.pythonhosted.org/packages/e7/9f/5a7a4d4c414b074df216824068cf8d82a05f05829e11976217cb9e550f50/phx-class-registry-4.0.6.tar.gz"
-    sha256 "66e9818de0a9d62e8cfe311587fcd3853ba941b71c11a7a73e5808d6550db125"
+    url "https://files.pythonhosted.org/packages/79/ce/db26f7f8ed4f4b200f34b8401ecaa9cbb0709f3c3822ae0d29a6019ad2a8/phx-class-registry-4.1.0.tar.gz"
+    sha256 "6a7fe8568f9000ad1f90c9a81c5cb65ec20ee3b89b2aaab7a67e14dbb67e11d1"
   end
 
   resource "python-dateutil" do
