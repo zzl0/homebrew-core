@@ -1,8 +1,8 @@
 class Bandwhich < Formula
   desc "Terminal bandwidth utilization tool"
   homepage "https://github.com/imsnif/bandwhich"
-  url "https://github.com/imsnif/bandwhich/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "f9c50c340372593bf4c54fcf2608ef37c2c56a37367b2f430c27cce3ea947828"
+  url "https://github.com/imsnif/bandwhich/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "8ba9bf6469834ad498b9fd17f86759a16793b00a6ef44edd6e525ec40adcb0b0"
   license "MIT"
 
   bottle do
@@ -24,7 +24,7 @@ class Bandwhich < Formula
   end
 
   test do
-    output = shell_output "#{bin}/bandwhich --interface bandwhich", 2
+    output = shell_output "#{bin}/bandwhich --interface bandwhich", 1
     assert_match output, "Error: Cannot find interface bandwhich"
   end
 end
