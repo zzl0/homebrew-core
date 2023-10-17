@@ -21,7 +21,7 @@ class Volatility < Formula
 
   depends_on "rust" => :build # for rpds-py
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yara"
 
   # Extra resources are from `requirements.txt`: https://github.com/volatilityfoundation/volatility3#requirements
