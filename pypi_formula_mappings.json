@@ -565,7 +565,7 @@
     "exclude_packages": ["pillow"]
   },
   "litani": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["markupsafe", "PyYAML"]
   },
   "litecli": {
     "exclude_packages": ["click", "Pygments", "six", "tabulate"]
