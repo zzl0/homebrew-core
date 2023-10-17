@@ -3,8 +3,8 @@ require "language/node"
 class Stylelint < Formula
   desc "Modern CSS linter"
   homepage "https://stylelint.io/"
-  url "https://registry.npmjs.org/stylelint/-/stylelint-15.10.3.tgz"
-  sha256 "8de9f620d6db5200d4d9cb1821b520eddca1ea0d2afd110fe05c39ffcdaaf851"
+  url "https://registry.npmjs.org/stylelint/-/stylelint-15.11.0.tgz"
+  sha256 "8d688b4656f653fc350d485739d6d2d8fe834d2916aea25fc5deec0e45fbec9b"
   license "MIT"
 
   bottle do
