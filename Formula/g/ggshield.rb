@@ -10,13 +10,14 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61ee61839f80f9f245ffe4cd8eb8db598c8839e6e17c87ff1f9fc871d0ca5086"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "057e31bdd90b928f2189cbec37ec98796ca3ac583d152f586b510bca2c5d53e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7c4d9e7bfce53e8ee6ce1b5354333f2da6d13705c45b2645e3d570624850f4e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fb9c2c0d3f90a2c4098002cfaad8f739987f1b9ab3903f817a026aac6e0d6724"
-    sha256 cellar: :any_skip_relocation, ventura:        "211cd53d14407f57d3642117e64948ad0f000b689ceb5c9609ee2e14329d9ace"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b6691052073f0e47633ebd058342904122ba6804953395a9dc92fe93244dfee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42ae30a576891d1c3748564bea193c5dd042df61091d09306afa0297bad171dc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23d08b6bf00e14d10373787ab8181f8f489d29a377f9c9222deaa0d18aea8a5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff7fa058daf7742c1c127467d6c5514db99fd981a9a53368e69ac2f29b48a781"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aee1d6e37dcf3cd8c879df7731b88f15c834e0949709a8a9350ba8a55eab5118"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec343421510f240760c84a69f98b0f278ec4c299624ac1485440a035dc8dd87c"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cc4bb0612115990ad340cac2c59bec74d717ab6e2fb82070971ab38747b8906"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f11b0b1b96e28a715bc0632f03f2756894eed076bbafa625764921105a9e326"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "290083a55a4145b92ef65679fe695a1e5326ed930b889c111648fdf27218944f"
   end
 
   depends_on "cffi"
@@ -27,7 +28,7 @@ class Ggshield < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "appdirs" do
