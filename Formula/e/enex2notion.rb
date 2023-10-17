@@ -3,10 +3,9 @@ class Enex2notion < Formula
 
   desc "Import Evernote ENEX files to Notion"
   homepage "https://github.com/vzhd1701/enex2notion"
-  url "https://files.pythonhosted.org/packages/b0/65/301a9406734eff3185d1724e86bdb62c697973771086f457910e550037d5/enex2notion-0.2.26.tar.gz"
-  sha256 "cd9a5a2ccb9a320d5f1cb81bbdbe8e464582f317aa6401135ddc9242ae6ccc73"
+  url "https://files.pythonhosted.org/packages/e9/69/76f7d4a560f7156fb52ec0174fc65d023734fc8a2c7703660f4e359b6a46/enex2notion-0.2.27.tar.gz"
+  sha256 "74caf499147cf18169cc7ed17cecb8c9f39e64ec4578a58105aeb69fd12ba64f"
   license "MIT"
-  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a68b92767fe9318c2d97849afc3c1450716253c74f527d88952a20568df3985"
