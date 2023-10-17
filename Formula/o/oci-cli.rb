@@ -9,13 +9,14 @@ class OciCli < Formula
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3767e820e07fc13412d0c5f21b6603a207c18faecac06a4dadf2b8c8e6638f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "150702a8357215431b85266e5d44c989ab9ca46bb32d82072c424c5de9890fac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af1ddf26ae5d55ec94cfa5f7a8ab229220835527a8b115a2a499d31b1d1e1f6b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "700e0c7a6da7165a2c64241102cfe4622ea0aa63a6afddc6f735a4d95df14ce1"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b5035ed44dedd540f1d293a67b7ac3d81e16d83f7bd781bca8e885cab2d7c73"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd008c631fe470d1195c2f6716af3c5db90d7c0f0d309f031aa800adca9fa2f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a513672233a5adee9a32d25b47639808b430aa753be37bcf1ae31e617116120"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62fc5933d7cd098937e5bf4ff86725be794a00b933dfdcadfd45d1678dd477da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8208057d45d49da03e1489fc7d67b64ae6f65d367b56810ddb1a950dcb2224b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88d3731dc2d43ca627b9b9d2d9b4907b1ef73d63f22dc66c256cd5c7c5302898"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cbc8d52fee3d1e28c39905c0c70d5f3042d734a2ddd14d904eb989584def28a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "569151dbf99ce4948f37cd7ddeb27548fe50578b13567fe50d410adce66f6422"
+    sha256 cellar: :any_skip_relocation, monterey:       "922ba649669ae24fee86f2b39ce9f12dcd1bbbe8be2c196bc66c9f2481ed468c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e40aa352f1771c3ef8a2ccba819937dddc72ef108f2c2ad2aba9d95a5a8f21f"
   end
 
   depends_on "cffi"
@@ -23,7 +24,7 @@ class OciCli < Formula
   depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
