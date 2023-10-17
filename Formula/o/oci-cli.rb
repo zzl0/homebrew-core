@@ -23,7 +23,7 @@ class OciCli < Formula
   depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
