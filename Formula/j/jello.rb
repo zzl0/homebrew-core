@@ -1,6 +1,4 @@
 class Jello < Formula
-  include Language::Python::Virtualenv
-
   desc "Filter JSON and JSON Lines data with Python syntax"
   homepage "https://github.com/kellyjonbrazil/jello"
   url "https://files.pythonhosted.org/packages/8a/1d/25e13e337f0c5c8076a4fc42db02b726529b611a69d816b71f8d591cf0f5/jello-1.6.0.tar.gz"
@@ -19,11 +17,16 @@ class Jello < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d4021cdccb1bc2a63a5d879d04a1290e11a2ca1e30a5f7f6d04a5a951d46c52"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  def python3
+    which("python3.12")
+  end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
     man1.install "man/jello.1"
   end
 
