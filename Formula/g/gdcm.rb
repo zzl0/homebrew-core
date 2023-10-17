@@ -26,10 +26,11 @@ class Gdcm < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "openjpeg"
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "expat"
   uses_from_macos "zlib"
@@ -41,7 +42,7 @@ class Gdcm < Formula
   fails_with gcc: "5"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
