@@ -19,7 +19,7 @@ class Jdtls < Formula
   end
 
   depends_on "openjdk"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     libexec.install %w[
