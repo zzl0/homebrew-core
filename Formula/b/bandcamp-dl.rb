@@ -6,7 +6,7 @@ class BandcampDl < Formula
   url "https://files.pythonhosted.org/packages/cb/6f/08d0e2b1819327e375ebf67af0689727b2d49db7c0d11d4829552ea01ae4/bandcamp-downloader-0.0.13.tar.gz"
   sha256 "c7dbf489b2611406148a6ced25e5814b1fe666e3b3da6c744cfc3df2abe1b270"
   license "Unlicense"
-  revision 3
+  revision 4
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
@@ -82,8 +82,8 @@ class BandcampDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
