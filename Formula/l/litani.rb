@@ -26,7 +26,8 @@ class Litani < Formula
   depends_on "gnuplot"
   depends_on "graphviz"
   depends_on "ninja"
-  depends_on "python@3.11"
+  depends_on "python-markupsafe"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "jinja2" do
@@ -34,14 +35,9 @@ class Litani < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   def install
     ENV.prepend_path "PATH", libexec/"vendor/bin"
-    venv = virtualenv_create(libexec/"vendor", "python3.11")
+    venv = virtualenv_create(libexec/"vendor", "python3.12")
     venv.pip_install resources
 
     libexec.install Dir["*"] - ["test", "examples"]
