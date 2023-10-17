@@ -14,15 +14,13 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d022fd63f93d9155d65bacdb6ae8322f0f77cd7a0dde5dff4dc58e2ce123b367"
-    sha256                               arm64_ventura:  "13369bc7d99cf8b2da61d00010daa496b0cc4827b7dea969e83ff56d701535f1"
-    sha256                               arm64_monterey: "a565a94492747550cac53e4a8988d5a5bdb235b42c78d41aa665e54c0af5a7ba"
-    sha256                               arm64_big_sur:  "53d0a8877fa30effdaa962aa4931a19e9248f602f8f5af7b6e04a86a31ce31d0"
-    sha256 cellar: :any,                 sonoma:         "6fb019b4a767c0ac26fd9a447c920f42d0e3583a0a8f77b4308f023a42e99649"
-    sha256                               ventura:        "e7d54df72be1a1f7839a13aa938fc70375d05bb1b86f700dd742f212bafd44c5"
-    sha256                               monterey:       "e3e9db1cf350fab27dacd482b85f99a99d6f86b5a071dd3531537d7cfeb954b7"
-    sha256                               big_sur:        "7d1cb8b9058159135350b8746a53beb867f8ea8176e621b250f0434b6e9ca749"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2c54074766d2ed5d369c168362558c9405ba8874cf1c8337b4f454c6f562be7"
+    sha256 cellar: :any,                 arm64_sonoma:   "8fd3dfc23275635bd786a3ef09749c909ac2bb2ea2e4b271ff82bd9f575d7215"
+    sha256 cellar: :any,                 arm64_ventura:  "ecd502e0a296fa9ff0b093eec0d0ff537ee6750a11ca3475c3317bdfe032b5ec"
+    sha256 cellar: :any,                 arm64_monterey: "77927824b8c8aaf89f77eeab57396835d1d33cc8d150c2e3ca86264dd4aef943"
+    sha256 cellar: :any,                 sonoma:         "fd14314e2f93b55340e363ebb5fa52283871c9df33e7d04674fe84ee865cf4b0"
+    sha256 cellar: :any,                 ventura:        "df22f461f6b5412d06d4e2dbf2802b59d09ebc2a599c112673e069c75e482757"
+    sha256 cellar: :any,                 monterey:       "696c7526f3e6d052af2e8c9d8556b0c32dc840b76574480025ede87b1f5d9d23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ceccd15fd3b58cb7be51a09879c6d31f58ddc300a74379f29823177975f280"
   end
 
   head do
