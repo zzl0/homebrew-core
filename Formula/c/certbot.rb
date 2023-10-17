@@ -6,6 +6,7 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/fb/da/1124407c79ae88b6eec56dcd057f08c1ebc6fbcd4c98d046ea24ccfbd2c5/certbot-2.7.1.tar.gz"
   sha256 "22604d6ab8e5b665ea1aa201d65840298f5e4f98a100d399f52cf30c6f5c7408"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
@@ -26,7 +27,7 @@ class Certbot < Formula
   depends_on "python-cryptography"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -102,14 +103,14 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
     if build.head?
       head_packages = %w[acme certbot certbot-apache certbot-nginx]
-      venv = virtualenv_create(libexec, "python3.11")
+      venv = virtualenv_create(libexec, "python3.12")
       venv.pip_install resources.reject { |r| head_packages.include? r.name }
       venv.pip_install_and_link head_packages.map { |pkg| buildpath/pkg }
       pkgshare.install buildpath/"certbot/examples"
