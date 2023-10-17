@@ -3,10 +3,9 @@ class CargoUdeps < Formula
   homepage "https://github.com/est31/cargo-udeps"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.42.tar.gz"
-  sha256 "b89c4ba44112a5b9d544bc8555a69f2fa24f44a0a389035cd38f19827a262e78"
+  url "https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.43.tar.gz"
+  sha256 "d2c286f696f1d1314fcbef03ffa3c1a365992021529ead1caf533cbe92c3deb9"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "335521a382d7248d69e7bac2847385ef3a0dba0fc1e4da6eb1e45b28786c22c1"
