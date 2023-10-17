@@ -9,15 +9,14 @@ class Doc8 < Formula
   head "https://github.com/PyCQA/doc8.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23a72a4a18a0739ee42b0ee6e8c0831b4e764efc46491f160ce6c55cc73de639"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "894235ad2cded34e1072772a8df17f42432e6e8dcb9aff59d252c78f7ddd3fe7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c91549a8ebe1453a0f98a575c0543c3d60a1411634b39d799d4d0da3d3b0780"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc2acb3dce64a72ebbadd46bf579d3484c700d133de53ef306f1ff9ef56732d0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a322a6e89c06d6b070370f8061ce8404bab3089724667f51baaf832a2cb8405"
-    sha256 cellar: :any_skip_relocation, ventura:        "844310402007a53b10c4af06a289ad096097156d165c27b62885726cebf32fba"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc36ed9318a5ed8aa742e270dd7f6c63efc7d28984390f21790fb217ab779cc5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "970258070670b9bda9a05ef6549a032eb42dd3d105c76f9399eb73eadd7610e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81cb6a88c01fa3565eaea21f3ce16d52cca08d078c435e635220f07180bf2102"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcab8748ce6d8189bca884ce88ab7196b44bb73ac97d790180366458f8fbb243"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "829b928634e11c99d75b28ad3ae3922d718b706363e875581e18779e6d835adf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5492b0b1f69c7da9031822ad056f5d226c4483ea7234b3473b88d5893d961801"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e50e5e4ad8474f92edbba636a15dcb26f686bad8075b93db4c91901cf1eeeeb"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f9c957149c0f97c629a56469cb7d454e6822685d0e1abd3245d55a9e4419eef"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc8fc1492606b7fcc5d49560b73171729f4bf0cdb5258c2a8aa1759306eccb5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9f92b4c8a1d56cfbb40e073702afd85d6753867e1cf3391af542f1c9126d919"
   end
 
   depends_on "docutils"
