@@ -6,6 +6,14 @@ class Pixi < Formula
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3997688af59bcaeb237e1fc1b58136c99309cf845ab06011b0df1ec04471c84b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a90c33638b17028bc1ce171d43b121b762ce9e103c49d7fef5234fbb70bdd6f"
