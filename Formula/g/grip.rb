@@ -21,7 +21,7 @@ class Grip < Formula
   depends_on "python-certifi"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
