@@ -21,7 +21,7 @@ class Ldeep < Formula
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "asn1crypto" do
