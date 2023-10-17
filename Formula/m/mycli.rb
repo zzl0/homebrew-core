@@ -8,15 +8,14 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2600c3ff0916c2392c7f9f6c78af67e33e7f4a75467df2876e2486314236c2ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27b5792812b88a9a3e706e8a5951a83a4db14770c6afa664d5cfcbf4369eb591"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd5408630fea5d0f2d2804a225851f28eb5f95ba594ef38ae67bcbff752b8801"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8f71c0f0cd6c27b10d6249e5aedacb2a6d4f696a4b4fc9b2cf9108b9aaf324aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3c08beadd646c598d42c06864cf419a287047338adcb2ea2e7729c3391626d95"
-    sha256 cellar: :any_skip_relocation, ventura:        "f09ad4f6423cffdafac55d6c3ff25c8f387152d16956a1c210897e97e944d0d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "47f73a701750081458d59cdd243c68d4914c25f3e43787bd24ef2fa02a92cfd9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a6f4d0e2701d65a9f5c312900f2b5e4c7d00bab9e8234e41a791a0ab7203279"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52a42f6feb4b9742a0a15964267fd0a3f52db1919195b52e80e29518c69a7fae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b912e5f834281a7956503d856e84c015bd3221d5359e203e7d6b4f430f30fd66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d866d3e248bbe263c8ea578bd60bf5bc165aa1e7f7b2619fa06bf073511131e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46120e195909bfa13de1cd443508d1f60918cb68e6204960e0f14e1ce94d4cdd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bb4628dc32cd4dc299e21cf633e5c357746854266175abbec6bc8bf27e62fb80"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d603932c673eafac54101a33bc71673f7e2749fe6c05eed41811ff8c78cb4fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd5b2ae8a3d96f4e8772cfb8b3d73a8aeca7f75fcd189001fe6a51477ca598f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cea85758a2715c1689703e146aa5e0ba7274e0b4e456c77fe785af6dd12c4184"
   end
 
   depends_on "cffi"
