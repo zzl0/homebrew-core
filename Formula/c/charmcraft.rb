@@ -6,7 +6,7 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/79/2f/14865ae1d3c6061c9e089a1577e4e946e09920eba76c1a7a8f6bc31374d7/charmcraft-2.2.0.tar.gz"
   sha256 "8acf952c0f302c67afae6755e912a3211803a7352b5b5cc588ed3bf8a5bc6b59"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a652705bb30333fd738b5fdc8deb19926f8494fcdd93bf89b5c9e4a76bd95f8d"
@@ -48,8 +48,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-cli" do
-    url "https://files.pythonhosted.org/packages/85/e0/be612f5c3b032237e2f884082a7747a557f1b0edf2e8ce14d577e128c2c1/craft-cli-2.1.0.tar.gz"
-    sha256 "628f09cd163ed251fca9e3c924bbbb4ed81e99d600b3173dfd0edd2fc1fca21a"
+    url "https://files.pythonhosted.org/packages/32/c6/5a84f644b3c4d53209035a6e54f940c9e6eb60548f1504cbec1f9ab53008/craft-cli-2.2.0.tar.gz"
+    sha256 "ee16218f6dd34899c3366e2c04736376cecf1c41c110c80af84cdb58c7722c68"
   end
 
   resource "craft-parts" do
@@ -228,8 +228,8 @@ class Charmcraft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   resource "wrapt" do
