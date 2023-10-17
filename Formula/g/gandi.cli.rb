@@ -9,14 +9,14 @@ class GandiCli < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce1f8294b2f45dd75225a93241d94d2bae8bf8adbf4d228dd30e1751797a87f6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb16519dc3f206c2af1de48a0b81fca854bca655291f67146940f0e3558f2f00"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8df1ad0c5ef9f749b4084c4031f3619964db740f0ad43cad5dafa2b794737b49"
-    sha256 cellar: :any_skip_relocation, ventura:        "150df3899afab045028b3463416bbcb3e6802711255e5c7800faa01d7f6aba7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "86268b7df7927a754674c7a64db72363bed1b6990e289c3692e7440337e5f5d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bef38c97c708cbb52c3683e5cdd8fdd9f3f96cd8150374f5a81458721e3d0e11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94ad4ab88f30cb72e6fee7a8343caa8e8951250724f62785c754c74fdd2335fa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58fbb27b4b9ed77d000318732a53cd533e9fd75345dfbad67da9ba915c8b621e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dc5106148e17ea54d7742bf9117e2acf471240886ae43baf19fe652b411bd70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1cf8ebdf3314c573a443dd2e3031358337424d22ecb0dece308f3f22e7846dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d9258ae6525b869d4d9bfe89d33a3d4c33dba43ab5e246e641c43d6cc52039b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "df0972b59a2d814a777333ebfcf5ecdf75d391a1deee303da14a533a01f974ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd991fc9d5c837a13101b60fffe30e5a3b6a9e2c9681408db11143aa5b56f7b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e73abdfe8089c1e7c7503783e211d2ea1866d3cb73ae4cf368d6b43d9d77b5bf"
   end
 
   # https://github.com/Gandi/gandi.cli#gandi-cli
