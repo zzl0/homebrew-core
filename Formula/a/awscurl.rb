@@ -22,7 +22,7 @@ class Awscurl < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libffi"
 
