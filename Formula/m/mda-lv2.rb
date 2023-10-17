@@ -26,9 +26,10 @@ class MdaLv2 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "sord" => :test
   depends_on "lv2"
+
+  uses_from_macos "python" => :build
 
   def install
     system "meson", "setup", "build", *std_meson_args
