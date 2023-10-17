@@ -23,7 +23,7 @@ class Volk < Formula
   depends_on "pkg-config" => :build
   depends_on "orc"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_intel do
     depends_on "cpu_features"
@@ -42,7 +42,7 @@ class Volk < Formula
   end
 
   def install
-    python = "python3.11"
+    python = "python3.12"
 
     # Set up Mako
     venv_root = libexec/"venv"
