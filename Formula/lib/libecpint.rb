@@ -20,7 +20,7 @@ class Libecpint < Formula
   depends_on "cmake" => :build
   depends_on "libcerf"
   depends_on "pugixml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     args = [
