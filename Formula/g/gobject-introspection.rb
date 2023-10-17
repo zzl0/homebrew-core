@@ -26,8 +26,9 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkg-config"
-  # Ships a `_giscanner.cpython-311-darwin.so`, so needs a specific version.
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  # Ships a `_giscanner.cpython-312-darwin.so`, so needs a specific version.
+  depends_on "python@3.12"
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi", since: :catalina
@@ -41,10 +42,15 @@ class GobjectIntrospection < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
+    # Allow scripts to prioritize "python3" from correct Python during build if
+    # that Python was altinstall'ed and the linked Python is also in environment
+    pyver = Language::Python.major_minor_version python3
+    ENV.prepend_path "PATH", Formula["python@#{pyver}"].opt_libexec/"bin"
+
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
 
     inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
