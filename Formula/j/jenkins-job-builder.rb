@@ -20,18 +20,19 @@ class JenkinsJobBuilder < Formula
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "fasteners" do
-    url "https://files.pythonhosted.org/packages/f5/9a/e613fc7f7fa157bea028d8d823a13ba5583a49a2dea926ca86b6cbf0fd00/fasteners-0.18.tar.gz"
-    sha256 "cb7c13ef91e0c7e4fe4af38ecaf6b904ec3f5ce0dda06d34924b6b74b869d953"
+    url "https://files.pythonhosted.org/packages/5f/d4/e834d929be54bfadb1f3e3b931c38e956aaa3b235a46a3c764c26c774902/fasteners-0.19.tar.gz"
+    sha256 "b4f37c3ac52d8a445af3a66bce57b33b5e90b97c696b7b984f530cf8f0ded09c"
   end
 
   resource "idna" do
@@ -60,12 +61,12 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "python-jenkins" do
-    url "https://files.pythonhosted.org/packages/93/2e/8120831ac693483e3ac878c2f1c6bb3535dabb247b4a93117bb2da3b09f8/python-jenkins-1.8.0.tar.gz"
-    sha256 "0180a5463f68e2e0110f382b4248d2284bc68481db4a16fcbf61f4f55801c31f"
+    url "https://files.pythonhosted.org/packages/83/a9/ad5efdb48044b7a4045f0de1262262da746e02d0bedd8cb8725144f8736c/python-jenkins-1.8.1.tar.gz"
+    sha256 "ff5f1d92539d903f869b02eaf2b1314447e6d6d78f767edcfdd92967d532b9c6"
 
     # setuptools patch to fix the conflict with jenkins-job-builder
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/2bfc1f3/jenkins-job-builder/python-jenkins-1.8.0-setuptools.patch"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/08e835e/jenkins-job-builder/python-jenkins-1.8.1-setuptools.patch"
       sha256 "f3319463368d8ed133ade64e6a4c4f01a28d45e6993a38012a26be55d8d3e765"
     end
   end
@@ -81,8 +82,8 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   # setuptools patch, upstream bug report, https://storyboard.openstack.org/#!/story/2010842
