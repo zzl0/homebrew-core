@@ -28,8 +28,9 @@ class FbClient < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python-pycurl"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
 
@@ -39,7 +40,7 @@ class FbClient < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
     resources.each do |r|
       r.stage do
