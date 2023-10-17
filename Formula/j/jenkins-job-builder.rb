@@ -8,15 +8,14 @@ class JenkinsJobBuilder < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c80e448109adab02c1323a62027ecd93979408f50bc6a298d19ad0c0b97b4d41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7fc0e4d8fc8fe933838d829eee69c0cf1a45028f47c47d90e74d2e05279ec41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e197891d69f28fb0e57fb0aff99f0f9e03682c16346e5fb0ebba957602ecb928"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51c98a529f1e8bc394679dd800839d05f0da6d061b4ad484ecd9b66fe5e1d95f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e53f6b10771c51bcbc7b2ad933d75d0e222b93cb84329aefa1220c7445440b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6702bb17c8e192ca66cf9cc7c8d677c678d5d3f02c92cf9c0551a1aa0e02b148"
-    sha256 cellar: :any_skip_relocation, monterey:       "028f3090cab6518f5bc722c2aab853e92d9182c1c9c0d432388d3b2a9a52cef8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4816d383ae27b6298c4e74dd270f05934bd52e528e1a08946bc76d0ceecd7bcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e37401600283aa226e2d0fdcfd00093324baf502a1a2d4eddfd12d16d6ad7d9f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a643e36d233226d66d15adc47a6674a2841e9422f0c96fa5a01e0b3a1f731eed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd5a29ee02b11226c728bb9cf377f39c922843b7330b8f6e8bf0c346a2c9dd66"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c168543a625b04d8b2f5057e56ae82d52c83256e4143201084131dcc7bd8147b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2be52bd629becad2a595c82c34780694fa832913070add0e89d10a1f6dbf3bf7"
+    sha256 cellar: :any_skip_relocation, ventura:        "99fa2d745d77f8b196170a3e8c8895e2950103dd304edc6ad2167532f5e74200"
+    sha256 cellar: :any_skip_relocation, monterey:       "385faef64b3aac70902ff3be8bb9dc187ccb03151cce2f72313b1037fd22ee68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5931078022cd79751e59a6b6c6255084d848f414e07b361b18d1d129128c18d5"
   end
 
   depends_on "python-certifi"
