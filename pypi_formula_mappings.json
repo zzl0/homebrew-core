@@ -394,7 +394,7 @@
     "exclude_packages": ["packaging"]
   },
   "fred": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "click"]
   },
   "gallery-dl": {
     "exclude_packages": ["certifi"]
