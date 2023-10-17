@@ -400,7 +400,7 @@
     "exclude_packages": ["certifi"]
   },
   "gcalcli": {
-    "exclude_packages": ["certifi", "six"]
+    "exclude_packages": ["certifi", "pyparsing", "six"]
   },
   "gcovr": {
     "exclude_packages": ["lxml", "MarkupSafe", "pygments"]
