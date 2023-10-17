@@ -277,7 +277,7 @@
   },
   "dnsrobocert": {
     "exclude_packages": [
-      "certbot", "certifi", "cffi", "cryptography", "dns-lexicon", "lxml",
+      "certbot", "certifi", "cffi", "click", "cryptography", "dns-lexicon", "lxml",
       "pycparser", "pygments", "pyyaml", "six"
     ]
   },
