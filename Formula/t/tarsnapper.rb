@@ -22,7 +22,7 @@ class Tarsnapper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f08e3a8c30c95c7242dd60019f249fc5de32e1b4483d403976c986d06632b4de"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "tarsnap"
