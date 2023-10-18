@@ -23,7 +23,7 @@ class TwinePypi < Formula
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
