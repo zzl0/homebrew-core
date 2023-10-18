@@ -6,7 +6,7 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/e6/60/cc687cbccfb3543b17ba5d404007f7e43edcb7fa3c780b4f9ec1cadee83f/molecule-6.0.2.tar.gz"
   sha256 "b919353f799746de60b16a27575627783e39c268fdf2f2aa0372f0162c7b5478"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
@@ -40,8 +40,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/be/a4/0fd9e4f7eef974bcb106c31aafa463cf43b6bc77c1a259bc236c4c44c057/ansible-core-2.15.4.tar.gz"
-    sha256 "c1a8aaede985f79e5932ba2163639379f7d8025bfd9b28378db1649a4ef541ed"
+    url "https://files.pythonhosted.org/packages/c8/4b/6a25ee293ee4886cb6e1782bec5e70c20468e5dc4db092d2075f56b9d88b/ansible-core-2.15.5.tar.gz"
+    sha256 "8cc539cb8d4349af3ffd901c70722f7a7a203ae6427ddac95ffdf546a6e41602"
   end
 
   resource "attrs" do
@@ -165,8 +165,8 @@ class Molecule < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/9e/a8/4a4e5ef90c4c4f27683ce2bb74b9521b5b1d06ac134cd650333fdca0f52c/rpds_py-0.10.4.tar.gz"
-    sha256 "18d5ff7fbd305a1d564273e9eb22de83ae3cd9cd6329fddc8f12f6428a711a6a"
+    url "https://files.pythonhosted.org/packages/ee/12/d6cfa2699916e5ece53a42e486e03b5a14e672c76ddb16d4649efcf9efb8/rpds_py-0.10.6.tar.gz"
+    sha256 "4ce5a708d65a8dbf3748d2474b580d606b1b9f91b5c6ab2a316e0b0cf7a4ba50"
   end
 
   resource "selinux" do
@@ -180,8 +180,8 @@ class Molecule < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcmatch" do
@@ -190,8 +190,8 @@ class Molecule < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/44/34/551f30cbdc0515c39c2e78ef5919615785cd370844e40ada82367c1fab3f/websocket-client-1.6.3.tar.gz"
-    sha256 "3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"
+    url "https://files.pythonhosted.org/packages/cb/eb/19eadbb717ef032749853ef5eb1c28e9ca974711e28bccd4815913ba5546/websocket-client-1.6.4.tar.gz"
+    sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
   end
 
   def install
