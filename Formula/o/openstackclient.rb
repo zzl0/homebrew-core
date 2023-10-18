@@ -9,13 +9,14 @@ class Openstackclient < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d97a5587c895cd828d994671bba9dbe0e44200d5245d5c3f0d37b0f5021944f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8747a7365ae1caef5ef1405cfc926cc7fe15e2c682aa0b7351a4357d1f22c6c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4837629a50791e8d0ba092a86845e471d61738e81f757ee77437fe02ebad2798"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c60d672992ec2709d03e8b7f986edbc41e1faa2f4f3858ecdf31604d1145dd3d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d018ab6f0ce7c9ef313b9d7283ae053bf9730364343cfd4ffa27ed29e7d0cc42"
-    sha256 cellar: :any_skip_relocation, monterey:       "214a994931dab50602b579a5c6805de9ed3ee874b5aa429c6246f029725740ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5398a742bb2f639e62b0c83cb20c76809ae8e5dd08d8e5ede2d7df72ae5532b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d9cc369e8dfd2569742d2e4274c0b39df2f5c5c0a9728a732a6d6c1ff775118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1fdfb087773aa78e43d4bdda0d8b5d58090091b34136a3548ebc3116bd752095"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b09fadd84519c7cd23bea3559ea24897b2485e4ae55409c70aff6e78e338da8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c5f39841b5c5f7c7bcbef313f58a5dc0ad218c62e937b334bb54fccbaa3c23d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0bc4649f35ee280297dcf2591a4abcdbb40799b822bc447f5fabb9b0291ef29"
+    sha256 cellar: :any_skip_relocation, monterey:       "a502e10effb6278626f1aeda33bdb69d9fe26fd4e4732ff4821e7f0acfe72d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4200c17a9fb61d671ee7e2a891dcc601129e00d38f535560ef3c9f37d40aff80"
   end
 
   depends_on "cffi"
@@ -24,7 +25,7 @@ class Openstackclient < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
