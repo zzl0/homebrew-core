@@ -1,8 +1,8 @@
 class Ipget < Formula
   desc "Retrieve files over IPFS and save them locally"
   homepage "https://github.com/ipfs/ipget/"
-  url "https://github.com/ipfs/ipget/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "e9b99050f5fd6fc5900a890cc5d5f097fbd3950fd00aeafa013271e5317bd4b8"
+  url "https://github.com/ipfs/ipget/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "a9bffe36f23284fa691cca0bc85d1890782ca0c7bc69a25f9881b712914a96cb"
   license "MIT"
   head "https://github.com/ipfs/ipget.git", branch: "master"
 
@@ -18,9 +18,15 @@ class Ipget < Formula
 
   depends_on "go" => :build
 
+  # patch version to match with the release
+  # upstream PR ref, https://github.com/ipfs/ipget/pull/147
+  patch do
+    url "https://github.com/ipfs/ipget/commit/1716f2298e54394123f3dda283ad30f0390b5640.patch?full_index=1"
+    sha256 "cb3faa2d66702f1df82fbf04e78778422d7634b5e1fd831c249be06845cca82c"
+  end
+
   def install
-    system "make", "build"
-    bin.install "ipget"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
