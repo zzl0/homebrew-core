@@ -23,7 +23,8 @@ class Vint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e33a39133442c624e46b3ae03af2629a7f6e35f4aabb8e0d6095472f87f98de7"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "ansicolor" do
