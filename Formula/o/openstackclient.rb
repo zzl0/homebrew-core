@@ -9,14 +9,13 @@ class Openstackclient < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d9cc369e8dfd2569742d2e4274c0b39df2f5c5c0a9728a732a6d6c1ff775118"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1fdfb087773aa78e43d4bdda0d8b5d58090091b34136a3548ebc3116bd752095"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b09fadd84519c7cd23bea3559ea24897b2485e4ae55409c70aff6e78e338da8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5f39841b5c5f7c7bcbef313f58a5dc0ad218c62e937b334bb54fccbaa3c23d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0bc4649f35ee280297dcf2591a4abcdbb40799b822bc447f5fabb9b0291ef29"
-    sha256 cellar: :any_skip_relocation, monterey:       "a502e10effb6278626f1aeda33bdb69d9fe26fd4e4732ff4821e7f0acfe72d5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4200c17a9fb61d671ee7e2a891dcc601129e00d38f535560ef3c9f37d40aff80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28aba7138881035e159502736b53331572ccc8ca43fff2d730969aeaebc63005"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b95e89438a9dcd38cb95028c8d040a79be8bc4e67df24b9524272577b2839537"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bda5fe8b55fb4120387f05df1a029460f397d2661939846a3c5caa6c9ea3a62a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "01e716f93d468b4d6eee13283805ecd69a4caeada335544700ac48b870787b8b"
+    sha256 cellar: :any_skip_relocation, ventura:        "2de143204131d4d00ccdcbf5ae98f695ef4624df10cef81ea6dedbcbf3f28b34"
+    sha256 cellar: :any_skip_relocation, monterey:       "63bc2687bf117aae517242804e56c3697f6f659114dd522b45f743e8f23ec8c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "245874920656f4e692f491bb0c0e1a7af7968faac278c4468c94013f5bfba8b3"
   end
 
   depends_on "cffi"
