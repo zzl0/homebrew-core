@@ -9,13 +9,13 @@ class AwsElasticbeanstalk < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a12f4d4ac1d0790915f92be2fdbf7c51ee647e99b5d6a9453d60c4189dec3e27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97bfbdfbeca27f1081a451a7c4cea287c04c28582a32404e081ec5eccbe99018"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "924959bbd542719e462b60bc9cf86873070a6e2d69d18eb3fa2d79e0f6a09428"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e90e120ce5bcd8bbfc8e0d9a6a240613732cf7581f135702148589bee8edb7f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a08db6c1723e7f46fed50401220dfe076c139c15e4fd858376d93f2ba7f9b21"
-    sha256 cellar: :any_skip_relocation, monterey:       "75eca48534951b9210568dc7917a026cfcf7b03e25828568858a238662c866f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1f9c007347c4d9b3a53fe45b76daeea8244d25093ff45540260cb42580dee5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dbb5b7dfa8fd04fa17f69b92eb192a2f9bf524cf5976eb750366aa534368d602"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18a3433851dea3d45b8025ecf4b645b3eb273dfeeb6384b340787d424d238f81"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f76a46858235e97aa4aafa39da45d6c8a003245dd172c5fc06f7d734f904ca65"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6f53e719a64bbf3b6ebec6e1e4c11bead8900ac812148c0d2e562210cf612f75"
+    sha256 cellar: :any_skip_relocation, ventura:        "db95d57195a28842e1a2a537ea655bf338a776f2cc30e3de2830bacbc0634ee8"
+    sha256 cellar: :any_skip_relocation, monterey:       "587fe7cae5e3c69c25acc265cf6757ad86fcb721867578e634e2e95aab17beb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30d2664fd25b97a314fe4e98dc23acb55e14d4f179bd711e9e12c5462d67b650"
   end
 
   # `pkg-config` and `rust` are for bcrypt
