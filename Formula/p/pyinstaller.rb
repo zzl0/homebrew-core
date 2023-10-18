@@ -19,7 +19,8 @@ class Pyinstaller < Formula
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   resource "altgraph" do
     url "https://files.pythonhosted.org/packages/de/a8/7145824cf0b9e3c28046520480f207df47e927df83aa9555fb47f8505922/altgraph-0.17.4.tar.gz"
@@ -38,7 +39,7 @@ class Pyinstaller < Formula
 
   def install
     cd "bootloader" do
-      system "python3.11", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
+      system "python3.12", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
     end
     virtualenv_install_with_resources
   end
