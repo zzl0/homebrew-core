@@ -22,10 +22,11 @@ class Tsduck < Formula
   depends_on "gnu-sed" => :build
   depends_on "grep" => :build
   depends_on "openjdk" => :build
-  depends_on "python@3.11" => :build
   depends_on "librist"
   depends_on "libvatek"
   depends_on "srt"
+
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "libedit"
   uses_from_macos "pcsc-lite"
