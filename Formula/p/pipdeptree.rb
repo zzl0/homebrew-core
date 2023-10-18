@@ -19,7 +19,7 @@ class Pipdeptree < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5259fa298e6a857f95b7bbdc331fe3485e39111b7d194196cce9a11b5f4cdee"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
