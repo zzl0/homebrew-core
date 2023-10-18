@@ -1,10 +1,9 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http://dlib.net/"
-  url "http://dlib.net/files/dlib-19.24.tar.bz2"
-  sha256 "28fdd1490c4d0bb73bd65dad64782dd55c23ea00647f5654d2227b7d30b784c4"
+  url "https://github.com/davisking/dlib/archive/refs/tags/v19.24.2.tar.gz"
+  sha256 "0f5c7e3de6316a513635052c5f0a16a84e1cef26a7d233bf00c21348462b6d6f"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do
@@ -60,7 +59,7 @@ class Dlib < Formula
         dlog << dlib::LINFO << "The answer is " << 42;
       }
     EOS
-    system ENV.cxx, "-pthread", "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
+    system ENV.cxx, "-pthread", "-std=c++14", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
     assert_match(/INFO.*example: The answer is 42/, shell_output("./test"))
   end
