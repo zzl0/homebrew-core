@@ -257,6 +257,9 @@
   "cruft": {
     "exclude_packages": ["cookiecutter", "six", "typing-extensions"]
   },
+  "crytic-compile": {
+    "exclude_packages": ["solc-select", "toml"]
+  },
   "csvkit": {
     "exclude_packages": ["six", "pytz"]
   },

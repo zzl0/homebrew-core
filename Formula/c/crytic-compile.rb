@@ -3,8 +3,8 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/41/75/84439a30acb3bcdba67cf3a63d1bb041b58661b796dcdb205cc2203c73b2/crytic-compile-0.3.4.tar.gz"
-  sha256 "f4bbabe616d09dcae73c3cd4140b719845ff67993c0159ec0de7d4e20642725d"
+  url "https://files.pythonhosted.org/packages/3a/9c/e100d2dbc90471010716e56766ef6608717c44d7278eea3dacb5bb48276a/crytic-compile-0.3.5.tar.gz"
+  sha256 "f9b2bf3dc8c99fbc58c4ae6f82b3e8e378f56e107e37fd8786a36567dd68fa6e"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
@@ -20,17 +20,13 @@ class CryticCompile < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "91b3920f61e02d5d3e6f75396e7337f34938ddadfa093a05299b35b83b3e66dd"
   end
 
+  depends_on "python-toml"
   depends_on "python@3.11"
   depends_on "solc-select"
 
   resource "cbor2" do
     url "https://files.pythonhosted.org/packages/d9/69/de486293f5211d2e8fe1a19854e69f2811a18448162c52b48c67f8fbcac3/cbor2-5.4.6.tar.gz"
     sha256 "b893500db0fe033e570c3adc956af6eefc57e280026bd2d86fd53da9f1e594d7"
-  end
-
-  resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/b9/05/0e7547c445bbbc96c538d870e6c5c5a69a9fa5df0a9df3e27cb126527196/pycryptodome-3.18.0.tar.gz"
-    sha256 "c9adee653fc882d98956e33ca2c1fb582e23a8af7ac82fee75bd6113c55a0413"
   end
 
   def install
