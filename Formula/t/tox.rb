@@ -21,7 +21,7 @@ class Tox < Formula
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
@@ -87,7 +87,7 @@ class Tox < Formula
   test do
     assert_match "usage", shell_output("#{bin}/tox --help")
     system bin/"tox"
-    pyver = Language::Python.major_minor_version(Formula["python@3.11"].opt_bin/"python3.11").to_s.delete(".")
+    pyver = Language::Python.major_minor_version(Formula["python@3.12"].opt_bin/"python3.12").to_s.delete(".")
 
     system bin/"tox", "quickstart", "src"
     (testpath/"src/test_trivial.py").write <<~EOS
