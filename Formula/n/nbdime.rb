@@ -9,13 +9,13 @@ class Nbdime < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70b661e5097654c18c5c6c699566f6bd551fd7112b441a25240e38ffdaccb8c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "143885074c08d5404ba87a9bc157f9f39b1a797fd911291f3632138c3fd88f34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51ed074ee95c78c841b0e79ca0733ea28528965784250dae0b0d5fbd5349cbc0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d990e90f389957e68567cde17ed7881bfad66a8bb70ea4a9570991a3e7d699c"
-    sha256 cellar: :any_skip_relocation, ventura:        "727d56277a3ba270eecdbeb47303b9b1810ce238f53c5395e6e64b45860752e9"
-    sha256 cellar: :any_skip_relocation, monterey:       "879bf42712f85446e37b282432615b72888f256fc5efdb8ab3a5430d7c2b863e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aab7bc3afbae7f0b4847e8016b6b76f159c23ec209dd0021b269430589d54e75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0279eea8459630f6cc1725d85ea08046c6cbe61d2e0eb2528888e375393a7628"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d52ca1b5cc3d1d503ac17e6c7cd0b530b2db019ec910545fa45ec1a3f0bbef08"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "886741802786af719886acd7b74aba7a6383a8b0ea5de9d1f270d03bef6a8d86"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d70edbae377069b0210d1581dc20b638f4b1637345c4711d0b4a5e908c99a71"
+    sha256 cellar: :any_skip_relocation, ventura:        "3699ffdec3814341b4659f0fadd43602fe782ce7c100fb9bef6d3874b0de5292"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ca514d2350c4f96f50402d546b607e4f0a41204a885ba90f51fcde153254b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1892f9371adb53456c1ea52662b15d2d0f42295b653915bd5d4ee23a0efd9b51"
   end
 
   depends_on "rust" => :build # for rpds-py
