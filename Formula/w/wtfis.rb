@@ -6,7 +6,7 @@ class Wtfis < Formula
   url "https://files.pythonhosted.org/packages/25/2a/6ede7b982da3e94102b3d7cfe968b95bad28364c082fbff4cf88ab9aba40/wtfis-0.7.1.tar.gz"
   sha256 "812cc1679f5bc4b07f73d84d96a963b16cbed2e4ccc07c7f24b2b696abba3dd3"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
@@ -97,13 +97,13 @@ class Wtfis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/e0/ab/bc8d317106c8ea5ff11a2394ae99cb9adf1a9d32c55d3b15eea2b505b875/XlsxWriter-3.1.6.tar.gz"
-    sha256 "2087abdaa4a5e981a3ae50b5c21ff1adae59c8fecb6157808585fc169a6bfcd9"
+    url "https://files.pythonhosted.org/packages/da/b3/90e50e5c285f48b5fc251a6e8ec255a110dc194349b992a18c5b9ae3e713/XlsxWriter-3.1.8.tar.gz"
+    sha256 "059d0786fbfa3055588e81e9d5acf4ace28394bf09353a31ae2cae635740fc15"
   end
 
   def install
