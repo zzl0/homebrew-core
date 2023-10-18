@@ -3,6 +3,7 @@ class GitNumber < Formula
   homepage "https://github.com/holygeek/git-number"
   url "https://github.com/holygeek/git-number/archive/1.0.1.tar.gz"
   sha256 "1b9e691bd2c16321a8b83b65f2393af1707ece77e05dab73b14b04f51e9f9a56"
+  license "ISC"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "f357699b108c2e521721c7a8a93ee188a526b47a5f1af7841cf005d2d1008f4f"
@@ -13,6 +14,12 @@ class GitNumber < Formula
     sha256 cellar: :any_skip_relocation, sierra:        "d71548120a8d5d9db4b9b9ae71be947303c6a415e35380d0d8e36551765b827f"
     sha256 cellar: :any_skip_relocation, el_capitan:    "d71548120a8d5d9db4b9b9ae71be947303c6a415e35380d0d8e36551765b827f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8bca68db296e388c3290a4c805720e710e74b38482db38cebc1d3c78c96b924"
+  end
+
+  # Fix for main branch name in tests
+  patch do
+    url "https://github.com/holygeek/git-number/commit/3da16b37716455ef1dcc9f617a89e003581b5188.patch?full_index=1"
+    sha256 "6e7ed0dfcd86b1e8ee4ada9688aa12be9e33c4d9bb6928cf59dda653aa3c716e"
   end
 
   # Necessary for next patch
