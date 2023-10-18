@@ -3,8 +3,8 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/72/9d/1c68404a2944423bb6450934c1b948bf38179a35bb1045133b8a2b287531/mentat-0.1.17.tar.gz"
-  sha256 "cf46aa5f214bed825ce4d283010acd64ed4dd1f6ab3fa33f24cd9f6220cfb2b8"
+  url "https://files.pythonhosted.org/packages/7e/89/c482a8b1754d733ca5bdc589c4d930c94f36047049307633eb62b7a8560c/mentat-0.1.19.tar.gz"
+  sha256 "8093ad981ad2b70d3c9d1f6d1c92cfbd9e6f4f5e028c099688eb71d02d804ebe"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
@@ -20,6 +20,7 @@ class Mentat < Formula
   end
 
   depends_on "rust" => :build # for tiktoken
+  depends_on "numpy"
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
