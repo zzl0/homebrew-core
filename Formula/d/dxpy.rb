@@ -6,6 +6,7 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/90/4a/8546678963831a30b5b7ca34210da4873aeef15aff0ab9d598c11fcdf965/dxpy-0.361.0.tar.gz"
   sha256 "455c2a63764e7a1158cdb48abcf987e80d186fb92c23c539d8e6f2e4cc0368c7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "099b37b0b5918f3dcd9ee4cad0a02a8ae21a832237bd96234e27393642a98443"
@@ -57,8 +58,8 @@ class Dxpy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   resource "websocket-client" do
