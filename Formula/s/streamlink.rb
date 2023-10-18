@@ -21,7 +21,7 @@ class Streamlink < Formula
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
