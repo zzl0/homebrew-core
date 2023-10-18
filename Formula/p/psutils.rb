@@ -20,7 +20,7 @@ class Psutils < Formula
   end
 
   depends_on "libpaper"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "puremagic" do
     url "https://files.pythonhosted.org/packages/50/bb/c9860ce714ce2147b6168fdf817e67c3be6eabc822fab5ef41cc52bafdec/puremagic-1.15.tar.gz"
@@ -28,8 +28,8 @@ class Psutils < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/4d/9e/23bb47ae1c3e8f11b5d5625eef5d6ab94ba1806ea2826babcb867090cce5/pypdf-3.16.1.tar.gz"
-    sha256 "aff9540e6c5ec135d6e80943db74257523639325162d00c903ee1e2be84351fc"
+    url "https://files.pythonhosted.org/packages/53/16/81e2f71268566c6c6f57f8a5fbb36e198cd4ba6e55ba39a36af48ce75520/pypdf-3.16.4.tar.gz"
+    sha256 "01927771b562d4ba84939ef95b393f0179166da786c5db710d07f807c52f480d"
   end
 
   def install
