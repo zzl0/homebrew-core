@@ -6,6 +6,7 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/e9/69/76f7d4a560f7156fb52ec0174fc65d023734fc8a2c7703660f4e359b6a46/enex2notion-0.2.27.tar.gz"
   sha256 "74caf499147cf18169cc7ed17cecb8c9f39e64ec4578a58105aeb69fd12ba64f"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f150162509439dd2b66607b5687c1a5915bdca922d3ed3cc9fcb24f43143215d"
@@ -123,8 +124,8 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   resource "w3lib" do
