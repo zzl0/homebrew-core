@@ -16,7 +16,6 @@ class Pylyzer < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.11"
 
   def install
     ENV["HOME"] = buildpath # The build will write to HOME/.erg
