@@ -6,7 +6,7 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/c6/37/fc94979077241a09f31f347cbae401c9f62705eadd441a392285537e603c/robotframework-6.1.1.zip"
   sha256 "3fa18f2596a4df2418c4b59abf43248327c15ed38ad8665f6a9a9c75c95d7789"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
@@ -47,8 +47,8 @@ class RobotFramework < Formula
   end
 
   resource "outcome" do
-    url "https://files.pythonhosted.org/packages/dd/91/741e1626e89fdc3664169e16300c59eefa4b23540cc6d6c70450f885098f/outcome-1.2.0.tar.gz"
-    sha256 "6f82bd3de45da303cf1f771ecafa1633750a358436a8bb60e06a1ceb745d2672"
+    url "https://files.pythonhosted.org/packages/64/1a/07e59b55f180506c72843d767a229c48084f5440005c646353742a4301bb/outcome-1.3.0.tar.gz"
+    sha256 "588ef4dc10b64e8df160d8d1310c44e1927129a66d6d2ef86845cef512c5f24c"
   end
 
   resource "paramiko" do
@@ -82,8 +82,8 @@ class RobotFramework < Formula
   end
 
   resource "robotframework-seleniumlibrary" do
-    url "https://files.pythonhosted.org/packages/48/49/b2032801e41814ed4456b74acbd2bc3792572ad54aa9cfa451992f88b8a8/robotframework-seleniumlibrary-6.1.2.tar.gz"
-    sha256 "81130a4eb8c34177e6cd8b51c2cdb29fde56078adf934f8758d2eb7bf9407309"
+    url "https://files.pythonhosted.org/packages/75/66/6a704118c5c8d3bd6b671364c73cee4ad8045188c321c8e7abdd468bc4e2/robotframework-seleniumlibrary-6.1.3.tar.gz"
+    sha256 "2cbe8954c7201c510a1d197381aace6f3a9a8a4b0abea3fa13f4d947fe47ea49"
   end
 
   resource "robotframework-sshlibrary" do
@@ -97,8 +97,8 @@ class RobotFramework < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/4d/ee/a3ab25dd30fb601ac580e76eb6df7f3f5da111b3b881df5bf1bd8d12f3b6/selenium-4.13.0.tar.gz"
-    sha256 "3c413a4f1b8af67824703195e3b1c19cfb1c3186c799efa035d55fd59d6dd59f"
+    url "https://files.pythonhosted.org/packages/0b/9a/7d71270c718d5f509cecda822f8c3ff39b2696fc8036f16b5d9b541b7940/selenium-4.14.0.tar.gz"
+    sha256 "0d14b0d9842366f38fb5f8f842cf7c042bcfa062affc6a0a86e4d634bdd0fe54"
   end
 
   resource "sniffio" do
@@ -122,8 +122,8 @@ class RobotFramework < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wsproto" do
