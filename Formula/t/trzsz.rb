@@ -18,7 +18,7 @@ class Trzsz < Formula
   end
 
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "iterm2" do
     url "https://files.pythonhosted.org/packages/4f/eb/47bb125fd3b32969f3bc8e0b8997bbe308484ac4d04331ae1e6199ae2c0f/iterm2-2.7.tar.gz"
