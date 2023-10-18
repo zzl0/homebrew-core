@@ -6,7 +6,7 @@ class Vineyard < Formula
   url "https://github.com/v6d-io/v6d/releases/download/v0.17.3/v6d-0.17.3.tar.gz"
   sha256 "34178fbc814a28b0dae8f26bf1c140ef0163c4c6fb57d5c4be06cd6c4d904718"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256                               arm64_sonoma:   "22fc09826da06dc466bae372997024810f240fb20b69a7fb9ef20f1f8b7ca8f9"
@@ -18,8 +18,8 @@ class Vineyard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c77a7684df23eb5d04e695216607ebc7e043b734756cee9036fa0bc49438d757"
   end
 
-  depends_on "cmake" => :build
-  depends_on "llvm" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "llvm" => [:build, :test]
   depends_on "python@3.11" => :build
   depends_on "apache-arrow"
   depends_on "boost"
@@ -81,20 +81,32 @@ class Vineyard < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cc", "-std=c++17",
-                    "-I#{Formula["apache-arrow"].include}",
-                    "-I#{Formula["boost"].include}",
-                    "-I#{include}",
-                    "-I#{include}/vineyard",
-                    "-I#{include}/vineyard/contrib",
-                    "-L#{Formula["apache-arrow"].lib}",
-                    "-L#{Formula["boost"].lib}",
-                    "-L#{lib}",
-                    "-larrow",
-                    "-lboost_thread-mt",
-                    "-lboost_system-mt",
-                    "-lvineyard_client",
-                    "-o", "test_vineyard_client"
+    (testpath/"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.5)
+
+      project(vineyard-test LANGUAGES C CXX)
+
+      find_package(vineyard REQUIRED)
+
+      add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}/test.cc)
+      target_include_directories(vineyard-test PRIVATE ${VINEYARD_INCLUDE_DIRS})
+      target_link_libraries(vineyard-test PRIVATE ${VINEYARD_LIBRARIES})
+    EOS
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+
+    # Remove Homebrew's lib directory from LDFLAGS as it is not available during
+    # `shell_output`.
+    ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
+
+    # macos AppleClang doesn't support -fopenmp
+    system "cmake", "-S", testpath, "-B", testpath/"build",
+                    "-DCMAKE_C_COMPILER=#{Formula["llvm"].bin}/clang",
+                    "-DCMAKE_CXX_COMPILER=#{Formula["llvm"].bin}/clang++",
+                    *std_cmake_args
+    system "cmake", "--build", testpath/"build"
 
     # prepare vineyardd
     vineyardd_pid = spawn bin/"vineyardd", "--norpc",
@@ -104,7 +116,8 @@ class Vineyard < Formula
     # sleep to let vineyardd get its wits about it
     sleep 10
 
-    assert_equal("vineyard instance is: 0\n", shell_output("./test_vineyard_client #{testpath}/vineyard.sock"))
+    assert_equal("vineyard instance is: 0\n",
+                 shell_output("#{testpath}/build/vineyard-test #{testpath}/vineyard.sock"))
   ensure
     # clean up the vineyardd process before we leave
     Process.kill("HUP", vineyardd_pid)
