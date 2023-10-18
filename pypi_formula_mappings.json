@@ -605,7 +605,7 @@
     "exclude_packages": ["Pygments", "PyYAML"]
   },
   "mentat": {
-    "exclude_packages": ["certifi", "packaging", "pygments", "six", "typing-extensions"]
+    "exclude_packages": ["certifi", "numpy", "packaging", "pygments", "six", "typing-extensions"]
   },
   "meson-python": {
     "exclude_packages": ["meson", "packaging"],
