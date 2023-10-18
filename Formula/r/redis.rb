@@ -12,14 +12,13 @@ class Redis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "53943e914be8be83327314d5e23a550f4b6ee31cb4ebebe85e27aa1bce80968a"
-    sha256 cellar: :any,                 arm64_ventura:  "cd7dc0b092e95bf3fdcf6f6d6a26a68c4bafcf6018220c121c7cd0fc3f5d5465"
-    sha256 cellar: :any,                 arm64_monterey: "a151d72c6dc3d502a0f53640e8ef89bf5401ba3c444b0da5a6f52a93ff418192"
-    sha256 cellar: :any,                 sonoma:         "648d64daed3802f6510ec1849704f85f8272eaa346a01a1bb2144306b0c438a5"
-    sha256 cellar: :any,                 ventura:        "1568685e4500ef9cae5c998763f13c51c4d87beead4c61b21e266f729439b5ed"
-    sha256 cellar: :any,                 monterey:       "6cdc1f0ec9d5efa53d1a8820e5deafed6a5e87e967785045a5c4240bca203063"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17ee5e17a10fc95eef2b90c07668fa70a155081d0387d023b9f988abdb906601"
+    sha256 cellar: :any,                 arm64_sonoma:   "1f6146c802a15b65de4d650687b014ca43c46a85076e3edeb22d293522e5bbbc"
+    sha256 cellar: :any,                 arm64_ventura:  "c412a9d0ac374696f8c563f0a2cdd57953f611447637c2e29120e7e3018050d7"
+    sha256 cellar: :any,                 arm64_monterey: "4f9bc4c0688c92b4d6fd4cf786212f69071c4fa637febd3f9cdaa1d793583c98"
+    sha256 cellar: :any,                 sonoma:         "7f690b472e683d20be5bebd16b9bf447f810371a94b92c2514f532b5a032acb1"
+    sha256 cellar: :any,                 ventura:        "5183bf03eba3f2c85d5081ede7792d3db633bb72d0354008fe045c86c7576b2a"
+    sha256 cellar: :any,                 monterey:       "93b090aed7c55898780b8a0a5d5c7bd91d520d178104f6c8a79c057c17fb5070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f080cae94a2f3a819b211483ddafe9307aa79146cb70a30be40772faf5859e64"
   end
 
   depends_on "openssl@3"
