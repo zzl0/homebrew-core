@@ -9,14 +9,13 @@ class Arjun < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aad7fb9e6468c4ba498475c9010cc2bb95bef77cc486aa9ad8139a4b4949c7c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1fd582eb0bd0a90b5f98447c33fe0df6c1f57db42a00d1e2d51b48d764c5bf4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cd5a7f640262ae57ba284afc0194a99edac000d959ee3f95cffae2571124222"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7e207152f9a447a0acd7468a6dbe5d4c1d6a6d7fde2ae439067298812f3e24ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1a4304776da9eed64222c4cb3ed19ffec7e4a197fece07fa0ad1b1e446bf910"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fa923a6326835eeb6d333f532b83b03144b5d400937d0c3999904916a1471f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca4fa2a28451b0007530711886ea43c6c1292aa3880546a062c7061f37a92ae9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb788dc5db6eeffe1017b76e545ab7496eb864ea494d6cee5a340e88ddb54347"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d16e4bd910501c8cdea6ab3c627d9bda3818ec321153608d248ad93e6788edf8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "237ff6e8dec46ba50de22927fc469fbb1dc53a0b446c3b964ca57f56b74f6eae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "972ae08a334985cfe0dc5e63e2ad185bc638d2b1bc989ac73d97e79a73e921b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bf2d8dc1da010b4c39ad698a5706f91e48b2847eb825c25100ce483edccacee"
+    sha256 cellar: :any_skip_relocation, monterey:       "24c39bdd2fe7e1e9c39f8fbb07437b25f37e7bc188c210cd1be32133ee504979"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06fdfa646ed1c5c10047db402bca1c89cc281a08c7a28b96514438688db55fd1"
   end
 
   depends_on "python-certifi"
