@@ -22,7 +22,7 @@ class Pwncat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c5614f155b08f02b5446436dabdffba7dcaa6b7e850c7a237ffd2fb8b970970"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
