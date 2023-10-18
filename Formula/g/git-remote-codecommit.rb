@@ -10,14 +10,13 @@ class GitRemoteCodecommit < Formula
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ad858e57ea1e623128df76151f824e9a76793edbe6d189ec0d62d96e687fa79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d39c660362cc0835912543e67dd16d58422a7a1b081d293e7eee18c03d7b53e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91bf27b22f0dbd2d1d786e979e4c999d3da45ceb0c889cdce23b0e99674bc45c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c64fce98dc6352af38f44c5410bc6a4d5f8d22b2fd3ef89fddcfbc9276a089b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "445c2b8553c8a29fb4dd7cd21f3778f4832789f1d097375088f83c18771b813c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8169c42a8deb50dc86ee9b56b342894bd0c1e1cc8ac7cf65ccb2d5a72ffe47e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "799d2de7d2c06ec19be93a5150226861fb4c2ff3188bf572119814cfbe163173"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3084e88a86952977eda57eaec5c67cc922eae58d3f811f8f2b2a4c8921a4f42"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d4632f0f3653dcbe896bfb3ccf72427bcfccb7ee0b165a766f55081920222ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e280cf2e2a9366a7dfe229a9523be9e0857cd71174d8aeb5d7a4a8b276ee05ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b86f8792be295dbd044110e31dc8762c476e47068e6f5943d1397c5caeb4c7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9724ed02c830ea73ad8dbd6fd06796808d324a83bee2f10223b5b03fafe06337"
+    sha256 cellar: :any_skip_relocation, monterey:       "d304f2d5bec2bde699e672a0afac100fb6835f1df5a86cf256d0be615e20e4ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12a218dbf61c8daf3fa70cf75f75f64c2d275b7bbb7e2a35e3671ebb105f059c"
   end
 
   depends_on "python@3.12"
