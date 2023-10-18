@@ -8,13 +8,13 @@ class Touca < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efbc5b59fb333fd0b8dff0a6ee6ac1a580068a7fbc56a6fa6c62b47112c05500"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2472bd6eab7df1fa96b525e4bfad3c72a55cc65e07c0b2bfecfe5a6585b8901"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a50aaf4742b7a36dcaaf64d5625b8f7dbb4ff17f4a2231428aa5da6290f02fe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f946ed8249b3a630d650c70ab27951cdf9d81591f222ad299d36866256ed80d"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b488932e294257d0ae38ac8e5a83de806b1f738b498d48f6142719855b8b230"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa9eecfb45233750bff9cd468ca9e0a745f67f06bbc47e10fae5fc3aec2d3f9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "333454231d9fecfedf3a1ebd2c70da62c451228aa7785741da378d06fa0a449d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed8008cbd754746f1835681d82b45cd9636b139ee442034b4200b3ff83b0d851"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0af7af9f81ea4542435b574acee9a7c903dcc46f89f86392e963e10ccf2c682"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6e6b2c91ef282e4f95286e8f6b011b32003526bb19d5af97244d043e7143b28"
+    sha256 cellar: :any_skip_relocation, sonoma:         "38441395fbd6261883976aa796f06399fbe825b61bcdb55b5770fd7ab5488de0"
+    sha256 cellar: :any_skip_relocation, ventura:        "066768172dea3900faaf38d1bed543ad64c3ebb9072901be765cc99766bbb0ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d7d929f207755392be0c0da16f12fc230958caff977d39c64fb04a3c4943d0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce9495442d083c1da866b714a7c20da2045d8d60ed81f66fd1cd4c1d7f50ebbf"
   end
 
   depends_on "pygments"
