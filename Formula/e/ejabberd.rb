@@ -1,10 +1,9 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://github.com/processone/ejabberd/archive/refs/tags/23.04.tar.gz"
-  sha256 "6ff1d41a1ff6261a0c846193647d8ec143e82142859bf1cfdc62299022ceb2ad"
+  url "https://github.com/processone/ejabberd/archive/refs/tags/23.10.tar.gz"
+  sha256 "0d6e7f0d82d91cda89e2575d99a83507413da2ffde39b2151804947a2a0fa258"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
