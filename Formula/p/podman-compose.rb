@@ -20,7 +20,7 @@ class PodmanCompose < Formula
   end
 
   depends_on "podman"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "python-dotenv" do
