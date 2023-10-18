@@ -18,7 +18,7 @@ class Pipenv < Formula
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
@@ -41,7 +41,7 @@ class Pipenv < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
