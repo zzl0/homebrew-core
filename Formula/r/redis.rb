@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-7.2.1.tar.gz"
-  sha256 "5c76d990a1b1c5f949bcd1eed90d0c8a4f70369bdbdcb40288c561ddf88967a4"
+  url "https://download.redis.io/releases/redis-7.2.2.tar.gz"
+  sha256 "ca999be08800edc6d265379c4c7aafad92f0ee400692e4e2d69829ab4b4c3d08"
   license "BSD-3-Clause"
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -23,10 +23,6 @@ class Redis < Formula
   end
 
   depends_on "openssl@3"
-
-  # Upstream fix for compilation on macOS Sonoma
-  # https://github.com/redis/redis/issues/12585
-  patch :DATA
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
@@ -57,16 +53,3 @@ class Redis < Formula
     %w[run db/redis log].each { |p| assert_predicate var/p, :exist?, "#{var/p} doesn't exist!" }
   end
 end
-__END__
-diff --git a/src/config.h b/src/config.h
-index 3c9a2701..4607c177 100644
---- a/src/config.h
-+++ b/src/config.h
-@@ -31,6 +31,7 @@
- #define __CONFIG_H
-
- #ifdef __APPLE__
-+#define _DARWIN_C_SOURCE
- #include <fcntl.h> // for fcntl(fd, F_FULLFSYNC)
- #include <AvailabilityMacros.h>
- #endif
