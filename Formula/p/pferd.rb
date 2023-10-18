@@ -8,15 +8,14 @@ class Pferd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e90a247a0fae4fe0657e45e520463db1885361b64e03387473d39373c152663f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddd1e21c2bfd358231f1ac4310ec33ce36e00ab572b68bc4387acd34b94c14f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfa77af99f8e2bbde01289795d42e1349935759ef57ee901d1bedbc6b57b7274"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68df51cac47ce6cd9cbacee403e935ad6b29ed78ea52a73ef3e90196cb7b791b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "809054fdf318fff05112c238c1e4e09058eefddba4634673537c71aadd1b00bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "633bdba6cb8ce40d8d101c0c83605dab4e84c28178de6f427bf52940906e896b"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1f017f7a0c9a0e39fd0070569f04682e05a67550ad25d0dc3126cf2f6e57725"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38579d38ef6f8f3fe1a924841fefc2831bc4e2f384f1e417a3e9029e447f6e96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca437b3c64702671278f1b9d25bf954e0554f026eeda7322ab8a33c04d5ae135"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e02347f9a8267b68dd388d4c81f407ebfcc3280a32c6ec53c59ac1d5a74a0b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2c937a93282e421d07c57747953a524addd3c2b4d4ae24e94f63ee1ecea8a52"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "efbec2a98df2d9acf1da9178c4ccb3ba872bf2d96e418e7fb6db6e9c7ae4d61a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f916bbb6fe0049cf7c4352d574a0995a3bb9c856966fa5c96acf26fbf4014243"
+    sha256 cellar: :any_skip_relocation, ventura:        "13af28e730dc993aa5a80f2215a0e1a9208021825fbf20f0c8920f51074edab8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e7cb9843ee4356805d371d133f0e98da6436be57abc87a7660d27f689a2e34d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dcefe922bc691a460c497718504e766f2452dc36ff6982509100a59ba731fb9"
   end
 
   depends_on "pygments"
