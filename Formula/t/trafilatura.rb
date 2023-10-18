@@ -20,7 +20,8 @@ class Trafilatura < Formula
 
   depends_on "python-certifi"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python-pytz"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
@@ -56,11 +57,6 @@ class Trafilatura < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz"
-    sha256 "7b4fddbeb94a1eba4b557da24f19fdf9db575192544270a9101d8509f9f43d7b"
   end
 
   resource "regex" do
