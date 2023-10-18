@@ -3,10 +3,9 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/dd/6a/69dc47b45016dc8b6956f45440b4afacdb74c32e876ecba65d4703a26e06/schemathesis-3.19.7.tar.gz"
-  sha256 "0a623312e772c5f75984fe9a0bde5bf96986e7761a24ba908f0b408ee9cea128"
+  url "https://files.pythonhosted.org/packages/9b/79/fb38500c84f96a99ad0cd01605e7d9d8d58d2616a6c2642b927fc52c441e/schemathesis-3.20.0.tar.gz"
+  sha256 "52f03b4fa694c5a5e8dd0f606e0afb98644b1989b474f526af6dfb079e501cb4"
   license "MIT"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b8457a4b200d84b16915cbcb081cc6ba6aeadabf6098f901ca6a40e08ccf7cd6"
@@ -53,11 +52,6 @@ class Schemathesis < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
-  resource "curlify" do
-    url "https://files.pythonhosted.org/packages/fa/2c/9254b2294d0250291560d78e16e5cd764b8e2caa75d4cad1e8ae9d73899d/curlify-2.2.1.tar.gz"
-    sha256 "0d3f02e7235faf952de8ef45ef469845196d30632d5838bcd5aee217726ddd6d"
-  end
-
   resource "graphql-core" do
     url "https://files.pythonhosted.org/packages/ee/a6/94df9045ca1bac404c7b394094cd06713f63f49c7a4d54d99b773ae81737/graphql-core-3.2.3.tar.gz"
     sha256 "06d2aad0ac723e35b1cb47885d3e5c45e956a53bc1b209a9fc5369007fe46676"
@@ -89,8 +83,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis-jsonschema" do
-    url "https://files.pythonhosted.org/packages/d0/63/c52f4e5f224a1321da2777ab5a75685495ba72f4e303c1f8d4badce96f65/hypothesis-jsonschema-0.23.0.tar.gz"
-    sha256 "c3cc5ecddd78efcb5c10cc3fbcf06aa4d32d8300d0babb8c6f89485f7a503aef"
+    url "https://files.pythonhosted.org/packages/8b/d7/47d7c208ca0f8a2ce6535d6cf0a167d9120ccfc00d6c5ff5fae7936a4654/hypothesis-jsonschema-0.22.1.tar.gz"
+    sha256 "5dd7449009f323e408a9aa64afb4d18bd1f60ea2eabf5bf152a510da728b34f2"
   end
 
   resource "idna" do
