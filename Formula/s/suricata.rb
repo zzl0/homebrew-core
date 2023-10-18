@@ -29,7 +29,7 @@ class Suricata < Formula
   depends_on "libnet"
   depends_on "lz4"
   depends_on "pcre2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   uses_from_macos "libpcap"
@@ -60,7 +60,7 @@ class Suricata < Formula
       args << "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
     end
 
-    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.11 "
+    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.12 "
     system "./configure", *std_configure_args, *args
     system "make", "install-full"
 
