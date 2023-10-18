@@ -9,13 +9,13 @@ class Dnstwist < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1016306caafeec2b6746fbf02de07f32039cf2022e018ea23c7296745cd38881"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5782805101b4c0a538d308ac281fdc13101763427f5b20f2ce0a796bfc5b4a3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74fd2eeefa9fb978d1aec98d19e7138f4091fa0db0183145c5ea97003dd03768"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7cb1c6e4c25d6dc87c3232da71051de30ccc3fcfbca9c97f71e88c4d7cd0b1a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b03c7a2ef159bc35ab0e0e6e8b6ca7f73519f19a69cf0603cf952ea6b89230a"
-    sha256 cellar: :any_skip_relocation, monterey:       "75dba5b4217c7a578a41891307748f70fa037a0c66719027f73280ec0be248b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f0402e6c2ac7ee81f9af35df1cdae9031e9e1a092619bd2b74b77b72814e58a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d62ee6303a44a9ee1b681869aaa9125288bf44e45a7c5d993e4bc77a8807e8fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b6651ef9d67fc7e21d063e6786ff95f78fbd55d501bedb08a91064699e95f54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55f6da6ba6ff972dbdb23f8dc955d478ae20e4de92e7bcb48ff6d5bdb7955913"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a7e08ca3c6e2ce53e8cbc9e93d8fdcf4700b438f49054a4aa47292fa3cb9dccd"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2d8b45482d8790a1e7f1c3848c8e64a4b5eb267742dbcb985e20309cba59214"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e11d291c43f7bce536057bf6bebfdc09ecd16f42d2a0765181451ef1152b091"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf3958b4e36c9057e180a4d6700d280f53a384e456e8182921f628fc814e524"
   end
 
   depends_on "geoip"
