@@ -718,7 +718,7 @@
     "exclude_packages": ["six"]
   },
   "pip-audit": {
-    "exclude_packages": ["certifi", "packaging", "Pygments", "six"]
+    "exclude_packages": ["certifi", "packaging", "Pygments", "pyparsing", "six", "toml"]
   },
   "pip-tools": {
     "exclude_packages": ["build", "click", "packaging", "pyproject-hooks"]

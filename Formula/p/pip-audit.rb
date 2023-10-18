@@ -22,7 +22,9 @@ class PipAudit < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-pyparsing"
+  depends_on "python-toml"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boolean-py" do
@@ -41,8 +43,8 @@ class PipAudit < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/19/b5/ff160aa03f4b9ed3fa655ee35871e43c215408e71daa437342ad434c88f3/cyclonedx_python_lib-4.2.2.tar.gz"
-    sha256 "d8fd40a94ab9130e9d1292ecebd35bd081f8a2d589c5259eaf7ec5caa5e95a43"
+    url "https://files.pythonhosted.org/packages/1e/9a/780027d284b3c22ecee842c5b3e2bd0e056381fcb60d7f29818a5243f709/cyclonedx_python_lib-4.2.3.tar.gz"
+    sha256 "904068b55d1665f0ea96f38307603cc14f95c3b421f1687fc2411326aefde3a6"
   end
 
   resource "defusedxml" do
@@ -105,11 +107,6 @@ class PipAudit < Formula
     sha256 "ba0e1287b9e4f645a5334f1913abd8e647e7250209f84f55dce3909498a6f586"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -125,14 +122,9 @@ class PipAudit < Formula
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
-  end
-
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "webencodings" do
