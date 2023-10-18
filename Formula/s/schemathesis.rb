@@ -6,7 +6,7 @@ class Schemathesis < Formula
   url "https://files.pythonhosted.org/packages/dd/6a/69dc47b45016dc8b6956f45440b4afacdb74c32e876ecba65d4703a26e06/schemathesis-3.19.7.tar.gz"
   sha256 "0a623312e772c5f75984fe9a0bde5bf96986e7761a24ba908f0b408ee9cea128"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "26a9306a96d00163cb256c58200db70009fa21a91538797b9d10eee287123bd3"
@@ -79,8 +79,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/58/f1/fcfc5e69414c73087b1ad72b1e076eb133baefcb2792461a6d810bc16083/hypothesis-6.87.2.tar.gz"
-    sha256 "8a00073528b96a7659afc5414b969453928e2a96f54674016a48372634d6bc60"
+    url "https://files.pythonhosted.org/packages/24/2f/9762d5b9901938ffe7ddfe3527054f6aa4d5335b1595150623f4abab76e7/hypothesis-6.88.1.tar.gz"
+    sha256 "f4c2c004b9ec3e0e25332ad2cb6b91eba477a855557a7b5c6e79068809ff8b51"
   end
 
   resource "hypothesis-graphql" do
@@ -154,8 +154,8 @@ class Schemathesis < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/9e/a8/4a4e5ef90c4c4f27683ce2bb74b9521b5b1d06ac134cd650333fdca0f52c/rpds_py-0.10.4.tar.gz"
-    sha256 "18d5ff7fbd305a1d564273e9eb22de83ae3cd9cd6329fddc8f12f6428a711a6a"
+    url "https://files.pythonhosted.org/packages/ee/12/d6cfa2699916e5ece53a42e486e03b5a14e672c76ddb16d4649efcf9efb8/rpds_py-0.10.6.tar.gz"
+    sha256 "4ce5a708d65a8dbf3748d2474b580d606b1b9f91b5c6ab2a316e0b0cf7a4ba50"
   end
 
   resource "sniffio" do
@@ -189,8 +189,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "werkzeug" do
