@@ -10,14 +10,13 @@ class Watson < Formula
   head "https://github.com/TailorDev/Watson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f05da35d81d7fe956e598148816fe9dee47d26a48b5c58b00621df0d718c183"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59efc46486bd16b9f7b9621623560f8b672bfe1e63f488f90043d2ad18fa5794"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0d09078fd84ed2f457ec82d4436bbfcd389d7ca7f0fbbe15bb0159b203e09b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be2338589c36ab2fcc28fb8c2ba8b4a4d22b6d0e2645fd8b77f817d2335445e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f24dfa13623c543369f008fdb4c972ecbe7f2c16747c88856589278e92bf67a"
-    sha256 cellar: :any_skip_relocation, monterey:       "a2666b899dfaaa2da3ef9bfd8f219fd3f577efb128c82364e1337fcd1806f699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43781db8086cea8f3b8bd6653545750ef606b05397361af01cebc14eac90be96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d657f84254a15ab03c0f1e6c5f36e61967600773a40f60073ab6ac97d4dead31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "311406268fbf3fad08fa588b0ee0b1ed22bf8676d57a182fe7ca36ba645a3ad6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "052055745eda7eb7c056c5d84c6e26afe95e57a5dc0d83b8819cedfa24b65da3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "40a0e45cb3ec164985cabf2c7afaed8435a96127c059892979fb93575de46f18"
+    sha256 cellar: :any_skip_relocation, ventura:        "97d50ac1856fe5e846139474371cc09ba90d41e2678d0998b3b9e5f354bb470a"
+    sha256 cellar: :any_skip_relocation, monterey:       "68f689f46913838466ee435bd4c23372c00188be00aee36f857fa883c64dcc67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "763188c25f86414ba75014b2e67eaf8d4655794852656c944896d6f4f90e5d8b"
   end
 
   depends_on "python-certifi"
