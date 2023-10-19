@@ -32,7 +32,6 @@ class LibusbCompat < Formula
   depends_on "libusb"
 
   def install
-    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
   end
