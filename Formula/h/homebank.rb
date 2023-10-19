@@ -2,9 +2,9 @@ class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.6.5.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.6.5.tar.gz"
-  sha256 "b5494dfcf87d7a8572696a2afa2a04496ba79e3857cd3e3b18ac03bd1b6d2ca8"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.7.1.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.7.1.tar.gz"
+  sha256 "7f0a929d775eef26a5a9f29fa3c013f3eefadbf6982cc086a7c75dddb9b4f429"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -33,12 +33,17 @@ class Homebank < Formula
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
   depends_on "libofx"
-  depends_on "libsoup@2"
+  depends_on "libsoup"
+
+  uses_from_macos "perl"
+
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
 
   def install
     if OS.linux?
-      # Needed to find intltool (xml::parser)
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 
