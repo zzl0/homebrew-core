@@ -1,9 +1,9 @@
 class Ne < Formula
   desc "Text editor based on the POSIX standard"
   homepage "https://github.com/vigna/ne"
-  url "https://github.com/vigna/ne/archive/3.3.2.tar.gz"
-  sha256 "9b8b757db22bd8cb783cf063f514143a8c325e5c321af31901e0f76e77455417"
-  license "GPL-3.0"
+  url "https://github.com/vigna/ne/archive/3.3.3.tar.gz"
+  sha256 "4f7509bb552e10348f9599f39856c8b7a2a74ea54c980dd2c9e15be212a1a6f0"
+  license "GPL-3.0-only"
   head "https://github.com/vigna/ne.git", branch: "master"
 
   bottle do
@@ -26,14 +26,6 @@ class Ne < Formula
   on_linux do
     # The version of `env` in CI is too old, so we need to use brewed coreutils.
     depends_on "coreutils" => :build
-  end
-
-  # Fixes info2src.pl [364]: $commands{SYNTAX}->{"abbr"} undefined.
-  # https://github.com/vigna/ne/issues/109#issuecomment-1355675699
-  # Remove in next release
-  patch do
-    url "https://github.com/vigna/ne/commit/90ae494711a06944f0027224cf6a4b4a812d1e95.patch?full_index=1"
-    sha256 "6ea1dbe3a133e2af896640a8cfe4e3e2f412e5fa521de181781cfa8c640d796a"
   end
 
   def install
