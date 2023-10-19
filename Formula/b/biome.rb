@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://github.com/biomejs/biome/archive/refs/tags/cli/v1.2.2.tar.gz"
-  sha256 "744847d50e716a5ada7eea2f9862fdad6c5321c5aa3ad15c3169e170b2fa09e7"
+  url "https://github.com/biomejs/biome/archive/refs/tags/cli/v1.3.0.tar.gz"
+  sha256 "ea41876c473012e62e0cf674f5583c0fd832147a772cad4aa691a29dea3212ad"
   license "MIT"
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -35,6 +35,6 @@ class Biome < Formula
     system bin/"biome", "format", "--semicolons=always", "--write", testpath/"test.js"
     assert_match "const x = 1;", (testpath/"test.js").read
 
-    assert_match version.to_s, shell_output("#{bin}/biome --version", 1)
+    assert_match version.to_s, shell_output("#{bin}/biome --version")
   end
 end
