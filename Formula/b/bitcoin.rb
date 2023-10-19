@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-25.0/bitcoin-25.0.tar.gz"
-  sha256 "5df67cf42ca3b9a0c38cdafec5bbb517da5b58d251f32c8d2a47511f9be1ebc2"
+  url "https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz"
+  sha256 "bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9"
   license "MIT"
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
