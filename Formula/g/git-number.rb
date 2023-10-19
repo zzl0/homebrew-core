@@ -7,6 +7,7 @@ class GitNumber < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "f357699b108c2e521721c7a8a93ee188a526b47a5f1af7841cf005d2d1008f4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9a99641367e1379e7150b0b4a4d82265e02f4262b35eb791c057595a14f14ae"
     sha256 cellar: :any_skip_relocation, big_sur:       "ca7a48d9827be6cc0d625891e25b7b7b7474d9c33a276955ab3f0eb14b8cb21b"
     sha256 cellar: :any_skip_relocation, catalina:      "662840b36a99f95902aee618faed6274d2cf9c6620b9c01855377d85d838eaad"
     sha256 cellar: :any_skip_relocation, mojave:        "2fc24b4bb5404f85fb6c359ac9b8c969846953176d8a01176c4e6ddba3067bc9"
