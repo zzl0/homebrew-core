@@ -3,8 +3,8 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/6a/4f/e2e935ecb9e840685aea2abe68c7aa4ff76d30b828a961752c40959254c2/cyclonedx_bom-3.11.2.tar.gz"
-  sha256 "b0c2beab3364ded549e3b386d5f8e973ba89b8306b755e905fd7a62439ba37e0"
+  url "https://files.pythonhosted.org/packages/06/b1/0f1757cf1e790d5af7dab11360de661b17ff57dfe15874970991062011e5/cyclonedx_bom-3.11.4.tar.gz"
+  sha256 "c3f129674a96975058ae5ae3010ed136514d40a7f1d0372909d696ebb80b813c"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
@@ -23,6 +23,11 @@ class CyclonedxPython < Formula
   depends_on "python-setuptools"
   depends_on "python-toml"
   depends_on "python@3.12"
+
+  resource "chardet" do
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+  end
 
   resource "cyclonedx-python-lib" do
     url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"
