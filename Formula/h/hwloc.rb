@@ -6,8 +6,8 @@ class Hwloc < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://www.mail-archive.com/hwloc-announce@lists.open-mpi.org/"
-    regex(/[\s,>]v?(\d+(?:\.\d+)+)(?:\s*?,|\s*?released)/i)
+    url "https://www.open-mpi.org/software/hwloc/current/downloads/latest_snapshot.txt"
+    regex(/(\d+\.\d+\.\d+)/i)
   end
 
   bottle do
