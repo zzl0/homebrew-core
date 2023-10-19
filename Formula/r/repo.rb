@@ -10,13 +10,13 @@ class Repo < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa0fc20511ba1bca5a23528663cc0be16955d6ed77626d095353b770c2662a0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25f410f3a6ba371a2eb2b46e2f18197a7f02e1e0752dee16ce1aaae90759eaf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, ventura:        "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, monterey:       "b57bda4d4aa6637271e1d9ab21835655a7018f2323d9a40d5c1da8c403c36440"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d54decc71a0df3a9a37359d771bd18eda15e2c7d2820aa26c9ac378022b4097a"
   end
 
   uses_from_macos "python"
