@@ -6,17 +6,17 @@ class Lexicon < Formula
   url "https://files.pythonhosted.org/packages/c6/25/1a58ab98b271eb5ea9aa84f43bcd5df45578b3a2c931197f77ec7cc6c654/dns_lexicon-3.16.0.tar.gz"
   sha256 "9c495f3387ecb9abf8c65b43b783069d296a3927dc6c2386b16c6049624a9dea"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1613f9661327003cbe33f9b2aa6b99f3c80a1d516f6acbd3c906864498b04af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "689b49c5307b03d3fdd74146fdf800f16d23b05fe65b58eef83e48401b62f9aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61eec4b49fb446a249cf13c5bfb85f47f8ed8c30becae613ba7c15fa107ee1c4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7336e06529936a2c8053b5e57eabd42ca21d8de93862ecb273ab669a99ebc40f"
-    sha256 cellar: :any_skip_relocation, ventura:        "51bc5f06d2e1f63a762baf59c750b57359e6d9d89d45b1c5eff7b00dc083db42"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f730e7950f9f2a4c3a4f6344885151797cbeee3f21003031acd1bbcbfbd61b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5141eee4b0d9c355f87a2e0c9c041792ca2a5f835e026162de9d276eb129e90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8755a43f31ad42fb8b9add5220ab732b7ae754ab861f16e0802133d9be3ee938"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99736c16f64018e38fe2350dc609a4826dd26f13bf5fad747ebb7b88104d1675"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc23b127b25c2d61ebba2710478b2b4551ab1de4a55ae6fd22dc9a329f8d9289"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ae17abebd8b06592c57b71991fb63dec4408af97075721b9b58926af2de5dd75"
+    sha256 cellar: :any_skip_relocation, ventura:        "ee3bfe94914264e366a6b22513cf15cd869760685981efa56605b57bd20e4e82"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3e423ad080f2e1aeab4c636983847e9944bd3a2685da6145f558b7f516df7aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a30ee6cb671699070b599fb45debb6eef10b052682b217d7b15dd4ab6a7ef40c"
   end
 
   depends_on "cffi"
@@ -26,7 +26,7 @@ class Lexicon < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -41,13 +41,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
-    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
+    url "https://files.pythonhosted.org/packages/4b/cd/9331ee4ecdbfd58e268664fc1126e7aa015a31ce088b0c1e3cf48bb56e97/boto3-1.28.66.tar.gz"
+    sha256 "38658585791f47cca3fc6aad03838de0136778b533e8c71c6a9590aedc60fbde"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
-    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
+    url "https://files.pythonhosted.org/packages/ed/19/489d319b286f629be7c56025dfc0df41e69166eb559996bd07f664b2c63d/botocore-1.31.66.tar.gz"
+    sha256 "70e94a5f9bd46b26b63a41fb441ad35f2ae8862ad9d90765b6fa31ccc02c0a19"
   end
 
   resource "charset-normalizer" do
