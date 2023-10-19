@@ -1,10 +1,11 @@
 class Tracker < Formula
   desc "Library and daemon that is an efficient search engine and triplestore"
   homepage "https://gnome.pages.gitlab.gnome.org/tracker/"
-  url "https://download.gnome.org/sources/tracker/3.4/tracker-3.4.2.tar.xz"
-  sha256 "4e6df142a4f704878fca98ebb5a224750e5ea546aa2aaabaa726a73540bd1731"
+  # pull from git tag to get submodules
+  url "https://gitlab.gnome.org/GNOME/tracker.git",
+      tag:      "3.6.0",
+      revision: "624ef729966f2d9cf748321bd7bac822489fa8ed"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 2
 
   # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
   livecheck do
@@ -47,15 +48,13 @@ class Tracker < Formula
       -Dsystemd_user_services=false
       -Dtests=false
       -Dsoup=soup3
+      --force-fallback-for=gvdb
     ]
 
     ENV["DESTDIR"] = "/"
-    mkdir "build" do
-      system "meson", *args, ".."
-      # Disable parallel build due to error: 'libtracker-sparql/tracker-sparql-enum-types.h' file not found
-      system "ninja", "-v", "-j1"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
