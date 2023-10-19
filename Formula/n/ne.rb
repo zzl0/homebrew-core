@@ -7,16 +7,13 @@ class Ne < Formula
   head "https://github.com/vigna/ne.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "a94b840b71ba903b74c328a58cb01d4107be7dc47e8be933998ca6e6b8c9b67d"
-    sha256 arm64_ventura:  "118365512d7c91463595795cf8ac3f5bb8c0ced42fdb8c4e52321c6858ec61e0"
-    sha256 arm64_monterey: "041e27ae4a7fabc0e61e89365c63916bf2e4be0ab0e1da78b4a2c0e9043a9ba8"
-    sha256 arm64_big_sur:  "53b99d998ae08a5608c2c3f049306619cb80b11a1d44ddc243d32378357df5ad"
-    sha256 sonoma:         "e128be1da9bd8aa95d08fb91569630b6a7adc1f907574f2c57025259a5e8f277"
-    sha256 ventura:        "ce2f35fd2873e3ee85470a4c2e19eb68d5e03060b70eca9973b5fa5e3741be8d"
-    sha256 monterey:       "60cc57ed07026f7a2b67f32b011e6c6f5b2105e2d0ceeff772d7052746797153"
-    sha256 big_sur:        "bec8bb3b21f20213c3f4d26f6dc03d5c7d25b269d22ac460b5fe810343506d14"
-    sha256 x86_64_linux:   "ed309053b95ca315b71c123dbf7b3b51fbb1e734e99e8ac0e1747295772ce644"
+    sha256 arm64_sonoma:   "8a550b3330062f58387f3addb83b6c8c31a16fb7e41f14486430c61deee7fd91"
+    sha256 arm64_ventura:  "28a91f4763d506a1e7e9bacb1c269e1dfff9f7398004787e1b463d2642cf182c"
+    sha256 arm64_monterey: "8091c957dc10498784eeac265ec6d9abdd44ae8bc877a9deedb57a639c4bd310"
+    sha256 sonoma:         "570cd0bc07142caee0a19dd6102d70c7320a7d449b4c7ee440e5515b1de6d731"
+    sha256 ventura:        "fe7942bde38c0379cc080eba7f19a8efdc687297ba25a1b4bf698127025c9f7c"
+    sha256 monterey:       "ce6c2287f4696841f25219e95282e497ed58b69435addca082756907838fdd8f"
+    sha256 x86_64_linux:   "8acf0230899e5a22ccc93d0e48d582545b76d7f86d199b78a543c7949ddb0ab6"
   end
 
   depends_on "texinfo" => :build
