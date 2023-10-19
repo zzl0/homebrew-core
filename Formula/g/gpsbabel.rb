@@ -1,8 +1,8 @@
 class Gpsbabel < Formula
   desc "Converts/uploads GPS waypoints, tracks, and routes"
   homepage "https://www.gpsbabel.org/"
-  url "https://github.com/GPSBabel/gpsbabel/archive/gpsbabel_1_8_0.tar.gz"
-  sha256 "448379f0bf5f5e4514ed9ca8a1069b132f4d0e2ab350e2277e0166bf126b0832"
+  url "https://github.com/GPSBabel/gpsbabel/archive/gpsbabel_1_9_0.tar.gz"
+  sha256 "7801d30553bbc25d0b0e8186f2f5a1ec41397e51a26b92cc8ad1aeaa77c9beb6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -24,6 +24,7 @@ class Gpsbabel < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a42240e22fd5787212ff71c58030b15eddd6c362846e8dc315765cffd7437e1"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libusb"
   depends_on "qt"
@@ -42,12 +43,15 @@ class Gpsbabel < Formula
     rm_r "shapelib"
     rm_r "zlib"
     shapelib = Formula["shapelib"]
-    system "qmake", "GPSBabel.pro",
-           "WITH_LIBUSB=pkgconfig",
-           "WITH_SHAPELIB=custom", "INCLUDEPATH+=#{shapelib.opt_include}", "LIBS+=-L#{shapelib.opt_lib} -lshp",
-           "WITH_ZLIB=pkgconfig"
-    system "make"
-    bin.install "gpsbabel"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DGPSBABEL_WITH_LIBUSB=pkgconfig",
+                    "-DGPSBABEL_WITH_SHAPELIB=custom",
+                    "-DGPSBABEL_EXTRA_INCLUDE_DIRECTORIES=#{shapelib.opt_include}",
+                    "-DGPSBABEL_EXTRA_LINK_LIBRARIES=-L#{shapelib.opt_lib} -lshp",
+                    "-DGPSBABEL_WITH_ZLIB=pkgconfig",
+                    *std_cmake_args
+    system "cmake", "--build", "build", "--target", "gpsbabel"
+    bin.install "build/gpsbabel"
   end
 
   test do
