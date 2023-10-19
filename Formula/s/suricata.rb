@@ -11,15 +11,14 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8c135b0e87a5f5ca3498243bd5df74b779073f3b3d29ae388a11ab9fd66b3aa7"
-    sha256 arm64_ventura:  "6c0e091bc55413c312adeb12fe40c4f6b6b48ee3cadaf1a26fc9fbb1efd4cdc5"
-    sha256 arm64_monterey: "84e3f070aa1c2f353dfa6fa29ce21b015e1bc081bdb7e071b417c8c3db03bd23"
-    sha256 arm64_big_sur:  "841856af3e342b605145d8b7aae649c71cf50661d163a5150c422803685b4c43"
-    sha256 sonoma:         "fba8bfe0a74021d8d9ec382f81e35e40d0943883736ab9c5d1a9d5bf72bbb492"
-    sha256 ventura:        "d7cf0013e35f2bdcd0f65d67649b6b187d2780952a4dc2be6d36ce579e29d0b4"
-    sha256 monterey:       "ccf7baf8ffc298dc280d36004437eb6536a7e82a2b0f300fb0b12f82cadd9e93"
-    sha256 big_sur:        "5700ef72c2a3c05fb2e345dd75141beb3d4b4976f2672733632f0dad662cba98"
-    sha256 x86_64_linux:   "047f924a159c6922ce829f6f4cd18098a083d36d3a59a3feada8cb027cb7b36c"
+    rebuild 1
+    sha256 arm64_sonoma:   "d1418153058ce8bedddcae8b4041e05f857a0765776e96dce2c017b57fcc2570"
+    sha256 arm64_ventura:  "aa912ea10befe1a686256b8288806c0545cf283d0f078f5ed17be8625c6bee1d"
+    sha256 arm64_monterey: "c13e5c49a85e5cfb9c2dd04fa21a2c0c7bb5f06561a466680bb3ac8e5b6dbad8"
+    sha256 sonoma:         "2a11a7af7b533becd033d2146dae5ecd6a2acd3cd195ebe9ff31d5067d3486ae"
+    sha256 ventura:        "f5f2adb3d9a7843e96a8679293a8ba952de3c3b834842f92b752ed6c098b96db"
+    sha256 monterey:       "95c796fc3ff0c7b86e1f1e3a2e241265885399446324e043b6cf5e429890dc21"
+    sha256 x86_64_linux:   "3289591e10a9ee0dd361333d788db3886e55485120815cb077aa424d8fb6e3f4"
   end
 
   depends_on "pkg-config" => :build
@@ -29,7 +28,7 @@ class Suricata < Formula
   depends_on "libnet"
   depends_on "lz4"
   depends_on "pcre2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   uses_from_macos "libpcap"
@@ -60,7 +59,7 @@ class Suricata < Formula
       args << "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
     end
 
-    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.11 "
+    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.12 "
     system "./configure", *std_configure_args, *args
     system "make", "install-full"
 
