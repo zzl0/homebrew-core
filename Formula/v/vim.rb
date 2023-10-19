@@ -17,13 +17,14 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d0ba7f36761385a65fb45c7d26b39a34a31f1854a46152d88b86ca2d09df0e65"
-    sha256 arm64_ventura:  "3ab4e06d0f57d54305a9b0295e173e7c01b4583e35713bb9ace9ecc553c5a854"
-    sha256 arm64_monterey: "f6f8262f43e1230e6951b3de189046c0d223f90cce2133be7e4afb9af83256e2"
-    sha256 sonoma:         "5439a6c3288380b6c89d5d977ffceef546ac91b926f769d24f6bd17164ef649a"
-    sha256 ventura:        "2770812875b55a3d9f17443c78a17d94d035f11614bf2960ecfd1f70f491e344"
-    sha256 monterey:       "8e0511be6ec187adc3e88c1502aa7088d329d2f30609a80e331761867095791d"
-    sha256 x86_64_linux:   "1b1e8a8321f8269a93343e8bce04d1aa020ad54e1bc9e315083fe3e3007f637d"
+    rebuild 1
+    sha256 arm64_sonoma:   "8b1c6ceb141f0e2146d4a06e61522286e127b3053657e86efb0df87552206e73"
+    sha256 arm64_ventura:  "cf7ea66420933111b11091062169da7d5e2079835c624d18837004a8496df23b"
+    sha256 arm64_monterey: "803ba6c1c3991c16110631d6938798551026ff1627f9403cb5171164b31dc1ee"
+    sha256 sonoma:         "5ad5e6bec143078b1219c2c9d28ab6c2cb0e9c0dadcf123cdfa560d877b45a28"
+    sha256 ventura:        "f401bef72bc4b902201f81b344beb58e5e7842a0e554f6c098b7321f7914ae06"
+    sha256 monterey:       "129c7b7165d7e55c9155edf268a657399f6ff7edf26a8439b2e28116d0bb6ee2"
+    sha256 x86_64_linux:   "e902df0d97ed21ece18fd813e2d59b403d75106e440ea2643cb35e23fa8f8c54"
   end
 
   depends_on "gettext"
@@ -31,7 +32,7 @@ class Vim < Formula
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
 
   conflicts_with "ex-vi",
@@ -41,7 +42,7 @@ class Vim < Formula
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")
