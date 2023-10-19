@@ -347,7 +347,7 @@
     ]
   },
   "enex2notion": {
-    "exclude_packages": ["certifi", "PyMuPDF", "six"]
+    "exclude_packages": ["certifi", "lxml", "PyMuPDF", "six"]
   },
   "esphome": {
     "exclude_packages": [

@@ -3,10 +3,9 @@ class Enex2notion < Formula
 
   desc "Import Evernote ENEX files to Notion"
   homepage "https://github.com/vzhd1701/enex2notion"
-  url "https://files.pythonhosted.org/packages/e9/69/76f7d4a560f7156fb52ec0174fc65d023734fc8a2c7703660f4e359b6a46/enex2notion-0.2.27.tar.gz"
-  sha256 "74caf499147cf18169cc7ed17cecb8c9f39e64ec4578a58105aeb69fd12ba64f"
+  url "https://files.pythonhosted.org/packages/ef/12/3dcf2252ec6b677263d0f473710d87db5419556314a7be5f38d2e709e078/enex2notion-0.3.0.tar.gz"
+  sha256 "1cf83d724a6a66ac1de579cebef364a69d485968e5ea8507eb7b6f16e13b3f61"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "214b1dbe7a130ebd9f0e5ba6dcfe5ec019b09a0c32d84a977c828c89bd9b4340"
@@ -20,6 +19,7 @@ class Enex2notion < Formula
 
   depends_on "pymupdf"
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -89,8 +89,8 @@ class Enex2notion < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "soupsieve" do
@@ -124,13 +124,13 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
-    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "w3lib" do
-    url "https://files.pythonhosted.org/packages/5e/2f/76558d2712d93e9267a3160190f1bb005f97ef4aba35592728f63747da8b/w3lib-1.22.0.tar.gz"
-    sha256 "0ad6d0203157d61149fd45aaed2e24f53902989c32fc1dccc2e2bfba371560df"
+    url "https://files.pythonhosted.org/packages/47/79/0c62d246fcc9e6fe520c196fe4dad2070db64692bde49c15c4f71fe7d1cb/w3lib-2.1.2.tar.gz"
+    sha256 "ed5b74e997eea2abe3c1321f916e344144ee8e9072a6f33463ee8e57f858a4b1"
   end
 
   resource "webencodings" do
