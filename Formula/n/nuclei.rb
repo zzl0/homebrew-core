@@ -1,8 +1,8 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://nuclei.projectdiscovery.io/"
-  url "https://github.com/projectdiscovery/nuclei/archive/v2.9.15.tar.gz"
-  sha256 "5be9d45a14affafa434822b01784afccc38b46ae6ce80e1c7cfe72f2458e4269"
+  url "https://github.com/projectdiscovery/nuclei/archive/v3.0.0.tar.gz"
+  sha256 "81088d5fb7dc6be1ab1c27bdd97230834e7daf0c901d1fde114bfe378989066a"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
@@ -21,32 +21,13 @@ class Nuclei < Formula
   depends_on "go" => :build
 
   def install
-    cd "v2/cmd/nuclei" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "main.go"
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/nuclei"
   end
 
   test do
-    (testpath/"test.yaml").write <<~EOS
-      id: homebrew-test
+    output = shell_output("#{bin}/nuclei -scan-all-ips -disable-update-check example.com 2>&1", 1)
+    assert_match "No results found", output
 
-      info:
-        name: Homebrew test
-        author: bleepnetworks
-        severity: INFO
-        description: Check DNS functionality
-
-      dns:
-        - name: "{{FQDN}}"
-          type: A
-          class: inet
-          recursion: true
-          retries: 3
-          matchers:
-            - type: word
-              words:
-                - "IN\tA"
-    EOS
-    system bin/"nuclei", "-target", "google.com", "-t", "test.yaml", "-config-directory", testpath
+    assert_match version.to_s, shell_output("#{bin}/nuclei -version 2>&1")
   end
 end
