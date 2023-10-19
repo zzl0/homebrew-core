@@ -3,10 +3,9 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/AnalogJ/lexicon"
-  url "https://files.pythonhosted.org/packages/c6/25/1a58ab98b271eb5ea9aa84f43bcd5df45578b3a2c931197f77ec7cc6c654/dns_lexicon-3.16.0.tar.gz"
-  sha256 "9c495f3387ecb9abf8c65b43b783069d296a3927dc6c2386b16c6049624a9dea"
+  url "https://files.pythonhosted.org/packages/2a/43/3b0eff450444321c10469e6108e9f319094a48c44386b4437bb62e71d43d/dns_lexicon-3.16.1.tar.gz"
+  sha256 "ddb110f35bb8f46497b8bab9085302317442881f45b72482cb3cc45bdcae734f"
   license "MIT"
-  revision 2
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
