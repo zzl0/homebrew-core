@@ -3,10 +3,9 @@ class Censys < Formula
 
   desc "Command-line interface for the Censys APIs (censys.io)"
   homepage "https://github.com/censys/censys-python"
-  url "https://files.pythonhosted.org/packages/31/3f/2094e4c07b5f8142242705b8f7af42550f1b70c9ce457684b834850d40ea/censys-2.2.7.tar.gz"
-  sha256 "abec858e5be89c45a60477bd7e51412fee7f55917325b11c3cd970298de3e2bd"
+  url "https://files.pythonhosted.org/packages/95/94/b8aebec34a8f6d7d266cc5afff92a4853f8885bbea77f0223695279b5c86/censys-2.2.8.tar.gz"
+  sha256 "e3c6d1e0715f36630a0c52fc2a837849b9d5ffbd6a1f6648e81b1b5a09b7731c"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38e8c30372157890e313a762380ad686d5bb75fa6ee8c4dd1f6835aa9f84c457"
