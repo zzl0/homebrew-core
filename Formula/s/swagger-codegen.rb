@@ -1,8 +1,8 @@
 class SwaggerCodegen < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v3.0.47.tar.gz"
-  sha256 "8481d60b89bdfe0c4ed7816da065b839439d5b37cfdb48d44ad07f546387c71b"
+  url "https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v3.0.48.tar.gz"
+  sha256 "7a42729709136a5a134ae6f45bfc90911069e0248548829b69a836eb93a8a13b"
   license "Apache-2.0"
   head "https://github.com/swagger-api/swagger-codegen.git", branch: "master"
 
