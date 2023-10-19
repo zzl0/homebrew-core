@@ -31,6 +31,10 @@ class Boost < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  # fix for https://github.com/boostorg/process/issues/342
+  # should eventually be in boost 1.84
+  patch :DATA
+
   def install
     # Force boost to compile with the desired compiler
     open("user-config.jam", "a") do |file|
@@ -134,3 +138,28 @@ class Boost < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/libs/process/include/boost/process/detail/posix/handles.hpp b/libs/process/include/boost/process/detail/posix/handles.hpp
+index cd9e1ce5..304e77b1 100644
+--- a/libs/process/include/boost/process/detail/posix/handles.hpp
++++ b/libs/process/include/boost/process/detail/posix/handles.hpp
+@@ -33,7 +33,7 @@ inline std::vector<native_handle_type> get_handles(std::error_code & ec)
+     else
+         ec.clear();
+
+-    auto my_fd = ::dirfd(dir.get());
++    auto my_fd = dirfd(dir.get());
+
+     struct ::dirent * ent_p;
+
+@@ -117,7 +117,7 @@ struct limit_handles_ : handler_base_ext
+             return;
+         }
+
+-        auto my_fd = ::dirfd(dir);
++        auto my_fd = dirfd(dir);
+         struct ::dirent * ent_p;
+
+         while ((ent_p = readdir(dir)) != nullptr)
+
