@@ -3,10 +3,9 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/87/1a/c2068da711687f1e49df29c1cb6aca92ce601fe16ee92c5b75bb8ba2a831/dvc-3.26.2.tar.gz"
-  sha256 "1ffbef35d3f85fd9d01e0711c9715804be2f53343a0f2f7fe2dcd7599e2f26eb"
+  url "https://files.pythonhosted.org/packages/cc/e0/3e91a3a8201a39c0160498c0a0bd70e2ed93569ff8abd55313bdee077af9/dvc-3.27.0.tar.gz"
+  sha256 "c04f40b4471b695cbe5452a6cbffac47d078863f7e462da2208238e6fb813ab5"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6f6676a6696fad0c171309faacce7bd8d470e53c5ff7f91e3ebba0aeae53fe11"
@@ -246,8 +245,8 @@ class Dvc < Formula
   end
 
   resource "dvc-azure" do
-    url "https://files.pythonhosted.org/packages/fc/89/a0835bb993906e3a44c2649e6592ff417e3384f2b73169374322c3a0b7b2/dvc-azure-2.22.1.tar.gz"
-    sha256 "bf755108dd4ea124f94657d438ff43a5f99fde8f42fdc92eb2687dd586b60a29"
+    url "https://files.pythonhosted.org/packages/e5/e0/2414a4f2ef4b07ca54774abbe74e082b65fd6fcd0cfbb233523cf366a0db/dvc-azure-2.23.0.tar.gz"
+    sha256 "d3e1b69f5cac445fe0825e6190eb145b650f3a6e98d44c5914148c7ceac44328"
   end
 
   resource "dvc-data" do
@@ -346,8 +345,8 @@ class Dvc < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/bd/c1/b9dbe600903f9ac2401e42f38cb376130485a6d0db611f60ab05fa8d21fc/fsspec-2023.9.2.tar.gz"
-    sha256 "80bfb8c70cc27b2178cc62a935ecf242fc6e8c3fb801f9c571fc01b1e715ba7d"
+    url "https://files.pythonhosted.org/packages/ca/2f/93a4a8eed0234a6b20a32c718ddd0ab712c66b4bda6ce4c3bcd51b279a66/fsspec-2023.9.1.tar.gz"
+    sha256 "da8cfe39eeb65aaa69074d5e0e4bbc9b7ef72d69c0587a31cab981eefdb3da13"
   end
 
   resource "funcy" do
@@ -356,8 +355,8 @@ class Dvc < Formula
   end
 
   resource "gcsfs" do
-    url "https://files.pythonhosted.org/packages/5c/de/d74d144a68ec41c99f41a35bb54cb25907883029d7c2e75eb6780321274a/gcsfs-2023.9.2.tar.gz"
-    sha256 "7ca430816fa99b3df428506b557f08dbafab563a048393747507d0809fa4576b"
+    url "https://files.pythonhosted.org/packages/91/80/ad93a2d4580298dda79a54a4cb8a783901aef51c8ce79a6bdaf25fddca46/gcsfs-2023.9.1.tar.gz"
+    sha256 "47698bba0468896bfb33749552fe459fa745069119d7c2605a53bf4f3a1f09ac"
   end
 
   resource "gitdb" do
@@ -366,8 +365,8 @@ class Dvc < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b3/45/cee7af549b6fa33f04531e402693a772b776cd9f845a2cbeca99cfac3331/GitPython-3.1.38.tar.gz"
-    sha256 "4d683e8957c8998b58ddb937e3e6cd167215a180e1ffd4da769ab81c620a89fe"
+    url "https://files.pythonhosted.org/packages/0d/b2/37265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3ea/GitPython-3.1.40.tar.gz"
+    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
   end
 
   resource "google-api-core" do
@@ -511,8 +510,8 @@ class Dvc < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/fd/a1/47b974da1a73f063c158a1f4cc33ed0abf7c04f98a19050e80c533c31f0c/networkx-3.1.tar.gz"
-    sha256 "de346335408f84de0eada6ff9fafafff9bcda11f0a0dfaa931133debb146ab61"
+    url "https://files.pythonhosted.org/packages/86/36/f9367f30c63a9e10f387783dc18b2e0454dc9debb25151b7a6d592590375/networkx-3.2.tar.gz"
+    sha256 "bda29edf392d9bfa5602034c767d28549214ec45f620081f0b74dc036a1fbbc1"
   end
 
   resource "oauth2client" do
@@ -661,8 +660,8 @@ class Dvc < Formula
   end
 
   resource "s3fs" do
-    url "https://files.pythonhosted.org/packages/4c/63/f19d72bf5112cfb53f65b895f2eafcbf98209644cc5800a7ac3ef031beca/s3fs-2023.9.2.tar.gz"
-    sha256 "64cccead32a816422dd9ae1d693c5d6354d99f64ae26c56388f1d8e1c7858321"
+    url "https://files.pythonhosted.org/packages/ac/dd/c06185d869a3877c20c67ae97c91b84f72be2fcdca2ca912d657293131df/s3fs-2023.9.1.tar.gz"
+    sha256 "42e1821ed94c1607c848853d1d715ebcd25c13380b6f510c2cb498c7e5b3e674"
   end
 
   resource "s3transfer" do
