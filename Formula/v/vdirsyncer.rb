@@ -10,13 +10,13 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ea8c383cee138d2dc47c81ba9e90452ffa151b7fb0142911ae55a67824de3ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7ba64054151207fa3e5c1e5b8ac4211e57e3cfde2e2bb75edb14f5dcd9dd418"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06b856e22815b8e2c5614edbc9fa421fe27b412f932cb100e44dfcd62146fb5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "081ecfaf806b5da722cc1956ae0f770a397fb1711b45d17886666e9216ea9157"
-    sha256 cellar: :any_skip_relocation, ventura:        "29a54f6fbf8fd98093573cfae80ff786c409c2cae77b143046623f25feee5d16"
-    sha256 cellar: :any_skip_relocation, monterey:       "b66ebff06241d6033928db12aa5dd6275fad2dc6235cbf1f08bd009b989ef48c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad3e5f91a0a492f4a9764209576d88404c56dd16f76c625c9fe741640f2dd95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2058a9820b011a2cea6d9846f09e1efe2d0e32b534de1dcf69abc0186d60ddd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e11257b36e09a145c7a74c09834c3359ba09225a03c2750ed7851b42ee30944"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46cecbafe09833a36d0826bf1d369e662f5511716453106b6fcf9f32f4ada4b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "36d63a4aa8b529c60ce6d7d10045ffb85a6efc31563b99158576e65067ada1e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5e740a97cabd7ea94af7efee9aac54bc733676b2797e96d8beb462a0cbb4fd9"
+    sha256 cellar: :any_skip_relocation, monterey:       "a9e8e0c6a067f866dbc0c075f19e16723d6f1232e0f393eeaae8eee6186a0014"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "926f612e0eda629131cfa6aaa974ab7388486a2cb96b69a05b8c0d3e8e6e84d9"
   end
 
   depends_on "python-certifi"
