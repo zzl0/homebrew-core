@@ -3,10 +3,9 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/d4/28/103ed458290f40221e0eb4d8f8268e7fbdc6b4f5ccd49bef73f7ddd26f86/grayskull-2.5.0.tar.gz"
-  sha256 "b021138655be550fd1b93b8db08b9c66169fac9cba6bcdad1411263e12fc703f"
+  url "https://files.pythonhosted.org/packages/39/ce/936b7037e16770a6f326fd4deaaebbe691053910b5a24eec7e6fe4e36084/grayskull-2.5.1.tar.gz"
+  sha256 "ce3737adb9849946f9f372604114b467cfffd552f7d142332c94ee7d150c2851"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d53df5194dbfd9eef023649bd59d4051f4e9b3b82b6a7abdba8674c81ac85342"
@@ -21,8 +20,9 @@ class Grayskull < Formula
   depends_on "cmake" => :build
   depends_on "python-certifi"
   depends_on "python-packaging"
+  depends_on "python-setuptools"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
