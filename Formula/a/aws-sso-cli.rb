@@ -2,8 +2,8 @@ class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://github.com/synfinatic/aws-sso-cli"
   url "https://github.com/synfinatic/aws-sso-cli.git",
-      tag:      "v1.14.1",
-      revision: "b3f6be7babc4e05956d0b7988bf7b3465bd25ad3"
+      tag:      "v1.14.2",
+      revision: "792f11ec86a5ce6683ba2df7cb544e4f76f2431b"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
