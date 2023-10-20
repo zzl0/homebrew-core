@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https://wasmtime.dev/"
   url "https://github.com/bytecodealliance/wasmtime.git",
-      tag:      "v13.0.0",
-      revision: "aec4b25b8f62f409175a3cc6c4a4ed18b446d3ae"
+      tag:      "v14.0.0",
+      revision: "2da78ca5c4c1e5a8cbc88a8ad3accf24bb4e6cfb"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
@@ -39,7 +39,7 @@ class Wasmtime < Formula
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
     (testpath/"sum.wasm").write(wasm)
     assert_equal "3\n",
-      shell_output("#{bin}/wasmtime #{testpath/"sum.wasm"} --invoke sum 1 2")
+      shell_output("#{bin}/wasmtime --invoke sum #{testpath/"sum.wasm"} 1 2")
 
     (testpath/"hello.wat").write <<~EOS
       (module
