@@ -3,8 +3,8 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-32.3.0.tgz"
-  sha256 "1161cf40036742f3b1ae35404dbc6a69788b3ddf48c090620fdf526c6ca1aebb"
+  url "https://registry.npmjs.org/vercel/-/vercel-32.5.0.tgz"
+  sha256 "39137f0ddabe9ca9fcafdb84620f9ff0b42297cef11c01f2aad86113be08288b"
   license "Apache-2.0"
 
   bottle do
@@ -22,8 +22,8 @@ class VercelCli < Formula
   depends_on "node"
 
   def install
-    inreplace "dist/index.js", "= getUpdateCommand",
-                               "= async()=>'brew upgrade vercel-cli'"
+    inreplace "dist/index.js", "${await getUpdateCommand()}",
+                               "brew upgrade vercel-cli"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
@@ -35,6 +35,7 @@ class VercelCli < Formula
                 .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with native slices
+    (node_modules/"fsevents/fsevents.node").unlink if OS.mac? && Hardware::CPU.arm?
     deuniversalize_machos
   end
 
