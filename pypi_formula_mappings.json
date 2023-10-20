@@ -312,7 +312,8 @@
   "dstack": {
     "package_name": "dstack[aws,azure,gcp,lambda]",
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "packaging", "protobuf", "pycparser", "Pygments",
+      "certifi", "click", "cffi", "cryptography", "markupsafe", "packaging",
+      "protobuf", "psutil", "pyparsing", "pycparser", "Pygments",
       "PyYAML", "six", "typing-extensions", "pytz"
     ]
   },
