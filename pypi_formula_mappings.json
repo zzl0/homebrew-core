@@ -907,7 +907,10 @@
     ]
   },
   "search-that-hash": {
-    "exclude_packages": ["certifi", "click", "commonmark", "name-that-hash", "Pygments", "rich", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "click", "commonmark", "name-that-hash", "Pygments",
+      "pyparsing", "rich", "toml", "typing-extensions"
+    ]
   },
   "semgrep": {
     "package_name": "semgrep",
