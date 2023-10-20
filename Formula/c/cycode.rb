@@ -18,6 +18,8 @@ class Cycode < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-click"
+  depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -40,11 +42,6 @@ class Cycode < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -70,11 +67,6 @@ class Cycode < Formula
   resource "marshmallow" do
     url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
     sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pathspec" do
@@ -109,6 +101,8 @@ class Cycode < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"cycode", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

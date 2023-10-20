@@ -260,7 +260,7 @@
     "exclude_packages": ["packaging", "toml"]
   },
   "cycode": {
-    "exclude_packages": ["certifi", "PyYAML", "six"]
+    "exclude_packages": ["certifi", "click", "packaging", "PyYAML", "six"]
   },
   "datalad": {
     "exclude_packages": ["certifi", "packaging"]
