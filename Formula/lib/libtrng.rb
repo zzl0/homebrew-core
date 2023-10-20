@@ -1,8 +1,8 @@
 class Libtrng < Formula
   desc "Tina's Random Number Generator Library"
   homepage "https://www.numbercrunch.de/trng/"
-  url "https://github.com/rabauke/trng4/archive/refs/tags/v4.24.tar.gz"
-  sha256 "92dd7ab4de95666f453b4fef04827fa8599d93a3e533cdc604782c15edd0c13c"
+  url "https://github.com/rabauke/trng4/archive/refs/tags/v4.25.tar.gz"
+  sha256 "2727ce04e726a0b214e7bc8066793489b1ddce2fdf932d63313f4fd2823c9beb"
   license "BSD-3-Clause"
   head "https://github.com/rabauke/trng4.git", branch: "master"
 
@@ -26,9 +26,13 @@ class Libtrng < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make", "install"
+    args = %w[
+      -DTRNG_ENABLE_TESTS=OFF
+      -DTRNG_ENABLE_EXAMPLES=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
