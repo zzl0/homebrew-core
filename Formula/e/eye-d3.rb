@@ -26,6 +26,7 @@ class EyeD3 < Formula
   end
 
   depends_on "python-packaging"
+  depends_on "python-toml"
   depends_on "python@3.12"
 
   # Looking for documentation? Please submit a PR to build some!
@@ -44,11 +45,6 @@ class EyeD3 < Formula
   resource "filetype" do
     url "https://files.pythonhosted.org/packages/bb/29/745f7d30d47fe0f251d3ad3dc2978a23141917661998763bebb6da007eb1/filetype-1.2.0.tar.gz"
     sha256 "66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   # Switch build-system to poetry-core to avoid rust dependency on Linux.
