@@ -1,8 +1,8 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
-  url "https://www.freetds.org/files/stable/freetds-1.4.3.tar.bz2", using: :homebrew_curl
-  sha256 "12f8b55b1e1816aec60e0d067de939c09e3477363250be95755b9b36e1c3c5d3"
+  url "https://www.freetds.org/files/stable/freetds-1.4.4.tar.bz2", using: :homebrew_curl
+  sha256 "f1fb755d3f979e90e90e6733d46311c839791a3d6e47709ac858a93f6a47a736"
   license "GPL-2.0-or-later"
 
   livecheck do
