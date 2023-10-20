@@ -41,7 +41,7 @@
   ["logcli", "loki", "promtail"],
   ["mame", "rom-tools"],
   ["mecab-unidic", "mecab-unidic-extended"],
-  ["moarvm", "nqp", "rakudo"],
+  ["moarvm", "nqp", "rakudo-star", "rakudo"],
   ["moreutils", "sponge"],
   ["mupdf", "mupdf-tools"],
   ["mysql", "mysql-client"],
