@@ -1,8 +1,8 @@
 class Ugit < Formula
   desc "Undo git commands. Your damage control git buddy"
   homepage "https://bhupesh.me/undo-your-last-git-mistake-with-ugit/"
-  url "https://github.com/Bhupesh-V/ugit/archive/refs/tags/v5.6.tar.gz"
-  sha256 "6e7ecab2a6d610f52a1e4382ec8310cb05000b593fa71f3b81dbcb39d8e0de88"
+  url "https://github.com/Bhupesh-V/ugit/archive/refs/tags/v5.7.tar.gz"
+  sha256 "9438261ef39fb3785a21edc00b756a9866e44ee373326f0269dc066c9a22ead9"
   license "MIT"
 
   bottle do
