@@ -18,6 +18,9 @@ class Sourcekitten < Formula
   depends_on :macos
   depends_on xcode: "6.0"
 
+  # https://github.com/jpsim/SourceKitten/pull/794 remove in release > 0.34.1
+  patch :DATA
+
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}", "TEMPORARY_FOLDER=#{buildpath}/SourceKitten.dst"
   end
@@ -30,3 +33,21 @@ class Sourcekitten < Formula
     system "#{bin}/sourcekitten", "syntax", "--text", "import Foundation // Hello World"
   end
 end
+__END__
+diff --git a/Makefile b/Makefile
+index 8ed333c5..cbad6d26 100644
+--- a/Makefile
++++ b/Makefile
+@@ -8,13 +8,6 @@ XCODEFLAGS=-workspace 'SourceKitten.xcworkspace' \
+ 	OTHER_LDFLAGS=-Wl,-headerpad_max_install_names
+ 
+ SWIFT_BUILD_FLAGS=--configuration release
+-UNAME=$(shell uname)
+-ifeq ($(UNAME), Darwin)
+-USE_SWIFT_STATIC_STDLIB:=$(shell test -d $$(dirname $$(xcrun --find swift))/../lib/swift_static/macosx && echo yes)
+-ifeq ($(USE_SWIFT_STATIC_STDLIB), yes)
+-SWIFT_BUILD_FLAGS+= -Xswiftc -static-stdlib
+-endif
+-endif
+ 
+ SOURCEKITTEN_EXECUTABLE=$(shell swift build $(SWIFT_BUILD_FLAGS) --show-bin-path)/sourcekitten
