@@ -24,6 +24,8 @@ class Miruo < Formula
   uses_from_macos "libpcap"
 
   def install
+    # https://github.com/KLab/miruo/pull/19
+    inreplace "miruo.h", "#include<stdlib.h>", "#include<stdlib.h>\n#include<ctype.h>"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--with-libpcap=#{MacOS.sdk_path}/usr"
