@@ -266,7 +266,9 @@
     "exclude_packages": ["certifi", "packaging"]
   },
   "datasette": {
-    "exclude_packages": ["certifi", "PyYAML", "six", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "click", "markupsafe", "PyYAML", "six", "typing-extensions"
+    ]
   },
   "detect-secrets": {
     "exclude_packages": ["certifi", "PyYAML"]
