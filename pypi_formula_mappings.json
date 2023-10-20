@@ -222,7 +222,9 @@
     "exclude_packages": ["psutil", "pygments", "typing-extensions"]
   },
   "commitizen": {
-    "exclude_packages": ["argcomplete", "PyYAML", "typing-extensions", "packaging"]
+    "exclude_packages": [
+      "argcomplete", "markupsafe", "PyYAML", "typing-extensions", "packaging"
+    ]
   },
   "conan": {
     "exclude_packages": ["certifi", "markupsafe", "Pygments", "PyYAML", "six"],
