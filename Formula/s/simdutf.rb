@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://github.com/simdutf/simdutf"
-  url "https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.18.tar.gz"
-  sha256 "c4910a05100f9fbef710d732f626f58e21c6d896bc940ef81d061803f2ec76ee"
+  url "https://github.com/simdutf/simdutf/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "1a84ea8a24396ea410d1c88d3126f95956a8799d8eaea0e03dc721e7c65ff9b3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
@@ -26,7 +26,11 @@ class Simdutf < Formula
   depends_on macos: :catalina
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TESTING=ON"
+    args = %w[
+      -DSIMDUTF_BENCHMARKS=ON
+      -DBUILD_TESTING=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     bin.install "build/benchmarks/benchmark" => "sutf-benchmark"
