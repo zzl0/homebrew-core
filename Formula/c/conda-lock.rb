@@ -3,8 +3,8 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/11/6f/0684b6ba5b9a6ecf825aab8b2c8b8d631ff0ad7211ec82f79b1a5b4414d8/conda_lock-2.4.0.tar.gz"
-  sha256 "7c41d1568a1163926cc1018da0cddd903a468986eb23e39fae2adf87051e316d"
+  url "https://files.pythonhosted.org/packages/8d/33/5c89ebb7fbf9f4f251454d9e538538ff0be21274a953dfe40a40314648fb/conda_lock-2.4.1.tar.gz"
+  sha256 "8be94e5cc57a0fafcb8658c1181049599496094ba08bd7f7aa2e9922f8964f04"
   license "MIT"
 
   bottle do
@@ -80,8 +80,8 @@ class CondaLock < Formula
   end
 
   resource "gitdb" do
-    url "https://files.pythonhosted.org/packages/4b/47/dc98f3d5d48aa815770e31490893b92c5f1cd6c6cf28dd3a8ae0efffac14/gitdb-4.0.10.tar.gz"
-    sha256 "6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"
+    url "https://files.pythonhosted.org/packages/19/0d/bbb5b5ee188dec84647a4664f3e11b06ade2bde568dbd489d9d64adef8ed/gitdb-4.0.11.tar.gz"
+    sha256 "bf5421126136d6d0af55bc1e7c1af1c397a34f5b7bd79e776cd3e89785c2b04b"
   end
 
   resource "gitpython" do
@@ -145,8 +145,8 @@ class CondaLock < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/a9/0a/03a0f2b6db0ed7f39f6447780d49a763c7576acb5ce9639c6f8c4e81dba0/ruamel.yaml-0.17.36.tar.gz"
-    sha256 "497d9f12c32e3201b12e897f1c7756bea59a7c50461daff66781598c48a7f289"
+    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
+    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
   resource "ruamel-yaml-clib" do
