@@ -2,8 +2,8 @@ class Micro < Formula
   desc "Modern and intuitive terminal-based text editor"
   homepage "https://github.com/zyedidia/micro"
   url "https://github.com/zyedidia/micro.git",
-      tag:      "v2.0.12",
-      revision: "c2cebaa3d19fbdd924d411ee393c03e3e7804435"
+      tag:      "v2.0.13",
+      revision: "68d88b571de6dca9fb8f03e2a3caafa2287c38d4"
   license "MIT"
   head "https://github.com/zyedidia/micro.git", branch: "master"
 
