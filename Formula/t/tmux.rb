@@ -2,7 +2,7 @@ class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
   license "ISC"
-  revision 2
+  revision 3
 
   stable do
     # Remove `stable` block in next release.
