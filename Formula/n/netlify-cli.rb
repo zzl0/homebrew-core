@@ -3,8 +3,8 @@ require "language/node"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-16.8.0.tgz"
-  sha256 "5f958e33eeda74fef3d1a17a694f8012c2eb1cadcda735135376d4ef9bccd765"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-16.9.1.tgz"
+  sha256 "3c70903f7b8a2ec08c251ad5d3485813e15c26cd6e21f94a7eb5cf6b14be8ea6"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
@@ -20,9 +20,20 @@ class NetlifyCli < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "vips"
+  end
+
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    if OS.linux?
+      node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
+      (node_modules/"@lmdb/lmdb-linux-x64").glob("*.musl.node").map(&:unlink)
+      (node_modules/"@msgpackr-extract/msgpackr-extract-linux-x64").glob("*.musl.node").map(&:unlink)
+    end
   end
 
   test do
