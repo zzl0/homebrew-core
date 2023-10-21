@@ -1,8 +1,8 @@
 class Gnuplot < Formula
   desc "Command-driven, interactive function plotting"
   homepage "http://www.gnuplot.info/"
-  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.9/gnuplot-5.4.9.tar.gz"
-  sha256 "a328a021f53dc05459be6066020e9a71e8eab6255d3381e22696120d465c6a97"
+  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.10/gnuplot-5.4.10.tar.gz"
+  sha256 "975d8c1cc2c41c7cedc4e323aff035d977feb9a97f0296dd2a8a66d197a5b27c"
   license "gnuplot"
 
   livecheck do
@@ -39,11 +39,6 @@ class Gnuplot < Formula
   depends_on "readline"
 
   fails_with gcc: "5"
-
-  # Fixes `uic-qt6: No such file or directory`
-  # Fixes `lrelease-qt6: No such file or directory`
-  # https://sourceforge.net/p/gnuplot/bugs/2649/
-  patch :DATA
 
   def install
     args = %W[
@@ -95,28 +90,3 @@ class Gnuplot < Formula
     assert_predicate testpath/"graph.txt", :exist?
   end
 end
-__END__
-diff --git a/configure b/configure
-index c918ea8..019dcc0 100755
---- a/configure
-+++ b/configure
-@@ -16393,12 +16393,17 @@ fi
-           UIC=${QT6LOC}/uic
-           MOC=${QT6LOC}/moc
-           RCC=${QT6LOC}/rcc
--      else
-+      elif test "x${UIC}" = "x"; then
-           UIC=uic-qt6
-           MOC=moc-qt6
-           RCC=rcc-qt6
-       fi
--      LRELEASE=lrelease-qt6
-+      QT6BIN=`$PKG_CONFIG --variable=bindir Qt6Core`
-+      if test "x${QT6BIN}" != "x"; then
-+          LRELEASE=${QT6BIN}/lrelease
-+      elif test "x${LRELEASE}" = "x"; then
-+          LRELEASE=lrelease-qt6
-+      fi
-       CXXFLAGS="$CXXFLAGS -fPIC"
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: The Qt terminal will use Qt6." >&5
- printf "%s\n" "The Qt terminal will use Qt6." >&6; }
