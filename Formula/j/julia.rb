@@ -5,6 +5,7 @@ class Julia < Formula
   url "https://github.com/JuliaLang/julia/releases/download/v1.9.3/julia-1.9.3-full.tar.gz"
   sha256 "8fc0c9dc5443a28d359bd79dda3940fa94ba2b7966b89865beb20da81123c316"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
