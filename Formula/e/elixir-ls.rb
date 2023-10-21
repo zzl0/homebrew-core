@@ -24,7 +24,8 @@ class ElixirLs < Formula
     system "mix", "local.rebar", "--force"
     system "mix", "deps.get"
     system "mix", "compile"
-    system "mix", "elixir_ls.release", "-o", libexec
+    system "mix", "elixir_ls.release2", "-o", libexec
+    libexec.glob("*.bat").map(&:unlink)
 
     bin.install_symlink libexec/"language_server.sh" => "elixir-ls"
   end
