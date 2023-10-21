@@ -1,10 +1,9 @@
 class Ddclient < Formula
   desc "Update dynamic DNS entries"
   homepage "https://ddclient.net/"
-  url "https://github.com/ddclient/ddclient/archive/v3.10.0.tar.gz"
-  sha256 "34b6d9a946290af0927e27460a965ad018a7c525625063b0f380cbddffc01c1b"
+  url "https://github.com/ddclient/ddclient/archive/v3.11.0.tar.gz"
+  sha256 "0e7ad53049c7e8699a316c834cf12cf14134671c7d87a44fe5783a481b886b64"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/ddclient/ddclient.git", branch: "master"
 
   livecheck do
