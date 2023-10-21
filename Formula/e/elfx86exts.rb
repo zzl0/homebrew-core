@@ -1,8 +1,8 @@
 class Elfx86exts < Formula
   desc "Decodes x86 binaries (ELF and Mach-O) and prints out ISA extensions in use"
   homepage "https://github.com/pkgw/elfx86exts"
-  url "https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.0.tar.gz"
-  sha256 "976f845635f08160c1330f3e70fd9b61bafbc26c76577bd278a7f2e8513d4130"
+  url "https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.1.tar.gz"
+  sha256 "64b218bbddabd1484ecb092f4e55a7fc6095b18e76170cff2d391822c91b7ce9"
   license "MIT"
   head "https://github.com/pkgw/elfx86exts.git", branch: "master"
 
