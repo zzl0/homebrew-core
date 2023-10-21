@@ -5,6 +5,7 @@ class Mame < Formula
   version "0.259"
   sha256 "46baf431079a3373ffe8d984b3ba5d62ad5b1d5e356d1f60cf60f6ad03d4cec6"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/mamedev/mame.git", branch: "master"
 
   # MAME tags (and filenames) are formatted like `mame0226`, so livecheck will
