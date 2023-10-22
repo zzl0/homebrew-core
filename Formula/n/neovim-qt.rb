@@ -7,17 +7,13 @@ class NeovimQt < Formula
   head "https://github.com/equalsraf/neovim-qt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "7575964ee3eafb0df3cd241c1be9d14631331f76506623e3d7e15a4cd9dbc373"
-    sha256 cellar: :any,                 arm64_ventura:  "ba069626e6a18a2d6a4d7c53b1b6807ca7b47ed4fb11253c747183f13715406d"
-    sha256 cellar: :any,                 arm64_monterey: "c43685139264ca10c57b80a7328340f9036c2c07fca44f507104cea67274d9e4"
-    sha256 cellar: :any,                 arm64_big_sur:  "e35446a4b5b00b7b82387c523fbf229333426707a17a42c4016dfa7862681d2e"
-    sha256 cellar: :any,                 sonoma:         "071bce587e7423293f0b26567f6f326f4e8da2d91d6e99d3242294f2a669b6d9"
-    sha256 cellar: :any,                 ventura:        "504ec4239004f831968b089d78a28c7633210c1de1eacbce2281c0ec8e6a71df"
-    sha256 cellar: :any,                 monterey:       "937fa07572c5bc168106b2bdd8d47d168ed722aa6c1ca99aa12514312abefe90"
-    sha256 cellar: :any,                 big_sur:        "3cb5e4c689e23d40c5c397fb11292bd1efceb5aac51a08d42c24e2247b584996"
-    sha256 cellar: :any,                 catalina:       "850cf1963c335f59b923d7085ed76d004e55ba9c058303f88886c007b8b7bff7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91244720218a0ab7daeaa8a2e91e287aa1c635c33f513bf898006405b671badf"
+    sha256 cellar: :any,                 arm64_sonoma:   "c83c58716edca89d93dec4a309628a4abee57a834a7d2e55e60bd8f1337101c3"
+    sha256 cellar: :any,                 arm64_ventura:  "97f6a46655c99d48e55fdbd825b7c41048654a5c8e37399444dc9ffc1c4cc9ba"
+    sha256 cellar: :any,                 arm64_monterey: "cc67e416a0c7b0b32c0687e20c6343216925f7402b0cd0a293bb5d33cbb8f356"
+    sha256 cellar: :any,                 sonoma:         "d7f7d75a951797a4181052c0316599d72e30cb8bfb10e56251b6b22fece92aa0"
+    sha256 cellar: :any,                 ventura:        "a82123756bd0178b09e41741a8c10a8c2745f86cf46d9fb82bafdb1d9738f4f6"
+    sha256 cellar: :any,                 monterey:       "30da4655952316b0fc93eb7cfe14eb166960693f03ef8694144bab097b304391"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57c7422f89ba1faf954bd679eb71b7768d0dc413fe802a373cd330cda4a3c72d"
   end
 
   depends_on "cmake" => :build
