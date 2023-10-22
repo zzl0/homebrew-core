@@ -6,6 +6,7 @@ class Cdktf < Formula
   url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.19.0.tgz"
   sha256 "1e8cf857b5ef4ef2b737e8366a51a923013d231c38ff301d0a43c14f293c1b4d"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "958644c1bb520bb5317ed1a36ee7c4433c52c39b33e8876488c9ef8316e43c73"
