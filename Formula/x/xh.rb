@@ -7,13 +7,13 @@ class Xh < Formula
   head "https://github.com/ducaale/xh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "232805d498dd4e5bb65fe5d52432bb48c9424ce348dd9fc9e74eaa32b836d64c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7949e32426d2a876d5855c3be6f2df08f6fe42c1f40c7de8ed66b53b2282baae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd77f14d3c930b7b96f193c6ac20697628255463294b3ea974860f12c47153b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "132a3b40cb4af58ba134bee93326ca5dbd9dd09923fbde423a0b9252618df980"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cb7b2858365b7aa761136fcc88acf2c2c5fa013b827a358650942a23c7f33e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "082237b93996621eb0b70d264baac1cfc66d1ffbd6e29facbbe747ca57b68d44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3d0172d4b5c61545fda04b8251b369286e1ba5a362c659756464691b4868f79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30b6e5e29a48900173be30a6679266003c715e8d41110c92daa17f023b83bb15"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20823bbe25a5b30850d2a17541e13be3183bfed6b1a7663d26289e01b3f602df"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "043567f53d1e654917044068802cea839095a678652f974d33ddfdf43e11a053"
+    sha256 cellar: :any_skip_relocation, sonoma:         "37b191c0098e213008aad1d0acd9e0ed49b8f167e7381da08a78f9ad31845747"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f7111863be97057f292445f80f3b8f2dceee74ace3bba27cccbaec0076e69ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "3976e74ee6d82bf4d7f4e7b03d86d948a85f54410d593cbab78ab4c0d2183a77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4493835b024aa36cb767dfeba618f76c53c7365f58285184a430838d60a8e29f"
   end
 
   depends_on "rust" => :build
