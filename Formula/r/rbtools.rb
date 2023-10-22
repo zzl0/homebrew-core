@@ -10,16 +10,14 @@ class Rbtools < Formula
   head "https://github.com/reviewboard/rbtools.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75515d822f030e47fd926bfe50675b25920355f22fcfbcf3034682b3fba2563f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "277a8c9af0ce8eff57a90be5d471f1f298346a0d144781a17baa9da5ea30cb32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70763493e72f7e536b0ee744f5bcab7f00c934256dcfe3681a7a3f9889007511"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3975e2c094222e09d0e823c8b5b938ae78de2c6df87b34741d57aface87ab6ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8d86684678559666e2577ccb202b3ac6eedf6eef35568d12c410a08f58f96ef8"
-    sha256 cellar: :any_skip_relocation, ventura:        "707850961f0e3b3af1a94bc5d98ac6abc13069fc2afb7e992924175afce5e88f"
-    sha256 cellar: :any_skip_relocation, monterey:       "e98985956bb0b4573159d598214c483d7d81f7b26b20d59de0085ffac4af0111"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e7c2ea19f3c55d15ed017df33afa0ed3d3396924f4eea5be9e3adb87f4b8abff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d92a1cba0e02a05828924fa6951e3e553a2d6cf18292d11401b35a6741a9c1c7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69280826a39dfbc55cf94d1f11ade8470fa9cb7ee9ef11632b5d3536b05ca9c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26aeb7fe73faeea93d442b37823cfcbaf5189a8656d7e936ed2940aac807c3e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b560aa4a189b1173b8b9603c9d77db164e77be52ce501f4009dfb6bdec7a5388"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b34ef6e62a88f7ec2b3733bf86b132bdc087ea3ceda1a499c44afc2711da94f"
+    sha256 cellar: :any_skip_relocation, ventura:        "87c27f7a7ac77b1778a201a9816aee74bec0a06cd781c31b90a2d51c719f2701"
+    sha256 cellar: :any_skip_relocation, monterey:       "d35dbece581ba434a3cafbe23c999a320de72f06792a3d12981c5a6e1aceea6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1717944e7cdbf970f9682049d4b634172ef659778f4c311c621ba12f270932d4"
   end
 
   depends_on "python-certifi"
