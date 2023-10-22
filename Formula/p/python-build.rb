@@ -19,20 +19,27 @@ class PythonBuild < Formula
   end
 
   depends_on "python-flit-core" => :build
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
-  depends_on "python@3.11"
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   test do
-    system python3, "-c", "import build"
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", "import build"
+    end
 
     stable.stage do
       system bin/"pyproject-build"
