@@ -1,8 +1,8 @@
 class NeovimQt < Formula
   desc "Neovim GUI, in Qt5"
   homepage "https://github.com/equalsraf/neovim-qt"
-  url "https://github.com/equalsraf/neovim-qt/archive/v0.2.17.tar.gz"
-  sha256 "ac538c2e5d63572dd0543c13fafb4d428e67128ea676467fcda68965b2aacda1"
+  url "https://github.com/equalsraf/neovim-qt/archive/v0.2.18.tar.gz"
+  sha256 "b1e1e019946ecb106b3aea8e35fc6e367d2efce44ca1c1599a2ccdfb35a28635"
   license "ISC"
   head "https://github.com/equalsraf/neovim-qt.git", branch: "master"
 
@@ -27,15 +27,8 @@ class NeovimQt < Formula
 
   fails_with gcc: "5"
 
-  # Fix finding `msgpack`
-  # https://github.com/equalsraf/neovim-qt/pull/1054
-  patch do
-    url "https://github.com/equalsraf/neovim-qt/commit/6831b54729e0ec812a366e01fa98483114f1cf49.patch?full_index=1"
-    sha256 "9bd6dc3adc1ddebed25aea00396eb4c79dd31f72d5f7e62c24d845db19ffe494"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DUSE_SYSTEM_MSGPACK=ON"
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
