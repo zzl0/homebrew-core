@@ -1,8 +1,8 @@
 class Lilv < Formula
   desc "C library to use LV2 plugins"
   homepage "https://drobilla.net/software/lilv.html"
-  url "https://download.drobilla.net/lilv-0.24.20.tar.xz"
-  sha256 "4fb082b9b8b286ea92bbb71bde6b75624cecab6df0cc639ee75a2a096212eebc"
+  url "https://download.drobilla.net/lilv-0.24.22.tar.xz"
+  sha256 "76f949d0e59fc83363409b5ec5e15c1046fb7dd6589d3c1b920cec1fd29f9ff3"
   license "ISC"
 
   livecheck do
@@ -30,6 +30,7 @@ class Lilv < Formula
   depends_on "serd"
   depends_on "sord"
   depends_on "sratom"
+  depends_on "zix"
 
   def python3
     "python3.12"
