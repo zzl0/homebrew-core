@@ -38,14 +38,13 @@ class Redex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "627f8818ccdda40645a5795573c716406a92697f2eede1862faa7347019402cb"
-    sha256 cellar: :any,                 arm64_ventura:  "d8ac21f6db847ac527193718f0ac57919c8256f43b72be26c3b848d78f23443e"
-    sha256 cellar: :any,                 arm64_monterey: "e4c48fb028ab15462f82657c1884946fb5a73086a0cf75b6a23cb5472eea7373"
-    sha256 cellar: :any,                 sonoma:         "f1e609d2c5397c316c5a1973bf6d9a3a2f0be6d566ca1265c48c60a453a0ee8a"
-    sha256 cellar: :any,                 ventura:        "2d039c048c634a3cd4c8dc81e5cf7ac60b69c52e64cffd948450030225532cd6"
-    sha256 cellar: :any,                 monterey:       "bbe72a752bbe3c2859308b383315439f3ae07d1f26c796126d60e1fb24d4de72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3fd51b3092f4dc8b59fdefcd79acf79dc5edbf25f4d245e58fb5685a216f5dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "5432d337825371686b4021b8898003c75505c4a09b0b5afe37ad9104843d7ba4"
+    sha256 cellar: :any,                 arm64_ventura:  "6bdf687aef61253b280936c81bf9c8b8fcc0ec830087885973ac836c29e1fe8f"
+    sha256 cellar: :any,                 arm64_monterey: "bc02b64093d49159e8a92bd83df951b7e099563c43dafba3765db81c5e4722d4"
+    sha256 cellar: :any,                 sonoma:         "95af337e88269e9dc187bab2bb8b3cd3588e36fdb6591fca58e6a6b364ca4f91"
+    sha256 cellar: :any,                 ventura:        "8fee121096aea10a76db45b4db03fb91426623e5460c5889c8d3d05dc285d5e7"
+    sha256 cellar: :any,                 monterey:       "f2e979f03d9e3882bfcc3fd46b2ba9e327ad0e118609f813a1959338e96c448d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37698a87c862ca311ed5b2fc5c182e225891ddc67f3cd089d349ae6675bbf9a2"
   end
 
   depends_on "autoconf" => :build
