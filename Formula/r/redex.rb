@@ -38,15 +38,14 @@ class Redex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eaafdcc35fbb70517593e3944edb35bbba69f23884c6757a580b3ad352eafd1f"
-    sha256 cellar: :any,                 arm64_ventura:  "e25e28b448f6d3123a3ac849ffac1d88967cd02411bd85ed44e3a159085ba096"
-    sha256 cellar: :any,                 arm64_monterey: "5a4a62ced9c73a9186cb2837a31880504ba64e237e0a8060751176fe3652632a"
-    sha256 cellar: :any,                 arm64_big_sur:  "701f5020ad8a3a72cd7f1de913af4f4404a881a1399196ebd1468164126fe363"
-    sha256 cellar: :any,                 sonoma:         "8f6a1ced2dbd16ae8d2572c5381fbedb710e6f42921aa1ecbecb3e6ca49db136"
-    sha256 cellar: :any,                 ventura:        "e7ab3fc11cd1620b651767594eee62e7db9c06e0419e32ac1df5a92a3e34d79c"
-    sha256 cellar: :any,                 monterey:       "97e06d7df13ac4e0ee46c295c6d28c0d19888173eee06d3f2e30a9d9b2b3fcb4"
-    sha256 cellar: :any,                 big_sur:        "2dee5174ab23e7ff88913a599b63766db149848ded87f2645e976a7f3ce0fffa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dfb3c6830b5a9b646e2739d446611ba476ed3c86402dbf160f11fa0f9f4de07"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "627f8818ccdda40645a5795573c716406a92697f2eede1862faa7347019402cb"
+    sha256 cellar: :any,                 arm64_ventura:  "d8ac21f6db847ac527193718f0ac57919c8256f43b72be26c3b848d78f23443e"
+    sha256 cellar: :any,                 arm64_monterey: "e4c48fb028ab15462f82657c1884946fb5a73086a0cf75b6a23cb5472eea7373"
+    sha256 cellar: :any,                 sonoma:         "f1e609d2c5397c316c5a1973bf6d9a3a2f0be6d566ca1265c48c60a453a0ee8a"
+    sha256 cellar: :any,                 ventura:        "2d039c048c634a3cd4c8dc81e5cf7ac60b69c52e64cffd948450030225532cd6"
+    sha256 cellar: :any,                 monterey:       "bbe72a752bbe3c2859308b383315439f3ae07d1f26c796126d60e1fb24d4de72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3fd51b3092f4dc8b59fdefcd79acf79dc5edbf25f4d245e58fb5685a216f5dc"
   end
 
   depends_on "autoconf" => :build
