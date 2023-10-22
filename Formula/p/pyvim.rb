@@ -8,17 +8,14 @@ class Pyvim < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "607912e14bc5faf751a28fd3727752a9f4f7695dd767cb8dea31ecf63cf09334"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84271d72d5e192730afe696ff8befbd09ed45c9ebb495fdc2a5675ef9e363f32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6998e350ae758b15aa2db8198001bc8a8124ed1c86a74e32ff3901359bb193b5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59c15aa998f7b3961dd042fd1e32bf09eb59510dd1774e348ceb4d297a36cf09"
-    sha256 cellar: :any_skip_relocation, sonoma:         "84746289c8f29cf62f3d5699056c12683b451153fb01affc4b09a20ef8a9dd2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2971047d47ad67e4a6a28afac14094a5dc6addf200880b24607da3730b46618"
-    sha256 cellar: :any_skip_relocation, monterey:       "8968b45fc990d804c0fb406dcfd19f5a459e0a65bf06152c763bc5d9a147c4d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3ea53ff35fdcdace23d6d95d67ddae50da86b64e63cac5a4796235f24df404b2"
-    sha256 cellar: :any_skip_relocation, catalina:       "1a18a3f4743b90fc41e4fad362eaf4a5fbb050874ab6fcebf61058ceb014d12c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "709d795900c4098c90892135c0859c0c93f8aa18868eeeb023bc4357bace19b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e4c9ae743c25b11c373055da09e5741f8978457575847589d44a9916b788f3d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1da6f44b9955463f99b8c04b606fddd3697e6036db65c17800b65526c93224e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3384b88b9d1b9cc66426343366f07fadae5202397727c3e694bd62bc942bbe1c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b940a3731430d50ba62cd35d111d1a7ef316bc8268c4452c21b8f641d10584a"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa3f1f6b006a2296b3a20a4bfdd1547fc59a45893a0c75a9b272fcabab5c9ddd"
+    sha256 cellar: :any_skip_relocation, monterey:       "8012317bf225ae6cee1e2d882c367de498023915b0275e4a7bfdd0c486c153b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcede15ebeb6ab14f705aafa482ee208beea862817095707daaf1205dedb2548"
   end
 
   depends_on "pygments"
