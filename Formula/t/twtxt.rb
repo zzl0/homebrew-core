@@ -9,15 +9,14 @@ class Twtxt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc26bf2cce0cd82864b27ff92fad9a81381904a0793b026a215e01c5deb2217b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa9f2e9273510525b7be2937857ab48aa5e66296cb48e6331320a8cac5cf7e63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd1bfa2c61d90c65902d90af65d8ae9a164f9a2e0faa831769f91882bcd7958"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73533d9386f31044ce65316484d359bfdfc8feeef26440aa11202c7e8c85d25b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62c202d3f2f5d4966ad96bc204f9a33162b08f479a6a3fc469a987089e093f82"
-    sha256 cellar: :any_skip_relocation, ventura:        "293d74157b98140bcf576f9aa1168d13765cfe58d275cf0c0684ed16d2915cdd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5e242f048a01738ec0bcd3fa9aa908fe5fffaeae75fc4471e7466905f30146e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5653a8b6cdfee8a04eb84eb85a2ca7caac2c8253dc23eb1617802d442e11c440"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "440ce20cf4e39666f2182ec31a33cd1e4dd7064e296bf3fb3dd3c62e8020a72d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3aae43e883e94a56fa92f3c8bf4bfa6dfdd04c9f52527d53502effadb56c962"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4f514b62bc63f978f39929115fd57e329966426611d5a281c3535eef2e515be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ab582facffacaff620fe7aee8944ceee7fdcb5ebd4f44c860c3dd7bda04baa6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b689433915d58dd5400ca606e3ce6356ab87c6ae087553413cac9807399d91b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c3179cb2a0aa414b2876792e2027f1ef379e30ff651cb4cd88e670e6dd4d652"
+    sha256 cellar: :any_skip_relocation, monterey:       "744e52d56287003e23980e22189fd1f840845a43124719734e66e6e18832812c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1426ec869f8312fb9f5c27f39848d772f2ed73ecfecf423e957a09b27c21d607"
   end
 
   depends_on "python-setuptools"
