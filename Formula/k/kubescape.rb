@@ -1,8 +1,8 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://github.com/kubescape/kubescape"
-  url "https://github.com/kubescape/kubescape/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "63c9052b5e402a471fde909932ee8a660e96262a4256fd472fe3834e793be14c"
+  url "https://github.com/kubescape/kubescape/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "d16aba27941dd2a638d552d0376ab05376f8ed4a525ecfbd9bdf499bf4251174"
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
 
@@ -26,7 +26,7 @@ class Kubescape < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kubescape/kubescape/v2/core/cautils.BuildNumber=v#{version}
+      -X github.com/kubescape/kubescape/v3/core/cautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
