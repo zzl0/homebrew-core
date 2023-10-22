@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https://github.com/universal-ctags/ctags"
-  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20231001.0.tar.gz"
-  version "p6.0.20231001.0"
-  sha256 "785d2c172c9ff88ccfdb43bad64c316808c80321d8c79e85cf394df5dd3bf160"
+  url "https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20231022.0.tar.gz"
+  version "p6.0.20231022.0"
+  sha256 "a562d1603bf6f4cbb5300425708bcfdfedbd3b3808ba0ad5ae03247a31508e33"
   license "GPL-2.0-only"
   head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
@@ -26,6 +26,7 @@ class UniversalCtags < Formula
   depends_on "automake" => :build
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.12" => :build
   depends_on "jansson"
   depends_on "libyaml"
   depends_on "pcre2"
