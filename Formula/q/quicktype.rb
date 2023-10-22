@@ -6,6 +6,7 @@ class Quicktype < Formula
   url "https://registry.npmjs.org/quicktype/-/quicktype-23.0.76.tgz"
   sha256 "00cbdb63d80196669ae7fddfa17a1ad39a69db32566a92d558ea92ff6d16b821"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
@@ -18,7 +19,7 @@ class Quicktype < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e16bf0a4bef00d435af28ee4172b3e4b84289684e69e39946c2186aab6eb959"
   end
 
-  depends_on "node"
+  depends_on "node@20"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
@@ -26,6 +27,8 @@ class Quicktype < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["node@20"].bin
+
     (testpath/"sample.json").write <<~EOS
       {
         "i": [0, 1],
