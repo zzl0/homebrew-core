@@ -6,6 +6,7 @@ class NodeSass < Formula
   url "https://registry.npmjs.org/sass/-/sass-1.69.4.tgz"
   sha256 "ce91baadd5f9b0dda64ab97f76d34755ef20d37fbf5567ba0996b63bc4851579"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9985861e06afa8993b7f9474c206b5c709f9ceae0589a7bae06c8ff89ad5a39c"
@@ -17,7 +18,7 @@ class NodeSass < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6db7aa70660bcaeed2167b2c631f9f4ece1767256789ba54c5733a5c8cebf807"
   end
 
-  depends_on "node"
+  depends_on "node@20"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
@@ -25,6 +26,8 @@ class NodeSass < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["node@20"].bin
+
     (testpath/"test.scss").write <<~EOS
       div {
         img {
