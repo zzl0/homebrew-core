@@ -2,8 +2,8 @@ class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
   homepage "http://www.linux-usb.org/"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-015.tar.gz"
-  sha256 "2b8140664578f39c3f6f0166a1b950f8655304e63e3d7f89899acb99bc5cb8e7"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-016.tar.gz"
+  sha256 "a039479b88979d8e6dafa5a82d91eb5183b087104204a87d0e7ae6a26257f0e5"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
