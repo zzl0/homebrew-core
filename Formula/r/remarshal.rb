@@ -19,15 +19,15 @@ class Remarshal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afdd307624aeeb6c87190a12ca40e900d6979ed7b7de0e9fb389f314e53c5e58"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   conflicts_with "msgpack-tools", because: "both install 'json2msgpack' binary"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/d9/69/de486293f5211d2e8fe1a19854e69f2811a18448162c52b48c67f8fbcac3/cbor2-5.4.6.tar.gz"
-    sha256 "b893500db0fe033e570c3adc956af6eefc57e280026bd2d86fd53da9f1e594d7"
+    url "https://files.pythonhosted.org/packages/55/82/20ab03a2a43338927e722e51db457d4d8b56332539612dedb56bbe44e07d/cbor2-5.5.0.tar.gz"
+    sha256 "380a427faed0202236dccca6b1dc0491f35c0598bdb6cac983616f6106127bd7"
   end
 
   resource "iniconfig" do
@@ -41,8 +41,8 @@ class Remarshal < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/5b/a2/4db5b065b0694b330f2b3c47e64abda0a470839da5119a404610d6349a11/pytest-7.4.1.tar.gz"
-    sha256 "2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"
+    url "https://files.pythonhosted.org/packages/e5/d0/18209bb95db8ee693a9a04fe056ab0663c6d6b1baf67dd50819dd9cd4bd7/pytest-7.4.2.tar.gz"
+    sha256 "a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"
   end
 
   resource "python-dateutil" do
