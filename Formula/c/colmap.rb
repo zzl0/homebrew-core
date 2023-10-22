@@ -4,6 +4,7 @@ class Colmap < Formula
   url "https://github.com/colmap/colmap/archive/refs/tags/3.8.tar.gz"
   sha256 "02288f8f61692fe38049d65608ed832b31246e7792692376afb712fa4cef8775"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3a0d7e341c1a9600b8caba970bee951d8b6d671fe9a263865eb589cb7d186aff"
@@ -36,6 +37,10 @@ class Colmap < Formula
 
   def install
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].prefix
+
+    # Use C++17 for compatibility with ceres-solver >= 2.2.0.
+    # Issue ref: https://github.com/colmap/colmap/issues/2247
+    inreplace "src/CMakeLists.txt", "-std=c++14", "-std=c++17"
 
     system "cmake", "-S", ".", "-B", "build", "-DCUDA_ENABLED=OFF", *std_cmake_args
     system "cmake", "--build", "build"
