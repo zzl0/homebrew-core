@@ -848,7 +848,7 @@
   },
   "regipy": {
     "package_name": "regipy[cli]",
-    "exclude_packages": ["tabulate", "pytz"]
+    "exclude_packages": ["click", "pytz", "tabulate"]
   },
   "remarshal": {
     "exclude_packages": ["six", "packaging", "PyYAML"]

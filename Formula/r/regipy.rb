@@ -21,18 +21,14 @@ class Regipy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "80b37ae8e56b2fac41fa904ef956035fcd881fdea7386604561ce57824b2dfce"
   end
 
+  depends_on "python-click"
   depends_on "python-pytz"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "construct" do
@@ -45,19 +41,17 @@ class Regipy < Formula
     sha256 "1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"
   end
 
-  resource "test_hive" do
-    url "https://raw.githubusercontent.com/mkorman90/regipy/71acd6a65bdee11ff776dbd44870adad4632404c/regipy_tests/data/SYSTEM.xz"
-    sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
-  end
-
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install resources.reject { |r| r.name == "test_hive" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
-    resource("test_hive").stage do
+    resource "homebrew-test_hive" do
+      url "https://raw.githubusercontent.com/mkorman90/regipy/71acd6a65bdee11ff776dbd44870adad4632404c/regipy_tests/data/SYSTEM.xz"
+      sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
+    end
+
+    resource("homebrew-test_hive").stage do
       system bin/"registry-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"
       h = JSON.parse(File.read("out.json"))
       assert_equal h["computer_name"][0]["name"], "WKS-WIN732BITA"
