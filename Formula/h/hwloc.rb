@@ -6,7 +6,7 @@ class Hwloc < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://www.open-mpi.org/software/hwloc/current/downloads/latest_snapshot.txt"
+    url "https://www.open-mpi.org/software/hwloc/current/downloads/latest_release.txt"
     regex(/(\d+\.\d+\.\d+)/i)
   end
 
