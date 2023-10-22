@@ -12,7 +12,7 @@ class Pycodestyle < Formula
     sha256 cellar: :any_skip_relocation, all: "9e3595379599ecbedbeab239b2adec94b66221e1fd8ef9ddfee3693e89a232a2"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     rewrite_shebang detected_python_shebang, "pycodestyle.py"
