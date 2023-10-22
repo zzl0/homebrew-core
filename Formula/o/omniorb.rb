@@ -23,7 +23,7 @@ class Omniorb < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "bindings" do
     url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.1/omniORBpy-4.3.1.tar.bz2"
@@ -31,7 +31,7 @@ class Omniorb < Formula
   end
 
   def install
-    ENV["PYTHON"] = python3 = which("python3.11")
+    ENV["PYTHON"] = python3 = which("python3.12")
     xy = Language::Python.major_minor_version python3
     inreplace "configure",
               /am_cv_python_version=`.*`/,
