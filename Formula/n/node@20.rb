@@ -10,6 +10,16 @@ class NodeAT20 < Formula
     regex(%r{href=["']?v?(20(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    sha256 arm64_sonoma:   "90457fea276a285c7c50facc1a4c3bcf1185c450c3d101bc07bd318a53a98e1c"
+    sha256 arm64_ventura:  "fc31441cb84987270d3ea897ecbc3edab6f3826e44d7b10d7b2d9f80713134e0"
+    sha256 arm64_monterey: "c840e438adf6475d01721b3805aa065ce88c20845cc7315efc6473f6f91d7869"
+    sha256 sonoma:         "5fb752db4c331ba4278f64c6ebbe695d34f62a11930cd62b506fd74ff7e55d85"
+    sha256 ventura:        "1c2c5b0c5b99275308781998875828f6aedb4539f031a490e9d7e9254f962568"
+    sha256 monterey:       "0285b304cbe9feeb6e2bfc2a6a359b1bd3cde7ec83a7893583382e7a86c835fd"
+    sha256 x86_64_linux:   "6025742b665ccc1ccf8cc14fa7f4ef00f86e05e88aba498805ff968aeba687fc"
+  end
+
   keg_only :versioned_formula
 
   # https://nodejs.org/en/about/releases/
