@@ -6,6 +6,14 @@ class ChainBench < Formula
   license "Apache-2.0"
   head "https://github.com/aquasecurity/chain-bench.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfbb60ac5af691f4eae0f750b0f3f15a5c28e752075434711c333aee8b154815"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c86422a1ddd597f84353351f5c77e3ba2f798552d4b4ae30ab1a2f2de612145d"
