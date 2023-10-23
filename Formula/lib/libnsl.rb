@@ -6,7 +6,7 @@ class Libnsl < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed70b285939e2ab21ba53d122ce2d4beab4cd0f9c86925c3d3a2cfb1b0eeecb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd62e18814426db752379866b0ecb55a655fcf7ffd068883625f9a7eed1f56b9"
   end
 
   depends_on "pkg-config" => :build
