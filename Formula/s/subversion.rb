@@ -67,7 +67,7 @@ class Subversion < Formula
   end
 
   resource "py3c" do
-    url "https://github.com/encukou/py3c/archive/v1.1.tar.gz"
+    url "https://github.com/encukou/py3c/archive/refs/tags/v1.1.tar.gz"
     sha256 "c7ffc22bc92dded0ca859db53ef3a0b466f89a9f8aad29359c9fe4ff18ebdd20"
   end
 
