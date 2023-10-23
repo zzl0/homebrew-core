@@ -974,6 +974,11 @@
   "sqlite-utils": {
     "exclude_packages": ["tabulate", "six"]
   },
+  "ssh-mitm": {
+    "exclude_packages": [
+      "argcomplete", "cffi", "cryptography", "packaging", "pycparser", "pygments", "pytz", "pyyaml", "six"
+    ]
+  },
   "sslyze": {
     "exclude_packages": ["typing-extensions", "pycparser"]
   },
