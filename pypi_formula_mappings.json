@@ -108,6 +108,9 @@
       "argcomplete", "certifi", "docutils", "six", "tabulate", "typing-extensions"
     ]
   },
+  "badkeys": {
+    "exclude_packages": ["cffi", "cryptography", "pycparser"]
+  },
   "bandcamp-dl": {
     "exclude_packages": ["certifi", "lxml", "mutagen", "six"]
   },
