@@ -1,5 +1,5 @@
 class TerraformInventory < Formula
-  desc "Terraform State → Ansible Dynamic Inventory"
+  desc "Go app which generates a dynamic Ansible inventory from a Terraform state file"
   homepage "https://github.com/adammck/terraform-inventory"
   url "https://github.com/adammck/terraform-inventory/archive/refs/tags/v0.10.tar.gz"
   sha256 "8bd8956da925d4f24c45874bc7b9012eb6d8b4aa11cfc9b6b1b7b7c9321365ac"
