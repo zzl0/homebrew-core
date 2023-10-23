@@ -6,13 +6,13 @@ class Fclones < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81dd11656635d8614a77a3689936ff3f8f1ea23d4be82ab693dcade73048b0b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5336400c90f0775873fb8fd743766ca1abc863323c6e41f87622c0c0ec550727"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cd40175943ce76ac19f7c98028680f88f39f182e60f4d6a41c770cb56fcf766"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8a66acdc0b88bcc3e1ae7e291cb4c707a4fb626628ea3f5e06226026cdb2823"
-    sha256 cellar: :any_skip_relocation, ventura:        "58beed345842bbce9ac06abc1478618aa66e6ac61836a562a97ad31591dc16b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "b57ff73e730e0f7a949a84b89890bc95249443bc44f6e2c9ff0c5f0718131556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee081625bd1c87174aef88f7de8eaad311d0e905d46029369c83e8101e82a59b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd9b6d5797fa0684a7ee8ca65474f9df0e945bb471d9a46613652b3ea30d759f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb46eeae970e16f81668d2e6d257b6793c03d6e07070ff17d33c4f4db0ceebe6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d727f8c12f64a01d27f4a5ac351190d1f837363ee0d266345365708ed36cf4a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b6a50011892b5d18ced26cfc4633a48b6d1103771d64e5b30ec090f7ff6b3ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2b33af5df8a3d4175a0e09c5e8c48d339e7c0c3693ea701ad8e4aa8cef994db"
+    sha256 cellar: :any_skip_relocation, monterey:       "8df7819cae0e6c1ca66767bbdf4d68c1a2a1336aa3dec856cf80178319bdcad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c385e383aed895e45334cbcbd2c2f483bbf25339863eccefa921e52eced69d44"
   end
 
   depends_on "rust" => :build
