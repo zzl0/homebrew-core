@@ -3,10 +3,9 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/09/5b/98f022bc96ceb68b12fb4cfe6fdf52cc3051fa0b7bf51dc805521afe72bd/awscurl-0.31.tar.gz"
-  sha256 "6ce032543c0ec00857ce9c08cafe8041270b5508b08ec73e264e63f1e1255601"
+  url "https://files.pythonhosted.org/packages/fa/71/2bd268f518591a82400eeccaef4cc11987b6a49912bccbf46339388eb98a/awscurl-0.32.tar.gz"
+  sha256 "0c4c91a9c9873e1ad95c37371b63ebf8be20c70722b5fb9cdec430553117594e"
   license "MIT"
-  revision 1
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
@@ -28,8 +27,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "configargparse" do
