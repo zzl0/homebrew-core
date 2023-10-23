@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/2d/e0/8433441b0236b9d795ffbf5750f98144e0378b6e20401ba4d2db30b99a5c/black-23.10.0.tar.gz"
-  sha256 "31b9f87b277a68d0e99d2905edae08807c007973eaa609da5f0c62def6b7c0bd"
+  url "https://files.pythonhosted.org/packages/36/bf/a462f36723824c60dc3db10528c95656755964279a6a5c287b4f9fd0fa84/black-23.10.1.tar.gz"
+  sha256 "1f8ce316753428ff68749c65a5f7844631aa18c8679dfd3ca9dc1a289979c258"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
@@ -47,8 +47,8 @@ class Black < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
