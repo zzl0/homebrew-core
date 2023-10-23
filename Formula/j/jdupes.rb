@@ -1,13 +1,13 @@
 class Jdupes < Formula
   desc "Duplicate file finder and an enhanced fork of 'fdupes'"
   homepage "https://codeberg.org/jbruchon/jdupes"
-  url "https://codeberg.org/jbruchon/jdupes/archive/v1.21.3.tar.gz"
-  sha256 "1548ec08cb74736e215259e1cae109fd633d0907c34314173b6d5ccaeab53c1b"
+  url "https://codeberg.org/jbruchon/jdupes/archive/v1.27.3.tar.gz"
+  sha256 "1c75ed30dc95b3b5024019ab2ba3f78a14835c11d5b71249aa94374fde650c16"
   license "MIT"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -22,7 +22,23 @@ class Jdupes < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8df5e09093977d45b08da78175dd18e8f221734d34c95cca11be1fec6beca13d"
   end
 
+  depends_on macos: :catalina # requires aligned_alloc
+
+  resource "libjodycode" do
+    url "https://codeberg.org/jbruchon/libjodycode.git",
+        tag:      "v3.1",
+        revision: "e44699edc8915f65635d2fa1c9dcfac38b1784c7"
+  end
+
   def install
+    ENV.append_to_cflags "-I#{include}"
+    ENV.append "LDFLAGS", "-L#{lib}"
+
+    resource("libjodycode").stage do
+      system "make"
+      system "make", "install", "PREFIX=#{prefix}"
+    end
+
     system "make", "install", "PREFIX=#{prefix}", "ENABLE_DEDUPE=1"
   end
 
@@ -30,7 +46,7 @@ class Jdupes < Formula
     touch "a"
     touch "b"
     (testpath/"c").write("unique file")
-    dupes = shell_output("#{bin}/jdupes --zeromatch .").strip.split("\n").sort
+    dupes = shell_output("#{bin}/jdupes --zero-match .").strip.split("\n").sort
     assert_equal ["./a", "./b"], dupes
   end
 end
