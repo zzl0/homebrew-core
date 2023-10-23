@@ -26,6 +26,10 @@ class Vroom < Formula
   fails_with gcc: "5"
 
   def install
+    # fixes https://github.com/VROOM-Project/vroom/issues/997 , remove in version > 1.13.0
+    inreplace "src/main.cpp", "throw cxxopts::OptionException", "throw cxxopts::exceptions::parsing"
+    inreplace "src/main.cpp", "catch (const cxxopts::OptionException", "catch (const cxxopts::exceptions::exception"
+
     # Use brewed dependencies instead of vendored dependencies
     cd "include" do
       rm_rf ["cxxopts", "rapidjson"]
