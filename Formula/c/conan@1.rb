@@ -6,7 +6,7 @@ class ConanAT1 < Formula
   url "https://files.pythonhosted.org/packages/38/62/8fe869e774eafe17f9bcb381d9cc195a85880370751282f671e5909b61de/conan-1.61.0.tar.gz"
   sha256 "bbc9c4c60472f91c348dd0d17ab716c4d00e6aff02990144f49c7ca07b9cc914"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://github.com/conan-io/conan.git"
@@ -39,8 +39,8 @@ class ConanAT1 < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "colorama" do
@@ -109,8 +109,8 @@ class ConanAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   def install
