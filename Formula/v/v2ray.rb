@@ -12,13 +12,14 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "409e841e02725d83a26a4adfa58272b69424da945e61ebd162b531538eb39fd7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cb07c76bf03b2fc7d0ffdf33594a5353ac8014ec29435c396406868951fe0a6"
   end
 
   # This requires Go 1.20 until there is a `v2ray` release that supports Go
