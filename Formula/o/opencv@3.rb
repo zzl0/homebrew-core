@@ -21,6 +21,9 @@ class OpencvAT3 < Formula
 
   keg_only :versioned_formula
 
+  # see https://github.com/opencv/opencv/wiki/Branches#eol-branches
+  disable! date: "2024-01-31", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ceres-solver"
