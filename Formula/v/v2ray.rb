@@ -12,15 +12,13 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffbf514dbfc3d9a3a3803e1d278226454c76746f6a7a2941f2a88d8aab546bc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "047e307951548ef501a41e251779125508d9c969f2c2206e0195a3213bb89f36"
-    sha256 cellar: :any_skip_relocation, ventura:        "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, monterey:       "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c09457ba4832a2d44e7bf70be876b04d5de9a4f49bb7a2ac135d96fa86c8a9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c85a924e13ff2bfbd4a581616c7789455c663e1196134a1944b57d64d47d37d7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0be0a71f72b1785b980e46ccd366766fe59e9a8ccfee5c481c37d96277d3511"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "409e841e02725d83a26a4adfa58272b69424da945e61ebd162b531538eb39fd7"
   end
 
   # This requires Go 1.20 until there is a `v2ray` release that supports Go
