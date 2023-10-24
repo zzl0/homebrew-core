@@ -20,7 +20,7 @@ class PythonYq < Formula
 
   depends_on "jq"
   depends_on "python-argcomplete"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   conflicts_with "yq", because: "both install `yq` executables"
@@ -38,11 +38,11 @@ class PythonYq < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    python3 = "python3.12"
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
     %w[yq xq tomlq].each do |script|
       generate_completions_from_executable(
-        python_exe, register_argcomplete, script,
+        python3, register_argcomplete, script,
         base_name:              script,
         shell_parameter_format: :arg
       )
