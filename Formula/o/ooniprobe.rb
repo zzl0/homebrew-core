@@ -1,8 +1,9 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.18.1.tar.gz"
-  sha256 "7a2b77e6fb303bcdf80e269aa3c8c71e273d2af7c940580d5623a668d1d094e2"
+  # TODO: check if we can build with go1.21
+  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.0.tar.gz"
+  sha256 "9ec38edb7bb4254e16a58f184ddceafc4a0ede060e08f6741ab02d1e7d6820a2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -20,7 +21,8 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc04d4e62efc3b7c5799c01be559569b72d8c50dd084f6d667fe0a33ef373447"
   end
 
-  depends_on "go" => :build
+  # go1.21 build issue report, https://github.com/ooni/probe/issues/2585
+  depends_on "go@1.20" => :build
   depends_on "tor"
 
   def install
@@ -30,6 +32,7 @@ class Ooniprobe < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ooniprobe version")
+
     # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
     return if OS.linux?
 
