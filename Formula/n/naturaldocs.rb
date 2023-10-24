@@ -21,6 +21,8 @@ class Naturaldocs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "44e058e2339a3d6113ac8564fa1b9557c1b93783f541a82a463d03b82f45fb8e"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `mono`"
+
   depends_on "mono"
 
   def install
