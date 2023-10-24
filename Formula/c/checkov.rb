@@ -33,7 +33,7 @@ class Checkov < Formula
   depends_on "python-tabulate"
   depends_on "python-toml"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -43,8 +43,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiomultiprocess" do
@@ -83,8 +83,8 @@ class Checkov < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/ce/e8/62189acaf81f935d159905a86a603901e5602e67e02baaeb5856614d77b9/beartype-0.16.3.tar.gz"
-    sha256 "085591b5b77807229b65a137fd473c6891c45287fe0ca6565b3250dead00380b"
+    url "https://files.pythonhosted.org/packages/5b/3e/b230c6cb4b0391591f7949d8fd55bb43aa9128465caa5a930f9398b447ad/beartype-0.16.4.tar.gz"
+    sha256 "1ada89cf2d6eb30eb6e156eed2eb5493357782937910d74380918e53c2eae0bf"
   end
 
   resource "beautifulsoup4" do
@@ -98,13 +98,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
-    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
+    url "https://files.pythonhosted.org/packages/30/db/8910e2922a20720e88b3693bad0d69b90a1a7fc0963a148c902e20a3c66a/boto3-1.28.69.tar.gz"
+    sha256 "2dd93e5c530334fbc74a662f269fa8bfc4c3b7321f9dbe2d53f7c8e57fe5f6dd"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
-    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
+    url "https://files.pythonhosted.org/packages/e9/80/3be576eae85f59735347fddb09c145ef636f68fa094e4c990465dad886bf/botocore-1.31.69.tar.gz"
+    sha256 "412439a199ada10c6284df1f48395928676d81d51339b1a93217cfd4c4f1c9a6"
   end
 
   resource "cached-property" do
@@ -118,8 +118,8 @@ class Checkov < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
@@ -183,13 +183,13 @@ class Checkov < Formula
   end
 
   resource "gitdb" do
-    url "https://files.pythonhosted.org/packages/4b/47/dc98f3d5d48aa815770e31490893b92c5f1cd6c6cf28dd3a8ae0efffac14/gitdb-4.0.10.tar.gz"
-    sha256 "6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"
+    url "https://files.pythonhosted.org/packages/19/0d/bbb5b5ee188dec84647a4664f3e11b06ade2bde568dbd489d9d64adef8ed/gitdb-4.0.11.tar.gz"
+    sha256 "bf5421126136d6d0af55bc1e7c1af1c397a34f5b7bd79e776cd3e89785c2b04b"
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b3/45/cee7af549b6fa33f04531e402693a772b776cd9f845a2cbeca99cfac3331/GitPython-3.1.38.tar.gz"
-    sha256 "4d683e8957c8998b58ddb937e3e6cd167215a180e1ffd4da769ab81c620a89fe"
+    url "https://files.pythonhosted.org/packages/0d/b2/37265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3ea/GitPython-3.1.40.tar.gz"
+    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
   end
 
   resource "idna" do
@@ -238,8 +238,8 @@ class Checkov < Formula
   end
 
   resource "lark" do
-    url "https://files.pythonhosted.org/packages/85/70/4465b0b7dc6ea72cc2c4ea25a2c6ad62cca7918eda030db36a4c11f6f5d9/lark-1.1.7.tar.gz"
-    sha256 "be7437bf1f37ab08b355f29ff2571d77d777113d0a8c4352b0c513dced6c5a1e"
+    url "https://files.pythonhosted.org/packages/12/1c/b466b58dacac15ffefce9bcb5128e18948a143849610a7d5300f31920be0/lark-1.1.8.tar.gz"
+    sha256 "7ef424db57f59c1ffd6f0d4c2b705119927f566b68c0fe1942dddcc0e44391a5"
   end
 
   resource "license-expression" do
@@ -430,10 +430,10 @@ class Checkov < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    python3 = "python3.12"
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
     generate_completions_from_executable(
-      python_exe, register_argcomplete, "checkov",
+      python3, register_argcomplete, "checkov",
       shell_parameter_format: :arg
     )
   end
