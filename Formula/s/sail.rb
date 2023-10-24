@@ -6,7 +6,7 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/14/a7/7f3f93ab1d8d9f58e8dce01ff5bbbdaf5f6ce679e5e13638df0cd2bdbe9a/sailed.io-0.10.8.tar.gz"
   sha256 "c31f7adbf97ea4c2827e35f9615a54fe9a013bd0b16a655ad29a926d9f86f014"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f1bf0a830fc2f81758a7f6edcf17758e647469d1db1aeb3045f1371ad765044"
@@ -22,7 +22,7 @@ class Sail < Formula
   depends_on "pyinvoke"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -87,15 +87,13 @@ class Sail < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
     site_packages = Language::Python.site_packages(python3)
-    %w[fabric pyinvoke].each do |package_name|
-      package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
-    end
+    fabric = Formula["fabric"].opt_libexec
+    (libexec/site_packages/"homebrew-fabric.pth").write fabric/site_packages
 
     venv.pip_install_and_link buildpath
 
