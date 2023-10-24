@@ -4,10 +4,9 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/19/e9/793fd6741fcc9fddc599e180a966016dedae5964cc24cde8f0f9dbfd8eef/checkov-2.5.10.tar.gz"
-  sha256 "a968ca91e6ffe53d93f2c9b45c168096b4d0e7511b1e74d126c7aab68afc06cb"
+  url "https://files.pythonhosted.org/packages/3b/e5/956d5f0efe2c4b7eb37956b2419ed9e381bafd47955099175997ffbaf34d/checkov-3.0.0.tar.gz"
+  sha256 "72334e51f5a7c7ba7474668af344b19355a82b10af5cfd8db83bb35d106093c2"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     rebuild 1
@@ -278,11 +277,6 @@ class Checkov < Formula
     sha256 "b8cf00a11a2a335d2bceba5dc1998182288a4b7848916a77923a6a2e0bc84373"
   end
 
-  resource "policyuniverse" do
-    url "https://files.pythonhosted.org/packages/18/47/e58a8e38dd0d69500b473b8d9bc549bb468af037220279c59d9affe84041/policyuniverse-1.5.1.20230817.tar.gz"
-    sha256 "7920896195af163230635f1a5cee0958f56003ef8c421f805ec81f134f80a57c"
-  end
-
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz"
     sha256 "f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"
@@ -296,6 +290,11 @@ class Checkov < Formula
   resource "pycep-parser" do
     url "https://files.pythonhosted.org/packages/1c/fb/3912b366eaae9414758dda5c4b6903f3931bafe25490bd7c6a4a27409ea1/pycep_parser-0.4.1.tar.gz"
     sha256 "a3edd1c3d280c283d614c865a854a693daf56c35cd4095b373016c214baa76dd"
+  end
+
+  resource "pydantic" do
+    url "https://files.pythonhosted.org/packages/51/cd/721eb771f3f09f60de0807e240c3acf44c38828d0ced869fe8df7e79801b/pydantic-1.10.13.tar.gz"
+    sha256 "32c8b48dcd3b2ac4e78b0ba4af3a2c2eb6048cb75202f0ea7b34feb740efc340"
   end
 
   resource "python-dateutil" do
