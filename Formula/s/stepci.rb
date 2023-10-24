@@ -3,8 +3,8 @@ require "language/node"
 class Stepci < Formula
   desc "API Testing and Monitoring made simple"
   homepage "https://stepci.com"
-  url "https://registry.npmjs.org/stepci/-/stepci-2.6.9.tgz"
-  sha256 "5f8bf94e1287a17d5924669d0160045eaee379dec95e5b074f3d2b7e84f4a29c"
+  url "https://registry.npmjs.org/stepci/-/stepci-2.7.0.tgz"
+  sha256 "6744878bfbe87c040d79c16b699a220d92dfa00071e31f2871c6b81181408947"
   license "MPL-2.0"
 
   bottle do
