@@ -6,7 +6,7 @@ class Pyinvoke < Formula
   url "https://files.pythonhosted.org/packages/f9/42/127e6d792884ab860defc3f4d80a8f9812e48ace584ffc5a346de58cdc6c/invoke-2.2.0.tar.gz"
   sha256 "ee6cbb101af1a859c7fe84f2a264c059020b0cb7fe3535f9424300ab568f6bd5"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/pyinvoke/invoke.git", branch: "main"
 
   bottle do
@@ -20,20 +20,14 @@ class Pyinvoke < Formula
   end
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.10" => [:build, :test]
-  depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.12" # Do not remove runtime dependency https://github.com/Homebrew/homebrew-core/issues/151248
 
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+  def python3
+    "python3.12"
   end
 
   def install
-    pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
-    end
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
