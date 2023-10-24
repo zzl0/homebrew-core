@@ -6,6 +6,7 @@ class Mercurial < Formula
   url "https://www.mercurial-scm.org/release/mercurial-6.5.3.tar.gz"
   sha256 "2cdc81fade129cf56b128417527f190ba72fd776567394ce54eed764e667e7d5"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.mercurial-scm.org/release/"
@@ -22,13 +23,14 @@ class Mercurial < Formula
     sha256 x86_64_linux:   "4709006c47dda40d3a6d409f0b82e3ea09c06d50e9108a9294bcc5c2db7ac84f"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def install
     ENV["HGPYTHON3"] = "1"
-    ENV["PYTHON"] = python3 = which("python3.11")
+    ENV["PYTHON"] = python3 = which("python3.12")
 
-    # FIXME: python@3.11 formula's "prefix scheme" patch tries to install into
+    # Homebrew's python "prefix scheme" patch tries to install into
     # HOMEBREW_PREFIX/{lib,bin}, which fails due to sandbox. As workaround,
     # manually set the installation paths to behave like prior python versions.
     setup_install_args = %W[
