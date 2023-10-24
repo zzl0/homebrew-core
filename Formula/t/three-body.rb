@@ -6,6 +6,16 @@ class ThreeBody < Formula
   license "MIT"
   head "https://github.com/rustq/3body-lang.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d12b9f985a0dbfb35785042bf5ae999e7009a535d84a5ddbfc23cf99de94ec4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49e781eb7eaa2354761c4f326bf1c8c5ff2fe0dc3dc0c76d0858ddeb02e0981d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84f8c528b0f1b59628f20741da8463fb75e415be193c3d853d2ac2c559123e4b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b728b0182eb9153c014cd2eec2199eaf4824d3e6eff09d4a86f006311ed6660a"
+    sha256 cellar: :any_skip_relocation, ventura:        "dca97388115f745f493904858a83a199e38ef26b4383f26e10738d88bc6c3d14"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec971e96f996bda26bd926dc4f025142c41e9f344796382838376065ec40b2fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc6e01658f4820de0aace31f67b81fd4c34fc0b7b24992afd8b89124c5000435"
+  end
+
   depends_on "rust" => :build
 
   def install
