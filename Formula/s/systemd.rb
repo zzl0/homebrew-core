@@ -23,7 +23,7 @@ class Systemd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "rsync" => :build
   depends_on "expat"
   depends_on "glib"
@@ -38,7 +38,7 @@ class Systemd < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.11")
+    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.12")
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"
 
     args = %W[
