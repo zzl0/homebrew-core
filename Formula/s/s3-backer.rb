@@ -7,7 +7,7 @@ class S3Backer < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0edba61a9c8ba6b916954b354b3e31cfe8bdc206440ec8b58be83e2bdef8df4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "99ad1e019e8cd0a7c11604e77c44724081271bf50afbe93f1a218162d3aae12b"
   end
 
   depends_on "pkg-config" => :build
