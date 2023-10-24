@@ -14,6 +14,8 @@ class Jackett < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cdd6d72db15c17e6e8de8365707caa010f1e6d44ae7af03510ef84583875ac5"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet@6`"
+
   depends_on "dotnet@6"
 
   def install
