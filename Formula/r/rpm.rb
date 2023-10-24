@@ -20,7 +20,7 @@ class Rpm < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "acl"
   depends_on "bzip2"
   depends_on "dbus"
@@ -133,6 +133,6 @@ class Rpm < Formula
     files = shell_output(bin/"rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match (HOMEBREW_PREFIX/"share/doc/test").to_s, files
 
-    system "python3.11", "-c", "import rpm"
+    system "python3.12", "-c", "import rpm"
   end
 end
