@@ -9,15 +9,13 @@ class CryticCompile < Formula
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b9012434ba27379466d4780008f0bf5d325040e55285bbf6e8776f7c113417a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41ff861719eb6cef6add9dbbe41504a4ee2dfde9d9c901110f32adc7fd7d9996"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78ca96c94df6c1979e04d9b9700b8c3ee7f64e33f0a2774ed67a3686226529be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d75aaea9d3a159b14928ea27025cb489939cef779694b77656e03dd57e8ea386"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d321cf4cc3905a8d1bfa9a4366b5885ce9a0703ff04ed7421875fb608b89bae5"
-    sha256 cellar: :any_skip_relocation, ventura:        "134bf16837b48d808139381d83375b1ae0a55cd3b49e1b6cbcf33216dd5d6323"
-    sha256 cellar: :any_skip_relocation, monterey:       "14796a097a735cadbbbf01ffe2d9fb2f002b4d5b88dee3b79333197d0ef1396e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d7a4f5f941967b3e92ce441df5dbfaa9027a67cc4673e968c9ff2a81eb40575"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91b3920f61e02d5d3e6f75396e7337f34938ddadfa093a05299b35b83b3e66dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fa40efded4dafd12df48484d6927ce9c6bd8465a5e1e34838becb7fdb50969f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8636132121c488a3363fc7f9a36be05f05913804d6328f10c9311042700eb8c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d603494d1a34ce2d19762865e71b88c5b9345a47b6b359a47233bca309298053"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b463daee590111792b834fe2e38a18ce5e823ebd49954f8f4e813c0bf1abdf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "29515a9e0deeae86de7802b9ceeb3b711f70d23c851cbd25da552778e7710dab"
+    sha256 cellar: :any_skip_relocation, monterey:       "832ec029aa68f32b6f3bf7d54379e2d57d1be3f37b3fb73613cc83d8b054ce69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "896dcb009a5b771ad9b7f92cc0f94d7090e0f2e7744fdb2f9aa524f67c5412ac"
   end
 
   depends_on "python-toml"
