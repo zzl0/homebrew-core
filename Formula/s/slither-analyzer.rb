@@ -6,28 +6,29 @@ class SlitherAnalyzer < Formula
   url "https://files.pythonhosted.org/packages/a5/c4/d2aaf5a600a8ac176655fb7e2130a4879d766e17f51ee4694d022474ebdf/slither-analyzer-0.10.0.tar.gz"
   sha256 "d01ad88a7fc9581f717859c66d01ef1658ba49505c60e89d5cf38ce6a7f4cdff"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6cbab2fe7a8ecda8bbad799ee9f29757d18bd41bf4dc4fa62cc60b612fd15b71"
-    sha256 cellar: :any,                 arm64_ventura:  "69b9da7fe2da1181487740253d6b58f41532a9b94aba953f33cf63c526812a51"
-    sha256 cellar: :any,                 arm64_monterey: "d1a3e7e48ccf7c83f31baabefa49ff1b5f16af25cc6950db988ee97db7c7e920"
-    sha256 cellar: :any,                 sonoma:         "9dad9d5e43f5252763904f41aced088d8b17b5f2f5ee73b72c29b3f3ab24d726"
-    sha256 cellar: :any,                 ventura:        "80efac827db9a748f6c0ea7b0d7262967d0032e8459c72f294b20451a4ea628e"
-    sha256 cellar: :any,                 monterey:       "69f133e60d6f128e11750c4830a8df46c23d461561080081ba4f5a7846abc615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f4ba1d3dcd41ab64d37faf0761e93b045615add7fdb46fb51abea5164da199a"
+    sha256 cellar: :any,                 arm64_sonoma:   "ee26b5cc30a0e66eaab8a109f92a3fe2e2d9357de6055674cbe7d64f33777a50"
+    sha256 cellar: :any,                 arm64_ventura:  "df077dc9168d9c3b5c8463f62bf0b00c9b9be9da2700a3cb0a537daee206da73"
+    sha256 cellar: :any,                 arm64_monterey: "46c2a94fb1798dbfd445ed7b94dec22f1deddd4a3e5e72f5843073acda339eb2"
+    sha256 cellar: :any,                 sonoma:         "7b1cd63b50af448d83a1396c648de7a1890223e62bb2c6bea31221ea8621af73"
+    sha256 cellar: :any,                 ventura:        "2653243dc1c6ced4d1f249d74c38dfea928f94c1e671916f17e873dff60d3706"
+    sha256 cellar: :any,                 monterey:       "9ef88c8fae12eec2f6549c12b98f02c5d05dc1f776ca099a172f489ba9952a18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59e9d9a132c77171107f1a73190ab5ba6c94edf100fcb38dc0ae3a74811da358"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "crytic-compile"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "solc-select"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -223,7 +224,7 @@ class SlitherAnalyzer < Formula
 
   def install
     virtualenv_install_with_resources
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     crytic_compile = Formula["crytic-compile"].opt_libexec
     solc_select = Formula["solc-select"].opt_libexec
     (libexec/site_packages/"homebrew-crytic-compile.pth").write crytic_compile/site_packages
