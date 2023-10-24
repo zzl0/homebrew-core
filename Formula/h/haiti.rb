@@ -5,6 +5,10 @@ class Haiti < Formula
   sha256 "0ddb24058c045640e0286db470c3ae968666d310428f196f799af13d31d72ae2"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "d3fbedee012c48003a97e8c0c0fb013aa577f7957e3cc3796d5580fe1a6ceb21"
+  end
+
   # Requires Ruby >= 2.7
   depends_on "ruby"
 
