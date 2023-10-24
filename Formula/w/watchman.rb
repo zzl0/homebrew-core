@@ -1,22 +1,10 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.10.23.00.tar.gz"
+  sha256 "34ec8f9fa744190c9effac22f5f9684cf323743fb9f77c64318ad0cde02d136b"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
-
-  stable do
-    url "https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz"
-    sha256 "f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c"
-
-    # Add support for fmt 10
-    # See https://github.com/facebook/watchman/pull/1141
-    # Remove with `stable` block on next release.
-    patch do
-      url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
-      sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6f4022c251338bbdb496886775239f6cd023c354e2f79c98e93dcf899814b942"
