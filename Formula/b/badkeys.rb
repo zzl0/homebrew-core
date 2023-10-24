@@ -8,6 +8,16 @@ class Badkeys < Formula
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "a4650c9a7766c7bb41ddcc1dff83ee46f3c61dbcc59372c81dee306038e1de21"
+    sha256 cellar: :any,                 arm64_ventura:  "48c1bfa3d51f2a137d406c0d37e1d669b482dbcc72e881b7d44fb3c9a466f698"
+    sha256 cellar: :any,                 arm64_monterey: "7f98a06d22880f47f54f33f11ce7711b5319315b57dfdcadc066c4459b9b4fa8"
+    sha256 cellar: :any,                 sonoma:         "eebacd8833af7dec4587017bad38f53e1a400931a66cd88148146624607a7339"
+    sha256 cellar: :any,                 ventura:        "5466bbcd795e901352daa14964d8d80fbf0f08e129516be98c23eca170337599"
+    sha256 cellar: :any,                 monterey:       "1da07989afba7bf157f145d4d9b11d49f8e5ad24fcdca817dcb9666b81ef25b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53fa9501f5bc882d53d5d0b205371046d4a9051fc634c6bcb53c89bd06c1d45c"
+  end
+
   depends_on "cffi"
   depends_on "gmp"
   depends_on "libmpc"
