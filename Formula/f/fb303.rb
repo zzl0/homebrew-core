@@ -1,8 +1,8 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://github.com/facebook/fb303/archive/refs/tags/v2023.10.09.00.tar.gz"
-  sha256 "89ce340f9decaa6eb20922d6e8b90ec00ad1f6faf7006e0b39c698723d4a4c40"
+  url "https://github.com/facebook/fb303/archive/refs/tags/v2023.10.23.00.tar.gz"
+  sha256 "03595e55611fcd01a736e7cec48f2195a60c82098d77b1531bf64ff60b5ed195"
   license "Apache-2.0"
   head "https://github.com/facebook/fb303.git", branch: "main"
 
@@ -17,8 +17,8 @@ class Fb303 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "fbthrift" => :build
   depends_on "mvfst" => :build
-  depends_on "fbthrift"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
