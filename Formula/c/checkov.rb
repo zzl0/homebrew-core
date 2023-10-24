@@ -4,20 +4,18 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/19/e9/793fd6741fcc9fddc599e180a966016dedae5964cc24cde8f0f9dbfd8eef/checkov-2.5.10.tar.gz"
-  sha256 "a968ca91e6ffe53d93f2c9b45c168096b4d0e7511b1e74d126c7aab68afc06cb"
+  url "https://files.pythonhosted.org/packages/3b/e5/956d5f0efe2c4b7eb37956b2419ed9e381bafd47955099175997ffbaf34d/checkov-3.0.0.tar.gz"
+  sha256 "72334e51f5a7c7ba7474668af344b19355a82b10af5cfd8db83bb35d106093c2"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "cb12f718bf799f1fb492bc8b9227db7e35cd05780600913a100c8d694d759c0a"
-    sha256 cellar: :any,                 arm64_ventura:  "f8065f0aa07c2c61b9e34268d906e1495cbad6c247c0ac2ffcd9e14a63d8b1c6"
-    sha256 cellar: :any,                 arm64_monterey: "66ee20c02f7485971b318d7a29ac6a732a4addf8aa4952c313fd7988fe98cb49"
-    sha256 cellar: :any,                 sonoma:         "6d3325b1e38f8d1b9e97a315242d97fdfc1aa58d92b9cf5f48f6750109b825ba"
-    sha256 cellar: :any,                 ventura:        "7df4f62c8da7f5590359bf5dec9e728ace5e6c5fbdf98d070b1fdc88ca56dbc5"
-    sha256 cellar: :any,                 monterey:       "62bc38b0a9a2496b6e12b5982a55f9f38b614f1934cb99a644b60fc4d7a2bfc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b776a0721cacc7f296500eab1e14bda03843ea74406607b7252b2f3300b16c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "5f49fa077fc83f49de2b886fabf4d615f72250e82a273b80af48497efe256961"
+    sha256 cellar: :any,                 arm64_ventura:  "0d37a1718bc82638cbfe033298082e6b94c6dabcdc5f8fac3da12652c029f4d5"
+    sha256 cellar: :any,                 arm64_monterey: "a05da7bde6c788e82fcee0ec9f83f66d0df27b88ad68b855fca4d868e60caa89"
+    sha256 cellar: :any,                 sonoma:         "66fffba3a3bf037275a87f457512054c4de54513a170a67506684276744fabf3"
+    sha256 cellar: :any,                 ventura:        "df7b4679b053455f10732f0a5cf8c576751b6e8c60ec66b32732dd05aa733519"
+    sha256 cellar: :any,                 monterey:       "326f7c4a998f6b03ed2d1c6fdbb013b949a2cebdbc4fffb25974f55e07cc839e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf727d28c7cdabe361ebe1a877e561611948e868b0a558ee36111b16a6523659"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -278,11 +276,6 @@ class Checkov < Formula
     sha256 "b8cf00a11a2a335d2bceba5dc1998182288a4b7848916a77923a6a2e0bc84373"
   end
 
-  resource "policyuniverse" do
-    url "https://files.pythonhosted.org/packages/18/47/e58a8e38dd0d69500b473b8d9bc549bb468af037220279c59d9affe84041/policyuniverse-1.5.1.20230817.tar.gz"
-    sha256 "7920896195af163230635f1a5cee0958f56003ef8c421f805ec81f134f80a57c"
-  end
-
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz"
     sha256 "f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"
@@ -296,6 +289,11 @@ class Checkov < Formula
   resource "pycep-parser" do
     url "https://files.pythonhosted.org/packages/1c/fb/3912b366eaae9414758dda5c4b6903f3931bafe25490bd7c6a4a27409ea1/pycep_parser-0.4.1.tar.gz"
     sha256 "a3edd1c3d280c283d614c865a854a693daf56c35cd4095b373016c214baa76dd"
+  end
+
+  resource "pydantic" do
+    url "https://files.pythonhosted.org/packages/51/cd/721eb771f3f09f60de0807e240c3acf44c38828d0ced869fe8df7e79801b/pydantic-1.10.13.tar.gz"
+    sha256 "32c8b48dcd3b2ac4e78b0ba4af3a2c2eb6048cb75202f0ea7b34feb740efc340"
   end
 
   resource "python-dateutil" do
