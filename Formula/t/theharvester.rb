@@ -29,16 +29,13 @@ class Theharvester < Formula
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
-
   # How to update the resources
   # tar -zxvf theHarvester-#{version}.tar.gz
-  # cd theHarvester-#{version} && virtualenv -p python3.11 .
+  # cd theHarvester-#{version} && virtualenv -p python3.12 .
   # source usr/local/bin/activate && pip install -r requirements/base.txt
   # pip freeze > dependencies.log
   # run homebrew-pypi-poet on the freezed dependencies
@@ -53,8 +50,8 @@ class Theharvester < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiomultiprocess" do
@@ -288,8 +285,8 @@ class Theharvester < Formula
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/ba/86/6dda1760481abf244cbd3908b79a4520d757040ca9ec37a79fc0fd01e2a0/uvloop-0.17.0.tar.gz"
-    sha256 "0ddf6baf9cf11a1a22c71487f39f15b2cf78eb5bde7e5b45fbb99e8a9d91b9e1"
+    url "https://files.pythonhosted.org/packages/9c/16/728cc5dde368e6eddb299c5aec4d10eaf25335a5af04e8c0abd68e2e9d32/uvloop-0.19.0.tar.gz"
+    sha256 "0246f4fd1bf2bf702e06b0d45ee91677ee5c31242f39aab4ea6fe0c51aedd0fd"
   end
 
   resource "websockets" do
