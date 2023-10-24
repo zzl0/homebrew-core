@@ -6,15 +6,13 @@ class GoCamo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e4a0b91027756a54616c0c75dff54e9242358202fcf9273ef18832fd3a7c89a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b47748d98155edb8af811c071ccf59853d743a351981eb079848c96150896d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89b47748d98155edb8af811c071ccf59853d743a351981eb079848c96150896d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89b47748d98155edb8af811c071ccf59853d743a351981eb079848c96150896d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ec6cf9d0f540510270605fd6a9c094ff0f5f2f66e5a87e82d0e80d56ed3574f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b15150f12b8ce4bca2ca98f15918fb37d2b898f67f3858d511ee481e8262359"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b15150f12b8ce4bca2ca98f15918fb37d2b898f67f3858d511ee481e8262359"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2b15150f12b8ce4bca2ca98f15918fb37d2b898f67f3858d511ee481e8262359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ff00656ed5e354e8b8edf40469945b82c1d3cb7272cc6967a6dc6a9c0e8c93e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
+    sha256 cellar: :any_skip_relocation, ventura:        "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
+    sha256 cellar: :any_skip_relocation, monterey:       "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01e2e715963ce5828e81737a84fdf28cbbb93a7033fbbac8d53dfc04fac53168"
   end
 
   depends_on "go" => :build
