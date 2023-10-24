@@ -7,13 +7,13 @@ class Massdriver < Formula
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1525f4a8230d84db83f471ec6eac252524a723053e343c02082657886e9a7008"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c123cbebf830f602e66647a0d9de143ef10028cbcd93b3ee2bcdb11548b3120c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4956185a040763a45aea3af7e58a9ec4da37d988f1f94190ebf25daa7142c8bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "832bfa722b556c7b08463604926ed1fc1c890fca38e63ed0f14cf52b64e83240"
-    sha256 cellar: :any_skip_relocation, ventura:        "36d6b5bbd9197d7cb1623b803fa39396636dd0c5a4a2df310cc898dc105ff921"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ffb33a0a58fca848eaf20278f2b499b91e04bf71aa0b7d2f7e6a9470c41588f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f11788edaa8a198e80cc8fc8c902c253372afa80c13bf5f64d7f59cc9307124"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81f095218be5638ad928ee218a3b856c110f1764d04f92b151b9f54f3b26972d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc162d342114c2da4d1806e067e2746d4f7072cdc20fabece0f1413ad78c5ac1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e26c55954c28242eaa76cc63d979efb1f0f822c9b0ff424bebacf9a5a71c5a03"
+    sha256 cellar: :any_skip_relocation, sonoma:         "00766f4b444234e7cc1413090188cbd90bb867bb7c9e55ed16b4160f89a8bae2"
+    sha256 cellar: :any_skip_relocation, ventura:        "08ae16f96fbaa043ec88ed6533a0317058f2a825fad2de58af6acd51663179ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ae64c52df5195944853328360d2412e61a9d54732194a6feac3304d0fa09cb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d72cb524de82d4412539fc99e561a0828b3ce4ad3cd56d5a246e6c3acf549fe"
   end
 
   depends_on "go" => :build
