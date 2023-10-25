@@ -1,21 +1,10 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https://helix-editor.com"
+  url "https://github.com/helix-editor/helix/releases/download/23.10/helix-23.10-source.tar.xz"
+  sha256 "4e7bcac200b1a15bc9f196bdfd161e4e448dc670359349ae14c18ccc512153e8"
   license "MPL-2.0"
-  revision 1
   head "https://github.com/helix-editor/helix.git", branch: "master"
-
-  stable do
-    url "https://github.com/helix-editor/helix/releases/download/23.05/helix-23.05-source.tar.xz"
-    sha256 "c1ca69facde99d708175c686ce5bf3585e119e372c83e1c3dc1d562c7a8e3d87"
-
-    # Fix crash with rust 1.71+: https://github.com/helix-editor/helix/pull/7227
-    # Remove with next release
-    patch do
-      url "https://github.com/helix-editor/helix/commit/de0ef8af15945fb7f761503c615a2d6213d2fd82.patch?full_index=1"
-      sha256 "c33a139f97e78473ecdee3412f2d153c362c9a3c2de6b14e66efb4b10eed02e8"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4deaac0584ab704b1013ad8f36d1dea61d6fb8877ea685846b7342e164f543a1"
