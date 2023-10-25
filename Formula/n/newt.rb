@@ -1,8 +1,8 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
   homepage "https://pagure.io/newt"
-  url "https://releases.pagure.org/newt/newt-0.52.23.tar.gz"
-  sha256 "caa372907b14ececfe298f0d512a62f41d33b290610244a58aed07bbc5ada12a"
+  url "https://releases.pagure.org/newt/newt-0.52.24.tar.gz"
+  sha256 "5ded7e221f85f642521c49b1826c8de19845aa372baf5d630a51774b544fbdbb"
   license "LGPL-2.0-or-later"
 
   livecheck do
