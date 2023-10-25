@@ -5,6 +5,10 @@ class Pciutils < Formula
   sha256 "e579d87f1afe2196db7db648857023f80adb500e8194c4488c8b47f9a238c1c6"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 x86_64_linux: "7c9e9637f605a3a053848a968060f098e7f2e1ed88f2aaa53c4dabf178b9b344"
+  end
+
   depends_on :linux
   depends_on "zlib"
 
