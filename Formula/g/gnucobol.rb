@@ -16,8 +16,7 @@ class Gnucobol < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
-    depends_on "bison" => :build
-    depends_on "flex" => :build
+    depends_on "bison" => :build # head needs Bison 3.x+, not available with macos one
     depends_on "gettext" => :build
     depends_on "help2man" => :build
     depends_on "libtool" => :build
@@ -28,10 +27,16 @@ class Gnucobol < Formula
     depends_on "lmdb"
     depends_on "unixodbc"
     # TODO: add "visam" and --with-visam, once formula is added
+
+    uses_from_macos "flex" => :build
   end
 
   depends_on "pkg-config" => :build
+
+  # MacOSX provided BDB does not work (only _way_ work adjusted CFLAGS)
+  # so we use the homebrew one
   depends_on "berkeley-db"
+
   depends_on "gmp"
   depends_on "json-c"
 
