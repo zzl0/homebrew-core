@@ -3,8 +3,8 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz"
-  sha256 "44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30"
+  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.1.tar.xz"
+  sha256 "915bc3d0f8507d650ead3832e2f8fb670fce59aac4d7754a7dab6f1e6fed78b2"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -23,10 +23,11 @@ class Glib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "pcre2"
 
   uses_from_macos "libffi", since: :catalina
-  uses_from_macos "python", since: :catalina
 
   on_macos do
     depends_on "gettext"
