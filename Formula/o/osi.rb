@@ -1,8 +1,8 @@
 class Osi < Formula
   desc "Open Solver Interface"
   homepage "https://github.com/coin-or/Osi"
-  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.8.tar.gz"
-  sha256 "8b01a49190cb260d4ce95aa7e3948a56c0917b106f138ec0a8544fadca71cf6a"
+  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.9.tar.gz"
+  sha256 "8b09802960d7d4fd9579b3e4320bfb36e7f8dca5e5094bf1f5edf1b7003f5562"
   license "EPL-2.0"
 
   livecheck do
