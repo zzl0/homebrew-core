@@ -1,10 +1,9 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  # LICENSE change from MIT to Apache-2.0 in v0.5+
-  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "1aad8715071852f4a3d3950af1ab7db49eef423c5db1f739238415051310ff72"
-  license "MIT"
+  url "https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "d695f29beb71d733b76c9c81145b6e1661ab506ac2a34043c4423860690af3fa"
+  license "Apache-2.0"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
