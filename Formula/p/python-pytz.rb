@@ -4,6 +4,7 @@ class PythonPytz < Formula
   url "https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz"
   sha256 "7b4fddbeb94a1eba4b557da24f19fdf9db575192544270a9101d8509f9f43d7b"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 1
