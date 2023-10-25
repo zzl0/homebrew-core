@@ -24,6 +24,12 @@ class SingBox < Formula
     system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), "./cmd/sing-box"
   end
 
+  service do
+    run [opt_bin/"sing-box", "run", "--config", etc/"sing-box/config.json"]
+    run_type :immediate
+    keep_alive true
+  end
+
   test do
     ss_port = free_port
     (testpath/"shadowsocks.json").write <<~EOS
