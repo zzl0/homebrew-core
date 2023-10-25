@@ -1,8 +1,8 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://github.com/ethereum/solidity/releases/download/v0.8.21/solidity_0.8.21.tar.gz"
-  sha256 "6d1bb8e72850320e72d788575f6bd25dd4930cb6dd9edd35a59266a46f610d13"
+  url "https://github.com/ethereum/solidity/releases/download/v0.8.22/solidity_0.8.22.tar.gz"
+  sha256 "f4beee1ec28abcf5e844c93b0f2b46133437eb0736024a9b6b0742a6078c0726"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
