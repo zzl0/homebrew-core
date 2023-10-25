@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.8.0.tar.gz"
-  sha256 "340798554d2c7f0e5fb719f9d9dd6a667dfe93ccdd3b1d653c3a3bdb04ed2d00"
+  url "https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.9.0.tar.gz"
+  sha256 "8373b3cf066e870a7eecd61f0e2c63083cc3f36713ec4d22170801eae180a2e7"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -22,11 +22,7 @@ class V2ray < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cb07c76bf03b2fc7d0ffdf33594a5353ac8014ec29435c396406868951fe0a6"
   end
 
-  # This requires Go 1.20 until there is a `v2ray` release that supports Go
-  # 1.21 (or newer): https://github.com/v2fly/v2ray-core/issues/2644
-  # We may want to try to update this to depend on `go` on the next `v2ray`
-  # release.
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
 
   resource "geoip" do
     url "https://github.com/v2fly/geoip/releases/download/202310190037/geoip.dat"
@@ -39,8 +35,8 @@ class V2ray < Formula
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20231021075451/dlc.dat"
-    sha256 "0cc377429d005c72a6ca0c5f6db6feb30dd273869cca9cb517906454fea7a920"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20231025154305/dlc.dat"
+    sha256 "26804c9b935f23d52875c15bdb47628b88b2a254eeb773fb5daa337e835af194"
   end
 
   def install
