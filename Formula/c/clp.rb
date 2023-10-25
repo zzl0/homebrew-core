@@ -1,8 +1,8 @@
 class Clp < Formula
   desc "Linear programming solver"
   homepage "https://github.com/coin-or/Clp"
-  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.8.tar.gz"
-  sha256 "f9931b5ba44f0daf445c6b48fc2c250dc12e667e59ace8ea7b025f158fe31556"
+  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.9.tar.gz"
+  sha256 "b02109be54e2c9c6babc9480c242b2c3c7499368cfca8c0430f74782a694a49f"
   license "EPL-2.0"
 
   livecheck do
