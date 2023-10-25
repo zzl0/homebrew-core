@@ -6,6 +6,7 @@
   "app-engine-java-sdk": "app-engine-java",
   "ark": "velero",
   "arm": "nyx",
+  "azion-cli": "azion",
   "aztfy": "aztfexport",
   "artifactory-cli-go": "jfrog-cli-go",
   "badtouch": "authoscope",
