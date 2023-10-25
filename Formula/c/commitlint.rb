@@ -3,8 +3,8 @@ require "language/node"
 class Commitlint < Formula
   desc "Lint commit messages according to a commit convention"
   homepage "https://commitlint.js.org/#/"
-  url "https://registry.npmjs.org/commitlint/-/commitlint-18.0.0.tgz"
-  sha256 "5af2b3438bdc926b9104bfd85ac9d7ca942156efa22f97850b67dcde5a82e10c"
+  url "https://registry.npmjs.org/commitlint/-/commitlint-18.1.0.tgz"
+  sha256 "04127efbac6966c7d0977bbf8deb1bfacebfd814d8d179480f15da8b251434dc"
   license "MIT"
   head "https://github.com/conventional-changelog/commitlint.git", branch: "master"
 
