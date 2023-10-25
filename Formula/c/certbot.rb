@@ -3,8 +3,8 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://files.pythonhosted.org/packages/d8/65/0a84f55afd6e245519f708f83cd43433bbe26986500cc6bdf6e309fd988e/certbot-2.7.2.tar.gz"
-  sha256 "1425de7e41c29fe1734f53fea5b64c3713df0cfc1df1a23a78d7513001457e6e"
+  url "https://files.pythonhosted.org/packages/16/8d/c4e226ef3fc95b478e4895837818c3fb54bfd91caf7366a31fa0f75b88a9/certbot-2.7.3.tar.gz"
+  sha256 "6e6f5dbdbd36672925572f44feccef77501a36d4eb68d63ecd5e372f09606eb0"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "master"
 
@@ -32,23 +32,23 @@ class Certbot < Formula
   uses_from_macos "libffi"
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/60/95/6261bf7f8794ead92e56b76d4b5e2a237e3b3b9edb0bc9b7fc249e8a24d1/acme-2.7.2.tar.gz"
-    sha256 "52bbc5f51f9887f6ee384e1ea7a3802792e31773d661cf5f5904e3d2be5df72d"
+    url "https://files.pythonhosted.org/packages/9f/bd/2c77cd8699b0324755fba5b55237fa86a672d979e79129ee9eee184a0264/acme-2.7.3.tar.gz"
+    sha256 "801c1d8eb8451793a88623abfd707ff3bcf31328c9a885f8fbe48721ea7f8565"
   end
 
   resource "certbot-apache" do
-    url "https://files.pythonhosted.org/packages/f0/b3/56bd07cbd90480b4959a3a437befc1eae322bf977814eeb5bca48b0abeed/certbot-apache-2.7.2.tar.gz"
-    sha256 "365278b9d3dfad7cb822a4544af5f6c81a23418d797609ca51583b2ffda04ff9"
+    url "https://files.pythonhosted.org/packages/9c/a5/00a03eacc30ba632bec5d764c90c3c6c18a430dceb350cc1acb202513d6a/certbot-apache-2.7.3.tar.gz"
+    sha256 "764504066c73e80f5504c8b2a5a7204f66ffa3516c5947256cc7440637a2dadd"
   end
 
   resource "certbot-nginx" do
-    url "https://files.pythonhosted.org/packages/02/3e/3f8a117def747df711c45e14477c24dd2f6f7d70c5e0b4738b346137667c/certbot-nginx-2.7.2.tar.gz"
-    sha256 "c5eb197cebf5b63c860d758bf8e22a713f4f07c1901d8f42a75f7b312073c365"
+    url "https://files.pythonhosted.org/packages/81/07/ed910e3c55bb1ec62119c103043f6fbba8aa53a20adb4cf1e16d42e78080/certbot-nginx-2.7.3.tar.gz"
+    sha256 "6e10b561beca16c0364b90209f75cb0b9804350fd052fa26350b2ebe9155b7b0"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "configargparse" do
