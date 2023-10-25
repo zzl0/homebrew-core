@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "126393320084c6bb5aa3916f9edc8de80824e9eb169db805432226eef4a56b15"
+  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "408128a255eba79763d9b7c5422d9c9d6a62019001f80f5ab28d34436c6189eb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -79,7 +79,7 @@ class NagaCli < Formula
 
     EOF
     assert_equal test_out_metal.read, <<~EOF
-      // language: metal2.0
+      // language: metal1.0
       #include <metal_stdlib>
       #include <simd/simd.h>
 
