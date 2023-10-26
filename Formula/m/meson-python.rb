@@ -1,8 +1,8 @@
 class MesonPython < Formula
   desc "Meson PEP 517 Python build backend"
   homepage "https://meson-python.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/38/a7/ddc350902a1b3b960db8d0e501f61468f925f994e0b4e6d696aeb6a75c00/meson_python-0.14.0.tar.gz"
-  sha256 "b96866690326544dfe452583753ac3f43313227e9fd9416701a8df90af212234"
+  url "https://files.pythonhosted.org/packages/a2/3b/276b596824a0820987fdcc7721618453b4f9a8305fe20b611a00ac3f948e/meson_python-0.15.0.tar.gz"
+  sha256 "fddb73eecd49e89c1c41c87937cd89c2d0b65a1c63ba28238681d4bd9484d26f"
   license "MIT"
 
   bottle do
