@@ -946,6 +946,9 @@
       "pytz", "PyYAML", "six", "typing-extensions"
     ]
   },
+  "sigstore": {
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six", "typing-extensions"]
+  },
   "sip": {
     "exclude_packages": ["packaging"]
   },
