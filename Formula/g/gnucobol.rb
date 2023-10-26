@@ -11,6 +11,16 @@ class Gnucobol < Formula
     regex(/href=.*?gnucobol[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_sonoma:   "35b99190f38a4ce4f20096a3fcc9e258eae128303f7651c1b0502376577e1ab0"
+    sha256 arm64_ventura:  "5346f5e18d5a2cd7d60b2e78258d5648a28ca361a470d4417cde6cdc2f88dbe9"
+    sha256 arm64_monterey: "1b5edf54a76b888a4f74c5e50523c71f78dc69aebabf3413972373594a9d9f0a"
+    sha256 sonoma:         "4ed0c37599d25d885b605f78c35d3b17dd0ed698ac63ed7b0cb430d67ff2ab79"
+    sha256 ventura:        "1d308479bccc3242c6db39f8e68048a21550b0d911c689de7fe7f6ac648f3cbe"
+    sha256 monterey:       "02976793288f851d75f1abd5c802908b68abf7f097722ee1460f2b6b451aa021"
+    sha256 x86_64_linux:   "3d5a97f7c0349499a790b2f312f0b018e30fc1bffa8268fe6d652ccfb3a8f7c8"
+  end
+
   head do
     url "https://svn.code.sf.net/p/gnucobol/code/trunk"
 
