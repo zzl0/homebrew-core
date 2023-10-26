@@ -7,6 +7,7 @@
   "libart": "2.3",
   "libepoxy": "1.5",
   "librsvg": "2.55",
+  "libshumate": "1.1",
   "libxml2": "2.11",
   "libxslt": "1.1",
   "tracker": "3.3"
