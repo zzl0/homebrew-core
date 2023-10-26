@@ -2,17 +2,16 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 2
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.1.tar.gz"
-    sha256 "463ea62f3bc870b4dfaa5143abd6b790efb2219f86e8799792768d06de4169f9"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.34.0.tar.gz"
+    sha256 "6bbec26ebc4f6ef2866b1c533661b69d399fd8d7057235a94301b31d5b154f1b"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
     resource "falcosecurity-libs" do
-      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.11.3.tar.gz"
-      sha256 "b4f9dc8c1612f4b14207d107bce323a0684dce0dbf018e5b846177992569367b"
+      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.13.1.tar.gz"
+      sha256 "2be42a27be3ffe6bd7e53eaa5d8358cab05a0dca821819c6e9059e51b9786219"
     end
   end
 
@@ -85,6 +84,7 @@ class Sysdig < Formula
     args = %W[
       -DSYSDIG_VERSION=#{version}
       -DUSE_BUNDLED_DEPS=OFF
+      -DUSE_BUNDLED_TINYDIR=ON
       -DCREATE_TEST_TARGETS=OFF
       -DBUILD_LIBSCAP_EXAMPLES=OFF
       -DDIR_ETC=#{etc}
