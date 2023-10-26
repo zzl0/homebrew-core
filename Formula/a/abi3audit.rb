@@ -7,6 +7,16 @@ class Abi3audit < Formula
   sha256 "b2768ecaad4118432fc79b354e86f141a063150ae046a16490dd2f995c61e816"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e9576371250f5c3a9e3955fd7a05aba3e7051efb4e124e96d120f8dae06f34d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed7acffe2fa57eb08cb397a9bc19a4b6daa755e0ad527795b9f2dbba217c580f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f22a0261988af58eb6fc7d54a43811c927ac9c9327fc4fb93c088755387430a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e04a38ff56ccaf7e1c7c8eab8055249383a7b23199d15f6c7641b9b184f7055b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9c17b6674e362fa0df79fb24ea3db37e51b9b723e7ca484ce8830c7714154f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d1bd975a0e8a24c4beeb7d41d4adb4591c1f79a95a7354131b7ce3ccbe6e5f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d0f1b874b11a3b736423017819c3ccbfa5dc967cd4908ad02577f9a5850c083"
+  end
+
   depends_on "cmake" => :build
   depends_on "pygments"
   depends_on "python-certifi"
