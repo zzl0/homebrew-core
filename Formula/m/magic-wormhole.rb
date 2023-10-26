@@ -9,15 +9,13 @@ class MagicWormhole < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5128b1718816c4c3808b3ed1a4c528f303a787661aaf6f3ac837d68d8b5ba4a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b689f1eb8d6984e50f8ef2bd095f60ef3af431879875a8e02eeff801bb440d43"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11491ccc6c93c02156c5d8ed26eec0bba942170c03a95824e247fd18946800ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "708ee97548814a029146d5ca16e48dab8059ddc3d1971aff4ebcee0a62435bd2"
-    sha256 cellar: :any,                 sonoma:         "c387d3e8199ca64dfb88a65611b561afd6eac45a992320aa08896287c77ef2d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ad83bc1b32dc11ef0ec119a66cb0281120a3ef69e2becc444fc2fefdfee4bb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "155d3cb7fc10ba5ec3ea63f4986174abd14cf42070d5c114042a9d5b998ae879"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1adc0c43c716c7d6e3e4528d42e5fb511b60569b69874040a5c1520ee82786a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adc3e93358cf0ac665b257f3a434f4d8d9213b78c33b7ed146759ff99581da1b"
+    sha256 cellar: :any,                 arm64_sonoma:   "2aa7c03d7382976b7375cb4dcf347ebfdb44b4265615051cdc7d84d928cca973"
+    sha256 cellar: :any,                 arm64_ventura:  "b47b1f25241e906b7bc935fe39885655e5873aa4f7ae3a54691e465e4d185a4a"
+    sha256 cellar: :any,                 arm64_monterey: "28cbec8064156925776bec88a4facec94483ffd5bb14ac011ebd192f6bed1b09"
+    sha256 cellar: :any,                 sonoma:         "3febb59c4136965a4a661c8e36f51f4cfa33cd3ba046e7832cd77f351c7e6d77"
+    sha256 cellar: :any,                 ventura:        "0ef7bad047726cff55bd16a5bb51b889a5d74e500bc90a81982fb6c9371d91d2"
+    sha256 cellar: :any,                 monterey:       "2f51ac5ca7501fe1130e24425ea425c4ac04ed8c24b016ba775b63a6148af124"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54204bc1e05834b7fc9c441c704ebe5906d06e8a710fc5026db307132c3701ec"
   end
 
   depends_on "cffi"
