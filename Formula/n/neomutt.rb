@@ -36,11 +36,16 @@ class Neomutt < Formula
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
+  on_macos do
+    # Build again libiconv for now on,
+    # but reconsider when macOS 14.2 is released
+    depends_on "libiconv"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --autocrypt
       --gss
@@ -54,13 +59,16 @@ class Neomutt < Formula
       --sqlite
       --tokyocabinet
       --zlib
+      --with-idn2=#{Formula["libidn2"].opt_prefix}
       --with-lua=#{Formula["lua"].opt_prefix}
       --with-ncurses=#{Formula["ncurses"].opt_prefix}
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
     ]
 
-    system "./configure", *args
+    args << "--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
