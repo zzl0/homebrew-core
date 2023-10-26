@@ -6,13 +6,13 @@ class Cocoapods < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cbdb962eb10c0ea710c15e0a1aa14bff8343c9a3009cbcbc85b0512543c7cfc0"
-    sha256 cellar: :any,                 arm64_ventura:  "701273e307f5fb1552b6c6df36d4ba2041689cc9097951686bc7e0f7cfbf32c9"
-    sha256 cellar: :any,                 arm64_monterey: "42f17fc4d98951e554c1cfb22fc52fc5f8a43020117566aa0f87a6a0214a8734"
-    sha256 cellar: :any,                 sonoma:         "07267b9775ca6b681a26ad87fe346bde4fa199798ada20f8e08564f83325ed2d"
-    sha256 cellar: :any,                 ventura:        "70c7bbb4c41d8dfd7a3489c8c784e8b1bf3d3e56286a93ff347410d0d38bf349"
-    sha256 cellar: :any,                 monterey:       "b839c266d79f379761a14f8cdfd22109fa3c6399c9dd5a60256384738bf8c15d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f65a2ee2887592fe5fd5f0a64346c7991bb8c583583e8f7fef0d35136ed26baa"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7c336c4337c302d3cfb29e1bc02853e7cca6d3c3e3f815501a51b05e9e8ae3b"
+    sha256 cellar: :any,                 arm64_ventura:  "6f7f43a9ddc01c6457be1b7d8b4d380a8e0b1775a0781d1b3a77be98da003df4"
+    sha256 cellar: :any,                 arm64_monterey: "3c965c80304e989c5c0ecf02c96c7a0d524dcb62c207ffebb7234197ca0c52ea"
+    sha256 cellar: :any,                 sonoma:         "c573ccf8e2c6ecc8acc9aeaba3907704e4511ac4175b0b05b8f68d47381d7175"
+    sha256 cellar: :any,                 ventura:        "28b7f7c37866df7556a66c610d1ca66661a4a6206d77aa042048a30c9c93927a"
+    sha256 cellar: :any,                 monterey:       "c6c2b2bfd3832fbb34f18857dbba20e977c53b8074a828ead5b126638adab647"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6998759886d81fa09e58e362d58fa82c3e62d8adec941092f1b78f1553871ab9"
   end
 
   depends_on "pkg-config" => :build
