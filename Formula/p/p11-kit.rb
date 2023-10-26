@@ -26,6 +26,8 @@ class P11Kit < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "ca-certificates"
   depends_on "libtasn1"
@@ -41,17 +43,18 @@ class P11Kit < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--with-module-config=#{etc}/pkcs11/modules",
-                          "--with-trust-paths=#{etc}/ca-certificates/cert.pem",
-                          "--without-systemd"
-    system "make"
+    args = %W[
+      -Dsystem_config=#{etc}
+      -Dmodule_config=#{etc}/pkcs11/modules
+      -Dtrust_paths=#{etc}/ca-certificates/cert.pem"
+      -Dsystemd=disabled
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     # This formula is used with crypto libraries, so let's run the test suite.
-    system "make", "check"
-    system "make", "install"
+    system "meson", "test", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do
