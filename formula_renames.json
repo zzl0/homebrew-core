@@ -165,7 +165,6 @@
   "stash-cli": "atlassian-cli",
   "subversion18": "subversion@1.8",
   "tachyon": "alluxio",
-  "team-explorer-everywhere": "tee-clc",
   "tensorflow": "libtensorflow",
   "thrift@0.90": "thrift@0.9",
   "todolist": "ultralist",
