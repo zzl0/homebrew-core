@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/f4/ff/25d2069135013d49ee1d61073e28abf8cc7f8e8e0f4e354e91510810c04f/streamlink-6.3.0.tar.gz"
-  sha256 "3ef99688e8140f0d9899ed8aaf45ffea2fa21786f6782c19912366e9aae0caea"
+  url "https://files.pythonhosted.org/packages/32/66/388d91190e70f7d27d0c8beb6766065893bf19c5ec9e9d33f556eb18aafd/streamlink-6.3.1.tar.gz"
+  sha256 "93c0dfae5d1789ee7317f1a155d3ff44a19a8c3c866e5030bb8f547a45f55844"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -62,8 +62,8 @@ class Streamlink < Formula
   end
 
   resource "outcome" do
-    url "https://files.pythonhosted.org/packages/64/1a/07e59b55f180506c72843d767a229c48084f5440005c646353742a4301bb/outcome-1.3.0.tar.gz"
-    sha256 "588ef4dc10b64e8df160d8d1310c44e1927129a66d6d2ef86845cef512c5f24c"
+    url "https://files.pythonhosted.org/packages/98/df/77698abfac98571e65ffeb0c1fba8ffd692ab8458d617a0eed7d9a8d38f2/outcome-1.3.0.post0.tar.gz"
+    sha256 "9dcf02e65f2971b80047b377468e72a268e15c0af3cf1238e6ff14f7f91143b8"
   end
 
   resource "pycountry" do
