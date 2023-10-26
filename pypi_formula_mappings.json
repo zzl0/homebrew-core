@@ -1,4 +1,7 @@
 {
+  "abi3audit": {
+    "exclude_packages": ["certifi", "packaging", "pygments", "six"]
+  },
   "aerleon": {
     "exclude_packages": ["pyyaml", "typing-extensions"]
   },
