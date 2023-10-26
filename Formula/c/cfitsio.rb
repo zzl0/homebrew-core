@@ -27,6 +27,8 @@ class Cfitsio < Formula
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-reentrant"
     system "make", "shared"
+    system "make", "fpack"
+    system "make", "funpack"
     system "make", "install"
     (pkgshare/"testprog").install Dir["testprog*"]
   end
