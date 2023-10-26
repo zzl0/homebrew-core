@@ -1,8 +1,8 @@
 class Fend < Formula
   desc "Arbitrary-precision unit-aware calculator"
   homepage "https://printfn.github.io/fend"
-  url "https://github.com/printfn/fend/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "f1f025c037ec98f929cfad914a68e923311d438ea9f043e662b536e0eeca5934"
+  url "https://github.com/printfn/fend/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "b0af31ef4d39d1c767fdb9fd1f998b555b5b435570e597795bdb3a29027de0b4"
   license "MIT"
   head "https://github.com/printfn/fend.git", branch: "main"
 
