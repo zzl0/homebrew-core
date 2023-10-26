@@ -7,6 +7,16 @@ class Sigstore < Formula
   sha256 "78013eaa2207c054ac803b361f8722011766d243bcbfa50c6e48003df2e3ca2f"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "3af9f25d562847c2abcfd047792e502f8ff8a3bd6f88a26381f70f74a654c388"
+    sha256 cellar: :any,                 arm64_ventura:  "99378e87ea2ee93cc47b2aed7d61c092661cec7930f81ed1fa8810fa2c7494bd"
+    sha256 cellar: :any,                 arm64_monterey: "aa4e2904d937d55f8c665e9a15d1020b767c094930da7e8f1f6d428950ecdd45"
+    sha256 cellar: :any,                 sonoma:         "48e8bbbd2e34e645c50d71ea6bbfaaf80c0cd3c3fb00413b13551000bbdb5ebb"
+    sha256 cellar: :any,                 ventura:        "ea5024808a66e6fbbdaf539c68e35bcb539105cc6519f61e9847c8f28caa4cd9"
+    sha256 cellar: :any,                 monterey:       "ee0c5d7a21e9cd81e6de583b94ced51a832320a1491d42dc72adab8b99ac0e0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "674a306fb6133c743609cb27732ffd64060e5b2b4b6d16b1fb9bb60e1517281f"
+  end
+
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "pycparser"
