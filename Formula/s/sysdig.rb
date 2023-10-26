@@ -21,15 +21,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "123029f1b33c4a42afb7c158c7a5d6de620fd937f6b035998a4386a23d883bc1"
-    sha256                               arm64_ventura:  "a02f4c3b7ae008af08860f1c1445b70eca5b944291575603e765bb6a69a7ed9a"
-    sha256                               arm64_monterey: "7805c1f30943acb2699c7eeade2c76b64342858dfddcf74fd3e5d14853621003"
-    sha256                               arm64_big_sur:  "ff32761f9e5c29a3216e05768e8198e4b0ae9e7fbc930a5fd03bea750153a704"
-    sha256                               sonoma:         "b900277b0be94a48a4dcc775a2ed48138c88cb0dc5f02630c52922f900e48ba5"
-    sha256                               ventura:        "ec1c02c077c32543b6122ad09527323e9f3f42e38bcea724925bd496594342e2"
-    sha256                               monterey:       "c730c92285371e0bbccb1784f8c72555039d5191a84511dabf2e6e24a342c231"
-    sha256                               big_sur:        "13388282ec131d56d1bbd46be67e88368b022000df4f42135b62b34e0944a36f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "827fb0c8956e5e181821379bd6661cff349e60495800acfda464d59890af8480"
+    sha256                               arm64_sonoma:   "e76ffdcc36d9a89f451d92692b393fd80392f6dec22f43d7d0625bfcdbcbdd6a"
+    sha256                               arm64_ventura:  "785be4df009479a82d615d5c0bae0b56f7b15a2f648cee64d83b728152dcb2bf"
+    sha256                               arm64_monterey: "74908e864dae3c315fa81e70b6909b2d68b2074c90acb27b4502079d5cbb3dd0"
+    sha256                               sonoma:         "eb79e163a450e7279cd4ee74de3605adeb5fa1903cc907b187731660393e0aaf"
+    sha256                               ventura:        "96a6c5b77a7b740b3cf559482e5df3a40ee164fd09e9a9919acdf96bd28bea71"
+    sha256                               monterey:       "14d549570f9f9860ae399cf1c0cd5dd0adf76d5a145e981bcb7386726f543015"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "280be9725a5a79c4a701bb2a8bca9ebb917c3c334675675fa2488af574a4f1ef"
   end
 
   head do
