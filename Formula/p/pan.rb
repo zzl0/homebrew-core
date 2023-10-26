@@ -5,6 +5,16 @@ class Pan < Formula
   sha256 "440317954df7217689100df3dfb68865770f5aed1b8ed2b45432d771bb80a8c9"
   license "GPL-2.0-only"
 
+  bottle do
+    sha256 arm64_sonoma:   "e4fcb1f5c2789fcceec936f1b5c02912ddae3f25c83352fbf07ebeb4736fc624"
+    sha256 arm64_ventura:  "30f5b64944c582e5270b3c4d3410317cc531198b3fc6732278f0bcad59ba14dd"
+    sha256 arm64_monterey: "c7f0b331a69759c3caaa49daeb52bbbdf08715cb8b666eaaba19f567a980e90d"
+    sha256 sonoma:         "23e2a06deabd0b066ed75763aa6e5ee683d9ebd751b424ffb63cdcd63efd61c1"
+    sha256 ventura:        "8dfdf0bcc1f5f1e22db31dcfdc33172b44d7fca653ed0a19eae9c36b0af7ac1d"
+    sha256 monterey:       "180f252594529865e2aea62980dae9eb7dcc93b64883b3992c76e4921890ee97"
+    sha256 x86_64_linux:   "7dcaa54b1e8306a5318357449e1022ef21684efddab8417490bd566c59ae60a2"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "itstool" => :build
