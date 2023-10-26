@@ -1,8 +1,8 @@
 class Libwebm < Formula
   desc "WebM container"
   homepage "https://www.webmproject.org/code/"
-  url "https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.30.tar.gz"
-  sha256 "6c1381fd1a66e86e095b76028ede696724e198ea0e39957c9649af5f0718b96a"
+  url "https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.31.tar.gz"
+  sha256 "616cfdca1c869222dc60d5a49d112c1464040390e3876afca4d385347c6ce55e"
   license "BSD-3-Clause"
 
   bottle do
