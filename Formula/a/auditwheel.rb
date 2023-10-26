@@ -7,6 +7,10 @@ class Auditwheel < Formula
   sha256 "aaf8153ab7a29cc99a663ce2498804daf1887ea1b7a3231ba0d3fee68a3ccf19"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d5c4e8a43af16fb81fd4ac6e481e69f3e23cf1f764d77773070e29757a1da87"
+  end
+
   depends_on :linux
   depends_on "python-setuptools"
   depends_on "python@3.12"
