@@ -4,6 +4,7 @@ class Openvi < Formula
   url "https://github.com/johnsonjh/OpenVi/archive/refs/tags/7.4.24.tar.gz"
   sha256 "c79c87021c059fbd234578741f623f28aead5b3355edf0e677995d76b10b741b"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/johnsonjh/OpenVi.git", branch: "master"
 
   bottle do
@@ -16,7 +17,7 @@ class Openvi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "de6c42a723376184900f14f844d4571c40b86f8d44a759e852d99dc2c26fcef3"
   end
 
-  uses_from_macos "ncurses"
+  depends_on "ncurses" # https://github.com/johnsonjh/OpenVi/issues/32
 
   def install
     system "make", "install", "CHOWN=true", "LTO=1", "PREFIX=#{prefix}"
