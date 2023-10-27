@@ -8,13 +8,13 @@ class Enex2notion < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b59be8601eea0af67e9f0deb7cdf032866a2731ccd347513e7e1103fe026fbf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1e36c54e21a9d598d7921176176de2fcc2fe6a25253d764a37904e4f8ed5942"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "15fffae2cb535388164002505739696068d2a77ccd9afc2b36970bf1e950dd76"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c5a3d5cbb65731faf16bc244c9907b6256c2a5eda00ec30578e69799ec3a0d91"
-    sha256 cellar: :any_skip_relocation, ventura:        "db5ef76a0688fa4adbd54646f4dfcc4ae66bc8180d49c6a700de499b78f6e2cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "46feabf9a76c5dba4e2550465c2dc19a4c32a1b4fcf8e4d8f7ba48d40ee331ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa3bab8c1ec2d77535083740b3463faf2a873018c181383b44bb01f4a196d098"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdd2946806ad70f13aaec20f66d996e19e4801f4bd3dc7eb1f9df784d015b392"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d0ad3c9d257d4943429a9e2f88aaf59df2534270c1016f2ea10a0ff2fa4858f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60645c4bccbe1be19dcd697d1f64347ea9798f83b2616df3e66f986aaf5ce71d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c624980ad0340f8ef0dcf09668c63a234477871906fa3ff051da073f51d66cad"
+    sha256 cellar: :any_skip_relocation, ventura:        "882e2d93aa41ee13199b0ce4e9c93400e320438d361fbb54f0b479cc7c8c255b"
+    sha256 cellar: :any_skip_relocation, monterey:       "4460c05069568797c6997d0f106a2a5771776dd25034cfb25a37a6b048f5150c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bda9efd19dec394c9cc0d8fb6987091b05b3f057c79d1537644d437baea35a93"
   end
 
   depends_on "pymupdf"
