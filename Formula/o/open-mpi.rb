@@ -1,8 +1,8 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.bz2"
-  sha256 "f740994485516deb63b5311af122c265179f5328a0d857a567b85db00b11e415"
+  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.0.tar.bz2"
+  sha256 "9d845ca94bc1aeb445f83d98d238cd08f6ec7ad0f73b0f79ec1668dbfdacd613"
   license "BSD-3-Clause"
 
   livecheck do
@@ -30,6 +30,7 @@ class OpenMpi < Formula
   depends_on "gcc" # for gfortran
   depends_on "hwloc"
   depends_on "libevent"
+  depends_on "pmix"
 
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
@@ -39,24 +40,22 @@ class OpenMpi < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
     end
 
-    # Work around asm incompatibility with new linker (FB13194320)
-    # https://github.com/open-mpi/ompi/issues/11935
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
-
     # Avoid references to the Homebrew shims directory
     inreplace_files = %w[
       ompi/tools/ompi_info/param.c
       oshmem/tools/oshmem_info/param.c
     ]
+    inreplace_files_cc = %w[
+      3rd-party/openpmix/src/tools/pmix_info/support.c
+      3rd-party/prrte/src/tools/prte_info/param.c
+    ]
 
     cxx = OS.linux? ? "g++" : ENV.cxx
     inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{cxx}\""
 
-    inreplace_files << "orte/tools/orte-info/param.c" unless build.head?
-    inreplace_files << "opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c" unless build.head?
-
     cc = OS.linux? ? "gcc" : ENV.cc
     inreplace inreplace_files, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{cc}\""
+    inreplace inreplace_files_cc, /(PMIX|PRTE)_CC_ABSOLUTE/, "\"#{cc}\""
 
     ENV.cxx11
     ENV.runtime_cpu_detection
@@ -68,6 +67,7 @@ class OpenMpi < Formula
       --sysconfdir=#{etc}
       --with-hwloc=#{Formula["hwloc"].opt_prefix}
       --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-pmix=#{Formula["pmix"].opt_prefix}
       --with-sge
     ]
     args << "--with-platform-optimized" if build.head?
