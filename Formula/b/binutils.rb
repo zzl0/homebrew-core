@@ -5,6 +5,7 @@ class Binutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
   sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
     sha256                               arm64_sonoma:   "f98e4acb81431b57e3c253950988f7812a79331e516491090a1d5f6a1b942be2"
@@ -19,6 +20,9 @@ class Binutils < Formula
   end
 
   keg_only "it shadows the host toolchain"
+
+  depends_on "pkg-config" => :build
+  depends_on "zstd"
 
   uses_from_macos "bison" => :build
   uses_from_macos "zlib"
@@ -47,6 +51,7 @@ class Binutils < Formula
       "--enable-plugins",
       "--enable-targets=all",
       "--with-system-zlib",
+      "--with-zstd",
       "--disable-nls",
     ]
     system "./configure", *args
