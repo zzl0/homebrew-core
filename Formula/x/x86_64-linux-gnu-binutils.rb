@@ -5,6 +5,7 @@ class X8664LinuxGnuBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
   sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "binutils"
@@ -21,6 +22,9 @@ class X8664LinuxGnuBinutils < Formula
     sha256 big_sur:        "5ace1f5fe636ae8a44cb68fc9d59cdc0189d1aa34059748f32b7615aad87e4b2"
     sha256 x86_64_linux:   "a682430e349878636cd02f87248927839741d839688d2f970fce750a8d0fa371"
   end
+
+  depends_on "pkg-config" => :build
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
@@ -56,6 +60,7 @@ class X8664LinuxGnuBinutils < Formula
                           "--enable-ld=yes",
                           "--enable-interwork",
                           "--with-system-zlib",
+                          "--with-zstd",
                           "--disable-nls",
                           "--disable-gprofng" # Fails to build on Linux
     system "make"
