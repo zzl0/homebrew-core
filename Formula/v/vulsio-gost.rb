@@ -5,6 +5,16 @@ class VulsioGost < Formula
   sha256 "2a76fb45307d2fd3f13fe3eff096b91f1b669dd18c6a0dc02a6951764d61c0e7"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd0cf6c27a0ffa0c1e19fc1fabc88a8a29efdfc3a38f244ec38aaae5a32a4e6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "645f39ac41d1759d4d1fc1752f2b402b7d104c6a53bfc012ab22cc7d8bbf0ebf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53984651214c75bf652b2a217e157410c79d062c35ffd517bde68174159e9ec5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aa538c63cfbe96adf509afabc06d6f0f4b0aff9cdc1c3f0624011443ff1f0ee1"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f7a31a84529d0257b8f00458ed3f11a602a14ac88498f2559c6a2d1bf480643"
+    sha256 cellar: :any_skip_relocation, monterey:       "6eb7036d1f5c1d9b3ef062a604d40a5b7064c57ea18f398521575029ffe0e020"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3b53548bf113b485ab313fc6b92a40aa753f4810af8443f6168b0a428946673"
+  end
+
   depends_on "go" => :build
 
   def install
