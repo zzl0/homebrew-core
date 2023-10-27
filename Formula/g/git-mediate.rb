@@ -5,6 +5,14 @@ class GitMediate < Formula
   sha256 "ed9b4f5f1ccc295e69d5a368b1b5436968e2290b8e1792a768c0cfae7f91fefb"
   license "GPL-2.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a7db9e71a7784d5bdd43d615c32705edf5c13db7478cf21175839c8a62245db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8808be675fcc86cbbe5008f61d1c612177a112c7cc84e28c449758f51e060e39"
+    sha256 cellar: :any_skip_relocation, ventura:        "716b6e60cc97f262a16ddeedef3331420235505513b8ef4fde017eb673aeac1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "3822dd197c6bb981da0880319c07e9c93ced515a0eef49de7aecaf72081fdd83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0086a8e11d14f3f9b29e0d4972c61ab5daa2a7b357fcc54c29dfdf7699c436b6"
+  end
+
   depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
 
