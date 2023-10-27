@@ -3,8 +3,8 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/8d/33/5c89ebb7fbf9f4f251454d9e538538ff0be21274a953dfe40a40314648fb/conda_lock-2.4.1.tar.gz"
-  sha256 "8be94e5cc57a0fafcb8658c1181049599496094ba08bd7f7aa2e9922f8964f04"
+  url "https://files.pythonhosted.org/packages/45/a0/825b63c665c97c5c4bb0f7feaca238307eb2dcfe952a71f7aa9584bdfff2/conda_lock-2.4.2.tar.gz"
+  sha256 "3367b83ae3a6884a4214786349daacc1a3eba601755e335cb6008216de9e55db"
   license "MIT"
 
   bottle do
@@ -50,8 +50,8 @@ class CondaLock < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
@@ -145,8 +145,8 @@ class CondaLock < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
-    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
+    url "https://files.pythonhosted.org/packages/65/40/34c5fe13ef544ed241fb2dd621d0160c065652a0575137b5ad66e5b279c8/ruamel.yaml-0.18.2.tar.gz"
+    sha256 "9bce33f7a814cea4c29a9c62fe872d2363d6220b767891d956eacea8fa5e6fe8"
   end
 
   resource "ruamel-yaml-clib" do
