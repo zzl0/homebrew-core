@@ -5,6 +5,7 @@ class ArmLinuxGnueabihfBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
   sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "binutils"
@@ -21,6 +22,9 @@ class ArmLinuxGnueabihfBinutils < Formula
     sha256 big_sur:        "9ff9eb1dc764fcfa54a4ecb773b405094cfa60fd9391d8f0428a6a1707a8a87a"
     sha256 x86_64_linux:   "ec5d45bba9e8d1287136d03b6ca3ac4dbae2fe4d88617eafce0604123e82755d"
   end
+
+  depends_on "pkg-config" => :build
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
@@ -47,6 +51,7 @@ class ArmLinuxGnueabihfBinutils < Formula
                           "--enable-ld=yes",
                           "--enable-interwork",
                           "--with-system-zlib",
+                          "--with-zstd",
                           "--disable-nls"
     system "make"
     system "make", "install"
