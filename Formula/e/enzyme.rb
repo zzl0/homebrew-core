@@ -3,8 +3,8 @@ class Enzyme < Formula
   homepage "https://enzyme.mit.edu"
   # TODO: Check if we can use unversioned `llvm` at version bump.
   # upstream issue report, https://github.com/EnzymeAD/Enzyme/issues/1480
-  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.88.tar.gz", using: :homebrew_curl
-  sha256 "723cf72edcd4e7d60219ecadcb9a2fb90837298aaa79bee121b2c6d989892357"
+  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.89.tar.gz", using: :homebrew_curl
+  sha256 "1b8c356cc03c12217e0526559fbbc754dae1870fe626bc8ab86ed2c1ebb76f68"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
