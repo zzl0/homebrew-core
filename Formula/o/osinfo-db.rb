@@ -1,8 +1,8 @@
 class OsinfoDb < Formula
   desc "Osinfo database of operating systems for virtualization provisioning tools"
   homepage "https://libosinfo.org/"
-  url "https://releases.pagure.org/libosinfo/osinfo-db-20230719.tar.xz"
-  sha256 "13d1c97fc7d67137935dcc97778c08bb079a4f0fe312d479786cea1411e4845a"
+  url "https://releases.pagure.org/libosinfo/osinfo-db-20231027.tar.xz"
+  sha256 "84a3dd050786ad52215fa3ec6531573ee6b3c3a56ca20b1ba75b2d85e0f0ba1a"
   license "GPL-2.0-or-later"
 
   livecheck do
