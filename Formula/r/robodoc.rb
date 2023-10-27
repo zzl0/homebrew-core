@@ -30,6 +30,12 @@ class Robodoc < Formula
     depends_on "libtool" => :build
   end
 
+  # Fixes https://github.com/gumpu/ROBODoc/issues/22
+  patch do
+    url "https://github.com/lutzmad/ROBODoc/commit/0f8b35c42523810415bec70bb2200d2ecb41c82f.patch?full_index=1"
+    sha256 "5fa0e63deaf9eb0eb82e53047a684159d572c116b96fcf4aa61777b663eb156d"
+  end
+
   def install
     system "autoreconf", "-f", "-i" if build.head?
     system "./configure", "--prefix=#{prefix}",
