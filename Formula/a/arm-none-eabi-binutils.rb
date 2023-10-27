@@ -5,6 +5,7 @@ class ArmNoneEabiBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
   sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "binutils"
@@ -22,6 +23,11 @@ class ArmNoneEabiBinutils < Formula
     sha256 x86_64_linux:   "fb6707492d6eceb4aa31bdfac836971bdb57667968a3361c1e71c583e3361e9d"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "zstd"
+
+  uses_from_macos "zlib"
+
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
@@ -32,6 +38,8 @@ class ArmNoneEabiBinutils < Formula
            "--prefix=#{prefix}",
            "--libdir=#{lib}/#{target}",
            "--infodir=#{info}/#{target}",
+           "--with-system-zlib",
+           "--with-zstd",
            "--disable-nls"
     system "make"
     system "make", "install"
