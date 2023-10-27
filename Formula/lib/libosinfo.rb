@@ -1,8 +1,8 @@
 class Libosinfo < Formula
   desc "Operating System information database"
   homepage "https://libosinfo.org/"
-  url "https://releases.pagure.org/libosinfo/libosinfo-1.10.0.tar.xz"
-  sha256 "a252e00fc580deb21da0da8c0aa03b8c31e8440b8448c8b98143fab477d32305"
+  url "https://releases.pagure.org/libosinfo/libosinfo-1.11.0.tar.xz"
+  sha256 "1bf96eec9e1460f3d1a713163cca1ff0d480a3490b50899292f14548b3a96b60"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -33,27 +33,28 @@ class Libosinfo < Formula
   depends_on "usb.ids"
 
   uses_from_macos "pod2man" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   resource "pci.ids" do
-    url "https://raw.githubusercontent.com/pciutils/pciids/7d42acec647d327f0824260c2d4656410d48986a/pci.ids"
-    sha256 "7e6314c5ecab564af740b1a7da0b2839690716344504420f19ae21bb8cf7ae9e"
+    url "https://raw.githubusercontent.com/pciutils/pciids/fd7d37fcca8edc95f174382a9a5a29c368f26acf/pci.ids"
+    sha256 "3ed78330ac32d8cba9a90831f88654c30346b9705c9befb013424e274d2f3fbf"
   end
 
   def install
     (share/"misc").install resource("pci.ids")
 
-    mkdir "build" do
-      flags = %W[
-        -Denable-gtk-doc=false
-        -Dwith-pci-ids-path=#{share/"misc/pci.ids"}
-        -Dwith-usb-ids-path=#{Formula["usb.ids"].opt_share/"misc/usb.ids"}
-        -Dsysconfdir=#{etc}
-      ]
-      system "meson", *std_meson_args, *flags, ".."
-      system "ninja", "install", "-v"
-    end
+    args = %W[
+      -Denable-gtk-doc=false
+      -Dwith-pci-ids-path=#{share/"misc/pci.ids"}
+      -Dwith-usb-ids-path=#{Formula["usb.ids"].opt_share/"misc/usb.ids"}
+      -Dsysconfdir=#{etc}
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+
     share.install_symlink HOMEBREW_PREFIX/"share/osinfo"
   end
 
