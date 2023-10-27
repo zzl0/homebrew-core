@@ -5,6 +5,7 @@ class Aarch64ElfBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
   sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "binutils"
@@ -22,6 +23,11 @@ class Aarch64ElfBinutils < Formula
     sha256 x86_64_linux:   "437e5bb688e90abf63efb2311b1685a77f701a2a3f17315d96e70e9c690df5fe"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "zstd"
+
+  uses_from_macos "zlib"
+
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
@@ -32,6 +38,8 @@ class Aarch64ElfBinutils < Formula
            "--prefix=#{prefix}",
            "--libdir=#{lib}/#{target}",
            "--infodir=#{info}/#{target}",
+           "--with-system-zlib",
+           "--with-zstd",
            "--disable-nls"
     system "make"
     system "make", "install"
