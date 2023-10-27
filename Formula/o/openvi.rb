@@ -7,13 +7,13 @@ class Openvi < Formula
   head "https://github.com/johnsonjh/OpenVi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "196279a615e7d1446d2222a14cfe938475039d5ca63237e04275f496b81dd835"
-    sha256 cellar: :any,                 arm64_ventura:  "129b58db3899ea04eaecb17ad8f8aea065e450c57962a86e18e950d1a47c27c6"
-    sha256 cellar: :any,                 arm64_monterey: "da5581b8f9b071474d837cb2542d46a08adc4e3adfe2f9d485a0a66665ecead9"
-    sha256 cellar: :any,                 sonoma:         "88c43c99b0b118b724efa4d5d849658301ecc0dd7ca67e1155c3a05748e2ec62"
-    sha256 cellar: :any,                 ventura:        "3432f8faa45ec5d812691c531baa9dd58fd46366d75d10b65a1aea63dddd0b6f"
-    sha256 cellar: :any,                 monterey:       "33a47aa1f3ae435b05307693e4cd61b109ac98d123d3dccb07b2825f9a250a5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df74f101b8378768e9e1860e4414292548d638fc8460b2a37c21c4f93e172fe2"
+    sha256 cellar: :any,                 arm64_sonoma:   "bcd37b67976b49a672087bb78543858208602f1e4db70b2952ecda7ae4832fc7"
+    sha256 cellar: :any,                 arm64_ventura:  "0732b6cf42a3a0243ee3a6ece2339e494c9327783345027aef61792582efdfe0"
+    sha256 cellar: :any,                 arm64_monterey: "811bfd51687dbaf346eb8dc95ebd73aafe7f6ef0b0ac6b21a9cf2a852514ac61"
+    sha256 cellar: :any,                 sonoma:         "18e7d15e432568531c6f16d98f52e41043ca4bc36945a52d3b682a1515d593df"
+    sha256 cellar: :any,                 ventura:        "75f5b9f721bd13ca1194b9936fe9211c4380d2bb16954e2e620ac66214fc31ad"
+    sha256 cellar: :any,                 monterey:       "15209f1a36a92f149b764d0818694cea0b7b4611b16b9013e6f8407f74452a99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01191395aa14aad8a81b9f1cb8960ebb4b5fb71aaacf66e46566d0ebf5d25ba9"
   end
 
   depends_on "ncurses" # https://github.com/johnsonjh/OpenVi/issues/32
