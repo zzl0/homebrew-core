@@ -3,10 +3,9 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/72/07/d38dedf5d64f7213420a0353f7acd3439e12808c4abbbe145449962b0d75/borgmatic-1.8.3.tar.gz"
-  sha256 "980851fa10b0ca3f9879ddb6e2fc4c12839cff583e97a8d5c9cc5f2c908b25ff"
+  url "https://files.pythonhosted.org/packages/e0/5b/f95ca2c0aec6efcf835150695f21ef7b751f874e12902c23d11d3fdf50c1/borgmatic-1.8.4.tar.gz"
+  sha256 "6621058953fa0b42ea5d0cb7105fa86cb871a2bbdca4e0a8d9cf44f96f589c7b"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "17e8a059de3eea812a1d1ce0749e71f71ccc8c1fda50bb5d8137d51c590247d5"
@@ -29,8 +28,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "colorama" do
@@ -69,8 +68,8 @@ class Borgmatic < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/de/7d/4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54/ruamel.yaml-0.17.35.tar.gz"
-    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
+    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
+    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
   resource "ruamel-yaml-clib" do
