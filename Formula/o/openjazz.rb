@@ -1,10 +1,9 @@
 class Openjazz < Formula
   desc "Open source Jazz Jackrabit engine"
   homepage "http://www.alister.eu/jazz/oj/"
-  url "https://github.com/AlisterT/openjazz/archive/refs/tags/20190106.tar.gz"
-  sha256 "27da3ab32cb6b806502a213c435e1b3b6ecebb9f099592f71caf6574135b1662"
-  license "GPL-2.0"
-  revision 1
+  url "https://github.com/AlisterT/openjazz/archive/refs/tags/20231028.tar.gz"
+  sha256 "c45ff414dc846563ad7ae4b6c848f938ab695eb4ae6f958856b3fa409da0b8ac"
+  license "GPL-2.0-only"
   head "https://github.com/AlisterT/openjazz.git", branch: "master"
 
   bottle do
@@ -20,11 +19,9 @@ class Openjazz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50f5226a5b83bd7f316b4f1546124fcf1b84cb99a18909a6e9551662a5a17b1"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "pkg-config" => :build
-  depends_on "libmodplug"
-  depends_on "sdl12-compat"
+  depends_on "cmake" => :build
+  depends_on "sdl2"
+  depends_on "sdl2_net"
 
   uses_from_macos "zlib"
 
@@ -37,26 +34,12 @@ class Openjazz < Formula
     sha256 "ed025415c0bc5ebc3a41e7a070551bdfdfb0b65b5314241152d8bd31f87c22da"
   end
 
-  # MSG_NOSIGNAL is only defined in Linux
-  # https://github.com/AlisterT/openjazz/pull/7
-  patch :DATA
-
   def install
-    # the libmodplug include paths in the source don't include the libmodplug directory
-    ENV.append_to_cflags "-I#{Formula["libmodplug"].opt_include}/libmodplug"
-
-    system "autoreconf", "-ivf"
-    system "./configure", "--prefix=#{prefix}",
-                          "--bindir=#{pkgshare}",
-                          "--disable-dependency-tracking"
-    system "make", "install"
-
-    # Default game lookup path is the OpenJazz binary's location
-    (bin/"OpenJazz").write <<~EOS
-      #!/bin/sh
-
-      exec "#{pkgshare}/OpenJazz" "$@"
-    EOS
+    # see https://github.com/AlisterT/openjazz/pull/100, can be removed once merged
+    inreplace "ext/psmplug/stdafx.h", "#include <malloc.h>", ""
+    system "cmake", "-S", ".", "-B", "build", "-DDATAPATH=#{pkgshare}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     resource("shareware").stage do
       pkgshare.install Dir["*"]
@@ -70,20 +53,8 @@ class Openjazz < Formula
         #{pkgshare}
     EOS
   end
-end
 
-__END__
-diff --git a/src/io/network.cpp b/src/io/network.cpp
-index 8af8775..362118e 100644
---- a/src/io/network.cpp
-+++ b/src/io/network.cpp
-@@ -53,6 +53,9 @@
-		#include <errno.h>
-		#include <string.h>
-	#endif
-+ 	#ifdef __APPLE__
-+ 		#define MSG_NOSIGNAL SO_NOSIGPIPE
-+    #endif
- #elif defined USE_SDL_NET
-	#include <arpa/inet.h>
- #endif
+  test do
+    system bin/"OpenJazz", "--version"
+  end
+end
