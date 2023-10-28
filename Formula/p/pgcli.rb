@@ -8,14 +8,13 @@ class Pgcli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d331c62de6055634aa7e32f6796b9e216868c42ed4444290c6755436413f412d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0c1bd3cb3411d770d00787985c31d3bc967a231fcac021142c2e72a8889e578"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bbea1d37a2b83bcf14fdcf1f357a08a1bb2e10d630c7cd71bf438e58a4731c0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adfeb0b4b4999c11084378aa6f4d95650d6a6f5adaa76fcfc839118d1ce574db"
-    sha256 cellar: :any_skip_relocation, ventura:        "893cdbcd80ab264689e0bdf527378f6c668c98aff7964a0afc7167458469a15a"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc94343f65e6d50ca658ca37f940329d18da8c1865cc1224be192124cca0e993"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d2b2a793e14bef7261d5a25bc0e6045a6843caa5ca14d64c3951db8101d18e"
+    sha256 cellar: :any,                 arm64_sonoma:   "9b1e16a5d8ab595184300812a8ecedd7c9ee7ce7cf6fbf105190af2197f630b1"
+    sha256 cellar: :any,                 arm64_ventura:  "0db161867fc9e5d70cb3bac6c5b85f3a3337357604a043f9f8b493bf785bef49"
+    sha256 cellar: :any,                 arm64_monterey: "91c99b650222fe3f490ef9b6f78a9b9ff02efe9106b7ec34a8f3de089eb047f5"
+    sha256 cellar: :any,                 sonoma:         "ee36b69e8d9b59aacc4935e626ea7d0291dc4d80b2d477a42b3e9d9d88bbf908"
+    sha256 cellar: :any,                 ventura:        "a5309ca818c26f50facf1413f966daead9f566d644b515cb9043fb0bdf6e8126"
+    sha256 cellar: :any,                 monterey:       "774bdd1584bebe574c2f960f23ba4182245f35d727e5b6d5682901c4a668ca1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e07559863f6c9a6b62ed42d1da767f4ac087d3e825bbcfb93c1a1862e8a93cf"
   end
 
   depends_on "rust" => :build # for pendulum
