@@ -1075,6 +1075,10 @@
   "urlwatch": {
     "exclude_packages": ["certifi", "keyring", "PyYAML"]
   },
+  "uvicorn": {
+    "package_name": "uvicorn[standard]",
+    "exclude_packages": ["click", "pyyaml"]
+  },
   "vdirsyncer": {
     "package_name": "vdirsyncer[google]",
     "exclude_packages": ["certifi", "click"]
