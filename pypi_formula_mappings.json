@@ -278,7 +278,8 @@
   },
   "datasette": {
     "exclude_packages": [
-      "certifi", "click", "markupsafe", "PyYAML", "six", "typing-extensions"
+      "certifi", "click", "markupsafe", "PyYAML", "six",
+      "typing-extensions", "uvicorn"
     ]
   },
   "detect-secrets": {
