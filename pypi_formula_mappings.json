@@ -507,7 +507,7 @@
     "exclude_packages": ["typing-extensions"]
   },
   "img2pdf": {
-    "exclude_packages": ["lxml", "packaging"]
+    "exclude_packages": ["lxml", "packaging", "pillow"]
   },
   "instalooter": {
     "exclude_packages": ["certifi", "six"]
