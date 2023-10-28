@@ -11,15 +11,13 @@ class NotmuchMutt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6faa1d5cd621e4761715509b98d488eb99bd49db07d92c46e5cf0c6f8dad29dc"
-    sha256 cellar: :any,                 arm64_ventura:  "79e313438c9332b53b8904e17415a516e3eebcc189de92234e1616f51c0d4edd"
-    sha256 cellar: :any,                 arm64_monterey: "e2bacabd6507b8c64a4bd24940fc6cc3785a95bfda67a7a18ab7049c8bee52ec"
-    sha256 cellar: :any,                 arm64_big_sur:  "705d5c69ad1b0cfe59609785e726cdd1af302c0a993df8b6ee0a7964c2b97cc9"
-    sha256 cellar: :any,                 sonoma:         "81db451989ce30884711a60fcf82126ad81fd4847a79574350960670353b43a3"
-    sha256 cellar: :any,                 ventura:        "ed203220afb16b5129fc349e4bd7f0bf672064f23d2217eec2f75b22ae03846e"
-    sha256 cellar: :any,                 monterey:       "e5541e9d930433b0449668bb412e8819e2b9b2396e5bf14947d738b4a105a792"
-    sha256 cellar: :any,                 big_sur:        "7fed64a33a46e55518e2d0b9841886d6874097e2e7151e0792f20b9883cfd8e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a0c5fe3c67f06aaf99c9082a7995ccd642ea878af92acbf9f09a9f0e3de7f5"
+    sha256 cellar: :any,                 arm64_sonoma:   "f2c8a852ef77fddbd6ff7b3578fea55a4cac99a75c27c017716463b17895f0ce"
+    sha256 cellar: :any,                 arm64_ventura:  "365ac247bdc29c7a3c238e92a3c941255cf167e8f9c13227630b41cceafdf14b"
+    sha256 cellar: :any,                 arm64_monterey: "a25b729f67df2188f9b82be45b65cfddc0fbefcf87c210e74e1b9aa79de0ef59"
+    sha256 cellar: :any,                 sonoma:         "a93790767aa904dcb2659f6002d1ab0c59f586a90210a8e543a161c35d5cb8a6"
+    sha256 cellar: :any,                 ventura:        "a691a6bd1fb0f45edc47c12169186deb1d852700404df17e2ef8204188a7a80d"
+    sha256 cellar: :any,                 monterey:       "1ee07717d44b113dd388ed91e6b95216e69e88a1ba5ae7937a02629adb53e9b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d0e5b6f8acc13309ff54be312cad378dad298b633a9bc29d9723d0fa134fb29"
   end
 
   depends_on "notmuch"
