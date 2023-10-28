@@ -9,31 +9,30 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8527e807037444fa16960cbe904181ee469e0e09b0d033c0218bffb621e922f"
-    sha256 cellar: :any,                 arm64_ventura:  "0f6fda8192e16d7b33656d5af1ad6652eb73b416ce287f8de5c36aa225956435"
-    sha256 cellar: :any,                 arm64_monterey: "fd4650140b04534e0f64566216dce06044ab0a0bc48e2d6f5aa892a6b86dd0d3"
-    sha256 cellar: :any,                 sonoma:         "79ff8519a4f2458e5b6cb3f5a7a87a1a6e833010f0d9b7d9f84328d7dec1808c"
-    sha256 cellar: :any,                 ventura:        "316421382dc828cd8cfbfe9d5ce644ee2e9c22dc0de0fc2175ce5ff630ea8258"
-    sha256 cellar: :any,                 monterey:       "2bee4d7d02057a5866be6a0161b4e24801f9e4c498e43ce7e4be862cfdc844f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ef54655ba33ed7bf32d50f0ccf23cc4a847b490ba7db5d60dc16dac7a21d9e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b3e20d823cb7d7df5ab9ee9778edbeca6d2391fa85c08a0291a1db74987b5cb6"
+    sha256 cellar: :any,                 arm64_ventura:  "b92e610bf31ed2777f311f28b2ec6fd9bccf99b94c39885b369e9510113d1fb3"
+    sha256 cellar: :any,                 arm64_monterey: "6f6e64db2fb9acb51df82594088d65e56014c588d96173de15c9b93468ba4e1d"
+    sha256 cellar: :any,                 sonoma:         "173457590ea9216ed4fada4e3ba126ce2adc375d224e9674179b5ef513f480a7"
+    sha256 cellar: :any,                 ventura:        "f529aa4eae343cc7f6ddc60eeddb30db3b50bb677fa9cee4ae3f19b61af5b4fe"
+    sha256 cellar: :any,                 monterey:       "a50868d6e8b25b01fca02f02a4db0ee61c2ab2308d9b0c6f65108df381b7fe2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d5bb4c62aca39770674125f3024d10849ac6768a11834f42a564b9ce590aa0d"
   end
 
   depends_on "rust" => :build
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-lxml"
+  depends_on "python-markupsafe"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
     sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-default-group" do
@@ -96,11 +95,6 @@ class Vunnel < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "mergedeep" do
     url "https://files.pythonhosted.org/packages/3a/41/580bb4006e3ed0361b8151a01d324fb03f420815446c7def45d02f74c270/mergedeep-1.3.4.tar.gz"
     sha256 "0096d52e9dad9939c3d975a774666af186eda617e6ca84df4c94dec30004f2a8"
@@ -109,11 +103,6 @@ class Vunnel < Formula
   resource "orjson" do
     url "https://files.pythonhosted.org/packages/72/75/642688bf5d99131fe8cf603f4ef9f26e4b1c6ed8f7f5c7e6fb31def54fb7/orjson-3.9.10.tar.gz"
     sha256 "9ebbdbd6a046c304b1845e96fbcc5559cd296b4dfd3ad2509e33c4d9ce07d6a1"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pluggy" do

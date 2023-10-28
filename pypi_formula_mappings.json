@@ -1103,7 +1103,10 @@
     "exclude_packages": ["toml"]
   },
   "vunnel": {
-    "exclude_packages": ["certifi", "lxml", "pyyaml", "six", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "click", "lxml", "markupsafe", "packaging",
+      "pyyaml", "six", "typing-extensions"
+    ]
   },
   "watson": {
     "exclude_packages": ["certifi", "click", "six"]
