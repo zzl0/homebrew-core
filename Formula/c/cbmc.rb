@@ -2,8 +2,8 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.94.0",
-      revision: "a997e322f16566986ec23c4824519c2fee9a8cc8"
+      tag:      "cbmc-5.95.0",
+      revision: "25cb64d67a297f7f45c0926a280f525e3cafd750"
   license "BSD-4-Clause"
 
   bottle do
@@ -25,6 +25,13 @@ class Cbmc < Formula
   uses_from_macos "flex" => :build
 
   fails_with gcc: "5"
+
+  # Remove extraneous `y` parameter from calls to `exp` and `logl`
+  # upstream PR ref, https://github.com/diffblue/cbmc/pull/7985
+  patch do
+    url "https://github.com/diffblue/cbmc/commit/70151a9861c55a5156d85f73f8dce0554b4e0fac.patch?full_index=1"
+    sha256 "e3c88c35af63b81df58b037dc101ab9205149ba8b5fe300294c9606b95d53206"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-Dsat_impl=minisat2;cadical", *std_cmake_args
