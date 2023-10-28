@@ -9,15 +9,13 @@ class Vit < Formula
   head "https://github.com/vit-project/vit.git", branch: "2.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d38736df8b5676a6c0984435b4bd78c04016db160a1ca455fbc06963bbc417ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cdf3ef7fa6362fc0ebd0e03bc21ec85ffcb4a82d7ff008c46e1f03c1a97e4a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da829044a95cabaa0cad05832056934cec40bef04745935aa66b395fb98091fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f45d5c5e30b1d047a720e35a74447cb454c3fa826378a3995b6bf84b5cae36c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "21e4284bcad1dbb1f6105f6f057d734c00f72eabce2677f9f655364a493b295e"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c7e2f9e250a1fe594ea3d138fedb3381e44d6b3ade8a891a1422497f072e4c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "92ec92eb9624dd50724a5fb76f91b9fac8bcc4290044e7f9ab0ef53d00490aec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fcc8009bd7c477231ca8f8d3b879d1313f86fc32653319145fd3e63b86ea7dad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f93e4ff9a53c040bd12353b27506070548a1f286da040a30969dc67ee386b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07c6838801cde2043cc4be85222d134f3add125a7e0e8f6bda6f718bf9a6fb73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba5c6afa83e6004a5be6038e6a58691a249b6594529e68c2ed7117bb463030b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93cdfa799ccc23594cc64d1d20d4a5b20b0a06597e1afa000153a54a838e24e8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "970a532408b8900ddb3b56d4966c3624640e76421cff3a4fa83c692d279406df"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d6aa4c94be62db3242d2235b94149f2f027a23fe50a379c6da6e7d868e67936"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c8173fcdebfe49c05d0029f9313e3631ab110c242540eb75b568365373fb62a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c05e79958401ba5fd6399a0afa23721e433c26b2dd0a169e3fe6868416aefaab"
   end
 
   depends_on "python@3.12"
