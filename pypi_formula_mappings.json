@@ -982,7 +982,9 @@
     ]
   },
   "sqlfluff": {
-    "exclude_packages": ["PyYAML", "typing-extensions", "Pygments", "packaging"]
+    "exclude_packages": [
+      "click", "markupsafe", "packaging", "pygments", "PyYAML", "typing-extensions"
+    ]
   },
   "sqlite-utils": {
     "exclude_packages": ["tabulate", "six"]
