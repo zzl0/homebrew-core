@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
   license "LGPL-2.1-or-later"
-  revision 22
+  revision 23
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   # TODO: Try switching to CMake build on next release as it works better with
@@ -16,6 +16,13 @@ class Mapnik < Formula
     patch do
       url "https://raw.githubusercontent.com/archlinux/svntogit-community/239768d7cd1217d5910d3f7d8ace86a7f85ad23c/trunk/scons4.patch"
       sha256 "79a85ddba3ec17b86cb216e21442611498a9f2612f03e98708057b3c3a6e8b06"
+    end
+
+    # Fix build with Boost v1.83 using Arch Linux patch. Remove in the next release.
+    # Ref: https://github.com/mapnik/mapnik/pull/4413
+    patch do
+      url "https://github.com/mapnik/mapnik/commit/26eb76cc07210d564d80d98948770c94d27c5243.patch?full_index=1"
+      sha256 "085408d6a38c77df7f333047bb1568bf0dfdf9c3b87fd9001997ba9b22be6d4c"
     end
   end
 
@@ -36,7 +43,7 @@ class Mapnik < Formula
 
   depends_on "pkg-config" => :build
   depends_on "scons" => :build
-  depends_on "boost@1.76"
+  depends_on "boost"
   depends_on "cairo"
   depends_on "freetype"
   depends_on "gdal"
@@ -53,7 +60,7 @@ class Mapnik < Formula
   uses_from_macos "zlib"
 
   def install
-    boost = Formula["boost@1.76"]
+    boost = Formula["boost"]
     harfbuzz = Formula["harfbuzz"]
     icu = Formula["icu4c"]
     jpeg = Formula["jpeg-turbo"]
