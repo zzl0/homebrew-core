@@ -21,11 +21,10 @@ class Helix < Formula
   fails_with gcc: "5" # For C++17
 
   def install
-    system "cargo", "install", "-vv", *std_cargo_args(root: libexec, path: "helix-term")
+    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
+    system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
     rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
-
-    (bin/"hx").write_env_script(libexec/"bin/hx", HELIX_RUNTIME: libexec/"runtime")
 
     bash_completion.install "contrib/completion/hx.bash" => "hx"
     fish_completion.install "contrib/completion/hx.fish"
