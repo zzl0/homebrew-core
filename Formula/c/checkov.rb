@@ -446,6 +446,13 @@ class Checkov < Formula
     sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
+  # Fix SyntaxWarning for python 3.12
+  # https://github.com/bridgecrewio/checkov/pull/5699
+  patch do
+    url "https://github.com/bridgecrewio/checkov/commit/1950691d37415706697b0d59ac5f6986f035e50d.patch?full_index=1"
+    sha256 "d0f379b481145f836005e786a03128e6d5f34fb952e80384d1a3f4f030c5cae1"
+  end
+
   def install
     virtualenv_install_with_resources
 
