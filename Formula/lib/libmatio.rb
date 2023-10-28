@@ -1,10 +1,9 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.23/matio-1.5.23.tar.gz"
-  sha256 "9f91eae661df46ea53c311a1b2dcff72051095b023c612d7cbfc09406c9f4d6e"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.24/matio-1.5.24.tar.gz"
+  sha256 "5106ebed5b40d02a2bb968b57bef8876701c566e039e6ebe134bab779c436f7c"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     rebuild 1
@@ -23,10 +22,8 @@ class Libmatio < Formula
   depends_on "hdf5"
   uses_from_macos "zlib"
 
-  resource "homebrew-test_mat_file" do
-    url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
-    sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
-  end
+  # fix pkg-config linkage for hdf5 and zlib
+  patch :DATA
 
   def install
     args = %W[
@@ -41,6 +38,11 @@ class Libmatio < Formula
   end
 
   test do
+    resource "homebrew-test_mat_file" do
+      url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
+      sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
+    end
+
     testpath.install resource("homebrew-test_mat_file")
     (testpath/"mat.c").write <<~EOS
       #include <stdlib.h>
@@ -76,3 +78,18 @@ class Libmatio < Formula
     refute_includes shell_output("pkg-config --cflags matio"), "-I/usr/include"
   end
 end
+
+__END__
+diff --git a/matio.pc.in b/matio.pc.in
+index 96d9402..139f11e 100644
+--- a/matio.pc.in
++++ b/matio.pc.in
+@@ -6,6 +6,5 @@ includedir=@includedir@
+ Name: MATIO
+ Description: MATIO Library
+ Version: @VERSION@
+-Libs: -L${libdir} -lmatio
+-Cflags: -I${includedir}
+-Requires.private: @HDF5_REQUIRES_PRIVATE@ @ZLIB_REQUIRES_PRIVATE@
++Libs: -L${libdir} -lmatio @HDF5_LIBS@ @ZLIB_LIBS@
++Cflags: -I${includedir} @HDF5_CFLAGS@ @ZLIB_CFLAGS@
