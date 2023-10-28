@@ -1,8 +1,8 @@
 class Haiti < Formula
   desc "Hash type identifier"
   homepage "https://noraj.github.io/haiti/#/"
-  url "https://github.com/noraj/haiti/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "0ddb24058c045640e0286db470c3ae968666d310428f196f799af13d31d72ae2"
+  url "https://github.com/noraj/haiti/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "56cfc6ec16274a83d019a18a11b32ea90da82f7f2b4c2d8eddb703fd6bf6d54f"
   license "MIT"
 
   bottle do
