@@ -213,23 +213,10 @@ class Moto < Formula
       exec bin/"moto_server", "--port=#{port}"
     end
 
-    # keep trying to connect until the server is up
-    curl_cmd = "curl --silent 127.0.0.1:#{port}/"
-    ohai curl_cmd
-    output = ""
-    exitstatus = 7
-    loop do
-      sleep 1
-      output = `#{curl_cmd}`
-      exitstatus = $CHILD_STATUS.exitstatus
-      break if exitstatus != 7  # CURLE_COULDNT_CONNECT
-    end
-
-    assert_equal exitstatus, 0
     expected_output = <<~EOS
       <ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01"><Owner><ID>bcaf1ffd86f41161ca5fb16fd081034f</ID><DisplayName>webfile</DisplayName></Owner><Buckets></Buckets></ListAllMyBucketsResult>
     EOS
-    assert_equal expected_output.strip, output.strip
+    assert_equal expected_output.strip, shell_output("curl --silent --retry 5 --retry-connrefused 127.0.0.1:#{port}/")
   ensure
     Process.kill "TERM", pid
     Process.wait pid
