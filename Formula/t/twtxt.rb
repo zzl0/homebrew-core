@@ -19,6 +19,7 @@ class Twtxt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1426ec869f8312fb9f5c27f39848d772f2ed73ecfecf423e957a09b27c21d607"
   end
 
+  depends_on "python-click"
   depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "six"
@@ -46,11 +47,6 @@ class Twtxt < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "frozenlist" do
@@ -85,6 +81,8 @@ class Twtxt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"twtxt", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
