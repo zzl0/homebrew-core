@@ -6,7 +6,7 @@ class Haiti < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d3fbedee012c48003a97e8c0c0fb013aa577f7957e3cc3796d5580fe1a6ceb21"
+    sha256 cellar: :any_skip_relocation, all: "68151b8ce06314946b1c438d76f02ccc125d4256b931554d336b3dbbf7497683"
   end
 
   # Requires Ruby >= 2.7
