@@ -3,10 +3,9 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/80/40/239f1834d73e92b5a071aa23373c5bb01ad7f97d4103c5d0ba5fabd5ea1e/moto-4.2.6.tar.gz"
-  sha256 "ce0a55d7e756c59a5a4392c7097aa5ca53e00aa2dd3f7000093356be15e7aef9"
+  url "https://files.pythonhosted.org/packages/11/7e/29e906f074b9945f040ba9662a7fe3aec9e74a82d437f62d6176296a16cc/moto-4.2.7.tar.gz"
+  sha256 "1298006aaa6996b886658eb194cac0e3a5679c9fcce6cb13e741ccc5a7247abb"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f410f6873ba3ef8437cf65f995d201224babcdd5bd7875d41a6a6685a7ca23a4"
@@ -123,8 +122,8 @@ class Moto < Formula
   end
 
   resource "py-partiql-parser" do
-    url "https://files.pythonhosted.org/packages/93/36/da590b7732a6aebf00c7a1c2069c21d04a4198bfb48469c8536c3ed95b46/py-partiql-parser-0.4.0.tar.gz"
-    sha256 "133d3dd8278de6c289eec17256b1e5d147c53c980ee54d9ee1535ce6f58ada3c"
+    url "https://files.pythonhosted.org/packages/e9/6c/1f73bba75a31d15f6ddf45cb986cb9e72b06c97795cdd3a7f3b90bebc959/py-partiql-parser-0.4.1.tar.gz"
+    sha256 "e0640ee913812bbf5cd126accc0b09eebd0e68df769a9bfbaef9a5e74a0c6d55"
   end
 
   resource "pyasn1" do
