@@ -8,6 +8,16 @@ class Uvicorn < Formula
   license "BSD-3-Clause"
   head "https://github.com/encode/uvicorn.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "46fea07c3564e382073b26591a27538d10fea339ffec1cbe1506c92458e7f304"
+    sha256 cellar: :any,                 arm64_ventura:  "472ac887fd0fffdfaf48e02aa579c1bb70b8ea9f5f80905b5e54152add03d8e4"
+    sha256 cellar: :any,                 arm64_monterey: "583251c75c1fa95f991f3a2fdf8103c1def371374706b4ed2bb0fa2f76f87eaa"
+    sha256 cellar: :any,                 sonoma:         "41550c651bea0318a971d7628e911cd98913af2233477d7f17e6f2e94a1329ad"
+    sha256 cellar: :any,                 ventura:        "bc6fb08601f0ef5f70970cf83b9641c0b69d5a7dac27818c07dd0ddbc12fc43d"
+    sha256 cellar: :any,                 monterey:       "0d46a73457a91a155f628c7ac7b1e5d8e30737fe7d596c798a76dc492dd39e07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf41d32281f786a4ae0e9c74e1b3036133d02bc80a4bf5ef50d244b0059041b3"
+  end
+
   depends_on "rust" => :build
   depends_on "python-click"
   depends_on "python@3.12"
