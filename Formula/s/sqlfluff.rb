@@ -18,9 +18,11 @@ class Sqlfluff < Formula
   end
 
   depends_on "pygments"
+  depends_on "python-click"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "appdirs" do
@@ -31,11 +33,6 @@ class Sqlfluff < Formula
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
     sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -56,11 +53,6 @@ class Sqlfluff < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "pathspec" do
@@ -95,6 +87,8 @@ class Sqlfluff < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"sqlfluff", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
