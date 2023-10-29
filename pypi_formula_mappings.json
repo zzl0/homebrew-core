@@ -1064,7 +1064,10 @@
     "exclude_packages": ["psutil", "six"]
   },
   "trezor-agent": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "pillow", "six", "typing-extensions", "docutils"],
+    "exclude_packages": [
+      "certifi", "click", "cffi", "cryptography", "docutils", "pycparser",
+      "pillow", "six", "typing-extensions"
+    ],
     "extra_packages": ["ledger-agent", "keepkey-agent"]
   },
   "trzsz": {
