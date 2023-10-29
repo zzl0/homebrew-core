@@ -9,15 +9,14 @@ class Mitmproxy < Formula
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a6b2fa7f72fbd3377fa17e1b0f24f42d2d2e0d98e239b649c7b926f44bb23911"
-    sha256 cellar: :any,                 arm64_ventura:  "ba140147a03e55be287f61a14ba42493966df2bec5fd05a25c6b169d3aaadcc4"
-    sha256 cellar: :any,                 arm64_monterey: "2669265031fa84adc1b036fd41048c5ca7e993d0487ff71545cd2ab5b5861163"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8fd652fe8a136da8961ed06bb6481b8bba043a2374362eaa537486c1d1ff3a2"
-    sha256 cellar: :any,                 sonoma:         "9cb9cb0f3f88cf9df404496d387658237b3752a0802789c9101cf8444407bb9f"
-    sha256 cellar: :any,                 ventura:        "d43a9c6187394f439a9c513cd43d05d8574e4c5d8f8bc7cfe5533aded54aafec"
-    sha256 cellar: :any,                 monterey:       "f5de6bdd2fcc0e447c9db2748c8cbea156c2b940755d1d6e9ac961c61021718b"
-    sha256 cellar: :any,                 big_sur:        "02680be135d0e90ed04f1490892f6c631c8f8cb56487e7f47be19cefeb0ec398"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff25592590686f5a19e2278b5adc684f4bb9c37b5ce626947df1823ce5705352"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ce482e68207cf11a5f8326f549c54ae58741c638f599d03500202683669c13f5"
+    sha256 cellar: :any,                 arm64_ventura:  "b1d0cbd66f78ed043a9bc2b2c7fdfffde6a6761b8d8f58ec6a4062fd5808c24c"
+    sha256 cellar: :any,                 arm64_monterey: "5592ba12806a558361e4e1d4ac827f8f2cb0816acc9f71c3dc0b1104bf0be522"
+    sha256 cellar: :any,                 sonoma:         "b9d926cb268655dae5846620e57d0c8508649233d10bb3c9053ac0f0d6fbdf8d"
+    sha256 cellar: :any,                 ventura:        "c8b57c74bc98e48a8b5d0cafdf4d338342f2952bdbb04519464163df9889b8fd"
+    sha256 cellar: :any,                 monterey:       "7056ae01af495f0c3b1fc90053a071d33963832d0617404d59e070dd44cc7387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23395280ed210ef34050a92a6c911c6a7a953a5c6b7149117aad7662c0696c70"
   end
 
   depends_on "rust" => :build # for mitmproxy-wireguard
