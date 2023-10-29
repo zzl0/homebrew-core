@@ -268,7 +268,7 @@
   },
   "cyclonedx-python": {
     "package_name": "cyclonedx-bom",
-    "exclude_packages": ["packaging", "toml"]
+    "exclude_packages": ["packaging", "pyparsing", "toml"]
   },
   "cycode": {
     "exclude_packages": ["certifi", "click", "packaging", "PyYAML", "six"]

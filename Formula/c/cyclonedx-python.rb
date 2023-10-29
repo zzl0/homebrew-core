@@ -19,6 +19,7 @@ class CyclonedxPython < Formula
   end
 
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-setuptools"
   depends_on "python-toml"
   depends_on "python@3.12"
@@ -41,11 +42,6 @@ class CyclonedxPython < Formula
   resource "pip-requirements-parser" do
     url "https://files.pythonhosted.org/packages/5e/2a/63b574101850e7f7b306ddbdb02cb294380d37948140eecd468fae392b54/pip-requirements-parser-32.0.1.tar.gz"
     sha256 "b4fa3a7a0be38243123cf9d1f3518da10c51bdb165a2b2985566247f9155a7d3"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "sortedcontainers" do
