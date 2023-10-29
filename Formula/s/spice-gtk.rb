@@ -14,13 +14,12 @@ class SpiceGtk < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2a6e8931ad271174c6f0ed8db774939cdde78d024c3ecdda9f9f2035e2536547"
-    sha256 arm64_monterey: "500b53e19c783d9a5267dc2ca98a195e2d434f2bb65493d114036365bcb1a39c"
-    sha256 arm64_big_sur:  "26ba9072a37ada8a8ffe4b7fc72ce5e818ac285e43e9c3d313bb3a67c00b97e6"
-    sha256 ventura:        "c7bc533bf415ffdda9cbf3129bff469457c84e266c1ee88ddac5be721e66431d"
-    sha256 monterey:       "cb802775855bc572d85b75a854cb4ad1eab6fa558a72c8b208c9963c2c326862"
-    sha256 big_sur:        "8988ac006388c1c9992ee19b844d108cbca3fc8c6642f67e623b4781cba3e6a7"
-    sha256 x86_64_linux:   "b68695adcd56e47248083082f0a09b9aa2c9cb80a78d684c2cc644bd5ecad469"
+    rebuild 1
+    sha256 arm64_ventura:  "72e82feb3a6e163e87202dfec50f6e434519cdd080511fe6d50179c3f913c36b"
+    sha256 arm64_monterey: "7405f31550ec07d48ec970158f3b5498d4d8b940bcfcf930a078c681f13b5383"
+    sha256 ventura:        "7a98d59c135af9d0512ef1da66d03ae1017bef61442ced1b22aeb8851025e477"
+    sha256 monterey:       "c7f1f4442a9ede6b40507db3195b1fa1eb5720e3dfca7ef9522e5cb32db69048"
+    sha256 x86_64_linux:   "13080eae5ee1a111247b04dacde796c2a63e02a3104800c55cd26fc31675aa42"
   end
 
   depends_on "gobject-introspection" => :build
