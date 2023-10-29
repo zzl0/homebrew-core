@@ -29,7 +29,7 @@ class SpiceGtk < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "vala" => :build
 
@@ -48,22 +48,14 @@ class SpiceGtk < Formula
   depends_on "opus"
   depends_on "pango"
   depends_on "pixman"
+  depends_on "python-pyparsing"
   depends_on "spice-protocol"
   depends_on "usbredir"
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
-  end
 
   # https://gitlab.com/keycodemap/keycodemapdb/-/merge_requests/18
   patch :DATA
 
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
-    venv.pip_install resources
-    ENV.prepend_path "PATH", buildpath/"venv/bin"
-
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
