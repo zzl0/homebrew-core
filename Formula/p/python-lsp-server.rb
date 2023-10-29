@@ -6,6 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/f1/cf/812d3bc1fb63e32edaf291950a188d6acce9a177c59e6d7baee487dc6912/python-lsp-server-1.9.0.tar.gz"
   sha256 "dc0c8298f0222fd66a52aa3170f3a5c8fe3021007a02098bb72f7fd8df353d13"
   license "MIT"
+  revision 1
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
@@ -21,7 +22,7 @@ class PythonLspServer < Formula
   depends_on "black"
   depends_on "mypy"
   depends_on "pydocstyle"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruff"
 
   resource "attrs" do
@@ -109,7 +110,7 @@ class PythonLspServer < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
