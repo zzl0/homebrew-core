@@ -19,6 +19,7 @@ class Trailscraper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c609494a3611d6323d43fa4830d9ea745fe65aa1ab4625174b32985f5e604779"
   end
 
+  depends_on "python-click"
   depends_on "python-pytz"
   depends_on "python-setuptools"
   depends_on "python@3.12"
@@ -32,11 +33,6 @@ class Trailscraper < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/3d/f6/d35a27c73dc1053abdfe8524d1e488073fccb51e43c88da61b8fe29522e3/botocore-1.29.165.tar.gz"
     sha256 "988b948be685006b43c4bbd8f5c0cb93e77c66deb70561994e0c5b31b5a67210"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "dateparser" do
@@ -86,6 +82,8 @@ class Trailscraper < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"trailscraper", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
