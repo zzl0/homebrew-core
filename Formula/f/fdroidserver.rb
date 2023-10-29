@@ -9,16 +9,14 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "1f8c444981709cd7a454212c68f67aa2c8a96b408654f21d892fe56ad9cec064"
-    sha256 cellar: :any,                 arm64_ventura:  "19180fb2a67e68548f57dde4db9cc53625ac5ad0bcd0838f8e9f828995a216b5"
-    sha256 cellar: :any,                 arm64_monterey: "ad63561c3f1897e49ceb5b0a84c988fc4adf11ff66c4e0b35451a1a39ffdeb35"
-    sha256 cellar: :any,                 arm64_big_sur:  "32899b19f8a6477b83697e94bdca3644439fb9ab769226a419bacdd11ed45fce"
-    sha256 cellar: :any,                 sonoma:         "7cd8f0829038212e1cb66fb76ea0df29d9afb07db2204a29efb6492258a040d4"
-    sha256 cellar: :any,                 ventura:        "0708ec00e87636526b5ebc4e83b8ce4565e197ae74c2a277263805e6f5937f97"
-    sha256 cellar: :any,                 monterey:       "e43e66af913f77f405bfd2e29c5c7617b439128c1d5a4670f4c5e408dd856342"
-    sha256 cellar: :any,                 big_sur:        "e0731c1e74ee2ecd84f22d180be2eaf4d17af87c18efc9af267ae53785e05643"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f7ba37033f0e6cfb19d6364030cb07ff5d13be1b720ba80c069e1222cc48013"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sonoma:   "59869eeca8776a33ee464e1612f4d2387e3628f58c3cfc816f22c1b94994b2a4"
+    sha256 cellar: :any,                 arm64_ventura:  "14b961ada1af941ac41fecadd327b6d921eae2ebb7209ba98d9954168dc18525"
+    sha256 cellar: :any,                 arm64_monterey: "25e66e5eca7a05547d90c1e652010a95f725e1950c84498c9263f20195dd89d8"
+    sha256 cellar: :any,                 sonoma:         "a9982f0b0cc386ac2f723a07f0319a41a2340abd9a586c180fe2ef17aef1ad8f"
+    sha256 cellar: :any,                 ventura:        "5449d4740432a23928e6f658e7ea717f902f949d959852a0ea69c43512a1ce6a"
+    sha256 cellar: :any,                 monterey:       "e4ffddfb2dfba5789fd664594d9149fb0952e1790e329f66df6bdd3e3f8d39da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54d18f643e1d0f483b99f049906ffa5f11575855d5a77b161d66fb593fdbd204"
   end
 
   depends_on "rust" => :build # for bcrypt
