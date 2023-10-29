@@ -3,8 +3,8 @@ class Urh < Formula
 
   desc "Universal Radio Hacker"
   homepage "https://github.com/jopohl/urh"
-  url "https://files.pythonhosted.org/packages/1c/20/45c108e7c89db910d68b8cccd988603789b1886acb94f79a716b89dffa19/urh-2.9.4.tar.gz"
-  sha256 "da5ee5acf9af62a8261e35cf2f2e40c37dc0898f0d84a3efd5f4ea21e5fb9ced"
+  url "https://files.pythonhosted.org/packages/49/4b/b1a4236c6e3dbcf215a3b1ded8e7ff1af6ca02155c230c40e9b1db0a5376/urh-2.9.5.tar.gz"
+  sha256 "eb621df420e0f15cf7fe98bceac6beb453c909e88c3fad05066f034ea578f406"
   license "GPL-3.0-only"
   head "https://github.com/jopohl/urh.git", branch: "master"
 
@@ -23,12 +23,8 @@ class Urh < Formula
   depends_on "libcython"
   depends_on "numpy"
   depends_on "pyqt@5"
+  depends_on "python-psutil"
   depends_on "python@3.11"
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz"
-    sha256 "3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"
-  end
 
   def install
     python3 = "python3.11"
