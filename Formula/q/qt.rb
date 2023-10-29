@@ -3,10 +3,10 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.5/6.5.2/single/qt-everywhere-src-6.5.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.5/6.5.2/single/qt-everywhere-src-6.5.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.5/6.5.2/single/qt-everywhere-src-6.5.2.tar.xz"
-  sha256 "cde57be663d0f875759797298bdc37a936d517c39f2013e4e6ece5e12edeed12"
+  url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+  sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -126,13 +126,6 @@ class Qt < Formula
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
-  # build patch for qmake with xcode 15
-  # https://bugreports.qt.io/browse/QTBUG-117225
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/086e8cf/qt5/qt5-qmake-xcode15.patch"
-    sha256 "802f29c2ccb846afa219f14876d9a1d67477ff90200befc2d0c5759c5081c613"
-  end
-
   def install
     # Allow -march options to be passed through, as Qt builds
     # arch-specific code with runtime detection of capabilities:
@@ -227,6 +220,9 @@ class Qt < Formula
         -DQT_FEATURE_webengine_system_pulseaudio=ON
         -DQT_FEATURE_webengine_system_zlib=ON
       ]
+
+      # As of Qt 6.6.0, this feature appears to be mandatory for Linux.
+      cmake_args << "-DQT_FEATURE_webengine_ozone_x11=ON"
     end
 
     system "./configure", *config_args, "--", *cmake_args
