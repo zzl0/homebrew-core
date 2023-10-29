@@ -1,12 +1,11 @@
 class FfmpegAT28 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-2.8.21.tar.xz"
-  sha256 "e5d956c19bff2aa5bdd60744509c9d8eb01330713d52674a7f650d54b570c82d"
+  url "https://ffmpeg.org/releases/ffmpeg-2.8.22.tar.xz"
+  sha256 "1fbbf622806a112c5131d42b280a9e980f676ffe1c81a4e0f2ae4cb121241531"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https://ffmpeg.org/download.html"
