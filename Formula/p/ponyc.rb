@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.57.0",
-      revision: "4bc307ffaac9f26375e28d379ccf7e31cef3ff3c"
+      tag:      "0.57.1",
+      revision: "6ed042ee16a5d77671da56cfbd72f0330f072e50"
   license "BSD-2-Clause"
 
   bottle do
@@ -16,7 +16,7 @@ class Ponyc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "llvm" => [:build, :test]
   uses_from_macos "zlib"
