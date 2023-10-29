@@ -1,8 +1,8 @@
 class Xeol < Formula
   desc "Xcanner for end-of-life software in container images, filesystems, and SBOMs"
   homepage "https://github.com/xeol-io/xeol"
-  url "https://github.com/xeol-io/xeol/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "462db8fc69be684b6ff9d91af400739ecd75883c0f42dc3b36e97b5fad869daf"
+  url "https://github.com/xeol-io/xeol/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "10ded34ec862269527ffa5a786f8ee53f8b936df0a2350dd199811272fe58b4f"
   license "Apache-2.0"
 
   bottle do
