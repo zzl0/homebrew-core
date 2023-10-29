@@ -21,6 +21,7 @@ class Hatch < Formula
   depends_on "keyring"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "virtualenv"
@@ -33,11 +34,6 @@ class Hatch < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
     sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "distlib" do
