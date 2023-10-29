@@ -27,6 +27,7 @@ class Bzt < Formula
   depends_on "numpy"
   depends_on "python-certifi"
   depends_on "python-lxml"
+  depends_on "python-psutil"
   depends_on "python-pytz"
   depends_on "python-setuptools"
   depends_on "python@3.12"
@@ -151,11 +152,6 @@ class Bzt < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "python-dateutil" do
