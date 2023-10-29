@@ -376,7 +376,7 @@
     "exclude_packages": ["cffi", "cryptography", "pycparser", "six", "PyYAML"]
   },
   "evernote-backup": {
-    "exclude_packages": ["certifi", "click"]
+    "exclude_packages": ["certifi", "click", "pyparsing"]
   },
   "eye-d3": {
     "exclude_packages": ["packaging", "toml"]
