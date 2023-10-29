@@ -438,7 +438,7 @@
     "extra_packages": ["pyobjc-framework-localauthentication"]
   },
   "git-cola": {
-    "exclude_packages": ["pyqt5"]
+    "exclude_packages": ["pyparsing", "pyqt5"]
   },
   "git-remote-codecommit": {
     "exclude_packages": ["six"]
