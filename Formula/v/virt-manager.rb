@@ -33,7 +33,7 @@ class VirtManager < Formula
   depends_on "py3cairo"
   depends_on "pygobject3"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "spice-gtk"
   depends_on "vte3"
 
@@ -66,7 +66,7 @@ class VirtManager < Formula
   end
 
   def install
-    python = "python3.11"
+    python = "python3.12"
     venv = virtualenv_create(libexec, python)
     venv.pip_install resources
 
