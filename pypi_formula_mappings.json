@@ -751,7 +751,9 @@
     "exclude_packages": ["argcomplete", "packaging"]
   },
   "platformio": {
-    "exclude_packages": ["certifi", "packaging", "tabulate", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "click", "packaging", "tabulate", "typing-extensions", "uvicorn"
+    ]
   },
   "pocsuite3": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "lxml", "pycparser", "PyYAML", "six"],
