@@ -17,14 +17,10 @@ class SqliteUtils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b8dde21b71257d408aefe7e4d2623971b669d8680b680d4d95c4b1ea57f9f7c"
   end
 
+  depends_on "python-click"
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "six"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
 
   resource "click-default-group" do
     url "https://files.pythonhosted.org/packages/1d/ce/edb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41df/click_default_group-1.2.4.tar.gz"
@@ -48,6 +44,8 @@ class SqliteUtils < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"sqlite-utils", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
