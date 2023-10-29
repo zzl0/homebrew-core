@@ -1,8 +1,8 @@
 class Orbiton < Formula
   desc "Fast and config-free text editor and IDE limited by VT100"
   homepage "https://orbiton.zip/"
-  url "https://github.com/xyproto/orbiton/archive/refs/tags/v2.65.2.tar.gz"
-  sha256 "9f16e7f651df13b0fac0508e634f1620ffd77fe86ae1da506dfc902827eac4df"
+  url "https://github.com/xyproto/orbiton/archive/refs/tags/v2.65.3.tar.gz"
+  sha256 "383e3a14b416530478250e69d1de1c71aedba7bd3304c53e965638edaed768da"
   license "BSD-3-Clause"
   head "https://github.com/xyproto/orbiton.git", branch: "main"
 
