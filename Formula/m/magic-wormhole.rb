@@ -22,7 +22,7 @@ class MagicWormhole < Formula
   depends_on "libsodium"
   depends_on "python-cryptography"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -48,8 +48,8 @@ class MagicWormhole < Formula
   end
 
   resource "constantly" do
-    url "https://files.pythonhosted.org/packages/95/f1/207a0a478c4bb34b1b49d5915e2db574cadc415c9ac3a7ef17e29b2e8951/constantly-15.1.0.tar.gz"
-    sha256 "586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35"
+    url "https://files.pythonhosted.org/packages/4d/6f/cb2a94494ff74aa9528a36c5b1422756330a75a8367bf20bd63171fc324d/constantly-23.10.4.tar.gz"
+    sha256 "aa92b70a33e2ac0bb33cd745eb61776594dc48764b06c35e0efd050b7f1c7cbd"
   end
 
   resource "hkdf" do
@@ -105,6 +105,13 @@ class MagicWormhole < Formula
   resource "spake2" do
     url "https://files.pythonhosted.org/packages/60/0b/bb5eca8e18c38a10b1c207bbe6103df091e5cf7b3e5fdc0efbcad7b85b60/spake2-0.8.tar.gz"
     sha256 "c17a614b29ee4126206e22181f70a406c618d3c6c62ca6d6779bce95e9c926f4"
+
+    # Update versioneer script for 3.12. Remove when merged/released
+    # https://github.com/warner/python-spake2/pull/15
+    patch do
+      url "https://github.com/warner/python-spake2/commit/5079cc963305c8aa6465e2a4bbbb08781fb49d3b.patch?full_index=1"
+      sha256 "2e095162aeb910eb5ca399763499b414b400bcf5cf59fd851f5810d7b6d11646"
+    end
   end
 
   resource "tqdm" do
@@ -138,6 +145,11 @@ class MagicWormhole < Formula
   end
 
   def install
+    # Workaround versioneer script broken on 3.12. Remove on next release.
+    # https://github.com/magic-wormhole/magic-wormhole/pull/507
+    inreplace "setup.py", "commands = versioneer.get_cmdclass()", "commands = {}"
+    inreplace "setup.py", "version=versioneer.get_version(),", "version='#{version}',"
+
     ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
     man1.install "docs/wormhole.1"
