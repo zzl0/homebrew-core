@@ -6,6 +6,7 @@ class Ipython < Formula
   url "https://files.pythonhosted.org/packages/a9/e9/c83d1a5756bf44f1802045a54dacc910d3d254c5ec56040993978d8c1b8d/ipython-8.17.2.tar.gz"
   sha256 "126bb57e1895594bb0d91ea3090bbd39384f6fe87c3d57fd558d0670f50339bb"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
@@ -19,7 +20,7 @@ class Ipython < Formula
   end
 
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "appnope" do
@@ -93,7 +94,7 @@ class Ipython < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
     res = resources.reject { |r| r.name == "appnope" && OS.linux? }
     venv.pip_install res
