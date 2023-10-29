@@ -474,7 +474,10 @@
     "exclude_packages": ["certifi"]
   },
   "hatch": {
-    "exclude_packages": ["certifi", "cryptography", "keyring", "packaging", "Pygments", "virtualenv"]
+    "exclude_packages": [
+      "certifi", "click", "cryptography", "keyring", "packaging",
+      "Pygments", "virtualenv"
+    ]
   },
   "homeassistant-cli": {
     "exclude_packages": ["certifi", "click", "markupsafe", "pytz", "six", "tabulate"]
