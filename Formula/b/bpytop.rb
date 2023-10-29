@@ -19,15 +19,11 @@ class Bpytop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "07be8a3c2e76de894f88040d89f9b45eac5dffc1256bad0987cfddcb3ba11989"
   end
 
+  depends_on "python-psutil"
   depends_on "python@3.12"
 
   on_macos do
     depends_on "osx-cpu-temp"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   # Tolerate SMC error from osx-cpu-temp

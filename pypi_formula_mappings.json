@@ -143,7 +143,9 @@
   "bpython": {
     "exclude_packages": ["certifi", "Pygments", "six"]
   },
-  "bpytop": "bpytop",
+  "bpytop": {
+    "exclude_packages": ["psutil"]
+  },
   "breezy": {
     "exclude_packages": ["six", "PyYAML"]
   },
