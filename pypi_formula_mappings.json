@@ -338,13 +338,13 @@
     "extra_packages": [
       "atom", "azure-storage-blob", "b2sdk", "boto3", "botocore", "boxsdk[jwt]",
       "dropbox", "gdata-python3", "google-api-python-client",
-      "google-auth-oauthlib", "httplib2", "jottalib", "keyring", "megatools",
-      "paramiko", "pexpect", "psutil", "pydrive2",
+      "google-auth-oauthlib", "httplib2", "jottalib", "megatools",
+      "paramiko", "pexpect", "pydrive2",
       "python-swiftclient[keystone]", "requests[security]", "requests-oauthlib"
     ],
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "lxml", "packaging",
-      "protobuf", "pycparser", "pytz", "PyYAML",
+      "certifi", "cffi", "cryptography", "keyring", "lxml", "packaging",
+      "protobuf", "psutil", "pycparser", "pyparsing", "pytz", "PyYAML",
       "six", "typing-extensions"
     ]
   },
