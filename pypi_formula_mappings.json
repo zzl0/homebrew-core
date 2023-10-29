@@ -995,7 +995,7 @@
     ]
   },
   "sqlite-utils": {
-    "exclude_packages": ["tabulate", "six"]
+    "exclude_packages": ["click", "six", "tabulate"]
   },
   "ssh-mitm": {
     "exclude_packages": [
