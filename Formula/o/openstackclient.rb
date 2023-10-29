@@ -23,6 +23,7 @@ class Openstackclient < Formula
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -186,11 +187,6 @@ class Openstackclient < Formula
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz"
     sha256 "f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pyperclip" do
