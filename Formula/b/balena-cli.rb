@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.0.0.tgz"
-  sha256 "e1dc0b5cefae9950ffea313c5d1abbf0a86ff5d85955d0364e3b9ea05947576f"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.2.1.tgz"
+  sha256 "778c6654959410c52354cd0dd34f969a06cebd123541d5ab9eb12d9812996fd7"
   license "Apache-2.0"
 
   livecheck do
@@ -38,6 +38,10 @@ class BalenaCli < Formula
 
   def install
     ENV.deparallelize
+
+    # Remove `oclif` patch, it is a devDependency, see discussions in https://github.com/balena-io/balena-cli/issues/2675
+    rm "patches/all/oclif+3.17.2.patch"
+
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
