@@ -19,6 +19,7 @@ class EvernoteBackup < Formula
 
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-pyparsing"
   depends_on "python-setuptools"
   depends_on "python@3.12"
 
@@ -57,11 +58,6 @@ class EvernoteBackup < Formula
     sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -84,6 +80,8 @@ class EvernoteBackup < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"evernote-backup", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
