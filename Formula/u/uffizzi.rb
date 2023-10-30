@@ -11,13 +11,13 @@ class Uffizzi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b2db5d6504f33d06f01dd2e47a75bab87ae2d1144c9a75c7961a137ff58eb38b"
-    sha256 cellar: :any,                 arm64_ventura:  "6f8f9c163fd19c0eada45655919308d5cc1970daba6c60cf12769584422ad94a"
-    sha256 cellar: :any,                 arm64_monterey: "417b53a4f1f36fde6f49b621d95bd3675872890096202117134adcf6672bb886"
-    sha256 cellar: :any,                 sonoma:         "9be850b8f8f1322f358d0d07d01f692c1f2728b77917c23076bae9c004173a3a"
-    sha256 cellar: :any,                 ventura:        "365a33db90f25d3db67fb6b9b7167725f0127dc3ef2ad9edbf447660ce39e4db"
-    sha256 cellar: :any,                 monterey:       "e201f52373d09eecb04e0175b95966d6c6bb009bd1d9c26378da0ba1903bef49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9308d4c7b90fa57fa8a4a00206925e6c8859834c83b36b0cacc92d32aec00b5"
+    sha256 cellar: :any,                 arm64_sonoma:   "7775093bbe792b5c8a98159d3e09294fe5cf651e67273d8f28e24cb57bc00995"
+    sha256 cellar: :any,                 arm64_ventura:  "5b48032ccdc363005e2839144d8ddaea81f85f53947cffd0dfaf24baaa1b20bc"
+    sha256 cellar: :any,                 arm64_monterey: "595a22c97103a4131cd73df11219065a4b1a5a3f3054bc1771799e1cd5dc1322"
+    sha256 cellar: :any,                 sonoma:         "aa110074e8efe4c68559785320d19975c3fbda888cd2db0d71e15ca66893324a"
+    sha256 cellar: :any,                 ventura:        "b0ea91e2ed4b9f741461a076659d92506dd31c1fbf6858226d23e77c1311fa46"
+    sha256 cellar: :any,                 monterey:       "77d7e4c37b5f6d7cd4a2867662fcd38d199670cf718ffe4ba6615902ca688ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b65edddec7936934aedbc201fff91e7884d7fbc93ca7b1d2c0b0eaa970fca47"
   end
 
   depends_on "ruby@3.0"
