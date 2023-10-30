@@ -3,8 +3,8 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/17/ff/23116d95eeb974bd08b57b7d477fb57d68446e04718b6c330d2854ad9923/ipython-8.16.1.tar.gz"
-  sha256 "ad52f58fca8f9f848e256c629eff888efc0528c12fe0f8ec14f33205f23ef938"
+  url "https://files.pythonhosted.org/packages/56/56/d341eba2fc669f97e58e988bb99795ed3a52dacf9257a8f706adaf72fc39/ipython-8.17.0.tar.gz"
+  sha256 "ec8023527c477910939841d4dc2348f8f843b310a504a49db7559bd6b7579953"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
@@ -28,13 +28,8 @@ class Ipython < Formula
   end
 
   resource "asttokens" do
-    url "https://files.pythonhosted.org/packages/ed/e0/7e5af07a090b9ef4f88e29b6edb8db8ca3366a0d7736ae9c3a6522fae140/asttokens-2.4.0.tar.gz"
-    sha256 "2e0171b991b2c959acc6c49318049236844a5da1d65ba2672c4880c1c894834e"
-  end
-
-  resource "backcall" do
-    url "https://files.pythonhosted.org/packages/a2/40/764a663805d84deee23043e1426a9175567db89c8b3287b5c2ad9f71aa93/backcall-0.2.0.tar.gz"
-    sha256 "5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"
+    url "https://files.pythonhosted.org/packages/45/1d/f03bcb60c4a3212e15f99a56085d93093a497718adf828d050b9d675da81/asttokens-2.4.1.tar.gz"
+    sha256 "b03869718ba9a6eb027e134bfdf69f38a236d681c83c160d510768af11254ba0"
   end
 
   resource "decorator" do
@@ -43,8 +38,8 @@ class Ipython < Formula
   end
 
   resource "executing" do
-    url "https://files.pythonhosted.org/packages/11/e3/207e956e01bd4a7809a1d7c4302fd2a64ab0b7a56c40711252a2d5d41ba7/executing-2.0.0.tar.gz"
-    sha256 "0ff053696fdeef426cda5bd18eacd94f82c91f49823a2e9090124212ceea9b08"
+    url "https://files.pythonhosted.org/packages/08/41/85d2d28466fca93737592b7f3cc456d1cfd6bcd401beceeba17e8e792b50/executing-2.0.1.tar.gz"
+    sha256 "35afe2ce3affba8ee97f2d69927fa823b08b472b7b994e36a52a964b93d16147"
   end
 
   resource "jedi" do
@@ -65,11 +60,6 @@ class Ipython < Formula
   resource "pexpect" do
     url "https://files.pythonhosted.org/packages/e5/9b/ff402e0e930e70467a7178abb7c128709a30dfb22d8777c043e501bc1b10/pexpect-4.8.0.tar.gz"
     sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
-  end
-
-  resource "pickleshare" do
-    url "https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-0.7.5.tar.gz"
-    sha256 "87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca"
   end
 
   resource "prompt-toolkit" do
@@ -93,8 +83,8 @@ class Ipython < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/3a/ae/362f1733cbd3160771fa059beb0e2bdab442b7065e7651465b01bc5e4ffa/traitlets-5.10.1.tar.gz"
-    sha256 "db9c4aa58139c3ba850101913915c042bdba86f7c8a0dda1c6f7f92c5da8e542"
+    url "https://files.pythonhosted.org/packages/cd/8d/1c0df0d3a3d4f6517bb34d6127e7881d40f40e5321f1cbe34f8a4e64a45d/traitlets-5.12.0.tar.gz"
+    sha256 "833273bf645d8ce31dcb613c56999e2e055b1ffe6d09168a164bcd91c36d5d35"
   end
 
   resource "wcwidth" do
