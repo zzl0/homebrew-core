@@ -10,16 +10,13 @@ class Alot < Formula
   head "https://github.com/pazz/alot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a470cb5adc341fd5af84708763fd3b4b49dcb7dfce8373a09794489cfe178146"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbc27be19820f2ed61e791dd3e2c8971fd774958e1138c6f8d9bc75a51de3246"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "904705776c6822e74b2ccd669522d0d5d8ebc50d897d84ae4a18d224e94369e0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc3065c6a113ae5444dd8773b756f0bab98e22d01e9d453dcd47c61273ecb74c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b865100ad7988ed153264fdebafbef89963d0eb678dff44aeb7f8a0dc861570"
-    sha256 cellar: :any_skip_relocation, ventura:        "6dcfd106f5fc14934312343aa07ed2832d1b3f687c898ad68875ef0d50366810"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdcfffd6db99d900cd0b400c0fda246ca55d6eb03e03cd2a65dc74481197f48e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "911f53e8988cb79626167fd5a7ec16aa8597f0729bc334217a193a29872e9263"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f7d297ebe88d841b19c3ad745661e2ca0b7e75129f99e1d166cb0883c2fb8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3f276294305f8b3feed95adcb161802a7e976fc3a7b34f25a983fafe343f19b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19b6f9aad8624ac916f1cb622510ae2f3ce8154b8aabecb16b37d8f0f06f9fb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d0eea5746c75674d117b66b14eb0087701955c1afd1bbf06344b2e092bc4c77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a31fe0d674dcc352a11edc69a97719fd64c65734f0a8531985863cd780926710"
+    sha256 cellar: :any_skip_relocation, ventura:        "9727b2d3460d945be287616dfa8409825f5bc0ef7c542af9794f0c4ee6a3d8b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b8bc209f4d604bd84890f2f7cbbb60016eaf3cfda765821f03ed64786b5296f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a68a78ee5375be349cc6bf57deb27287af479af989cc3c647cec0a5d4f78df4"
   end
 
   depends_on "sphinx-doc" => :build
