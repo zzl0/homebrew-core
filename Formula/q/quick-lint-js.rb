@@ -4,7 +4,7 @@ class QuickLintJs < Formula
   url "https://c.quick-lint-js.com/releases/2.17.0/source/quick-lint-js-2.17.0.tar.gz"
   sha256 "8a7ed7f7bcc664da23b7d112bf03d0cdc747aed62d5ba0f466ce1c2998e94966"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
   bottle do
