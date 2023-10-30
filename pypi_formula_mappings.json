@@ -968,6 +968,10 @@
       "pytz", "PyYAML", "six", "typing-extensions"
     ]
   },
+  "sigma-cli": {
+    "exclude_packages": ["certifi", "click", "markupsafe", "pyparsing", "pyyaml"],
+    "extra_packages": ["pysigma-backend-sqlite"]
+  },
   "sigstore": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "six", "typing-extensions"]
   },
