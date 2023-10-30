@@ -2,18 +2,18 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.95.0",
-      revision: "25cb64d67a297f7f45c0926a280f525e3cafd750"
+      tag:      "cbmc-5.95.1",
+      revision: "731338d5d82ac86fc447015e0bd24cdf7a74c442"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29752347409bd4caf7d47654aa60e9fcddf6857c1d709ef16926edb31ea39724"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ae9b4d5bffa69460e07ef7abed310883375d9daedae9d2b4c124bf77a42b080"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed9edd5790a0196936af1a2d412aecbcce386235688dcbc0bb22aeed7c04699a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e7139f3b7cb43d16858e9cfbe1626169784c762221d1f4e6b27746d8f56a53f"
-    sha256 cellar: :any_skip_relocation, ventura:        "e95e3665ebeb126ba40a1a26f18d315fbf94a965ba328872e1c82e18cdda0dff"
-    sha256 cellar: :any_skip_relocation, monterey:       "0aa6a4abe4a74ae62cb1feb9bda78d281b0d5d64a2cac8ba950a8877ff412195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "362d057c212fd6807e9c966db1b5772ca065c4015dc90cca734f38ead639405a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a93a74b6ceacd62465a7c0c27a8451c775e8a69923a2b9388aaa0a51257b249"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c625b851133a25efc6d180cee609e29eaf85984f831f97034906487fa6c937ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "512b4480b1068442f73548499c5ba0f58c3db012dffda2a72a7f3a3ac57f83d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ba108b3ea344f31e8a5b78080be1987f9bc19af1abaf1818d5ae5fa82f912e58"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc1e610ac17d864e3a400638bed661252ac2f027bb7b29e25950ee10571dcee0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2a2ca2db14350b20b4eaa012eda5cc147abc6f6253833bd030a202658ffea7bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "635f7f7b776288dbec70f66b3665393a5fe03e5ea8bf0ddeb372dfff25f1d6f2"
   end
 
   depends_on "cmake" => :build
@@ -25,13 +25,6 @@ class Cbmc < Formula
   uses_from_macos "flex" => :build
 
   fails_with gcc: "5"
-
-  # Remove extraneous `y` parameter from calls to `exp` and `logl`
-  # upstream PR ref, https://github.com/diffblue/cbmc/pull/7985
-  patch do
-    url "https://github.com/diffblue/cbmc/commit/70151a9861c55a5156d85f73f8dce0554b4e0fac.patch?full_index=1"
-    sha256 "e3c88c35af63b81df58b037dc101ab9205149ba8b5fe300294c9606b95d53206"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-Dsat_impl=minisat2;cadical", *std_cmake_args
