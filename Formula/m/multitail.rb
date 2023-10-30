@@ -1,8 +1,8 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
   homepage "https://vanheusden.com/multitail/"
-  url "https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.1.tar.gz"
-  sha256 "fa9ed63c1501c5c06c8b9713e7b1fb37d4223e815f07878078d820c1370f6dc1"
+  url "https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.2.tar.gz"
+  sha256 "c8552e10093f0690b8baef84945753c878e234d7b3d0e3ff27e509ed5515998c"
   license "Apache-2.0"
   head "https://github.com/folkertvanheusden/multitail.git"
 
@@ -18,12 +18,6 @@ class Multitail < Formula
 
   depends_on "pkg-config" => :build
   depends_on "ncurses"
-
-  # Fixes segfault. Remove in next release.
-  patch do
-    url "https://github.com/folkertvanheusden/multitail/commit/47acfbddf43abb92eaa3fe191189aad6312ffe6b.patch?full_index=1"
-    sha256 "3bd6dce3e8df138f942662b4666d95d836692b315cabe8edffbb43a3ebc90ba7"
-  end
 
   def install
     system "make", "-f", "makefile.macosx", "multitail", "DESTDIR=#{HOMEBREW_PREFIX}"
