@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/d7/50/22a0a4b08712ba13bd3b052d15f342658bf44f2e9e5440d65035ebca3665/vunnel-0.17.3.tar.gz"
-  sha256 "e15bd72513bf2c8dc9d306c5838fedbff488d52812645a490e347a4f3ea3ef05"
+  url "https://files.pythonhosted.org/packages/b6/c9/606e1f0765750990f10bda7f8eb4288c683a5fe0d37aecacef3a515faa1b/vunnel-0.17.4.tar.gz"
+  sha256 "4befe43b034129314961475ff8a829f1803dbe6ccdcf178e25a47ebb1841d591"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -136,8 +136,8 @@ class Vunnel < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/27/7c/ab28273996e8e5b78ddaeddbc1df54033231ff325827b3149d51334ed852/SQLAlchemy-1.4.49.tar.gz"
-    sha256 "06ff25cbae30c396c4b7737464f2a7fc37a67b7da409993b182b024cec80aed9"
+    url "https://files.pythonhosted.org/packages/5a/0a/dabe332c40afebb0a979d3e66b34570fce2f8611bae19b186f0c69f54643/SQLAlchemy-1.4.50.tar.gz"
+    sha256 "3b97ddf509fc21e10b09403b5219b06c5b558b27fc2453150274fa4e70707dbf"
   end
 
   resource "toposort" do
