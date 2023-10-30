@@ -3,8 +3,8 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/56/56/d341eba2fc669f97e58e988bb99795ed3a52dacf9257a8f706adaf72fc39/ipython-8.17.0.tar.gz"
-  sha256 "ec8023527c477910939841d4dc2348f8f843b310a504a49db7559bd6b7579953"
+  url "https://files.pythonhosted.org/packages/23/e5/5cc4f78c0a4e050859e69ead6e33ebdb3509166f50c2a2f3ea49b28195ac/ipython-8.17.1.tar.gz"
+  sha256 "9e12020f4bf74f08631c0f033bb580e074fbe36c64903195f3e63b9c0a986cbe"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
@@ -83,8 +83,8 @@ class Ipython < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/cd/8d/1c0df0d3a3d4f6517bb34d6127e7881d40f40e5321f1cbe34f8a4e64a45d/traitlets-5.12.0.tar.gz"
-    sha256 "833273bf645d8ce31dcb613c56999e2e055b1ffe6d09168a164bcd91c36d5d35"
+    url "https://files.pythonhosted.org/packages/5a/0b/b825ac58e20a6fef55c94ba9c7c96f1777f9a3b7e34b3b43b6d54185ec2a/traitlets-5.13.0.tar.gz"
+    sha256 "9b232b9430c8f57288c1024b34a8f0251ddcc47268927367a0dd3eeaca40deb5"
   end
 
   resource "wcwidth" do
