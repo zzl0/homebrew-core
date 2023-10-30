@@ -800,7 +800,10 @@
     "exclude_packages": ["Pygments"]
   },
   "pwntools": {
-    "exclude_packages": ["certifi", "cffi", "cryptography", "packaging", "pycparser", "pygments", "six"]
+    "exclude_packages": [
+      "certifi", "cffi", "cryptography", "markupsafe", "packaging", "psutil",
+      "pycparser", "pygments", "six"
+    ]
   },
   "px": {
     "exclude_packages": ["six"]
