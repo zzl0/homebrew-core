@@ -19,10 +19,10 @@ class GitCredentialOauth < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
-    assert_empty shell_output("#{bin}/git-credential-oauth", 2)
+    assert_match "git-credential-oauth #{version}", shell_output("#{bin}/git-credential-oauth -verbose 2>&1", 2)
   end
 end
