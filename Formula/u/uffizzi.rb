@@ -1,8 +1,8 @@
 class Uffizzi < Formula
   desc "Self-serve developer platforms in minutes, not months with k8s virtual clusters"
   homepage "https://uffizzi.com"
-  url "https://github.com/UffizziCloud/uffizzi_cli/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "59896c1646c8cd9261b32154efbd063fba507382899e1377f2369fb0e58b608b"
+  url "https://github.com/UffizziCloud/uffizzi_cli/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "8437dd01ae74b4de562766700ab71cf0346bf354bbf32451d273ea90c954ad8c"
   license "Apache-2.0"
 
   livecheck do
@@ -23,8 +23,8 @@ class Uffizzi < Formula
   depends_on "ruby@3.0"
 
   resource "activesupport" do
-    url "https://rubygems.org/gems/activesupport-6.1.4.1.gem"
-    sha256 "44b781877c2189aa15ca5451e2d310dcedfd16c01df1106f68a91b82990cfda5"
+    url "https://rubygems.org/gems/activesupport-6.1.7.gem"
+    sha256 "f9dee8a4cc315714e29228328428437c8779f58237749339afadbdcfb5c0b74c"
   end
 
   resource "awesome_print" do
@@ -58,8 +58,8 @@ class Uffizzi < Formula
   end
 
   resource "thor" do
-    url "https://rubygems.org/gems/thor-1.3.0.gem"
-    sha256 "1adc7f9e5b3655a68c71393fee8bd0ad088d14ee8e83a0b73726f23cbb3ca7c3"
+    url "https://rubygems.org/gems/thor-1.2.1.gem"
+    sha256 "b1752153dc9c6b8d3fcaa665e9e1a00a3e73f28da5e238b81c404502e539d446"
   end
 
   resource "tty-prompt" do
@@ -73,8 +73,8 @@ class Uffizzi < Formula
   end
 
   resource "uffizzi-cli" do
-    url "https://rubygems.org/gems/uffizzi-cli-2.2.2.gem"
-    sha256 "287690243c2e9bfc29c5cba33153ae89426773d9f45cb2944ca2d75b6ddba971"
+    url "https://rubygems.org/gems/uffizzi-cli-2.3.2.gem"
+    sha256 "40194fe562248cecd26edc3fdbf34171ef0d0c02a13a4b20ed290300f69e965f"
   end
 
   def install
