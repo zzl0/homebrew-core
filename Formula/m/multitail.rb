@@ -1,29 +1,23 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
   homepage "https://vanheusden.com/multitail/"
-  url "https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.1.tar.gz"
-  sha256 "fa9ed63c1501c5c06c8b9713e7b1fb37d4223e815f07878078d820c1370f6dc1"
+  url "https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.2.tar.gz"
+  sha256 "c8552e10093f0690b8baef84945753c878e234d7b3d0e3ff27e509ed5515998c"
   license "Apache-2.0"
   head "https://github.com/folkertvanheusden/multitail.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a7abf3e9432f663dadd24eb0358949ed3a6fc9563a3fb75affa7fb4ad23d7225"
-    sha256 cellar: :any,                 arm64_ventura:  "36a558274f68601894f69bad2c76067c84dcd93c0bb0f8a8d7707bcc64184127"
-    sha256 cellar: :any,                 arm64_monterey: "764942343f5b7d5b85dad59fbdce1f205903e1a2e7e5cea56886bf37eae3f918"
-    sha256 cellar: :any,                 sonoma:         "91ac1e160fbb6a6e4ee590fdc1111eb2ec08e814aac509614191d6672f0a785a"
-    sha256 cellar: :any,                 ventura:        "2e4a9df2577a707edd7c68d4a69eb2405777d223481c1a440a775533014362c6"
-    sha256 cellar: :any,                 monterey:       "f5d069f18899048c02379a45f8abb47db111f77a70c6bc9b18dad171e8f38b4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "029b1f39b69a347c51f0309e62304d69b5548f3e2983d6618f1b20a1fc61e1e5"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3fc083b287b8f49b9c79ca1951be8f5032ad00f839110eb8a778dc2487925fd"
+    sha256 cellar: :any,                 arm64_ventura:  "98444fd682fdb68e33acef1864f3364d2048a50c4d707453bafbf04246314e86"
+    sha256 cellar: :any,                 arm64_monterey: "65cfe67e4d5634b323c1bf70a5d8264f52b26320083188af4a1f68a0db7cf67f"
+    sha256 cellar: :any,                 sonoma:         "074de6e786a2ba9a0f45415eab5977fb9adf4edf88996931ceba3d6f4bb45827"
+    sha256 cellar: :any,                 ventura:        "a453421f0d555ad4b6be1d09b91f3bd8d90801e0990df31ca1e3316f8e017a77"
+    sha256 cellar: :any,                 monterey:       "79ba0b2ef4b92fba512392fef29417216feb83a6e598f3dbfec0c3afb8254bf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa9ed05dd7832ab4b6f705d3196f13f8c0526ee74db4ac9dbdfb4c6d96be0f41"
   end
 
   depends_on "pkg-config" => :build
   depends_on "ncurses"
-
-  # Fixes segfault. Remove in next release.
-  patch do
-    url "https://github.com/folkertvanheusden/multitail/commit/47acfbddf43abb92eaa3fe191189aad6312ffe6b.patch?full_index=1"
-    sha256 "3bd6dce3e8df138f942662b4666d95d836692b315cabe8edffbb43a3ebc90ba7"
-  end
 
   def install
     system "make", "-f", "makefile.macosx", "multitail", "DESTDIR=#{HOMEBREW_PREFIX}"
