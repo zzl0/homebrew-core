@@ -2,8 +2,8 @@ class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
   homepage "http://www.linux-usb.org/"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-016.tar.gz"
-  sha256 "a039479b88979d8e6dafa5a82d91eb5183b087104204a87d0e7ae6a26257f0e5"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-017.tar.gz"
+  sha256 "f704c4cb78a060db88b43aac6ebfd3d93c2c5cf1d6dd0e42936faaf00814ab00"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -30,8 +30,8 @@ class Usbutils < Formula
   conflicts_with "lsusb", because: "both provide an `lsusb` binary"
 
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/9ef20debdfb9995fec347e401f2b5eb7b6c76f07/usbutils/portable.patch"
-    sha256 "645cf353cd2ce0c0ee4f8c4129c3b39488c23d0ab13f4cfdef07f55f23381933"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/12f3d34/usbutils/portable.patch"
+    sha256 "0f504a173191a1e1e2f56b41584fcc0468eab7b7dfefd225910b91b5ea65cfbe"
   end
 
   def install
