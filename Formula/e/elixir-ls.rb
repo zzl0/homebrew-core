@@ -1,8 +1,8 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https://elixir-lsp.github.io/elixir-ls"
-  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.17.3.tar.gz"
-  sha256 "31e6ae59cc27de1b7dc343373391292a875d16ccc93ff01bf02bbf2e395f486c"
+  url "https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.17.4.tar.gz"
+  sha256 "45aa2a87f07dd259b95fb0002e622fd35067fcea91276ef6c5b803197a8214a4"
   license "Apache-2.0"
 
   bottle do
