@@ -1,8 +1,8 @@
 class Changie < Formula
   desc "Automated changelog tool for preparing releases"
   homepage "https://changie.dev/"
-  url "https://github.com/miniscruff/changie/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "2a6a1e3f0756886bcbe1e70b26e6ec961190960e113ab1492f2a7c727350f903"
+  url "https://github.com/miniscruff/changie/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "60ece4f71a64d862abd0edc3eeb0e5e1f11b307e8d602a546402b47f112d2b52"
   license "MIT"
   head "https://github.com/miniscruff/changie.git", branch: "main"
 
