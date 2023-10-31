@@ -4,7 +4,7 @@ class GitExtras < Formula
   url "https://github.com/tj/git-extras/archive/refs/tags/7.1.0.tar.gz"
   sha256 "e5c855361d2f1ec1be6ee601247153d9c8c04a221949b6ec3903b32fa736f542"
   license "MIT"
-  head "https://github.com/tj/git-extras.git", branch: "master"
+  head "https://github.com/tj/git-extras.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
