@@ -353,8 +353,8 @@
   "dvc": {
     "package_name": "dvc[all]",
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "cryptography", "numpy", "packaging",
-      "protobuf", "pyarrow", "pycparser", "pygit2", "Pygments",
+      "argcomplete", "certifi", "cffi", "click", "cryptography", "numpy", "packaging",
+      "protobuf", "psutil", "pyarrow", "pycparser", "pygit2", "Pygments", "pyparsing",
       "PyYAML", "six", "tabulate", "typing-extensions"
     ]
   },
