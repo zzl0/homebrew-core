@@ -9,6 +9,7 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a0226a713e6c65697e91293969995b4bab0e775bc71e8cece1c2be4caf4f5e37"
@@ -31,7 +32,7 @@ class Jupyterlab < Formula
   depends_on "python-lsp-server"
   depends_on "python-packaging"
   depends_on "python-psutil"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "zeromq"
@@ -361,7 +362,7 @@ class Jupyterlab < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
