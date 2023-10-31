@@ -988,7 +988,9 @@
     "exclude_packages": ["black", "toml"]
   },
   "snakemake": {
-    "exclude_packages": ["certifi", "tabulate", "PyYAML", "docutils", "packaging"]
+    "exclude_packages": [
+      "certifi", "docutils", "markupsafe", "packaging", "psutil", "pyyaml", "tabulate"
+    ]
   },
   "snapcraft": {
     "exclude_packages": [
