@@ -1098,7 +1098,7 @@
     "exclude_packages": ["certifi", "click", "six"]
   },
   "twine-pypi": {
-    "exclude_packages": ["certifi", "docutils", "Pygments", "six"]
+    "exclude_packages": ["certifi", "docutils", "keyring", "Pygments", "six"]
   },
   "twtxt": {
     "exclude_packages": ["click", "six"]
