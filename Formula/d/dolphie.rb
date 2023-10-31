@@ -3,10 +3,9 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/42/62/5853fe74430773e0e4e5c29483f1ca633a5955d25f9ede4fad24f333a809/dolphie-3.1.3.tar.gz"
-  sha256 "62b008053c1ac7b5e17815782726345b95e5970ab22d29b517af58b71d3dfdb1"
+  url "https://files.pythonhosted.org/packages/60/87/612bbc66b33f266405027053fde3632e42936f8793a073c60c37e3f6a3d0/dolphie-3.1.4.tar.gz"
+  sha256 "68ad316da4bea5ec4024254fd3e5e926f5cfcc52d9ead02832eb3e2f6882e01a"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01eb71c04c0b7d8c7b857e1234da956ec4079d85fd0d383bde41e0a9a4d693eb"
@@ -28,8 +27,8 @@ class Dolphie < Formula
   depends_on "python@3.12"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
@@ -93,8 +92,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/46/47/dda242d5de6dea10b64e118b194fb0934b84b28555783b1e7f04c25a0289/textual-0.37.1.tar.gz"
-    sha256 "0498894da7f4af5cac62d99e412e9d813e784f7a87834dd29aa656d31d068760"
+    url "https://files.pythonhosted.org/packages/01/22/99db4365d3f883c73d02135a1f312f146a59d18cf72e6462aed014339897/textual-0.40.0.tar.gz"
+    sha256 "0fd014f9fab7f6d88167c82f90e115b118b3016b8597281d14c9257967f7812e"
   end
 
   resource "textual-autocomplete" do
@@ -122,6 +121,10 @@ class Dolphie < Formula
   end
 
   test do
+    # Fails in Linux CI with "ParseError: end of file reached"
+    # See https://github.com/Homebrew/homebrew-core/pull/152912#issuecomment-1787257320
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     output = shell_output("#{bin}/dolphie mysql://dolphie:test@localhost:3306 2>&1")
     assert_match "Failed to connect to database host", output
 
