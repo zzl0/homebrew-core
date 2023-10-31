@@ -5,6 +5,10 @@ class Lager < Formula
   sha256 "9e4743c3fe2c95c1653c3fd088a2200108f09d758725697831852dc91d15d174"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "ecb454d1e0681ec7cb5be9210205b58790d161e5345a4046a6f6226f5eb81e3b"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "zug"
