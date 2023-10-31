@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/4e/e4/028dbca76293d896fbce5bd74523d0612f005b1404066fccedd411281a35/dvc-3.27.1.tar.gz"
-  sha256 "958ed99c71df6466a1663694d2788caff9319f3eac87834d62203bbdaa59c622"
+  url "https://files.pythonhosted.org/packages/a3/77/d07d34df019a01eedc6e61328482331d098139d016dee78e8186a7ee8101/dvc-3.28.0.tar.gz"
+  sha256 "78441431c7d341540b1e7179d32c1a7ad574b898a63598d0b2647a381856ab38"
   license "Apache-2.0"
 
   bottle do
@@ -250,8 +250,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/47/59/d7c9c0702aea7104af73d9aac89c7e705d6d9b9271ee46662839039a5a13/dvc-data-2.19.0.tar.gz"
-    sha256 "68e34c9dbd0592e85b767ef8f562e9614509e19e90aaa6f6a37fc1e783437e5b"
+    url "https://files.pythonhosted.org/packages/6f/a1/fe414be00c8ea1b83ebac0ca4ca04c860c7c90e7fbf1faa71427754b5fb6/dvc-data-2.20.0.tar.gz"
+    sha256 "9b907905f901fcad3279db99f639bf88bf21c9fcd2df9f44565ceb316b977a5a"
   end
 
   resource "dvc-gdrive" do
@@ -275,8 +275,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/9e/92/8ea3b09602601a959a02d9db8e16f3ae33b1925ae0ef86cc2d44b113dd53/dvc-objects-1.0.1.tar.gz"
-    sha256 "a9fdf55552b95d3dfa1d4572b3938e893c4b4365bb551e168e164fcf5eab93dd"
+    url "https://files.pythonhosted.org/packages/f1/26/cc6b9e25c3b110fb5ff35ce755cc169a0c8f5974187b718569d89161cbb7/dvc-objects-1.1.0.tar.gz"
+    sha256 "b4249a13734f32e2a6d3d973441c113dcf05d551b0f35a9da60d9d5f460ed19e"
   end
 
   resource "dvc-oss" do
@@ -750,8 +750,8 @@ class Dvc < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
-    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
+    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
+    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
   end
 
   resource "webdav4" do
