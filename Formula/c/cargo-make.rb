@@ -1,8 +1,8 @@
 class CargoMake < Formula
   desc "Rust task runner and build tool"
   homepage "https://github.com/sagiegurari/cargo-make"
-  url "https://github.com/sagiegurari/cargo-make/archive/refs/tags/0.37.3.tar.gz"
-  sha256 "84232d6fee09cdabe03d6348d156a2a80ba0965140f0d9f65b2abb25362ba071"
+  url "https://github.com/sagiegurari/cargo-make/archive/refs/tags/0.37.4.tar.gz"
+  sha256 "720f29c09a3b02b45390583418ba8df5a70cc3492da88a914355a1da5fcbca81"
   license "Apache-2.0"
 
   bottle do
