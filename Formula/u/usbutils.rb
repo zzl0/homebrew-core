@@ -12,13 +12,13 @@ class Usbutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "22b2748584a3a2dadb98f2358bf3e8c626e86116d0f86d8f31cabde5a9510ef7"
-    sha256 cellar: :any,                 arm64_ventura:  "3a764eca8ec97a20e574155971ca36d605e147895cfe662e928b9fdc9e1d3ea4"
-    sha256 cellar: :any,                 arm64_monterey: "e666369f0a077167aaefc89d35cae73155de75a99a1283a2b20619a598ab27e7"
-    sha256 cellar: :any,                 sonoma:         "9339cb51844c2fca1291cd46c004ba63412be085c97b1447c1c32da6e35eb55f"
-    sha256 cellar: :any,                 ventura:        "3615052e1133e70b936e9976abcd205409cc1d84983936ab8e41d79fd114b2ca"
-    sha256 cellar: :any,                 monterey:       "08689120babf873589ba31a10b5dbe78544401601b15d0370271125d0af155a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a47e38802224bad18abd534a2d48dc84092382f4b60084b221f15ff53adbeab2"
+    sha256 cellar: :any,                 arm64_sonoma:   "374ce8a0c6782808d4fd194dbfd177c779ca568e7d5b0a5687412add96cce4ed"
+    sha256 cellar: :any,                 arm64_ventura:  "735a4d7ec2d7393bb3421c27583f1df30455c5a4c3b092786dfe3ee92144806e"
+    sha256 cellar: :any,                 arm64_monterey: "eabe8a0f9cee89292386b2b0900677127c8827882bf43323dfb732013d6a2f1a"
+    sha256 cellar: :any,                 sonoma:         "3c3468d2b41346db49f356b1f0ab04e86bfbcc93954bbcfc2c343c6fbd720eaa"
+    sha256 cellar: :any,                 ventura:        "1c2b43d31059a4b67815be116ab308817487a9f06d670244a2a234a023851d93"
+    sha256 cellar: :any,                 monterey:       "6a760ee183985a6d80d58efe5e78c945511c3b89cce5e01bfb48858637fdb322"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17f5961f3ebd783d33e4851654070498c44c65c2bf235754ce8dcd704063dcaa"
   end
 
   depends_on "autoconf" => :build
