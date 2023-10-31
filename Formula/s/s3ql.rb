@@ -8,7 +8,7 @@ class S3ql < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a9dbc30a57887057a7898f1fe5843b3bba02936698e494c81ecaa2999161d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5545a8f84859fd469580a713c8cf89bf9ae138919b103496f590cc31c8be5d8a"
   end
 
   depends_on "pkg-config" => :build
