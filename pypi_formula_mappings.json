@@ -360,7 +360,7 @@
   },
   "dxpy": {
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "cryptography", "pycparser", "six"
+      "argcomplete", "certifi", "cffi", "cryptography", "psutil", "pycparser", "six"
     ]
   },
   "enex2notion": {
