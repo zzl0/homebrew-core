@@ -3,8 +3,8 @@ require "language/node"
 class Mailpit < Formula
   desc "Web and API based SMTP testing"
   homepage "https://github.com/axllent/mailpit"
-  url "https://github.com/axllent/mailpit/archive/refs/tags/v1.9.9.tar.gz"
-  sha256 "b1e13c6bcf2e0225900312678dd62009bbcf9d5d0cddee0f341d30289f9f07de"
+  url "https://github.com/axllent/mailpit/archive/refs/tags/v1.9.10.tar.gz"
+  sha256 "71b3b12f585cfb8fbda4a2d401d646ce65d406dce3a3ffaaccb69c6ca404393b"
   license "MIT"
 
   bottle do
