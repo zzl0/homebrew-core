@@ -7,16 +7,13 @@ class Openjazz < Formula
   head "https://github.com/AlisterT/openjazz.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "36a6e47e3678206db333537d788fa7bba4baedaa9907d37bb2924318a3d7991d"
-    sha256 cellar: :any,                 arm64_ventura:  "112a6ec8803fa3672de7508518f1b055d7f0302c5e998e850fd3a10b008785ac"
-    sha256 cellar: :any,                 arm64_monterey: "c6027acbe964bd7a83d604d812bf5a43078fcd34dd2ed43db595fea85b2e842a"
-    sha256 cellar: :any,                 arm64_big_sur:  "7cddbce5a824cfe34e1fd75de8974522d3b011a53c9584052f0b27e79dfc79ca"
-    sha256 cellar: :any,                 sonoma:         "a1b2e462f6d19cbdb07862ccc9db811666cc2904b9bffc47f6158525fa5721b5"
-    sha256 cellar: :any,                 ventura:        "ac798949ec631497175402c544182e31d47884dcc00e43fb6b7bcfbf96bcf9b4"
-    sha256 cellar: :any,                 monterey:       "5239dbf6629d348f81a7466b0bd8d92dbc222decdc304091bf71e545b49bb9bb"
-    sha256 cellar: :any,                 big_sur:        "85d31ef9c357d5f3755fcbcb123e93a71f26b2549458ab97c9f3f22975372cfa"
-    sha256 cellar: :any,                 catalina:       "b9948afd1fcc825a94787e97bbc964140268ac5c5ee1a76ac1113835869b4e96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50f5226a5b83bd7f316b4f1546124fcf1b84cb99a18909a6e9551662a5a17b1"
+    sha256 arm64_sonoma:   "07a222337046a16eb095259f2a5952d2893279bb5dea456df5db6a04d0a464a3"
+    sha256 arm64_ventura:  "c5c520f1a957586f0d8a9a624db938ab0310f1beaa6b89e5b0ed8a64cef6337c"
+    sha256 arm64_monterey: "df4726038828be4f5c0297724794355b57988a3418d82f184d26345c3fe29bcf"
+    sha256 sonoma:         "bee571f4da0e9d27a0e165e349fe3bb0987e781367bd6e1d951ac841d63973a7"
+    sha256 ventura:        "319618c494484856acb274b82f8a32232e9a2a022bf704ad638b599885b4009a"
+    sha256 monterey:       "a420f6753dd4676cd8c2952e81c46d75f9c558d1ea07dfb5de95f1c69b272cff"
+    sha256 x86_64_linux:   "f6f7b98ac0aa8679388825ae164c71441c5b4e54c24344d7041b2c178a22a51c"
   end
 
   depends_on "cmake" => :build
