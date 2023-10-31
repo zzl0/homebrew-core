@@ -8,14 +8,14 @@ class Gyb < Formula
   head "https://github.com/GAM-team/got-your-back.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e394300c5f11dc1811fd6d1f8197055435a2893e5b55f5b84fadf028fe33e5ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c28b0920c8e2d2c26edd760902d662cea7708e5f6f4c8ee9cd1d1ce7b04bd4c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "001a4038949c0db3815fdef012f3d9282cac27e1085eadfeb455c8445a06f4b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad52a4ba434da5f7109e103b43e61ba3f2f2d86ee0023540148e0a29c10f7b04"
-    sha256 cellar: :any_skip_relocation, ventura:        "e583328505a608f6cbe29ca609e1c286eb1ab8b55d86530e626c07b059bd3685"
-    sha256 cellar: :any_skip_relocation, monterey:       "8546705fc38278d5816e899613e9b21b74883ffc64892e5ce8e389f93e4b9ae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a2c08143b51304d9b29d3940b654a0026bb0ebd89222d6b0f1e14469d3d296"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0de1c0d58863814d51f6e56f8253e5e044a304d435051a853ceb4f0fce1244a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "246a2e0b5dd5ce49774d9cc547f7ba8537fb16d2e691c7ccb0d4e80126b6fcff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4d2b75ee4466a1caaf0eea04bd38c4f36d0d728200e290afce416eeb85af201"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1d8ed62c5ef3773db3afa6e49d61fcbfecbdb8232054fc29110f5493a0ca6b2d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f379471a1f3abcef240b672b371d2f5f3d9e891098777a105b8483982fb4251"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c343a8d90c541a7bbcbe29fca69f63aef31ca89f20935148d9c855dac930ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4193f2faf779ad3fdaedfd9b3df1247fd486b3d48a983aca2364ce77cf069202"
   end
 
   depends_on "pyinstaller" => :build
