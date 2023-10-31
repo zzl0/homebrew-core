@@ -1,8 +1,8 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://github.com/libgit2/pygit2"
-  url "https://files.pythonhosted.org/packages/73/05/cb50b5eb86fd67e36a6711fd41ef19bd614e95c5f37b28550407b100871a/pygit2-1.13.1.tar.gz"
-  sha256 "d8e6d540aad9ded1cf2c6bda31ba48b1e20c18525807dbd837317bef4dccb994"
+  url "https://files.pythonhosted.org/packages/68/ac/268a23daedfaaaa54da8eceedb5ad1e425d9e6dd3cf5c5ffc170ff403d33/pygit2-1.13.2.tar.gz"
+  sha256 "75c7eb86b47c70f6f1434bcf3b5eb41f4e8006a15cee6bef606651b97d23788c"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
