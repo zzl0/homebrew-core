@@ -3,11 +3,20 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi"
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.8.90.tar.gz"
-  sha256 "290bd2299962f14667a279dd8e40a1f93d1e9e338c08342af5830a1ce119c93e"
   license "MIT"
-  revision 2
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
+
+  stable do
+    url "https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.0.tar.gz"
+    sha256 "76390a12c049216c708b522372a7eed9f2fcf8f8d462af107d881dbb1ce3a79f"
+
+    # patch for `Can't load application from file ".../lanraragi": Can't open file "oshino"`
+    # remove in next release
+    patch do
+      url "https://github.com/Difegue/LANraragi/commit/d2ab6807cc4b1ed1fe902c264cba7750ae07f435.patch?full_index=1"
+      sha256 "3edc8e1248e5931bfc7f983af93b92354bb85368582d4ccedcd1af93013ce24a"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6d7cecbd0f38afed3ee880deca03e8aee23cc18f4d7fb51657d0a0e8e9bd80b6"
@@ -37,14 +46,14 @@ class Lanraragi < Formula
 
   resource "libarchive-headers" do
     on_macos do
-      url "https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-113.tar.gz"
-      sha256 "b422c37cc5f9ec876d927768745423ac3aae2d2a85686bc627b97e22d686930f"
+      url "https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-121.tar.gz"
+      sha256 "f38736ffdbf9005726bdc126e68ff34ddaee25326ae51d58e4385de717bc773f"
     end
   end
 
   resource "Image::Magick" do
-    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.0-0.tar.gz"
-    sha256 "f90c975cbe21445777c40d19c17b7f79023d3064ef8fabcf348cf82654bc16eb"
+    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.1-20.tar.gz"
+    sha256 "a0c0305d0071b95d8580f1c18548beb683453d59d12cd8d9a9d3f6abe922ea38"
   end
 
   def install
@@ -107,18 +116,15 @@ class Lanraragi < Formula
 
     # Set PERL5LIB as we're not calling the launcher script
     ENV["PERL5LIB"] = libexec/"lib/perl5"
+    pid = fork do
+      exec "npm start --prefix #{libexec}"
+    end
+    sleep 2
 
-    # This can't have its _user-facing_ functionality tested in the `brew test`
-    # environment because it needs Redis. It fails spectacularly tho with some
-    # table flip emoji. So let's use those to confirm _some_ functionality.
-    output = <<~EOS
-      ｷﾀ━━━━━━(ﾟ∀ﾟ)━━━━━━!!!!!
-      (╯・_>・）╯︵ ┻━┻
-      It appears your Redis database is currently not running.
-      The program will cease functioning now.
-    EOS
-    # Execute through npm to avoid starting a redis-server
-    return_value = OS.mac? ? 61 : 111
-    assert_match output, shell_output("npm start --prefix #{libexec}", return_value)
+    assert_match "LANraragi 0.9.0 started. (Production Mode)", (testpath/"lanraragi.log").read
+    assert_match "Shinobu File Watcher started", (testpath/"shinobu.log").read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
