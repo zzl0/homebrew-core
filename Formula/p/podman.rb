@@ -2,8 +2,8 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.7.1",
-      revision: "ef83eeb9c7482826672f3efa12db3d61c88df6c4"
+      tag:      "v4.7.2",
+      revision: "750b4c3a7c31f6573350f0b3f1b787f26e0fe1e3"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -19,6 +19,7 @@ class Podman < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
+  uses_from_macos "python" => :build
 
   on_macos do
     depends_on "make" => :build
