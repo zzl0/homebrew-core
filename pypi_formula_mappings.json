@@ -675,6 +675,9 @@
   "nbdime": {
     "exclude_packages": ["certifi", "jupyter-server", "nbconvert", "pyyaml", "six"]
   },
+  "neovim-remote": {
+    "exclude_packages": ["psutil"]
+  },
   "nicotine-plus": {
     "exclude_packages": ["pycairo", "PyGObject"]
   },
