@@ -26,7 +26,11 @@ class Typst < Formula
 
   def install
     ENV["TYPST_VERSION"] = version.to_s
+    ENV["GEN_ARTIFACTS"] = "artifacts"
     system "cargo", "install", *std_cargo_args(path: "crates/typst-cli")
+    bash_completion.install "crates/typst-cli/artifacts/typst.bash" => "typst"
+    fish_completion.install "crates/typst-cli/artifacts/typst.fish"
+    zsh_completion.install "crates/typst-cli/artifacts/_typst"
   end
 
   test do
