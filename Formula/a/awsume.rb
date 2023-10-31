@@ -19,6 +19,7 @@ class Awsume < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba6912a0dfb6ea0172fbab32c1ac094892b08067bd768e82e8fe93147767a390"
   end
 
+  depends_on "python-psutil"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -48,11 +49,6 @@ class Awsume < Formula
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "python-dateutil" do
