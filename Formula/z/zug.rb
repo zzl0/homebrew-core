@@ -5,6 +5,10 @@ class Zug < Formula
   sha256 "1b9c8f962e40baa6f0c6af35f957444850063d550078a3ebd0227727b8ef193c"
   license "BSL-1.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "96fbf6458c5eebb9e65299d68f5fa0eac49de340e8eeeb2bd73da0f57d06e6b4"
+  end
+
   depends_on "cmake" => :build
 
   def install
