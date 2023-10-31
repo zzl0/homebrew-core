@@ -4,6 +4,7 @@ class Apt < Formula
   url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.6.tar.xz"
   sha256 "8683f54eff0bf54e51e025b348bd0774d0fd437799616f48512956cf15c05f67"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/a/apt/"
