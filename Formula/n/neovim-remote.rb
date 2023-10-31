@@ -9,15 +9,14 @@ class NeovimRemote < Formula
   head "https://github.com/mhinz/neovim-remote.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11cf9bbc583b6e0ab169a0f39e1383cc549162523bbe5594442f5d29259ea520"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45102b633d6c3ea52df5a54b2aaaf9a3c86d3d8ab0e1d409e7dbe8f90f625ad3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c10cd5d480c570373ba7fe4d629b7a40b3a41b2cac242ce62cd7b52fac2cac2"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2ed0b820e8e17e93cd3a3655ab3658f6ff8176c1dbe238b00f7a9d7ab8bdda7"
-    sha256 cellar: :any_skip_relocation, monterey:       "a60c1065aafc55524a57eebdd75facd52432a37d3a3663ed053748b8042b78d2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c26fd309db614a1b36d08c4bee8da33444ef525903574f5575fe6964639c6a4c"
-    sha256 cellar: :any_skip_relocation, catalina:       "bad631e4f3a4393e233ae231ff191448672affe0aeea8addde4d086f4aa7192a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d06a5d88810e44a27c54469b23544650dc67d566117303a76887e0a3f5ac9f16"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b2421bba7714a9ac3ba6af4dcf7b6d5e1b23d9e2fc6d536ae29979d3d931e27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd06fdba9c046945b562a51d64b50a4cc2569876b6006b360a70947aca3b1f76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4ae9d3e06f8960f92a0ea44b07581ae1cbe39a2e2ceb897d072c1b3d220bf19"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e3cce27f8b638674e3de6af3585ab0302a513fa781975862653eceb235318af9"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e1fb0f87fab109c0f39565ab978cf7896e1bcdb30eb20493ddf1bc7ecc90ddb"
+    sha256 cellar: :any_skip_relocation, monterey:       "700902934bcb3846c11387bda29b36123773e627704236a4a7541abe6e7cd172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5006841176b575774b70f44609e28dc5a5a5ce14207b3fedf0fd796e6a4cbce8"
   end
 
   depends_on "neovim"
