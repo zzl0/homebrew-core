@@ -1,9 +1,9 @@
 class Mmseqs2 < Formula
   desc "Software suite for very fast sequence search and clustering"
   homepage "https://mmseqs.com/"
-  url "https://github.com/soedinglab/MMseqs2/archive/refs/tags/14-7e284.tar.gz"
-  version "14-7e284"
-  sha256 "a15fd59b121073fdcc8b259fc703e5ce4c671d2c56eb5c027749f4bd4c28dfe1"
+  url "https://github.com/soedinglab/MMseqs2/archive/refs/tags/15-6f452.tar.gz"
+  version "15-6f452"
+  sha256 "7115ac5a7e2a49229466806aaa760d00204bb08c870e3c231b00e525c77531dc"
   license "GPL-3.0-or-later"
   head "https://github.com/soedinglab/MMseqs2.git", branch: "master"
 
@@ -34,14 +34,10 @@ class Mmseqs2 < Formula
     depends_on "gawk"
   end
 
+  # check revision with https://github.com/soedinglab/MMseqs2/wiki/Home/_history
   resource "documentation" do
     url "https://github.com/soedinglab/MMseqs2.wiki.git",
-        revision: "4cd4a50c83d72dc60d75dc79afe1b9b67b5e775d"
-  end
-
-  resource "testdata" do
-    url "https://github.com/soedinglab/MMseqs2/releases/download/12-113e3/MMseqs2-Regression-Minimal.zip"
-    sha256 "ab0c2953d1c27736c22a57a1ccbb976c1320435fad82b5c579dbd716b7bae4ce"
+        revision: "1ea9a93cb31d6c8cc25ef963311bcdddb95ff58d"
   end
 
   def install
@@ -77,7 +73,12 @@ class Mmseqs2 < Formula
   end
 
   test do
-    resource("testdata").stage do
+    resource "homebrew-testdata" do
+      url "https://github.com/soedinglab/MMseqs2/releases/download/12-113e3/MMseqs2-Regression-Minimal.zip"
+      sha256 "ab0c2953d1c27736c22a57a1ccbb976c1320435fad82b5c579dbd716b7bae4ce"
+    end
+
+    resource("homebrew-testdata").stage do
       system "./run_regression.sh", "#{bin}/mmseqs", "scratch"
     end
   end
