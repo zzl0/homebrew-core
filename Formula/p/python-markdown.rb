@@ -1,10 +1,9 @@
 class PythonMarkdown < Formula
   desc "Python implementation of Markdown"
   homepage "https://python-markdown.github.io"
-  url "https://files.pythonhosted.org/packages/62/25/1b21a708e65a933e9e2ecf03bfc7fae7169981cc688155cdb581de3e86dc/Markdown-3.5.tar.gz"
-  sha256 "a807eb2e4778d9156c8f07876c6e4d50b5494c5665c4834f67b06459dfd877b3"
+  url "https://files.pythonhosted.org/packages/35/14/1ec9742e151f3b06a723a20d9af7201a389ebd3aae8b7d93b521819489dc/Markdown-3.5.1.tar.gz"
+  sha256 "b65d7beb248dc22f2e8a31fb706d93798093c308dc1aba295aedeb9d41a813bd"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/Python-Markdown/markdown.git", branch: "master"
 
   bottle do
