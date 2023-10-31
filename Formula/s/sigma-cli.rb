@@ -8,6 +8,16 @@ class SigmaCli < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec6f5987f308a5314696ca007e90e0b66fabc1a07d65ca0866395523b5d45b1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f266f59631e91a5004bb3f4931fc83678cedd7587354aa96e0ca0c4357ea68a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75451f891c24ed11e6caff81f9185348835757f7ce45a817350e370e24369091"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dadbd96d0f95ac400e1ca78de3ffaea68f94329be2ce231aca27cf9bb46c22b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbb849da7826cfd3bdbbe806259296814e661d9eedbb3561128c9f3d3578f534"
+    sha256 cellar: :any_skip_relocation, monterey:       "041cc256e57168ef384977d065e1704b04ff16fa65391ebee56cd310a3f1e6b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d23a93ca46fce7638d8be22d5e612b2d35b40a75d46de9f8a9653d21bf706e"
+  end
+
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-markupsafe"
