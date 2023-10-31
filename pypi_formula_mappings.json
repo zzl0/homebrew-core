@@ -11,6 +11,9 @@
   "aiven-client": {
     "exclude_packages": ["certifi"]
   },
+  "adb-enhanced": {
+    "exclude_packages": ["psutil"]
+  },
   "all-repos": {
     "exclude_packages": ["packaging"]
   },
