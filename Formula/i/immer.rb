@@ -5,6 +5,10 @@ class Immer < Formula
   sha256 "de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209"
   license "BSL-1.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "e1dc5c791931d0887a5f7ba54e96d8f36f6b2dd63dea423432953f996025c325"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
