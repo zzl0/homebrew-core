@@ -125,8 +125,8 @@
   },
   "bbot": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "docutils", "lxml", "packaging",
-      "pycparser", "pyyaml", "six", "typing-extensions"
+      "certifi", "cffi", "cryptography", "docutils", "lxml", "markupsafe", "packaging",
+      "psutil", "pycparser", "pyyaml", "six", "tabulate", "typing-extensions"
     ]
   },
   "beancount": {
