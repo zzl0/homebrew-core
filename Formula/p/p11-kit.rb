@@ -1,8 +1,8 @@
 class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
   homepage "https://p11-glue.freedesktop.org"
-  url "https://github.com/p11-glue/p11-kit/releases/download/0.25.1/p11-kit-0.25.1.tar.xz"
-  sha256 "b6f326925725c8c45484e6daf78cdc73428a86296b6b99078255017f1bacdafc"
+  url "https://github.com/p11-glue/p11-kit/releases/download/0.25.2/p11-kit-0.25.2.tar.xz"
+  sha256 "44be0f5797464ca5b36c68c8fb9152c2d34e91f6ba910ad3945dd7cdd2557cc3"
   license "BSD-3-Clause"
 
   bottle do
