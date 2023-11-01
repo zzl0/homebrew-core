@@ -10,13 +10,13 @@ class QtPostgresql < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e503abd2cd9ed6677e415315867f58b6618d75631a94c66f5343835c6e265241"
-    sha256 cellar: :any,                 arm64_ventura:  "b3406656ecb755d4a9eefa3fb47a483be116c2915a09686d46799c9d9a7c15b2"
-    sha256 cellar: :any,                 arm64_monterey: "5fc98f12ebe54e2c580bf48cc325f6bb987fc0a8c422e8df70f9c392b2bbb090"
-    sha256 cellar: :any,                 sonoma:         "184ea4a5f980ed6f4e25dfe23edd37ea828be710ff22a2893e7329ac1b0d7c0d"
-    sha256 cellar: :any,                 ventura:        "0efad2d9845ea5bf8f21876c202cee95239c6a38038389e0404f2a094052facc"
-    sha256 cellar: :any,                 monterey:       "caab8307bc63b81a7655624d1763633c3a7c6d3efa0620ca65b36dcb8d6403f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63feb4756a65daf81e2f97dae9215756eddc06af15cf3df7dcc83f6b3fe1e301"
+    sha256 cellar: :any,                 arm64_sonoma:   "d79628ffb37546fb442e7cb4b8b090681e2e4799758fd7253f9f10ece2457fc0"
+    sha256 cellar: :any,                 arm64_ventura:  "ed5fb06282aad1c2bb2159ada2c58e5716055b7f40ff9d97cf91a94b91098931"
+    sha256 cellar: :any,                 arm64_monterey: "737306db7d1bed0d30e4917fcd0436cd0d7b886c39cd4e9a3e8e5fbb82da57c0"
+    sha256 cellar: :any,                 sonoma:         "dda87fea5063252977b090615b814f18525d3ef0ca8b3933ac8007a0d7176af9"
+    sha256 cellar: :any,                 ventura:        "1a2a696c8cda7c1d703e5a12d23493e81d722e59dc94d762a1dc8aa83631fe16"
+    sha256 cellar: :any,                 monterey:       "b75a17fb1290a7617c7f7435f444b67968582a8a657204838e9d974917dfe1d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65036ec15d01e98cd3b91406cd3e8fc618575477c41bd68cb32554fe2d6d1537"
   end
 
   depends_on "cmake" => [:build, :test]
