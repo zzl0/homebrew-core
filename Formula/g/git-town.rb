@@ -1,8 +1,8 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
   homepage "https://www.git-town.com/"
-  url "https://github.com/git-town/git-town/archive/refs/tags/v9.0.1.tar.gz"
-  sha256 "692a4125b86375e77f4957f80ef815cc757676cd8843a7e45b1fbf12da1a8a46"
+  url "https://github.com/git-town/git-town/archive/refs/tags/v10.0.0.tar.gz"
+  sha256 "7a5abc1095b974d5f2d44e920c48720c10b3ab398996091d67d2b8ae60a694b2"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class GitTown < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/git-town/git-town/v9/src/cmd.version=v#{version}
-      -X github.com/git-town/git-town/v9/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
+      -X github.com/git-town/git-town/v10/src/cmd.version=v#{version}
+      -X github.com/git-town/git-town/v10/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
@@ -33,7 +33,7 @@ class GitTown < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/git-town version")
+    assert_match version.to_s, shell_output("#{bin}/git-town -V")
 
     system "git", "init"
     touch "testing.txt"
