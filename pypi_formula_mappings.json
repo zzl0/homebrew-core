@@ -845,7 +845,7 @@
     "exclude_packages": ["lxml", "markdown", "PyYAML", "six"]
   },
   "python@3.8": {
-    "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
+    "extra_packages": ["setuptools", "pip", "wheel"]
   },
   "python@3.9": {
     "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
