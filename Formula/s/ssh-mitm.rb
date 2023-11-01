@@ -3,8 +3,8 @@ class SshMitm < Formula
 
   desc "SSH server for security audits and malware analysis"
   homepage "https://docs.ssh-mitm.at"
-  url "https://files.pythonhosted.org/packages/67/82/04ab95eec9ffb4afe510414d157b9f71548f96053a5d8bfd3822a5f281a8/ssh_mitm-4.0.0.tar.gz"
-  sha256 "56d675aea4d94a2acff2c3902c405f8d958a24455fd9811fe479edb17220a655"
+  url "https://files.pythonhosted.org/packages/dc/15/b3b4189bcd5ba6a86e65d72689a980eb66a67a4a6bccdc1639b9251cd29a/ssh_mitm-4.1.1.tar.gz"
+  sha256 "db61c3d33e4515bde82118e9f62dd3d25dbf35718005af16b30316dfa0be7b4f"
   license "GPL-3.0-only"
   head "https://github.com/ssh-mitm/ssh-mitm.git", branch: "master"
 
@@ -56,8 +56,8 @@ class SshMitm < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/44/03/158ae1dcb950bd96f04038502238159e116fafb27addf5df1ba35068f2d6/paramiko-3.3.1.tar.gz"
+    sha256 "6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"
   end
 
   resource "pynacl" do
