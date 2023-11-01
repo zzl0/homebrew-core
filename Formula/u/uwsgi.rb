@@ -1,10 +1,9 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a7/4e/c4d5559b3504bb65175a759392b03cac04b8771e9a9b14811adf1151f02f/uwsgi-2.0.22.tar.gz"
-  sha256 "4cc4727258671ac5fa17ab422155e9aaef8a2008ebb86e4404b66deaae965db2"
+  url "https://files.pythonhosted.org/packages/79/73/b5def500729e134d1cb8dfc334e27fa2e9cfd4e639c1f60c6532d40edaed/uwsgi-2.0.23.tar.gz"
+  sha256 "0cafda0c16f921db7fe42cfaf81b167cf884ee17350efbdd87d1ecece2d7de37"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
@@ -20,7 +19,7 @@ class Uwsgi < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
   depends_on "pcre" # PCRE2 issue: https://github.com/unbit/uwsgi/issues/2486
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yajl"
 
   uses_from_macos "curl"
@@ -49,7 +48,7 @@ class Uwsgi < Formula
       embedded_plugins = null
     EOS
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     system python3, "uwsgiconfig.py", "--verbose", "--build", "brew"
 
     plugins = %w[airbrake alarm_curl asyncio cache
