@@ -3,10 +3,9 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/d8/63/ed127918b70651e0087db7d003827d88ecd67c7a82ec58ad7f74d09017c1/llm-0.11.tar.gz"
-  sha256 "fc09c8bd53cd417807c70cc2b24f5c1ac0915f45808434a09546a62c1edf36fd"
+  url "https://files.pythonhosted.org/packages/49/c6/12a34c856d4046fdd14f449e022892618b0c9cddecd0542378fcd450cc2e/llm-0.11.1.tar.gz"
+  sha256 "631214181e904e75795885b40e6371d56acbd238ce24d3218b5007cb13be7d7b"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     rebuild 1
@@ -55,8 +54,8 @@ class Llm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "click" do
@@ -125,8 +124,8 @@ class Llm < Formula
   end
 
   resource "sqlite-migrate" do
-    url "https://files.pythonhosted.org/packages/9e/33/0b0fc2ac04f91b0cde409ec1a177753a2ff46a7f211116d511dde2e6d2a2/sqlite-migrate-0.1a2.tar.gz"
-    sha256 "c33b40a9edd35b4490e095f55cf59e03828d25c8b97377cd8a1f7b72694fc111"
+    url "https://files.pythonhosted.org/packages/13/86/1463a00d3c4bdb707c0ed4077d17687465a0aa9444593f66f6c4b49e39b5/sqlite-migrate-0.1b0.tar.gz"
+    sha256 "8d502b3ca4b9c45e56012bd35c03d23235f0823c976d4ce940cbb40e33087ded"
   end
 
   resource "sqlite-utils" do
