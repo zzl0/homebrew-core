@@ -12,13 +12,13 @@ class Spack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61781b1aa693de63fb62a8dbdc1809c7b4b57ed7de6f9e07c190f497b644caec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61781b1aa693de63fb62a8dbdc1809c7b4b57ed7de6f9e07c190f497b644caec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61781b1aa693de63fb62a8dbdc1809c7b4b57ed7de6f9e07c190f497b644caec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f31b431a919c539647d51064eb252b369417b4df2db2b3603f7dc7a7a686b8fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "f31b431a919c539647d51064eb252b369417b4df2db2b3603f7dc7a7a686b8fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "f31b431a919c539647d51064eb252b369417b4df2db2b3603f7dc7a7a686b8fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f9e5e4b18e4350d5992a0ad01cdeb78567f331338ec16dc388a310cfa1aadb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "455521db05c5d8927aec15c3912052b79f400e1b02268fdf9a33ddc57959eca6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "455521db05c5d8927aec15c3912052b79f400e1b02268fdf9a33ddc57959eca6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "455521db05c5d8927aec15c3912052b79f400e1b02268fdf9a33ddc57959eca6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "438a46c92e807446424c208b47cfe8762ff305ac5e3d86d45c44fa55f1434784"
+    sha256 cellar: :any_skip_relocation, ventura:        "438a46c92e807446424c208b47cfe8762ff305ac5e3d86d45c44fa55f1434784"
+    sha256 cellar: :any_skip_relocation, monterey:       "438a46c92e807446424c208b47cfe8762ff305ac5e3d86d45c44fa55f1434784"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8829358672b5fd93fe53219fdb1bd774dec4a8010e325f342c2c9461d3a8b00"
   end
 
   uses_from_macos "python"
