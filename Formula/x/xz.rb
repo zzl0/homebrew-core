@@ -4,11 +4,11 @@ class Xz < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https://tukaani.org/xz/"
   # The archive.org mirror below needs to be manually created at `archive.org`.
-  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.4.4.tar.gz"
-  mirror "https://tukaani.org/xz/xz-5.4.4.tar.gz"
-  mirror "https://archive.org/download/xz-5.4.4/xz-5.4.4.tar.gz"
-  mirror "http://archive.org/download/xz-5.4.4/xz-5.4.4.tar.gz"
-  sha256 "aae39544e254cfd27e942d35a048d592959bd7a79f9a624afb0498bb5613bdf8"
+  url "https://downloads.sourceforge.net/project/lzmautils/xz-5.4.5.tar.gz"
+  mirror "https://tukaani.org/xz/xz-5.4.5.tar.gz"
+  mirror "https://archive.org/download/xz-5.4.5/xz-5.4.5.tar.gz"
+  mirror "http://archive.org/download/xz-5.4.5/xz-5.4.5.tar.gz"
+  sha256 "135c90b934aee8fbc0d467de87a05cb70d627da36abe518c357a873709e5b7d6"
   license all_of: [
     :public_domain,
     "LGPL-2.1-or-later",
@@ -29,10 +29,7 @@ class Xz < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "check"
     system "make", "install"
   end
