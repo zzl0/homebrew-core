@@ -2,9 +2,9 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2023-10",
-      revision: "2cca00505601f0b0e76719d366a037cdb4cf794c"
-  version "2023-10"
+      tag:      "dev-2023-11",
+      revision: "ef5eb4b612eed1a51186b9182a5e61b79ce36d06"
+  version "2023-11"
   license "BSD-3-Clause"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
@@ -18,7 +18,7 @@ class Odin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2b1a29c12eefc435eea5f08f925df165c9925314ea20b93d44dc7c61295ef15"
   end
 
-  depends_on "llvm@14"
+  depends_on "llvm"
 
   fails_with gcc: "5" # LLVM is built with GCC
 
