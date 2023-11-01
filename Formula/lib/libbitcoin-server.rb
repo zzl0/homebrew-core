@@ -4,7 +4,7 @@ class LibbitcoinServer < Formula
   url "https://github.com/libbitcoin/libbitcoin-server/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_sonoma:   "b62af4658d5a5375d77ac181cbc738a1cd45a68eef07d2b35a3db0eff78dbdfd"
@@ -26,6 +26,8 @@ class LibbitcoinServer < Formula
   depends_on "boost@1.76"
   depends_on "libbitcoin-node"
   depends_on "libbitcoin-protocol"
+  depends_on "libsodium"
+  depends_on "zeromq"
 
   def install
     ENV.cxx11
