@@ -4,6 +4,7 @@ class JupyterR < Formula
   url "https://github.com/IRkernel/IRkernel/archive/refs/tags/1.3.2.tar.gz", using: :nounzip
   sha256 "4ef2df1371e4b80dc1520da9186242998eb89eb0acfbc7d78de9aef4416bc358"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "0a87163b05cfc86db83fb1a1e78f379df9742d6a68c478ab8613e8d36c31564e"
@@ -41,8 +42,8 @@ class JupyterR < Formula
   end
 
   resource "fansi" do
-    url "https://cloud.r-project.org/src/contrib/fansi_1.0.4.tar.gz"
-    sha256 "3163214e6c40922bbb495229259ed8ce1bebd98b77098a6936d234e43da9c49f"
+    url "https://cloud.r-project.org/src/contrib/fansi_1.0.5.tar.gz"
+    sha256 "c616ce357fbfd43253c366da578549a38066459058c22fb99c82fc05992e23f6"
   end
 
   resource "glue" do
@@ -56,13 +57,13 @@ class JupyterR < Formula
   end
 
   resource "utf8" do
-    url "https://cloud.r-project.org/src/contrib/utf8_1.2.3.tar.gz"
-    sha256 "c0a88686591f4ad43b52917d0964e9df4c62d8858fe25135a1bf357dfcbd6347"
+    url "https://cloud.r-project.org/src/contrib/utf8_1.2.4.tar.gz"
+    sha256 "418f824bbd9cd868d2d8a0d4345545c62151d321224cdffca8b1ffd98a167b7d"
   end
 
   resource "vctrs" do
-    url "https://cloud.r-project.org/src/contrib/vctrs_0.6.3.tar.gz"
-    sha256 "93dc220dcde8b440586b2260460ef354e827a17dfec1ea6a9815585a10cfa5c2"
+    url "https://cloud.r-project.org/src/contrib/vctrs_0.6.4.tar.gz"
+    sha256 "8a80192356e724d21bd89a0ce3e5835856fd5bb1651e7fc205c6fee58fd001c8"
   end
 
   resource "base64enc" do
@@ -76,8 +77,8 @@ class JupyterR < Formula
   end
 
   resource "htmltools" do
-    url "https://cloud.r-project.org/src/contrib/htmltools_0.5.6.tar.gz"
-    sha256 "15eb8e2745c3be5e9926aa773f21d551435e903aa1dd20712f8ab54055b5a067"
+    url "https://cloud.r-project.org/src/contrib/htmltools_0.5.6.1.tar.gz"
+    sha256 "09b84ef819d03ba818c7d54a99b5b8b029e91370fd72b3410b5048f0f644a04e"
   end
 
   resource "pillar" do
@@ -96,8 +97,8 @@ class JupyterR < Formula
   end
 
   resource "evaluate" do
-    url "https://cloud.r-project.org/src/contrib/evaluate_0.21.tar.gz"
-    sha256 "3178c99cee8917d7d128806d064d4fecce7845ed07f42e759dcc0adda89c22b9"
+    url "https://cloud.r-project.org/src/contrib/evaluate_0.23.tar.gz"
+    sha256 "c9cf9c37502b8fbfa78e4eb96b8c3d1789060e49505c86c07cb7476da804a45c"
   end
 
   resource "IRdisplay" do
