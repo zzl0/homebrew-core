@@ -1,9 +1,9 @@
 class Jena < Formula
   desc "Framework for building semantic web and linked data apps"
   homepage "https://jena.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-4.9.0.tar.gz"
-  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-4.9.0.tar.gz"
-  sha256 "914b047442b0623c8ce46f18293b7dd1f5b35f6d618ae9518f75b98cae3929e8"
+  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-4.10.0.tar.gz"
+  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-4.10.0.tar.gz"
+  sha256 "1b690287917659fad2382afe7c43b4da694e4957d5d8ecb7b9918d11aacb47e3"
   license "Apache-2.0"
 
   bottle do
