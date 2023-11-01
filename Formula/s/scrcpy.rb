@@ -1,8 +1,8 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "6f3d055159cb125eabe940a901bef8a69e14e2c25f0e47554f846e7f26a36c4d"
+  url "https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.2.tar.gz"
+  sha256 "9c96ce84129e6a4c15da8b907e4576c945732e666fcc52cf94ff402b9dd10c2c"
   license "Apache-2.0"
 
   bottle do
@@ -27,8 +27,8 @@ class Scrcpy < Formula
   fails_with gcc: "5"
 
   resource "prebuilt-server" do
-    url "https://github.com/Genymobile/scrcpy/releases/download/v2.1.1/scrcpy-server-v2.1.1"
-    sha256 "9558db6c56743a1dc03b38f59801fb40e91cc891f8fc0c89e5b0b067761f148e"
+    url "https://github.com/Genymobile/scrcpy/releases/download/v2.2/scrcpy-server-v2.2"
+    sha256 "c85c4aa84305efb69115cd497a120ebdd10258993b4cf123a8245b3d99d49874"
   end
 
   def install
@@ -36,13 +36,10 @@ class Scrcpy < Formula
     r.fetch
     cp r.cached_download, buildpath/"prebuilt-server.jar"
 
-    mkdir "build" do
-      system "meson", *std_meson_args,
-                      "-Dprebuilt_server=#{buildpath}/prebuilt-server.jar",
-                      ".."
-
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", "-Dprebuilt_server=#{buildpath}/prebuilt-server.jar",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def caveats
@@ -55,6 +52,8 @@ class Scrcpy < Formula
   end
 
   test do
+    assert_equal version, resource("prebuilt-server").version, "`prebuilt-server` resource needs updating!"
+
     fakeadb = (testpath/"fakeadb.sh")
 
     # When running, scrcpy calls adb five times:
