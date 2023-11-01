@@ -1,9 +1,9 @@
 class Blast < Formula
   desc "Basic Local Alignment Search Tool"
   homepage "https://blast.ncbi.nlm.nih.gov/"
-  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.1/ncbi-blast-2.14.1+-src.tar.gz"
-  version "2.14.1"
-  sha256 "712c2dbdf0fb13cc1c2d4f4ef5dd1ce4b06c3b57e96dfea8f23e6e99f5b1650e"
+  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.15.0/ncbi-blast-2.15.0+-src.tar.gz"
+  version "2.15.0"
+  sha256 "6918c370524c8d44e028bf491e8f245a895e07c66c77b261ce3b38d6058216e0"
   license :public_domain
 
   livecheck do
@@ -27,6 +27,7 @@ class Blast < Formula
 
   uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
   on_macos do
