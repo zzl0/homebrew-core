@@ -4,18 +4,17 @@ class Uwsgi < Formula
   url "https://files.pythonhosted.org/packages/a7/4e/c4d5559b3504bb65175a759392b03cac04b8771e9a9b14811adf1151f02f/uwsgi-2.0.22.tar.gz"
   sha256 "4cc4727258671ac5fa17ab422155e9aaef8a2008ebb86e4404b66deaae965db2"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "c9a01adb5891b4a5edb8ce6a36f10f573effd1addb8031a1371026638c73b8e2"
-    sha256 arm64_ventura:  "7fd65d5414dc3a93e9c07d77347902ab26b6ebf139190252242a37665cdef949"
-    sha256 arm64_monterey: "b652fab26ae8671e9ea0834ed41a9817101a5bafc44f5e38132327a0afe1d599"
-    sha256 arm64_big_sur:  "44b257a7cc2f749ecf4f5cedbe267986b9d1a3d9864adf9db3dce17d68052797"
-    sha256 sonoma:         "93872800a7af1ffb6635b7571fabf996905b654b5e11ea54beef02763dd5326d"
-    sha256 ventura:        "544ba27e4967949369a68cef57aeb0d4d6191a85ec27098228e1434036002a04"
-    sha256 monterey:       "38998ee07c84dc9a44d766d2cc8e4531c6e393ca3b494a536bc99ad8c895e754"
-    sha256 big_sur:        "165bf9600690b687b3b529ad6976bcb03222fb9116041c26a9ec90ef72faccd2"
-    sha256 x86_64_linux:   "2ad95234ef39aae78d4d51b3522850b8661438b43ceabb0477a375d251e6f4f2"
+    sha256 arm64_sonoma:   "bf8157bb14536bb4d38756ba29ff1a21ed4449e72ba73ce7cdd9e623ef381222"
+    sha256 arm64_ventura:  "3eb5b4b463094e70a67e65753f2d0ee825f1be01d42869abe833c073e45c18ba"
+    sha256 arm64_monterey: "ab3b26c178c35ffb395a27d6d80ae525f23f98ded290d151a04b13cfffab8aab"
+    sha256 sonoma:         "1fc81b90f3147449d776bba81aa9447251f7a3651929db26391d231969e6d248"
+    sha256 ventura:        "3f238a0e8133c2f29a5f59f0684fa1425b6f12460e28f66779c328f2c0c8bd05"
+    sha256 monterey:       "1f97ef2f4d92f85dd20fd54de94597f73b64a750c2b13136fda2c87066ab8861"
+    sha256 x86_64_linux:   "9703985622530125687af7950961f6d7978ab6a860120b186ed2000da6625c04"
   end
 
   depends_on "pkg-config" => :build
