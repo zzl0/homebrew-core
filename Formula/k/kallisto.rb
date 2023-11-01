@@ -1,8 +1,8 @@
 class Kallisto < Formula
   desc "Quantify abundances of transcripts from RNA-Seq data"
   homepage "https://pachterlab.github.io/kallisto/"
-  url "https://github.com/pachterlab/kallisto/archive/refs/tags/v0.50.0.tar.gz"
-  sha256 "f9cc0058d08206cb6dde4a4dcaf8a778df5a939a6e021508eea9b00b0d6d5368"
+  url "https://github.com/pachterlab/kallisto/archive/refs/tags/v0.50.1.tar.gz"
+  sha256 "030752bab3b0e33cd3f23f6d8feddd74194e5513532ffbf23519e84db2a86d34"
   license "BSD-2-Clause"
 
   bottle do
@@ -19,6 +19,7 @@ class Kallisto < Formula
   depends_on "hdf5"
 
   def install
+    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
     ENV.deparallelize
 
     system "cmake", ".", "-DUSE_HDF5=ON", *std_cmake_args
