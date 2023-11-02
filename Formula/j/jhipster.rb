@@ -3,8 +3,8 @@ require "language/node"
 class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
-  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.9.4.tgz"
-  sha256 "6d24c81e0cb3218d42f7c39d2f95ed6870ac1deb99ce43a61f37d98046f9f8a2"
+  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-8.0.0.tgz"
+  sha256 "8c96f780cbae4159292d49716e675d2a97d7cdd054427fc1449684b93a16063a"
   license "Apache-2.0"
 
   bottle do
@@ -29,6 +29,10 @@ class Jhipster < Formula
   end
 
   test do
-    assert_match "execution is complete", shell_output("#{bin}/jhipster info")
+    output = shell_output("#{bin}/jhipster info 2>&1")
+    assert_match "JHipster configuration not found", output
+    assert_match "execution is complete", output
+
+    assert_match version.to_s, shell_output("#{bin}/jhipster --version")
   end
 end
