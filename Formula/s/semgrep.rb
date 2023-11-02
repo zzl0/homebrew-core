@@ -15,14 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "a8a979bf2f5c89b5641e2c56a42ff50c237ac0cfac6798fc06c171a0799eb472"
-    sha256 cellar: :any, arm64_ventura:  "63b56ca8ac0a8b3bbc73914cc8b53d346a74e8f22e37f623bd6561b5cba03be8"
-    sha256 cellar: :any, arm64_monterey: "cc3c7fd3ddca3b2dce54bf260849fa34cc006f35d9de59909503b1e7c5b64ca1"
-    sha256 cellar: :any, sonoma:         "eb0d7ed69f1301e4cc98f8564c1b96f6e10d34afff7ecf5364af5b06c747f79c"
-    sha256 cellar: :any, ventura:        "f1f6bc62e7194142618d5360f5c9790695c712f9565e79f7d87c3dcba2392fd2"
-    sha256 cellar: :any, monterey:       "09fa8cb770b8b0b4abedcb05734d297dd7eed564cf682feb29a390871ee00951"
-    sha256               x86_64_linux:   "da2dc3edce360f3c47c276f256962f3c4d0bfcbc68b5763d53c94a27702aa37a"
+    rebuild 2
+    sha256 cellar: :any, arm64_sonoma:   "11f97f55486c601ecf0dc4a66539dc98d1aa531c41faae0755056a415b2b2957"
+    sha256 cellar: :any, arm64_ventura:  "f866b4821ebdb2bfde1b091793d41851287840e836d18f6af8b84753169ccfbd"
+    sha256 cellar: :any, arm64_monterey: "556e43371e0e6ca25a6d7e619c72a624e732907e7ba354706601aacf6be45da9"
+    sha256 cellar: :any, sonoma:         "438f8aa9719b54e58477e67c6ecac6807d61d066c016bdcff7e654b5823bc5c7"
+    sha256 cellar: :any, ventura:        "1e1fee9d296772c39019557022278cddc047642e4a83e058a6bb4c5c6b627cb1"
+    sha256 cellar: :any, monterey:       "0fc9a3a946af41cac9f6310b90d5aa0a66ea1d54f21ab114db2dbe70f0e0d3c7"
+    sha256               x86_64_linux:   "5cc824f5f154d98f5fa9fe270f242611c2fed9937087bfdfff7ec017e25e9905"
   end
 
   depends_on "autoconf" => :build
@@ -188,6 +188,8 @@ class Semgrep < Formula
     Dir.mktmpdir("opamroot") do |opamroot|
       ENV["OPAMROOT"] = opamroot
       ENV["OPAMYES"] = "1"
+      # Set library path so opam + lwt can find libev
+      ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }
