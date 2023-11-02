@@ -29,7 +29,7 @@ class Zsh < Formula
   end
 
   depends_on "ncurses"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
