@@ -7,11 +7,11 @@ class Fastfetch < Formula
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   bottle do
-    sha256 arm64_ventura:  "3cf59dfaf3a058de9ca3a746969cdb64f88d0bbcca4c08496f3ccda506c49806"
-    sha256 arm64_monterey: "4315645f0915160d3bbc248c5888d80fbe5014ef7c42628e4d59ed2fc00fe60c"
-    sha256 ventura:        "71d0dda8643cded0fd18b50c29bf1cc1879e4ca9fefcb567e6d6f9ed40050e0d"
-    sha256 monterey:       "b492c4b20bc576921ffd1c7f6e2ab7f71bfc8b99288e22e87646c357f1d50a7f"
-    sha256 x86_64_linux:   "b130fdef9cc7eeca505de7db79b917530364342437c5e19d4f732ffd9a5e7de1"
+    sha256 arm64_ventura:  "0b45560ea1c8d44e7de59b338062844adea78f54afe2a5db29a8a866a1018dc6"
+    sha256 arm64_monterey: "4a000aab7da286bf8aea588a1081846b31a3f2435abc05ce752567c7eea58e5a"
+    sha256 ventura:        "b6b6460fbaa4f5e4bfbdc9c40bf919ab10ffff1a6013db62bf87b81f960c3b5e"
+    sha256 monterey:       "47e031b61d6f363a68194068068d969d10a04d0c654b8246efb1c5e5df0c802f"
+    sha256 x86_64_linux:   "16999a7975bbd6778b01dde48c65f4d237e34b1943d025b1d7dc2105024a60b4"
   end
 
   depends_on "chafa" => :build
