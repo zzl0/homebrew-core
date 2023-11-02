@@ -9,15 +9,13 @@ class CargoRelease < Formula
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2861c7999fd556f54e4214ff9647f8f6a25588e2ac4250db7a99214f5cac5dff"
-    sha256 cellar: :any,                 arm64_ventura:  "c1220849bf433dd4604abee375f2790118c1aa9d6cee63733c769c7ccfc87865"
-    sha256 cellar: :any,                 arm64_monterey: "b56c7ae3f7de31880a517e081b8b6e7823ed3e03dfe4eb2c340413e608119bbd"
-    sha256 cellar: :any,                 arm64_big_sur:  "426fda66942b2b406901b94959e1e6a22b4cf85f8c475a4299e41c16bf9979d5"
-    sha256 cellar: :any,                 sonoma:         "aaffc2e74a9b05881a96183c0bf53cd9ce69bda55e38e178c778e11b4363d076"
-    sha256 cellar: :any,                 ventura:        "8c8b4794590df563589aeafd48faaaf9af2455053ef5978e0a23fd1c5397ce11"
-    sha256 cellar: :any,                 monterey:       "3fcc8af36b4e73d4f4760c128196ef926f7630b3a65db868f58c16b687749557"
-    sha256 cellar: :any,                 big_sur:        "f2bd3595848df2a0b998127045f05153efd859d2e4e2458a0a0d8f70dbc50df1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb0923161f4e8b978b7c4954af04900e2acf3752703206d29f9f54c5923b4a08"
+    sha256 cellar: :any,                 arm64_sonoma:   "3675b6cb9832967d904ce2e195ed69233c4a8d176e72357129dde3729e7c15e2"
+    sha256 cellar: :any,                 arm64_ventura:  "a5e01d7f5fd0aaff1155c0403393f383cc2a330f0abd297afe2955dd78f7b081"
+    sha256 cellar: :any,                 arm64_monterey: "e62931f5d0cf2b56dd2add8dc3075e402a5190b885f03d9b4aae8e7d7c579020"
+    sha256 cellar: :any,                 sonoma:         "15eed0a3d9fad9271b48558d4d5d2fb76075b4b073b0685d45ae115d109fa9a6"
+    sha256 cellar: :any,                 ventura:        "6ca0b76f7ad7c09d1e9d685004091e429f5eb15e150cae14b8a5f762a438d21e"
+    sha256 cellar: :any,                 monterey:       "4dc173985bd5c7b6f17309d7647f993ba861f1ebf5b3127f3bbb31fbc6a46521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed58418c8fbe39b5a20fb8af5db686569248f8cffd5e95c7993e78c3e37a6d35"
   end
 
   depends_on "pkg-config" => :build
