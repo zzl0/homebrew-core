@@ -188,6 +188,8 @@ class Semgrep < Formula
     Dir.mktmpdir("opamroot") do |opamroot|
       ENV["OPAMROOT"] = opamroot
       ENV["OPAMYES"] = "1"
+      # Set library path so opam + lwt can find libev
+      ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }
