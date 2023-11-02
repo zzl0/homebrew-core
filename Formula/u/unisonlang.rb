@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M5f",
-      revision: "04ba01c6372c5b9ddf64d985b649e05313ca5947"
-  version "M5f"
+      tag:      "release/M5g",
+      revision: "f761c09f7b963a3012a95465b568f96573bba185"
+  version "M5g"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -41,9 +41,9 @@ class Unisonlang < Formula
   end
 
   resource "local-ui" do
-    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5f.tar.gz"
-    version "M5f"
-    sha256 "26becc00486f1574b14d86452b3e1f45b3361af009c576d3a17b0cb518a07191"
+    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5g.tar.gz"
+    version "M5g"
+    sha256 "534b599119ca5d84836912e6965dc2b9bd53bc3ee875d3219a4a184fcaa62248"
   end
 
   def install
