@@ -34,6 +34,7 @@ class Semgrep < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "gmp"
+  depends_on "libev"
   depends_on "pcre"
   depends_on "pygments"
   depends_on "python-certifi"
