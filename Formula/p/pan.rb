@@ -36,8 +36,6 @@ class Pan < Formula
     # use brew name for gtk3 version of tool update-icon-cache
     inreplace "pan/icons/Makefile.am", "gtk-update-icon-cache", "gtk3-update-icon-cache"
 
-    # fix libiconv linking https://gitlab.gnome.org/GNOME/pan/-/issues/171
-    ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.append "CXXFLAGS", "-std=c++11"
 
     system "NOCONFIGURE=1 ./autogen.sh"
