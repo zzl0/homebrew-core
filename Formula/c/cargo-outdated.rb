@@ -3,10 +3,9 @@ class CargoOutdated < Formula
   homepage "https://github.com/kbknapp/cargo-outdated"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "571910b0c44f0bcf0b6e5c24184247e4603f474c7bde5f0eaa1203ce802b4a4a"
+  url "https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "4aea3dcbbf4b118c860ac29a2e66608f226c485ae329a9bfc73680967920589e"
   license "MIT"
-  revision 2
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
   bottle do
