@@ -7,6 +7,16 @@ class Raven < Formula
   sha256 "35bb528c902909acb5793243d1a865c22c35ac3fec81624b4aabf2de2304ffae"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91218b6ec7d2e1768a545bdc1e10b55290935f9761c5fbaa14650fd02eb94184"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "150f177a30ec93fe89c6d99d7e4f0eed72e7c3b9aa7f0f8e4ac950f8cfa642d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3aa61987edd0037c373c45889d5ccb12fc6e1e924dec1c3c469473a686ca27db"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2637b8a3b3a0cc40526f9f9aae2652f9e836e8c7060380bb621cac3cf5a54721"
+    sha256 cellar: :any_skip_relocation, ventura:        "993b9cff0d7bc4aaaedf2339273132b482094739b5fdffb1fbd4e301ea36b56b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0299c585d8854aa99f94efdf2622385f56650ba6ec0c8ea66d2fe3eda09d3cb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "460c1079fe63b77cb0c3d0afe684e3fb556bd5c207c033c7076e3dc497b0f369"
+  end
+
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
