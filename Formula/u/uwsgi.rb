@@ -1,26 +1,25 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a7/4e/c4d5559b3504bb65175a759392b03cac04b8771e9a9b14811adf1151f02f/uwsgi-2.0.22.tar.gz"
-  sha256 "4cc4727258671ac5fa17ab422155e9aaef8a2008ebb86e4404b66deaae965db2"
+  url "https://files.pythonhosted.org/packages/79/73/b5def500729e134d1cb8dfc334e27fa2e9cfd4e639c1f60c6532d40edaed/uwsgi-2.0.23.tar.gz"
+  sha256 "0cafda0c16f921db7fe42cfaf81b167cf884ee17350efbdd87d1ecece2d7de37"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "bf8157bb14536bb4d38756ba29ff1a21ed4449e72ba73ce7cdd9e623ef381222"
-    sha256 arm64_ventura:  "3eb5b4b463094e70a67e65753f2d0ee825f1be01d42869abe833c073e45c18ba"
-    sha256 arm64_monterey: "ab3b26c178c35ffb395a27d6d80ae525f23f98ded290d151a04b13cfffab8aab"
-    sha256 sonoma:         "1fc81b90f3147449d776bba81aa9447251f7a3651929db26391d231969e6d248"
-    sha256 ventura:        "3f238a0e8133c2f29a5f59f0684fa1425b6f12460e28f66779c328f2c0c8bd05"
-    sha256 monterey:       "1f97ef2f4d92f85dd20fd54de94597f73b64a750c2b13136fda2c87066ab8861"
-    sha256 x86_64_linux:   "9703985622530125687af7950961f6d7978ab6a860120b186ed2000da6625c04"
+    sha256 arm64_sonoma:   "d00dcbc2ba8dcee2316c40411427027e2dc71bc82e7bc624f052755ec82f1318"
+    sha256 arm64_ventura:  "6bc67ba69b0034da3315d8bfdfc9b7f50f5ad86cee3bbcd726bffb8ac9058923"
+    sha256 arm64_monterey: "1072eadd2da3cc85a0aaa2f8987ac25ff79532c3ef332a95127ca1cf0696a669"
+    sha256 sonoma:         "bca4654d6dba077e82c5a4875a0ef8bb73f6f6aca58b877f0b8908bdffe1110a"
+    sha256 ventura:        "92dabf5cddea250d6a546a262cd2ce8f5d76eac9c5b6dc0bdf398517fb90f70f"
+    sha256 monterey:       "ddb5a72cb7fe75cd53e29589f273bb42d8534dc81d5259ae4157fb48f07ff226"
+    sha256 x86_64_linux:   "65f4b5ff4fe2afb46d6c836880372e5265765ee967f01f40fea6ac49518b6d29"
   end
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
   depends_on "pcre" # PCRE2 issue: https://github.com/unbit/uwsgi/issues/2486
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yajl"
 
   uses_from_macos "curl"
@@ -49,7 +48,7 @@ class Uwsgi < Formula
       embedded_plugins = null
     EOS
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     system python3, "uwsgiconfig.py", "--verbose", "--build", "brew"
 
     plugins = %w[airbrake alarm_curl asyncio cache
