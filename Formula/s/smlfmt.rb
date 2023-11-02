@@ -1,8 +1,8 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
   homepage "https://github.com/shwestrick/smlfmt"
-  url "https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "cbbdfbcf1f929c6e933a2e4f7a562bf71b0709ca9cd2888bf58a53c4ac0240e5"
+  url "https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "ca957b3a72615d292443742a1b155d180d963e1c4e17d4d2644af4fb53be627f"
   license "MIT"
   head "https://github.com/shwestrick/smlfmt.git", branch: "main"
 
