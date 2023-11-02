@@ -9,8 +9,8 @@ class Exiftool < Formula
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
-    url "https://exiftool.org/ver.txt"
-    regex(/.++/i)
+    url "https://exiftool.org/history.html"
+    regex(/production release is.*?href=.*?Image[._-]ExifTool[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
