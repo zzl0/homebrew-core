@@ -3,8 +3,8 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/42/16/18cc08428819ac1dfe462fb38c4d431298e4940edb23c8b4d468833f7919/cyclonedx_bom-3.11.5.tar.gz"
-  sha256 "65589a061be98233fcffcdd2dad70e99999a5ecef6cecff049e2d77f35bb95a1"
+  url "https://files.pythonhosted.org/packages/71/fa/9a91b4dfb61bed3ad2ddcd836693a66c476b45fa24eaa6627f8b26cb79ff/cyclonedx_bom-3.11.6.tar.gz"
+  sha256 "b358625adfbe0c4a3aee3ea48f52718c9f97ec75ec55fa7f536e41fd1a514f48"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
