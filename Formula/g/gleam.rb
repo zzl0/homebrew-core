@@ -4,6 +4,12 @@ class Gleam < Formula
   url "https://github.com/gleam-lang/gleam/archive/refs/tags/v0.32.1.tar.gz"
   sha256 "c81f4a8278002c6172283d08234ab2a24ef19e2633e3bb81be2aca0d237398ff"
   license "Apache-2.0"
+  head "https://github.com/gleam-lang/gleam.git", branch: "main"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52ea501a7b84032afbe9abb3b8dc3b91f209af3612886c3cc763ac76edbb9cd5"
