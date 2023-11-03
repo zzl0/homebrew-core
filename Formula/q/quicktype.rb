@@ -3,10 +3,9 @@ require "language/node"
 class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
   homepage "https://github.com/quicktype/quicktype"
-  url "https://registry.npmjs.org/quicktype/-/quicktype-23.0.76.tgz"
-  sha256 "00cbdb63d80196669ae7fddfa17a1ad39a69db32566a92d558ea92ff6d16b821"
+  url "https://registry.npmjs.org/quicktype/-/quicktype-23.0.77.tgz"
+  sha256 "bb1a0a4dcdb6797f9723b0121ac17f52b65c57443ace2d92df6081ac7d90fed4"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
@@ -19,7 +18,7 @@ class Quicktype < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e00c9f9da34e799fc9a850a3871a9b746f7ef546bade2131d1a7b2c1d601560b"
   end
 
-  depends_on "node@20"
+  depends_on "node"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
