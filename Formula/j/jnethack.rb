@@ -1,15 +1,12 @@
-# NetHack the way God intended it to be played: from a terminal.
-# This formula is based on the NetHack formula.
-
 class Jnethack < Formula
   desc "Japanese localization of NetHack"
   homepage "https://jnethack.osdn.jp/"
   # We use a git checkout to avoid patching the upstream NetHack tarball.
-  url "https://scm.osdn.net/gitroot/jnethack/source.git",
-      tag:      "v3.6.6-0.6",
-      revision: "1fe57469d3f3bc20997f5f219c33bf4973a41b82"
+  url "https://github.com/jnethack/jnethack-release.git",
+      tag:      "v3.6.7-0.1",
+      revision: "3b3a9c4e25df60f9bce2ad09ce368410b4360e85"
   license "NGPL"
-  head "https://github.com/jnethack/jnethack-alpha.git", branch: "develop"
+  head "https://github.com/jnethack/jnethack-release.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "7298feacfb1a205d0bf1c02eabe54e9df3aae702b616a96b3c52a1cea55b5573"
