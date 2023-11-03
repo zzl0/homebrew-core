@@ -1,8 +1,8 @@
 class WiremockStandalone < Formula
   desc "Simulator for HTTP-based APIs"
   homepage "https://wiremock.org/docs/running-standalone/"
-  url "https://search.maven.org/remotecontent?filepath=org/wiremock/wiremock-standalone/3.2.0/wiremock-standalone-3.2.0.jar"
-  sha256 "be83bd500c61c509565ace233238bddd305409c15686dff809e6be5290662f74"
+  url "https://search.maven.org/remotecontent?filepath=org/wiremock/wiremock-standalone/3.3.0/wiremock-standalone-3.3.0.jar"
+  sha256 "c59d92ce979bbad359ee5e402eebfe362d083da97e82e995ddda94b0aca828da"
   license "Apache-2.0"
 
   livecheck do
