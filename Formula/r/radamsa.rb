@@ -6,18 +6,13 @@ class Radamsa < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "327f8de9747d51e9ace1a62aaaf520f050687a1ec9a3b2c013b07046ba92747d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd11fada93d54e4f8f72ac47c20ea26e8298f64bc930a290e897ac671940b80d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d86d86fab9f28b1dd1b2a7b98fe0a224f1b5e059f58c978be4a0ea5a146083ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5ee7ab43bc7155d05030cffef87111083e9d5b55b96d51c1ea54fc76fc9ce8fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7189136ecfd1c1c609718e9813b00c7a3f6e981bad8977b026bf71ad28f7aa97"
-    sha256 cellar: :any_skip_relocation, ventura:        "03cb4d8460f06c11572b3d5fe9862029081b8a5be996304702e8380d8ced58e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "68e110b46fd84cab81f57ce9d465e142e090067690f56808d11cbc31420b1eac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "925d63ed4fd304e24832bfff8acc6ae75d3549ad6f893292a4865ab7cd77c499"
-    sha256 cellar: :any_skip_relocation, catalina:       "97fe42099e0b4278519ee560af5a38dd0cb5055e7542cd892d4c4f96d93960c5"
-    sha256 cellar: :any_skip_relocation, mojave:         "a4d9d9e07ff76b8bb51333a04d645ea0213663dc635bdea890b1cffb7f2e6543"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "82d2231dcb25adb55f62690bd34d2b4b8978a3d22b956c0f0f2e20640d31c7a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5a4c3e8c05fa322cea64074eb8ea2783d40d9394818aba84ea1f5845cec9cc1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0af48b970749d3140a384b58a3a154d7a2f772c3de5b82053adca2bfc51548f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8925ac2d6e3c32b78ef09e0b3d7c0403f3a210b99138b1833e9c55db97db2392"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3f2f8360c3b5ef80433bf865cc828751fd4a53383ba92c7beb75ad629a63526"
+    sha256 cellar: :any_skip_relocation, sonoma:         "28fcd6c2a92bf81253ea11ca472b188e8b793d2ef188a9d79a191893a985a193"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf286a9e8d072eeb26fe122b35f412e1a9d65d9594e4f7eca161d458f4f9d6de"
+    sha256 cellar: :any_skip_relocation, monterey:       "3576947047fad8d865becded6957f1656ccae7b1c270f3dc6b2b3e660e09378e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4689407adfe023eb9ef82d62468d80460b1ce882066990b1d0decc65723b428"
   end
 
   def install
