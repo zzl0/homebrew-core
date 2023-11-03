@@ -1,14 +1,14 @@
 class Mafft < Formula
   desc "Multiple alignments with fast Fourier transforms"
   homepage "https://mafft.cbrc.jp/alignment/software/"
-  url "https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tgz"
-  sha256 "d6eef33d8b9e282e20f9b25b6b6fb2757b9b6900e397ca621d56da86d9976541"
+  url "https://gitlab.com/sysimm/mafft.git",
+      tag:      "v7.520",
+      revision: "52b59f064c600da59bca8233736418fb8bb35d5e"
+  license "BSD-3-Clause"
 
-  # The regex below is intended to avoid releases with trailing "Experimental"
-  # text after the link for the archive.
   livecheck do
-    url "https://mafft.cbrc.jp/alignment/software/source.html"
-    regex(%r{href=.*?mafft[._-]v?(\d+(?:\.\d+)+)-with-extensions-src\.t.+?</a>\s*?<(?:br[^>]*?|/li|/ul)>}i)
+    url :homepage
+    regex(/The latest version is (\d+(?:\.\d+)+)/i)
   end
 
   bottle do
