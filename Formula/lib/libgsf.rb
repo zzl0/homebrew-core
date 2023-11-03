@@ -1,8 +1,8 @@
 class Libgsf < Formula
   desc "I/O abstraction library for dealing with structured file formats"
   homepage "https://gitlab.gnome.org/GNOME/libgsf"
-  url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.50.tar.xz"
-  sha256 "6e6c20d0778339069d583c0d63759d297e817ea10d0d897ebbe965f16e2e8e52"
+  url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.51.tar.xz"
+  sha256 "f0b83251f98b0fd5592b11895910cc0e19f798110b389aba7da1cb7c474017f5"
   license "LGPL-2.1-only"
 
   bottle do
