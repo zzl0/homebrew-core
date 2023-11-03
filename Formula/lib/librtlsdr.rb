@@ -1,9 +1,9 @@
 class Librtlsdr < Formula
   desc "Use Realtek DVB-T dongles as a cheap SDR"
   homepage "https://osmocom.org/projects/rtl-sdr/wiki"
-  url "https://github.com/steve-m/librtlsdr/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "80a5155f3505bca8f1b808f8414d7dcd7c459b662a1cde84d3a2629a6e72ae55"
-  license "GPL-2.0"
+  url "https://github.com/steve-m/librtlsdr/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "e108d3c6a00efcdf55877d1172be538842686c50377043319baffcfdb6b7b9cb"
+  license "GPL-2.0-or-later"
   head "https://git.osmocom.org/rtl-sdr", using: :git, branch: "master"
 
   bottle do
@@ -28,10 +28,9 @@ class Librtlsdr < Formula
   depends_on "libusb"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
