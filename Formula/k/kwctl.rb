@@ -1,8 +1,8 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://github.com/kubewarden/kwctl/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "4bf0d5517b2f45555a395bf61caed151947a776b5c07fc3ba689cadb0e9d7677"
+  url "https://github.com/kubewarden/kwctl/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "9f770025338b7b5a5097dfe9fd128c39eededf0237ee9dada06376d846a674ea"
   license "Apache-2.0"
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
@@ -39,6 +39,20 @@ class Kwctl < Formula
           "group": "networking.k8s.io",
           "kind": "Ingress",
           "version": "v1"
+        },
+        "resource": {
+          "group": "networking.k8s.io",
+          "version": "v1",
+          "resource": "ingresses"
+        },
+        "name": "foobar",
+        "operation": "CREATE",
+        "userInfo": {
+          "username": "kubernetes-admin",
+          "groups": [
+            "system:masters",
+            "system:authenticated"
+          ]
         },
         "object": {
           "apiVersion": "networking.k8s.io/v1",
