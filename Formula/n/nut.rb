@@ -1,20 +1,9 @@
 class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
   homepage "https://networkupstools.org/"
+  url "https://github.com/networkupstools/nut/releases/download/v2.8.1/nut-2.8.1.tar.gz"
+  sha256 "7da48ee23b1f0d8d72560bb0af84f5c5ae4dbe35452b84cb49840132e47f099c"
   license "GPL-2.0-or-later"
-  revision 1
-
-  stable do
-    url "https://github.com/networkupstools/nut/releases/download/v2.8.0-signed/nut-2.8.0.tar.gz"
-    sha256 "c3e5a708da797b7c70b653d37b1206a000fcb503b85519fe4cdf6353f792bfe5"
-
-    # fix build failure
-    # remove in next release
-    patch do
-      url "https://github.com/networkupstools/nut/commit/9e6d3c79a4c0ed71c25fdfd350402bb2e78e42e8.patch?full_index=1"
-      sha256 "39472a04f1963a297713381a3a17e57183c1143a6602c194ca3016244caa6a9f"
-    end
-  end
 
   livecheck do
     url :stable
@@ -51,9 +40,6 @@ class Nut < Formula
     if build.head?
       ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
       system "./autogen.sh"
-    else
-      # Regenerate configure, due to patch applied
-      system "autoreconf", "-i"
     end
 
     args = %W[
@@ -75,7 +61,9 @@ class Nut < Formula
       --without-libltdl
       --without-neon
       --without-nss
+      --without-nut_monitor
       --without-powerman
+      --without-pynut
       --without-snmp
       --without-wrap
     ]
