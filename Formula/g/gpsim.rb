@@ -1,8 +1,8 @@
 class Gpsim < Formula
   desc "Simulator for Microchip's PIC microcontrollers"
   homepage "https://gpsim.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.0.tar.gz"
-  sha256 "8ef4fb64c993b205d943b300fb9dcb8cc0c4c9d0e8d8d47fdc088fe9c3c42468"
+  url "https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.1.tar.gz"
+  sha256 "c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/gpsim/code/trunk"
 
@@ -25,9 +25,6 @@ class Gpsim < Formula
   depends_on "popt"
   depends_on "readline"
 
-  # upstream bug report, https://sourceforge.net/p/gpsim/bugs/286/
-  patch :DATA
-
   def install
     ENV.cxx11
 
@@ -42,28 +39,3 @@ class Gpsim < Formula
     system "#{bin}/gpsim", "--version"
   end
 end
-
-__END__
-diff --git a/doc/Makefile.am b/doc/Makefile.am
-index 69b3f13..f9c5dc4 100644
---- a/doc/Makefile.am
-+++ b/doc/Makefile.am
-@@ -1,6 +1,3 @@
--
--SUBDIRS=gpsim.html.LyXconv
--
- all: gpsim.ps gpsim.pdf
- 
- gpsim.ps: gpsim.lyx
-diff --git a/doc/Makefile.in b/doc/Makefile.in
-index 2d7a0e8..cd72080 100644
---- a/doc/Makefile.in
-+++ b/doc/Makefile.in
-@@ -330,7 +330,6 @@ target_alias = @target_alias@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
--SUBDIRS = gpsim.html.LyXconv
- EXTRA_DIST = \
- 	screenshots/breadboard.png \
- 	screenshots/registerview.png \
