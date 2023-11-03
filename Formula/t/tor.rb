@@ -19,11 +19,11 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c5bdda5ba6b629469c2a3308e18d0fc175c265f304d4a9b371b82330084c768b"
-    sha256 arm64_monterey: "41d8fdf807b87fe7e1bea3b5d53f9cc6c413f75d2d824a01f42da9c1165bb436"
-    sha256 ventura:        "467584b0e3acbac8a5991baac783953bc83048365c22fa947d4c8080a48bf504"
-    sha256 monterey:       "38232cddee46344bba00e95f053b8ddc2d4c47281112c705e790f9d0c47f4a1f"
-    sha256 x86_64_linux:   "42d5b710bbc46f8bd5f9c4a7ec5fa52452d3402ac045fabd135981d2e4c055d1"
+    sha256 arm64_ventura:  "1c5c91bc72d3e2ce8760a0eb44509871ed7581e02dd6dd2b8a0a1788befbdd6e"
+    sha256 arm64_monterey: "f9a2ea0f396a09a6c3711fec1125ffabe962c38e04b30065f63d1a2b28330a5d"
+    sha256 ventura:        "e1bcf6887b2efaa698a663c29f4f7eaf367eb2cc6dbea1fb95bb1019cdf75da9"
+    sha256 monterey:       "af439d1ef2783a20c5cbe912ade8e1702343fd1f509c98aea0f3aebff73396cf"
+    sha256 x86_64_linux:   "c97f4fb952cb89f9c87af95836b0d1f21a3c647fddbef9d2efdaf992041297dc"
   end
 
   depends_on "pkg-config" => :build
