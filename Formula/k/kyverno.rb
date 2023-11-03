@@ -1,9 +1,8 @@
 class Kyverno < Formula
   desc "Kubernetes Native Policy Management"
   homepage "https://kyverno.io/"
-  url "https://github.com/kyverno/kyverno.git",
-      tag:      "v1.10.4",
-      revision: "da6ef87588b7c14a9f01af80b461973494b422fd"
+  url "https://github.com/kyverno/kyverno/archive/refs/tags/v1.10.5.tar.gz"
+  sha256 "7aa0f69bcb70be996139d26e224ed3dece284efe980c549eb611e80458b4483b"
   license "Apache-2.0"
   head "https://github.com/kyverno/kyverno.git", branch: "main"
 
@@ -31,7 +30,7 @@ class Kyverno < Formula
     ldflags = %W[
       -s -w
       -X #{project}/pkg/version.BuildVersion=#{version}
-      -X #{project}/pkg/version.BuildHash=#{Utils.git_head}
+      -X #{project}/pkg/version.BuildHash=
       -X #{project}/pkg/version.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli/kubectl-kyverno"
@@ -40,8 +39,8 @@ class Kyverno < Formula
   end
 
   test do
-    assert_match "Test Summary: 0 tests passed and 0 tests failed", shell_output("#{bin}/kyverno test .")
+    assert_match "No test yamls available", shell_output("#{bin}/kyverno test .")
 
-    assert_match version.to_s, "#{bin}/kyverno version"
+    assert_match version.to_s, shell_output("#{bin}/kyverno version")
   end
 end
