@@ -4,7 +4,7 @@ class Movgrab < Formula
   url "https://github.com/ColumPaget/Movgrab/archive/refs/tags/3.1.2.tar.gz"
   sha256 "30be6057ddbd9ac32f6e3d5456145b09526cc6bd5e3f3fb3999cc05283457529"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "7fbbd62fc17257b90c9fe91b83062f2d42c8e7112c74e38e3f9e69ac08c59f39"
@@ -36,6 +36,9 @@ class Movgrab < Formula
   patch :DATA
 
   def install
+    # workaround for Xcode 14.3
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # Can you believe this? A forgotten semicolon! Probably got missed because it's
     # behind a conditional #ifdef.
     # Fixed upstream: https://github.com/ColumPaget/libUseful/commit/6c71f8b123fd45caf747828a9685929ab63794d7
@@ -45,7 +48,7 @@ class Movgrab < Formula
     # this one does not. https://github.com/ColumPaget/Movgrab/blob/HEAD/libUseful/Process.c#L95-L99
     inreplace "libUseful-2.8/Process.c", "setresuid(uid,uid,uid)", "setreuid(uid,uid)"
 
-    system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking", "--enable-ssl"
+    system "./configure", "--enable-ssl", *std_configure_args
     system "make"
 
     # because case-insensitivity is sadly a thing and while the movgrab
