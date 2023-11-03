@@ -1,10 +1,9 @@
 class Gnumeric < Formula
   desc "GNOME Spreadsheet Application"
   homepage "https://projects.gnome.org/gnumeric/"
-  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.55.tar.xz"
-  sha256 "c69a09cd190b622acca476bbc3d4c03d68d7ccf59bba61bf036ce60885f9fb65"
+  url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.56.tar.xz"
+  sha256 "51a38f35ac5b0f71defa8b9e20bf2e08563798f1cb33379a9a17726fb1e3e1b2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
-  revision 1
 
   bottle do
     sha256                               arm64_sonoma:   "dd42aa96ff8b79898c9f90647b7747529d2a67396c12d01a2d94a8d4200b340e"
@@ -29,6 +28,7 @@ class Gnumeric < Formula
   depends_on "pango"
 
   uses_from_macos "bison" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "perl"
 
   on_macos do
