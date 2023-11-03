@@ -3,10 +3,9 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/f2/7a/4c76d3622aa72b9c47a26e70a6ee9c0ea93658dfea02cf8092b5a7d01c33/check-jsonschema-0.27.0.tar.gz"
-  sha256 "57a78e78e1865e5f965a344db92816034dba1135468ad622efb6e410d2adf823"
+  url "https://files.pythonhosted.org/packages/58/d9/3fd4aebc9325d4baf6ecc4c095bf2cf6ea9e366cbd450c76cd9ad297365e/check-jsonschema-0.27.1.tar.gz"
+  sha256 "e640479f16f106b9c6a3d2e47a82105c726ab0cc17e27e05e02e2269f2785e18"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
@@ -35,8 +34,8 @@ class CheckJsonschema < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "click" do
@@ -65,8 +64,8 @@ class CheckJsonschema < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
-    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
+    url "https://files.pythonhosted.org/packages/95/18/618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052/jsonschema-4.19.2.tar.gz"
+    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
   end
 
   resource "jsonschema-specifications" do
@@ -110,8 +109,8 @@ class CheckJsonschema < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
+    url "https://files.pythonhosted.org/packages/27/fc/73edf1269fab4ae08ada602f4bf17b0a0428b3bf10574c2ea7331d73f87d/ruamel.yaml-0.17.33.tar.gz"
+    sha256 "5c56aa0bff2afceaa93bffbfc78b450b7dc1e01d5edb80b3a570695286ae62b1"
   end
 
   resource "ruamel-yaml-clib" do
