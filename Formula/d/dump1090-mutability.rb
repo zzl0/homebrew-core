@@ -5,7 +5,7 @@ class Dump1090Mutability < Formula
   version "1.15_20180310-4a16df3-dfsg"
   sha256 "778f389508eccbce6c90d7f56cd01568fad2aaa5618cb5e7c41640a2473905a6"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "02a0fd32e9d19fe91d1df08b1ea0b311533f46a56f8c0b2bf9cf4f8293600296"
