@@ -5,7 +5,7 @@ class Rtl433 < Formula
       tag:      "22.11",
       revision: "c3c58d81e72ec3d80af480a7c2ef7995ef66147f"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/merbanan/rtl_433.git", branch: "master"
 
   bottle do
