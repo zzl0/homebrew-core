@@ -17,13 +17,13 @@ class GoFeatureFlagRelayProxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1d70ac746d0cda9f175338c1e56211199ba5f246e3e9a94ffba26ed44a1e14b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe96ead5729677f4dc4ee9aaf687c291fabd59724ecab1af02600bcfdc3f95e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42732c3493bc4135d7140c2dd67b4539ac7f98c8c778a7764701f6ef6c597ec7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd8464914c238432a9ea312d7d2e598d88c7ea3f24da0391ba1c1ee6293e314e"
-    sha256 cellar: :any_skip_relocation, ventura:        "7333862396f230fbac3e85a37af3f814732bc4cf1c98744a991717ca35cb5f66"
-    sha256 cellar: :any_skip_relocation, monterey:       "f356d25551470c6f85f70fdae763219ed6be1018010025ec2d4f98524aa34105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a1013c59521e9f33cf121cc4c96b63c4679d114d50c21e49ad8a6c98b50559e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2544ebede7fd8380d492c8767b21c6883917a740e177ea14c54f2860c2b7a34e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24e62ce202e12fd33fdafd22bf3ecf6d42f8d9b760030f2a6b810589735a20a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac0d8291641d0a9792ec8148a618145de6e618568f0d7bc50cae740d5640e15f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cd78bfb5f19eba4a1eee4639c8287683955769f1443c3ee0774221492f8ed11f"
+    sha256 cellar: :any_skip_relocation, ventura:        "91fd405a5def64aee0f83384e7f8577044815cbb3486ac7cdd33072f7d0262cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "cda55b989990e906a3682b62c2c4082709d3bf39d3467be43b23683957f6b104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e21bcb5d915a46f6918a20744a5e945d6798982d7e3672d9a327efc06786bdc5"
   end
 
   depends_on "go" => :build
