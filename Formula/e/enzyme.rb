@@ -1,10 +1,8 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  # upstream issue report, https://github.com/EnzymeAD/Enzyme/issues/1480
-  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.89.tar.gz", using: :homebrew_curl
-  sha256 "1b8c356cc03c12217e0526559fbbc754dae1870fe626bc8ab86ed2c1ebb76f68"
+  url "https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.90.tar.gz", using: :homebrew_curl
+  sha256 "cbee9fd802aaedff474bad8fe4df3b8b55206ce247d5ec6a0de356f952f7724d"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
@@ -19,7 +17,7 @@ class Enzyme < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@16"
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
@@ -49,19 +47,11 @@ class Enzyme < Formula
       }
     EOS
 
-    opt = llvm.opt_bin/"opt"
     ENV["CC"] = llvm.opt_bin/"clang"
 
-    # `-Xclang -no-opaque-pointers` is a transitional flag for LLVM 15, and will
-    # likely be need to removed in LLVM 16. See:
-    # https://llvm.org/docs/OpaquePointers.html#version-support
-    system ENV.cc, "-v", testpath/"test.c", "-S", "-emit-llvm", "-o", "input.ll", "-O2",
-                   "-fno-vectorize", "-fno-slp-vectorize", "-fno-unroll-loops",
-                   "-Xclang", "-no-opaque-pointers"
-    system opt, "input.ll", "--enable-new-pm=0",
-                "-load=#{opt_lib/shared_library("LLVMEnzyme-#{llvm.version.major}")}",
-                "--enzyme-attributor=0", "-enzyme", "-o", "output.ll", "-S"
-    system ENV.cc, "output.ll", "-O3", "-o", "test"
+    system ENV.cc, testpath/"test.c",
+                        "-fplugin=#{lib/shared_library("ClangEnzyme-#{llvm.version.major}")}",
+                        "-O1", "-o", "test"
 
     assert_equal "square(21)=441, dsquare(21)=42\n", shell_output("./test")
   end
