@@ -12,10 +12,10 @@ class Gpsim < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma: "47237c675e0d58452a5af3af244b6184cadedb63301c838af1c37fadcf6acca3"
-    sha256 cellar: :any,                 sonoma:       "f97272437dba25f87e9572fb5fb727340f6d07f2876133aa8628f8c3357447c5"
-    sha256 cellar: :any,                 monterey:     "2e5195547b9d5783ed68956e0c158d0f9de968da495b0cecf18b76d787746638"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "edbf0180a035cb6d807a858c590176a01d169d0d0fe84dd6b24505ad05433b18"
+    sha256 cellar: :any,                 arm64_sonoma: "fa23f8c80ac0345a2f22b8ea0ba306c915947df7eac7ace8cbd14e1eff4a6b9c"
+    sha256 cellar: :any,                 sonoma:       "2981d50ca8314999f1aed8b224da83e52b74d013fc6dd3c5ff9d14fa98fe482c"
+    sha256 cellar: :any,                 monterey:     "82ed0708bc543e6a067d5b23647de05de60c2abf4c4851adcb9c7f58d2f60b43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed7b77aad09ad8845ef7b7f7481c8d480e65f69eb92715b0045d9c8d80ac5c27"
   end
 
   depends_on "gputils" => :build
