@@ -1,8 +1,8 @@
 class Goffice < Formula
   desc "Gnumeric spreadsheet program"
   homepage "https://gitlab.gnome.org/GNOME/goffice"
-  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.55.tar.xz"
-  sha256 "16a221191855a6a6c0d06b1ef8e481cf3f52041a654ec96d35817045ba1a99af"
+  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz"
+  sha256 "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
@@ -38,6 +38,7 @@ class Goffice < Formula
   depends_on "pango"
 
   uses_from_macos "perl" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
