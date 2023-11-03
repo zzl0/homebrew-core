@@ -1,8 +1,8 @@
 class Radamsa < Formula
   desc "Test case generator for robustness testing (a.k.a. a \"fuzzer\")"
   homepage "https://gitlab.com/akihe/radamsa"
-  url "https://gitlab.com/akihe/radamsa/-/archive/v0.6/radamsa-v0.6.tar.gz"
-  sha256 "a68f11da7a559fceb695a7af7035384ecd2982d666c7c95ce74c849405450b5e"
+  url "https://gitlab.com/akihe/radamsa/-/archive/v0.7/radamsa-v0.7.tar.gz"
+  sha256 "d9a6981be276cd8dfc02a701829631c5a882451f32c202b73664068d56f622a2"
   license "MIT"
 
   bottle do
@@ -20,17 +20,8 @@ class Radamsa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5a4c3e8c05fa322cea64074eb8ea2783d40d9394818aba84ea1f5845cec9cc1"
   end
 
-  resource "owl" do
-    url "https://gitlab.com/owl-lisp/owl/uploads/0d0730b500976348d1e66b4a1756cdc3/ol-0.1.19.c.gz"
-    sha256 "86917b9145cf3745ee8294c81fb822d17106698aa1d021916dfb2e0b8cfbb54d"
-  end
-
   def install
-    resource("owl").stage do
-      buildpath.install "ol.c"
-    end
-
-    system "make"
+    system "make", "future"
     man1.install "doc/radamsa.1"
     prefix.install Dir["*"]
   end
@@ -48,6 +39,8 @@ class Radamsa < Formula
   end
 
   test do
-    system bin/"radamsa", "-V"
+    assert_match "Radamsa is a general purpose fuzzer.", shell_output("#{bin}/radamsa --about")
+    assert_match "drop a byte", shell_output("#{bin}/radamsa --list")
+    assert_match version.to_s, shell_output("#{bin}/radamsa --version")
   end
 end
