@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/refs/tags/v8.9.2.tar.gz"
-  sha256 "d68695777f7edc7579bff361c15159a7a6c324d7927de9ebad853968c640ea36"
+  url "https://github.com/elastic/logstash/archive/refs/tags/v8.10.4.tar.gz"
+  sha256 "b0ac9704f9088f092f4ac79b5a0757dcdc421af23ad06dff8248adde8dbb6f5d"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -27,15 +27,6 @@ class Logstash < Formula
   depends_on "openjdk@17"
 
   uses_from_macos "ruby" => :build
-
-  # Ruby 3.2 compatibility.
-  # https://github.com/elastic/logstash/pull/14838
-  patch do
-    on_linux do
-      url "https://github.com/elastic/logstash/commit/95870c0f7a7c008c10e848191f85a1065e7db800.patch?full_index=1"
-      sha256 "b09065efe41a0098266d1243df19c6e35f4d075db06b41309c8fa791b25453f5"
-    end
-  end
 
   def install
     # remove non open source files
@@ -74,6 +65,16 @@ class Logstash < Formula
 
     bin.install libexec/"bin/logstash", libexec/"bin/logstash-plugin"
     bin.env_script_all_files libexec/"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("17")}}"
+
+    # remove non-native architecture pre-built libraries
+    paths = [
+      libexec/"vendor/jruby/lib/ruby/stdlib/libfixposix/binary",
+      libexec/"vendor/bundle/jruby/3.1.0/gems/ffi-binary-libfixposix-0.5.1.1-java/lib/libfixposix/binary",
+    ]
+    paths.each do |path|
+      path.each_child { |dir| dir.rmtree unless dir.to_s.include? Hardware::CPU.arch.to_s }
+    end
+    rm_r libexec/"vendor/jruby/lib/ruby/stdlib/libfixposix/binary/arm64-darwin" if OS.mac? && Hardware::CPU.arm?
   end
 
   def post_install
