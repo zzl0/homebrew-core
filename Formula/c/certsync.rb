@@ -7,6 +7,16 @@ class Certsync < Formula
   sha256 "ac97dd363b9f795ba34c79d7003ed213507a4b686f6021f47c62f707612cdba8"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8471628c6b02b96d656fffe5740d7b078c3660323105fbe4629f7c5954381258"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a38e1077cc8ae26ad2e9db31bb2e62b83569cbe4f5d641fcc59e4608d5a2524b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04dce6540aebd41d985b3f620b2ddb4a3c2ddfa40550f88f7038485c67e3de81"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c8a00c5a7942677e532a880b84e264de24e04710f510fc467e68e6b3d31f004"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec4d5a0dd42855b5ca34d9cc70fe8e1f290e2a219f458815e4ff3e79f8d77ca2"
+    sha256 cellar: :any_skip_relocation, monterey:       "68a25551461d8a78f62c09d9ce9c46d1c2a5027415e32e79ff301b6414d70f54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff1de24eba7da12dfb1d3828549b5373bfd00b8cc3a9beaa3caf67c9e6db7c2f"
+  end
+
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
