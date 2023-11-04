@@ -26,7 +26,6 @@ class Duckdb < Formula
              "-DENABLE_EXTENSION_AUTOLOADING=1",
              "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
-      system "make", "install"
       bin.install "duckdb"
       # The cli tool was renamed (0.1.8 -> 0.1.9)
       # Create a symlink to not break compatibility
