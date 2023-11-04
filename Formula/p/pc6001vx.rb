@@ -1,10 +1,10 @@
 class Pc6001vx < Formula
   desc "PC-6001 emulator"
-  homepage "http://eighttails.seesaa.net/"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.1.3_src.tar.gz"
-  sha256 "264f135ad89f443b8b103169ca28e95ba488f2ce627c6dc3791e0230587be0d9"
+  # http://eighttails.seesaa.net/ gives 405 error
+  homepage "https://github.com/eighttails/PC6001VX"
+  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.2.4_src.tar.gz"
+  sha256 "0c9e565e6181e671c1f499808d9ca73b50a9b49e4b0633198f294b0d1076cf08"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
@@ -16,7 +16,6 @@ class Pc6001vx < Formula
     sha256 cellar: :any,                 ventura:        "434cf93c1ee8698062a7123acc56a422d3d5899638808c9bfeb00872d253c32f"
     sha256 cellar: :any,                 monterey:       "f27093a85a256425a2acac1fa4293da1101cef25f7a74edc693c75cd6bec39c8"
     sha256 cellar: :any,                 big_sur:        "b8e5990242a9331cda7e78c1b1d3d4117909284f33bb973ab5f1460b7ddbe108"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b212c77721d4e4f67fe1f00b00e64718cf6b859c6a753c54e04139b491c68bf5"
   end
 
   depends_on "pkg-config" => :build
@@ -33,24 +32,19 @@ class Pc6001vx < Formula
                                  ".."
       system "make"
 
-      if OS.mac?
-        prefix.install "PC6001VX.app"
-        bin.write_exec_script "#{prefix}/PC6001VX.app/Contents/MacOS/PC6001VX"
-      else
-        bin.install "PC6001VX"
-      end
+      prefix.install "PC6001VX.app"
+      bin.write_exec_script "#{prefix}/PC6001VX.app/Contents/MacOS/PC6001VX"
     end
   end
 
   test do
-    ENV["QT_QPA_PLATFORM"] = "minimal" unless OS.mac?
     user_config_dir = testpath/".pc6001vx4"
     user_config_dir.mkpath
     pid = fork do
       exec bin/"PC6001VX"
     end
-    sleep 15
-    assert_predicate user_config_dir/"pc6001vx.ini",
+    sleep 20
+    assert_predicate user_config_dir/"rom",
                      :exist?, "User config directory should exist"
   ensure
     Process.kill("TERM", pid)
