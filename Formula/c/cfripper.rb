@@ -7,6 +7,16 @@ class Cfripper < Formula
   sha256 "e08237f45dc5e2b8ad7f71acfdb3525c0c5317e69a9392adc9bdcea8cfac69c1"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f170c89d796f67c36ed21a1815da90861132b7e131f764146496549b4c53151"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3493102896d06a16e00bde9120f9d3f15d7f78fc318d970bb38eb72910e370e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3912e468b18944d06a637467bcf9300a958db48ade83ffeadaca654da8e29a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "89aaf0e098a7911b509672d5d768f3077f35e5f15c592a233bb90f1e981be57e"
+    sha256 cellar: :any_skip_relocation, ventura:        "738e37c6de2cafe52b68161df239c4df5f5b23a0aa9401f13b40b646006a758a"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e35dd2f18e52b9b1ae1bb7372ad34d6cde00dc46cbbc87b9a2cd44b9b5bb860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edcd7a813e3e845b4d8aa16558d4d80ef769fa273037249135ff38f1b1e1e3d9"
+  end
+
   depends_on "python-click"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
