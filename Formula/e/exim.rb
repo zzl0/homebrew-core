@@ -1,8 +1,8 @@
 class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
-  url "https://ftp.exim.org/pub/exim/exim4/exim-4.96.2.tar.xz"
-  sha256 "038e327e8d1e93d005bac9bb06fd22aec44d5028930d6dbe8817ad44bbfc1de6"
+  url "https://ftp.exim.org/pub/exim/exim4/exim-4.97.tar.xz"
+  sha256 "428150e67c494fa14fe5195d81b972c1b23e651ee4f9f2ff1788250266d31e9c"
   license "GPL-2.0-or-later"
 
   # Maintenance releases are kept in a `fixes` subdirectory, so it's necessary
@@ -41,9 +41,33 @@ class Exim < Formula
   depends_on "berkeley-db@5"
   depends_on "openssl@3"
   depends_on "pcre2"
+
   uses_from_macos "libxcrypt"
+  uses_from_macos "perl"
+
+  resource "File::Next" do
+    url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-1.18.tar.gz"
+    sha256 "f900cb39505eb6e168a9ca51a10b73f1bbde1914b923a09ecd72d9c02e6ec2ef"
+  end
+  resource "File::FcntlLock" do
+    url "https://cpan.metacpan.org/authors/id/J/JT/JTT/File-FcntlLock-0.22.tar.gz"
+    sha256 "9a9abb2efff93ab73741a128d3f700e525273546c15d04e7c51c704ab09dbcdf"
+  end
 
   def install
+    # fix `Cannot read timezone file /usr/share/zoneinfo/UTC0` issue
+    ENV["TZ"] = "UTC"
+
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    inreplace "OS/Makefile-Default", "/usr/bin/perl", Formula["perl"].opt_bin/"perl" if OS.linux?
+
+    resources.each do |r|
+      r.stage do
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+        system "make", "install"
+      end
+    end
+
     cp "src/EDITME", "Local/Makefile"
     inreplace "Local/Makefile" do |s|
       s.change_make_var! "EXIM_USER", ENV["USER"]
