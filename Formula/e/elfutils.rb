@@ -11,8 +11,7 @@ class Elfutils < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "e1116a1bf56bc021c9dd68cbe11bd2142c529d25202ec6bc5a1aaf88d10aab13"
+    sha256 x86_64_linux: "864a4554463c8217518b64acc0dc02a3687c7db734e7dff6f123190b5f8084e3"
   end
 
   depends_on "m4" => :build
