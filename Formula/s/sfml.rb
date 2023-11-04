@@ -2,8 +2,8 @@ class Sfml < Formula
   # Don't update SFML until there's a corresponding CSFML release
   desc "Multi-media library with bindings for multiple languages"
   homepage "https://www.sfml-dev.org/"
-  url "https://www.sfml-dev.org/files/SFML-2.6.0-sources.zip"
-  sha256 "dc477fc7266641709046bd38628c909f5748bd2564b388cf6c750a9e20cdfef1"
+  url "https://www.sfml-dev.org/files/SFML-2.6.1-sources.zip"
+  sha256 "5bf19e5c303516987f7f54d4ff1b208a0f9352ffa1cd55f992527016de0e8cb7"
   license "Zlib"
   head "https://github.com/SFML/SFML.git", branch: "master"
 
