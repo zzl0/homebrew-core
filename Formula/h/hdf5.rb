@@ -1,8 +1,8 @@
 class Hdf5 < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.2/src/hdf5-1.14.2.tar.bz2"
-  sha256 "ea3c5e257ef322af5e77fc1e52ead3ad6bf3bb4ac06480dd17ee3900d7a24cfb"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.3/src/hdf5-1.14.3.tar.bz2"
+  sha256 "9425f224ed75d1280bb46d6f26923dd938f9040e7eaebf57e66ec7357c08f917"
   license "BSD-3-Clause"
   version_scheme 1
 
@@ -37,10 +37,6 @@ class Hdf5 < Formula
   conflicts_with "hdf5-mpi", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 
   def install
-    # Work around incompatibility with new linker (FB13194355)
-    # https://github.com/HDFGroup/hdf5/issues/3571
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
-
     inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
               "${libdir}/libhdf5.settings",
               "#{pkgshare}/libhdf5.settings"
@@ -65,8 +61,14 @@ class Hdf5 < Formula
     system "./configure", *args
 
     # Avoid shims in settings file
-    inreplace "src/libhdf5.settings", Superenv.shims_path/ENV.cxx, ENV.cxx
-    inreplace "src/libhdf5.settings", Superenv.shims_path/ENV.cc, ENV.cc
+    inreplace_files = %w[
+      src/H5build_settings.c
+      src/libhdf5.settings
+      src/Makefile
+    ]
+
+    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, ENV.cxx
+    inreplace inreplace_files, Superenv.shims_path/ENV.cc, ENV.cc
 
     system "make", "install"
   end
