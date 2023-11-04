@@ -1,13 +1,13 @@
 class Libunwind < Formula
   desc "C API for determining the call-chain of a program"
   homepage "https://www.nongnu.org/libunwind/"
-  url "https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.6.2.tar.gz"
-  sha256 "4a6aec666991fb45d0889c44aede8ad6eb108071c3554fcdff671f9c94794976"
+  url "https://github.com/libunwind/libunwind/releases/download/v1.7.2/libunwind-1.7.2.tar.gz"
+  sha256 "a18a6a24307443a8ace7a8acc2ce79fbbe6826cd0edf98d6326d0225d6a5d6e6"
   license "MIT"
 
   livecheck do
-    url "https://download.savannah.nongnu.org/releases/libunwind/"
-    regex(/href=.*?libunwind[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
