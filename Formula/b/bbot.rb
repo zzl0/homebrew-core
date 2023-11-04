@@ -3,8 +3,8 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/00/e6/fba9eab02c5843bc55fa123a5bf00bef7ec2ad70ca5ab608de0971ae3350/bbot-1.1.2.tar.gz"
-  sha256 "39623277d53786142fe9380e1d7d433699dd5b0f33e5f30aa0fe96ba22d0c354"
+  url "https://files.pythonhosted.org/packages/e3/27/24958886068096ea1a9fc9309f4ef2be1d0a6c4e817ee5c3033d4c67a8ce/bbot-1.1.3.tar.gz"
+  sha256 "66508fdb0eddadc7eb6334f91a345a6a93f8c5aca4793ca930b974a13b7d671a"
   license "GPL-3.0-or-later"
 
   bottle do
