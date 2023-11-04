@@ -1,8 +1,8 @@
 class Numbat < Formula
   desc "Statically typed programming language for scientific computations"
   homepage "https://github.com/sharkdp/numbat"
-  url "https://github.com/sharkdp/numbat/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "0f70e14d408f6129f2a5621053ebc4c47cdda9088ceb367151fb73436620523c"
+  url "https://github.com/sharkdp/numbat/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "852502496718892c2de0d3f0b45caef642d07cbcc50a838a0d0b192a5d062354"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/numbat.git", branch: "master"
 
