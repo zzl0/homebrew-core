@@ -173,6 +173,9 @@
     "extra_packages": ["certbot-apache", "certbot-nginx"],
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser", "pyparsing", "six", "pytz"]
   },
+  "certsync": {
+    "exclude_packages": ["certifi", "cffi", "click", "cryptography", "markupsafe", "pycparser", "six"]
+  },
   "cf2tf": {
     "exclude_packages": ["certifi", "click", "packaging", "six"]
   },
