@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://github.com/rui314/mold/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "380f540114408c37bcdb7f3bda91a056448a93124ca6992a373ae2bda35e9af7"
+  url "https://github.com/rui314/mold/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "db172c0e97606565a81e37995bf5c911606d3f3b9f3829e92cd26985c9b0ed3b"
   license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
