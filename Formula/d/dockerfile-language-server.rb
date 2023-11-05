@@ -8,6 +8,16 @@ class DockerfileLanguageServer < Formula
   license "MIT"
   head "https://github.com/rcjsuen/dockerfile-language-server.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7110ccd0518d69ff46216bebd74f2435570aa1f41e78321ef3d187e9e07f195"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7110ccd0518d69ff46216bebd74f2435570aa1f41e78321ef3d187e9e07f195"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7110ccd0518d69ff46216bebd74f2435570aa1f41e78321ef3d187e9e07f195"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a84133e59a27c4c865fc3ca68782466015987894ab94bf708a42543977c3a56"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a84133e59a27c4c865fc3ca68782466015987894ab94bf708a42543977c3a56"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a84133e59a27c4c865fc3ca68782466015987894ab94bf708a42543977c3a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7110ccd0518d69ff46216bebd74f2435570aa1f41e78321ef3d187e9e07f195"
+  end
+
   depends_on "node"
 
   def install
