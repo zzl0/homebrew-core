@@ -3,8 +3,8 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/31/3c/606a043bff19bc726bf98d0bfdae7006f3dcc1797666b2fc6e33470fe432/gallery_dl-1.26.1.tar.gz"
-  sha256 "489b2111dbe63c3419e66aa241f26959c438dd61975313ef30c26263fe02c6c7"
+  url "https://files.pythonhosted.org/packages/79/73/87d61facef7cc7e461ac7a3ca07dce0d8577f79032d3b7c783c18d612cb8/gallery_dl-1.26.2.tar.gz"
+  sha256 "02071cb33d139730839e1479572ed3b778ebab3f7e87069c95081724184663dc"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
@@ -22,8 +22,8 @@ class GalleryDl < Formula
   depends_on "python@3.12"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
