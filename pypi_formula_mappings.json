@@ -64,6 +64,9 @@
     ],
     "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six"]
   },
+  "apkleaks": {
+    "exclude_packages": ["click", "lxml"]
+  },
   "apprise": {
     "exclude_packages": ["certifi", "markdown", "PyYAML"]
   },
