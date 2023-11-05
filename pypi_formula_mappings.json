@@ -217,7 +217,7 @@
   },
   "checkov": {
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "markdown", "markupsafe", "numpy",
+      "argcomplete", "certifi", "cffi", "click", "markdown", "markupsafe", "numpy",
       "packaging", "pycparser", "pyparsing", "PyYAML", "six",
       "tabulate", "toml", "typing-extensions"
     ]
