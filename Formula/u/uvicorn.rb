@@ -3,8 +3,8 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://www.uvicorn.org/"
-  url "https://files.pythonhosted.org/packages/4c/b3/aa7eb8367959623eef0527f876e371f1ac5770a3b31d3d6db34337b795e6/uvicorn-0.23.2.tar.gz"
-  sha256 "4d3cc12d7727ba72b64d12d3cc7743124074c0a69f7b201512fc50c3e3f1569a"
+  url "https://files.pythonhosted.org/packages/af/c9/dc0b3b6f944271d5f71564c2db08a1879a384cda7100f6f2f71b4ec9b751/uvicorn-0.24.0.tar.gz"
+  sha256 "368d5d81520a51be96431845169c225d771c9dd22a58613e1a181e6c4512ac33"
   license "BSD-3-Clause"
   head "https://github.com/encode/uvicorn.git", branch: "master"
 
@@ -54,8 +54,8 @@ class Uvicorn < Formula
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/80/f9/94d2d914d351c7d5db80e102fb0d7ab3bbb798e8322ab71a9fe9f8bfa31b/uvloop-0.18.0.tar.gz"
-    sha256 "d5d1135beffe9cd95d0350f19e2716bc38be47d5df296d7cc46e3b7557c0d1ff"
+    url "https://files.pythonhosted.org/packages/9c/16/728cc5dde368e6eddb299c5aec4d10eaf25335a5af04e8c0abd68e2e9d32/uvloop-0.19.0.tar.gz"
+    sha256 "0246f4fd1bf2bf702e06b0d45ee91677ee5c31242f39aab4ea6fe0c51aedd0fd"
   end
 
   resource "watchfiles" do
@@ -64,8 +64,8 @@ class Uvicorn < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
-    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
+    url "https://files.pythonhosted.org/packages/2e/62/7a7874b7285413c954a4cca3c11fd851f11b2fe5b4ae2d9bee4f6d9bdb10/websockets-12.0.tar.gz"
+    sha256 "81df9cbcbb6c260de1e007e58c011bfebe2dafc8435107b0537f393dd38c8b1b"
   end
 
   def install
