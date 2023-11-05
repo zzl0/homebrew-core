@@ -1,11 +1,9 @@
 class Px < Formula
-  include Language::Python::Virtualenv
-
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
   url "https://github.com/walles/px.git",
-      tag:      "3.4.1",
-      revision: "22594952ce4d41da4ff79619aa5761ea47f42964"
+      tag:      "3.5.1",
+      revision: "53c4faf6708a89d5dd07ac5b994b42e4ae4164b2"
   license "MIT"
 
   bottle do
@@ -18,23 +16,24 @@ class Px < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff852cad694bf7b1628dbe68cc0243d4de9975a8910d27598ca280af2a45f35f"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
-  depends_on "six"
 
   uses_from_macos "lsof"
 
-  # For updates: https://pypi.org/project/python-dateutil/#files
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
+
     man1.install Dir["doc/*.1"]
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/px --version")
+
     split_first_line = pipe_output("#{bin}/px --no-pager").lines.first.split
     assert_equal %w[PID COMMAND USERNAME CPU CPUTIME RAM COMMANDLINE], split_first_line
   end
