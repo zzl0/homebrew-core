@@ -1,8 +1,9 @@
 class Gssdp < Formula
   desc "GUPnP library for resource discovery and announcement over SSDP"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.2.tar.xz"
-  sha256 "410b376deeced9836b57f488f80052fe4a14f89e075b1ceccf28e51f490f9fb9"
+  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.3.tar.xz"
+  sha256 "2fedb5afdb22cf14d5498a39a773ca89788a250fcf70118783df821e1f3f3446"
+  license "LGPL-2.1-or-later"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "f66a3c00786eeaa115d631b7d965a173faf5282713c0582433b5f5c6a8c6e825"
@@ -25,6 +26,8 @@ class Gssdp < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "libsoup"
+
+  uses_from_macos "python" => :build
 
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
