@@ -935,7 +935,9 @@
   },
   "sail": {
     "package_name": "sailed-io",
-    "exclude_packages": ["certifi", "fabric", "invoke", "packaging", "pyyaml", "six"]
+    "exclude_packages": [
+      "certifi", "click", "fabric", "invoke", "markupsafe", "packaging", "pyyaml", "six"
+    ]
   },
   "salt": {
     "extra_packages": ["pycryptodome", "pygit2"],
