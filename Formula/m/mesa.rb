@@ -1,6 +1,4 @@
 class Mesa < Formula
-  include Language::Python::Virtualenv
-
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
   license "MIT"
@@ -35,7 +33,9 @@ class Mesa < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "pygments" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python-mako" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "xorgproto" => :build
 
   depends_on "expat"
@@ -72,16 +72,6 @@ class Mesa < Formula
 
   fails_with gcc: "5"
 
-  resource "Mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
-  end
-
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
   resource "glxgears.c" do
     url "https://gitlab.freedesktop.org/mesa/demos/-/raw/caac7be425a185e191224833375413772c4aff8d/src/xdemos/glxgears.c"
     sha256 "344a03aff01708350d90603fd6b841bccd295157670f519b459bbf3874acf847"
@@ -93,15 +83,6 @@ class Mesa < Formula
   end
 
   def install
-    venv_root = buildpath/"venv"
-    venv = virtualenv_create(venv_root, "python3.11")
-
-    %w[Mako MarkupSafe].each do |res|
-      venv.pip_install resource(res)
-    end
-
-    ENV.prepend_path "PATH", "#{venv_root}/bin"
-
     args = ["-Db_ndebug=true"]
 
     if OS.linux?
