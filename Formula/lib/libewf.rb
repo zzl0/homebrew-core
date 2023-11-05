@@ -2,11 +2,15 @@ class Libewf < Formula
   desc "Library for support of the Expert Witness Compression Format"
   homepage "https://github.com/libyal/libewf"
   # The main libewf repository is currently "experimental".
-  # See discussions in this issue, https://github.com/libyal/libewf/issues/127
-  url "https://github.com/libyal/libewf-legacy/releases/download/20140813/libewf-20140813.tar.gz"
-  sha256 "dbfdf1bbea5944b014c2311cce4615d92b2b6b91c8401eef8640de9f3e75845b"
+  # See discussions in this issue: https://github.com/libyal/libewf/issues/127
+  url "https://github.com/libyal/libewf-legacy/releases/download/20140814/libewf-20140814.tar.gz"
+  sha256 "38cdd05f09da2037a8eba50d8f39aeeada39dd2c6008c9ffac4f554cf957e414"
   license "LGPL-3.0-or-later"
-  revision 1
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "38d67042ef18e590383d3ee4c63f11fbfeadd5114e2d030b9d3a0b85cca3d941"
