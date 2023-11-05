@@ -34,7 +34,7 @@ class Vtk < Formula
   depends_on "netcdf"
   depends_on "pugixml"
   depends_on "pyqt"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
@@ -69,7 +69,7 @@ class Vtk < Formula
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
-    python = "python3.11"
+    python = "python3.12"
     qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
     vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]
