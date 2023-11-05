@@ -6,6 +6,16 @@ class Authz0 < Formula
   license "MIT"
   head "https://github.com/hahwul/authz0.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14381da4ed533631835222d21cd916381953a087c3b1335bb4d30a8c26acd382"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2a469a36c22f19b0ecc5ee81c8aae79cdd1f826a6ee917865666b7f004ab3a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68a16964db28dc0169285a3a7dc06c19544ec0f53fcc83396d7944700aea3826"
+    sha256 cellar: :any_skip_relocation, sonoma:         "463ee39916da6ebe2df30fbf14805ea507a3c9be4881c5be47c8f538c34553d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "97e19733f1cab9bece649e12ef4ea454f05cb9596755d90901c74e7ebedcc56f"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3342b3b6def76d71b61f2a3c16cb9ce3ffed34787effd744d29de1a1277ebd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c7d5364e993143029a3c66471ee76f88ed3f5e20e0094ba6aa497830b195fc6"
+  end
+
   depends_on "go" => :build
 
   def install
