@@ -6,14 +6,14 @@ class Volk < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 arm64_sonoma:   "0cc483d3b627ca413559e042ec8490e72e4e89b94b1ce9e843abc1f265402d11"
-    sha256 arm64_ventura:  "cd4bd7224339fe505ba92c6499e293e2e09ff1bd92f7ec59bd8b1b1c435bfcb4"
-    sha256 arm64_monterey: "6f5a4f9da3f8e68634a37d8424d3ea7932f2c35c096f83363eb00aaa84f41fba"
-    sha256 sonoma:         "11bd508d48a3ee05c2bae2e03227a26172b1c1eaf8caea047ad03e784798e68a"
-    sha256 ventura:        "502c305f3ef12668a78187baec9fff3932ab7ff4d449a12153d49e157f3f9e71"
-    sha256 monterey:       "33435c0f6c14b6b473ebd62217b64e8d0cce837057eb0c2af8d5f1613189bd25"
-    sha256 x86_64_linux:   "05a6f706e27f0089342f093168e0112c8005128ea171d297f3093285d1ccdeed"
+    rebuild 3
+    sha256 arm64_sonoma:   "072cd45e79c9ac4963295c6fdfef3cff48896f6becef6ac7b8231435a89440f2"
+    sha256 arm64_ventura:  "912e1ea863bf9f6826659452f24d397858d54406c5fa54a006c77a7144199625"
+    sha256 arm64_monterey: "f72f8a5caa0dea45ed68270de221f572c55912d0166da58d604db2d857a94fda"
+    sha256 sonoma:         "0edaf57d20141a964fff36c396f96a6b6c885ea11066693c4c52c0f5cc7d0db1"
+    sha256 ventura:        "5f299db3defa0020c8f7ea479af41ff16648f0dfb117f87f652cd61afc3a0e8b"
+    sha256 monterey:       "33f296f46eedd9352a5c5fecd2fdd86b68941ef4589ab0ea0de56b13ce877616"
+    sha256 x86_64_linux:   "57c61351a927713042c5cf0d71fe440ff758cc072cb0e2d81f98a8b8b0508abe"
   end
 
   depends_on "cmake" => :build
