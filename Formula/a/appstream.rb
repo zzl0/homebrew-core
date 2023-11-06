@@ -5,6 +5,16 @@ class Appstream < Formula
   sha256 "4470a27474dc3cc4938552fbf0394b6a65d8a2055d4f4418df086d65d8f2ba29"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    sha256 arm64_sonoma:   "58dfde567bb5c7f5b0062d4a975ff00dd89ec0bd99d011251f863dbf6b153edc"
+    sha256 arm64_ventura:  "470f0e5fab4267324ca772134083082ecf9aadeb8077249c3e8a3d194c887c60"
+    sha256 arm64_monterey: "13829ac0b94e1fd725bcd93bf5ea457c4f03f0e303af5dbdfa4d0faa4477ac16"
+    sha256 sonoma:         "244cdeb62533ad303829285bbc3fb29a98e1892d6b5bd05de60bae144370fa0d"
+    sha256 ventura:        "cc92f24966387c88d7cb77bb8767431989d23d90e0a525c86e2f9fb5626fbd22"
+    sha256 monterey:       "513afece09af3b5801bb2e33b18f8622d9a45174557614540e1f6fa61536a3a0"
+    sha256 x86_64_linux:   "fa33486228fde054d1c4de2df52ee6ec88231d771fd46e3f4f2e20be5166af0f"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "gtk-doc" => :build
   depends_on "itstool" => :build
