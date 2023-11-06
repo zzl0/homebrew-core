@@ -1,8 +1,8 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
   homepage "https://buildpulse.io"
-  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.27.2.tar.gz"
-  sha256 "fc9a01cb2666bf4c23e7883d870e00304d1090261752c1010294f8a5a5a42915"
+  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.27.3.tar.gz"
+  sha256 "90e3b70b281f00bd9473ac46d089778ceb9c8e48c9cc2a3b42e850e440162c31"
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
