@@ -1,6 +1,4 @@
 class Volk < Formula
-  include Language::Python::Virtualenv
-
   desc "Vector Optimized Library of Kernels"
   homepage "https://www.libvolk.org/"
   url "https://github.com/gnuradio/volk/releases/download/v3.0.0/volk-3.0.0.tar.gz"
@@ -22,6 +20,7 @@ class Volk < Formula
   depends_on "pkg-config" => :build
   depends_on "orc"
   depends_on "pygments"
+  depends_on "python-mako"
   depends_on "python-markupsafe"
   depends_on "python@3.12"
 
@@ -31,19 +30,8 @@ class Volk < Formula
 
   fails_with gcc: "5" # https://github.com/gnuradio/volk/issues/375
 
-  resource "Mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
-  end
-
   def install
     python = "python3.12"
-
-    # Set up Mako
-    venv_root = libexec/"venv"
-    ENV.prepend_create_path "PYTHONPATH", venv_root/Language::Python.site_packages(python)
-    venv = virtualenv_create(venv_root, python)
-    venv.pip_install resources
 
     # Avoid references to the Homebrew shims directory
     inreplace "lib/CMakeLists.txt" do |s|
@@ -53,18 +41,13 @@ class Volk < Formula
 
     # cpu_features fails to build on ARM macOS.
     args = %W[
-      -DPYTHON_EXECUTABLE=#{venv_root}/bin/python
+      -DPYTHON_EXECUTABLE=#{which(python)}
       -DENABLE_TESTING=OFF
       -DVOLK_CPU_FEATURES=#{Hardware::CPU.intel?}
     ]
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Set up volk_modtool paths
-    site_packages = prefix/Language::Python.site_packages(python)
-    pth_contents = "import site; site.addsitedir('#{site_packages}')\n"
-    (venv_root/Language::Python.site_packages(python)/"homebrew-volk.pth").write pth_contents
   end
 
   test do
