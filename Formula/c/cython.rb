@@ -20,10 +20,11 @@ class Cython < Formula
     Users are advised to use `pip` to install cython
   EOS
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => [:build, :test]
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
