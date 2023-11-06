@@ -27,29 +27,18 @@ class Uhd < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-mako" => :build
   depends_on "boost"
   depends_on "libusb"
-  depends_on "python-markupsafe"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   fails_with gcc: "5"
 
-  resource "mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
-  end
-
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
-
-    resource("mako").stage do
-      system python3, *Language::Python.setup_install_args(libexec/"vendor", python3)
-    end
-
     system "cmake", "-S", "host", "-B", "host/build", "-DENABLE_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "host/build"
     system "cmake", "--install", "host/build"
