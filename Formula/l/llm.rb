@@ -3,8 +3,8 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/49/c6/12a34c856d4046fdd14f449e022892618b0c9cddecd0542378fcd450cc2e/llm-0.11.1.tar.gz"
-  sha256 "631214181e904e75795885b40e6371d56acbd238ce24d3218b5007cb13be7d7b"
+  url "https://files.pythonhosted.org/packages/dd/55/6191c46709f6aee2c80fbed7535130f868780f1b152b2e596dc81d202ebe/llm-0.12.tar.gz"
+  sha256 "e6a3fac275b9b80a29fe018a7b8467d97871fd4194912bcd2a8c844e9aab03d1"
   license "Apache-2.0"
 
   bottle do
@@ -28,8 +28,8 @@ class Llm < Formula
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
-    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
+    url "https://files.pythonhosted.org/packages/2f/d2/1e9a33d15b85b0ea0d4029e3fdca0979e9b864314b965a4d3f0882e5dede/aiohttp-3.9.0b1.tar.gz"
+    sha256 "d6e120b08ac168825239c64e0a850a108edb9cd17be247e25bced9b07a14a403"
   end
 
   resource "aiosignal" do
@@ -128,8 +128,8 @@ class Llm < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/84/39/4ce5c5ac7ac6a485349f8636a920cd2568bf8f11298519d552b0c57351db/sqlite-utils-3.35.1.tar.gz"
-    sha256 "e0f03e6976b05bdb7a5c56454971a0e980fc16dbfd3512bbd3bdcac4f0e4370e"
+    url "https://files.pythonhosted.org/packages/10/91/4febf8cfe2d0b57a6a77595180bdb4ab97a89ffd36223ed295d1d8bfbbc7/sqlite-utils-3.35.2.tar.gz"
+    sha256 "590b14ad277914cb3fc7d5e254764847facdaaa23c7bafd85ec93874f6f42143"
   end
 
   resource "tqdm" do
