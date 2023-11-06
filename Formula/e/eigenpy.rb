@@ -4,7 +4,7 @@ class Eigenpy < Formula
   url "https://github.com/stack-of-tasks/eigenpy/releases/download/v3.1.1/eigenpy-3.1.1.tar.gz"
   sha256 "3e2b2c3cd78f163f4d96bee008124ebe3369c6bab8db3c055c1cb239e49835b7"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "master"
 
   bottle do
@@ -20,13 +20,15 @@ class Eigenpy < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "boost-python3"
   depends_on "eigen"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
