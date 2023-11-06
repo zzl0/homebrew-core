@@ -6,6 +6,7 @@ class ScikitImage < Formula
   url "https://files.pythonhosted.org/packages/65/c1/a49da20845f0f0e1afbb1c2586d406dc0acb84c26ae293bad6d7e7f718bc/scikit_image-0.22.0.tar.gz"
   sha256 "018d734df1d2da2719087d15f679d19285fce97cd37695103deadfaef2873236"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scikit-image/scikit-image.git", branch: "main"
 
   bottle do
@@ -27,7 +28,7 @@ class ScikitImage < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scipy"
 
   resource "imageio" do
@@ -51,7 +52,7 @@ class ScikitImage < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
