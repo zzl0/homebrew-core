@@ -8,6 +8,16 @@ class ScikitImage < Formula
   license "BSD-3-Clause"
   head "https://github.com/scikit-image/scikit-image.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14dc715dc566ceb423e058f4b9be7c3c1145453a8c85a6c93911286b2c8c3c73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "086cad269e43bfbeb38a3229665c9eeb7669339907634527166789f56460dcf7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "612d04cf228f8801eb968a44a12fc3703831daeb9c6fe0e21feacf43c0d7b7e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b741902f152a8f66315700c81749188ed1c4cf02b201cfb6e4d077cf4f67c3ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "fdb2a512b3a97c4d0d9bd726838b240ec05057acb82905ff60d7391b4c1fdf8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "d3f33c9709f8ccb7afc58906518e657a18fc7ce3dc4adb7f57e9364026195075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d7978fe5f86cce29a0fba68497bd75dca9c23cf37dc7bc9ed73d2087b60f56c"
+  end
+
   depends_on "libcython" => :build
   depends_on "meson" => :build
   depends_on "meson-python" => :build
