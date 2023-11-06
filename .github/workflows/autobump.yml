@@ -91,6 +91,7 @@ env:
     brew-php-switcher
     brook
     broot
+    btrfs-progs
     bubblewrap
     buildifier
     buildkit
@@ -159,6 +160,7 @@ env:
     convox
     copilot
     coredns
+    corepack
     cortex
     cosign
     couchdb
@@ -228,10 +230,12 @@ env:
     elan-init
     elfutils
     elixir
+    elixir-ls
     embulk
     emscripten
     envconsul
     envoy
+    enzyme
     esbuild
     eslint
     esptool
@@ -302,7 +306,9 @@ env:
     gnunet
     gnupg-pkcs11-scd
     gnuplot
+    go-feature-flag-relay-proxy
     go-md2man
+    goffice
     gofumpt
     gojq
     golang-migrate
@@ -320,6 +326,7 @@ env:
     govc
     gowsdl
     gpg-tui
+    gpsim
     gradle
     gradle-completion
     gradle-profiler
@@ -331,6 +338,7 @@ env:
     groovysdk
     gsmartcontrol
     gsoap
+    gupnp
     gupnp-tools
     hadoop
     halide
@@ -352,6 +360,7 @@ env:
     htmltest
     htpdate
     httpx
+    httpyac
     hyperfine
     iamy
     igv
@@ -363,12 +372,14 @@ env:
     influxdb
     influxdb-cli
     influxdb@1
+    inxi
     ioctl
     ipinfo-cli
     ipmiutil
     ipopt
     ircd-hybrid
     istioctl
+    ittapi
     ivy
     jadx
     java-service-wrapper
@@ -447,6 +458,7 @@ env:
     libepoxy
     libgetdata
     libgr
+    libgsf
     liblinear
     libnfs
     liboqs
@@ -454,6 +466,7 @@ env:
     libpipeline
     librdkafka
     librespot
+    libressl
     libsndfile
     lima
     linkerd
@@ -467,14 +480,17 @@ env:
     lux
     lychee
     macchina
+    mackup
     mage
     mailutils
+    manifest-tool
     mapcidr
     marked
     marp-cli
     matterbridge
     maven
     mavsdk
+    mawk
     maxwell
     mdbook
     mdcat
@@ -538,11 +554,13 @@ env:
     numcpp
     nushell
     oauth2_proxy
+    oauth2c
     ocaml-findlib
     oci-cli
     ocp
     ocrmypdf
     octave
+    oh-my-posh
     oha
     okteto
     omniorb
@@ -550,16 +568,18 @@ env:
     onedrive
     ooniprobe
     opa
-    openrtsp
     openiothub-server
+    openrtsp
     opensearch
     operator-sdk
+    optipng
     or-tools
     oras
     orc-tools
     orientdb
     orocos-kdl
     ortp
+    osc
     osm
     ott
     oxipng
@@ -589,6 +609,7 @@ env:
     pmd
     pngquant
     pnpm
+    pocketbase
     podman
     postgis
     powerman
@@ -606,9 +627,13 @@ env:
     py-spy
     pyflow
     pyoxidizer
+    qd
     qjackctl
     qpid-proton
     questdb
+    quick-lint-js
+    quicktype
+    radamsa
     rancher-cli
     rav1e
     rbspy
@@ -795,6 +820,7 @@ env:
     wireguard-go
     wiremock-standalone
     wolfssl
+    woodpecker-cli
     wxwidgets
     xcbeautify
     xclogparser
