@@ -813,7 +813,7 @@
   },
   "pwntools": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "markupsafe", "packaging", "psutil",
+      "certifi", "cffi", "cryptography", "mako", "markupsafe", "packaging", "psutil",
       "pycparser", "pygments", "six"
     ]
   },
