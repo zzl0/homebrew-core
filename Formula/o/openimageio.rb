@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://github.com/OpenImageIO/oiio/archive/refs/tags/v2.5.5.0.tar.gz"
   sha256 "8c0de6cd8cfc8aeb696e9cf4fbd067c8c1d9fc22a3b7b81dfeda857ab526b1c8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -39,7 +40,7 @@ class Openimageio < Formula
   depends_on "openexr"
   depends_on "pugixml"
   depends_on "pybind11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "webp"
 
   # https://github.com/OpenImageIO/oiio/blob/master/INSTALL.md
@@ -49,7 +50,7 @@ class Openimageio < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
