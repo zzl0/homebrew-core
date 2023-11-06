@@ -4,6 +4,7 @@ class Proxsuite < Formula
   url "https://github.com/Simple-Robotics/proxsuite/releases/download/v0.5.0/proxsuite-0.5.0.tar.gz"
   sha256 "c2e928aa35c42fdc5297a81b9dcc6a7f927c8a0b01a18d1984780d67debdaa76"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Simple-Robotics/proxsuite.git", branch: "main"
 
   bottle do
@@ -19,20 +20,28 @@ class Proxsuite < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "eigen"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scipy"
   depends_on "simde"
 
+  def python3
+    "python3.12"
+  end
+
   def install
     system "git", "submodule", "update", "--init", "--recursive" if build.head?
+
+    pyver = Language::Python.major_minor_version python3
+    python_exe = Formula["python@#{pyver}"].opt_libexec/"bin/python"
 
     ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefix/Language::Python.site_packages
 
     # simde include dir can be removed after https://github.com/Simple-Robotics/proxsuite/issues/65
     system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.11"].opt_libexec/"bin/python"}",
+                    "-DPYTHON_EXECUTABLE=#{python_exe}",
                     "-DBUILD_UNIT_TESTS=OFF",
                     "-DBUILD_PYTHON_INTERFACE=ON",
                     "-DINSTALL_DOCUMENTATION=ON",
@@ -43,7 +52,8 @@ class Proxsuite < Formula
   end
 
   test do
-    python_exe = Formula["python@3.11"].opt_libexec/"bin/python"
+    pyver = Language::Python.major_minor_version python3
+    python_exe = Formula["python@#{pyver}"].opt_libexec/"bin/python"
     system python_exe, "-c", <<~EOS
       import proxsuite
       qp = proxsuite.proxqp.dense.QP(10,0,0)
