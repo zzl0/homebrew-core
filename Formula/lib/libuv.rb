@@ -1,8 +1,8 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org"
-  url "https://github.com/libuv/libuv/archive/refs/tags/v1.46.0.tar.gz"
-  sha256 "7aa66be3413ae10605e1f5c9ae934504ffe317ef68ea16fdaa83e23905c681bd"
+  url "https://github.com/libuv/libuv/archive/refs/tags/v1.47.0.tar.gz"
+  sha256 "d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
@@ -33,15 +33,12 @@ class Libuv < Formula
     # This isn't yet handled by the make install process sadly.
     cd "docs" do
       system "make", "man"
-      system "make", "singlehtml"
       man1.install "build/man/libuv.1"
-      doc.install Dir["build/singlehtml/*"]
     end
 
     system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
