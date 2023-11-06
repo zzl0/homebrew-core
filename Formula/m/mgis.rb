@@ -4,7 +4,7 @@ class Mgis < Formula
   url "https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-2.1.tar.gz"
   sha256 "f5b556aab130da0c423f395fe4c35d6bf509dd8fc958242f2e37ea788464aea9"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 1
+  revision 2
   head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
@@ -19,10 +19,10 @@ class Mgis < Formula
   depends_on "llvm" => :build
   depends_on "boost-python3"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
