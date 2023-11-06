@@ -6,6 +6,7 @@ class Networkit < Formula
   url "https://github.com/networkit/networkit/archive/refs/tags/10.1.tar.gz"
   sha256 "35d11422b731f3e3f06ec05615576366be96ce26dd23aa16c8023b97f2fe9039"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 1
@@ -23,15 +24,16 @@ class Networkit < Formula
   depends_on "cmake" => :build
   depends_on "libcython" => :build
   depends_on "ninja" => :build
+  depends_on "python-setuptools" => :build
   depends_on "tlx" => :build
 
   depends_on "libnetworkit"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scipy"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
