@@ -6,7 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.58.tar.bz2"
   sha256 "72a36c3cf17d0f624f093d6d083dd5ecaf040c7022bf332148c772008c987a17"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -40,7 +40,9 @@ class GraphTool < Formula
   depends_on "pillow"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python-packaging"
+  depends_on "python-pyparsing"
+  depends_on "python@3.12"
   depends_on "scipy"
   depends_on "six"
 
@@ -74,16 +76,6 @@ class GraphTool < Formula
     patch :DATA
   end
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
-  end
-
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
@@ -105,7 +97,7 @@ class GraphTool < Formula
   # Resources are for Python `matplotlib` and `zstandard` packages
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
