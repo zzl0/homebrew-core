@@ -4,6 +4,7 @@ class Scipy < Formula
   url "https://files.pythonhosted.org/packages/39/7b/9f265b7f074195392e893a5cdc66116c2f7a31fd5f3d9cceff661ec6df82/scipy-1.11.3.tar.gz"
   sha256 "bba4d955f54edd61899776bad459bf7326e14b9fa1c552181f0479cc60a568cd"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
@@ -26,7 +27,7 @@ class Scipy < Formula
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pybind11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xsimd"
 
   cxxstdlib_check :skip
@@ -34,7 +35,7 @@ class Scipy < Formula
   fails_with gcc: "5"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
