@@ -1,8 +1,8 @@
 class Busted < Formula
   desc "Elegant Lua unit testing"
   homepage "https://lunarmodules.github.io/busted/"
-  url "https://github.com/lunarmodules/busted/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "445519fa663dbdd21e8a6ecf1609f397d0e2168440e59ee29198ee687321e9a3"
+  url "https://github.com/lunarmodules/busted/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "befca10f573bb476fa1db2e3149150d65f802a71d34d1682679e640665f2dc2b"
   license "MIT"
   head "https://github.com/lunarmodules/busted.git", branch: "master"
 
