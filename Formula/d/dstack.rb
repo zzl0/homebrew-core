@@ -27,6 +27,7 @@ class Dstack < Formula
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-cryptography"
+  depends_on "python-mako"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-psutil"
@@ -377,11 +378,6 @@ class Dstack < Formula
   resource "jsonschema-specifications" do
     url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
     sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
-  end
-
-  resource "mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
   end
 
   resource "markdown-it-py" do
