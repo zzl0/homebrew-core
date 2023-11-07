@@ -6,15 +6,13 @@ class PyqtAT5 < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9398c47f03210dddad2db4419553223f43113d7fe302656b20f6aa5fd0b3eecf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdebe6cce54a45c856b8b2237308f4ba53e45ea0bc460769b615f557bc69ac09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83b6ea13c4b1389d0fe758bcd9f83b8d6564b8b6abbfc05c57ce102d4734940d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0926e76447c749f669f1a2cc13c9fa06ff2da0ae8071c62d1e96f8ea1357227f"
-    sha256 cellar: :any,                 sonoma:         "e069472245fac9dd5d02dffd92a9af711763757a4330dfd1b7b7278539304df4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e05bf795d62839535e0e0e6ee6c70a6bef82bc90a953de0393c21ed1f870b4bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "04905257fd09737552946add20a940e065cbe973080bc60c63022f0b5cacc939"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25533e0e23fb89a027e17c991cc9ddd0dc76c3d4805acc4f1d6f3e506bde88b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf729fadf5aec8e76778c9ea6cc1abe3a1abe6c19016a56a4a7713348dcd45f"
+    sha256 cellar: :any,                 arm64_sonoma:   "d6669361745e9102a636347aee93a854d65f5a3823d97499c57021948a6bbfb4"
+    sha256 cellar: :any,                 arm64_ventura:  "ba75381ca90419e1caca9aea1f49356a1716beeb6762c032ec9e6f7aa19f3cd8"
+    sha256 cellar: :any,                 arm64_monterey: "272a159c4a8e2652203df1b79936623631fff2136adba1c2eddb1a66239acbbe"
+    sha256 cellar: :any,                 sonoma:         "97ec53f240ba671451919bd6b75aef4b3070b4de17a898dc31c3b445e1c2af9f"
+    sha256 cellar: :any,                 ventura:        "e38fde9c5940c4c8aa0e466a613bc62c6f4da83033363ff69e5a68b8ac4f9136"
+    sha256 cellar: :any,                 monterey:       "b2f8be04556ee826dcdb9f27eed73114d9f9d50fe111d26e404d3bd3109ccff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f9bba8c73a7383f8d53d0f61a35fdd816f6351352e1e4fa77e03568d73f83e2"
   end
 
   depends_on "pyqt-builder"      => :build
