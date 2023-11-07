@@ -16,15 +16,13 @@ class Gping < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a7e8e5ac645b7fe8926f13fd955a78456cca1b6df550aee1a484733382e81ab"
-    sha256 cellar: :any,                 arm64_ventura:  "12a9bd754d2f1597e89d5cc6690af8af14d2d3836b974f90452abe849c5c6c6f"
-    sha256 cellar: :any,                 arm64_monterey: "9ffad7b6407af60c32cffcd3099d50e57f74a25e601864c3dc2712eb2dec00ae"
-    sha256 cellar: :any,                 arm64_big_sur:  "8df9a4ea92dbc359024d08fa8c6a3dcf9d55ce828b4975a8f5d82bb6ce0a65d2"
-    sha256 cellar: :any,                 sonoma:         "06c573c3c30745fa9f0965eea02526c6622bb9b73e04bae0629fd617dc3ad5c1"
-    sha256 cellar: :any,                 ventura:        "853207d921bf41d05992e8fd5c874992865040e9fba970ca7566b26fa0509e61"
-    sha256 cellar: :any,                 monterey:       "6f6b83f8510cb0f67f3bdf123c22a9b5f73e5fc64be5aebff7a0ce2591e21aa7"
-    sha256 cellar: :any,                 big_sur:        "df95fab0f12d5d4ceeab96132e1220f3fc70bdcc435403c15e3db047219ea5c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b7fc0ff3c261dc5b8d94ecac8ee501f15e9e8d6323bbd82da43c20ff785c050"
+    sha256 cellar: :any,                 arm64_sonoma:   "bf75c401da8490f86860400b44eab7d70e97b3f385cfd1575d90dfc2eaa58ca7"
+    sha256 cellar: :any,                 arm64_ventura:  "123955023e5ddd7880551cc1187b81bb4d9d90658daba874de71f45324e0fc06"
+    sha256 cellar: :any,                 arm64_monterey: "cb7cd75727ce6a1c142817a619d9782037e8d76bb24b08e2346c0bf548e408d1"
+    sha256 cellar: :any,                 sonoma:         "8e9c8d94e37f631acd169183a98a0fbae8c8c35280273ac484bae94d45f89b25"
+    sha256 cellar: :any,                 ventura:        "c1e97c6aad0384752dd502b30f21b933b57050fec7b7b6daa6b165b51b014385"
+    sha256 cellar: :any,                 monterey:       "95d1f73b1d0f3e896a638bfa9c21987ac84c18db0bdbeee1ca135ca8746da061"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae0a6583408425897b94a4e7e6666979fb47d09f9a5950596aaf91b5b9e8d319"
   end
 
   depends_on "pkg-config" => :build
