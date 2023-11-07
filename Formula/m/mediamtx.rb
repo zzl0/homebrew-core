@@ -5,6 +5,16 @@ class Mediamtx < Formula
   sha256 "222553dada1947877867ffeb1f93aaa1e29c13dc2d64a1ba924693ca52f0a404"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0530b1886c8635914cf91ff5a3596b0a9f4c09c44ac021bdcb66213369a1caa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc116fd53cb9295f79f1bfb63b00af57fcb5902d53c7bcde5197b955921ea536"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87bfdc2e7a716f5fb127073cb23db0df28b5118291e95eaa5c8f28901651caea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "091216325278355fbc228af05ebd94dc9ef9cdf5170d1e30717c546e37b1db84"
+    sha256 cellar: :any_skip_relocation, ventura:        "4af068cede136671393cc86b8fe740d729c86dbb87b13eb9a8fe79c3a35f32ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "484298cb596dedf22b9f14bc4d9cd377bba761eeb4a820bfead46c4830b7c872"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "410b27e61674a1be8193cfe85dc399e41d8c1e56cb2f01f7af271434bceb10d1"
+  end
+
   depends_on "go" => :build
 
   def install
