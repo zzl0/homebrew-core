@@ -3,9 +3,8 @@ class Apkleaks < Formula
 
   desc "Scanning APK file for URIs, endpoints & secrets"
   homepage "https://github.com/dwisiswant0/apkleaks"
-  # upstream pypi artifact issue report, https://github.com/dwisiswant0/apkleaks/issues/79
-  url "https://github.com/dwisiswant0/apkleaks/archive/refs/tags/v2.6.1.tar.gz"
-  sha256 "c22557f527ee49c04947c1bed1b5ee50857ee68b0f4f3b99a5e4b18dffe30d16"
+  url "https://files.pythonhosted.org/packages/8e/7f/95822c947138c8fc127d88128fb8fa9b0ed37a7fddf0b840685075ee288e/apkleaks-2.6.1.tar.gz"
+  sha256 "47eea4683a9916e4099d05776be2ec3892791f5fd854f49cb5ed489cc9867c62"
   license "Apache-2.0"
 
   bottle do
