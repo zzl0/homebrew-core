@@ -4,6 +4,7 @@ class Mfem < Formula
   url "https://github.com/mfem/mfem/archive/refs/tags/v4.6.tar.gz"
   sha256 "250bb6aa0fd5f6a6002c072d357656241ed38acfc750e43e87d8c36a8f8a4b4f"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
