@@ -7,15 +7,13 @@ class Cpuid < Formula
   head "https://github.com/klauspost/cpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca8c5a7aa8563240046520a35331290a6d64192d7ae3bdbaffe733747fad636f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "809af34ae9e73f2ecc6651c80315c588f8c67592a24872e8db1ae78003d58795"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "809af34ae9e73f2ecc6651c80315c588f8c67592a24872e8db1ae78003d58795"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "809af34ae9e73f2ecc6651c80315c588f8c67592a24872e8db1ae78003d58795"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60bb4040f2617024b74bbdc0d388d22d9ca71998a91488eb9b3e506a30127cec"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2068378022c9da1035ed77f3da67a43e86d3e91d39dea9a2ab92c12dc9b4878"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2068378022c9da1035ed77f3da67a43e86d3e91d39dea9a2ab92c12dc9b4878"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f2068378022c9da1035ed77f3da67a43e86d3e91d39dea9a2ab92c12dc9b4878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaae85c66a4c2e343d14bd9b606c232b55bc4fbbb39c87e6c2490d969c8b10f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d080e3e206d595fda2d83d9d2e3375d08e2c8c971fe7f7840fc54be255b139ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d080e3e206d595fda2d83d9d2e3375d08e2c8c971fe7f7840fc54be255b139ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d080e3e206d595fda2d83d9d2e3375d08e2c8c971fe7f7840fc54be255b139ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "88f312108e68b4e01833c65d2a3ce0181440386f7c8e6f5f30ca05f3f304b523"
+    sha256 cellar: :any_skip_relocation, ventura:        "88f312108e68b4e01833c65d2a3ce0181440386f7c8e6f5f30ca05f3f304b523"
+    sha256 cellar: :any_skip_relocation, monterey:       "88f312108e68b4e01833c65d2a3ce0181440386f7c8e6f5f30ca05f3f304b523"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ec31059044fa32595435d45dbe6deee876df929fa5e03000c31abf9572b466d"
   end
 
   depends_on "go" => :build
