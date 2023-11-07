@@ -20,6 +20,7 @@ class BandcampDl < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-docopt"
   depends_on "python-lxml"
   depends_on "python-mutagen"
   depends_on "python@3.12"
@@ -43,11 +44,6 @@ class BandcampDl < Formula
   resource "demjson3" do
     url "https://files.pythonhosted.org/packages/f7/d2/6a81a9b5311d50542e11218b470dafd8adbaf1b3e51fc1fddd8a57eed691/demjson3-3.0.6.tar.gz"
     sha256 "37c83b0c6eb08d25defc88df0a2a4875d58a7809a9650bd6eee7afd8053cdbac"
-  end
-
-  resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   resource "idna" do
