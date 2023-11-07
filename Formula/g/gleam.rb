@@ -12,13 +12,13 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c5c45c184713fa01b33cd2b8b406ca23b3020782a2d796e187101097326d731"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74edac62954633ce47e71645cd2b7893ce88bfabbb063c67759569593c563916"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23e5caa4d549bc21d134d499867a342cabaf0fcf32cf0c1e9079cebd918ea817"
-    sha256 cellar: :any_skip_relocation, sonoma:         "43ee88757f2f0be16d26b84503b7db3acface053b7095826e3b3e136a68d6be2"
-    sha256 cellar: :any_skip_relocation, ventura:        "bed700b017898eaa5efbbabfb3e82440c7baa552dbbf967e855c6a9db63d98a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b64ceb877d1d52bb2b9bfaf58a41854ee4eab50f2f5a83017267a2ae1e11f20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe4612738d95a09e10a9f794cc972f2ee4ac99c50434aa5e5eea1680b0ecfcb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "645decd71b1148b59b1680b0360d300cd107f5f7d7125f9f841a0f39dd126fa9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "581f167f5289332dadb6e238826cc29315a324aa84d7fcad4bae7cb6bac17e30"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "813b2aad999760a24deb36fd926e1c02aa9a8002f9f36ea2e2f4eec35b782d39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aef846861cee2fc4edd9b305162b281f1ee971fc2705785cc115e6c19c19ea36"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4c505bfe99bcafe8e985a89d001c98eb7a85fe2694b31104d9a81f605bf164e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c2e575e327dfc1f82de6e46ca241daec08b41d528d7db6d7f79baeb6fba6a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "252c27b7fba7af5b7fa9c0f5581a3d189a13fade402c829b54e1c38e29126812"
   end
 
   depends_on "rust" => :build
