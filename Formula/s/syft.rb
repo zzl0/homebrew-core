@@ -1,10 +1,19 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://github.com/anchore/syft/archive/refs/tags/v0.94.0.tar.gz"
-  sha256 "379f898c73a35bdc876f47b9c042bf2382000d99c0f9bdd16c2f681ff5081fab"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
+
+  stable do
+    url "https://github.com/anchore/syft/archive/refs/tags/v0.95.0.tar.gz"
+    sha256 "bdf4866ee53ac0209b0b8768a147e9c79bfcc6e1c788a421f84ede8a7aa4f7bc"
+
+    # fix `identify cyclone-json without $schema` issue
+    patch do
+      url "https://github.com/anchore/syft/commit/d91c2dd84211d825012063f78793787e7cbf2078.patch?full_index=1"
+      sha256 "51abff0cf89bdf75dfea1ddcfce9d7d28c919cdf76a3d83bcb756b4b3c951f14"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f07b024384b7a81b701f57a9c1b76ab649093df5158e9d48d2d85979efa3b5a"
@@ -25,11 +34,6 @@ class Syft < Formula
       -X main.gitCommit=#{tap.user}
       -X main.buildDate=#{time.iso8601}
     ]
-
-    # Building for OSX with -extldflags "-static" results in the error:
-    # ld: library not found for -lcrt0.o
-    # This is because static builds are only possible if all libraries
-    ldflags << "-linkmode \"external\" -extldflags \"-static\"" if OS.linux?
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/syft"
 
