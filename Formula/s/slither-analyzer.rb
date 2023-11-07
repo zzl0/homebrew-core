@@ -23,6 +23,7 @@ class SlitherAnalyzer < Formula
   depends_on "crytic-compile"
   depends_on "python-certifi"
   depends_on "python-packaging"
+  depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "solc-select"
 
@@ -190,11 +191,6 @@ class SlitherAnalyzer < Formula
   resource "toolz" do
     url "https://files.pythonhosted.org/packages/cf/05/2008534bbaa716b46a2d795d7b54b999d0f7638fbb9ed0b6e87bfa934f84/toolz-0.12.0.tar.gz"
     sha256 "88c570861c440ee3f2f6037c4654613228ff40c93a6c25e0eba70d17282c6194"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do
