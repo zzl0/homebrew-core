@@ -1,8 +1,8 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https://zellij.dev"
-  url "https://github.com/zellij-org/zellij/archive/refs/tags/v0.38.2.tar.gz"
-  sha256 "18e8ae9fa2ad995af5f6c64b3c0713143d260cdc6c1a978831313bfaf305ad5e"
+  url "https://github.com/zellij-org/zellij/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "dee3c677eb4545d302895e1c0020f7da9aba8b154927c6ff215b59aec4fbec9f"
   license "MIT"
 
   bottle do
@@ -18,8 +18,15 @@ class Zellij < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"zellij", "setup", "--generate-completion")
