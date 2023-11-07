@@ -47,6 +47,7 @@ env:
     argocd
     argocd-autopilot
     argocd-vault-plugin
+    argparse
     arkade
     armadillo
     arrayfire
@@ -100,6 +101,7 @@ env:
     buku
     bundletool
     bupstash
+    busted
     butane
     byacc
     byteman
@@ -146,8 +148,10 @@ env:
     closure-compiler
     cloud-nuke
     cloudformation-guard
+    cloudprober
     clusterctl
     cobalt
+    code-cli
     code-minimap
     cointop
     coinutils
@@ -164,6 +168,7 @@ env:
     cortex
     cosign
     couchdb
+    cpuid
     croc
     cromwell
     crowdin
@@ -222,6 +227,7 @@ env:
     dune
     dust
     dvc
+    dxpy
     dynare
     easyengine
     efm-langserver
@@ -331,6 +337,7 @@ env:
     gradle-completion
     gradle-profiler
     grafana
+    grafana-agent
     grails
     grin
     gromacs
@@ -382,6 +389,7 @@ env:
     ittapi
     ivy
     jadx
+    jaq
     java-service-wrapper
     jena
     jenkins
@@ -424,6 +432,7 @@ env:
     ko
     kompose
     kops
+    kor
     kotlin
     krew
     ktlint
@@ -438,6 +447,7 @@ env:
     kubeseal
     kubespy
     kubevela
+    kubevious
     kubie
     kumactl
     kustomize
@@ -453,6 +463,7 @@ env:
     lego
     leiningen
     lexbor
+    lexicon
     lf
     libdap
     libepoxy
@@ -472,8 +483,10 @@ env:
     linkerd
     linode-cli
     liquibase
+    llm
     lmod
     localstack
+    locust
     log4cxx
     lout
     luau
@@ -516,6 +529,7 @@ env:
     molecule
     mongocli
     mongodb-atlas-cli
+    monika
     monolith
     moto
     mpv
@@ -571,6 +585,7 @@ env:
     openiothub-server
     openrtsp
     opensearch
+    openvdb
     operator-sdk
     optipng
     or-tools
@@ -581,6 +596,7 @@ env:
     ortp
     osc
     osm
+    osv-scanner
     ott
     oxipng
     pacapt
@@ -664,6 +680,7 @@ env:
     scala
     scorecard
     scotch
+    scrcpy
     scummvm
     scummvm-tools
     scw
@@ -753,6 +770,7 @@ env:
     terraformer
     terragrunt
     terrascan
+    testkube
     tfsec
     thanos
     thrift
@@ -775,6 +793,7 @@ env:
     trivy
     trojan-go
     typedb
+    typos-cli
     tz
     uni
     universal-ctags
@@ -786,6 +805,7 @@ env:
     vault-cli
     veclibfort
     velero
+    verapdf
     vercel-cli
     vgrep
     virgil
@@ -825,6 +845,7 @@ env:
     xcbeautify
     xclogparser
     xdpyinfo
+    xeol
     xerces-c
     xgboost
     xh
@@ -844,6 +865,7 @@ env:
     zola
     zookeeper
     zoxide
+    zsh-vi-mode
     zstd
     zydis
 
