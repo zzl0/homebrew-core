@@ -18,15 +18,13 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8da805ed1adce5804d81644226ed8e1bdd1ef575b5ad3dfdd97162b63e273d22"
-    sha256 cellar: :any,                 arm64_ventura:  "437499ad734beb3a26d056ab4fc0094e03a960ff9ac129a8703ef0f941c335c9"
-    sha256 cellar: :any,                 arm64_monterey: "0468ce004d374eb22f3bb61c2d59e60ad3e6df784f595b0b8aa36bd079614f5e"
-    sha256 cellar: :any,                 arm64_big_sur:  "e128662febaeb9ba2bd7c0cfb4cc19b749a115ca3dbf5ebd016de77b2091808e"
-    sha256 cellar: :any,                 sonoma:         "29f32f49a61e677ded0df0ee9e91a14ddb62c33a12f004558c2383004aa2e2b3"
-    sha256 cellar: :any,                 ventura:        "9942eb140dd053356af58cb6d00f8abf683de8fd7350dbf09cb43b920a0f8e7d"
-    sha256 cellar: :any,                 monterey:       "040f49e834c757385005d8633cb05ae04632aed635e7ad273ea3ee1ab7d8527a"
-    sha256 cellar: :any,                 big_sur:        "194b81958ad918e230c6e61ff20946714034ac752e53100cd975ae064018eb39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b0b7c70b67419eac81187b9b98ce59ba022e19517671c73803757ceb9b1731f"
+    sha256 cellar: :any,                 arm64_sonoma:   "cced8c91c0ec4039ba552ac95f53f1d0d9db3965d8d3888bc881f26687ab7c8e"
+    sha256 cellar: :any,                 arm64_ventura:  "8b4472646b4508afac13e94a075004c536691b0f0fdb6f1a651df982a1f8f717"
+    sha256 cellar: :any,                 arm64_monterey: "33ae90fe62616ccd27d1d0c6e5cb31b5ee79a4adf17c635f01265c4105c64c19"
+    sha256 cellar: :any,                 sonoma:         "e61a6810ba9244fe6d2cfbf100f0d54e1159388a6b3d9eed9e82e06771975876"
+    sha256 cellar: :any,                 ventura:        "850d3f1991a15f0356d49b2ac115780b1c855a63e237717543ece2304a7c1319"
+    sha256 cellar: :any,                 monterey:       "b27d5b3bdcb87d8d99d36032202bc520c58b964318db79f17f39693d6c7b0d57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0059adc8ea018cf1f7fee11f516b9cdc5306e9818ae0f1c0499380c4c1076a0"
   end
 
   depends_on "cmake" => :build
