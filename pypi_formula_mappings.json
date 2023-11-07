@@ -241,6 +241,9 @@
   "coconut": {
     "exclude_packages": ["psutil", "pygments", "typing-extensions"]
   },
+  "codelimit": {
+    "exclude_packages": ["certifi", "click", "pygments", "six", "typing-extensions"]
+  },
   "commitizen": {
     "exclude_packages": [
       "argcomplete", "markupsafe", "PyYAML", "typing-extensions", "packaging"
