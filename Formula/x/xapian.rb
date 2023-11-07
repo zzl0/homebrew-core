@@ -1,8 +1,8 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.23/xapian-core-1.4.23.tar.xz"
-  sha256 "30d3518172084f310dab86d262b512718a7f9a13635aaa1a188e61dc26b2288c"
+  url "https://oligarchy.co.uk/xapian/1.4.24/xapian-core-1.4.24.tar.xz"
+  sha256 "eda5ae6dcf6b0553a8676af64b1fd304e998cd20f779031ccaaf7ab9a373531a"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -23,7 +23,7 @@ class Xapian < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b22baed91ec43e7de0d55aabbc5fe9820a266d872be5453393f302726e6ec4c"
   end
 
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
   uses_from_macos "zlib"
@@ -46,7 +46,7 @@ class Xapian < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
