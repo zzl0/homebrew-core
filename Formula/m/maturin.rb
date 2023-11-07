@@ -8,13 +8,13 @@ class Maturin < Formula
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e45b7a2d535bbc539327687093a7ce498b9590370ed0abb307b990f66b05fcd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e4e26c816e8113c78eb6f5112f142cb461f7b0a8335467ea005c8aaf3038845"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "846bf2f1441b7c06c38390e7c91b00c53f703009698c78d6153c992d43cb81cf"
-    sha256 cellar: :any,                 sonoma:         "cd4df1996bb2c0caf784a45418f790d0e211591ce2bb05573635bdb356b5619e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d168165b411d2d24b42d8d1d23a791ae2241526a7820d50cb335bf26af6f5436"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb1a7d07e00a47344116ed6642a8ba912d885fc4cb8d2ec6b9a8b447ac1f9fff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26a741013b0ec745058271428c50854277bbcfd9681b8eb5e32d44991b75dc85"
+    sha256 cellar: :any,                 arm64_sonoma:   "0d223db2b214366ed6f35f44aaa0ecb09b814cca08469eabcbc4597862a375cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3224e0f21bc8b045d8921ecaf156433dd30bfdbf437de1cd9e7490c15b31747"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53e6a2c3ae745df6c69d1d736ee43142020d170771f1a5b9d61bcf84800078c3"
+    sha256 cellar: :any,                 sonoma:         "c09056f41f176e1a7b80971c5f754c7be18e368cab6ddc2ac24c50206bb6e66a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1556e7b56f062c8091829ee73134ccae258efd875b0a0a6dfeb6b2a72207b9cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd6e77c547732b200d4d8e6f053cf0efd976bb46098d4ea01f904e5526b74727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6844f259b9c0cdc45c384dfcc70e54f34284635117a44814ba52315cc8f6a21"
   end
 
   depends_on "python-flit-core" => :build
