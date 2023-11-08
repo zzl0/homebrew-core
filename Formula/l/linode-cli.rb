@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/5d/5d/d928c91d039eea8c5ad12d914f55ca2e69bf1aaac85c345ac9a12ef9248e/linode-cli-5.45.0.tar.gz"
-  sha256 "89fe1bc805cb8dfb18f559f3c1e5a0b73615209c1350f04491d532c70985201f"
+  url "https://files.pythonhosted.org/packages/7a/59/0330bf9c77ba683fd436520683acfed09f18ed7e6f0023097a0c1a81db3d/linode-cli-5.45.1.tar.gz"
+  sha256 "540154567bb6cbdf081c1fb46a38b362de7de5c21f83a22de50a60554b73bce1"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -31,8 +31,8 @@ class LinodeCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
@@ -66,8 +66,8 @@ class LinodeCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
