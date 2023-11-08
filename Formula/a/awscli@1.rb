@@ -14,13 +14,13 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5d9cc8d78d935b05a5e81fca95f7d3d047dfd746654e593092c8376a30b3b98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4edbbaf1f38e1c1727be7ba030796fd5b94cff88344f5e458428368c9fc8628"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb80dc36e84714eb13df582cf86d93a908bdf4b39d62f1a1966ef40f48fa17e7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3fd5adf192689e60f4465bfcfe7f8ddacca3975c15e1d835080b79174386f9bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "63a3fa73074b328de82b8227f0cd00ea8a6a78e77dab4972cd7b01fde17f5bb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca2af46bfb7d1fcd2597c458057335e7f8f4f7405cce803644b3a52565475ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d33164eeace4ffd8c2fe67d8a9d6330cf798d54b176ad2fcc54766eb4b73f02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e00a079db51bbb23a8f79b35e3587e097c7f3145b8744715c750293d86adb3a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb5caeb49c7116fba28e34293c54675f89c6a679eea29b3df74cb2b3f7c474dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3d9b519f3561b43d3dd38d8c9e6ff1a6b2b25cd1fd721871a4c66b9a23adc9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5894ccfe47c571854dd41634f0c3eaaa6f373f5c75bee40d095521ce14c4c2da"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e72fa268c397c634f5982abf121031319ecc265e7f5051f14a2b1db2b88b9c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "5728428d34da069d5a2520f28f929ceac866e8df7c8ed53d6f2bd37e911383e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8566fe19d816073f9564c7737ec712aed619ad44ceefe2a03b8c5fdfad1a9278"
   end
 
   keg_only :versioned_formula
