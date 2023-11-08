@@ -3,8 +3,8 @@ require "language/node"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-17.1.0.tgz"
-  sha256 "cd0617890d6651a71aeb230e67fa38b724a8aeb9936501cda193b18b4e84ae2a"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-17.2.0.tgz"
+  sha256 "238b601d73295244023950a9d66359d65cdb60846e72d4c6e470b5e250c04b2e"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
@@ -22,6 +22,7 @@ class NetlifyCli < Formula
 
   on_linux do
     depends_on "vips"
+    depends_on "xsel"
   end
 
   def install
@@ -29,10 +30,21 @@ class NetlifyCli < Formula
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
+    node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
+
     if OS.linux?
-      node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
       (node_modules/"@lmdb/lmdb-linux-x64").glob("*.musl.node").map(&:unlink)
       (node_modules/"@msgpackr-extract/msgpackr-extract-linux-x64").glob("*.musl.node").map(&:unlink)
+      (node_modules/"@parcel/watcher-linux-x64-musl/watcher.node").unlink
+    end
+
+    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
+    clipboardy_fallbacks_dir.rmtree # remove pre-built binaries
+    if OS.linux?
+      linux_dir = clipboardy_fallbacks_dir/"linux"
+      linux_dir.mkpath
+      # Replace the vendored pre-built xsel with one we build ourselves
+      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
     end
   end
 
