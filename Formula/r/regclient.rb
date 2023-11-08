@@ -6,6 +6,16 @@ class Regclient < Formula
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b14db501827fb412909e8924c8fdc8166319e646d583339e93abe69d3271ee74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e196258ef4885cfb22cf405e1f866213bdda8bd6735ded1a7bf75cd1e32b65ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58349cc8d95219efe8b60156b4f89016faa2a1840748530c4619c75a98da7c39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7e0ac9b65ab90d09e73a41794a945704e8e84ea9ea2fee9d2e6a17628428d3e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec10d2f8aa37def225550f41ebf2aeaa9d99964f905708715db767fbc7d91892"
+    sha256 cellar: :any_skip_relocation, monterey:       "b0e935b629928393a2685ccd3017d660f40a6fafede2a1f11dfec4889384990c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d92529090fce0a67cdd800d821505c3b750b5021fbe72c6a14d519ee1fa14cc2"
+  end
+
   depends_on "go" => :build
 
   def install
