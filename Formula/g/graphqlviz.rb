@@ -7,6 +7,10 @@ class Graphqlviz < Formula
   sha256 "1ede0553fe61ca6f59876b31a7d86f8f9aa692456255c1acf91c204feb2e1ef3"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "62665fa4b145517916c55a51b222a0f896106797a5cf7d63d2967da10f75b0e8"
+  end
+
   depends_on "node"
 
   def install
