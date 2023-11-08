@@ -32,6 +32,18 @@ class Gpac < Formula
 
   conflicts_with "bento4", because: "both install `mp42ts` binaries"
 
+  # https://github.com/gpac/gpac/issues/2673
+  patch do
+    url "https://github.com/gpac/gpac/commit/ce2202796a1630129cdff42cc1c02c3a8ea7a75f.patch?full_index=1"
+    sha256 "708ff80d95fcfd28720c6c56a9c32c76bb181911fa8f6cb9a0f38c8012e96e9d"
+  end
+
+  # https://github.com/gpac/gpac/issues/2406
+  patch do
+    url "https://github.com/gpac/gpac/commit/ba14e34dd7a3c4cef5a56962898e9f863dd4b4f3.patch?full_index=1"
+    sha256 "22ea4f6e93ec457468759bf5599903bea5171b1216472d09967fc9c558fa9fb3"
+  end
+
   def install
     args = %W[
       --disable-wx
