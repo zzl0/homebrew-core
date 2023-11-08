@@ -1,10 +1,9 @@
 class Sd < Formula
   desc "Intuitive find & replace CLI"
   homepage "https://github.com/chmln/sd"
-  url "https://github.com/chmln/sd/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "faf33a97797b95097c08ebb7c2451ac9835907254d89863b10ab5e0813b5fe5f"
+  url "https://github.com/chmln/sd/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "2adc1dec0d2c63cbffa94204b212926f2735a59753494fca72c3cfe4001d472f"
   license "MIT"
-  revision 1
 
   bottle do
     rebuild 1
@@ -25,13 +24,10 @@ class Sd < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    # Completion scripts and manpage are generated in the crate's build
-    # directory, which includes a fingerprint hash. Try to locate it first
-    out_dir = Dir["target/release/build/sd-*/out"].first
-    man1.install "#{out_dir}/sd.1"
-    bash_completion.install "#{out_dir}/sd.bash"
-    fish_completion.install "#{out_dir}/sd.fish"
-    zsh_completion.install "#{out_dir}/_sd"
+    man1.install "gen/sd.1"
+    bash_completion.install "gen/completions/sd.bash" => "sd"
+    fish_completion.install "gen/completions/sd.fish"
+    zsh_completion.install "gen/completions/_sd"
   end
 
   test do
