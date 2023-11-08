@@ -3,8 +3,8 @@ require "language/node"
 class SnykCli < Formula
   desc "Scans and monitors projects for security vulnerabilities"
   homepage "https://snyk.io"
-  url "https://registry.npmjs.org/snyk/-/snyk-1.1238.0.tgz"
-  sha256 "4808ee5a7705392fc660387bbdf4561e0375f3b3f3cf82bf83663d9703e43acc"
+  url "https://registry.npmjs.org/snyk/-/snyk-1.1240.0.tgz"
+  sha256 "36e831463e7fa69ded244d0c8dcabd89cdc723baab4f148566ab64cc7f1d9794"
   license "Apache-2.0"
 
   bottle do
