@@ -1,8 +1,8 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-cxx-driver"
-  url "https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.8.1/mongo-cxx-driver-r3.8.1.tar.gz"
-  sha256 "b12c96670e1e68bae1a6f5cb08541f3da52f5ddeb5def274d2cf5d662ef73160"
+  url "https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.9.0/mongo-cxx-driver-r3.9.0.tar.gz"
+  sha256 "09526c61b38f6adce86aa9ff682c061d08a5184cfe14e3aea12d8ecaf35364a2"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
 
@@ -22,6 +22,7 @@ class MongoCxxDriver < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :test
   depends_on "mongo-c-driver"
 
   def install
@@ -31,30 +32,27 @@ class MongoCxxDriver < Formula
     (buildpath / "examples/CMakeLists.txt").write ""
 
     mongo_c_prefix = Formula["mongo-c-driver"].opt_prefix
-    system "cmake", ".", *std_cmake_args,
-                        "-DBUILD_VERSION=#{version}",
-                        "-DLIBBSON_DIR=#{mongo_c_prefix}",
-                        "-DLIBMONGOC_DIR=#{mongo_c_prefix}",
-                        "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "make"
-    system "make", "install"
+    args = %W[
+      -DBUILD_VERSION=#{version}
+      -DLIBBSON_DIR=#{mongo_c_prefix}
+      -DLIBMONGOC_DIR=#{mongo_c_prefix}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    mongo_c_include = Formula["mongo-c-driver"]
-
-    system ENV.cc, "-o", "test", pkgshare/"examples/bsoncxx/builder_basic.cpp",
-      "-I#{include}/bsoncxx/v_noabi",
-      "-I#{mongo_c_include}/libbson-1.0",
-      "-L#{lib}", "-lbsoncxx", "-std=c++11", "-lstdc++"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libbsoncxx").chomp.split
+    system ENV.cc, "-std=c++11", pkgshare/"examples/bsoncxx/builder_basic.cpp",
+      *pkg_config_flags, "-lstdc++", "-o", "test"
     system "./test"
 
-    system ENV.cc, "-o", "test", pkgshare/"examples/mongocxx/connect.cpp",
-      "-I#{include}/mongocxx/v_noabi",
-      "-I#{include}/bsoncxx/v_noabi",
-      "-I#{mongo_c_include}/libmongoc-1.0",
-      "-I#{mongo_c_include}/libbson-1.0",
-      "-L#{lib}", "-lmongocxx", "-lbsoncxx", "-std=c++11", "-lstdc++"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libbsoncxx libmongocxx").chomp.split
+    system ENV.cc, "-std=c++11", pkgshare/"examples/mongocxx/connect.cpp",
+      *pkg_config_flags, "-lstdc++", "-o", "test"
     assert_match "No suitable servers",
       shell_output("./test mongodb://0.0.0.0 2>&1", 1)
   end
