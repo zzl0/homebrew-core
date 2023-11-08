@@ -19,30 +19,65 @@ env:
   HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
   FORMULAE: >
     abcmidi
+    abseil
+    access
     ack
+    act
+    actionlint
     activemq
+    ada-url
+    adb-enhanced
+    adios2
+    afflib
+    agda
+    age
+    age-plugin-yubikey
+    agg
+    aichat
     alda
+    algol68g
     aliddns
     aliyun-cli
+    all-repos
     allure
     alluxio
+    alp
+    alpscore
+    alsa-lib
+    amber
     ammonite-repl
+    amqp-cpp
+    amtterm
+    ancient
+    angle-grinder
     angular-cli
+    animdl
+    ansible
+    ansible-language-server
     ansible-lint
     ant
     ant@1.9
+    antidote
+    antlr
+    antlr4-cpp-runtime
     anycable-go
+    aom
     apache-archiva
     apache-drill
     apache-flink
     apache-geode
     apache-opennlp
     apache-spark
+    apachetop
     apidoc
+    apko
     apktool
+    appium
+    apr
     apt
     aptos
     arb
+    archi-steam-farm
     argo
     argocd
     argocd-autopilot
@@ -50,23 +85,39 @@ env:
     argparse
     arkade
     armadillo
+    arp-scan
     arrayfire
+    artillery
     arturo
     asciidoctorj
+    asdf
     ask-cli
+    asnmap
     assh
+    ast-grep
+    astgen
+    astro
     asuka
     asymptote
+    asyncapi
     atlantis
+    atlas
     atuin
+    auditbeat
     autorest
     autorestic
     avrdude
+    awk
+    aws-amplify
     aws-cdk
     aws-elasticbeanstalk
     aws-es-proxy
+    aws-nuke
     aws-rotate-key
     aws-sam-cli
+    aws-sso-cli
+    awscli
+    awscli@1
     azcopy
     b3sum
     bagit
