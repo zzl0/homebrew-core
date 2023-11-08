@@ -1,8 +1,8 @@
 class Hq < Formula
   desc "Jq, but for HTML"
   homepage "https://github.com/orf/html-query"
-  url "https://github.com/orf/html-query/archive/refs/tags/html-query-v1.2.0.tar.gz"
-  sha256 "29a0dd1b43978c359958b0cae22fb52a8b4afe25f6544eba1ded73ad5041ec52"
+  url "https://github.com/orf/html-query/archive/refs/tags/html-query-v1.2.1.tar.gz"
+  sha256 "db6c574acc701f337285839e1f7a3a6e30267fd0ba69733a9a74e637b827bcdb"
   license "MIT"
 
   livecheck do
