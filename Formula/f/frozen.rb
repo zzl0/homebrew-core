@@ -6,6 +6,10 @@ class Frozen < Formula
   license "Apache-2.0"
   head "https://github.com/serge-sans-paille/frozen.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b2343bd5ac9155af3cc2b82a00e3e45956fcc0476c3590073de076fafe60ee6f"
+  end
+
   depends_on "cmake" => :build
 
   def install
