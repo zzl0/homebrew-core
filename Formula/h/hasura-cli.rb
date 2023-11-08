@@ -3,8 +3,8 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/refs/tags/v2.35.0.tar.gz"
-  sha256 "0a5a72e880ce16a21b55a50e417f11814a0349f27302bf14c6ef4592eecf0984"
+  url "https://github.com/hasura/graphql-engine/archive/refs/tags/v2.35.1.tar.gz"
+  sha256 "22dac95660b664c3790c4b53b1a262e214faacce1d793204fc4717451e2c55f0"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
