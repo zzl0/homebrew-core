@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/dc/5b/8a7c5460393a5f073361b6758e3d22e5c2f26cf97a5e725bf9875c8a437d/ocrmypdf-15.4.0.tar.gz"
-  sha256 "d50fa8efed6abdc92f9c88e026ce520ab1df8369ad1d5ef285d5c5308281a096"
+  url "https://files.pythonhosted.org/packages/73/57/be84640ccdb9edbd75a86dc05872f446d25d368a109e27312c6b8036a108/ocrmypdf-15.4.1.tar.gz"
+  sha256 "a96658efa5d5321c9a5f7bc95980c79c3822583b96874bdf23916196d380b9d2"
   license "MPL-2.0"
 
   bottle do
@@ -41,8 +41,8 @@ class Ocrmypdf < Formula
   fails_with gcc: "5"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "markdown-it-py" do
@@ -66,8 +66,8 @@ class Ocrmypdf < Formula
   end
 
   resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/74/dd/5931d75069458bd39d921fcb157061e9436e169a2e3c47ad9f15cf37f52d/reportlab-4.0.6.tar.gz"
-    sha256 "069aa35da7c882921f419f6e26327e14dac1d9d0adeb40b584cdadd974d99fc0"
+    url "https://files.pythonhosted.org/packages/d8/cf/efb86961f9aed4f95556a15034ee66b1315de6752290c33634120ff4fcd1/reportlab-4.0.7.tar.gz"
+    sha256 "967c77f00efd918cc231cf8b6d8f4e477dc973b5c16557e3bd18dfaeb5a70234"
   end
 
   resource "rich" do
