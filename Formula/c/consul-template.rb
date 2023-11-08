@@ -2,8 +2,8 @@ class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
   homepage "https://github.com/hashicorp/consul-template"
   url "https://github.com/hashicorp/consul-template.git",
-      tag:      "v0.34.0",
-      revision: "58a31b44ecca1ece68ca7bbfc0ad6ca9e8f8ad6b"
+      tag:      "v0.35.0",
+      revision: "2d2654ffe96210db43306922aaefbb730a8e07f9"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
