@@ -29,13 +29,13 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7d3f9bdbc6f9f15582d1369b5b7c075b06382e2a38a8427e620d6904d964dee8"
-    sha256 arm64_ventura:  "b03aec79724e3d4a0e78b821231cda68f192024301081032e502f081a3b843ca"
-    sha256 arm64_monterey: "f49778de6eefe6c6aa0a0e6473fa4e96439118c015fcae2b4a720589f7e6b272"
-    sha256 sonoma:         "775be4d0834de8392d422c01180308f283184c0e022eb7793e948ca74a12c7b5"
-    sha256 ventura:        "2fbb0b86014cac747e67c74f8eefebc05936a154057ce2a5fa5db6f1424148b9"
-    sha256 monterey:       "7370aca2253de325967b050ff571435b73957398fa15194035df228d8acb4d2d"
-    sha256 x86_64_linux:   "bdf951569f0cbafcbac6a1f50660ca9148dd7611983ce1f9fb4ce23c3c1f9dda"
+    sha256 arm64_sonoma:   "682bd08db48945b88dc5e27364134e7b7b55e4976b43aefb3ab416648254cf38"
+    sha256 arm64_ventura:  "71b0ab1abb27ea746dcafc967e74133ed23fd4e1a98de7b29a8fe0ff3bee5e21"
+    sha256 arm64_monterey: "b06a7d20196be39195537b4098488ad490053e99c4b6afb3b5e2583efad38ca7"
+    sha256 sonoma:         "c7fd37ca7f127199453e369303ab36708b7db48d8590e6973147b8e52967cb5e"
+    sha256 ventura:        "1d9bc5a7cfcb5256f13229b515c1162e8e68ab218442a9b7966d9a09d2098900"
+    sha256 monterey:       "28f5d45b1d759287a5d75e834ed98ed4d4fcafa4a5051b302cdd320311fc20b8"
+    sha256 x86_64_linux:   "9d7505c9f08b77cda209da3002dfbbb35e507194058b46fa8483bffd68fb5a6b"
   end
 
   depends_on "berkeley-db@5"
