@@ -1,8 +1,8 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
   homepage "https://github.com/rfc1036/whois"
-  url "https://github.com/rfc1036/whois/archive/refs/tags/v5.5.19.tar.gz"
-  sha256 "58602ce405a0d1f62fc99cd9e9e8cb3fb1ce05451a45a8d5b532bab5120d070e"
+  url "https://github.com/rfc1036/whois/archive/refs/tags/v5.5.20.tar.gz"
+  sha256 "c15d527cad54a9d681415840060581b9d349e017b582fd575ee0f3133a1deef4"
   license "GPL-2.0-or-later"
   head "https://github.com/rfc1036/whois.git", branch: "next"
 
@@ -20,13 +20,6 @@ class Whois < Formula
 
   depends_on "pkg-config" => :build
   depends_on "libidn2"
-
-  # fix build failure with clang
-  # upstream patch, https://github.com/rfc1036/whois/pull/156
-  patch do
-    url "https://github.com/rfc1036/whois/commit/2fdc7a921dc5fd9ccd156627b96eaeb25d710302.patch?full_index=1"
-    sha256 "38d1f108cb10db3c4ccf451fd3f5497ecd0b3f8421df84a64f4fa617085b0c23"
-  end
 
   def install
     ENV.append "LDFLAGS", "-L/usr/lib -liconv" if OS.mac?
