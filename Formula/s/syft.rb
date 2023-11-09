@@ -1,19 +1,10 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
+  url "https://github.com/anchore/syft/archive/refs/tags/v0.96.0.tar.gz"
+  sha256 "fb8c003b5b11bbacc66dbd2e60f1ba91a8d96cc91653d677fe9b460de912fb21"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
-
-  stable do
-    url "https://github.com/anchore/syft/archive/refs/tags/v0.95.0.tar.gz"
-    sha256 "bdf4866ee53ac0209b0b8768a147e9c79bfcc6e1c788a421f84ede8a7aa4f7bc"
-
-    # fix `identify cyclone-json without $schema` issue
-    patch do
-      url "https://github.com/anchore/syft/commit/d91c2dd84211d825012063f78793787e7cbf2078.patch?full_index=1"
-      sha256 "51abff0cf89bdf75dfea1ddcfce9d7d28c919cdf76a3d83bcb756b4b3c951f14"
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04e8ed24c3bfd89e72c686958851831ca97ddd168a7e1555bc7fd4369c44033a"
