@@ -719,7 +719,10 @@
     "exclude_packages": ["certifi", "cffi", "cryptography", "Cython", "docutils", "pycparser", "six"]
   },
   "openai-whisper": {
-    "exclude_packages": ["certifi", "torch", "PyYAML", "huggingface_hub"]
+    "exclude_packages": [
+      "certifi", "huggingface_hub", "markupsafe", "numpy", "PyYAML",
+      "torch", "typing-extensions"
+    ]
   },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],
