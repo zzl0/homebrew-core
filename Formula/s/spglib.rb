@@ -5,6 +5,16 @@ class Spglib < Formula
   sha256 "31bca273a1bc54e1cff4058eebe7c0a35d5f9b489579e84667d8e005c73dcc13"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "67803d095d3ea1f27f80c65c91702ce6c6d51b0a639467f9abf978c9ca0d0b24"
+    sha256 cellar: :any,                 arm64_ventura:  "809d385dcbda7f5f2051adbad883bbdede6b34fa5eb8b5d14e95427071c33b56"
+    sha256 cellar: :any,                 arm64_monterey: "d42e88acf4aec81f3b8be03b8a88bd18ae32bae2503a0adb88425e59aa9cfd1f"
+    sha256 cellar: :any,                 sonoma:         "1688ef9515e42a9810752d453ffcbbb62305cd06df7ce6b5f204d2dd78ebead4"
+    sha256 cellar: :any,                 ventura:        "b286554489884d54297dd3225494e47eec8c0606a24a7b4f83abed22ce019204"
+    sha256 cellar: :any,                 monterey:       "b5521db6b9b81324e6d7ebf5eae3b55afadb1c389785768b2c4516b3e99a4847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc0b5510db0b9c8405f345f2b21d086647c0ca9859f2f18827209ccaa3e80bdf"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "gcc" # for gfortran
 
