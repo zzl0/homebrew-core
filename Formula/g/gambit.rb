@@ -1,10 +1,9 @@
 class Gambit < Formula
   desc "Software tools for game theory"
   homepage "http://www.gambit-project.org"
-  url "https://github.com/gambitproject/gambit/archive/refs/tags/v16.0.2.tar.gz"
-  sha256 "49837f2ccb9bb65dad2f3bba9c436c7a7df8711887e25f6bf54b074508a682d4"
+  url "https://github.com/gambitproject/gambit/archive/refs/tags/v16.1.0.tar.gz"
+  sha256 "de3e3d561cf46aeaec135efaf23f41ddef28968d9071251ca8cb6266babece62"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
-  revision 3
 
   livecheck do
     url :stable
@@ -44,7 +43,6 @@ class Gambit < Formula
 
   test do
     system bin/"gambit-enumpure", pkgshare/"contrib/games/e02.efg"
-    system bin/"gambit-enumpoly", pkgshare/"contrib/games/e01.efg"
     system bin/"gambit-enummixed", pkgshare/"contrib/games/e02.nfg"
     system bin/"gambit-gnm", pkgshare/"contrib/games/e02.nfg"
     system bin/"gambit-ipa", pkgshare/"contrib/games/e02.nfg"
