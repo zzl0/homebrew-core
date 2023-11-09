@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https://github.com/mozilla/sccache"
-  url "https://github.com/mozilla/sccache/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "15f3abf9031743baf7b2f0cb1567f08456795a52f49943793348b4b8c31dd066"
+  url "https://github.com/mozilla/sccache/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "5807417adbb120531ed5d7a18d5406e736be99b45ce9239ab196473fb405e62d"
   license "Apache-2.0"
   head "https://github.com/mozilla/sccache.git", branch: "main"
 
