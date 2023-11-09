@@ -50,6 +50,8 @@ class Sift < Formula
     cd "src/github.com/svent/sift" do
       system "go", "build", "-o", bin/"sift"
       prefix.install_metafiles
+
+      bash_completion.install "sift-completion.bash" => "sift"
     end
   end
 
