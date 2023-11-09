@@ -880,6 +880,9 @@
     "extra_packages": ["python-lsp-black", "pylsp-mypy", "python-lsp-ruff", "pylsp-rope"],
     "exclude_packages": ["black", "mypy", "ruff"]
   },
+  "python-mako": {
+    "exclude_packages": ["markupsafe"]
+  },
   "python-yq": {
     "exclude_packages": ["argcomplete", "PyYAML"]
   },
