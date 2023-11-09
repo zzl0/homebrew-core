@@ -6,7 +6,7 @@ class Bindfs < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7175afd04e2af48dba44575560a3e99625c681cef8349977111fd8d017ad093"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d0baa83bdbed18fa88431ac3957947d5ec94b3b80a91bd03eb4a7f17e92903ba"
   end
 
   head do
