@@ -3,8 +3,8 @@ require "language/node"
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
   homepage "https://handshake.org"
-  url "https://github.com/handshake-org/hsd/archive/refs/tags/v6.1.0.tar.gz"
-  sha256 "5eae5d24e1bace863e7cc52e3b95af66613e179a2dcc896642a7a2ce69801abf"
+  url "https://github.com/handshake-org/hsd/archive/refs/tags/v6.1.1.tar.gz"
+  sha256 "6a0040832f92b08973b2eb5dd350ee7b6cb20234b0d523f133b935e876e9d9a6"
   license "MIT"
 
   livecheck do
