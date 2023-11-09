@@ -3,8 +3,8 @@ require "language/node"
 class Pwned < Formula
   desc "CLI for the 'Have I been pwned?' service"
   homepage "https://github.com/wKovacs64/pwned"
-  url "https://registry.npmjs.org/pwned/-/pwned-11.0.0.tgz"
-  sha256 "35ea2c1ac3b2c44a11b5460d89b59df9509ecc5a94fce1306dd2f786d1e7b89d"
+  url "https://registry.npmjs.org/pwned/-/pwned-12.0.0.tgz"
+  sha256 "b4944b55836e95ae05984e3b1d8112d30500cac2b3a667d4567c4eb280e11418"
   license "MIT"
 
   bottle do
