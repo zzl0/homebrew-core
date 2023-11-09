@@ -3,8 +3,8 @@ class Censys < Formula
 
   desc "Command-line interface for the Censys APIs (censys.io)"
   homepage "https://github.com/censys/censys-python"
-  url "https://files.pythonhosted.org/packages/95/94/b8aebec34a8f6d7d266cc5afff92a4853f8885bbea77f0223695279b5c86/censys-2.2.8.tar.gz"
-  sha256 "e3c6d1e0715f36630a0c52fc2a837849b9d5ffbd6a1f6648e81b1b5a09b7731c"
+  url "https://files.pythonhosted.org/packages/78/46/bb3199c8c6c1ab9713a50af30d7888c8e373262fc4e5a0c048d4777f662a/censys-2.2.9.tar.gz"
+  sha256 "9b5bd9e60bef54b0d505f649b4dcfc40f877f61e401047e66cc2c5b6029bf59b"
   license "Apache-2.0"
 
   bottle do
@@ -28,8 +28,8 @@ class Censys < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
