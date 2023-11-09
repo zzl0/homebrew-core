@@ -53,6 +53,7 @@ class Libxml2 < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
                           "--disable-silent-rules",
                           "--with-history",
                           "--with-icu",
