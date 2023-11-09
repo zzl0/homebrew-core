@@ -1,8 +1,8 @@
 class Feroxbuster < Formula
   desc "Fast, simple, recursive content discovery tool written in Rust"
   homepage "https://epi052.github.io/feroxbuster"
-  url "https://github.com/epi052/feroxbuster/archive/refs/tags/v2.10.0.tar.gz"
-  sha256 "687f4b9a09ab146355fcaef132307b0cd802923728ba1fe14029a115f841be57"
+  url "https://github.com/epi052/feroxbuster/archive/refs/tags/v2.10.1.tar.gz"
+  sha256 "d51dea67dcf33609aaa3e4e8e07f22c7c53866ff44fa4a68c02233cde95cead7"
   license "MIT"
 
   bottle do
@@ -17,10 +17,16 @@ class Feroxbuster < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e778a0c7984dbc9077871f5446e21ef7f565ff95f8a03027df0b72db4808a47"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "miniserve" => :test
+  depends_on "openssl@3"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 
