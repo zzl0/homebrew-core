@@ -24,6 +24,8 @@ class Hashlink < Formula
   depends_on "openal-soft"
   depends_on "sdl2"
 
+  uses_from_macos "sqlite"
+
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
