@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/07/2e/3b97788f2c07eceaee249858627c3a94745d20c1b4a59a75ff5990adea58/vunnel-0.17.5.tar.gz"
-  sha256 "5a7cbbb6568825f303eaa351500cb5a5c131d4be32362fff153f99f1b107c3f8"
+  url "https://files.pythonhosted.org/packages/4d/42/f3cd9061f4b60edd0dd6c4eb0802d6896b0d2d1b9579ce04ee8c39cd059e/vunnel-0.17.6.tar.gz"
+  sha256 "2a952b74e47ee85243d678c24ad30694681258733e6a5e4d795ddc572640c66c"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -49,11 +49,6 @@ class Vunnel < Formula
     sha256 "1e8f0c7ac1c1d7f4fb6d901950aa216358809de25ee7c41bc138615a23936c80"
   end
 
-  resource "dataclass-wizard" do
-    url "https://files.pythonhosted.org/packages/cb/5b/00d70960d5277b8be8c5a79c986b6170285a07f162cf05ee33e87fd7f392/dataclass-wizard-0.22.2.tar.gz"
-    sha256 "211f842e5e9a8ace50ba891ef428cd78c82579fb98024f80f3e630ca8d1946f6"
-  end
-
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
@@ -92,6 +87,11 @@ class Vunnel < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+  end
+
+  resource "mashumaro" do
+    url "https://files.pythonhosted.org/packages/93/4b/50b95e3180b5454ee533ffc32a73c34695b1a9ca777ab5c387dec6f7e912/mashumaro-3.10.tar.gz"
+    sha256 "0248a5c8574aa6cd20696621502d38a7ea66af3d6d93c5d03f93b33298edc878"
   end
 
   resource "mergedeep" do
