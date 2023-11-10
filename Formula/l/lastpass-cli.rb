@@ -1,8 +1,8 @@
 class LastpassCli < Formula
   desc "LastPass command-line interface tool"
   homepage "https://github.com/lastpass/lastpass-cli"
-  url "https://github.com/lastpass/lastpass-cli/releases/download/v1.3.6/lastpass-cli-1.3.6.tar.gz"
-  sha256 "4e6f9a5df9fab46cb6192f40762933faba002479d9387eecbd5ffb28efb9d88b"
+  url "https://github.com/lastpass/lastpass-cli/releases/download/v1.3.7/lastpass-cli-1.3.7.tar.gz"
+  sha256 "448a53960602164456bbc9156d017540a1dac989a8cab7bc6a2a9781b52d47cb"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/lastpass/lastpass-cli.git", branch: "master"
 
@@ -31,14 +31,6 @@ class LastpassCli < Formula
   # Avoid crashes on Mojave's version of libcurl (https://github.com/lastpass/lastpass-cli/issues/427)
   on_mojave :or_newer do
     depends_on "curl"
-  end
-
-  # Newer GCC compatibility patch, https://github.com/lastpass/lastpass-cli/pull/609
-  patch do
-    on_linux do
-      url "https://github.com/lastpass/lastpass-cli/commit/23595c38c4f522c8a33bc75ba93d7fdb27040880.patch?full_index=1"
-      sha256 "d2e5c22319c4533e44658564052ea1f849530e158e34ecc430a08e138959292f"
-    end
   end
 
   def install
