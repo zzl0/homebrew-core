@@ -8,13 +8,13 @@ class FaunaShell < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3bb934e11c1c2ba84237c261384ce96477928c4daa57d0fb72f4dc1ced11fc59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bb934e11c1c2ba84237c261384ce96477928c4daa57d0fb72f4dc1ced11fc59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3bb934e11c1c2ba84237c261384ce96477928c4daa57d0fb72f4dc1ced11fc59"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6328f95db139186b3f9d001b560c336154b86a301d96e7c780573fb3d898d21f"
-    sha256 cellar: :any_skip_relocation, ventura:        "6328f95db139186b3f9d001b560c336154b86a301d96e7c780573fb3d898d21f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6328f95db139186b3f9d001b560c336154b86a301d96e7c780573fb3d898d21f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bb934e11c1c2ba84237c261384ce96477928c4daa57d0fb72f4dc1ced11fc59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af5f454788388317b8f6c9f7919aff58d2dcff28eb18ccc13cc1801d22221dba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af5f454788388317b8f6c9f7919aff58d2dcff28eb18ccc13cc1801d22221dba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af5f454788388317b8f6c9f7919aff58d2dcff28eb18ccc13cc1801d22221dba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ecebc28d573a52f7e1abc9567cb34ce89e6ab558797075b46a7f9369c60a3d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2ecebc28d573a52f7e1abc9567cb34ce89e6ab558797075b46a7f9369c60a3d1"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ecebc28d573a52f7e1abc9567cb34ce89e6ab558797075b46a7f9369c60a3d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af5f454788388317b8f6c9f7919aff58d2dcff28eb18ccc13cc1801d22221dba"
   end
 
   depends_on "node"
