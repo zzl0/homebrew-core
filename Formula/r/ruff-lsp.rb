@@ -3,8 +3,8 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https://github.com/astral-sh/ruff-lsp"
-  url "https://files.pythonhosted.org/packages/46/0a/e432b726310859b577e64bae2b5ee8ee6bef32741d63fdb9791a250a2271/ruff_lsp-0.0.43.tar.gz"
-  sha256 "5b495c8282955a783200d36c1ae2dce2fa6b4f0df110ec7e6eba07d13bc8681d"
+  url "https://files.pythonhosted.org/packages/cb/5b/5beed11bdabb27bc919dbd4fff128262992be4302a5ad18f1576a00b11a1/ruff_lsp-0.0.45.tar.gz"
+  sha256 "11c2d4979eabf81327b714f9395b91be1f3620a8861009ae4967f67e7de2671d"
   license "MIT"
 
   bottle do
@@ -19,7 +19,7 @@ class RuffLsp < Formula
 
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruff"
 
   resource "attrs" do
