@@ -12,7 +12,7 @@
     "exclude_packages": ["certifi"]
   },
   "adb-enhanced": {
-    "exclude_packages": ["psutil"]
+    "exclude_packages": ["docopt", "psutil"]
   },
   "all-repos": {
     "exclude_packages": ["packaging"]
