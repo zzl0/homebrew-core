@@ -8,15 +8,13 @@ class Gitmoji < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e112982c8f5acd0374f67757cc81c641d0335748284cb10743a540c7bb4b4d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc86635f368e5959a671b3f45da64d8c2e2f86095eb6cc814137aa6b52af89aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc86635f368e5959a671b3f45da64d8c2e2f86095eb6cc814137aa6b52af89aa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc86635f368e5959a671b3f45da64d8c2e2f86095eb6cc814137aa6b52af89aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b42f92f173ae0df68b9ae248c8c28141cc9a7d850154253d235018ef7eae1cff"
-    sha256 cellar: :any_skip_relocation, ventura:        "5fbb300743e5f6d4526629ffc678537a1ba0691a9c9eda0e095a1b243b3b2e2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fbb300743e5f6d4526629ffc678537a1ba0691a9c9eda0e095a1b243b3b2e2c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5fbb300743e5f6d4526629ffc678537a1ba0691a9c9eda0e095a1b243b3b2e2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc86635f368e5959a671b3f45da64d8c2e2f86095eb6cc814137aa6b52af89aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d53f5806b99de932374aebf51d076b8a75876e721e68d79c2f7847ad407044bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d53f5806b99de932374aebf51d076b8a75876e721e68d79c2f7847ad407044bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d53f5806b99de932374aebf51d076b8a75876e721e68d79c2f7847ad407044bb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "686b3ddaf1dfa8ec64bdbf5318a4f88f1373c1d4dc706a722c7f505b7f5111c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "686b3ddaf1dfa8ec64bdbf5318a4f88f1373c1d4dc706a722c7f505b7f5111c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "686b3ddaf1dfa8ec64bdbf5318a4f88f1373c1d4dc706a722c7f505b7f5111c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d53f5806b99de932374aebf51d076b8a75876e721e68d79c2f7847ad407044bb"
   end
 
   depends_on "node"
