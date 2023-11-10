@@ -8,13 +8,13 @@ class Stepci < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "104c608135d183affc07d0231be5f52660c94786a6fa9215ce0060bea45ec3be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "104c608135d183affc07d0231be5f52660c94786a6fa9215ce0060bea45ec3be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "104c608135d183affc07d0231be5f52660c94786a6fa9215ce0060bea45ec3be"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5c97a3da1e0aaf22fdc4dff2a444a7964e11ca59261f6ae9b11bf903e2078069"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c97a3da1e0aaf22fdc4dff2a444a7964e11ca59261f6ae9b11bf903e2078069"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c97a3da1e0aaf22fdc4dff2a444a7964e11ca59261f6ae9b11bf903e2078069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "104c608135d183affc07d0231be5f52660c94786a6fa9215ce0060bea45ec3be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d55731b3895a6a84aed59005ef641424e5d15b29b660e326d166f106a0c192d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d55731b3895a6a84aed59005ef641424e5d15b29b660e326d166f106a0c192d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d55731b3895a6a84aed59005ef641424e5d15b29b660e326d166f106a0c192d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c7e128f36f9a9ae64284168d73368afaa905568d13a712c55bcce97a7b014550"
+    sha256 cellar: :any_skip_relocation, ventura:        "c7e128f36f9a9ae64284168d73368afaa905568d13a712c55bcce97a7b014550"
+    sha256 cellar: :any_skip_relocation, monterey:       "c7e128f36f9a9ae64284168d73368afaa905568d13a712c55bcce97a7b014550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d55731b3895a6a84aed59005ef641424e5d15b29b660e326d166f106a0c192d1"
   end
 
   depends_on "node"
