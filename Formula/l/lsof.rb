@@ -1,8 +1,8 @@
 class Lsof < Formula
   desc "Utility to list open files"
   homepage "https://github.com/lsof-org/lsof"
-  url "https://github.com/lsof-org/lsof/archive/refs/tags/4.98.0.tar.gz"
-  sha256 "80308a614508814ac70eb2ae1ed2c4344dcf6076fa60afc7734d6b1a79e62b16"
+  url "https://github.com/lsof-org/lsof/archive/refs/tags/4.99.0.tar.gz"
+  sha256 "27fca13b6a3682114a489205a89d05d92f1c755e282be1f3590db15b16b2ed06"
   license "lsof"
 
   bottle do
@@ -21,6 +21,13 @@ class Lsof < Formula
 
   on_linux do
     depends_on "libtirpc"
+
+    # fix argument mismatch for gethostnm
+    # upstream PR ref, https://github.com/lsof-org/lsof/pull/298
+    patch do
+      url "https://github.com/lsof-org/lsof/commit/5aebb5fd63372ddf6cb3fdc84b3b6afe67e738f2.patch?full_index=1"
+      sha256 "3878a9360cb426a1c2b3902beb585017d2991fd1e498f770a59a8aa6eb0e6cf3"
+    end
   end
 
   def install
@@ -28,11 +35,7 @@ class Lsof < Formula
       ENV["LSOF_INCLUDE"] = MacOS.sdk_path/"usr/include"
 
       # Source hardcodes full header paths at /usr/include
-      inreplace %w[
-        dialects/darwin/kmem/dlsof.h
-        dialects/darwin/kmem/machine.h
-        dialects/darwin/libproc/machine.h
-      ], "/usr/include", MacOS.sdk_path/"usr/include"
+      inreplace "lib/dialects/darwin/machine.h", "/usr/include", MacOS.sdk_path/"usr/include"
     else
       ENV["LSOF_INCLUDE"] = HOMEBREW_PREFIX/"include"
     end
