@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/7a/59/0330bf9c77ba683fd436520683acfed09f18ed7e6f0023097a0c1a81db3d/linode-cli-5.45.1.tar.gz"
-  sha256 "540154567bb6cbdf081c1fb46a38b362de7de5c21f83a22de50a60554b73bce1"
+  url "https://files.pythonhosted.org/packages/12/04/3500dc64982504b5c66d6ca16a20cb6af82e00b28b0e4537bfa07de21c04/linode-cli-5.45.2.tar.gz"
+  sha256 "b3e1cf85bf82e27ad7d8985da7a11d85c7b7ac2e4ac1fc6b4bafffb3d8bdc3b0"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -26,8 +26,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.163.1-patch.1/openapi.yaml"
-    sha256 "da6e549f6c1fcc68dc2288775ce156b881e67428c46c1b78f0477f95dac31735"
+    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.167.3/openapi.yaml"
+    sha256 "43ddaeb31a6ba3cc069555f07188b87f7867be9a386a374ddf0020bf769877d5"
   end
 
   resource "charset-normalizer" do
