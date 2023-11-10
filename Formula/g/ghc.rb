@@ -1,6 +1,8 @@
 class Ghc < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
+  url "https://downloads.haskell.org/~ghc/9.8.1/ghc-9.8.1-src.tar.xz"
+  sha256 "b2f8ed6b7f733797a92436f4ff6e088a520913149c9a9be90465b40ad1f20751"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -8,19 +10,6 @@ class Ghc < Formula
     any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"], # GMP
   ]
   head "https://gitlab.haskell.org/ghc/ghc.git", branch: "master"
-
-  stable do
-    url "https://downloads.haskell.org/~ghc/9.6.2/ghc-9.6.2-src.tar.xz"
-    sha256 "1b510c5f8753c3ba24851702c6c9da7d81dc5e47fe3ecb7af39c7c2613abf170"
-
-    # Backport fix for building docs with sphinx-doc 7.
-    # TODO: Remove patch if fix is backported to 9.2.
-    # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
-    patch do
-      url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
-      sha256 "54cdde1ca5d1b6fe3bbad8d0eac2b8c112ca1f346c4086d1e7361fa9510f1f44"
-    end
-  end
 
   livecheck do
     url "https://www.haskell.org/ghc/download.html"
@@ -39,7 +28,7 @@ class Ghc < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "sphinx-doc" => :build
   depends_on "xz" => :build
 
@@ -59,22 +48,22 @@ class Ghc < Formula
   resource "binary" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-aarch64-apple-darwin.tar.xz"
-        sha256 "5d85f9836d72d45634039218ed52e9faa0ed00c0db056f3d1162b4c2b3838e38"
+        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-aarch64-apple-darwin.tar.xz"
+        sha256 "e1cdf458926b2eaf52d2a8287d99a965040ff9051171f5c3b7467049cf0eb213"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-x86_64-apple-darwin.tar.xz"
-        sha256 "2c874dc685cb72b0c4d6f226b795051705a923c25080eeba05d546350474cb1e"
+        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-x86_64-apple-darwin.tar.xz"
+        sha256 "dde46118ab8388fb1066312c097123e93b1dcf6ae366e3370f88ea456382c9db"
       end
     end
     on_linux do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-aarch64-deb10-linux.tar.xz"
-        sha256 "05896fc4bc52c117d281eac9c621c6c3a0b14f9f9eed5e42cce5e1c4485c7623"
+        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-aarch64-deb10-linux.tar.xz"
+        sha256 "03c389859319f09452081310fc13af7525063ea8930830ef76be2a14b312271e"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-x86_64-ubuntu20_04-linux.tar.xz"
-        sha256 "f1c5c4f9257d06acf9da655f0491cf897ed05dece95f6266fdd880998125467a"
+        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-x86_64-ubuntu20_04-linux.tar.xz"
+        sha256 "d2018768b53ab2c9ab4d543d1e8d7c2b1fb78707b70c74c96ff1733e82f22b80"
       end
     end
   end
@@ -82,17 +71,17 @@ class Ghc < Formula
   resource "cabal-install" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-aarch64-darwin.tar.xz"
-        sha256 "fdabdc4dca42688a97f2b837165af42fcfd4c111d42ddb0d4df7bbebd5c8750e"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-aarch64-darwin.tar.xz"
+        sha256 "d2bd336d7397cf4b76f3bb0d80dea24ca0fa047903e39c8305b136e855269d7b"
       end
       on_intel do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-x86_64-darwin.tar.xz"
-        sha256 "893a316bd634cbcd08861306efdee86f66ec634f9562a8c59dc616f7e2e14ffa"
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-darwin.tar.xz"
+        sha256 "cd64f2a8f476d0f320945105303c982448ca1379ff54b8625b79fb982b551d90"
       end
     end
     on_linux do
-      url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-x86_64-linux-ubuntu20_04.tar.xz"
-      sha256 "b0752c4c5e53eec56af23a1e7cd5a18b5fc62dd18988962aa0aa8748a22af52d"
+      url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz"
+      sha256 "c2a8048caa3dbfe021d0212804f7f2faad4df1154f1ff52bd2f3c68c1d445fe1"
     end
   end
 
