@@ -1043,6 +1043,9 @@
       "certifi", "docutils", "markupsafe", "packaging", "Pygments", "tabulate"
     ]
   },
+  "spoof-mac": {
+    "exclude_packages": ["docopt"]
+  },
   "sqlfluff": {
     "exclude_packages": [
       "click", "markupsafe", "packaging", "pygments", "PyYAML", "typing-extensions"
