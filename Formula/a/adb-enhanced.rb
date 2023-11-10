@@ -1,6 +1,4 @@
 class AdbEnhanced < Formula
-  include Language::Python::Virtualenv
-
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
   url "https://files.pythonhosted.org/packages/82/11/1228620ea0c9204d6d908d8485005141ab3d71d3db71a152080439fa927d/adb-enhanced-2.5.22.tar.gz"
@@ -18,16 +16,17 @@ class AdbEnhanced < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fd029125051b0f8099c3f3a2c5ced238cd53b1cf572aa51900c478761b6b9f3"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-docopt"
   depends_on "python-psutil"
   depends_on "python@3.12"
 
-  resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
