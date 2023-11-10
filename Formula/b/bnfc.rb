@@ -4,6 +4,7 @@ class Bnfc < Formula
   url "https://github.com/BNFC/bnfc/archive/refs/tags/v2.9.5.tar.gz"
   sha256 "32a6293b95e10cf1192f348ec79f3c125b52a56350caa4f67087feb3642eef77"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
   bottle do
@@ -17,7 +18,8 @@ class Bnfc < Formula
   end
 
   depends_on "cabal-install" => [:build, :test]
-  depends_on "ghc" => [:build, :test]
+  # ghc 9.8 support issue, https://github.com/BNFC/bnfc/issues/469
+  depends_on "ghc@9.6" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "agda" => :test
   depends_on "antlr" => :test
