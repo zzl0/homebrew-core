@@ -1,10 +1,8 @@
 class Dhall < Formula
   desc "Interpreter for the Dhall language"
   homepage "https://dhall-lang.org/"
-  # TODO: Switch `ghc@9.2` to `ghc` once cborg has a new release that supports
-  # ghc-prim 0.9.0. PR ref: https://github.com/well-typed/cborg/pull/304
-  url "https://hackage.haskell.org/package/dhall-1.41.2/dhall-1.41.2.tar.gz"
-  sha256 "6a9a026e698e5c1a1e103fcb376e8494615b03ef2450f0b6c5e6b43877cea592"
+  url "https://hackage.haskell.org/package/dhall-1.42.1/dhall-1.42.1.tar.gz"
+  sha256 "ce8cfa44978091811e7c77eb6d2a80cbc55b4582045a0740c44e277af4388758"
   license "BSD-3-Clause"
 
   bottle do
@@ -18,7 +16,7 @@ class Dhall < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
