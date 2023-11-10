@@ -1,8 +1,8 @@
 class FfmpegAT5 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-5.1.3.tar.xz"
-  sha256 "1b113593ff907293be7aed95acdda5e785dd73616d7d4ec90a0f6adbc5a0312e"
+  url "https://ffmpeg.org/releases/ffmpeg-5.1.4.tar.xz"
+  sha256 "54383bb890a1cd62580e9f1eaa8081203196ed53bde9e98fb6b0004423f49063"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
@@ -76,25 +76,6 @@ class FfmpegAT5 < Formula
   end
 
   fails_with gcc: "5"
-
-  # Two upstream patches, fixing compilation with recent svt-av1 versions
-  # Remove in next version
-  patch do
-    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff_plain/bea695d54372b66a6b9b136982fc92adb63e4745?hp=33ed503e590c252ac5e191503ff45e67dc34c214"
-    sha256 "76b1916d710e01b79e20342de7fb0aa5b32bfcdc903d16bd3c1eafa10a555d60"
-  end
-
-  patch do
-    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff_plain/3344d47a88506aba060b5fd2a214cf7785b11483?hp=bea695d54372b66a6b9b136982fc92adb63e4745"
-    sha256 "1d46c3ba395710ba8ba440fa1e6a176dd063a74539d67365389cba6d015abaf3"
-  end
-
-  # Fix for binutils on Linux, remove on next release
-  # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
-  patch do
-    url "https://github.com/FFmpeg/FFmpeg/commit/effadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
-    sha256 "9800c708313da78d537b61cfb750762bb8ad006ca9335b1724dbbca5669f5b24"
-  end
 
   def install
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
