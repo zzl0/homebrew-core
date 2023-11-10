@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/cb/d4/02c49e14da81cf93bc3b133cf64131bfff174f163d593c6fc5efa95d89f6/locust-2.18.1.tar.gz"
-  sha256 "503985a240f8f8098636c9493689caca2cc923b83f241393bb2c92bde5801278"
+  url "https://files.pythonhosted.org/packages/70/84/d5904be15627024741b85662076febfb910160497a49c0b9aee68bc7f672/locust-2.18.2.tar.gz"
+  sha256 "802300a30b4d88555854e3687ff30a0cf5e73b35f264e45ec6f0aa2c8792569f"
   license "MIT"
 
   bottle do
@@ -24,8 +24,8 @@ class Locust < Formula
   depends_on "six"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
-    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
+    url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
+    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
   end
 
   resource "brotli" do
