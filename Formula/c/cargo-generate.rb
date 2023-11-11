@@ -7,15 +7,13 @@ class CargoGenerate < Formula
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "21579bcb1c519918780f419cccf75c0a5bc43c1941c3820c27aa439e9be77c67"
-    sha256 cellar: :any,                 arm64_ventura:  "f8604cdaa3abbad85cebf35c31ea9094cd485846db6a1e7c1501c347a0c887a7"
-    sha256 cellar: :any,                 arm64_monterey: "5531f9d28f0987b8df1618c14756c3058249fdeaf875e9f062a5d5c2ed93e8c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "bea38c9c69707163bdcfd676dc4fc6e0c0270b332ccaa108636e84053a8f3666"
-    sha256 cellar: :any,                 sonoma:         "827f03d0c299fcccd6c070ae1f16431fe9142149e3793accc5edcc0a89848546"
-    sha256 cellar: :any,                 ventura:        "74e5a5029a89b5b8473eac07d20af0419b7480b00d818137f3cc81cee26ebf1a"
-    sha256 cellar: :any,                 monterey:       "e0281cd735b23577defc2f3a4c152aac138de326682e6f7c72cfea90395af7f4"
-    sha256 cellar: :any,                 big_sur:        "a4a4c91e2797eccb3d4ea68090e15d10e97849275a62cd158293712780711bce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d19aecb6fd248226f867516b30c395efce81544550d7a343ba3dbd94213f51f2"
+    sha256 cellar: :any,                 arm64_sonoma:   "9f99049211034c8b9b9e16251d3d29e37bb4bdb043400aa32a3a2601e6d64aff"
+    sha256 cellar: :any,                 arm64_ventura:  "40cd8d546222cba9318445a88cd169c9e517b8ba593e6c0a1252ab4e7fff6047"
+    sha256 cellar: :any,                 arm64_monterey: "b2c30eecc6328def4fd2ad1090c4405acc65bbd384c60c137f323a1dbb5bce78"
+    sha256 cellar: :any,                 sonoma:         "7a8b4af693e8af340d6daca81ce941c9a1b64df8bec0124ee7992c1322265070"
+    sha256 cellar: :any,                 ventura:        "6d0503244572fd4ece411932a93b5c378fd2f174934192dcddbf5b8898b11b6f"
+    sha256 cellar: :any,                 monterey:       "d04c4093521726a68843d0052b7373fb1b6699e83f75942c44bd49862bf81542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3e5799d56bd30b8856585ffd706d05d558cc4e677d6cfc17dd1e735b6241a78"
   end
 
   depends_on "pkg-config" => :build
