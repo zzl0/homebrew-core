@@ -6,13 +6,13 @@ class Bomber < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f227ef01b9e4064d7b6cb945dcb65bd39c3748f4aef594aab4fc91c269bce55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa1d253d6c46a8ae70849f9aca42152bbd3893da782538c0500f076af03bdcef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f5f1e955942385652beb07d44d542fe806e5e1d504a43607b4aa462a3279c72"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d1f7371b26619cb2c8fd7f363233cb3791c237ef601990c5135eacb121f85011"
-    sha256 cellar: :any_skip_relocation, ventura:        "4fdf488a6ddb274979daf263ff37f2f33a76f28d906a6f3b042ffbfa4e10f3fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8399f08a9b353a32e8442a7afa166bd7f84799f60aabc2faf4398b51596c4e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad78e54d44f14b88f2c6ceaf634f8160270bac73f34f6b1af8b56d50be23b96f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5356b1834ac935fa3be39989da3ad5387626eac16bd881bc5d5ced5709f34d2a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16b326862f5d06a27764e875b0911eb728bdeb13a68ae99ad8b6a6f967bb1adc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06a32a3812cb05a636b39ccafbc2987968c503aa8b2a9b952f3703a0bbf86e9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2b7d8b7fb7a6d524b3548515263642f600bb839092dd326743932113ea5733b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab2fb647e5eab91053174fe4ef855aef649cbb4ae4a449df083581a3394bb9c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef6b4b85784cff668f1f99418fde2bc0ff7021c2dcfacf1a39321d46ee64e0b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ca7c8b75e336704de0a784ff010c7488485cea784ed59cc6401c57e5e9445db"
   end
 
   depends_on "go" => :build
