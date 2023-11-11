@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/11/7e/29e906f074b9945f040ba9662a7fe3aec9e74a82d437f62d6176296a16cc/moto-4.2.7.tar.gz"
-  sha256 "1298006aaa6996b886658eb194cac0e3a5679c9fcce6cb13e741ccc5a7247abb"
+  url "https://files.pythonhosted.org/packages/7f/1a/3707521f422178c44f93f5dd145ecdc096e7348a453fe7dd06588912ef54/moto-4.2.8.tar.gz"
+  sha256 "9b5a363f36f8c3fb36388764e7b8c01c615da2f2cba7da3e681680de14bfc769"
   license "Apache-2.0"
 
   bottle do
@@ -37,13 +37,13 @@ class Moto < Formula
   end
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
-    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
+    url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
+    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "docker" do
@@ -122,8 +122,8 @@ class Moto < Formula
   end
 
   resource "py-partiql-parser" do
-    url "https://files.pythonhosted.org/packages/e9/6c/1f73bba75a31d15f6ddf45cb986cb9e72b06c97795cdd3a7f3b90bebc959/py-partiql-parser-0.4.1.tar.gz"
-    sha256 "e0640ee913812bbf5cd126accc0b09eebd0e68df769a9bfbaef9a5e74a0c6d55"
+    url "https://files.pythonhosted.org/packages/28/14/4a9104fa74cd08e2ba499a7b7c6f372e3ef974d52155b181802f04ad4860/py-partiql-parser-0.4.2.tar.gz"
+    sha256 "9c99d545be7897c6bfa97a107f6cfbcd92e359d394e4f3b95430e6409e8dd1e1"
   end
 
   resource "pyasn1" do
@@ -142,8 +142,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/5a/00/f0c95461f33b3cf452339f5cd212f653dbaf5caadca6bc7f229531c212c6/responses-0.23.3.tar.gz"
-    sha256 "205029e1cb334c21cb4ec64fc7599be48b859a0fd381a42443cdd600bfe8b16a"
+    url "https://files.pythonhosted.org/packages/72/7b/3730ec729b4e7302aeb7bf552be2f4dc927d2a2345a6f5fb22db692f908c/responses-0.24.0.tar.gz"
+    sha256 "3df82f7d4dcd3e5f61498181aadb4381f291da25c7506c47fe8cb68ce29203e7"
   end
 
   resource "rfc3339-validator" do
@@ -161,11 +161,6 @@ class Moto < Formula
     sha256 "3020ed4f8c846849299370fbe98ff4157b0ccc1accec105e07cfa9ae4bb55064"
   end
 
-  resource "types-pyyaml" do
-    url "https://files.pythonhosted.org/packages/af/48/b3bbe63a129a80911b60f57929c5b243af909bc1c9590917434bca61a4a3/types-PyYAML-6.0.12.12.tar.gz"
-    sha256 "334373d392fde0fdf95af5c3f1661885fa10c52167b14593eb856289e1855062"
-  end
-
   resource "websocket-client" do
     url "https://files.pythonhosted.org/packages/cb/eb/19eadbb717ef032749853ef5eb1c28e9ca974711e28bccd4815913ba5546/websocket-client-1.6.4.tar.gz"
     sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
@@ -177,8 +172,8 @@ class Moto < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/f8/7d/73e4e3cdb2c780e13f9d87dc10488d7566d8fd77f8d68f0e416bfbd144c7/wrapt-1.15.0.tar.gz"
-    sha256 "d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a"
+    url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
+    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
   end
 
   resource "xmltodict" do
