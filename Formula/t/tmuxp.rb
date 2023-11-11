@@ -19,7 +19,7 @@ class Tmuxp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e62d13235128ab72b39d1521f25eef21b907eff3304363df8f6277d3ea2cbec"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "tmux"
 
