@@ -2,8 +2,8 @@ class Vlang < Formula
   desc "V programming language"
   homepage "https://vlang.io"
   # NOTE: Keep this in sync with V compiler below when updating
-  url "https://github.com/vlang/v/archive/refs/tags/0.4.2.tar.gz"
-  sha256 "fa567363e046a35c039462c077fc9a88fe81cb61b10cfeee060868cd9d620f2c"
+  url "https://github.com/vlang/v/archive/refs/tags/0.4.3.tar.gz"
+  sha256 "79bbe201fe6f7b98b2f80e405ce1d914b4d28931372bf7f9d30cf9b356e4d4f1"
   license "MIT"
 
   livecheck do
@@ -28,7 +28,7 @@ class Vlang < Formula
     # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".
     # The sources of this V compiler commit need to be used here
     url "https://github.com/vlang/vc.git",
-        revision: "5b77beb2ecbcd35d5a4dc872aaa719b7cf85d182"
+        revision: "5e691a82c01957870b451e06216a9fb3a4e83a18"
     on_big_sur :or_older do
       patch do
         url "https://raw.githubusercontent.com/Homebrew/formula-patches/4a51a527e534534c3ddc6801c45d3a3a2c8fbd5a/vlang/vc.patch"
