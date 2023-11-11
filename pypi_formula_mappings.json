@@ -206,7 +206,7 @@
     ]
   },
   "chatblade": {
-    "exclude_packages": ["certifi", "pygments", "PyYAML"]
+    "exclude_packages": ["certifi", "pygments", "PyYAML", "typing-extensions"]
   },
   "check-jsonschema": {
     "exclude_packages": ["certifi", "six"],
