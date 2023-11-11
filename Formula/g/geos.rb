@@ -1,8 +1,8 @@
 class Geos < Formula
   desc "Geometry Engine"
   homepage "https://libgeos.org/"
-  url "https://download.osgeo.org/geos/geos-3.12.0.tar.bz2"
-  sha256 "d96db96011259178a35555a0f6d6e75a739e52a495a6b2aa5efb3d75390fbc39"
+  url "https://download.osgeo.org/geos/geos-3.12.1.tar.bz2"
+  sha256 "d6ea7e492224b51193e8244fe3ec17c4d44d0777f3c32ca4fb171140549a0d03"
   license "LGPL-2.1-or-later"
 
   livecheck do
