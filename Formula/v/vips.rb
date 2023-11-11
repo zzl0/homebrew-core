@@ -1,10 +1,9 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.14.5/vips-8.14.5.tar.xz"
-  sha256 "90374e9f6fbd5657b5faf306cacda20658d6144d385316b59b865bc1a487b68d"
+  url "https://github.com/libvips/libvips/releases/download/v8.15.0/vips-8.15.0.tar.xz"
+  sha256 "d33f81c6ab4bd1faeedc36dc32f880b19e9d5ff69b502e59d175332dfb8f63f1"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -52,6 +51,7 @@ class Vips < Formula
   depends_on "poppler"
   depends_on "webp"
 
+  uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
@@ -61,11 +61,9 @@ class Vips < Formula
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
 
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
