@@ -1,8 +1,8 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
   homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
-  url "https://github.com/ximion/appstream/archive/refs/tags/v0.16.4.tar.gz"
-  sha256 "95d5cf451d1945182a9bc4d597c13e713451a3dba1a5759f45b6b3279ff3774c"
+  url "https://github.com/ximion/appstream/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "e964fea8b4b7efac7976dc13da856421ddec4299acb5012a7c059f03eabcbeae"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -30,35 +30,19 @@ class Appstream < Formula
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
-  on_macos do
-    depends_on "gnu-sed" => :build
-  end
-
   on_linux do
     depends_on "gettext" => :build
     depends_on "gperf" => :build
     depends_on "systemd"
   end
 
+  # fix macos build, upstream PR ref, https://github.com/ximion/appstream/pull/556
   patch do
-    url "https://github.com/ximion/appstream/commit/952cc682c1a39b7e5338d97f0cbee76e911d3979.patch?full_index=1"
-    sha256 "b9cb967ab35ee46c6db5dcf83a41922ef1d2f60239a05ad708a4fc4014a90e06"
-  end
-  patch do
-    url "https://github.com/ximion/appstream/commit/0ad6af8a47fa6747f5cbe9b4a7a96ea6d6def0a8.patch?full_index=1"
-    sha256 "09eccfde59d35e7559c694410e1763867b2c6dd8454ffce895d1b8be235ca474"
-  end
-  patch do
-    url "https://github.com/ximion/appstream/commit/8d752b0637960c8e31a325e09f3c2c730ee5bd86.patch?full_index=1"
-    sha256 "3302241cb1c935a5b601ee490e3c0d70a1ae85ab7ad285de66598bdacaf6f7b4"
+    url "https://github.com/ximion/appstream/commit/06eeffe7eba5c4e82a1dd548e100c6fe4f71b413.patch?full_index=1"
+    sha256 "d0ad5853d451eb073fc64bd3e9e58e81182f4142220e0f413794752cda235d28"
   end
 
   def install
-    # Use GNU sed on macOS to avoid this build failure:
-    # sed: RE error: illegal byte sequence
-    # Reported to the upstream developer by email as a bug tracker does not exist.
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
-
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     inreplace "meson.build", "/usr/include", prefix.to_s
@@ -68,6 +52,8 @@ class Appstream < Formula
       -Dvapi=true
       -Dgir=true
       -Ddocs=false
+      -Dapidocs=false
+      -Dinstall-docs=false
     ]
 
     args << "-Dsystemd=false" if OS.mac?
