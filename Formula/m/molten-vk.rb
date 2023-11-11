@@ -152,6 +152,7 @@ class MoltenVk < Formula
                "-scheme", "MoltenVK Package (macOS only)",
                "-derivedDataPath", "#{buildpath}/build",
                "SYMROOT=#{buildpath}/build", "OBJROOT=build",
+               "GCC_PREPROCESSOR_DEFINITIONS=${inherited} MVK_CONFIG_LOG_LEVEL=MVK_CONFIG_LOG_LEVEL_NONE",
                "build"
 
     (libexec/"lib").install Dir["External/build/Intermediates/XCFrameworkStaging/Release/" \
