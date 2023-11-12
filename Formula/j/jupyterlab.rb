@@ -29,7 +29,9 @@ class Jupyterlab < Formula
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-jinja"
   depends_on "python-lsp-server"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-psutil"
   depends_on "python@3.12"
@@ -131,11 +133,6 @@ class Jupyterlab < Formula
     sha256 "ac2f9015137935279eac671f94f89eb00584f940f5dc49462a0c4ee692ba1bd9"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "json5" do
     url "https://files.pythonhosted.org/packages/f9/40/89e0ecbf8180e112f22046553b50a99fdbb9e8b7c49d547cda2bfa81097b/json5-0.9.14.tar.gz"
     sha256 "9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"
@@ -199,11 +196,6 @@ class Jupyterlab < Formula
   resource "jupyterlab-server" do
     url "https://files.pythonhosted.org/packages/39/50/e6ed3c392bf304ccbde96b4f2ae7da6f5f7c758deeaf95e117647605c136/jupyterlab_server-2.25.0.tar.gz"
     sha256 "77c2f1f282d610f95e496e20d5bf1d2a7706826dfb7b18f3378ae2870d272fb7"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "mistune" do
