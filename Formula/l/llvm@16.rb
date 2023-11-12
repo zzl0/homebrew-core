@@ -33,7 +33,7 @@ class LlvmAT16 < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "swig" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six" # TODO: Remove at next release.
   depends_on "z3"
   depends_on "zstd"
@@ -60,7 +60,7 @@ class LlvmAT16 < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
