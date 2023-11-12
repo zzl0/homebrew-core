@@ -26,6 +26,7 @@ class AstrometryNet < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "cairo"
   depends_on "cfitsio"
@@ -34,12 +35,12 @@ class AstrometryNet < Formula
   depends_on "libpng"
   depends_on "netpbm"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "wcslib"
 
   resource "fitsio" do
-    url "https://files.pythonhosted.org/packages/1f/0e/b312ff3f6b588c13fc2256a5df4c4d63c527a07e176012d0593136af53ee/fitsio-1.1.8.tar.gz"
-    sha256 "61f569b2682a0cadce52c9653f0c9b81f951d000522cef645ce1cb49f78300f9"
+    url "https://files.pythonhosted.org/packages/aa/03/d7d0b77f938627cb46f6d91257d859c78459fbb5b155899d6c4c78970faa/fitsio-1.2.1.tar.gz"
+    sha256 "c64f60588f25fb2ba499854082bca73b0eda43b32ed6091f09dfcbcb72a911a6"
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/130484
@@ -54,14 +55,15 @@ class AstrometryNet < Formula
     # See https://github.com/dstndstn/astrometry.net/issues/178#issuecomment-592741428
     ENV.deparallelize
 
-    python = which("python3.11")
+    python = which("python3.12")
+    ENV["FITSIO_USE_SYSTEM_FITSIO"] = "1"
     ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}/netpbm"
     ENV["NETPBM_LIB"] = "-L#{Formula["netpbm"].opt_lib} -lnetpbm"
     ENV["SYSTEM_GSL"] = "yes"
     ENV["PYTHON"] = python
 
     venv = virtualenv_create(libexec, python)
-    venv.pip_install resources
+    venv.pip_install(resources, build_isolation: false)
 
     ENV["INSTALL_DIR"] = prefix
     site_packages = Language::Python.site_packages(python)
