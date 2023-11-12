@@ -1,10 +1,9 @@
 class Siril < Formula
   desc "Astronomical image processing tool"
   homepage "https://www.siril.org"
-  url "https://free-astro.org/download/siril-1.0.6.tar.bz2"
-  sha256 "f89604697ffcd43f009f8b4474daafdef220a4f786636545833be1236f38b561"
+  url "https://free-astro.org/download/siril-1.2.0.tar.bz2"
+  sha256 "5941a4b5778929347482570dab05c9d780f3ab36e56f05b6301c39d911065e6f"
   license "GPL-3.0-or-later"
-  revision 7
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   bottle do
@@ -19,11 +18,10 @@ class Siril < Formula
     sha256 x86_64_linux:   "8c89cf9a837456760716b1be36b7280dde9ec4c1042ee3c6d24f00da0c4d70f7"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "intltool" => :build
-  depends_on "libtool" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
   depends_on "cfitsio"
@@ -36,6 +34,7 @@ class Siril < Formula
   depends_on "jpeg-turbo"
   depends_on "json-glib"
   depends_on "libconfig"
+  depends_on "libheif"
   depends_on "libraw"
   depends_on "librsvg"
   depends_on "netpbm"
@@ -53,16 +52,13 @@ class Siril < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    args = %w[
+      --force-fallback-for=kplot
+    ]
 
-    # siril uses pkg-config but it has wrong include paths for several
-    # headers. Work around that by letting it find all includes.
-    ENV.append_to_cflags "-I#{HOMEBREW_PREFIX}/include"
-    ENV.append_to_cflags "-Xpreprocessor -fopenmp -lomp" if OS.mac?
-
-    system "./autogen.sh", "--prefix=#{prefix}"
-    system "make"
-    system "make", "install"
+    system "meson", "setup", "_build", *args, *std_meson_args
+    system "meson", "compile", "-C", "_build", "--verbose"
+    system "meson", "install", "-C", "_build"
   end
 
   test do
