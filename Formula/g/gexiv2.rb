@@ -6,6 +6,7 @@ class Gexiv2 < Formula
   url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz"
   sha256 "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "21456f0d9f146e737dfcafcbca6bf138b4b154152a6f3273223a05fdff4b6cf7"
