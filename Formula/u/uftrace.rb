@@ -8,7 +8,8 @@ class Uftrace < Formula
   head "https://github.com/namhyung/uftrace.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "477cdea5a6cc69342c42492c1fcb4a7f0ed2ca21bfd165febaec626e72a30eff"
+    rebuild 1
+    sha256 x86_64_linux: "8086e68d0c5cf6bc746f343d390dc7ca338357deba55034d58c1e349a2cc79d9"
   end
 
   depends_on "pandoc" => :build
