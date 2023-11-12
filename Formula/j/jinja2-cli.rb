@@ -18,15 +18,11 @@ class Jinja2Cli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2e6172326dff855bdc8c57b6d6cea2352e6ba8d728ae99fb1364fd2e77f5ef3"
   end
 
+  depends_on "python-jinja"
   depends_on "python-markupsafe"
   depends_on "python-toml"
   depends_on "python@3.12"
   depends_on "pyyaml"
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
 
   resource "xmltodict" do
     url "https://files.pythonhosted.org/packages/39/0d/40df5be1e684bbaecdb9d1e0e40d5d482465de6b00cbb92b84ee5d243c7f/xmltodict-0.13.0.tar.gz"
