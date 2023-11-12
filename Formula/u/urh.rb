@@ -24,10 +24,11 @@ class Urh < Formula
   depends_on "numpy"
   depends_on "pyqt@5"
   depends_on "python-psutil"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
 
     # Enable finding cython, which is keg-only
     site_packages = Language::Python.site_packages(python3)
@@ -36,7 +37,10 @@ class Urh < Formula
     EOS
     (libexec/site_packages/"homebrew-libcython.pth").write pth_contents
 
-    virtualenv_install_with_resources
+    # We disable build isolation to avoid trying to build another numpy for build-only usage.
+    # We can replace the virtualenv with pip install if we decide to link `libcython`.
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install_and_link(buildpath, build_isolation: false)
   end
 
   test do
