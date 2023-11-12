@@ -1,10 +1,20 @@
 class Siril < Formula
   desc "Astronomical image processing tool"
   homepage "https://www.siril.org"
-  url "https://free-astro.org/download/siril-1.2.0.tar.bz2"
-  sha256 "5941a4b5778929347482570dab05c9d780f3ab36e56f05b6301c39d911065e6f"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
+
+  stable do
+    url "https://free-astro.org/download/siril-1.2.0.tar.bz2"
+    sha256 "5941a4b5778929347482570dab05c9d780f3ab36e56f05b6301c39d911065e6f"
+
+    # TODO: Remove this patch on the next version after 1.2.0.
+    patch do
+      url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-astronomy/siril/files/siril-1.2-exiv2-0.28.patch?id=002882203ad6a2b08ce035a18b95844a9f4b85d0"
+      sha256 "023a1a084f3005ed90649e71c70d59335d2efcd06875433f2cc2841f9d357eba"
+    end
+  end
 
   bottle do
     sha256 arm64_sonoma:   "c9c5cafd7997d252c7e56a68f78e0eb98a4f11b3539e2d93f9cea9b2b2ca2c67"
