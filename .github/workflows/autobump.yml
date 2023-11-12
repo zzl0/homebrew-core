@@ -119,130 +119,287 @@ env:
     awscli
     awscli@1
     azcopy
+    b2-tools
     b3sum
+    babel
     bagit
     baidupcs-go
+    balena-cli
     ballerina
+    bandwhich
+    bareos-client
+    bartycrouch
+    base16384
     bash_unit
+    bash-language-server
     bashunit
+    bat
+    bat-extras
     batik
+    bazarr
     bazel
     bazelisk
     bbtools
+    bcftools
     bcoin
+    bde
+    beagle
     bear
     benthos
     berglas
     bettercap
+    bfs
+    biber
+    bibtexconv
     bigloo
+    bilix
     binaryen
+    bind
+    bindfs
+    bindgen
+    bingrep
+    biome
+    bitrise
+    bitwarden-cli
+    bk
+    bkt
+    black
+    bluepill
+    bmake
     bnd
+    boolector
+    bore-cli
+    borgmatic
     bosh-cli
+    botan
     bottom
     brev
     brew-php-switcher
+    brogue
     brook
     broot
     btrfs-progs
     bubblewrap
+    buf
     buildifier
     buildkit
     buildozer
     buildpulse-test-reporter
     buku
+    bulk_extractor
     bundletool
+    bup
     bupstash
     busted
     butane
     byacc
     byteman
     bzt
+    c-ares
+    c2rust
     caddy
     cadence
     cadence-workflow
+    cadical
+    caf
     caire
+    calc
+    calcurse
     calicoctl
+    capnp
+    capstone
+    cargo-about
     cargo-audit
+    cargo-binstall
     cargo-bloat
     cargo-c
+    cargo-crev
+    cargo-deny
+    cargo-depgraph
     cargo-edit
+    cargo-generate
     cargo-instruments
     cargo-llvm-lines
+    cargo-make
+    cargo-nextest
     cargo-outdated
+    cargo-release
+    cargo-udeps
     cargo-watch
+    cargo-zigbuild
+    carla
     carrot2
+    cask
     cassandra
+    cassandra-cpp-driver
     cassandra-reaper
+    cassowary
+    castxml
     catch2
+    cava
+    cbindgen
+    ccache
+    cdebug
     cdk8s
+    cdktf
+    cdogs-sdl
+    cdxgen
+    censys
+    certbot
     certigo
+    cfengine
+    cfitsio
+    cfn-lint
+    cfonts
     cfr-decompiler
     cfssl
     cgl
+    cgrep
+    chain-bench
+    chainloop-cli
     chamber
     charmcraft
+    chars
+    chart-testing
+    chatblade
     cheat
+    check-jsonschema
+    checkbashisms
+    checkdmarc
+    checkmake
     checkstyle
     chezmoi
+    chkrootkit
     choose-rust
     chromaprint
     chronograf
+    chuck
     cilium-cli
+    cimg
     circleci
+    circumflex
     clair
     clamav
     clarinet
-    clash
     clazy
+    clhep
+    cli53
+    clickhouse-cpp
     cliclick
+    clifm
+    clipboard
     clojurescript
     closure-compiler
     cloud-nuke
+    cloud-sql-proxy
+    cloudflare-quiche
+    cloudflare-wrangler2
+    cloudflared
+    cloudformation-cli
     cloudformation-guard
     cloudprober
+    clusterawsadm
     clusterctl
+    cmctl
+    cmu-pocketsphinx
+    cntb
     cobalt
+    cocoapods
+    cocogitto
+    coconut
     code-cli
     code-minimap
+    code-server
+    codec2
+    coder
+    codespell
+    cog
     cointop
     coinutils
     colima
+    commitizen
+    commitlint
     composer
+    conan
+    conan@1
+    conda-lock
+    conda-zsh-completion
+    conduit
     condure
     conftest
     consul-template
     contentful-cli
+    convco
     convox
+    cookiecutter
+    copa
+    copier
     copilot
+    core-lightning
     coredns
     corepack
+    corrosion
     cortex
     cosign
     couchdb
+    countdown
+    counterfeiter
+    coursier
+    cpm
+    cpp-httplib
+    cppcheck
+    cpr
+    cpu_features
+    cpufetch
     cpuid
+    crane
+    croaring
     croc
     cromwell
     crowdin
     crun
+    cryptominisat
+    crystal
     css-crush
     csvq
     csvtk
+    ctlptl
     cubejs-cli
+    cue
+    cvs-fast-export
     cweb
+    cyclonedx-python
+    cycode
     cypher-shell
     cyrus-sasl
+    czg
+    czkawka
+    d2
+    daemon
     dafny
+    dagger
     darkstat
+    dart-sdk
+    dartsim
+    dasel
+    datafusion
+    datalad
     datree
     dbdeployer
+    dbml-cli
+    dbus
+    dcd
+    ddcutil
     ddrescue
     deark
     delve
     deno
     dependency-check
+    deployer
     derby
     detekt
     detox
+    devcontainer
     devspace
     dex2jar
     diamond
@@ -250,19 +407,31 @@ env:
     diffoscope
     difftastic
     digdag
+    direvent
+    dislocker
+    distrobox
+    dive
     django-completion
+    djhtml
     djl-serving
     dnscontrol
     dnscrypt-proxy
+    dnsdist
+    dnstwist
     dnsx
     docker
+    docker-buildx
     docker-compose
     docker-credential-helper
+    docker-gen
     docker-slim
     docker-squash
     doctl
     docuum
+    doggo
+    dolphie
     dolt
+    dooit
     dosbox-staging
     dotenv-linter
     double-conversion
@@ -273,13 +442,24 @@ env:
     drone-cli
     druid
     dstask
+    dtm
     dua-cli
+    dub
+    duck
+    duckdb
     duckscript
+    dufs
+    dumpling
+    dunamai
     dune
     dust
     dvc
     dxpy
+    dyld-headers
+    dynaconf
     dynare
+    dysk
+    dzr
     easyengine
     efm-langserver
     ehco
