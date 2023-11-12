@@ -26,7 +26,7 @@ class AwscliAT1 < Formula
   keg_only :versioned_formula
 
   depends_on "docutils"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
