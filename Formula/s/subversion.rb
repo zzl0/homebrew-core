@@ -35,7 +35,8 @@ class Subversion < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "scons" => :build # For Serf
   depends_on "swig" => :build
   depends_on "apr"
@@ -76,7 +77,7 @@ class Subversion < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
