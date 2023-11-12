@@ -21,7 +21,7 @@ class Restview < Formula
 
   depends_on "docutils"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "bleach" do
