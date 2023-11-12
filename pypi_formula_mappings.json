@@ -899,6 +899,10 @@
   "pywhat": {
     "exclude_packages": ["click", "Pygments"]
   },
+  "raven": {
+    "package_name": "raven-cycode",
+    "exclude_packages": ["certifi", "packaging", "pygments", "pytz", "pyyaml", "six"]
+  },
   "rbtools": {
     "exclude_packages": ["certifi", "six", "typing-extensions"]
   },
