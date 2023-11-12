@@ -4,6 +4,7 @@ class Baobab < Formula
   url "https://download.gnome.org/sources/baobab/45/baobab-45.0.tar.xz"
   sha256 "a7d2cf308a6c839ee0b0bf074f8f5fd60d62ae2f064a94b3c610d6560b758e86"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "ef1f68b4bfa8df91c108145460ca781da7dbd9177ec02cd042aae5afcee6b01e"
