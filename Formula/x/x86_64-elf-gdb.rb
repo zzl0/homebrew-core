@@ -25,7 +25,7 @@ class X8664ElfGdb < Formula
 
   depends_on "x86_64-elf-gcc" => :test
   depends_on "gmp"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "zlib"
@@ -46,7 +46,7 @@ class X8664ElfGdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{Formula["python@3.11"].opt_bin}/python3.11
+      --with-python=#{which("python3.12")}
       --with-system-zlib
       --disable-binutils
     ]
