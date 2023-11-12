@@ -1,8 +1,8 @@
 class PythonArgcomplete < Formula
   desc "Tab completion for Python argparse"
   homepage "https://kislyuk.github.io/argcomplete/"
-  url "https://files.pythonhosted.org/packages/48/28/2a56c0fccc0bb07bd369bbb2b2a1452743f84acb08145eaccc11b3e6fa74/argcomplete-3.1.4.tar.gz"
-  sha256 "72558ba729e4c468572609817226fb0a6e7e9a0a7d477b882be168c0b4a62b94"
+  url "https://files.pythonhosted.org/packages/fa/b0/e9dfb95bd5afc9b9134a652e33627a6b895faa8e8e725f7ce26518f42850/argcomplete-3.1.5.tar.gz"
+  sha256 "86089f25e2fae30f8c6282649fcb52e98fd22b3ffcf952befff9796cb0971e31"
   license "Apache-2.0"
 
   bottle do
