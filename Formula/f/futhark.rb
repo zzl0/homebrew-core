@@ -1,8 +1,9 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https://futhark-lang.org/"
-  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.7.tar.gz"
-  sha256 "64afb1b228b377702a35b558cab2e58ca260e06fd402048dd457d8b944d6f225"
+  # TODO: Try to switch `ghc@9.4` to `ghc` when futhark.cabal allows base>=4.17
+  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.8.tar.gz"
+  sha256 "dc62d4d9cf411b26f7a6e348c338ff802d303a0cc99291b312b2865cfff38300"
   license "ISC"
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
@@ -17,7 +18,7 @@ class Futhark < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.4" => :build
   depends_on "sphinx-doc" => :build
 
   uses_from_macos "ncurses"
