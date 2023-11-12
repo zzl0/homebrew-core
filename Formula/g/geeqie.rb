@@ -4,6 +4,7 @@ class Geeqie < Formula
   url "https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz"
   sha256 "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -49,6 +50,7 @@ class Geeqie < Formula
   depends_on "poppler" # for pdf support # for video thumbnails support
   depends_on "webp-pixbuf-loader" # for webp support
 
+  uses_from_macos "python" => :build
   uses_from_macos "vim" => :build # for xxd
 
   def install
