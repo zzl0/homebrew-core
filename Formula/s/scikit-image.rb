@@ -27,6 +27,7 @@ class ScikitImage < Formula
   depends_on "pythran" => :build
   depends_on "numpy"
   depends_on "pillow"
+  depends_on "python-networkx"
   depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "scipy"
@@ -39,11 +40,6 @@ class ScikitImage < Formula
   resource "lazy-loader" do
     url "https://files.pythonhosted.org/packages/0e/3a/1630a735bfdf9eb857a3b9a53317a1e1658ea97a1b4b39dcb0f71dae81f8/lazy_loader-0.3.tar.gz"
     sha256 "3b68898e34f5b2a29daaaac172c6555512d0f32074f147e2254e4a6d9d838f37"
-  end
-
-  resource "networkx" do
-    url "https://files.pythonhosted.org/packages/c4/80/a84676339aaae2f1cfdf9f418701dd634aef9cc76f708ef55c36ff39c3ca/networkx-3.2.1.tar.gz"
-    sha256 "9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6"
   end
 
   resource "tifffile" do
