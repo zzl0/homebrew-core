@@ -2,8 +2,8 @@ class Retdec < Formula
   desc "Retargetable machine-code decompiler based on LLVM"
   homepage "https://github.com/avast/retdec"
   url "https://github.com/avast/retdec.git",
-    tag:      "v5.0",
-    revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
+      tag:      "v5.0",
+      revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
   license all_of: ["MIT", "Zlib"]
   revision 1
   head "https://github.com/avast/retdec.git", branch: "master"
@@ -26,7 +26,7 @@ class Retdec < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_macos do
     depends_on xcode: :build
