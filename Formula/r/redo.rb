@@ -22,7 +22,7 @@ class Redo < Formula
   end
 
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
@@ -35,7 +35,7 @@ class Redo < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     # Prevent system Python 2 from being detected
     inreplace "redo/whichpython.do", " python python3 python2 python2.7;", " #{python3};"
 
