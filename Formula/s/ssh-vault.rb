@@ -7,15 +7,13 @@ class SshVault < Formula
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f86981b5062ba4f2382c6be48232248624e0b4a38902d900e5071e6246728731"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25e86b2a90a05442c7e883447d5139fed351bf0c24a1110def35d3cf3130c028"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25e86b2a90a05442c7e883447d5139fed351bf0c24a1110def35d3cf3130c028"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25e86b2a90a05442c7e883447d5139fed351bf0c24a1110def35d3cf3130c028"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2d0a3f4a23913ff935e8ee16278f6434eb105e2b0a10597ad535e63c71e090b"
-    sha256 cellar: :any_skip_relocation, ventura:        "626b79f4e43c94b0032b7c96971205441e54988955e8cbc741ec380d45ce17f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "626b79f4e43c94b0032b7c96971205441e54988955e8cbc741ec380d45ce17f1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "626b79f4e43c94b0032b7c96971205441e54988955e8cbc741ec380d45ce17f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51e41cb587b634237268bf413e3e8b57925c1a55002598a343f9c7bdd41d7354"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b464b0b2437888088eb4b4ee5df126a7c7d7441220d8668d4a4dc1047f36cb5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0088467c63f7dad44f3ef52c6b65c6f84063eb2635a035564bb3ea7041606e1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f67e5a6811a027dd21d8ddcecb634829ba4caa9638624b4388223cb076db011"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02124b0120c0dd2de37f60b2d6061365e9bbbcd1f8e317f24dc4a87212d28a0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "73a0be0cac446d704b095af7011f181aa18d92c587c41c6276cf9fadc99e1840"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba51709863c0f0760a7ca351e230c1b0b4f68d4202a6aaa731979b81c9c8519e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88ea0f8e4729d8ca4b2ea3099a09a19370c6f912eb1720d96ffab91c438789e2"
   end
 
   depends_on "rust" => :build
