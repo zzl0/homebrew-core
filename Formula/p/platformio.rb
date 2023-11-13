@@ -6,7 +6,7 @@ class Platformio < Formula
   url "https://files.pythonhosted.org/packages/85/9b/37452c9b7e99638c9d761c7864a463e4721ce7206fb526174813ffe6a949/platformio-6.1.11.tar.gz"
   sha256 "1977201887cd11487adf1babf17a28f45f6dbbec8cbc5e3cc144cb43b320a0d0"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
@@ -91,8 +91,8 @@ class Platformio < Formula
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[uvicorn].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
+    pth_contents = "import site; site.addsitedir('#{Formula["uvicorn"].opt_libexec/site_packages}')\n"
+    (libexec/site_packages/"homebrew-uvicorn.pth").write pth_contents
 
     generate_completions_from_executable(bin/"pio", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
