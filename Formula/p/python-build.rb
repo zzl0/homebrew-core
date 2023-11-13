@@ -4,6 +4,7 @@ class PythonBuild < Formula
   url "https://files.pythonhosted.org/packages/98/e3/83a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1/build-1.0.3.tar.gz"
   sha256 "538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"
   license "MIT"
+  revision 1
   head "https://github.com/pypa/build.git", branch: "main"
 
   bottle do
