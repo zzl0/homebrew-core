@@ -6,7 +6,7 @@ class Maclaunch < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "85afa782ab131dd363d78f2401de325d6ed04730612ac20fb6ec727cc92ebc65"
+    sha256 cellar: :any_skip_relocation, all: "639bd667f12534988b5419a710d59ec0f69bc1a2e274d31d055273e9e6faf7c6"
   end
   depends_on :macos
 
