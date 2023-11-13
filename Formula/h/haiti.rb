@@ -12,7 +12,8 @@ class Haiti < Formula
   # Requires Ruby >= 2.7
   depends_on "ruby"
 
-  # upstream patch for haiti-hash gem version
+  # Runtime dependencies of haiti
+  # List with `gem install --explain haiti-hash`
   resource "paint" do
     url "https://rubygems.org/gems/paint-2.3.0.gem"
     sha256 "327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5"
@@ -23,13 +24,11 @@ class Haiti < Formula
     sha256 "73f837ed376d015971712c17f7aafa021998b964b77d52997dcaff79d6727467"
   end
 
+  # upstream patch for haiti-hash gem version
   patch do
     url "https://github.com/noraj/haiti/commit/45d70981997038b950b832aa1b18e624ca66725d.patch?full_index=1"
     sha256 "be06dc98947770020c36a9a6d6c62046657fe756234f134af0b6abc3ca232ecb"
   end
-
-  # Runtime dependencies of haiti
-  # List with `gem install --explain haiti-hash`
 
   def install
     ENV["GEM_HOME"] = libexec
