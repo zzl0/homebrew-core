@@ -1,11 +1,10 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.3.0/apache-pulsar-client-cpp-3.3.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.3.0/apache-pulsar-client-cpp-3.3.0.tar.gz"
-  sha256 "0e04c67d7b644a92081eb6993ebd1579e05080c1fff651728dfa04b054e637bf"
+  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.4.0/apache-pulsar-client-cpp-3.4.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.4.0/apache-pulsar-client-cpp-3.4.0.tar.gz"
+  sha256 "b4dfb0608d1b0b11250cf4213fa223c463f71f4c8e8e068c5bf49e35bfdcc020"
   license "Apache-2.0"
-  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "aa1d893b5e754c6481a04abad5edeb456b8175e1d9ef52a82b6e6a2a52ef50cc"
