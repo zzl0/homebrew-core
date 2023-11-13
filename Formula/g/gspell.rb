@@ -19,6 +19,7 @@ class Gspell < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => [:build, :test]
+  depends_on "python@3.12" => :build
   depends_on "vala" => :build
   depends_on "enchant"
   depends_on "glib"
