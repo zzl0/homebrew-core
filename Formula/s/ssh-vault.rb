@@ -1,10 +1,10 @@
 class SshVault < Formula
   desc "Encrypt/decrypt using SSH keys"
   homepage "https://ssh-vault.com/"
-  url "https://github.com/ssh-vault/ssh-vault/archive/refs/tags/0.12.10.tar.gz"
-  sha256 "8dd05033aed9a00cb30ab2b454b5709987799e187f298b5817c8f2c8e37ecaf6"
+  url "https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.0.1.tar.gz"
+  sha256 "38bc41c88b540d694591d1c2d911ff799c22ab7b4ffabc5058f05e3830f472f1"
   license "BSD-3-Clause"
-  head "https://github.com/ssh-vault/ssh-vault.git", branch: "master"
+  head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f86981b5062ba4f2382c6be48232248624e0b4a38902d900e5071e6246728731"
@@ -18,18 +18,43 @@ class SshVault < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51e41cb587b634237268bf413e3e8b57925c1a55002598a343f9c7bdd41d7354"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "cmd/ssh-vault/main.go"
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
+    system "cargo", "install", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
-    output = pipe_output("#{bin}/ssh-vault -u new create", "hi")
-    fingerprint = output.split("\n").first.split(";").last
-    cmd = "#{bin}/ssh-vault -k https://ssh-keys.online/key/#{fingerprint} view"
-    output = pipe_output(cmd, output, 0)
-    assert_equal "hi", output.chomp
+    test_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINixf2m2nj8TDeazbWuemUY8ZHNg7znA7hVPN8TJLr2W"
+    (testpath/"public_key").write test_key
+    cmd = "#{bin}/ssh-vault f -k  #{testpath}/public_key"
+    assert_match "SHA256:hgIL5fEHz5zuOWY1CDlUuotdaUl4MvYG7vAgE4q4TzM", shell_output(cmd)
+
+    if OS.linux?
+      [
+        Formula["openssl@3"].opt_lib/shared_library("libssl"),
+        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      ].each do |library|
+        assert check_binary_linkage(bin/"ssh-vault", library),
+              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+      end
+    end
   end
 end
