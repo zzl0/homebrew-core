@@ -11,7 +11,7 @@ class Osmosis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "03b25119fbe3db2e9ebde3b6752951ef2aa84501e9e68e1a9d39ac30fde7ed0b"
+    sha256 cellar: :any_skip_relocation, all: "5a62a77b661449efd017f9eb3dd87dd2d9720d5b9245f419963d627413b2c009"
   end
 
   depends_on "openjdk"
