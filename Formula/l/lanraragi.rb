@@ -19,13 +19,13 @@ class Lanraragi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6d7cecbd0f38afed3ee880deca03e8aee23cc18f4d7fb51657d0a0e8e9bd80b6"
-    sha256 cellar: :any,                 arm64_ventura:  "6ac4aa61abe98f69a42b73b465e8928fa7c06d3933f023fddc2690ad588af4d5"
-    sha256 cellar: :any,                 arm64_monterey: "aec9003288a39616f378a570a1e13b26dc299061f2f436e0d83b18365dd6cc9f"
-    sha256 cellar: :any,                 sonoma:         "6c1d39363d02694aa3ad570371eef0a7866974629d0cda89edbd1fdea93b9607"
-    sha256 cellar: :any,                 ventura:        "2c8e3c4d10539a00006d61e1dd76c8263fcb91cf51d071e356c250117889cdf2"
-    sha256 cellar: :any,                 monterey:       "708cdbb45a1da8b23ca91564568ec0b451b10911f2b4ff70d1a66d37e69e14d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e9a46d6556104ff0c6039b1fee385acaa23a344a095bd956d8816c1cfad267c"
+    sha256 cellar: :any,                 arm64_sonoma:   "3b49498cbc0a34297dcb42c3afb77eebf5db20e38499ab7e35ebd0d985ec0f93"
+    sha256 cellar: :any,                 arm64_ventura:  "6746c926ae28a5ea67e5c7d0640f63ae654435777914c267d64054733cc0b292"
+    sha256 cellar: :any,                 arm64_monterey: "a76240c2c099dc3c87bb6496f5db3fa98fab445561faf27c3245e1a894fb672e"
+    sha256 cellar: :any,                 sonoma:         "0aefa14f2fe76f790aa9a13c815256c3ca43fc1b1f8d670b468b0e9b766fbf13"
+    sha256 cellar: :any,                 ventura:        "47e34ca1d4ed8ac217df7be95533f540b0fba4912b0220e70e52a8b7ecd26969"
+    sha256 cellar: :any,                 monterey:       "e169e620e4eef0d430a227e4a8e4903946246d271a0133fdbf872d88aec8cea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b8ccd9a2cfeb25225e21ff477852767f99befcd3c6315e9ade1a34e43c3c376"
   end
 
   depends_on "nettle" => :build
