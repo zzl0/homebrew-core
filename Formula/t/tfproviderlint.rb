@@ -1,10 +1,9 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Lint Tool"
   homepage "https://github.com/bflad/tfproviderlint"
-  url "https://github.com/bflad/tfproviderlint/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "df66a164256ffbacbb260e445313c0666bb14ce4b8363f123903259ecc0f4eb5"
+  url "https://github.com/bflad/tfproviderlint/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "60427ce6952106ba6c321555352645f051781ff55fe876b591e5dd2454852692"
   license "MPL-2.0"
-  revision 1
   head "https://github.com/bflad/tfproviderlint.git", branch: "main"
 
   bottle do
@@ -20,19 +19,9 @@ class Tfproviderlint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "76c181e440e93dca6784ff49c7592f2a039ba64785220c7f9eb66bdc73f3273a"
   end
 
-  # Issue ref: https://github.com/bflad/tfproviderlint/issues/255
-  deprecate! date: "2023-02-14", because: "errors with Go 1.18 or later"
-
-  depends_on "go@1.17" => [:build, :test]
-
-  resource "test_resource" do
-    url "https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
-    sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
-  end
+  depends_on "go" => [:build, :test]
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-
     ldflags = %W[
       -s -w
       -X github.com/bflad/tfproviderlint/version.Version=#{version}
@@ -50,7 +39,12 @@ class Tfproviderlint < Formula
   end
 
   test do
-    testpath.install resource("test_resource")
+    resource "homebrew-test_resource" do
+      url "https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
+      sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
+    end
+
+    testpath.install resource("homebrew-test_resource")
     assert_match "S006: schema of TypeMap should include Elem",
       shell_output(bin/"tfproviderlint -fix #{testpath}/... 2>&1", 3)
 
