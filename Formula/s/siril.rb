@@ -7,15 +7,13 @@ class Siril < Formula
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "8c6cd7d8bd63127d2263b8b153dbe941b0ad9a7edde60885db558bd048ad74c8"
-    sha256 arm64_ventura:  "208c71f56dff61d423588210968bae04e6a732466764353b46cd249b34dfe029"
-    sha256 arm64_monterey: "7bde9251cba3965ca5be5a7160c657ed679957d579b2417ceb504d969ca39885"
-    sha256 arm64_big_sur:  "5d96bce7246ddd5d51fc4bb812fd77b200cc8ddabc18dcc3b875c78fd76d0c13"
-    sha256 sonoma:         "076e83a7d0b68b7408253fbd81a04097410b02606271589c5cfd8c15fe8493c9"
-    sha256 ventura:        "417100a448f19ff66d112b370769e58547c5fa81f77ccc86b4b08033059f11d9"
-    sha256 monterey:       "c279b428372f7aa09ef73904a59aced6f4aa422650987358bece360def465ffa"
-    sha256 big_sur:        "7daf5062ee04e7bb033153df1d4f1124b993ab07b6641c4ade092e13d31d8e57"
-    sha256 x86_64_linux:   "8c89cf9a837456760716b1be36b7280dde9ec4c1042ee3c6d24f00da0c4d70f7"
+    sha256 arm64_sonoma:   "c9c5cafd7997d252c7e56a68f78e0eb98a4f11b3539e2d93f9cea9b2b2ca2c67"
+    sha256 arm64_ventura:  "47cae6cccef66d3542592cfb62a792158a7ca96cfcbc7c1fde1b6a5ef131d995"
+    sha256 arm64_monterey: "fde58e9375557429edb8fbb411a785e9c8f864ac340cf38fdf861ea070765434"
+    sha256 sonoma:         "a1e40b2348c123c0e7629048cf2c41e19b7fa92789a3b63d41f8360bc9bf40d6"
+    sha256 ventura:        "630861827248dce85b2a821c68f749731dfc67b8d7491c8b95d92bc4526095ae"
+    sha256 monterey:       "6379aa1d781159b6f659e050bca48231b3b5a922482da9bed2a78f3b3553858c"
+    sha256 x86_64_linux:   "c61ebfa4b4238ef5af4f4ceed3c2c177b8f40a711dc990cba23095d0b28152bb"
   end
 
   depends_on "cmake" => :build
