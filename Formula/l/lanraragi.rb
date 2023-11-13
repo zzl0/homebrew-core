@@ -116,15 +116,18 @@ class Lanraragi < Formula
 
     # Set PERL5LIB as we're not calling the launcher script
     ENV["PERL5LIB"] = libexec/"lib/perl5"
-    pid = fork do
-      exec "npm start --prefix #{libexec}"
-    end
-    sleep 2
 
-    assert_match "LANraragi 0.9.0 started. (Production Mode)", (testpath/"lanraragi.log").read
-    assert_match "Shinobu File Watcher started", (testpath/"shinobu.log").read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # This can't have its _user-facing_ functionality tested in the `brew test`
+    # environment because it needs Redis. It fails spectacularly tho with some
+    # table flip emoji. So let's use those to confirm _some_ functionality.
+    output = <<~EOS
+      ｷﾀ━━━━━━(ﾟ∀ﾟ)━━━━━━!!!!!
+      (╯・_>・）╯︵ ┻━┻
+      It appears your Redis database is currently not running.
+      The program will cease functioning now.
+    EOS
+    # Execute through npm to avoid starting a redis-server
+    return_value = OS.mac? ? 61 : 111
+    assert_match output, shell_output("npm start --prefix #{libexec}", return_value)
   end
 end
