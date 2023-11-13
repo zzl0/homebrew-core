@@ -1,8 +1,8 @@
 class Ruler < Formula
   desc "Tool to abuse Exchange services"
   homepage "https://github.com/sensepost/ruler"
-  url "https://github.com/sensepost/ruler/archive/refs/tags/2.4.1.tar.gz"
-  sha256 "ff46d8604d5d8d6a1442956b27e66714b441447db42bf5ff8e61df16f0eae18d"
+  url "https://github.com/sensepost/ruler/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "e7344c60c604fa08f73dd30978f6815979cc26ca78bca71e132d0c66cc152718"
   license "CC-BY-NC-SA-4.0"
   head "https://github.com/sensepost/ruler.git", branch: "master"
 
