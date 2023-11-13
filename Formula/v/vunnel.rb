@@ -3,8 +3,8 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/4d/42/f3cd9061f4b60edd0dd6c4eb0802d6896b0d2d1b9579ce04ee8c39cd059e/vunnel-0.17.6.tar.gz"
-  sha256 "2a952b74e47ee85243d678c24ad30694681258733e6a5e4d795ddc572640c66c"
+  url "https://files.pythonhosted.org/packages/c0/a3/cd01655526512a416c6e6bc266bbcc465d46505f564b60329d6de017a5cb/vunnel-0.17.7.tar.gz"
+  sha256 "8a9042e8f6297a2a73bd8ce33bb73a2172544d5ee12fcd86fa42228cc18d2a0f"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
@@ -150,8 +150,8 @@ class Vunnel < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "xsdata" do
