@@ -1,19 +1,19 @@
 class Ruler < Formula
   desc "Tool to abuse Exchange services"
   homepage "https://github.com/sensepost/ruler"
-  url "https://github.com/sensepost/ruler/archive/refs/tags/2.4.1.tar.gz"
-  sha256 "ff46d8604d5d8d6a1442956b27e66714b441447db42bf5ff8e61df16f0eae18d"
+  url "https://github.com/sensepost/ruler/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "e7344c60c604fa08f73dd30978f6815979cc26ca78bca71e132d0c66cc152718"
   license "CC-BY-NC-SA-4.0"
   head "https://github.com/sensepost/ruler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0902958de4c70c76839786dda690b3c2511f8162a311f1fadcd26340ff47088"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ab70c74d0267919c69539df184bdcea18423856a49e7b088e2b451e39eb8c50"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e7b0a67fe4d7603a83f0d7de3cb430b17f1de4e0223e640c149bc31aa53f465"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34f9d47d325e4b347db003e4f7d5fe059e44c2fb8509cf32a45e271f35ea0780"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2b05047e82e4b88b9cddcc57fbd1c979a898ae34db371d9f31afbd3c044028a"
-    sha256 cellar: :any_skip_relocation, monterey:       "9eb542d4476ac45c92b6be5c6121e2a0150c05cfc588b1db520b984a65aeddea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a68de0e3454c6891bc15364ad04ff51c6ae31cf244b6c589649b058982fa0ef9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1db97c959bbb99094e58e6fe0950bb4e00a377141ed4ab0461c27361d6e18d5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9f543b67ba8612482997883d5f2ebad9c53c1b8c056c3c44aecda5646793755"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b72f93e0a2ca38a44a5a153f9a3e9efa901ac145571ca41fecceeff699b5144"
+    sha256 cellar: :any_skip_relocation, sonoma:         "656e85847f333ff6b9369cc508c421e5087cf5ccc7c7bf25b1930794c7fb62cf"
+    sha256 cellar: :any_skip_relocation, ventura:        "92055e334d5affd6f35bbaff4d225eaba43a958b205f575fd3ad68fb49383077"
+    sha256 cellar: :any_skip_relocation, monterey:       "ffe2bae704819afa45499582f22b201390cd9fb5856fc42abf389afef8c8290c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdeeee61a6a36f8e7087f5937178410a21805ffadfab5ff2bda31b2df3e1ffc5"
   end
 
   depends_on "go" => :build
