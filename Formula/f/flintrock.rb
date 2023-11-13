@@ -24,7 +24,7 @@ class Flintrock < Formula
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -41,6 +41,13 @@ class Flintrock < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/d4/a4/ef715db7192535688fae0130714fde5dce91ce2ed8e521aad55a213a5820/botocore-1.20.90.tar.gz"
     sha256 "b301810c4bd6cab1b6eaf6bfd9f25abb27959b586c2e1689bbce035b3fb8ae66"
+
+    # Backport commit to fix ModuleNotFoundError on Python 3.12.
+    # Remove in the next formula release.
+    patch do
+      url "https://github.com/boto/botocore/commit/411f45a014a116bc72462206f3b3b3fc1ac9a630.patch?full_index=1"
+      sha256 "4d77944b344b3b35e6c95b73005462b860699349a5c27dee60025f802e80ebb8"
+    end
   end
 
   resource "click" do
