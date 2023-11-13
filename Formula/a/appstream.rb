@@ -6,13 +6,13 @@ class Appstream < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "13958c6501fe66eae4db052bc4b1cafdace94582dfce971246a2576f0eecdb39"
-    sha256 arm64_ventura:  "e22556e5fba8e18bddde908ca3cb87fa32b1bf27a87ce636e7d64eb9c976cdbd"
-    sha256 arm64_monterey: "c96f102ea8b12a4d41028ceb82792c1e22869583a038c950e0e0390d81815343"
-    sha256 sonoma:         "d35f7905d588c035bd4d90075c843a409ab59934e678d6900aa580a3b18918c0"
-    sha256 ventura:        "a0bc82b0bf8a07097069d9c3c67b59378624b693ef6cf5ebfd259e83c543bfa7"
-    sha256 monterey:       "13c2bf0823221c19bd96ca07adcf30fb7b69bb3f30ad1f25ef2b864011fee113"
-    sha256 x86_64_linux:   "b51dce98eeb7f1b48288d677ecaa2c9adaabc2ad16bde8281bc661a64c87b757"
+    sha256 arm64_sonoma:   "fea3ceef7de44039d1f6903b7553d3f27bbaf6c5264749d88426370e71f9cfc2"
+    sha256 arm64_ventura:  "122be0f2b9287feaf5a99ccd6c10fdff5ee7057aeb192af8b2f7dcbf7eb078a7"
+    sha256 arm64_monterey: "d2af4844cac58077a37a4c2c15f6efcb4a0f6bc7a4f0d3d0f393315a0bba7ae6"
+    sha256 sonoma:         "d52e13dad503fb2d3ee49ac19aa53644316f156630fd68816f90dd2220fe0999"
+    sha256 ventura:        "ad9c30d09234316c029d84c5c6d6e9f261749248592fe789d82c8dad23527897"
+    sha256 monterey:       "07aa33e27ab6644baee01d70312b8b1a56eb69b7cec589546cc3468bdf44c76c"
+    sha256 x86_64_linux:   "995bec05eb79d642334dccd3534815c4b8ef64b277dc5de1bfbe564ce99b17fe"
   end
 
   depends_on "gobject-introspection" => :build
