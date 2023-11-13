@@ -4,6 +4,7 @@ class PythonTabulate < Formula
   url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
   sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 2
