@@ -6,12 +6,12 @@ class Faircamp < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c1e5bea71211ec1023a6642cb6e724c4fede822d3e05dfc34b18457c1c1cf34f"
-    sha256 cellar: :any, arm64_ventura:  "4700c89421188730e7f10141ad304bc77fed9ca14b3274a5af604365a8bb960e"
-    sha256 cellar: :any, arm64_monterey: "087e98915ae8676581e7e6f32c5230279af684885cbce817ce85f88d5dd63ed7"
-    sha256 cellar: :any, sonoma:         "c9f9e347b03d917bda3dd5ce772a0108a15ec29af17c4d25dcea2c4cdb2d5326"
-    sha256 cellar: :any, ventura:        "22b6b0f5cf4809afab09e9aec1d7f73ab0dab8d9c5f0fa9b1d0cc2d5ffb11715"
-    sha256 cellar: :any, monterey:       "28dbad8e63dec63f10e2d3ba96b97a5e561e1c82a6f6518bb0453192ea67ebc6"
+    sha256 cellar: :any, arm64_sonoma:   "8bd7b88aecfba8c84b507769b87b89dfd6a437ac8ed6e0ddcf769080e786373e"
+    sha256 cellar: :any, arm64_ventura:  "7a3f25bc317ff0ef2e2202e7028b8cca9bf7621bce7255138088620748838389"
+    sha256 cellar: :any, arm64_monterey: "cf181a46cd2c0c58c8cb1a9784510a4eff678c9dfd0ac2d3489f201e7b6de7ec"
+    sha256 cellar: :any, sonoma:         "79eddc16f79e7187492432d82270bd16b15b828441f4fa0fa3055b4c83086b0f"
+    sha256 cellar: :any, ventura:        "c4528c3b159f5b1883adc8d0f541ecda1ec329bccc1dd3d7faa696348fbc5c74"
+    sha256 cellar: :any, monterey:       "1609a1ca273a6bd1df9b53a777477f5ee46140bb4d46112c3b4991e02f403f08"
   end
 
   depends_on "opus" => :build
