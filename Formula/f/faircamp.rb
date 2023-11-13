@@ -1,8 +1,8 @@
 class Faircamp < Formula
   desc "Static site generator for audio producers"
   homepage "https://codeberg.org/simonrepp/faircamp"
-  url "https://codeberg.org/simonrepp/faircamp/archive/0.9.2.tar.gz"
-  sha256 "15c826e22d8297223ae6c591d14ff79226682ef4db3911a1f349d639406295b7"
+  url "https://codeberg.org/simonrepp/faircamp/archive/0.10.1.tar.gz"
+  sha256 "7756643fe9c5933f745b34d909289b32d663d9e153b07f4743a0bdf9f21fb6b4"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -38,7 +38,7 @@ class Faircamp < Formula
   test do
     # Check properly compiled with optional libvips feature
     version_str = shell_output("#{bin}/faircamp --version").chomp
-    assert_match "faircamp 0.9.2 (compiled with libvips)", version_str
+    assert_match "faircamp #{version} (compiled with libvips)", version_str
 
     # Check site generation
     catalog_dir = testpath/"Catalog"
