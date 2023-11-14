@@ -6,6 +6,7 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/de/5c/c0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858e/enex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdd2946806ad70f13aaec20f66d996e19e4801f4bd3dc7eb1f9df784d015b392"
@@ -17,10 +18,11 @@ class Enex2notion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bda9efd19dec394c9cc0d8fb6987091b05b3f057c79d1537644d437baea35a93"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pymupdf"
   depends_on "python-certifi"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do
