@@ -11,15 +11,13 @@ class SonarqubeLts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d3df3b172c47dbde541f524aaf18ba238ece6095914fb98ab193c650e195999d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8dd3923bb2b3c784f700409c8bb0c5589fd6fc0be6daddeceae0d9468710fd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b988b2236f3050b0a112d2d870443292adb735495cc1c6e4fa205b41751106d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "904ad293008fd6b7183268cc86ec1e4a6b8ecdb787693726f615d453061526ad"
   end
 
   depends_on "openjdk@17"
