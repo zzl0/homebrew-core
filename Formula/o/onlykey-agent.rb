@@ -29,7 +29,7 @@ class OnlykeyAgent < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "aenum" do
@@ -184,7 +184,7 @@ class OnlykeyAgent < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
