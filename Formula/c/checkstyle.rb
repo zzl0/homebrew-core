@@ -6,13 +6,13 @@ class Checkstyle < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8047609107fd905bf1eb6f36123e0e682f17108907deb77ce7cd59f8fa53f7a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68cdab140c071d1b639bf839e17bf211cb10e94428199c435fcf01bb248cfec0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, ventura:        "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, monterey:       "e693e482e0b6125aef9c11534e6677f0a2ad3a42876118c784b497ec2bbf6532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "424adb21361ee3d27b326b0484e42d6cc5a737ac7c4853e58c5abdaac77a036b"
   end
 
   depends_on "openjdk"
