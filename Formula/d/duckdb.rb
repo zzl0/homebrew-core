@@ -2,12 +2,11 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.9.1",
-      revision: "401c8061c6ece35949cac58c7770cc755710ca86"
+      tag:      "v0.9.2",
+      revision: "3c695d7ba94d95d9facee48d395f46ed0bd72b46"
   license "MIT"
 
   bottle do
-    rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c4a8b868083bdb727a1ccaef157ce6d7fd1c124ea863ddf9e44dc6e309c9312"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec8156408c76e69677f194400e8f8e7dafa27612793522eda5182014b5d4da3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fcad466ca906f96e114bd0207c31152b666b1cd4fa8fa0b03a2b6d3299ea6c5c"
@@ -26,6 +25,7 @@ class Duckdb < Formula
              "-DENABLE_EXTENSION_AUTOLOADING=1",
              "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
+      system "make", "install"
       bin.install "duckdb"
       # The cli tool was renamed (0.1.8 -> 0.1.9)
       # Create a symlink to not break compatibility
