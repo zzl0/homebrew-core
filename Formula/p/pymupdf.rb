@@ -4,6 +4,7 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/3a/75/743a7b990a56eaf4a870f0c6eb7ccd80a9ece040d56c89b851caba49cce0/PyMuPDF-1.23.6.tar.gz"
   sha256 "618b8e884190ac1cca9df1c637f87669d2d532d421d4ee7e4763c848dc4f3a1e"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2226a271abf94fe41e8a68a26fff0c65597bf2ecbb74e6e44269490e5c084145"
@@ -16,10 +17,11 @@ class Pymupdf < Formula
   end
 
   depends_on "freetype" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
 
   depends_on "mupdf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "gumbo-parser"
@@ -30,7 +32,7 @@ class Pymupdf < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
