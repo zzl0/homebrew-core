@@ -1,8 +1,8 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.4/llvm-project-17.0.4.src.tar.xz"
-  sha256 "a225eb96f52e7d8c6c275b351fcc66d7a21d925eecff53730900404f244ff16a"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/llvm-project-17.0.5.src.tar.xz"
+  sha256 "95d7eff82945cf05c16a1851d7b391fc2da726b87c1138125e3b6e4d300ab834"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -31,7 +31,7 @@ class Llvm < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "swig" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "z3"
   depends_on "zstd"
 
@@ -50,7 +50,7 @@ class Llvm < Formula
   fails_with gcc: "5"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
