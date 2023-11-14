@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.13.34.tar.gz"
-  sha256 "1ca6dd478160289872ecf830f5465f7ecb45f7c6dcf24864a9e3e010047846a8"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.13.35.tar.gz"
+  sha256 "b8f37502e6fd6fbf7efbfb43aabc955ba638f3ff3416a886635e14d4eb3c4496"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -32,8 +32,8 @@ class Awscli < Formula
   uses_from_macos "mandoc"
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/91/70/d8f52d7b5b4ae3b087e493d90f4b3ab5d7bbfd980311185822894ff92b62/awscrt-0.19.10.tar.gz"
-    sha256 "a57c4596c433bdd518ae8e0bd186d5c694341663eaa8527b146a8cf195382ca9"
+    url "https://files.pythonhosted.org/packages/aa/ff/119c38e5481570d636611957ccba7656e5dfe65f87d67dc9592b25a66724/awscrt-0.19.12.tar.gz"
+    sha256 "b24924c2d9926c6255e8c44124c7cd86efa958406e32407ba334e1f708b26153"
   end
 
   resource "colorama" do
@@ -82,8 +82,8 @@ class Awscli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
-    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
+    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
+    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
   end
 
   def python3
