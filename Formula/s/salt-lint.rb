@@ -19,7 +19,8 @@ class SaltLint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d13825dc04e6d3dbb7bde6189810da4d2258d9dcfbdff472aa69dc0cc8735fd6"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "pathspec" do
