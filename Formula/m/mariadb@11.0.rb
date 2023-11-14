@@ -1,8 +1,8 @@
 class MariadbAT110 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://archive.mariadb.org/mariadb-11.0.3/source/mariadb-11.0.3.tar.gz"
-  sha256 "529f08a064ee7733a136ec474a4239e8ac9bd6db139b8ba70bff8a7f1303839a"
+  url "https://archive.mariadb.org/mariadb-11.0.4/source/mariadb-11.0.4.tar.gz"
+  sha256 "27696cdf31159f225410eb5c8665b85645a1c59981ce5af6bcff6c965feede6b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -56,17 +56,6 @@ class MariadbAT110 < Formula
   end
 
   fails_with gcc: "5"
-
-  # Fix libfmt usage.
-  # https://github.com/MariaDB/server/pull/2732
-  patch do
-    url "https://github.com/MariaDB/server/commit/f4cec369a392c8a6056207012992ad4a5639965a.patch?full_index=1"
-    sha256 "1851d5ae209c770e8fd1ba834b840be12d7b537b96c7efa3d4e7c9523f188912"
-  end
-  patch do
-    url "https://github.com/MariaDB/server/commit/cd5808eb8da13c5626d4bdeb452cef6ada29cb1d.patch?full_index=1"
-    sha256 "4d288f82f56c61278aefecba8a90d214810b754e234f40b338e8cc809e0369e9"
-  end
 
   def install
     ENV.cxx11
