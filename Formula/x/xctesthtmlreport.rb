@@ -1,8 +1,8 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
   homepage "https://github.com/XCTestHTMLReport/XCTestHTMLReport"
-  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.3.4.tar.gz"
-  sha256 "85e10b9350de8842efba29dd241968ad5112e34429ec1d5fbfb79b713ba98822"
+  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "d6d9d3b4c1c2dba1068909ef94e90cdd99039485845afca12f4bf7ac8964807d"
   license "MIT"
   head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
@@ -18,12 +18,12 @@ class Xctesthtmlreport < Formula
   end
 
   depends_on :macos
-  depends_on xcode: "13.0"
+  depends_on xcode: "14.0"
   uses_from_macos "swift"
 
   resource "homebrew-testdata" do
-    url "https://raw.githubusercontent.com/tylervick/XCTestHTMLReport/sanity-xcresult/Tests/XCTestHTMLReportTests/Resources/SanityResults.xcresult.tar.gz"
-    sha256 "ce574435d6fc4de6e581fa190a8e77a3999f93c4714582226297e11c07d8fb66"
+    url "https://pub-0b56a3a43f5b4adc91c743afc384fe1a.r2.dev/SanityResults.xcresult.tar.gz"
+    sha256 "e04a42a99dc05910aa31e6819016e5a481553d27d0dde121840f36fdb58e57b7"
   end
 
   def install
