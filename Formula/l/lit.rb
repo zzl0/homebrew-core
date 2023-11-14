@@ -8,13 +8,13 @@ class Lit < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a1817fc9e846520ed7f778c2f0e6278cbfbbb8a397394fadf65b50585ae1140"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12299f4be34e81f4812c16d721201bc4912f756cbb343b54bdba934e6c681e47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f9e95849e7dc58f17d544aaee729fc8d36acc162f15cad3b18a102abba751d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1306bbb98a01d26111062835efdf7859ef073ca70d98e863169ff026bba31965"
-    sha256 cellar: :any_skip_relocation, ventura:        "d31d0bb8e743794dd85f4fed2e180e60d91a2611d3df0fd292245ed7f46ee861"
-    sha256 cellar: :any_skip_relocation, monterey:       "c906af42960c050a0eaefd0cb803f475a6ff4c04c97b50799ca3bc83960f7996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0102016a07bc061350a501c8520b75d9c9dcafaddb4fd7704d44e3b11247d0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "567dc79c15353450bf1ddfe468032a870c56fb6ea8807552747cce5ebd3ce3e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8fe3e7e73e5c254ca9b953cb3f47180526f2fe5898faf16aecdcc968ca53906"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "277b30d1ba5724e471b93968c10063192c8a242fa93bd291282b682a25eb2165"
+    sha256 cellar: :any_skip_relocation, sonoma:         "15fff58769989d66e3c4f668733655fc2713e666e7ace3852a2102780ceab79c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d12672032bc1de3f7f302c9349c8c8cf65e6306f41dbba57bf78176cd2034781"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3e4f3ff49c706ab44c22466f8f4724a9d5a530368c4265cdba84a4b67447715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e279a6f038209e8b3cef565294da40b2e46079bd0c8e8687c387c6ddeb5126a5"
   end
 
   depends_on "python-setuptools" => :build
