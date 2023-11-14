@@ -21,7 +21,7 @@ class GitCola < Formula
   depends_on "pyqt@5"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "qtpy" do
     url "https://files.pythonhosted.org/packages/eb/9a/7ce646daefb2f85bf5b9c8ac461508b58fa5dcad6d40db476187fafd0148/QtPy-2.4.1.tar.gz"
