@@ -37,7 +37,7 @@ class SyslogNg < Formula
   depends_on "mongo-c-driver"
   depends_on "openssl@3"
   depends_on "pcre"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "riemann-client"
 
   uses_from_macos "curl"
@@ -50,7 +50,8 @@ class SyslogNg < Formula
   end
 
   def install
-    sng_python_ver = Formula["python@3.11"].version.major_minor
+    python3 = "python3.12"
+    sng_python_ver = Language::Python.major_minor_version python3
 
     venv_path = libexec/"python-venv"
     system "./configure", *std_configure_args,
@@ -66,7 +67,7 @@ class SyslogNg < Formula
     system "make", "install"
 
     requirements = lib/"syslog-ng/python/requirements.txt"
-    venv = virtualenv_create(venv_path, "python3.11")
+    venv = virtualenv_create(venv_path, python3)
     venv.pip_install requirements.read
     cp requirements, venv_path
   end
