@@ -3,8 +3,8 @@ class Lit < Formula
 
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/c0/97/0b2535f7802db3a8a49f8e509971850c44ba0e29a5c91751fb167bd3c5cf/lit-17.0.4.tar.gz"
-  sha256 "ee2e180128e770abc6aed3a02de2daf09d81b7d30225e315205d3599c311d304"
+  url "https://files.pythonhosted.org/packages/98/a5/f3d49178d1e69224d8680b0a0a02d42d221b45e703587bb2339a0503f421/lit-17.0.5.tar.gz"
+  sha256 "696199a629c73712a5bebda533729ea2c7e4c798bcfc38d9cd1375aa668ced98"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
@@ -17,11 +17,12 @@ class Lit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0102016a07bc061350a501c8520b75d9c9dcafaddb4fd7704d44e3b11247d0f"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "llvm" => :test
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
