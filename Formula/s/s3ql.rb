@@ -10,7 +10,8 @@ class S3ql < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5545a8f84859fd469580a713c8cf89bf9ae138919b103496f590cc31c8be5d8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "653c0762d45748098f7d48b1705dc5beef3b609ad6811997b86557c9b19fae11"
   end
 
   depends_on "libcython" => :build
