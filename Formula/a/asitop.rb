@@ -7,6 +7,12 @@ class Asitop < Formula
   sha256 "5df7b59304572a948f71cf94b87adc613869a8a87a933595b1b3e26bf42c3e37"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59ccc7576dbd652b5f0e830573f0e8051a2d068c5057eaaa0fbee7150c527aaf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1332975b0e14cfcaff9174d94af5166d33cacbfbe5f398253c45fa7cb7f5d03b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2c02496f76a70c1116e8cda3fce262427df4cd4c1c1288d047bda2d29627c10"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on arch: :arm64
   depends_on :macos
