@@ -76,6 +76,9 @@
   "arxiv_latex_cleaner": {
     "exclude_packages": ["pillow", "six", "PyYAML"]
   },
+  "asitop": {
+    "exclude_packages": ["psutil", "six"]
+  },
   "athenacli": {
     "exclude_packages": ["six", "tabulate"]
   },
