@@ -42,8 +42,8 @@ class PerconaToolkit < Formula
   end
 
   resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.001.tar.gz"
-    sha256 "bf6411d26301c6361d48ebbf5cfaa09805de7ded5da3eb280089c00ade4449d4"
+    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.002.tar.gz"
+    sha256 "8dbf87c2b5b8eaf79cd16507cc07597caaf4af49bc521ec51c0ea275e8332e25"
   end
 
   resource "JSON" do
@@ -63,7 +63,7 @@ class PerconaToolkit < Formula
         else
           libexec
         end
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}"
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}", "NO_PERLLOCAL=1", "NO_PACKLIST=1"
         system "make", "install"
       end
     end
@@ -77,12 +77,15 @@ class PerconaToolkit < Formula
     # https://github.com/Homebrew/homebrew-core/issues/4936
     rewrite_shebang detected_perl_shebang, *bin.children
 
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: libexec/"lib/perl5")
   end
 
   test do
     input = "SELECT name, password FROM user WHERE id='12823';"
     output = pipe_output("#{bin}/pt-fingerprint", input, 0)
     assert_equal "select name, password from user where id=?;", output.chomp
+
+    # Test a command that uses a native module, like DBI.
+    assert_match version.to_s, shell_output("#{bin}/pt-online-schema-change --version")
   end
 end
