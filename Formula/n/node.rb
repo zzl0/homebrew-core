@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v21.1.0/node-v21.1.0.tar.xz"
-  sha256 "91ac72e4444c5e5ab4b448030a61ffa95acd35d34a9d31d2d220ee2bed01b925"
+  url "https://nodejs.org/dist/v21.2.0/node-v21.2.0.tar.xz"
+  sha256 "d57c9cea394764fa1d9af51e52c7449f71193e9d44c4a81fbedec653ec827707"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -22,7 +22,6 @@ class Node < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "brotli"
   depends_on "c-ares"
@@ -50,12 +49,9 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-10.2.0.tgz"
-    sha256 "c362077587b1e782e5aef3dcf85826399ae552ad66b760e2585c4ac11102243f"
+    url "https://registry.npmjs.org/npm/-/npm-10.2.3.tgz"
+    sha256 "9316bf3da0a0ec6b81eb83784539098a0e802246d8269c45797a87a6a82a62bf"
   end
-
-  # Support Python 3.12
-  patch :DATA
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
@@ -180,26 +176,3 @@ class Node < Formula
     assert_match "< hello >", shell_output("#{HOMEBREW_PREFIX}/bin/npx --yes cowsay hello")
   end
 end
-
-__END__
-diff --git a/configure b/configure
-index fefb313c..711a3014 100755
---- a/configure
-+++ b/configure
-@@ -4,6 +4,7 @@
- # Note that the mix of single and double quotes is intentional,
- # as is the fact that the ] goes on a new line.
- _=[ 'exec' '/bin/sh' '-c' '''
-+command -v python3.12 >/dev/null && exec python3.12 "$0" "$@"
- command -v python3.11 >/dev/null && exec python3.11 "$0" "$@"
- command -v python3.10 >/dev/null && exec python3.10 "$0" "$@"
- command -v python3.9 >/dev/null && exec python3.9 "$0" "$@"
-@@ -23,7 +24,7 @@ except ImportError:
-   from distutils.spawn import find_executable as which
-
- print('Node.js configure: Found Python {}.{}.{}...'.format(*sys.version_info))
--acceptable_pythons = ((3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (3, 6))
-+acceptable_pythons = ((3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (3, 6))
- if sys.version_info[:2] in acceptable_pythons:
-   import configure
- else:
