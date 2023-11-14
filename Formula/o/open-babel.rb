@@ -1,6 +1,6 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
-  homepage "https://openbabel.org"
+  homepage "https://github.com/openbabel/openbabel"
   url "https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-1-1.tar.gz"
   version "3.1.1"
   sha256 "c97023ac6300d26176c97d4ef39957f06e68848d64f1a04b0b284ccff2744f02"
@@ -23,16 +23,17 @@ class OpenBabel < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "rapidjson" => :build
   depends_on "swig" => :build
   depends_on "cairo"
   depends_on "eigen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libxml2"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
