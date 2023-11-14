@@ -22,7 +22,7 @@ class PipTools < Formula
   depends_on "python-click"
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
