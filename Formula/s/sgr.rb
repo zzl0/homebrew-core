@@ -18,6 +18,7 @@ class Sgr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa0b8ac84754cf0ff7b1e8565c53835519d8a7454dce9da232edd2f4394260d2"
   end
 
+  depends_on "libcython" => :build # TODO: remove with newer `pglast` (4.4+)
   depends_on "rust" => :build # for pydantic
   depends_on "libpq" # for psycopg2-binary
   depends_on "pycparser"
@@ -26,7 +27,7 @@ class Sgr < Formula
   depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   # Manually update `pglast` from ==3.4 to support python 3.11
@@ -185,6 +186,9 @@ class Sgr < Formula
   end
 
   def install
+    # TODO: remove with newer `pglast` (4.4+)
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages("python3.12")
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"sgr", shells: [:fish, :zsh], shell_parameter_format: :click)
