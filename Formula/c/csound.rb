@@ -46,7 +46,7 @@ class Csound < Formula
   depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "portmidi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "stk"
 
   uses_from_macos "bison" => :build
@@ -89,9 +89,7 @@ class Csound < Formula
   end
 
   def python3
-    deps.map(&:to_formula)
-        .find { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .opt_libexec/"bin/python"
+    which("python3.12")
   end
 
   def install
