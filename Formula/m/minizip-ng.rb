@@ -4,6 +4,7 @@ class MinizipNg < Formula
   url "https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.0.3.tar.gz"
   sha256 "e39a736d4f55c22fa548e68225b2e92bc22aedd9ab90d002b0c5851e3a7bdace"
   license "Zlib"
+  revision 1
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
 
   bottle do
@@ -32,18 +33,20 @@ class MinizipNg < Formula
   conflicts_with "libtcod", "libzip", because: "libtcod, libzip and minizip-ng install a `zip.h` header"
 
   def install
-    system "cmake", "-S", ".", "-B", "build/shared",
-                    "-DMZ_FETCH_LIBS=OFF",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    *std_cmake_args
+    args = %w[
+      -DMZ_FETCH_LIBS=OFF
+      -DMZ_LIB_SUFFIX=-ng
+      -DMZ_LIBCOMP=OFF
+      -DMZ_ZLIB=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build/shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", ".", "-B", "build/static",
-                    "-DMZ_FETCH_LIBS=OFF",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build/static", *args, *std_cmake_args
     system "cmake", "--build", "build/static"
-    lib.install "build/static/libminizip.a"
+    lib.install "build/static/libminizip-ng.a"
   end
 
   test do
@@ -60,7 +63,7 @@ class MinizipNg < Formula
       }
     EOS
 
-    system ENV.cc, "test.c", "-I#{include}/minizip", "-L#{lib}", "-lminizip", "-o", "test"
+    system ENV.cc, "test.c", "-I#{include}/minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
     system "./test"
   end
 end
