@@ -33,7 +33,7 @@ class GtkDoc < Formula
   depends_on "docbook-xsl"
   depends_on "pygments"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six" # for anytree
 
   resource "anytree" do
@@ -45,7 +45,7 @@ class GtkDoc < Formula
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkg-config"].bin
 
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
     ENV.prepend_path "PATH", libexec/"bin"
 
