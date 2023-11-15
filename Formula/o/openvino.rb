@@ -12,15 +12,13 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4b446279dd917f2331fca5566c6bd90cf27c024ccffd86de2488049236fff9cd"
-    sha256 cellar: :any,                 arm64_ventura:  "546e12c9e50018b9edb3bc93c9828d010a68fb92e1c27cea3e0a2f150cff3016"
-    sha256 cellar: :any,                 arm64_monterey: "2507b59d22416ba1dee76bcf44373a5241059c98c4b0c95b6a766e9eba4dcaea"
-    sha256 cellar: :any,                 arm64_big_sur:  "9d31597763c9b11e02faa4e3b51ba66c99c75de9c805cc8a85c71a4997eb72e5"
-    sha256 cellar: :any,                 sonoma:         "8c2c44f72fedb5767f9a81f03bb0ec3c421d1eb232d76c5baa8936927b071c39"
-    sha256 cellar: :any,                 ventura:        "b9a275c2942faa9115749a87da6445b2fb7f4e62f096f69f7122e814a7a9c856"
-    sha256 cellar: :any,                 monterey:       "b8710c8918cdf4870977998b195a6f77c75e255f8f151299be58b098bd5dc84d"
-    sha256 cellar: :any,                 big_sur:        "d3f479b8c8910eeb2159946cefb2669aec7a9f9988ddb203bd99a935be8ecd69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e249baf6055f0b00678adb1f5c1dd99919f7336b871fc0ae468d9836c60dac14"
+    sha256 cellar: :any,                 arm64_sonoma:   "b0aa311237860c2306a80b141c4e67d4e2e9d2fd2132d76ffe766dfe132a1658"
+    sha256 cellar: :any,                 arm64_ventura:  "0cc4f701be585e97f35d548ca300022d58ae48393fc5137b38d94fb7032b6a74"
+    sha256 cellar: :any,                 arm64_monterey: "9e3c3415670de1a974c2d8b190f440338db9c0de8cc5ab020e493a1b76f8686b"
+    sha256 cellar: :any,                 sonoma:         "fa77326d729799cc6d6009667f465592b206c6a264e07c81db55df7cba28d8ae"
+    sha256 cellar: :any,                 ventura:        "2eaec52cf147bea4557d9f46e104981b8961c2f5f03e475c6a6b75aea020b15a"
+    sha256 cellar: :any,                 monterey:       "62cbbe1162b3f2f46f651861abb6cc75bf7a81095a836330e0d17b3f2ae7f8c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c884c3960706b19b627b762636dc6020067b16e8ce48c82442f4c8f7d6eb2a6"
   end
 
   depends_on "cmake" => [:build, :test]
