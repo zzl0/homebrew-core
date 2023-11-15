@@ -26,7 +26,7 @@ class Pympress < Formula
   depends_on "libyaml"
   depends_on "poppler"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "watchdog" do
     url "https://files.pythonhosted.org/packages/95/a6/d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ec/watchdog-3.0.0.tar.gz"
@@ -35,12 +35,13 @@ class Pympress < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink libexec/"bin/pympress"
   end
 
   test do
     # (pympress:48790): Gtk-WARNING **: 13:03:37.080: cannot open display
     ENV["PYMPRESS_HEADLESS_TEST"]="1" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    (testpath/"Library/Preferences").mkpath
 
     system bin/"pympress", "--quit"
 
