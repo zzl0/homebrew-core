@@ -384,7 +384,9 @@ env:
     dasel
     datafusion
     datalad
+    datasette
     datree
+    dav1d
     dbdeployer
     dbml-cli
     dbus
@@ -392,16 +394,26 @@ env:
     ddcutil
     ddrescue
     deark
+    debianutils
+    dehydrated
     delve
     deno
     dependency-check
     deployer
     derby
+    detect-secrets
     detekt
     detox
     devcontainer
     devspace
     dex2jar
+    dfmt
+    dfu-programmer
+    dhall
+    dhall-bash
+    dhall-json
+    dhall-lsp-server
+    dhall-yaml
     diamond
     diesel
     diffoscope
@@ -417,15 +429,21 @@ env:
     dnscontrol
     dnscrypt-proxy
     dnsdist
+    dnsmasq
+    dnsperf
     dnstwist
     dnsx
     docker
     docker-buildx
     docker-compose
     docker-credential-helper
+    docker-credential-helper-ecr
     docker-gen
+    docker-machine
     docker-slim
     docker-squash
+    dockviz
+    doctest
     doctl
     docuum
     doggo
@@ -436,11 +454,20 @@ env:
     dotenv-linter
     double-conversion
     doxygen
+    dpkg
+    dpp
     dprint
+    draco
+    drafter
     driftctl
     drill
     drone-cli
+    dronedb
     druid
+    dscanner
+    dsda-doom
+    dsq
+    dssim
     dstask
     dtm
     dua-cli
@@ -460,28 +487,130 @@ env:
     dynare
     dysk
     dzr
+    earthly
+    easeprobe
+    easy-rsa
     easyengine
+    eccodes
+    ecflow-ui
+    echidna
+    ecl
+    editorconfig-checker
+    efl
     efm-langserver
+    eg-examples
+    eget
     ehco
+    eigenpy
+    ejabberd
+    ejdb
     eksctl
     elan-init
+    elektra
     elfutils
+    elfx86exts
     elixir
     elixir-ls
+    elm-format
+    elvish
+    emacs-dracula
+    embree
     embulk
+    emqx
     emscripten
+    entr
     envconsul
+    envd
     envoy
     enzyme
+    epr
+    erdtree
+    erg
+    erigon
+    erofs-utils
     esbuild
     eslint
+    esphome
     esptool
     etcd
+    etcd-cpp-apiv3
     ethereum
+    eva
+    exercism
+    exim
+    exiv2
+    exodriver
     exploitdb
+    eza
+    f2
     faas-cli
+    fabric
     fabric-installer
+    fail2ban
+    faiss
+    fakeroot
+    falco
     fantom
+    fastfec
+    fastlane
+    fastnetmon
+    fastp
+    fastqc
+    faust
+    fclones
+    fd
+    fdroidcl
+    felinks
+    fend
+    fennel
+    feroxbuster
+    ffuf
+    fheroes2
+    fig2dev
+    filebeat
+    findent
+    findomain
+    fisher
+    flac
+    flank
+    flann
+    flashrom
+    flatbuffers
+    fleet-cli
+    flint
+    flix
+    fluent-bit
+    fn
+    fnm
+    folderify
+    fontconfig
+    fontforge
+    fonttools
+    fop
+    forcecli
+    ford
+    forgit
+    fork-cleaner
+    fortio
+    fourmolu
+    freeipmi
+    freerdp
+    freeswitch
+    freetds
+    freetype
+    freexl
+    frei0r
+    frugal
+    fselect
+    fsql
+    fuc
+    fuego-firestore
+    func-e
+    functionalplus
+    fuse-overlayfs
+    fw
+    fwupd
+    fx
     faudio
     fblog
     fdroidserver
