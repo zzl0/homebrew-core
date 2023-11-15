@@ -28,7 +28,7 @@ class ConanAT1 < Formula
   depends_on "cmake" => :test
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
