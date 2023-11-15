@@ -23,10 +23,9 @@ class Nnn < Formula
 
   def install
     args = %w[
-      O_EMOJI=1
       O_NERD=1
-      O_ICONS=1
     ]
+    # args: choose one of O_NERD/O_EMOJI/O_ICONS
 
     system "make", "install", "PREFIX=#{prefix}", *args
 
