@@ -15,13 +15,13 @@ class Opentofu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "326b6db5ca6e0d99a69ed3608f8cb39fd3ed2adf661c50424a9a4efb778a5119"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "085d5db81ad0d66dee91a108d3b180790f8cfe65c45c6cf9d4ae3c85f0d43079"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a69e715e264cc42906770068dc8f77f108b7764d7ee559464e3660ea1ff692c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5094f18c53c7055c6e78cce7652cdf2ae7f2e1aca7b15fe4d84b251766795720"
-    sha256 cellar: :any_skip_relocation, ventura:        "fcbd3f862ca8a0dec2595b3627518b88bd7ebf8d7cbed831271b33d423d8cb70"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbf371eb6c7de1c79df71872222283fba152fc468c1a9db28eef9f0a49948c12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4a295746dea14b2a9c15501746dd824038b88eb5a93a17d38d4c196703604f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5429296a79e0c924705287d2e6db1f537f57adaf06d9936a0cc80f6a1a725fc1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4259aee1f20265ac56372b0160dd506f966a6df94d906d25872ed46c551b1cc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9086f2be8116eb65eebcb7e627b1cc8b232509d22f29b5eaecaa61ed3e6621cf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "841125d488d24b494dc5443c7f37d1e6cc7893b2f8d4edc844d994881916e1ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "52305d5def74fb925731bc81bbe8d1103f426a22514670704cf8b8705760736e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5432921777329e3dd106d10093d13c2894a9b7b28d74a14ba01eafbce2fe88c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec2da3a2add12194650c53d906a44e0c4636fa76c0de920384a2c8cfbfee1a1b"
   end
 
   depends_on "go" => :build
