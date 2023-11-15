@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://archive.mariadb.org/mariadb-11.1.2/source/mariadb-11.1.2.tar.gz"
-  sha256 "19a9e980e57fa332931f643b48ad7390528c889ff6ea8b0e16fd306aa3088238"
+  url "https://archive.mariadb.org/mariadb-11.1.3/source/mariadb-11.1.3.tar.gz"
+  sha256 "ad3aa6ae478179275ecb28e3ed8a578f2004f084e14409727c0bf04975ace36c"
   license "GPL-2.0-only"
 
   livecheck do
@@ -55,17 +55,6 @@ class Mariadb < Formula
   conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
-
-  # Fix libfmt usage.
-  # https://github.com/MariaDB/server/pull/2732
-  patch do
-    url "https://github.com/MariaDB/server/commit/f4cec369a392c8a6056207012992ad4a5639965a.patch?full_index=1"
-    sha256 "1851d5ae209c770e8fd1ba834b840be12d7b537b96c7efa3d4e7c9523f188912"
-  end
-  patch do
-    url "https://github.com/MariaDB/server/commit/cd5808eb8da13c5626d4bdeb452cef6ada29cb1d.patch?full_index=1"
-    sha256 "4d288f82f56c61278aefecba8a90d214810b754e234f40b338e8cc809e0369e9"
-  end
 
   def install
     ENV.cxx11
