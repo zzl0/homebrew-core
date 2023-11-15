@@ -31,7 +31,8 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python@3.11"
+  depends_on "python-setuptools" # for pymol/plugins/installation.py
+  depends_on "python@3.12"
   uses_from_macos "libxml2"
 
   on_linux do
@@ -59,7 +60,7 @@ class Pymol < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
