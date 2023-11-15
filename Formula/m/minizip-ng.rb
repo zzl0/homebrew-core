@@ -29,9 +29,6 @@ class MinizipNg < Formula
     depends_on "openssl@3"
   end
 
-  conflicts_with "minizip", because: "both install a `libminizip.a` library"
-  conflicts_with "libtcod", "libzip", because: "libtcod, libzip and minizip-ng install a `zip.h` header"
-
   def install
     args = %w[
       -DMZ_FETCH_LIBS=OFF
