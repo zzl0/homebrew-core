@@ -25,9 +25,13 @@ class Libpeas < Formula
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
+    pyver = Language::Python.major_minor_version "python3.12"
+    # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
+    inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
+
     args = %w[
       -Dpython3=true
       -Dintrospection=true
