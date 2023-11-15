@@ -32,7 +32,17 @@ class Pipx < Formula
     sha256 "ce8176728d98c914b6401781bf3b23fccd968d1647539c8788c7010375e02796"
   end
 
+  def python3
+    deps.map(&:to_formula)
+        .find { |f| f.name.start_with?("python@") }
+  end
+
   def install
+    # Avoid Cellar path reference, which is only good for one version.
+    inreplace "src/pipx/interpreter.py",
+              "DEFAULT_PYTHON = _get_sys_executable()",
+              "DEFAULT_PYTHON = '#{python3.opt_libexec/"bin/python"}'"
+
     virtualenv_install_with_resources
 
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
