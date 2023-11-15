@@ -979,6 +979,9 @@
   "scour": {
     "exclude_packages": ["six"]
   },
+  "scoutsuite": {
+    "exclude_packages": ["certifi", "cryptography", "pyparsing", "pytz", "pyyaml", "six", "typing-extensions"]
+  },
   "scrapy": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "pycparser", "six", "typing-extensions",
