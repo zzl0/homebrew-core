@@ -20,10 +20,14 @@ class Openfortivpn < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
 
+  # awaiting formula creation
+  # uses_from_macos "pppd"
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
+                          "--enable-legacy-pppd", # only for pppd < 2.5.0
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}/openfortivpn"
     system "make", "install"
