@@ -141,6 +141,10 @@
   "bilix": {
     "exclude_packages": ["certifi", "typing-extensions", "Pygments"]
   },
+  "binwalk": {
+    "exclude_packages": ["numpy", "packaging", "pillow", "psutil", "pyparsing", "six"],
+    "extra_packages": ["capstone", "gnupg", "matplotlib", "pycryptodome"]
+  },
   "black": {
     "package_name": "black[d]",
     "exclude_packages": ["packaging"]
