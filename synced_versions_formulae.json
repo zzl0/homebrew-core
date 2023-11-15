@@ -15,7 +15,6 @@
   ["b3sum", "blake3"],
   ["boost", "boost-bcp", "boost-build", "boost-mpi", "boost-python3"],
   ["bundler-completion", "gem-completion", "rails-completion", "ruby-completion"],
-  ["buildifier", "buildozer"],
   ["cmake", "cmake-docs"],
   ["cython", "libcython"],
   ["dbhash", "lemon", "sqldiff", "sqlite", "sqlite-analyzer"],
