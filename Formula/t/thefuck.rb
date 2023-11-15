@@ -9,17 +9,14 @@ class Thefuck < Formula
   head "https://github.com/nvbn/thefuck.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "088b22d1fce236f7a2d8c37ae19dd05bcfdb669a441b117c28e865c7cb946cf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0de3ebd0766c538d124f74270a91730c8e3e083656e61f09b6e3edb837caf0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3c20013e623b39c5bca1fd71e44b200f7e31a2d7f5a377bc92b4593f806aff9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d94b1731b44013b526e005137ce28d06484966c41b99e20003d5d40fbbc753a1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "146518f2b0e6653764c2a64b37fb19fc24293a1f28865f9fd19727237817be39"
-    sha256 cellar: :any_skip_relocation, ventura:        "27254159fefb93d553c8f2941396061950c946354350bbac1d98396fb5771ad7"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac8a42c8a3f407106e49da365beaa4f03337e025907bcb69812d28cf1c66850e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "788c8f21aec08c8df7cf09ca2be2b5069657af6e9dd1476b7d3b675451549976"
-    sha256 cellar: :any_skip_relocation, catalina:       "125e506e6b470358180f6fe49cb45aa99617442a1649fb7a9db18c8aafbd0c89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa50d5f202ecb6c751b1f8da9c2e943992bfc182bb6dfaa8b4ffdb46514e0225"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0cd4272e6787d23bb980a218f863f7bc6f7054423e9888481cd25aeda9c06a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33a477185117d10d5303ab23b20c75b5dae623818049d774bb22cbd5b9465f94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a407caab7389fc6a24d80fdb986e350fb618b1ffe70081db49e0134c7107fcc4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f47837746848e2461ffe06c9f53327596da7f060a3af7d0c9cf2cfdb98548f31"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e6691aaa62a7e42bcf58066623a6fc222417cbc520c051a200434e3dd6ab4e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "425f36d7acbc639a4dffa316ee71e759ffc548672e420e94fe86474310e6a8ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8b7681bccf20ba84eced3265495eecc1584764b8ed3551fbb7c26325b167ef7"
   end
 
   depends_on "python@3.12"
