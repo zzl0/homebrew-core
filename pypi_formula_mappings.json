@@ -746,6 +746,9 @@
   "parliament": {
     "exclude_packages": ["six", "PyYAML"]
   },
+  "pdfalyzer": {
+    "exclude_packages": ["pygments", "six"]
+  },
   "pdm": {
     "exclude_packages": ["certifi", "packaging", "Pygments", "pyproject-hooks", "six", "virtualenv"],
     "extra_packages": ["wheel"]
