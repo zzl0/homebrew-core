@@ -15,13 +15,13 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "da2561c1b2cb42a5e68c71ad7bef33c55e21a6cbc8520589935b8e615bf95239"
-    sha256 cellar: :any,                 arm64_ventura:  "46f38f2a7e61e5e44fc6108cb0778c5a71e2578cc091557f71c2d81527fe118a"
-    sha256 cellar: :any,                 arm64_monterey: "81f30cb5e46c6ea7c30c4fedb2c42fb14d9d206e5b9e41c5f4316e5946fd59a4"
-    sha256 cellar: :any,                 sonoma:         "62d6a76be82aaa4eb8dc97d8675ae44a5ba51ab7f3b87f225b4d3aaffb66c66e"
-    sha256 cellar: :any,                 ventura:        "8fc8b42a538c34a7549f9dcf34673007158f6d37b1ed8b48fc8b5e2856064bac"
-    sha256 cellar: :any,                 monterey:       "db68f8e9f523589d141b7fc0cbea8ac6b52fcf1a55a6b6761f93906f595ee339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08cb7da011d44055fbf57eeb6f268f5644bb78ed32c0d517437493a95b57cafe"
+    sha256 cellar: :any,                 arm64_sonoma:   "88d6c76039fb931c3f51a4549703eee81db44f9811bbdec0cc5a48d1a3b3248c"
+    sha256 cellar: :any,                 arm64_ventura:  "b2fdf01314225d8264fd27ead4365ec49e22e21b878a6a6a8cc3789b83e81f93"
+    sha256 cellar: :any,                 arm64_monterey: "2778ed1c9591052e0c5c86170c11549bfb6026fbee885285428825e358a251ad"
+    sha256 cellar: :any,                 sonoma:         "54de1e52199b9727c45f64b2c45dbdfaed205ae4c1ce02fd95b27ff7e9027363"
+    sha256 cellar: :any,                 ventura:        "2e0b7c32cd619918f735347e1535ea0757c1b6a7a8033395036e856022344e70"
+    sha256 cellar: :any,                 monterey:       "17ee2c4bf0cff496fab5ff83499fc1dc8124b36a50f03f28a64a852c67bc717d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5012bd2e2b57f58091b05991ce8b3dc63e25057976d6c7b6cb03a4dc2cf269cb"
   end
 
   depends_on "cmake" => :build
