@@ -8,6 +8,16 @@ class Pdfalyzer < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "449ac9a9574f98ee7fa11cc855f2a11393608c0589ee643b63faedf02813787c"
+    sha256 cellar: :any,                 arm64_ventura:  "6efac9b3a0d2b61c017178ea724b2f31d74e546ed488128f78f296dd6f415284"
+    sha256 cellar: :any,                 arm64_monterey: "eadd3d5b8045c4e72f18c42eb87636215a8c763f70f4417077760dd4d1450660"
+    sha256 cellar: :any,                 sonoma:         "752098bf250bde7120c5b0ac0f59f1ff9119f78569a1dd409d0edba29ed7509c"
+    sha256 cellar: :any,                 ventura:        "be9aac13759a1ab24b986ef3f05d864a418a35103a40e7416c911f5697be64cb"
+    sha256 cellar: :any,                 monterey:       "3579bfebfd5c973889a36841ba0213a8d792cd10b766b6ba6c5e004a394a68ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31413d287afe27ff90172964e64d83348b5f9b0d848cb3254f6cd074f721eada"
+  end
+
   depends_on "pygments"
   depends_on "python@3.12"
   depends_on "six"
