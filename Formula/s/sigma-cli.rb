@@ -3,8 +3,8 @@ class SigmaCli < Formula
 
   desc "CLI based on pySigma"
   homepage "https://github.com/SigmaHQ/sigma-cli"
-  url "https://files.pythonhosted.org/packages/f9/62/7a5d20b138a41799477ef4b5d2b199feb19c3ab627ecfba369e4c2dbb4cf/sigma_cli-0.7.9.tar.gz"
-  sha256 "2f8385bb4f647214df67f88405e9a4fd029ebf32fc3960b45efb03ffb7466183"
+  url "https://files.pythonhosted.org/packages/c9/fb/c289959a98db60787d48150356b8e9519fb5c64f226e2f183408ef8ee3f1/sigma_cli-0.7.10.tar.gz"
+  sha256 "6f212e6e571224689e1373c7cdc6c228e49560250e6c5f8233c14a94a0cee8c2"
   license "LGPL-2.1-or-later"
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
@@ -56,8 +56,8 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https://files.pythonhosted.org/packages/cd/76/ce641f52a56e55ab9b239c031e8e924d2d8042f53eb2705d0d0f6205658d/pysigma-0.10.6.tar.gz"
-    sha256 "f1deb0c5e9d90cba75821bdc21bfad8d47babac4fa7c4495dc213255fbe89b82"
+    url "https://files.pythonhosted.org/packages/60/f1/9e62e159f0c461a32d70f25e65918128ac3387225425e5e1091456cac9e7/pysigma-0.10.8.tar.gz"
+    sha256 "e8ea313bcfa614d88d7a789d8db03754adcc3259a59ab87a39892000400f7745"
   end
 
   resource "pysigma-backend-sqlite" do
@@ -71,13 +71,13 @@ class SigmaCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
-    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
+    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
+    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
   end
 
   def install
