@@ -22,14 +22,13 @@ class Opencolorio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "faefc0f5c3a10047cbce7d285d4fee3f559b119445769f3d5852fd5be50b9b8e"
-    sha256 cellar: :any,                 arm64_ventura:  "24e90581137d74ea93eea49a901df620a6b6e2701b0c0093d2a11536e52759a4"
-    sha256 cellar: :any,                 arm64_monterey: "53198ac5f3461fb2548af12babb164d6693749b2023cf064eb2f5ffd1b71ecc6"
-    sha256 cellar: :any,                 arm64_big_sur:  "d074e606a1c3fec28b0d692c03aa88238074359ad47d56cf06887d9101b564cb"
-    sha256 cellar: :any,                 ventura:        "c3c4653825daa64ab29a454b7fb03407f2b92b0982a4a77e44fbb7e5370c7842"
-    sha256 cellar: :any,                 monterey:       "6ef1226d44426a9159f66d1ee39cbbc9b7954dda1c6f5167ae77e67bdc4a4c3d"
-    sha256 cellar: :any,                 big_sur:        "233b55833ab1b80ab8a7265ac31fe2f63a48b83f885ee0128d00443ff213bf9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14827e687761b816cbeaab2471aba1791d23b080b8525123cbe09e4e78c23491"
+    sha256 cellar: :any,                 arm64_sonoma:   "3a4b8a52b3da9cc5fcd1adc0d5c0143b0b579b60d07990ca5ad5fe19b8d4d2b4"
+    sha256 cellar: :any,                 arm64_ventura:  "f5dc959b648f0df4e5b674cbf9a7ef504777c96b9cb5509aced1bece54dc14cc"
+    sha256 cellar: :any,                 arm64_monterey: "ea1f81fd2aa4fabfa0afe3e7150586004a2ae8cadd3859a1809b5ea857152af4"
+    sha256 cellar: :any,                 sonoma:         "0e066c04dd6178becebaeb1cc85738fe4aaac670e7fd77477aefc650f9bd3a20"
+    sha256 cellar: :any,                 ventura:        "11a61e056d96987bc8f825183a31c709a6a913b4a59cd709983ae5837c0d6000"
+    sha256 cellar: :any,                 monterey:       "f470717b782952115cb7116a0c5c1a9dcffb33ad826863d8b6362290b6d87c1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bb4c90738d4ff25c4669a9dc44b28062c4ce2ff28fb612166985a3d87a6ba6e"
   end
 
   depends_on "cmake" => :build
