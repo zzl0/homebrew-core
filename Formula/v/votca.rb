@@ -1,10 +1,9 @@
 class Votca < Formula
   desc "Versatile Object-oriented Toolkit for Coarse-graining Applications"
   homepage "https://www.votca.org/"
-  url "https://github.com/votca/votca/archive/refs/tags/v2022.1.tar.gz"
-  sha256 "4710a7552f94789936324d76d2e0830b576de8d3f1c605748e2d20947d018100"
+  url "https://github.com/votca/votca/archive/refs/tags/v2023.tar.gz"
+  sha256 "ac78d2eb5a6694b76878d2ab1ec86bb161765143a447cc23905cdcb2bb6743be"
   license "Apache-2.0"
-  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c8126c7eb7617240a3f291d78384cc44af121918c16489382da872e22213f398"
@@ -34,12 +33,6 @@ class Votca < Formula
 
   on_macos do
     depends_on "libomp"
-  end
-
-  # patch for boost 1.83, remove in next release
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/81862a091ac2fc2df5c5d79a28bb95fee0a67e7c/votca/boost-1.83.patch"
-    sha256 "c0701fd6a86b2227a4b3af5af296cddf6e40c48d4f118cb23f2f104b4d334a15"
   end
 
   def install
