@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/8c/46/760f6cfe92cea98673a7b562c84b99bcfe5dd610f4c9b604dae09dd77d7b/prowler-3.11.1.tar.gz"
-  sha256 "43a83b202d1918b98cdbae521b1c2f1e8ee9e80738164f8e5551ffd4a41b1e50"
+  url "https://files.pythonhosted.org/packages/41/60/fa5ff0c32e5be6d2dc93655ee10f56934cbd03ee77703d1f2ebe50ad45d4/prowler-3.11.2.tar.gz"
+  sha256 "6603a5c5b249c7f3e7d60f2abbbac70ec276fc9fea324394c91a5320fca0b28e"
   license "Apache-2.0"
 
   bottle do
@@ -34,9 +34,14 @@ class Prowler < Formula
     sha256 "6a538862d33ce67d997429d14998310e1dbfda6cb7d9bbfbf799c4709847fece"
   end
 
+  resource "adal" do
+    url "https://files.pythonhosted.org/packages/90/d7/a829bc5e8ff28f82f9e2dc9b363f3b7b9c1194766d5a75105e3885bfa9a8/adal-1.2.7.tar.gz"
+    sha256 "d74f45b81317454d96e982fd1c50e6fb5c99ac2223728aea8764433a39f566f1"
+  end
+
   resource "alive-progress" do
-    url "https://files.pythonhosted.org/packages/ec/55/ae92dce431293998db7575fd2d8315d239d760772df39871b901d3f78357/alive-progress-3.1.4.tar.gz"
-    sha256 "74a95d8d0d42bc99d3a3725dbd06ebb852245f1b64e301a7c375b92b22663f7b"
+    url "https://files.pythonhosted.org/packages/6a/cf/de25c4f6123c3b3eb5acc87144d3e017df25b32c16806b14572a259939ac/alive-progress-3.1.5.tar.gz"
+    sha256 "42e399a66c8150dc507602dff7b7953f105ef11faf97ddaa6d27b1cbf45c4c98"
   end
 
   resource "awsipranges" do
@@ -90,8 +95,8 @@ class Prowler < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/9d/f5/4ec0b5b3a99f6a4bb5c82f8dbab121bcd892c355ae363140558a164cff08/azure-storage-blob-12.18.3.tar.gz"
-    sha256 "d8ced0deee3367fa3d4f3d1a03cd9edadf4440c0a371f503d623fa6c807554ee"
+    url "https://files.pythonhosted.org/packages/fd/f8/59c209132b3b2993402df6b7e79728726927b53168624e917cd9daaffea8/azure-storage-blob-12.19.0.tar.gz"
+    sha256 "26c0a4320a34a3c2a1b74528ba6812ebcb632a04cd67b1c7377232c4b01a5897"
   end
 
   resource "boto3" do
@@ -145,8 +150,8 @@ class Prowler < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/72/eb/4ad7d8685f89f2435ce0c4d3eed42e3c72423708de056ce46009e5207a56/google-api-python-client-2.106.0.tar.gz"
-    sha256 "f6a3862be2f6e5e0536d7bd47b5af3f24ac0b9147c76c830cafb3329d71d5724"
+    url "https://files.pythonhosted.org/packages/7a/c5/898280fd3b9ccdb4ec23263846ec0c998cb0c09826a91eb2a8eee007bc98/google-api-python-client-2.107.0.tar.gz"
+    sha256 "ef6d4c1a17fe9ec0894fc6d4f61e751c4b859fb33f2ab5b881ceb0b80ba442ba"
   end
 
   resource "google-auth" do
@@ -207,6 +212,11 @@ class Prowler < Formula
   resource "msrest" do
     url "https://files.pythonhosted.org/packages/68/77/8397c8fb8fc257d8ea0fa66f8068e073278c65f05acb17dcb22a02bfdc42/msrest-0.7.1.zip"
     sha256 "6e7661f46f3afd88b75667b7187a92829924446c7ea1d169be8c4bb7eeb788b9"
+  end
+
+  resource "msrestazure" do
+    url "https://files.pythonhosted.org/packages/48/fc/5c2940301a83f18884a8e3aead2b2ff177a1a373f75c7b17e2e404199b2a/msrestazure-0.6.4.tar.gz"
+    sha256 "a06f0dabc9a6f5efe3b6add4bd8fb623aeadacf816b7a35b0f89107e0544d189"
   end
 
   resource "oauthlib" do
