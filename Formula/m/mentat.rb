@@ -3,8 +3,8 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/09/96/d2bd94212d6a8724da1c1a06ccb35c91a30b9d62715346e1a7e0d14b2f07/mentat-0.1.20.tar.gz"
-  sha256 "b24b142dd9ff1cb5858b1a517dea4af38d610d16113abc27b0f48e3fb6d4b264"
+  url "https://files.pythonhosted.org/packages/60/10/35e95a04333ce58c5db0c645f776aa49361676957b03e2cf3edc9799dd54/mentat-1.0.2.tar.gz"
+  sha256 "afead6c532cbe20d6a2637dea7d51fe337736782127a7a2736ae24f4ffed3ef9"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
@@ -132,6 +132,11 @@ class Mentat < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "sentry-sdk" do
+    url "https://files.pythonhosted.org/packages/00/e5/cf944fd98a68dcde5567949061322577200222d4a897a471e8eaafdbaed4/sentry-sdk-1.34.0.tar.gz"
+    sha256 "e5d0d2b25931d88fa10986da59d941ac6037f742ab6ff2fce4143a27981d60c3"
+  end
+
   resource "termcolor" do
     url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
     sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
@@ -148,13 +153,13 @@ class Mentat < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
-    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
+    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
+    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
   end
 
   resource "yarl" do
