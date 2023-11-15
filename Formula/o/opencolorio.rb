@@ -1,10 +1,25 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https://opencolorio.org/"
-  url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "36f27c5887fc4e5c241805c29b8b8e68725aa05520bcaa7c7ec84c0422b8580e"
   license "BSD-3-Clause"
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
+
+  stable do
+    url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.3.0.tar.gz"
+    sha256 "32b7be676c110d849a77886d8a409159f0367309b2b2f5dae5aa0c38f42b445a"
+
+    # Backport fix for detection of yaml-cpp 0.8
+    patch do
+      url "https://github.com/AcademySoftwareFoundation/OpenColorIO/commit/1d3b69502eeb0f0b1d381d347efcab5b18ae9f3c.patch?full_index=1"
+      sha256 "c57123c6e0c8541ac839b8e43f819aa93dbfbb436b3998bea5960496f5f6574b"
+    end
+
+    # Backport fix for detection of pystring
+    patch do
+      url "https://github.com/AcademySoftwareFoundation/OpenColorIO/commit/9078753990d7f976a0bfcd55cfa63f2e1de3a53b.patch?full_index=1"
+      sha256 "ed9f39edcf1825102850554d00a811853cb2a2e30debe7fbae7388e220c27676"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "faefc0f5c3a10047cbce7d285d4fee3f559b119445769f3d5852fd5be50b9b8e"
@@ -18,21 +33,35 @@ class Opencolorio < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pybind11" => :build
+  depends_on "imath"
   depends_on "little-cms2"
-  depends_on "python@3.11"
+  depends_on "minizip-ng"
+  depends_on "openexr"
+  depends_on "pystring"
+  depends_on "python@3.12"
+  depends_on "yaml-cpp"
+
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
+
+  def python3
+    "python3.12"
+  end
 
   def install
-    python3 = "python3.11"
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DPYTHON=#{python3}
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DOCIO_BUILD_GPU_TESTS=OFF
+      -DOCIO_BUILD_TESTS=OFF
+      -DOCIO_INSTALL_EXT_PACKAGES=NONE
+      -DOCIO_PYTHON_VERSION=#{Language::Python.major_minor_version python3}
+      -DPython_EXECUTABLE=#{which(python3)}
     ]
 
-    system "cmake", "-S", ".", "-B", "macbuild", *args, *std_cmake_args
-    system "cmake", "--build", "macbuild"
-    system "cmake", "--install", "macbuild"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   def caveats
@@ -52,5 +81,6 @@ class Opencolorio < Formula
 
   test do
     assert_match "validate", shell_output("#{bin}/ociocheck --help", 1)
+    system python3, "-c", "import PyOpenColorIO as OCIO; print(OCIO.GetCurrentConfig())"
   end
 end
