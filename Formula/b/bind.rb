@@ -22,14 +22,12 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4c63777a9a6b02c0039a4e7a30bc243857aa2eb2b6b03511564e45d8a4acff9a"
-    sha256 arm64_ventura:  "3fa17ded26484ce26cc1a177626a6261fd743ee5296b633a493e5477a1391fd0"
-    sha256 arm64_monterey: "4d69cad398a9e34b631dff611feaa591ec76859ad61ed9cd5547b8e32848a9b9"
-    sha256 arm64_big_sur:  "068666a3a07e259d410854fb723132a42bef4dd9a94a70cc323895af632a4eb1"
-    sha256 ventura:        "232a40fe0f6c58b8ae455c740cbb72fa5a1383a6d649d493efc214c7ffc21cf6"
-    sha256 monterey:       "85f15935f98df9ffa1b49c7bc19d921b270eeb0096f8b0c7872de8bdef33ed94"
-    sha256 big_sur:        "c062018d28a7fb8f9acd7b6323e40ac6704c09845de2f1083dd1a036820de110"
-    sha256 x86_64_linux:   "ab6173ed4e28fc8bb8313fb7062c4551d36fc9513328f3af04cae43b7ebaf47f"
+    sha256 arm64_sonoma:   "59d1d296554abc586e2380545027df96f22a8f135e73f7e453a0a7e09ab02308"
+    sha256 arm64_ventura:  "fe5cd63cc2596adb40d1eaca8227a616bf02f5e20b72b0adeba8c0fca4c2af6d"
+    sha256 arm64_monterey: "1f447d8d089a2022693f856f207bc78a7903594b7afd2d4ae873a27c5b3c7d27"
+    sha256 ventura:        "458215922aca12aa545a0408ba3ebf85fb6c7b6e6d7863448f455a1ba90b9f89"
+    sha256 monterey:       "49067af9b4b1addff4a6683606238d90de5c7b47e108082cb3f37e982bb80431"
+    sha256 x86_64_linux:   "48df27f98547717e9132ee722aa59f45ae0186027f6c2738db63717ec44a1190"
   end
 
   depends_on "pkg-config" => :build
