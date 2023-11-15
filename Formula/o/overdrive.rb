@@ -7,7 +7,7 @@ class Overdrive < Formula
   head "https://github.com/chbrown/overdrive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7dccf8e85a0bac71098738482cbdd9977475d7ff59eeb16bad4f650e535c9ac6"
+    sha256 cellar: :any_skip_relocation, all: "de1c03f99f65cd9933fd70347b92f185b6a1b4c776e4efaeea56084ee52dd28c"
   end
 
   depends_on "tidy-html5"
