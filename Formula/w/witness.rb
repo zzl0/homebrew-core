@@ -6,6 +6,16 @@ class Witness < Formula
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b758e2bab3db9871bd6bc186045abcf32cd8f689decfd50ecc4fea2b433478d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c314219273d42f35194a7d40e905a21787dd3feb4149c7412e29b15a3dbfc952"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8a4fe9e62c16c76256f12f05477b6b82f66eaa9da065a9d3599669db025e186"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ed0c481715c5233d93d7dbebc8ca8a7005077238ede5048cfcc50804b4063a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "57bf1552e03713d867f6e4236f503eb1f1a2c2ce8a2c79e2f03876206e886aa4"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d97f1b975e0eae9e7a8cba3725acfe83c2fb60f66642235df237bed1d0ebc4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b4089dc36268b905a34f751bd4227a7767f5a4da2c4d3c2a176729db3e9bad7"
+  end
+
   depends_on "go" => :build
 
   def install
