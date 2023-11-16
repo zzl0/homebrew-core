@@ -17,9 +17,10 @@ class Mdv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ebe8bbb634bbc88fd57785e791eab18de60599a4ad2cb7c9f2abf7693dc713"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pygments"
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install
