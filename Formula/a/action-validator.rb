@@ -14,6 +14,16 @@ class ActionValidator < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "469a5c6e6a2bd18e0d1292887645cb062dcd35cced249191b2a779a828e2ef12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "806e330aa7c346486af0a03379b18b654286b8146be0c0114484cc4c848259cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd3c910fe75cd68ef262cc18e470222482d9b1b597be97ccd1a6764324c7f3c2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "28f4effdfa26048e810e10233d19f311333f74f042c6aa231f4860762360f0ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "8afa1d2f4bb1807319d745de95c9882f4ae81c50ebc7d1eae109f75411eb061d"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a4bd5bdafd2b9ce832610ed67fbbd8d8e58b482e0596fa5bf6fcd322a8548d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de54c0e77883be1ec0b373dd5ab28ace1a63ded5bc539494ddad92673196201a"
+  end
+
   head do
     url "https://github.com/mpalmer/action-validator.git", branch: "main"
 
