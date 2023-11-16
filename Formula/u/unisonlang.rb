@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M5g",
-      revision: "f761c09f7b963a3012a95465b568f96573bba185"
-  version "M5g"
+      tag:      "release/M5h",
+      revision: "68d6f93d3bdd3663aee6ec7e16fee4eedc6df26b"
+  version "M5h"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -23,7 +23,7 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1370f281557abd31d49c08502aa63ff3050192994510f2fbe9b44d00fe9448ff"
   end
 
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc@9.2" => :build # GHC 9.4 PR: https://github.com/unisonweb/unison/pull/4009
   depends_on "haskell-stack" => :build
   depends_on "node@18" => :build
 
@@ -40,9 +40,9 @@ class Unisonlang < Formula
   end
 
   resource "local-ui" do
-    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5g.tar.gz"
-    version "M5g"
-    sha256 "534b599119ca5d84836912e6965dc2b9bd53bc3ee875d3219a4a184fcaa62248"
+    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5h.tar.gz"
+    version "M5h"
+    sha256 "febd72be5f546962c8bf44bde1332d88a32a3a8c457a560f885ca95a3a856f4d"
   end
 
   def install
