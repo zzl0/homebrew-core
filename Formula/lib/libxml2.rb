@@ -1,10 +1,9 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.5.tar.xz"
-  sha256 "3727b078c360ec69fa869de14bd6f75d7ee8d36987b071e6928d4720a28df3a6"
+  url "https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.0.tar.xz"
+  sha256 "431521c8e19ca396af4fa97743b5a6bfcccddbba90e16426a15e5374cd64fe0d"
   license "MIT"
-  revision 1
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -78,8 +77,12 @@ class Libxml2 < Formula
       inreplace "setup.py", "includes_dir = [",
                             "includes_dir = [#{includes}"
 
-      pythons.each do |python|
-        system python, "-m", "pip", "install", *std_pip_args, "."
+      # Needed for Python 3.12+.
+      # https://github.com/Homebrew/homebrew-core/pull/154551#issuecomment-1820102786
+      with_env(PYTHONPATH: buildpath/"python") do
+        pythons.each do |python|
+          system python, "-m", "pip", "install", *std_pip_args, "."
+        end
       end
     end
   end
