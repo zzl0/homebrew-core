@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/41/60/fa5ff0c32e5be6d2dc93655ee10f56934cbd03ee77703d1f2ebe50ad45d4/prowler-3.11.2.tar.gz"
-  sha256 "6603a5c5b249c7f3e7d60f2abbbac70ec276fc9fea324394c91a5320fca0b28e"
+  url "https://files.pythonhosted.org/packages/f3/59/4bea02b9a91621305352c09f1098b3d5d4033fed51af2e74ce39480c9f03/prowler-3.11.3.tar.gz"
+  sha256 "d4a6cdc1cc8efc4327a23cd32099ec0284e51af318f6265933bfe48e65ad0044"
   license "Apache-2.0"
 
   bottle do
@@ -230,8 +230,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/84/75/a4641e4795ee3f95b71e6f2bf1ebf395ee7eddd717a10a813f69b25d2b1d/protobuf-4.25.0.tar.gz"
-    sha256 "68f7caf0d4f012fd194a301420cf6aa258366144d814f358c5b32558228afa7c"
+    url "https://files.pythonhosted.org/packages/59/5f/b2d00e6a08d97656a27832d4d146e03ffc46ae74b4699740674bea13a905/protobuf-4.25.1.tar.gz"
+    sha256 "57d65074b4f5baa4ab5da1605c02be90ac20c8b40fb137d6a8df9f416b0d0ce2"
   end
 
   resource "pyasn1" do
