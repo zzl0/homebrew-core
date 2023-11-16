@@ -1,12 +1,19 @@
 class DhallLspServer < Formula
   desc "Language Server Protocol (LSP) server for Dhall"
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server"
-  # TODO: Switch `ghc@9.2` to `ghc` once cborg has a new release that supports
-  # ghc-prim 0.9.0. PR ref: https://github.com/well-typed/cborg/pull/304
-  url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.3/dhall-lsp-server-1.1.3.tar.gz"
-  sha256 "885595eb731bd2eab28073751b9981e0406e69c4a8288748675439d0b0968ded"
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
+
+  stable do
+    url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.3/dhall-lsp-server-1.1.3.tar.gz"
+    sha256 "885595eb731bd2eab28073751b9981e0406e69c4a8288748675439d0b0968ded"
+
+    # Backport relaxed upper bound on lens. Remove on next release.
+    patch :p2 do
+      url "https://github.com/dhall-lang/dhall-haskell/commit/5e817a9c6bccf72123a3c67961af149b32d75c10.patch?full_index=1"
+      sha256 "f66004893312b9001e2dd122880c63d0e6fccbc7af0e8a549a08a171d99e2d07"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "404e71e6c61f8838993cdf6640c0b567002ed11a9c9d3c05d375370eeb71eb24"
@@ -19,7 +26,7 @@ class DhallLspServer < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc@9.4" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
