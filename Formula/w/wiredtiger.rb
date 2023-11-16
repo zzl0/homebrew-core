@@ -1,8 +1,8 @@
 class Wiredtiger < Formula
   desc "High performance NoSQL extensible platform for data management"
   homepage "https://source.wiredtiger.com/"
-  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.1.0.tar.gz"
-  sha256 "0d988a8256219b614d855a2504d252975240171a633b882f19149c4a2ce0ec3d"
+  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.2.0.tar.gz"
+  sha256 "90d1392a9b10dae5bda02d476cb3204331dcf94b3e47ce5e2ab4d4d9b4dd198c"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -31,12 +31,6 @@ class Wiredtiger < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "zlib"
-
-  # Adds include for std::optional. Remove in version 11.2.0.
-  patch do
-    url "https://github.com/wiredtiger/wiredtiger/commit/4418f9d2d7cad3829b47566d374ee73b29d699d7.patch?full_index=1"
-    sha256 "79bc6c1f027cda7742cdca26b361471126c60e8e66198a8dae4782b2a750c1c3"
-  end
 
   def install
     args = %W[
