@@ -7,6 +7,16 @@ class AwscliLocal < Formula
   sha256 "99aad6b8e0cfefb2093453866cbcd24e710d7e6a1523cac0969ed0f64442ea7c"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f838b35373e0c53e39f8e33b2d54b254e4befca00382725b9b4110987b9305b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4aac2a52363f1a94a499c5402254f70d3303f76186304a42c5222c346681f19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2ac156b6c9601527059193dbe34131021e3145712db6999cfca3ca5a0c680f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe395a2fa3b4c7bc83b9938cdf514d2ab311edd9c2ec142dda4955361def6c17"
+    sha256 cellar: :any_skip_relocation, ventura:        "7dbf44b9021a4ec90313692cd0db9ecf7662f9fe7564fd8617e1d9b71ac344b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ad12085ff392710d9155c8926aeafc1ecae779c077881c00569bf903131252d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25200e2bb2943bc38af05e6f20c45ca04f3a6b772149430e507a4c64c8c2a18c"
+  end
+
   depends_on "awscli" => :test # awscli-local can work with any version of awscli
   depends_on "localstack"
   depends_on "python@3.12"
