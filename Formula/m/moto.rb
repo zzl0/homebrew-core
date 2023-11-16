@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/7f/1a/3707521f422178c44f93f5dd145ecdc096e7348a453fe7dd06588912ef54/moto-4.2.8.tar.gz"
-  sha256 "9b5a363f36f8c3fb36388764e7b8c01c615da2f2cba7da3e681680de14bfc769"
+  url "https://files.pythonhosted.org/packages/0a/d6/b1614a8f6009275af0f6a5845613fcb5891058c059df4e285ae4d37bedd2/moto-4.2.9.tar.gz"
+  sha256 "24de81eeaa450a20b57c5cdf9a757ea5216bddc7db798e335d2de1f2376bf324"
   license "Apache-2.0"
 
   bottle do
@@ -92,8 +92,8 @@ class Moto < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/92/91/fbdab127309e70d60945ebec5ada96f5b2ff3c7f06011217d4e5eb6c56bf/jsonschema_path-0.3.1.tar.gz"
-    sha256 "07ea584b5c9b41a614b4d011c5575955676f48d0abbfd93d9ea8e933018d716d"
+    url "https://files.pythonhosted.org/packages/6d/17/47bf2da4582a6d35a1254bc058258835a452698f97dade2ce9ed3dabd512/jsonschema_path-0.3.2.tar.gz"
+    sha256 "4d0dababf341e36e9b91a5fb2a3e3fd300b0150e7fe88df4e55cc8253c5a3989"
   end
 
   resource "lazy-object-proxy" do
@@ -142,8 +142,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/72/7b/3730ec729b4e7302aeb7bf552be2f4dc927d2a2345a6f5fb22db692f908c/responses-0.24.0.tar.gz"
-    sha256 "3df82f7d4dcd3e5f61498181aadb4381f291da25c7506c47fe8cb68ce29203e7"
+    url "https://files.pythonhosted.org/packages/a0/c5/2f4f243e9b9ddb2fa70d696fb66daafd8fde20c9663a4a22c6a02d61bd97/responses-0.24.1.tar.gz"
+    sha256 "b127c6ca3f8df0eb9cc82fd93109a3007a86acb24871834c47b77765152ecf8c"
   end
 
   resource "rfc3339-validator" do
