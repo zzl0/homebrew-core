@@ -25,7 +25,7 @@ class Mat2 < Formula
   depends_on "py3cairo"
   depends_on "pygobject3"
   depends_on "python-mutagen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # patch man1 file layout, remove in next release
   # https://0xacab.org/jvoisin/mat2/-/merge_requests/111
@@ -35,7 +35,7 @@ class Mat2 < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
