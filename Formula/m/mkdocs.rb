@@ -18,11 +18,12 @@ class Mkdocs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "de47d980cbf275d945d58d5d9bfd254f8664b30e53892feed97e16e43d778ad9"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-click"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
