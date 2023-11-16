@@ -5,8 +5,8 @@ class ApifyCli < Formula
 
   desc "Apify command-line interface"
   homepage "https://docs.apify.com/cli"
-  url "https://registry.npmjs.org/apify-cli/-/apify-cli-0.18.1.tgz"
-  sha256 "ee638e7cae1947034602e656031b47e3a2ba1ab70e033097ab72ce9e9d911f1b"
+  url "https://registry.npmjs.org/apify-cli/-/apify-cli-0.19.0.tgz"
+  sha256 "f4359db5835d7007872a0efde7d82736c6a625107f61139ed06abf64495cafff"
   license "Apache-2.0"
 
   bottle do
@@ -36,10 +36,10 @@ class ApifyCli < Formula
   end
 
   test do
-    # Test that the Apify CLI is at all installed and working
-    assert_match "apify-cli/#{version}", shell_output("#{bin}/apify --version")
-    # Test that the CLI can initialize a new actor
-    system "#{bin}/apify", "init", "testing-actor"
-    assert_predicate testpath/".actor/actor.json", :exist?
+    output = shell_output("#{bin}/apify init -y testing-actor")
+    assert_match "Success: The Apify actor has been initialized", output
+    assert_predicate testpath/"storage/key_value_stores/default/INPUT.json", :exist?
+
+    assert_match version.to_s, shell_output("#{bin}/apify --version")
   end
 end
