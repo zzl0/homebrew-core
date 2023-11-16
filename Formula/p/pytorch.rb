@@ -7,6 +7,7 @@ class Pytorch < Formula
       tag:      "v2.1.0",
       revision: "7bcf7da3a268b435777fe87c7794c382f444e86d"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
