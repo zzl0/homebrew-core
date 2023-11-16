@@ -6,6 +6,7 @@ class Klee < Formula
   url "https://github.com/klee/klee/archive/refs/tags/v3.0.tar.gz"
   sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
   license "NCSA"
+  revision 1
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
@@ -19,10 +20,11 @@ class Klee < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "gperftools"
   depends_on "llvm@14"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
   depends_on "stp"
   depends_on "wllvm"
