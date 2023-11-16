@@ -1,8 +1,8 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https://github.com/tweag/nickel"
-  url "https://github.com/tweag/nickel/archive/refs/tags/1.2.2.tar.gz"
-  sha256 "11f9e8820f211241a95341667c786556a0271cf828246ac33d071929089dd97e"
+  url "https://github.com/tweag/nickel/archive/refs/tags/1.3.0.tar.gz"
+  sha256 "cd6919eb945992721bd164291ebee11dbb62f06004061c0cfc5fa73e98197224"
   license "MIT"
   head "https://github.com/tweag/nickel.git", branch: "master"
 
@@ -22,9 +22,18 @@ class Nickel < Formula
     ENV["NICKEL_NIX_BUILD_REV"] = tap.user.to_s
 
     system "cargo", "install", *std_cargo_args(path: "cli")
+
+    generate_completions_from_executable(bin/"nickel", "gen-completions")
   end
 
   test do
-    assert_equal "4", pipe_output(bin/"nickel", "let x = 2 in x + x").strip
+    assert_match version.to_s, shell_output("#{bin}/nickel --version")
+
+    (testpath/"program.ncl").write <<~EOS
+      let s = "world" in "Hello, " ++ s
+    EOS
+
+    output = shell_output("#{bin}/nickel eval program.ncl")
+    assert_match "Hello, world", output
   end
 end
