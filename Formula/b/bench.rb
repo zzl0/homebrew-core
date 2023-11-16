@@ -18,8 +18,11 @@ class Bench < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d67753efea7bd91ca20905d0b0b7526f056513c54cbd1fe36f25ca0f10309878"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66791820e252b6dcfabe359fdfc5ec7ccf6076c85a5d0a3508f30531c0275abf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a975d4ed8425503adbd49345a5679f53057eff242dd39cd7bdf42e926b94d06f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "117af640f3037233d19685c1dc525fa7de4f6aa45bc38d8473d163c5591aed8c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "474861c086b24985be5699caebdf324b63e39f580275a0ef97de811325e7def7"
     sha256 cellar: :any_skip_relocation, ventura:        "2666513d2557abb201a807607752b3f46fe17ea317962f6091eca10394721d78"
     sha256 cellar: :any_skip_relocation, monterey:       "c092373768cce8b0beee7c4a110afd4eca5a4cc57090a87ac065d58eb72f376a"
     sha256 cellar: :any_skip_relocation, big_sur:        "c9ee5713f0c97785f37506da9e34f4cda353beaad06a5209fce27aeb93e3f770"
