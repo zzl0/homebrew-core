@@ -1,8 +1,8 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
   homepage "https://github.com/budimanjojo/talhelper"
-  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "916f260de8642c1f247b9308eb0619d90bf6d23e73d60be1d2dac9cd99fe2160"
+  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "91b577f0d0d45eb921ae71ba201ec69aaa7d81a4d789ae978a88444341056678"
   license "BSD-3-Clause"
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
@@ -30,7 +30,7 @@ class Talhelper < Formula
     cp_r Dir["#{pkgshare}/example/*"], testpath
 
     output = shell_output("#{bin}/talhelper genconfig 2>&1", 1)
-    assert_match "failed to decrypt/read env file talenv.yaml", output
+    assert_match "failed to load env file: trying to decrypt talenv.yaml with sops", output
 
     assert_match "cluster:", shell_output("#{bin}/talhelper gensecret")
 
