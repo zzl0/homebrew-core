@@ -6,6 +6,10 @@ class Shellspec < Formula
   license "MIT"
   head "https://github.com/shellspec/shellspec.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "bed9352ffb54daed0056141f7f37ce2de38a8e2465b64afb1291233eaa05dc56"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
