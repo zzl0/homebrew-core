@@ -1,8 +1,8 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyll/hey with tui animation"
   homepage "https://github.com/hatoo/oha/"
-  url "https://github.com/hatoo/oha/archive/refs/tags/v0.6.5.tar.gz"
-  sha256 "e9d588e03be7e8b877d610bc22e8bb2b1100ad7de22b1743b9f3cd67953464c3"
+  url "https://github.com/hatoo/oha/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "56f96bc4e6a50d4e1b167f1f04d5d894197d10838d8e570b1b9868a3f9325114"
   license "MIT"
   head "https://github.com/hatoo/oha.git", branch: "master"
 
@@ -28,7 +28,9 @@ class Oha < Formula
   end
 
   test do
-    output = "[200] 200 responses"
-    assert_match output.to_s, shell_output("#{bin}/oha --no-tui https://www.google.com")
+    output = "[200] 1 responses"
+    assert_match output.to_s, shell_output("#{bin}/oha -n 1 -c 1 --no-tui https://www.google.com")
+
+    assert_match version.to_s, shell_output("#{bin}/oha --version")
   end
 end
