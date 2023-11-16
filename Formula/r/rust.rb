@@ -4,17 +4,13 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    # TODO: try switching to `llvm` 17 at 1.73.0.
-    # See: https://github.com/rust-lang/rust/issues/116020
-    url "https://static.rust-lang.org/dist/rustc-1.72.1-src.tar.gz"
-    sha256 "7f48845f6a52cdbb5d63fb0528fd5f520eb443275b55f98e328159f86568f895"
+    url "https://static.rust-lang.org/dist/rustc-1.74.0-src.tar.gz"
+    sha256 "882b584bc321c5dcfe77cdaa69f277906b936255ef7808fcd5c7492925cf1049"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
-    # When bumping to a new version, check if we can use unversioned `libgit2`.
-    # See comments below for details.
     resource "cargo" do
-      url "https://github.com/rust-lang/cargo/archive/refs/tags/0.73.1.tar.gz"
-      sha256 "976fb6f3e773319e60875772478645297d9eacc852857e288e8cec65399d2c88"
+      url "https://github.com/rust-lang/cargo/archive/refs/tags/0.75.0.tar.gz"
+      sha256 "d6b9512bca4b4d692a242188bfe83e1b696c44903007b7b48a56b287d01c063b"
     end
   end
 
@@ -38,15 +34,10 @@ class Rust < Formula
     end
   end
 
-  # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/rust-lang/cargo/blob/#{cargo_version}/Cargo.lock
-  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Use the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm@16"
+  depends_on "llvm"
+  depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkg-config"
 
@@ -58,33 +49,37 @@ class Rust < Formula
   resource "cargobootstrap" do
     on_macos do
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-07-13/cargo-1.71.0-aarch64-apple-darwin.tar.xz"
-        sha256 "7637bc54d15cec656d7abb32417316546c7a784eded8677753b5dad7f05b5b09"
+        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-aarch64-apple-darwin.tar.xz"
+        sha256 "caa855d28ade0ecb70567d886048d392b3b90f15a7751f9733d4c189ce67bb71"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-07-13/cargo-1.71.0-x86_64-apple-darwin.tar.xz"
-        sha256 "d83fe33cabf20394168f056ead44d243bd37dc96165d87867ea5114cfb52e739"
+        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-x86_64-apple-darwin.tar.xz"
+        sha256 "94f9eb5836fe59a3ef1d1d4c99623d602b0cec48964c5676453be4205df3b28a"
       end
     end
 
     on_linux do
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-07-13/cargo-1.71.0-aarch64-unknown-linux-gnu.tar.xz"
-        sha256 "13e8ff23d6af976a45f3ab451bf698e318a8d1823d588ff8a989555096f894a8"
+        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-aarch64-unknown-linux-gnu.tar.xz"
+        sha256 "1195a1d37280802574d729cf00e0dadc63a7c9312a9ae3ef2cf99645f7be0a77"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-07-13/cargo-1.71.0-x86_64-unknown-linux-gnu.tar.xz"
-        sha256 "fe6fb520f59966300ee661d18b37c36cb3e614877c4c01dfedf987b8a9c577e9"
+        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-x86_64-unknown-linux-gnu.tar.xz"
+        sha256 "7c3ce5738d570eaea97dd3d213ea73c8beda4f0c61e7486f95e497b7b10c4e2d"
       end
     end
   end
+
+  # Fixes 'could not read dir ".../codegen-backends"' on 12-arm64.
+  # See https://github.com/Homebrew/homebrew-core/pull/154526#issuecomment-1814795860
+  patch :DATA
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://docs.rs/openssl/latest/openssl/#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
 
     if OS.mac?
@@ -122,7 +117,7 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{Formula["llvm@16"].opt_prefix}
+      --llvm-root=#{Formula["llvm"].opt_prefix}
       --enable-llvm-link-shared
       --enable-vendor
       --disable-cargo-native-static
@@ -181,7 +176,7 @@ class Rust < Formula
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {
       bin/"cargo" => [
-        Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+        Formula["libgit2"].opt_lib/shared_library("libgit2"),
         Formula["libssh2"].opt_lib/shared_library("libssh2"),
         Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
         Formula["openssl@3"].opt_lib/shared_library("libssl"),
@@ -204,3 +199,20 @@ class Rust < Formula
     assert missing_linkage.empty?, "Missing linkage: #{missing_linkage.join(", ")}"
   end
 end
+
+__END__
+diff --git a/src/bootstrap/compile.rs b/src/bootstrap/compile.rs
+index 292ccc5780f..7266badf501 100644
+--- a/src/bootstrap/compile.rs
++++ b/src/bootstrap/compile.rs
+@@ -546,7 +546,9 @@ fn run(self, builder: &Builder<'_>) {
+                 .join("stage0/lib/rustlib")
+                 .join(&host)
+                 .join("codegen-backends");
+-            builder.cp_r(&stage0_codegen_backends, &sysroot_codegen_backends);
++            if stage0_codegen_backends.exists() {
++                builder.cp_r(&stage0_codegen_backends, &sysroot_codegen_backends);
++            }
+         }
+     }
+ }
