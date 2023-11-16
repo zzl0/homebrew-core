@@ -1,8 +1,8 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
-  url "https://github.com/commercialhaskell/stack/archive/refs/tags/v2.11.1.tar.gz"
-  sha256 "7a3a7e4aca8aef9ab6c081ea553a681844e6dad901c6b36b5e4cacae2fef6d23"
+  url "https://github.com/commercialhaskell/stack/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "00333782b1bda3bda02ca0c1bbc6becdd86e5a39f6448b0df788b634e1bde692"
   license "BSD-3-Clause"
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
@@ -22,30 +22,33 @@ class HaskellStack < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc" => :build
 
   uses_from_macos "zlib"
-
-  # All ghc versions before 9.2.1 requires LLVM Code Generator as a backend on
-  # ARM. GHC 8.10.7 user manual recommend use LLVM 9 through 12 and we met some
-  # unknown issue with LLVM 13 before so conservatively use LLVM 12 here.
-  #
-  # References:
-  #   https://downloads.haskell.org/~ghc/8.10.7/docs/html/users_guide/8.10.7-notes.html
-  #   https://gitlab.haskell.org/ghc/ghc/-/issues/20559
-  on_arm do
-    depends_on "llvm@12"
-  end
 
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.
     # If there are issues resolving dependencies, then can consider bootstrapping with stack instead.
     (buildpath/"cabal.project").unlink
+    (buildpath/"cabal.project").write <<~EOS
+      packages: .
+    EOS
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
+  end
 
-    bin.env_script_all_files libexec, PATH: "${PATH}:#{Formula["llvm@12"].opt_bin}" if Hardware::CPU.arm?
+  def caveats
+    on_macos do
+      on_arm do
+        <<~EOS
+          All GHC versions before 9.2.1 requires LLVM Code Generator as a backend
+          on ARM. If you are using one of those GHC versions with `haskell-stack`,
+          then you may need to install a supported LLVM version and add its bin
+          directory to the PATH.
+        EOS
+      end
+    end
   end
 
   test do
