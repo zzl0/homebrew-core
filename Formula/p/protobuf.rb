@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v25.0/protobuf-25.0.tar.gz"
-  sha256 "7beed9c511d632cff7c22ac0094dd7720e550153039d5da7e059bcceb488474a"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v25.1/protobuf-25.1.tar.gz"
+  sha256 "9bd87b8280ef720d3240514f884e56a712f2218f0d693b48050c836028940a42"
   license "BSD-3-Clause"
 
   livecheck do
@@ -65,10 +65,6 @@ class Protobuf < Formula
       # Keep C++ standard in sync with `abseil.rb`.
       inreplace "setup.py", "extra_compile_args.append('-std=c++14')",
                             "extra_compile_args.append('-std=c++#{abseil_cxx_standard}')"
-
-      # Fix "error: could not create 'build': File exists" on macOS
-      # (with a case-insensitive filesystem).
-      mv "BUILD", "BUILD.bazel"
 
       pythons.each do |python|
         pyext_dir = prefix/Language::Python.site_packages(python)/"google/protobuf/pyext"
