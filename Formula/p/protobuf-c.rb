@@ -4,7 +4,7 @@ class ProtobufC < Formula
   url "https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.1/protobuf-c-1.4.1.tar.gz"
   sha256 "4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f"
   license "BSD-2-Clause"
-  revision 9
+  revision 10
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ca5c74cd7442d724251d73216979189f6bbcab19ec28ec46c9ad3754271f40bb"
