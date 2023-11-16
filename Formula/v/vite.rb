@@ -3,8 +3,8 @@ require "language/node"
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-4.5.0.tgz"
-  sha256 "5341e86fd426dfcb0dda740c573a9fd0a22e2aeb364baa06ad5b715b5c5fc391"
+  url "https://registry.npmjs.org/vite/-/vite-5.0.0.tgz"
+  sha256 "de76095362f298ac15399cea3af028b6cdee5886bfcec13be21adebe5b2cf535"
   license "MIT"
 
   bottle do
@@ -22,15 +22,28 @@ class Vite < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Delete native binaries installed by npm, as we dont support `musl` for a `libc` implementation
+    node_modules = libexec/"lib/node_modules/vite/node_modules"
+    (node_modules/"@rollup/rollup-linux-x64-musl/rollup.linux-x64-musl.node").unlink if OS.linux?
+
+    # Replace universal binaries with their native slices
     deuniversalize_machos
   end
 
   test do
     port = free_port
-    fork do
-      system bin/"vite", "preview", "--port", port
+    output = ""
+    PTY.spawn("#{bin}/vite preview --debug --port #{port}") do |r, _w, pid|
+      sleep 2
+      Process.kill("TERM", pid)
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
     end
-    sleep 2
-    assert_match "Cannot GET /", shell_output("curl -s localhost:#{port}")
+    assert_match("no config file found", output)
+    assert_match("using resolved config", output)
   end
 end
