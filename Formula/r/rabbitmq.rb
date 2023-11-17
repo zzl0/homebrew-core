@@ -11,7 +11,7 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0ba6aacf2632fdbb2b69ba2ac8497ed6a70de1603a0cb400f2d745d6d75ec818"
+    sha256 cellar: :any_skip_relocation, all: "020f7889d81f40db628ba714eaa546d9ddce6f21c9f4ffd9f74262d2f1aa0566"
   end
 
   depends_on "erlang"
