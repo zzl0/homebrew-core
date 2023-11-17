@@ -18,22 +18,26 @@ class Fonttools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f5882ed5c35176b03b9de36e08e9bf30a634a7a79d6cfc4d7c31062538a2e8f"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-brotli"
   depends_on "python@3.12"
 
-  resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+  def python3
+    which("python3.12")
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     if OS.mac?
       cp "/System/Library/Fonts/ZapfDingbats.ttf", testpath
+
       system bin/"ttx", "ZapfDingbats.ttf"
+      assert_predicate testpath/"ZapfDingbats.ttx", :exist?
       system bin/"fonttools", "ttLib.woff2", "compress", "ZapfDingbats.ttf"
+      assert_predicate testpath/"ZapfDingbats.woff2", :exist?
     else
       assert_match "usage", shell_output("#{bin}/ttx -h")
     end
