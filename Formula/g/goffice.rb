@@ -4,6 +4,7 @@ class Goffice < Formula
   url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz"
   sha256 "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "5a613d5b56c610af0735ced2c4084a7fadaf1977afb1156d14273e28d80e5c53"
@@ -26,7 +27,7 @@ class Goffice < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
@@ -86,7 +87,7 @@ class Goffice < Formula
            "-I#{Formula["pango"].opt_include}/pango-1.0",
            "-I#{Formula["cairo"].opt_include}/cairo",
            "-I#{Formula["gdk-pixbuf"].opt_include}/gdk-pixbuf-2.0",
-           "-I#{Formula["atk"].opt_include}/atk-1.0",
+           "-I#{Formula["at-spi2-core"].opt_include}/atk-1.0",
            testpath/"test.c", "-o", testpath/"test"
     system "./test"
   end
