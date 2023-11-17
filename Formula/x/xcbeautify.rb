@@ -2,8 +2,8 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/tuist/xcbeautify"
   url "https://github.com/tuist/xcbeautify.git",
-      tag:      "1.0.0",
-      revision: "a996cc125e45afb9f2d77cacc5710f3595bcdd07"
+      tag:      "1.0.1",
+      revision: "7dc31d4a9e9cc660f2de6ff6c6e0f0d5dfbb572b"
   license "MIT"
   head "https://github.com/tuist/xcbeautify.git", branch: "master"
 
@@ -21,6 +21,12 @@ class Xcbeautify < Formula
   depends_on xcode: ["14.0", :build]
 
   uses_from_macos "swift"
+
+  # fix version report issue, upstream PR ref, https://github.com/tuist/xcbeautify/pull/159
+  patch do
+    url "https://github.com/tuist/xcbeautify/commit/af3847b6a3bbe1142c055fc968f20322788bf3a0.patch?full_index=1"
+    sha256 "863884832585c19cce03f9f10dc4e38575ec44f74e2d235c6654a6301a6a8d5d"
+  end
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
