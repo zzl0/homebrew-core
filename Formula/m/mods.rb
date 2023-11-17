@@ -1,8 +1,8 @@
 class Mods < Formula
   desc "AI on the command-line"
   homepage "https://github.com/charmbracelet/mods"
-  url "https://github.com/charmbracelet/mods/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "7272c4062095c63e6c8a2cc3b5233bf9261a027237512123c073c2128284e6d0"
+  url "https://github.com/charmbracelet/mods/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "a615e7db5aa6e0cd353a488219bb35ea8f9732fc107daee6d3b89d7f16cef54d"
   license "MIT"
 
   bottle do
