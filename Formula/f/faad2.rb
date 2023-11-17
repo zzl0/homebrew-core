@@ -1,8 +1,8 @@
 class Faad2 < Formula
   desc "ISO AAC audio decoder"
   homepage "https://sourceforge.net/projects/faac/"
-  url "https://github.com/knik0/faad2/archive/refs/tags/2.10.1.tar.gz"
-  sha256 "4c16c71295ca0cbf7c3dfe98eb11d8fa8d0ac3042e41604cfd6cc11a408cf264"
+  url "https://github.com/knik0/faad2/archive/refs/tags/2.11.1.tar.gz"
+  sha256 "72dbc0494de9ee38d240f670eccf2b10ef715fd0508c305532ca3def3225bb06"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -18,17 +18,16 @@ class Faad2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "300156e7a30d3e2b449f78f6671d1769f559a659241a55d9f074c8026193ab99"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
 
   def install
-    system "./bootstrap"
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "infile.mp4", shell_output("#{bin}/faad -h", 1)
+    output = shell_output("#{bin}/faad -i #{test_fixtures("test.m4a")} 2>&1")
+    assert_match "LC AAC\t0.192 secs, 2 ch, 8000 Hz", output
   end
 end
