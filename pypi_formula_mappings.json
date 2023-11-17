@@ -620,7 +620,9 @@
     ]
   },
   "locust": {
-    "exclude_packages": ["certifi", "click", "markupsafe", "psutil", "six", "typing-extensions"]
+    "exclude_packages": [
+      "brotli", "certifi", "click", "markupsafe", "psutil", "six", "typing-extensions"
+    ]
   },
   "mackup": {
     "exclude_packages": ["docopt", "six"]
