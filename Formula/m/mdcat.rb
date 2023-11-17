@@ -4,6 +4,7 @@ class Mdcat < Formula
   url "https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.1.0.tar.gz"
   sha256 "96ed4b74c202514987610a69af7fc71afd3b826d0449f9326661fd5244c5d5ee"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/swsnr/mdcat.git", branch: "main"
 
   bottle do
@@ -16,6 +17,7 @@ class Mdcat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74281f92fda0e745885a6687f70a463e1db2d4ee2fcb2b54601264d3cd9e6d66"
   end
 
+  depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
@@ -26,6 +28,12 @@ class Mdcat < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    outdir = Dir["target/release/build/mdcat-*/out"].first
+    man1.install "#{outdir}/mdcat.1"
+    bash_completion.install "#{outdir}/completions/mdcat.bash" => "mdcat"
+    fish_completion.install "#{outdir}/completions/mdcat.fish"
+    zsh_completion.install "#{outdir}/completions/_mdcat"
   end
 
   test do
