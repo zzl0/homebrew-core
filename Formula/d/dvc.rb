@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/f4/9f/b98bbd473af5f4621352adc5847d0b1f838e746d8a9a0d2fdba741bf1e32/dvc-3.30.0.tar.gz"
-  sha256 "36d177529b9b90eb771390c16f04b421af50ee91dc6c683575cf06fd5c0ac95d"
+  url "https://files.pythonhosted.org/packages/f3/f2/1b73216a9cd3d5d1d4c3dc786d2eb4c4583ed4c2ee060a5f3979294e5715/dvc-3.30.1.tar.gz"
+  sha256 "4048b016b0a0bd08d08fadd889a5e7e2debcda1e891204987a5ccc8ccc4bdc29"
   license "Apache-2.0"
 
   bottle do
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/09/96/28dbca0030b7c276bd34130033b246ac52662b2d21a6fabb77d33f24bde9/dvc-data-2.21.2.tar.gz"
-    sha256 "a4894b0e7d285ed63e906b47a4a971c7ba8e17f9c1f8b6de0bbab47f0b71dfd0"
+    url "https://files.pythonhosted.org/packages/9f/ef/b99b8b9e8295bdba9fe189981a8f73bc7c42a490b943ce89da5caf9c0aa3/dvc-data-2.22.0.tar.gz"
+    sha256 "970f465cd15d0511b9602764617495e515753f8c9dacc3dce955d02f36d0802e"
   end
 
   resource "dvc-gdrive" do
@@ -478,8 +478,8 @@ class Dvc < Formula
   end
 
   resource "kombu" do
-    url "https://files.pythonhosted.org/packages/61/76/62b2b45186db6ff3139ba44cf50c2ac455f671b809707127195669db834e/kombu-5.3.3.tar.gz"
-    sha256 "1491df826cfc5178c80f3e89dd6dfba68e484ef334db81070eb5cb8094b31167"
+    url "https://files.pythonhosted.org/packages/f1/24/f88282626d5f5b720fed5a8d1a609a504569b93465cbbfe8e7c049fba54e/kombu-5.3.4.tar.gz"
+    sha256 "0bb2e278644d11dea6272c17974a3dbb9688a949f3bb60aeb5b791329c44fadc"
   end
 
   resource "markdown-it-py" do
@@ -628,8 +628,8 @@ class Dvc < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "rsa" do
@@ -733,8 +733,8 @@ class Dvc < Formula
   end
 
   resource "voluptuous" do
-    url "https://files.pythonhosted.org/packages/9d/81/01a869fbe01ce20f84a974b3fca1d152fade3551c92bb9d11fd74ed5e3a9/voluptuous-0.14.0.tar.gz"
-    sha256 "145384a9613f7520b70e214e5c06de0809e069ab56716685446450f9bee15e2e"
+    url "https://files.pythonhosted.org/packages/d8/33/98b8032d580525c04e0691f4df9a74b0cfb327661823e32fe6d00bed55a4/voluptuous-0.14.1.tar.gz"
+    sha256 "7b6e5f7553ce02461cce17fedb0e3603195496eb260ece9aca86cc4cc6625218"
   end
 
   resource "wcwidth" do
