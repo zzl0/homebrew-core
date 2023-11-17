@@ -1,8 +1,8 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://github.com/oneapi-src/oneTBB"
-  url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.10.0.tar.gz"
-  sha256 "487023a955e5a3cc6d3a0d5f89179f9b6c0ae7222613a7185b0227ba0c83700b"
+  url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.11.0.tar.gz"
+  sha256 "782ce0cab62df9ea125cdea253a50534862b563f1d85d4cda7ad4e77550ac363"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,8 @@ class Tbb < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
 
   on_linux do
@@ -31,12 +32,12 @@ class Tbb < Formula
   patch :DATA
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
     # Prevent `setup.py` from installing tbb4py directly into HOMEBREW_PREFIX.
-    # We need this due to our `python@3.11` patch.
+    # We need this due to our Python patch.
     site_packages = Language::Python.site_packages(python3)
     inreplace "python/CMakeLists.txt", "@@SITE_PACKAGES@@", site_packages
 
@@ -67,11 +68,6 @@ class Tbb < Formula
 
       system python3, "-m", "pip", "install", *std_pip_args, "."
     end
-
-    return unless OS.linux?
-
-    inreplace_files = prefix.glob("rml/CMakeFiles/irml.dir/{flags.make,build.make,link.txt}")
-    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, ENV.cxx
   end
 
   test do
@@ -136,23 +132,24 @@ end
 
 __END__
 diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
-index 1d2b05f..81ba8de 100644
+index 748921a5..d03fdc6f 100644
 --- a/python/CMakeLists.txt
 +++ b/python/CMakeLists.txt
 @@ -40,7 +40,7 @@ add_custom_target(
      ${PYTHON_EXECUTABLE} ${PYTHON_BUILD_WORK_DIR}/setup.py
          build -b${PYTHON_BUILD_WORK_DIR}
          build_ext ${TBB4PY_INCLUDE_STRING} -L$<TARGET_FILE_DIR:TBB::tbb>
--        install --prefix ${PYTHON_BUILD_WORK_DIR}/build -f
-+        install --prefix ${PYTHON_BUILD_WORK_DIR}/build --install-lib ${PYTHON_BUILD_WORK_DIR}/build/@@SITE_PACKAGES@@ -f
+-        install --prefix build -f
++        install --prefix build --install-lib ${PYTHON_BUILD_WORK_DIR}/build/@@SITE_PACKAGES@@ -f
      COMMENT "Build and install to work directory the oneTBB Python module"
  )
  
-@@ -49,7 +49,7 @@ add_test(NAME python_test
+@@ -50,7 +50,7 @@ add_test(NAME python_test
                   -DPYTHON_MODULE_BUILD_PATH=${PYTHON_BUILD_WORK_DIR}/build
                   -P ${PROJECT_SOURCE_DIR}/cmake/python/test_launcher.cmake)
-
+ 
 -install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${PYTHON_BUILD_WORK_DIR}/build/
 +install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${PYTHON_BUILD_WORK_DIR}/
          DESTINATION .
          COMPONENT tbb4py)
+ 
