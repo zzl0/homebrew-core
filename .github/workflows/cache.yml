@@ -44,7 +44,6 @@ jobs:
       - name: Determine runners to use for this job
         id: determine-runners
         env:
-          HOMEBREW_MACOS_BUILD_ON_GITHUB_RUNNER: true
           HOMEBREW_MACOS_TIMEOUT: 30
         run: brew determine-test-runners --all-supported
 
