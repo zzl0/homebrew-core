@@ -1,18 +1,13 @@
 class Ncview < Formula
   desc "Visual browser for netCDF format files"
   homepage "https://cirrus.ucsd.edu/ncview/"
-  url "ftp://cirrus.ucsd.edu/pub/ncview/ncview-2.1.8.tar.gz"
-  sha256 "e8badc507b9b774801288d1c2d59eb79ab31b004df4858d0674ed0d87dfc91be"
+  url "https://cirrus.ucsd.edu/~pierce/ncview/ncview-2.1.9.tar.gz"
+  sha256 "e2317ac094af62f0adcf68421d70658209436aae344640959ec8975a645891af"
   license "GPL-3.0-only"
-  revision 6
 
-  # The stable archive in the formula is fetched over FTP and the website for
-  # the software hasn't been updated to list the latest release (it has been
-  # years now). We're checking Debian for now because it's potentially better
-  # than having no check at all.
   livecheck do
-    url "https://deb.debian.org/debian/pool/main/n/ncview/"
-    regex(/href=.*?ncview[._-]v?(\d+(?:\.\d+)+)(?:\+ds)?\.orig\.t/i)
+    url :homepage
+    regex(/href=.*?ncview[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
