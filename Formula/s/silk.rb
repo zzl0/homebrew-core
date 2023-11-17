@@ -1,8 +1,9 @@
 class Silk < Formula
   desc "Collection of traffic analysis tools"
   homepage "https://tools.netsa.cert.org/silk/"
-  url "https://tools.netsa.cert.org/releases/silk-3.22.0.tar.gz"
-  sha256 "15cff02484a75ba3c297067d57111f29751f1c94d6f66a5f4c27877268713e80"
+  url "https://tools.netsa.cert.org/releases/silk-3.22.1.tar.gz"
+  sha256 "e10096e9fa4ef4980cfff300b8f7a0aed6a8e8f172b444e43dd79ed7e05a7e02"
+  license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
     url :homepage
@@ -36,6 +37,9 @@ class Silk < Formula
       --enable-ipv6
       --enable-data-rootdir=#{var}/silk
     ]
+    # Work around macOS Sonoma having /usr/bin/podselect but Pod::Select was
+    # removed from Perl 5.34 resulting in `Can't locate Pod/Select.pm in @INC`
+    args << "ac_cv_prog_PODSELECT=" if MacOS.version == :sonoma
 
     system "./configure", *args
     system "make"
