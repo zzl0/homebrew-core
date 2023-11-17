@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
-  homepage "https://github.com/nxtrace/NTrace-core"
-  url "https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.2.4.tar.gz"
-  sha256 "1ff9ce0d0d25078891e62ca0578ff13b1ece36e732f78a699a39909baf0030db"
+  homepage "https://nxtrace.github.io/NTrace-core/"
+  url "https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.2.6.tar.gz"
+  sha256 "3a81106d73ef5d2d85f717339088a2c9bb62aec5e7a0eef491d8a24d7640772b"
   license "GPL-3.0-only"
   head "https://github.com/nxtrace/NTrace-core.git", branch: "main"
 
@@ -43,8 +43,9 @@ class Nexttrace < Formula
   end
 
   test do
-    # requires `sudo` to start
-    output = shell_output(bin/"nexttrace --language en 1.1.1.1", 1)
+    # requires `sudo` for linux
+    return_status = OS.mac? ? 0 : 1
+    output = shell_output("#{bin}/nexttrace --language en 1.1.1.1 2>&1", return_status)
     assert_match "[NextTrace API] preferred API IP", output
     assert_match version.to_s, shell_output(bin/"nexttrace --version")
   end
