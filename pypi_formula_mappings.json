@@ -1102,6 +1102,9 @@
   "tern": {
     "exclude_packages": ["certifi", "PyYAML", "packaging"]
   },
+  "terraform-local": {
+    "exclude_packages": ["six"]
+  },
   "thefuck": {
     "exclude_packages": ["six"]
   },
