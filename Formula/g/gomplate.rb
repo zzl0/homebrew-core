@@ -1,10 +1,10 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
-  homepage "https://gomplate.hairyhenderson.ca/"
-  url "https://github.com/hairyhenderson/gomplate/archive/refs/tags/v3.11.5.tar.gz"
-  sha256 "49d68aef8c0358b5f292444f378bdf40361a71f26ab0292f5468c701367142d8"
+  homepage "https://gomplate.ca/"
+  url "https://github.com/hairyhenderson/gomplate/archive/refs/tags/v3.11.6.tar.gz"
+  sha256 "fba514c022e8d797a950b43e3d4e47bf5a546ed95492651a22d95cdf2f614bfd"
   license "MIT"
-  head "https://github.com/hairyhenderson/gomplate.git", branch: "master"
+  head "https://github.com/hairyhenderson/gomplate.git", branch: "main"
 
   livecheck do
     url :stable
@@ -26,7 +26,6 @@ class Gomplate < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "bin/gomplate" => "gomplate"
-    prefix.install_metafiles
   end
 
   test do
