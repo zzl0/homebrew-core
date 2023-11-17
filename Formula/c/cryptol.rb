@@ -9,9 +9,11 @@ class Cryptol < Formula
   head "https://github.com/GaloisInc/cryptol.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ee1cc0497c66d8e27dc787709cd35a871d7742cbbf95df0154a7bb6a2ad2eef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddf4bba413e84315ecd219d131254e81c98c1880f0c152d175ea8d1e0cd75f60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eb37d4c49186b2427fa22db9d81bc4faeb2d0586ac31285ef88ad337f1604eef"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a012d46f5209d1a245201fc99f80679b9624c0ab74379af954e9e0901f4aa48"
+    sha256 cellar: :any_skip_relocation, sonoma:         "199a69fbb9f0eeb172cffad1fa87b6b0a393f1b153242dd8acfba5f6fedc3526"
     sha256 cellar: :any_skip_relocation, ventura:        "a75dd102d569cafbfc76ffa8f02da6764c803929a87145db184e047289ebf8fc"
     sha256 cellar: :any_skip_relocation, monterey:       "2773787758a94f584f1c083b7efb7c131ee3205a718536cca9b5e040871b7ea9"
     sha256 cellar: :any_skip_relocation, big_sur:        "f241ace085d5fea00472b96ce5e179bbf72dbeb1369d1f4ec2ddca46ab5de729"
