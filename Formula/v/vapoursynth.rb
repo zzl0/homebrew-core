@@ -27,7 +27,7 @@ class Vapoursynth < Formula
   depends_on "libtool" => :build
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "zimg"
 
   fails_with gcc: "5"
@@ -63,7 +63,7 @@ class Vapoursynth < Formula
   end
 
   test do
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import vapoursynth"
+    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import vapoursynth"
     system bin/"vspipe", "--version"
   end
 end
