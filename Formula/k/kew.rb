@@ -6,6 +6,10 @@ class Kew < Formula
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f568e43a63fc3dd2d0fc95d9f40fb2ef0a8f4aa503b25b118482372cee72b77"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "chafa"
   depends_on "ffmpeg"
