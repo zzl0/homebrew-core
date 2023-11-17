@@ -6,7 +6,7 @@ class SpiceGtk < Formula
   url "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz"
   sha256 "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.spice-space.org/download/gtk/"
@@ -32,7 +32,7 @@ class SpiceGtk < Formula
   depends_on "six" => :build
   depends_on "vala" => :build
 
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "gettext"
@@ -69,7 +69,7 @@ class SpiceGtk < Formula
       }
     EOS
     system ENV.cc, "test.cpp",
-                   "-I#{Formula["atk"].include}/atk-1.0",
+                   "-I#{Formula["at-spi2-core"].include}/atk-1.0",
                    "-I#{Formula["cairo"].include}/cairo",
                    "-I#{Formula["gdk-pixbuf"].include}/gdk-pixbuf-2.0",
                    "-I#{Formula["glib"].include}/glib-2.0",
