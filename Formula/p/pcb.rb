@@ -4,6 +4,7 @@ class Pcb < Formula
   url "https://downloads.sourceforge.net/project/pcb/pcb/pcb-4.3.0/pcb-4.3.0.tar.gz"
   sha256 "ae852f46af84aba7f51d813fb916fc7fcdbeea43f7134f150507024e1743fb5e"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
 
   livecheck do
@@ -48,13 +49,17 @@ class Pcb < Formula
     depends_on "gnu-sed"
   end
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   conflicts_with "gts", because: "both install a `gts.h` header"
 
   def install
     if OS.mac?
       ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"
     else
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
     end
 
     system "./autogen.sh" if build.head?
