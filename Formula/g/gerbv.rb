@@ -4,6 +4,7 @@ class Gerbv < Formula
   url "https://github.com/gerbv/gerbv/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "3eef8eb8a2755da8400e7a4394229475ad4cf1a2f85345720ee1da135a1aec44"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "fb11deb70368edf98c01b48d9fb7efa5c739fb644b10f72b0f912317e06f26ba"
