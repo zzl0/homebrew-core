@@ -4,6 +4,7 @@ class QalculateGtk < Formula
   url "https://github.com/Qalculate/qalculate-gtk/releases/download/v4.8.1/qalculate-gtk-4.8.1.tar.gz"
   sha256 "b97e84a5f52b277eefb8e5b9b60cfc7aeed3b243f92a9725ff9cc3aeeacf41c2"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "7d598b6ab8a1631a64c3606b8299aa874ca5aad2b0dc74b0a71f1e8aba358c44"
@@ -25,8 +26,12 @@ class QalculateGtk < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
