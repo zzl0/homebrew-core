@@ -4,6 +4,7 @@ class LibgeditGtksourceview < Formula
   url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.4.tar.xz"
   sha256 "7453a1cce2f6d58871644d2203ecdbbb043050886170ebea376c1cf6e27f86d8"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/gedit-technology/libgedit-gtksourceview.git", branch: "main"
 
   bottle do
