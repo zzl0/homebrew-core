@@ -4,6 +4,7 @@ class Gdl < Formula
   url "https://download.gnome.org/sources/gdl/3.40/gdl-3.40.0.tar.xz"
   sha256 "3641d4fd669d1e1818aeff3cf9ffb7887fc5c367850b78c28c775eba4ab6a555"
   license "LGPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256                               arm64_sonoma:   "6afb4a5408293dbf345d97596a338dfe52947e942cb94358cf549b3002c7e138"
@@ -30,6 +31,13 @@ class Gdl < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+  end
+
+  # Fix build with libxml2 2.12. Remove if upstream PR is merged and in release.
+  # PR ref: https://gitlab.gnome.org/GNOME/gdl/-/merge_requests/4
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gdl/-/commit/414f83eb4ad9e5576ee3d089594bf1301ff24091.diff"
+    sha256 "715c804e6d03304bc077b99f667bbeb062c873b3bbd737182fb2cd47a295de95"
   end
 
   def install
