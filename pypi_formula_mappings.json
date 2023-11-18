@@ -106,6 +106,9 @@
   "awscli@1": {
     "exclude_packages": ["six", "PyYAML", "docutils"]
   },
+  "awscli-local": {
+    "exclude_packages": ["six"]
+  },
   "awscurl": {
     "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser"]
   },
