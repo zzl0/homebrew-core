@@ -4,6 +4,7 @@ class Gucharmap < Formula
   url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.1.2/gucharmap-15.1.2.tar.bz2"
   sha256 "f8580cb191d0a430513d0384b1f619a5eb8ad40dbd609d0c0f8370afa756c1fe"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "c22f7ead176bde24d19ee63dca996c0805d2b8b8a3eed4086605315673d3a9fa"
@@ -49,7 +50,7 @@ class Gucharmap < Formula
     # ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
     inreplace "meson.build", "'-Wl,-Bsymbolic-functions'", "" if OS.mac?
 
-    system "meson", *std_meson_args, "build", "-Ducd_path=#{buildpath}/unicode"
+    system "meson", "setup", "build", "-Ducd_path=#{buildpath}/unicode", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
