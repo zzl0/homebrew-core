@@ -4,6 +4,7 @@ class GnomeAutoar < Formula
   url "https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.4.tar.xz"
   sha256 "c0afbe333bcf3cb1441a1f574cc8ec7b1b8197779145d4edeee2896fdacfc3c2"
   license "LGPL-2.1-or-later"
+  revision 1
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
   # even-numbered minor versions are stable, so we override the default regex
@@ -32,11 +33,9 @@ class GnomeAutoar < Formula
   depends_on "libarchive"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
