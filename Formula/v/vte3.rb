@@ -4,6 +4,7 @@ class Vte3 < Formula
   url "https://download.gnome.org/sources/vte/0.74/vte-0.74.1.tar.xz"
   sha256 "2328c3f1c998350a18e0e513348e9fc581d57ea4e7b89aedf11e0e3c65042b4f"
   license "LGPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "21e7d8c2be2b75d20dab8f84b25d87d1402bc539d98affd15c636221dc25d18a"
