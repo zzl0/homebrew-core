@@ -4,6 +4,7 @@ class Evince < Formula
   url "https://download.gnome.org/sources/evince/45/evince-45.0.tar.xz"
   sha256 "d18647d4275cbddf0d32817b1d04e307342a85be914ec4dad2d8082aaf8aa4a8"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "e03af0664ea68b59cd1cf48a6103442b39b41011c1213c17be63d2d684838cdc"
