@@ -1,7 +1,7 @@
 class Gpa < Formula
   desc "Graphical user interface for the GnuPG"
   homepage "https://www.gnupg.org/related_software/gpa/"
-  revision 2
+  revision 3
 
   stable do
     url "https://gnupg.org/ftp/gcrypt/gpa/gpa-0.10.0.tar.bz2"
