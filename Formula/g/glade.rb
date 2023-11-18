@@ -4,6 +4,7 @@ class Glade < Formula
   url "https://download.gnome.org/sources/glade/3.40/glade-3.40.0.tar.xz"
   sha256 "31c9adaea849972ab9517b564e19ac19977ca97758b109edc3167008f53e3d9c"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "28e61c555dda9c24738a962df1d597fc713462c4c94b23a36a22e1c7181e5228"
@@ -43,11 +44,9 @@ class Glade < Formula
     # Disable icon-cache update
     ENV["DESTDIR"] = "/"
 
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dintrospection=true", "-Dgladeui=true", ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", "-Dintrospection=true", "-Dgladeui=true", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
