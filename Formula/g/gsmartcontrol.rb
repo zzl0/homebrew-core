@@ -4,6 +4,7 @@ class Gsmartcontrol < Formula
   url "https://downloads.sourceforge.net/project/gsmartcontrol/1.1.4/gsmartcontrol-1.1.4.tar.bz2"
   sha256 "fc409f2b8a84cc40bb103d6c82401b9d4c0182d5a3b223c93959c7ad66191847"
   license any_of: ["GPL-2.0", "GPL-3.0"]
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "cbf93d1b7f8c9a39750dc89dea1133a0e05affb187c993e6d4fdee0c6c63a34a"
