@@ -4,7 +4,7 @@ class Pdfpc < Formula
   url "https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.4.1.tar.gz"
   sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
     sha256 arm64_sonoma:   "4b76c88f065350a748304511382c62d9418dbbcea2baaeddbd749a1a7e27322e"
