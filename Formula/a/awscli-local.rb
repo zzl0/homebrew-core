@@ -8,13 +8,13 @@ class AwscliLocal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f838b35373e0c53e39f8e33b2d54b254e4befca00382725b9b4110987b9305b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4aac2a52363f1a94a499c5402254f70d3303f76186304a42c5222c346681f19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2ac156b6c9601527059193dbe34131021e3145712db6999cfca3ca5a0c680f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe395a2fa3b4c7bc83b9938cdf514d2ab311edd9c2ec142dda4955361def6c17"
-    sha256 cellar: :any_skip_relocation, ventura:        "7dbf44b9021a4ec90313692cd0db9ecf7662f9fe7564fd8617e1d9b71ac344b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ad12085ff392710d9155c8926aeafc1ecae779c077881c00569bf903131252d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25200e2bb2943bc38af05e6f20c45ca04f3a6b772149430e507a4c64c8c2a18c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e79ad4a1d6154030f86e9f5595db107baba5407d2fcb1f26d566df3ab69199"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d5ff2622d41095a9bb5ebc1cebf338245256d329221f5294046df8a1eedbdb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a61f3bfe59fbb2a7d823e4f647728774d0a31d451e1c2ed17a6f26d3a99a88b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "111a846c72b25142838b44f4510b6393baec692054f5b897567dde9191efc60d"
+    sha256 cellar: :any_skip_relocation, ventura:        "08581c0256205d19a2ef2166559420c9f711c1e502d11c9047cc4bd5bb3c6f92"
+    sha256 cellar: :any_skip_relocation, monterey:       "e8937e080e3ce7599ecb5e77736a449d0f44ed9867ab9a2f2d3f9fe139f3d269"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53a71d80cc2668397bcc681143b53f2bfc3872314974883f5723e22f44189cf6"
   end
 
   depends_on "awscli" => :test # awscli-local can work with any version of awscli
