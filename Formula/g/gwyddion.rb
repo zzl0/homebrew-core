@@ -4,6 +4,7 @@ class Gwyddion < Formula
   url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.64/gwyddion-2.64.tar.xz"
   sha256 "1432f85c31c7e96605e3b3ac9e1c6933bb3b61a76eb620838dc24a085f19942c"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "http://gwyddion.net/download.php"
