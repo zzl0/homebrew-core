@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https://fmv.jku.at/cadical/"
-  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.8.0.tar.gz"
-  sha256 "f053be060898079f353530b7d2fc25360f9b43ad924ae0891e13cc3193bf8ca0"
+  url "https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.9.0.tar.gz"
+  sha256 "a367e5bc83c4275b69fb5f9e297b270d77705f09ff583aa78cfd1444a6b524de"
   license "MIT"
 
   livecheck do
