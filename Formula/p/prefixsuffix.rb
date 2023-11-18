@@ -4,7 +4,7 @@ class Prefixsuffix < Formula
   url "https://download.gnome.org/sources/prefixsuffix/0.6/prefixsuffix-0.6.9.tar.xz"
   sha256 "fc3202bddf2ebbb93ffd31fc2a079cfc05957e4bf219535f26e6d8784d859e9b"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
 
   bottle do
     sha256 arm64_sonoma:   "96120f0df93696069810c7c298a3d743b0be423cca684e92a549a73b389175f9"
@@ -20,14 +20,19 @@ class Prefixsuffix < Formula
     sha256 x86_64_linux:   "fc0145d8cfcf008d3801cf7d90611303c510c4529974d4f2fa5b7224d09c027b"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "gtkmm3"
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
     ENV.cxx11
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
