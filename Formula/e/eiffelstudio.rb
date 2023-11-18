@@ -5,6 +5,7 @@ class Eiffelstudio < Formula
   version "22.05.10.6302"
   sha256 "c2ede38b19cedead58a9e075cf79d6a4b113e049c0723fe9556c4f36ee68b80d"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0f874957ea698f23de6ad67f6bcde3d1f06d636857c5b81cfd69bc502dd4662f"
