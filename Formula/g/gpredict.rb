@@ -2,7 +2,7 @@ class Gpredict < Formula
   desc "Real-time satellite tracking/prediction application"
   homepage "http://gpredict.oz9aec.net/"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
 
   stable do
     url "https://github.com/csete/gpredict/releases/download/v2.2.1/gpredict-2.2.1.tar.bz2"
