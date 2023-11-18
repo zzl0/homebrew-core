@@ -4,6 +4,7 @@ class FileRoller < Formula
   url "https://download.gnome.org/sources/file-roller/43/file-roller-43.0.tar.xz"
   sha256 "298729fdbdb9da8132c0bbc60907517d65685b05618ae05167335e6484f573a1"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "3a2c6468a868140f9d2b528fc61f9d904728171f5ea26fa7be0f9ec08f8c8ec5"
@@ -18,6 +19,7 @@ class FileRoller < Formula
     sha256 x86_64_linux:   "26fafa0ed18cc3e19567609ed448f6cd6bae516a5490d71d16580d1bf4b45e0c"
   end
 
+  depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -42,7 +44,7 @@ class FileRoller < Formula
     ENV.append "LIBS", "-L#{Formula["libmagic"].opt_lib}"
     ENV["DESTDIR"] = "/"
 
-    system "meson", *std_meson_args, "build", "-Dpackagekit=false", "-Duse_native_appchooser=false"
+    system "meson", "setup", "build", "-Dpackagekit=false", "-Duse_native_appchooser=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
