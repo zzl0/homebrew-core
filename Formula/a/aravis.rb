@@ -4,6 +4,7 @@ class Aravis < Formula
   url "https://github.com/AravisProject/aravis/releases/download/0.8.30/aravis-0.8.30.tar.xz"
   sha256 "40380f06fa04524a7875bd456e5a5ea78b2c058fa84b5598bc6e0642fcef00b0"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "56b62cc4c88b0eaa1ee1681b7c6a8e8d19f3adaefd254d7b1f736e897e45dc84"
