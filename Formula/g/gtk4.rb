@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.12/gtk-4.12.3.tar.xz"
-  sha256 "148ce262f6c86487455fb1d9793c3f58bc3e1da477a29617fadb0420f5870a89"
+  url "https://download.gnome.org/sources/gtk/4.12/gtk-4.12.4.tar.xz"
+  sha256 "ba67c6498e5599f928edafb9e08a320adfaa50ab2f0da6fc6ab2252fc2d57520"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -44,13 +44,6 @@ class Gtk4 < Formula
   on_linux do
     depends_on "libxcursor"
     depends_on "libxkbcommon"
-  end
-
-  # patch macOS build
-  # upstream PR ref, https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6208
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gtk/-/commit/aa888c0b3f775776fe3b71028396b7a8c6adb1d6.diff"
-    sha256 "07604078655c73b5db8b5fcdf2288677f0d19a791f336293d7f1c561819488e1"
   end
 
   def install
