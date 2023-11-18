@@ -6,6 +6,7 @@ class Homebank < Formula
   mirror "http://homebank.free.fr/public/sources/homebank-5.7.2.tar.gz"
   sha256 "331d7ef88d90f3f34ca6610f7f18e89e935443b18b091a87d9b94bd7556399ef"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/h/homebank/"
