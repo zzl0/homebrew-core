@@ -4,6 +4,7 @@ class Pan < Formula
   url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.155/pan-v0.155.tar.bz2"
   sha256 "3624ac3171fa8089825ce55b62b053db4f86d592f717c4d874c48ce0e885dff2"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     rebuild 1
