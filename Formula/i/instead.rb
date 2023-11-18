@@ -4,6 +4,7 @@ class Instead < Formula
   url "https://github.com/instead-hub/instead/archive/refs/tags/3.5.1.tar.gz"
   sha256 "53380f94be7f1ec46de309d513f7fe62a1c63d607a247715d87815e83a9c7d63"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "9b2a9f6f5a2e90d61b6166628584a8ca807daa7b4f9051d90291e472caf2efa3"
