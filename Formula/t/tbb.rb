@@ -6,15 +6,13 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "82aedbedc4f01d9e859ec0c0702a04cd61c300c9e6941239e8eae120eff4bd57"
-    sha256 cellar: :any,                 arm64_ventura:  "111d9a40d50f16615cfa8d543aba48d55482b4b234154a172309bf62c5a5d2d6"
-    sha256 cellar: :any,                 arm64_monterey: "beefab871bae0c31c9ced93653db9f3d4ee0e77c708252aae7a395560bd8e8ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4d19bdf3991e80b81217bd45f770acab8841f1701a004ece15d2e581b34e2d3"
-    sha256 cellar: :any,                 sonoma:         "eb9180328e0efdc0426cbb08ca79d736c2796c68f9d260a43cf5406409201968"
-    sha256 cellar: :any,                 ventura:        "54c8bbc3954d70aaa5c37ff01c64e4d5873c96f9f9c87442e13d11c00e5a6436"
-    sha256 cellar: :any,                 monterey:       "18759017f100a1a974c7126577d06ce8a18fcc0b4ae0d448c692b7d38ac6db93"
-    sha256 cellar: :any,                 big_sur:        "ea0fbb62658f0179c96b309eafe7068434c131bf89926f02f9e89c7daf5a0de5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6071625843f701c8a904882b90f647ab0e7307656bec78f4066430639b1b866a"
+    sha256 cellar: :any,                 arm64_sonoma:   "54cfc46133d37fade8f3404d4be73127527cad56dc8212fd887885cc9440f613"
+    sha256 cellar: :any,                 arm64_ventura:  "c11a0e3e69cab1208064730e23f3c5b16e85755ec3067772c5a07dc773b8df8f"
+    sha256 cellar: :any,                 arm64_monterey: "9fd02a5e37c68c94315a89c194595d5f1b8d5faad760d2848c56f37deebbe182"
+    sha256 cellar: :any,                 sonoma:         "463e36411facadf4fe22376cc124dca6d69f46659635bdceb3609a147181f6ea"
+    sha256 cellar: :any,                 ventura:        "2c361a6bc460ad91b491ee27e25402749d346f80878d7ff97148e41ff049854f"
+    sha256 cellar: :any,                 monterey:       "9dcd86957cfa389c4d9c70794a0da08b2a5b623b1f465a7ed958f4a3b7da9b88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a76dd7893a0959e0b82dc2abf0e24c27ead22f574cf272a593cb5ba374242b4a"
   end
 
   depends_on "cmake" => :build
