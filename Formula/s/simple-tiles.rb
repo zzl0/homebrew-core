@@ -20,14 +20,14 @@ class SimpleTiles < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
+  depends_on "python@3.11" => :build
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"
 
-  uses_from_macos "python" => :build
-
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    ENV.prepend_path "PATH", Formula["python@3.11"].libexec/"bin"
+    system "./waf", "configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
