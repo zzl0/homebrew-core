@@ -4,6 +4,7 @@ class GtkVnc < Formula
   url "https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz"
   sha256 "512763ac4e0559d0158b6682ca5dd1a3bd633f082f5e4349d7158e6b5f80f1ce"
   license "LGPL-2.1-or-later"
+  revision 1
 
   # gtk-vnc doesn't use the usual "even-numbered minor is stable" GNOME version
   # scheme, so we have to provide a regex to opt out of the `Gnome` strategy's
