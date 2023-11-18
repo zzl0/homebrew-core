@@ -4,6 +4,7 @@ class Libdazzle < Formula
   url "https://download.gnome.org/sources/libdazzle/3.44/libdazzle-3.44.0.tar.xz"
   sha256 "3cd3e45eb6e2680cb05d52e1e80dd8f9d59d4765212f0e28f78e6c1783d18eae"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "5c7b93ca6770861bbb76939386e6b9e197852cb4ba92e91a1f44ecb2ada84c88"
@@ -27,11 +28,9 @@ class Libdazzle < Formula
   depends_on "gtk+3"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dwith_vapi=true", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dwith_vapi=true", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
