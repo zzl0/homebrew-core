@@ -4,7 +4,7 @@ class Gtkspell3 < Formula
   url "https://downloads.sourceforge.net/project/gtkspell/3.0.10/gtkspell3-3.0.10.tar.xz"
   sha256 "b040f63836b347eb344f5542443dc254621805072f7141d49c067ecb5a375732"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
     sha256 arm64_sonoma:   "21f4405abf4c6af1bd0857e3600b4f8fde014ab4d96f46c2f1c6f43ceef1acc1"
@@ -23,6 +23,7 @@ class Gtkspell3 < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "gtk-doc" => :build
   depends_on "intltool" => :build
@@ -34,8 +35,12 @@ class Gtkspell3 < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
     system "autoreconf", "-fi"
     system "./configure", "--disable-dependency-tracking",
