@@ -4,6 +4,7 @@ class Libhandy < Formula
   url "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.8.2/libhandy-1.8.2.tar.gz"
   sha256 "2c551aae128dff918b84943a93a58bc9be84f42a709b9e43c8d074538e68c10e"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "3ebc1d3d66cfa5118353eb3d86d70b050c854059b3c6f0356cac7611672dbd47"
@@ -26,11 +27,9 @@ class Libhandy < Formula
   depends_on "gtk+3"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dglade_catalog=disabled", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dglade_catalog=disabled", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
