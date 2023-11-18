@@ -2,12 +2,14 @@ class Ettercap < Formula
   desc "Multipurpose sniffer/interceptor/logger for switched LAN"
   homepage "https://ettercap.github.io/ettercap/"
   license "GPL-2.0-or-later"
-  revision 1
-  head "https://github.com/Ettercap/ettercap.git", branch: "master"
+  revision 2
 
   stable do
     url "https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
     sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
+
+    depends_on "geoip"
+    depends_on "pcre"
 
     # Fix build for curl 8+
     # https://github.com/Ettercap/ettercap/pull/1221
@@ -27,13 +29,18 @@ class Ettercap < Formula
     sha256 x86_64_linux:   "6e7f045902aadfd09135dfeb6937876c1932b42505baafb7a5c8d9f9f355bb6e"
   end
 
+  head do
+    url "https://github.com/Ettercap/ettercap.git", branch: "master"
+
+    depends_on "libmaxminddb"
+    depends_on "pcre2"
+  end
+
   depends_on "cmake" => :build
-  depends_on "geoip"
   depends_on "gtk+3"
   depends_on "libnet"
   depends_on "ncurses" if DevelopmentTools.clang_build_version >= 1000
   depends_on "openssl@3"
-  depends_on "pcre"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -41,6 +48,13 @@ class Ettercap < Formula
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  on_macos do
+    # Use ninja to work around build failure with make:
+    # .../tapi stubify -isysroot ... -o libettercap-ui.0.8.3.1.tbd libettercap-ui.0.8.3.1.dylib
+    # error: no such file or directory: 'libettercap-ui.0.8.3.1.dylib'
+    depends_on "ninja" => :build
+  end
 
   def install
     # Work around a CMake bug affecting harfbuzz headers and pango
@@ -66,6 +80,8 @@ class Ettercap < Formula
       # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
       ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw"
       args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/"
+    else
+      args << "-GNinja"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
