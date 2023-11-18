@@ -3,6 +3,7 @@ class Pioneers < Formula
   homepage "https://pio.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/pio/Source/pioneers-15.6.tar.gz"
   sha256 "9a358d88548e3866e14c46c2707f66c98f8040a7857d47965e1ed9805aeb631d"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "a38fc24e98822d7572e2b6425728501e150286f497add378a15b3cb4daae68b7"
@@ -28,8 +29,12 @@ class Pioneers < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
     # fix usage of echo options not supported by sh
     inreplace "Makefile.in", /\becho/, "/bin/echo"
