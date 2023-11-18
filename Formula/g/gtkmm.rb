@@ -4,7 +4,7 @@ class Gtkmm < Formula
   url "https://download.gnome.org/sources/gtkmm/2.24/gtkmm-2.24.5.tar.xz"
   sha256 "0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72"
   license "LGPL-2.1-or-later"
-  revision 8
+  revision 9
 
   livecheck do
     url :stable
