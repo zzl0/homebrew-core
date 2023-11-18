@@ -4,6 +4,7 @@ class Zenity < Formula
   url "https://download.gnome.org/sources/zenity/3.44/zenity-3.44.2.tar.xz"
   sha256 "3fb5b8b1044d3d129262d3c54cf220eb7f76bc21bd5ac6d96ec115cd3518300e"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "34af05184f94c54f654baf863998055bff3794e9e2cd2317a19abf63062f339f"
