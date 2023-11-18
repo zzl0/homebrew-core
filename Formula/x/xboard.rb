@@ -5,7 +5,7 @@ class Xboard < Formula
   mirror "https://ftpmirror.gnu.org/xboard/xboard-4.9.1.tar.gz"
   sha256 "2b2e53e8428ad9b6e8dc8a55b3a5183381911a4dae2c0072fa96296bbb1970d6"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
     sha256 arm64_sonoma:   "4ca6f9bd7e7392905a39b3f278960b3695cbf748fc1a1e132dfae3a90a55a304"
@@ -42,6 +42,8 @@ class Xboard < Formula
   end
 
   def install
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "./autogen.sh" if build.head?
     args = ["--prefix=#{prefix}",
             "--with-gtk",
