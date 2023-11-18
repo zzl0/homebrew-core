@@ -1,10 +1,9 @@
 class Pygments < Formula
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
-  sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
+  url "https://files.pythonhosted.org/packages/22/04/097cdb7d5c6faee58e31a8a2b63cba2222a52066f734b3fdc713c6f40575/pygments-2.17.1.tar.gz"
+  sha256 "e45a0e74bf9c530f564ca81b8952343be986a29f6afe7f5ad95c5f06b7bdf5e8"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
@@ -17,10 +16,15 @@ class Pygments < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d21d474ed493f0d9a5c373a51eecb677bc6ea75f864bc6744dd806923739fbcd"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "python@3.10" => [:build, :test]
+  depends_on "python-hatchling" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+
+  # Fix package name: https://github.com/pygments/pygments/pull/2593
+  patch do
+    url "https://github.com/pygments/pygments/commit/cdd61b1ce73f389dbfb4f743422b468c43b41f93.patch?full_index=1"
+    sha256 "d6a2c4d3f83da065f2694e55c648207337029ae6b6490c477059df12c4f14003"
+  end
 
   def pythons
     deps.select { |dep| dep.name.start_with?("python@") }
