@@ -4,6 +4,7 @@ class Grsync < Formula
   url "https://downloads.sourceforge.net/project/grsync/grsync-1.3.1.tar.gz"
   sha256 "33cc0e25daa62e5ba7091caea3c83a8dc74dc5d7721c4501d349f210c4b3c6d3"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "fd5a3b8ad7b5de7ee1bd25767a34c2a432a4332176665b780a9723abfb0fb418"
