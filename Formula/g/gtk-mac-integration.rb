@@ -2,6 +2,7 @@ class GtkMacIntegration < Formula
   desc "Integrates GTK macOS applications with the Mac desktop"
   homepage "https://wiki.gnome.org/Projects/GTK+/OSX/Integration"
   license "LGPL-2.1-only"
+  revision 1
 
   stable do
     url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.1.tar.xz"
