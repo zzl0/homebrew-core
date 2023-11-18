@@ -4,6 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "5b0e99ab3e7b94b0daa98ca8041d5ec9280ee0a2c28338a5506a968ac52e2354"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -48,7 +49,7 @@ class Gitg < Formula
     inreplace "meson.build", "version: '45.alpha'", "version: '#{version}'"
 
     ENV["DESTDIR"] = "/"
-    system "meson", *std_meson_args, "build", "-Dpython=false"
+    system "meson", "setup", "build", "-Dpython=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
