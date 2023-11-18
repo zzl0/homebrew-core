@@ -5,6 +5,7 @@ class Mdk < Formula
   mirror "https://ftpmirror.gnu.org/mdk/v1.3.0/mdk-1.3.0.tar.gz"
   sha256 "8b1e5dd7f47b738cb966ef717be92a501494d9ba6d87038f09e8fa29101b132e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -26,6 +27,7 @@ class Mdk < Formula
     sha256 x86_64_linux:   "b316f2bb722d07f661f73e6b836a38679a00313e07bee00c4eff92870ac26ec5"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
