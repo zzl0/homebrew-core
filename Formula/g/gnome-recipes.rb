@@ -5,6 +5,7 @@ class GnomeRecipes < Formula
   url "https://gitlab.gnome.org/GNOME/recipes.git",
       tag:      "2.0.4",
       revision: "d5e9733c49ea4f99e72c065c05ee1a35ef65e67d"
+  revision 1
 
   bottle do
     rebuild 1
@@ -19,6 +20,7 @@ class GnomeRecipes < Formula
     sha256 x86_64_linux:  "ffedc8920bea9198ab547302ded99b2591f52d3f38f11e7cb00b29aa80e386eb"
   end
 
+  depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -67,11 +69,9 @@ class GnomeRecipes < Formula
     # stop meson_post_install.py from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = ""
     ENV.delete "PYTHONPATH"
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
