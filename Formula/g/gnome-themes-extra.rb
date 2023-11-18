@@ -4,6 +4,7 @@ class GnomeThemesExtra < Formula
   url "https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz"
   sha256 "7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "34d4d0a58cbc2d46e00628d61d1eae314393c39439a7324096e7b5168e6327c3"
