@@ -4,6 +4,7 @@ class SimpleScan < Formula
   url "https://download.gnome.org/sources/simple-scan/44/simple-scan-44.0.tar.xz"
   sha256 "39b870fd46f447f747eaecc2df26049ef773185099f0e13c675656264dd98e95"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "a151bc9892b812b9f4d002a5419fcb522ab13e974b618484fa37b82ab2d39e88"
@@ -32,11 +33,9 @@ class SimpleScan < Formula
 
   def install
     ENV["DESTDIR"] = "/"
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
