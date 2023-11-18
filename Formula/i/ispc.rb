@@ -1,9 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/ispc/ispc/archive/refs/tags/v1.21.1.tar.gz"
-  sha256 "9f4a11d68c1a3f64be7bad912ef00df50fa8fb3c3e98cebb502ee41d8f9e9fd7"
+  url "https://github.com/ispc/ispc/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "38b0e2de585838004aaa1090af12c2ad20a5ee05c620a686979386450ba0c9c9"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -27,8 +26,8 @@ class Ispc < Formula
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  depends_on "python@3.11" => :build
-  depends_on "llvm@16"
+  depends_on "python@3.12" => :build
+  depends_on "llvm"
 
   on_linux do
     depends_on "tbb"
