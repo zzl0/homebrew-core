@@ -4,6 +4,7 @@ class Klavaro < Formula
   url "https://downloads.sourceforge.net/project/klavaro/klavaro-3.14.tar.bz2"
   sha256 "87187e49d301c510e6964098cdb612126bf030d2a875fd799eadcad3eae56dab"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -22,6 +23,7 @@ class Klavaro < Formula
     sha256 x86_64_linux:   "ad2be44442da47138dd950ba6bad4701ba7db850fc1304fa7ad93aa1bd7d7284"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
@@ -31,8 +33,12 @@ class Klavaro < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "curl"
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
