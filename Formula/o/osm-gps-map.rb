@@ -2,7 +2,7 @@ class OsmGpsMap < Formula
   desc "GTK+ library to embed OpenStreetMap maps"
   homepage "https://github.com/nzjrs/osm-gps-map"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz"
