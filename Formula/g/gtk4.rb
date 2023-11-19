@@ -11,13 +11,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f44f31d9a220357beabd3db55ab802185b6afcc5b94ba3a16e13dfe84b09a744"
-    sha256 arm64_ventura:  "73a887bca2a27d369027c8a01ad0d46ae531055a51c7da7a54079ec3564c0e7e"
-    sha256 arm64_monterey: "8459e35842015867877cc64e04166b62216049e1bf94c9f57cc32e8db137457e"
-    sha256 sonoma:         "8155a6fcea9753412a08b4f72bd3f5b516a937acce9405e2c0959308636212b1"
-    sha256 ventura:        "97c1021d1312e42055cb31ba0da8514208c2a0ffb265fe71896f0f43d4da53e4"
-    sha256 monterey:       "9f73d0fd6b5eb332ea16d91f48a37b0d56faafb56a0bbfc0e68928bbc5d2f4bc"
-    sha256 x86_64_linux:   "cc422a47a87958e4f5932d12c3170734572ed4548b7a498a5dd9ec8ae0783cbd"
+    sha256 arm64_sonoma:   "434265577c9b60c2443f6d6911d733790171e645451776d05512e661c97473d8"
+    sha256 arm64_ventura:  "9b19dfca6a1bcd20d0660aae3b6a5db33bd2f42bef0b4b8578af829f66733845"
+    sha256 arm64_monterey: "74705751c60f8cf14c3ffeae82ce1375e222bffb063e7392eacdd74c3dedd17f"
+    sha256 sonoma:         "6ee239b184e714834e270eae5a49fef1c1c2b779d58787c98538e5e29f810ec3"
+    sha256 ventura:        "f94181393a2ffbd9a976341a26cd18db0f97170b8e429d9fd10f0108d8bae0b9"
+    sha256 monterey:       "7bb8193b1d24ad8fe018c07179e63dfd440b6a73414df55f94cca793f535415d"
+    sha256 x86_64_linux:   "d040ef38cd23f9f376ac842b03a0ee70e36bad3aa0a7d116aedf3865a33f4518"
   end
 
   depends_on "docbook" => :build
