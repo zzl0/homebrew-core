@@ -1,10 +1,10 @@
 class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
-  url "https://ftp.gnu.org/gnu/gettext/gettext-0.22.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.22.3.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.3.tar.gz"
-  sha256 "839a260b2314ba66274dae7d245ec19fce190a3aa67869bf31354cb558df42c7"
+  url "https://ftp.gnu.org/gnu/gettext/gettext-0.22.4.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.22.4.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.4.tar.gz"
+  sha256 "c1e0bb2a4427a9024390c662cd532d664c4b36b8ff444ed5e54b115fdb7a1aea"
   license "GPL-3.0-or-later"
 
   bottle do
