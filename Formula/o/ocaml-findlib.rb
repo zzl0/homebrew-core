@@ -4,6 +4,7 @@ class OcamlFindlib < Formula
   url "http://download.camlcity.org/download/findlib-1.9.6.tar.gz"
   sha256 "2df996279ae16b606db5ff5879f93dbfade0898db9f1a3e82f7f845faa2930a2"
   license "MIT"
+  revision 1
 
   livecheck do
     url "http://download.camlcity.org/download/"
@@ -45,6 +46,10 @@ class OcamlFindlib < Formula
 
     # Avoid conflict with ocaml-num package
     rm_rf Dir[lib/"ocaml/num", lib/"ocaml/num-top"]
+
+    # Save extra findlib.conf to work around https://github.com/Homebrew/homebrew-test-bot/issues/805
+    libexec.mkpath
+    cp etc/"findlib.conf", libexec/"findlib.conf"
   end
 
   test do
