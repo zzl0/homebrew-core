@@ -1,4 +1,4 @@
-class NanopbGenerator < Formula
+class Nanopb < Formula
   include Language::Python::Shebang
 
   desc "C library for encoding and decoding Protocol Buffer messages"
@@ -12,22 +12,22 @@ class NanopbGenerator < Formula
     regex(/href=.*?nanopb[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "6636f540fd6289d663ec675571f5799e7ac29337496e8ba2a45b73696dadd376"
-  end
-
+  depends_on "cmake" => :build
   depends_on "protobuf"
-  depends_on "python-setuptools"
+  depends_on "python-setuptools" # import pkg_resources
   depends_on "python@3.12"
 
   def install
-    cd "generator" do
-      system "make", "-C", "proto"
-      rewrite_shebang detected_python_shebang, "nanopb_generator.py"
-      libexec.install "nanopb_generator.py", "protoc-gen-nanopb", "proto"
-      bin.install_symlink libexec/"protoc-gen-nanopb", libexec/"nanopb_generator.py"
-      rewrite_shebang detected_python_shebang, libexec/"protoc-gen-nanopb"
-    end
+    ENV.append_to_cflags "-DPB_ENABLE_MALLOC=1"
+    site_packages = Language::Python.site_packages("python3.12")
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-Dnanopb_PYTHON_INSTDIR_OVERRIDE=#{prefix/site_packages}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    rewrite_shebang detected_python_shebang, *bin.children
   end
 
   test do
