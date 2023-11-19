@@ -1,6 +1,8 @@
 class Lilypond < Formula
   desc "Music engraving system"
   homepage "https://lilypond.org"
+  url "https://lilypond.org/download/sources/v2.24/lilypond-2.24.3.tar.gz"
+  sha256 "df005f76ef7af5a4cd74a10f8e7115278b7fa79f14018937b65c109498ec44be"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-3.0-only",
@@ -11,19 +13,6 @@ class Lilypond < Formula
     "AGPL-3.0-only",
     "LPPL-1.3c",
   ]
-
-  stable do
-    url "https://lilypond.org/download/sources/v2.24/lilypond-2.24.2.tar.gz"
-    sha256 "7944e610d7b4f1de4c71ccfe1fbdd3201f54fac54561bdcd048914f8dbb60a48"
-
-    # Fix for ghostscript 10.02.1
-    # Remove with next release
-    # https://gitlab.com/lilypond/lilypond/-/issues/6675
-    patch do
-      url "https://gitlab.com/lilypond/lilypond/-/commit/179b9f6975b6a3ebfba043bc953ae95fc4254094.diff"
-      sha256 "e95c6b4c03f36f18b4a35e974494c3ae2bd676a76ef9393fd655c7a14aee93eb"
-    end
-  end
 
   livecheck do
     url "https://lilypond.org/source.html"
@@ -61,7 +50,7 @@ class Lilypond < Formula
   depends_on "ghostscript"
   depends_on "guile"
   depends_on "pango"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "flex" => :build
   uses_from_macos "perl" => :build
