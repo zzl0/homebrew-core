@@ -1,10 +1,9 @@
 class Criterion < Formula
   desc "Cross-platform C and C++ unit testing framework for the 21st century"
   homepage "https://github.com/Snaipe/Criterion"
-  url "https://github.com/Snaipe/Criterion/releases/download/v2.4.1/criterion-2.4.1.tar.xz"
-  sha256 "d0f86a8fc868e2c7b83894ad058313023176d406501a4ee8863e5357e31a80e7"
+  url "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2.tar.xz"
+  sha256 "e3c52fae0e90887aeefa1d45066b1fde64b82517d7750db7a0af9226ca6571c0"
   license "MIT"
-  revision 3
   head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
 
   bottle do
@@ -25,10 +24,12 @@ class Criterion < Formula
   depends_on "pkg-config" => :build
   depends_on "libgit2"
   depends_on "nanomsg"
+  depends_on "nanopb"
+
   uses_from_macos "libffi"
 
   def install
-    system "meson", "setup", *std_meson_args, "--force-fallback-for=boxfort", "build"
+    system "meson", "setup", *std_meson_args, "--force-fallback-for=boxfort,debugbreak,klib", "build"
     system "meson", "compile", "-C", "build"
     system "meson", "install", "--skip-subprojects", "-C", "build"
   end
