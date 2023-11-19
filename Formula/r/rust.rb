@@ -15,15 +15,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "40687edb42b50bdf778643803a21a98fca07d86b6a138edfdd73a282c1e18ad8"
-    sha256 cellar: :any,                 arm64_ventura:  "be9922a4b56016f18d209067f5a4d148d2aad4db3061092f848744aff41e337d"
-    sha256 cellar: :any,                 arm64_monterey: "a9ada0e355a336a55545a16e615daa051c5a675dc05c63793a77b8bac98ba04e"
-    sha256 cellar: :any,                 arm64_big_sur:  "9bfc9baf003134053944ad145cc48155a23607ff73fecd6d45d1e4d3b429d6fd"
-    sha256 cellar: :any,                 sonoma:         "fbc3c8c3894f64dc121541cc9a50fb22a38ccff82d4dba9c370d70a6785f614e"
-    sha256 cellar: :any,                 ventura:        "4cd3be4492eae97232dd1d868fb40f849882724688c4bd792f1e720d8710803d"
-    sha256 cellar: :any,                 monterey:       "f7b8d6dc15d845f4ad715706542237386f97cf045e9168b34876bccb060e0e26"
-    sha256 cellar: :any,                 big_sur:        "20214e26fbc77ef51e3be59c970ed9a109f3c13cfa7331a973d60d06b907760a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36b6bb23066fccd7b3c9311d5c671768133bbe5c27cce132376c4c0ec30abf9c"
+    sha256 cellar: :any,                 arm64_sonoma:   "4b21da961caf6a07da1a060289a9582bbffc10dcd64f68e2e4e4e1af2e057c06"
+    sha256 cellar: :any,                 arm64_ventura:  "6e1f064619902bec9e5dfb26ac55b5e287372b62ce6e234b31c4c807c00dbe52"
+    sha256 cellar: :any,                 arm64_monterey: "058460f7f14b2aec5fd0324fcda09f1b59635514513ba4f3240d298e1752be75"
+    sha256 cellar: :any,                 sonoma:         "ab812c8acc40ebf09c615acd8c5c9db351916e02ae2dab18e79faf71e17c85ca"
+    sha256 cellar: :any,                 ventura:        "7f1acd1ed3ce57ca0b1c7fff889fa6665273a34b28cd16dccc3db3e51f5d2420"
+    sha256 cellar: :any,                 monterey:       "7173f18b220068bfb3693087999e37f0394b03932607a1a6e5d3a3f4082a85e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "262c9474e64e64b89a87d086f141993a46992fb3be348454944a16c0695ac43a"
   end
 
   head do
