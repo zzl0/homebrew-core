@@ -1,10 +1,9 @@
 class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
   homepage "https://github.com/clojure-lsp/clojure-lsp"
-  url "https://github.com/clojure-lsp/clojure-lsp.git",
-      tag:      "2021.09.13-22.25.35",
-      revision: "d564f81e25c71cc370c33d745881af1187f97667"
-  version "20210913T222535"
+  url "https://github.com/clojure-lsp/clojure-lsp/releases/download/2023.10.30-16.25.41/clojure-lsp-standalone.jar"
+  version "20231030T162541"
+  sha256 "4e2fadf51e6b1e64b7b532d6650726f49f438e92f714b34e206268d6503c3370"
   license "MIT"
   head "https://github.com/clojure-lsp/clojure-lsp.git", branch: "master"
 
@@ -31,26 +30,34 @@ class ClojureLsp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b8f92dadb82afd0bee547349f330a415c9fd1d8ab8ed80c58495b02c6f140e0"
   end
 
-  depends_on "clojure" => :build
-  # The Java Runtime version only recognizes class file versions up to 52.0
-  depends_on "openjdk@11"
+  depends_on "openjdk"
 
   def install
-    system "make", "prod-bin"
-    jar = "clojure-lsp.jar"
-    libexec.install jar
-    bin.write_jar_script libexec/jar, "clojure-lsp", java_version: "11"
+    libexec.install "clojure-lsp-standalone.jar"
+    bin.write_jar_script libexec/"clojure-lsp-standalone.jar", "clojure-lsp"
   end
 
   test do
-    input =
-      "Content-Length: 152\r\n" \
-      "\r\n" \
-      "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"" \
-      "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
-      "bose\",\"workspaceFolders\":null}}\r\n"
+    require "open3"
 
-    output = pipe_output("#{bin}/clojure-lsp", input, 0)
-    assert_match "Content-Length", output
+    json = <<~JSON
+      {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "processId": 88075,
+          "rootUri": null,
+          "capabilities": {},
+          "trace": "verbose",
+          "workspaceFolders": null
+        }
+      }
+    JSON
+
+    Open3.popen3("#{bin}/clojure-lsp") do |stdin, stdout|
+      stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
+      assert_match(/^Content-Length: \d+/i, stdout.readline)
+    end
   end
 end
