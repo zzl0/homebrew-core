@@ -389,7 +389,7 @@
   },
   "esphome": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "platformio", "protobuf", "pycparser",
+      "argcomplete", "certifi", "cffi", "cryptography", "platformio", "protobuf", "pycparser",
       "pyparsing", "PyYAML", "six", "tabulate"
     ]
   },
