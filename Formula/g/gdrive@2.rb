@@ -6,17 +6,13 @@ class GdriveAT2 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39a52f08e8cf194ee7faf721c3db80fc8ffe0736df0816b914845d32c91bc12a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "adeacb147f331a863acc3bb532aea0be7b0d761e1f82d701dfc446a2f66ce31b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c352c82a925ec14ef3e88e2483bdb7147de246226fb35fe6830e9f28eb6f6805"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f991723008683908cb3a37497348e9813314807b9000e90de1e2130f2342554d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4fc0a6807daf9808181931267c2dd1446f2288385edecb8bebd022ec8913a14"
-    sha256 cellar: :any_skip_relocation, ventura:        "e71c7ec3ea38bab5756b2ad347143158e4eec5a492eef6ab33400033b528646e"
-    sha256 cellar: :any_skip_relocation, monterey:       "861b550af0728ddbf48274164bd7207d73349d7800dad8a4c0760ea2fecc9b9e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d96fff9fcee61b32a8185cae41d1f5b21f36dd22f235852f283b46fcd3b066e"
-    sha256 cellar: :any_skip_relocation, catalina:       "08947085778a3414d976c4dbda157b58704c60700621348f621d74a589c68149"
-    sha256 cellar: :any_skip_relocation, mojave:         "a1f4a672700f4348173b184e04aa6da8196ad93d44efbd5122aa304c88d0cce1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d687e4d537911f156c2f5cfd0a88fe8c44793eef89c497849e2130ab138d70e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ad935c13ec41e8b5876ee821995bd6a853b67b38e17626b9a636c9e8680db60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4135e1686fca80cb9e6e4366af6e99d5631b896854500bae74907dd57b87d23f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c0222446c65a22470b13d3ae825599d125af37afe9fdfc1f73e3c4b99fa657d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad269a367d382c2d9e78b9cd75978e1f1efef79317f0f6cfa1b444d2f1e16afc"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b7d7cf1547348e22b8998fb3cf588667904eafd628dc97afbcef047f01ace83"
+    sha256 cellar: :any_skip_relocation, monterey:       "1529979b500ba4dd3a9fe931a4f6cff46bb2e3bee83526da960b7459ebf5ecca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1ea79701fc05370bff771480e1839c0ded5d9cdd9cc9c647207fae1ebafda32"
   end
 
   keg_only :versioned_formula
