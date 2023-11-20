@@ -9,13 +9,14 @@ class Woob < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b33990675a791ab6b95bfe8886a7d1d126b501e3c45ae5b4f817f754cef0d169"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45a329e53211ca26edc35164d8d8e8f315acac089dcae4b8def07895ff2297b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "85f298b5539ab84c253e702a4fde092bc41a50c0726b4b902ee79adeaf77f0f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "064ef9dba6273999dc767caeb3fd7d773fdae3d8fdda6b663cd63ce32b04e318"
-    sha256 cellar: :any_skip_relocation, ventura:        "29af606d5791c3afb6f70767d95fd0937e233e62983208e4b644ded52718c851"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b2358ff45015783606a990d5b6f915d09a431ae6df07f7faa84b8d6d5ebba05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "383c335bbad31c941c06b65cc5ea553188a3eb67ed20be6572ce175309f07be2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "511c0f208e789db061cd46adec573dc58a1148bce483c973e12fa5e936385544"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bdfea406161a0fe30f96c41acac0e2e55b376403f65a5f4a7275522f72b9d55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e60b2ec0af5b1a37d38740002af762ff741351d7228973348c9fbdfe0adbb769"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29b6a426a4a98e1ba508886cfd41258d02bb1b7a5a642b2b4b2bf63d1696f7ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "cea43c3fa5a9c4452e1daaca37340676cd58f25287d902cdbe20c7b964e2a632"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c34f9089789d045aed2fb7294ddb4227c869a9ffdb8a7d8f8d7fcfad279e004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e23c6a2120ff2eb687ea55d4c978da494ed66322d038bf05b5ecf3906a0a449"
   end
 
   depends_on "gnupg"
