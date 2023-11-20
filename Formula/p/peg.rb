@@ -8,7 +8,7 @@ class Peg < Formula
 
   livecheck do
     url :homepage
-    regex(/href=.*?peg[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.t/i)
+    regex(/current stable version is v?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do
