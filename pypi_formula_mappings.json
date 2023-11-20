@@ -1217,7 +1217,10 @@
     "exclude_packages": ["docopt", "packaging", "python-dateutil", "PyYAML", "six"]
   },
   "woob": {
-    "exclude_packages": ["certifi", "lxml", "packaging", "pillow", "Pygments", "PyYAML", "six"],
+    "exclude_packages": [
+      "certifi", "lxml", "packaging", "pillow", "Pygments", "python-dateutil",
+      "PyYAML", "six"
+    ],
     "extra_packages": ["colorama"]
   },
   "wtfis": {
