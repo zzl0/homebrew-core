@@ -1,8 +1,8 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
   homepage "https://web.crev.dev/rust-reviews/"
-  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.25.4.tar.gz"
-  sha256 "1eed9427b732e6d8afe9148a868a4a836d1905688c9104a2d6959fd0119795fe"
+  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.25.5.tar.gz"
+  sha256 "3c26e9abb31ad008f2e1ced8c7b9b859027ce09d4b34fdf363dbf3a07626dca4"
   license "Apache-2.0"
 
   livecheck do
@@ -25,6 +25,12 @@ class CargoCrev < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
+
+  # build patch for index-guix dependency
+  patch do
+    url "https://github.com/crev-dev/cargo-crev/commit/1f26743bed2eee2ed62bc50cead24743a3b6535e.patch?full_index=1"
+    sha256 "7787f0c946268de7d281413429698a4c0524e25f763faa6aec2abc8be0ef0c52"
+  end
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
