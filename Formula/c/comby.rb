@@ -20,7 +20,7 @@ class Comby < Formula
 
   depends_on "autoconf" => :build
   depends_on "gmp" => :build
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build # https://github.com/comby-tools/comby/issues/358
   depends_on "opam" => :build
   depends_on "pkg-config" => :build
   depends_on "gmp"
