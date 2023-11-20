@@ -1,12 +1,39 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https://coccinelle.lip6.fr/"
-  url "https://github.com/coccinelle/coccinelle.git",
-      tag:      "1.1.1",
-      revision: "5444e14106ff17404e63d7824b9eba3c0e7139ba"
   license "GPL-2.0-only"
   revision 1
   head "https://github.com/coccinelle/coccinelle.git", branch: "master"
+
+  stable do
+    url "https://github.com/coccinelle/coccinelle.git",
+        tag:      "1.1.1",
+        revision: "5444e14106ff17404e63d7824b9eba3c0e7139ba"
+
+    # Backport compatibility with OCaml 5. Remove in the next release.
+    patch do
+      url "https://github.com/coccinelle/coccinelle/commit/f13b03aa20a08e5187ce36bfd5e606f18acd2888.patch?full_index=1"
+      sha256 "84f06551652d9fcee63451fe8d3bce3845c01fe054087cde50bb3b8308014445"
+    end
+    patch do
+      url "https://github.com/coccinelle/coccinelle/commit/1d0733a27006b06eef712f541000a8bf10246804.patch?full_index=1"
+      sha256 "391ee079fc18ac4727af089fdf686cd41d4b2ba7847c4bcf2b3b04caf5b6d457"
+    end
+
+    # Backport usage of non-bundled packages to allow versions installed by opam
+    patch do
+      url "https://github.com/coccinelle/coccinelle/commit/3f54340c8ac907e528dbe1475a4a7141e77b9cdd.patch?full_index=1"
+      sha256 "94b23b53c023270368601bc5debefc918a99f87b7489e25acddf9c967ddb4486"
+    end
+    patch do
+      url "https://github.com/coccinelle/coccinelle/commit/2afa9f669b565badf17104176cc4850a2dff67f6.patch?full_index=1"
+      sha256 "882fe080f7fbce4b0f08b8854a5b02212c17efbc2a62c145eae562842d8e2337"
+    end
+    patch do
+      url "https://github.com/coccinelle/coccinelle/commit/d9ce82a556e313684af74912cf204bb902e04436.patch?full_index=1"
+      sha256 "4b27d81d27363efb1a83064abba1df1c09a1f1f064c81cc621ca61b79f58d83e"
+    end
+  end
 
   livecheck do
     url :stable
@@ -30,42 +57,28 @@ class Coccinelle < Formula
   depends_on "ocaml-findlib" => :build
   depends_on "opam" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.12" => :build
   depends_on "ocaml"
   depends_on "pcre"
 
   uses_from_macos "unzip" => :build
 
-  # Bootstrap resource for Ocaml 4.12 compatibility.
-  # Remove when Coccinelle supports Ocaml 4.12 natively
-  resource "stdcompat" do
-    url "https://github.com/thierry-martinez/stdcompat/releases/download/v15/stdcompat-15.tar.gz"
-    sha256 "5e746f68ffe451e7dabe9d961efeef36516b451f35a96e174b8f929a44599cf5"
-  end
-
   def install
-    resource("stdcompat").stage do
-      system "./configure", "--prefix=#{buildpath}/bootstrap"
-      ENV.deparallelize { system "make" }
-      system "make", "install"
-    end
-    ENV.prepend_path "OCAMLPATH", buildpath/"bootstrap/lib"
-
     Dir.mktmpdir("opamroot") do |opamroot|
       ENV["OPAMROOT"] = opamroot
       ENV["OPAMYES"] = "1"
       ENV["OPAMVERBOSE"] = "1"
       system "opam", "init", "--no-setup", "--disable-sandboxing"
+      system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
       system "./autogen"
-      system "opam", "config", "exec", "--", "./configure",
-                            "--disable-dependency-tracking",
-                            "--enable-release",
-                            "--enable-ocaml",
-                            "--enable-opt",
-                            "--with-pdflatex=no",
-                            "--prefix=#{prefix}",
-                            "--libdir=#{lib}"
+      system "opam", "exec", "--", "./configure", *std_configure_args,
+                                                  "--disable-silent-rules",
+                                                  "--enable-ocaml",
+                                                  "--enable-opt",
+                                                  "--without-pdflatex",
+                                                  "--with-bash-completion=#{bash_completion}"
       ENV.deparallelize
-      system "opam", "config", "exec", "--", "make"
+      system "opam", "exec", "--", "make"
       system "make", "install"
     end
 
