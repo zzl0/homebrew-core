@@ -500,7 +500,7 @@
   },
   "hatch": {
     "exclude_packages": [
-      "certifi", "click", "cryptography", "keyring", "packaging",
+      "certifi", "click", "cryptography", "filelock", "hatchling", "keyring",
       "Pygments", "virtualenv"
     ]
   },
