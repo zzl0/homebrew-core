@@ -1120,7 +1120,7 @@
     "exclude_packages": ["PyYAML"]
   },
   "todoman": {
-    "exclude_packages": ["six", "tabulate", "pytz"]
+    "exclude_packages": ["click", "python-dateutil", "pytz", "six", "tabulate"]
   },
   "toot": {
     "exclude_packages": ["certifi"]
