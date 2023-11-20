@@ -3,8 +3,8 @@ require "language/node"
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://github.com/openziti/zrok/archive/refs/tags/v0.4.15.tar.gz"
-  sha256 "d0c37cff0e9f9ec8339e4d830f7a1a17d22c8e3536ffd9ea5a2bb37783d4a43f"
+  url "https://github.com/openziti/zrok/archive/refs/tags/v0.4.16.tar.gz"
+  sha256 "4745de03fd5809805e8f3b5f21cdc37bc2e0ac0f23cf0b28b3745a1682be8559"
   license "Apache-2.0"
   head "https://github.com/openziti/zrok.git", branch: "main"
 
