@@ -1205,7 +1205,7 @@
     ]
   },
   "watson": {
-    "exclude_packages": ["certifi", "click", "six"]
+    "exclude_packages": ["certifi", "click", "python-dateutil", "six"]
   },
   "waybackpy": {
     "exclude_packages": ["certifi", "click"]
