@@ -205,8 +205,8 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{inputs.pull_request}}
-          body: ":warning: @${{github.actor}} pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
-          bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
+          body: ":warning: @${{github.actor}} pre-merge checks [failed](${{env.RUN_URL}})."
+          bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}})."
           bot: github-actions[bot]
 
       - name: Enqueue PR for merge
@@ -347,8 +347,8 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{inputs.pull_request}}
-          body: ":warning: @${{github.actor}} bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
-          bot_body: ":warning: Bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
+          body: ":warning: @${{github.actor}} bottle publish [failed](${{env.RUN_URL}})."
+          bot_body: ":warning: Bottle publish [failed](${{env.RUN_URL}})."
           bot: github-actions[bot]
 
       - name: Wait until pull request branch is in sync with local repository
@@ -427,6 +427,6 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{inputs.pull_request}}
-          body: ":warning: @${{github.actor}} [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
-          bot_body: ":warning: [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
+          body: ":warning: @${{github.actor}} [Failed to enable automerge](${{env.RUN_URL}})."
+          bot_body: ":warning: [Failed to enable automerge](${{env.RUN_URL}})."
           bot: github-actions[bot]
