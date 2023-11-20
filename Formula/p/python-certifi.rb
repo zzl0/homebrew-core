@@ -6,13 +6,13 @@ class PythonCertifi < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7e3ade85f22742f34abc5d2d9fcbdb4b4bd7f48dc8a159632c031d8007189f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d97a923fa6705e96f28e4f4eee95dc546da9c3284f1dd72b1c8e38a3a0233a9f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4cca94c242a1491a3f719c601f4a27243b88a79afd66c7642f8807bda98643e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b24e2973e53c9b1d45cba54e396e204f0f704175f59aa5a64eb9b91871662de"
-    sha256 cellar: :any_skip_relocation, ventura:        "093282849560012f202cf6b5059091f0ae0825a3e76dcfbb5bb83f3bce40023e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d9e4934e6512167a14e9f2fdac2a969e4ea36a72d959c794a7002c0a90cf7f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a540eaf727baaa449fe5ae998e22f704accdb80555824fb7171af9e12104256f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e725d4eeae81cf1f8dde8dab4ada86315a2d760c2995f8efd48d5c5e264992eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f79fb464210d1710ee1308d49b29c31e126e7189561cf9ab149afc4f9a6e9b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd46de953e2fff760eada1af1ee10f4f326350f8e660e653c3d15cbe86ef72d6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "734371a47c764f08745539dd4babc08e2967db2dc80e822daccf0fe807a6c04f"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cf049e969e6f8a424079355957e1dba1a0eedff05dec96c9448d3c060dd9eba"
+    sha256 cellar: :any_skip_relocation, monterey:       "6519586d0da1f82c1179883c6dc37081c4dad9a1205e3e0dbcfee55aac7f8cf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0814e1eb9d0cd05170c07fa532d9406587748bccd6397b1074d573f7adc182d9"
   end
 
   depends_on "python-setuptools" => :build
