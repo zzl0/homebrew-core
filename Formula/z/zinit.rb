@@ -7,15 +7,13 @@ class Zinit < Formula
   head "https://github.com/zdharma-continuum/zinit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d99e7800aa291676e5a74d0ed4f4e8ee77d3d8baa8492f34379368a3bff1743f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d99e7800aa291676e5a74d0ed4f4e8ee77d3d8baa8492f34379368a3bff1743f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d99e7800aa291676e5a74d0ed4f4e8ee77d3d8baa8492f34379368a3bff1743f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d99e7800aa291676e5a74d0ed4f4e8ee77d3d8baa8492f34379368a3bff1743f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77cb19579625c9c29b0fc0bdb8ab6831f0adeaa941a56764e1679a43ee3763c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "77cb19579625c9c29b0fc0bdb8ab6831f0adeaa941a56764e1679a43ee3763c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "77cb19579625c9c29b0fc0bdb8ab6831f0adeaa941a56764e1679a43ee3763c8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77cb19579625c9c29b0fc0bdb8ab6831f0adeaa941a56764e1679a43ee3763c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d99e7800aa291676e5a74d0ed4f4e8ee77d3d8baa8492f34379368a3bff1743f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
+    sha256 cellar: :any_skip_relocation, ventura:        "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
   end
 
   uses_from_macos "zsh"
