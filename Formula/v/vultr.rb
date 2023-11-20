@@ -1,10 +1,10 @@
 class Vultr < Formula
-  desc "Command-line tool for Vultr"
-  homepage "https://jamesclonk.github.io/vultr"
-  url "https://github.com/JamesClonk/vultr/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "6529d521a7fa006808cd07331f31256e91773ec7e1a0c7839cd14884034fb185"
-  license "MIT"
-  head "https://github.com/JamesClonk/vultr.git", branch: "master"
+  desc "Command-line tool for Vultr services"
+  homepage "https://github.com/vultr/vultr-cli"
+  url "https://github.com/vultr/vultr-cli/archive/refs/tags/v2.20.0.tar.gz"
+  sha256 "98087cfad9913dc018bd011b9fa525dd519c287b5cd701f7c0529651e94a08af"
+  license "Apache-2.0"
+  head "https://github.com/vultr/vultr-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3749ebb4bdb3f933e720398451b8f6441b4e77a28b2adb014a7ac6dc43afe066"
