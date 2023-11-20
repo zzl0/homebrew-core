@@ -1,8 +1,8 @@
 class Cake < Formula
   desc "Cross platform build automation system with a C# DSL"
   homepage "https://cakebuild.net/"
-  url "https://github.com/cake-build/cake/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "2bd3f55d13e559120296aa206ebe09f0410ccd6f133dd1bcb90f56470bfcf09e"
+  url "https://github.com/cake-build/cake/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "ea45d7a69f7bc373bd4d38ed708632a4ff7365d36cb9a85c40a107e6a7ae2c1b"
   license "MIT"
 
   bottle do
@@ -14,8 +14,6 @@ class Cake < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "fa889b18b3ce98e02e27a2ab5a2a7ced8a420a6ef7d7490dab02449929732812"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3fda2e3c37cbad6ae0e407291e5447857dbc36359500be831b34b19a673679c"
   end
-
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
 
   depends_on "dotnet"
 
