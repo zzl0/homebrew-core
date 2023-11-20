@@ -1,9 +1,9 @@
 class Ledit < Formula
   desc "Line editor for interactive commands"
   homepage "https://pauillac.inria.fr/~ddr/ledit/"
-  url "https://github.com/chetmurthy/ledit/archive/refs/tags/ledit-2-05.tar.gz"
-  version "2.05"
-  sha256 "493ee6eae47cc92f1bee5f3c04a2f7aaa0812e4bdf17e03b32776ab51421392c"
+  url "https://github.com/chetmurthy/ledit/archive/refs/tags/ledit-2-06.tar.gz"
+  version "2.06"
+  sha256 "9fb4fe256ca9e878a0b47dfd43b4c64c6a3f089c9e76193b2db347f0d90855be"
   license "BSD-3-Clause"
 
   livecheck do
@@ -28,13 +28,27 @@ class Ledit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec38d1627d6277d03b8a607a91d6d1d7c43b8f4287b15393e0a26cac27d04e06"
   end
 
+  depends_on "ocaml-findlib" => :build
+  depends_on "camlp-streams"
   depends_on "camlp5"
   depends_on "ocaml"
 
+  # Backport Makefile fixes. Remove in the next release.
+  patch do
+    url "https://github.com/chetmurthy/ledit/commit/3dbd668d9c69aab5ccd61f6b906c14122ae3271d.patch?full_index=1"
+    sha256 "f5aafe054a5daa97d311155931bc997f1065b20acfdf23211fbcbf1172fd7e97"
+  end
+
   def install
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     # like camlp5, this build fails if the jobs are parallelized
     ENV.deparallelize
-    args = %W[BINDIR=#{bin} LIBDIR=#{lib} MANDIR=#{man}]
+    args = %W[BINDIR=#{bin} LIBDIR=#{lib} MANDIR=#{man1}]
+    args << "CUSTOM=" if OS.linux? # Work around brew corrupting appended bytecode
     system "make", *args
     system "make", "install", *args
   end
