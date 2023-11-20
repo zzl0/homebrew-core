@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "aa7548ff0720a375984b25cddac4a8e252f85b9523a7a357ab20c3d282a5bb92"
+  url "https://github.com/microsoft/sbom-tool/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "2ee856c667d14f2b6a7f4081b330a8d9e9b0af18923aebacc88ed092736d7bd6"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -14,36 +14,26 @@ class SbomTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6be797b74091c3a50ed591ab57b7a723381d9b299245b1368d35cc54f29371f"
   end
 
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
-
-  depends_on "dotnet" => :build
+  depends_on "dotnet"
 
   uses_from_macos "icu4c" => :test
   uses_from_macos "zlib"
 
-  # patch to use mono.unix to support arm builds
-  # upstream PR ref, https://github.com/microsoft/sbom-tool/pull/409
-  patch do
-    url "https://github.com/microsoft/sbom-tool/commit/dd411c551220fbb579e58c4464b284d2a6781080.patch?full_index=1"
-    sha256 "d99878256a1ce470d0f424c86215ab07c5381cc29ee83c90129166899057a6fb"
-  end
-
   def install
     bin.mkdir
 
-    dotnet_version = Formula["dotnet"].version.to_s
-    inreplace "./global.json", "7.0.400", dotnet_version
-
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
+    dotnet = Formula["dotnet"]
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
 
     args = %W[
       --configuration Release
-      --output #{buildpath}
+      --framework net#{dotnet.version.major_minor}
+      --output #{libexec}
       --runtime #{os}-#{arch}
-      --self-contained=true
+      --no-self-contained
       -p:OFFICIAL_BUILD=true
       -p:MinVerVersionOverride=#{version}
       -p:PublishSingleFile=true
@@ -54,7 +44,8 @@ class SbomTool < Formula
     ]
 
     system "dotnet", "publish", "src/Microsoft.Sbom.Tool/Microsoft.Sbom.Tool.csproj", *args
-    bin.install "Microsoft.Sbom.Tool" => "sbom-tool"
+    (bin/"sbom-tool").write_env_script libexec/"Microsoft.Sbom.Tool",
+                                       DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
   end
 
   test do
