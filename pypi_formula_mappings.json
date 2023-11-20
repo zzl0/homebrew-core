@@ -580,7 +580,7 @@
     "exclude_packages": ["cffi", "cryptography", "pycparser"]
   },
   "khal": {
-    "exclude_packages": ["six", "pytz"]
+    "exclude_packages": ["python-dateutil", "pytz", "six"]
   },
   "khard": {
     "exclude_packages": ["six"]
