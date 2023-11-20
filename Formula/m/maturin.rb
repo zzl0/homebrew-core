@@ -4,6 +4,7 @@ class Maturin < Formula
   url "https://github.com/PyO3/maturin/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "4506920ebe88401de129b5d5579c433ba0702192aa0e0537f97520d3719c4d2c"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
@@ -47,6 +48,15 @@ class Maturin < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.remove "HOMEBREW_LIBRARY_PATHS",
+                 recursive_dependencies.find { |d| d.name.match?(/^llvm(@\d+)?$/) }
+                                       .to_formula
+                                       .opt_lib
+    end
+
     pythons.each do |python|
       ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python)
       resources.each do |r|
