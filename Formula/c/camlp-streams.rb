@@ -4,6 +4,7 @@ class CamlpStreams < Formula
   url "https://github.com/ocaml/camlp-streams/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "ad71f62406e9bb4e7fb5d4593ede2af6c68f8b0d96f25574446e142c3eb0d9a4"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e329a416fd6e58bde5d1b39a4ac5a194960f398b2e825c9b819c656d3729cb11"
@@ -28,6 +29,11 @@ class CamlpStreams < Formula
   end
 
   test do
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     (testpath/"test.ml").write <<~EOS
       let stream = Stream.of_list ([] : unit list)
     EOS
