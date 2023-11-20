@@ -2,6 +2,8 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   # git is needed for dune subst
+  # TODO: Update `ocaml@4` dependency to `ocaml` on next release as OCaml 4.14 PR
+  # also adds support for OCaml 5: https://github.com/stan-dev/stanc3/pull/1366
   url "https://github.com/stan-dev/stanc3.git",
       tag:      "v2.32.2",
       revision: "bcbf83c52c76018ce4a6cd86233de1601ddf9422"
@@ -19,7 +21,7 @@ class Stanc3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e684d8fd2b13d3d1f02fc304e8b6bf205288a8806fbdbbbfffc9ca10480465f"
   end
 
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build
   depends_on "opam" => :build
 
   uses_from_macos "unzip" => :build
