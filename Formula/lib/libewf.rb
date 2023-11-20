@@ -9,6 +9,7 @@ class Libewf < Formula
 
   livecheck do
     url :stable
+    regex(/^(?:libewf[._-])?v?(\d+(?:\.\d+)*)$/i)
     strategy :github_latest
   end
 
