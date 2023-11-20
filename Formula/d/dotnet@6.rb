@@ -8,13 +8,11 @@ class DotnetAT6 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e321d22cf019fcf43b9182ab920fb56b06472eb44a841d5e9da7c68efd06d099"
-    sha256 cellar: :any,                 arm64_monterey: "bec272194da05a71880e7f81fcfbfbd6d2b52369d87563b3776bca4c73fc06f3"
-    sha256 cellar: :any,                 arm64_big_sur:  "b7edf93d33f58eaa16f6d3f590208fd32d46b7744125f35129502d9afeb1217d"
-    sha256 cellar: :any,                 ventura:        "cadb65f97ef88bcf4765925ed1927698b4392f3bf919190b6288283abc0b31b3"
-    sha256 cellar: :any,                 monterey:       "264e2d92b82139a7277655fbb68a45a6c9eb6f9badb7b289d38a2846ee8a2a58"
-    sha256 cellar: :any,                 big_sur:        "e5f103cdec092cdeaf95ba7760c07c0c81f1dbcd11d57350b2d69668dc5c2bf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "968678d4e9ce603f57e9378906a1abab629a30eeefbf0c1143027b91c3ad1eae"
+    sha256 cellar: :any,                 arm64_ventura:  "74ae1e9f647dad3ca8ef8f05559e23284c0ce23163beff75749b43df90b2577d"
+    sha256 cellar: :any,                 arm64_monterey: "25fa40a478a1c3010c196bd29569675d4911cf68429fa570cfac9e75fd56254b"
+    sha256 cellar: :any,                 ventura:        "d11fcc9a7a3a3c20197ce240a871323a44041ec7ef348007152fb3c0c2d907e4"
+    sha256 cellar: :any,                 monterey:       "32cf49e5e8a0b4d431b0865d1e2d3844474259bd5fd744082264690dc7c682fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beafa491d72204af7e2aa81b7a492a211b0db984b9030063a1955c5d646de49d"
   end
 
   keg_only :versioned_formula
