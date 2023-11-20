@@ -9,14 +9,14 @@ class Twtxt < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4c89a9bfa235cfaa070064500061c9d14a37bae7fd5a0b9f8539885794ffb1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "501b0660e32aa1938bc29dcc795e4e50cdabe544f0ca9ebddb083717633570d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f066b8786cf7cfd8c0fdf9910dd85a63b0cd1114e4d86c89e0621b4c7f4add2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc8d917b5c7b771c427a50e08422378fcf390c0fc7d581bbc9fe3043c39d4b33"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b0068ff90622bf33b5af562e4b842fc7c521c144a89663350e636b1243b3cf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3bc972b3cbd992fb9a860cf8d70520b4358da086fdc76e20af7f1d03eed9508"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5163536b47a0c4f1c359f8ee10e3c8bd1dc5c7ed53621ea1edf6c35307718b4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94084bf50b4023c9717fed819b4ac3fdb2f5647f453d9a2e8613609fc0a94f5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7dd80e80d55c39478cce312b6587ddd49721a1e2492ca9fb52d81c8d533e7ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dca14622de8dda2e63577b05b8810ef671104787553a396a5ad3a0197b33914a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9f890820dd3b7b3a6d30b225db867a227259615c7d7facf963b23b6bb050d92e"
+    sha256 cellar: :any_skip_relocation, ventura:        "054f0f471019a0e9f4e6707b4cc853439df52cc24e4551f3fd5d22caae58ad71"
+    sha256 cellar: :any_skip_relocation, monterey:       "87d74fbbd094e3529ab3ff62d935ef4225c740b7c86305c7728f3f20a8712564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e66e7434748b514f0411d5ff7919c462fcea51aa6c1287698add2200bd934758"
   end
 
   depends_on "python-click"
