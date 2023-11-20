@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://github.com/camlp5/camlp5/archive/refs/tags/8.02.01.tar.gz"
   sha256 "58d4bce0c20fa1151fc2c15f172f5884472e2044a4b0da22aababf46c361e515"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -48,11 +49,11 @@ class Camlp5 < Formula
     ocaml = Formula["ocaml"]
     (testpath/"hi.ml").write "print_endline \"Hi!\";;"
     assert_equal "let _ = print_endline \"Hi!\"",
-      # The purpose of linking with the file "bigarray.cma" is to ensure that the
+      # The purpose of linking with the file "str.cma" is to ensure that the
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
       shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo #{lib}/ocaml/camlp5/pr_o.cmo " \
-                   "#{ocaml.opt_lib}/ocaml/bigarray.cma hi.ml")
+                   "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end
