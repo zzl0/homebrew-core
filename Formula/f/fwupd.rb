@@ -1,8 +1,8 @@
 class Fwupd < Formula
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://github.com/fwupd/fwupd/releases/download/1.9.8/fwupd-1.9.8.tar.xz"
-  sha256 "6060075ce02ab11c66c96d6ca689c75f3abc909730c7279c5edd8cf5bfaed46a"
+  url "https://github.com/fwupd/fwupd/releases/download/1.9.9/fwupd-1.9.9.tar.xz"
+  sha256 "dd31c25b916005376be7ba31aa8e8d8f14eb2acabc24482412aaa2c88b7796e6"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
@@ -43,6 +43,13 @@ class Fwupd < Formula
 
   def python3
     "python3.12"
+  end
+
+  # Fix meson build issue
+  # upstream PR ref, https://github.com/fwupd/fwupd/pull/6433
+  patch do
+    url "https://github.com/fwupd/fwupd/commit/8621c3039a10792ee4dfb7c461bb5e9dcffef4d5.patch?full_index=1"
+    sha256 "83f7c244e41dfeec290ab52740df0b83979f3ef36c2d361f7dd077e30c237c7d"
   end
 
   def install
