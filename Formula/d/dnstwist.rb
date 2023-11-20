@@ -31,18 +31,13 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
-    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
+    url "https://files.pythonhosted.org/packages/71/80/68f3bd93240efd92e9397947301efb76461db48c5ac80be2423ffa9c20a3/aiohttp-3.9.0.tar.gz"
+    sha256 "09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"
   end
 
   resource "aiosignal" do
     url "https://files.pythonhosted.org/packages/ae/67/0952ed97a9793b4958e5736f6d2b346b414a2cd63e82d05940032f45b32f/aiosignal-1.3.1.tar.gz"
     sha256 "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"
-  end
-
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
-    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
   end
 
   resource "attrs" do
@@ -51,8 +46,8 @@ class Dnstwist < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "dnspython" do
@@ -76,8 +71,8 @@ class Dnstwist < Formula
   end
 
   resource "maxminddb" do
-    url "https://files.pythonhosted.org/packages/fe/06/31078febc8852d673b33602e096e87671eac7b7a6b737b0be563f8c2ac23/maxminddb-2.4.0.tar.gz"
-    sha256 "81e54e53408bd502650e5969ccba16780af659ec1db1c44b2c997e4330a5ed96"
+    url "https://files.pythonhosted.org/packages/a0/fe/f3a6fbd7a7146f733c1c39062fe8e6aeb3a833c07f1798c06ab8ff7b788f/maxminddb-2.5.1.tar.gz"
+    sha256 "4807d374e645bd68334e4f487ba85a27189dbc1267a98e644aa686a7927e0559"
   end
 
   resource "multidict" do
@@ -106,8 +101,8 @@ class Dnstwist < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "yarl" do
