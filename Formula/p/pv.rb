@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.8.0.tar.gz"
-  sha256 "5cec4f737826a0eddab471dd3b75a587bd29a2e7cfa30068d57f29439a251fdf"
+  url "https://www.ivarch.com/programs/sources/pv-1.8.5.tar.gz"
+  sha256 "d22948d06be06a5be37336318de540a2215be10ab0163f8cd23a20149647b780"
   license "Artistic-2.0"
 
   livecheck do
