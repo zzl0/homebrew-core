@@ -19,13 +19,9 @@ class S3cmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9785c7ced06c286975b392882d054a445556ce494d3f0f6c68838b7ac937fdfc"
   end
 
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
 
   resource "python-magic" do
     url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
