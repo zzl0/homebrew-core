@@ -413,7 +413,7 @@
   },
   "fdroidserver": {
     "exclude_packages": [
-      "certifi", "cffi", "click", "cryptography", "fonttools", "ipython", "lxml", "numpy",
+      "certifi", "cffi", "click", "cryptography", "fonttools", "ipython", "lxml", "matplotlib", "networkx", "numpy",
       "packaging", "pillow", "pygments", "pyparsing", "pyyaml", "six", "typing-extensions", "yamllint"
     ]
   },
