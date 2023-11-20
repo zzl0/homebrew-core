@@ -108,6 +108,7 @@ class Rust < Formula
       cargo
       clippy
       rustdoc
+      rust-analyzer-proc-macro-srv
       rust-demangler
       src
     ]
