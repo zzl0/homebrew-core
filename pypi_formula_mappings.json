@@ -1200,8 +1200,8 @@
   },
   "vunnel": {
     "exclude_packages": [
-      "certifi", "click", "lxml", "markupsafe", "packaging",
-      "pyyaml", "six", "typing-extensions"
+      "certifi", "click", "jinja2", "lxml", "markupsafe", "packaging", "pluggy",
+      "python-dateutil", "pyyaml", "six", "typing-extensions"
     ]
   },
   "watson": {

@@ -21,9 +21,12 @@ class Vunnel < Formula
   depends_on "rust" => :build
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-dateutil"
+  depends_on "python-jinja"
   depends_on "python-lxml"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-pluggy"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -84,11 +87,6 @@ class Vunnel < Formula
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "mashumaro" do
     url "https://files.pythonhosted.org/packages/93/4b/50b95e3180b5454ee533ffc32a73c34695b1a9ca777ab5c387dec6f7e912/mashumaro-3.10.tar.gz"
     sha256 "0248a5c8574aa6cd20696621502d38a7ea66af3d6d93c5d03f93b33298edc878"
@@ -104,11 +102,6 @@ class Vunnel < Formula
     sha256 "9ebbdbd6a046c304b1845e96fbcc5559cd296b4dfd3ad2509e33c4d9ce07d6a1"
   end
 
-  resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
   resource "pytest" do
     url "https://files.pythonhosted.org/packages/38/d4/174f020da50c5afe9f5963ad0fc5b56a4287e3586e3de5b3c8bce9c547b4/pytest-7.4.3.tar.gz"
     sha256 "d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5"
@@ -117,11 +110,6 @@ class Vunnel < Formula
   resource "pytest-snapshot" do
     url "https://files.pythonhosted.org/packages/9b/7b/ab8f1fc1e687218aa66acec1c3674d9c443f6a2dc8cb6a50f464548ffa34/pytest-snapshot-0.9.0.tar.gz"
     sha256 "c7013c3abc3e860f9feff899f8b4debe3708650d8d8242a61bf2625ff64db7f3"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "requests" do
