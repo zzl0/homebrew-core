@@ -18,6 +18,7 @@ class Khard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b34d8d8bec612e7991794858cf4e23ad465e6f91735fd847c17301b06bd1f7a"
   end
 
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -29,11 +30,6 @@ class Khard < Formula
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "ruamel-yaml" do
