@@ -5,6 +5,16 @@ class PythonMatplotlib < Formula
   sha256 "01a978b871b881ee76017152f1f1a0cbf6bd5f7b8ff8c96df0df1bd57d8755a1"
   license "PSF-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "f87a007e183b78fa45896bac75b13b200578b4c6f6050936276aa96124bbf9f1"
+    sha256 cellar: :any,                 arm64_ventura:  "ee20b0c03a2e716a921094c99cf80389bf93a420239d240fa510e2e889ba9806"
+    sha256 cellar: :any,                 arm64_monterey: "6e2e71a8fbbe29b1ab69bfb55db81fdd54df60ae3daede8f68602cd9cb28dc6d"
+    sha256 cellar: :any,                 sonoma:         "93462a6519a47d5a5081757e8789b4db91d558ef75aa5e770cb0d4a0f04ef35e"
+    sha256 cellar: :any,                 ventura:        "bbc45a72ffecf6b32dd83f9f11d8409a377f84b872b5810093e9ed42f759bbba"
+    sha256 cellar: :any,                 monterey:       "7695df8adadd3e9d16acfaae8b187535ea64fb966abd17abe804d9e72b1993a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c5c3878e5809e6b57c432f52deb5717c465be6715e400837aa770f9e32e432e"
+  end
+
   depends_on "meson" => :build
   depends_on "meson-python" => :build
   depends_on "ninja" => :build
