@@ -1075,7 +1075,7 @@
     ]
   },
   "sqlite-utils": {
-    "exclude_packages": ["click", "six", "tabulate"]
+    "exclude_packages": ["click", "pluggy", "python-dateutil", "six", "tabulate"]
   },
   "ssh-mitm": {
     "exclude_packages": [
