@@ -7,11 +7,12 @@ class SbomTool < Formula
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8a51b520982ed9854d57b2d8fc7107b271c9844c74c111ce18d9aa037bbb8e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8a51b520982ed9854d57b2d8fc7107b271c9844c74c111ce18d9aa037bbb8e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbb07e840d9d97ba07aceddcf346bf02222b098bfaf56a9c3c9df15cd361e5f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbb07e840d9d97ba07aceddcf346bf02222b098bfaf56a9c3c9df15cd361e5f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6be797b74091c3a50ed591ab57b7a723381d9b299245b1368d35cc54f29371f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "417e819cd53ff31758904737aa81b97d0f7cb878ec2e80b252565bfe957753a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8daa09c8de09315e51aaa0f5a0f12e79ea8aa9dc9e8f40ede2c1bde23b0b7023"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2d20c1d826d5defeabc4bd50fbe283f955273a71d513c60e1ef60199de64215"
+    sha256 cellar: :any_skip_relocation, ventura:        "89bfb2c1c1dab4ae1415044ba517a14f332d972b3757e5acb553f96d44699548"
+    sha256 cellar: :any_skip_relocation, monterey:       "feeddfa1702f211d8032be29b88cb967f4e591353ab3e6532aece9e718d0b2d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75e6de33fc2565f445539b9023f1c427770802835db1d4c8ead23d6023478157"
   end
 
   depends_on "dotnet"
