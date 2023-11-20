@@ -1,10 +1,10 @@
 class DockerMachineDriverVultr < Formula
   desc "Docker Machine driver plugin for Vultr Cloud"
-  homepage "https://github.com/janeczku/docker-machine-vultr"
-  url "https://github.com/janeczku/docker-machine-vultr/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "f69b1b33c7c73bea4ab1980fbf59b7ba546221d31229d03749edee24a1e7e8b5"
+  homepage "https://github.com/vultr/docker-machine-driver-vultr"
+  url "https://github.com/vultr/docker-machine-driver-vultr/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "d81ffb5a923d521830090025e0b65dbd7bef8b8472a50637ddf80a9f5c31cd25"
   license "MIT"
-  head "https://github.com/janeczku/docker-machine-vultr.git", branch: "master"
+  head "https://github.com/vultr/docker-machine-driver-vultr.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,26 +22,15 @@ class DockerMachineDriverVultr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "60610ec215e212a442adf660b34f651db0c97a75cfe7ca908e00c8d450ccd8f4"
   end
 
-  # last commit was in 2017
-  disable! date: "2023-08-29", because: :unmaintained
-
   depends_on "go" => :build
   depends_on "docker-machine"
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/janeczku/docker-machine-vultr").install buildpath.children
-
-    cd "src/github.com/janeczku/docker-machine-vultr" do
-      system "make"
-      bin.install "build/docker-machine-driver-vultr-v#{version}" => "docker-machine-driver-vultr"
-      prefix.install_metafiles
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./machine"
   end
 
   test do
-    assert_match "--vultr-api-endpoint",
+    assert_match "--vultr-api-key",
       shell_output("#{Formula["docker-machine"].bin}/docker-machine create --driver vultr -h")
   end
 end
