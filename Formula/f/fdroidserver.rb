@@ -31,6 +31,8 @@ class Fdroidserver < Formula
   depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-lxml"
+  depends_on "python-matplotlib"
+  depends_on "python-networkx"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
   depends_on "python-typing-extensions"
@@ -41,10 +43,6 @@ class Fdroidserver < Formula
   depends_on "yamllint"
 
   uses_from_macos "libffi", since: :catalina
-
-  on_linux do
-    depends_on "patchelf" => :build # for contourpy
-  end
 
   resource "androguard" do
     url "https://files.pythonhosted.org/packages/83/78/0f44e8f0fd10493b3118d79d60599c93e5a2cd378d83054014600a620cba/androguard-3.3.5.tar.gz"
@@ -86,16 +84,6 @@ class Fdroidserver < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
-  resource "contourpy" do
-    url "https://files.pythonhosted.org/packages/11/a3/48ddc7ae832b000952cf4be64452381d150a41a2299c2eb19237168528d1/contourpy-1.2.0.tar.gz"
-    sha256 "171f311cb758de7da13fc53af221ae47a5877be5a0843a9fe150818c51ed276a"
-  end
-
-  resource "cycler" do
-    url "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb79008e7522a75244477d2838f38cbb722248dabc2a8/cycler-0.12.1.tar.gz"
-    sha256 "88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c"
-  end
-
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
@@ -114,21 +102,6 @@ class Fdroidserver < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "kiwisolver" do
-    url "https://files.pythonhosted.org/packages/b9/2d/226779e405724344fc678fcc025b812587617ea1a48b9442628b688e85ea/kiwisolver-1.4.5.tar.gz"
-    sha256 "e57e563a57fb22a142da34f38acc2fc1a5c864bc29ca1517a88abc963e60d6ec"
-  end
-
-  resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/b4/1b/1b80fcc6b7f33a4c7fa025e944416f8b63fa8d278fad32470c82a2edf319/matplotlib-3.8.1.tar.gz"
-    sha256 "044df81c1f6f3a8e52d70c4cfcb44e77ea9632a10929932870dfaa90de94365d"
-  end
-
-  resource "networkx" do
-    url "https://files.pythonhosted.org/packages/c4/80/a84676339aaae2f1cfdf9f418701dd634aef9cc76f708ef55c36ff39c3ca/networkx-3.2.1.tar.gz"
-    sha256 "9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6"
   end
 
   resource "paramiko" do
@@ -159,11 +132,6 @@ class Fdroidserver < Formula
   resource "pypng" do
     url "https://files.pythonhosted.org/packages/93/cd/112f092ec27cca83e0516de0a3368dbd9128c187fb6b52aaaa7cde39c96d/pypng-0.20220715.0.tar.gz"
     sha256 "739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-vagrant" do
@@ -201,18 +169,18 @@ class Fdroidserver < Formula
     sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    python3 = "python3.12"
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources.reject { |r| r.name == "matplotlib" }
-    venv.pip_install(resource("matplotlib"), build_isolation: false)
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
 
     bash_completion.install "completion/bash-completion" => "fdroid"
     doc.install "examples"
 
     site_packages = Language::Python.site_packages(python3)
-    paths = %w[fonttools ipython pygments yamllint].map { |p| Formula[p].opt_libexec/site_packages }
+    paths = %w[ipython yamllint].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
