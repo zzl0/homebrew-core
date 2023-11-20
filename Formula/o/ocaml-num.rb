@@ -4,7 +4,7 @@ class OcamlNum < Formula
   url "https://github.com/ocaml/num/archive/refs/tags/v1.4.tar.gz"
   sha256 "015088b68e717b04c07997920e33c53219711dfaf36d1196d02313f48ea00f24"
   license "LGPL-2.1"
-  revision 3
+  revision 4
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c9fa6f0a88f6aae923bba24c8dbd7355e65523d4fd72b8b80260f4dee7d072eb"
@@ -23,6 +23,11 @@ class OcamlNum < Formula
   depends_on "ocaml"
 
   def install
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
 
     (lib/"ocaml").mkpath
