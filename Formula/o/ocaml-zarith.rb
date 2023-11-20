@@ -4,6 +4,7 @@ class OcamlZarith < Formula
   url "https://github.com/ocaml/Zarith/archive/refs/tags/release-1.13.tar.gz"
   sha256 "a5826d33fea0103ad6e66f92583d8e075fb77976de893ffdd73ada0409b3f83b"
   license "LGPL-2.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "30941c4d36a66cd0fdb3ba0204f4f93a18ee4a68d92d5952db4a5834f50321a9"
@@ -22,6 +23,11 @@ class OcamlZarith < Formula
   depends_on "ocaml"
 
   def install
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
 
     (lib/"ocaml").mkpath
