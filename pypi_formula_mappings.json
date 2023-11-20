@@ -424,9 +424,6 @@
     "exclude_packages": ["certifi", "docutils", "flit-core"]
   },
   "fobis": "fobis-py",
-  "fonttools": {
-    "extra_packages": ["Brotli"]
-  },
   "ford": {
     "exclude_packages": ["markdown", "markupsafe", "pygments"]
   },
