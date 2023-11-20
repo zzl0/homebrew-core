@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://github.com/nushell/nushell/archive/refs/tags/0.87.0.tar.gz"
-  sha256 "9db8826bd0ea4930089b74622ae3eb9aea0e4ce1a45f481c806ebd48c3a9252d"
+  url "https://github.com/nushell/nushell/archive/refs/tags/0.87.1.tar.gz"
+  sha256 "92087ff56c98acb86dc14e9566748c0f470ad5f13277dd62bda878146535fa83"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -29,6 +29,7 @@ class Nushell < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "libgit2" # for `nu_plugin_gstat`
     depends_on "libx11"
     depends_on "libxcb"
   end
