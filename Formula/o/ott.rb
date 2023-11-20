@@ -1,8 +1,8 @@
 class Ott < Formula
   desc "Tool for writing definitions of programming languages and calculi"
   homepage "https://www.cl.cam.ac.uk/~pes20/ott/"
-  url "https://github.com/ott-lang/ott/archive/refs/tags/0.32.tar.gz"
-  sha256 "c4a9d9a6b67f3d581383468468ea36d54a0097804e9fac43c8090946904d3a2c"
+  url "https://github.com/ott-lang/ott/archive/refs/tags/0.33.tar.gz"
+  sha256 "d64ec4527f8ace56a407fc67957840d1653980fb0112d7fa8f2b0fc958501f7b"
   license "BSD-3-Clause"
   head "https://github.com/ott-lang/ott.git", branch: "master"
 
@@ -22,10 +22,19 @@ class Ott < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "80f076cb53a69044fd0007ccdae4998c2ed828ee432134c65a141a5bdb1a013a"
   end
 
-  depends_on "ocaml@4" => :build
+  depends_on "gmp" => :build
+  depends_on "ocaml" => :build
+  depends_on "opam" => :build
 
   def install
-    system "make", "world"
+    opamroot = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot
+    ENV["OPAMYES"] = "1"
+
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
+    system "opam", "exec", "--", "make", "world"
+
     bin.install "bin/ott"
     pkgshare.install "examples"
     (pkgshare/"emacs/site-lisp/ott").install "emacs/ott-mode.el"
