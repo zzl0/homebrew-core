@@ -1,8 +1,8 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https://dotnet.github.io/docfx/"
-  url "https://github.com/dotnet/docfx/archive/refs/tags/v2.71.1.tar.gz"
-  sha256 "e5817a279674d9e3a1d85bd5efb109830ab5753a8c3e615fd0628a37db88f147"
+  url "https://github.com/dotnet/docfx/archive/refs/tags/v2.73.2.tar.gz"
+  sha256 "00101c1db47fc2b143ad6247819e1b4a6cbdc54eb0b642020d113e0440858a2f"
   license "MIT"
 
   bottle do
@@ -12,8 +12,6 @@ class Docfx < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "9a3a9a9fa8550e3e89d0b1b4fb032060908954777dece8c947e2fe1c115fe402"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "720ed02cea63ae7469f4ab7250556e12ce462f53d05b635fb6fe498ff44bc8fa"
   end
-
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
 
   depends_on "dotnet"
 
@@ -43,7 +41,7 @@ class Docfx < Formula
   end
 
   test do
-    system bin/"docfx", "init", "-q"
+    system bin/"docfx", "init", "--yes", "--output", testpath/"docfx_project"
     assert_predicate testpath/"docfx_project/docfx.json", :exist?,
                      "Failed to generate project"
   end
