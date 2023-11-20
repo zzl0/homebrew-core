@@ -22,6 +22,7 @@ class Woob < Formula
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-dateutil"
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-setuptools"
@@ -67,11 +68,6 @@ class Woob < Formula
   resource "pycountry" do
     url "https://files.pythonhosted.org/packages/33/24/033604d30f6cf82d661c0f9dfc2c71d52cafc2de516616f80d3b0600cb7c/pycountry-22.3.5.tar.gz"
     sha256 "b2163a246c585894d808f18783e19137cb70a0c18fb36748dc01fc6f109c1646"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "requests" do
