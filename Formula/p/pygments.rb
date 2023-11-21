@@ -1,8 +1,8 @@
 class Pygments < Formula
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/22/04/097cdb7d5c6faee58e31a8a2b63cba2222a52066f734b3fdc713c6f40575/pygments-2.17.1.tar.gz"
-  sha256 "e45a0e74bf9c530f564ca81b8952343be986a29f6afe7f5ad95c5f06b7bdf5e8"
+  url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
+  sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   license "BSD-2-Clause"
   head "https://github.com/pygments/pygments.git", branch: "master"
 
@@ -19,12 +19,6 @@ class Pygments < Formula
   depends_on "python-hatchling" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
-
-  # Fix package name: https://github.com/pygments/pygments/pull/2593
-  patch do
-    url "https://github.com/pygments/pygments/commit/cdd61b1ce73f389dbfb4f743422b468c43b41f93.patch?full_index=1"
-    sha256 "d6a2c4d3f83da065f2694e55c648207337029ae6b6490c477059df12c4f14003"
-  end
 
   def pythons
     deps.select { |dep| dep.name.start_with?("python@") }
