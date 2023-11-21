@@ -6,6 +6,7 @@ class Uhdm < Formula
   url "https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.80.tar.gz"
   sha256 "e28cbae0e8bccc2c428356b109c254fe51169839bc55dd1091de9f24406a00f8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
