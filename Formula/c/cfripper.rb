@@ -8,13 +8,13 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81e35b727560de8b78a39ee75959f92f782c05ba9c81933d2cb7d5fb6dbbb386"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d6adeb94dfc1469fa8f45b2b4c40df1a17e96c913dffe8d981172927be1eee0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1917d0895e6b85d4cd3b443d965014efe8f4ecee55619a021d64a78e1478ceaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6dc5418b57c29936be9ef5caa2edab16620cdd3cd01289728a889198c2c47144"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec5bcce79e2eb3c7b912eba94d66daaf10c6e11e7608e45769e2f02eec03b962"
-    sha256 cellar: :any_skip_relocation, monterey:       "d45bd0575882073f206f27478736e7b2fa21fa825c7ce1bede11dc516ade10fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fce5ed256bd20846ac491b6c2af1bbda266d37f501f409dd0d14bbb4d355ce6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6e7e06335b8665b3137ac5dd722d67e21cbd7787e9aa404e262b752a1495a74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bf398fbe660b3ba2b596b9e23cd50694f523c0cd5cbd5cbf234233a19295980"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ae0d9141cb2e80581ab6237b98774f50b3c1389dabb73e70930a87e7687b054"
+    sha256 cellar: :any_skip_relocation, sonoma:         "192c8b38219dca35861becf45221acafb4715a7b0b84163a72a10f9328071731"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4a493fd40834f03a97562fa0896f107acebb2581d25a18078a6205902080d03"
+    sha256 cellar: :any_skip_relocation, monterey:       "931ef40b566fae134bb43c751f6f3bf9c43dcc12fb26c3ed6519e8eea715b6f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0206adea625e611debf235a7c1589d1d35cf2d8c31981df2838c4c7cae41ea4e"
   end
 
   depends_on "python-click"
