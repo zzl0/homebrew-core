@@ -61,6 +61,7 @@ class DnscryptProxy < Formula
     run [opt_sbin/"dnscrypt-proxy", "-config", etc/"dnscrypt-proxy.toml"]
     keep_alive true
     require_root true
+    process_type :background
   end
 
   test do
