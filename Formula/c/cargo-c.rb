@@ -1,10 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for details.
-  url "https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.27.tar.gz"
-  sha256 "caca521e893ae7cc63a9e2c5e58f2151b7b74754a4fd884c8eb5939b967ae0d5"
+  url "https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.28.tar.gz"
+  sha256 "f5237b057c8c6c21c2d3d827acea8a0a059db780c69e3eaf807ab3c43e50798d"
   license "MIT"
 
   livecheck do
@@ -27,14 +25,7 @@ class CargoC < Formula
   # be missing despite its presence.
   # Try switching to `uses_from_macos` when that's resolved.
   depends_on "curl"
-  # To check for `libgit2` version:
-  # 1. Check for `cargo` version at https://github.com/lu-zero/cargo-c/blob/v#{version}/Cargo.toml
-  # 2. Search for `libgit2-sys` version at https://github.com/rust-lang/cargo/blob/#{cargo_version}/Cargo.lock
-  # 3. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Use the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -45,7 +36,7 @@ class CargoC < Formula
   end
 
   def install
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     # Ensure the correct `openssl` will be picked up.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -69,7 +60,7 @@ class CargoC < Formula
 
     [
       Formula["curl"].opt_lib/shared_library("libcurl"),
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
