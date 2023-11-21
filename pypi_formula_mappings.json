@@ -1115,8 +1115,8 @@
   },
   "theharvester": {
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "pycparser", "pygments", "PyYAML",
-      "six", "typing-extensions"
+      "argcomplete", "certifi", "cffi", "filelock", "pycparser", "pygments", "python-dateutil", "PyYAML",
+      "six", "typing-extensions", "uvicorn"
     ]
   },
   "tmuxp": {
