@@ -259,6 +259,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue: ${{ env.PR }}
-          body: ":warning: @${{ github.actor }} replacement PR creation [failed](${{ env.RUN_URL }}). CC @carlocab"
-          bot_body: ":warning: Replacement PR creation [failed](${{ env.RUN_URL }}). CC @carlocab"
+          body: ":warning: @${{ github.actor }} replacement PR creation [failed](${{ env.RUN_URL }})."
+          bot_body: ":warning: Replacement PR creation [failed](${{ env.RUN_URL }})."
           bot: github-actions[bot]
