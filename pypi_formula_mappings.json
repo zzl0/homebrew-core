@@ -25,8 +25,8 @@
   },
   "ansible": {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "lxml", "markupsafe", "pycparser",
-      "pytz", "pyyaml", "six", "packaging"
+      "certifi", "cffi", "cryptography", "jinja2", "lxml", "markupsafe", "pycparser",
+      "pyparsing", "python-dateutil", "pytz", "pyyaml", "six", "packaging"
     ],
     "extra_packages": [
       "apache-libcloud", "boto3", "dnspython", "docker",
