@@ -34,6 +34,12 @@ class Dnscontrol < Formula
       -X main.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: go_ldflags)
+
+    generate_completions_from_executable(bin/"dnscontrol", "shell-completion", shells: [:bash, :zsh])
+  end
+
+  def caveats
+    "dnscontrol bash completion depends on the bash-completion package."
   end
 
   test do
