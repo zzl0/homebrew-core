@@ -1,9 +1,10 @@
 class Glbinding < Formula
   desc "C++ binding for the OpenGL API"
   homepage "https://github.com/cginternals/glbinding"
-  url "https://github.com/cginternals/glbinding/archive/refs/tags/v2.1.4.tar.gz"
-  sha256 "cb5971b086c0d217b2304d31368803fd2b8c12ee0d41c280d40d7c23588f8be2"
+  url "https://github.com/cginternals/glbinding/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "a0aa5e67b538649979a71705313fc2b2c3aa49cf9af62a97f7ee9a665fd30564"
   license "MIT"
+  head "https://github.com/cginternals/glbinding.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,6 +24,7 @@ class Glbinding < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "glfw" => :test
 
   on_linux do
     depends_on "mesa"
@@ -30,24 +32,37 @@ class Glbinding < Formula
   end
 
   def install
-    ENV.cxx11
-    system "cmake", ".", *std_cmake_args, "-DGLFW_LIBRARY_RELEASE="
-    system "cmake", "--build", ".", "--target", "install"
+    # Force install to use system directory structure as the upstream only
+    # considers /usr and /usr/local to be valid for a system installation
+    inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
+
+    # NOTE: Can remove `OPTION_BUILD_OWN_KHR_HEADERS=ON` (at least on Linux)
+    # if we add `libglvnd` formula and use it as part of OpenGL solution.
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DOPTION_BUILD_OWN_KHR_HEADERS=ON",
+                    "-DEXECUTABLE_INSTALL_RPATH=#{rpath}",
+                    "-DLIBRARY_INSTALL_RPATH=#{loader_path}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <glbinding/gl/gl.h>
-      #include <glbinding/Binding.h>
+      #include <glbinding/glbinding.h>
+      #include <GLFW/glfw3.h>
       int main(void)
       {
-        glbinding::Binding::initialize();
+        glbinding::initialize(glfwGetProcAddress);
       }
     EOS
     open_gl = OS.mac? ? ["-framework", "OpenGL"] : ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
-                    "-I#{include}/glbinding", "-I#{lib}/glbinding", *open_gl,
-                    "-L#{lib}", "-lglbinding", *ENV.cflags.to_s.split
+                    "-I#{include}/glbinding", "-I#{lib}/glbinding",
+                    "-I#{include}/glbinding/3rdparty", *open_gl,
+                    "-L#{lib}", "-lglbinding", "-L#{Formula["glfw"].opt_lib}", "-lglfw",
+                    *ENV.cflags.to_s.split
     system "./test"
   end
 end
