@@ -26,7 +26,7 @@ class Wasmtime < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    system "cargo", "build", "--locked", "--lib", "--manifest-path", "crates/c-api/Cargo.toml", "--release"
+    system "cargo", "build", "--locked", "--lib", "-p", "wasmtime-c-api", "--release"
     cp "crates/c-api/wasm-c-api/include/wasm.h", "crates/c-api/include/"
     lib.install shared_library("target/release/libwasmtime")
     include.install "crates/c-api/wasm-c-api/include/wasm.h"
