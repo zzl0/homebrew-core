@@ -1,9 +1,9 @@
 class ApachePulsar < Formula
   desc "Cloud-native distributed messaging and streaming platform"
   homepage "https://pulsar.apache.org/"
-  url "https://www.apache.org/dyn/mirrors/mirrors.cgi?action=download&filename=pulsar/pulsar-2.10.3/apache-pulsar-2.10.3-src.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-2.10.3/apache-pulsar-2.10.3-src.tar.gz"
-  sha256 "4fca38025c6059b0cb1b8c8ca7526a6c525769529c270a0172e2294d311b8f96"
+  url "https://www.apache.org/dyn/mirrors/mirrors.cgi?action=download&filename=pulsar/pulsar-3.1.1/apache-pulsar-3.1.1-src.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-3.1.1/apache-pulsar-3.1.1-src.tar.gz"
+  sha256 "c668d8276412397aa54eb20b65b2700bd8eca5df8f62cb4570eb4d826ff231d2"
   license "Apache-2.0"
   head "https://github.com/apache/pulsar.git", branch: "master"
 
@@ -22,7 +22,7 @@ class ApachePulsar < Formula
   depends_on "maven" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf" => :build
-  depends_on arch: :x86_64
+  depends_on arch: :x86_64 # https://github.com/apache/pulsar/issues/16639
   depends_on "openjdk@17"
 
   def install
@@ -40,9 +40,11 @@ class ApachePulsar < Formula
 
     binpfx = "apache-pulsar-#{built_version}"
     system "tar", "-xf", "distribution/server/target/#{binpfx}-bin.tar.gz"
-    libexec.install "#{binpfx}/bin", "#{binpfx}/lib", "#{binpfx}/instances", "#{binpfx}/conf"
-    (libexec/"lib/presto/bin/procname/Linux-ppc64le").rmtree
-    pkgshare.install "#{binpfx}/examples", "#{binpfx}/licenses"
+    libexec.install "#{binpfx}/bin", "#{binpfx}/lib", "#{binpfx}/instances", "#{binpfx}/conf", "#{binpfx}/trino"
+    libexec.glob("bin/*.cmd").map(&:unlink)
+    (libexec/"trino/bin/procname/Linux-aarch64").rmtree
+    (libexec/"trino/bin/procname/Linux-ppc64le").rmtree
+    pkgshare.install "#{binpfx}/examples"
     (etc/"pulsar").install_symlink libexec/"conf"
 
     libexec.glob("bin/*") do |path|
@@ -66,12 +68,14 @@ class ApachePulsar < Formula
   test do
     ENV["PULSAR_GC_LOG"] = "-Xlog:gc*:#{testpath}/pulsar_gc_%p.log:time,uptime:filecount=10,filesize=20M"
     ENV["PULSAR_LOG_DIR"] = testpath
+    ENV["PULSAR_STANDALONE_USE_ZOOKEEPER"] = "1"
+
     fork do
       exec bin/"pulsar", "standalone", "--zookeeper-dir", "#{testpath}/zk", " --bookkeeper-dir", "#{testpath}/bk"
     end
     # The daemon takes some time to start; pulsar-client will retry until it gets a connection, but emit confusing
     # errors until that happens, so sleep to reduce log spam.
-    sleep 15
+    sleep 30
 
     output = shell_output("#{bin}/pulsar-client produce my-topic --messages 'hello-pulsar'")
     assert_match "1 messages successfully produced", output
