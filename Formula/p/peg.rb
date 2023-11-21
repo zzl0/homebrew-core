@@ -1,9 +1,9 @@
 class Peg < Formula
   desc "Program to perform pattern matching on text"
   homepage "https://www.piumarta.com/software/peg/"
-  url "https://www.piumarta.com/software/peg/peg-0.1.18.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/p/peg/peg_0.1.18.orig.tar.gz"
-  sha256 "20193bdd673fc7487a38937e297fff08aa73751b633a086ac28c3b34890f9084"
+  url "https://www.piumarta.com/software/peg/peg-0.1.19.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/p/peg/peg_0.1.19.orig.tar.gz"
+  sha256 "0013dd83a6739778445a64bced3d74b9f50c07553f86ea43333ae5fab5c2bbb4"
   license "MIT"
 
   # The homepage links to development tarballs using the stable version format
