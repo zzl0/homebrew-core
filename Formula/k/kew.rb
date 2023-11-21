@@ -1,8 +1,8 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "f63394302a45b3a36d1830e75339c05f0f947a31ab254ae426ee42a0fce66d7f"
+  url "https://github.com/ravachol/kew/archive/refs/tags/1.7.2.tar.gz"
+  sha256 "9ad1b2b8a7d55c65dac8303d5c1a58cb5567fde6cb7290ad482cabd60fd12612"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
@@ -16,7 +16,9 @@ class Kew < Formula
   depends_on "fftw"
   depends_on "freeimage"
   depends_on "glib"
+  depends_on "libvorbis"
   depends_on :linux
+  depends_on "opusfile"
 
   def install
     system "make"
