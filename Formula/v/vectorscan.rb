@@ -1,9 +1,8 @@
 class Vectorscan < Formula
   desc "High-performance regular expression matching library"
   homepage "https://github.com/VectorCamp/vectorscan"
-  # TODO: update version check for new release
-  url "https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.10.1.tar.gz"
-  sha256 "ed4fb5aafecca155c4ce2f9b2c0ab781dc92fee720f77f4f4d56b651787ae118"
+  url "https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.11.tar.gz"
+  sha256 "905f76ad1fa9e4ae0eb28232cac98afdb96c479666202c5a4c27871fb30a2711"
   license "BSD-3-Clause"
 
   bottle do
@@ -21,8 +20,8 @@ class Vectorscan < Formula
 
   def install
     cmake_args = [
-      "-DBUILD_STATIC_AND_SHARED=ON",
-      "-DPYTHON_EXECUTABLE:FILEPATH=python3",
+      "-DBUILD_STATIC_LIBS=ON",
+      "-DBUILD_SHARED_LIBS=ON",
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
@@ -41,6 +40,6 @@ class Vectorscan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    assert_match version.major_minor_patch.to_s, shell_output("./test")
+    assert_match version.to_s, shell_output("./test")
   end
 end
