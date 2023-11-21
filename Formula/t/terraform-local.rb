@@ -18,6 +18,7 @@ class TerraformLocal < Formula
   end
 
   depends_on "localstack"
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -44,11 +45,6 @@ class TerraformLocal < Formula
   resource "localstack-client" do
     url "https://files.pythonhosted.org/packages/ce/f6/7c19f1249cdcdc946616387e8aa93472f879624eb6acdd31a78a76fc046f/localstack-client-2.5.tar.gz"
     sha256 "8b8b2ee6013265a55d3e312a4513efccd222131bed79395545a4f643704f9213"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-hcl2" do
