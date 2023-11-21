@@ -6,13 +6,13 @@ class Azion < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9c50a425d4ca0126ba0f307bbcc71f602755fec129c764545df327b17cdd8f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cd9021233b52305a2f6755efdaed3131699671d1a48bff3072a8b2c0437c820"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f2fa239f4f0a3471107583e0edbb2ac04e7f01d9019b3521393843f7ef97aa5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eca7e3c3b82f306d194d599722ffe27c15022ed4e6257fee10db07b41d315e64"
-    sha256 cellar: :any_skip_relocation, ventura:        "26278f6676a0a635d25a7e8ae855ae805012bea0592ae86debed37b934bf6190"
-    sha256 cellar: :any_skip_relocation, monterey:       "5777c676c16679e255dff8e868fd98ed9013fa82e4fb0ab6d6eacaaf54737b60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14435623222e06c366875988ceeaa67df376154b508fb4d50f943c78ca4683ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fc86a9ed3777b1fe3126eb942b69fa3ce36ae167daf0427757901b29e796584"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92d1fa04c8825195b52c67ed8c3a58639b1752fe1d386d5e730595cbcc94f64a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36bb9484b7f57e78630215e20461ca327cd29fc0d7d1c38da94822df860c805d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "31c67299f91e09ad13db62dc9179791142a4de7d9ba802ad94db0d673dd36a6e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab203fc93758c3a9938cf1d89d6e37c4a01540df2d5bf0c9e60f89933d9fe1d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "d3c7352572440656470458e3f61283e6beb9531f86993e09790689aa9c9c48ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b17b87d23d7ee3b04044a260982746bf4a4abb6a313e1abcfc1f0f0e8b33fe88"
   end
 
   depends_on "go" => :build
