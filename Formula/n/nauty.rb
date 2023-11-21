@@ -1,10 +1,9 @@
 class Nauty < Formula
   desc "Automorphism groups of graphs and digraphs"
   homepage "https://pallini.di.uniroma1.it/"
-  url "https://pallini.di.uniroma1.it/nauty2_8_6.tar.gz"
-  sha256 "f2ce98225ca8330f5bce35f7d707b629247e09dda15fc479dc00e726fee5e6fa"
+  url "https://pallini.di.uniroma1.it/nauty2_8_8.tar.gz"
+  sha256 "accf5eeddde623d179c8fee9d15cfb7d66d7a90cc7684d11c96ad9b3f3655dbb"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   livecheck do
@@ -25,14 +24,6 @@ class Nauty < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "afd16a1cb7af80145eec65bc2a0458b1e5c011b46fb13424c704972651dc554e"
     sha256 cellar: :any_skip_relocation, big_sur:        "674ff752456a99d44ddd63bf906d1f9cebf2517022f502fbc85c14fdb2d3de64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "712e4cfba548cf16a9f95d108737fe818e1e4429ce7890a24f6bc0fcc4d9d0f3"
-  end
-
-  # Apply upstream fixes. See:
-  #   https://mailman.anu.edu.au/pipermail/nauty/2023-January.txt
-  #   https://github.com/Homebrew/homebrew-core/issues/125101
-  patch do
-    url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-mathematics/nauty/files/nauty-2.8.6-gentreeg-gentourng.patch"
-    sha256 "2a6ae62a3064d24513442a094fe6db41c6733cb5259172350791819be7bf3c11"
   end
 
   def install
