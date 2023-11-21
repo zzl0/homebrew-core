@@ -3,8 +3,8 @@ require "language/node"
 class Monika < Formula
   desc "Synthetic monitoring made easy"
   homepage "https://monika.hyperjump.tech"
-  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.15.11.tgz"
-  sha256 "323b444e77f95ec9599a562509c96c8142296bb0efffd31a9bf2b9e97f45009d"
+  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.16.0.tgz"
+  sha256 "d64c6b59abfe0d9363d26ff8597f40b70813c105545e08080f040a38e2142831"
   license "MIT"
 
   bottle do
@@ -22,6 +22,13 @@ class Monika < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/@hyperjumptech/monika/node_modules"
+    node_modules.glob("nice-napi/prebuilds/*")
+                .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with native slices.
     deuniversalize_machos
