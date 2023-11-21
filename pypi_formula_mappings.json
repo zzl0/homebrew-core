@@ -1112,6 +1112,9 @@
   "terraform-local": {
     "exclude_packages": ["python-dateutil", "six"]
   },
+  "texttest": {
+    "exclude_packages": ["psutil"]
+  },
   "thefuck": {
     "exclude_packages": ["six"]
   },
