@@ -21,31 +21,33 @@ class Scipy < Formula
   depends_on "meson-python" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "pythran" => :build
   depends_on "gcc" # for gfortran
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pybind11"
-  depends_on "python@3.12"
   depends_on "xsimd"
 
   cxxstdlib_check :skip
 
   fails_with gcc: "5"
 
-  def python3
-    "python3.12"
+  def pythons
+    deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
   end
 
   def install
-    site_packages = Language::Python.site_packages(python3)
     ENV.prepend_path "PATH", Formula["libcython"].opt_libexec/"bin"
-    ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
-    ENV.prepend_path "PYTHONPATH", Formula["pythran"].opt_libexec/site_packages
-    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/site_packages
-    ENV.prepend_create_path "PYTHONPATH", site_packages
 
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      site_packages = Language::Python.site_packages(python_exe)
+      ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
+
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+    end
   end
 
   # cleanup leftover .pyc files from previous installs which can cause problems
@@ -59,6 +61,9 @@ class Scipy < Formula
       from scipy import special
       print(special.exp10(3))
     EOS
-    assert_equal "1000.0", shell_output("#{python3} test.py").chomp
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      assert_equal "1000.0", shell_output("#{python_exe} test.py").chomp
+    end
   end
 end
