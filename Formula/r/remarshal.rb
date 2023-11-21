@@ -19,6 +19,8 @@ class Remarshal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eafe2e9622869ceb3c9f2d235b60263fe926705e940e27922dc5c1e3c61c4ad"
   end
 
+  depends_on "python-dateutil"
+  depends_on "python-pluggy"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -35,19 +37,9 @@ class Remarshal < Formula
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
   end
 
-  resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
   resource "pytest" do
     url "https://files.pythonhosted.org/packages/e5/d0/18209bb95db8ee693a9a04fe056ab0663c6d6b1baf67dd50819dd9cd4bd7/pytest-7.4.2.tar.gz"
     sha256 "a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "tomlkit" do
