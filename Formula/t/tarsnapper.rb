@@ -19,6 +19,7 @@ class Tarsnapper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "281f63f9ab7c817ef7f706edd6e448b3fb6deb2df0ae47eff226de67e5091256"
   end
 
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -32,11 +33,6 @@ class Tarsnapper < Formula
   resource "ptyprocess" do
     url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   def install
