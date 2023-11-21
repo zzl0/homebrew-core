@@ -195,7 +195,9 @@
     "exclude_packages": ["click", "six", "PyYAML"]
   },
   "cfn-lint": {
-    "exclude_packages": ["six", "PyYAML", "typing-extensions"]
+    "exclude_packages": [
+      "networkx", "python-dateutil", "pyyaml", "six", "sympy", "typing-extensions"
+    ]
   },
   "cfripper": {
     "exclude_packages": ["click", "PyYAML", "typing-extensions", "six"]
