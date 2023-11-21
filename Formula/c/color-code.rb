@@ -1,10 +1,9 @@
 class ColorCode < Formula
   desc "Free advanced MasterMind clone"
   homepage "http://colorcode.laebisch.com/"
-  url "http://colorcode.laebisch.com/download/ColorCode-0.8.5.tar.gz"
-  sha256 "7c128db12af6ab11439eb710091b4a448100553a4d11d3a7c8dafdfbc57c1a85"
+  url "http://colorcode.laebisch.com/download/ColorCode-0.8.7.tar.gz"
+  sha256 "10d6bb0ab532e603c30caf7fafc5541fa1de5c31f2e154ebc6e1bed410de182a"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url "http://colorcode.laebisch.com/download"
@@ -25,24 +24,20 @@ class ColorCode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "49bf9128a81486c66e92b0382a448a970b20c32a01d296aaeeca8d1a9c4995c2"
   end
 
+  depends_on "cmake" => :build
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def install
-    qt5 = Formula["qt@5"].opt_prefix
-    system "#{qt5}/bin/qmake"
-    system "make"
-
-    if OS.mac?
-      prefix.install "ColorCode.app"
-      bin.write_exec_script "#{prefix}/ColorCode.app/Contents/MacOS/colorcode"
-    else
-      bin.install "colorcode"
-    end
+    system "cmake", "-S", "src", "-B", "build_cmake", *std_cmake_args
+    system "cmake", "--build", "build_cmake"
+    bin.install "build_cmake/colorcode"
   end
 
   test do
+    # We cannot write a more substantial test because executing the binary
+    # opens a GUI, which is not supported by Homebrew's test environment
     system "#{bin}/colorcode", "-h"
   end
 end
