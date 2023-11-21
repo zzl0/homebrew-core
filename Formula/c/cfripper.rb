@@ -2,9 +2,9 @@ class Cfripper < Formula
   include Language::Python::Virtualenv
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
-  homepage "https://github.com/Skyscanner/cfripper"
-  url "https://files.pythonhosted.org/packages/ba/a5/36ce53ca9b14b2a10e73a8c5f2cff2adaa40b04c3e032b263d144009b3bf/cfripper-1.15.0.tar.gz"
-  sha256 "718ce7261705f47fc968c6dfd805f40a1e7854b209ae530b07bca23464f26d00"
+  homepage "https://cfripper.readthedocs.io"
+  url "https://files.pythonhosted.org/packages/51/93/e375c84b0bdac3e718bebe99c4c91a5946200aac73fe166fca006a7b2125/cfripper-1.15.1.tar.gz"
+  sha256 "3a7b92daa036e4ed14bf2b01b0d14f76a7b71d664bfd572ee35a4eb96ca92bf8"
   license "Apache-2.0"
 
   bottle do
@@ -24,13 +24,13 @@ class Cfripper < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6b/06/7e2ca443db1af4f3cb76d36eb9f20baf78688ddb095d473e733309a22bb2/boto3-1.29.3.tar.gz"
-    sha256 "d038b19cbe29d488133351ee6eb36ee11a0934df8bcbc0892bbeb2c544a327a4"
+    url "https://files.pythonhosted.org/packages/8d/5f/4ee13ee77641c98032fcddb51456a26976f69365fdc3c6c9e699970b9e99/boto3-1.29.4.tar.gz"
+    sha256 "ca9b04fc2c75990c2be84c43b9d6edecce828960fc27e07ab29036587a1ca635"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/de/d1/6bbd2a3ade785ff5af9f46c0865c3e7e0f1e4d3c99e9530756ffda9cc1aa/botocore-1.32.3.tar.gz"
-    sha256 "be622915db1dbf1d6d5ed907633471f9ed8f5399dd3cf333f9dc2b955cd3e80d"
+    url "https://files.pythonhosted.org/packages/10/6f/e7fe287501ae0bb2732e0752dde93c4a2ad1922953be16dd912acc2c26be/botocore-1.32.4.tar.gz"
+    sha256 "6bfa75e28c9ad0321cefefa51b00ff233b16b2416f8b95229796263edba45a39"
   end
 
   resource "cfn-flip" do
@@ -49,8 +49,8 @@ class Cfripper < Formula
   end
 
   resource "pycfmodel" do
-    url "https://files.pythonhosted.org/packages/f2/72/0058257bbbc2c6cc3b92a3f3351bf84bf75bc24130d71801227b20531450/pycfmodel-0.21.0.tar.gz"
-    sha256 "0a4253f154f580b9d7465c909ab1a4f2a670adc16e86fabe215a40c66256805d"
+    url "https://files.pythonhosted.org/packages/ef/b0/0844b357c0d47ed9e83748107cd1dbccfc49d52396be48f52132893c30d7/pycfmodel-0.21.1.tar.gz"
+    sha256 "4429f8d623c35324dd1b04dfbc36607ade1743f020a02fac6d387096ef2c828f"
   end
 
   resource "pydantic" do
