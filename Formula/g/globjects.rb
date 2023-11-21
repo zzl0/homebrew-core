@@ -1,10 +1,16 @@
 class Globjects < Formula
   desc "C++ library strictly wrapping OpenGL objects"
   homepage "https://github.com/cginternals/globjects"
-  url "https://github.com/cginternals/globjects/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "68fa218c1478c09b555e44f2209a066b28be025312e0bab6e3a0b142a01ebbc6"
   license "MIT"
-  head "https://github.com/cginternals/globjects.git", branch: "master"
+  revision 1
+
+  # TODO: Switch to `glbinding` with v2 release and remove stable/head blocks.
+  # Also consider deprecating `glbinding@2` based on upstream support status.
+  stable do
+    url "https://github.com/cginternals/globjects/archive/refs/tags/v1.1.0.tar.gz"
+    sha256 "68fa218c1478c09b555e44f2209a066b28be025312e0bab6e3a0b142a01ebbc6"
+    depends_on "glbinding@2"
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2cfb8ac766e0a90dcfb28589b7eb4dbb451279930f26429df811ce95c46ba9eb"
@@ -22,14 +28,22 @@ class Globjects < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fe2640f8e2a366ca0d65e9afde39a1c60583af73fce21d22dadae53807c2b5a"
   end
 
+  head do
+    url "https://github.com/cginternals/globjects.git", branch: "master"
+    depends_on "glbinding"
+  end
+
   depends_on "cmake" => :build
-  depends_on "glbinding"
   depends_on "glm"
 
   def install
-    ENV.cxx11
-    system "cmake", ".", "-Dglbinding_DIR=#{Formula["glbinding"].opt_prefix}", *std_cmake_args
-    system "cmake", "--build", ".", "--target", "install"
+    # Force install to use system directory structure as the upstream only
+    # considers /usr and /usr/local to be valid for a system installation
+    inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -43,9 +57,11 @@ class Globjects < Formula
     flags = ["-std=c++11"]
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test", "test.cpp", *flags,
-           "-I#{include}/globjects", "-I#{Formula["glm"].include}/glm", "-I#{lib}/globjects",
-           "-L#{lib}", "-L#{Formula["glbinding"].opt_lib}",
-           "-lglobjects", "-lglbinding", *ENV.cflags.to_s.split
+                    "-I#{include}/globjects",
+                    "-I#{Formula["glbinding@2"].opt_include}",
+                    "-I#{Formula["glm"].opt_include}/glm",
+                    "-L#{lib}", "-L#{Formula["glbinding@2"].opt_lib}",
+                    "-lglobjects", "-lglbinding", *ENV.cflags.to_s.split
     system "./test"
   end
 end
