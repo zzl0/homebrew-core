@@ -1,6 +1,4 @@
 class Bumpversion < Formula
-  include Language::Python::Virtualenv
-
   desc "Increase version numbers with SemVer terms"
   homepage "https://pypi.python.org/pypi/bumpversion"
   # maintained fork for the project
@@ -21,10 +19,15 @@ class Bumpversion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0bbaf895f4bc339e8e7c9f724767a0b495a90632bf1a7fc55ea08073da23edd"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
