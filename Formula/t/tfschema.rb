@@ -1,5 +1,5 @@
 class Tfschema < Formula
-  desc "Schema inspector for Terraform providers"
+  desc "Schema inspector for Terraform/OpenTofu providers"
   homepage "https://github.com/minamijoyo/tfschema"
   url "https://github.com/minamijoyo/tfschema/archive/refs/tags/v0.7.7.tar.gz"
   sha256 "fcd81602862205c0d9247fa4cde7240ed5cc4a687b71f55459f45a1e5870dc77"
@@ -17,7 +17,7 @@ class Tfschema < Formula
   end
 
   depends_on "go" => :build
-  depends_on "terraform" => :test
+  depends_on "opentofu" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -25,7 +25,7 @@ class Tfschema < Formula
 
   test do
     (testpath/"provider.tf").write "provider \"aws\" {}"
-    system Formula["terraform"].bin/"terraform", "init"
+    system Formula["opentofu"].bin/"tofu", "init"
     assert_match "permissions_boundary", shell_output("#{bin}/tfschema resource show aws_iam_user")
 
     assert_match version.to_s, shell_output("#{bin}/tfschema --version")
