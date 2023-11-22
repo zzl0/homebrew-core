@@ -6,6 +6,16 @@ class SpidermonkeyAT91 < Formula
   sha256 "53be2bcde0b5ee3ec106bd8ba06b8ae95e7d489c484e881dfbe5360e4c920762"
   license "MPL-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e6c8e0991f5644ce8f5ba4978a458da014abcca8ffcc7633ef4f00d45a112e46"
+    sha256 cellar: :any,                 arm64_ventura:  "d2482aa0378ab2caedc651ac5affcafbf7f341f570f29fe4fadac00bbb089e7d"
+    sha256 cellar: :any,                 arm64_monterey: "bdb1f803fb43029a92439b5855d75cba658b0844e2e4d83180e7f82f7b16218b"
+    sha256 cellar: :any,                 sonoma:         "206fa2cdd4e2b8228721eb13532dda5a6eb0c411bffe7879c88044b6701449f0"
+    sha256 cellar: :any,                 ventura:        "24a0b39bf9dd8184685f458d4a154adf5b2b76d93bb221189e500fdb1e5a649d"
+    sha256 cellar: :any,                 monterey:       "9bf5558c2ba41bdaa832660ad01c009e8691892cf61140b5a554e8ee8333de22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "174f3e9cc9c2bc69f9c6be9a7e0a1346f2f59955bedfbe2c6279de467f0b472c"
+  end
+
   depends_on "autoconf@2.13" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
