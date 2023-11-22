@@ -6,7 +6,7 @@ class Couchdb < Formula
   mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -32,7 +32,7 @@ class Couchdb < Formula
   depends_on "openssl@3"
   # NOTE: Supported `spidermonkey` versions are hardcoded at
   # https://github.com/apache/couchdb/blob/#{version}/src/couch/rebar.config.script
-  depends_on "spidermonkey"
+  depends_on "spidermonkey@91"
 
   conflicts_with "ejabberd", because: "both install `jiffy` lib"
 
@@ -42,7 +42,7 @@ class Couchdb < Formula
   end
 
   def install
-    spidermonkey = Formula["spidermonkey"]
+    spidermonkey = Formula["spidermonkey@91"]
     inreplace "configure", '[ ! -d "/usr/local/include/${SM_HEADERS}" ]',
                            "[ ! -d \"#{spidermonkey.opt_include}/${SM_HEADERS}\" ]"
     inreplace "src/couch/rebar.config.script" do |s|
