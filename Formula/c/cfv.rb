@@ -1,6 +1,4 @@
 class Cfv < Formula
-  include Language::Python::Virtualenv
-
   desc "Test and create various files (e.g., .sfv, .csv, .crc., .torrent)"
   homepage "https://github.com/cfv-project/cfv"
   url "https://files.pythonhosted.org/packages/db/54/c5926a7846a895b1e096854f32473bcbdcb2aaff320995f3209f0a159be4/cfv-3.0.0.tar.gz"
@@ -18,10 +16,18 @@ class Cfv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "560380993073f6543d0ff516d56578525ec80108b863256b308ef0b9fa59829e"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    # fix man folder location issue
+    inreplace "setup.py", "'man/man1'", "'share/man/man1'"
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
