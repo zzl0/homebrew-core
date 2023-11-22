@@ -1,8 +1,8 @@
 class Xnvme < Formula
   desc "Cross-platform libraries and tools for efficient I/O and low-level control"
   homepage "https://xnvme.io/"
-  url "https://github.com/OpenMPDK/xNVMe/releases/download/v0.7.2/xnvme-0.7.2.tar.gz"
-  sha256 "1cb849b537cfddc15d82b8f4622fe3f999b4c7c0542c55b8d09b485e016e942e"
+  url "https://github.com/OpenMPDK/xNVMe/releases/download/v0.7.3/xnvme-0.7.3.tar.gz"
+  sha256 "fb1b777e63ed2e6a256de6bd2718db346f6e78eb73ef188ff1aef526ce28f294"
   license "BSD-3-Clause"
 
   bottle do
@@ -18,7 +18,6 @@ class Xnvme < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.12" => :build
 
   def install
     # We do not have SPDK nor libvfn on macOS, thus disabling these
