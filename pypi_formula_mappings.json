@@ -64,6 +64,18 @@
     ],
     "exclude_packages": ["certifi", "cffi", "pycparser", "PyYAML", "six"]
   },
+  "ansible@8": {
+    "exclude_packages": [
+      "certifi", "cffi", "cryptography", "jinja2", "lxml", "markupsafe", "pycparser",
+      "pyparsing", "python-dateutil", "pytz", "pyyaml", "six", "packaging"
+    ],
+    "extra_packages": [
+      "apache-libcloud", "boto3", "dnspython", "docker",
+      "junos-eznc", "jxmlease", "kerberos", "ntc-templates", "openshift",
+      "passlib", "pexpect", "proxmoxer", "pysphere3", "python-consul",
+      "python-neutronclient", "pywinrm", "requests-credssp", "shade", "zabbix-api"
+    ]
+  },
   "apkleaks": {
     "exclude_packages": ["click", "lxml"]
   },
