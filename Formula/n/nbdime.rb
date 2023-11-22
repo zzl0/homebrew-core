@@ -8,13 +8,13 @@ class Nbdime < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2f71ae956c43367b1a9b9edad31681cc3c028469c90ab48c0d42e08756e193e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3573b03e54a24c0ae72ea216bdabe45eec0bf61f27d8d4ca814295ecddb3b633"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94cf4a59bfcf7801763067efceb3c1f55242781bd6976c17847ea04f62e5625f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d2f11aac79b4bf903a57ddc20fc6d320c6bc55e99f9624bf2e577af2e8dc1fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3cc690093aa2971c1b6675e8c45363b1ee5cbf362dd203a26db29165754c1c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "52704dfd9ba79eeb55d2a1ab7d26fff324f27a3cb010b7be4edf5e07fd81fe16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b4d44e363ddbad5b939a39681e98a043cf0a29fe4cbb1177984f97013e416f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74306467ff5e6f94c21b708d9bb013eb18d1bde2312240dcd2d993ec3b10751c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b261b74c40dcd77207b98b6538a302ec68fb2e308f9911c842628f2cdd24a12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04cd1d5b2b66a02ebaec901fca8d27b9adcf4b9fa60f91c335faaa9af43032a1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "128ae01e650289c24844f53838849cbf9914fc26cb6567acc18cc39a721c2228"
+    sha256 cellar: :any_skip_relocation, ventura:        "004072f7a3ce7168b8bb62e46d051b6f9b4ca1be77e05af6a4d047adc194c031"
+    sha256 cellar: :any_skip_relocation, monterey:       "80629a210f677425dbfd4ac1563671ae18bc37a6a3d4b5a65445145250a51835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ec505a09e8fd1af0edc3f6bb45df3270c8dc87e5d4e87c2d4e201d90c6a37f"
   end
 
   depends_on "jupyterlab" # only to provide jupyter-server and nbconvert
