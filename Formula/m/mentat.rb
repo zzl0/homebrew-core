@@ -3,8 +3,8 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/60/10/35e95a04333ce58c5db0c645f776aa49361676957b03e2cf3edc9799dd54/mentat-1.0.2.tar.gz"
-  sha256 "afead6c532cbe20d6a2637dea7d51fe337736782127a7a2736ae24f4ffed3ef9"
+  url "https://files.pythonhosted.org/packages/93/92/e6494fcddfc92ea80196d7b94aed9b808fd278f00dbd30caf5fdffa65496/mentat-1.0.3.tar.gz"
+  sha256 "ff1f821efcdbec7199445ad794e94dd0d9e45d7911b4d84162d57ac8664a3135"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
@@ -23,6 +23,8 @@ class Mentat < Formula
   depends_on "numpy"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-jinja"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
@@ -154,13 +156,13 @@ class Mentat < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
-    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
+    url "https://files.pythonhosted.org/packages/ca/f7/2af788563995eeec32b920c0640a6bc54777c89c780030a7754f95166b7f/yarl-1.9.3.tar.gz"
+    sha256 "4a14907b597ec55740f63e52d7fee0e9ee09d5b9d57a4f399a7423268e457b57"
   end
 
   def install
