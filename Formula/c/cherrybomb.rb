@@ -6,6 +6,16 @@ class Cherrybomb < Formula
   license "Apache-2.0"
   head "https://github.com/blst-security/cherrybomb.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd0341b2c6a53b6c4e0f42a79e3f1e5bf5a25e2d0c00f317b8fc18254de72951"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3ccf56d17a1d0c267ee4d674bc3106f6693a27ed618768ba85f2390e1d4cfc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a288c2801a7149be6a9b63d3e29115e49446898b457579a9ff46a320ebdd54b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d83874129a6e38b7dcd593342ff466671a40c90d3bf0a48a1a6f9657a15169c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "991adbf0625913d6b6b5a24973ccc26155160e3bfc67f86f7b6909bc714f6556"
+    sha256 cellar: :any_skip_relocation, monterey:       "790c2d511642f7d35ae2815d1d466067b3ea275f59e9ea5c4f11fcf2ff7c4cbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c267814c22eb06a91e7029572694a158b1de67d986e76ebd36973b42f4e840a1"
+  end
+
   depends_on "rust" => :build
 
   def install
