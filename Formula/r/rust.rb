@@ -121,6 +121,7 @@ class Rust < Formula
       --enable-llvm-link-shared
       --enable-vendor
       --disable-cargo-native-static
+      --enable-profiler
       --set=rust.jemalloc
       --release-description=#{tap.user}
     ]
