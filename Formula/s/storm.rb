@@ -3,8 +3,8 @@ class Storm < Formula
 
   desc "Distributed realtime computation system to process data streams"
   homepage "https://storm.apache.org"
-  url "https://dlcdn.apache.org/storm/apache-storm-2.5.0/apache-storm-2.5.0.tar.gz"
-  sha256 "fa7dc1b010a84a1ed929d8ed55bfc8a821e06763c6bdcdcf027de5bfac40a8cf"
+  url "https://dlcdn.apache.org/storm/apache-storm-2.6.0/apache-storm-2.6.0.tar.gz"
+  sha256 "358e182d5e5c711865d2fdd5d91f71184399b40064ecd0e7d4a7741047002c95"
   license "Apache-2.0"
 
   bottle do
