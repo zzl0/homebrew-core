@@ -16,8 +16,7 @@ class Bnfc < Formula
   end
 
   depends_on "cabal-install" => [:build, :test]
-  # ghc 9.8 support issue, https://github.com/BNFC/bnfc/issues/469
-  depends_on "ghc@9.6" => [:build, :test]
+  depends_on "ghc" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "agda" => :test
   depends_on "antlr" => :test
