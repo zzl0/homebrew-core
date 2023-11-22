@@ -1,6 +1,4 @@
 class CfnFlip < Formula
-  include Language::Python::Virtualenv
-
   desc "Convert AWS CloudFormation templates between JSON and YAML formats"
   homepage "https://github.com/awslabs/aws-cfn-template-flip"
   url "https://files.pythonhosted.org/packages/ca/75/8eba0bb52a6c58e347bc4c839b249d9f42380de93ed12a14eba4355387b4/cfn_flip-1.3.0.tar.gz"
@@ -19,13 +17,18 @@ class CfnFlip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea89f0b93ab362a699c81b6663f8d79749a824d445d9a32630490d960d311816"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-click"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
