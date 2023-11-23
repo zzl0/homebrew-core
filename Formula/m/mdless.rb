@@ -1,18 +1,18 @@
 class Mdless < Formula
   desc "Provides a formatted and highlighted view of Markdown files in Terminal"
   homepage "https://github.com/ttscoff/mdless"
-  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.0.4.tar.gz"
-  sha256 "b0be56b7337f645181e124ec51faba84f6f349a2b5b0694fe6beaeb88083601f"
+  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.0.7.tar.gz"
+  sha256 "4baf22a4ed0805519c86b324f31c8ddfa9829a55d127209eb7ff8e3ecaa5ef87"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "a60558ca7cc9c049c63fef8800a4230e6bf19f1a8d3889054f9e4116a82818e0"
-    sha256                               arm64_ventura:  "82d9d5db1594b4f95525e45ffb1eb00e4aa04f46687584e81ec3a236e42c7503"
-    sha256                               arm64_monterey: "dbba37dea09438bee1877bf45ec04e544afef8a69dbde17c0f45e3e30b14d026"
-    sha256                               sonoma:         "156155f484b307161da955c9bda3404f14143175b915925686196d498c059efd"
-    sha256                               ventura:        "72f64d616cfbfe003d0a09fc66dccfa79db508b875a6b937c1941e323e2b0725"
-    sha256                               monterey:       "b18a56dfcf4cd3454a6383921ae4ac927fd7beb41df70d2ccafae4cb7b0d7308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79bacc5aae547894c5a2c6ed853cbff8468185988441c341a8bfc8d20d8c612b"
+    sha256                               arm64_sonoma:   "e2a824f608fd8a4236fbcbcf5e1118bb3843f29fdf5eb8e00b4d0c57064d9e83"
+    sha256                               arm64_ventura:  "d714e428a38bfdcc7792950bc08a8a41254d0a8df3bb829254054b6cd504c96d"
+    sha256                               arm64_monterey: "3c1e03d34f724082f70dc848b575b17570f139a0c0426965ea73c1286244e56b"
+    sha256                               sonoma:         "dc7f3d238a90a80e8f768d370895cfa26eee303ed308124748a638fea84f47e7"
+    sha256                               ventura:        "aabb826f7d90a27ddb3bee2fe2061fce0b79ae45df9596c6765291efb2109ee5"
+    sha256                               monterey:       "eb958694e17b8097e2bd4eb326b0c3ac3f68b17c1ccce68822d7a9bba321086c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18c0f49b760716177c014abe3e9bf0afcba6ba1cfd4fa7fe4f372c9e2221c9f6"
   end
 
   uses_from_macos "ruby"
