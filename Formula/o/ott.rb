@@ -24,7 +24,7 @@ class Ott < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ca84d7f68137c731edd143156701f3abca196a1aacfc36120ec31b545549a55"
   end
 
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build
 
   def install
     system "make", "world"
