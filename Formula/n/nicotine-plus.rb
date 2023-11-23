@@ -1,6 +1,4 @@
 class NicotinePlus < Formula
-  include Language::Python::Virtualenv
-
   desc "Graphical client for the Soulseek peer-to-peer network"
   homepage "https://nicotine-plus.org"
   url "https://files.pythonhosted.org/packages/70/d5/15d8c60e3d27d3482fb8cba3ae0c49e57efe00f28e51b8aaea09f979bc48/nicotine-plus-3.2.9.tar.gz"
@@ -19,6 +17,7 @@ class NicotinePlus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e2181a4f34689217adab51c3ad6957d3766eed290561aac47d7fadd56084510"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "py3cairo"
@@ -30,8 +29,12 @@ class NicotinePlus < Formula
     depends_on "gettext" => :build # for `msgfmt`
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
