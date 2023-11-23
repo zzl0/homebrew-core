@@ -3,8 +3,8 @@ class Fypp < Formula
 
   desc "Python powered Fortran preprocessor"
   homepage "https://fypp.readthedocs.io/en/stable/"
-  url "https://github.com/aradi/fypp/archive/refs/tags/3.2.tar.gz"
-  sha256 "33f48c8d2337db539865265ce33c7c50e4d521aacbd31ac7b7e8b189d771ce1d"
+  url "https://files.pythonhosted.org/packages/01/35/0e2dfffc90201f17436d3416f8d5c8b00e2187e410ec899bb62cf2cea59b/fypp-3.2.tar.gz"
+  sha256 "05c20f71dd9a7206ffe2d8688032723f97b8c2984d472ba045819d7d2b513bce"
   license "BSD-2-Clause"
   head "https://github.com/aradi/fypp.git", branch: "main"
 
@@ -19,11 +19,16 @@ class Fypp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a25c3909fde50da5dbcecaf82f30e57cc28ff5b4cb975726cb30674332393fd"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "gcc" => :test
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
