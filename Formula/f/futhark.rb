@@ -2,8 +2,8 @@ class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https://futhark-lang.org/"
   # TODO: Try to switch `ghc@9.4` to `ghc` when futhark.cabal allows base>=4.17
-  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.8.tar.gz"
-  sha256 "dc62d4d9cf411b26f7a6e348c338ff802d303a0cc99291b312b2865cfff38300"
+  url "https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.9.tar.gz"
+  sha256 "bf7bc33d8932fd63b0880e6795945d9bdfb4f49baed75f9d2d46e41842fefae1"
   license "ISC"
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
