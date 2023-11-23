@@ -1,8 +1,8 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.28.06.source.tar.gz"
-  sha256 "af3b673b9aca393a5c9ae1bf86eab2672aaf1841b658c5c6e7a30ab93c586533"
+  url "https://root.cern.ch/download/root_v6.30.00.source.tar.gz"
+  sha256 "0592c066954cfed42312957c9cb251654456064fe2d8dabdcb8826f1c0099d71"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
