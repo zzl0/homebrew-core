@@ -4,6 +4,7 @@ class Rpm < Formula
   url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.19.x/rpm-4.19.0.tar.bz2"
   sha256 "b30916dc148cbeab077797e9fc365702931e3a9a7eacf70add84153b549b3f77"
   license "GPL-2.0-only"
+  revision 1
   version_scheme 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
