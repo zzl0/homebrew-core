@@ -1,6 +1,4 @@
 class Scons < Formula
-  include Language::Python::Virtualenv
-
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
   url "https://files.pythonhosted.org/packages/a4/ce/31e6d2f5e1d1cc23d65cfe4e28b2a83cc2d49f4bb99b5eec9240fb9a9857/SCons-4.6.0.tar.gz"
@@ -17,10 +15,15 @@ class Scons < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "858e36218cd6e8ded5220619fd9afeaa2fdf76faa0e47ca06df7e9f4fc48cddc"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
