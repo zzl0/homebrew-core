@@ -2,8 +2,8 @@ class Opal < Formula
   desc "Ruby to JavaScript transpiler"
   homepage "https://opalrb.com/"
   url "https://github.com/opal/opal.git",
-      tag:      "v1.8.1",
-      revision: "b13f31881120e673fe37fe7ea0feb12bdcc878bd"
+      tag:      "v1.8.2",
+      revision: "090897655fb1c0b9006a068012990375ead28049"
   license "MIT"
   head "https://github.com/opal/opal.git", branch: "master"
 
