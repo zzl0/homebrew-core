@@ -8,13 +8,13 @@ class DbmlCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d19e433766fa9752601d85a5401cb2cedbdedab0090a178c64592a7869a22a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d19e433766fa9752601d85a5401cb2cedbdedab0090a178c64592a7869a22a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d19e433766fa9752601d85a5401cb2cedbdedab0090a178c64592a7869a22a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f8cd55c5b5504bd8034df0d23976a68b3a9edfacc3a13a9a25327e6c672ff94"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f8cd55c5b5504bd8034df0d23976a68b3a9edfacc3a13a9a25327e6c672ff94"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f8cd55c5b5504bd8034df0d23976a68b3a9edfacc3a13a9a25327e6c672ff94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d1b7ea44ddaae9b056e59323808c85db4a17d2058b9bae6cab529a80fe8bf3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0684420e3dfb189814c8cb389940ea955f43b26ab57d3fec39856e3ba7c97d62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0684420e3dfb189814c8cb389940ea955f43b26ab57d3fec39856e3ba7c97d62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0684420e3dfb189814c8cb389940ea955f43b26ab57d3fec39856e3ba7c97d62"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3fe48eaff0d6e6b24bd45727e2fea5ab5a62ef52e8ede5cd5705f82b22caf6a9"
+    sha256 cellar: :any_skip_relocation, ventura:        "3fe48eaff0d6e6b24bd45727e2fea5ab5a62ef52e8ede5cd5705f82b22caf6a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "3fe48eaff0d6e6b24bd45727e2fea5ab5a62ef52e8ede5cd5705f82b22caf6a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f2e53e43150bc075897977a0dc00c913befc42ecea7c51d9b14c099935767e5"
   end
 
   depends_on "node"
