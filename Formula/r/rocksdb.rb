@@ -7,13 +7,13 @@ class Rocksdb < Formula
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bf6bade4ee3212030f78e485ef7d5c8b54853a65a6dbf78a9817fd2b6c041f4f"
-    sha256 cellar: :any,                 arm64_ventura:  "8dbb731756dc068a9c6a8cd19349b7c4b60a038420c5b340c57ee2f88ecb9d37"
-    sha256 cellar: :any,                 arm64_monterey: "8b0f01d3959ca56fa699192dad90e5034b8ffcefa0b13b42ce335872f8f6e8d0"
-    sha256 cellar: :any,                 sonoma:         "bac2e0faa301c9a8f4a8d989b743ecced22a7558c17efa114c8e01a6d4753267"
-    sha256 cellar: :any,                 ventura:        "957e93957db8a572cd7aa914e343f111aeb486ce03871a949262ed9632f0d2d6"
-    sha256 cellar: :any,                 monterey:       "fb1b27a42693ee6ae04cacd6794f7b0628f3aa90841fb32b8014c6268b6e7bd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33c826ad955143c18f0aec27cc87538bb8ce7d55dcdc9d06ffef4443967f5825"
+    sha256 cellar: :any,                 arm64_sonoma:   "944fb620c7ef114f5948237938cc1172b96e71a6c3382ef1d485f90e274ba66d"
+    sha256 cellar: :any,                 arm64_ventura:  "fc550aa292f7d30d055dc1a80f868a6fef5c3010b3adec67e5b4f174ec1b32e2"
+    sha256 cellar: :any,                 arm64_monterey: "43e7c6a30d90c08c90747ea0111a205003a3f2abb0baec04c67bdee1e86d72cb"
+    sha256 cellar: :any,                 sonoma:         "540583d8b747bc748bc70db69f62af02f4c69920407a5952d605ea91ce85576d"
+    sha256 cellar: :any,                 ventura:        "4ac15966c0a6916d980f3eb189b826d6ea694059f015c35c139678b174e28c77"
+    sha256 cellar: :any,                 monterey:       "5cb8f406cda79843fa8e15e5d619ef410ea7d3c0536646a66717f3585f47468e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88ca1940448de119e0f46d85982d61a5a89b3cac7c69578f0f724a760b7d4db7"
   end
 
   depends_on "cmake" => :build
