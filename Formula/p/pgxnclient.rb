@@ -1,6 +1,4 @@
 class Pgxnclient < Formula
-  include Language::Python::Virtualenv
-
   desc "Command-line client for the PostgreSQL Extension Network"
   homepage "https://pgxn.github.io/pgxnclient/"
   url "https://github.com/pgxn/pgxnclient/archive/refs/tags/v1.3.2.tar.gz"
@@ -19,14 +17,20 @@ class Pgxnclient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f1b2b974561e440ebb0ec1c1f10e24a023e47397a9ecf43dda1c10463a3a96e"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
   depends_on "six"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     assert_match "pgxn", shell_output("#{bin}/pgxnclient mirror")
+    assert_match version.to_s, shell_output("#{bin}/pgxnclient --version")
   end
 end
