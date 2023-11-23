@@ -17,17 +17,14 @@ class Sslmate < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17ae6bb3ed5c430fdda554b990d5a1d5b539b89065ed5944288851b862f83c20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a27cad29a05af1a278ce5472e7a93400ec29f3232d8336042c01db999b495f79"
-    sha256 cellar: :any_skip_relocation, ventura:        "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, catalina:       "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8cf9d5a489518810246c59334f5f0b2855888075b421698746f08391d965eb7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "932e9dcb8e0fb10cbc525292fcacab324e5f919e951cdadcee3dd81a1d306c1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "826a25dd77500137cc8305370256fe0f20c4d077f63d68c074ae853eba94a89f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "753c58a81a474c16a65283ce9001695feea621548b94e8c8520bb383bfc7a6b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6259b02b5b9197e69f5efdf546481e16ece92e4b440a071a7ea1c9e372e91542"
+    sha256 cellar: :any_skip_relocation, ventura:        "88685486b03263d33975ffd699028b74d5cd91709c546f8fcc57a754ce873242"
+    sha256 cellar: :any_skip_relocation, monterey:       "a90a85b45f8b82b2a0dffd3fc4f2d492d8001494cb17ab4904ee8109a6ff21b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f84a12a2650d145b2d6ec14f502de800351aa19fb4b1c013ef7d8e7dd6a0b479"
   end
 
   depends_on "python@3.12"
