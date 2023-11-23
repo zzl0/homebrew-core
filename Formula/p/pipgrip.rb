@@ -3,8 +3,8 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/a2/58/e3068231c31198f9cd5198e2a0f1b3ac96c6f82f10c774ad61a0b4721b4b/pipgrip-0.10.9.tar.gz"
-  sha256 "9bc0b74b89dc1ed9f05cc6066323d03bcc515cb2a58ca6717fe1c2db30c6b69b"
+  url "https://files.pythonhosted.org/packages/5b/ac/b9f4f4df6270d75202583407ddaef8651163127d228758e8418974f70b5a/pipgrip-0.10.10.tar.gz"
+  sha256 "b8e947c79eef74100a5dc256a94d377205b3b00816e4195964a73ee28deb9a4d"
   license "BSD-3-Clause"
 
   bottle do
@@ -24,8 +24,8 @@ class Pipgrip < Formula
   depends_on "six"
 
   resource "anytree" do
-    url "https://files.pythonhosted.org/packages/7e/84/51e270f1f117da92025427e5cddd71ee62fc65de8b0391568055eb872d3d/anytree-2.12.0.tar.gz"
-    sha256 "0dde0365cc8b1f3531e927694f39b903c360eadab2be09c50f3426ecca967949"
+    url "https://files.pythonhosted.org/packages/f9/44/2dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7dea/anytree-2.12.1.tar.gz"
+    sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
   end
 
   resource "wheel" do
