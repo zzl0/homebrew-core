@@ -1,13 +1,13 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-3.1.4.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.1.4.tar.gz"
-  mirror "https://www.openssl.org/source/old/3.1/openssl-3.1.4.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/3.1/openssl-3.1.4.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.1.4.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/3.1/openssl-3.1.4.tar.gz"
-  sha256 "840af5366ab9b522bde525826be3ef0fb0af81c6a9ebd84caa600fea1731eee3"
+  url "https://www.openssl.org/source/openssl-3.2.0.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.2.0.tar.gz"
+  mirror "https://www.openssl.org/source/old/3.2/openssl-3.2.0.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/3.2/openssl-3.2.0.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-3.2.0.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/3.2/openssl-3.2.0.tar.gz"
+  sha256 "14c826f07c7e433706fb5c69fa9e25dab95684844b4c962a2cf1bf183eb4690e"
   license "Apache-2.0"
 
   livecheck do
@@ -29,15 +29,15 @@ class OpensslAT3 < Formula
 
   on_linux do
     resource "Test::Harness" do
-      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"
-      sha256 "7eb591ea6b499ece6745ff3e80e60cee669f0037f9ccbc4e4511425f593e5297"
+      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.48.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.48.tar.gz"
+      sha256 "e73ff89c81c1a53f6baeef6816841b89d3384403ad97422a7da9d1eeb20ef9c5"
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302195.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302195.tar.gz"
-      sha256 "b390bb23592e0b946c95adbb3c30b11bc634a286b2847be611ad929c57e39a6c"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302196.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302196.tar.gz"
+      sha256 "020e71da0a479b2d2546304ce6bd23fb9dd428df7d4e161d19612fc1f406fd9f"
     end
 
     resource "ExtUtils::MakeMaker" do
