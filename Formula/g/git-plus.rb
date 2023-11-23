@@ -1,6 +1,4 @@
 class GitPlus < Formula
-  include Language::Python::Virtualenv
-
   desc "Git utilities: git multi, git relation, git old-branches, git recent"
   homepage "https://github.com/tkrajina/git-plus"
   url "https://files.pythonhosted.org/packages/79/27/765447b46d6fa578892b2bdd59be3f7f3c545d68ab65ba6d3d89994ec7fc/git-plus-0.4.10.tar.gz"
@@ -19,10 +17,15 @@ class GitPlus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f54d550604b3ffadd002cc9b65385c1fc42ea8dc40b5826ffebdb0a730504570"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
