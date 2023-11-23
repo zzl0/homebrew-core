@@ -1,6 +1,4 @@
 class GitImerge < Formula
-  include Language::Python::Virtualenv
-
   desc "Incremental merge for git"
   homepage "https://github.com/mhagger/git-imerge"
   license "GPL-2.0-or-later"
@@ -27,10 +25,15 @@ class GitImerge < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "588ed41906d89362973aeced4b9e04ec7f8b16e94eb316243b189522a2a4457a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
     bash_completion.install "completions/git-imerge"
   end
 
