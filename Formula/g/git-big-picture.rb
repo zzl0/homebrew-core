@@ -1,6 +1,4 @@
 class GitBigPicture < Formula
-  include Language::Python::Virtualenv
-
   desc "Visualization tool for Git repositories"
   homepage "https://github.com/git-big-picture/git-big-picture"
   url "https://github.com/git-big-picture/git-big-picture/archive/refs/tags/v1.2.2.tar.gz"
@@ -18,11 +16,16 @@ class GitBigPicture < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f41d674a0efc5e158ff3fea38fe417cb9d50a018238955a0c41a7aa38f9a6aca"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "graphviz"
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
