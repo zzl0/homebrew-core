@@ -1,6 +1,4 @@
 class Mdv < Formula
-  include Language::Python::Virtualenv
-
   desc "Styled terminal markdown viewer"
   homepage "https://github.com/axiros/terminal_markdown_viewer"
   url "https://files.pythonhosted.org/packages/d0/32/f5e1b8c70dc40b02604fbd0be3ff0bd5e01ee99c9fddf8f423b10d07cd31/mdv-1.7.5.tar.gz"
@@ -24,8 +22,12 @@ class Mdv < Formula
   depends_on "python@3.12"
   depends_on "pyyaml"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
