@@ -27,54 +27,68 @@ class GhcAT92 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "python@3.11" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "python@3.12" => :build
   depends_on "sphinx-doc" => :build
   depends_on macos: :catalina
 
   uses_from_macos "m4" => :build
+  uses_from_macos "xz" => :build
   uses_from_macos "ncurses"
 
   on_linux do
     depends_on "gmp" => :build
-    on_arm do
-      depends_on "numactl" => :build
-    end
-  end
-
-  # GHC 9.2.5 user manual recommend use LLVM 9 through 12
-  # https://downloads.haskell.org/~ghc/9.2.5/docs/html/users_guide/9.2.5-notes.html
-  # and we met some unknown issue w/ LLVM 13 before https://gitlab.haskell.org/ghc/ghc/-/issues/20559
-  # so conservatively use LLVM 12 here
-  on_arm do
-    depends_on "llvm@12"
   end
 
   # A binary of ghc is needed to bootstrap ghc
   resource "binary" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.0.2/ghc-9.0.2-aarch64-apple-darwin.tar.xz"
-        sha256 "b1fcab17fe48326d2ff302d70c12bc4cf4d570dfbbce68ab57c719cfec882b05"
+        url "https://downloads.haskell.org/~ghc/9.2.8/ghc-9.2.8-aarch64-apple-darwin.tar.xz"
+        sha256 "34db9b19571905b08ca1e444b46490e7c19cb73a0fe778696fa6ec02ff8d3c4b"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.0.2/ghc-9.0.2-x86_64-apple-darwin.tar.xz"
-        sha256 "e1fe990eb987f5c4b03e0396f9c228a10da71769c8a2bc8fadbc1d3b10a0f53a"
+        url "https://downloads.haskell.org/~ghc/9.2.8/ghc-9.2.8-x86_64-apple-darwin.tar.xz"
+        sha256 "eb78361feaf4277f627cbdc4b849849d09d175d0d878d28433719b7482db27f5"
       end
     end
     on_linux do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.0.2/ghc-9.0.2-aarch64-deb10-linux.tar.xz"
-        sha256 "cb016344c70a872738a24af60bd15d3b18749087b9905c1b3f1b1549dc01f46d"
+        url "https://downloads.haskell.org/~ghc/9.2.8/ghc-9.2.8-aarch64-deb10-linux.tar.xz"
+        sha256 "645433359d8ad9e7b286f85ef5111db1b787ee3712c24c5dfde7c62769aa59a4"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.0.2/ghc-9.0.2-x86_64-ubuntu20.04-linux.tar.xz"
-        sha256 "a0ff9893618d597534682123360e7c80f97441f0e49f261828416110e8348ea0"
+        url "https://downloads.haskell.org/~ghc/9.2.8/ghc-9.2.8-x86_64-ubuntu20.04-linux.tar.xz"
+        sha256 "6e4adc184a53ca9d9dd8c11c6611d0643fdc3b76550ae769e378d9edb2bda745"
+      end
+    end
+  end
+
+  resource "cabal-install" do
+    on_macos do
+      on_arm do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-aarch64-darwin.tar.xz"
+        sha256 "d2bd336d7397cf4b76f3bb0d80dea24ca0fa047903e39c8305b136e855269d7b"
+      end
+      on_intel do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-darwin.tar.xz"
+        sha256 "cd64f2a8f476d0f320945105303c982448ca1379ff54b8625b79fb982b551d90"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-aarch64-linux-deb10.tar.xz"
+        sha256 "004ed4a7ca890fadee23f58f9cb606c066236a43e16b34be2532b177b231b06d"
+      end
+      on_intel do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz"
+        sha256 "c2a8048caa3dbfe021d0212804f7f2faad4df1154f1ff52bd2f3c68c1d445fe1"
       end
     end
   end
 
   # Backport fix for building docs with sphinx-doc 6.
-  # TODO: Remove patch if fix is backported to 9.2.
   # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/9625
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/00dc51060881df81258ba3b3bdf447294618a4de.diff"
@@ -82,7 +96,6 @@ class GhcAT92 < Formula
   end
 
   # Backport fix for building docs with sphinx-doc 7.
-  # TODO: Remove patch if fix is backported to 9.2.
   # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
@@ -92,17 +105,10 @@ class GhcAT92 < Formula
   def install
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = which("python3.11")
-    # ARM64 Linux bootstrap binary is linked to libnuma so help it find our copy
-    ENV.append_path "LD_LIBRARY_PATH", Formula["numactl"].opt_lib if OS.linux? && Hardware::CPU.arm?
-    # Work around build failure: fatal error: 'ffitarget_arm64.h' file not found
-    # Issue ref: https://gitlab.haskell.org/ghc/ghc/-/issues/20592
-    # TODO: remove once bootstrap ghc is 9.2.3 or later.
-    ENV.append_path "C_INCLUDE_PATH", "#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac? && Hardware::CPU.arm?
+    ENV["PYTHON"] = which("python3.12")
 
+    binary = buildpath/"binary"
     resource("binary").stage do
-      binary = buildpath/"binary"
-
       binary_args = []
       if OS.linux?
         binary_args << "--with-gmp-includes=#{Formula["gmp"].opt_include}"
@@ -115,15 +121,31 @@ class GhcAT92 < Formula
       ENV.prepend_path "PATH", binary/"bin"
     end
 
+    resource("cabal-install").stage { (binary/"bin").install "cabal" }
+    system "cabal", "v2-update"
+    cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
+    system "cabal", "v2-install", "alex", "happy", *cabal_args, "--installdir=#{binary}/bin"
+
     system "./configure", "--prefix=#{prefix}", "--disable-numa", "--with-intree-gmp"
-    system "make"
-    ENV.deparallelize { system "make", "install" }
+    hadrian_args = %W[
+      -j#{ENV.make_jobs}
+      --prefix=#{prefix}
+      --flavour=perf
+      --docs=no-sphinx-pdfs
+    ]
+    # Work around linkage error due to RPATH in ghc-iserv-dyn-ghc
+    # Issue ref: https://gitlab.haskell.org/ghc/ghc/-/issues/22557
+    os = OS.mac? ? "osx" : OS.kernel_name.downcase
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch.to_s
+    extra_rpath = rpath(source: lib/"ghc-#{version}/bin",
+                        target: lib/"ghc-#{version}/lib/#{cpu}-#{os}-ghc-#{version}")
+    hadrian_args << "*.iserv.ghc.link.opts += -optl-Wl,-rpath,#{extra_rpath}"
+    # Let hadrian handle its own parallelization
+    ENV.deparallelize { system "hadrian/build", "install", *hadrian_args }
 
     bash_completion.install "utils/completion/ghc.bash" => "ghc"
-    (lib/"ghc-#{version}/package.conf.d/package.cache").unlink
-    (lib/"ghc-#{version}/package.conf.d/package.cache.lock").unlink
-
-    bin.env_script_all_files libexec, PATH: "${PATH}:#{Formula["llvm@12"].opt_bin}" if Hardware::CPU.arm?
+    (lib/"ghc-#{version}/lib/package.conf.d/package.cache").unlink
+    (lib/"ghc-#{version}/lib/package.conf.d/package.cache.lock").unlink
   end
 
   def post_install
