@@ -1,6 +1,4 @@
 class TranslateToolkit < Formula
-  include Language::Python::Virtualenv
-
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
   url "https://files.pythonhosted.org/packages/2d/96/02265cf887313ca433d177ea4b1153826cf167c78a1456a5919c20eafd1c/translate-toolkit-3.11.1.tar.gz"
@@ -18,18 +16,24 @@ class TranslateToolkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "02eb6369b34ed3594fec6a51f887768d7a59d59b2f91bbc22e71f84b03fd41d1"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-lxml"
   depends_on "python@3.12"
 
-  def install
-    # Workaround to avoid creating libexec/bin/__pycache__ which gets linked to bin
-    ENV["PYTHONPYCACHEPREFIX"] = buildpath/"pycache"
+  def python3
+    "python3.12"
+  end
 
-    virtualenv_install_with_resources
+  def install
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    system bin/"pretranslate", "-h"
-    system bin/"podebug", "-h"
+    test_file = testpath/"test.po"
+    touch test_file
+    assert_match "Processing file : #{test_file}", shell_output("#{bin}/pocount --no-color #{test_file}")
+
+    assert_match version.to_s, shell_output("#{bin}/pretranslate --version")
+    assert_match version.to_s, shell_output("#{bin}/podebug --version")
   end
 end
