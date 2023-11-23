@@ -1,6 +1,4 @@
 class Gprof2dot < Formula
-  include Language::Python::Virtualenv
-
   desc "Convert the output from many profilers into a Graphviz dot graph"
   homepage "https://github.com/jrfonseca/gprof2dot"
   url "https://files.pythonhosted.org/packages/ab/0b/fc056b26a90c1836aa6c6e1332372dc13050d384f017e388131854ead8cf/gprof2dot-2022.7.29.tar.gz"
@@ -19,6 +17,7 @@ class Gprof2dot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66111cc1fda2c7add502c5927e0eb4c30927a9be529358baef86dc43be83e83a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "graphviz"
   depends_on "python@3.12"
 
@@ -26,8 +25,12 @@ class Gprof2dot < Formula
     depends_on "libx11"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
