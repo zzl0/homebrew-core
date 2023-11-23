@@ -24,17 +24,24 @@ class Docutils < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .sort_by(&:version)
   end
 
   def install
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
 
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run front-end tools, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
@@ -44,7 +51,8 @@ class Docutils < Formula
     system bin/"rst2man.py", testpath/"README.txt"
     system bin/"rst2man", testpath/"README.txt"
     pythons.each do |python|
-      system python, "-c", "import docutils"
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", "import docutils"
     end
   end
 end
