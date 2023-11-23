@@ -1,6 +1,4 @@
 class EulerPy < Formula
-  include Language::Python::Virtualenv
-
   desc "Project Euler command-line tool written in Python"
   homepage "https://github.com/iKevinY/EulerPy"
   url "https://github.com/iKevinY/EulerPy/archive/refs/tags/v1.4.0.tar.gz"
@@ -20,15 +18,16 @@ class EulerPy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ef6eb10c8e5225fda9b692d78202f1be8e5d0a1afc678a4bbc69e566360e34c"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-click"
   depends_on "python@3.12"
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/7b/61/80731d6bbf0dd05fe2fe9bac02cd7c5e3306f5ee19a9e6b9102b5784cf8c/click-4.0.tar.gz"
-    sha256 "f49e03611f5f2557788ceeb80710b1c67110f97c5e6740b97edf70245eea2409"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
