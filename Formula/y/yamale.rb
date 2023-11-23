@@ -1,6 +1,4 @@
 class Yamale < Formula
-  include Language::Python::Virtualenv
-
   desc "Schema and validator for YAML"
   homepage "https://github.com/23andMe/Yamale"
   url "https://files.pythonhosted.org/packages/0c/93/3002a45542579cdd626a011f39bbe19ddcc1fbe0541081824c39ef216147/yamale-4.0.4.tar.gz"
@@ -19,11 +17,16 @@ class Yamale < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48b3576332e4eb29d5360c9bb9d65d0c61e71dd09f5811673f001baba2139551"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
   depends_on "pyyaml"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
