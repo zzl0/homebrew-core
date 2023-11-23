@@ -1,6 +1,4 @@
 class Pius < Formula
-  include Language::Python::Virtualenv
-
   desc "PGP individual UID signer"
   homepage "https://www.phildev.net/pius/"
   url "https://github.com/jaymzh/pius/archive/refs/tags/v3.0.0.tar.gz"
@@ -20,13 +18,19 @@ class Pius < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e0a5c15872c6e24e56cc856c25c78ac7c89a7845afe7abd8513db31192d3d97"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "gnupg"
   depends_on "python@3.12"
+
+  def python3
+    "python3.12"
+  end
 
   def install
     # Replace hardcoded gpg path (WONTFIX)
     inreplace "libpius/constants.py", %r{/usr/bin/gpg2?}, "/usr/bin/env gpg"
-    virtualenv_install_with_resources
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   def caveats
@@ -38,6 +42,9 @@ class Pius < Formula
   end
 
   test do
-    system bin/"pius", "-T"
+    output = shell_output("#{bin}/pius -T")
+    assert_match "Welcome to PIUS, the PGP Individual UID Signer", output
+
+    assert_match version.to_s, shell_output("#{bin}/pius --version")
   end
 end
