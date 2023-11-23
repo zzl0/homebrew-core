@@ -663,6 +663,9 @@
     "package_name": "mdv[yaml]",
     "exclude_packages": ["Pygments", "PyYAML"]
   },
+  "memray": {
+    "exclude_packages": ["jinja2", "markupsafe", "pygments"]
+  },
   "mentat": {
     "exclude_packages": ["certifi", "jinja2", "markupsafe", "numpy", "packaging", "pygments", "six", "typing-extensions"]
   },
