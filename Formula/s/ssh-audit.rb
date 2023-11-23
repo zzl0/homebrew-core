@@ -1,6 +1,4 @@
 class SshAudit < Formula
-  include Language::Python::Virtualenv
-
   desc "SSH server & client auditing"
   homepage "https://github.com/jtesta/ssh-audit"
   url "https://files.pythonhosted.org/packages/f2/b9/88c7f0ecba0a8fbf07e0d7674b7eac3dbf5270ac39a3b48bc34bb7c5a22c/ssh-audit-3.0.0.tar.gz"
@@ -19,13 +17,21 @@ class SshAudit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "122b8fc613a7b844dfe9f34d5a06e34de89dea54ea91ef82d73eca05b5728447"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    assert_match "[exception]", shell_output("#{bin}/ssh-audit -nt 0 ssh.github.com", 1)
+    output = shell_output("#{bin}/ssh-audit -nt 0 ssh.github.com", 1)
+    assert_match "[exception] cannot connect to ssh.github.com port 22", output
+
+    assert_match "ssh-audit v#{version}", shell_output("#{bin}/ssh-audit -h")
   end
 end
