@@ -3,8 +3,8 @@ require "language/node"
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-7.4.2.tgz"
-  sha256 "dcdfc090f86271a1ec5f960a75ba041110f11c0b4722acf65a20b3e56d635a89"
+  url "https://registry.npmjs.org/lerna/-/lerna-8.0.0.tgz"
+  sha256 "0d70a1e9df20ab272731aaba9a925b69e7bd10c548ecb69f4eb825773a5dd51c"
   license "MIT"
 
   bottle do
@@ -23,12 +23,8 @@ class Lerna < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/lerna/node_modules"
-    (node_modules/"@parcel/watcher/prebuilds/linux-x64/node.napi.musl.node").unlink
     (node_modules/"@nx/nx-linux-x64-musl/nx.linux-x64-musl.node").unlink if OS.linux?
-    (node_modules/"@parcel/watcher/prebuilds").each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with native slices
     deuniversalize_machos
