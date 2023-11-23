@@ -29,8 +29,7 @@ class Numpy < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use python3.10
-        .map { |f| f.opt_libexec/"bin/python" }
+        .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use newest python
   end
 
   def install
@@ -48,18 +47,26 @@ class Numpy < Formula
     Pathname("site.cfg").write config
 
     pythons.each do |python|
-      site_packages = Language::Python.site_packages(python)
+      python_exe = python.opt_libexec/"bin/python"
+      site_packages = Language::Python.site_packages(python_exe)
       ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
 
-      system python, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
-                                          "--parallel=#{ENV.make_jobs}"
-      system python, *Language::Python.setup_install_args(prefix, python)
+      system python_exe, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
+                                              "--parallel=#{ENV.make_jobs}"
+      system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run `f2py`, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
     pythons.each do |python|
-      system python, "-c", <<~EOS
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", <<~EOS
         import numpy as np
         t = np.ones((3,3), int)
         assert t.sum() == 9
