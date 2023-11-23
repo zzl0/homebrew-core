@@ -1,6 +1,4 @@
 class TrashCli < Formula
-  include Language::Python::Virtualenv
-
   desc "Command-line interface to the freedesktop.org trashcan"
   homepage "https://github.com/andreafrancia/trash-cli"
   url "https://files.pythonhosted.org/packages/1e/2b/267cd091c656738fd7fb2f60d86898698c5431c0565f87917f8eb6abb753/trash-cli-0.23.11.10.tar.gz"
@@ -18,6 +16,7 @@ class TrashCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81018d03b91b3c19dff399bfc16634e45983ee04d2d29d0212c5096f7e482e3a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-psutil"
   depends_on "python@3.12"
   depends_on "six"
@@ -25,9 +24,12 @@ class TrashCli < Formula
   conflicts_with "macos-trash", because: "both install a `trash` binary"
   conflicts_with "trash", because: "both install a `trash` binary"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
-    man1.install_symlink libexec.glob("share/man/man1/trash*.1")
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
