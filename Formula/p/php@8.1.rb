@@ -2,11 +2,10 @@ class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.1.25.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.25.tar.xz"
-  sha256 "66fdba064aa119b1463a7969571d42f4642690275d8605ab5149bcc5107e2484"
+  url "https://www.php.net/distributions/php-8.1.26.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.26.tar.xz"
+  sha256 "17f87133596449327451ad4b8d9911bfaea59ff5109f3a6f2bb679f967a8ea0f"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -66,6 +65,13 @@ class PhpAT81 < Formula
     # PHP build system incorrectly links system libraries
     # see https://github.com/php/php-src/issues/10680
     patch :DATA
+  end
+
+  # Fix build failure with libxml >= 2.12
+  # To be removed when PHP 8.1.27 is released.
+  patch do
+    url "https://github.com/php/php-src/commit/6a76e5d0a2dcf46b4ab74cc3ffcbfeb860c4fdb3.patch?full_index=1"
+    sha256 "9960993a3b6759b8461fc6a181cc4dfdf93eb5da0453037b0b78dfecdeff2c4f"
   end
 
   def install
