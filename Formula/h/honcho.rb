@@ -1,6 +1,4 @@
 class Honcho < Formula
-  include Language::Python::Virtualenv
-
   desc "Python clone of Foreman, for managing Procfile-based applications"
   homepage "https://github.com/nickstenning/honcho"
   url "https://files.pythonhosted.org/packages/0e/7c/c0aa47711b5ada100273cbe190b33cc12297065ce559989699fd6c1ec0cb/honcho-1.1.0.tar.gz"
@@ -19,6 +17,7 @@ class Honcho < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e197e7a87627ce248de6f4e102330b27ce6a38d62a0d5edc8f2030139f589356"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   # Replace pkg_resources with importlib for 3.12
@@ -28,8 +27,12 @@ class Honcho < Formula
     sha256 "a20f222f57d23f33e732cc23ba4cc22000eb38e2f9cd5c71fdbc6321e0eb364f"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
