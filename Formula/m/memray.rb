@@ -7,6 +7,16 @@ class Memray < Formula
   sha256 "38322e052b882790993412f1840517a51818aa55c47037f69915b2007f2c4cee"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "859ea5b5f29ad0b5e4fdebc9112852a234ffd54767c3248255be6442ea929c9e"
+    sha256 cellar: :any,                 arm64_ventura:  "142b345d5017fbf8bb69fd71f655df3304ef62844d3f2d74b09858c37f22be3b"
+    sha256 cellar: :any,                 arm64_monterey: "1c3e9949b810d9bcf42aaba96146befc82fc4229650c624bce5f119aa4f61a87"
+    sha256 cellar: :any,                 sonoma:         "82c66c67d45cd4182bdb6dd082b0a2b669023d5be6a484d9edb2465cd8a156e7"
+    sha256 cellar: :any,                 ventura:        "21e4baea6cbaae4224ffa33343f8e0cb375bfa1ab240adbb52e379cc45c73d06"
+    sha256 cellar: :any,                 monterey:       "f4deb8c4ef14eb1a75e1d3d6954c55eb50ffde0c1266fe414b2cbfc80ac5bb14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32dbf00c1c73aa5fba8b6ed652acdd9925a6694b048dbd3ba9df94823fdd5fc2"
+  end
+
   depends_on "lz4"
   depends_on "pygments"
   depends_on "python-jinja"
