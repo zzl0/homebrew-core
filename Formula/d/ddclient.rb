@@ -1,8 +1,8 @@
 class Ddclient < Formula
   desc "Update dynamic DNS entries"
   homepage "https://ddclient.net/"
-  url "https://github.com/ddclient/ddclient/archive/refs/tags/v3.11.1.tar.gz"
-  sha256 "5eb5ca4118f14ae219da09e82dac39e0255048518a56311b2e9ec392505edd11"
+  url "https://github.com/ddclient/ddclient/archive/refs/tags/v3.11.2.tar.gz"
+  sha256 "243cd832abd3cdd2b49903e1b5ed7f450e2d9c4c0eaf8ce4fe692c244d3afd77"
   license "GPL-2.0-or-later"
   head "https://github.com/ddclient/ddclient.git", branch: "master"
 
@@ -32,14 +32,17 @@ class Ddclient < Formula
       url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-2.73.tar.gz"
       sha256 "b6da746853253d5b4ac43191b4f69a4719595ee13a7ca676a8054cf36e6d16bb"
     end
+
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.078.tar.gz"
-      sha256 "4cf83737a72b0970948b494bc9ddab7f725420a0ca0152d25c7e48ef8fa2b6a1"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.084.tar.gz"
+      sha256 "a60d1e04e192363155329560498abd3412c3044295dae092d27fb6e445c71ce1"
     end
+
     resource "JSON::PP" do
       url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-PP-4.16.tar.gz"
       sha256 "8bc2f162bafc42645c489905ad72540f0d3c284b360c96299095183c30cc9789"
     end
+
     resource "Net::SSLeay" do
       url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
       sha256 "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9"
