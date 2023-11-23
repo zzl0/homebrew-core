@@ -1,6 +1,4 @@
 class Pssh < Formula
-  include Language::Python::Virtualenv
-
   desc "Parallel versions of OpenSSH and related tools"
   homepage "https://code.google.com/archive/p/parallel-ssh/"
   url "https://files.pythonhosted.org/packages/60/9a/8035af3a7d3d1617ae2c7c174efa4f154e5bf9c24b36b623413b38be8e4a/pssh-2.3.1.tar.gz"
@@ -19,6 +17,7 @@ class Pssh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cd7a5fa0e49dfa41b01e00f61d343828e9ce9a1b540ecc99a47d65d8c980930"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   conflicts_with "putty", because: "both install `pscp` binaries"
@@ -29,9 +28,15 @@ class Pssh < Formula
     sha256 "aba524c201cdc1be79ecd1896d2b04b758f173cdebd53acf606c32321a7e8c33"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
-    share.install libexec/"man"
+    # fix man folder location issue
+    inreplace "setup.py", "'man/man1'", "'share/man/man1'"
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
