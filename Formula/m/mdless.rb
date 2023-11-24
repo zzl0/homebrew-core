@@ -6,13 +6,13 @@ class Mdless < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "f2d1fd5c0181bc16948fde1b556d51ac991202ff532a8291f4854a2f2c476bd1"
-    sha256                               arm64_ventura:  "efbba2d3ddd79563cae4fedddbc7f2def688e87e0e79289dc3f3ed1c49787044"
-    sha256                               arm64_monterey: "bb83341a0d7dbb34402fe1b5db947dd0956576d63628947757e9b6f987bd8129"
-    sha256                               sonoma:         "7bb2a0c88cab4f6abb1d8a0bd26633aba3d7a95b1e45948fe0611d8998a8660d"
-    sha256                               ventura:        "68528f701162bc0080864ca43dceefa2162b99b3b010f1ede809dbf4014104f5"
-    sha256                               monterey:       "70a6a0a0466e8598d5a4cbd92da4994596778cfcf8f749208bac49bd9e09760c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e5333480e2db0d82da8f2357716c22a43fa086f9550854303420ff2dd70f7db"
+    sha256                               arm64_sonoma:   "d7e429ec490918e836c7cf8c1043686c83acf1b8d68226c6282a5b004e1e0174"
+    sha256                               arm64_ventura:  "6bf299486e721e97ebc6c2373b06c81c0407bf9628639077df827542591f2df3"
+    sha256                               arm64_monterey: "9f95c9760739cf9435731209f98131d0857b2ff7158bb8cf38887341bedf90ae"
+    sha256                               sonoma:         "3f65835344ef0814b2bdf0efd4e5c3fdbdd61e8a8ed0d3b0224762a7ec48d1ce"
+    sha256                               ventura:        "749361b68d4522dfd76ec5958e8a2e14dbe7bd36c22e37c547a2996a8f39455c"
+    sha256                               monterey:       "c29da2c2ae921f79bc0a02e52488bc4c3deeb5c5b8829fc22db80814d0d5e0d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef109c49d1a711a44f04d212a9170e4f3c00c7aa646cf09e7c8479116d1b907"
   end
 
   uses_from_macos "ruby"
