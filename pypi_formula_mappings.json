@@ -586,7 +586,8 @@
     "extra_packages": ["jupyter-console", "notebook"],
     "exclude_packages": [
       "certifi", "cffi", "ipython", "jinja2", "markupsafe", "packaging",
-      "psutil", "pycparser", "pygments", "pyyaml", "six"
+      "psutil", "pycparser", "pygments", "python-dateutil", "pyyaml", "requests",
+      "six"
     ]
   },
   "keepkey-agent": {
