@@ -13,13 +13,13 @@ class PhpAT81 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "24f2af5ab40ce057543deb463b4bfad054af72093bda77015919d0da98fa9836"
-    sha256 arm64_ventura:  "700e74b43295d6a24b7c7f101305cce3315dea85c3e2efc5a7b0bd91be956c2c"
-    sha256 arm64_monterey: "1a41bc5ffe5df8d7ad461eebe96c7728713ef4c2b4dff5c268c1e55b5a218faf"
-    sha256 sonoma:         "e1190f06dcb990d435f571f0884054dffa30345154c792f5d4f35fe8e002b141"
-    sha256 ventura:        "3f93ab63c651e35186818eaaba2a5a880051d44abad7f6a418014863f83d656e"
-    sha256 monterey:       "2c39384d1e61531c418a3a3b8f47ab34088630cd803be046199f9f7af3c267a2"
-    sha256 x86_64_linux:   "df09ad9103fb521b94572aced26b611097b001ea540823048b415976e20b2433"
+    sha256 arm64_sonoma:   "5f26a51cbefb8706a6dfde279762fc623120eecf9b605911ed5d2df82a39ed3b"
+    sha256 arm64_ventura:  "6296f529ef3672cd1b41199623e44252881adf613b43e46610ee40f87c62e2d1"
+    sha256 arm64_monterey: "b2564108a20591eefcd48f1ea2c7de5f2423d78d4f6bc5ca50765b443ff7dbec"
+    sha256 sonoma:         "66f63f1525a012d3ccb3f5dd79f7b3bb8b376cfa45ace1d6ec166ee7f3d8cf57"
+    sha256 ventura:        "a35092205c6ef656fe41ae509cb37a7abb8f02fc6373ca814efeac689756b94b"
+    sha256 monterey:       "cfd486bb808dbabf8bf87d25e35691331da1493e3e2a21fd932e75bb6b156575"
+    sha256 x86_64_linux:   "d97939e8aed3d339176ad0daa94e3bcdce74b7b0660b984d29ec8867afb5f26b"
   end
 
   keg_only :versioned_formula
