@@ -1,6 +1,4 @@
 class Dunamai < Formula
-  include Language::Python::Virtualenv
-
   desc "Dynamic version generation"
   homepage "https://github.com/mtkennerly/dunamai"
   url "https://files.pythonhosted.org/packages/1d/03/338fba56a6c76ea6d99ca0b7af3098292c2dd6597ed656daa6ae26a07a77/dunamai-1.19.0.tar.gz"
@@ -18,11 +16,18 @@ class Dunamai < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c7ce7a5209524f43bd013b76f27f1bb8372e15186f4ce58a46aa7c369bc3246"
   end
 
-  depends_on "python-packaging"
+  depends_on "poetry" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
