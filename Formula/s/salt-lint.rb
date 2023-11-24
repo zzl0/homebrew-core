@@ -1,6 +1,4 @@
 class SaltLint < Formula
-  include Language::Python::Virtualenv
-
   desc "Check for best practices in SaltStack"
   homepage "https://github.com/warpnet/salt-lint"
   url "https://files.pythonhosted.org/packages/e5/e9/4df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5c/salt-lint-0.9.2.tar.gz"
@@ -19,16 +17,16 @@ class SaltLint < Formula
   end
 
   depends_on "python-setuptools" => :build
+  depends_on "python-pathspec"
   depends_on "python@3.12"
   depends_on "pyyaml"
 
-  resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/f4/8e/f91cffb32740b251cff04cad1e7cdd2c710582c735a01f56307316c148f2/pathspec-0.11.0.tar.gz"
-    sha256 "64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
