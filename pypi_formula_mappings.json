@@ -704,7 +704,10 @@
     "exclude_packages": ["certifi", "cffi", "click", "cryptography", "packaging", "pycparser", "Pygments", "PyYAML"]
   },
   "mycli": {
-    "exclude_packages": ["cffi", "click", "cryptography", "pycparser", "Pygments", "six", "tabulate"]
+    "exclude_packages": [
+      "cffi", "click", "cryptography", "pycparser", "Pygments", "six",
+      "sqlparse", "tabulate"
+    ]
   },
   "name-that-hash": {
     "exclude_packages": ["click", "Pygments"]

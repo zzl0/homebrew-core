@@ -25,6 +25,7 @@ class Mycli < Formula
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "six"
+  depends_on "sqlparse"
 
   uses_from_macos "libffi"
 
@@ -61,11 +62,6 @@ class Mycli < Formula
   resource "sqlglot" do
     url "https://files.pythonhosted.org/packages/c1/b1/c0bda67234171f4d88ee936f4a7810275fceded0ed974dac893ebc0d4bd2/sqlglot-18.14.0.tar.gz"
     sha256 "e2b2f16598830e8acd5ffbe55e19c2e45af7e27596692c3214cf4cc1be82027b"
-  end
-
-  resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
-    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
   resource "wcwidth" do
