@@ -1,6 +1,4 @@
 class Epr < Formula
-  include Language::Python::Virtualenv
-
   desc "Command-line EPUB reader"
   homepage "https://github.com/wustho/epr"
   url "https://files.pythonhosted.org/packages/39/20/d647083aa86ec9da89b4f04b62dd6942aabb77528fd2efe018ff1cd145d2/epr-reader-2.4.15.tar.gz"
@@ -19,10 +17,18 @@ class Epr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "637fd130f94aaf3e7f40a36eadc3918ff346b47a601862ce5ef1e05ceae90324"
   end
 
+  depends_on "poetry" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
