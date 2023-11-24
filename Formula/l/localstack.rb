@@ -3,8 +3,8 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/ae/8f/4bc477471b087667b24dccc29b8e51c17d1cc6ddb87b53a82114b2619e78/localstack-3.0.0.tar.gz"
-  sha256 "106ce186c149596e892894dcaf079bf00742d7ae039ef9f1f5920f86bd618468"
+  url "https://files.pythonhosted.org/packages/42/11/140488d63c1a5c6870d40f019ef6e793f2a73dcd758f3d42c48e50da038f/localstack-3.0.1.tar.gz"
+  sha256 "12afac1b9d5812c67e298c83d49cfd2536a8e9325853deb77afbe02e87a24266"
   license "Apache-2.0"
 
   bottle do
@@ -66,13 +66,13 @@ class Localstack < Formula
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/77/50/69747c9179303951f01d97a5106ae44be0c8b4dbd0ebfba93a5562b283ec/localstack-core-3.0.0.tar.gz"
-    sha256 "c4baa9d6697b534e0073741d086a5a427aeb5690ca7943a7f7f9d4606c1fe133"
+    url "https://files.pythonhosted.org/packages/6a/8a/b3c72dd633ff50faef6b8545abbecd6a0b73bd9db8da338040f658ef89e8/localstack-core-3.0.1.tar.gz"
+    sha256 "4b8596d22c895b07a644c96a2e27e9993e5272774dbf519a81d2ee070fbc6186"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/6b/d3/c71f1c9017e8dd8bfd0d6aafa21f7bbff01b8ae8fc82d8207329565b2ae6/localstack-ext-3.0.0.tar.gz"
-    sha256 "435c405daeaa69b41ccb7ea2c3ab5991387c3662958afd3bc8eff0bdbe4a7767"
+    url "https://files.pythonhosted.org/packages/8f/0d/65666f57d2ad4f7bd9f1214bf0b199d66d6cfa4cebc41b4cb6961757395d/localstack-ext-3.0.1.tar.gz"
+    sha256 "197e31685660790cd3f58a336cd97941430bc2b1faa5cfea121d573d21c90df3"
   end
 
   resource "markdown-it-py" do
@@ -101,8 +101,8 @@ class Localstack < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
-    sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
+    url "https://files.pythonhosted.org/packages/ce/dc/996e5446a94627fe8192735c20300ca51535397e31e7097a3cc80ccf78b7/pyasn1-0.5.1.tar.gz"
+    sha256 "6d391a96e59b23130a5cfa74d6fd7f388dbbe26cc8f1edf39fdddf08d9d6676c"
   end
 
   resource "python-dateutil" do
