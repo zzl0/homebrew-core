@@ -1,6 +1,4 @@
 class S3cmd < Formula
-  include Language::Python::Virtualenv
-
   desc "Command-line tool for the Amazon S3 service"
   homepage "https://s3tools.org/s3cmd"
   url "https://files.pythonhosted.org/packages/97/10/5ae9b5c69d0482dda2927c67a4db26a3e9e064964577a81be9239a419b3f/s3cmd-2.3.0.tar.gz"
@@ -19,18 +17,18 @@ class S3cmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca9fb159b3ac96273a2932c457932f7ae5d584fea8f5b118460bfdb2428c20f7"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-dateutil"
+  depends_on "python-magic"
   depends_on "python@3.12"
   depends_on "six"
 
-  resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
-    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
+  def python3
+    "python3.12"
   end
 
   def install
-    ENV["S3CMD_INSTPATH_MAN"] = man
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
