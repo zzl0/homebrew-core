@@ -6,7 +6,7 @@ class PreCommit < Formula
   url "https://files.pythonhosted.org/packages/04/b3/4ae08d21eb097162f5aad37f4585f8069a86402ed7f5362cc9ae097f9572/pre_commit-3.5.0.tar.gz"
   sha256 "5804465c675b659b0862f07907f96295d490822a450c4c40e747d0b1c6ebcb32"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
@@ -29,8 +29,8 @@ class PreCommit < Formula
   end
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/5f/19/f3aa63b65be4cdf23ba26984aa04cb21fa04fccfef68355919edafee025c/identify-2.5.30.tar.gz"
-    sha256 "f302a4256a15c849b91cfcdcec052a8ce914634b2f77ae87dad29cd749f2d88d"
+    url "https://files.pythonhosted.org/packages/82/cb/d7ca096a5bea337db7bcca03afd18c4a7fe502ba1b0c64915950c37a5d41/identify-2.5.32.tar.gz"
+    sha256 "5d9979348ec1a21c768ae07e0a652924538e8bce67313a73cb0f681cf08ba407"
   end
 
   resource "nodeenv" do
