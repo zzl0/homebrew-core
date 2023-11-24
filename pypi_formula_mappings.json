@@ -1006,7 +1006,7 @@
     "exclude_packages": ["six"]
   },
   "salt-lint": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["pathspec", "PyYAML"]
   },
   "sceptre": {
     "exclude_packages": ["certifi", "click", "packaging", "pyparsing", "six", "PyYAML"]
