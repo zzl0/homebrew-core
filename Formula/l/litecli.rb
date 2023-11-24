@@ -22,6 +22,7 @@ class Litecli < Formula
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "six"
+  depends_on "sqlparse"
 
   uses_from_macos "sqlite"
 
@@ -38,11 +39,6 @@ class Litecli < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/d9/7b/7d88d94427e1e179e0a62818e68335cf969af5ca38033c0ca02237ab6ee7/prompt_toolkit-3.0.41.tar.gz"
     sha256 "941367d97fc815548822aa26c2a269fdc4eb21e9ec05fc5d447cf09bad5d75f0"
-  end
-
-  resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
-    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
   resource "wcwidth" do
