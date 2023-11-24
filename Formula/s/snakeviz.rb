@@ -7,6 +7,16 @@ class Snakeviz < Formula
   sha256 "7bfd00be7ae147eb4a170a471578e1cd3f41f803238958b6b8efcf2c698a6aa9"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1e8c5454e204c47519daa78a0f81ee26142b3b55461ab1ac0a54a700c5ddaeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b92423ff12040f8bb58932da3e85de8ccc9f4a0d03062e38011e50fa58ba4648"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b720d5d592f63fd467d4ce86e3423ea9ce5866548de519db11f39fc768f28ab7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c8408abc7756e010d8cd9c4a4d7872b4e9a35f9c80c17ae94d5877e4dbccfdc1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e976d6136f4a25ee8f9db7bb7df42c2882381ac88500bbb77ecb3dc695218d25"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b76ec91b173fa652dcc1efbcffd14cd9c5c6dcc661c362dae45fc4f5ce4adee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16e8caa4e320d0ce6a05b0a8af600efe4a23d11b18d09e932dd94497eb5c0fef"
+  end
+
   depends_on "python@3.12"
 
   resource "tornado" do
