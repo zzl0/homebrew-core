@@ -1,8 +1,8 @@
 class Presenterm < Formula
   desc "Terminal slideshow tool"
   homepage "https://github.com/mfontanini/presenterm"
-  url "https://github.com/mfontanini/presenterm/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "3d0d80f13cbb13e8f1afc0fd4503f661835ac978ad730c8b57422b13d95657e0"
+  url "https://github.com/mfontanini/presenterm/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f239e5f2f6cbd5b16d5170e78ff773b8164e433a8260f4187faa5670dbbd521f"
   license "BSD-2-Clause"
   head "https://github.com/mfontanini/presenterm.git", branch: "master"
 
@@ -23,8 +23,8 @@ class Presenterm < Formula
   end
 
   test do
-    output = shell_output("#{bin}/presenterm non_exist.md 2>&1")
-    assert_match "Failed to run presentation", output
+    output = shell_output("#{bin}/presenterm non_exist.md 2>&1", 1)
+    assert_match "reading presentation: No such file or directory", output
 
     assert_match version.to_s, shell_output("#{bin}/presenterm --version")
   end
