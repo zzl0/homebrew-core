@@ -849,7 +849,7 @@
   "pwntools": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "mako", "markupsafe", "packaging", "psutil",
-      "pycparser", "pygments", "six"
+      "pycparser", "python-dateutil", "pygments", "requests", "six"
     ]
   },
   "px": {
