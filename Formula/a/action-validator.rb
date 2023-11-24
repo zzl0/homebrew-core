@@ -4,13 +4,13 @@ class ActionValidator < Formula
   license "GPL-3.0-only"
 
   stable do
-    url "https://github.com/mpalmer/action-validator/archive/refs/tags/v0.5.3.tar.gz"
-    sha256 "9afc0e12ca04d5373b3788a36b0f174077f7411572877da85a4c92d187751f14"
+    url "https://github.com/mpalmer/action-validator/archive/refs/tags/v0.5.4.tar.gz"
+    sha256 "faf6b7ac865f30e24d81cec6b0c7cdbf7eddf113a97d6c5aa49c7c1a9f44a793"
 
     # always pull the HEAD commit hash
     resource "schemastore" do
       url "https://github.com/SchemaStore/schemastore.git",
-          revision: "c0e78776f848b8ea866f379f159109adf4d62ad5"
+          revision: "11d1fc36e96803f85324070a018e8457167bb232"
     end
   end
 
