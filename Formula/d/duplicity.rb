@@ -26,8 +26,10 @@ class Duplicity < Formula
   depends_on "protobuf"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-dateutil"
   depends_on "python-lxml"
   depends_on "python-packaging"
+  depends_on "python-ply"
   depends_on "python-psutil"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
@@ -196,11 +198,6 @@ class Duplicity < Formula
     sha256 "015c9a1772f06a2ad496278aff4b20ad41acc660304fa8f8b854932c662bb0a5"
   end
 
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
   resource "keystoneauth1" do
     url "https://files.pythonhosted.org/packages/9b/b3/ddee6a16e07fea73295476394ab75c8294a396fc164d6547b73922ab3ee5/keystoneauth1-5.3.0.tar.gz"
     sha256 "017c2b9b599453c92940750edbb20f17687121b2890114bf9d36df14a0627117"
@@ -281,11 +278,6 @@ class Duplicity < Formula
     sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
   end
 
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
-  end
-
   resource "ptyprocess" do
     url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
@@ -319,11 +311,6 @@ class Duplicity < Formula
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/bf/a0/e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610e/pyOpenSSL-23.3.0.tar.gz"
     sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-keystoneclient" do
