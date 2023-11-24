@@ -348,7 +348,7 @@
   "dolphie": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "packaging", "pycparser", "Pygments",
-      "typing-extensions"
+      "requests", "sqlparse", "typing-extensions"
     ]
   },
   "dooit": {
