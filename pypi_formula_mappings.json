@@ -425,7 +425,9 @@
   },
   "fava": {
     "exclude_packages": [
-      "certifi", "click", "lxml", "markupsafe", "packaging", "pyparsing", "pytz", "six"
+      "certifi", "click", "lxml", "jinja2", "markupsafe", "packaging", "pluggy",
+      "ply", "pyparsing", "python-dateutil", "python-magic", "pytz", "requests",
+      "six"
     ]
   },
   "fdroidserver": {
