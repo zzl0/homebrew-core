@@ -3,7 +3,7 @@
     "exclude_packages": ["certifi", "packaging", "pygments", "six"]
   },
   "aerleon": {
-    "exclude_packages": ["pyyaml", "typing-extensions"]
+    "exclude_packages": ["absl-py", "ply", "pyyaml", "typing-extensions"]
   },
   "airshare": {
     "exclude_packages": ["certifi", "click"]

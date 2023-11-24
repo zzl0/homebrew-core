@@ -1,6 +1,4 @@
 class Aerleon < Formula
-  include Language::Python::Virtualenv
-
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/b8/e5/f4386abc5d0e7f18bba22650514c1c14dbd235c93e11ac020f6c724614da/aerleon-1.7.0.tar.gz"
@@ -19,22 +17,23 @@ class Aerleon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "167fe5857147fb234003b7d04fafc857b9be6aedf1c5f0ae2fc50bdda89c2ad6"
   end
 
+  depends_on "poetry" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python-abseil"
+  depends_on "python-ply"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
 
-  resource "absl-py" do
-    url "https://files.pythonhosted.org/packages/79/c9/45ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0/absl-py-1.4.0.tar.gz"
-    sha256 "d2c244d01048ba476e7c080bd2c6df5e141d211de80223460d5b3b8a2a58433d"
-  end
-
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
