@@ -1,8 +1,8 @@
 class Ksops < Formula
   desc "Flexible Kustomize Plugin for SOPS Encrypted Resources"
   homepage "https://github.com/viaduct-ai/kustomize-sops"
-  url "https://github.com/viaduct-ai/kustomize-sops/archive/refs/tags/v4.2.5.tar.gz"
-  sha256 "046a052d3ed0115279f890ee9bebac50aac51f70e426b59d428a6ad67505990a"
+  url "https://github.com/viaduct-ai/kustomize-sops/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "639575d41f4c3ad152fdb2a0e9533829217f4417bcd13338e2a47f204629e8ff"
   license "Apache-2.0"
 
   bottle do
