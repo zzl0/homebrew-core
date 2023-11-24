@@ -1,6 +1,4 @@
 class Borgbackup < Formula
-  include Language::Python::Virtualenv
-
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://borgbackup.org/"
   url "https://files.pythonhosted.org/packages/cd/a2/d4375923a8b858312e6f4593ac7f613d338394f3feb669f67d2a6269d2f9/borgbackup-1.2.6.tar.gz"
@@ -19,10 +17,13 @@ class Borgbackup < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "libb2"
   depends_on "lz4"
   depends_on "openssl@3"
+  depends_on "python-msgpack"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python@3.12"
   depends_on "xxhash"
   depends_on "zstd"
@@ -31,15 +32,13 @@ class Borgbackup < Formula
     depends_on "acl"
   end
 
-  resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+  def python3
+    "python3.12"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
+  # master build already support 1.0.7 without much change
+  # new release requst issue, https://github.com/borgbackup/borg/issues/7948
+  patch :DATA
 
   def install
     ENV["BORG_LIBB2_PREFIX"] = Formula["libb2"].prefix
@@ -47,7 +46,8 @@ class Borgbackup < Formula
     ENV["BORG_LIBXXHASH_PREFIX"] = Formula["xxhash"].prefix
     ENV["BORG_LIBZSTD_PREFIX"] = Formula["zstd"].prefix
     ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@3"].prefix
-    virtualenv_install_with_resources
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
 
     man1.install Dir["docs/man/*.1"]
     bash_completion.install "scripts/shell_completions/bash/borg"
@@ -69,3 +69,18 @@ class Borgbackup < Formula
     assert_equal File.size(testpath/"restore/test.pdf"), File.size(testpath/"test.pdf")
   end
 end
+
+__END__
+diff --git a/src/borg/helpers/msgpack.py b/src/borg/helpers/msgpack.py
+index 309c988..197d2de 100644
+--- a/src/borg/helpers/msgpack.py
++++ b/src/borg/helpers/msgpack.py
+@@ -182,7 +182,7 @@ def is_slow_msgpack():
+ def is_supported_msgpack():
+     # DO NOT CHANGE OR REMOVE! See also requirements and comments in setup.py.
+     import msgpack
+-    return (0, 5, 6) <= msgpack.version <= (1, 0, 5) and \
++    return (0, 5, 6) <= msgpack.version <= (1, 0, 7) and \
+            msgpack.version not in [(1, 0, 1), ]  # < add bad releases here to deny list
+ 
+ 
