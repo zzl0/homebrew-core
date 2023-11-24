@@ -1,8 +1,8 @@
 class PcscLite < Formula
   desc "Middleware to access a smart card using SCard API"
   homepage "https://pcsclite.apdu.fr/"
-  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.0.0.tar.bz2"
-  sha256 "d6c3e2b64510e5ed6fcd3323febf2cc2a8e5fda5a6588c7671f2d77f9f189356"
+  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.0.1.tar.bz2"
+  sha256 "5edcaf5d4544403bdab6ee2b5d6c02c6f97ea64eebf0825b8d0fa61ba417dada"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "ISC"]
 
   livecheck do
@@ -32,11 +32,14 @@ class PcscLite < Formula
   end
 
   def install
-    args = %W[--disable-dependency-tracking
-              --disable-silent-rules
-              --prefix=#{prefix}
-              --sysconfdir=#{etc}
-              --disable-libsystemd]
+    args = %W[
+      --disable-dependency-tracking
+      --disable-silent-rules
+      --prefix=#{prefix}
+      --sysconfdir=#{etc}
+      --disable-libsystemd
+      --disable-polkit
+    ]
 
     args << "--disable-udev" if OS.linux?
 
