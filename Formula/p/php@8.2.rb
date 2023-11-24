@@ -1,33 +1,32 @@
-class Php < Formula
+class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.3.0.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.0.tar.xz"
-  sha256 "1db84fec57125aa93638b51bb2b15103e12ac196e2f960f0d124275b2687ea54"
+  url "https://www.php.net/distributions/php-8.2.13.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.13.tar.xz"
+  sha256 "2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b"
   license "PHP-3.01"
 
   livecheck do
     url "https://www.php.net/downloads"
-    regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a6925742487d675227f73c2987d833eaee8cad0437c817f54402691a2a946ad0"
-    sha256 arm64_ventura:  "d983fd457a832a3385bc1f61dbdf2ff08d37ab41bb69949b278ad172ef15b12f"
-    sha256 arm64_monterey: "c8214d2cb1b8d41bf1d8c0431da3c8a9967d33ddc03ad1c7f2b116d37bc49feb"
-    sha256 sonoma:         "92dd989cafcd75b36284ab156109843b7cd3928556b7b8a5bf581d568f0060ff"
-    sha256 ventura:        "c44ff188ae4328c4b4db37f7d47c74002610ceaffb5a0547bf37c09b1f26d5b8"
-    sha256 monterey:       "e1d07aa947cd589a5bbaff57ea3bb184f3af2587f122210152fd9cf4202918b7"
-    sha256 x86_64_linux:   "43277a1c99764998329a65f5348caff7d7ce27dd31fd1842ffea22c0111a7c4f"
+    sha256 arm64_sonoma:   "250edbb027db8791594188561f943f82f8f52a05e211c9c9bdad7b66e584cf1b"
+    sha256 arm64_ventura:  "73d5de301d8a7c24f247d57af79094c4b12ebceb40170bc473c36030cbb6f5d0"
+    sha256 arm64_monterey: "b439fcd0cbf00494407a99502d8808d2bacb73888e6f20fa4b786b29d2e6a7d2"
+    sha256 sonoma:         "a987bb00016e50176a0f4c9d44b3cbb416ca8261a86306b09e7a151936c59ea5"
+    sha256 ventura:        "33aa128a56c8e60d2233adb02dc0331d62a921ea0a1aada89a9fd42df74b20e2"
+    sha256 monterey:       "5bf3dfeada961fbba3fe247d2111f978d8d90acc9326c0f585d8797e41551595"
+    sha256 x86_64_linux:   "3c9584a993bfaeb05329bd13a62388bf623a690feaee058557e98241cd1df960"
   end
 
-  head do
-    url "https://github.com/php/php-src.git", branch: "master"
+  keg_only :versioned_formula
 
-    depends_on "bison" => :build # bison >= 3.0.0 required to generate parsers
-    depends_on "re2c" => :build # required to generate PHP lexers
-  end
+  # Security Support Until Dec 08 2025
+  # https://www.php.net/supported-versions.php
+  deprecate! date: "2025-12-08", because: :unsupported
 
   depends_on "httpd" => [:build, :test]
   depends_on "pkg-config" => :build
@@ -68,6 +67,13 @@ class Php < Formula
     patch :DATA
   end
 
+  # Fix build failure with libxml >= 2.12
+  # To be removed when PHP 8.2.14 is released.
+  patch do
+    url "https://github.com/php/php-src/commit/8a95e616b91ac0eeedba90a61e36e652919763f2.patch?full_index=1"
+    sha256 "b71de4d0d08d5bb2308d7866d82e46444a52e107bd6937c3f2927dbd35ebde30"
+  end
+
   def install
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
@@ -79,6 +85,10 @@ class Php < Formula
               "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}/httpd/modules'"
       s.gsub! "-z `$APXS -q SYSCONFDIR`",
               "-z ''"
+
+      # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
+      s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
+              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
     end
 
     # Update error message in apache sapi to better explain the requirements
@@ -265,7 +275,7 @@ class Php < Formula
     php_ext_dir = opt_prefix/"lib/php"/php_basename
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear"
+    pear_path = HOMEBREW_PREFIX/"share/pear@#{version.major_minor}"
     cp_r pkgshare/"pear/.", pear_path
     {
       "php_ini"  => etc/"php/#{version.major_minor}/php.ini",
@@ -320,6 +330,7 @@ class Php < Formula
     EOS
   end
 
+  plist_options manual: "php-fpm"
   service do
     run [opt_sbin/"php-fpm", "--nodaemonize"]
     run_type :immediate
