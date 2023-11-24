@@ -8,13 +8,14 @@ class Pgcli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86e4def3477b49f091c9e8c15381b8c17699a9025e6c063246b3169ebc492e0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b23918cc18f198c081626dd6ad5911d53402742ca3fd3d981fbb018be40b926"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8e3e1ef0b5e3e0cbaf4909fd50175996a62342ee8731797db1024b405d6157d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb15b6e12f03fdbbbb21a5f9a635f210fcaf0b103d1490f64d284032f1d733e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd85d8fe5134674de16e513be86efaa1f44a9610d29e99bc1548c6673ca1e3d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d125e807afe293b5d71297598d41e093f556b7808df2f78955594ba809bf1d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa1dddde994f75c2f4d75a0e06ed591798bb7afa1064a573bf23922b2f0171f0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f14ed2a232cf404aa9ec3bb7c485766cfa3463c6a58a6c484a6fa1583680b4aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d1850becffb22e97b6a8a80cb94b1d38d89024265541d4d7724d25904260ea7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29ad1c8c8e5472388d76013900f054fabbc2529b7b3be27bd32e496887474f41"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f1519c869a32ea09caca4c226306e0fa24dc4f889a37a4bbd7bee06dddd58272"
+    sha256 cellar: :any_skip_relocation, ventura:        "bdb358926d258a05671a2c5a6af1f10aa55a81b786618cc6fb08ee5767e797d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb1a9b0749d6024444b3bc16302831990240c828f5d1aabb6594deb995dee0ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6afd7f4ea6ce3cd213a7cbffea865960092d633dfaa71a00a71ef810a2c533"
   end
 
   depends_on "python-setuptools" => :build # for pendulum
