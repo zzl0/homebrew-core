@@ -19,25 +19,37 @@ class Sip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1792c730d4be1cf5c126a116a4c15601fa40594b971e5aaadd93752e38e7988f"
   end
 
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "python-packaging"
+  depends_on "python-ply"
   depends_on "python-setuptools"
-  depends_on "python@3.12"
 
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .sort_by(&:version)
   end
 
   def install
-    python3 = "python3.12"
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
-    # We don't install into venv as sip-install writes the sys.executable in scripts
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    clis = %w[sip-build sip-distinfo sip-install sip-module sip-sdist sip-wheel]
 
-    site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-    (prefix/site_packages/"homebrew-sip.pth").write pth_contents
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+
+      pyversion = Language::Python.major_minor_version(python_exe)
+      clis.each do |cli|
+        bin.install bin/cli => "#{cli}-#{pyversion}"
+      end
+
+      next if python != pythons.max_by(&:version)
+
+      # The newest one is used as the default
+      clis.each do |cli|
+        bin.install_symlink "#{cli}-#{pyversion}" => cli
+      end
+    end
   end
 
   test do
@@ -79,6 +91,11 @@ class Sip < Formula
       %End
     EOS
 
-    system "#{bin}/sip-install", "--target-dir", "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      pyversion = Language::Python.major_minor_version(python_exe)
+
+      system "#{bin}/sip-install-#{pyversion}", "--target-dir", "."
+    end
   end
 end
