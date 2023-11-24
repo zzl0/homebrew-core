@@ -3,8 +3,8 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https://gnome.pages.gitlab.gnome.org/gi-docgen/"
-  url "https://files.pythonhosted.org/packages/29/72/a319bce143e5d10677bc89b66e750c1511ec005c7a8bb098b415cc68ac68/gi-docgen-2023.1.tar.gz"
-  sha256 "88adeda9cbf882569479701eada009afa5d94fa29d728653ec388c32035f7fa3"
+  url "https://files.pythonhosted.org/packages/e5/6e/9f05646d0dbfa537c9328204212e7d22942e656b9279d1d36d8efedf5dec/gi-docgen-2023.2.tar.gz"
+  sha256 "1836b6496fdc27aff345d12bac8d4b024416a23e0745c8fe0fd38884437a1fc7"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
@@ -23,6 +23,7 @@ class GiDocgen < Formula
   depends_on "python-jinja"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
+  depends_on "python-packaging"
   depends_on "python@3.12"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
