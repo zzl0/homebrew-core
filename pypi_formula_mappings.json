@@ -788,7 +788,10 @@
     "exclude_packages": ["certifi", "Pygments"]
   },
   "pgcli": {
-    "exclude_packages": ["click", "Pygments", "six", "tabulate", "typing-extensions"]
+    "exclude_packages": [
+      "click", "Pygments", "python-dateutil", "six", "sqlparse", "tabulate",
+      "typing-extensions"
+    ]
   },
   "pgxnclient": {
     "exclude_packages": ["six"]
