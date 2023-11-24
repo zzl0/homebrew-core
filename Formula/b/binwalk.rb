@@ -14,15 +14,14 @@ class Binwalk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "71ff03d196f6cb547869fd0e95e8e61a354f34d901e9353e5c334b15ca2a6104"
-    sha256 cellar: :any,                 arm64_ventura:  "4f7bf49bcdc180a94d923859aaae9bb975531e3f66c0946fa0e8560d76e9705d"
-    sha256 cellar: :any,                 arm64_monterey: "50bc5ac7368e8f0423f374afe062b6e9f36a20a6a288991b129340185a67e6c9"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5e7979beefcf75ed418a517ec05ddabccc02712790eac38f3b82c118abd3aac"
-    sha256 cellar: :any,                 sonoma:         "cb9fba219457ebe9000f42987d9a0fb5fd24502e5b53c742122945ec95bce18d"
-    sha256 cellar: :any,                 ventura:        "097c35817c67fb96ab78e91be7f316f931e356ab8b06d27d340e567d25769dc7"
-    sha256 cellar: :any,                 monterey:       "3835d5d50f13e1bbf7e960b5bd6c354ece0ba0cda79599c956b9d860e668896c"
-    sha256 cellar: :any,                 big_sur:        "db580e80796365ee95126a20ba213c360f5bd170c6cdf68d7598860979229566"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b2728143c492690a2d7193a20bbfa8dc57c1b16f0709995a29aefc9b1270379"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "aba55d1d9857149f60db5e976b54571a1e77a6bed589e286fb703700283f96d8"
+    sha256 cellar: :any,                 arm64_ventura:  "d4d418ba303811db090a5aed12d82c696c88476f69600338aaacdcbec888a321"
+    sha256 cellar: :any,                 arm64_monterey: "76c0a9c8bf1e3c480dd3bb3e3bfe20af3dc432fe65598e47df5c40a513747565"
+    sha256 cellar: :any,                 sonoma:         "80f791198442d659000941676ed6192195f20ecba6f5ffcc38dac42e40f5fc35"
+    sha256 cellar: :any,                 ventura:        "53c36bc90dbbf038f7687f142e49388b98d526dc47079b100397c40e1c65fb61"
+    sha256 cellar: :any,                 monterey:       "992e87b0d998e8092716e17fc72fd044442c1d2bef7a0158efab6bb41d0352b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "108cabc9ef40c01d49e866e7619a6b6ad6207abb11ccb3360861653d15f20a10"
   end
 
   depends_on "meson" => :build # for contourpy
