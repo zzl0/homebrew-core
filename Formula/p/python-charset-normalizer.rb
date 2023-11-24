@@ -5,6 +5,16 @@ class PythonCharsetNormalizer < Formula
   sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf56118490db56357ca3c93f9ab7cc47d67059fc6b2a8d98e8706d230f306611"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd8b0e195c0b141f072a48aadca5329215954c94acb929370bc94c9cf7836374"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b66982913189e8ad4f7e10d5516722cf76f2d8b764ce3bafdea67eb3a607b619"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f3436649fe6983ccae0e594fa6adeddc26d8ba76859cd6541263bffc326ebcb"
+    sha256 cellar: :any_skip_relocation, ventura:        "34ac7817bc31df65535561b0f4ef5a76b5b98869eb58f55adef16096163cf59d"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a9c34b3d07577b21ecc2304892df8071ea544c3f60419867b624ab531f3b92d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c94c6c9984fe7b9e2c079e855886199ba04896fc608f43949bbeda964097949"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
