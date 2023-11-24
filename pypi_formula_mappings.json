@@ -915,6 +915,9 @@
     "extra_packages": ["python-lsp-black", "pylsp-mypy", "python-lsp-ruff", "pylsp-rope"],
     "exclude_packages": ["black", "mypy", "ruff"]
   },
+  "python-requests": {
+    "exclude_packages": ["certifi", "charset-normalizer", "idna", "urllib3"]
+  },
   "python-mako": {
     "exclude_packages": ["markupsafe"]
   },
