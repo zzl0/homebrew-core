@@ -324,7 +324,7 @@
     ]
   },
   "detect-secrets": {
-    "exclude_packages": ["certifi", "PyYAML"]
+    "exclude_packages": ["requests", "PyYAML"]
   },
   "diffoscope": {
     "package_name": "diffoscope[cmdline]",
