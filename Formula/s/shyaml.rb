@@ -21,10 +21,13 @@ class Shyaml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9692d49037767d99705665957e0b26aa3a9f5619b06ed57d09a63aa4c176c510"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install
+    # Remove unneeded/broken d2to1: https://github.com/0k/shyaml/pull/67
+    inreplace "setup.py", "setup_requires=['d2to1'],", "#setup_requires=['d2to1'],"
+    inreplace "setup.cfg", "[entry_points]", "[options.entry_points]"
     virtualenv_install_with_resources
   end
 
