@@ -461,7 +461,7 @@
     "exclude_packages": ["requests", "click"]
   },
   "gallery-dl": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["requests"]
   },
   "gcalcli": {
     "exclude_packages": ["certifi", "pyparsing", "six"]
