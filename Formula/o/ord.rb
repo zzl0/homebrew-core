@@ -1,8 +1,8 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https://ordinals.com/"
-  url "https://github.com/ordinals/ord/archive/refs/tags/0.11.1.tar.gz"
-  sha256 "a84d4a30d51595603d39db6d88ee5b764cc0459ee238716af1c5585a75037fb0"
+  url "https://github.com/ordinals/ord/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "6c531fcb106e13ad8ee9b39d17a99183b9ec678129ba79c3fdef7f2f9afcdaba"
   license "CC0-1.0"
   head "https://github.com/ordinals/ord.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Ord < Formula
 
   test do
     expected = "error: failed to connect to Bitcoin Core RPC at 127.0.0.1:8332/wallet/ord"
-    assert_match expected, shell_output("#{bin}/ord info 2>&1", 1)
+    assert_match expected, shell_output("#{bin}/ord index info 2>&1", 1)
 
     expected = "error: failed to spawn `bitcoind`"
     assert_match expected, shell_output("#{bin}/ord preview 2>&1", 1)
