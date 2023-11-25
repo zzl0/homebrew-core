@@ -102,8 +102,9 @@
   },
   "aws-sam-cli" : {
     "exclude_packages": [
-      "certifi", "cffi", "cryptography", "pycparser", "pytz", "Pygments",
-      "PyYAML", "six", "typing-extensions", "packaging"
+      "cffi", "cfn-lint", "cookiecutter", "cryptography", "networkx",
+      "packaging", "pycparser", "pygments", "pytz", "pyyaml", "requests", "six",
+      "sympy", "typing-extensions"
     ]
   },
   "aws-shell" : {
