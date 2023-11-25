@@ -1304,6 +1304,6 @@
     "exclude_packages": ["brotli", "certifi", "mutagen"]
   },
   "zabbix-cli": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["requests"]
   }
 }
