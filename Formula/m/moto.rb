@@ -8,13 +8,13 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39b38995cd17655553fff0e11e083fd3877901e09d0a8ce7b0fd51fd68ed91a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae3362b73e842b28d65ffeaf5405227a7da141a4deecafbbc0917d6604fa0b33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cf9707bca646f3757aacc34a348709a9c5dd312a55ca7045053dafc8bf72d89"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b71e31844fab5a85b5a77293ee1d53bc148cea5e184aa849bea161acdfdcfe60"
-    sha256 cellar: :any_skip_relocation, ventura:        "087e87731d4dbe272ce6fb6e32498a4409973444bd5c5c3984bae48485c2e526"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3a045015eea70b6a5ea184c5a2f32a02f718f0672d1223c0e07f41c854b6bde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b559217fc836a60c581ad62613dfc0eb958943b81933f2ce5165a2b2e381c05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96a886b856a6e471380798c23361b49b615425d61d49d026e22f20636bf21810"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9e87f2ed6d5fcee16de43969d412d63185f95beadbaf3a2dc403012117c949d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f85c6dc22c3e059f77eaa1cf64ec6eca5c00d4557f38c21ae88c54b3bdc7c40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "24e3cb6533f80bde122834ca5189a30780a3f6a17336141cef537a20a4d98821"
+    sha256 cellar: :any_skip_relocation, ventura:        "06c8d16ff155b4fb9e17a78179345bfe238076e2f1270a302f6093ffe9b3e0ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "c82e66cd6680dbe62e7bc0db28f05f53579a399063aa03ea0bf3ca0ab573a677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d69456ff1f080ccc93860104c5c88cf35fa52f2c51eed9ff168ea798a93673b1"
   end
 
   depends_on "cffi"
