@@ -1,8 +1,8 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.2.tar.gz"
-  sha256 "9c96ce84129e6a4c15da8b907e4576c945732e666fcc52cf94ff402b9dd10c2c"
+  url "https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.3.tar.gz"
+  sha256 "70937335be7c8b0be3dcf4ae2b0371e5dbe6cf340bf4ccb341be3d10fc039c36"
   license "Apache-2.0"
 
   bottle do
@@ -25,8 +25,19 @@ class Scrcpy < Formula
   fails_with gcc: "5"
 
   resource "prebuilt-server" do
-    url "https://github.com/Genymobile/scrcpy/releases/download/v2.2/scrcpy-server-v2.2"
-    sha256 "c85c4aa84305efb69115cd497a120ebdd10258993b4cf123a8245b3d99d49874"
+    url "https://github.com/Genymobile/scrcpy/releases/download/v2.3/scrcpy-server-v2.3"
+    sha256 "8daed514d7796fca6987dc973e201bd15ba51d0f7258973dec92d9ded00dbd5f"
+  end
+
+  # Fix compilation error:
+  #   ../app/src/cli.c:2158:17: error: expected expression
+  #                   enum sc_orientation orientation;
+  #                   ^
+  #
+  # Patch accepted upstream, remove on next release
+  patch do
+    url "https://github.com/Genymobile/scrcpy/commit/4135c411af419f4f86dc9ec9301c88012d616c49.patch?full_index=1"
+    sha256 "634d3f936d72848e90579a327c6f61d065f42baf96798113d74fe73fc46000a7"
   end
 
   def install
