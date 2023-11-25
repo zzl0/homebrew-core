@@ -1,6 +1,4 @@
 class Diceware < Formula
-  include Language::Python::Virtualenv
-
   desc "Passphrases to remember"
   homepage "https://github.com/ulif/diceware"
   url "https://files.pythonhosted.org/packages/2f/7b/2ebe60ee2360170d93f1c3f1e4429353c8445992fc2bc501e98013697c71/diceware-0.10.tar.gz"
@@ -21,8 +19,12 @@ class Diceware < Formula
   depends_on "python-setuptools" # remove for v0.11+
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
     man1.install "diceware.1"
   end
 
