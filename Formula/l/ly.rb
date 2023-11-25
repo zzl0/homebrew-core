@@ -1,6 +1,4 @@
 class Ly < Formula
-  include Language::Python::Virtualenv
-
   desc "Parse, manipulate or create documents in LilyPond format"
   homepage "https://github.com/frescobaldi/python-ly"
   url "https://files.pythonhosted.org/packages/9b/ed/e277509bb9f9376efe391f2f5a27da9840366d12a62bef30f44e5a24e0d9/python-ly-0.9.7.tar.gz"
@@ -19,20 +17,15 @@ class Ly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b168c0e6b81049af49c920e12792b989f0b1e91584f2df3725e7023d38ee3ca"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   def python3
-    deps.map(&:to_formula)
-        .find { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .opt_libexec/"bin/python"
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
-
-    site_packages = prefix/Language::Python.site_packages(python3)
-    python_version = Language::Python.major_minor_version(python3)
-    site_packages.install_symlink libexec/"lib/python#{python_version}/site-packages/ly"
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
