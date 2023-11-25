@@ -550,6 +550,9 @@
   "img2pdf": {
     "exclude_packages": ["lxml", "packaging", "pillow"]
   },
+  "instaloader": {
+    "exclude_packages": ["requests"]
+  },
   "instalooter": {
     "exclude_packages": ["certifi", "six"]
   },
