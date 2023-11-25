@@ -1,9 +1,8 @@
 class Vermin < Formula
   desc "Concurrently detect the minimum Python versions needed to run code"
   homepage "https://github.com/netromdk/vermin"
-  # pypi sdist issue, https://github.com/netromdk/vermin/issues/243
-  url "https://github.com/netromdk/vermin/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "e4b6ca6f3e71b0d83a179dc4a4ba50682f60474cf8c948ba9f82e330f219ff4a"
+  url "https://files.pythonhosted.org/packages/3d/26/7b871396c33006c445c25ef7da605ecbd6cef830d577b496d2b73a554f9d/vermin-1.6.0.tar.gz"
+  sha256 "6266ca02f55d1c2aa189a610017c132eb2d1934f09e72a955b1eb3820ee6d4ef"
   license "MIT"
   head "https://github.com/netromdk/vermin.git", branch: "master"
 
