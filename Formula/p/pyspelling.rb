@@ -22,7 +22,7 @@ class Pyspelling < Formula
   depends_on "aspell" => :test
   depends_on "python-lxml"
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
