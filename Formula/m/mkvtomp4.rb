@@ -1,6 +1,4 @@
 class Mkvtomp4 < Formula
-  include Language::Python::Virtualenv
-
   desc "Convert mkv files to mp4"
   homepage "https://github.com/gavinbeatty/mkvtomp4/"
   url "https://files.pythonhosted.org/packages/89/27/7367092f0d5530207e049afc76b167998dca2478a5c004018cf07e8a5653/mkvtomp4-2.0.tar.gz"
@@ -20,15 +18,19 @@ class Mkvtomp4 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "26c9985853df8ccc0ee242454c6bec5e82d4334262b05f7ec00c153e0a844e6e"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "ffmpeg"
   depends_on "gpac"
   depends_on "mkvtoolnix"
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
-    bin.install_symlink bin/"mkvtomp4.py" => "mkvtomp4"
-    prefix.install libexec/"share"
+    system python3, "-m", "pip", "install", *std_pip_args, "."
+    bin.install_symlink "mkvtomp4.py" => "mkvtomp4"
   end
 
   test do
