@@ -7,13 +7,14 @@ class Scipy < Formula
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "14ca1141efff56a2a0cf908d962a3b6598183109850cd058752551084e1871c7"
-    sha256 cellar: :any,                 arm64_ventura:  "7450fdcc89db83945b2474b3712dd3281be211c27d39ef44315d61db248eb9f3"
-    sha256 cellar: :any,                 arm64_monterey: "6488fdf4ab00ff55fabbc70f6deb2dfd41fd5946d6fa33be7a646cad5014375e"
-    sha256 cellar: :any,                 sonoma:         "c17511eb6f15a5e081c0fdc02536770db4f9863b95d8b3f36c8ba4c88d1544f6"
-    sha256 cellar: :any,                 ventura:        "0ea4f911e75230b063febacc732ef65c9f136be208df055770093df693f78bb5"
-    sha256 cellar: :any,                 monterey:       "7dc8355c6a8dec426c6a1a17f9d171023457af671b6192085bcfca96eaec90bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c74212b12edfde9e6b1d18db99e3291704bdc6f958f1dd10448029695c98b81"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4896cd0a9ce676799572f79955f8130730396d4ce7ee1906de29887bca2a926a"
+    sha256 cellar: :any,                 arm64_ventura:  "0fbb27be6c587b2a93012f2481e9455fc9e948280de18bc409ee34dfe789ea5f"
+    sha256 cellar: :any,                 arm64_monterey: "021dbd48d31691391dc450800ce5360dedc6ba2649b8f914b464d9a61126cea1"
+    sha256 cellar: :any,                 sonoma:         "ea5ae340909ee300580379041849d1b2eeb0a00122fc124e9ac450ee15a05b73"
+    sha256 cellar: :any,                 ventura:        "766729c0e24d756f4437ac87148effb330a6e19a528301cf3b1647983ffd6020"
+    sha256 cellar: :any,                 monterey:       "923731834f661a57771abf52652a8ea8d38b36228ac04cc18d35d8617888431d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b16b58aad7cb25d2ef852d7e940bd28a2e01a1f1f9abcfdb98d53d32ab0855ee"
   end
 
   depends_on "libcython" => :build
