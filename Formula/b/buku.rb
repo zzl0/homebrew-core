@@ -10,16 +10,14 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d87b5c6e95693fdaf45cfe5dc1071a4eac085f38feb80bb8f1a08b144b195e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59823a4c46029edc65736d6b1b5d73e87377a85bd1a7d1f06cf7aef84b151bf6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7eb2bf1d00f67dabc0f395ecbe9aa7fda008cd9ae99425c3ba44f706c87b74dc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b513b0b2384c72872abd8308152ee8d8675a4eef675613ef2e1cadc2a253bea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "81cc4e360141f5c2a87b95eb13c82cf57ec2b4b8910ae66136e636e9cff4a522"
-    sha256 cellar: :any_skip_relocation, ventura:        "551f3ff697855fab3347c36b11c709ca898067b732abf019815b8e69ad2ad3eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "a20e62b0fcf52e48adbe933f9a04924d032208d3602251e604398337c299bda3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45dfbc86ceefe3c1b24feda345362dc219dc7a013d032072b35c3d380d190f1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a377d56a1028b226c03aa4ae21bf57aee9bba605a9ab8f866585367e1b9cb01"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "037f17e7dcc7dded30a95fa369818c1e36989caba338f992ae4177f012b32ff0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8501d6283d2411da8daced39212530523096284bf7b76df6af8b394ae6756bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68dbbad055d9c60edbbe6da48925e794a84704ac5d126a3434aa1d469bc5ab5e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "571d030e2dfc682d8d6b3baf8d6e17b5678fce3ffb738cf5a340ca990ad82456"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f1fb3f88246ed3365cd1d11501dd377e903559f3c2c20de25c25cb164701799"
+    sha256 cellar: :any_skip_relocation, monterey:       "7b88ae604d9346cbf223d8fe9bc97aabf80d32ac4ef4b489d55b1f6f16713e78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f6951e795286f784f70eabee16ba12742c71c24dddeec2189c3b64c046aacf1"
   end
 
   depends_on "cffi"
