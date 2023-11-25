@@ -287,7 +287,10 @@
     ]
   },
   "cookiecutter": {
-    "exclude_packages": ["certifi", "click", "markupsafe", "Pygments", "PyYAML", "six"]
+    "exclude_packages": [
+      "click", "jinja2", "markupsafe", "pygments", "python-dateutil",
+      "pyyaml", "requests", "six"
+    ]
   },
   "copier": {
     "exclude_packages": ["markupsafe", "packaging", "Pygments", "PyYAML", "typing-extensions"]
