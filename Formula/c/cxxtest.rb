@@ -1,6 +1,4 @@
 class Cxxtest < Formula
-  include Language::Python::Virtualenv
-
   desc "C++ unit testing framework similar to JUnit, CppUnit and xUnit"
   homepage "https://github.com/CxxTest/cxxtest"
   url "https://github.com/CxxTest/cxxtest/releases/download/4.4/cxxtest-4.4.tar.gz"
@@ -20,11 +18,15 @@ class Cxxtest < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "42c3d117a42f8ef77c5ec762a392cbf36f068ed2416ee6812d978dc4c9426742"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install_and_link buildpath/"python"
+    system python3, "-m", "pip", "install", *std_pip_args, "./python"
 
     include.install "cxxtest"
     doc.install Dir["doc/*"]
