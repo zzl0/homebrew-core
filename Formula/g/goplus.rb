@@ -7,13 +7,13 @@ class Goplus < Formula
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "be96008aefd5652b2af9731b01784520be7ea6996c6f8eb81ea054ff16a0fd1e"
-    sha256 arm64_ventura:  "7fef21f86e822f62c7ef7a56cdb565343b4a19ad68a92875bc9f14cc1d641612"
-    sha256 arm64_monterey: "c6da5d3c35013c0acbd32fedbbb9919dfeed9038783fb05358856460bf0c361d"
-    sha256 sonoma:         "d7f9b13cecd1c111b56ee5b194cd3d63938359886d04a77f923be5e17eca111e"
-    sha256 ventura:        "b958aa4008d50350c0e82333fed8c0d54ae2a2334bd5704f9e491ffed0085d5e"
-    sha256 monterey:       "d3909f0e7ed2d9f3d9901bb4d8198b3c0fcf3929dfaa51b146a0fd8d96a98ffa"
-    sha256 x86_64_linux:   "3c94e6d60fd2ae56b252f4a3a028a2152d624d74f40e9d7116966eb43a20c80e"
+    sha256 arm64_sonoma:   "151d447ca74f63ae2deb6f8e0261ff739466a25388e660b3a25376f0ccd11df3"
+    sha256 arm64_ventura:  "dca84478384f39201c8f12249f671478d95123a83fa46531ba16252c29b74ca6"
+    sha256 arm64_monterey: "1f0e7efb044d70343f1e6d6502afbc3ee25a1a18df90f2e8552dc58ce29ae843"
+    sha256 sonoma:         "ac06e358097d29e432e0b54b6b076de3cef0152478462ad4a0a787ef079a392c"
+    sha256 ventura:        "7986807ffc96fceaf0956c314cf2865d22e2060420922f82b6d207cb5d48bb60"
+    sha256 monterey:       "f85e5a323600843800952cbe50b605c7be57afb0b49d47b87b1bdfe4319cf169"
+    sha256 x86_64_linux:   "98ac7d095b0f30875ad1e0bdc3bcf496b7a9024c0dc5b6be83c6a00e36be9fa2"
   end
 
   depends_on "go"
