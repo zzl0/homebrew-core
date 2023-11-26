@@ -11,13 +11,8 @@ class JenkinsLts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f60121d461f83dc382519826339ffdd83489f424fadb870036cfaf597f515d2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f36da64e359c01b7ae981379b329e88a8fdda649ecd183545d39f9cff5e739c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "39a52095275693fdebea5ea2cfbd1a9855e8ef8961f8c77986e817ed46c69fa0"
   end
 
   depends_on "openjdk"
