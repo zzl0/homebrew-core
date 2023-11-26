@@ -530,7 +530,10 @@
     ]
   },
   "homeassistant-cli": {
-    "exclude_packages": ["certifi", "click", "markupsafe", "pytz", "six", "tabulate"]
+    "exclude_packages": [
+      "attrs", "click", "jinja2", "markupsafe", "ply", "pytz", "requests",
+      "six", "tabulate"
+    ]
   },
   "howdoi": {
     "exclude_packages": [
