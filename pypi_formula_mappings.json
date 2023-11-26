@@ -939,6 +939,9 @@
     "extra_packages": ["python-lsp-black", "pylsp-mypy", "python-lsp-ruff", "pylsp-rope"],
     "exclude_packages": ["black", "mypy", "ruff"]
   },
+  "python-prompt-toolkit": {
+    "exclude_packages": ["wcwidth"]
+  },
   "python-requests": {
     "exclude_packages": ["certifi", "charset-normalizer", "idna", "urllib3"]
   },
