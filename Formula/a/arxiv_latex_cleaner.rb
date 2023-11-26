@@ -1,6 +1,4 @@
 class ArxivLatexCleaner < Formula
-  include Language::Python::Virtualenv
-
   desc "Clean LaTeX code to submit to arXiv"
   homepage "https://github.com/google-research/arxiv-latex-cleaner"
   url "https://files.pythonhosted.org/packages/ba/75/626014f47d51aad0e6ef39a051ba7fe24a4e4f8b0bf23750909615d62864/arxiv_latex_cleaner-1.0.1.tar.gz"
@@ -19,23 +17,20 @@ class ArxivLatexCleaner < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed1b43f5f808505364aa9fd8a23d7330ed44ce8756c27180d446f980d7c74d9a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pillow"
+  depends_on "python-abseil"
+  depends_on "python-regex"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
-  resource "absl-py" do
-    url "https://files.pythonhosted.org/packages/79/c9/45ecff8055b0ce2ad2bfbf1f438b5b8605873704d50610eda05771b865a0/absl-py-1.4.0.tar.gz"
-    sha256 "d2c244d01048ba476e7c080bd2c6df5e141d211de80223460d5b3b8a2a58433d"
-  end
-
-  resource "regex" do
-    url "https://files.pythonhosted.org/packages/18/df/401fd39ffd50062ff1e0344f95f8e2c141de4fd1eca1677d2f29609e5389/regex-2023.6.3.tar.gz"
-    sha256 "72d1a25bf36d2050ceb35b517afe13864865268dfb45910e2e17a84be6cbfeb0"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
