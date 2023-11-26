@@ -8,7 +8,7 @@ class SqlTranslator < Formula
   url "https://cpan.metacpan.org/authors/id/I/IL/ILMARI/SQL-Translator-1.62.tar.gz"
   sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46990d0cac7b485a2db7fbe52061d62cc39a7cbe23a1cb0cc88bb1240ca67134"
