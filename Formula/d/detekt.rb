@@ -11,13 +11,7 @@ class Detekt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, ventura:        "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fbd39855c01cea206ab8ae3c0e4ec540705ad88c8c53049c83e823fe4ac4603"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "247ca743cee104509459e3525f01b9ce6d40c5a279cd2044aba532efae4beb44"
+    sha256 cellar: :any_skip_relocation, all: "0b69f5498220bb83e144a830bd9745584409306e0fff15d16e4bf7c1609be565"
   end
 
   depends_on "openjdk@17"
