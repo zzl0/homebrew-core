@@ -494,7 +494,7 @@
     "exclude_packages": ["six"]
   },
   "git-review": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["requests"]
   },
   "gitless": {
     "exclude_packages": ["pygit2"]
