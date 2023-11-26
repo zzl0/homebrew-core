@@ -3,8 +3,8 @@ class Khard < Formula
 
   desc "Console carddav client"
   homepage "https://github.com/scheibler/khard/"
-  url "https://files.pythonhosted.org/packages/2a/7f/495c11f3d5d9ddb1f1b8edd9731bb53f2afd226f6c430630b433a3680609/khard-0.19.0.tar.gz"
-  sha256 "e648be69d7f3ee6d3e15bc42f7e2171cb9fca1e2ca2e4012b94d799720c04ca4"
+  url "https://files.pythonhosted.org/packages/0d/00/215a69d2ae96cac511a6594116958bf13e210dd24f78c48f5ffaf039edec/khard-0.19.1.tar.gz"
+  sha256 "59f30a0da3c3da3eb04f4dbe18ee4763913b685d99ec8418fd574a88c491c490"
   license "GPL-3.0-only"
 
   bottle do
