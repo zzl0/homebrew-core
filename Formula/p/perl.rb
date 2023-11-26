@@ -5,8 +5,8 @@ class Perl < Formula
   head "https://github.com/perl/perl5.git", branch: "blead"
 
   stable do
-    url "https://www.cpan.org/src/5.0/perl-5.38.0.tar.xz"
-    sha256 "eca551caec3bc549a4e590c0015003790bdd1a604ffe19cc78ee631d51f7072e"
+    url "https://www.cpan.org/src/5.0/perl-5.38.1.tar.xz"
+    sha256 "6a82c7930563086e78cb84d9c265e6b212ee65d509d19eedcd23ab8c1ba3f046"
   end
 
   livecheck do
