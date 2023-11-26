@@ -506,7 +506,7 @@
     "exclude_packages": ["packaging", "psutil"]
   },
   "goolabs": {
-    "exclude_packages": ["certifi", "click", "six"]
+    "exclude_packages": ["click", "requests", "six"]
   },
   "gptline": {
     "exclude_packages": ["certifi", "click", "lxml", "pygments", "pyyaml", "six"]
