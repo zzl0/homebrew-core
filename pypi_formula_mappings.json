@@ -213,7 +213,8 @@
   },
   "cfn-lint": {
     "exclude_packages": [
-      "networkx", "python-dateutil", "pyyaml", "six", "sympy", "typing-extensions"
+      "attrs", "networkx", "pbr", "python-dateutil", "pyyaml", "six", "sympy",
+      "typing-extensions", "urllib3"
     ]
   },
   "cfripper": {
