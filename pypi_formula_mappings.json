@@ -1109,8 +1109,9 @@
   },
   "snapcraft": {
     "exclude_packages": [
-      "cffi", "certifi", "docutils", "lxml", "packaging", "pytz", "pyyaml",
-      "six", "tabulate", "typing-extensions"
+      "attrs", "cffi", "click", "docutils", "lxml", "packaging",
+      "python-dateutil", "pytz", "pyyaml", "psutil", "pyparsing", "requests",
+      "six", "tabulate", "toml", "typing-extensions"
     ],
     "extra_packages": ["catkin_pkg", "pydantic-yaml[yaml]<1", "setuptools<60"]
   },
