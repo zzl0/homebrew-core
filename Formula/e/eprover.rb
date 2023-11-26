@@ -1,8 +1,8 @@
 class Eprover < Formula
   desc "Theorem prover for full first-order logic with equality"
   homepage "https://eprover.org/"
-  url "https://wwwlehre.dhbw-stuttgart.de/~sschulz/WORK/E_DOWNLOAD/V_3.0/E.tgz"
-  sha256 "8a7b229eb8aa4ef1dfd14951f51d6229fb19c431bf56c31b46ea361402fccdf9"
+  url "https://wwwlehre.dhbw-stuttgart.de/~sschulz/WORK/E_DOWNLOAD/V_3.0.03/E.tgz"
+  sha256 "712e7351ed8df4a77dbb36cda5e06dbcb6e050dd1cdcdded19c61cccadcab1d4"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
