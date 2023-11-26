@@ -939,6 +939,9 @@
   "python-requests": {
     "exclude_packages": ["certifi", "charset-normalizer", "idna", "urllib3"]
   },
+  "python-requests-oauthlib": {
+    "exclude_packages": ["oauthlib", "requests"]
+  },
   "python-mako": {
     "exclude_packages": ["markupsafe"]
   },
