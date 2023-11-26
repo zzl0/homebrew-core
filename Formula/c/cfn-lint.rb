@@ -19,10 +19,13 @@ class CfnLint < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "python-attrs"
   depends_on "python-dateutil"
   depends_on "python-networkx"
+  depends_on "python-pbr"
   depends_on "python-sympy"
   depends_on "python-typing-extensions"
+  depends_on "python-urllib3"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -30,11 +33,6 @@ class CfnLint < Formula
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
     sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
-  end
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "aws-sam-translator" do
@@ -92,11 +90,6 @@ class CfnLint < Formula
     sha256 "de16a051990d4e25a3982b2dd9e89d671067548718866416faec14d9de56db9f"
   end
 
-  resource "pbr" do
-    url "https://files.pythonhosted.org/packages/8d/c2/ee43b3b11bf2b40e56536183fc9f22afbb04e882720332b6276ee2454c24/pbr-6.0.0.tar.gz"
-    sha256 "d1377122a5a00e2f940ee482999518efe16d745d423a670c27773dfbc3c9a7d9"
-  end
-
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/0b/6c/cebf0e87ee0f2496584e04079592f33610f1f9aaf3684cb3105f03969e2b/pydantic-2.5.1.tar.gz"
     sha256 "0b8be5413c06aadfbe56f6dc1d45c9ed25fd43264414c571135c97dd77c2bedb"
@@ -130,11 +123,6 @@ class CfnLint < Formula
   resource "sarif-om" do
     url "https://files.pythonhosted.org/packages/ba/de/bbdd93fe456d4011500784657c5e4a31e3f4fcbb276255d4db1213aed78c/sarif_om-1.0.4.tar.gz"
     sha256 "cd5f416b3083e00d402a92e449a7ff67af46f11241073eea0461802a3b5aef98"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
