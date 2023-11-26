@@ -1,10 +1,9 @@
 class LuckyCommit < Formula
   desc "Customize your git commit hashes!"
   homepage "https://github.com/not-an-aardvark/lucky-commit"
-  url "https://github.com/not-an-aardvark/lucky-commit/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "3b35472c90d36f8276bddab3e75713e4dcd99c2a7abc3e412a9acd52e0fbcf81"
+  url "https://github.com/not-an-aardvark/lucky-commit/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "80d056c55cda794ce20b4f257bc77bd82aacf15962b7855d187098068a5be02c"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c56571170906e43a64028e57c3d74309068be8ddc139a8ec41a099fffef7c31a"
