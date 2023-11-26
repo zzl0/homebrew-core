@@ -4,7 +4,7 @@ class ExtractUrl < Formula
   url "https://github.com/m3m0ryh0l3/extracturl/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "5f0b568d5c9449f477527b4077d8269f1f5e6d6531dfa5eb6ca72dbacab6f336"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9065d9387cd8772f973fe3a07f3ace04cfee3d645ce9ed53b79a9bbc29abfc7a"
