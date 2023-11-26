@@ -1194,7 +1194,10 @@
     "exclude_packages": ["packaging"]
   },
   "trafilatura": {
-    "exclude_packages": ["certifi", "lxml", "pytz", "six"]
+    "exclude_packages": [
+      "certifi", "charset-normalizer", "lxml", "python-dateutil", "pytz",
+      "six", "urllib3"
+    ]
   },
   "trailscraper": {
     "exclude_packages": ["click", "python-dateutil", "pytz", "six"]
