@@ -403,7 +403,8 @@
   },
   "dxpy": {
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "cryptography", "psutil", "pycparser", "six"
+      "argcomplete", "cffi", "cryptography", "psutil", "pycparser",
+      "python-dateutil", "requests", "six", "websocket-client"
     ]
   },
   "enex2notion": {
