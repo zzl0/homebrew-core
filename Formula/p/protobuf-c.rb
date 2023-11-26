@@ -1,10 +1,9 @@
 class ProtobufC < Formula
   desc "Protocol buffers library"
   homepage "https://github.com/protobuf-c/protobuf-c"
-  url "https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.1/protobuf-c-1.4.1.tar.gz"
-  sha256 "4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f"
+  url "https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.0/protobuf-c-1.5.0.tar.gz"
+  sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
-  revision 10
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "899d76fd1efae4b2404a802994d3ff4d5ff74328ad84aa27602e113f0e84baa0"
@@ -24,39 +23,15 @@ class ProtobufC < Formula
     depends_on "libtool" => :build
   end
 
-  # TODO: `autoconf`, `automake`, and `libtool` are needed for the patches.
-  #       Remove when they are no longer needed.
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf"
-
-  # The next three patches are for compatibility with the newest protobuf.
-  # https://github.com/protobuf-c/protobuf-c/pull/556
-  # TODO: Uncomment `if build.head?` in `#install` when these are no longer needed.
-  patch do
-    url "https://github.com/protobuf-c/protobuf-c/commit/66a0b0d205224f63f19dd8f96abf9dcdc2112331.patch?full_index=1"
-    sha256 "a3561ad37f33048c59a1ceece246a515b62cef91126e4041056d10ea26a19230"
-  end
-
-  patch do
-    url "https://github.com/protobuf-c/protobuf-c/commit/7706c95d4835e75f182ab56d9dad5c8cd8517e0a.patch?full_index=1"
-    sha256 "86364b4da6e077bd9f89a82d6e2ac965776ee1a544e43d1964c2e800424cdb6e"
-  end
-
-  patch do
-    url "https://github.com/protobuf-c/protobuf-c/commit/66574f3fd85a205eb7c90b790477d5415364209e.patch?full_index=1"
-    sha256 "2d1d6edbd615dff4f0a9c4a974d325effefc44466e1855f8c0b88e5977962a9d"
-  end
 
   def install
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
 
-    # TODO: Uncomment `if build.head?` when the patches are no longer needed.
-    system "autoreconf", "--force", "--install", "--verbose" # if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
