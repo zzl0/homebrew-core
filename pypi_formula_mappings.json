@@ -924,6 +924,9 @@
   "python@3.12": {
     "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
   },
+  "python-botocore": {
+    "exclude_packages": ["jmespath", "python-dateutil", "six", "urllib3"]
+  },
   "python-build": {
     "exclude_packages": ["packaging", "pyproject-hooks"]
   },
