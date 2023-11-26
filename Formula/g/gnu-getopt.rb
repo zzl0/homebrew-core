@@ -38,6 +38,7 @@ class GnuGetopt < Formula
     bin.install "getopt"
     man1.install "misc-utils/getopt.1"
     bash_completion.install "bash-completion/getopt"
+    doc.install "misc-utils/getopt-example.bash", "misc-utils/getopt-example.tcsh"
   end
 
   test do
