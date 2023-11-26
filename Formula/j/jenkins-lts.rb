@@ -20,13 +20,13 @@ class JenkinsLts < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f36da64e359c01b7ae981379b329e88a8fdda649ecd183545d39f9cff5e739c"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
-    system "#{Formula["openjdk@17"].opt_bin}/jar", "xvf", "jenkins.war"
+    system "#{Formula["openjdk"].opt_bin}/jar", "xvf", "jenkins.war"
     libexec.install "jenkins.war", "WEB-INF/lib/cli-#{version}.jar"
-    bin.write_jar_script libexec/"jenkins.war", "jenkins-lts", java_version: "17"
-    bin.write_jar_script libexec/"cli-#{version}.jar", "jenkins-lts-cli", java_version: "17"
+    bin.write_jar_script libexec/"jenkins.war", "jenkins-lts"
+    bin.write_jar_script libexec/"cli-#{version}.jar", "jenkins-lts-cli"
   end
 
   def caveats
@@ -36,7 +36,7 @@ class JenkinsLts < Formula
   end
 
   service do
-    run [Formula["openjdk@17"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"jenkins.war",
+    run [Formula["openjdk"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"jenkins.war",
          "--httpListenAddress=127.0.0.1", "--httpPort=8080"]
   end
 
