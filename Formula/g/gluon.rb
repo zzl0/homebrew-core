@@ -14,14 +14,13 @@ class Gluon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "772237093841dd3c01a7370dff7f9a36a22db5661b5838129b5e64836838ed46"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "856724c80aca4147aa43da1f46c03113ff95364e38e6dd9d1eb60bb393630f0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d97b9493f40381d9df5020efc6b36b99854a7f30df2d032f2c230705acf09dff"
-    sha256 cellar: :any_skip_relocation, ventura:        "9dde5bfb5376eb312a217d4c847c7b7640713aa2d9d8737202b75988eb6edb97"
-    sha256 cellar: :any_skip_relocation, monterey:       "68a5decef287473baeeb071ce82c2662a3076a6acca56d1026e02e9a4ddb6cf1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a9db415b52c1f8113f7c3a46478282dd627a8c9035772b8455968888c96a8b7f"
-    sha256 cellar: :any_skip_relocation, catalina:       "873f425fb7417041c09b67efe496f1bb99b7631f2a24c2e9115875f4efe7e273"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f2c8e631a2a1c180688996cde7d4e87dcd8f257c74a0bf5ac61798ffe48530"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4f5001264f56d18739d145b9e9423a5e3bfd2e31cbed0649f082516e4f5687d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4393342b66ede5869953b964c303cba89caace2051937c99c114d9c21d980ead"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aefe7045d9ef7fa7830a90e2e794c0f68926bae742f402764d442cd360ddaae5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27627946ae35b4b9e35631903c1cbcb9bcd857375f2d035e3dfa400ab9f77ee9"
+    sha256 cellar: :any_skip_relocation, ventura:        "03b4837e4adabb86f4e12acf9310b7888560c97608473b27c230fcd57f1ed88f"
+    sha256 cellar: :any_skip_relocation, monterey:       "64fb0c4cda091c3e4ef737ba21f06c9e43bcac513af09f6057b077f11c86e793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba2ee59f07103937ec724410329016ff048f6da389b45b78fca28a63f11c18d1"
   end
 
   depends_on "rust" => :build
