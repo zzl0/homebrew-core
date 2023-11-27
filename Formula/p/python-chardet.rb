@@ -5,6 +5,16 @@ class PythonChardet < Formula
   sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cd2f90530ac02025ce9c507677cc876d0f43a49f67960a1274acfe286bb74c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34e44d47f861cc01c3d3944280648b9df25b41a6a4e95a1836628bb9868ace00"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c68b9dc4bf49a532f729177f7940e27697fc29aa519e09edd236c2021c62e673"
+    sha256 cellar: :any_skip_relocation, sonoma:         "236e842fd379d9c94692a6a77e7d3b7436e2f8878f2cb56e72965095434d5a06"
+    sha256 cellar: :any_skip_relocation, ventura:        "69c9384779c2805abbdb2621d9207109333e0efacad284ac2cb7337847b8ddf2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d4e54af4f2fa7cfe65af5166d05005a7cf41d99d24d5194097188a385be1a7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd4c2fbd024346e2eba9dda0b44a0ba0974b35e3a6c215d1e7c442388fe2c396"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
