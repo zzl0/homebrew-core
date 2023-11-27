@@ -1,8 +1,8 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://velero.io/"
-  url "https://github.com/vmware-tanzu/velero/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "6190a8ea4c4abe71be5cc8f4de645ba1dc17554b8e368b8f30f8fbada43f54f9"
+  url "https://github.com/vmware-tanzu/velero/archive/refs/tags/v1.12.2.tar.gz"
+  sha256 "c79524f9f0c7fc4f6b70a0d001e6f31b9b5227577e65edeb2a1e581df262938c"
   license "Apache-2.0"
 
   bottle do
