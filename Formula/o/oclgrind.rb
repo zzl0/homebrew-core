@@ -25,11 +25,17 @@ class Oclgrind < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@13"
+  depends_on "llvm@14" # Issue for newer LLVM: https://github.com/jrprice/Oclgrind/issues/209
   depends_on "readline"
 
   on_linux do
     depends_on "opencl-headers" => :test
+  end
+
+  # Backport support for `llvm@14`. Remove in the next release.
+  patch do
+    url "https://github.com/jrprice/Oclgrind/commit/6c76e7bec0aa7fa451515a5cfcb35ab2384ba6e0.patch?full_index=1"
+    sha256 "8c1b8ec75d8d8c8d02246124b40452ec9ef1243d3e3c497fe4ffa8571cd98ade"
   end
 
   def install
