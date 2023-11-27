@@ -8,13 +8,13 @@ class Copier < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b9731386cf74f86d994f610269d2732417ec4e7dcd4ed982c37c8ee6e84f77df"
-    sha256 cellar: :any,                 arm64_ventura:  "ce595634fbdb0d203793caac6a43b62d599aa876e00b936a4fc24d35ab79b15c"
-    sha256 cellar: :any,                 arm64_monterey: "4e39d908acf964c2b1a08964f3c44e4adf79c602bf68c8c1e4766cce374941f1"
-    sha256 cellar: :any,                 sonoma:         "8319c3a9cbedccdafbff303dd76baf8df155594fbb42cbf757542dec04b55afd"
-    sha256 cellar: :any,                 ventura:        "51d41549424d8a4c7d0c9b2e5b80e05bfccd505642093e6da652c0a4a3282f9c"
-    sha256 cellar: :any,                 monterey:       "758200df75a9d5ab0e9d93826c0acf44aa93d0e1c811826f37f6f8ad16d19672"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "467cc9e7744b89adde30ead2d075e667198a7fa4ebc3f55a7ebd9337acb3dda9"
+    sha256 cellar: :any,                 arm64_sonoma:   "4d9b85e58add14339f35c8c520bd2a8eb12675a4f58d8088d827a5997582daf3"
+    sha256 cellar: :any,                 arm64_ventura:  "5f6b543e3c7f4052207a55ea6de9fdb4b35a7216277625e9d2e866f6bde2d9d7"
+    sha256 cellar: :any,                 arm64_monterey: "b7530b6dada0771a2ac75f5995243c53a0fdd9e7a267bfc2afd0fb7c2a51ff65"
+    sha256 cellar: :any,                 sonoma:         "323a57f05f4fd3bab795b2648aa55b4e78a8cfd5bf08005744a0e6fd24122d4e"
+    sha256 cellar: :any,                 ventura:        "cc147e856ac24bb3c134f673361fe397724c3d7e41303026f11a0e13c6aca7b6"
+    sha256 cellar: :any,                 monterey:       "cc2df313eff91dc91f3d09a8979b452d72f06455d7bd2d93f671dd286a6b1f41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90fd01187d33e2613e5de439098d721391f3f9f81d0de0a409a9dc135dd5947b"
   end
 
   depends_on "rust" => :build
