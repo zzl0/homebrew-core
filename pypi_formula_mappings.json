@@ -923,6 +923,9 @@
   "python@3.12": {
     "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
   },
+  "python-anytree": {
+    "exclude_packages": ["six"]
+  },
   "python-boto3": {
     "exclude_packages": ["botocore", "s3transfer"]
   },
