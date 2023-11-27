@@ -923,6 +923,9 @@
   "python@3.12": {
     "extra_packages": ["flit-core", "setuptools", "pip", "wheel"]
   },
+  "python-botocore": {
+    "exclude_packages": ["jmespath", "python-dateutil", "six", "urllib3"]
+  },
   "python-build": {
     "exclude_packages": ["packaging", "pyproject-hooks"]
   },
@@ -945,6 +948,9 @@
     "extra_packages": ["python-lsp-black", "pylsp-mypy", "python-lsp-ruff", "pylsp-rope"],
     "exclude_packages": ["black", "mypy", "ruff"]
   },
+  "python-mako": {
+    "exclude_packages": ["markupsafe"]
+  },
   "python-prompt-toolkit": {
     "exclude_packages": ["wcwidth"]
   },
@@ -954,8 +960,8 @@
   "python-requests-oauthlib": {
     "exclude_packages": ["oauthlib", "requests"]
   },
-  "python-mako": {
-    "exclude_packages": ["markupsafe"]
+  "python-s3transfer": {
+    "exclude_packages": ["botocore"]
   },
   "python-yq": {
     "exclude_packages": ["argcomplete", "PyYAML"]
