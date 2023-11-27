@@ -1,6 +1,4 @@
 class GtkDoc < Formula
-  include Language::Python::Virtualenv
-
   desc "GTK+ documentation tool"
   homepage "https://gitlab.gnome.org/GNOME/gtk-doc"
   url "https://download.gnome.org/sources/gtk-doc/1.33/gtk-doc-1.33.2.tar.xz"
@@ -32,22 +30,13 @@ class GtkDoc < Formula
   depends_on "docbook"
   depends_on "docbook-xsl"
   depends_on "pygments"
+  depends_on "python-anytree"
   depends_on "python-lxml"
   depends_on "python@3.12"
-  depends_on "six" # for anytree
-
-  resource "anytree" do
-    url "https://files.pythonhosted.org/packages/d8/45/de59861abc8cb66e9e95c02b214be4d52900aa92ce34241a957dcf1d569d/anytree-2.8.0.tar.gz"
-    sha256 "3f0f93f355a91bc3e6245319bf4c1d50e3416cc7a35cc1133c1ff38306bbccab"
-  end
 
   def install
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkg-config"].bin
-
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resources
-    ENV.prepend_path "PATH", libexec/"bin"
 
     system "meson", "setup", "build", *std_meson_args, "-Dtests=false", "-Dyelp_manual=false"
     system "meson", "compile", "-C", "build", "--verbose"
