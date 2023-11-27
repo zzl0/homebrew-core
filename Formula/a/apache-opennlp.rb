@@ -1,9 +1,9 @@
 class ApacheOpennlp < Formula
   desc "Machine learning toolkit for processing natural language text"
   homepage "https://opennlp.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=opennlp/opennlp-2.3.0/apache-opennlp-2.3.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/opennlp/opennlp-2.3.0/apache-opennlp-2.3.0-bin.tar.gz"
-  sha256 "d506207db0fe9d23864f36dd6f7b31a42d35028d29fa3c9f89883228eb8522a1"
+  url "https://www.apache.org/dyn/closer.lua?path=opennlp/opennlp-2.3.1/apache-opennlp-2.3.1-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/opennlp/opennlp-2.3.1/apache-opennlp-2.3.1-bin.tar.gz"
+  sha256 "4637782175fef7992f3a125a967064bf502de99532988dda305a0b0159d6f970"
   license "Apache-2.0"
 
   bottle do
