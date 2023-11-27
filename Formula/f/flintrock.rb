@@ -8,14 +8,13 @@ class Flintrock < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "c62d0778e58f1c65fe2e38c27ac721e4b993d3ae4d6a2aa935765e3149fff19b"
-    sha256 cellar: :any,                 arm64_ventura:  "b863dbe1faebd77071133c982f862cc996c01e4709c1401f4834265fa01ab1e1"
-    sha256 cellar: :any,                 arm64_monterey: "d84dd921448aa5848934f2abe5ca198e812f8ac6a73a1416c173100bec820842"
-    sha256 cellar: :any,                 sonoma:         "335a7374442bcb189f2346edef5d16df56116edcd8a3496ee8117d2a6a6db24f"
-    sha256 cellar: :any,                 ventura:        "582bef6c7ec11a033754239dbff5882e49801b77dce67d2621d7e8621a6a1f0e"
-    sha256 cellar: :any,                 monterey:       "251bdccda137c921787cd92c8142d2f97888e18b86994b164b26b9dd3a7897bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b872a2e2e24f99a80121701edf41992f606969a3a414be80fcb7a2624a9dc5"
+    sha256 cellar: :any,                 arm64_sonoma:   "08b7a6ab1af7834ea9fd2fed66a6afb2e877f782c7a913c9c92fa65d4fd19f7f"
+    sha256 cellar: :any,                 arm64_ventura:  "9a2a41173acb8eb811d77bd52a274aa2651887eb2f60052db1543d1349652cbb"
+    sha256 cellar: :any,                 arm64_monterey: "e9f8bbc3a49676cd4f18a89468e0e4e0a79cb9d05ba390e9bb44f66d394032e3"
+    sha256 cellar: :any,                 sonoma:         "0ec71f114567a3f12eecc274c7fdb04f0c71e5dbb942b883a1b857f068635d68"
+    sha256 cellar: :any,                 ventura:        "e7666a403ab3c40986fb66d5b477d950b1b712379c5d0bed67558dc3247b4c7f"
+    sha256 cellar: :any,                 monterey:       "5005a42f59063cf7a42de6227dd630ad5d5f7791b10bd79fa309b3837a0411a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0bacf1f16f1a2a814131855981faa98b79fffdf238bc946d0617eab54c21b9d"
   end
 
   depends_on "rust" => :build # for bcrypt
