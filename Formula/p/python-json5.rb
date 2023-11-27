@@ -5,6 +5,16 @@ class PythonJson5 < Formula
   sha256 "9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d314eb13631172ef72b149457a61277f1ac0096aecc9d63d74a0fa70541687ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90e9e91f835dd1a5a37528001672c0c40fb1214f298b9cc3427baa14381cbe92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de829ddddce69301eb29800853f999141db8303d43919f41ef80273648be7f91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "af7008b52157d927a1c782511513afc76bbd0edacf822e91234fad27bb6a3bdb"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e512f9c303a9d9d325fed53c9965ccc2372ed45356bff182e2cabcd9783dac7"
+    sha256 cellar: :any_skip_relocation, monterey:       "bcf69256b9bc30cfc134938cb61a8e9645567b0194f9017fe88c1cb82fc0611a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "264153cc4f88b5683efab346167780eec6a110489a821bbd612f8b842a46eafa"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
