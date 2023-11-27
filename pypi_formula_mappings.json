@@ -963,6 +963,9 @@
   "python-requests-oauthlib": {
     "exclude_packages": ["oauthlib", "requests"]
   },
+  "python-rich": {
+    "exclude_packages": ["markdown-it-py", "pygments"]
+  },
   "python-s3transfer": {
     "exclude_packages": ["botocore"]
   },

@@ -18,6 +18,8 @@ class PythonRich < Formula
   depends_on "poetry" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+  depends_on "pygments"
+  depends_on "python-markdown-it-py"
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }
