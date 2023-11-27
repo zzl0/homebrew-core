@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/b6/32/a280f0bc15bfb6ce40c8d63d6896f81d9b7ee5f8600bd1a5d079013ad5f1/locust-2.19.0.tar.gz"
-  sha256 "091bb8ee321a9a63e160d0f6de0a0819c62f18378e44986bc5d446d017875aa6"
+  url "https://files.pythonhosted.org/packages/fb/0d/565e425b3cc048d47875e7eb3571ac51a2b83c6852d00ca9ba5c4d0e7eac/locust-2.19.1.tar.gz"
+  sha256 "5c21609b1395833dc0b4bb3ddaaf709a88f6e70950aefce86e11eb5944fe9217"
   license "MIT"
 
   bottle do
@@ -23,6 +23,7 @@ class Locust < Formula
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "six"
+  depends_on "zeromq"
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
@@ -70,8 +71,8 @@ class Locust < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "itsdangerous" do
