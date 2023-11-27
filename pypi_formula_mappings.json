@@ -957,6 +957,9 @@
   "python-mako": {
     "exclude_packages": ["markupsafe"]
   },
+  "python-markdown-it-py": {
+    "exclude_packages": ["mdurl"]
+  },
   "python-prompt-toolkit": {
     "exclude_packages": ["wcwidth"]
   },
@@ -965,6 +968,9 @@
   },
   "python-requests-oauthlib": {
     "exclude_packages": ["oauthlib", "requests"]
+  },
+  "python-rich": {
+    "exclude_packages": ["markdown-it-py", "pygments"]
   },
   "python-s3transfer": {
     "exclude_packages": ["botocore"]
