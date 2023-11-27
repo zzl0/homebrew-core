@@ -1,8 +1,8 @@
 class Gluon < Formula
   desc "Static, type inferred and embeddable language written in Rust"
   homepage "https://gluon-lang.org"
-  url "https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "1532cae94c85c9172e0b96b061384c448e6e1b35093d1aacf0cd214e751fe1e3"
+  url "https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.2.tar.gz"
+  sha256 "b5f82fecdf56b8b25ed516a023d31bcaf576b2bb3b2aee3e53d6f50ea8f281a3"
   license "MIT"
   head "https://github.com/gluon-lang/gluon.git", branch: "master"
 
@@ -25,13 +25,6 @@ class Gluon < Formula
   end
 
   depends_on "rust" => :build
-
-  # Fix compile with newer Rust.
-  # Remove with 0.19.
-  patch do
-    url "https://github.com/gluon-lang/gluon/commit/f30127bf5e27520d41a654154381c2e9601d2f3e.patch?full_index=1"
-    sha256 "bcfb2d0c36104a30745f7e6ddc4c8650ed60cb969f1e55cd4e6bb2cb6fe48722"
-  end
 
   def install
     cd "repl" do
