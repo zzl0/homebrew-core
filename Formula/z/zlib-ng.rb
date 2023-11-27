@@ -1,8 +1,8 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.1.4.tar.gz"
-  sha256 "a0293475e6a44a3f6c045229fe50f69dc0eebc62a42405a51f19d46a5541e77a"
+  url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.1.5.tar.gz"
+  sha256 "3f6576971397b379d4205ae5451ff5a68edf6c103b2f03c4188ed7075fbb5f04"
   license "Zlib"
 
   bottle do
