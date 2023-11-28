@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/74/d2/e0327b527088432bfe5559a93284efac942a6434737b160f4f6cd60385c5/streamlink-6.4.1.tar.gz"
-  sha256 "8e3dacb009334bad206dc9b50ddc3768d6a489fc7824ac42bb4bc70d0a926eac"
+  url "https://files.pythonhosted.org/packages/8c/90/bc859704c1e0a6c959c382cdc7a1ec7488e6ae28e1bd4902aef177e1fdd7/streamlink-6.4.2.tar.gz"
+  sha256 "b5fb719f4251a692c88788a1d46e2cd0fa2231960c52b281cb8210871c722e76"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -47,8 +47,8 @@ class Streamlink < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "isodate" do
