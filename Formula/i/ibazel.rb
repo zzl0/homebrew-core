@@ -1,8 +1,8 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
   homepage "https://github.com/bazelbuild/bazel-watcher"
-  url "https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.23.7.tar.gz"
-  sha256 "21920e77f0dca97a4b098588b60d5afefab6efc6db384c755e01084ecaf0620f"
+  url "https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "bc0ac30e84aa8b8a18ae1fc69d9ef6c575a9fa28239f36b6d14d3603e2b1d667"
   license "Apache-2.0"
 
   bottle do
@@ -26,7 +26,7 @@ class Ibazel < Formula
   end
 
   # bazel 6.x support issue, https://github.com/bazelbuild/bazel-watcher/issues/616
-  # patch to use bazel 6.3.2, upstream PR, https://github.com/bazelbuild/bazel-watcher/pull/575
+  # patch to use bazel 6.4.0, upstream PR, https://github.com/bazelbuild/bazel-watcher/pull/575
   patch :DATA
 
   def install
@@ -90,4 +90,4 @@ index 8a30e8f..09b254e 100644
 +++ b/.bazelversion
 @@ -1 +1 @@
 -5.4.0
-+6.3.2
++6.4.0
