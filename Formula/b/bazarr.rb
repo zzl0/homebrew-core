@@ -5,8 +5,8 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://github.com/morpheus65535/bazarr/releases/download/v1.3.1/bazarr.zip"
-  sha256 "02150caef9d9a28d1731f27a17d062e260b4864e53dc49103d7fece2d1d67227"
+  url "https://github.com/morpheus65535/bazarr/releases/download/v1.4.0/bazarr.zip"
+  sha256 "b023f5239ec54974dfe624259942101ccad218d3b11bf47669a854dc3f31e56c"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
@@ -119,6 +119,10 @@ class Bazarr < Formula
       Process.wait wait_thr.pid
     end
 
-    assert_includes File.read(config_file), "#{testpath}/custom_backup"
+    assert_predicate (testpath/"config/config.ini.old"), :exist?
+    new_config_file = testpath/"config/config.yaml"
+    assert_includes File.read(new_config_file), "#{testpath}/custom_backup"
+    bazarr_log = testpath/"log/bazarr.log"
+    assert_match "BAZARR is started and waiting for request", bazarr_log.read
   end
 end
