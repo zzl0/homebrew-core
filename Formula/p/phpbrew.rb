@@ -1,8 +1,8 @@
 class Phpbrew < Formula
   desc "Brew & manage PHP versions in pure PHP at HOME"
   homepage "https://phpbrew.github.io/phpbrew"
-  url "https://github.com/phpbrew/phpbrew/releases/download/2.1.0/phpbrew.phar"
-  sha256 "0f8f55bb31f6680ad3b9703cddb46d9c5186ea67778fc1896b35f44569d9d006"
+  url "https://github.com/phpbrew/phpbrew/releases/download/2.2.0/phpbrew.phar"
+  sha256 "d1f248d486d6d2368d67cf0bb79371ee0abfc7e566bfc279e750372d1b0f96bd"
   license "MIT"
 
   bottle do
