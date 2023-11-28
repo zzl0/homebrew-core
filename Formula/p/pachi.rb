@@ -1,9 +1,9 @@
 class Pachi < Formula
   desc "Software for the Board Game of Go/Weiqi/Baduk"
   homepage "https://pachi.or.cz/"
-  url "https://github.com/pasky/pachi/archive/refs/tags/pachi-12.60.tar.gz"
-  sha256 "3c05cf4fe5206ba4cbe0e0026ec3225232261b44e9e05e45f76193b4b31ff8e9"
-  license "GPL-2.0"
+  url "https://github.com/pasky/pachi/archive/refs/tags/pachi-12.84.tar.gz"
+  sha256 "5ced9ffd9fdb0ee4cdb24ad341abbcb7df0ab8a7f244932b7dd3bfa0ff6180ba"
+  license "GPL-2.0-only"
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
@@ -20,40 +20,30 @@ class Pachi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fc26989c0cf90b6fa2256e129b0b87993464ec27ad88fefe569abdd9702292"
   end
 
-  resource "patterns" do
-    url "https://sainet-dist.s3.amazonaws.com/pachi_patterns.zip"
-    sha256 "73045eed2a15c5cb54bcdb7e60b106729009fa0a809d388dfd80f26c07ca7cbc"
-  end
-
-  resource "book" do
-    url "https://gnugo.baduk.org/books/ra6.zip"
-    sha256 "1e7ffc75c424e94338308c048aacc479da6ac5cbe77c0df8adc733956872485a"
+  resource "datafiles" do
+    url "https://github.com/pasky/pachi/releases/download/pachi-12.84/pachi-12.84-linux-static.tgz", using: :nounzip
+    sha256 "c9b080a93468cb4eacfb6cb43ccd3c6ca2caacc784b02ebe5ec7ba3e4e071922"
   end
 
   def install
-    ENV["MAC"] = "1"
+    ENV["MAC"] = "1" if OS.mac?
+    ENV["GENERIC"] = "1"
     ENV["DOUBLE_FLOATING"] = "1"
 
     # https://github.com/pasky/pachi/issues/78
-    inreplace "Makefile", "build.h: .git/HEAD .git/index", "build.h:"
-    inreplace "Makefile", "DCNN=1", "DCNN=0"
+    inreplace "Makefile" do |s|
+      unless build.head?
+        s.gsub! "build.h: build.h.git", "build.h:"
+        s.gsub! "@cp build.h.git", "echo '#define PACHI_GIT_BRANCH \"\"\\n#define PACHI_GIT_HASH \"\"' >>"
+      end
+      s.change_make_var! "DCNN", "0"
+      s.change_make_var! "PREFIX", prefix
+    end
 
+    # Manually extract data files from Linux build, which is actually a zip file
+    system "unzip", "-oj", resource("datafiles").cached_download, "*/*", "-x", "*/*/*", "-d", buildpath
     system "make"
-    bin.install "pachi"
-
-    pkgshare.install resource("patterns")
-    pkgshare.install resource("book")
-  end
-
-  def caveats
-    <<~EOS
-      This formula also downloads additional data, such as opening books
-      and pattern files. They are stored in #{opt_pkgshare}.
-
-      At present, pachi cannot be pointed to external files, so make sure
-      to set the working directory to #{opt_pkgshare} if you want pachi
-      to take advantage of these additional files.
-    EOS
+    system "make", "install"
   end
 
   test do
