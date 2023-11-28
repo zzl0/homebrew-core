@@ -7,17 +7,13 @@ class Pachi < Formula
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc36b13c20604b90c51740831cce9701470241754f2b1e1376cf3b59d7013a26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d25307a303833c144652b596baac8346e8274ed1669c5710f77675d978670692"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c38b47dfb6e9f48507f47be141963ea5fb4b6329a83f015f4bd0d52c09325408"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71f7bf11f6d68a8768468e4494cdc0785f484a5ccd7713cfc4327f049e79e80a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "875a4356ea6a4746457358ad77a03c620a720eeb84c77bcd10b33b192577906f"
-    sha256 cellar: :any_skip_relocation, ventura:        "10306782a64e73d770c861e44c616a13cd417df1c346195f42426f62db6c1ec6"
-    sha256 cellar: :any_skip_relocation, monterey:       "7079a129c324c7411aabe2c5357f3b5c86658bcec6b897f06e8cccf02e775a23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d14dec70d5fedd0d7ba63b05f175b06b12c40e1da71d24da64712ce63858dae1"
-    sha256 cellar: :any_skip_relocation, catalina:       "9a2adc64bf7dbfbaf9e3d9ff940d6c5bcb0e4040160ed62f57751ec87281132e"
-    sha256 cellar: :any_skip_relocation, mojave:         "c88f24dd1e7a267848eab540dc2b0961962825ab6e7088fc24b335159dacf31c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fc26989c0cf90b6fa2256e129b0b87993464ec27ad88fefe569abdd9702292"
+    sha256 arm64_sonoma:   "57b6e6f43f52e5ef856feccee3a1a828872a90fb45a9e72149147ef8aa1e129d"
+    sha256 arm64_ventura:  "59b6a51156dc47e96991c92ce1fdd8060a4b9f2789f53ac515d9b08b8f117941"
+    sha256 arm64_monterey: "cba618e09fd5920a22b9e96b44aff7daaf2c1de834cc9b30dc1d13e9b3ce9498"
+    sha256 sonoma:         "08420848a56934b074a7044ceb0acc38c49c169a0d784b4b5bdf0af3431ba73c"
+    sha256 ventura:        "4f2ff8e1819b0982ae09db3be0935c36e38c809795d4b45776076e9a15e0c1d2"
+    sha256 monterey:       "8d0c1b96f212172117f2f44d2880d906d043c0601d8a7b1dd4dc796cf8ddc57d"
+    sha256 x86_64_linux:   "eb13f42af4891d563b870f8840182c9b6f99f76dfd7afcfeaf9c1cbf8bff4790"
   end
 
   resource "datafiles" do
