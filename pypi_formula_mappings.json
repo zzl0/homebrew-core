@@ -80,7 +80,7 @@
     "exclude_packages": ["click", "lxml"]
   },
   "apprise": {
-    "exclude_packages": ["certifi", "markdown", "PyYAML"]
+    "exclude_packages": ["click", "markdown", "PyYAML", "requests-oauthlib"]
   },
   "arjun": {
     "exclude_packages": ["certifi"]
