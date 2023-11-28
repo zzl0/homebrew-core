@@ -7,15 +7,13 @@ class Timg < Formula
   head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "767594a921a1370dbb8df28cb61132ac7899b383f427f6c0982eb1bbf6087566"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ca4ca9178030af9b0418c5ff18f32100a2b27841e97d517e7e682c3f8cf82e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2596728ac480126f610db00094ea24168f4794e553691dc867f6dd81903b78c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a55ffc2499c1c3e7bdaec136c66d8b6a29c5ca921510cd61c95d939e44908be9"
-    sha256 cellar: :any,                 sonoma:         "4ad540742905fb9ac09f04037cd4832d176f096054fc7fb019afe9a56ceda570"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d62754ef58b5a4e69554c1e4cbefc140eeec20cfbddd09dd276e293d202bf47"
-    sha256 cellar: :any_skip_relocation, monterey:       "171645ac338541eb705d2e6f61b07bb33c111f69ac228e0e0df517e2c252db04"
-    sha256 cellar: :any_skip_relocation, big_sur:        "75b753e2434611fac670caafee952910087c0111867abfcc0499d0eba5f604a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa0371ef38e8aee61aa5ee4a383e3eb5d4df72f340647bd531ac6adfb9d684fa"
+    sha256 cellar: :any,                 arm64_sonoma:   "3df2e6fa948f85f2db7e3d2531db11624dc0cdb603c1905b746710c4aa25e9a2"
+    sha256 cellar: :any,                 arm64_ventura:  "c6cd77aa6e606437e614f4a1aac3fef184b11e422ac14ed5798cade311380651"
+    sha256 cellar: :any,                 arm64_monterey: "a033cef39938d2c48be40a8ca08a05456368e5def3a2e3380a4234959b43691e"
+    sha256 cellar: :any,                 sonoma:         "59068f2f41854bb80bed0dbf2f77a87da6ec2e9db163cfcec09051fbbbdf8107"
+    sha256 cellar: :any,                 ventura:        "600a3b12edddc659423dd29bf0155e85a67b0c5223aa5365b2a2fa8a69f6cf59"
+    sha256 cellar: :any,                 monterey:       "d8ba48ccbcf0c0185694ffba3a8c0a881276c37e7ca93d37ad1b0fe013403d6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "badd59908809d80015f930cae24dfb61198a1f91211413dd5207344b1fbfb637"
   end
 
   depends_on "cmake" => :build
