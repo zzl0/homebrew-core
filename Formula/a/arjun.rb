@@ -6,13 +6,14 @@ class Arjun < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "192f7ae94916acd47d28413c5abeb492a1642c1b059c1093c1e95cd62e87a073"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47cd188c43e6f7b0e2b301c00d68da0ee61719941e239e75a176853800701322"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f112f1ad2d0a9d64ce41d87d1e664c3d601de97cde3de6146e13ef8202adae6d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bee8fadcac1d7c77cce0e80c8cd0a9fc11f74180a1fd7522c789c0e14020d55c"
-    sha256 cellar: :any_skip_relocation, ventura:        "a194a2368caa2bbf92f53635712e27c427b853f3f7242e8f7f0f1231b53c5d55"
-    sha256 cellar: :any_skip_relocation, monterey:       "d925de5da66003db36f3e7b2414cea411c34bc28189cab5ccb4f87db076a295c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb9e5a170f2cda7983d63b6f598c7dd2106f81091360dd905aa7a064ea3b97b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b383c810957b9abbfb679cf4f2bb2b7c11fd8cd4a732751baf50a3ae5a56232c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fabe5baf56119662c1a948b0f496da10a2c0121009c4e3fe28b8ec66a578c5df"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50299a67611d931ea4db42181dcd7ed3aac5888c63c96156bebe3f7cfb6dbb0b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e4b6e981329cd53af271bea8bd26ba5049b3a420ed9a6040af162af325f8c149"
+    sha256 cellar: :any_skip_relocation, ventura:        "1778f8981e95ee71306599cc609595a1d9f25b9965a8213794ffe3ea25d51ddb"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7f28d677a0a46c89b2c9a2a1768bae436fe484945021ca7249924138adb4b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26c2d40b7150decd2cbb95201c8eff966fc477d3ce3612275c7e60984882486d"
   end
 
   depends_on "python-setuptools" => :build
