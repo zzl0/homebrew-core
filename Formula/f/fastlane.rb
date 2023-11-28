@@ -20,7 +20,7 @@ class Fastlane < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2592c13c7abf7e5f0089531c6a6a58608bd447e07a53d8d4531da80a909e6bfc"
   end
 
-  depends_on "ruby@3.1"
+  depends_on "ruby"
 
   on_macos do
     depends_on "terminal-notifier"
