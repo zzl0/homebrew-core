@@ -20,7 +20,7 @@ class Uffizzi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b75c4da477f060057f81da3dc0eae237ab310c1dcbf55652073e9f38c54cfe0"
   end
 
-  depends_on "ruby@3.0"
+  depends_on "ruby"
   depends_on "skaffold"
 
   resource "activesupport" do
