@@ -145,6 +145,9 @@
   "bandit": {
     "exclude_packages": ["PyYAML", "pygments"]
   },
+  "bashate": {
+    "exclude_packages": ["pbr"]
+  },
   "bbot": {
     "exclude_packages": [
       "certifi", "cffi", "cryptography", "docutils", "lxml", "markupsafe", "packaging",
