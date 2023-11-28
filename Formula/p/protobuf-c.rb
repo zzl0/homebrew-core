@@ -6,13 +6,13 @@ class ProtobufC < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "899d76fd1efae4b2404a802994d3ff4d5ff74328ad84aa27602e113f0e84baa0"
-    sha256 cellar: :any,                 arm64_ventura:  "f078402e98c0ed0893e7c45f270525d73af1fce025a29b7b7c28e97242e3a911"
-    sha256 cellar: :any,                 arm64_monterey: "7a18c6c2e45d5290d915e319b57b835b8506fb41ca0d3d9f801ea6c2bdbacf14"
-    sha256 cellar: :any,                 sonoma:         "d121a00c144164896118412cc3997418b1a1ce3f9922f63b7d70ac527d03237e"
-    sha256 cellar: :any,                 ventura:        "26dc85759982d07178ea0db8d42e6848aee5c6615f0e651c37779f073a37549f"
-    sha256 cellar: :any,                 monterey:       "3ff18ae10399d0a3f22425701e80d93cec1fddb9a97aca831283d5ed9cbcf7b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44ab9771ef7748e3d0a4b8c07eb0717b49a43cd5eba2b9deb490bc9a65a710a6"
+    sha256 cellar: :any,                 arm64_sonoma:   "fafeb03e9ac4ab7536eafefebd63f7db812b960a2fb16d83a937aa80a70b4158"
+    sha256 cellar: :any,                 arm64_ventura:  "aeec7fbd83468ac568828aaad7862f9f03965a465f703304253f73052f306150"
+    sha256 cellar: :any,                 arm64_monterey: "18fccf7cbc69da71f10768a8ea0464b6be1ec3dc148b23e9eddbcf68086785bf"
+    sha256 cellar: :any,                 sonoma:         "6a56823964abb27099fa90402d7e0d9e9e771d48cddd787c1d0ceeb8b1aff897"
+    sha256 cellar: :any,                 ventura:        "23f15144f03228f640d3f75eafe3a3bd047558d31f1e483380902f891f00f6e8"
+    sha256 cellar: :any,                 monterey:       "9a8744982010994dedce83c77cbca63ef431a060c10191e7fcf04773f976ba71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b33c881b3ba12e613208cd359310bb44f72aacd66e9da40243944922381f744"
   end
 
   head do
