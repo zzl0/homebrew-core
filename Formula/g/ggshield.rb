@@ -9,13 +9,13 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e4c49e4d4070b3d97509fb0632ad32eeecdd4ce81cf645a098eccf55e1325ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55e259f8425b8cda3f2a1bd103dad165bb0cdb02138fa3390cac0f578712e99e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e347615104a7a755a1616623e4b02f1938ce505131ded47544aa26f3702e01c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f7d29d460a5477a1a6a9ff7edf974f67bbb88bf92b5221c07cc76cccabb6f82"
-    sha256 cellar: :any_skip_relocation, ventura:        "04128b1b9e9afc7213929b7ebf39fb6ad5d9e48c31e70489ef85e2ba3a76ca92"
-    sha256 cellar: :any_skip_relocation, monterey:       "513a2e4e309c6c8d2f9084940afee151f5730cf33036ae6b925d8f7840fe060e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d37b0cd8761cea9e7decff44a0995bcfc738f931f00769ca88bd9ad0bab711b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd6b7dfb0ec27ad339e4bca87e1a470d8ae019cc9b77e4d46920ad03b5b9f6e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2938fa4be81b1ae63aeb2d04dee413b1a3e0a2a8e739b2eed9473557b79d84da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cbc6ebcc1a656c6cddc521471d0c80e6b367240ac8624206c007e953e9e678c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9de84ea63255c56b52fadac3496bcc470c1a848d8088e37ca1fa9188691ed1a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cbb08718867673b09fbe7c8d2b9ca7e6c71e4edeb2bce68f38c98f039b5a312"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c485b538dca687fa05a4c95afd52187a98c7b6c3ec84ef17d33ce27917fa742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d5e779b2f7d50b864b789aa94a9e5b94f058458696d3438e129a0944f0b5fbe"
   end
 
   depends_on "cffi"
