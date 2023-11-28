@@ -1,8 +1,8 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https://xwmx.github.io/nb"
-  url "https://github.com/xwmx/nb/archive/refs/tags/7.8.0.tar.gz"
-  sha256 "2cd7df83c6f24625b2ee671ed0f1e2caf9adc297231d851ce6da4cc6909247c6"
+  url "https://github.com/xwmx/nb/archive/refs/tags/7.9.0.tar.gz"
+  sha256 "213c1138d9a87ebc4e0e6e956cf19812d10e8ddd2373fd97cab15437a46e6f1b"
   license "AGPL-3.0-or-later"
   head "https://github.com/xwmx/nb.git", branch: "master"
 
