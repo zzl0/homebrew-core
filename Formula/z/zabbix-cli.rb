@@ -1,10 +1,9 @@
 class ZabbixCli < Formula
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https://github.com/unioslo/zabbix-cli/"
-  url "https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.1.tar.gz"
-  sha256 "1d6de0486a5cd6b4fdd53c35810bd14e423ed039ed7ad0865ea08f6082309564"
+  url "https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.2.tar.gz"
+  sha256 "e56b6be1c13c42c516c8e8e6b01948fc81591eae83f8babb7bee6d2025299c26"
   license "GPL-3.0-or-later"
-  revision 4
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   livecheck do
