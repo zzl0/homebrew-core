@@ -4,12 +4,12 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.8.tar.gz"
-    sha256 "c722e1c96eb6775962ed250fdbd443357beed386ae3587534cf1835dcf604b66"
+    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.9.tar.gz"
+    sha256 "41159b817fb7649e42b41b3ca37bb3346d4fcb27049737d8a3bca5091ad74bb5"
 
     resource "ncbi-vdb" do
-      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.8.tar.gz"
-      sha256 "f8c0168a3e8454b6faf8e996fb074dd26bf161362168d316ebb22bb173fa2251"
+      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.9.tar.gz"
+      sha256 "26c94e5259b0c7e98fdaa1e93d41201df29ffff56946dd19464c6a0cfb584f92"
     end
   end
 
@@ -71,6 +71,8 @@ class Sratoolkit < Formula
   end
 
   test do
+    assert_equal version, resource("ncbi-vdb").version, "`ncbi-vdb` resource needs updating!" if build.stable?
+
     # For testing purposes, generate a sample config noninteractively in lieu of running vdb-config --interactive
     # See upstream issue: https://github.com/ncbi/sra-tools/issues/291
     require "securerandom"
