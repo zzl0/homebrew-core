@@ -1,10 +1,9 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
   homepage "https://thelfer.github.io/tfel/web/index.html"
-  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-4.1.0.tar.gz"
-  sha256 "7505c41da9df5fb3c281651ff29b58a18fd4d91b92f839322f0267269c5f1375"
+  url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-4.1.1.tar.gz"
+  sha256 "e0f229094e88a2d6c6a78ae60fa77d2f4b8294e9d810c21fd7df61004bf29a33"
   license "GPL-1.0-or-later"
-  revision 4
   head "https://github.com/thelfer/tfel.git", using: :git, branch: "master"
 
   bottle do
