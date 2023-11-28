@@ -12,13 +12,13 @@ class Libpq < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "49ad6314bad02cc469d16edb472898ac17d0d2d5bc4033391b3d0933db1ab5a3"
-    sha256 arm64_ventura:  "d368cb57bb4f04df6f6ace665a11bc34a2fe9cc39b8d8c337de61b3f937148d0"
-    sha256 arm64_monterey: "7c96fa78808730ababf21f2c8dd938c9d56b50ea1c6f2362695a3a73ed17d921"
-    sha256 sonoma:         "2ac1c0e20d1e3974e81d7cdc9c6d24bbdcf6e050dd3a60e2ed89f15922f21c4e"
-    sha256 ventura:        "2a43fdee20b343e1c437d8c8cabeb17e0a46ca28c9478ac94d0fca96ae11e5b4"
-    sha256 monterey:       "a80489ca19e00aa6920a9f9e2e30b7378df089a11f8b1dcb86276a9756384255"
-    sha256 x86_64_linux:   "4d099a83019b774f9884bbae34d3c84ac981035c349bcfab661afe879d389280"
+    sha256 arm64_sonoma:   "f0fe09ec0a29c249f03bfaebf204856813c33ab9b57c9dae0674a0291dfcb950"
+    sha256 arm64_ventura:  "d2e232c76f49c91c88d03f39a6fbd98df616399d1302c55198a698f31a7efbc8"
+    sha256 arm64_monterey: "6661fd55501ecc6680eede20312d20fb591b6df8a7211d0220b5419c173bb1fc"
+    sha256 sonoma:         "742fd801eb1bd4528ccd00c095ef74ace4013641d55f0f88db50045754572e97"
+    sha256 ventura:        "bba9c418969284bfdb7e4630c96ab1f5494250ff8ac542fd926e2c9c113b1849"
+    sha256 monterey:       "d2fb2d1b5b17bba9b15dc6127770dfb865df83d885b143668c9a167ccb80c4ce"
+    sha256 x86_64_linux:   "8493dd42f4d3edbc5f3e7b1ec7fbb2ff5efc4c61a20c28b5bf2662b0321a8376"
   end
 
   keg_only "conflicts with postgres formula"
