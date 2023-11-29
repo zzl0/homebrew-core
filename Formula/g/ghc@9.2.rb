@@ -16,13 +16,14 @@ class GhcAT92 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3f634c4de37219f963a4f275e8e635f693f47525fce8d2700261057a0d1582c9"
-    sha256 cellar: :any,                 arm64_monterey: "a05983788d4e98554f5015e1565984c3f2a7d404b2d6e43ebc8614b47dde8ac5"
-    sha256 cellar: :any,                 arm64_big_sur:  "8d5db82a18888f41dd5583ea9a86bf215ff4f0042aed2cf2ae7ecf55407f8ed7"
-    sha256                               ventura:        "db3ab5c04a895022011458e9c2099b14cb2e054d68b5fc1318b2e9309facc94c"
-    sha256                               monterey:       "9a119d3fa0a7a926fa967cfd829c7313d0c7c2ebbd3f3a42766cf9396af009e5"
-    sha256                               big_sur:        "05f2c30f6d7fbbd1b66ab81bdd8a91ec1ca4a956044b978d32736acb88f7f7f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "251d11fa868f9e0af58f6e98c5c66f79034af410227175543abe0464fc834cbf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "655bbab689b52ce774c6d02a43eb33ce53592b06440a088cedcee758876c50a7"
+    sha256 cellar: :any,                 arm64_ventura:  "8cf37ef16647a516f9f32f35eb2919250d0042e0a7b9f8866095e295ac2fdedc"
+    sha256 cellar: :any,                 arm64_monterey: "9bb8bc86992b9377bff2d36bc6b58b382a5145d5c77ee5a5e2c949b26157c439"
+    sha256 cellar: :any,                 sonoma:         "a5753c516c679fb18679fa9e51ae53266629c1af6acc4a38afdc3db5bb03e2f7"
+    sha256 cellar: :any,                 ventura:        "ec0c7dcb8324e4dc98ee7109504445f6ae8373f9bd582d9401ae09f0ea54c97d"
+    sha256 cellar: :any,                 monterey:       "d10b5a289d3128529285ade5780d117c9e7e259eaa85b9379e5c74463a77e212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aacd44c8dff96335cc9af1c8e0e1f789fcb39c5124ac700143718bba1ed54973"
   end
 
   keg_only :versioned_formula
