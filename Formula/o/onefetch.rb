@@ -1,12 +1,9 @@
 class Onefetch < Formula
   desc "Command-line Git information tool"
   homepage "https://onefetch.dev/"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for details.
-  url "https://github.com/o2sh/onefetch/archive/refs/tags/2.18.1.tar.gz"
-  sha256 "7b0f03e9d2383ac32283cfb9ec09d10c8789a298969c8b7d45fa0168bd909140"
+  url "https://github.com/o2sh/onefetch/archive/refs/tags/2.19.0.tar.gz"
+  sha256 "e6aa7504730de86f307d6c3671875b11a447a4088daf74df280c8f644dea4819"
   license "MIT"
-  revision 1
   head "https://github.com/o2sh/onefetch.git", branch: "main"
 
   bottle do
@@ -21,21 +18,18 @@ class Onefetch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e8c88c3adf425e057cf7a0797d2c94d92a974f4bde6389848d9bf22b33615e3"
   end
 
-  # `cmake` is used to build `zstd` and `zlib`.
-  # TODO: See if it is possible to use Homebrew dependencies instead.
+  # `cmake` is used to build `zlib`.
+  # upstream issue, https://github.com/rust-lang/libz-sys/issues/147
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/o2sh/onefetch/blob/#{version}/Cargo.lock
-  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Migrate to the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
+  depends_on "zstd"
 
   def install
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+    ENV["ZSTD_SYS_USE_PKG_CONFIG"] = "1"
+
     system "cargo", "install", *std_cargo_args
 
     man1.install "docs/onefetch.1"
@@ -58,7 +52,7 @@ class Onefetch < Formula
     linkage_with_libgit2 = (bin/"onefetch").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.6"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
