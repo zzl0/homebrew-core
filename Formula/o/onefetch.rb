@@ -7,15 +7,13 @@ class Onefetch < Formula
   head "https://github.com/o2sh/onefetch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6dc4cc26db8fc147540961f52d1f7cee2693f7b81a1e6b394da3bb5299d4af53"
-    sha256 cellar: :any,                 arm64_ventura:  "13491ecb6b14e676dd75eada2c98a52bd72afecd0335bd9c39f7795aa24ff20d"
-    sha256 cellar: :any,                 arm64_monterey: "6715b79a60fc0d1572f5abbba2c841d7be4420aa75114f4cc3467e6013ae15d0"
-    sha256 cellar: :any,                 arm64_big_sur:  "b1c8a32b3f992d09d4e0f87fb7a536bf56fe04dd6c288289efa743358b03901a"
-    sha256 cellar: :any,                 sonoma:         "0f87b3f2862d2077d9a3a853fbd4654c5d333ca7a48f689bd011e89f38ea3102"
-    sha256 cellar: :any,                 ventura:        "6cf0339a4c6fab1fa624b77e3ddeaa1dfba966adacc7a1e0aa820fe3dd02abb0"
-    sha256 cellar: :any,                 monterey:       "2747b0fece549cd8c75a38d69753b684777f7a52cd7be130b341451ffc8273f9"
-    sha256 cellar: :any,                 big_sur:        "5ad3dce345afb2f2b87287bb07ba69a3ecdb9f51c526b628f2e92a7766ed623b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e8c88c3adf425e057cf7a0797d2c94d92a974f4bde6389848d9bf22b33615e3"
+    sha256 cellar: :any,                 arm64_sonoma:   "3be44fe6313ca0084e8c72a08bc59de0ec8cbf78b39d52ce4dd3d2ce59dc1d43"
+    sha256 cellar: :any,                 arm64_ventura:  "bb298ddf13ddb14cecd0f0cd5fdc40cda096b8dc5d849d922eb7a63206be54f4"
+    sha256 cellar: :any,                 arm64_monterey: "11736834baa60ed02ac4b0e8df44783ae2fe17b7ec12a6f2fa2a1ccd36b29948"
+    sha256 cellar: :any,                 sonoma:         "c596b6bbadccb7aaa995eb74a9e4eb14bbb16f70a4070996fbc30316f4007d7a"
+    sha256 cellar: :any,                 ventura:        "b3536a6c3969c52b6eb8716eb7ed827ec2d5bd7661821151bc378b97d96ef18c"
+    sha256 cellar: :any,                 monterey:       "543cdf04c1517054e74412709f34da1c22c888d5d8d2a6b4debab8d14e1e07be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fec3b38c7e4d6fa520947d7580f4b30cc7ed09b31d722755b384955db5caf6"
   end
 
   # `cmake` is used to build `zlib`.
