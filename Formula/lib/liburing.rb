@@ -1,8 +1,9 @@
 class Liburing < Formula
   desc "Helpers to setup and teardown io_uring instances"
   homepage "https://github.com/axboe/liburing"
-  url "https://github.com/axboe/liburing/archive/refs/tags/liburing-2.4.tar.gz"
-  sha256 "2398ec82d967a6f903f3ae1fd4541c754472d3a85a584dc78c5da2fabc90706b"
+  # not need to check github releases, as tags are sufficient, see https://github.com/axboe/liburing/issues/1008
+  url "https://github.com/axboe/liburing/archive/refs/tags/liburing-2.5.tar.gz"
+  sha256 "456f5f882165630f0dc7b75e8fd53bd01a955d5d4720729b4323097e6e9f2a98"
   license any_of: ["MIT", "LGPL-2.1-only"]
   head "https://github.com/axboe/liburing.git", branch: "master"
 
@@ -13,6 +14,7 @@ class Liburing < Formula
   depends_on :linux
 
   def install
+    # not autotools based configure, so std_configure_args is not suitable
     system "./configure", "--prefix=#{prefix}", "--libdir=#{lib}", "--mandir=#{man}"
     system "make"
     system "make", "install"
