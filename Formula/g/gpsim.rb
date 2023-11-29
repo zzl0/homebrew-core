@@ -25,6 +25,9 @@ class Gpsim < Formula
   depends_on "popt"
   depends_on "readline"
 
+  # https://sourceforge.net/p/gpsim/bugs/289/
+  patch :DATA
+
   def install
     system "./configure", "--disable-gui",
                           "--disable-shared",
@@ -37,3 +40,27 @@ class Gpsim < Formula
     system "#{bin}/gpsim", "--version"
   end
 end
+
+__END__
+Index: program_files.cc
+===================================================================
+--- a/src/program_files.cc  (revision 2623)
++++ b/src/program_files.cc  (working copy)
+@@ -85,8 +85,7 @@
+   * ProgramFileTypeList
+   * Singleton class to manage the many (as of now three) file types.
+   */
+-ProgramFileTypeList * ProgramFileTypeList::s_ProgramFileTypeList =
+-  new ProgramFileTypeList();
++ProgramFileTypeList * ProgramFileTypeList::s_ProgramFileTypeList = nullptr;
+ // We will instantiate g_HexFileType and g_CodFileType here to be sure
+ // they are instantiated after s_ProgramFileTypeList. The objects will
+ // move should the PIC code moved to its own external module.
+@@ -97,6 +96,8 @@
+ 
+ ProgramFileTypeList &ProgramFileTypeList::GetList()
+ {
++  if (!s_ProgramFileTypeList)
++      s_ProgramFileTypeList = new ProgramFileTypeList();
+   return *s_ProgramFileTypeList;
+ }
