@@ -3,10 +3,9 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a5/81/f7818b3d805427e8448429fd1bfc126a06b2e5daa58ea97a8b153e5454fb/trafilatura-1.6.2.tar.gz"
-  sha256 "a984630ad9c54d9fe803555d00f5a028ca65c766ce89bfd87d976f561c55b503"
+  url "https://files.pythonhosted.org/packages/aa/2d/e91ca57ca6ead5bf72e2c651fc81d47052c4c794a27d729598fba90404b4/trafilatura-1.6.3.tar.gz"
+  sha256 "671dd6e0000e101c4bce8d70f4408bcb79fcbf2275ee25591efe33e2c8a1600d"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     rebuild 2
@@ -29,18 +28,18 @@ class Trafilatura < Formula
   depends_on "six"
 
   resource "courlan" do
-    url "https://files.pythonhosted.org/packages/53/35/d141b5ffc381cef94c95d32d7082aff443cfea22b2a75c2839297064d408/courlan-0.9.4.tar.gz"
-    sha256 "6906aa9a15ae9d442821e06ae153c60f385cff41a8d44b9597c00b349f7043c5"
+    url "https://files.pythonhosted.org/packages/dd/66/09e441e9130ea67201009b3e6020ebccf2c90df4a25a05edd79f08706d33/courlan-0.9.5.tar.gz"
+    sha256 "38dc35b2e3bf1f5d516d00d51ac12ebde543e3417c6be6f6a2273c0fc5b5b353"
   end
 
   resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/7e/16/e95f1d2f8014bac38e00d037e192222e52de7db7c71268ed3b2e12d4893c/dateparser-1.1.8.tar.gz"
-    sha256 "86b8b7517efcc558f085a142cdb7620f0921543fcabdb538c8a4c4001d8178e3"
+    url "https://files.pythonhosted.org/packages/1a/b2/f6b29ab17d7959eb1a0a5c64f5011dc85051ad4e25e401cbddcc515db00f/dateparser-1.2.0.tar.gz"
+    sha256 "7975b43a4222283e0ae15be7b4999d08c9a70e2d378ac87385b1ccf2cffbbb30"
   end
 
   resource "htmldate" do
-    url "https://files.pythonhosted.org/packages/e4/81/b3b8c88bbb6cdf610098597b7b96d71151de4bc8bda456e882da0486a92d/htmldate-1.5.2.tar.gz"
-    sha256 "cc8b41c412b21d8a9236981755cfba7dfe25ebaf925a46417058d4902ad77e9b"
+    url "https://files.pythonhosted.org/packages/24/fb/26213bb6300dd7d17afb131d222b4f7e083d822d0fd72089eb60e3b134c1/htmldate-1.6.0.tar.gz"
+    sha256 "5827c8f626a16800a29e57e8188a3d32d0b08ca4c7bd662537b73bbbf22c45a6"
   end
 
   resource "justext" do
@@ -64,8 +63,8 @@ class Trafilatura < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/b2/e2/adf17c75bab9b33e7f392b063468d50e513b2921bbae7343eb3728e0bc0a/tzlocal-5.1.tar.gz"
-    sha256 "a5ccb2365b295ed964e0a98ad076fe10c495591e75505d34f154d60a7f1ed722"
+    url "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz"
+    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
 
   def install
