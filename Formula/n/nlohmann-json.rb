@@ -1,8 +1,8 @@
 class NlohmannJson < Formula
   desc "JSON for modern C++"
   homepage "https://github.com/nlohmann/json"
-  url "https://github.com/nlohmann/json/archive/refs/tags/v3.11.2.tar.gz"
-  sha256 "d69f9deb6a75e2580465c6c4c5111b89c4dc2fa94e3a85fcd2ffcd9a143d9273"
+  url "https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz"
+  sha256 "0d8ef5af7f9794e3263480193c491549b2ba6cc74bb018906202ada498a79406"
   license "MIT"
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
@@ -13,10 +13,10 @@ class NlohmannJson < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
