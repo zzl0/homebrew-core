@@ -17,14 +17,14 @@ class YoutubeDl < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91ddcd5a78a536d49b1dd461b1f841611cbf641fae881aa4b88fd354451d9848"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5c07f4bf1dba666a29a383db3a93e999e21e87cbd897247fe90bd48bbbd6629"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e8e5b503f45df8295c549bd1b3c8852eddeb1a820ef83609346ff05eb0aef42"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa5eed9e9d1c14f924f90b67c653cc0207e22bb86ee3280fb5e9f114383c7bd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b05a5de77bed702e043fa611811597321b92c15b3d8ee5d7abc07db452966219"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c53c7c184fe002c221ce12eef1dde7aba6dc200b8f63a2fb55db1c2059ae85b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db272dcc243e7d6ad084e1c63e407379be8501eb7727f13445b04ea0bd5dffc8"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86ad6daf8ba59b37855706201030abfdfa6a334d66ee80ee6351212baa1fccaa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f0777822da37695c41651a1745fda40a3bda17b7d252b682c74eaa8591023b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e1ac5fa2ec5d0dc609a2a52b5862da268bcd2731609aa114491b787105701f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d203c17f40f2e3ab8e1d3887539ae66173c4e91b36d28024e7bd98e41c2407a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "41ea7b884710606f9e4b2e98d186815d1be48a13fa6e3c945c2c686fec48e25f"
+    sha256 cellar: :any_skip_relocation, monterey:       "f78df8ae4f3c7b6f84f8d2a94bfb1187219c0b2c46a8a2859bf1061940068820"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2abdf78bc998a6fde5c66488e36411df9c0d8326554a031c3dd32aaef651af2c"
   end
 
   head do
