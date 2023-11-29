@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://github.com/raphamorim/rio/archive/refs/tags/v0.0.27.tar.gz"
-  sha256 "2338d679eaec987bd50ab12ca1e9b79853690899d2e8e70efa88315d0c626090"
+  url "https://github.com/raphamorim/rio/archive/refs/tags/v0.0.28.tar.gz"
+  sha256 "9883320942e83994fd6ee3e2272ec811d99677fa59f3c8ccd0437735d74d0dec"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -26,7 +26,7 @@ class Rio < Formula
   depends_on :macos
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "rio")
+    system "cargo", "install", *std_cargo_args(path: "frontends/cross-winit")
   end
 
   test do
