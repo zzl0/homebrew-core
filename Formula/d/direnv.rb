@@ -1,8 +1,8 @@
 class Direnv < Formula
   desc "Load/unload environment variables based on $PWD"
   homepage "https://direnv.net/"
-  url "https://github.com/direnv/direnv/archive/refs/tags/v2.32.3.tar.gz"
-  sha256 "c66f6d1000f28f919c6106b5dcdd0a0e54fb553602c63c60bf59d9bbdf8bd33c"
+  url "https://github.com/direnv/direnv/archive/refs/tags/v2.33.0.tar.gz"
+  sha256 "8ef18051aa6bdcd6b59f04f02acdd0b78849b8ddbdbd372d4957af7889c903ea"
   license "MIT"
   head "https://github.com/direnv/direnv.git", branch: "master"
 
