@@ -5,7 +5,7 @@ class PerconaServer < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.33-25/source/tarball/percona-server-8.0.33-25.tar.gz"
   sha256 "9871cac20c226bba7607f35c19ee23516a38c67573dd48618727c74eae22912e"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-server/latest/"
@@ -115,7 +115,6 @@ class PerconaServer < Formula
       -DINSTALL_PLUGINDIR=lib/percona-server/plugin
       -DMYSQL_DATADIR=#{var}/mysql
       -DSYSCONFDIR=#{etc}
-      -DENABLED_LOCAL_INFILE=1
       -DWITH_EMBEDDED_SERVER=ON
       -DWITH_INNODB_MEMCACHED=ON
       -DWITH_UNIT_TESTS=OFF
