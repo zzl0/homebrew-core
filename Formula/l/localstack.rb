@@ -3,8 +3,8 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/42/11/140488d63c1a5c6870d40f019ef6e793f2a73dcd758f3d42c48e50da038f/localstack-3.0.1.tar.gz"
-  sha256 "12afac1b9d5812c67e298c83d49cfd2536a8e9325853deb77afbe02e87a24266"
+  url "https://files.pythonhosted.org/packages/31/17/377a100ee57070a9641782ef92e7c75496ae3b74972ea6dd9a01139ffb7d/localstack-3.0.2.tar.gz"
+  sha256 "7ae38500e60430809ae8f2a8d71bc98cd7bed154c1fd140a91298c873bcab338"
   license "Apache-2.0"
 
   bottle do
@@ -61,18 +61,18 @@ class Localstack < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/6a/8a/b3c72dd633ff50faef6b8545abbecd6a0b73bd9db8da338040f658ef89e8/localstack-core-3.0.1.tar.gz"
-    sha256 "4b8596d22c895b07a644c96a2e27e9993e5272774dbf519a81d2ee070fbc6186"
+    url "https://files.pythonhosted.org/packages/1e/a8/ff00879172c9d4d3b80a1b31ebfff0d0ec37223cd901ede80855225d367c/localstack-core-3.0.2.tar.gz"
+    sha256 "789352a723f6df702abc32b0048dcee62bfa2ee71cbf777deab8355159b038ec"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/8f/0d/65666f57d2ad4f7bd9f1214bf0b199d66d6cfa4cebc41b4cb6961757395d/localstack-ext-3.0.1.tar.gz"
-    sha256 "197e31685660790cd3f58a336cd97941430bc2b1faa5cfea121d573d21c90df3"
+    url "https://files.pythonhosted.org/packages/eb/67/7e0c025e1b6832c50eb741bfb02b5322f2487d13e5ae9e172b77b498ea76/localstack-ext-3.0.2.tar.gz"
+    sha256 "28d33f1e34965707a72eab576da44fef493b6fb61793ffda2861240713e9d5f0"
   end
 
   resource "markdown-it-py" do
@@ -83,6 +83,11 @@ class Localstack < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pbr" do
