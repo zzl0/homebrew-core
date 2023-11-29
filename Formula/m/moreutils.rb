@@ -1,9 +1,8 @@
 class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
-  url "https://git.joeyh.name/git/moreutils.git",
-      tag:      "0.67",
-      revision: "ee8e013cd5398c5fb34fb19a24db0f3b6185bac3"
+  url "https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.68.tar.gz"
+  sha256 "5eb14bc7bc1407743478ebdbd83772bf3b927fd949136a2fbbde96fa6000b6e7"
   license all_of: [
     "GPL-2.0-or-later",
     { any_of: ["GPL-2.0-only", "Artistic-2.0"] },
@@ -41,8 +40,8 @@ class Moreutils < Formula
   end
 
   resource "IPC::Run" do
-    url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/IPC-Run-20200505.0.tar.gz"
-    sha256 "816ebf217fa0df99c583d73c0acc6ced78ac773787c664c75cbf140bb7e4c901"
+    url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/IPC-Run-20231003.0.tar.gz"
+    sha256 "eb25bbdf5913d291797ef1bfe998f15130b455d3ed02aacde6856f0b25e4fe57"
   end
 
   def install
