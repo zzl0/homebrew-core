@@ -61,7 +61,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Check commit format
-        if: ${{!contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')}}
+        if: >
+          github.actor != 'BrewTestBot' &&
+          !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
         uses: Homebrew/actions/check-commit-format@master
         with:
           token: ${{secrets.GITHUB_TOKEN}}
