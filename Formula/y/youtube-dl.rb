@@ -3,9 +3,18 @@ class YoutubeDl < Formula
 
   desc "Download YouTube videos from the command-line"
   homepage "https://ytdl-org.github.io/youtube-dl/"
-  url "https://files.pythonhosted.org/packages/01/4f/ab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7/youtube_dl-2021.12.17.tar.gz"
-  sha256 "bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2"
   license "Unlicense"
+
+  stable do
+    url "https://files.pythonhosted.org/packages/01/4f/ab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7/youtube_dl-2021.12.17.tar.gz"
+    sha256 "bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2"
+
+    # Backport fix for extractor handling consent
+    patch do
+      url "https://github.com/ytdl-org/youtube-dl/commit/aaed4884ed9954b8b69c3ca5254418ec578ed0b9.patch?full_index=1"
+      sha256 "3078402768839f4ad611bcb7ab3b221d1a97626c62c4f1bdb2f85598fa45fa96"
+    end
+  end
 
   bottle do
     rebuild 3
@@ -26,16 +35,16 @@ class YoutubeDl < Formula
   depends_on "python@3.12"
 
   def install
+    python3 = which("python3.12")
     if build.head?
-      python = Formula["python@3.12"].opt_bin/"python3"
-      system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python}", "install"
+      system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python3}", "install"
       fish_completion.install prefix/"etc/fish/completions/youtube-dl.fish"
       (prefix/"etc/fish").rmtree
     else
       virtualenv_install_with_resources
       # Handle "ERROR: Unable to extract uploader id" until new release
       # https://github.com/ytdl-org/youtube-dl/issues/31530
-      inreplace libexec/"lib/python3.12/site-packages/youtube_dl/extractor/youtube.py",
+      inreplace libexec/Language::Python.site_packages(python3)/"youtube_dl/extractor/youtube.py",
                 "owner_profile_url, 'uploader id')",
                 "owner_profile_url, 'uploader id', fatal=False)"
       man1.install_symlink libexec/"share/man/man1/youtube-dl.1" => "youtube-dl.1"
