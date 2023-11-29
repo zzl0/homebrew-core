@@ -4,6 +4,7 @@ class MysqlAT57 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.44.tar.gz"
   sha256 "b8fe262c4679cb7bbc379a3f1addc723844db168628ce2acf78d33906849e491"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/5.7.html?tpl=files&os=src&version=5.7"
@@ -77,7 +78,6 @@ class MysqlAT57 < Formula
       -DWITH_NUMA=OFF
       -DWITH_UNIT_TESTS=OFF
       -DWITH_EMBEDDED_SERVER=ON
-      -DENABLED_LOCAL_INFILE=1
     ]
 
     args << if OS.mac?
