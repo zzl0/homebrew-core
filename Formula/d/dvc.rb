@@ -3,10 +3,9 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/f3/f2/1b73216a9cd3d5d1d4c3dc786d2eb4c4583ed4c2ee060a5f3979294e5715/dvc-3.30.1.tar.gz"
-  sha256 "4048b016b0a0bd08d08fadd889a5e7e2debcda1e891204987a5ccc8ccc4bdc29"
+  url "https://files.pythonhosted.org/packages/6c/db/68f606ef37226b0d99495772c2b291e4522ffc32efda644d9ce8e12897b5/dvc-3.30.3.tar.gz"
+  sha256 "04bfcd6ef3d318ba279ce70ebe419a8094e88bc51c6d98fefb8b5a8abf8d90be"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b7b463c92b9f50ab24a08f6d795cc8795a431148b41295f88a4250aa9b4a594b"
@@ -369,8 +368,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/f9/26/6e4218cda2e15e7b2120acf68c470f49ec7c811bc82c09b4befa5c66386e/google-api-python-client-2.108.0.tar.gz"
-    sha256 "6396efca83185fb205c0abdbc1c2ee57b40475578c6af37f6d0e30a639aade99"
+    url "https://files.pythonhosted.org/packages/f8/99/c83a13d7d7f15aa06e9a6811375688f8c45f5211f5f5c719d337a2596f3d/google-api-python-client-2.109.0.tar.gz"
+    sha256 "d06390c25477c361d52639fe00ef912c3fab8dafc7fbf29580c1144e92523a79"
   end
 
   resource "google-auth" do
