@@ -1,8 +1,9 @@
 class Qcli < Formula
   desc "Report audiovisual metrics via libavfilter"
   homepage "https://bavc.org/preserve-media/preservation-tools"
-  url "https://github.com/bavc/qctools/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "17cdc326819d3b332574968ee99714ac982c3a8e19a9c80bcbd3dc6dcb4db2b1"
+  url "https://github.com/bavc/qctools.git",
+      tag:      "v1.3.1",
+      revision: "0573c33953d02db53812a2420f174d6b1233751e"
   license "GPL-3.0-or-later"
   head "https://github.com/bavc/qctools.git", branch: "master"
 
@@ -20,22 +21,21 @@ class Qcli < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg@4"
-  depends_on "qt@5"
-  depends_on "qwt-qt5"
+  depends_on "ffmpeg"
+  depends_on "qt"
+  depends_on "qwt"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
-    qt5 = Formula["qt@5"].opt_prefix
-    ENV["QCTOOLS_USE_BREW"]="true"
+    ENV["USE_BREW"]="true"
 
     cd "Project/QtCreator/qctools-lib" do
-      system "#{qt5}/bin/qmake", "qctools-lib.pro"
+      system "qmake", "qctools-lib.pro"
       system "make"
     end
     cd "Project/QtCreator/qctools-cli" do
-      system "#{qt5}/bin/qmake", "qctools-cli.pro"
+      system "qmake", "qctools-cli.pro"
       system "make"
       bin.install "qcli"
     end
@@ -44,7 +44,7 @@ class Qcli < Formula
   test do
     # Create an example mp4 file
     mp4out = testpath/"video.mp4"
-    system "#{Formula["ffmpeg@4"].bin}/ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    system "#{Formula["ffmpeg"].bin}/ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     # Create a qcli report from the mp4
     qcliout = testpath/"video.mp4.qctools.xml.gz"
     system bin/"qcli", "-i", mp4out, "-o", qcliout
