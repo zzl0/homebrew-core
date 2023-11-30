@@ -7,7 +7,7 @@ class BrewPhpSwitcher < Formula
   head "https://github.com/philcook/brew-php-switcher.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "93556c4acac08ee72bdc0bf5c12e220b18edb2396a5fdc28470b38ca04d5906a"
+    sha256 cellar: :any_skip_relocation, all: "e0825664daa7aa3179f0893c1293a4db3c9fc7255f23f4c84b5a3d9e7f3f2f0a"
   end
 
   depends_on "php" => :test
