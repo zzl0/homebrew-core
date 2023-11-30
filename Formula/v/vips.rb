@@ -24,7 +24,7 @@ class Vips < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "cgif"
@@ -65,6 +65,17 @@ class Vips < Formula
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+
+    if OS.mac?
+      # `pkg-config --libs vips` includes libarchive, but that package is
+      # keg-only so it needs to look for the pkgconfig file in libarchive's opt
+      # path.
+      libarchive = Formula["libarchive"].opt_prefix
+      inreplace [lib/"pkgconfig/vips.pc", lib/"pkgconfig/vips-cpp.pc"] do |s|
+        s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
+                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")
+      end
+    end
   end
 
   test do
@@ -79,5 +90,9 @@ class Vips < Formula
     # [palette] requires libimagequant, vips warns if it's not present
     cmd = "#{bin}/vips copy #{test_fixtures("test.png")} #{testpath}/test.png[palette] 2>&1"
     assert_equal "", shell_output(cmd)
+
+    # Make sure `pkg-config` can parse `vips.pc` and `vips-cpp.pc` after the `inreplace`.
+    system "pkg-config", "vips"
+    system "pkg-config", "vips-cpp"
   end
 end
