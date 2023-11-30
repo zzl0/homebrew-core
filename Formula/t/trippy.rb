@@ -1,8 +1,8 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
   homepage "https://trippy.cli.rs/"
-  url "https://github.com/fujiapple852/trippy/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "4b2155ca20d53ee1d29c9459a6efc4ee094658e93033a90085e39c841d02666b"
+  url "https://github.com/fujiapple852/trippy/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "bebd130c74ceacf4bc6b6f3aa92fa639e1904eb904c5135f53c45510370289ed"
   license "Apache-2.0"
   head "https://github.com/fujiapple852/trippy.git", branch: "master"
 
@@ -26,13 +26,8 @@ class Trippy < Formula
 
   test do
     # https://github.com/fujiapple852/trippy#privileges
-    expected = if OS.mac?
-      "root user required to use raw sockets"
-    else
-      "capability CAP_NET_RAW is required"
-    end
-
-    output = shell_output("#{bin}/trip brew.sh 2>&1", 255)
+    expected = "Error: privileges are required"
+    output = shell_output("#{bin}/trip brew.sh 2>&1", 1)
     assert_match expected, output
 
     assert_match "trip #{version}", shell_output("#{bin}/trip --version")
