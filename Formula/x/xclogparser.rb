@@ -1,8 +1,8 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/MobileNativeFoundation/XCLogParser"
-  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.36.tar.gz"
-  sha256 "d3b2e0d75b3c6920535398c882d75c92f901262a302a344a75fe23adfe01e10c"
+  url "https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.37.tar.gz"
+  sha256 "4963287d3326ba72f612cce47bca7ce1aaf95e00fb3208cba8cbd19a3eb5b5f8"
   license "Apache-2.0"
 
   bottle do
