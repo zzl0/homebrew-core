@@ -7,7 +7,7 @@ class NlohmannJson < Formula
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9ca4704d40b8e80ae9405d98e64c89922ace4de66ededabe63b65d73d14d8bc8"
+    sha256 cellar: :any_skip_relocation, all: "f171485a9f51d41eff592f4bf49bd14d09fa041c89370c00c4674211e15fddd6"
   end
 
   depends_on "cmake" => :build
