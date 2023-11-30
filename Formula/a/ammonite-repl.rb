@@ -22,7 +22,7 @@ class AmmoniteRepl < Formula
     (libexec/"bin").install Dir["*"].first => "amm"
     chmod 0755, libexec/"bin/amm"
     env = Language::Java.overridable_java_home_env("17")
-    env["PATH"] = "$PATH:$JAVA_HOME/bin"
+    env["PATH"] = "$JAVA_HOME/bin:$PATH"
     (bin/"amm").write_env_script libexec/"bin/amm", env
   end
 
