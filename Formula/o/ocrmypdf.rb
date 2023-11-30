@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/44/cc/a23e549389b457241cef9b3f4879ac001052da9c6bd3d44e8cbf8c864122/ocrmypdf-15.4.3.tar.gz"
-  sha256 "9385f582fa8b9eb4d89a27dfd80a29cffdf53694c570f9f0e87db4af8cfe3b15"
+  url "https://files.pythonhosted.org/packages/c4/cb/204cd70630becd846b07fe2efeea3630d760471aa584808f20118e7b523d/ocrmypdf-15.4.4.tar.gz"
+  sha256 "4696c81cc5b5d64f31ccfe685d10baeb69b42bb0974acddf292d8cf9d97605c3"
   license "MPL-2.0"
 
   bottle do
@@ -45,11 +45,6 @@ class Ocrmypdf < Formula
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
-  resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
-    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
-  end
-
   resource "deprecation" do
     url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
     sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
@@ -70,11 +65,6 @@ class Ocrmypdf < Formula
     sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
   end
 
-  resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/38/e8/c7642da0b774d42a259bdb450aba0d34aee65bf3f6641c7a7f3c83ac7297/pikepdf-8.7.1.tar.gz"
-    sha256 "69d69a93d07027e351996ef8232f26bba762d415206414e0ae3814be0aee0f7a"
-  end
-
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
@@ -88,11 +78,6 @@ class Ocrmypdf < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
     sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
-  end
-
-  resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
-    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
   end
 
   def install
