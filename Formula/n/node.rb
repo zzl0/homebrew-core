@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v21.2.0/node-v21.2.0.tar.xz"
-  sha256 "d57c9cea394764fa1d9af51e52c7449f71193e9d44c4a81fbedec653ec827707"
+  url "https://nodejs.org/dist/v21.3.0/node-v21.3.0.tar.xz"
+  sha256 "ab4172ec827f770c6c3b4b6f30824104137eda474848e84d55ed55b341e67725"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -49,8 +49,23 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-10.2.3.tgz"
-    sha256 "9316bf3da0a0ec6b81eb83784539098a0e802246d8269c45797a87a6a82a62bf"
+    url "https://registry.npmjs.org/npm/-/npm-10.2.4.tgz"
+    sha256 "36b548120f75f26408d04ff163cd4a699916f1c4b72ebeeab0bbaf054009eb5b"
+  end
+
+  # Fixes `return binding.writeFileUtf8( Error: ENOENT: no such file or directory`.
+  # Remove both patches when upstream releases a new version after they're merged.
+  # https://github.com/nodejs/node/issues/50989
+  # https://github.com/nodejs/node/pull/50990
+
+  patch do
+    url "https://github.com/nodejs/node/commit/c3236428e02b00a416858e9f76ce287923595266.patch?full_index=1"
+    sha256 "067f59bb4d769b775a35968d00e6d26adc34bd12ae899ab1bcdb2b2e478b6f8e"
+  end
+
+  patch do
+    url "https://github.com/nodejs/node/commit/aaa4edda7d2e16a284f893c9cb49459b1271e4d5.patch?full_index=1"
+    sha256 "16fab63b15d4ad2a9ab0cf0516d108d789a7b58fe14fecf5277aceeb3b56ac2f"
   end
 
   def install
