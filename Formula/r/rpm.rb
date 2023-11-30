@@ -16,7 +16,8 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "97a723de140f43f323996f9748f2c870bb1bb36555c3372c3a4b624158378721"
+    rebuild 1
+    sha256 x86_64_linux: "c39d73788d7aec2606c007f143e5bb980f7f1433bb91be5d62bbdde754d1a362"
   end
 
   depends_on "cmake" => :build
