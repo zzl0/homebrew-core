@@ -18,7 +18,7 @@ class Metashell < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "libedit"
   uses_from_macos "libxml2"
@@ -31,16 +31,16 @@ class Metashell < Formula
   def install
     # Build internal Clang
     system "cmake", "-S", "3rd/templight/llvm",
-                    "-B", "3rd/templight/build",
+                    "-B", "build/templight",
+                    "-DLIBCLANG_BUILD_STATIC=ON",
                     "-DLLVM_ENABLE_TERMINFO=OFF",
                     "-DLLVM_ENABLE_PROJECTS=clang",
                     *std_cmake_args
-    system "cmake", "--build", "3rd/templight/build"
-    system "cmake", "--install", "3rd/templight/build"
+    system "cmake", "--build", "build/templight", "--target", "templight"
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "build/metashell", *std_cmake_args
+    system "cmake", "--build", "build/metashell"
+    system "cmake", "--install", "build/metashell"
   end
 
   test do
