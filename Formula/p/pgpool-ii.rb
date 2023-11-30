@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.4.4.tar.gz"
-  sha256 "10bed66f8197c74dcb00a0e73f618066d5d5e0adc878865c2fcfa1c945e68f4f"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.4.5.tar.gz"
+  sha256 "ccd4922c8694991102a2bef64dd43f33f539f6a185bd42f218322bab0a388a60"
   # NTP license that excludes distributing "with fee"
   license :cannot_represent
 
