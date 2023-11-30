@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/3.1.48.tar.gz"
-  sha256 "5d1eca63ff1a23dd80d51ed6314cf6988fdd44ead13a7b85bd08dc98285e7a99"
+  url "https://github.com/emscripten-core/emscripten/archive/refs/tags/3.1.50.tar.gz"
+  sha256 "6cebaac67c957441152c3075a901c91c41460c2d2df3d4ba45e6309fbc3b1e18"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -29,7 +29,7 @@ class Emscripten < Formula
 
   depends_on "cmake" => :build
   depends_on "node"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yuicompressor"
 
   # OpenJDK is needed as a dependency on Linux and ARM64 for google-closure-compiler,
@@ -51,7 +51,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "4fba26a77ea344b8d2b49cc8e1afdc8fcda13e96"
+        revision: "dbcac17d645d8ace8ae2cb69d6ba36b22d59b7cf"
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -62,8 +62,8 @@ class Emscripten < Formula
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
-    url "https://github.com/llvm/llvm-project.git",
-        revision: "a54545ba6514802178cf7cf1c1dd9f7efbf3cde7"
+    url "https://github.com/llvm/llvm-project/archive/14028ec0a62210d68a4dd7a046ac79c8c3b7727e.tar.gz"
+    sha256 "abcf9561cc66292f7ee9beba4ef76daa6d8ddf2ce8bb513bbb5c6501265e9625"
   end
 
   def install
@@ -169,7 +169,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: Formula["python@3.11"].opt_bin/"python3.11" }
+    emscript_env = { PYTHON: Formula["python@3.12"].opt_bin/"python3.12" }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|
