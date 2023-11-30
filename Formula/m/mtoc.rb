@@ -6,17 +6,12 @@ class Mtoc < Formula
   license "APSL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1fbf003deb50e3d981f6185f47e9d26cf03ecab59bcec5e6976dd0d9a5e1f75e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04d75f24e8a8dbf876aa37fddd44139c5177b08348210ef3acacedb5ba8e1dc7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebb0ffb0ba60ca6d02f0df9919427bf8a2579632e585a2a6ae851c5fbe858cc5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "935bfd119379ec4d223830db858a2b2279152709a6e78eba895af5859110d22f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cec74d24e4f0e02404ba18a486fa61a9c5cfd060e07ec131c241681ce9e25f32"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd70c47294b5c9bee72d0e7d0c2d1b8779eefd367a01ce13409cbb1191919798"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd72c247a0ea992a4ab1a645e3a51007331a1bd15fc693e93fc1bd0267f38273"
-    sha256 cellar: :any_skip_relocation, big_sur:        "605abc57733add4e0643d6ffa0186df37e1b4adb5461b9fcdd92d1bfb688f649"
-    sha256 cellar: :any_skip_relocation, catalina:       "2f60b3731066cf662f3d8e9451ce0f94954980100780c9e79b6e8ea066ad8def"
-    sha256 cellar: :any_skip_relocation, mojave:         "c9cba74c5669816e90ae2fa9110be8c9b6b9d1a90ec7d1f246687a3f512e08ab"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "62587e723f38c2a51d3a951dca42df10b9aa1ac67c88d8e286b27e6957edd985"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09f5ebd19cf69d050cdfe07449b88af12332a0f4a4ae00ffd2aca2686b7f65d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e62f8e6169d30a003ccfe37f099c16e067d0eb155ebb3493378d18230b47d525"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb34a8d6ea6ecb1d36df9a138a0940eaf9e11dfdd2fe1f7f3f196e34c0d7aa2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf68d8e1eeebac0d968f6602033d3e849f5e11b6e4f85cc9491057250ced9b15"
+    sha256 cellar: :any_skip_relocation, ventura:        "b80782da42c2a981fb9c373fa351d8181d1c32b365ed1115a6b9ca856c812b45"
+    sha256 cellar: :any_skip_relocation, monterey:       "8799642d1f54cb65371b1dd19dd70778aed1418678a25f636db50d2908e7e6ef"
   end
 
   depends_on "llvm" => :build
