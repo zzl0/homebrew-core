@@ -1,10 +1,9 @@
 class LibvirtGlib < Formula
   desc "Libvirt API for glib-based programs"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/glib/libvirt-glib-4.0.0.tar.xz"
-  sha256 "8423f7069daa476307321d1c11e2ecc285340cd32ca9fc05207762843edeacbd"
+  url "https://download.libvirt.org/glib/libvirt-glib-5.0.0.tar.xz"
+  sha256 "9bfec346382416a3575d87299bc641b2a464aa519fd9b1287e318aa43a2f3b8b"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://download.libvirt.org/glib/"
