@@ -43,6 +43,10 @@ class Rpm < Formula
     conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
     # only rpm should go into HOMEBREW_CELLAR, not rpms built
     inreplace ["macros.in", "platform.in"], "@prefix@", HOMEBREW_PREFIX
@@ -50,6 +54,9 @@ class Rpm < Formula
     # ensure that pkg-config binary is found for dep generators
     inreplace "scripts/pkgconfigdeps.sh",
               "/usr/bin/pkg-config", Formula["pkg-config"].opt_bin/"pkg-config"
+
+    # work around Homebrew's prefix scheme which sets Python3_SITEARCH outside of prefix
+    inreplace "python/CMakeLists.txt", "${Python3_SITEARCH}", prefix/Language::Python.site_packages(python3)
 
     # WITH_INTERNAL_OPENPGP and WITH_OPENSSL are deprecated
     args = %W[
@@ -134,6 +141,6 @@ class Rpm < Formula
     files = shell_output(bin/"rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match (HOMEBREW_PREFIX/"share/doc/test").to_s, files
 
-    system "python3.12", "-c", "import rpm"
+    system python3, "-c", "import rpm"
   end
 end
