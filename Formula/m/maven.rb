@@ -12,13 +12,13 @@ class Maven < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "642685366adfc507d5337e2de17b1bb13ae381a18a09956cc03d9d0258e8d34f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "642685366adfc507d5337e2de17b1bb13ae381a18a09956cc03d9d0258e8d34f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "642685366adfc507d5337e2de17b1bb13ae381a18a09956cc03d9d0258e8d34f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3c0cb2c2df11686acaf832092c54975dae8622b86bdbd2b546f65820fd4bf59e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c0cb2c2df11686acaf832092c54975dae8622b86bdbd2b546f65820fd4bf59e"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c0cb2c2df11686acaf832092c54975dae8622b86bdbd2b546f65820fd4bf59e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "642685366adfc507d5337e2de17b1bb13ae381a18a09956cc03d9d0258e8d34f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ff7772d39d4ca91511aba210961c89e042297f42277213f6a658e7874405392"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ff7772d39d4ca91511aba210961c89e042297f42277213f6a658e7874405392"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ff7772d39d4ca91511aba210961c89e042297f42277213f6a658e7874405392"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21ada71ddbdf8f184165ac8f64e4dbf1373beec79c0781e16f0e5b407a99d2dd"
+    sha256 cellar: :any_skip_relocation, ventura:        "21ada71ddbdf8f184165ac8f64e4dbf1373beec79c0781e16f0e5b407a99d2dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "21ada71ddbdf8f184165ac8f64e4dbf1373beec79c0781e16f0e5b407a99d2dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ff7772d39d4ca91511aba210961c89e042297f42277213f6a658e7874405392"
   end
 
   depends_on "openjdk"
