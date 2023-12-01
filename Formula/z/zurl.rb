@@ -3,10 +3,9 @@ class Zurl < Formula
 
   desc "HTTP and WebSocket client worker with ZeroMQ interface"
   homepage "https://github.com/fanout/zurl"
-  url "https://github.com/fanout/zurl/releases/download/v1.11.1/zurl-1.11.1.tar.bz2"
-  sha256 "39948523ffbd0167bc8ba7d433b38577156e970fe9f3baa98f2aed269241d70c"
+  url "https://github.com/fanout/zurl/releases/download/v1.12.0/zurl-1.12.0.tar.bz2"
+  sha256 "46d13ac60509a1566a4e3ad3eaed5262adf86eb5601ff892dba49affb0b63750"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d61f6c9edd6c3dde53d2d27e60601facce836bdee497c72335143695da6ebfc3"
@@ -24,7 +23,7 @@ class Zurl < Formula
   depends_on "python-packaging" => :test
   depends_on "python-setuptools" => :test
   depends_on "python@3.12" => :test
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "zeromq"
 
   uses_from_macos "curl"
@@ -41,7 +40,10 @@ class Zurl < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+    args = ["--qtselect=#{Formula["qt"].version.major}"]
+    args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
+
+    system "./configure", "--prefix=#{prefix}", *args
     system "make"
     system "make", "install"
   end
