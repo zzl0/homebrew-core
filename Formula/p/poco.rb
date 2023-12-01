@@ -1,14 +1,14 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.12.5/poco-1.12.5-all.tar.gz"
-  sha256 "2e8f6d03e31cd67ca597f45a77daa797db3760035b445710a1cf4973863c2d0f"
+  url "https://pocoproject.org/releases/poco-1.12.5p1/poco-1.12.5p1-all.tar.gz"
+  sha256 "d7c17b30f4536066f11f89e8b3b1145161ca477470a5482c63cfadb68cdf3e25"
   license "BSL-1.0"
   head "https://github.com/pocoproject/poco.git", branch: "master"
 
   livecheck do
     url "https://pocoproject.org/releases/"
-    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
+    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+\w*)/?["' >]}i)
   end
 
   bottle do
