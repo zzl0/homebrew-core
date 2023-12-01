@@ -41,14 +41,14 @@ class Coccinelle < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c36d64915f8f1fb1d3f1b11affa180d87cce7c2fab525ca5d43e000d6552ac84"
-    sha256 arm64_monterey: "6d709b2576f84260edf15ed3a6c4e4b4e0cc73bde3819f9d9085f964c761b155"
-    sha256 arm64_big_sur:  "43e22010b8b1f3bf93817d161e2d0e96d907f4a38972d27f91d0231042f70860"
-    sha256 ventura:        "7d44848e93251045e263c647aa95c2fd7639ab2918dcdea672ea12115c0f922d"
-    sha256 monterey:       "9e00a25cc6afe398d4a5ae42300bacd883bf1f570e6c1523ffb43bd3d330ae30"
-    sha256 big_sur:        "270fe7690278277362ebf04707665ae41e3831c21e33d945408f2e7d9737669e"
-    sha256 catalina:       "27b442146b362f44848997fa840389ff9df05317e915147d289a74e1ef4c5a68"
-    sha256 x86_64_linux:   "29a0aeaeb102990cac27cdc3ecc713f2af6366f38c5d3cefb520ef70dcd2fa84"
+    rebuild 1
+    sha256 arm64_sonoma:   "ca6145d84ac088d6a9af56409383ee95fcdfc019d565f57a16ab6571b468df10"
+    sha256 arm64_ventura:  "cb7b2f3f20840b99f22efba6538fd4e7a6fa3868aa9f934c5722e26a968dc753"
+    sha256 arm64_monterey: "368b32215f0409f8686364f2d5f9fa6d6ef3896ae1baddba37ad34abc2021a8a"
+    sha256 sonoma:         "6e9fcb9482970a2459a8e6bc4b319cd06d555dbfcd6501ad5cae9d9fc8dad61b"
+    sha256 ventura:        "60b09a4b123954c6a206cfa471c8653622f9567f786eb183241b1cd55f412128"
+    sha256 monterey:       "108f9640319df581d2feb12d6f52540d7f30876d24f48547e2a901ddda474aed"
+    sha256 x86_64_linux:   "1d24df746aee06ce03219fb78ff208b30b7b14c666195e30623c9012c9f825ea"
   end
 
   depends_on "autoconf" => :build
