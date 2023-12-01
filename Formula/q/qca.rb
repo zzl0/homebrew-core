@@ -25,23 +25,29 @@ class Qca < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "botan"
+  depends_on "ca-certificates"
   depends_on "gnupg"
   depends_on "libgcrypt"
   depends_on "nss"
   depends_on "openssl@3"
   depends_on "pkcs11-helper"
-  depends_on "qt@5"
+  depends_on "qt"
+
+  uses_from_macos "cyrus-sasl"
 
   fails_with gcc: "5"
 
   def install
-    # Make sure we link with OpenSSL 3 and not OpenSSL 1.1.
-    openssl11 = Formula["openssl@1.1"]
-    ENV.remove "CMAKE_PREFIX_PATH", openssl11.opt_prefix
-    ENV.remove ["CMAKE_INCLUDE_PATH", "HOMEBREW_INCLUDE_PATHS"], openssl11.opt_include
-    ENV.remove ["CMAKE_LIBRARY_PATH", "HOMEBREW_LIBRARY_PATHS"], openssl11.opt_lib
+    ENV["QC_CERTSTORE_PATH"] = Formula["ca-certificates"].pkgetc/"cert.pem"
 
-    args = %W[-DBUILD_TESTS=OFF -DQCA_PLUGINS_INSTALL_DIR=#{lib}/qt5/plugins]
+    # FIXME: QCA_PLUGINS_INSTALL_DIR should match qt's directory "{share}/qt/plugins";
+    # however, building with that directory results in segmentation faults inside
+    # PluginInstance destructor at `delete _instance`.
+    args = %W[
+      -DBUILD_TESTS=OFF
+      -DBUILD_WITH_QT6=ON
+      -DQCA_PLUGINS_INSTALL_DIR=#{lib}/qt/plugins
+    ]
 
     # Disable some plugins. qca-ossl, qca-cyrus-sasl, qca-logger,
     # qca-softstore are always built.
@@ -60,7 +66,7 @@ class Qca < Formula
   end
 
   test do
-    system bin/"qcatool-qt5", "--noprompt", "--newpass=",
+    system bin/"qcatool-qt6", "--noprompt", "--newpass=",
                               "key", "make", "rsa", "2048", "test.key"
   end
 end
