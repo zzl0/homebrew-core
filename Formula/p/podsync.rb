@@ -20,7 +20,7 @@ class Podsync < Formula
 
   depends_on "go" => :build
   depends_on "ffmpeg"
-  depends_on "youtube-dl"
+  depends_on "yt-dlp"
 
   def install
     system "make", "build"
