@@ -6,7 +6,7 @@ class Fennel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c1d124ad6f12534f3ad4def0e124a99fc89c0e5149df92ead5ca01c4a349ccc7"
+    sha256 cellar: :any_skip_relocation, all: "f46028597883cbc38864c61bd3fa402da9cb90ce97415d51a7b5279bc17f7bd0"
   end
 
   depends_on "lua"
