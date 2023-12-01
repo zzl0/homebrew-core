@@ -17,7 +17,8 @@ class Solargraph < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "faeca34a6d2716350ec139ddaa22993fc65ce2cd01dddb8a3d8098a21be5c358"
   end
 
-  uses_from_macos "ruby", since: :catalina
+  depends_on "ruby" # Requires >= Ruby 2.7
+
   uses_from_macos "xz"
 
   def install
