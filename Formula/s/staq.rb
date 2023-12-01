@@ -1,8 +1,8 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
   homepage "https://github.com/softwareQinc/staq"
-  url "https://github.com/softwareQinc/staq/archive/refs/tags/v3.3.tar.gz"
-  sha256 "2a1232474f7b7fc0153c18f49e6231e82b6f9c3d1f9ed506bbbb578972cf5067"
+  url "https://github.com/softwareQinc/staq/archive/refs/tags/v3.4.tar.gz"
+  sha256 "6a39d5ff9dace12fe29ad379d378bdf21a6d2515aba93f6008465280291381c2"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class Staq < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-D", "INSTALL_SOURCES=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
