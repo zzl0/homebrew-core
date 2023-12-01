@@ -1,5 +1,5 @@
 class NeovimQt < Formula
-  desc "Neovim GUI, in Qt5"
+  desc "Neovim GUI, in Qt"
   homepage "https://github.com/equalsraf/neovim-qt"
   url "https://github.com/equalsraf/neovim-qt/archive/refs/tags/v0.2.18.tar.gz"
   sha256 "b1e1e019946ecb106b3aea8e35fc6e367d2efce44ca1c1599a2ccdfb35a28635"
@@ -19,12 +19,12 @@ class NeovimQt < Formula
   depends_on "cmake" => :build
   depends_on "msgpack"
   depends_on "neovim"
-  depends_on "qt@5"
+  depends_on "qt"
 
   fails_with gcc: "5"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", "-DWITH_QT=Qt6", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
