@@ -21,10 +21,10 @@ class Pushpin < Formula
   end
 
   bottle do
-    sha256 ventura:      "a14bd996772ffd8d662690864e7412135fd3fa50df4d953694969d02280971ea"
-    sha256 monterey:     "9b7ffe6547bb8bf7790b64d0ca0fb81a85d069dbc5bf8782606fd670afa730e6"
-    sha256 big_sur:      "c382905cb6068f69fb4af65a0f5fcefd441519d1fb186d4ffbe048126e701b82"
-    sha256 x86_64_linux: "2e3da86aaf8b0bd905cac0ec5291e6ea2e111c287cc44b68a9b05333287a8bce"
+    sha256 sonoma:       "c01c689ca8623864c1ddb7ce3aa36a5a5f625da28dcb7c6db41457d12fd7927a"
+    sha256 ventura:      "14ea4ecaa5e10187d5d138ea46349c877cc18adc6205da84a6ba5f55a106a06d"
+    sha256 monterey:     "c06b30ebad48cad4c33e78a288dfc191edf83d56eec4a5771c5b116d4d585596"
+    sha256 x86_64_linux: "0b395e30678c52c69f6147e1693f0a767a61b7463c24e60134811537389922d7"
   end
 
   depends_on "pkg-config" => :build
