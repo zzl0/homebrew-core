@@ -16,6 +16,16 @@ class OcamlAT4 < Formula
     regex(%r{href=.*?/releases/v?(4(?:\.\d+)+)/?["']}i)
   end
 
+  bottle do
+    sha256 arm64_sonoma:   "015d672de32d28f039ec897291e4c36803bcf562f3904fffecc17dbcd9f0aba6"
+    sha256 arm64_ventura:  "a9b005aeb68d7e7cba4ddf72a2bd4d9683329e95dda048a002afc0f9ef23534b"
+    sha256 arm64_monterey: "71f5a84d9137a11012664e65d7282b57dc1eea163f5c4d8e14c02b1dbb5da58f"
+    sha256 sonoma:         "18a84964e30800cb1ef70b1336c2ce0e5d8eec0b3b017f10e6699ba06346922e"
+    sha256 ventura:        "d4513f0912c5e6eada78a425c8380b2c6fc06055c9ac2b0ad612d1105c3d01d0"
+    sha256 monterey:       "7d10dfd426a35c0dfd07cd6cb5969c0b7d572176bd2d1d40b79e6e49b0500230"
+    sha256 x86_64_linux:   "8412292973241a9951911a94cd1245f861a225a881ef08839815954ce4a276fd"
+  end
+
   # The ocaml compilers embed prefix information in weird ways that the default
   # brew detection doesn't find, and so needs to be explicitly blocked.
   pour_bottle? only_if: :default_prefix
