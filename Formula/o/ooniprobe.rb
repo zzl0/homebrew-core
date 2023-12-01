@@ -2,8 +2,8 @@ class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
   # TODO: check if we can build with go1.21
-  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.1.tar.gz"
-  sha256 "e25d5cf6e50b71459f94f75051083f498f8bee287c345b512897576491f70972"
+  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.2.tar.gz"
+  sha256 "aefc8dad948cdc4a7269bf223c4cdccb6f31fdc153c1e857a9364e195e67cf47"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,7 +19,7 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "165f5aa5c0e54a9a84d8c4ed6dbe98cf3a66b675258a171a903d9dbaa7bcf515"
   end
 
-  # go1.21 build issue report, https://github.com/ooni/probe/issues/2585
+  # go1.21 build issue report, https://github.com/ooni/probe/issues/2548
   depends_on "go@1.20" => :build
   depends_on "tor"
 
@@ -37,7 +37,9 @@ class Ooniprobe < Formula
     (testpath/"config.json").write <<~EOS
       {
         "_version": 3,
-        "_informed_consent": true,
+        "_informed_consent": false,
+        "_is_beta": false,
+        "auto_update": false,
         "sharing": {
           "include_ip": false,
           "include_asn": true,
@@ -48,8 +50,8 @@ class Ooniprobe < Formula
           "websites_enabled_category_codes": []
         },
         "advanced": {
-          "send_crash_reports": true,
-          "collect_usage_stats": true
+          "send_crash_reports": false,
+          "collect_usage_stats": false
         }
       }
     EOS
