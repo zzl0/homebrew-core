@@ -1,8 +1,8 @@
 class Dxpy < Formula
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/7d/6a/24de43eace08ff1512c658591466115949ae1bd8fed22e841f6e12f405de/dxpy-0.365.0.tar.gz"
-  sha256 "234efe289c71da5069cb7e42f569c9dbff922e270267365d8b36798fd541240c"
+  url "https://files.pythonhosted.org/packages/5e/0c/09aadaebd7676909ea1aa43982b74536f2d27a852956ef6443b6bae4ab09/dxpy-0.366.0.tar.gz"
+  sha256 "4f00cc2611d8def8ffc0a996a53e8019fcdc658f827ea9cf56999be7d334ed32"
   license "Apache-2.0"
 
   bottle do
@@ -35,6 +35,16 @@ class Dxpy < Formula
 
   def python3
     "python3.12"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/d4/91/c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28/certifi-2023.11.17.tar.gz"
+    sha256 "9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1"
+  end
+
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install
