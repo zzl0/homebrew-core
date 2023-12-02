@@ -1,8 +1,8 @@
 class Geoip2fast < Formula
   desc "GeoIP2 country/ASN lookup tool"
   homepage "https://github.com/rabuchaim/geoip2fast"
-  url "https://files.pythonhosted.org/packages/60/23/2cddf27bcca55115888c6cabef03d5efd3f7234ee3fc8b35287dd36f204e/geoip2fast-1.2.0.tar.gz"
-  sha256 "2074b52ca281f4f6316e4935da87bbc085c279820485042c832cf3467f9c3ca7"
+  url "https://files.pythonhosted.org/packages/eb/34/6d91d8165b2d717736360c65a7822ccb025bca4cd0a1385982c49ce73b9e/geoip2fast-1.2.1.tar.gz"
+  sha256 "75bb4cd4931c245c5aaecdac7e2d2a350689e1dba4a1a5371eef92263995adb2"
   license "MIT"
   head "https://github.com/rabuchaim/geoip2fast.git", branch: "main"
 
