@@ -16,14 +16,11 @@ class Tbb < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
-
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "hwloc"
-  end
+  depends_on "hwloc"
 
   # Fix installation of Python components
   # See See https://github.com/oneapi-src/oneTBB/issues/343
@@ -74,8 +71,6 @@ class Tbb < Formula
     assert_path_exists lib/"libtbb.a"
     assert_path_exists lib/"libtbbmalloc.a"
 
-    # on macOS core types are not distinguished, because libhwloc does not support it for now
-    # see https://github.com/oneapi-src/oneTBB/blob/690aaf497a78a75ff72cddb084579427ab0a8ffc/CMakeLists.txt#L226-L228
     (testpath/"cores-types.cpp").write <<~EOS
       #include <cstdlib>
       #include <tbb/task_arena.h>
@@ -84,11 +79,7 @@ class Tbb < Formula
           const auto numa_nodes = tbb::info::numa_nodes();
           const auto size = numa_nodes.size();
           const auto type = numa_nodes.front();
-      #ifdef __APPLE__
-          return size == 1 && type == tbb::task_arena::automatic ? EXIT_SUCCESS : EXIT_FAILURE;
-      #else
           return size != 1 || type != tbb::task_arena::automatic ? EXIT_SUCCESS : EXIT_FAILURE;
-      #endif
       }
     EOS
 
