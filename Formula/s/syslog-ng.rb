@@ -3,10 +3,9 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.2.0/syslog-ng-4.2.0.tar.gz"
-  sha256 "092bd17fd47002c988aebdf81d0ed3f3cfd0e82b388d2453bcaa5e67934f4dda"
+  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.5.0/syslog-ng-4.5.0.tar.gz"
+  sha256 "08828ed200436c3ca4c98e5b74885440661c1036965e219aa9261b31a24fa144"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
 
   bottle do
     rebuild 1
@@ -35,20 +34,26 @@ class SyslogNg < Formula
   depends_on "librdkafka"
   depends_on "mongo-c-driver"
   depends_on "openssl@3"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "python@3.12"
   depends_on "riemann-client"
 
   uses_from_macos "curl"
 
-  # patch pyyaml build, remove in next release
-  # relates to https://github.com/yaml/pyyaml/pull/702
+  # Clang c++ compilation fixes.
+  # Remove when merged and released: https://github.com/syslog-ng/syslog-ng/pull/4739
+  # See also: https://github.com/Homebrew/homebrew-core/pull/156185#issuecomment-1837419001
   patch do
-    url "https://github.com/syslog-ng/syslog-ng/commit/246dc5c8425b15a0a1ab0229e44e52f5c0aebe2c.patch?full_index=1"
-    sha256 "7e75103fdeb54c185342d1dce2dc7a215c2d6812be15c5199ce480a62e2a05bf"
+    url "https://github.com/syslog-ng/syslog-ng/commit/27db599781eaf07ed6a93d96564df4e126dd1518.patch?full_index=1"
+    sha256 "1f78793bb456d7ee7656116b2238ded280cf42ebb4b37b65de20cb26ba753041"
   end
 
   def install
+    # In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/c++/v1/compare:157:
+    # ./version:1:1: error: expected unqualified-id
+    rm "VERSION"
+    ENV["VERSION"] = version
+
     python3 = "python3.12"
     sng_python_ver = Language::Python.major_minor_version python3
 
@@ -61,18 +66,20 @@ class SyslogNg < Formula
                           "--with-python=#{sng_python_ver}",
                           "--with-python-venv-dir=#{venv_path}",
                           "--disable-afsnmp",
+                          "--disable-example-modules",
                           "--disable-java",
                           "--disable-java-modules"
     system "make", "install"
 
     requirements = lib/"syslog-ng/python/requirements.txt"
     venv = virtualenv_create(venv_path, python3)
-    venv.pip_install requirements.read
+    venv.pip_install requirements.read.gsub(/#.*$/, "")
     cp requirements, venv_path
   end
 
   test do
-    system "#{sbin}/syslog-ng", "--version"
+    assert_equal "syslog-ng #{version.major} (#{version})",
+                 shell_output("#{sbin}/syslog-ng --version").lines.first.chomp
     system "#{sbin}/syslog-ng", "--cfgfile=#{pkgetc}/syslog-ng.conf", "--syntax-only"
   end
 end
