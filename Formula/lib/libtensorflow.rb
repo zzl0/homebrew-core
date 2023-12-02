@@ -1,8 +1,8 @@
 class Libtensorflow < Formula
   desc "C interface for Google's OS library for Machine Intelligence"
   homepage "https://www.tensorflow.org/"
-  url "https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "c030cb1905bff1d2446615992aad8d8d85cbe90c4fb625cee458c63bf466bc8e"
+  url "https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "9cec5acb0ecf2d47b16891f8bc5bc6fbfdffe1700bdadc0d9ebe27ea34f0c220"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,11 @@ class Libtensorflow < Formula
 
   depends_on "bazelisk" => :build
   depends_on "numpy" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
+
+  on_macos do
+    depends_on "gnu-getopt" => :build
+  end
 
   resource "homebrew-test-model" do
     url "https://github.com/tensorflow/models/raw/v1.13.0/samples/languages/java/training/model/graph.pb"
@@ -26,7 +30,7 @@ class Libtensorflow < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     optflag = if Hardware::CPU.arm? && OS.mac?
       "-mcpu=apple-m1"
     elsif build.bottle?
@@ -52,6 +56,7 @@ class Libtensorflow < Formula
     ENV["TF_NEED_KAFKA"] = "0"
     ENV["TF_NEED_OPENCL_SYCL"] = "0"
     ENV["TF_NEED_ROCM"] = "0"
+    ENV["TF_NEED_CLANG"] = "0" if OS.linux?
     ENV["TF_DOWNLOAD_CLANG"] = "0"
     ENV["TF_SET_ANDROID_WORKSPACE"] = "0"
     ENV["TF_CONFIGURE_IOS"] = "0"
@@ -73,29 +78,23 @@ class Libtensorflow < Formula
       ]
     end
     targets = %w[
-      tensorflow:libtensorflow.so
-      tensorflow:install_headers
-      tensorflow/tools/benchmark:benchmark_model
-      tensorflow/tools/graph_transforms:summarize_graph
-      tensorflow/tools/graph_transforms:transform_graph
+      //tensorflow/tools/lib_package:libtensorflow
+      //tensorflow/tools/benchmark:benchmark_model
+      //tensorflow/tools/graph_transforms:summarize_graph
+      //tensorflow/tools/graph_transforms:transform_graph
     ]
     system Formula["bazelisk"].opt_bin/"bazelisk", "build", *bazel_args, *targets
 
-    lib.install Dir["bazel-bin/tensorflow/*.so*", "bazel-bin/tensorflow/*.dylib*"]
-    include.install "bazel-bin/tensorflow/include/tensorflow"
     bin.install %w[
       bazel-bin/tensorflow/tools/benchmark/benchmark_model
       bazel-bin/tensorflow/tools/graph_transforms/summarize_graph
       bazel-bin/tensorflow/tools/graph_transforms/transform_graph
     ]
+    system "tar", "-C", prefix, "-xzf", "bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz"
 
-    (lib/"pkgconfig/tensorflow.pc").write <<~EOS
-      Name: tensorflow
-      Description: Tensorflow library
-      Version: #{version}
-      Libs: -L#{lib} -ltensorflow
-      Cflags: -I#{include}
-    EOS
+    ENV.prepend_path "PATH", Formula["gnu-getopt"].opt_prefix/"bin" if OS.mac?
+    system "tensorflow/c/generate-pc.sh", "--prefix", prefix, "--version", version.to_s
+    (lib/"pkgconfig").install "tensorflow.pc"
   end
 
   test do
