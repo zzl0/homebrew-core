@@ -1,13 +1,11 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.28.06.source.tar.gz"
-  sha256 "af3b673b9aca393a5c9ae1bf86eab2672aaf1841b658c5c6e7a30ab93c586533"
+  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
+  sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
-  # Should be removed with new version
-  # https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032
-  # https://github.com/root-project/root/commit/01d07d5b33ee91cd7fd6c6e615cd4c940710c397
+
   livecheck do
     formula "root"
   end
@@ -24,11 +22,11 @@ class Minuit2 < Formula
 
   depends_on "cmake" => :build
 
-  # Fixes missing header MnMatrixfwd.h
+  # Fix VERSION_FILE path for standalone mode
   # Remove in next release
   patch do
-    url "https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032.patch?full_index=1"
-    sha256 "25a5e3fa2846c83e824bd0a21003658f4c03b6096aa52573179c8aea6228a604"
+    url "https://github.com/root-project/root/commit/25731a7b0731a65f6a949dd249b098fdd612095d.patch?full_index=1"
+    sha256 "058daafb2103b43b9d7775f895f16992050ba339083e844124c551ce9133b0a3"
   end
 
   def install
