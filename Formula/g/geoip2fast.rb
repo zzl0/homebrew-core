@@ -7,13 +7,13 @@ class Geoip2fast < Formula
   head "https://github.com/rabuchaim/geoip2fast.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac573e3ec4d783f6a606f037534fe167c10f90ac410d8512489ff242a2b9cb37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7932b0d486bc03c1224a70548b3c648ca207ab8ecbf74982cfb53cbf9bbd7c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc6ff0f599a503da67621cf74a10c7dca971b33405caede141a744888e812d9f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2df4f78616c37aca04d06c712ed2a33641b33df59a3e4ccdd5a457f5e82938fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4763ff033c5936691badd26686903bae14b889630cda3edd433ad62a856671d"
-    sha256 cellar: :any_skip_relocation, monterey:       "50ae42815c3dd1b259f5525ee0c53a9076c5967e480ef8172002e3994b0ae599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2671c1558896dced9c83f2c6d258c9d2428b6d006c6e148118e0c919f1ac891e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee5174b2e9e4f372524dc72443f51cb98648551df011d519f47e333524ed03f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2466f0e83c3072bc75f9c11ed3f7cbfb9be50106d842b9390f91920695c890b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c9428f558b1b5a293c2aafbe032264333e42b1477eaa33c9b8dde08f9751dcb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cd6f4dd07556771e26dd42bb01676f51118c402d36b1f38f511dd28b6566b0b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a658876cf3f5aca6653d27b179115314ac57c925dd4b4ccb551e3adc4352f82"
+    sha256 cellar: :any_skip_relocation, monterey:       "2787e8cc8d0c0ff4b5df98c7d8d580e16334c6b16d2814b8782867b5846084d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0402ff566f44c1f6f63c18bfeaae6410cd8716786f508c8caf0d331c5e2757e3"
   end
 
   depends_on "python-setuptools" => :build
