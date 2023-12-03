@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/ee/bc/4ec843bf29f682e0aa14645ddcba9e203b4fe5363d3cce1724dda7199981/moto-4.2.10.tar.gz"
-  sha256 "92595fe287474a31ac3ef847941ebb097e8ffb0c3d6c106e47cf573db06933b2"
+  url "https://files.pythonhosted.org/packages/f0/9d/32031dee4457a6c6ef0b8c4ad18a170ca471c20cb83313c13bb896e09ead/moto-4.2.11.tar.gz"
+  sha256 "2da62d52eaa765dfe2762c920f0a88a58f3a09e04581c91db967d92faec848f1"
   license "Apache-2.0"
 
   bottle do
@@ -72,8 +72,8 @@ class Moto < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/9b/c4/db3e4b22ebc18ee797dae8e14b5db68e5826ae6337334c276f1cb4ff84fb/idna-3.5.tar.gz"
-    sha256 "27009fe2735bf8723353582d48575b23c533cc2c2de7b5a68908d91b5eb18d08"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "itsdangerous" do
