@@ -3,8 +3,8 @@ class Raven < Formula
 
   desc "Risk Analysis and Vulnerability Enumeration for CI/CD"
   homepage "https://github.com/CycodeLabs/raven"
-  url "https://files.pythonhosted.org/packages/f1/68/13983346fc57a535fd0f583f89399b0bcd988d5adb2ce89575b1b80c95ba/raven-cycode-1.0.5.tar.gz"
-  sha256 "f54ebcc495ac27305b0acbc88747130d70a80903a63ce468797d84a6a02dcead"
+  url "https://files.pythonhosted.org/packages/63/f4/4e41fcf000b9556a8e216dcf6d8d83f218a0914d89fdca47ee1e9bc13671/raven-cycode-1.0.6.tar.gz"
+  sha256 "e644e09194bcf2eadb9499d2e5b345250d7c494263397090ea87bb6d720015cd"
   license "Apache-2.0"
 
   bottle do
