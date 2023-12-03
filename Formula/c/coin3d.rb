@@ -2,21 +2,16 @@ class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin) with Python bindings (Pivy)"
   homepage "https://coin3d.github.io/"
   license all_of: ["BSD-3-Clause", "ISC"]
-  revision 4
 
   stable do
-    url "https://github.com/coin3d/coin/archive/refs/tags/Coin-4.0.0.tar.gz"
-    sha256 "b00d2a8e9d962397cf9bf0d9baa81bcecfbd16eef675a98c792f5cf49eb6e805"
+    url "https://github.com/coin3d/coin/releases/download/v4.0.1/coin-4.0.1-src.zip"
+    sha256 "267f36baa2bece32445fb1879f7a1c7931bd3a274affa04660d36a262370fdf2"
 
+    # TODO: migrate pyside@2 -> pyside and python@3.10 -> python@3.12 on next pivy release
     resource "pivy" do
       url "https://github.com/coin3d/pivy/archive/refs/tags/0.6.8.tar.gz"
       sha256 "c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346"
     end
-  end
-
-  livecheck do
-    url :stable
-    regex(/^Coin[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -57,14 +52,6 @@ class Coin3d < Formula
   end
 
   def install
-    # Create an empty directory for cpack to make the build system
-    # happy. This is a workaround for a build issue on upstream that
-    # was fixed by commit be8e3d57aeb5b4df6abb52c5fa88666d48e7d7a0 but
-    # hasn't made it to a release yet.
-    mkdir "cpack.d" do
-      touch "CMakeLists.txt"
-    end
-
     system "cmake", "-S", ".", "-B", "_build",
                     "-DCOIN_BUILD_MAC_FRAMEWORK=OFF",
                     "-DCOIN_BUILD_DOCUMENTATION=ON",
