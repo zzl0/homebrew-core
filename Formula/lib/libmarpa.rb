@@ -1,8 +1,8 @@
 class Libmarpa < Formula
   desc "Marpa parse engine C library -- STABLE"
   homepage "https://jeffreykegler.github.io/Marpa-web-site/libmarpa.html"
-  url "https://github.com/jeffreykegler/libmarpa/archive/refs/tags/v9.0.3.tar.gz"
-  sha256 "2fd21d7ae0c05743a0503cd52467f33beff72c555b0b10283e2c761464496f21"
+  url "https://github.com/jeffreykegler/libmarpa/archive/refs/tags/v11.0.13.tar.gz"
+  sha256 "cb3c7f47d9ee95de967838ea0ecc380ffacfdfd8ec2c3d7cc2a6acaa4cc9597b"
   license "MIT"
   head "https://github.com/jeffreykegler/libmarpa.git", branch: "tested"
 
@@ -20,7 +20,6 @@ class Libmarpa < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "cmake" => :build
   depends_on "emacs" => :build
   depends_on "libtool" => :build
   depends_on "texinfo" => :build
@@ -30,10 +29,12 @@ class Libmarpa < Formula
     ENV.deparallelize
     inreplace "work/etc/libmarpa.pc.in", "prefix=\".\"", "prefix=\"#{prefix}\""
     inreplace "work/ac/Makefile.am", "git log -n 5", "## git log -n 5"
-    system "make", "dist"
-    system "cmake", "-S", "cm_dist", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    system "make", "ac_dist"
+    mkdir "build" do
+      system "../ac_dist/configure", *std_configure_args, "--disable-silent-rules"
+      system "make", "install"
+      (lib/"pkgconfig").install "libmarpa.pc"
+    end
   end
 
   test do
