@@ -1,8 +1,8 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://github.com/jdx/rtx"
-  url "https://github.com/jdx/rtx/archive/refs/tags/v2023.12.5.tar.gz"
-  sha256 "07993f61b2b4e5a2b5b2aa78f0f11c240f4c86e95154e4ed4ab23e90c666f85c"
+  url "https://github.com/jdx/rtx/archive/refs/tags/v2023.12.7.tar.gz"
+  sha256 "0c5c9156dad5776b88079e85d98bcca9a6c8bc85ebf910c3cd26a9488a31fff7"
   license "MIT"
   head "https://github.com/jdx/rtx.git", branch: "main"
 
@@ -24,9 +24,11 @@ class Rtx < Formula
   end
 
   def install
-    system "cargo", "install", "--features=brew", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
     man1.install "man/man1/rtx.1"
     generate_completions_from_executable(bin/"rtx", "completion")
+    lib.mkpath
+    touch lib/".disable-self-update"
   end
 
   test do
