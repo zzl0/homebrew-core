@@ -1,10 +1,9 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
   homepage "https://github.com/burrowers/garble"
-  url "https://github.com/burrowers/garble/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "11c038cb5fb6b21a2160305beec939c69b0712e39f52f0a0b6d977fa68d5b6db"
+  url "https://github.com/burrowers/garble/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "355e0ee7e98b1656fcfe8156040ed2ef41afd5e2f2d6332465392ab425530494"
   license "BSD-3-Clause"
-  revision 5
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
@@ -45,7 +44,6 @@ class Garble < Formula
             -buildmode exe
              -compiler gc
              -trimpath true
-        DefaultGODEBUG panicnil=1
            CGO_ENABLED 1
                 GOARCH #{goarch}
                   GOOS #{goos}
