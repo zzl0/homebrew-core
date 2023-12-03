@@ -2,8 +2,8 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/tuist/xcbeautify"
   url "https://github.com/tuist/xcbeautify.git",
-      tag:      "1.0.1",
-      revision: "7dc31d4a9e9cc660f2de6ff6c6e0f0d5dfbb572b"
+      tag:      "1.1.0",
+      revision: "043ed32135a933a0d9e9e0fc25a4c800c916c3cd"
   license "MIT"
   head "https://github.com/tuist/xcbeautify.git", branch: "master"
 
@@ -22,12 +22,6 @@ class Xcbeautify < Formula
 
   uses_from_macos "swift"
 
-  # fix version report issue, upstream PR ref, https://github.com/tuist/xcbeautify/pull/159
-  patch do
-    url "https://github.com/tuist/xcbeautify/commit/af3847b6a3bbe1142c055fc968f20322788bf3a0.patch?full_index=1"
-    sha256 "863884832585c19cce03f9f10dc4e38575ec44f74e2d235c6654a6301a6a8d5d"
-  end
-
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
     bin.install ".build/release/xcbeautify"
@@ -35,8 +29,8 @@ class Xcbeautify < Formula
 
   test do
     log = "CompileStoryboard /Users/admin/MyApp/MyApp/Main.storyboard (in target: MyApp)"
-    assert_match "[\u{1B}[36mMyApp\u{1B}[0m] \u{1B}[1mCompiling\u{1B}[0m Main.storyboard",
-      pipe_output("#{bin}/xcbeautify", log).chomp
+    assert_match "[MyApp] Compiling Main.storyboard",
+      pipe_output("#{bin}/xcbeautify --disable-colored-output", log).chomp
     assert_match version.to_s,
       shell_output("#{bin}/xcbeautify --version").chomp
   end
