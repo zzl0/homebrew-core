@@ -1,9 +1,9 @@
 class Nikto < Formula
   desc "Web server scanner"
   homepage "https://cirt.net/nikto2"
-  url "https://github.com/sullo/nikto/archive/refs/tags/2.1.6.tar.gz"
-  sha256 "c1731ae4133d3879718bb7605a8d395b2036668505effbcbbcaa4dae4e9f27f2"
-  license "GPL-2.0"
+  url "https://github.com/sullo/nikto/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "fb0dc4b2bc92cb31f8069f64ea4d47295bcd11067a7184da955743de7d97709d"
+  license "GPL-2.0-only"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f10c6df6fe8633d239a7c830e736d31a60bb2d5850744b21d97c3876c1f5b36d"
@@ -23,7 +23,7 @@ class Nikto < Formula
     cd "program" do
       inreplace "nikto.pl", "/etc/nikto.conf", "#{etc}/nikto.conf"
 
-      inreplace "nikto.conf" do |s|
+      inreplace "nikto.conf.default" do |s|
         s.gsub! "# EXECDIR=/opt/nikto", "EXECDIR=#{prefix}"
         s.gsub! "# PLUGINDIR=/opt/nikto/plugins",
                 "PLUGINDIR=#{pkgshare}/plugins"
@@ -36,7 +36,7 @@ class Nikto < Formula
 
       bin.install "nikto.pl" => "nikto"
       bin.install "replay.pl"
-      etc.install "nikto.conf"
+      etc.install "nikto.conf.default" => "nikto.conf"
       man1.install "docs/nikto.1"
       pkgshare.install "docs", "plugins", "templates"
     end
