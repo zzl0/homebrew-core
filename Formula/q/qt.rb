@@ -3,10 +3,6 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -15,6 +11,21 @@ class Qt < Formula
     "LGPL-3.0-only",
   ]
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
+
+  stable do
+    url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
+
+    # Backport fix for QTBUG-117765 which can cause build failure in `qca`
+    # .../MacOSX.sdk/usr/include/c++/v1/concept:318:1: error: Parse error at "::"
+    patch do
+      url "https://github.com/qt/qtbase/commit/a8c1c38f94ba9011b7646fe4f756ca213479cd30.patch?full_index=1"
+      directory "qtbase"
+      sha256 "dc33174b2b829f2cabb096bad654a984294986aea5d4a226ff225b951e77acfc"
+    end
+  end
 
   # The first-party website doesn't make version information readily available,
   # so we check the `head` repository tags instead.
