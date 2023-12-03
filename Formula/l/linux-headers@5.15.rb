@@ -11,7 +11,7 @@ class LinuxHeadersAT515 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "590e6a9dd8dccf0a190f402b23043c6c926c2cbd0938abce5e12fa38538f35ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c3a59fb3c080a8f620e3b90571e0c1215bc1023d5a6ff7fad63efcd5635b576f"
   end
 
   depends_on :linux
