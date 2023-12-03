@@ -1,8 +1,8 @@
 class Rp < Formula
   desc "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries"
   homepage "https://github.com/0vercl0k/rp"
-  url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "7d0b523e123315c1a4e66ab6386a733ce3200d0cc2c489f04edbe398a016a160"
+  url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "38a6ac4d1b97468c81b4da93d62b46d4486817b02bdb53de7f1196b4938ed2bc"
   license "MIT"
   head "https://github.com/0vercl0k/rp.git", branch: "master"
 
