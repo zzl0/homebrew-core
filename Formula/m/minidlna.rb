@@ -1,10 +1,9 @@
 class Minidlna < Formula
   desc "Media server software, compliant with DLNA/UPnP-AV clients"
   homepage "https://sourceforge.net/projects/minidlna/"
-  url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.0/minidlna-1.3.0.tar.gz"
-  sha256 "47d9b06b4c48801a4c1112ec23d24782728b5495e95ec2195bbe5c81bc2d3c63"
+  url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.3/minidlna-1.3.3.tar.gz"
+  sha256 "39026c6d4a139b9180192d1c37225aa3376fdf4f1a74d7debbdbb693d996afa4"
   license "GPL-2.0-only"
-  revision 7
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d261c6f4253c3cc116f401cd9f19477b18ed420cd69c31cb3be6962681f2be08"
@@ -35,6 +34,9 @@ class Minidlna < Formula
   depends_on "sqlite"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
+
+  # Add missing include: https://sourceforge.net/p/minidlna/bugs/351/
+  patch :DATA
 
   def install
     system "./autogen.sh" if build.head?
@@ -90,6 +92,21 @@ class Minidlna < Formula
     io.expect("debug: Initial file scan completed", 30)
     assert_predicate testpath/"minidlna.pid", :exist?
 
-    assert_match "MiniDLNA #{version}", shell_output("curl localhost:#{port}")
+    # change back to localhost once https://sourceforge.net/p/minidlna/bugs/346/ is addressed
+    assert_match "MiniDLNA #{version}", shell_output("curl 127.0.0.1:#{port}")
   end
 end
+
+__END__
+diff --git a/kqueue.c b/kqueue.c
+index 35b3f2b..cf425cf 100644
+--- a/kqueue.c
++++ b/kqueue.c
+@@ -28,6 +28,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/event.h>
++#include <sys/time.h>
+ #include <assert.h>
+ #include <errno.h>
+ #include <stdlib.h>
