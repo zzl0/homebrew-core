@@ -17,9 +17,10 @@ class Direnv < Formula
   end
 
   depends_on "go" => :build
+  depends_on "bash"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].bin}/bash"
   end
 
   test do
