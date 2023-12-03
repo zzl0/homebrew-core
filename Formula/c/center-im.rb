@@ -1,15 +1,12 @@
 class CenterIm < Formula
   desc "Text-mode multi-protocol instant messaging client"
   homepage "https://github.com/petrpavlu/centerim5"
-  url "https://web.archive.org/web/20191105151123/https://www.centerim.org/download/releases/centerim-4.22.10.tar.gz"
-  sha256 "93ce15eb9c834a4939b5aa0846d5c6023ec2953214daf8dc26c85ceaa4413f6e"
+  url "https://github.com/petrpavlu/centerim5/releases/download/v5.0.1/centerim5-5.0.1.tar.gz"
+  sha256 "b80b999e0174b81206255556cf00de6548ea29fa6f3ea9deb1f9ab59d8318313"
   license "GPL-2.0-or-later"
-  revision 3
 
-  # Modify this to use `url :stable` if/when the formula is updated to use an
-  # archive from GitHub in the future.
   livecheck do
-    url :homepage
+    url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
@@ -25,56 +22,45 @@ class CenterIm < Formula
     sha256 x86_64_linux:   "da7275cf3357b6ba3b363fc938f80e4639ebf5e0732b0f5705a1c467093d5567"
   end
 
+  depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
-  depends_on "openssl@3"
+  depends_on "glib"
+  depends_on "libsigc++@2"
+  depends_on "pidgin" # for libpurple
 
-  uses_from_macos "curl"
+  uses_from_macos "ncurses", since: :sonoma
 
-  # Fix build with clang; 4.22.10 is an outdated release and 5.0 is a rewrite,
-  # so this is not reported upstream
-  patch :DATA
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/677cb38/center-im/patch-libjabber_jconn.c.diff"
-    sha256 "ed8d10075c23c7dec2a782214cb53be05b11c04e617350f6f559f3c3bf803cfe"
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Work around build error on macOS due to `version` file confusing system header.
+    # Also allow CMake to correctly set the version number inside binary.
+    # Issue ref: https://github.com/petrpavlu/centerim5/issues/1
+    mv "version", ".tarball-version"
 
-    # Uses `auto` as a variable name.
-    ENV.append "CXXFLAGS", "-std=gnu++03"
-
-    # Work around for C++ version header picking up VERSION file on
-    # case-insensitive systems. Can be removed on next update.
-    (buildpath/"intl/VERSION").unlink if OS.mac?
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-msn",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
-    system "make", "install"
-
-    # /bin/gawk does not exist on macOS
-    inreplace bin/"cimformathistory", "/bin/gawk", "/usr/bin/awk"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "trillian", shell_output("#{bin}/cimconv")
+    assert_match version.to_s, shell_output("#{bin}/centerim5 --version")
+
+    # FIXME: Unable to run TUI test in Linux CI.
+    # Error is "Placing the terminal into raw mode failed."
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"] && OS.linux?
+
+    ENV["TERM"] = "xterm"
+    File.open("output.txt", "w") do |file|
+      $stdout.reopen(file)
+      pid = fork { exec bin/"centerim5", "--basedir", testpath }
+      sleep 10
+      Process.kill("TERM", pid)
+    end
+    assert_match "Welcome to CenterIM", (testpath/"output.txt").read
+    assert_predicate testpath/"prefs.xml", :exist?
   end
 end
-
-__END__
-diff --git a/libicq2000/libicq2000/sigslot.h b/libicq2000/libicq2000/sigslot.h
-index b7509c0..024774f 100644
---- a/libicq2000/libicq2000/sigslot.h
-+++ b/libicq2000/libicq2000/sigslot.h
-@@ -82,6 +82,7 @@
- #ifndef SIGSLOT_H__
- #define SIGSLOT_H__
-
-+#include <cstdlib>
- #include <set>
- #include <list>
