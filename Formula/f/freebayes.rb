@@ -1,8 +1,9 @@
 class Freebayes < Formula
   desc "Bayesian haplotype-based genetic polymorphism discovery and genotyping"
   homepage "https://github.com/freebayes/freebayes"
-  url "https://github.com/freebayes/freebayes/releases/download/v1.3.6/freebayes-1.3.6-src.tar.gz"
-  sha256 "6016c1e58fdf34a1f6f77b720dd8e12e13a127f7cbac9c747e47954561b437f5"
+  url "https://github.com/freebayes/freebayes.git",
+      tag:      "v1.3.7",
+      revision: "ae60517162d34ab6217bd6c58e2b71551abacac2"
   license "MIT"
   head "https://github.com/freebayes/freebayes.git", branch: "master"
 
@@ -38,11 +39,9 @@ class Freebayes < Formula
   uses_from_macos "zlib"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", "-Dcpp_std=c++14", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
     pkgshare.install "test"
   end
 
