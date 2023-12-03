@@ -1,8 +1,8 @@
 class Mdless < Formula
   desc "Provides a formatted and highlighted view of Markdown files in Terminal"
   homepage "https://github.com/ttscoff/mdless"
-  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.1.10.tar.gz"
-  sha256 "a534a902be26860efd41018be29dce3402917cd2c923742cf59aacc69ca1eea1"
+  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.1.11.tar.gz"
+  sha256 "045069b86d412471c2183c2edbc3fc39fa1e536b84c8b0d924a6e6fedde629bd"
   license "MIT"
 
   bottle do
@@ -15,7 +15,8 @@ class Mdless < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "24ec7f2eb334c5506915ce35dac2bb7251cf9a11df74f3102d231c86f2058edc"
   end
 
-  uses_from_macos "ruby"
+  # Requires Ruby >= 2.7
+  depends_on "ruby"
 
   def install
     ENV["GEM_HOME"] = libexec
