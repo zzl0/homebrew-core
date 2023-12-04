@@ -18,7 +18,7 @@ class Saxon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5f98a7699d038c3a265100a9cdcab9861549b945ac8848f87778acd0a277a350"
+    sha256 cellar: :any_skip_relocation, all: "19384b20adad8aa3c1eb7e5e6323c39898beaab96d0b905c9c24e3988c6c60a5"
   end
 
   depends_on "openjdk"
