@@ -1,12 +1,12 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "http://www.squid-cache.org/"
-  url "http://www.squid-cache.org/Versions/v5/squid-5.9.tar.xz"
-  sha256 "3fe5c2007da2757446af91b6ef974f154b208120a9a39396ea681e5c4abb04b5"
+  url "http://www.squid-cache.org/Versions/v6/squid-6.5.tar.xz"
+  sha256 "5070f8a3ae6666870c8fc716326befb0a1abe8b5ff3a6f3932cbc5543d7c8549"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://www.squid-cache.org/Versions/v5/"
+    url "http://www.squid-cache.org/Versions/v6/"
     regex(/href=.*?squid[._-]v?(\d+(?:\.\d+)+)-RELEASENOTES\.html/i)
   end
 
@@ -23,7 +23,7 @@ class Squid < Formula
   end
 
   head do
-    url "lp:squid", using: :bzr
+    url "git://git.launchpad.net/squid", branch: "v6"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -51,6 +51,8 @@ class Squid < Formula
       --disable-eui
       --enable-pf-transparent
       --with-included-ltdl
+      --with-gnutls=no
+      --with-nettle=no
       --with-openssl
       --enable-delay-pools
       --enable-disk-io=yes
