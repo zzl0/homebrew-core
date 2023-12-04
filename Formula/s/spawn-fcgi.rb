@@ -1,13 +1,14 @@
 class SpawnFcgi < Formula
-  desc "Spawn fast-CGI processes"
+  desc "Spawn FastCGI processes"
   homepage "https://redmine.lighttpd.net/projects/spawn-fcgi"
-  url "https://www.lighttpd.net/download/spawn-fcgi-1.6.4.tar.gz"
-  sha256 "ab327462cb99894a3699f874425a421d934f957cb24221f00bb888108d9dd09e"
+  url "https://www.lighttpd.net/download/spawn-fcgi-1.6.5.tar.gz"
+  sha256 "a72d7bf7fb6d1a0acda89c93d4f060bf77a2dba97ddcfecd00f11e708f592c40"
   license "BSD-3-Clause"
+  head "https://git.lighttpd.net/lighttpd/spawn-fcgi.git", branch: "master"
 
   livecheck do
-    url "https://redmine.lighttpd.net/projects/spawn-fcgi/news"
-    regex(/href=.*?spawn-fcgi[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^(?:spawn-fcgi-)?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
