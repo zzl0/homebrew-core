@@ -2,14 +2,15 @@ class Languagetool < Formula
   desc "Style and grammar checker"
   homepage "https://www.languagetool.org/"
   url "https://github.com/languagetool-org/languagetool.git",
-      tag:      "v6.2",
-      revision: "2fe7ae723aa7f2212dc5a71247010af981322543"
+      tag:      "v6.3-branch",
+      revision: "fb238b2a32bc72714632a399c9b47abbe9f1c0c1"
+  version "6.3"
   license "LGPL-2.1-or-later"
   head "https://github.com/languagetool-org/languagetool.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)(-branch)?$/i)
   end
 
   bottle do
