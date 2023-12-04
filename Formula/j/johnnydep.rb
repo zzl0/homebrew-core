@@ -8,14 +8,13 @@ class Johnnydep < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd287ff813a9fd0b924126a8c912e5ac156433703d51828d55d044b555870b5d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2537d43f3186d4389f2751c187d28125451bd89858a0fdd120cad7edd415324"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8cdb7318ba2e6ad2d7e0dc513d808cc396b9d6acbf21cf50f6fd04c76c74ac8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7316dcf0acd14aa7b2dea97a5f6d53eb51829c9ed0a842089aa86914ddaad61f"
-    sha256 cellar: :any_skip_relocation, ventura:        "550c089679864506d907bd2aa6fd29ee0e99a18c35a630600a69162ea59a4148"
-    sha256 cellar: :any_skip_relocation, monterey:       "a79bc27d4f7c50fdc8b9471516d96f2bfd456be762f4989ad3cc1873f2ff2222"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79241d8947792d84bd688a056b2178230230d8398fc79975a918c5d66674ace0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3cefe6a9404fe13705e9660dd13bf1a2a5af96d454e4ac3d259760e9ff390e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b33759ab96d983487fc61d843b496e5ddcff08cb7c71c030208803777b2f8f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01e7506766de2dbd53c4014bc4fb51af67f877bc1d7131690d01b1915a3f3893"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87c451722ac92beedfe339398b978b13b95c507372b417976238f627cc63bcf6"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3d7037245b5c33a426d2b5691af1bc260813ec30da1acd4113a1dc3ee1563a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "26b0157b53e702e446da6dcec2fad1ce8ef4ae5fd010fcc97f4136d8d598f12e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d359136f74783c97ee000c705c163c959d72f566b4d0fc6f891f85232ef7d90"
   end
 
   depends_on "python-packaging"
