@@ -3,8 +3,8 @@ require "language/node"
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-5.0.4.tgz"
-  sha256 "e47e79b2991bb05dd2c10982b5dd1280a4005ceee2f6c2a07ad776e08f6e032d"
+  url "https://registry.npmjs.org/vite/-/vite-5.0.5.tgz"
+  sha256 "db427c2ca7e5cd9944780f82644ded47ce1f575cb9703e9ae9221a038efb35c4"
   license "MIT"
 
   bottle do
@@ -32,18 +32,12 @@ class Vite < Formula
   end
 
   test do
-    port = free_port
-    output = ""
-    PTY.spawn("#{bin}/vite preview --debug --port #{port}") do |r, _w, pid|
-      sleep 2
-      Process.kill("TERM", pid)
-      begin
-        r.each_line { |line| output += line }
-      rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
-      end
-    end
-    assert_match("no config file found", output)
-    assert_match("using resolved config", output)
+    output = shell_output("#{bin}/vite optimize --force")
+    assert_match "Forced re-optimization of dependencies", output
+
+    output = shell_output("#{bin}/vite optimize")
+    assert_match "Hash is consistent. Skipping.", output
+
+    assert_match version.to_s, shell_output("#{bin}/vite --version")
   end
 end
