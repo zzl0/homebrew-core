@@ -17,10 +17,6 @@ class Pcb2gcode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec22ceb70ddf645429e299780bed3d3ed0e3e26c2c1a97ba986d8fe7ebc881fd"
   end
 
-  # Release 2.0.0 doesn't include an autoreconfed tarball
-  # glibmm, gtkmm and librsvg are used only in unittests,
-  # and are therefore not needed at runtime.
-  depends_on "atkmm@2.28" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cairomm@1.14" => :build
@@ -31,8 +27,16 @@ class Pcb2gcode < Formula
   depends_on "libtool" => :build
   depends_on "pangomm@2.46" => :build
   depends_on "pkg-config" => :build
+  depends_on "at-spi2-core"
   depends_on "boost"
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
   depends_on "gerbv"
+  depends_on "gettext"
+  depends_on "glib"
+  depends_on "gtk+"
+  depends_on "harfbuzz"
+  depends_on "pango"
 
   fails_with gcc: "5"
 
