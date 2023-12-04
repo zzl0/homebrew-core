@@ -4,12 +4,12 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://github.com/minetest/minetest/archive/refs/tags/5.7.0.tar.gz"
-    sha256 "0cd0fd48a97f76e337a2e1284599a054f8f92906a84a4ef2122ed321e1b75fa7"
+    url "https://github.com/minetest/minetest/archive/refs/tags/5.8.0.tar.gz"
+    sha256 "610c85a24d77acdc3043a69d777bed9e6c00169406ca09df22ad490fe0d68c0c"
 
     resource "irrlichtmt" do
-      url "https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt10.tar.gz"
-      sha256 "6d00348d8ff513f6a7cee5c930908ef67428ff637e6a9e4d5688409bdb6d547d"
+      url "https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt13.tar.gz"
+      sha256 "2fde8e27144988210b9c0ff1e202905834d9d25aaa63ce452763fd7171096adc"
     end
 
     resource "minetest_game" do
