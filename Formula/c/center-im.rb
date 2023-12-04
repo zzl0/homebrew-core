@@ -11,15 +11,13 @@ class CenterIm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d75f8b87c2bcd20519e83e938faccbc543fd1501b7c606d6ebb629a725ed9d63"
-    sha256 arm64_ventura:  "06ea3b5f68d56428232fe118e9acd8991bc874339e4a871cc353090f8fd35279"
-    sha256 arm64_monterey: "1a7055bb3ef5921a9a7879b1d5a6b1c1e208e10e74775118aa266e60fdc1b0b4"
-    sha256 arm64_big_sur:  "da6277844c78cbc85d849be46094d4a67e3ab57cc6bf41d2cb5332a36db0ca7c"
-    sha256 sonoma:         "6e36cf572c5c13d94fbbc516f9ae591c03103fabfbbf4c3cb2587cfbd6021909"
-    sha256 ventura:        "eaac6faf7415659261e938587b564ee5190fe7df96ef1a7b9cd7e946a21a5c63"
-    sha256 monterey:       "5647b6358b2c0c1b95fef613b5dd9818a584b2e127bbd85ee1dd329b698c4ebc"
-    sha256 big_sur:        "d8b97d13db945bc0a2fe883bfa8394c70496f1cdd4bc8624c3fdf43dab824ccd"
-    sha256 x86_64_linux:   "da7275cf3357b6ba3b363fc938f80e4639ebf5e0732b0f5705a1c467093d5567"
+    sha256 arm64_sonoma:   "65761f72dce3b59dfa0b058aa2eff754ffb132b9c61e9cf36d595f9ad12b3054"
+    sha256 arm64_ventura:  "aeaea7b73d4df68699def112fc0b0108d22af0680a9f8bc1d323b9c605044091"
+    sha256 arm64_monterey: "5234f05e2c0871d7df29fa263734ee54feb09de3ee6fbd327ec0d8e3655530ab"
+    sha256 sonoma:         "02f27aa633b15c66529bd3d7c9d11f382b4998816fad2f048b1efd11be44cc2b"
+    sha256 ventura:        "c39b856a9f8a148f92c600bafb203b135e95ccb34e6a28fa891602c3b6d81858"
+    sha256 monterey:       "a8442a0d0e8ba9888577ddfd2d8c76699cb0eb20a1e96c0b0b143186ad27e63c"
+    sha256 x86_64_linux:   "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
   end
 
   depends_on "cmake" => :build
