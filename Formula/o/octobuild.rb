@@ -1,8 +1,8 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https://github.com/octobuild/octobuild"
-  url "https://github.com/octobuild/octobuild/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "033341ae371c1b62294d3c6068b6737f9d37bcba3a708fe3702007a7505e21c7"
+  url "https://github.com/octobuild/octobuild/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "13240e1e75908de4d9f8d2066ec35305bed7b0e9d05ce44f98b4449de13451d7"
   license "MIT"
   head "https://github.com/octobuild/octobuild.git", branch: "master"
 
