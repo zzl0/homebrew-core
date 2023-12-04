@@ -4,8 +4,8 @@ class Coin3d < Formula
   license all_of: ["BSD-3-Clause", "ISC"]
 
   stable do
-    url "https://github.com/coin3d/coin/releases/download/v4.0.1/coin-4.0.1-src.zip"
-    sha256 "267f36baa2bece32445fb1879f7a1c7931bd3a274affa04660d36a262370fdf2"
+    url "https://github.com/coin3d/coin/releases/download/v4.0.2/coin-4.0.2-src.zip"
+    sha256 "b764a88674f96fa540df3a9520d80586346843779858dcb6cd8657725fcb16f0"
 
     # TODO: migrate pyside@2 -> pyside and python@3.10 -> python@3.12 on next pivy release
     resource "pivy" do
