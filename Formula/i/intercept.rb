@@ -1,8 +1,8 @@
 class Intercept < Formula
   desc "Static Application Security Testing (SAST) tool"
   homepage "https://intercept.cc"
-  url "https://github.com/xfhg/intercept/archive/refs/tags/v1.5.5.tar.gz"
-  sha256 "3ca092dd54452fc2166b398410fd238f50e02e3313346bf820edc51132ee1324"
+  url "https://github.com/xfhg/intercept/archive/refs/tags/v1.5.9.tar.gz"
+  sha256 "bc6007b4cfd0cfd81334a20c7f38ba6fa65843a1a92634fb357eff36948d3172"
   license "AGPL-3.0-only"
   head "https://github.com/xfhg/intercept.git", branch: "master"
 
