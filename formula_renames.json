@@ -126,6 +126,7 @@
   "mr2": "zoro",
   "mysql-connector-c": "mysql-client",
   "mysql56": "mysql@5.6",
+  "nanopb-generator": "nanopb",
   "newsbeuter": "newsboat",
   "nimrod": "nim",
   "now-cli": "vercel-cli",
