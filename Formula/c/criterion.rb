@@ -7,15 +7,13 @@ class Criterion < Formula
   head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "8c197f88d8ab0ef7db30d11c2621cf75b9c95a914b736a1a689351c7ba572ea2"
-    sha256 cellar: :any, arm64_ventura:  "e2fa6b6131c59f39a3153bc8f5a90bcaf5c5ee4b7cf5375572c0e79edb559d81"
-    sha256 cellar: :any, arm64_monterey: "6342d313467fc469437fedeff6dafcf6db55eb4e9afa56a4b3d39ed30ee3462c"
-    sha256 cellar: :any, arm64_big_sur:  "a72de1d6b5e7dee339ff55d9e5322e31338997e0f750d1e90ba3879f1bd13ff9"
-    sha256 cellar: :any, sonoma:         "331a9f46e37f20268a4f3397c1176fb81afc079b54c8f39b7f1d2d28445030db"
-    sha256 cellar: :any, ventura:        "698a580f22b167eddca65ee4a296436ab78f414281cb6816bef1ba1112cb5ff2"
-    sha256 cellar: :any, monterey:       "d047a288db8efb7335928601b3f33604a6784c6f0f134400bba0584e1d222e4d"
-    sha256 cellar: :any, big_sur:        "b5552777b6e4a64ea00444da777d40d5c62078a77a1828e8610161143f36d5f4"
-    sha256               x86_64_linux:   "b58276340d35a0ab8ed97152a6ed76d33547df5cac1bf69b8eaca673dc5fc6d6"
+    sha256 cellar: :any, arm64_sonoma:   "dfcc1663c7ca47642db565c77773a3e68866cfc0d5d353629e20ef47649191d0"
+    sha256 cellar: :any, arm64_ventura:  "5ae290e70fc07f3c78d8827027b70232c87ff07bb7297161bde71c9792fb407c"
+    sha256 cellar: :any, arm64_monterey: "f8e3b622a0cd0dbcb169d7595cd15acbe81cc666fb3344f0f0a560fd5740afbf"
+    sha256 cellar: :any, sonoma:         "ec1932cc75323624c4d43a5eb3d54b02b3ec0d016cb111695488b681eb67874e"
+    sha256 cellar: :any, ventura:        "3e7ad78fdf43eddaa64dce5caf15fc28806e8066adc8625720a7bfa2fc9fe795"
+    sha256 cellar: :any, monterey:       "4a591b4b9f37f8343dc5900ad42b8daff1703fa9b7e03b5957b2b94476ea8d89"
+    sha256               x86_64_linux:   "cbb32a2c8d32f1c0611d3194c03190bd9f61bcfd6c6052d03fcf9d5f201139c9"
   end
 
   depends_on "cmake" => :build
