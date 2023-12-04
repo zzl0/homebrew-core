@@ -2,8 +2,8 @@ class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
   url "https://github.com/yorkie-team/yorkie.git",
-    tag:      "v0.4.9",
-    revision: "8a33500b705df825911e7d83c1d3f475940b5022"
+    tag:      "v0.4.10",
+    revision: "1006b647b75195bfb5ff6791db672c381cb4de54"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
