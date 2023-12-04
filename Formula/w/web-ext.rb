@@ -3,8 +3,8 @@ require "language/node"
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
   homepage "https://github.com/mozilla/web-ext"
-  url "https://registry.npmjs.org/web-ext/-/web-ext-7.8.0.tgz"
-  sha256 "227ce577a95005d8294e6bf1ca0ae5f345a5dfa98f9f52c91be977ada96d7fa6"
+  url "https://registry.npmjs.org/web-ext/-/web-ext-7.9.0.tgz"
+  sha256 "d38d5b3efdbf7acc9278cb89246f79feb998aa53fe3ed8c4cdbb9707e4e22f3e"
   license "MPL-2.0"
 
   bottle do
