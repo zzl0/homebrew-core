@@ -12,11 +12,11 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0d5f09e6e1c9d932eb64e5bea2e76adac37b68506d335abe38ade8829fc25e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99e229c7e250f4c891f1a6d9e2f26f96ca0fa6e400276de470a2f045c365148c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d34a6873e7838ab7ba8c44807dc1bf9f5a757256c503585d9d9e34361ae3b7dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8e3571bf2c6f583f996e643738e7093445723dc37787e74d179740869769b74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "165f5aa5c0e54a9a84d8c4ed6dbe98cf3a66b675258a171a903d9dbaa7bcf515"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "975d29ac01455f0eb6a3bbd8303a847147a5d8fa20eaf82e1047f13d2ee3e9dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5e6c5ab8ab8465deace688f926dd37935f4509887e82847e06b8f8728e7b569"
+    sha256 cellar: :any_skip_relocation, ventura:        "a306e9e94ad00f66e579f39e14fd76294c51e2cc70a42b247ab7595f5b62ea28"
+    sha256 cellar: :any_skip_relocation, monterey:       "bef20fd8ef1a5c50d38af4c5d2f6421dec9e2f7aabb5ec7b02ed9c89687b53d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "808907b8bec02270444786ff87e98b17f37f39a3e96c6fb71b6c114b099eb3c4"
   end
 
   # go1.21 build issue report, https://github.com/ooni/probe/issues/2548
