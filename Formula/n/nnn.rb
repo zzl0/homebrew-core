@@ -22,12 +22,7 @@ class Nnn < Formula
   depends_on "readline"
 
   def install
-    args = %w[
-      O_NERD=1
-    ]
-    # args: choose one of O_NERD/O_EMOJI/O_ICONS
-
-    system "make", "install", "PREFIX=#{prefix}", *args
+    system "make", "install", "PREFIX=#{prefix}"
 
     bash_completion.install "misc/auto-completion/bash/nnn-completion.bash"
     zsh_completion.install "misc/auto-completion/zsh/_nnn"
