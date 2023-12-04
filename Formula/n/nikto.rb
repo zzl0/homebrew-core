@@ -6,17 +6,13 @@ class Nikto < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f10c6df6fe8633d239a7c830e736d31a60bb2d5850744b21d97c3876c1f5b36d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb11bfbc15cae557394eb54a4edf5ad658b32af5b2085b92089f25104894a87c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb11bfbc15cae557394eb54a4edf5ad658b32af5b2085b92089f25104894a87c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb11bfbc15cae557394eb54a4edf5ad658b32af5b2085b92089f25104894a87c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "431ec3490be53fbc0514bcc12f4704e6b9424e71e7bfefc4dd571174bf68fd83"
-    sha256 cellar: :any_skip_relocation, ventura:        "a664c33768310d6673ef4a4adc9fa11522abd974f44928f7635b5663b11f948e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a664c33768310d6673ef4a4adc9fa11522abd974f44928f7635b5663b11f948e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a664c33768310d6673ef4a4adc9fa11522abd974f44928f7635b5663b11f948e"
-    sha256 cellar: :any_skip_relocation, catalina:       "a664c33768310d6673ef4a4adc9fa11522abd974f44928f7635b5663b11f948e"
-    sha256 cellar: :any_skip_relocation, mojave:         "a664c33768310d6673ef4a4adc9fa11522abd974f44928f7635b5663b11f948e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb11bfbc15cae557394eb54a4edf5ad658b32af5b2085b92089f25104894a87c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e822edd4d19c031489f940d9f0d3bd37765470baa55519e8c7f0e141f54b8dd6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e822edd4d19c031489f940d9f0d3bd37765470baa55519e8c7f0e141f54b8dd6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e822edd4d19c031489f940d9f0d3bd37765470baa55519e8c7f0e141f54b8dd6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8f31869f1d8481474a9689d80247d222fa9a79a780a3c936be268feab852a16"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8f31869f1d8481474a9689d80247d222fa9a79a780a3c936be268feab852a16"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8f31869f1d8481474a9689d80247d222fa9a79a780a3c936be268feab852a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e822edd4d19c031489f940d9f0d3bd37765470baa55519e8c7f0e141f54b8dd6"
   end
 
   def install
