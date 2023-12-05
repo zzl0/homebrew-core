@@ -3,8 +3,8 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-2.2.2.tgz"
-  sha256 "49cccb2f198b3de5ac37f9605677e8bb32dbec5eae5b45cc834b5c64245116f0"
+  url "https://registry.npmjs.org/appium/-/appium-2.2.3.tgz"
+  sha256 "b2500aef1507b3b05dad2ed45cf890d3d56d6cd7a062a471787c1cc046d51f0c"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
@@ -44,19 +44,15 @@ class Appium < Formula
   end
 
   test do
+    output = shell_output("#{bin}/appium server --show-build-info")
+    assert_match version.to_s, JSON.parse(output)["version"]
+
+    output = shell_output("#{bin}/appium driver list 2>&1")
+    assert_match "uiautomator2", output
+
+    output = shell_output("#{bin}/appium plugin list 2>&1")
+    assert_match "images", output
+
     assert_match version.to_s, shell_output("#{bin}/appium --version")
-
-    port = free_port
-    begin
-      pid = fork do
-        exec bin/"appium --port #{port} &>appium-start.out"
-      end
-      sleep 3
-
-      assert_match "unknown command", shell_output("curl -s 127.0.0.1:#{port}")
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
   end
 end
