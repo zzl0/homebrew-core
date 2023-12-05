@@ -22,9 +22,12 @@ class Hyperfine < Formula
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
     man1.install "doc/hyperfine.1"
-    bash_completion.install "hyperfine.bash"
     fish_completion.install "hyperfine.fish"
     zsh_completion.install "_hyperfine"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # bash: complete: nosort: invalid option name
+    # Issue ref: https://github.com/clap-rs/clap/issues/5190
+    (share/"bash-completion/completions").install "hyperfine.bash" => "hyperfine"
   end
 
   test do
