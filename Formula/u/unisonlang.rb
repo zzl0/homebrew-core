@@ -16,13 +16,13 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b9fe64aab3d82611fdca2ca993ecff7972786d87a821f841dc3865de7c6f7b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0da230b4a7105735597ec11f58d666eda033f6f087aec109d0989fd9fb367917"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79c0a67fda5b87670bc4030fbfa9edac6ac923ca24bad6ddb1444eeb090024c2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9fe4b29ea28a2f2777dfdc7c996f245c31e14b6bf9013f1c8c8daa61d684951c"
-    sha256 cellar: :any_skip_relocation, ventura:        "69a3d3e8fc286e287caf9d9a886900f9e933357f2b750a88984960e1438648e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3332fa8b0ad2949787eb58f082b9f5e5e3ffb52253442764204e21cf530ed76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb5119dacf5c039bebe2d180c687e5e465d09a8265b949486c2dcfb9e4fea90b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27ab477693638d1b62c7b679ad24dddf5ea6bd0745d8ff03c0da85d8c4560d5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ca8bfe440d39d66d88e2d436d8ad374393963737fd8a7d0a4e53a37758d8aa7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d772b22156d824974696caf89ea263f125a62cd8eb0d8a4cab2c07f710efe14f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "77d8a6b34336d5c63564877a8a6dd97a855a3edef5a3926adbaba5d5fbdb5aa1"
+    sha256 cellar: :any_skip_relocation, ventura:        "24d03a539050feb1aefe0ebbecef1c4f06f2379d91a063ea144af02dc3f94f45"
+    sha256 cellar: :any_skip_relocation, monterey:       "2de0f07799a44b4d53619f62b20741dfa12040fb90fcab8421a8564c5006d5ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d594aae90116a8136956555221276bd192bccd2155c64b71cface577c8f5d981"
   end
 
   depends_on "ghc@9.2" => :build # GHC 9.4 PR: https://github.com/unisonweb/unison/pull/4009
