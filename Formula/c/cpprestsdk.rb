@@ -3,10 +3,9 @@ class Cpprestsdk < Formula
   homepage "https://github.com/Microsoft/cpprestsdk"
   # pull from git tag to get submodules
   url "https://github.com/Microsoft/cpprestsdk.git",
-      tag:      "2.10.18",
-      revision: "122d09549201da5383321d870bed45ecb9e168c5"
+      tag:      "v2.10.19",
+      revision: "411a109150b270f23c8c97fa4ec9a0a4a98cdecf"
   license "MIT"
-  revision 1
   head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
 
   bottle do
