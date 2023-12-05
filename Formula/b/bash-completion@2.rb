@@ -39,9 +39,16 @@ class BashCompletionAT2 < Formula
 
   def install
     inreplace "bash_completion" do |s|
-      s.gsub! "readlink -f", "readlink"
-      # Automatically read Homebrew's existing v1 completions
-      s.gsub! ":-/etc/bash_completion.d", ":-#{etc}/bash_completion.d"
+      s.gsub! "readlink -f", "readlink" if OS.mac?
+      if build.head?
+        s.gsub! "(/etc/bash_completion.d)", "(#{etc}/bash_completion.d)"
+      else
+        # Automatically read Homebrew's existing v1 completions
+        s.gsub! ":-/etc/bash_completion.d", ":-#{etc}/bash_completion.d"
+        # Automatically read Homebrew's v2 completions.
+        # TODO: Remove in the next release as script is able to find via PATH.
+        s.gsub! ":-/usr/local/share:", ":-#{HOMEBREW_PREFIX}/share:/usr/local/share:"
+      end
     end
 
     system "autoreconf", "-i" if build.head?
