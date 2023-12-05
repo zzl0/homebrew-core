@@ -1,8 +1,8 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https://ordinals.com/"
-  url "https://github.com/ordinals/ord/archive/refs/tags/0.12.2.tar.gz"
-  sha256 "80083386219b7b68a2f764a12ad5afbc76877974fcb2e32bbd927e82797d3843"
+  url "https://github.com/ordinals/ord/archive/refs/tags/0.12.3.tar.gz"
+  sha256 "356c5f77e6c8ff7109476f3c926ef797fff9b9b0b74fc6692dfa334894e0e3f1"
   license "CC0-1.0"
   head "https://github.com/ordinals/ord.git", branch: "master"
 
