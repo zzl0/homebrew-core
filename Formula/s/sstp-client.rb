@@ -1,16 +1,11 @@
 class SstpClient < Formula
-  desc "SSTP (Microsofts Remote Access Solution for PPP over SSL) client"
+  desc "SSTP (Microsoft's Remote Access Solution for PPP over SSL) client"
   homepage "https://sstp-client.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.18.tar.gz"
-  sha256 "d879f4f35ab7eae87486edc48b50f99a9af65f5eb6fb4427993ca578bb0e0dc8"
+  url "https://gitlab.com/sstp-project/sstp-client/-/releases/1.0.19/downloads/dist-gzip/sstp-client-1.0.19.tar.gz"
+  sha256 "f14647a58eaa5e6aa65e348225dd3331a11a28ecd2e8ce6234bce25c53144505"
   license "GPL-2.0-or-later"
-  revision 1
   version_scheme 1
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/sstp-client[._-]v?(\d+(?:\.\d+)+)\.t}i)
-  end
+  head "https://gitlab.com/sstp-project/sstp-client.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "c8e48110aea4e446af93bba8d6dc2f7919a779c7289f46dddc7dd43744cfb965"
