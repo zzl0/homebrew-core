@@ -14,16 +14,13 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "2b375592dc6ca6ab72a2b9dc14fd9cb37b2153df1c7cfc561ca93a4a5a7955fa"
-    sha256 cellar: :any,                 arm64_ventura:  "bb43982d9f926fb5be7983d2aa4c74c1b045c0ac81656e8326b8377d011bd6e7"
-    sha256 cellar: :any,                 arm64_monterey: "7865d5fc5d7f76abf3798b9b44bd03b92cb4ad0805eead866042effa37c7ee63"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f8f838052625cfb3356e465785aaaf0f8d61e6394dcaedaf1bc44460ce462a5"
-    sha256 cellar: :any,                 sonoma:         "4945921304ae43a6f763acc111218f60625518d5fa4197de4c9113252d8ee1fc"
-    sha256 cellar: :any,                 ventura:        "d2207f59ca7a2dd0ecd2584b47220de9344b3d1b6d3069a15d67b24d6f0d8203"
-    sha256 cellar: :any,                 monterey:       "22da2defb584868e75af04623219ca07adf78d495c166c10deb56fdc485abf63"
-    sha256 cellar: :any,                 big_sur:        "eea32beea59b8a9ee9b3f9a064a82607e08a1c75ecde8f1aa8ea12ef647786b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2d26e8915542c685991d8da6b120792a7948b374491dcbe8bdedd75ceac5806"
+    sha256 cellar: :any,                 arm64_sonoma:   "cb3ff9340a74b2a20c2189b133969c2d3850bf25a71745aca3af5c6b5714b340"
+    sha256 cellar: :any,                 arm64_ventura:  "0025f479469cadba2f08254c251023c24b4ca6b2f31225d4a205cc16f73d29de"
+    sha256 cellar: :any,                 arm64_monterey: "cc98711b0a669690e39a788ed6e06aac5f2d8093a8d2fb54036a6b8253c77f28"
+    sha256 cellar: :any,                 sonoma:         "596d87e3a7a5da03728e4c49ded0e25056d23e812e09dd88755703fbcb0fa685"
+    sha256 cellar: :any,                 ventura:        "ecacea75ab1b9141947a865144814d0b59ffe4d46ec8085c38c876fde5469495"
+    sha256 cellar: :any,                 monterey:       "4b39704aa84728ba513aa38c9485af0b104db1287a9aabcf3b391092b0ad7fe7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cdf234c3670d08dcfa6f8b68800ed1f5a9510c83ab3587c39da950ffef51743"
   end
 
   head do
