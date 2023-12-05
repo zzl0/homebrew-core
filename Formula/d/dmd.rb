@@ -5,12 +5,12 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.105.3.tar.gz"
-    sha256 "6798ad0cbcadf4aa7c13338061dc64e6213dd34d6ad84d05d43ee77a7380dad5"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.106.0.tar.gz"
+    sha256 "1079649c41a9b8e0d3e81c573c82d84cd6873b3afc95b37d6f5206842cedc7c9"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.105.3.tar.gz"
-      sha256 "9ea51cd0d4908a5826d0cb240e214912a2f6ca829561959865a1edef2326943d"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.106.0.tar.gz"
+      sha256 "3f926ee26905c2f6fe457e7ad2fe4feac8cad83c571a70adea30b6cd4a4366b6"
     end
   end
 
@@ -100,6 +100,8 @@ class Dmd < Formula
   end
 
   test do
+    assert_equal version, resource("phobos").version, "`phobos` resource needs updating!" if build.stable?
+
     system bin/"dmd", "-fPIC", pkgshare/"samples/hello.d"
     system "./hello"
   end
