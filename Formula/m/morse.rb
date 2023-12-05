@@ -26,7 +26,14 @@ class Morse < Formula
   depends_on "pkg-config" => :build
   depends_on "pulseaudio"
 
+  # Use Debian patch to fix usage with newer `pulseaudio`
+  patch do
+    url "https://sources.debian.org/data/main/m/morse/2.5-2/debian/patches/04fix-pa_simple_write-with-mono-output.patch"
+    sha256 "69b57f6230fcb649ca0695b75cf0968d0ce82e6c30c7190dd50b87245e432fa2"
+  end
+
   def install
+    ENV["CC"] = "#{ENV.cc} -Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     system "make", "all"
     bin.install %w[morse QSO]
     man1.install %w[morse.1 QSO.1]
