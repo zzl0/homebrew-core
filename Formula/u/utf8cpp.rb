@@ -6,7 +6,7 @@ class Utf8cpp < Formula
   license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "964320181751c78a83c45218577bb5a4a9398575de5e92864cddbfd2d13d0c0e"
+    sha256 cellar: :any_skip_relocation, all: "4b9f7d94fc727533b39cbf9cc3c8acb9361f12270b7a2a56ef01c045bb8d4574"
   end
 
   depends_on "cmake" => [:build, :test]
