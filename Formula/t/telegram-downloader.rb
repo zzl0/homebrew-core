@@ -1,8 +1,8 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
   homepage "https://github.com/iyear/tdl"
-  url "https://github.com/iyear/tdl/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "415ceeb7b2ab2e3627c9064275a7e0fd5c42200c2f12bfe09d0703d650747c0d"
+  url "https://github.com/iyear/tdl/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "ad2b8e5b930bfd9b985fb4739ceeeadabd7e3a1cf7fc999c55f782076d6ef574"
   license "AGPL-3.0-only"
 
   bottle do
@@ -23,6 +23,6 @@ class TelegramDownloader < Formula
 
   test do
     assert_match "# ID of dialog", shell_output("#{bin}/tdl chat ls -f -")
-    assert_match "callback: not authorized. please login first", shell_output("#{bin}/tdl chat ls -n _test", 1)
+    assert_match "not authorized. please login first", shell_output("#{bin}/tdl chat ls -n _test", 1)
   end
 end
