@@ -1,8 +1,8 @@
 class Stuffbin < Formula
   desc "Compress and embed static files and assets into Go binaries"
   homepage "https://github.com/knadh/stuffbin"
-  url "https://github.com/knadh/stuffbin/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "127acd259b6b79786ee6551ae11e46924766115130812a2f5964f11fea21839e"
+  url "https://github.com/knadh/stuffbin/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "10de8bdec2997299beaff857cd5a4c74b3951c9e4dab97b68f7b97af8d564ac3"
   license "MIT"
   head "https://github.com/knadh/stuffbin.git", branch: "master"
 
