@@ -35,12 +35,15 @@ class Broot < Formula
     # Completion scripts are generated in the crate's build directory,
     # which includes a fingerprint hash. Try to locate it first
     out_dir = Dir["target/release/build/broot-*/out"].first
-    bash_completion.install "#{out_dir}/broot.bash"
-    bash_completion.install "#{out_dir}/br.bash"
     fish_completion.install "#{out_dir}/broot.fish"
     fish_completion.install "#{out_dir}/br.fish"
     zsh_completion.install "#{out_dir}/_broot"
     zsh_completion.install "#{out_dir}/_br"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # bash: complete: nosort: invalid option name
+    # Issue ref: https://github.com/clap-rs/clap/issues/5190
+    (share/"bash-completion/completions").install "#{out_dir}/broot.bash" => "broot"
+    (share/"bash-completion/completions").install "#{out_dir}/br.bash" => "br"
   end
 
   test do
