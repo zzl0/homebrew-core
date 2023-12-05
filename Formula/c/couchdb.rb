@@ -2,11 +2,10 @@ class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
   # TODO: Check if we can use unversioned `erlang` at version bump.
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
-  sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.3/apache-couchdb-3.3.3.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.3.3/apache-couchdb-3.3.3.tar.gz"
+  sha256 "7a2007b5f673d4be22a25c9a111d9066919d872ddb9135a7dcec0122299bd39e"
   license "Apache-2.0"
-  revision 3
 
   livecheck do
     url :homepage
