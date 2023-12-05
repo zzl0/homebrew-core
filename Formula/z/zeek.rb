@@ -2,10 +2,9 @@ class Zeek < Formula
   desc "Network security monitor"
   homepage "https://www.zeek.org"
   url "https://github.com/zeek/zeek.git",
-      tag:      "v5.2.2",
-      revision: "a6f825b81da389bb2deb1cf389dbd7e88efd4a1c"
+      tag:      "v6.0.2",
+      revision: "dbaa9bf33d26be80f820e73a550a25d4be2740a7"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
@@ -41,8 +40,6 @@ class Zeek < Formula
   fails_with gcc: "5"
 
   def install
-    (buildpath/"auxil/c-ares").rmtree
-
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
     # https://github.com/Homebrew/homebrew-core/pull/74932
     inreplace "zeek-config.in" do |s|
@@ -51,7 +48,7 @@ class Zeek < Formula
     end
 
     # Avoid references to the Homebrew shims directory
-    inreplace "auxil/spicy/spicy/hilti/toolchain/src/config.cc.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
+    inreplace "auxil/spicy/hilti/toolchain/src/config.cc.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBROKER_DISABLE_TESTS=on",
