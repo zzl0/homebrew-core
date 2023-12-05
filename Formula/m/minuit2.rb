@@ -11,13 +11,13 @@ class Minuit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "372b6cc373807caa831565296bc78da73b9adfac810e2bd8cc4236b4c4b4ff1d"
-    sha256 cellar: :any,                 arm64_ventura:  "abe92b317e61d3a2eb9bbe0da2373403cb72ff65ca641bce2bc220e5d5fdca32"
-    sha256 cellar: :any,                 arm64_monterey: "8a37e38cb7b07af5d049c1c03dac34feb120af5b6a2aa6eb9ac60bdcf0010330"
-    sha256 cellar: :any,                 sonoma:         "825216002e5be60d60e5d12e1d7715091ac1c7f97e1a80fc4bff7284c17b02c3"
-    sha256 cellar: :any,                 ventura:        "d5038b5036cefcc0faacb3c7f453c538d43e986621c4d2015bcfc058797620da"
-    sha256 cellar: :any,                 monterey:       "4a6515d1d41ae6a26ad80422165c9411045d5439c32f8596b987c317a55ce569"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5474a1c7c17c66779d637b5f811e4ba0972b4389b84ed6e200c49b8b575752cc"
+    sha256 cellar: :any,                 arm64_sonoma:   "46a6c3ab833507b369ddaa8f01a17675f6be756a80397ad7352941dcc4fd715e"
+    sha256 cellar: :any,                 arm64_ventura:  "647a86580b40ceceb93ef633a11f48827b8ff5ff6b0a0f3fc10a019dbcd38731"
+    sha256 cellar: :any,                 arm64_monterey: "e047993fecb18867605f023cdac53f4b4e389d79e71ce67b75fdf5d66fd04c3e"
+    sha256 cellar: :any,                 sonoma:         "7c1c22861e9f17a9145ccd5b73f176f57096c3715d7b53fbcee882388423208e"
+    sha256 cellar: :any,                 ventura:        "12c9da2afbca594f7bc41f8fcb4917135ccd885e38a560351b65ee2911254c47"
+    sha256 cellar: :any,                 monterey:       "f292777a6f6a7a89f1d5d677a21cdfaab6623b616a03960fd901b1c23154190e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "202f11a06135d0b0b556135238ba974282a939a15c6814c071c230ff03639b8e"
   end
 
   depends_on "cmake" => :build
