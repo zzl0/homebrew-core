@@ -1,8 +1,8 @@
 class PythonBoto3 < Formula
   desc "AWS SDK for Python"
   homepage "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/index.html"
-  url "https://files.pythonhosted.org/packages/07/2d/6b217bb14849a79d6c419b96518e55252995b9857b1df52b952cbabe066b/boto3-1.29.0.tar.gz"
-  sha256 "3e90ea2faa3e9892b9140f857911f9ef0013192a106f50d0ec7b71e8d1afc90a"
+  url "https://files.pythonhosted.org/packages/47/87/87aa0bedda7591bb7da730a415c2ba8520c80e0a5011648de5ede40aad9d/boto3-1.33.0.tar.gz"
+  sha256 "ebf6d86217c37986f965dbe35a3bbd0318127d23a65737ab6486667496decb54"
   license "Apache-2.0"
 
   bottle do
