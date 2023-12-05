@@ -18,7 +18,7 @@ class Jmeter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30e671f75a56f645115bb3f5c91968afcfbb89643565737a1c18d79928c9bf83"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   resource "jmeter-plugins-manager" do
     url "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/1.9/jmeter-plugins-manager-1.9.jar"
@@ -30,7 +30,7 @@ class Jmeter < Formula
     rm_f Dir["bin/*.bat"]
     prefix.install_metafiles
     libexec.install Dir["*"]
-    (bin/"jmeter").write_env_script libexec/"bin/jmeter", JAVA_HOME: Formula["openjdk@17"].opt_prefix
+    (bin/"jmeter").write_env_script libexec/"bin/jmeter", JAVA_HOME: Formula["openjdk"].opt_prefix
 
     resource("jmeter-plugins-manager").stage do
       (libexec/"lib/ext").install Dir["*"]
