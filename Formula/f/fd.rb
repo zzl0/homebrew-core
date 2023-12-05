@@ -23,6 +23,10 @@ class Fd < Formula
     man1.install "doc/fd.1"
     generate_completions_from_executable(bin/"fd", "--gen-completions", shells: [:bash, :fish])
     zsh_completion.install "contrib/completion/_fd"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # bash: complete: nosort: invalid option name
+    # Issue ref: https://github.com/clap-rs/clap/issues/5190
+    (share/"bash-completion/completions").install bash_completion.children
   end
 
   test do
