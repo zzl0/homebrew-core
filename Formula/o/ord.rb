@@ -7,13 +7,13 @@ class Ord < Formula
   head "https://github.com/ordinals/ord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acae08b3afdcf51621517e4797e646a34858c6bd7ea7916cf1bf550ca56e7f08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5815aac3b62ab664330d7f7765c7e5adf39bb8e8870da855544e3f25b7bc5046"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5291a3c8ec699495137591652e3a8d95ba406759fd35797f07356115f6e8121c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4363bd40d70678551ec8836eec88e1fa5b8d9333fbc12af4831a3f4157deeeb"
-    sha256 cellar: :any_skip_relocation, ventura:        "3686889c746cfebab9fa4f676a3b6c5089847ebbfda09a21596de2c54ad36145"
-    sha256 cellar: :any_skip_relocation, monterey:       "a948f79c1dfc2f8826ed6b1d63c7827955fb32d0385daa396e6b1fd5e94053cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfda066123724bc0118135a5497bf3436d55865d05f5080bcb20e6dc3339c963"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebaf3bcb5a7500a2a81e3025c7ad26c7e930c448e418765638a76c0799f57189"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e52bbe5d95574161d556b1063a4b6f7f889d86b260e3deba8a901a44e72a263"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf75d3306fe2cf8c4017e0bc2e35d709c83bf524bc866111162cdb345823f0d0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7fa9a5b3c0200d20b790443ce1722a97d73107b8881147e6b0a97ee8a817cdc0"
+    sha256 cellar: :any_skip_relocation, ventura:        "821edd8f55be57ea939079610f75a52d13fce3c35c4865371797b543c720c268"
+    sha256 cellar: :any_skip_relocation, monterey:       "64b9ae2aaa97966a6bb7f4d225971fe8f59e409a35a63cf60fbf59e0580f968f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7f6cef60b8bed8b70a0ea4d3400310b0a556febf9ed5d9bec6c6ae557521725"
   end
 
   depends_on "rust" => :build
