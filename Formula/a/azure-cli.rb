@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.54.0.tar.gz"
-  sha256 "18b1275378712a7cd11bb84b2f9ce761abc1a71dff0c01a3ffe0d264d5bd9146"
+  url "https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.55.0.tar.gz"
+  sha256 "6967e51de33dd83e8e6d548e36de43303fa5dca90107f4fccbbab94748ba0628"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -212,8 +212,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-containerservice" do
-    url "https://files.pythonhosted.org/packages/a1/96/7b2d311d353326d77023aaa12b930f93862aa30da45189ec89db7b5c46ab/azure-mgmt-containerservice-27.0.0.tar.gz"
-    sha256 "21d1a8d80eb962230927c4b5f098be15f9e7ca5361b3cbc5390a5f03dd7080d3"
+    url "https://files.pythonhosted.org/packages/f3/5e/0ba7dbcb29ceb43fe8bff577f2c834cf075833b17abe24607b70f748eaf5/azure-mgmt-containerservice-28.0.0.tar.gz"
+    sha256 "b55605a44515f6fd0e3a4dc22bfa0f440f3e7e1625ebaf06ab3eb06bf35a6cdb"
   end
 
   resource "azure-mgmt-core" do
@@ -367,8 +367,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-rdbms" do
-    url "https://files.pythonhosted.org/packages/ee/31/5033906d49958ef0c0cf0620fbe97bca2436bccbed54a3c727d8952664f1/azure-mgmt-rdbms-10.2.0b11.tar.gz"
-    sha256 "03b4b0925a80873e04cbd6abd585b2b61b55672436636454b1adbb88c7369b15"
+    url "https://files.pythonhosted.org/packages/07/be/b0678f1edf78c4b502a426edbac481fc697013e2791bbc19098aaf190f45/azure-mgmt-rdbms-10.2.0b12.tar.gz"
+    sha256 "59d4e6d18c4c5cd1c6712183dfc619d5898968c8df2c90bc38899779d7310de1"
   end
 
   resource "azure-mgmt-recoveryservices" do
@@ -432,8 +432,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-sql" do
-    url "https://files.pythonhosted.org/packages/65/66/1282b7eb14582f29245c9c47ee68dde6c34e4013ace07f3949cde2e2b8cb/azure-mgmt-sql-4.0.0b12.tar.gz"
-    sha256 "2c9c7d71db6aa681e5d693c6628768039d32f0d3f87ed6d7858ef3a21b023c7f"
+    url "https://files.pythonhosted.org/packages/d4/e8/c925da31d0bcafb90ac913ce2640ecb5202298e592a51ce45934a8fc1d19/azure-mgmt-sql-4.0.0b13.tar.gz"
+    sha256 "27a4b1015d5c82529be388731dfe7e9b59746e97ea79cc291b7a707640b3defb"
   end
 
   resource "azure-mgmt-sqlvirtualmachine" do
@@ -637,8 +637,8 @@ class AzureCli < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
-    sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
+    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
   resource "PyJWT" do
@@ -722,8 +722,8 @@ class AzureCli < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/f8/7d/73e4e3cdb2c780e13f9d87dc10488d7566d8fd77f8d68f0e416bfbd144c7/wrapt-1.15.0.tar.gz"
-    sha256 "d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a"
+    url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
+    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
   end
 
   resource "xmltodict" do
