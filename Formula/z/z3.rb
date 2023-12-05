@@ -5,13 +5,14 @@ class Z3 < Formula
   head "https://github.com/Z3Prover/z3.git", branch: "master"
 
   stable do
-    url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.2.tar.gz"
-    sha256 "9f58f3710bd2094085951a75791550f547903d75fe7e2fcb373c5f03fc761b8f"
+    url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.3.tar.gz"
+    sha256 "61670733eb7a74eeca13033244cbec2c4098dca24a6fa3df0e7ae12ee8f33d9c"
 
-    # Fix source build for users with GCC 13. Remove in the next release.
+    # build patch to use built-in `importlib.resources` avail in py3.9+
+    # upstream PR ref, https://github.com/Z3Prover/z3/pull/7042
     patch do
-      url "https://github.com/Z3Prover/z3/commit/520e692a43c41e8981eb091494bef0297ecbe3c6.patch?full_index=1"
-      sha256 "3e57b6ba3f8f271c3a8e46f1172b3384296c9570165680eb2bcf57d84e28298a"
+      url "https://github.com/Z3Prover/z3/commit/03ae6d86cb4db88c71d6b245e29400e9a44cb59f.patch?full_index=1"
+      sha256 "bc574bf4a6de35a41e396f42b3e82f2f563bcd017acb536a86958a1e44b0fb9a"
     end
   end
 
