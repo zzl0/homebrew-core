@@ -1,8 +1,8 @@
 class OsvScanner < Formula
   desc "Vulnerability scanner which uses the OSV database"
   homepage "https://github.com/google/osv-scanner"
-  url "https://github.com/google/osv-scanner/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "a32daca1d28374b7f63174467bb72783b3f478aed8d260263aa88056271b7f21"
+  url "https://github.com/google/osv-scanner/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "4de0d5f942270ac57a81d7f1ff42b68e6042be5a1afc5d119f4797952a0197d2"
   license "Apache-2.0"
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
@@ -34,7 +34,7 @@ class OsvScanner < Formula
     scan_output = shell_output("#{bin}/osv-scanner --lockfile #{testpath}/go.mod").strip
     expected_output = <<~EOS.chomp
       Scanned #{testpath}/go.mod file and found 2 packages
-      No vulnerabilities found
+      No issues found
     EOS
     assert_equal expected_output, scan_output
   end
