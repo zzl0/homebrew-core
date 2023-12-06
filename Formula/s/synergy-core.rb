@@ -65,6 +65,11 @@ class SynergyCore < Formula
               "set (SYNERGY_BUNDLE_DIR ${CMAKE_BINARY_DIR}/bundle)",
               "set (SYNERGY_BUNDLE_DIR ${CMAKE_INSTALL_PREFIX}/bundle)"
 
+    # Disable macdeployqt to prevent copying dylibs
+    inreplace "src/gui/CMakeLists.txt",
+              /"execute_process\(COMMAND \${MACDEPLOYQT_EXECUTABLE}.*\)"\)$/,
+              '"MESSAGE (\\"Skipping macdeployqt in Homebrew\\")")'
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DBUILD_TESTS:BOOL=OFF", "-DCMAKE_INSTALL_DO_STRIP=1",
                     "-DSYSTEM_PUGIXML:BOOL=ON"
