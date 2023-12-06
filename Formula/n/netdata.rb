@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.43.2/netdata-v1.43.2.tar.gz"
-  sha256 "d4a7ea2717ac7c8f04865f18e13aeaa0a36784156059f1b5ced75a44f74afc4d"
+  url "https://github.com/netdata/netdata/releases/download/v1.44.0/netdata-v1.44.0.tar.gz"
+  sha256 "87c761475e4020e8ec6e5bb04766affcd722e42252d400fb02afa6b260cc9d18"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -30,6 +29,7 @@ class Netdata < Formula
   depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
+  depends_on "pcre2"
   depends_on "protobuf"
   depends_on "protobuf-c"
 
