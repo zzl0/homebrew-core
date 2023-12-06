@@ -9,13 +9,13 @@ class ContentfulCli < Formula
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be9b16b3631adc16757e9fc10c44a44d752f9152234384528f32ba64552e2fba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be9b16b3631adc16757e9fc10c44a44d752f9152234384528f32ba64552e2fba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be9b16b3631adc16757e9fc10c44a44d752f9152234384528f32ba64552e2fba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0a56cc3ebc3bdb3c514c9b35c33d856d72f83406664834cb1c8ec98c69162396"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a56cc3ebc3bdb3c514c9b35c33d856d72f83406664834cb1c8ec98c69162396"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a56cc3ebc3bdb3c514c9b35c33d856d72f83406664834cb1c8ec98c69162396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be9b16b3631adc16757e9fc10c44a44d752f9152234384528f32ba64552e2fba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee0bff7e6c0b41407918725dc3f34aef5e12798ff7e057e1396897882983ce54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee0bff7e6c0b41407918725dc3f34aef5e12798ff7e057e1396897882983ce54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee0bff7e6c0b41407918725dc3f34aef5e12798ff7e057e1396897882983ce54"
+    sha256 cellar: :any_skip_relocation, sonoma:         "88d03e1996d5b90c07ee3ade0a46c869c5ecb656a1e202870d6927127c4a20b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "88d03e1996d5b90c07ee3ade0a46c869c5ecb656a1e202870d6927127c4a20b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "88d03e1996d5b90c07ee3ade0a46c869c5ecb656a1e202870d6927127c4a20b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee0bff7e6c0b41407918725dc3f34aef5e12798ff7e057e1396897882983ce54"
   end
 
   depends_on "node"
