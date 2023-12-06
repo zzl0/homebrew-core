@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/42/cd/1864c8d3b52397c1bd0fb2744184d397711ce153270d50ffb0b699bec86e/dvc-3.33.0.tar.gz"
-  sha256 "28d11f13e5e83efbce9441a7da517bdce3fb3e386bec7bb990e0c98b59b149dd"
+  url "https://files.pythonhosted.org/packages/70/58/7343e82f3822286b64cbe811fe5a60f7ec69f62b0ef97603992c9c83f3c6/dvc-3.33.2.tar.gz"
+  sha256 "17687b3666857256a69957516db3764c5edef8f8f5fe5703784dcb08e831f380"
   license "Apache-2.0"
 
   bottle do
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/9c/04/9ffceebe624a2f78f7c5a3a0f7a78bb2763a2339e2a6e94eddc081e87f49/dvc-data-2.22.3.tar.gz"
-    sha256 "ab4b6695078eea95f8289c6cde2d8356cfbff231c8d5b72b29cf34ec2ecf9c26"
+    url "https://files.pythonhosted.org/packages/3a/46/666b8b5852f1796499539068b171690d9642faf09cfc31d368ade2334a03/dvc-data-2.22.5.tar.gz"
+    sha256 "c95498dce142685ce9310b85d198f4dd2e868b0b5eae414aeae8aed4664a059a"
   end
 
   resource "dvc-gdrive" do
@@ -273,8 +273,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/80/0d/f943130dce934178a1aa895197312b5cd5a608e300a9d11734bcde968913/dvc-objects-1.4.4.tar.gz"
-    sha256 "0cf37921d8c56fa2965df644d1d73016ecef767f7a683aa50258e8228f4290b8"
+    url "https://files.pythonhosted.org/packages/68/78/f53a34c805f0a8a26c09d653982b14dd950ef3e7e3b877a28e2a9443956a/dvc-objects-1.4.8.tar.gz"
+    sha256 "a7172c62ddf58b5a445d91c87c23e0f0f438b36fb15480786a82764bb4253aa3"
   end
 
   resource "dvc-oss" do
@@ -753,8 +753,8 @@ class Dvc < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/ca/f7/2af788563995eeec32b920c0640a6bc54777c89c780030a7754f95166b7f/yarl-1.9.3.tar.gz"
-    sha256 "4a14907b597ec55740f63e52d7fee0e9ee09d5b9d57a4f399a7423268e457b57"
+    url "https://files.pythonhosted.org/packages/e0/ad/bedcdccbcbf91363fd425a948994f3340924145c2bc8ccb296f4a1e52c28/yarl-1.9.4.tar.gz"
+    sha256 "566db86717cf8080b99b58b083b773a908ae40f06681e87e589a976faf8246bf"
   end
 
   resource "zc-lockfile" do
