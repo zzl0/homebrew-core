@@ -1,8 +1,8 @@
 class MonitoringPlugins < Formula
   desc "Plugins for nagios compatible monitoring systems"
   homepage "https://www.monitoring-plugins.org"
-  url "https://www.monitoring-plugins.org/download/monitoring-plugins-2.3.3.tar.gz"
-  sha256 "7023b1dc17626c5115b061e7ce02e06f006e35af92abf473334dffe7ff3c2d6d"
+  url "https://www.monitoring-plugins.org/download/monitoring-plugins-2.3.5.tar.gz"
+  sha256 "f3edd79a9254f231a1b46b32d14def806648f5267e133ef0c0d39329587ee38b"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -22,6 +22,9 @@ class MonitoringPlugins < Formula
     sha256               x86_64_linux:   "a1a591f41c0bea670ae1592f05572b6e08c030e2e0cabfba9151dd5ba757f299"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "gettext"
   depends_on "openssl@3"
 
   on_linux do
@@ -29,6 +32,10 @@ class MonitoringPlugins < Formula
   end
 
   conflicts_with "nagios-plugins", because: "both install their plugins to the same folder"
+
+  # Prevent -lcrypto from showing up in Makefile dependencies
+  # Reported upstream: https://github.com/monitoring-plugins/monitoring-plugins/pull/1970
+  patch :DATA
 
   def install
     # Fix compile with newer Clang
@@ -41,6 +48,9 @@ class MonitoringPlugins < Formula
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
+    system "aclocal", "-I", "gl/m4", "-I", "m4"
+    system "autoupdate"
+    system "automake", "--add-missing"
     system "./configure", *args
     system "make", "install"
     sbin.write_exec_script Dir["#{libexec}/sbin/*"]
@@ -54,7 +64,33 @@ class MonitoringPlugins < Formula
   end
 
   test do
-    output = shell_output("#{sbin}/check_dns -H 8.8.8.8 -t 3")
+    output = shell_output("#{sbin}/check_dns -H brew.sh -s 8.8.8.8 -t 3")
     assert_match "DNS OK", output
   end
 end
+
+__END__
+diff --git a/plugins-root/Makefile.am b/plugins-root/Makefile.am
+index 40aa020..a80229e 100644
+--- a/plugins-root/Makefile.am
++++ b/plugins-root/Makefile.am
+@@ -26,7 +26,7 @@ EXTRA_PROGRAMS = pst3
+ 
+ EXTRA_DIST = t pst3.c
+ 
+-BASEOBJS = ../plugins/utils.o ../lib/libmonitoringplug.a ../gl/libgnu.a $(LIB_CRYPTO)
++BASEOBJS = ../plugins/utils.o ../lib/libmonitoringplug.a ../gl/libgnu.a
+ NETOBJS = ../plugins/netutils.o $(BASEOBJS) $(EXTRA_NETOBJS)
+ NETLIBS = $(NETOBJS) $(SOCKETLIBS)
+ 
+@@ -80,8 +80,8 @@ install-exec-local: $(noinst_PROGRAMS)
+ 
+ ##############################################################################
+ # the actual targets
+-check_dhcp_LDADD = @LTLIBINTL@ $(NETLIBS)
+-check_icmp_LDADD = @LTLIBINTL@ $(NETLIBS) $(SOCKETLIBS)
++check_dhcp_LDADD = @LTLIBINTL@ $(NETLIBS) $(LIB_CRYPTO)
++check_icmp_LDADD = @LTLIBINTL@ $(NETLIBS) $(SOCKETLIBS) $(LIB_CRYPTO)
+ 
+ # -m64 needed at compiler and linker phase
+ pst3_CFLAGS = @PST3CFLAGS@
