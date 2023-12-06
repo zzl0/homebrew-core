@@ -26,14 +26,13 @@ class Pulseaudio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "27d4abbe8ff504b140b588fe78d7e7b798c0a076f94d1c25418b6a3be8fcd5e2"
-    sha256 arm64_ventura:  "18a8f6d639cdd2e3e387886eada41d7fcb458d9bf03375a39fe7d372d60a92cf"
-    sha256 arm64_monterey: "99b50d18d374013340228f611af63fcb66bdc9e0a681fa3a9ebb2c3b05a89430"
-    sha256 sonoma:         "252b453dab9684b191f8119c2992f70b8e3cab3cd9b65e248b5f01e3b3a40649"
-    sha256 ventura:        "cc5870768b17130fb40b517d422ef6e0b915695c2fac9a8e8931800caaab29d6"
-    sha256 monterey:       "6febd7d96e526e962947e64c597701d0be1000a9f626b4a02467f0bf582f83d6"
-    sha256 x86_64_linux:   "618016935992f4317a6cea21054682693644743dead13896e97af76ab93847b8"
+    sha256 arm64_sonoma:   "3d6c37dff594d1bb5e351ff86e7f6194b0b51df6fa74b4450671b2e1560625e3"
+    sha256 arm64_ventura:  "b198133d973cd324073cc2ec73f900eb7bfa02e156489d9830b4c1c058ebaf11"
+    sha256 arm64_monterey: "ef12808629107095cd7c5c9a8bacd88b186a9e03ff83b8d793e118cd2d8fed5e"
+    sha256 sonoma:         "f55b6dcebc24384f4049ec999da7353af2c70829628f4ef142a892da54e28c35"
+    sha256 ventura:        "446e0a771587285b5a86d201242d5615dd4640c09674178aa2a968ffe6969469"
+    sha256 monterey:       "4eeac72411307c5524442a61b809e7ba1930c41a727a1848cc3b60a5d262bb53"
+    sha256 x86_64_linux:   "2b3c51aa1cfe4b3b96775f03289b3fda30165a601db1f9adc6b69a8f2e8c9fd9"
   end
 
   depends_on "gettext" => :build
