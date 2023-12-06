@@ -14,13 +14,13 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e1559b512441394ecf464a0f4d1515beeae56f3387e6b54e7de3c750fce6b52e"
-    sha256 arm64_ventura:  "4904eb43384a6d1d28a7d607b17f5c098a2571053d8db25933543f3eac506313"
-    sha256 arm64_monterey: "bad6be52748f7c2cde4c72743c18b0ba6be2194841b4a838ae2d88a322a5b3dc"
-    sha256 sonoma:         "cce489a72a26cad4453c9c0af229837d102869b12b7cfc0689172e273fe327ca"
-    sha256 ventura:        "c344d29e6c7fddef021791c0cb1ad4e34bc3c7d1ef6560a2e23d4d76eaa53b2e"
-    sha256 monterey:       "0ef04a47bd610debc1f328678210287d9ef0413ba4f1ba89b9db2f800288217b"
-    sha256 x86_64_linux:   "11370a2a350ed986b03ce0daa1fa6558826223bd642d6594f6a75c10a344693d"
+    sha256 arm64_sonoma:   "9ee825cd15be20ba5a07c46b425a2fc34a31e2d28b166b887f05256bc45dc9b6"
+    sha256 arm64_ventura:  "ee3d4ff9e9780820b439675448c6cab316108108a739f73c677b8a6f687c12f3"
+    sha256 arm64_monterey: "1bdb0d6456bec3664d8f51faf1f978252f93639ca8ad3c1ad06f8b67b7f546b2"
+    sha256 sonoma:         "2e85f305e5db472be9697f670047fe5cc40a86c662d15e069f32efc262e41545"
+    sha256 ventura:        "a9dc8302efa3a626074a004330647cd80276967072164d02d8037d796ea1a2d7"
+    sha256 monterey:       "0f401fa3377d537f4943e3c99536ec4de7c98541cdcdf80bcdd96951268bada0"
+    sha256 x86_64_linux:   "2c046bafeb69764a4515de7a226aeac68c2302ac9a93d19748403b5e6726bb0b"
   end
 
   depends_on "cmake" => :build
