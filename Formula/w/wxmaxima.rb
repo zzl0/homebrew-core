@@ -43,6 +43,9 @@ class Wxmaxima < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
 
+    # Disable CMake fixup_bundle to prevent copying dylibs
+    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
+
     system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
@@ -50,8 +53,7 @@ class Wxmaxima < Formula
 
     return unless OS.mac?
 
-    prefix.install "build-wxm/src/wxMaxima.app"
-    bin.write_exec_script prefix/"wxMaxima.app/Contents/MacOS/wxmaxima"
+    bin.write_exec_script prefix/"wxmaxima.app/Contents/MacOS/wxmaxima"
   end
 
   def caveats
