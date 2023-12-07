@@ -1,14 +1,22 @@
 class Pngquant < Formula
   desc "PNG image optimizing utility"
   homepage "https://pngquant.org/"
-  url "https://pngquant.org/pngquant-2.18.0-src.tar.gz"
-  sha256 "e72194b52b36f040deaec49a1ddd5dcd8d4feecc3a5fe6c5e9589a9707b233d4"
+  url "https://static.crates.io/crates/pngquant/pngquant-3.0.2.crate"
+  sha256 "33f8501d8b81f34cb6f028a5d06772b9d7940e0bc2b15a5d0bce138cb74233cb"
   license :cannot_represent
-  head "https://github.com/kornelski/pngquant.git", branch: "master"
+  head "https://github.com/kornelski/pngquant.git", branch: "main"
 
   livecheck do
-    url "https://pngquant.org/releases.html"
-    regex(%r{href=.*?/pngquant[._-]v?(\d+(?:\.\d+)+)-src\.t}i)
+    url "https://crates.io/api/v1/crates/pngquant/versions"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :json do |json|
+      json["versions"]&.map do |version|
+        next if version["yanked"] == true
+        next if (match = version["num"]&.match(regex)).blank?
+
+        match[1]
+      end
+    end
   end
 
   bottle do
@@ -29,7 +37,8 @@ class Pngquant < Formula
   depends_on "little-cms2"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "tar", "--strip-components", "1", "-xzvf", "pngquant-#{version}.crate"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
