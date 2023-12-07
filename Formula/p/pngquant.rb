@@ -20,15 +20,13 @@ class Pngquant < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b195142b5fad75f621e4103fd147a8008d88d62dbc79cea5681d055ff0520e2f"
-    sha256 cellar: :any,                 arm64_ventura:  "55fab88e60676f665814df9e581bdf08fc702c017710b5014b62b71918cc5c5a"
-    sha256 cellar: :any,                 arm64_monterey: "2a9880d5f9082fefeaa293e839b4c4c13cf667727f25a051fdaed81d893fd343"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ac3705e4b0be4c8fddcf74651060c9f8c4a06cf606cf29487f4c7b1cb54e92c"
-    sha256 cellar: :any,                 sonoma:         "abe2eeddc6224a9433f6f5dfc08b6e09cc4e0e65cd58496eb6eb7ad1dca5336c"
-    sha256 cellar: :any,                 ventura:        "4d2a131a292a55106feb2513cada8dcbd1b8028ddc59d7bb95a189b2ce51fd6e"
-    sha256 cellar: :any,                 monterey:       "fc3d3fd03d19f8ff9dcf2832262cd093bb3716f2362c17e5587930b5f3b974b5"
-    sha256 cellar: :any,                 big_sur:        "04f276c7261989d2c5af611cc8ee54e4bd6fe50b7e1f4d5df870564ce7b7f612"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d482fb76dc638ad8271269b95af411697e9d1f1ac21abc3f19ceace8af285ea8"
+    sha256 cellar: :any,                 arm64_sonoma:   "dcb677c4bffb533a7a5c70e52977b0923bdce6bebc232bb3880cf113b823bf17"
+    sha256 cellar: :any,                 arm64_ventura:  "ec8a1fb6c4e95afd713c5fbde9fc67513eb9f1525afa82fa250ac0c1219273f8"
+    sha256 cellar: :any,                 arm64_monterey: "0123b2f1143791189367c1714f1d20d89bbb385f0fb5497b857fc0bf65701ec7"
+    sha256 cellar: :any,                 sonoma:         "37928ca3e06ec9a90747b3a9cb139381a0dab1648c31b364ecda5fd820a46e14"
+    sha256 cellar: :any,                 ventura:        "60970346fd1f5cdc306045c4740824a58c47f2dbea18e2ff4411cade6e857679"
+    sha256 cellar: :any,                 monterey:       "c82b3ec91aa752a17bcebda7bc36e40006e53f84ea5a024193a96d10ab3db435"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ea8f69b63a235f33a839e3095dbc8b03080c2f3ab75bee6c55b741aa7c27cb1"
   end
 
   depends_on "pkg-config" => :build
