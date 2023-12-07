@@ -6,6 +6,11 @@ class Scarb < Formula
   license "MIT"
   head "https://github.com/software-mansion/scarb.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f896be01d7c4ab4215f7b6a5b054cf304729163f0108de58c3912c0bf27b9f45"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d4166f1b103e129b26f2cb743d735437aae00489f9d9d759ffd953e8c7e7c94"
