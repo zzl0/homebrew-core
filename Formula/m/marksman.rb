@@ -1,8 +1,8 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-07-25.tar.gz"
-  sha256 "0b04ab2eeb185ab321f0ab0f7ab19c02d91b8c2ce377d6ea2af494cd1ef48a7b"
+  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-07.tar.gz"
+  sha256 "b0fff091b87abfaccefc6276ed07e9bc35ecf43da197049a7295db175d593748"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
@@ -15,8 +15,6 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "fcde5660ad404c33f7e04a650ea42d7b459d99d4c3256374d3e23f5b8edae0b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb8eb4232c1cc858efe61d63bbac0192ca11a9d5a5881bc5f05ee4a20a0ccf7a"
   end
-
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
 
   depends_on "dotnet" => :build
 
