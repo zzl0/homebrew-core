@@ -1,8 +1,8 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
   homepage "https://www.git-town.com/"
-  url "https://github.com/git-town/git-town/archive/refs/tags/v10.0.3.tar.gz"
-  sha256 "2225a46ef9df5bb7b8e5c9d8cb7fc45c1d82eb72d05b08948be38dc19bae9ab4"
+  url "https://github.com/git-town/git-town/archive/refs/tags/v11.0.0.tar.gz"
+  sha256 "44384657e15996492e3ee4ec6d960cbbbd052d23f4171166ea9c3ae258e6f091"
   license "MIT"
 
   bottle do
@@ -20,8 +20,8 @@ class GitTown < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/git-town/git-town/v10/src/cmd.version=v#{version}
-      -X github.com/git-town/git-town/v10/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
+      -X github.com/git-town/git-town/v11/src/cmd.version=v#{version}
+      -X github.com/git-town/git-town/v11/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
