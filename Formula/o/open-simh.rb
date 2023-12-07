@@ -11,6 +11,16 @@ class OpenSimh < Formula
     regex(/^v?(\d+(?:\.\d+)+(?:-\d+)?)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "43567e394094f3435e761a4114a421c0488f5af137ce9b4d8aff87d75b485fa1"
+    sha256 cellar: :any,                 arm64_ventura:  "ee7d22345190d2009472b2233bb6c974790f5b38331877ec647be5971f403ae6"
+    sha256 cellar: :any,                 arm64_monterey: "134f1dff238a06523a66039d07f44493460b8b3cdc22b652cd2a6f5e64180e00"
+    sha256 cellar: :any,                 sonoma:         "086bbb15c8872e69967c8b5c600ae22a5389fd37e4e3a7fcc54cabae7cbe4cc6"
+    sha256 cellar: :any,                 ventura:        "28c9c12e56fea289d1d1803752e517f162e4692d76a24f33d7edc09288a02915"
+    sha256 cellar: :any,                 monterey:       "c68fb8a31e1b55c2a5aa6a907df37ab80ce8672573283adf394906720309a743"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e1de5c0c7a5ac581db904d311b660667ea9937cca2745c8b225856b5454208"
+  end
+
   depends_on "libpng"
   depends_on "pcre"
   depends_on "vde"
