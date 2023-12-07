@@ -31,7 +31,8 @@ class Opentofu < Formula
   fails_with gcc: "5"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"tofu", ldflags: "-s -w"), "./cmd/tofu"
+    ldflags = "-s -w -X github.com/opentofu/opentofu/version.dev=no"
+    system "go", "build", *std_go_args(output: bin/"tofu", ldflags: ldflags), "./cmd/tofu"
   end
 
   test do
