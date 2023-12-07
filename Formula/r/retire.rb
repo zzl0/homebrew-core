@@ -8,6 +8,10 @@ class Retire < Formula
   license "Apache-2.0"
   head "https://github.com/RetireJS/retire.js.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b312aff6d3ac530f703c40cb015f5778ec13ef2977a2fa52151bc87784939748"
+  end
+
   depends_on "node"
 
   def install
