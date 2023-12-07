@@ -1,8 +1,8 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
   homepage "https://github.com/SpiderLabs/ModSecurity"
-  url "https://github.com/SpiderLabs/ModSecurity/releases/download/v3.0.10/modsecurity-v3.0.10.tar.gz"
-  sha256 "d5d459f7c2e57a69a405f3222d8e285de419a594b0ea8829058709962227ead0"
+  url "https://github.com/SpiderLabs/ModSecurity/releases/download/v3.0.11/modsecurity-v3.0.11.tar.gz"
+  sha256 "070f46c779d30785b95eb1316b46e2e4e6f90fd94a96aaca4bd54cd94738b692"
   license "Apache-2.0"
 
   bottle do
