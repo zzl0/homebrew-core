@@ -1,15 +1,9 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
-  homepage "http://www.mavetju.org/unix/general.php"
-  url "http://www.mavetju.org/download/dhcpdump-1.8.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/d/dhcpdump/dhcpdump_1.8.orig.tar.gz"
-  sha256 "6d5eb9418162fb738bc56e4c1682ce7f7392dd96e568cc996e44c28de7f77190"
+  homepage "https://github.com/bbonev/dhcpdump"
+  url "https://github.com/bbonev/dhcpdump/releases/download/v1.9/dhcpdump-1.9.tar.xz"
+  sha256 "3658ac21cc33e79e72bed070454e49c543017991cb6c37f4253c85e9176869d1"
   license "BSD-2-Clause"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?dhcpdump[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62635186a885739e158d1dee56b62dfce2f5d304a31c25cd4a249d594f86aeb7"
@@ -31,6 +25,7 @@ class Dhcpdump < Formula
   uses_from_macos "libpcap"
 
   def install
+    inreplace "Makefile", "-Wl,-z,relro -Wl,-z,now", "" if OS.mac?
     system "make", "CFLAGS=-DHAVE_STRSEP"
     bin.install "dhcpdump"
     man8.install "dhcpdump.8"
