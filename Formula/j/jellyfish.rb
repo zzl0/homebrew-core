@@ -1,8 +1,8 @@
 class Jellyfish < Formula
   desc "Fast, memory-efficient counting of DNA k-mers"
-  homepage "http://www.genome.umd.edu/jellyfish.html"
-  url "https://github.com/gmarcais/Jellyfish/releases/download/v2.3.0/jellyfish-2.3.0.tar.gz"
-  sha256 "e195b7cf7ba42a90e5e112c0ed27894cd7ac864476dc5fb45ab169f5b930ea5a"
+  homepage "https://github.com/gmarcais/Jellyfish"
+  url "https://github.com/gmarcais/Jellyfish/releases/download/v2.3.1/jellyfish-2.3.1.tar.gz"
+  sha256 "ee032b57257948ca0f0610883099267572c91a635eecbd88ae5d8974c2430fcd"
   license any_of: ["BSD-3-Clause", "GPL-3.0-or-later"]
 
   bottle do
