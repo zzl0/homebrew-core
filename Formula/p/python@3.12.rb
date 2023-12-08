@@ -1,10 +1,9 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz"
-  sha256 "51412956d24a1ef7c97f1cb5f70e185c13e3de1f50d131c0aac6338080687afb"
+  url "https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz"
+  sha256 "d01ec6a33bc10009b09c17da95cc2759af5a580a7316b3a446eb4190e13f97b2"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -78,12 +77,6 @@ class PythonAT312 < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/6d2fba8de3159182025237d373a6f4f78b8bd203/python/3.11-sysconfig.diff"
     sha256 "8bfe417c815da4ca2c0a2457ce7ef81bc9dae310e20e4fb36235901ea4be1658"
-  end
-
-  # Fix build with newer editline
-  patch do
-    url "https://github.com/Bo98/cpython/commit/42e00d754d162ab7ab633d78f5541297161b4c15.patch?full_index=1"
-    sha256 "1025eb881eb831d88f0bcf3579d256f08c613d19ece907ed148859bb8d92703c"
   end
 
   def lib_cellar
