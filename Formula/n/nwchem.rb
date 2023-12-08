@@ -25,10 +25,18 @@ class Nwchem < Formula
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
+  depends_on "pkg-config"
   depends_on "python@3.12"
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
+
+  # fixes a performance issue due to the fact that homembrew uses OpenMP for OpenBLAS threading
+  # Remove in next release.
+  patch do
+    url "https://github.com/nwchemgit/nwchem/commit/7ffbf689ceba4258cfe656cf979e783ee8debcdd.patch?full_index=1"
+    sha256 "fcfc2b505a3afb0cc234cd0ac587c09c4d74e295f24496c899db7dc09dc7029b"
+  end
 
   def install
     pkgshare.install "QA"
@@ -59,10 +67,9 @@ class Nwchem < Formula
       ENV["SCALAPACK_SIZE"] = "4"
       ENV["USE_64TO32"] = "y"
       ENV["USE_HWOPT"] = "n"
+      ENV["OPENBLAS_USES_OPENMP"] = "y"
       ENV["LIBXC_LIB"] = Formula["libxc"].opt_lib.to_s
       ENV["LIBXC_INCLUDE"] = Formula["libxc"].opt_include.to_s
-      ENV.append "OMPI_FCFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
-      ENV.append "OMPI_CFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
       os = OS.mac? ? "MACX64" : "LINUX64"
       system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol", "USE_MPI=Y"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
@@ -78,6 +85,7 @@ class Nwchem < Formula
   test do
     cp_r pkgshare/"QA", testpath
     cd "QA" do
+      ENV["OMP_NUM_THREADS"] = "1"
       ENV["NWCHEM_TOP"] = testpath
       ENV["NWCHEM_TARGET"] = OS.mac? ? "MACX64" : "LINUX64"
       ENV["NWCHEM_EXECUTABLE"] = "#{bin}/nwchem"
