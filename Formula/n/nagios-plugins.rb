@@ -1,10 +1,9 @@
 class NagiosPlugins < Formula
   desc "Plugins for the nagios network monitoring system"
   homepage "https://www.nagios-plugins.org/"
-  url "https://github.com/nagios-plugins/nagios-plugins/releases/download/release-2.4.7/nagios-plugins-2.4.7.tar.gz"
-  sha256 "63833d03cd62ea5da85763c241c276c468e8b92730fd6f1701cc9828d73c7f69"
+  url "https://github.com/nagios-plugins/nagios-plugins/releases/download/2.4.8/nagios-plugins-2.4.8.tar.gz"
+  sha256 "8e09e9ec1676ecead7e7c7d41d5ea48d5c4bfdfaddfc756d0dd732df7c8f85e4"
   license "GPL-3.0-or-later"
-  head "https://github.com/nagios-plugins/nagios-plugins.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "048cc999792208bd20a910dbc338c838ae40f4e8ef892c4f4752c88cc388f6a1"
@@ -16,8 +15,7 @@ class NagiosPlugins < Formula
     sha256               x86_64_linux:   "3ec8ef266de0948fdc7aaa8347241ca00bf89665215e1713237f2b543afac0a8"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  depends_on "gettext"
   depends_on "openssl@3"
 
   on_linux do
@@ -34,7 +32,6 @@ class NagiosPlugins < Formula
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "./tools/setup" if build.head?
     system "./configure", *args
     system "make", "install"
     sbin.write_exec_script Dir["#{libexec}/sbin/*"]
