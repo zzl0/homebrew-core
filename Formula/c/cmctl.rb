@@ -1,8 +1,8 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.13.2.tar.gz"
-  sha256 "ef6ef828ecf8a334ea9e3f3b21b4b19985a57aac053ddf11972f15d9a2102b80"
+  url "https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.13.3.tar.gz"
+  sha256 "e6d9cdd2e6aab45498e2a179b075caf52b0f4acf27a7ef60c0ce933bce346388"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cert-manager.git", branch: "master"
 
