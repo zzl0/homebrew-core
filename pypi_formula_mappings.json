@@ -691,7 +691,10 @@
     "exclude_packages": ["jinja2", "markupsafe", "pygments"]
   },
   "mentat": {
-    "exclude_packages": ["certifi", "jinja2", "markupsafe", "numpy", "packaging", "pygments", "six", "typing-extensions"]
+    "exclude_packages": [
+      "certifi", "cffi", "jinja2", "markupsafe", "numpy", "packaging",
+      "pillow", "pycparser", "pygments", "requests", "six", "typing-extensions"
+    ]
   },
   "meson-python": {
     "exclude_packages": ["meson", "packaging"],
