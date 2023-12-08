@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz"
-  sha256 "bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9"
+  url "https://bitcoincore.org/bin/bitcoin-core-26.0/bitcoin-26.0.tar.gz"
+  sha256 "ab1d99276e28db62d1d9f3901e85ac358d7f1ebcb942d348a9c4e46f0fcdc0a1"
   license "MIT"
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
@@ -31,7 +31,7 @@ class Bitcoin < Formula
   depends_on "berkeley-db@4"
   depends_on "boost"
   depends_on "libevent"
-  depends_on macos: :catalina
+  depends_on macos: :big_sur
   depends_on "miniupnpc"
   depends_on "zeromq"
 
@@ -44,6 +44,16 @@ class Bitcoin < Formula
   fails_with :gcc do
     version "7" # fails with GCC 7.x and earlier
     cause "Requires std::filesystem support"
+  end
+
+  patch do
+    url "https://github.com/bitcoin/bitcoin/commit/e1e3396b890b79d6115dd325b68f456a0deda57f.patch?full_index=1"
+    sha256 "b9bb2d6d2ae302bc1bd3956c7e7e66a25e782df5dc154b9d2b17d28b23fda1ad"
+  end
+
+  patch do
+    url "https://github.com/bitcoin/bitcoin/commit/9c144154bd755e3765a51faa42b8849316cfdeb9.patch?full_index=1"
+    sha256 "caeb3c04eda55b260272bfbdb4f512c99dbf2df06b950b51b162eaeb5a98507a"
   end
 
   def install
@@ -64,7 +74,8 @@ class Bitcoin < Formula
 
     # Test that we're using the right version of `berkeley-db`.
     port = free_port
-    bitcoind = spawn bin/"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}"
+    bitcoind = spawn bin/"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}",
+                                     "-deprecatedrpc=create_bdb"
     sleep 15
     # This command will fail if we have too new a version.
     system bin/"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
