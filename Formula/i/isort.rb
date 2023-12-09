@@ -12,14 +12,13 @@ class Isort < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "379756d92cda291dd3c986207bf8354929f7cae2fb6fa70328f0910a531cdfb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "379bf2302bf9350adcf9251c1cea0a20dd866709767d51fc6202be875c9a0cc2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f56fdf2cc55f864921c976d6072f05cb5710ba56ba4af18e1a0f568f880f4ed2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "96edf8289f409494428280909766438e1e85fc265944f050ae224e8552aca67b"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cef353885a0141c0f3dd1ee56270caca837c475ada8f075ec47fff7aef69da9"
-    sha256 cellar: :any_skip_relocation, monterey:       "f872bfceb6a103a01535962cdc79dd6b2242bca96f002cf279f06ff2ce52b62d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4de6b3973615de88f487ef0db6635fde93638ab0e841b792029d805526ac0306"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77fe9468b682b2b7839ba3f6e95368c77f08fc5de36dd55c0c7a7f26d7a02a63"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6c818f7bb848bf95078f44739d8528a835f0b7b8901e8763b62e2c070c6030a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95209b69d4cb24525973b54b30ce851988a6106fcd7367191c6cddea059c7061"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2d208c0aea4d1cf1516644be814fe9085f8d309cbc178295c5cdc07c61a73712"
+    sha256 cellar: :any_skip_relocation, ventura:        "18030ccc7096649969220480a7a57393fbc19c551dbe7a3ac7bf3a00484c3e52"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb38d9eff72ce12724ff391ad0812c5c7965c062cf4b74c326e2e877e97d58eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23638a9f6c0492dd46481c5211d3313e1d45fb657f59b8b6d9b7b90436cd38f0"
   end
 
   depends_on "poetry" => :build
