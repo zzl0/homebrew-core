@@ -7,13 +7,13 @@ class Luau < Formula
   head "https://github.com/luau-lang/luau.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "526ff446feeceab45ed894bb78e69877a5c44d32a8b98fbe502b106bca69a28d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c50967295c2d21c77ef172894176bac6d49c500a64a88e73835f9fabbd989b62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf1068bce1d909f4b8b05fac520cf62bd2a0ca0aeb29935bbc84ae7ed9d4e3a4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3798c18e61ed3926c4a4c5d5597d6e5f84005f17207690959c3b8ddff209a36a"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c1e502a59111420d5cded3b5dd28cb07778e10409fc4b6e2d3bc95a56337562"
-    sha256 cellar: :any_skip_relocation, monterey:       "226754fa6b4febf7a632e83208deb2cb4572f6e6fbf903d427bd8ef99f174847"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "485b856ecf0a3d060d4ebc91d5ecc4ab9fc1f3c358f3c346c6acb737dc04009a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0799550be922ff46ec6c78f13731c4000635003762139217a844d0226f49c78b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e11ce6cc8675a14f3ca67f6f4d94e392517555ac64ca708973f441f7ddfba0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27fa188b0a044ab9ccf2211dff10e27d99554f1b8d098c1235eacde6a0b1456c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "edb9ab68f6404b44ea75360709adfc41b057659dc1bd1508551973b7eafde80f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1118946aee6fd20532770ab5ae84e6050ac3097bb2379b6ad881e034a6b70bfb"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b9bd31212aab3c1da7d6b1d55905951e39f4c8676e25fef14fa9de0408b45f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a565cfdd4f7c20956474ad9f3e34d50529dc7581508ad7813fffec4fbe54897"
   end
 
   depends_on "cmake" => :build
