@@ -166,7 +166,7 @@
   },
   "black": {
     "package_name": "black[d]",
-    "exclude_packages": ["packaging"]
+    "exclude_packages": ["attrs", "click", "idna", "packaging", "pathspec", "platformdirs"]
   },
   "borgmatic": {
     "extra_packages": ["ruamel.yaml.clib"],
