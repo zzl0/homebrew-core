@@ -1,8 +1,8 @@
 class Cidr < Formula
   desc "CLI to perform various actions on CIDR ranges"
   homepage "https://github.com/bschaatsbergen/cidr"
-  url "https://github.com/bschaatsbergen/cidr/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "91fe6434dfda9da6effbcc135fe22cff32c5ed5e2ff4be224421f042119e8ba7"
+  url "https://github.com/bschaatsbergen/cidr/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "381b14463e641455dc4ce3a5765bae6eee774b753c1f69e843ba4bce19b932cc"
   license "MIT"
   head "https://github.com/bschaatsbergen/cidr.git", branch: "main"
 
