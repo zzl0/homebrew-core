@@ -238,9 +238,9 @@
     "exclude_packages": ["certifi", "pygments", "PyYAML", "typing-extensions"]
   },
   "check-jsonschema": {
-    "exclude_packages": ["certifi", "six"],
+    "exclude_packages": ["attrs", "click", "python-dateutil", "requests", "six"],
     "extra_packages": [
-      "fqdn", "idna", "isoduration", "jsonpointer", "rfc3339-validator",
+      "fqdn", "isoduration", "jsonpointer", "rfc3339-validator",
       "rfc3987", "uri_template", "webcolors"
     ]
   },
