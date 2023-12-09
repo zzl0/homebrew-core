@@ -1,8 +1,8 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "ae2c584d0c4d73d16e2a98c9a7b7d0a71ff72ab7db29210854c730d30d739942"
+  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "a94f44703de0ce10da16533675e9f2a1dbcdf0139db8ace95f4bcfef71e08eb7"
   license "MPL-2.0"
 
   bottle do
@@ -15,25 +15,12 @@ class Sonic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eee3f6c1232c6eaea8eb38994b733f75ee579daf0226fdfa638580647d794bf"
   end
 
-  # Use `llvm@15` to work around build failure with Clang 16 described in
-  # https://github.com/rust-lang/rust-bindgen/issues/2312.
-  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
-  # updated to 0.62.0 or newer. There is a check in the `install` method.
-  depends_on "llvm@15" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "llvm" => :build
   uses_from_macos "netcat" => :test
 
   def install
-    bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
-    )
-    if bindgen_version >= "0.62.0"
-      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
-           'this check and try switching to `uses_from_macos "llvm" => :build`.'
-    end
-
     system "cargo", "install", *std_cargo_args
     inreplace "config.cfg", "./", var/"sonic/"
     etc.install "config.cfg" => "sonic.cfg"
