@@ -3,8 +3,8 @@ require "language/node"
 class MarkdownlintCli < Formula
   desc "CLI for Node.js style checker and lint tool for Markdown files"
   homepage "https://github.com/igorshubovych/markdownlint-cli"
-  url "https://registry.npmjs.org/markdownlint-cli/-/markdownlint-cli-0.37.0.tgz"
-  sha256 "5c6ed9557e18e09ae7f014f619072bd413f0c87c6d20c8adc2cf7ff3f383c4d6"
+  url "https://registry.npmjs.org/markdownlint-cli/-/markdownlint-cli-0.38.0.tgz"
+  sha256 "2c8d61cbdf9d86b4f3eb5ac56ee231bc5aebd9c96a8f15c32354f363e0b2bebc"
   license "MIT"
 
   bottle do
@@ -36,7 +36,7 @@ class MarkdownlintCli < Formula
 
       body
     EOS
-    assert_match "MD022/blanks-around-headings/blanks-around-headers",
+    assert_match "MD022/blanks-around-headings Headings should be surrounded by blank lines",
                  shell_output("#{bin}/markdownlint #{testpath}/test-bad.md  2>&1", 1)
     assert_empty shell_output("#{bin}/markdownlint #{testpath}/test-good.md")
   end
