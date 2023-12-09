@@ -9,13 +9,13 @@ class SigmaCli < Formula
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9b850682be17310ea370d915d63331a178c441a3dfd72c42e87c94b9011e634"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcaf44fe28fd929cd196a02f19f677cff74484cf77b038d582ac6a8df66a004f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bc8ebaa7334998bafb1bb2398a144e26b37b629881655c19f836599795f1547"
-    sha256 cellar: :any_skip_relocation, sonoma:         "538dd896687df373890442153fab1c0e398397c73f26bed4040061ae40adbcde"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e9d873683b01abc3eaf80ec32b2b2638af82a6c34bd77584e5703344a8ffd3d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d9eeb3f36e3b8bfe88ae12f9ea2138dd01db7e59da27a8521b67f5bf4d96b79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbb31fdd73eb89a6b3b2f325e8ba8fb37a5551528f50326aaa53fa5004cda7b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "daf5af77ca9f3e26d93c3ff6b5c534ea82850a8aefb007faf65e128dad2308b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53cbc6c88e6eb69447b52d7b35c33b95589ce6bf6967024051707c8c0fe4df60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07c6756c784d29732cd15f9f12c055907f29b021d44731d23d1c4017e940b5b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d8c098836ece117cc354b577cc9a964bd46fdc8d80ba33ad80acf47cb91bd16"
+    sha256 cellar: :any_skip_relocation, ventura:        "57090c2680c4d7c1aeed5df9b3e8e5f25ce0727f31c8661bbd531cb467e11997"
+    sha256 cellar: :any_skip_relocation, monterey:       "4c38ba70a1e2f27bccb6c4bda0efe1d77f73f738188a22285006a5d7a6bdad20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95c50d1d1d3a64cfef8c7d8da4387c11ef313436f0d2a9c14e9cd1230f32eeaf"
   end
 
   depends_on "python-certifi"
