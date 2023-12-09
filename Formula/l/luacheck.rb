@@ -1,8 +1,8 @@
 class Luacheck < Formula
   desc "Tool for linting and static analysis of Lua code"
   homepage "https://luacheck.readthedocs.io/"
-  url "https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "6ef4276498c4bb4ec527c3f942e35ff5c71fdd8c88ed0619a83a1c967d135c81"
+  url "https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "a3ae089f3939b9fba4dd91c8c6f206e088cc4b21b49f1b6c7a5cc7345a09dc19"
   license "MIT"
   head "https://github.com/lunarmodules/luacheck.git", branch: "master"
 
