@@ -1,8 +1,8 @@
 class Aws2Wrap < Formula
   desc "Script to export current AWS SSO credentials or run a sub-process with them"
   homepage "https://github.com/linaro-its/aws2-wrap"
-  url "https://files.pythonhosted.org/packages/db/07/db4c98b4d44ee824ad21563910d198f0da2561a6c7cfeaef1b954979c5c6/aws2-wrap-1.3.1.tar.gz"
-  sha256 "cfaee18e42f538208537c259a020263a856923520d06097e66f0e41ef404cae7"
+  url "https://files.pythonhosted.org/packages/6d/c7/8afdf4d0c7c6e2072c73a0150f9789445af33381a611d33333f4c9bf1ef6/aws2-wrap-1.4.0.tar.gz"
+  sha256 "77613ae13423a6407e79760bdd35843ddd128612672a0ad3a934ecade76aa7fc"
   license "GPL-3.0-only"
 
   bottle do
