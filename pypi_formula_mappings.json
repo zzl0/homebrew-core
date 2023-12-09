@@ -495,7 +495,7 @@
     "exclude_packages": ["packaging", "pyparsing", "pyqt5"]
   },
   "git-remote-codecommit": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["python-dateutil", "six", "urllib3"]
   },
   "git-review": {
     "exclude_packages": ["requests"]
