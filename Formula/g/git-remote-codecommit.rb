@@ -19,6 +19,8 @@ class GitRemoteCodecommit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12a218dbf61c8daf3fa70cf75f75f64c2d275b7bbb7e2a35e3671ebb105f059c"
   end
 
+  depends_on "python-dateutil"
+  depends_on "python-urllib3"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -30,16 +32,6 @@ class GitRemoteCodecommit < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
