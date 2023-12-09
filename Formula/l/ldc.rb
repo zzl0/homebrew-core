@@ -1,10 +1,20 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.35.0/ldc-1.35.0-src.tar.gz"
-  sha256 "6e296993706c76c093e609139aa0b3f8704355fa0f3756f6758d78d44226dfa0"
   license "BSD-3-Clause"
-  head "https://github.com/ldc-developers/ldc.git", branch: "master"
+
+  stable do
+    url "https://github.com/ldc-developers/ldc/releases/download/v1.35.0/ldc-1.35.0-src.tar.gz"
+    sha256 "6e296993706c76c093e609139aa0b3f8704355fa0f3756f6758d78d44226dfa0"
+
+    depends_on "llvm@16"
+
+    # Backport fix for LTO on macOS Sonoma
+    patch do
+      url "https://github.com/ldc-developers/ldc/commit/93b9babe8087a9e1ba3a6a76233175d96e1d2f3f.patch?full_index=1"
+      sha256 "8756248cb9bb77595325bc46df10fb42fbd940d86611dd8413abb27de6e177cd"
+    end
+  end
 
   livecheck do
     url :stable
@@ -19,11 +29,14 @@ class Ldc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5b5aa12699b0c8e640f73c1175924a60cd55b4bf4faa4e60480791e0a59d787"
   end
 
+  head do
+    url "https://github.com/ldc-developers/ldc.git", branch: "master"
+    depends_on "llvm"
+  end
+
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkg-config" => :build
-  # llvm@16 build failure report, https://github.com/ldc-developers/ldc/issues/4478
-  depends_on "llvm@15"
 
   uses_from_macos "libxml2" => :build
 
@@ -60,6 +73,9 @@ class Ldc < Formula
     ENV.cxx11
     # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
     ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib if OS.linux?
+    # Work around LLVM 16+ build failure due to missing -lzstd when linking lldELF
+    # Issue ref: https://github.com/ldc-developers/ldc/issues/4478
+    inreplace "CMakeLists.txt", " -llldELF ", " -llldELF -lzstd "
 
     (buildpath/"ldc-bootstrap").install resource("ldc-bootstrap")
 
