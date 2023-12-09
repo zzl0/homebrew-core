@@ -1,10 +1,15 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.3.1.tar.gz"
-  sha256 "0d883f27aff597c348929d1d7ea640616f18bd20e3e57b3db7194f5207c4bebc"
+  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.3.4.tar.gz"
+  sha256 "d132775816685b7ceb8adc164af50a96814af879b97ad453efca3a285efd96d0"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 arm64_ventura:  "0c46c2cc1befbf6d70d21d90ca20ccbb0676cdf068c9e29d4f2efd968decc10a"
@@ -19,6 +24,7 @@ class Fastfetch < Formula
   depends_on "glib" => :build
   depends_on "imagemagick" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.12" => :build
   depends_on "vulkan-loader" => :build
 
   uses_from_macos "sqlite" => :build
