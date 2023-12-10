@@ -48,23 +48,26 @@ class Sdl2 < Formula
     system "./autogen.sh" if build.head?
 
     args = %W[--prefix=#{prefix} --enable-hidapi]
-    args << if OS.mac?
-      "--without-x"
+    args += if OS.mac?
+      %w[--without-x]
     else
-      args << "--with-x"
-      args << "--enable-pulseaudio"
-      args << "--enable-pulseaudio-shared"
-      args << "--enable-video-dummy"
-      args << "--enable-video-opengl"
-      args << "--enable-video-opengles"
-      args << "--enable-video-x11"
-      args << "--enable-video-x11-scrnsaver"
-      args << "--enable-video-x11-xcursor"
-      args << "--enable-video-x11-xinerama"
-      args << "--enable-video-x11-xinput"
-      args << "--enable-video-x11-xrandr"
-      args << "--enable-video-x11-xshape"
-      "--enable-x11-shared"
+      %w[
+        --disable-rpath
+        --enable-pulseaudio
+        --enable-pulseaudio-shared
+        --enable-video-dummy
+        --enable-video-opengl
+        --enable-video-opengles
+        --enable-video-x11
+        --enable-video-x11-scrnsaver
+        --enable-video-x11-xcursor
+        --enable-video-x11-xinerama
+        --enable-video-x11-xinput
+        --enable-video-x11-xrandr
+        --enable-video-x11-xshape
+        --enable-x11-shared
+        --with-x
+      ]
     end
     system "./configure", *args
     system "make", "install"
