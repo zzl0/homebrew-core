@@ -23,7 +23,6 @@ class GnupgAT22 < Formula
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "gnutls"
   depends_on "libassuan"
   depends_on "libgcrypt"
@@ -34,13 +33,18 @@ class GnupgAT22 < Formula
   depends_on "pinentry"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
 
-  uses_from_macos "sqlite" => :build
+  uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "libidn"
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
+    libusb = Formula["libusb"]
+    ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
