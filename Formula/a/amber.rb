@@ -4,6 +4,7 @@ class Amber < Formula
   url "https://github.com/amberframework/amber/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "92664a859fb27699855dfa5d87dc9bf2e4a614d3e54844a8344196d2807e775c"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "614634b1f963575f581a3282ef05281d1086219bd0ec355c792edd219480fc7c"
