@@ -4,6 +4,7 @@ class Noir < Formula
   url "https://github.com/noir-cr/noir/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "37b0b78d4673cc2482ad346010de8b36be5f75c92724938aa6e2ec1fd1883e20"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "485206f0e38ee88b92b31a829ed1d1eac86bd56ca1020ba113fb232af86b76c6"
