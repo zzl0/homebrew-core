@@ -3,8 +3,8 @@ class Z < Formula
   homepage "https://github.com/rupa/z"
   # Please don't update this formula to 1.11.
   # https://github.com/rupa/z/issues/205
-  url "https://github.com/rupa/z/archive/refs/tags/v1.9.tar.gz"
-  sha256 "e2860e4f65770e02297ca4ca08ec1ee623a658bd9cc1acddbbe5ad22e1de70a7"
+  url "https://github.com/rupa/z/archive/refs/tags/v1.12.tar.gz"
+  sha256 "7d8695f2f5af6805f0db231e6ed571899b8b375936a8bfca81a522b7082b574e"
   license "WTFPL"
   version_scheme 1
   head "https://github.com/rupa/z.git", branch: "master"
