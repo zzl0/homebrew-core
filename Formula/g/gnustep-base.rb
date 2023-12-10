@@ -33,14 +33,14 @@ class GnustepBase < Formula
   depends_on "gmp"
   depends_on "gnutls"
 
+  uses_from_macos "llvm" => :build
   uses_from_macos "icu4c", since: :monterey
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
 
   on_linux do
-    # Needs to be built with Clang for Objective-C, but fails with LLVM 16.
-    depends_on "llvm@15" => :build
     depends_on "libobjc2"
+    fails_with :gcc
   end
 
   # Fix build with new libxml2.
@@ -55,7 +55,6 @@ class GnustepBase < Formula
     ENV["GNUSTEP_MAKEFILES"] = if OS.mac?
       Formula["gnustep-make"].opt_prefix/"Library/GNUstep/Makefiles"
     else
-      ENV.clang # To use `llvm@15` clang
       Formula["gnustep-make"].share/"GNUstep/Makefiles"
     end
 
