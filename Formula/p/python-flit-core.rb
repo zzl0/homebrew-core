@@ -16,7 +16,6 @@ class PythonFlitCore < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0843bb770f825ec359f1638371d79de26b495319dacf041bf334bee0bc340d2d"
   end
 
-  depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
