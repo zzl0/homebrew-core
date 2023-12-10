@@ -29,10 +29,8 @@ class Glbinding < Formula
     # considers /usr and /usr/local to be valid for a system installation
     inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
 
-    # NOTE: Can remove `OPTION_BUILD_OWN_KHR_HEADERS=ON` (at least on Linux)
-    # if we add `libglvnd` formula and use it as part of OpenGL solution.
     system "cmake", "-S", ".", "-B", "build",
-                    "-DOPTION_BUILD_OWN_KHR_HEADERS=ON",
+                    "-DOPTION_BUILD_OWN_KHR_HEADERS=#{OS.mac? ? "ON" : "OFF"}",
                     "-DEXECUTABLE_INSTALL_RPATH=#{rpath}",
                     "-DLIBRARY_INSTALL_RPATH=#{loader_path}",
                     *std_cmake_args
@@ -50,10 +48,13 @@ class Glbinding < Formula
         glbinding::initialize(glfwGetProcAddress);
       }
     EOS
-    open_gl = OS.mac? ? ["-framework", "OpenGL"] : ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
+    open_gl = if OS.mac?
+      ["-I#{include}/glbinding/3rdparty", "-framework", "OpenGL"]
+    else
+      ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
+    end
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
-                    "-I#{include}/glbinding", "-I#{lib}/glbinding",
-                    "-I#{include}/glbinding/3rdparty", *open_gl,
+                    "-I#{include}/glbinding", "-I#{lib}/glbinding", *open_gl,
                     "-L#{lib}", "-lglbinding", "-L#{Formula["glfw"].opt_lib}", "-lglfw",
                     *ENV.cflags.to_s.split
     system "./test"
