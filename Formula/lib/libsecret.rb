@@ -1,8 +1,8 @@
 class Libsecret < Formula
   desc "Library for storing/retrieving passwords and other secrets"
   homepage "https://wiki.gnome.org/Projects/Libsecret"
-  url "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.1.tar.xz"
-  sha256 "674f51323a5f74e4cb7e3277da68b5afddd333eca25bc9fd2d820a92972f90b1"
+  url "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.2.tar.xz"
+  sha256 "e4a341496a0815e64c8d3b8fabab33d7bae7efdeab77b843669731d5b181dcee"
   license "LGPL-2.1-or-later"
 
   # libsecret doesn't use GNOME's "even-numbered minor is stable" version
