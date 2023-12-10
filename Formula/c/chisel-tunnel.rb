@@ -18,6 +18,8 @@ class ChiselTunnel < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "chisel", because: "both install `chisel` binaries"
+
   def install
     system "go", "build", *std_go_args(output: bin/"chisel", ldflags: "-X github.com/jpillora/chisel/share.BuildVersion=v#{version}")
   end
