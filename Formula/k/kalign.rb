@@ -1,8 +1,8 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.3.5.tar.gz"
-  sha256 "75f3a127d2a9eef1eafd931fb0785736eb3f82826be506e7edd00daf1ba26212"
+  url "https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "67d1a562d54b3b7622cc3164588c05b9e2bf8f1a5140bb48a4e816c61a87d4a8"
   license "GPL-3.0-or-later"
 
   bottle do
