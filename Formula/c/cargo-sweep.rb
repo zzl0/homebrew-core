@@ -6,6 +6,16 @@ class CargoSweep < Formula
   license "MIT"
   head "https://github.com/holmgr/cargo-sweep.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d93a4d29347ff53114bfa71000c0bd6f1975601572eea35a167e14c2790110a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "814b71182a6ab0d4e6b9cca7541ee64c18b5998b2434ce09dccc1a48b4e04040"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82ea5d4efa1f73c845d1562ea2f3c342131859a4c9dbe28e23750d9047369f52"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ea14e4235dd9b900432dd67ad6e93d2095e8614075e305180cd618e9d42fe1e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ac87cfde988a3e31fe62049c492dfdb1d8c814a0a8dd215cc77779b4866d084"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a4cea26d73505209cebb58aa3cfd5b9a169066fdec47c537a5fd11e60b56611"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc2bacae4a814c7ee19750fc5b7961206c2f83277fe848a58e07427eda09ee3f"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
 
