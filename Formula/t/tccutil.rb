@@ -3,8 +3,8 @@ class Tccutil < Formula
 
   desc "Utility to modify the macOS Accessibility Database (TCC.db)"
   homepage "https://github.com/jacobsalmela/tccutil"
-  url "https://github.com/jacobsalmela/tccutil/archive/refs/tags/v1.2.13.tar.gz"
-  sha256 "b0e3f660857426372588b0f659056a059ccbd35a4c91538c75671d960cb91030"
+  url "https://github.com/jacobsalmela/tccutil/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "b585da1cc342e2880a601c88ff0e4d8fd65f22146bd1f581a3f41608c76d0523"
   license "GPL-2.0-or-later"
   head "https://github.com/jacobsalmela/tccutil.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Tccutil < Formula
   end
 
   test do
-    assert_match "Unrecognized command check", shell_output("#{bin}/tccutil check 2>&1")
+    assert_match "Unrecognized command \"check\"", shell_output("#{bin}/tccutil check 2>&1")
     assert_match "tccutil #{version}", shell_output("#{bin}/tccutil --version")
   end
 end
