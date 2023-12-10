@@ -2,12 +2,17 @@ class Freediameter < Formula
   desc "Open source Diameter (Authentication) protocol implementation"
   homepage "http://www.freediameter.net"
   license "BSD-3-Clause"
+  head "https://github.com/freeDiameter/freeDiameter.git", branch: "master"
 
-  # TODO: Switch to `libidn2` on next release and remove stable & head blocks
   stable do
     url "http://www.freediameter.net/hg/freeDiameter/archive/1.5.0.tar.gz"
     sha256 "2500f75b70d428ea75dd25eedcdddf8fb6a8ea809b02c82bf5e35fe206cbbcbc"
-    depends_on "libidn"
+
+    # Backport support for `libidn2`. Remove in the next release.
+    patch do
+      url "http://www.freediameter.net/hg/freeDiameter/raw-rev/699c3fb0c57b"
+      sha256 "ee708848e4093363954bedd47f61199196c9753c9f1fcbd33e302c47d58f8041"
+    end
   end
 
   livecheck do
@@ -30,14 +35,11 @@ class Freediameter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1be75ed61dff3fcd06cd4c3516843ab0c516e59009d7767b7a38ded9a09431e"
   end
 
-  head do
-    url "https://github.com/freeDiameter/freeDiameter.git", branch: "master"
-    depends_on "libidn2"
-  end
-
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "libgcrypt"
+  depends_on "libidn2"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
