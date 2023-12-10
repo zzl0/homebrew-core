@@ -12,15 +12,13 @@ class I686ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "69f08ea80f0135d861d956f15e720e80574373c366e9643b8663642bdc311726"
-    sha256 arm64_ventura:  "0969645b1766aa7280cb23392da79248549b302b90c3d983826746f6e8a44e35"
-    sha256 arm64_monterey: "6c9636d966ea3d95e9147056ab2e14e1c203023fa11be042bbb1fabf183f085a"
-    sha256 arm64_big_sur:  "11afb15debb99ef8a1475e90551be8baafd10e14a9507753d9fbcab378abea77"
-    sha256 sonoma:         "dae563b292cdb79867ef0d693288a57a5039854db78fc357664d406f3484348b"
-    sha256 ventura:        "7f753b8c8264e707452a60793fbee38b4e11d93630b2637f2fc49364e1b08fe9"
-    sha256 monterey:       "aac1095204267bd257b9d90219dcfd278fbc438f9cbc7418b1d137f6e8701f2d"
-    sha256 big_sur:        "42629840da2048dd49447f356b4152ca8dd948a7f4b7ad8cc2e4ed527d241ca5"
-    sha256 x86_64_linux:   "36f833ce6e67de8d5049e965e6e6e23e904f4f2c539c02636cf71b6c30eec3d8"
+    sha256 arm64_sonoma:   "b68aa754ca6fdcc0a5561636da86b73de85bcc877275a7b009f11e442e266fd3"
+    sha256 arm64_ventura:  "209a3a9d152fdbc0b26ed7926cd000ab537e90c672f5958c9dbd6a2ac2bc9b3e"
+    sha256 arm64_monterey: "34fea4cc6c033f2cfeacd7ed850ef4b79bb4fa409bae6b3103b5b536aeaef59c"
+    sha256 sonoma:         "fbaec4c72cb15463b4be71256284621856a39bcd29a265e700e5a7d0e1929a97"
+    sha256 ventura:        "1c68e536f0226dc59da88e099786b17a47be98fcce18f5ea68b0fdf1342126aa"
+    sha256 monterey:       "9946c225f36f7d2d25a84226e6ac15ca3cdcd4b1eae534cb45b9bc38b827a81c"
+    sha256 x86_64_linux:   "e54c42aab45e4772fc3b20068021b5a9e3a35fe4114158765ad417e8ed5c43cc"
   end
 
   depends_on "pkg-config" => :build
