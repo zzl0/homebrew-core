@@ -1,8 +1,8 @@
 class Rarian < Formula
   desc "Documentation metadata library"
   homepage "https://rarian.freedesktop.org/"
-  url "https://gitlab.freedesktop.org/rarian/rarian/-/releases/0.8.4/downloads/assets/rarian-0.8.4.tar.bz2"
-  sha256 "55624f9001fce8f6c8032d7d57bf2acfe7c150bafb3b1bb715319a1b2eb9b2c5"
+  url "https://gitlab.freedesktop.org/rarian/rarian/-/releases/0.8.5/downloads/assets/rarian-0.8.5.tar.bz2"
+  sha256 "8ead8a0e70cbf080176effa6f288de55747f649c9bae9809aa967a81c7e987ed"
   license "GPL-2.0-or-later"
 
   livecheck do
