@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.6.tar.gz"
-  sha256 "f7263ce640a60b2c88573f068ac1c9402c3c9025d186fdd556968b3069bbbf90"
+  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.7.tar.gz"
+  sha256 "b3cbfb6a3bb36bbf1a4d2807756a759d5a9c27fe25efa576c32d6e4e0592b449"
   license "Apache-2.0"
 
   livecheck do
@@ -26,7 +26,7 @@ class DockerSlim < Formula
 
   def install
     system "go", "generate", "./pkg/appbom"
-    ldflags = "-s -w -X github.com/docker-slim/docker-slim/pkg/version.appVersionTag=#{version}"
+    ldflags = "-s -w -X github.com/slimtoolkit/slim/pkg/version.appVersionTag=#{version}"
     system "go", "build",
                  *std_go_args(output: bin/"slim", ldflags: ldflags),
                  "./cmd/slim"
