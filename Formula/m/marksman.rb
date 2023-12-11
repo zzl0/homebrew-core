@@ -1,8 +1,8 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-07.tar.gz"
-  sha256 "b0fff091b87abfaccefc6276ed07e9bc35ecf43da197049a7295db175d593748"
+  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-09.tar.gz"
+  sha256 "1f4f5b76c2679426f6a5e93d50e15deb4faadad2da18e70bee66de1dbe68342a"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
