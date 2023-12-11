@@ -1,8 +1,8 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
   homepage "https://github.com/brainboxdotcc/DPP"
-  url "https://github.com/brainboxdotcc/DPP/releases/download/v10.0.28/DPP-10.0.28.tar.gz"
-  sha256 "aa0c16a1583f649f28ec7739c941e9f2bf9c891c0b87ef8278420618f8bacd46"
+  url "https://github.com/brainboxdotcc/DPP/releases/download/v10.0.29/DPP-10.0.29.tar.gz"
+  sha256 "a37e91fbdabee20cb0313700588db4077abf0ebabafe386457d999d22d2d0682"
   license "Apache-2.0"
 
   bottle do
@@ -22,7 +22,7 @@ class Libdpp < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DDPP_CORO=on", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
