@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/d7/c5/96dcb6bff4348b8928c0c62a4fa6d732fda8fe3324ca6d1c36058230e74b/cfn-lint-0.83.4.tar.gz"
-  sha256 "fe386419ec2c92ffd795a9d1e1bea8131c9c8fae90e7a823f43da2fff82e9af7"
+  url "https://files.pythonhosted.org/packages/57/5e/26b5d2f520b2dcc3127dad5e529abdf6202e5840464bf450af0316d4ab98/cfn-lint-0.83.5.tar.gz"
+  sha256 "97ed0b36f77defba9fe843d2401160c7bb2a81dd4478dd17859bac9f027da311"
   license "MIT-0"
 
   bottle do
@@ -35,18 +35,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/26/a3/a6238f1fbc6b8b612dca5207b7692cd92e8260c79a3e8314f654e35d528e/aws-sam-translator-1.81.0.tar.gz"
-    sha256 "a5e268673d4d17cd1609f823fa9779aaf0103c47971a03a4eab6414b08c702fa"
+    url "https://files.pythonhosted.org/packages/d2/9d/25709acfd440ba2e8b7518a67745fbeb7df8a8ed0d30c538bead9d371d98/aws-sam-translator-1.82.0.tar.gz"
+    sha256 "f78e58194461635aef6255d04e82a9b690e331ca9fd669d1401bf7f9a93ae49f"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b1/e0/3cf846e1c39489f8250cd032514e0c1821d326a00002e06b94252c9f526c/boto3-1.33.6.tar.gz"
-    sha256 "4f62fc1c7f3ea2d22917aa0aa07b86f119abd90bed3d815e4b52fb3d84773e15"
+    url "https://files.pythonhosted.org/packages/4d/88/c2a6c14e64b2930b6f7ccf73c383f97db04efb9fd46b930666272e5b062e/boto3-1.33.11.tar.gz"
+    sha256 "620f1eb3e18e780be58383b4a4e10db003d2314131190514153996032c8d932d"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/04/6c/540ecba244f342206d72e7d22328f2ceea33f3f8bac89c8fac463c15e4aa/botocore-1.33.6.tar.gz"
-    sha256 "938056bab831829f90e09ecd70dd6b295afd52b1482f5582ee7a11d8243d9661"
+    url "https://files.pythonhosted.org/packages/b2/66/2d7c91767ece67a67f719178aa6ddc94c9f8496de2345109ccfee5e262fb/botocore-1.33.11.tar.gz"
+    sha256 "b14b328f902d120de0a09eaa657a9a701c0ceeb711197c2f01ef0523f855086c"
   end
 
   resource "jmespath" do
@@ -100,8 +100,8 @@ class CfnLint < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/80/ce/e99def6196f53af8de12a9c36968de32f80b7871084d677d0dfcd2762d0b/referencing-0.31.1.tar.gz"
-    sha256 "81a1471c68c9d5e3831c30ad1dd9815c45b558e596653db751a2bfdd17b3b9ec"
+    url "https://files.pythonhosted.org/packages/96/71/0aabc36753b7f4ad18cbc3c97dea9d6a4f204cbba7b8e9804313366e1c8f/referencing-0.32.0.tar.gz"
+    sha256 "689e64fe121843dcfd57b71933318ef1f91188ffb45367332700a86ac8fd6161"
   end
 
   resource "regex" do
