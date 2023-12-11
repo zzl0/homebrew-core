@@ -24,14 +24,13 @@ class Mesa < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "dddd482d9ce3c3039cb6e2cb723d6574d530eef7bde7c7479d67f3c527f6e3ab"
-    sha256 arm64_ventura:  "23ab97f0b19d4f29bbb29f99098b03a351beb9b742a07141e5b9df6f1f28ca6d"
-    sha256 arm64_monterey: "afa96fc1b42afee3f3a87a96995be248bd6c14db878137cfda97befdf77b1593"
-    sha256 sonoma:         "c192ead99cce30c3144631a0bfbdab742c83c9282ed5d7a83eda8cbe1e834abe"
-    sha256 ventura:        "914668e4f5dfb87ea564d63e94933ef972e3e4c9c4572171b905af9a52cf09c5"
-    sha256 monterey:       "539337056f221acea7ad231bdff22ce6c3f34574f9e9b1146469070bebbdf342"
-    sha256 x86_64_linux:   "c489ab18612fbafecd6c52fb8ba66eeb0c345e7587c459ac528e976e98643fa5"
+    sha256 arm64_sonoma:   "bac88585d678b4e788ba6e75385fd22c1d2c86e5470767837f54bd9baf9c6951"
+    sha256 arm64_ventura:  "856916431fd8edff1a97acf89e8b9838f993456e14d4c4094169cf8f49ef6a7f"
+    sha256 arm64_monterey: "619d8414db8c61b3cd413310e0fcf6f0e25effeaa89c9ce841a11e69fbdd83ac"
+    sha256 sonoma:         "a57889a610f965e34546010f80da300aa2c0e59047826c42d6cdef9e284cb756"
+    sha256 ventura:        "1dc93e7411330093c0b6d39fdf8e9abce58cbcd9eeb5cc8ee986643bdf32149c"
+    sha256 monterey:       "ed1ce8abca5ad84aba81adeb4c8bbf83cc72a0e25217fae2264fd98ec610515e"
+    sha256 x86_64_linux:   "7f4a07bbe1f2b91c90c42b363c2305ecc9ed7dfc1ca62093f6943599e5bf38c7"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
