@@ -1,25 +1,10 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https://opencolorio.org/"
+  url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "7196e979a0449ce28afd46a78383476f3b8fc1cc1d3a417192be439ede83437b"
   license "BSD-3-Clause"
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
-
-  stable do
-    url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.3.0.tar.gz"
-    sha256 "32b7be676c110d849a77886d8a409159f0367309b2b2f5dae5aa0c38f42b445a"
-
-    # Backport fix for detection of yaml-cpp 0.8
-    patch do
-      url "https://github.com/AcademySoftwareFoundation/OpenColorIO/commit/1d3b69502eeb0f0b1d381d347efcab5b18ae9f3c.patch?full_index=1"
-      sha256 "c57123c6e0c8541ac839b8e43f819aa93dbfbb436b3998bea5960496f5f6574b"
-    end
-
-    # Backport fix for detection of pystring
-    patch do
-      url "https://github.com/AcademySoftwareFoundation/OpenColorIO/commit/9078753990d7f976a0bfcd55cfa63f2e1de3a53b.patch?full_index=1"
-      sha256 "ed9f39edcf1825102850554d00a811853cb2a2e30debe7fbae7388e220c27676"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3a4b8a52b3da9cc5fcd1adc0d5c0143b0b579b60d07990ca5ad5fe19b8d4d2b4"
@@ -47,6 +32,9 @@ class Opencolorio < Formula
   def python3
     "python3.12"
   end
+
+  # upstream issue report, https://github.com/AcademySoftwareFoundation/OpenColorIO/issues/1920
+  patch :DATA
 
   def install
     args = %W[
@@ -83,3 +71,18 @@ class Opencolorio < Formula
     system python3, "-c", "import PyOpenColorIO as OCIO; print(OCIO.GetCurrentConfig())"
   end
 end
+
+__END__
+diff --git a/src/OpenColorIO/ConfigUtils.cpp b/src/OpenColorIO/ConfigUtils.cpp
+index 2e77472..b4228ff 100644
+--- a/src/OpenColorIO/ConfigUtils.cpp
++++ b/src/OpenColorIO/ConfigUtils.cpp
+@@ -3,7 +3,7 @@
+
+ #include "ConfigUtils.h"
+ #include "MathUtils.h"
+-#include "pystring/pystring.h"
++#include "pystring.h"
+ #include "utils/StringUtils.h"
+
+ namespace OCIO_NAMESPACE
