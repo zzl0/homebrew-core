@@ -12,13 +12,13 @@ class Legitify < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df8c22b8d56a4c7974c4e36eab3f57ed4fabde603b76633c38ff6b999b3b3f92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f20638f7027fc05db12f6debc81b5445e65e5c20b67ea8dc5115701754151a60"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86a737e0d77de8cb3645b2735c3ea02ac684dcdb6072edc29178f44cc5ab0bd1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bdc2980c5ca8bef8d979b4d351f963967e13dcd4ea550424c8e7c95a7183c755"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a43549aa276c495e23ad58f33a0bf62611f7d98206e7171a7b08296623e8ba5"
-    sha256 cellar: :any_skip_relocation, monterey:       "db7d674b271a0d24e6fee3bc0f195729775fdd518dbc8bbc1356f0f9d6d6237f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d12ea1bd6803e790bc3bb607c847faad4ae71cbd8406a7a4ce39df5bf2a0220f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e16999a7890a25ae818d393c780493a70926ed0c724e4df7f64e198fea31234"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8143a1fdba555238178cfc1895b934eac726a8f6ea5bfeda49ad8c511903a9ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e14a0602173855fa23fb82a89723581d8b9728fc88b5e21d7a44a6720128bb4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1c90d319f2bdb9f6eb9420a44cb1e08875efc346274d45034927c7c3e25c4a19"
+    sha256 cellar: :any_skip_relocation, ventura:        "edde2a50998a8738ca68f09c9f3659904fbc9d4f4212fe803aa02f04f48e7862"
+    sha256 cellar: :any_skip_relocation, monterey:       "32f56ae06d33a66d8fce7e1f446b82708a7a40078d874713bbb383462d7fdc33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a575ea3115862ba7406d6a3b81eb5d1b0fda133a826991bc71f05f2502553247"
   end
 
   depends_on "go" => :build
