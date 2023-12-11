@@ -1,11 +1,9 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/symengine/symengine/releases/download/v0.11.1/symengine-0.11.1.tar.gz"
-  sha256 "217b39955dc19f920c6f54c057fdc89e8e155ddee8f0e3c3cacc67b3e3850b64"
+  url "https://github.com/symengine/symengine/releases/download/v0.11.2/symengine-0.11.2.tar.gz"
+  sha256 "f6972acd6a65354f6414e69460d2e175729470632bdac05919bc2f7f32e48cbd"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fe11b29c50b5ac1d28bef924361dffeb2de8b09da2247ba123819ca2552a5760"
@@ -22,7 +20,7 @@ class Symengine < Formula
   depends_on "flint"
   depends_on "gmp"
   depends_on "libmpc"
-  depends_on "llvm@16"
+  depends_on "llvm"
   depends_on "mpfr"
 
   fails_with gcc: "5"
@@ -34,13 +32,6 @@ class Symengine < Formula
   patch do
     url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-libs/symengine/files/symengine-0.8.1-fix_llvm.patch?id=83ab9587be9f89e667506b861208d613a2f016e5"
     sha256 "c654ea7c4ee44c689433e87f71c7ae78e6c04968e7dfe89be5e4ba4c8c53713b"
-  end
-
-  # fix flint 3 compatibility
-  # https://github.com/symengine/symengine/pull/1985, remove in next release
-  patch do
-    url "https://github.com/symengine/symengine/commit/9b2526ffee85ebb2b3011513ae544aec1b54d623.patch?full_index=1"
-    sha256 "8232c3cd757e8f9eecf296bc8e8353830c604d89e368b12de0c45715a7fa660d"
   end
 
   def install
