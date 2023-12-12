@@ -36,7 +36,6 @@ class Ntopng < Formula
   depends_on "libtool" => :build
   depends_on "lua" => :build
   depends_on "pkg-config" => :build
-  depends_on "geoip"
   depends_on "json-c"
   depends_on "libmaxminddb"
   depends_on "libsodium"
