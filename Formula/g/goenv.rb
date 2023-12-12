@@ -13,13 +13,13 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48b68254680d5057d5b4e57dd6efce59ba66e337ba8a3951323e1b5a9211a049"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48b68254680d5057d5b4e57dd6efce59ba66e337ba8a3951323e1b5a9211a049"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48b68254680d5057d5b4e57dd6efce59ba66e337ba8a3951323e1b5a9211a049"
-    sha256 cellar: :any_skip_relocation, sonoma:         "defe6d1af139f9cc9c99a8668562828f248e13f5c20c323be19d9b19ffac90b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "defe6d1af139f9cc9c99a8668562828f248e13f5c20c323be19d9b19ffac90b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "defe6d1af139f9cc9c99a8668562828f248e13f5c20c323be19d9b19ffac90b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48b68254680d5057d5b4e57dd6efce59ba66e337ba8a3951323e1b5a9211a049"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b055aa3963664fca7ec055c5f5787d901f6671a4f8dbdb0d680842bb3899a5e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b055aa3963664fca7ec055c5f5787d901f6671a4f8dbdb0d680842bb3899a5e8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b055aa3963664fca7ec055c5f5787d901f6671a4f8dbdb0d680842bb3899a5e8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d2e34d5ef14763389851c233b3f79446ab4bbc952cf81f06087686a3a0f7a8af"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2e34d5ef14763389851c233b3f79446ab4bbc952cf81f06087686a3a0f7a8af"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2e34d5ef14763389851c233b3f79446ab4bbc952cf81f06087686a3a0f7a8af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b055aa3963664fca7ec055c5f5787d901f6671a4f8dbdb0d680842bb3899a5e8"
   end
 
   def install
