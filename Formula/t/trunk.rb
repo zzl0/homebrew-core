@@ -1,8 +1,8 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
   homepage "https://trunkrs.dev/"
-  url "https://github.com/trunk-rs/trunk/archive/refs/tags/v0.17.5.tar.gz"
-  sha256 "308b5b24af739e779d05dfbb35f9bbfa87063e8532f09e6cf0b268951db3f604"
+  url "https://github.com/trunk-rs/trunk/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "b19d6fa45e1fab883badb9a2ba92277ac1bae6139e67d90459fbdf4247cd3a65"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/trunk-rs/trunk.git", branch: "main"
 
@@ -18,12 +18,13 @@ class Trunk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6c9d144b8f442aa3c186be21974655679086cef8dfa0158e4314af31ee597e3"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
+  uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
   end
 
   def install
