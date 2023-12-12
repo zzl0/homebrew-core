@@ -10,14 +10,13 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 1
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   stable do
-    url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-    sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
+    url "https://download.qt.io/official_releases/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
+    mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
+    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
+    sha256 "dd3668f65645fe270bc615d748bd4dc048bd17b9dc297025106e6ecc419ab95d"
 
     # Backport fix for QTBUG-117765 which can cause build failure in `qca`
     # .../MacOSX.sdk/usr/include/c++/v1/concept:318:1: error: Parse error at "::"
@@ -45,11 +44,11 @@ class Qt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9eef515725a5895005cc7c7c08eea7b12bb9950d4f232c67535525e8c1e08cf"
   end
 
-  depends_on "cmake"      => [:build, :test]
-  depends_on "ninja"      => :build
-  depends_on "node"       => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "ninja" => :build
+  depends_on "node" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.11" => :build # Python 3.12 needs newer Chromium without imp usage (maybe 118 or 120)
   depends_on "six" => :build
   depends_on "vulkan-headers" => [:build, :test]
   depends_on "vulkan-loader" => [:build, :test]
@@ -78,7 +77,7 @@ class Qt < Formula
   depends_on "zstd"
 
   uses_from_macos "bison" => :build
-  uses_from_macos "flex"  => :build
+  uses_from_macos "flex" => :build
   uses_from_macos "gperf" => :build
   uses_from_macos "llvm" => :test # Our test relies on `clang++` in `PATH`.
 
@@ -181,15 +180,15 @@ class Qt < Formula
     # because on macOS `/tmp` -> `/private/tmp`
     inreplace "qtwebengine/src/3rdparty/gn/src/base/files/file_util_posix.cc",
               "FilePath(full_path)", "FilePath(input)"
-    realpath_files = %w[
-      qtwebengine/cmake/Gn.cmake
-      qtwebengine/cmake/Functions.cmake
-      qtwebengine/src/core/api/CMakeLists.txt
-      qtwebengine/src/CMakeLists.txt
-      qtwebengine/src/gn/CMakeLists.txt
-      qtwebengine/src/process/CMakeLists.txt
+
+    # Modify Assistant path as we manually move `*.app` bundles from `bin` to `libexec`.
+    # This fixes invocation of Assistant via the Help menu of apps like Designer and
+    # Linguist as they originally relied on Assistant.app being in `bin`.
+    assistant_files = %w[
+      qttools/src/designer/src/designer/assistantclient.cpp
+      qttools/src/linguist/linguist/mainwindow.cpp
     ]
-    inreplace realpath_files, "REALPATH", "ABSOLUTE"
+    inreplace assistant_files, '"Assistant.app/Contents/MacOS/Assistant"', '"Assistant"'
 
     config_args = %W[
       -release
@@ -263,18 +262,6 @@ class Qt < Formula
 
     inreplace lib/"cmake/Qt6/qt.toolchain.cmake", "#{Superenv.shims_path}/", ""
 
-    # The pkg-config files installed suggest that headers can be found in the
-    # `include` directory. Make this so by creating symlinks from `include` to
-    # the Frameworks' Headers folders.
-    # Tracking issues:
-    # https://bugreports.qt.io/browse/QTBUG-86080
-    # https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6363
-    lib.glob("*.framework") do |f|
-      # Some config scripts will only find Qt in a "Frameworks" folder
-      frameworks.install_symlink f
-      include.install_symlink f/"Headers" => f.stem
-    end
-
     # Install a qtversion.xml to ease integration with QtCreator
     # As far as we can tell, there is no ability to make the Qt buildsystem
     # generate this and it's in the Qt source tarball at all.
@@ -309,6 +296,18 @@ class Qt < Formula
     XML
 
     return unless OS.mac?
+
+    # The pkg-config files installed suggest that headers can be found in the
+    # `include` directory. Make this so by creating symlinks from `include` to
+    # the Frameworks' Headers folders.
+    # Tracking issues:
+    # https://bugreports.qt.io/browse/QTBUG-86080
+    # https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6363
+    lib.glob("*.framework") do |f|
+      # Some config scripts will only find Qt in a "Frameworks" folder
+      frameworks.install_symlink f
+      include.install_symlink f/"Headers" => f.stem
+    end
 
     bin.glob("*.app") do |app|
       libexec.install app
