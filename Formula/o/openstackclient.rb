@@ -9,14 +9,14 @@ class Openstackclient < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "836c88df83bebbbc346a9a506e7f72521ff65653b394ecf29017fe189e796619"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cb690e92b9e2abfcece80eb1332f8dc71de594086e4eab89f630e5d165b7f14"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a45c925c0b260556d2b6f79c36d13d7af3ec1c2d373f1935a575a6a6b85fe078"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6be00573a00b9d887e4cb5e284a4ba6251b7276ac8d53b569d63fc80653c26d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "f93d2cae9b28f8d73fa7f741abb5ff5332a3d96500025bd89049a7b7e4ef6c93"
-    sha256 cellar: :any_skip_relocation, monterey:       "293573f2579a7f81f93ba09c1127bfa9ce47c277da48124b2c93a7a9b4b3c348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e404623397c7bb7398eed64861c1c3e2ae90dacf15814515318a86ad456be9b3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "cb3fed6965ad589336bdfd0772457b7ae0a380d2797aa5f4333943d6f9c392c5"
+    sha256 cellar: :any,                 arm64_ventura:  "58ae8d72c288c4658c8bd3a71d1d903b5d50dbc5a0ed39b0d162b7b1b6ac4d32"
+    sha256 cellar: :any,                 arm64_monterey: "a18d236f2f6bd633e79fd5ba40c3f8caa21c792d197dc79fbbf567f7ed9168f8"
+    sha256 cellar: :any,                 sonoma:         "a4bdb802797426327bf91fedc56393117b803574003dafde370233cee552c94a"
+    sha256 cellar: :any,                 ventura:        "611fa9e82be17b57046741445f245cfcf404a30a6d5557aa5b8b9d94a587765c"
+    sha256 cellar: :any,                 monterey:       "1007d73412a13ed7c5875caa9637914aa2ac5845d8a5de17671e264a20623aa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a9c5e6e627e3475a4f6c2a4311e8779f598131b97cb102a6e5e8ccdfbae89ca"
   end
 
   depends_on "rust" => :build # for rpds-py
