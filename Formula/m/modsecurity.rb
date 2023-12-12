@@ -21,7 +21,6 @@ class Modsecurity < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "geoip"
   depends_on "libmaxminddb"
   depends_on "lua"
   depends_on "pcre2"
@@ -30,11 +29,18 @@ class Modsecurity < Formula
   uses_from_macos "curl", since: :monterey
   uses_from_macos "libxml2"
 
+  # Use ArchLinux patch to fix build with libxml2 2.12.
+  # TODO: Check if fixed in future libxml2 release.
+  # Issue ref: https://github.com/SpiderLabs/ModSecurity/issues/3023
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/libmodsecurity/-/raw/5c78cfaaeb00c842731c52851341884c74bdc9b2/libxml-includes.patch"
+    sha256 "7ee0adbe5b164ca512c49e51e30ffd41e29244156a695e619dcf1d0387e69aef"
+  end
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    libxml2 = "#{MacOS.sdk_path_if_needed}/usr"
-    libxml2 = Formula["libxml2"].opt_prefix if OS.linux?
+    libxml2 = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["libxml2"].opt_prefix
 
     args = [
       "--disable-debug-logs",
@@ -44,6 +50,7 @@ class Modsecurity < Formula
       "--with-lua=#{Formula["lua"].opt_prefix}",
       "--with-pcre2=#{Formula["pcre2"].opt_prefix}",
       "--with-yajl=#{Formula["yajl"].opt_prefix}",
+      "--without-geoip",
     ]
 
     system "./configure", *args, *std_configure_args, "--disable-silent-rules"
