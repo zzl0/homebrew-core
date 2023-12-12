@@ -9,6 +9,11 @@ class S3ql < Formula
   sha256 "5921f6286247792ecb93cd78105eaa5d71e8b3037628ae1bce5c78dc6cf08fd2"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "653c0762d45748098f7d48b1705dc5beef3b609ad6811997b86557c9b19fae11"
