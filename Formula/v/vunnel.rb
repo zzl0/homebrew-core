@@ -9,13 +9,13 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "582dccb93d7e759eb6db077cf58df162007a5dd1d74bab3f3b01f221b3bd5ad3"
-    sha256 cellar: :any,                 arm64_ventura:  "98e65dd089ac65e12b245ef85fdbdb88e0e1dacd5522cc6e95f7262899010f72"
-    sha256 cellar: :any,                 arm64_monterey: "d2de74382f12febe18b9322d649c99c1b7d8c2dbcb9ecd443c195984745c900f"
-    sha256 cellar: :any,                 sonoma:         "dabc263bbf841245beec9093bb125409a59c1948640d4b82aca5971b0815364a"
-    sha256 cellar: :any,                 ventura:        "b8e99ac481da1be3a85889fc64424c2e9a3dde4dd6d8ce6dc54366cafacefcd6"
-    sha256 cellar: :any,                 monterey:       "bd21f1d92835d8d59e633506e5c9e309871bc6f46c739732753132eac18c4d3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ae1082d64fd76151e67f911c6c952fa42062582050d81f34a35a15823339c0c"
+    sha256 cellar: :any,                 arm64_sonoma:   "8bd4270e7b78500ea38d5ff61fcee3f318665e6470aba71dd0b6cd0aafb80495"
+    sha256 cellar: :any,                 arm64_ventura:  "46d687dc51baaf4a519dfa04472919d631ec12f063e186e3e2e4b945760f3b33"
+    sha256 cellar: :any,                 arm64_monterey: "488d0d0b118f2a5513b628859db58c86172cbc931edac25b94b16743469b3f9e"
+    sha256 cellar: :any,                 sonoma:         "ce8384f091f02d13f8d8df47772e4e0e0479f025fe58b8b3aacb81ecf5b5862a"
+    sha256 cellar: :any,                 ventura:        "abec7fc635ad43fbd60d2aff72b74ea33f59f0ed01d045c40012bb1de9b2b784"
+    sha256 cellar: :any,                 monterey:       "e3160b24e3a4a7359bec2303b98954c6669ba0d6575e3b65da0beebb46360885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b2da4061c3c9596cdbaae77f71f7aa56d2ccc2628faf1470879cb1770757dc7"
   end
 
   depends_on "rust" => :build
