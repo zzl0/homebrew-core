@@ -2,14 +2,15 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.4.1/Agda-2.6.4.1.tar.gz"
     sha256 "23248a9b3c50c81ea4751518a66f2a6144617b6a5a9202686b54e33bc9cbd080"
 
     resource "stdlib" do
-      url "https://github.com/agda/agda-stdlib/archive/refs/tags/v1.7.3.tar.gz"
-      sha256 "91c42323fdc94d032a8c98ea9249d9d77e7ba3b51749fe85f18536dbbe603437"
+      url "https://github.com/agda/agda-stdlib/archive/refs/tags/v2.0.tar.gz"
+      sha256 "14eecb83d62495f701e1eb03ffba59a2f767491f728a8ab8c8bb9243331399d8"
     end
   end
 
@@ -50,7 +51,9 @@ class Agda < Formula
       system "cabal", "v2-update"
       system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}/agda"
       system "./GenerateEverything"
-      system bin/"agda", "-i", ".", "-i", "src", "--html", "--vim", "README.agda"
+      cd "doc" do
+        system bin/"agda", "-i", "..", "--html", "--vim", "README.agda"
+      end
     end
 
     # Clean up references to Homebrew shims
