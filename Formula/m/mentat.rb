@@ -3,8 +3,8 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/66/29/667148a7d39ffdaff4f9e68cd8e3b4d7a87f602f36f3b497c52251a55287/mentat-1.0.5.tar.gz"
-  sha256 "ddda50d99b6272bb7532bf96b7c7d13266d7963379954dfe347e3166243ae2c1"
+  url "https://files.pythonhosted.org/packages/35/a5/8d619a16e97384407b781b40c91b67c1fec520e767bc6214c06f69b13d09/mentat-1.0.6.tar.gz"
+  sha256 "7a36ea2b0600afb06eced3e578afcf3677cc9418efba95d2e99e4439e071966a"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
@@ -243,8 +243,7 @@ class Mentat < Formula
   end
 
   test do
-    # Run mentat and capture stderr
-    output = shell_output("#{bin}/mentat 2>&1", 1)
-    assert_match "isn't part of a git project", output
+    output = shell_output("#{bin}/mentat 2>&1")
+    assert_match "No OpenAI api key detected", output
   end
 end
