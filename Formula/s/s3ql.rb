@@ -5,8 +5,8 @@ class S3ql < Formula
   homepage "https://github.com/s3ql/s3ql"
   # TODO: Try to remove `libcython` and corresponding build_cython in the next release.
   # Ref: https://github.com/s3ql/s3ql/issues/335
-  url "https://github.com/s3ql/s3ql/releases/download/s3ql-5.1.2/s3ql-5.1.2.tar.gz"
-  sha256 "5921f6286247792ecb93cd78105eaa5d71e8b3037628ae1bce5c78dc6cf08fd2"
+  url "https://github.com/s3ql/s3ql/releases/download/s3ql-5.1.3/s3ql-5.1.3.tar.gz"
+  sha256 "9511f7c230f3b9ea16908a806649ed9bf90ee71ed6838ceb19db9cf4eb28ed5c"
   license "GPL-3.0-only"
 
   livecheck do
