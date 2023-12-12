@@ -19,7 +19,7 @@ class Dnstwist < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "77ba4f70557bc242ae2aee081ea502f4cb82fd6e98a2a58d0a2b5f70b8bdecf5"
   end
 
-  depends_on "geoip"
+  depends_on "libmaxminddb"
   depends_on "python-certifi"
   depends_on "python@3.12"
   depends_on "ssdeep"
@@ -111,6 +111,7 @@ class Dnstwist < Formula
   end
 
   def install
+    ENV["MAXMINDDB_USE_SYSTEM_LIBMAXMINDDB"] = "1"
     ENV.append "CPPFLAGS", "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi"
 
     venv = virtualenv_create(libexec, "python3.12")
