@@ -1,8 +1,8 @@
 class Isort < Formula
   desc "Sort Python imports automatically"
   homepage "https://pycqa.github.io/isort/"
-  url "https://files.pythonhosted.org/packages/42/c5/e8a34dace89624d27c31c67140362cfe07562c450c52984419ee242f0fcb/isort-5.13.0.tar.gz"
-  sha256 "d67f78c6a1715f224cca46b29d740037bdb6eea15323a133e897cda15876147b"
+  url "https://files.pythonhosted.org/packages/1e/59/98677f9085b607551b009833449c39bfc4ce8172b0d9545eece9b5e2f8e5/isort-5.13.1.tar.gz"
+  sha256 "aaed790b463e8703fb1eddb831dfa8e8616bacde2c083bd557ef73c8189b7263"
   license "MIT"
   head "https://github.com/PyCQA/isort.git", branch: "main"
 
