@@ -1,14 +1,8 @@
 class ArgusClients < Formula
   desc "Audit Record Generation and Utilization System clients"
   homepage "https://openargus.org"
-  url "https://qosient.com/argus/src/argus-clients-3.0.8.2.tar.gz"
-  sha256 "32073a60ddd56ea8407a4d1b134448ff4bcdba0ee7399160c2f801a0aa913bb1"
-  revision 4
-
-  livecheck do
-    url "https://openargus.org/getting-argus"
-    regex(/href=.*?argus-clients[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  url "https://github.com/openargus/clients/archive/refs/tags/v3.0.8.4.tar.gz"
+  sha256 "1e71e1ec84a311af4ac6c6c9e7a3231e10591e215b84d7e0841735b11db3127a"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bbd65b29c0ebfde03358e5878c52e993af6280a24562b424cead54ff88ce47e9"
@@ -26,14 +20,18 @@ class ArgusClients < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "702918f2a17809ddbff6f9c7161a3b58bdc63209ab8f8a13ab29f7b546cb0c7d"
   end
 
-  depends_on "geoip"
   depends_on "readline"
   depends_on "rrdtool"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  on_linux do
+    depends_on "libtirpc"
+  end
+
   def install
+    ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}/tirpc" if OS.linux?
     ENV.append "CFLAGS", "-std=gnu89"
     system "./configure", "--prefix=#{prefix}"
     system "make"
