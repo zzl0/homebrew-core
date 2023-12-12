@@ -3,8 +3,8 @@ class TerraformLocal < Formula
 
   desc "CLI wrapper to deploy your Terraform applications directly to LocalStack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/aa/f7/69c2981d89c0e074bf15272304fe6843ffcb266cfe044b32f36e23a6e628/terraform-local-0.16.0.tar.gz"
-  sha256 "3193213c54275d5a2407d01763778a876e45a04daaa48c4a698a64807d757a1e"
+  url "https://files.pythonhosted.org/packages/83/0c/98a28e341fae1fbef63d136fdbb2da11ca47bcdb5f086aa670c67ba253f8/terraform-local-0.16.1.tar.gz"
+  sha256 "943c823186164bacfc1857d413b784c7bff3f02f33c6c0d58cf679109101897e"
   license "Apache-2.0"
 
   bottle do
@@ -24,13 +24,13 @@ class TerraformLocal < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/de/a5/4ae1555dd922da0543172241849a795a9dc6385e0bd8a0d8acd8765d10d6/boto3-1.29.2.tar.gz"
-    sha256 "f3024bba9ac980007ba7b5f28a9734d111fb5466e2426ac76c5edbd6dedd8db2"
+    url "https://files.pythonhosted.org/packages/e5/86/3c386c17fcd9edbd612b1bbeaee85eaa21dd8d85c347de097aba30fc8cb6/boto3-1.33.12.tar.gz"
+    sha256 "2225edaea2fa17274f62707c12d9f7803c998af7089fe8a1ec8e4f1ebf47677e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/63/5b/b78ac001e26069a2348b7edc131cbd2aa526ffa496a603df8ed3231ae36d/botocore-1.32.2.tar.gz"
-    sha256 "0e231524e9b72169fe0b8d9310f47072c245fb712778e0669f53f264f0e49536"
+    url "https://files.pythonhosted.org/packages/ef/dc/b4b0b8b6ccdcf5880f7381a197397fbc6121e562fd2411e97fc4b4052997/botocore-1.33.12.tar.gz"
+    sha256 "067c94fa88583c04ae897d48a11d2be09f280363b8e794b82d78d631d3a3e910"
   end
 
   resource "jmespath" do
@@ -54,8 +54,8 @@ class TerraformLocal < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/3f/ff/5fd9375f3fe467263cff9cad9746fd4c4e1399440ea9563091c958ff90b5/s3transfer-0.7.0.tar.gz"
-    sha256 "fd3889a66f5fe17299fe75b82eae6cf722554edca744ca5d5fe308b104883d2e"
+    url "https://files.pythonhosted.org/packages/5f/cc/7e3b8305e22d7dcb383d4e1a30126cfac3d54aea2bbd2dfd147e2eff4988/s3transfer-0.8.2.tar.gz"
+    sha256 "368ac6876a9e9ed91f6bc86581e319be08188dc60d50e0d56308ed5765446283"
   end
 
   resource "urllib3" do
