@@ -2,8 +2,8 @@ class Teku < Formula
   desc "Java Implementation of the Ethereum 2.0 Beacon Chain"
   homepage "https://docs.teku.consensys.net/"
   url "https://github.com/ConsenSys/teku.git",
-      tag:      "23.11.0",
-      revision: "ee1e1aace63b9c8676ec2f01d93d4e6a3b955cea"
+      tag:      "23.12.0",
+      revision: "24ba349c13952e333eabbc89dbcfe4241e4fce55"
   license "Apache-2.0"
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
@@ -32,8 +32,16 @@ class Teku < Formula
     assert_match "teku/", shell_output("#{bin}/teku --version")
 
     rest_port = free_port
+    test_args = %W[
+      --ee-endpoint=http://127.0.0.1
+      --ignore-weak-subjectivity-period-enabled
+      --rest-api-enabled
+      --rest-api-port=#{rest_port}
+      --p2p-enabled=false
+
+    ]
     fork do
-      exec bin/"teku", "--rest-api-enabled", "--rest-api-port=#{rest_port}", "--p2p-enabled=false", "--ee-endpoint=http://127.0.0.1"
+      exec bin/"teku", *test_args
     end
     sleep 15
 
