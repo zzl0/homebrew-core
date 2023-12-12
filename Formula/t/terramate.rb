@@ -4,6 +4,7 @@ class Terramate < Formula
   url "https://github.com/terramate-io/terramate/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "e5df311ea9aa5897541042e51ac37c97c202401dd2a0a09e8cd4f5c07c583387"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/terramate-io/terramate.git", branch: "main"
 
   bottle do
@@ -19,11 +20,12 @@ class Terramate < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/terramate"
+    system "go", "build", *std_go_args(output: bin/"terramate", ldflags: "-s -w"), "./cmd/terramate"
+    system "go", "build", *std_go_args(output: bin/"terramate-ls", ldflags: "-s -w"), "./cmd/terramate-ls"
   end
 
   test do
-    assert_match "Project root not found", shell_output("#{bin}/terramate list 2>&1", 1)
     assert_match version.to_s, shell_output("#{bin}/terramate version")
+    assert_match version.to_s, shell_output("#{bin}/terramate-ls -version")
   end
 end
