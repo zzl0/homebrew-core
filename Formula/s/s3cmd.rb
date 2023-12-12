@@ -1,8 +1,8 @@
 class S3cmd < Formula
   desc "Command-line tool for the Amazon S3 service"
   homepage "https://s3tools.org/s3cmd"
-  url "https://files.pythonhosted.org/packages/97/10/5ae9b5c69d0482dda2927c67a4db26a3e9e064964577a81be9239a419b3f/s3cmd-2.3.0.tar.gz"
-  sha256 "15330776e7ff993d8ae0ac213bf896f210719e9b91445f5f7626a8fa7e74e30b"
+  url "https://files.pythonhosted.org/packages/b3/9c/ad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01/s3cmd-2.4.0.tar.gz"
+  sha256 "6b567521be1c151323f2059c8feec85ded96b6f184ff80535837fea33798b40b"
   license "GPL-2.0-or-later"
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
