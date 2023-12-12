@@ -7,13 +7,14 @@ class PythonTypingExtensions < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4138102c5291a13eb6c5f64303a49881f7e7e988077dbed91482ca338b216b03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3288bb986ec0f759bb9682bad52007174ba5145b4a063f26844257ddf17e3893"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e50cd8cc622a1fd191a1318df52d5ec74c82911c6d3968e6d6ee44d031bb3a4e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5da893864219e7104a2c62ff400a63b8ce4bbccb7b67306d1a67394642254111"
-    sha256 cellar: :any_skip_relocation, ventura:        "51fcab54c1caa9f5bdc4f228249d8cc680c7978b71a4ee710060ba1aa40eca24"
-    sha256 cellar: :any_skip_relocation, monterey:       "f332513e1a606fc1542344b1a16af82f019e292942617352e7003cf8599ea737"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fe82dee67341e40570ac55f7fab625c580a10d13dbea498bbf3ba50eafc8730"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb23d0644b58f54c53b29bcfa972fc1df5a0deb0626741a9c558e4ff9bdee613"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce92e1f123de4780760d2364f4ce025aa1d04db0102e48482d2f3dd15ae8505f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12d1a56431c1c91b55a80cb25bc7d8cb8a9ab4ce8411fba4602078e0276a9db3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "460177bfac2b4730891d396b489a3d303b3d725b11c954241288e301d0014bb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "a786f8d064f78f0773328fee9921ffabeb7f07f4831858680ed910dd826f6975"
+    sha256 cellar: :any_skip_relocation, monterey:       "1744a216b8ed8693adb8e9c17c1536b96eb8ee3ff8f4aa23a49d703fcf86b0c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abf1629102c71af4127df318ce60a3fcc4eda13d74c34013d860818046c6a5b4"
   end
 
   depends_on "python-flit-core" => :build
