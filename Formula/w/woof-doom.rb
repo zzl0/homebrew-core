@@ -6,15 +6,13 @@ class WoofDoom < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 arm64_sonoma:   "272696d111b626b917191c9b2d2f01a7f6485b9e323534dc1a95833584c629d9"
-    sha256 arm64_ventura:  "1435dd815bd152e47a784482e13dc5648696e110416f493846428bc5de200f3c"
-    sha256 arm64_monterey: "bf211d3b9ecb07e1d0f63d86fa4b83177318280af492924e0c037a75896f7638"
-    sha256 arm64_big_sur:  "f19e4e52a79f87500e103ad142f3ecec6a080eac973cd662b623aa10681ff5b0"
-    sha256 sonoma:         "dc78f78bc1d3c6cf7a15d618a5796a480f52256f517faaa691104e26a572a97e"
-    sha256 ventura:        "dfe29d620379a8bb2bfe992437d815ea132b5197f36057d9346de542869bd36a"
-    sha256 monterey:       "425fcf2c84d2ebe2000816195a62c7ebe3fb19d46564b743b26365082194f2a2"
-    sha256 big_sur:        "65b38efa006d6ecd2541e72f5ae2ebfa4cf8c3933788c33002a29c63a1684687"
-    sha256 x86_64_linux:   "6a437e9062ee58685305c105012391a849f44e59df153dd19ba67b6857f60596"
+    sha256 arm64_sonoma:   "97f32de8484c776cd3bbd74524c3d44b5b55889e35851eb6027dfe2c55b0bfff"
+    sha256 arm64_ventura:  "13c63ed4b5de58013a212f7d37fbcdf29598fa85f84ab26624b9cfba373c6c4c"
+    sha256 arm64_monterey: "adaea7e5364ca683dfb9ef3f901a6003d8863f7478dba04294c2f730b8ee72e4"
+    sha256 sonoma:         "775d7a23903c618e6e3ee797922d43ade529ba6787c113dbb2ffab19a02c8b60"
+    sha256 ventura:        "11405fb274aeb2ccfbdc5a88b610d1eb2df82a3624c0d5731c52da6c226b7cd6"
+    sha256 monterey:       "792acf28474056af9ee12dbdcffcdba64300ef97cfdf6d59c00ff7b02f1f5989"
+    sha256 x86_64_linux:   "abf0611639ad9912b65cd0d478c001b109843133a3f00a9f3436d7ff02bbae66"
   end
 
   depends_on "cmake" => :build
