@@ -8,14 +8,26 @@ class Ettercap < Formula
     url "https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
     sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
 
-    depends_on "geoip"
     depends_on "pcre"
+
+    # Part of libmaxminddb backport that cannot be added via patch.
+    # Remove in the next release along with corresponding install
+    resource "GeoLite2-Country.mmdb" do
+      url "https://raw.githubusercontent.com/Ettercap/ettercap/741c4d3bcd5c3e37d7d6b0fe0e748a955b2f43f5/share/GeoLite2-Country.mmdb"
+      sha256 "b22fd1cc9bd76c0706ed6cafefcd07c2bfb5a22581faebdcd9161b9d8a44d0c0"
+    end
 
     # Fix build for curl 8+
     # https://github.com/Ettercap/ettercap/pull/1221
     patch do
       url "https://github.com/Ettercap/ettercap/commit/40534662043b7d831d1f6c70448afa9d374a9b63.patch?full_index=1"
       sha256 "ac9edbd2f5d2e809835f8b111a7f20000ffab0efca2d6f17f4b199bb325009b1"
+    end
+
+    # Backport libmaxminddb support. Remove in the next release.
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/1857153707716e38c40ebb5dc641a30a471e2962/ettercap/libmaxminddb-backport.diff"
+      sha256 "b7869963df256af7cfae0f9e936e6dac4ec51a8b38dcfef6ea909e81e3ab8d0e"
     end
   end
 
@@ -32,12 +44,12 @@ class Ettercap < Formula
   head do
     url "https://github.com/Ettercap/ettercap.git", branch: "master"
 
-    depends_on "libmaxminddb"
     depends_on "pcre2"
   end
 
   depends_on "cmake" => :build
   depends_on "gtk+3"
+  depends_on "libmaxminddb"
   depends_on "libnet"
   depends_on "ncurses" if DevelopmentTools.clang_build_version >= 1000
   depends_on "openssl@3"
@@ -57,6 +69,8 @@ class Ettercap < Formula
   end
 
   def install
+    (buildpath/"share").install resource("GeoLite2-Country.mmdb") if build.stable?
+
     # Work around a CMake bug affecting harfbuzz headers and pango
     # https://gitlab.kitware.com/cmake/cmake/issues/19531
     ENV.append_to_cflags "-I#{Formula["harfbuzz"].opt_include}/harfbuzz"
