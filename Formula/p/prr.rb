@@ -1,8 +1,8 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https://github.com/danobi/prr"
-  url "https://github.com/danobi/prr/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "c713aa543e1c2987430ff0fbfa3892a543d02bb24549ebf7127c06b55f6b14f1"
+  url "https://github.com/danobi/prr/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "4f81770aa28661bb3cc880507ec9d56b46f8d26310acca1efcc6cc29571c0531"
   license "GPL-2.0-only"
   head "https://github.com/danobi/prr.git", branch: "master"
 
@@ -16,20 +16,41 @@ class Prr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ae6f73a6aca6e0e26cb46c26ef9b0459fec89958d2a7a4b71c8aa2b2fed512"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "libgit2"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "pkg-config" => :build
+  def install
+    # Ensure the declared `openssl@3` dependency will be picked up.
+    # https://docs.rs/openssl/latest/openssl/#manual
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+    system "cargo", "install", *std_cargo_args
   end
 
-  def install
-    system "cargo", "install", *std_cargo_args
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
     assert_match "Failed to read config", shell_output("#{bin}/prr get Homebrew/homebrew-core/6 2>&1", 1)
+
+    [
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"prr", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+    end
   end
 end
