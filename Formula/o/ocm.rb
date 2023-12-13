@@ -1,8 +1,8 @@
 class Ocm < Formula
   desc "CLI for the Red Hat OpenShift Cluster Manager"
   homepage "https://www.openshift.com/"
-  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v0.1.70.tar.gz"
-  sha256 "f4693db628fb63009133cf97ad48c7aaae764e381006a7e239a13597722ef02c"
+  url "https://github.com/openshift-online/ocm-cli/archive/refs/tags/v0.1.72.tar.gz"
+  sha256 "c1fd5e0fdb8470dc28e596dc29845e3b7e03d02ab336d961ef3101337ee4093c"
   license "Apache-2.0"
   head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
@@ -17,6 +17,13 @@ class Ocm < Formula
   end
 
   depends_on "go" => :build
+
+  # update to build with go1.21
+  # upstream PR ref, https://github.com/openshift-online/ocm-cli/pull/587
+  patch do
+    url "https://github.com/openshift-online/ocm-cli/commit/0bfd59a5728ece351e60ab34e0fbade747472feb.patch?full_index=1"
+    sha256 "cc5016d6c98b7b995bb331ccf6c68f393e06bdf17536e9b92ca8c18c0a7494c9"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/ocm"
