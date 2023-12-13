@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.38.5/deno_src.tar.gz"
-  sha256 "df10fa5fbc97322e315ea638945ce943f91591337fdcc8d3917f33a4469081d6"
+  url "https://github.com/denoland/deno/releases/download/v1.39.0/deno_src.tar.gz"
+  sha256 "a384c70c4b8d0ef6bb2a6a0ab020ad9b80eb0fb30c77c8acc09e1ce4287f05eb"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -45,23 +45,23 @@ class Deno < Formula
   # Use the version of `v8` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "v8"' (without single quotes).
   resource "rusty_v8" do
-    url "https://static.crates.io/crates/v8/v8-0.81.0.crate"
-    sha256 "b75f5f378b9b54aff3b10da8170d26af4cfd217f644cf671badcd13af5db4beb"
+    url "https://static.crates.io/crates/v8/v8-0.82.0.crate"
+    sha256 "f53dfb242f4c0c39ed3fc7064378a342e57b5c9bd774636ad34ffe405b808121"
   end
 
   # Find the v8 version from the last commit message at:
   # https://github.com/denoland/rusty_v8/commits/v#{rusty_v8_version}/v8
   # Then, use the corresponding tag found in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/refs/tags/12.0.267.1-denoland-b287115fa7c9f0323c43.tar.gz"
-    sha256 "f8ede0e87d00c7c25f8833b6dc0f149929c511316e2c50100195b0a11b3052cc"
+    url "https://github.com/denoland/v8/archive/refs/tags/12.0.267.8-denoland-60a289a156e16eaf1ccf.tar.gz"
+    sha256 "66a429c798e7f67193c945d824db26ef11aaf99b61522f587f60457a0a57600e"
   end
 
   # Use the version of `deno_core` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "deno_core"' (without single quotes).
   resource "deno_core" do
-    url "https://github.com/denoland/deno_core/archive/refs/tags/0.232.0.tar.gz"
-    sha256 "37ec83d3c6d39c017cf12b99f9a4d10cd302cf95d5d8f7c42f8c18a6ba65f9c7"
+    url "https://github.com/denoland/deno_core/archive/refs/tags/0.238.0.tar.gz"
+    sha256 "a76a39e8563d3a79defaaf7e14efd9beadc5fd826d4a83b04b0fc0e911fe38e2"
   end
 
   # To find the version of gn used:
