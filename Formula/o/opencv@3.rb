@@ -2,10 +2,9 @@ class OpencvAT3 < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://github.com/opencv/opencv/archive/refs/tags/3.4.16.tar.gz"
-  sha256 "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
+  url "https://github.com/opencv/opencv/archive/refs/tags/3.4.20.tar.gz"
+  sha256 "b9eda448a08ba7b10bfd5bd45697056569ebdf7a02070947e1c1f3e8e69280cd"
   license "BSD-3-Clause"
-  revision 10
 
   bottle do
     sha256 arm64_sonoma:   "e0644d0bf41b7937e68d64c2e3fed4fcd133d2a158c7c46f83d730ec91278a36"
@@ -26,6 +25,7 @@ class OpencvAT3 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "ceres-solver"
   depends_on "eigen"
   depends_on "ffmpeg@4"
@@ -37,38 +37,19 @@ class OpencvAT3 < Formula
   depends_on "numpy"
   depends_on "openexr"
   depends_on "protobuf@21"
-  depends_on "python@3.10"
+  depends_on "python@3.12"
   depends_on "tbb"
   depends_on "webp"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/3.4.16.tar.gz"
-    sha256 "92b4f6ab8107e9de387bafc3c7658263e5c6be68554d6086b37a2cb168e332c5"
-  end
-
-  # tbb 2021 support. Backport of
-  # https://github.com/opencv/opencv/pull/19384
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/ec823c01d3275b13b527e4860ae542fac11da24c/opencv%403/tbb2021.patch"
-    sha256 "a125f962ea07f0656869cbd97433f0e465013effc13c97a414752e0d25ed9a7d"
-  end
-
-  # allow cmake to find OpenEXR 3+.
-  patch do
-    url "https://github.com/opencv/opencv/commit/f43fec7ee674d9fc65be21119066c3e67c856357.patch?full_index=1"
-    sha256 "b46e4e9dc93878bccd2351c79795426797d27f54a4720d51f805c118770e6f4a"
-  end
-
-  # Fix build against lapack 3.10.0, https://github.com/opencv/opencv/pull/21114
-  patch do
-    url "https://github.com/opencv/opencv/commit/54c180092d2ca02e0460eac7176cab23890fc11e.patch?full_index=1"
-    sha256 "66fd79afe33ddd4d6bb2002d56ca43029a68ab5c6ce9fd7d5ca34843bc5db902"
+    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/3.4.20.tar.gz"
+    sha256 "b0bb3fa7ae4ac00926b83d4d95c6500c2f7af542f8ec78d0f01b2961a690d5dc"
   end
 
   def python3
-    "python3.10"
+    "python3.12"
   end
 
   def install
@@ -147,9 +128,8 @@ class OpencvAT3 < Formula
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-o", "test"
     assert_equal shell_output("./test").strip, version.to_s
 
-    python = Formula["python@3.10"].opt_bin/python3
-    ENV["PYTHONPATH"] = prefix/Language::Python.site_packages(python)
-    output = shell_output("#{python} -c 'import cv2; print(cv2.__version__)'")
+    ENV["PYTHONPATH"] = prefix/Language::Python.site_packages(python3)
+    output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp
   end
 end
