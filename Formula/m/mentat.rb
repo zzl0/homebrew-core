@@ -9,13 +9,13 @@ class Mentat < Formula
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bc632a2776fab5a9c4550b91199e437f3a97eaed81358e4dfb96e31584317482"
-    sha256 cellar: :any,                 arm64_ventura:  "52d3e42611087c81825d5695138d068b9e5958c2dc8960d6de6fc4baefab9845"
-    sha256 cellar: :any,                 arm64_monterey: "388d8464cc4733de4804f30ad4718b001c23461f4241049fecdf16fddfbc0e2d"
-    sha256 cellar: :any,                 sonoma:         "4fa46a09a714221b9bf9d41a477287b4ae8604e6ada4eb36e5c07c82144f793d"
-    sha256 cellar: :any,                 ventura:        "8679bcad8089b5673c08a043acf2b0249d4a988fed76f524f98ff1b2950d8465"
-    sha256 cellar: :any,                 monterey:       "632b51db811696af623d5737e510791c1354b389e18fb70c069685c7e3481f51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ef7dc24b88b5272e9501f1518f855de29f45b6f694ece89b05f6197a1cc7f66"
+    sha256 cellar: :any,                 arm64_sonoma:   "472b40795eed61eb33767e9aeef565cced6693daed9f7b1ac4343425b0dcc93f"
+    sha256 cellar: :any,                 arm64_ventura:  "7c0c21fe8f350578a4cbb213ce9cce9d08cfac034ccaa8bad295df67252e0464"
+    sha256 cellar: :any,                 arm64_monterey: "dea53afb0150f846e225facc786020745691358d83a8f249140882aac971ccdf"
+    sha256 cellar: :any,                 sonoma:         "8c823af96f62283820625354ab01254920e6137fbcbcea90267d758ac22430e5"
+    sha256 cellar: :any,                 ventura:        "25706e3984fe526b458813bef366ab9f6d0f8665e6da458d144482c20e6eea91"
+    sha256 cellar: :any,                 monterey:       "e8ee9011c3549e57b46f4acf574089d9c1d63f828bc2b50e6edfdf98b67c6fad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fdd6beae44efad0b876172c51567916f776c5597b98ce5b5c9c077574b7be39"
   end
 
   depends_on "rust" => :build # for tiktoken
