@@ -8,13 +8,13 @@ class Molecule < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "62e70bbc440e674029a6504641559ad72009916298aadd10f36aef20450f77ac"
-    sha256 cellar: :any,                 arm64_ventura:  "1d49ee7a39a8dce17b7e8b84c84fae57ab72e244f43e4cc713871830b11e8506"
-    sha256 cellar: :any,                 arm64_monterey: "c0fa1e01ab4c74fa3bd87b6fd837dcb80ad890ec4e216a273a304b95fab807b1"
-    sha256 cellar: :any,                 sonoma:         "228bbdcb287aedc0c17e2cb06a0ac70d3ef784d2e550ccc2f69c4da17a7afe71"
-    sha256 cellar: :any,                 ventura:        "5be81929d5fb3bc03b298c0cf24de1a4b7e34cafc620362bf9e37143bc5101d5"
-    sha256 cellar: :any,                 monterey:       "6bdb1f80a79e65ac21f1330a6894597c050a8eda28737ec20f9940ea73cce382"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d84f8e5c2b0c943dc13accf1b278c90bb2147960990fcee1cd3d47caec55395"
+    sha256 cellar: :any,                 arm64_sonoma:   "db206ada705e189a09a79b875f9afe5e0516793e6853a70612b912c452b09033"
+    sha256 cellar: :any,                 arm64_ventura:  "b632e7f7d426e0154523010e8452138398067f2d5eceeb17dfbb57c25976489d"
+    sha256 cellar: :any,                 arm64_monterey: "1240fc2be1196528f5cee2fc7f004b8dae98312766d5b928547ab65f0820494e"
+    sha256 cellar: :any,                 sonoma:         "193aa3526dbaef57341e623ee8fb61795f96ec802a1a864789208c9fad8c2053"
+    sha256 cellar: :any,                 ventura:        "90d0b3df25e35cba96cc68107c2073efe642f3c174f326cfc873e29f5541d1f1"
+    sha256 cellar: :any,                 monterey:       "c022ebc8247e9be95c3e8b69620651be8f5bdfba3968b6e3d94a2dc0367caa70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1392f3584946ef24cef4aeff95e49975725e9e1ed138a8ca5a7e8c3117cc3b13"
   end
 
   depends_on "rust" => :build # for rpds-py
