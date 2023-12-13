@@ -1,8 +1,8 @@
 class Mpdscribble < Formula
   desc "Last.fm reporting client for mpd"
   homepage "https://www.musicpd.org/clients/mpdscribble/"
-  url "https://www.musicpd.org/download/mpdscribble/0.24/mpdscribble-0.24.tar.xz"
-  sha256 "f6b4cba748b3b87e705270b4923c8e23e94c2e00fedd50beb1468dbe2fb2a8e7"
+  url "https://www.musicpd.org/download/mpdscribble/0.25/mpdscribble-0.25.tar.xz"
+  sha256 "20f89d945bf517c4d68bf77a77a359fdb13842ab1295e8d21eda79be2b5b35ce"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -31,12 +31,6 @@ class Mpdscribble < Formula
   depends_on "libmpdclient"
 
   uses_from_macos "curl"
-
-  # build patch, remove in next release
-  patch do
-    url "https://github.com/MusicPlayerDaemon/mpdscribble/commit/0dbcea25c81f3fdc608f71ef71a9784679fee17f.patch?full_index=1"
-    sha256 "df312bf1b60c371d33c05a6d8c82fb10e702e5eea91ed0dbe5bcee7f4302f550"
-  end
 
   def install
     mkdir "build" do
