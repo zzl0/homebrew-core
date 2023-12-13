@@ -3,10 +3,9 @@ class Openstackclient < Formula
 
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
-  url "https://files.pythonhosted.org/packages/4b/4a/4fa8b9e681dbd38ecf2a86e05f0f9fa48eb4e31e7c4f5925877367022127/python-openstackclient-6.3.0.tar.gz"
-  sha256 "9ba0bdf8d03087e585b40a8dcc429cebbdd5fdec24c1d60a102bf9f331320df1"
+  url "https://files.pythonhosted.org/packages/71/13/9556dd8c47b78a7542f5f9241f4798f66d1203b6fd5f069518f5cc51df3f/python-openstackclient-6.4.0.tar.gz"
+  sha256 "0c6ab40168ea51fed68819aa251f8253de9a61dacc96dd1b64739f189fc2183f"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     rebuild 2
@@ -42,8 +41,8 @@ class Openstackclient < Formula
   end
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/aa/6c/737d2345d86741eeb594381394016b9c74c1253b4cbe274bb1e7b5e2138e/Babel-2.13.1.tar.gz"
-    sha256 "33e0952d7dd6374af8dbf6768cc4ddf3ccfefc244f9986d4074704f2fbd18900"
+    url "https://files.pythonhosted.org/packages/e2/80/cfbe44a9085d112e983282ee7ca4c00429bc4d1ce86ee5f4e60259ddff7f/Babel-2.14.0.tar.gz"
+    sha256 "6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"
   end
 
   resource "charset-normalizer" do
