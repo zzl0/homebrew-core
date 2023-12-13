@@ -3,10 +3,9 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://github.com/v6d-io/v6d/releases/download/v0.18.2/v6d-0.18.2.tar.gz"
-  sha256 "1255ca4ebeb5da34e33cb82a8d5530a5fc6b5fcebfb52d1b085058b2eab4a53c"
+  url "https://github.com/v6d-io/v6d/releases/download/v0.19.1/v6d-0.19.1.tar.gz"
+  sha256 "8da78864003cc559825cde30aa1de41ecf5c653ccc23a699c15a5b02796e86ca"
   license "Apache-2.0"
-  revision 3
 
   bottle do
     sha256                               arm64_sonoma:   "f02de5281f928f585379e6c855246023659df8a9013351c310ec12e8968bbc67"
@@ -20,7 +19,8 @@ class Vineyard < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => [:build, :test]
-  depends_on "python@3.11" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "apache-arrow"
   depends_on "boost"
   depends_on "etcd"
@@ -37,8 +37,11 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
+  # upstream issue report, https://github.com/v6d-io/v6d/issues/1652
+  patch :DATA
+
   def install
-    python = "python3.11"
+    python = "python3.12"
     # LLVM is keg-only.
     ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/Language::Python.site_packages(python)
 
@@ -123,3 +126,22 @@ class Vineyard < Formula
     Process.kill("HUP", vineyardd_pid)
   end
 end
+
+__END__
+diff --git a/modules/graph/CMakeLists.txt b/modules/graph/CMakeLists.txt
+index 2e9e69f..781b11c 100644
+--- a/modules/graph/CMakeLists.txt
++++ b/modules/graph/CMakeLists.txt
+@@ -63,8 +63,10 @@ file(GLOB_RECURSE GRAPH_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}" "fragment/*.cc"
+
+ add_library(vineyard_graph ${GRAPH_SRC_FILES} ${powturbo-target-objects})
+ target_add_debuginfo(vineyard_graph)
+-target_compile_options(vineyard_graph PUBLIC "-fopenmp")
+-target_link_options(vineyard_graph PUBLIC "-fopenmp")
++if(NOT APPLE)
++    target_compile_options(vineyard_graph PUBLIC "-fopenmp")
++    target_link_options(vineyard_graph PUBLIC "-fopenmp")
++endif()
+ target_include_directories(vineyard_graph PUBLIC ${MPI_CXX_INCLUDE_PATH})
+
+ find_package(Boost COMPONENTS leaf)
