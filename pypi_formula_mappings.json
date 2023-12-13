@@ -1186,10 +1186,6 @@
   "terminator": {
     "exclude_packages": ["psutil"]
   },
-  "termius": {
-    "package_name": "termius",
-    "exclude_packages": ["six", "PyYAML"]
-  },
   "tern": {
     "exclude_packages": ["certifi", "PyYAML", "packaging"]
   },
