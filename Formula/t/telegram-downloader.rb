@@ -1,8 +1,8 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
   homepage "https://github.com/iyear/tdl"
-  url "https://github.com/iyear/tdl/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "ad2b8e5b930bfd9b985fb4739ceeeadabd7e3a1cf7fc999c55f782076d6ef574"
+  url "https://github.com/iyear/tdl/archive/refs/tags/v0.13.3.tar.gz"
+  sha256 "f92356bbc29a98bdcbd5bf2ae9c71280cf9d3a577ef0ca3f490a4cbc22739078"
   license "AGPL-3.0-only"
 
   bottle do
