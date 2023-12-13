@@ -2,8 +2,8 @@ class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
   # TODO: check if we can build with go1.21
-  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.2.tar.gz"
-  sha256 "aefc8dad948cdc4a7269bf223c4cdccb6f31fdc153c1e857a9364e195e67cf47"
+  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.20.0.tar.gz"
+  sha256 "701bdcbd42ef34fc04b581b278b3cda914c5a78b39bbba9d7ffa74095472bdb2"
   license "GPL-3.0-or-later"
 
   livecheck do
