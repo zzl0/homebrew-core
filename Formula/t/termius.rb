@@ -10,15 +10,14 @@ class Termius < Formula
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "69d938e866fc4c831902672187500ccbc4e82dc68f815843774bf5399d8c3187"
-    sha256 cellar: :any,                 arm64_ventura:  "3b8b1add7406fd53ed6841289642eb611077a1494b9637b59242fd2990316ccd"
-    sha256 cellar: :any,                 arm64_monterey: "f1232f80e5401956c3a8486315cd9adb9b2cfbd1a30979421b9d2537c284688d"
-    sha256 cellar: :any,                 arm64_big_sur:  "af2ba00ad36e578b0f0454bd659f1e8efbbfbaf88b2375031bb0746bd4980565"
-    sha256 cellar: :any,                 sonoma:         "7b19613ee7ffe6fdfcc02d8518849c39fccb767cbce3249e6c24baa321f7c1b8"
-    sha256 cellar: :any,                 ventura:        "6fef17c9b1ced8ad4333c93b9a115f399b32052378d0901040ec8aa20ac41102"
-    sha256 cellar: :any,                 monterey:       "ae2c4980e751c027df0f879a9ab39d6921dbf69981260f0d382ba88bd7881c95"
-    sha256 cellar: :any,                 big_sur:        "db41c6dbedd8750c8c172a52e2331288f7c67c43d183c17a1de9fbb2a2034b97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78c02ee947dcb9f2012e38c3e66cebd877eee1d726e1c41b5268e5c4b5d66d05"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4760e31686c77fbadd1fcbaabfdf61441ed0777e44bfb26fbe588c0d9b19aded"
+    sha256 cellar: :any,                 arm64_ventura:  "86f852e5ac7df5da9c1eeb83fdc4a4a43715fdd2ef5efe941093f50fdd739255"
+    sha256 cellar: :any,                 arm64_monterey: "16f3a8216e44b16f50b079739c58421dd3aa7a938b08238f210eed2cd5419c55"
+    sha256 cellar: :any,                 sonoma:         "59739c679adc05c00e6657561bc8c9869e692dca958dea52d228fd64a4601b72"
+    sha256 cellar: :any,                 ventura:        "d79a9e201624d64ea39ad06a09dbaa641cb48923abb663bbe6c04bc179197507"
+    sha256 cellar: :any,                 monterey:       "99670995d56d724007d314eedf4f1b477a64ca8426b38e7eda184d957135f8c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa42f95512647fc2f86bea61898971a06a36a94a06504d1350be629d036a4c80"
   end
 
   # https://github.com/termius/termius-cli/issues/197#issuecomment-1399394041
