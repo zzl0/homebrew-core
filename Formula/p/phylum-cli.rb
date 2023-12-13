@@ -1,8 +1,8 @@
 class PhylumCli < Formula
   desc "Command-line interface for the Phylum API"
   homepage "https://www.phylum.io"
-  url "https://github.com/phylum-dev/cli/archive/refs/tags/v5.9.0.tar.gz"
-  sha256 "00c9cdfe1a8d7332fbd843c926107f60be511e22121fc2ecf5bb0d6d0e11c14e"
+  url "https://github.com/phylum-dev/cli/archive/refs/tags/v6.0.0.tar.gz"
+  sha256 "6d690a17be074ba2c174bd03868665332dead3deaa35fe9b1fcac7a1f4d416bd"
   license "GPL-3.0-or-later"
   head "https://github.com/phylum-dev/cli.git", branch: "main"
 
