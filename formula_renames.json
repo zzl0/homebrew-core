@@ -157,7 +157,6 @@
   "root6": "root",
   "rt-audio": "rtaudio",
   "richmd": "rich-cli",
-  "saltstack": "salt",
   "scala211": "scala@2.11",
   "screenbrightness": "brightness",
   "sdl": "sdl12-compat",
