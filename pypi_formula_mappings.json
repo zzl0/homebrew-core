@@ -326,7 +326,7 @@
     "exclude_packages": ["certifi", "click", "packaging", "PyYAML", "six"]
   },
   "datalad": {
-    "exclude_packages": ["certifi", "packaging"]
+    "exclude_packages": ["certifi", "cryptography", "packaging"]
   },
   "datasette": {
     "exclude_packages": [
