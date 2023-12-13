@@ -2,10 +2,10 @@ class Rethinkdb < Formula
   desc "Open-source database for the realtime web"
   homepage "https://rethinkdb.com/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.3.tgz"
-  sha256 "c3788c7a270fbb49e3da45787b6be500763c190fb059e39b7def9454f9a4674f"
+  # upstream issue report, https://github.com/rethinkdb/rethinkdb/issues/7142
+  url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.4.tgz"
+  sha256 "5091237602b62830db2cb3daaca6ab34632323741e6710c2f0de4d84f442711f"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/rethinkdb/rethinkdb.git", branch: "next"
 
   livecheck do
