@@ -2,8 +2,8 @@ class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https://github.com/PostgREST/postgrest"
   # TODO: Try to switch `ghc@9.2` to `ghc` when postgrest.cabal allows base>=4.17
-  url "https://github.com/PostgREST/postgrest/archive/refs/tags/v12.0.0.tar.gz"
-  sha256 "ab38016b25a635543fc3fb4e699ebc303ae9d8e2377865fcd1096d35da8b3f4b"
+  url "https://github.com/PostgREST/postgrest/archive/refs/tags/v12.0.1.tar.gz"
+  sha256 "d758d1aebc60da5e5ff2d215eb1dcaa69d62ef88a14077536764ce90125e0961"
   license "MIT"
   head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
