@@ -31,10 +31,14 @@ class Rtx < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/rtx.1"
-    share.install "share/fish"
     generate_completions_from_executable(bin/"rtx", "completion")
     lib.mkpath
     touch lib/".disable-self-update"
+    (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
+      if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
+        #{bin}/rtx activate fish | source
+      end
+    EOS
   end
 
   test do
