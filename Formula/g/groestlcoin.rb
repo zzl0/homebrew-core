@@ -1,8 +1,8 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://groestlcoin.org/groestlcoin-core-wallet/"
-  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v25.0/groestlcoin-25.0.tar.gz"
-  sha256 "23d27c2135cce492d7680b1b939ee2dbae1d56df9eb161301e3712eaaa94988e"
+  url "https://github.com/Groestlcoin/groestlcoin/releases/download/v26.0/groestlcoin-26.0.tar.gz"
+  sha256 "45ff0c7e58e3e6cd9be4db00f8ba02566249538487f5711e64d4f0187414fb46"
   license "MIT"
   head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
@@ -25,7 +25,7 @@ class Groestlcoin < Formula
   depends_on "berkeley-db@5"
   depends_on "boost"
   depends_on "libevent"
-  depends_on macos: :catalina # groestlcoin requires std::filesystem, which is only supported from Catalina onwards.
+  depends_on macos: :big_sur
   depends_on "miniupnpc"
   depends_on "zeromq"
 
