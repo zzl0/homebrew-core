@@ -171,7 +171,7 @@ class Gstreamer < Formula
     ]
 
     # The apple media plug-in uses API that was added in Mojave
-    args << "-Dgst-plugins-bad:applemedia=disabled" if MacOS.version <= :high_sierra
+    args << "-Dgst-plugins-bad:applemedia=disabled" if OS.mac? && MacOS.version <= :high_sierra
 
     # Ban trying to chown to root.
     # https://bugzilla.gnome.org/show_bug.cgi?id=750367
