@@ -13,15 +13,13 @@ class Inform6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "235f253e1b358f1b624ade58136cd00cb0161d654376f3e3ff6fdeaf703b9f56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f375c1af6d193350be16319b80c545e53985b38cdc1988939c191ce45478703"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "364bd6fa090ec1ca128cf678e2066e1aa3620df42b6d2b8bcf955206b9baa157"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "492008bc56dc0468c0994dac47501a91ee02d179d747544b7e1cd1183b785d9c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7facb1374525c88c56a7ebf2ebb9acb3ba8c56cccccd28e91e8c4cf386289212"
-    sha256 cellar: :any_skip_relocation, ventura:        "368a1105afc2be3fa8448b91ee93f1d4e13a90e7f2236711a1f1f6bd88662613"
-    sha256 cellar: :any_skip_relocation, monterey:       "0aeaa2879d6ea06fb1373117115e239059da2ed04e68d9a647a13fcb34bea1e0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7c8ba8cad52b5652188721bb5c7a98b490d6f23f2479a374d8784b80cdd9fa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74616af11d9700f2ca7f0de9661ace30b5883d728fbb8bc8b91cdca9ffdc5f77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66473f965646e839aadc2ab39c71829a165171fb08272b769d5c48f079aae55a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f4fc0cef4014f1fec5e7cc85721ae8dcff950c6c2da1dc85ea1c1c27f3572e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15058c1ddf4d52cbc108356ab233cfa38182c2929014fa6d853b114302261ecd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7c404deb4f2bb4cc7fb4efa367f961f7c47ce2d1309c7d9d39cd72c18b35645"
+    sha256 cellar: :any_skip_relocation, ventura:        "baf8ad81318ecb25d82077b6babd71f2f22379a973d5f6c3fa377b0bcf86c619"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ea7fa8509bc13f0a991c6e97f6d19b46c1122b1c28780490b686a78ad46dce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557339f55b5ab462d293fe8b1e3758a37d94e83c2c7da4ffddf75a7971a34e8e"
   end
 
   resource "homebrew-test_resource" do
