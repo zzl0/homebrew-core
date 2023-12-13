@@ -1,8 +1,8 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
   homepage "https://www.knot-dns.cz/"
-  url "https://secure.nic.cz/files/knot-dns/knot-3.3.2.tar.xz"
-  sha256 "0d65d4b59f5df69b78c6295ade0a2ea7931831de7ef5eeee3e00f8a20af679e4"
+  url "https://secure.nic.cz/files/knot-dns/knot-3.3.3.tar.xz"
+  sha256 "aab40aab2acd735c500f296bacaa5c84ff0488221a4068ce9946e973beacc5ae"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
 
   livecheck do
@@ -21,7 +21,7 @@ class Knot < Formula
   end
 
   head do
-    url "https://gitlab.labs.nic.cz/knot/knot-dns.git"
+    url "https://gitlab.nic.cz/knot/knot-dns.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,6 +39,10 @@ class Knot < Formula
   depends_on "userspace-rcu"
 
   uses_from_macos "libedit"
+
+  # build patch to use `IPV6_PKTINFO` on macOS
+  # submitted issue and build patch via https://gitlab.nic.cz/knot/knot-dns/-/issues/909
+  patch :DATA
 
   def install
     system "autoreconf", "-fvi" if build.head?
@@ -99,3 +103,34 @@ class Knot < Formula
     system sbin/"knotc", "conf-check"
   end
 end
+
+__END__
+diff --git a/src/knot/server/quic-handler.c b/src/knot/server/quic-handler.c
+index 0944900..f8ab263 100644
+--- a/src/knot/server/quic-handler.c
++++ b/src/knot/server/quic-handler.c
+@@ -13,6 +13,9 @@
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  */
++#ifdef __APPLE__
++#define __APPLE_USE_RFC_3542 /* to use IPV6_PKTINFO */
++#endif
+
+ #include <netinet/in.h>
+ #include <string.h>
+diff --git a/src/knot/server/udp-handler.c b/src/knot/server/udp-handler.c
+index 3b06fa9..5d85877 100644
+--- a/src/knot/server/udp-handler.c
++++ b/src/knot/server/udp-handler.c
+@@ -14,7 +14,9 @@
+     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  */
+
+-#define __APPLE_USE_RFC_3542
++#ifdef __APPLE__
++#define __APPLE_USE_RFC_3542 /* to use IPV6_PKTINFO */
++#endif
+
+ #include <assert.h>
+ #include <dlfcn.h>
