@@ -1,4 +1,5 @@
 [
+  "influxdb",
   "opencv@3",
   "smpeg",
   "smpeg2",
