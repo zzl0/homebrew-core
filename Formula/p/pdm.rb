@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/e7/78/7299699a7e2a319675312d8cbf5978f4a0acbd33b31a15ce297bbdf0fc16/pdm-2.10.4.tar.gz"
-  sha256 "6dfd9d4cb59043edecb2d0b47d208e55d89d333ba7197deb05cca2dfbc7a4bfb"
+  url "https://files.pythonhosted.org/packages/61/99/5b6591bb413405761c605f2a6d25b9178152af87e79096f5144c493ee101/pdm-2.11.0.tar.gz"
+  sha256 "3ff4b5d4d8af4747dde978e8d0fea8c5f5e65a07dee861d2c2fbafdcc8d69205"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11cec3dcd191f67cf1b2e15acbfd9e2e110c399e2ccbd3a5f4cb5e7a26462a7c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9da373630fd64157d3c589d5dcc8c201ca530fab3665e4b7cce52202af0b74d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec6cde1f7d51c63abe3562d65bd99c810ee0c7defbbcfe166bc16f77eeae3049"
-    sha256 cellar: :any_skip_relocation, sonoma:         "494a18382891e307bfec56b931732de4eed50cd0a3c796b38b63c341c3910a3b"
-    sha256 cellar: :any_skip_relocation, ventura:        "49728a226e2a5a554476b9cd74213b3a77064050542b3189ae4850b67a9bf7ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "96a766d9d480598b71d6b41ba62bc6a21bcefefcb1bef5422f88f26a030a41b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f025921ea277d9aef68971129c96a6cbfb0c9f1cd00125ba0bc96deaacf371d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f47bdf87e32095fb61cdf360195471141c5eed98a947b639a76718937333bd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f23d848bf6348c9d947e3fe89e9fc44a980272a4fb8f141982b1cf2205830f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc86c79f840fc6e389a79978f2a668e48662c984f87c7be2b1a7d1b15ad936cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9769706849956e85c69193894b1aa15664932e2d289b39282256915ad12df96e"
+    sha256 cellar: :any_skip_relocation, ventura:        "5dd6ef58a315b072197d3ecf28c3ea6bde3037bd4dba32633772698d2f77f0e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "7befa9030b6516a1fe0969ee16d2d947a3cb1a4dbf9117996f9b3c3991638c64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f68f2fda0b6682bb0e2d9d92e46cb865eda5d0577407c54f77375a0ed83ef222"
   end
 
   depends_on "pygments"
@@ -40,14 +40,19 @@ class Pdm < Formula
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
+  resource "dep-logic" do
+    url "https://files.pythonhosted.org/packages/d0/4e/9fe2a7eb8090bb6d30184d30ab5872996948857ce5d0b549fb5c8bb4f5e4/dep_logic-0.0.3.tar.gz"
+    sha256 "6b9da937652d8ecf63e916c254d8ec4e8e27f8bcf0f8df205c561f5b3d740e79"
+  end
+
   resource "findpython" do
-    url "https://files.pythonhosted.org/packages/9f/8b/b58064e28219d08905116692192e34fde978c736c3c4af55dae8d16afa95/findpython-0.4.0.tar.gz"
-    sha256 "18b14d115678da18ae92ee22d7001cc30915ea531053f77010ee05a39680f438"
+    url "https://files.pythonhosted.org/packages/89/e4/acf061c1b86fbe7c4cc3863002ffcb273d3d7ecd9c5dedd65aa9ec8a8139/findpython-0.4.1.tar.gz"
+    sha256 "d7d014558681b3761d57a5b2342a713a8bf302f6c1fc9d99f81b9d8bd1681b04"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "installer" do
@@ -121,8 +126,8 @@ class Pdm < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/fb/d0/0b4c18a0b85c20233b0c3bc33f792aefd7f12a5832b4da77419949ff6fd9/wheel-0.41.3.tar.gz"
-    sha256 "4d4987ce51a49370ea65c0bfd2234e8ce80a12780820d9dc462597a6e60d0841"
+    url "https://files.pythonhosted.org/packages/b0/b4/bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97b/wheel-0.42.0.tar.gz"
+    sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
   end
 
   def install
