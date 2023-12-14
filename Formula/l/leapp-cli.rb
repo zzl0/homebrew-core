@@ -3,8 +3,8 @@ require "language/node"
 class LeappCli < Formula
   desc "Cloud credentials manager cli"
   homepage "https://github.com/noovolari/leapp"
-  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.53.tgz"
-  sha256 "a48e7f0313934cfc7a9b82b8e3bc71d0cba894f11b2da8327f49b1d36c20a81e"
+  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.54.tgz"
+  sha256 "52f5590ff097ea27814c8eac762b5d30e447a560bed68ab75f95635079d7c1c9"
   license "MPL-2.0"
 
   bottle do
