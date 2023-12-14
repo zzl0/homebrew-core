@@ -1,8 +1,8 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://github.com/johnkerl/miller/archive/refs/tags/v6.9.0.tar.gz"
-  sha256 "e85ce4d7ea2aa7d0986939c64db9eec69f2e1e59a91bbee25d7d1f994543ca60"
+  url "https://github.com/johnkerl/miller/archive/refs/tags/v6.10.0.tar.gz"
+  sha256 "a7e0fef83e2f8f5fe3c6fce73766209e8ed4906472f0229cbce0930e1f7c5bad"
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git", branch: "main"
 
