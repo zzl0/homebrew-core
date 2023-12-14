@@ -1,8 +1,8 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/17/dc/969e2da415597b328e6a73dc233f9bb4f2b312889180e9bbe48470c957e7/PyQt6-6.6.0.tar.gz"
-  sha256 "d41512d66044c2df9c5f515a56a922170d68a37b3406ffddc8b4adc57181b576"
+  url "https://files.pythonhosted.org/packages/8c/2b/6fe0409501798abc780a70cab48c39599742ab5a8168e682107eaab78fca/PyQt6-6.6.1.tar.gz"
+  sha256 "9f158aa29d205142c56f0f35d07784b8df0be28378d20a97bcda8bd64ffd0379"
   license "GPL-3.0-only"
 
   bottle do
@@ -16,8 +16,7 @@ class Pyqt < Formula
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "sip"          => :build
-
+  depends_on "sip" => :build
   depends_on "python@3.12"
   depends_on "qt"
 
