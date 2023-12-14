@@ -6,13 +6,13 @@ class PythonHatchling < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40585512588943a1d1b2f172853591258d9e04cc56548984d9bbf840a0e5a602"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "385d0f6148e4c68c2f4f8d73db4f02bbc5f2b27f4c1dd63f7458cbccf1783fac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0226db0190cf76954950f7cc77bc1450ef13e9392fa15522f0325d5edb923e6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98bcb3bd4d38a864a8f0379231f93207eb66635410a88b52ea0d49d5846c1fd2"
-    sha256 cellar: :any_skip_relocation, ventura:        "d85d12902558e8376011b300c07aa46c5c2546e0134e2cdc8c87f1289180b34e"
-    sha256 cellar: :any_skip_relocation, monterey:       "0dbda1cf944f4a446882f5cbe6881739c2ebfb20b592fae11ab0220535c89cae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "622d5f5c2ca82cbb86fd94a962ab12e85048b63fd4fd59ffb2562c6b0f3920da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f330053f9362172a357e7b994386aec6f84d9b8dd1c601d73996f7f6a34a85d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8aabd077cc71d421107b0a480f0d2a7f7fe7796e20fc0600a91a5fc37bd0294"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f71fa4909b206ec93e8b7fcdedeb9289bf54c664cc9c39ec7cf9e3fa822ec50e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48f3fc48116d3b42aabc4e091a073490a7275d60dff1626154f0c2bdb7d9fa59"
+    sha256 cellar: :any_skip_relocation, ventura:        "1fd09251532c35008b324ca4437f67ba62cf8fd9f4b34da989bca28640c53f7b"
+    sha256 cellar: :any_skip_relocation, monterey:       "e86a766a0e2c1193f50916d1fa333e3151eb175eb1ed82316072fe7b5ac37f5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d1f711b14a20ad32a4195506871fc0a073c0d6f313e0ec3f532186664386d0c"
   end
 
   depends_on "python-flit-core" => :build
