@@ -24,9 +24,8 @@ class Hdf5 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "45a3ba08b9c14d54fa5afbfe214e8397af81e50e1b3a2b5bf8d97cc5e88b898f"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :test
   depends_on "gcc" # for gfortran
   depends_on "libaec"
 
@@ -43,32 +42,33 @@ class Hdf5 < Formula
               "settingsdir=$(libdir)",
               "settingsdir=#{pkgshare}"
 
-    system "autoreconf", "--force", "--install", "--verbose"
-
-    args = %W[
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-build-mode=production
-      --enable-fortran
-      --enable-cxx
-      --prefix=#{prefix}
-      --with-szlib=#{Formula["libaec"].opt_prefix}
+    ENV["libaec_DIR"] = Formula["libaec"].opt_prefix.to_s
+    args = %w[
+      -DHDF5_BUILD_FORTRAN:BOOL=ON
+      -DHDF5_BUILD_CPP_LIB:BOOL=ON
+      -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" if OS.linux?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
-    system "./configure", *args
-
-    # Avoid shims in settings file
-    inreplace_files = %w[
-      src/H5build_settings.c
-      src/libhdf5.settings
-      src/Makefile
+    # Avoid c shims in settings files
+    inreplace_c_files = %w[
+      build/src/H5build_settings.c
+      build/src/libhdf5.settings
+      build/CMakeFiles/h5cc
+      build/CMakeFiles/h5hlcc
     ]
+    inreplace inreplace_c_files, Superenv.shims_path/ENV.cc, ENV.cc
 
-    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, ENV.cxx
-    inreplace inreplace_files, Superenv.shims_path/ENV.cc, ENV.cc
+    # Avoid cpp shims in settings files
+    inreplace_cxx_files = %w[
+      build/CMakeFiles/h5c++
+      build/CMakeFiles/h5hlc++
+    ]
+    inreplace_cxx_files << "build/src/libhdf5.settings" if OS.linux?
+    inreplace inreplace_cxx_files, Superenv.shims_path/ENV.cxx, ENV.cxx
 
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -111,7 +111,11 @@ class Hdf5 < Formula
       write (*,"(I0,'.',I0,'.',I0)") major, minor, rel
       end
     EOS
-    system "#{bin}/h5fc", "test.f90"
+    system bin/"h5fc", "test.f90"
     assert_equal version.to_s, shell_output("./a.out").chomp
+
+    # Make sure that it was built with SZIP/libaec
+    config = shell_output("#{bin}/h5cc -showconfig")
+    assert_match %r{I/O filters.*DECODE}, config
   end
 end
