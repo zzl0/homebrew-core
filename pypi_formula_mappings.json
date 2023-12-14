@@ -86,7 +86,7 @@
     "exclude_packages": ["dicttoxml", "requests"]
   },
   "arxiv_latex_cleaner": {
-    "exclude_packages": ["pillow", "six", "PyYAML"]
+    "exclude_packages": ["absl-py", "pillow", "regex", "six", "PyYAML"]
   },
   "asitop": {
     "exclude_packages": ["psutil", "six"]
