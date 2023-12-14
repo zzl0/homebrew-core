@@ -1,10 +1,10 @@
 class GemCompletion < Formula
   desc "Bash completion for gem"
   homepage "https://github.com/mernen/completion-ruby"
-  url "https://github.com/mernen/completion-ruby.git",
-      revision: "f3e4345042b0cc48317e45b673dfd3d23904b9a7"
-  version "2"
+  url "https://github.com/mernen/completion-ruby/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "ee8b84d7ac7444a7388e58a406af56dc0b690a57faa7bcfa4c10671deb788991"
   license "MIT"
+  version_scheme 1
   head "https://github.com/mernen/completion-ruby.git", branch: "master"
 
   livecheck do
