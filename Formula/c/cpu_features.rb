@@ -16,10 +16,6 @@ class CpuFeatures < Formula
 
   depends_on "cmake" => :build
 
-  on_macos do
-    depends_on arch: :x86_64 # https://github.com/google/cpu_features#whats-supported
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
@@ -37,11 +33,18 @@ class CpuFeatures < Formula
   test do
     output = shell_output(bin/"list_cpu_features")
     assert_match(/^arch\s*:/, output)
-    assert_match(/^brand\s*:/, output)
-    assert_match(/^family\s*:/, output)
-    assert_match(/^model\s*:/, output)
-    assert_match(/^stepping\s*:/, output)
-    assert_match(/^uarch\s*:/, output)
+    if Hardware::CPU.arm?
+      assert_match(/^implementer\s*:/, output)
+      assert_match(/^variant\s*:/, output)
+      assert_match(/^part\s*:/, output)
+      assert_match(/^revision\s*:/, output)
+    else
+      assert_match(/^brand\s*:/, output)
+      assert_match(/^family\s*:/, output)
+      assert_match(/^model\s*:/, output)
+      assert_match(/^stepping\s*:/, output)
+      assert_match(/^uarch\s*:/, output)
+    end
     assert_match(/^flags\s*:/, output)
   end
 end
