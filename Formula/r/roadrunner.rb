@@ -1,8 +1,8 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
   homepage "https://roadrunner.dev/"
-  url "https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2023.3.7.tar.gz"
-  sha256 "d966ce578287b555658b85d7a0850afae831cc1d0170fd76762154a074a2a38d"
+  url "https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2023.3.8.tar.gz"
+  sha256 "372cb025c55daa4390c37f454079bb96b7a67a6e8ed1e9eb9be557b107db7cc8"
   license "MIT"
   head "https://github.com/roadrunner-server/roadrunner.git", branch: "master"
 
