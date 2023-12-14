@@ -42,6 +42,12 @@ class Rtx < Formula
     EOS
   end
 
+  def caveats
+    <<~EOS
+      If you are using fish shell, rtx will be activated for you automatically.
+    EOS
+  end
+
   test do
     system "#{bin}/rtx", "install", "nodejs@18.13.0"
     assert_match "v18.13.0", shell_output("#{bin}/rtx exec nodejs@18.13.0 -- node -v")
