@@ -17,12 +17,13 @@ class Gssh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4d4ded31d059a3d36f783aad5ed1fd48a2b7638b93b7d987f51bbbbb3daf8d3"
   end
 
-  depends_on "openjdk@11"
+  depends_on "gradle@7" => :build
+  depends_on "openjdk"
 
   def install
     ENV["CIRCLE_TAG"] = version
     ENV["GROOVY_SSH_VERSION"] = version
-    system "./gradlew", "shadowJar"
+    system "gradle", "shadowJar", "--no-daemon"
     libexec.install "cli/build/libs/gssh.jar"
     bin.write_jar_script libexec/"gssh.jar", "gssh"
   end
