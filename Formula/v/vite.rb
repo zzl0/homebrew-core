@@ -8,13 +8,12 @@ class Vite < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a41f68020f1f3b683a22209cf1b49bc91b646d00f0445f32fb387534cf53e8f0"
-    sha256 cellar: :any,                 arm64_ventura:  "a41f68020f1f3b683a22209cf1b49bc91b646d00f0445f32fb387534cf53e8f0"
-    sha256 cellar: :any,                 arm64_monterey: "a41f68020f1f3b683a22209cf1b49bc91b646d00f0445f32fb387534cf53e8f0"
-    sha256 cellar: :any,                 sonoma:         "d5ca12d64868619d90c9ef354502f287c0fa5b80e1cee6849e28e615b674da69"
-    sha256 cellar: :any,                 ventura:        "d5ca12d64868619d90c9ef354502f287c0fa5b80e1cee6849e28e615b674da69"
-    sha256 cellar: :any,                 monterey:       "d5ca12d64868619d90c9ef354502f287c0fa5b80e1cee6849e28e615b674da69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9130e0753788c487abaf3cc869f22d2d4e9de6bf21785bbb784924149203c4e"
+    sha256 cellar: :any, arm64_sonoma:   "789129112f70a8b5ce1949f8d6c3738d80fb6a53648204264cb71f6775f39ca5"
+    sha256 cellar: :any, arm64_ventura:  "789129112f70a8b5ce1949f8d6c3738d80fb6a53648204264cb71f6775f39ca5"
+    sha256 cellar: :any, arm64_monterey: "789129112f70a8b5ce1949f8d6c3738d80fb6a53648204264cb71f6775f39ca5"
+    sha256 cellar: :any, sonoma:         "688df8a9ccc59e555ff4862b83dcd21c111e029b1fc18f789d5d5836fcb6abcf"
+    sha256 cellar: :any, ventura:        "688df8a9ccc59e555ff4862b83dcd21c111e029b1fc18f789d5d5836fcb6abcf"
+    sha256 cellar: :any, monterey:       "688df8a9ccc59e555ff4862b83dcd21c111e029b1fc18f789d5d5836fcb6abcf"
   end
 
   depends_on "node"
