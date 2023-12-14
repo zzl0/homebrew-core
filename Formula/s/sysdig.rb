@@ -56,10 +56,10 @@ class Sysdig < Formula
     depends_on "libb64" => :build
     depends_on "abseil"
     depends_on "elfutils"
-    depends_on "grpc@1.54"
+    depends_on "grpc"
     depends_on "jq"
     depends_on "openssl@3"
-    depends_on "protobuf@21"
+    depends_on "protobuf"
     depends_on "zstd"
   end
 
@@ -87,7 +87,6 @@ class Sysdig < Formula
       -DBUILD_LIBSCAP_EXAMPLES=OFF
       -DDIR_ETC=#{etc}
       -DFALCOSECURITY_LIBS_SOURCE_DIR=#{buildpath}/falcosecurity-libs
-      -DCMAKE_CXX_FLAGS=-std=c++17
     ]
 
     # `USE_BUNDLED_*=OFF` flags are implied by `USE_BUNDLED_DEPS=OFF`, but let's be explicit.
