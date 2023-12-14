@@ -199,7 +199,7 @@ class Fdroidserver < Formula
       ANDROID_HOME.  To do this all from the command line, run:
 
         brew install --cask android-commandlinetools temurin
-        export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
+        export ANDROID_HOME=#{share}/android-commandlinetools
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "build-tools;34.0.0"
     EOS
   end
