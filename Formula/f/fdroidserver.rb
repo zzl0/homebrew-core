@@ -6,7 +6,7 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/75/72/ea1e1e9d7d0ade051279b8676e6025f8c14dd64a5edeb76f2208e23c7720/fdroidserver-2.2.1.tar.gz"
   sha256 "6dcba0b747bfc9ebe4d441c56cf0c8aeab70a58cd0d1248462892e933a382302"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
     rebuild 1
@@ -28,6 +28,7 @@ class Fdroidserver < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "pygments"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-cryptography"
@@ -160,6 +161,11 @@ class Fdroidserver < Formula
     sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
+  resource "sdkmanager" do
+    url "https://files.pythonhosted.org/packages/d1/f7/380ca52c2a11323008e267eb62c5f6d7d4224941bd83aa03db75ee689ca7/sdkmanager-0.6.5.tar.gz"
+    sha256 "dd29505e449a99f1e4c6881c2d0488e3d88252da7ec7b1b0c6cb0e59853d5a85"
+  end
+
   resource "smmap" do
     url "https://files.pythonhosted.org/packages/88/04/b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baa/smmap-5.0.1.tar.gz"
     sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
@@ -187,11 +193,15 @@ class Fdroidserver < Formula
 
   def caveats
     <<~EOS
-      In order to function, fdroidserver requires that the Android SDK's
-      "Build-tools" and "Platform-tools" are installed.  Also, it is best if the
-      base path of the Android SDK is set in the standard environment variable
-      ANDROID_HOME.  To install them from the command line, run:
-      android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0
+      For complete functionality, fdroidserver requires that the
+      Android SDK's "build-tools" and "platform-tools" are installed,
+      and those require a Java JDK.  Also, it is best if the base path
+      of the Android SDK is set in the standard environment variable
+      ANDROID_HOME.  To do this all from the command line, run:
+
+        brew install --cask android-commandlinetools temurin
+        export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "build-tools;34.0.0"
     EOS
   end
 
