@@ -2,10 +2,9 @@ class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.33-27/source/tarball/percona-xtrabackup-8.0.33-27.tar.gz"
-  sha256 "64b3b0ecaab5a5ee50af02ec40f12664bfe4c94f929ff0c189705ae886da0b12"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.35-30/source/tarball/percona-xtrabackup-8.0.35-30.tar.gz"
+  sha256 "8a3632a5a7a91834800f4f83902468bccff1d979e82347c0372b39a97b0c85f0"
   license "GPL-2.0-only"
-  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-xtrabackup/latest/"
@@ -31,6 +30,7 @@ class PerconaXtrabackup < Formula
     sha256 x86_64_linux:   "397d8edc78cfca437bee8a82a71b8d1b4053a4f0ca8b82c719a45161c2f2b6ab"
   end
 
+  depends_on "bison" => :build # needs bison >= 3.0.4
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
@@ -40,7 +40,7 @@ class PerconaXtrabackup < Formula
   depends_on "libfido2"
   depends_on "libgcrypt"
   depends_on "lz4"
-  depends_on "mysql"
+  depends_on "mysql-client"
   depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "zstd"
@@ -55,8 +55,7 @@ class PerconaXtrabackup < Formula
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libaio"
-    # Incompatible with procps-4 https://jira.percona.com/browse/PXB-2993
-    depends_on "procps@3"
+    depends_on "procps"
   end
 
   conflicts_with "percona-server", because: "both install a `kmip.h`"
@@ -79,8 +78,8 @@ class PerconaXtrabackup < Formula
   end
 
   resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz"
-    sha256 "4f48541ff15a0a7405f76adc10f81627c33996fbf56c95c26c094444c0928d78"
+    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.003.tar.gz"
+    sha256 "21554443d60e294cc0ac00adaef53ccb7de55d4fae66a38372a5adf0a0f1edda"
   end
 
   # https://github.com/percona/percona-xtrabackup/blob/percona-xtrabackup-#{version}/cmake/boost.cmake
@@ -96,14 +95,6 @@ class PerconaXtrabackup < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
-  end
-
-  # Fix for "Cannot find system zlib libraries" even though they are installed.
-  # https://bugs.mysql.com/bug.php?id=110745
-  # https://bugs.mysql.com/bug.php?id=111467
-  patch do
-    url "https://bugs.mysql.com/file.php?id=32361&bug_id=111467"
-    sha256 "3fe1ebb619583fc1778b249042184ef48a4f85555c573fb3618697cf024d19cc"
   end
 
   def install
@@ -129,6 +120,9 @@ class PerconaXtrabackup < Formula
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
     ]
+    # Work around build script incorrectly looking for procps on macOS.
+    # Issue ref: https://jira.percona.com/browse/PXB-3210
+    cmake_args << "-DPROCPS_INCLUDE_DIR=/dev/null" if OS.mac?
 
     (buildpath/"boost").install resource("boost")
     cmake_args << "-DWITH_BOOST=#{buildpath}/boost"
@@ -141,7 +135,12 @@ class PerconaXtrabackup < Formula
     system "cmake", "--install", "build"
 
     # remove conflicting library that is already installed by mysql
-    rm lib/"libmysqlservices.a"
+    (lib/"libmysqlservices.a").unlink
+    # remove conflicting libraries/headers that are installed by percona-server
+    (lib/"libkmip.a").unlink
+    (lib/"libkmippp.a").unlink
+    (include/"kmip.h").unlink
+    (include/"kmippp.h").unlink
 
     ENV.prepend_create_path "PERL5LIB", buildpath/"build_deps/lib/perl5"
 
