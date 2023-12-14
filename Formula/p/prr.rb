@@ -7,13 +7,13 @@ class Prr < Formula
   head "https://github.com/danobi/prr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9c4090b1619a36b5a561d6c35edb9015eb1b11dfc6304cc653d5273dc9386963"
-    sha256 cellar: :any,                 arm64_ventura:  "6c5d48e1b9fa46864bac608f1e91a6d34e1515f8b4f8b6f74050cd1dbc411f64"
-    sha256 cellar: :any,                 arm64_monterey: "2969893f0070442a91452b2d32f12c48142b82c75cbadfc7f68ba45b42476878"
-    sha256 cellar: :any,                 sonoma:         "f3ba4f65de66424fb0ca8f07660a711ba8c7bd072f284db877a5d5657fc64f1c"
-    sha256 cellar: :any,                 ventura:        "2d98039e5a7fe041c8bd0eb4d7c8e536492bdc97016a51deb426c76fa3a3012a"
-    sha256 cellar: :any,                 monterey:       "0ec7fda34a0494a898244d1889f017e01ba9838378d5f86334a9b61e6efd31f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ae6f73a6aca6e0e26cb46c26ef9b0459fec89958d2a7a4b71c8aa2b2fed512"
+    sha256 cellar: :any,                 arm64_sonoma:   "566d97b538c2a086b12d78799da01d3f05b67fc1e1408010050c928f7b965ef9"
+    sha256 cellar: :any,                 arm64_ventura:  "3303b91bfc4d51a7213133a96857ad2ddf4dd96312613a3d8984c5b5d649373b"
+    sha256 cellar: :any,                 arm64_monterey: "ea8debd95622d22bda11d43c9253bafe3e2bacf90ed82bbf26eee89f5fa11360"
+    sha256 cellar: :any,                 sonoma:         "60f5a66a5b975958734b8ec3ef8b79d6db6dded3472b0b22d118d4308be90f29"
+    sha256 cellar: :any,                 ventura:        "3e1ce66c4112dac884b135b4d91d49d96328835e0701650c4e419aaed044653b"
+    sha256 cellar: :any,                 monterey:       "41db3631a5f29b19d47a46e602a145e276dba1695c43a7671f13cb77da73f30b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "164b6962b332731db1f8d5c6099e39fc73c3358e68a3cee220786e60fffa582d"
   end
 
   depends_on "pkg-config" => :build
