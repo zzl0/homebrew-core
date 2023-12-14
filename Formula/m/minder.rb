@@ -1,8 +1,8 @@
 class Minder < Formula
   desc "CLI for interacting with Stacklok's Minder platform"
   homepage "https://minder-docs.stacklok.dev"
-  url "https://github.com/stacklok/minder/archive/refs/tags/v0.0.20.tar.gz"
-  sha256 "54d131c345e34e6d1e3c65e754746f7bcb44408e8a503100f871dba6f1f89ef4"
+  url "https://github.com/stacklok/minder/archive/refs/tags/v0.0.21.tar.gz"
+  sha256 "cf4679938a37d64a1c9e16bd9862f7347ac532a8b8254f780508bc692460ed3a"
   license "Apache-2.0"
   head "https://github.com/stacklok/minder.git", branch: "main"
 
@@ -31,7 +31,7 @@ class Minder < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/minder version")
 
-    output = shell_output("#{bin}/minder artifact list -p github 2>&1", 1)
-    assert_match "Error on execute: error getting artifacts", output
+    output = shell_output("#{bin}/minder artifact list -p github 2>&1", 16)
+    assert_match "Details: Unauthenticated indicates the request does not have valid", output
   end
 end
