@@ -16,12 +16,24 @@ class Arturo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "53abb703d9ef8eb1301fc054b851b564b4133f4936b63ddf23805c120fa5cdc5"
   end
 
-  depends_on "nim" => :build
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "mysql"
+
+  # TODO: switch to `depends_on "nim" => :build` in the next release
+  resource "nim" do
+    url "https://nim-lang.org/download/nim-1.6.14.tar.xz"
+    sha256 "d070d2f28ae2400df7fe4a49eceb9f45cd539906b107481856a0af7a8fa82dc9"
+  end
 
   def install
+    (buildpath/"nim").install resource("nim")
+    cd "nim" do
+      system "./build.sh"
+      system "./bin/nim", "c", "-d:release", "koch"
+      system "./koch", "boot", "-d:release", "-d:useLinenoise"
+    end
+    ENV.prepend_path "PATH", buildpath/"nim/bin"
+
     inreplace "build.nims", /ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt/, "ROOT_DIR=\"#{prefix}\""
 
     # Work around issues with Xcode 14.3
