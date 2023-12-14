@@ -3,8 +3,8 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/19/a2/53530f20f27bc9a3db11dce22d8d8a441c36bb92c171b317323005b9f5aa/hatch-1.8.0.tar.gz"
-  sha256 "ab2b90888111b12d8baf0b7de3c99c5705f693858a0f76a51b872ed265a9785f"
+  url "https://files.pythonhosted.org/packages/bd/71/3465bb587b551ddcc1c03bb045a6c1d7424db959bed77ed8abb85eca48b4/hatch-1.8.1.tar.gz"
+  sha256 "fdc574184dcb1d52a63a3cfd08431bf674ad3be2fd7316cbf5fb6d4bdbc3032f"
   license "MIT"
 
   bottle do
