@@ -12,7 +12,7 @@ class BundlerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2a933db603ecba2d78dc7bb9c88df00aa45d838e692bc5e6c00ef7d97d983ad6"
+    sha256 cellar: :any_skip_relocation, all: "2686357c15eac317662a36f48c906a2f7af86bfaf092f28a4b36f1815b16fcea"
   end
 
   def install
