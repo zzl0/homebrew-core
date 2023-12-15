@@ -1,10 +1,19 @@
 class SwiProlog < Formula
   desc "ISO/Edinburgh-style Prolog interpreter"
   homepage "https://www.swi-prolog.org/"
-  url "https://www.swi-prolog.org/download/stable/src/swipl-9.0.4.tar.gz"
-  sha256 "feb2815a51d34fa81cb34e8149830405935a7e1d1c1950461239750baa8b49f0"
   license "BSD-2-Clause"
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
+
+  stable do
+    url "https://www.swi-prolog.org/download/stable/src/swipl-9.0.4.tar.gz"
+    sha256 "feb2815a51d34fa81cb34e8149830405935a7e1d1c1950461239750baa8b49f0"
+
+    # Backport fix to build on Sonoma
+    patch do
+      url "https://github.com/SWI-Prolog/swipl-devel/commit/1e51805f04ea9cb13cf01e5b7a483c03d253b24c.patch?full_index=1"
+      sha256 "628b65b3e4a49c8dda4b97824ad05359c48bd27e7e4ddbf914e3da57ef7c87ee"
+    end
+  end
 
   livecheck do
     url "https://www.swi-prolog.org/download/stable/src/"
@@ -24,7 +33,7 @@ class SwiProlog < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "berkeley-db@4"
+  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "gmp"
   depends_on "libarchive"
   depends_on "libyaml"
@@ -46,12 +55,25 @@ class SwiProlog < Formula
       end
     end
 
-    args = ["-DSWIPL_PACKAGES_JAVA=OFF", "-DSWIPL_PACKAGES_X=OFF", "-DCMAKE_INSTALL_RPATH=#{loader_path}"]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: libexec)
+    args = %W[
+      -DSWIPL_PACKAGES_JAVA=OFF
+      -DSWIPL_PACKAGES_X=OFF
+      -DCMAKE_INSTALL_RPATH=#{loader_path}
+    ]
+    if OS.mac?
+      macosx_dependencies_from = case HOMEBREW_PREFIX.to_s
+      when "/usr/local"
+        "HomebrewLocal"
+      when "/opt/homebrew"
+        "HomebrewOpt"
+      else
+        HOMEBREW_PREFIX
+      end
+      args << "-DMACOSX_DEPENDENCIES_FROM=#{macosx_dependencies_from}"
+    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    bin.write_exec_script (libexec/"bin").children
   end
 
   test do
