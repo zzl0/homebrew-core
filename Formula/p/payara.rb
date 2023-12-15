@@ -18,7 +18,7 @@ class Payara < Formula
   end
 
   depends_on :macos # The test fails on Linux.
-  depends_on "openjdk@11"
+  depends_on "openjdk"
 
   conflicts_with "glassfish", because: "both install the same scripts"
 
@@ -31,7 +31,7 @@ class Payara < Formula
 
     libexec.install Dir["*"]
     bin.install Dir["#{libexec}/bin/*"]
-    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("11"))
+    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env)
   end
 
   def caveats
