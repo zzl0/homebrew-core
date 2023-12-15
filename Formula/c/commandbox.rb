@@ -14,8 +14,7 @@ class Commandbox < Formula
     sha256 cellar: :any_skip_relocation, all: "1a8246ce0a8363ddfe57d4c7db9376adb44bb8b0ae6a9256873953592fad8e5b"
   end
 
-  # not yet compatible with Java 17 on ARM
-  depends_on "openjdk@11"
+  depends_on "openjdk"
 
   resource "apidocs" do
     url "https://downloads.ortussolutions.com/ortussolutions/commandbox/5.9.1/commandbox-apidocs-5.9.1.zip"
@@ -24,7 +23,7 @@ class Commandbox < Formula
 
   def install
     (libexec/"bin").install "box"
-    (bin/"box").write_env_script libexec/"bin/box", Language::Java.java_home_env("11")
+    (bin/"box").write_env_script libexec/"bin/box", Language::Java.java_home_env
     doc.install resource("apidocs")
   end
 
