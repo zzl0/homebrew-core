@@ -7,15 +7,13 @@ class OpencvAT3 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sonoma:   "e0644d0bf41b7937e68d64c2e3fed4fcd133d2a158c7c46f83d730ec91278a36"
-    sha256 arm64_ventura:  "ba188e3c706ef89108f9cdb6db3431df48a57cec911e509bf08f659ea04ffc50"
-    sha256 arm64_monterey: "2b43c5baa5a0a736c528996432e6760686fd577838793ce3a59f4b6842ff7a58"
-    sha256 arm64_big_sur:  "aeae24c516413cad8f3aad18b79a714c6fab778a9ae6f5984862cbbe07cb10a4"
-    sha256 sonoma:         "413f8f6114ebd5dd0af6a06fbc3a7395aaf068411faee4a582e9406a61e34880"
-    sha256 ventura:        "ef372b5e6bb730c085b64cc87fe70c298e245bcadaa03fba1e455de524e1b69d"
-    sha256 monterey:       "ac214b488450d231214ca239c3e5b364f94666daf24c643bedd507ca63347bfd"
-    sha256 big_sur:        "b4ede37ae35dfd9e1ece7d711d7c01dc8ecafcc71e541370828e42a8d83824fb"
-    sha256 x86_64_linux:   "418e78eefef39bb1bf0c3fa367818d207b385bf8e692f4925ca5a5ba7130d090"
+    sha256 arm64_sonoma:   "4cc2b2c1de1cb869d251fb5fb74538e2eab7d63b0588f84a70494126e5ff8500"
+    sha256 arm64_ventura:  "e41c77e2b2bc44d9fd5c7a6999db47e7063f70ae4e878c31bd2f0cee49ed55fd"
+    sha256 arm64_monterey: "5420a7536c02498251ce0bc2315d5d7d4ba66c207ac27b418e68ac4e59fde8e3"
+    sha256 sonoma:         "e9da7e9b03a5bc2b782a263561a1e465538fb0ae6d53ee1903b03b23ca7bd1ba"
+    sha256 ventura:        "4efcfe32624a7f94d1541d8f8939afc0979226e0e5b6ed5e79e647bf8f16ae54"
+    sha256 monterey:       "513823481211ab8fb937f27b9ba23e1bcd8524a22f6283cb3fd51de6c1202997"
+    sha256 x86_64_linux:   "76ab86b278b87ab1df04d85d7dc1af660aedadce4d380b553860fbd22afe2ce8"
   end
 
   keg_only :versioned_formula
