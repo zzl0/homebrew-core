@@ -20,20 +20,31 @@ class Chromaprint < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
-  def install
-    args = %W[
-      -DBUILD_TOOLS=ON
-      -DCMAKE_INSTALL_RPATH=#{rpath}
-    ]
+  # Backport support for FFmpeg 5+. Remove in the next release
+  patch do
+    url "https://github.com/acoustid/chromaprint/commit/584960fbf785f899d757ccf67222e3cf3f95a963.patch?full_index=1"
+    sha256 "b9db11db3589c5f4a2999c1a782bd41f614d438f18a6ed3b5167165d0863f9c2"
+  end
+  patch do
+    url "https://github.com/acoustid/chromaprint/commit/8ccad6937177b1b92e40ab8f4447ea27bac009a7.patch?full_index=1"
+    sha256 "47c9cc257c6e5d46840e9b64ba5f1bcee2705eac3d7f5b23ca0fb4aefc6b8189"
+  end
+  patch do
+    url "https://github.com/acoustid/chromaprint/commit/aa67c95b9e486884a6d3ee8b0c91207d8c2b0551.patch?full_index=1"
+    sha256 "f90f5f13a95f1d086dbf98cd3da072d1754299987ee1734a6d62fcda2139b55d"
+  end
 
-    mkdir "build" do
-      system "cmake", "..", *args, *std_cmake_args
-      system "make", "install"
-    end
+  def install
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_TOOLS=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
