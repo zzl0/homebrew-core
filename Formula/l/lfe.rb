@@ -19,20 +19,18 @@ class Lfe < Formula
   end
 
   depends_on "emacs" => :build
-  depends_on "erlang@25"
+  depends_on "erlang"
 
   def install
     system "make"
     system "make", "MANINSTDIR=#{man}", "install-man"
     system "make", "emacs"
 
-    libexec.install "ebin"
+    libexec.install "bin", "ebin"
+    bin.install_symlink (libexec/"bin").children
     pkgshare.install "dev", "examples", "test"
     doc.install Pathname.glob("doc/*.txt")
     elisp.install Pathname.glob("emacs/*.elc")
-
-    prefix.install "bin"
-    bin.env_script_all_files libexec/"bin", PATH: "#{Formula["erlang@25"].opt_bin}:${PATH}"
   end
 
   test do
