@@ -1,10 +1,14 @@
 class ExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://api.kde.org/frameworks/extra-cmake-modules/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.112/extra-cmake-modules-5.112.0.tar.xz"
-  sha256 "ac1084772280d57e5f31e2e2816ecbec4884169413f24f063660eb6f15d4c2e2"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT"]
   head "https://invent.kde.org/frameworks/extra-cmake-modules.git", branch: "master"
+
+  stable do
+    url "https://download.kde.org/stable/frameworks/5.113/extra-cmake-modules-5.113.0.tar.xz"
+    sha256 "265e5440eebeca07351a469e617a4bf35748927bd907b00ace9c018392bb3bc4"
+    depends_on "qt@5" => :build
+  end
 
   livecheck do
     url "https://download.kde.org/stable/frameworks/"
@@ -22,28 +26,29 @@ class ExtraCmakeModules < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "qt@5" => :build
   depends_on "sphinx-doc" => :build
 
   def install
-    args = std_cmake_args + %w[
-      -S .
-      -B build
+    args = %w[
       -DBUILD_HTML_DOCS=ON
       -DBUILD_MAN_DOCS=ON
       -DBUILD_QTHELP_DOCS=ON
     ]
 
-    system "cmake", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(ECM REQUIRED)")
-    system "cmake", ".", "-Wno-dev"
+    (testpath/"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.5)
+      project(test)
+      find_package(ECM REQUIRED)
+    EOS
+    system "cmake", "."
 
-    expected="ECM_DIR:PATH=#{HOMEBREW_PREFIX}/share/ECM/cmake"
-    assert_match expected, File.read(testpath/"CMakeCache.txt")
+    expected = "ECM_DIR:PATH=#{HOMEBREW_PREFIX}/share/ECM/cmake"
+    assert_match expected, (testpath/"CMakeCache.txt").read
   end
 end
