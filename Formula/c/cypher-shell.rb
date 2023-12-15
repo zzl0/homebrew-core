@@ -12,7 +12,7 @@ class CypherShell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8bd2a1164deb5b909753f257ad403c3f0cce4b32335ae3152fa3b3a1baf3fee9"
+    sha256 cellar: :any_skip_relocation, all: "7ab8715e80a79dd705ef970e0d6826f2116c79af21370d24a4f5eb223bd205a8"
   end
 
   depends_on "openjdk"
