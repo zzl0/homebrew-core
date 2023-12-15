@@ -31,12 +31,10 @@ class Vice < Formula
   depends_on "yasm" => :build
 
   depends_on "adwaita-icon-theme"
-  depends_on "ffmpeg@4"
   depends_on "flac"
   depends_on "giflib"
   depends_on "glew"
   depends_on "gtk+3"
-  depends_on "jpeg-turbo"
   depends_on "lame"
   depends_on "libogg"
   depends_on "libpng"
@@ -49,6 +47,7 @@ class Vice < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "pulseaudio"
   end
 
   def install
@@ -56,16 +55,14 @@ class Vice < Formula
     system "./configure", *std_configure_args,
                           "--disable-arch",
                           "--disable-pdf-docs",
-                          "--enable-native-gtk3ui",
+                          "--enable-gtk3ui",
                           "--enable-midi",
                           "--enable-lame",
-                          "--enable-external-ffmpeg",
                           "--enable-ethernet",
                           "--enable-cpuhistory",
                           "--with-flac",
                           "--with-vorbis",
                           "--with-gif",
-                          "--with-jpeg",
                           "--with-png"
     system "make", "install"
   end
