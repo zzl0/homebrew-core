@@ -1,15 +1,18 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.112/karchive-5.112.0.tar.xz"
-  sha256 "27d697a52a5016c16081c6a414b390d96350450d6eeb889d1f463358eeebfd67"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
     "LGPL-2.0-or-later",
     any_of: ["LGPL-2.0-only", "LGPL-3.0-only"],
   ]
-  head "https://invent.kde.org/frameworks/karchive.git", branch: "master"
+
+  stable do
+    url "https://download.kde.org/stable/frameworks/5.113/karchive-5.113.0.tar.xz"
+    sha256 "2da489460198e4c9aabe4734793c97290ecf08f789160fae639ef40a0bba430d"
+    depends_on "qt@5"
+  end
 
   livecheck do
     url "https://download.kde.org/stable/frameworks/"
@@ -26,12 +29,16 @@ class Karchive < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "beb39142f0f7e7898a17c355b44f52b15dff3a74ff6caf14a1b99365c0dd5e44"
   end
 
+  head do
+    url "https://invent.kde.org/frameworks/karchive.git", branch: "master"
+    depends_on "qt"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "graphviz" => :build
+  depends_on "pkg-config" => :build
 
-  depends_on "qt@5"
   depends_on "xz"
   depends_on "zstd"
 
@@ -41,13 +48,7 @@ class Karchive < Formula
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args + %w[
-      -S .
-      -B build
-      -DBUILD_QCH=ON
-    ]
-
-    system "cmake", *args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
