@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https://witness.dev"
-  url "https://github.com/in-toto/witness/archive/refs/tags/v0.1.14.tar.gz"
-  sha256 "03bb27c4f751aa259f02993fecef08ff3a295018165a886d640a8951eb3fcd02"
+  url "https://github.com/in-toto/witness/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "352c263752059e6c87e0a3975d9d826642c27778de8134ee1224adf8eaf7d56b"
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
@@ -26,7 +26,7 @@ class Witness < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/testifysec/witness/cmd.Version=#{version}
+      -X github.com/in-toto/witness/cmd.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
