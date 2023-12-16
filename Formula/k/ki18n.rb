@@ -1,14 +1,17 @@
 class Ki18n < Formula
   desc "KDE Gettext-based UI text internationalization"
   homepage "https://api.kde.org/frameworks/ki18n/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.112/ki18n-5.112.0.tar.xz"
-  sha256 "33d542e760c2bd5dd2d3511624cac3311c60187d7c7b155a4b968a7c6b7a961b"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.0-or-later",
     any_of: ["LGPL-2.1-only", "LGPL-3.0-only"],
   ]
-  head "https://invent.kde.org/frameworks/ki18n.git", branch: "master"
+
+  stable do
+    url "https://download.kde.org/stable/frameworks/5.113/ki18n-5.113.0.tar.xz"
+    sha256 "fc94ba4cd1a4f0d25958764efcfc052cbf29fcf302cd668be2b18f62c6c58042"
+    depends_on "qt@5"
+  end
 
   livecheck do
     url "https://download.kde.org/stable/frameworks/"
@@ -25,26 +28,33 @@ class Ki18n < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd6a90d20224d621690f7f18fb4b76dfe4b6e65c75d2d8354b687c7d9ad1d20d"
   end
 
+  head do
+    url "https://invent.kde.org/frameworks/ki18n.git", branch: "master"
+    depends_on "qt"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "graphviz" => :build
-  depends_on "python@3.11" => :build
+  depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "iso-codes"
-  depends_on "qt@5"
+
+  uses_from_macos "python" => :build, since: :catalina
 
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args + %w[
-      -S .
-      -B build
+    # TODO: Change to only use Python3_EXECUTABLE when KDE 6 (Qt 6) is released
+    python_variable = build.head? ? "Python3_EXECUTABLE" : "PYTHON_EXECUTABLE"
+
+    args = %W[
       -DBUILD_QCH=ON
       -DBUILD_WITH_QML=ON
+      -D#{python_variable}=#{which("python3")}
     ]
 
-    system "cmake", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -53,18 +63,21 @@ class Ki18n < Formula
   end
 
   test do
+    qt = Formula[build.head? ? "qt" : "qt@5"]
+    qt_major = qt.version.major
+
     (testpath/"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.5)
       include(FeatureSummary)
-      find_package(ECM #{version} NO_MODULE)
+      find_package(ECM #{version unless build.head?} NO_MODULE)
       set_package_properties(ECM PROPERTIES TYPE REQUIRED)
       set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} "#{pkgshare}/cmake")
       set(CMAKE_CXX_STANDARD 17)
-      set(QT_MAJOR_VERSION 5)
+      set(QT_MAJOR_VERSION #{qt_major})
       set(BUILD_WITH_QML ON)
-      set(REQUIRED_QT_VERSION #{Formula["qt@5"].version})
+      set(REQUIRED_QT_VERSION #{qt.version})
       find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED Core Qml)
-      find_package(KF5I18n REQUIRED)
+      find_package(KF#{qt_major}I18n REQUIRED)
       INCLUDE(CheckCXXSourceCompiles)
       find_package(LibIntl)
       set_package_properties(LibIntl PROPERTIES TYPE REQUIRED)
@@ -73,15 +86,15 @@ class Ki18n < Formula
 
     cp_r (pkgshare/"autotests"), testpath
 
-    args = std_cmake_args + %W[
-      -S .
-      -B build
-      -DQt5_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5
-      -DLibIntl_INCLUDE_DIRS=#{Formula["gettext"].include}
-      -DLibIntl_LIBRARIES=#{Formula["gettext"].lib}/libintl.dylib
-    ]
+    args = %W[-DQt#{qt_major}_DIR=#{qt.opt_lib}/cmake/Qt#{qt_major}]
+    if OS.mac?
+      args += %W[
+        -DLibIntl_INCLUDE_DIRS=#{Formula["gettext"].include}
+        -DLibIntl_LIBRARIES=#{Formula["gettext"].lib}/libintl.dylib
+      ]
+    end
 
-    system "cmake", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
   end
 end
