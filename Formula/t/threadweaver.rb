@@ -1,10 +1,13 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
   homepage "https://api.kde.org/frameworks/threadweaver/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.112/threadweaver-5.112.0.tar.xz"
-  sha256 "c91de5489d3f660a177fa91cb24827d7e316827fa6f3d290bb656be0b09178c4"
   license "LGPL-2.0-or-later"
-  head "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
+
+  stable do
+    url "https://download.kde.org/stable/frameworks/5.113/threadweaver-5.113.0.tar.xz"
+    sha256 "f749e4225640daa4650f4b6b6a31aa4ff523b14b13885309f042ecf25a3df1f4"
+    depends_on "qt@5"
+  end
 
   livecheck do
     url "https://download.kde.org/stable/frameworks/"
@@ -21,22 +24,19 @@ class Threadweaver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb4f8e1c4ac415522eca5a97ed6f39ae4f759958247244ca8bf3072aa609981a"
   end
 
+  head do
+    url "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
+    depends_on "qt"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "graphviz" => :build
-  depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args + %w[
-      -S .
-      -B build
-      -DBUILD_QCH=ON
-    ]
-
-    system "cmake", *args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
