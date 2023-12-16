@@ -55,22 +55,18 @@ class Mpich < Formula
 
     args = %W[
       --disable-dependency-tracking
+      --disable-silent-rules
       --enable-fast=all,O3
       --enable-g=dbg
       --enable-romio
       --enable-shared
+      --with-hwloc=#{Formula["hwloc"].opt_prefix}
       --with-pm=hydra
-      F77=gfortran
-      FC=gfortran
-      FCFLAGS=-fallow-argument-mismatch
-      --disable-silent-rules
       --prefix=#{prefix}
       --mandir=#{man}
+      F77=gfortran
+      FC=gfortran
     ]
-
-    # Flag for compatibility with GCC 10
-    # https://lists.mpich.org/pipermail/discuss/2020-January/005863.html
-    args << "FFLAGS=-fallow-argument-mismatch"
 
     if OS.linux?
       # Use libfabric https://lists.mpich.org/pipermail/discuss/2021-January/006092.html
