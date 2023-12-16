@@ -7,6 +7,16 @@ class Yewtube < Formula
   sha256 "8100466a5e89c84249d882e2e9ea9ff282a2d4f7f68135157cb942e6eb927b29"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f567eb1064d94997be2a8f3b93db9d4a2bb6b6b55538e5caee6ec54e6a0f479f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "982791f1fe07d1eb921f5a49e03952238bc4562a26aa123bd5ff0a0440a14f65"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72ddc3d8bf08f3778f3142d2525efdb3cd991beb39f220eccacad68118e5b37d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4191a23ab01ebb13d6186d0d3e6d0936108a68e7bc4f655e7a85e6f4acf08e01"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5c001cf45974ff040af1bf0e60bb1eb30aec15083f8249bf0b57daa383b4449"
+    sha256 cellar: :any_skip_relocation, monterey:       "999aa41253e778dfbecc92dd3d98a204719dad2224eeac9d3337833d3199de70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93eef90ec4b3bd1b219fdb4d5129490913e96e0eb5957271f961c814303cf4ff"
+  end
+
   depends_on "mplayer"
   depends_on "python@3.12"
 
