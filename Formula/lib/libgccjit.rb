@@ -16,6 +16,13 @@ class Libgccjit < Formula
       sha256 "2df7ef067871a30b2531a2013b3db661ec9e61037341977bfc451e30bf2c1035"
     end
 
+    # Fix a warning with Xcode 15's linker
+    # https://github.com/iains/gcc-13-branch/issues/11
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/e923a0cd6c0e60bb388e8a5b8cd1dcf9c3bf7758/gcc/gcc-xcode15-warnings.diff"
+      sha256 "dcfec5f2209def06678fa9cf91bc7bbe38237f9f3a356a23ab66b84e88142b91"
+    end
+
     # Upstream fix to deal with macOS 14 SDK <math.h> header
     # https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=93f803d53b5ccaabded9d7b4512b54da81c1c616
     patch :DATA
@@ -77,21 +84,13 @@ class Libgccjit < Formula
       --with-system-zlib
     ]
 
-    make_args = if OS.mac?
+    if OS.mac?
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
-
-      # Work around a bug in Xcode 15's new linker (FB13038083)
-      if DevelopmentTools.clang_build_version >= 1500
-        toolchain_path = "/Library/Developer/CommandLineTools"
-        args << "--with-ld=#{toolchain_path}/usr/bin/ld-classic"
-      end
-
-      ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
     else
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
@@ -102,14 +101,12 @@ class Libgccjit < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https://stackoverflow.com/a/54038769
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
-
-      []
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
       system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
-      system "make", *make_args
+      system "make"
       system "make", "install"
     end
 
