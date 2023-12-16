@@ -3,8 +3,8 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/8c/90/bc859704c1e0a6c959c382cdc7a1ec7488e6ae28e1bd4902aef177e1fdd7/streamlink-6.4.2.tar.gz"
-  sha256 "b5fb719f4251a692c88788a1d46e2cd0fa2231960c52b281cb8210871c722e76"
+  url "https://files.pythonhosted.org/packages/c7/eb/bd99f3ce5d9cf720d267d6f7219e12042ab95ed89abd093d97073a3f190e/streamlink-6.5.0.tar.gz"
+  sha256 "8f4d61593bcce10f8d5e84ca956aac4fa639c0a349e7df379834373a883966ed"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
@@ -67,8 +67,8 @@ class Streamlink < Formula
   end
 
   resource "pycountry" do
-    url "https://files.pythonhosted.org/packages/33/24/033604d30f6cf82d661c0f9dfc2c71d52cafc2de516616f80d3b0600cb7c/pycountry-22.3.5.tar.gz"
-    sha256 "b2163a246c585894d808f18783e19137cb70a0c18fb36748dc01fc6f109c1646"
+    url "https://files.pythonhosted.org/packages/08/4a/137f422423b9c85148183691da65c5c843a209b7fc0c33a5144489366f53/pycountry-23.12.11.tar.gz"
+    sha256 "00569d82eaefbc6a490a311bfa84a9c571cff9ddbf8b0a4f4e7b4f868b4ad925"
   end
 
   resource "pycryptodome" do
@@ -97,8 +97,8 @@ class Streamlink < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/81/5d/f14b7dd618408613a4c0a6b4e88902fe97bc07ff136921d6c935859036de/trio-0.23.1.tar.gz"
-    sha256 "16f89f7dcc8f7b9dcdec1fcd863e0c039af6d0f9a22f8dfd56f75d75ec73fd48"
+    url "https://files.pythonhosted.org/packages/c7/9a/39e0a59d762f4c72cec458f263ee2265e29f883421062f64fd8e01f69013/trio-0.23.2.tar.gz"
+    sha256 "da1d35b9a2b17eb32cae2e763b16551f9aa6703634735024e32f325c9285069e"
   end
 
   resource "trio-websocket" do
@@ -112,8 +112,8 @@ class Streamlink < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/cb/eb/19eadbb717ef032749853ef5eb1c28e9ca974711e28bccd4815913ba5546/websocket-client-1.6.4.tar.gz"
-    sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
+    url "https://files.pythonhosted.org/packages/20/07/2a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330/websocket-client-1.7.0.tar.gz"
+    sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
   end
 
   resource "wsproto" do
