@@ -15,13 +15,13 @@ class Threadweaver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8e1c6b92b79af83a3bb0d40fd0ea7f184dbde1e8b275b6634eeeccf55b6e658c"
-    sha256 cellar: :any,                 arm64_ventura:  "401f4ce3620d59ca5ef80d5ebff6cb991cae858adb41df737a3e104a1c804881"
-    sha256 cellar: :any,                 arm64_monterey: "fb84d6c1fce9b5e2dc16d75590d2f2973fe7255b3a3d7754fa1add85399f2fc9"
-    sha256 cellar: :any,                 sonoma:         "0945d665454e77c826727a0e9d623bb1abe208ae88af63d23177a890b272a4cd"
-    sha256 cellar: :any,                 ventura:        "f5401a274e67db05b3d926b0a842d655c067167e727ee2a2e9a474ebf3b57c75"
-    sha256 cellar: :any,                 monterey:       "83dcf9f477229f87fa324b234bc2301309593351f51107270b7ec1f5d948d4d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb4f8e1c4ac415522eca5a97ed6f39ae4f759958247244ca8bf3072aa609981a"
+    sha256 cellar: :any,                 arm64_sonoma:   "16f83bf34b6e95b6584eb2c11c88dd31eec6d9587dea9066ad8f5388bc0e676c"
+    sha256 cellar: :any,                 arm64_ventura:  "d5807db33f8915418cc10b5594416c4bf79c6d9705d5693b66957cf26fa5a5f4"
+    sha256 cellar: :any,                 arm64_monterey: "ef521c732d2c44b9c2fceec081878d03b4665a55a4a9fdd57427a8f62e86f84d"
+    sha256 cellar: :any,                 sonoma:         "a773d1b7da2a9554790d489022b3710433066f91e97a836b4311ffaf1e9c8b7e"
+    sha256 cellar: :any,                 ventura:        "4472272e2bdaf44d0885f0dba943c1b4bead9b7ade790455fc0768b8d65b6968"
+    sha256 cellar: :any,                 monterey:       "413a520c1e1572cbbc1ad215ce839dd6800994c65c733786537a92cd773b828e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2def47067c832e87ad1d637d2aa3a0960fb74f733bb40e551780cf399864f3b8"
   end
 
   head do
