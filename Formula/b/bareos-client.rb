@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://github.com/bareos/bareos/archive/refs/tags/Release/22.1.2.tar.gz"
-  sha256 "a164300bda6a2184d9346779d2747fb725a31e08cc3d7bf0b4d2e963c06aef26"
+  url "https://github.com/bareos/bareos/archive/refs/tags/Release/23.0.0.tar.gz"
+  sha256 "6d3afe2a6e3340e2942f654546a1e919242511dede783aff1c8a97a81bc6a706"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -38,6 +38,12 @@ class BareosClient < Formula
 
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"
 
+  # build patch for `sprintf` error, upstream PR ref, https://github.com/bareos/bareos/pull/1636
+  patch do
+    url "https://github.com/bareos/bareos/commit/bac6e7f30c0ef0df859e62bd1cd47ed563175d2a.patch?full_index=1"
+    sha256 "1768352769ee7e5f54831d402e8458ddc13c02bfe18a6d96003b45c64dc8b965"
+  end
+
   def install
     # Work around Linux build failure by disabling warnings:
     # lmdb/mdb.c:2282:13: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
@@ -47,25 +53,6 @@ class BareosClient < Formula
       ENV.append_to_cflags "-Wno-unused-but-set-variable"
       ENV.append_to_cflags "-Wno-unused-parameter"
     end
-
-    # Work around hardcoded paths to /usr/local Homebrew installation,
-    # forced static linkage on macOS, and openssl formula alias usage.
-    inreplace "core/CMakeLists.txt" do |s|
-      s.gsub! "/usr/local/opt/gettext/lib/libintl.a", Formula["gettext"].opt_lib/shared_library("libintl")
-      s.gsub! "/usr/local/opt/openssl", Formula["openssl@3"].opt_prefix
-      s.gsub! "/usr/local/", "#{HOMEBREW_PREFIX}/"
-    end
-    inreplace "core/src/plugins/CMakeLists.txt" do |s|
-      s.gsub! "/usr/local/opt/gettext/include", Formula["gettext"].opt_include
-      s.gsub! "/usr/local/opt/openssl/include", Formula["openssl@3"].opt_include
-    end
-    inreplace "core/cmake/BareosFindAllLibraries.cmake" do |s|
-      s.gsub! "/usr/local/opt/lzo/lib/liblzo2.a", Formula["lzo"].opt_lib/shared_library("liblzo2")
-      s.gsub! "set(OPENSSL_USE_STATIC_LIBS 1)", ""
-    end
-    inreplace "core/cmake/FindReadline.cmake",
-              "/usr/local/opt/readline/lib/libreadline.a",
-              Formula["readline"].opt_lib/shared_library("libreadline")
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DENABLE_PYTHON=OFF",
@@ -79,7 +66,8 @@ class BareosClient < Formula
                     "-Dmon-fd-password=XXX_REPLACE_WITH_CLIENT_MONITOR_PASSWORD_XXX",
                     "-Dbasename=XXX_REPLACE_WITH_LOCAL_HOSTNAME_XXX",
                     "-Dhostname=XXX_REPLACE_WITH_LOCAL_HOSTNAME_XXX",
-                    "-Dclient-only=ON"
+                    "-Dclient-only=ON",
+                    "-DENABLE_LZO=ON"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
