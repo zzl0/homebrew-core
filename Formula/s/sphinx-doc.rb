@@ -3,8 +3,6 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  # TODO: Remove `python-setuptools` dependency when babel has a new release with upstream commit.
-  # Ref: https://github.com/python-babel/babel/commit/bf7b2ca3dbb2953166e33d24c1dc800a4f7c97a8
   url "https://files.pythonhosted.org/packages/73/8e/6e51da4b26665b4b92b1944ea18b2d9c825e753e19180cc5bdc818d0ed3b/sphinx-7.2.6.tar.gz"
   sha256 "9a5160e1ea90688d5963ba09a2dcd8bdd526620edbb65c328728f1b2228d5ab5"
   license "BSD-2-Clause"
@@ -31,7 +29,6 @@ class SphinxDoc < Formula
   depends_on "python-jinja"
   depends_on "python-packaging"
   depends_on "python-requests"
-  depends_on "python-setuptools" # for babel
   depends_on "python-tabulate"
   depends_on "python@3.12"
 
@@ -41,8 +38,8 @@ class SphinxDoc < Formula
   end
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/aa/6c/737d2345d86741eeb594381394016b9c74c1253b4cbe274bb1e7b5e2138e/Babel-2.13.1.tar.gz"
-    sha256 "33e0952d7dd6374af8dbf6768cc4ddf3ccfefc244f9986d4074704f2fbd18900"
+    url "https://files.pythonhosted.org/packages/e2/80/cfbe44a9085d112e983282ee7ca4c00429bc4d1ce86ee5f4e60259ddff7f/Babel-2.14.0.tar.gz"
+    sha256 "6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"
   end
 
   resource "imagesize" do
