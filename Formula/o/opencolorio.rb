@@ -7,13 +7,13 @@ class Opencolorio < Formula
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3a4b8a52b3da9cc5fcd1adc0d5c0143b0b579b60d07990ca5ad5fe19b8d4d2b4"
-    sha256 cellar: :any,                 arm64_ventura:  "f5dc959b648f0df4e5b674cbf9a7ef504777c96b9cb5509aced1bece54dc14cc"
-    sha256 cellar: :any,                 arm64_monterey: "ea1f81fd2aa4fabfa0afe3e7150586004a2ae8cadd3859a1809b5ea857152af4"
-    sha256 cellar: :any,                 sonoma:         "0e066c04dd6178becebaeb1cc85738fe4aaac670e7fd77477aefc650f9bd3a20"
-    sha256 cellar: :any,                 ventura:        "11a61e056d96987bc8f825183a31c709a6a913b4a59cd709983ae5837c0d6000"
-    sha256 cellar: :any,                 monterey:       "f470717b782952115cb7116a0c5c1a9dcffb33ad826863d8b6362290b6d87c1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bb4c90738d4ff25c4669a9dc44b28062c4ce2ff28fb612166985a3d87a6ba6e"
+    sha256 cellar: :any,                 arm64_sonoma:   "8db69f0e0ada2620378e51662bc354e7d8945581cd7b834041c6cc7f7b98efb0"
+    sha256 cellar: :any,                 arm64_ventura:  "8e320fd85149a34410212a7185e1f5eef88fe4bbd06c9c46a52bb4c874927961"
+    sha256 cellar: :any,                 arm64_monterey: "5d7373a09f160aa2add924d60b192e4eaa133ae701254b7e73a78ebc5661e599"
+    sha256 cellar: :any,                 sonoma:         "7a3581a0ac83f353d591f72353f164b6362e3d8dd14688aad98329a308bd6f0a"
+    sha256 cellar: :any,                 ventura:        "1ece7fc2a9704c19850f5198891822c7355a18762f4a4a1e418f29be50027126"
+    sha256 cellar: :any,                 monterey:       "ebbf0fa7efc34488dd6d2493bf6fa7a10b9ef669858acd0f8352ab9355aec657"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bbf20c67aabcdeb4f4786f2fdd3a4a5c7326d584b0dff9355a3540e873e242a"
   end
 
   depends_on "cmake" => :build
