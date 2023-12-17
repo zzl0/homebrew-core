@@ -8,13 +8,13 @@ class Teku < Formula
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4fecf7fe327364d5a2c2398da6960c8c655fb06d4f7086abd2e6f4a90dc6f68"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4fecf7fe327364d5a2c2398da6960c8c655fb06d4f7086abd2e6f4a90dc6f68"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4fecf7fe327364d5a2c2398da6960c8c655fb06d4f7086abd2e6f4a90dc6f68"
-    sha256 cellar: :any_skip_relocation, sonoma:         "190bbbf504736ce37cf3382a0f5ad9e1d6f62626e5eaf49c4fc45ae9c48e45b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "190bbbf504736ce37cf3382a0f5ad9e1d6f62626e5eaf49c4fc45ae9c48e45b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "190bbbf504736ce37cf3382a0f5ad9e1d6f62626e5eaf49c4fc45ae9c48e45b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4fecf7fe327364d5a2c2398da6960c8c655fb06d4f7086abd2e6f4a90dc6f68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfb5f789d2c77ff12cfe0f6214b1b92e237692e3d9ecd222cd6fa0c0dc00329c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfb5f789d2c77ff12cfe0f6214b1b92e237692e3d9ecd222cd6fa0c0dc00329c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfb5f789d2c77ff12cfe0f6214b1b92e237692e3d9ecd222cd6fa0c0dc00329c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "124d430e910c21b2290212a654680128a25fd9f055656dbf6fe2fef267588388"
+    sha256 cellar: :any_skip_relocation, ventura:        "124d430e910c21b2290212a654680128a25fd9f055656dbf6fe2fef267588388"
+    sha256 cellar: :any_skip_relocation, monterey:       "124d430e910c21b2290212a654680128a25fd9f055656dbf6fe2fef267588388"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfb5f789d2c77ff12cfe0f6214b1b92e237692e3d9ecd222cd6fa0c0dc00329c"
   end
 
   depends_on "gradle" => :build
