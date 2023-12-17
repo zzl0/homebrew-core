@@ -19,13 +19,13 @@ class Ki18n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6d841eb9fe44f81f1a85c65ff75866b1ba94bacd8499d17dd057709c19768b67"
-    sha256 cellar: :any,                 arm64_ventura:  "55af29ff56fb4c3f2962b608c905b36c07008b48e7ab0af9e755a8ee2ee2efee"
-    sha256 cellar: :any,                 arm64_monterey: "5837f9757264b0bb88a11183c3496b2da026dd7930f31657ccf9a10a0f8bc463"
-    sha256 cellar: :any,                 sonoma:         "e5fea5c336856deda5705bc1c1d73ba62dd85bd66ba3950840f18f0eacf70658"
-    sha256 cellar: :any,                 ventura:        "305d36763c239529140420a6de17525fd55e0ceeb65b4275cbe395616eb9aac1"
-    sha256 cellar: :any,                 monterey:       "5c766ad27d7cd7dfc9bf3515ba115e6a506a250c4ad74b89fbbf4e2cd4dbe431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd6a90d20224d621690f7f18fb4b76dfe4b6e65c75d2d8354b687c7d9ad1d20d"
+    sha256 arm64_sonoma:   "56a38014c964358d01b2216bcde3bbf2b5b8bad0c25e2bc365b0d13c6514951c"
+    sha256 arm64_ventura:  "32c4c6ef171d2289b3aa6fd45208bfff4d343fe74d6b83c014f0ca9e89951717"
+    sha256 arm64_monterey: "e779a4fad606b1214caeef4a87ae8a38c64e273b2ffe5a9e85bb8288fe617c67"
+    sha256 sonoma:         "976b281d2d2dc7411a1acf00309a58e66263465e1c25bf121bbc0d2379d083bc"
+    sha256 ventura:        "64279c85325050983fb3fbbeb74ac6ca707a09e3d47f29ef04ca2703f518e064"
+    sha256 monterey:       "08500741feb0f9913798257c34aa5166ac07e10d0dfdc0d868ceba6ec7ee96e1"
+    sha256 x86_64_linux:   "cbea00ebc8661dd2af154c6d142e0853fc944f965d1ecf0fd4e85d74d6d1913a"
   end
 
   head do
