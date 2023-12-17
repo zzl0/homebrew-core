@@ -9,13 +9,13 @@ class Shodan < Formula
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d051fb611d1d6c905ef64bddfebe264b53e1272cfbe07750f441a9f9a83347d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21210eed1dabadf80d38a2b5683e342c0d49d181e8fa0224e93db225dbd8a953"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ad01d9859ceb0f0cc7dc5517c5db0cb87ae38f03de850fe61bd87b17b5590c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c99fcb782e1fc15d7be929faf34dd2f6ec3194cec618312b767dd51be2ef070"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f36906dda16bfbecab217604bab76eb3046516a06bc2674619553ffbe54ce11"
-    sha256 cellar: :any_skip_relocation, monterey:       "54b4cd9aa8fac953ebe69df70b91c0a7952d1e6d045386d04f857c3226547a4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "236d0139c620ebf5b1a37582c365e53b402ace74e9d23175d041b88b1e7de150"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0372b361db583aca209b0c5dba898ec2521eab8c5690a5982396b37224d9d4b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e77fe9d1898ba8f7923abf5789de20d67852f1f1ef67ad0e5135f115fb2d329"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff6a2f59ad698918955a97d355253f5363d9c708605f4ed719dd404ab9a7c2e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5399e6b6f7b854b55f295249cdb096481bd0133270dbe71e153d6306efd94188"
+    sha256 cellar: :any_skip_relocation, ventura:        "bad7bd84229092f03c85d945052f4c7e0ef8fc473b947ee15d4aeba766bbd193"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f6fb27361a99e49b2adf891f2742640691e4145cd4e6147d44de803b850c676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "989c2df9d45c1f05fcef1b0a199c9b4fa4802e831c397f03af434f59c027121c"
   end
 
   depends_on "python-certifi"
