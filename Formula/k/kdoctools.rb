@@ -20,13 +20,13 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ea2fefadb68d2ece0e730ce3ee5e6e79a27bf6f7ea0a2e683bcddeddf6c23abb"
-    sha256 cellar: :any,                 arm64_ventura:  "6c086b4e4c5666e0e0ba22dc884087341eb8ff27403569a62f59c468a1c3fd18"
-    sha256 cellar: :any,                 arm64_monterey: "55a6a34602c6e81a68ad487e847f24eb26558ca0303bfe7579341addbf840f99"
-    sha256 cellar: :any,                 sonoma:         "4b922c29702bb079eaf0cc3ea342b011fba6cbf3096ba45d5a49c7a8c6f58c76"
-    sha256 cellar: :any,                 ventura:        "75f13942000a569444c331000b895c0b1cff2ebbf631a9e7c9681811103cff7c"
-    sha256 cellar: :any,                 monterey:       "9f255f5e770fd052c2771c5823dc0552ff0ee6a5e55b3aa622dccaa156b417a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "156caf7408752d5af19eea4799da643d035d0ebfce2cdf4582da762a62f777a1"
+    sha256 cellar: :any,                 arm64_sonoma:   "a4a0cedb7fb4174c743e41ae007da61264ffdd5d9a38d48a5208f1cdd1409e23"
+    sha256 cellar: :any,                 arm64_ventura:  "4eca60c303dd23733f7ec3f9e7f4f20d7931979048d0a8269a07528578247a16"
+    sha256 cellar: :any,                 arm64_monterey: "53a5e7e5e3faaf2d409861619beae9564d00da3bc4f65e6052632e27aff1a0e4"
+    sha256 cellar: :any,                 sonoma:         "d800b9a7d3baaffadc8cd03a9dd65b233d052c64966e97d3447e9ac123960320"
+    sha256 cellar: :any,                 ventura:        "28c9efc035a28950b20c64696132ef8e1cb40c28304d52c675352b76a27d5e71"
+    sha256 cellar: :any,                 monterey:       "f4c0af3c17ae6923a185a16468566e36f52f8f053a70c0b1dad5f6f6f0bc01af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58d6c31919667aeb26e3c0f98571917c36e76243dd3bc189cb828e6cbce82765"
   end
 
   head do
