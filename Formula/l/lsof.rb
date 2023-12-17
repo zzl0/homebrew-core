@@ -1,8 +1,8 @@
 class Lsof < Formula
   desc "Utility to list open files"
   homepage "https://github.com/lsof-org/lsof"
-  url "https://github.com/lsof-org/lsof/archive/refs/tags/4.99.0.tar.gz"
-  sha256 "27fca13b6a3682114a489205a89d05d92f1c755e282be1f3590db15b16b2ed06"
+  url "https://github.com/lsof-org/lsof/archive/refs/tags/4.99.3.tar.gz"
+  sha256 "b9c56468b927d9691ab168c0b1e9f8f1f835694a35ff898c549d383bd8d09bd4"
   license "lsof"
 
   bottle do
@@ -19,13 +19,6 @@ class Lsof < Formula
 
   on_linux do
     depends_on "libtirpc"
-
-    # fix argument mismatch for gethostnm
-    # upstream PR ref, https://github.com/lsof-org/lsof/pull/298
-    patch do
-      url "https://github.com/lsof-org/lsof/commit/5aebb5fd63372ddf6cb3fdc84b3b6afe67e738f2.patch?full_index=1"
-      sha256 "3878a9360cb426a1c2b3902beb585017d2991fd1e498f770a59a8aa6eb0e6cf3"
-    end
   end
 
   def install
