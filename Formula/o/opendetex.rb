@@ -6,13 +6,13 @@ class Opendetex < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a046f41d5f06e58bd4424b1c44fe9aad39a5e716dd39f4205be6cb5419bf3b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e8d3d426c7d1f17c8939d089385d2bfe34ffc413f9972460db1d718b36ee49c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "492e3ac4f09d8ec46842f3c9a76ebe7e1c750c8872a7349513b5b6274fb5b726"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60a8f762f9fb9cbd7fe0036daec56fab0ed9713efb1c251e805ca2cf692e7029"
-    sha256 cellar: :any_skip_relocation, ventura:        "d63d41beb9c3f2e2b16e815593b12e6bd23f2b495df93423a33af28c98b6e0b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ae1595f01817366f9abd99559ae95d6e70b90ba88ec5ef0f6973b9f3dc8c3b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ee8f83764d07fdb0ff7cc7795251aeb694ffce8ebeabadbd52514ce980f6566"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23938ef4f3e39053df242eace39677f290ec1e1ff000569635443df5fa062a70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78f98d7aadb714d796f32b60c3becd898c9ef6a88d14e58fb9c303b8d2ec368e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55f421f5f7b3500f5ceb9fc05f76b947e012bc2c79b5695ce81b106576cfcba9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5e458e9b340a5784f5b9c776b059a5b2310836918b414ed050d94deefa550612"
+    sha256 cellar: :any_skip_relocation, ventura:        "3717e4f330e0abda53e3b27e83f9d46bdf701787433f8d7356cc246ffafc903d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed14c822975353fa8962fdb4c0a3527669cec5df674924145938682f76b38f13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76bf60e19353d112fdd02b250ea0d87f28688582d0c26f30f580e3cc86434d1"
   end
 
   uses_from_macos "flex" => :build
