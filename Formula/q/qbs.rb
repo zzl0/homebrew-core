@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/2.1.2/qbs-src-2.1.2.tar.gz"
-  sha256 "465d398ba3ac2bf157c4c32118e7ea55759050550e5e2babff091b000f2c27c9"
+  url "https://download.qt.io/official_releases/qbs/2.2.1/qbs-src-2.2.1.tar.gz"
+  sha256 "84dad32ff12fda91d4a57c637c86200cdedc7fa56e04daf1c544908ffdb6a2a6"
   license :cannot_represent
   head "https://code.qt.io/qbs/qbs.git", branch: "master"
 
