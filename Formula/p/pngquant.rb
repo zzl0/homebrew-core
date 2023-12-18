@@ -1,8 +1,8 @@
 class Pngquant < Formula
   desc "PNG image optimizing utility"
   homepage "https://pngquant.org/"
-  url "https://static.crates.io/crates/pngquant/pngquant-3.0.2.crate"
-  sha256 "33f8501d8b81f34cb6f028a5d06772b9d7940e0bc2b15a5d0bce138cb74233cb"
+  url "https://static.crates.io/crates/pngquant/pngquant-3.0.3.crate"
+  sha256 "68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232"
   license :cannot_represent
   head "https://github.com/kornelski/pngquant.git", branch: "main"
 
