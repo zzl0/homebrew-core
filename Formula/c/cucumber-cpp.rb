@@ -1,10 +1,9 @@
 class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
-  url "https://github.com/cucumber/cucumber-cpp/archive/refs/tags/v0.5.tar.gz"
-  sha256 "9e1b5546187290b265e43f47f67d4ce7bf817ae86ee2bc5fb338115b533f8438"
+  url "https://github.com/cucumber/cucumber-cpp/archive/refs/tags/v0.6.tar.gz"
+  sha256 "d4f8155b665a8b338a60f97bd652bb04a1b41f5c32750e13dbf48664a942d93a"
   license "MIT"
-  revision 9
 
   bottle do
     rebuild 1
@@ -24,17 +23,17 @@ class CucumberCpp < Formula
   depends_on "boost"
 
   def install
-    args = std_cmake_args + %w[
+    args = %w[
       -DCUKE_DISABLE_GTEST=on
       -DCUKE_DISABLE_CPPSPEC=on
       -DCUKE_DISABLE_FUNCTIONAL=on
       -DCUKE_DISABLE_BOOST_TEST=on
-      -DCMAKE_CXX_STANDARD=11
+      -DCMAKE_CXX_STANDARD=17
     ]
 
-    system "cmake", ".", *args
-    system "cmake", "--build", "."
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
