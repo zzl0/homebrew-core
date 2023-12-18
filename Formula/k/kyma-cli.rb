@@ -2,9 +2,18 @@ class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
   url "https://github.com/kyma-project/cli/archive/refs/tags/2.20.1.tar.gz"
-  sha256 "5648038946088c0ed0901bd0ff04bfadb25cbbf33230e760e580671fd59ef8c1"
+  sha256 "f9ed216465b3b3124efb299c9a0f444a6294eed65243a08d5c0765048a05d0f0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kyma-project/cli.git", branch: "main"
+
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released and they sometimes re-tag versions before that point, so it's
+  # necessary to check release versions instead of tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0918ccc8e9a45f76e838edfb13bc159450eb4fc6cb6bcd16213df16b13500b22"
