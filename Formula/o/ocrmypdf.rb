@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/c4/cb/204cd70630becd846b07fe2efeea3630d760471aa584808f20118e7b523d/ocrmypdf-15.4.4.tar.gz"
-  sha256 "4696c81cc5b5d64f31ccfe685d10baeb69b42bb0974acddf292d8cf9d97605c3"
+  url "https://files.pythonhosted.org/packages/17/dc/58fccf4af11a0289249f7fd23db757aa6bdea71cc56c8a593edd9e1f3fef/ocrmypdf-16.0.0.tar.gz"
+  sha256 "7f893d9a79498119ba5ee80f983e1cdfb786de9bbc91dadbaee3b8e081413ef1"
   license "MPL-2.0"
 
   bottle do
@@ -70,28 +70,13 @@ class Ocrmypdf < Formula
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
   end
 
-  resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/d8/cf/efb86961f9aed4f95556a15034ee66b1315de6752290c33634120ff4fcd1/reportlab-4.0.7.tar.gz"
-    sha256 "967c77f00efd918cc231cf8b6d8f4e477dc973b5c16557e3bd18dfaeb5a70234"
-  end
-
   resource "rich" do
     url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
     sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    resource("reportlab").stage do
-      (Pathname.pwd/"local-setup.cfg").write <<~EOS
-        [FREETYPE_PATHS]
-        lib=#{Formula["freetype"].opt_lib}
-        inc=#{Formula["freetype"].opt_include}
-      EOS
-      venv.pip_install Pathname.pwd
-    end
-    venv.pip_install resources.reject { |r| r.name == "reportlab" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.12")
     paths = %w[img2pdf].map { |p| Formula[p].opt_libexec/site_packages }
@@ -102,8 +87,8 @@ class Ocrmypdf < Formula
   end
 
   test do
-    system "#{bin}/ocrmypdf", "-f", "-q", "--deskew",
-                              test_fixtures("test.pdf"), "ocr.pdf"
+    system bin/"ocrmypdf", "-f", "-q", "--deskew",
+                           test_fixtures("test.pdf"), "ocr.pdf"
     assert_predicate testpath/"ocr.pdf", :exist?
   end
 end
