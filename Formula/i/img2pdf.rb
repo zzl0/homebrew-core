@@ -9,13 +9,13 @@ class Img2pdf < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8f54e7b8928dce6d4644f6184955572789432c1572c59e708b63d904b2dc8421"
-    sha256 cellar: :any,                 arm64_ventura:  "d398f46e1214935b45cb6518e10992fb29cd97d3adc7de54feae7b101cc84a63"
-    sha256 cellar: :any,                 arm64_monterey: "df91b380e73c7337f7bc503fcee69659d30b8932e4502a276189b5890813a653"
-    sha256 cellar: :any,                 sonoma:         "6154675daaaf2b8b5eb1083e5d7b71c8d8fb7acc9f03f58d64d27b3697963654"
-    sha256 cellar: :any,                 ventura:        "806a59e0f70e1407d8a6d3de0a5934e09ab1a2aa6f527dec26f5b382f26a1d53"
-    sha256 cellar: :any,                 monterey:       "1c43195c36c1835f3591e9d1cbec90f8c804562b3a76752abd172b98a67c697c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ce080bb9a37bc6ad9e2acf94d5af39db30bb2ad75a2c0b5144ba6a90104d93f"
+    sha256 cellar: :any,                 arm64_sonoma:   "5cf6fe368cb747f5a59ef5d497b5bfda7d999cdb136f5d8a7d6a87355dcc78ba"
+    sha256 cellar: :any,                 arm64_ventura:  "477a3a5df8e05cc52dd82f19de887ebbc1786561ab8d4b82a8d5da44564443cb"
+    sha256 cellar: :any,                 arm64_monterey: "b76dcb24356ed2d304a5fb40061b9a6045cb0fa5b9b5622d5c6f5a7900e749fd"
+    sha256 cellar: :any,                 sonoma:         "28ec3b3b256b8d91f305bef63efc5b541254416f2bc3b02080e14105e175ccc9"
+    sha256 cellar: :any,                 ventura:        "cb2de4afdf6f787845774ac03f044373106a0cf5398fa522679b1050d9c69424"
+    sha256 cellar: :any,                 monterey:       "f722068d35a42b0a794b58603efe738452bc40005fa0fec35f6bd3a91cb55750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f51551d67b6158fada6dd0b76bc56ba2e84a2908382c440c4923a63887aaa78"
   end
 
   depends_on "pillow"
