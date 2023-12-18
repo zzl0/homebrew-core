@@ -26,7 +26,7 @@ class Lowdown < Formula
 
     system "./configure", *configure_args
     system "make"
-    system "make", "install"
+    system "make", "install", "install_libs"
   end
 
   test do
