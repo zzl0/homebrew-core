@@ -41,7 +41,7 @@ class Dpp < Formula
   def install
     resources.each do |r|
       r.stage buildpath/"dub-packages"/r.name
-      system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version
+      system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version.to_s
     end
 
     if OS.mac?
