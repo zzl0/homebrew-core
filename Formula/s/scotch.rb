@@ -61,7 +61,7 @@ class Scotch < Formula
         ln_sf "Make.inc/Makefile.inc.#{makefile_inc_suffix}.shlib", "Makefile.inc"
       end
 
-      system "make", "scotch", "ptscotch"
+      system "make", "scotch", "ptscotch", "esmumps", "ptesmumps"
       system "make", "prefix=#{prefix}", "install"
 
       pkgshare.install "check/test_strat_seq.c"
