@@ -1,8 +1,8 @@
 class SqlMigrate < Formula
   desc "SQL schema migration tool for Go"
   homepage "https://github.com/rubenv/sql-migrate"
-  url "https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "5171e69fbb8cfd276afc3b8ac1be965cffcaa8fdc86d886d0a990b4b28bd50ad"
+  url "https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "685890a086268ad8972b562f426162b19a98adbb29006074d0ea047f9ac247ad"
   license "MIT"
   head "https://github.com/rubenv/sql-migrate.git", branch: "master"
 
