@@ -3,8 +3,8 @@ class Pter < Formula
 
   desc "Your console and graphical UI to manage your todo.txt file(s)"
   homepage "https://vonshednob.cc/pter/"
-  url "https://files.pythonhosted.org/packages/9a/51/804f61e32b6ac5c4e84bcb9c72e748e49cb96940abb97bc823fb747f69b4/pter-3.11.2.tar.gz"
-  sha256 "563bab0ba753da631c968fd0e7de8b203873d70f5205ffcac34ae74ae63322d9"
+  url "https://files.pythonhosted.org/packages/c7/bd/d5b3ad7de8a35931fe7eb3ccd171d6e8704b127dbf0e826c49754400772c/pter-3.11.4.tar.gz"
+  sha256 "4a417ee4ed52392ce5bd743d5c6e0233ebbac06af617b6eb9fb49b1ef290450f"
   license "MIT"
 
   bottle do
@@ -17,8 +17,7 @@ class Pter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "efd38a2e3495e1892471312829f1c4f2e5f00e12ebc4af4585b8056e406bc4e6"
   end
 
-  # upstream py3.12 support issue, https://github.com/vonshednob/pter/issues/30
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "cursedspace" do
     url "https://files.pythonhosted.org/packages/cd/3b/72657c9e867dd5034814dcea21b1128a70a1b8427e48c7de8b3b9ea3dd93/cursedspace-1.5.2.tar.gz"
