@@ -35,6 +35,8 @@ class Cdb < Formula
 
   def install
     inreplace "conf-home", "/usr/local", prefix
+    # Fix compile with newer Clang
+    inreplace "conf-cc", "gcc -O2", "gcc -O2 -Wno-implicit-function-declaration"
     system "make", "setup"
   end
 
