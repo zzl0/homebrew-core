@@ -3,8 +3,8 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/bd/71/3465bb587b551ddcc1c03bb045a6c1d7424db959bed77ed8abb85eca48b4/hatch-1.8.1.tar.gz"
-  sha256 "fdc574184dcb1d52a63a3cfd08431bf674ad3be2fd7316cbf5fb6d4bdbc3032f"
+  url "https://files.pythonhosted.org/packages/74/a4/364724cf4bde0915d038d6505b64d43e6fd92277503969b554baaf8670b9/hatch-1.9.0.tar.gz"
+  sha256 "e1e6a511e152ec7cd4dbabc4f4f6a1874870bd49c97d17d390b9232dda685ce3"
   license "MIT"
 
   bottle do
@@ -32,8 +32,8 @@ class Hatch < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/6e/57/075e07fb01ae2b740289ec9daec670f60c06f62d04b23a68077fd5d73fab/anyio-4.1.0.tar.gz"
-    sha256 "5a0bec7085176715be77df87fc66d6c9d70626bd752fcc85f57cdbee5b3760da"
+    url "https://files.pythonhosted.org/packages/2d/b8/7333d87d5f03247215d86a86362fd3e324111788c6cdd8d2e6196a6ba833/anyio-4.2.0.tar.gz"
+    sha256 "e1875bb4b4e2de1669f4bc7869b6d3f54231cdced71605e6e64c9be77e3be50f"
   end
 
   resource "h11" do
