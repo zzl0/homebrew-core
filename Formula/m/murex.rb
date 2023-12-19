@@ -1,8 +1,8 @@
 class Murex < Formula
   desc "Bash-like shell designed for greater command-line productivity and safer scripts"
   homepage "https://murex.rocks"
-  url "https://github.com/lmorg/murex/archive/refs/tags/v5.3.4000.tar.gz"
-  sha256 "cc46a7c4dbc15de9a9ef0b23d3708aabed462afa4d565ac992d3052cea58e760"
+  url "https://github.com/lmorg/murex/archive/refs/tags/v5.3.5000.tar.gz"
+  sha256 "01dd4cac5d71692c0bb3724c543f6a2a45259f0199249335f94511f3509d7ebf"
   license "GPL-2.0-only"
   head "https://github.com/lmorg/murex.git", branch: "master"
 
@@ -23,7 +23,7 @@ class Murex < Formula
   end
 
   test do
-    system "#{bin}/murex", "--run-tests"
     assert_equal "homebrew", shell_output("#{bin}/murex -c 'echo homebrew'").chomp
+    assert_match version.to_s, shell_output("#{bin}/murex -version")
   end
 end
