@@ -12,13 +12,14 @@ class OpenMpi < Formula
   end
 
   bottle do
+    rebuild 1
     sha256 arm64_sonoma:   "09a4eabfe2712992910a9e20dbade1b5feece7d50aab633cd3e978b25d2b82e6"
     sha256 arm64_ventura:  "28f1cfccfd6c8ddbf28a6a474470ea08825177961abe42904dfad4410ba4754a"
-    sha256 arm64_monterey: "29d6956c1e7391585a46260053dcc41f05150725ab0a613f1b86278e83a11d93"
+    sha256 arm64_monterey: "8a04d2aebe184cc417c29dd7887776adb8c592694e9c696dd4b7cd99e0d488c9"
     sha256 sonoma:         "6651f0be6f28d3649b335987b145769aabb50179d72cc1cff3a31c6e7b774d70"
     sha256 ventura:        "4701253b1cbaae1dcb93110375d9c8fe333d206c23ec552165c919f4ec6069f4"
     sha256 monterey:       "81bde866142f398d211ce01b0c7916b83d5955d376d92f715c156898be4c4773"
-    sha256 x86_64_linux:   "b9b027f6aebad991638848aa0afd6033d28c0e60b40fab29f0d66058d4a0f63d"
+    sha256 x86_64_linux:   "f302c6d4ab55591bd8739e155f35c3f07f8940c17b8775b0bafbea1f3899ce6a"
   end
 
   head do
