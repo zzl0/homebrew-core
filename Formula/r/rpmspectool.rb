@@ -3,8 +3,8 @@ class Rpmspectool < Formula
 
   desc "Utility for handling RPM spec files"
   homepage "https://github.com/nphilipp/rpmspectool"
-  url "https://files.pythonhosted.org/packages/0d/b9/723a043cca7407717238e7f5f9fd5df562aa4599204fdb1a76d652ebd281/rpmspectool-1.99.7.tar.gz"
-  sha256 "359ab2c743bfe19cde5758e27d798e276aff63e1b9c8bb1bd307e89c07200ed6"
+  url "https://files.pythonhosted.org/packages/c3/c9/4dab0dec09b4b5596ad5e3d4d0e4281d6a1bf3e3f24035c07fbdbaa158b9/rpmspectool-1.99.8.tar.gz"
+  sha256 "4b973d523e6748e978e887d09ea201985d3806895e1c3456fc5a42455c1102b8"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -13,11 +13,15 @@ class Rpmspectool < Formula
   end
 
   depends_on :linux
-  depends_on "python-argcomplete"
   depends_on "python-pycurl"
   depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "rpm"
+
+  resource "argcomplete" do
+    url "https://files.pythonhosted.org/packages/85/b9/e2bef848f79fce1e70d048b4de873424fde918c54ac2e6b8638cca887243/argcomplete-2.1.2.tar.gz"
+    sha256 "fc82ef070c607b1559b5c720529d63b54d9dcf2dcfc2632b10e6372314a34457"
+  end
 
   def install
     virtualenv_install_with_resources
