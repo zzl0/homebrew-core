@@ -13,7 +13,7 @@ class SshCopyId < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "509d70793768e0c9c1e28faa360555a8a1253212b76d8f97a693119b36576d94"
+    sha256 cellar: :any_skip_relocation, all: "f8cf418bbd54cc795f9f94c40752cbfb66d2194de987f0643eb0936103407ccf"
   end
 
   keg_only :provided_by_macos
