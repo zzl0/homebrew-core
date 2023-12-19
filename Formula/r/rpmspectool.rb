@@ -3,8 +3,8 @@ class Rpmspectool < Formula
 
   desc "Utility for handling RPM spec files"
   homepage "https://github.com/nphilipp/rpmspectool"
-  url "https://files.pythonhosted.org/packages/c3/c9/4dab0dec09b4b5596ad5e3d4d0e4281d6a1bf3e3f24035c07fbdbaa158b9/rpmspectool-1.99.8.tar.gz"
-  sha256 "4b973d523e6748e978e887d09ea201985d3806895e1c3456fc5a42455c1102b8"
+  url "https://files.pythonhosted.org/packages/f9/45/d7c3f5ea8f924ec63f4be1bbef072c015dc79e80ce47a488267fa81ba364/rpmspectool-1.99.9.tar.gz"
+  sha256 "4452f49d86317d91767ccf0aa5a2f146fbae17574780fc3cb6cd3b651daf295b"
   license "GPL-3.0-or-later"
 
   bottle do
