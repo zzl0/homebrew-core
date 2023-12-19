@@ -26,24 +26,29 @@ class Aubio < Formula
 
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "libsndfile"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "homebrew-aiff" do
     url "https://archive.org/download/TestAifAiffFile/02DayIsDone.aif"
     sha256 "bca81e8d13f3f6526cd54110ec1196afd5bda6c93b16a7ba5023e474901e050d"
   end
 
-  # Fix build with Python 3.11 using Fedora patch. Failure is due to old waf 2.0.14.
+  # Fix build with Python 3.12 using Fedora patch. Failure is due to old waf 2.0.14.
   # Remove on next release as HEAD has newer waf.
   patch do
     url "https://src.fedoraproject.org/rpms/aubio/raw/29fb7e383b5465f4704b1cdc7db27df716e1b45c/f/aubio-python39.patch"
     sha256 "2f9cb8913b1c4840588df2f437f702c329b4de4e46eff4dcf68aff4b5024a358"
   end
+  patch do
+    url "https://src.fedoraproject.org/rpms/aubio/raw/454ac411d2af0ebcf63cdb1bacd8f229817c27c9/f/aubio-imp-removed.patch"
+    sha256 "0ff5cbb3cdcebbced7432366c3eb0f742db48e864b48bf845c0d3240136c5cdb"
+  end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
