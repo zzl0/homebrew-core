@@ -1200,7 +1200,7 @@
   },
   "theharvester": {
     "exclude_packages": [
-      "argcomplete", "certifi", "cffi", "filelock", "pycparser", "pygments", "python-dateutil", "PyYAML",
+      "argcomplete", "certifi", "cffi", "filelock", "lxml", "packaging", "pygments", "python-dateutil", "PyYAML",
       "six", "typing-extensions", "uvicorn"
     ]
   },
