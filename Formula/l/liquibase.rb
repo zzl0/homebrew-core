@@ -11,13 +11,13 @@ class Liquibase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc1898ae30a51d99b7f8da0c5fbf2bcdbfdeda2b04f263da809515f528e1384f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc1898ae30a51d99b7f8da0c5fbf2bcdbfdeda2b04f263da809515f528e1384f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc1898ae30a51d99b7f8da0c5fbf2bcdbfdeda2b04f263da809515f528e1384f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e971f5810b861bf2bf0b182bd3b8abbff8d5c2fb6611ff4e9b5c358143826aa4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e971f5810b861bf2bf0b182bd3b8abbff8d5c2fb6611ff4e9b5c358143826aa4"
-    sha256 cellar: :any_skip_relocation, monterey:       "e971f5810b861bf2bf0b182bd3b8abbff8d5c2fb6611ff4e9b5c358143826aa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc1898ae30a51d99b7f8da0c5fbf2bcdbfdeda2b04f263da809515f528e1384f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8535bfaeae6e94cab736fb4632606a157b4e2c67d13cf63220a3f3a5d589031"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8535bfaeae6e94cab736fb4632606a157b4e2c67d13cf63220a3f3a5d589031"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8535bfaeae6e94cab736fb4632606a157b4e2c67d13cf63220a3f3a5d589031"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b330f7382949694f6951a35c827ae8d4abbcb0d29d47fc76a66e7ebc58971020"
+    sha256 cellar: :any_skip_relocation, ventura:        "b330f7382949694f6951a35c827ae8d4abbcb0d29d47fc76a66e7ebc58971020"
+    sha256 cellar: :any_skip_relocation, monterey:       "b330f7382949694f6951a35c827ae8d4abbcb0d29d47fc76a66e7ebc58971020"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8535bfaeae6e94cab736fb4632606a157b4e2c67d13cf63220a3f3a5d589031"
   end
 
   depends_on "openjdk"
