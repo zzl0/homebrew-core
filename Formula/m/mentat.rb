@@ -3,8 +3,8 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/35/a5/8d619a16e97384407b781b40c91b67c1fec520e767bc6214c06f69b13d09/mentat-1.0.6.tar.gz"
-  sha256 "7a36ea2b0600afb06eced3e578afcf3677cc9418efba95d2e99e4439e071966a"
+  url "https://files.pythonhosted.org/packages/63/8b/ca24b73aa9be9aaa853f46221c920ddf978d108fb9b0cc636ef1417bdc3b/mentat-1.0.7.tar.gz"
+  sha256 "c762904e539fb81fd1cfe6fdf6ba6b0a2c4e63d89c953b6615ca6ef600c9ec43"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
@@ -84,8 +84,8 @@ class Mentat < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/95/18/618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052/jsonschema-4.19.2.tar.gz"
-    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
+    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
+    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
   end
 
   resource "jsonschema-specifications" do
@@ -164,8 +164,8 @@ class Mentat < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/0b/f42f99419c5150c2741fe28bf97674d928d46ee17f46f2bc5be031cce0bc/rpds_py-0.13.2.tar.gz"
-    sha256 "f8eae66a1304de7368932b42d801c67969fd090ddb1a7a24f27b435ed4bed68f"
+    url "https://files.pythonhosted.org/packages/a9/27/92d18887228969196cd80943e3fb94520925462aa660fb491e4e2da93e56/rpds_py-0.15.2.tar.gz"
+    sha256 "373b76eeb79e8c14f6d82cb1d4d5293f9e4059baec6c1b16dca7ad13b6131b39"
   end
 
   resource "selenium" do
@@ -214,8 +214,8 @@ class Mentat < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/81/5d/f14b7dd618408613a4c0a6b4e88902fe97bc07ff136921d6c935859036de/trio-0.23.1.tar.gz"
-    sha256 "16f89f7dcc8f7b9dcdec1fcd863e0c039af6d0f9a22f8dfd56f75d75ec73fd48"
+    url "https://files.pythonhosted.org/packages/c7/9a/39e0a59d762f4c72cec458f263ee2265e29f883421062f64fd8e01f69013/trio-0.23.2.tar.gz"
+    sha256 "da1d35b9a2b17eb32cae2e763b16551f9aa6703634735024e32f325c9285069e"
   end
 
   resource "trio-websocket" do
