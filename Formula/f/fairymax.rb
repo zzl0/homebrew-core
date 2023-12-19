@@ -23,12 +23,7 @@ class Fairymax < Formula
   end
 
   def install
-    system "make", "all",
-                   "INI_F=#{pkgshare}/fmax.ini",
-                   "INI_Q=#{pkgshare}/qmax.ini"
-    bin.install "fairymax", "shamax", "maxqi"
-    pkgshare.install Dir["data/*.ini"]
-    man6.install "fairymax.6.gz"
+    system "make", "install", "prefix=#{prefix}", "CC=#{ENV.cc}"
   end
 
   test do
@@ -36,6 +31,6 @@ class Fairymax < Formula
       hint
       quit
     EOS
-    system "#{bin}/fairymax < test"
+    refute_match(/piece-description file .* not found/, shell_output("#{bin}/fairymax < test"))
   end
 end
