@@ -54,6 +54,16 @@ class BareosClient < Formula
       ENV.append_to_cflags "-Wno-unused-parameter"
     end
 
+    # Work around hardcoded paths forced static linkage on macOS
+    inreplace "core/cmake/BareosFindAllLibraries.cmake" do |s|
+      s.gsub! "set(OPENSSL_USE_STATIC_LIBS 1)", ""
+      s.gsub! "${HOMEBREW_PREFIX}/opt/lzo/lib/liblzo2.a", Formula["lzo"].opt_lib/shared_library("liblzo2")
+    end
+
+    inreplace "core/cmake/FindReadline.cmake",
+              "${HOMEBREW_PREFIX}/opt/readline/lib/libreadline.a",
+              Formula["readline"].opt_lib/shared_library("libreadline")
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DENABLE_PYTHON=OFF",
                     "-Dworkingdir=#{var}/lib/bareos",
