@@ -3,8 +3,8 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https://github.com/franc-pentest/ldeep"
-  url "https://files.pythonhosted.org/packages/f3/86/1db4969a381b4fcfee4586caf51e2d7bbff9f5cf939bd221289660cd8172/ldeep-1.0.49.tar.gz"
-  sha256 "9ce09e4dd50da456423f64765397d5a1c480d0887825abd0bd0080cff96f99fd"
+  url "https://files.pythonhosted.org/packages/8f/7c/f62d3b31a9675e71712432a7423cd0d783689a50b830bd14f9265434b432/ldeep-1.0.51.tar.gz"
+  sha256 "ff372876aea6afbdb145218d6dabd600bb61bd5ae19b38b6dc40f8874bf72344"
   license "MIT"
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
@@ -75,8 +75,8 @@ class Ldeep < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
-    sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
+    url "https://files.pythonhosted.org/packages/10/56/d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764/termcolor-2.4.0.tar.gz"
+    sha256 "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a"
   end
 
   resource "tqdm" do
