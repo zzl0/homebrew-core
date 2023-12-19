@@ -27,9 +27,10 @@ class Bbot < Formula
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-psutil"
+  depends_on "python-setuptools"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
