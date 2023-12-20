@@ -3,11 +3,11 @@ class Semgrep < Formula
 
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
-  url "https://github.com/returntocorp/semgrep.git",
+  url "https://github.com/semgrep/semgrep.git",
       tag:      "v1.54.0",
       revision: "64e6f96f1d7b5c69da9c0e615daeb470f1865ff0"
   license "LGPL-2.1-only"
-  head "https://github.com/returntocorp/semgrep.git", branch: "develop"
+  head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
     url :stable
