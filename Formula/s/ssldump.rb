@@ -6,14 +6,13 @@ class Ssldump < Formula
   license "BSD-4-Clause"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "8fc8ca0f4b1fde91e0b45420c7a49400de0a6b350a2745c493914b19558dd734"
-    sha256 cellar: :any,                 arm64_ventura:  "83eb5a5e9b13ec2a5dbd1d0476b58e803318ac8243939997c91c61b08af6a705"
-    sha256 cellar: :any,                 arm64_monterey: "db2444ab2212b47e715351f51179244c4c141890f4b04af950fdb715668a3acc"
-    sha256 cellar: :any,                 sonoma:         "15554437c179041d78da4e2e64b9cf777f8b8f630d76e334f9ac3dac7d313a94"
-    sha256 cellar: :any,                 ventura:        "bae2a0625a830a84b52bc1067f0cbc2a97cb7bc699ee1a47a59edfec4f54248a"
-    sha256 cellar: :any,                 monterey:       "52da057720aa30c60b9a3ac7be09f9e5337ee3b1123108d44c5901e425a19bc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6e48e727151bd543bb0784fbd8a79eb90acbba5c6cf369538ea8316e8ad9773"
+    sha256 cellar: :any,                 arm64_sonoma:   "5a04f758e392c85c23e64281e62e56355494e8c17cc2916d4b5b3496e13337c6"
+    sha256 cellar: :any,                 arm64_ventura:  "48bec7a09eb15f3b58e960495016638e6a8b8c2e041f00f20d2ef7d7b7197917"
+    sha256 cellar: :any,                 arm64_monterey: "bf61f7bbad2f9c944136b9338cc2ad2ae7a7d501f72762ee03969bb8f95e7290"
+    sha256 cellar: :any,                 sonoma:         "ec039ce32c6879ccc9febdfd3cc80aefbf434fdd53191046ceecacf74625470d"
+    sha256 cellar: :any,                 ventura:        "af9a81b16fc912ffd160db362c9e78512e9d06452d028045dea42491a23afc5d"
+    sha256 cellar: :any,                 monterey:       "97a5488ee177f7e6fa0dd65ec4f06dfb61a94719577c44ee44cf231111be2b91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2431676c289f4b0000dbff8a7c131803dc06385d18f9445affbbe1f83b1c1810"
   end
 
   depends_on "cmake" => :build
