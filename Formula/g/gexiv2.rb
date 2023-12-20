@@ -22,16 +22,25 @@ class Gexiv2 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "pygobject3" => :build
-  depends_on "python@3.11" => :build
+  depends_on "pygobject3" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "vala" => :build
   depends_on "exiv2"
   depends_on "glib"
 
+  def python3
+    "python3.12"
+  end
+
   def install
+    site_packages = prefix/Language::Python.site_packages(python3)
+
     # Update to use c++17 when `exiv2` is updated to use c++17
-    system "meson", *std_meson_args, "build", "-Dcpp_std=c++11"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", "-Dcpp_std=c++11",
+                                      "-Dpython.platlibdir=#{site_packages}",
+                                      "-Dpython.purelibdir=#{site_packages}",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
@@ -50,5 +59,14 @@ class Gexiv2 < Formula
                    "-L#{lib}",
                    "-lgexiv2"
     system "./test"
+
+    (testpath/"test.py").write <<~EOS
+      import gi
+      gi.require_version('GExiv2', '0.10')
+      from gi.repository import GExiv2
+      exif = GExiv2.Metadata('#{test_fixtures("test.jpg")}')
+      print(exif.try_get_gps_info())
+    EOS
+    assert_equal "(longitude=0.0, latitude=0.0, altitude=0.0)\n", shell_output("#{python3} test.py")
   end
 end
