@@ -17,14 +17,12 @@ class GsettingsDesktopSchemas < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4069d503079788203fdf238665cf49a9aed09f5f933987fb4a126b303f35aa92"
   end
 
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "glib"
-
-  uses_from_macos "expat"
 
   def install
     ENV["DESTDIR"] = "/"
