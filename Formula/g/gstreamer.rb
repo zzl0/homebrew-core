@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.7/gstreamer-1.22.7.tar.gz"
-    sha256 "b51ba0520a5cdb13d096da002eaf546172d1d77a71876ea48fb086580f13a355"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.8/gstreamer-1.22.8.tar.gz"
+    sha256 "ebe085820a32f135d9a5a3442b2cb2238d8ce1d3bc66f4d6bfbc11d0873dbecc"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.7/gst-plugins-rs-gstreamer-1.22.7.tar.gz"
-      sha256 "a5014fdf6c360f79ea32c2bbc7ecee64cca3ab3d6c1fdca7a5fac20a2ae4bd1e"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.8/gst-plugins-rs-gstreamer-1.22.8.tar.gz"
+      sha256 "18d8d8061c6614d1334ad7c1b817ebce253ee66986c31c50401f135e0a5280b3"
     end
   end
 
