@@ -1,16 +1,9 @@
 class Ssldump < Formula
   desc "SSLv3/TLS network protocol analyzer"
-  homepage "https://ssldump.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ssldump/ssldump/0.9b3/ssldump-0.9b3.tar.gz"
-  sha256 "6422c16718d27c270bbcfcc1272c4f9bd3c0799c351f1d6dd54fdc162afdab1e"
-  revision 2
-
-  # This regex intentionally matches unstable versions, as only a beta version
-  # (0.9b3) is available at the time of writing.
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/ssldump/([^/]+)/[^/]+\.t}i)
-  end
+  homepage "https://adulau.github.io/ssldump/"
+  url "https://github.com/adulau/ssldump/archive/refs/tags/v1.8.tar.gz"
+  sha256 "fa1bb14034385487cc639fb32c12a5da0f8fbfee4603f4e101221848e46e72b3"
+  license "BSD-4-Clause"
 
   bottle do
     rebuild 3
@@ -23,75 +16,50 @@ class Ssldump < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6e48e727151bd543bb0784fbd8a79eb90acbba5c6cf369538ea8316e8ad9773"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  depends_on "cmake" => :build
+  depends_on "json-c"
+  depends_on "libnet"
   depends_on "libpcap"
   depends_on "openssl@3"
 
-  # reorder include files
-  # https://sourceforge.net/p/ssldump/bugs/40/
-  # increase pcap sample size from an arbitrary 5000 the max TLS packet size 18432
+  # Temporarily apply patch to not ignore our preferred destination directories
+  # Remove for >=1.9
   patch :DATA
 
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    ENV["LIBS"] = "-lssl -lcrypto"
-
-    # .dylib, not .a
-    inreplace "configure.in", "if test -f $dir/libpcap.a; then",
-                              "if test -f $dir/#{shared_library("libpcap")}; then"
-
-    # The configure file that ships in the 0.9b3 tarball is too old to work
-    # with Xcode 12
-    system "autoreconf", "--verbose", "--install", "--force"
-
-    # Normally we'd get these files installed as part of autoreconf.  However,
-    # this project doesn't use Makefile.am so they're not brought in.  The copies
-    # in the 0.9b3 tarball are too old to detect MacOS
-    %w[config.guess config.sub].each do |fn|
-      cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
-    end
-
-    system "./configure", *std_configure_args,
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--mandir=#{man}",
-                          "--with-pcap=#{Formula["libpcap"].opt_prefix}"
-    system "make"
-    # force install as make got confused by install target and INSTALL file.
-    system "make", "install", "-B"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    system "#{sbin}/ssldump", "-v"
+    system "#{bin}/ssldump", "-v"
   end
 end
 
 __END__
---- a/base/pcap-snoop.c	2010-03-18 22:59:13.000000000 -0700
-+++ b/base/pcap-snoop.c	2010-03-18 22:59:30.000000000 -0700
-@@ -46,10 +46,9 @@
-
- static char *RCSSTRING="$Id: pcap-snoop.c,v 1.14 2002/09/09 21:02:58 ekr Exp $";
-
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,6 +7,9 @@ project(
+     LANGUAGES C
+ )
+ 
++include(CheckSymbolExists)
++include(GNUInstallDirs)
++
+ configure_file(base/pcap-snoop.c.in base/pcap-snoop.c)
+ 
+ set(SOURCES
+@@ -110,8 +112,5 @@ target_link_libraries(ssldump
+         ${JSONC_LIBRARIES}
+ )
+ 
+-set(CMAKE_INSTALL_PREFIX "/usr/local")
+-install(TARGETS ssldump DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 -
- #include <pcap.h>
- #include <unistd.h>
--#include <net/bpf.h>
-+#include <pcap-bpf.h>
- #ifndef _WIN32
- #include <sys/param.h>
- #endif
---- a/base/pcap-snoop.c	2012-04-06 10:35:06.000000000 -0700
-+++ b/base/pcap-snoop.c	2012-04-06 10:45:31.000000000 -0700
-@@ -286,7 +286,7 @@
-           err_exit("Aborting",-1);
-         }
-       }
--      if(!(p=pcap_open_live(interface_name,5000,!no_promiscuous,1000,errbuf))){
-+      if(!(p=pcap_open_live(interface_name,18432,!no_promiscuous,1000,errbuf))){
- 	fprintf(stderr,"PCAP: %s\n",errbuf);
- 	err_exit("Aborting",-1);
-       }
+-set(CMAKE_INSTALL_MANDIR "/usr/local/share/man")
++install(TARGETS ssldump DESTINATION ${CMAKE_INSTALL_BINDIR})
+ install(FILES ssldump.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
