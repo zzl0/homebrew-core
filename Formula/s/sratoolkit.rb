@@ -19,13 +19,13 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abf8b0714ee92a20c6cb79b7271b561dddff421248e39b04145fcefd18b4685a"
-    sha256 cellar: :any,                 arm64_ventura:  "13600cd4bd449ceac9df26b9a3034af426cee8f5e68876b8a6b7dcd015823e91"
-    sha256 cellar: :any,                 arm64_monterey: "c8eec70ee4795d3de7b262333d2d57d9308ed5990064415878def8e39fd2afb3"
-    sha256 cellar: :any,                 sonoma:         "4e370bf623f5f6dc0cc10b84e0893104dd517b7ace91c76206c6cba4c4cf1c73"
-    sha256 cellar: :any,                 ventura:        "b67c466dc5d2a1a24e26ac513cffea5e15c96b00cb304d3f65357468e3d3eb58"
-    sha256 cellar: :any,                 monterey:       "645fe427c7bef779e28ba9c5dc20cd34dcc7c60203d59861c91d53595b5c57b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e275667ca8216cfe3002e0a8db46aff35070ec01ec358871f9358b4f520a0a1"
+    sha256 cellar: :any,                 arm64_sonoma:   "5bc5d225da76c6e57a12ebe4027e454a2c2bfb3229306daac46df538d446b057"
+    sha256 cellar: :any,                 arm64_ventura:  "4faeeca177bf726e5650f714fa64ceb56c8ce80ef3eaf652ae14dd44038ae42c"
+    sha256 cellar: :any,                 arm64_monterey: "89218c6322857efe88d4efe757d6126b39ece00445fee8af52d9cdff1da2d1c7"
+    sha256 cellar: :any,                 sonoma:         "47548e36720f03d2733188779bf9ba735e62c0fe5515d541c3bde330f01e0802"
+    sha256 cellar: :any,                 ventura:        "de7883c9c8c5ce4f4f326c51e6e68ef1935cd0486e09324d20da4ba84d4ac9fe"
+    sha256 cellar: :any,                 monterey:       "b6167481dee77e6372e7743f673cd0d3146b9ae478ecee9a28ac006cd863b3e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "166edd71fecff71213c8b68992872518600c0cc16aeec8de5ed83cc0ec002174"
   end
 
   head do
