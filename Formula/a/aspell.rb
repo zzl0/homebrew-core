@@ -8,13 +8,13 @@ class Aspell < Formula
   revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c09de9d60faefba0f6ed4ce08303b26cf2c09be166a096762e6da96e3017a6a1"
-    sha256 arm64_ventura:  "f5fab61aff0efb53878445f21ad0fb4fddd16572719aea966b56bf73c87a54de"
-    sha256 arm64_monterey: "476604cf6fb7586a1c7d3d77760ea0ab27f05931da5f50ffc75db76f4547842a"
-    sha256 sonoma:         "691acef50d4d0e4166f796afd9b196436b089ae3351d755efe54e53b4e734e8f"
-    sha256 ventura:        "9545c26bb94931889ba7e7ca3afe63ae98981c244738ae69e374748f5759187a"
-    sha256 monterey:       "f2e88c7d2468c5142037eeeec2b6146357d9dcbe9aaf83f7334ba8b57c1e691c"
-    sha256 x86_64_linux:   "c9750d22f8fc6313c16d17c40b9f59778677a993c12c0d2e1d28c162bfe7f04a"
+    sha256 arm64_sonoma:   "8d5594cd0235f14ef183062e5e1ff997470f0c5cf9a522cd488997f206df28ae"
+    sha256 arm64_ventura:  "c36b4d14b5b78a2b61a21878bec4a060376fc72a2bdd975c0a32c0f88fc0865b"
+    sha256 arm64_monterey: "bfc9df1c3eef5bf05029c819592d6073437707fa60e3523ea4a98fd2929fc8ee"
+    sha256 sonoma:         "960e34fc76f8dfeeb3115236cfdaea24b2339791070411a5ea19e38d6e60f5de"
+    sha256 ventura:        "0a07e16a5486cae75a1c146e0a5001709e77172385c0887234d1119eb691bb94"
+    sha256 monterey:       "6ceca17185c9b563d91f81c8665fd2a31ddf37248fce447ded97c9ac9e82f7b9"
+    sha256 x86_64_linux:   "d0a434bcc48c8bebdf070e31e07a14cd7ae3bc3988abb0b111baeb809e5be448"
   end
 
   uses_from_macos "ncurses"
