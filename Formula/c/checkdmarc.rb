@@ -3,19 +3,19 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/b4/20/943f9774cd0e7832cd0800a2d86cd283bbf3dc8e43e4c1bb01e843fbf3e5/checkdmarc-5.0.0.tar.gz"
-  sha256 "7f09e75d66ae8d510dfbe640489c29c14b87e6373f5a819201aa88a9cea25743"
+  url "https://files.pythonhosted.org/packages/e0/a1/e1b018e7828d3ab2c18190cd90185e360db8ec416ff23a40908514f0f3dc/checkdmarc-5.0.2.tar.gz"
+  sha256 "8ee95f3b246d80fbc16e924c9c8773c0ce46f80c6c52c73938ac57cc297fb362"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8eb1519279b68ca16966122a48d1a9c44f17acef9488e0bcab9ae61d7ce9c543"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2da69baa1bd3ebb1df0e0d21fbb88a23b1cb95056294d91f2e5745a95e17b1ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b095dfbf73a544fed51aee1a3123a47d0354046bc44aa98352b6e97518a545d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "255ea787ea3bedab2452ec0e7ac224530c759f1848ee20fb7b64745a6d4feca3"
-    sha256 cellar: :any_skip_relocation, ventura:        "854e8c11e061df17e87209dbff6c16e3ea97f9df91b409c93397c90bd67faffa"
-    sha256 cellar: :any_skip_relocation, monterey:       "0400f7ac46921b57cc6c1a85d86417fac85ff8cc7d75b2d0d13fcc12c6d81b8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dba6e9f7c694f992126c9b454f4d319f167abe82133aab853bdb91da2f9e78d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "825a1ffeeb7ec152d0a9935cd45317a1ebdba80a4e61808cae50c3980d84c78f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52e235afee95699fa61f9b26494c5189efbfe6e4cfc559be5adb8ec61a54f5c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e909306acf869d7a9b0f922f7918cb982ef890a6d9f88ae54e837a5e0d64933d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6881f457cbd92113480fca4bd6c2c08008c7a1eaa439ed898f232a46607b2e8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "e78544a078ae48ad5ef5e0ef22eb6b8ab6d94b4ed3711b5da59e1abe0824f0a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "be58894e3a61dd562d2bc75ac67bcb0711b9fd1e6d2a1ac64cadea2c9db3844e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f23b2e29e64fc9294bc93f6cf5b7345e03689f78e2f7dcf2d5bd7cd9a7fdbdd"
   end
 
   depends_on "cffi"
