@@ -1,11 +1,11 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
   homepage "http://www.proftpd.org/"
-  url "https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.8a.tar.gz"
-  mirror "https://fossies.org/linux/misc/proftpd-1.3.8a.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/proftpd/proftpd-1.3.8a.tar.gz"
-  version "1.3.8a"
-  sha256 "56093b890a712220b09b98e29de2974a590e8fae6b36ed78c698a90945466aaf"
+  url "https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.8b.tar.gz"
+  mirror "https://fossies.org/linux/misc/proftpd-1.3.8b.tar.gz"
+  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/proftpd/proftpd-1.3.8b.tar.gz"
+  version "1.3.8b"
+  sha256 "183ab7c6107de271a2959ff268f55c9b6c76b2cf0029e6584fccc019686601e0"
   license "GPL-2.0-or-later"
 
   # Proftpd uses an incrementing letter after the numeric version for
