@@ -26,7 +26,8 @@ class Simgrid < Formula
   depends_on "doxygen" => :build
   depends_on "boost"
   depends_on "graphviz"
-  depends_on "python@3.11"
+
+  uses_from_macos "python", since: :catalina
 
   fails_with gcc: "5"
 
@@ -39,6 +40,7 @@ class Simgrid < Formula
     ENV.append "LDFLAGS", "-L#{Formula["graphviz"].opt_lib}"
 
     system "cmake", "-S", ".", "-B", "build",
+                    "-DPython3_EXECUTABLE=#{which("python3")}",
                     "-Denable_debug=on",
                     "-Denable_compile_optimizations=off",
                     "-Denable_fortran=off",
@@ -46,7 +48,7 @@ class Simgrid < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    rewrite_shebang detected_python_shebang, *bin.children
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), *bin.children
   end
 
   test do
