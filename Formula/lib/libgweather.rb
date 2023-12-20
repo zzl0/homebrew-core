@@ -27,12 +27,13 @@ class Libgweather < Formula
     sha256 x86_64_linux:   "a6ffa551f6f61451b13c708ac3e30eb3233bdeee6c4735927cf2689920a3e114"
   end
 
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "pygobject3" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "geocode-glib"
   depends_on "gtk+3"
   depends_on "libsoup"
@@ -45,7 +46,7 @@ class Libgweather < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "meson", *std_meson_args, "build", "-Dgtk_doc=false", "-Dtests=false"
+    system "meson", "setup", "build", "-Dgtk_doc=false", "-Dtests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
