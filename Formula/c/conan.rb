@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/57/9a/401e18c965945f8979bf861c8a146dce4edb4f46fa2e6c906d83f203a991/conan-2.0.14.tar.gz"
-  sha256 "3bbb4f4c4d749384af9ae5db26984b7f44949cafd340dcf6d2fd86d207731bb2"
+  url "https://files.pythonhosted.org/packages/51/ca/44268705629eeabb5c223583715114131eb7ace86e2fc14273c801c61cef/conan-2.0.15.tar.gz"
+  sha256 "e4cb9898615d63d741036b92d231c2130b5b29e3abe8dd3b51cc458d564b572e"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
@@ -48,8 +48,8 @@ class Conan < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "jinja2" do
