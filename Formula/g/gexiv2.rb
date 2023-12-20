@@ -9,13 +9,14 @@ class Gexiv2 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "946792d04c7db89b11192f4d3cf5cd0d18ccfb6a9e4911ed48d89198bf0bdfd3"
-    sha256 cellar: :any, arm64_ventura:  "e2341c3fefd5644a3c8f636fcd69d1defde69bb2bd93213622c04444499d24f7"
-    sha256 cellar: :any, arm64_monterey: "4b181df721ec247288cae8797e8a2ec67c59d28d8c29d4cbe1ce27f129df8489"
-    sha256 cellar: :any, sonoma:         "db64e4074fbca3d8e33fed25f0133f74bc610a3e069df77e78fe706117c3c489"
-    sha256 cellar: :any, ventura:        "48ac72a299229652ed8c62c1b38eac0f291f1e1a7df0825a8d25e59f2a9a0317"
-    sha256 cellar: :any, monterey:       "3896495b29c74c5e4a10198cab6491861f37758fc8691ccfc08ea7c20b7c7f2a"
-    sha256               x86_64_linux:   "b17f76ea6f1c459d28abb2b0738541eb2cc1ce386d445cb277538fe3c498afe1"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "c80f38f7bc014d4b17196583ed6d1de648e5000e52663f8d00f95341d26cba60"
+    sha256 cellar: :any, arm64_ventura:  "612684a73317a22620479756fcee11fae7fd1436446b087edff24385df11eed2"
+    sha256 cellar: :any, arm64_monterey: "469e0ea99ac26cf6fb64feecd2bb2b5a96f8e2e4d3db4eebd409c4a7ff9cef3b"
+    sha256 cellar: :any, sonoma:         "853e45314b2824c293a4124245ffac4773b7ef79653be1c77fa47372b8e1c8fd"
+    sha256 cellar: :any, ventura:        "8765986471baf740607e563c7b99eb3a447fb4ff3b51557ea6e652705d3b1c7b"
+    sha256 cellar: :any, monterey:       "26bcd41689a5be13d78bd78a1728448ac6114cb3b63ad4fb6e03aa517cde7594"
+    sha256               x86_64_linux:   "f940fee4151e253561119242611886f248a6a6ef1c21813d0a91c9872e5762cc"
   end
 
   depends_on "gobject-introspection" => :build
