@@ -3,6 +3,8 @@ class Lensfun < Formula
 
   desc "Remove defects from digital images"
   homepage "https://lensfun.github.io/"
+  url "https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "dafb39c08ef24a0e2abd00d05d7341b1bf1f0c38bfcd5a4c69cf5f0ecb6db112"
   license all_of: [
     "LGPL-3.0-only",
     "GPL-3.0-only",
@@ -11,17 +13,6 @@ class Lensfun < Formula
   ]
   version_scheme 1
   head "https://github.com/lensfun/lensfun.git", branch: "master"
-
-  stable do
-    url "https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.4.tar.gz"
-    sha256 "dafb39c08ef24a0e2abd00d05d7341b1bf1f0c38bfcd5a4c69cf5f0ecb6db112"
-
-    # upstream cmake build change, https://github.com/lensfun/lensfun/pull/1983
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/86b624c/lensfun/0.3.4.patch"
-      sha256 "8cc8af937d185bb0e01d3610fa7bb35905eb7d4e36ac4c807a292f1258369bdb"
-    end
-  end
 
   # Versions with a 90+ patch are unstable and this regex should only match the
   # stable versions.
@@ -44,18 +35,27 @@ class Lensfun < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
+  depends_on "python-setuptools" => :build
   depends_on "glib"
   depends_on "libpng"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Homebrew's python "prefix scheme" patch tries to install into
+    # HOMEBREW_PREFIX/lib, which fails due to sandbox. As a workaround,
+    # we disable the install step and manually run pip install later.
+    inreplace "apps/CMakeLists.txt", /^\s*INSTALL\(CODE "execute_process\(.*SETUP_PY/, "#\\0"
+
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_LENSTOOL=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    rewrite_shebang detected_python_shebang, *bin.children
 
-    rewrite_shebang detected_python_shebang,
-      bin/"lensfun-add-adapter", bin/"lensfun-convert-lcp", bin/"lensfun-update-data"
+    system "python3.12", "-m", "pip", "install", *std_pip_args, "./build/apps"
   end
 
   test do
