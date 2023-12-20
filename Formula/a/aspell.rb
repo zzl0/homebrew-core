@@ -5,42 +5,19 @@ class Aspell < Formula
   mirror "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.1.tar.gz"
   sha256 "d6da12b34d42d457fa604e435ad484a74b2effcd120ff40acd6bb3fb2887d21b"
   license "LGPL-2.1-only"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c09de9d60faefba0f6ed4ce08303b26cf2c09be166a096762e6da96e3017a6a1"
-    sha256 arm64_ventura:  "f5fab61aff0efb53878445f21ad0fb4fddd16572719aea966b56bf73c87a54de"
-    sha256 arm64_monterey: "476604cf6fb7586a1c7d3d77760ea0ab27f05931da5f50ffc75db76f4547842a"
-    sha256 sonoma:         "691acef50d4d0e4166f796afd9b196436b089ae3351d755efe54e53b4e734e8f"
-    sha256 ventura:        "9545c26bb94931889ba7e7ca3afe63ae98981c244738ae69e374748f5759187a"
-    sha256 monterey:       "f2e88c7d2468c5142037eeeec2b6146357d9dcbe9aaf83f7334ba8b57c1e691c"
-    sha256 x86_64_linux:   "c9750d22f8fc6313c16d17c40b9f59778677a993c12c0d2e1d28c162bfe7f04a"
+    sha256 arm64_sonoma:   "8d5594cd0235f14ef183062e5e1ff997470f0c5cf9a522cd488997f206df28ae"
+    sha256 arm64_ventura:  "c36b4d14b5b78a2b61a21878bec4a060376fc72a2bdd975c0a32c0f88fc0865b"
+    sha256 arm64_monterey: "bfc9df1c3eef5bf05029c819592d6073437707fa60e3523ea4a98fd2929fc8ee"
+    sha256 sonoma:         "960e34fc76f8dfeeb3115236cfdaea24b2339791070411a5ea19e38d6e60f5de"
+    sha256 ventura:        "0a07e16a5486cae75a1c146e0a5001709e77172385c0887234d1119eb691bb94"
+    sha256 monterey:       "6ceca17185c9b563d91f81c8665fd2a31ddf37248fce447ded97c9ac9e82f7b9"
+    sha256 x86_64_linux:   "d0a434bcc48c8bebdf070e31e07a14cd7ae3bc3988abb0b111baeb809e5be448"
   end
 
   uses_from_macos "ncurses"
-
-  resource "en" do
-    url "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2018.04.16-0.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2018.04.16-0.tar.bz2"
-    sha256 "f11071e74b0c0753f4afabf024941a5c3a96bafe3879211ebd47bc34e76fbd2f"
-  end
-
-  resource "de" do
-    url "https://ftp.gnu.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2"
-    sha256 "c2125d1fafb1d4effbe6c88d4e9127db59da9ed92639c7cbaeae1b7337655571"
-  end
-
-  resource "es" do
-    url "https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/aspell/dict/es/aspell6-es-1.11-2.tar.bz2"
-    sha256 "ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc"
-  end
-
-  resource "fr" do
-    url "https://ftp.gnu.org/gnu/aspell/dict/fr/aspell-fr-0.50-3.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/aspell/dict/fr/aspell-fr-0.50-3.tar.bz2"
-    sha256 "f9421047519d2af9a7a466e4336f6e6ea55206b356cd33c8bd18cb626bf2ce91"
-  end
 
   resource "af" do
     url "https://ftp.gnu.org/gnu/aspell/dict/af/aspell-af-0.50-0.tar.bz2"
@@ -126,6 +103,12 @@ class Aspell < Formula
     sha256 "dbc6cbceaa7a4528f3756f0b5cce5c3d0615c2103d3899b47e9df2ed9582e2f7"
   end
 
+  resource "de" do
+    url "https://ftp.gnu.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2"
+    sha256 "c2125d1fafb1d4effbe6c88d4e9127db59da9ed92639c7cbaeae1b7337655571"
+  end
+
   resource "de_alt" do
     url "https://ftp.gnu.org/gnu/aspell/dict/de-alt/aspell6-de-alt-2.1-1.tar.bz2"
     mirror "https://ftpmirror.gnu.org/aspell/dict/de-alt/aspell6-de-alt-2.1-1.tar.bz2"
@@ -138,10 +121,22 @@ class Aspell < Formula
     sha256 "4af60f1a8adf8b1899680deefdf49288d7406a2c591658f880628bf7c1604cd2"
   end
 
+  resource "en" do
+    url "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
+    sha256 "4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3"
+  end
+
   resource "eo" do
     url "https://ftp.gnu.org/gnu/aspell/dict/eo/aspell6-eo-2.1.20000225a-2.tar.bz2"
     mirror "https://ftpmirror.gnu.org/aspell/dict/eo/aspell6-eo-2.1.20000225a-2.tar.bz2"
     sha256 "41d2d18d6a4de6422185a31ecfc1a3de2e751f3dfb2cbec8f275b11857056e27"
+  end
+
+  resource "es" do
+    url "https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/aspell/dict/es/aspell6-es-1.11-2.tar.bz2"
+    sha256 "ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc"
   end
 
   resource "et" do
@@ -166,6 +161,12 @@ class Aspell < Formula
     url "https://ftp.gnu.org/gnu/aspell/dict/fo/aspell5-fo-0.2.16-1.tar.bz2"
     mirror "https://ftpmirror.gnu.org/aspell/dict/fo/aspell5-fo-0.2.16-1.tar.bz2"
     sha256 "f7e0ddc039bb4f5c142d39dab72d9dfcb951f5e46779f6e3cf1d084a69f95e08"
+  end
+
+  resource "fr" do
+    url "https://ftp.gnu.org/gnu/aspell/dict/fr/aspell-fr-0.50-3.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/aspell/dict/fr/aspell-fr-0.50-3.tar.bz2"
+    sha256 "f9421047519d2af9a7a466e4336f6e6ea55206b356cd33c8bd18cb626bf2ce91"
   end
 
   resource "fy" do
