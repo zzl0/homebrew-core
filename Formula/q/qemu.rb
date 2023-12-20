@@ -1,5 +1,5 @@
 class Qemu < Formula
-  desc "Emulator for x86 and PowerPC"
+  desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
   url "https://download.qemu.org/qemu-8.1.3.tar.xz"
   sha256 "43cc176804105586f74f90398f34e9f85787dff400d3b640d81f7779fbe265bb"
