@@ -36,7 +36,7 @@ class Rtx < Formula
     touch lib/".disable-self-update"
     (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
       if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
-        #{bin}/rtx activate fish | source
+        #{opt_bin}/rtx activate fish | source
       end
     EOS
   end
