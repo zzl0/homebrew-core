@@ -12,13 +12,14 @@ class Rtx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73d429f92bf1b3b1ffef9c26f7ed0b28f7c49e6c6c2f7b703aef59dc2288cdc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d0c56324941dbb1e4553b2eb7f314ee7b05593f7986b10b4064d7bfc9b0bd1b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3d3b023cf97d1fa5a8dda48a60163789967fed269d698ff071180ef67644a5f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c765710222af74bc75d1003d0fac12e5954b431ea1534c4527f4b526bc45555f"
-    sha256 cellar: :any_skip_relocation, ventura:        "df0ef52a91ef035c5fd76397e6fc228b8f24cfae0cc87dc013f7e4343a42f4f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "39cb4a38cd788766e556d007b251232e4f06772703f6dff1299c150f276f23fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f54e122aa05c73daa5933ca63f8280c8a1b9a09b71bf61c12171cebd73e33156"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49a9dd627247e6de74b906a1014bca61bc759f460ce39d011d68a934beca294c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ff9393d72a78eb08cafd969bf74129753eee7031b257866a5dbd472821e5018"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b02035d56ea7b103c3d71b45ce604c45c1bc11103ad3cf6380e7e51408b85c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5f727bb5ecd9114938b19d9c159b308dae3d9249aa1e32146f15dd021b5c31c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9308a4cd81450a70287f91d6f09b015331fa444602974dc3c2abfe7df4652e21"
+    sha256 cellar: :any_skip_relocation, monterey:       "dce30cdc9c88226d04abb2c20926bdbc63574233939247d2a7a11be14a9020ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "419518c384dbbc9185f163f10a05dc13833cda514466156360582dabc65d5b1c"
   end
 
   depends_on "rust" => :build
@@ -36,7 +37,7 @@ class Rtx < Formula
     touch lib/".disable-self-update"
     (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
       if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
-        #{bin}/rtx activate fish | source
+        #{opt_bin}/rtx activate fish | source
       end
     EOS
   end
