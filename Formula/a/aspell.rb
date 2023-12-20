@@ -1,24 +1,19 @@
 class Aspell < Formula
   desc "Spell checker with better logic than ispell"
   homepage "http://aspell.net/"
-  url "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.tar.gz"
-  mirror "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.tar.gz"
-  sha256 "f9b77e515334a751b2e60daab5db23499e26c9209f5e7b7443b05235ad0226f2"
+  url "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.1.tar.gz"
+  sha256 "d6da12b34d42d457fa604e435ad484a74b2effcd120ff40acd6bb3fb2887d21b"
   license "LGPL-2.1-only"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "074a736c0740c4b19b259a3b02243390e8eab0755e0967646d35835e4bc131ab"
-    sha256 arm64_ventura:  "f00a63fb34af5c118d0a44b6847e012905f7abf6749a6e71b16cb09057774793"
-    sha256 arm64_monterey: "d75d3b4e2929123244786e9adb7ff335ec75943617e7dbd855d71c7ce3035173"
-    sha256 arm64_big_sur:  "bdd761d4454523f1bc8c0adba2db1a23c215c01371e348cd162b573347791159"
-    sha256 sonoma:         "b5314162b192388dce757d62f14976cad9e421e314a083ab25044cc439626df8"
-    sha256 ventura:        "6ed92805d3beaacead9501572e63105d2129f99450e0a8081b98fe935aa51f66"
-    sha256 monterey:       "91f9e3083f86a059d0db046aa78e3ddf95a3c6cf531c982b7ca470dd0e57db3b"
-    sha256 big_sur:        "abf04f9f474e21d070e22667204cd122e7e099e90e60110dc7639fdaa5f5a66f"
-    sha256 catalina:       "86b7d31eff12742ccb73464c088c8313998bd4c1e37f108754f936d51b6f49dd"
-    sha256 mojave:         "aeded9b9861145353ad13bbf85772f23e556fe6dc0b263beebd555cf19762197"
-    sha256 x86_64_linux:   "5154c4a1e76b1f9ab21325d442cd9eaf80b83314792142ff837f84bcfb8cbb4a"
+    sha256 arm64_sonoma:   "c09de9d60faefba0f6ed4ce08303b26cf2c09be166a096762e6da96e3017a6a1"
+    sha256 arm64_ventura:  "f5fab61aff0efb53878445f21ad0fb4fddd16572719aea966b56bf73c87a54de"
+    sha256 arm64_monterey: "476604cf6fb7586a1c7d3d77760ea0ab27f05931da5f50ffc75db76f4547842a"
+    sha256 sonoma:         "691acef50d4d0e4166f796afd9b196436b089ae3351d755efe54e53b4e734e8f"
+    sha256 ventura:        "9545c26bb94931889ba7e7ca3afe63ae98981c244738ae69e374748f5759187a"
+    sha256 monterey:       "f2e88c7d2468c5142037eeeec2b6146357d9dcbe9aaf83f7334ba8b57c1e691c"
+    sha256 x86_64_linux:   "c9750d22f8fc6313c16d17c40b9f59778677a993c12c0d2e1d28c162bfe7f04a"
   end
 
   uses_from_macos "ncurses"
