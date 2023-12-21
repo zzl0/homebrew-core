@@ -3,8 +3,8 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://www.uvicorn.org/"
-  url "https://files.pythonhosted.org/packages/e5/84/d43ce8fe6b31a316ef0ed04ea0d58cab981bdf7f17f8423491fa8b4f50b6/uvicorn-0.24.0.post1.tar.gz"
-  sha256 "09c8e5a79dc466bdf28dead50093957db184de356fcdc48697bad3bde4c2588e"
+  url "https://files.pythonhosted.org/packages/ec/54/0eb4441bf38c70f6ed1886dddb2e29d1650026041d19e49fc373e332fa60/uvicorn-0.25.0.tar.gz"
+  sha256 "6dddbad1d7ee0f5140aba5ec138ddc9612c5109399903828b4874c9937f009c2"
   license "BSD-3-Clause"
   head "https://github.com/encode/uvicorn.git", branch: "master"
 
@@ -24,8 +24,8 @@ class Uvicorn < Formula
   depends_on "pyyaml"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
-    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
+    url "https://files.pythonhosted.org/packages/2d/b8/7333d87d5f03247215d86a86362fd3e324111788c6cdd8d2e6196a6ba833/anyio-4.2.0.tar.gz"
+    sha256 "e1875bb4b4e2de1669f4bc7869b6d3f54231cdced71605e6e64c9be77e3be50f"
   end
 
   resource "h11" do
@@ -39,8 +39,8 @@ class Uvicorn < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "python-dotenv" do
