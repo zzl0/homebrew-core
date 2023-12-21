@@ -21,9 +21,10 @@ class Libtcod < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on macos: :catalina
   depends_on "sdl2"
+
+  uses_from_macos "python" => :build
 
   conflicts_with "libzip", because: "libtcod and libzip install a `zip.h` header"
 
@@ -31,18 +32,11 @@ class Libtcod < Formula
 
   def install
     cd "buildsys/autotools" do
-      system "autoreconf", "-fiv"
-      system "./configure"
+      system "autoreconf", "--force", "--install", "--verbose"
+      system "./configure", *std_configure_args, "--disable-silent-rules"
       system "make"
-      lib.install Dir[".libs/*{.a,.dylib}"]
+      system "make", "install"
     end
-    Dir.chdir("src") do
-      Dir.glob("libtcod/**/*.{h,hpp}") do |f|
-        (include/File.dirname(f)).install f
-      end
-    end
-    # don't yet know what this is for
-    libexec.install "data"
   end
 
   test do
