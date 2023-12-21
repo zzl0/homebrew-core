@@ -8,13 +8,13 @@ class AngularCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "893c46301eb2ff3f349cbebf7ff830255a5a6ea7a0610757fe756401b44f414b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "893c46301eb2ff3f349cbebf7ff830255a5a6ea7a0610757fe756401b44f414b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "893c46301eb2ff3f349cbebf7ff830255a5a6ea7a0610757fe756401b44f414b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "205000a78e5870b3181f08d2906c38576346e4064197e609a5371ee5670930c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "205000a78e5870b3181f08d2906c38576346e4064197e609a5371ee5670930c0"
-    sha256 cellar: :any_skip_relocation, monterey:       "205000a78e5870b3181f08d2906c38576346e4064197e609a5371ee5670930c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "893c46301eb2ff3f349cbebf7ff830255a5a6ea7a0610757fe756401b44f414b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec237ec3bb594b9f06d19d80194861a5c0bf7a613fb2e953be24e3f59da05df8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec237ec3bb594b9f06d19d80194861a5c0bf7a613fb2e953be24e3f59da05df8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec237ec3bb594b9f06d19d80194861a5c0bf7a613fb2e953be24e3f59da05df8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "86d55e383f3421b10bc78506a0ae9825c96d8d840a73dee17ca9f6a275330086"
+    sha256 cellar: :any_skip_relocation, ventura:        "86d55e383f3421b10bc78506a0ae9825c96d8d840a73dee17ca9f6a275330086"
+    sha256 cellar: :any_skip_relocation, monterey:       "86d55e383f3421b10bc78506a0ae9825c96d8d840a73dee17ca9f6a275330086"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec237ec3bb594b9f06d19d80194861a5c0bf7a613fb2e953be24e3f59da05df8"
   end
 
   depends_on "node"
