@@ -7,13 +7,13 @@ class Terrascan < Formula
   head "https://github.com/tenable/terrascan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46f275b707189736db7d2970b212d31f985f72724bced3abd2ce9048b87fcab8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35f17efef6abfe00b1cf75aa9c4982e9c4be517d4e9abf82575afb05192cccd3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "43d40ae920e9ae8d381d4765cba586ce91e779c4ab134737bbeeb84edd4bd339"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b3f258bcd7c18f7c191be2a3ac9b9b1b8aa21e32bec833b95137e66bf456343a"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0522ba097ece939d0d879b31bed490c2a3197b60ba783f971c2dc835868b401"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2123bee6db7c143e2a11f158646778d1ed43dbc68d6e2c6a564955f9f50243b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7db154c41d5bd41e5696f8dd2efd96e64787f088a9eba8e197d03448c83692a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ab0e01beeeed9f23ca99194fb2ed28c799a10a2e092acc2db0f827f4480129f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f953589ef19537235edc5d9b72f7075e4399361a7ef8543f3e9a44b2ed8ac2c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "02da158add2da59b6aaa8106039bc2bef6ac63e69cd6f3adaf4ea5fe86acac56"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf283bb60f34c01897aceadff5d6e88a2ad1973f580a08b778083bdbc5ce5a12"
+    sha256 cellar: :any_skip_relocation, ventura:        "191b2ab5e49d37ae9bdc861e9c9a6c27a1c09870ee128bea5989e273c0245f6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f67a4585599db7cb0758e49ccee7fba0b8c50d35dedb00d5a568c5a0fd096ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e856332e837812bda955f61fe27c06100babe4d6e285e5cf605f56c5064ff418"
   end
 
   depends_on "go" => :build
