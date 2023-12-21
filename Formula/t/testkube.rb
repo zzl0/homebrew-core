@@ -12,13 +12,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20866b7b20af0c9d05344268cff272b4b37a6b07a215a688ffc3cecad5790b30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fbf409acc06e85605e5539365063133dc344f545799d1ff8a73e4fb8e5cd5b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6df26177d3022374e089317943ed026990f2048fd116a5a35c88d19adf250aac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aab764ebe0e506450b173eebdc685d237ae6bc07d6dcd03f7fcf5ebb62257794"
-    sha256 cellar: :any_skip_relocation, ventura:        "aab171a37fe2d03173362a3fc20dc017d7d11a8b87a759bf531739212caaba5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5ae545b3479f9790ba78b94ed11b6658a33a573c48504e0f0884ba6205bf80b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0889ff831bbcee82ed74c4978e69c80bf2a389a816ec148398de35b471715321"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0037496e340b1d749a6eee38a51767c3fd1b1a48ed974e4e64e5d378e0ebff56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29a774941d80f96d78f666148de5d39f53f2540018c0e0457a2d9249c0c82fbd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e151ff6bf3a1a3866e95bede487d6d8819fbdb58d7d4ef939d38ce313b1fecd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46c587e63ec5c5ecdc35639eaaeaa88a975f73c57f7580f0b4ced8e77f835143"
+    sha256 cellar: :any_skip_relocation, ventura:        "629cd526f540101ceff9ea696029f26ae7d5e696b5f5e0650a1aee05d7f5153c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2667a52cc544a7f99b06d213a76108600b558d5606f5b273883d3aeba2081516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8998213a2fe96c5da5765325bb220a5ecec92050b19f3485b4dd5fe1aaaeaec4"
   end
 
   depends_on "go" => :build
