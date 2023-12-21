@@ -1,8 +1,8 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/sdk-1.3.261.1.tar.gz"
-  sha256 "a5cf99ed62e93800232e50b782890321d4d7e053dcaa71bd8efc0c48a00bd1dd"
+  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.3.268.0.tar.gz"
+  sha256 "dd656a51ba4c229c1a0bb220b7470723e8fd4b68abb7f2cf2ca4027df824f4a0"
   license all_of: [
     "Apache-2.0",
     "MIT",
@@ -10,10 +10,11 @@ class SpirvCross < Formula
     :cannot_represent, # LicenseRef-KhronosFreeUse
   ]
   version_scheme 1
+  head "https://github.com/KhronosGroup/SPIRV-Cross.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^sdk[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
