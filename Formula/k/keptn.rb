@@ -1,8 +1,8 @@
 class Keptn < Formula
   desc "CLI for keptn.sh, a message-driven control-plane for application delivery"
   homepage "https://keptn.sh"
-  url "https://github.com/keptn/keptn/archive/refs/tags/1.4.4.tar.gz"
-  sha256 "96fa4b0c903a582c1be02dc48b13d2ac86e45f583116d0402fcd71f4a033afbb"
+  url "https://github.com/keptn/keptn/archive/refs/tags/1.4.5.tar.gz"
+  sha256 "2b767fedf0ac9581b914bb6c89720749023cf102d154c283697a653103a3318c"
   license "Apache-2.0"
 
   livecheck do
