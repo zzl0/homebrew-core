@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/f6/c2/af064873c68e0b6aff257e7e61663e14f0129a3e76664117fb40fd3e45de/checkov-3.1.30.tar.gz"
-  sha256 "e585fc91a4935f976c917aa02caf786b9bf6748c959b7efc54e7a218456ccc09"
+  url "https://files.pythonhosted.org/packages/86/2b/8cef5b247259c5d82f6f36be0bb2c393adbe7f64f869b92008d51f0fd247/checkov-3.1.40.tar.gz"
+  sha256 "7c966e66b3696fe2fcea32b01642878277eed21effb66c1ad61a1bbaf75a4aa6"
   license "Apache-2.0"
 
   bottle do
@@ -79,8 +79,8 @@ class Checkov < Formula
   end
 
   resource "bc-python-hcl2" do
-    url "https://files.pythonhosted.org/packages/f2/8e/3119325e775ea84e63e10ada2cb18fa07c820d98b81606f40ff3602feeb1/bc-python-hcl2-0.4.1.tar.gz"
-    sha256 "72a438ceeced7d2e4c898e218f55a2a4aba7a887c1d64a4cf913837193c446b6"
+    url "https://files.pythonhosted.org/packages/d8/9a/1cb1e4c65a75dcc304438d1f941345d5dd5e8819f1a8b7b17991a21a22b3/bc-python-hcl2-0.4.2.tar.gz"
+    sha256 "ac8ff59fb9bd437ea29b89a7d7c507fd0a1e957845bae9aeac69f2892b8d681e"
   end
 
   resource "beartype" do
@@ -99,13 +99,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c0/93/e49334486d9eaa9534ba181a526485f432ef0aed52a5f50accef28f2a990/boto3-1.34.3.tar.gz"
-    sha256 "d2fa7c1c65108fd984ac7b6d21cca640a6a005ff1ad99e4429b9f6ef835996f9"
+    url "https://files.pythonhosted.org/packages/e4/9e/69ec8182ec3d78cd171ffface2dcd89467350b023b91945017965ea537c1/boto3-1.34.5.tar.gz"
+    sha256 "e165722c2924decd488bf0cd912dee2296d1d219a55be5dd9c93f2967b57c4e8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e0/2d/28620df467125d91fc5a3cb3c3c65a863d0a4078ad824bd278145d46187e/botocore-1.34.3.tar.gz"
-    sha256 "8e5b32c63db8963af0008e36ceb13c236a46878a3722ffc6dd3be7351fba7163"
+    url "https://files.pythonhosted.org/packages/2b/52/9cb50c0bc73919436344153900ebe7b1d8965a3a1626cecb702a60c1e586/botocore-1.34.5.tar.gz"
+    sha256 "c339876859bddfc38de9d5409458eaab0ae703da867a3b6474a986bf7db7d967"
   end
 
   resource "cached-property" do
