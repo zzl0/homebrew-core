@@ -2,8 +2,8 @@ class Clusterawsadm < Formula
   desc "Home for bootstrapping, AMI, EKS, and other helpers in Cluster API Provider AWS"
   homepage "https://cluster-api-aws.sigs.k8s.io/clusterawsadm/clusterawsadm.html"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
-      tag:      "v2.3.0",
-      revision: "2562a8bc41a9b76a25dd6b4f6ba9252a033f5ba1"
+      tag:      "v2.3.1",
+      revision: "ca3cc2d63a5646c06d5dec5368ab7c50fe806ef9"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
