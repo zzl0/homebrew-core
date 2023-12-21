@@ -1,8 +1,8 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.268.tar.gz"
-  sha256 "038fe8be301a7169b57c5fef7fbcdfa61a52f2b0fb3dabcf61218dfa417ba7dc"
+  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.274.tar.gz"
+  sha256 "100ccf35f4b54afe9601374f2aadee8b6dc24cde7273b31d1432192a0c52c2bc"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
@@ -41,6 +41,7 @@ class VulkanExtensionlayer < Formula
                     "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].prefix}",
                     "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].prefix}",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -56,15 +57,14 @@ class VulkanExtensionlayer < Formula
   test do
     ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
     ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
+    ENV["VK_MEMORY_DECOMPRESSION_FORCE_ENABLE"]="true"
+    ENV["VK_SHADER_OBJECT_FORCE_ENABLE"]="true"
+    ENV["VK_VK_SYNCHRONIZATION2_FORCE_ENABLE"]="true"
 
-    expected = <<~EOS
-      Instance Layers: count = 3
-      --------------------------
-      VK_LAYER_KHRONOS_shader_object      Khronos Shader object layer      \\d\\.\\d\\.\\d+  version 1
-      VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   \\d\\.\\d\\.\\d+  version 1
-      VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer \\d\\.\\d\\.\\d+  version 1
-    EOS
-    actual = shell_output("vulkaninfo --summary")
-    assert_match Regexp.new(expected), actual
+    actual = shell_output("vulkaninfo")
+    %w[VK_EXT_shader_object VK_KHR_synchronization2 VK_KHR_timeline_semaphore
+       VK_NV_memory_decompression].each do |expected|
+      assert_match expected, actual
+    end
   end
 end
