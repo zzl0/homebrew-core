@@ -26,7 +26,8 @@ class Libprelude < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "gnutls"
   depends_on "libgpg-error"
   depends_on "libtool"
@@ -39,21 +40,10 @@ class Libprelude < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
-    # Use the stdlib distutils to work around python bindings install failure:
-    # TEST FAILED: .../lib/python3.11/site-packages/ does NOT support .pth files
-    # bad install directory or PYTHONPATH
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
-
-    # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
-    inreplace "bindings/python/Makefile.in",
-              "--prefix @prefix@",
-              "\\0 --install-lib=#{prefix/Language::Python.site_packages(python3)}"
-
     ENV["HAVE_CXX"] = "yes"
     args = %W[
       --disable-silent-rules
@@ -63,13 +53,18 @@ class Libprelude < Formula
       --without-perl
       --without-swig
       --without-python2
-      --with-python3=#{python3}
+      --without-python3
       --with-libgnutls-prefix=#{Formula["gnutls"].opt_prefix}
     ]
 
     system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
+
+    # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
+    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
+    # This is done by manually install python bindings.
+    system python3, "-m", "pip", "install", *std_pip_args, "./bindings/python"
   end
 
   test do
