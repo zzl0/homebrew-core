@@ -1,8 +1,8 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.268.tar.gz"
-  sha256 "2e6704eb2609fe2f0f79fdd016b7b403ac6466391d4e63879438962077261140"
+  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.274.tar.gz"
+  sha256 "3dcd107fd6d46ae07e9ae072f79c3fa326329ce2c986d1f7b61e3079bfa1e020"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
@@ -19,10 +19,10 @@ class VulkanValidationlayers < Formula
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "python@3.12" => :build
-  depends_on "vulkan-loader" => :test
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
   depends_on "vulkan-headers"
+  depends_on "vulkan-loader"
   depends_on "vulkan-utility-libraries"
 
   on_linux do
@@ -36,13 +36,13 @@ class VulkanValidationlayers < Formula
   # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#43
   resource "SPIRV-Headers" do
     url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-        revision: "d790ced752b5bfc06b6988baadef6eb2d16bdf96"
+        revision: "1c6bb2743599e6eb6f37b2969acc0aef812e32e3"
   end
 
   # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L57
   resource "SPIRV-Tools" do
     url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-        revision: "847715d6c65200987c079fb13ca7925760faec23"
+        revision: "6b4f0c9d0b7d02db5ed0b03433ae62c03bbff722"
   end
 
   def install
@@ -58,6 +58,7 @@ class VulkanValidationlayers < Formula
                       "-DSPIRV_WERROR=OFF",
                       "-DSPIRV_SKIP_TESTS=ON",
                       "-DSPIRV_SKIP_EXECUTABLES=ON",
+                      "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
                       *std_cmake_args(install_prefix: buildpath/"third_party/SPIRV-Tools")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
@@ -69,6 +70,7 @@ class VulkanValidationlayers < Formula
       "-DSPIRV_TOOLS_INSTALL_DIR=#{buildpath}/third_party/SPIRV-Tools",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
       "-DVULKAN_UTILITY_LIBRARIES_INSTALL_DIR=#{Formula["vulkan-utility-libraries"].prefix}",
+      "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
       "-DBUILD_LAYERS=ON",
       "-DBUILD_LAYER_SUPPORT_FILES=ON",
       "-DBUILD_TESTS=OFF",
@@ -97,12 +99,10 @@ class VulkanValidationlayers < Formula
     ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
     ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
 
-    expected = <<~EOS
-      Instance Layers: count = 1
-      --------------------------
-      VK_LAYER_KHRONOS_validation Khronos Validation Layer #{version}  version 1
-    EOS
-    actual = shell_output("vulkaninfo --summary")
-    assert_match expected, actual
+    actual = shell_output("vulkaninfo")
+    %w[VK_EXT_debug_report VK_EXT_debug_utils VK_EXT_validation_features
+       VK_EXT_debug_marker VK_EXT_tooling_info VK_EXT_validation_cache].each do |expected|
+      assert_match expected, actual
+    end
   end
 end
