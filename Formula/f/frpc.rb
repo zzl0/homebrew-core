@@ -7,11 +7,13 @@ class Frpc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75d8fa848b12da58e054b595ad839704bd81a59b6a49f3ef63603f9a2727aef8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75d8fa848b12da58e054b595ad839704bd81a59b6a49f3ef63603f9a2727aef8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2f00bdcb5d3ca8dbb99c93c8d7e167f4a86f9fb38428a8404ffbda0b6a4a2cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2f00bdcb5d3ca8dbb99c93c8d7e167f4a86f9fb38428a8404ffbda0b6a4a2cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2f00bdcb5d3ca8dbb99c93c8d7e167f4a86f9fb38428a8404ffbda0b6a4a2cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94aa67e36bf46ed1abdc120b2e31791a4c13b2d5adfa7034803a115084f350ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94aa67e36bf46ed1abdc120b2e31791a4c13b2d5adfa7034803a115084f350ae"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94aa67e36bf46ed1abdc120b2e31791a4c13b2d5adfa7034803a115084f350ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "099b555ea7b3c3ee9efb15ba6bda9581882dd966445624438c9dc729a20600ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "099b555ea7b3c3ee9efb15ba6bda9581882dd966445624438c9dc729a20600ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "099b555ea7b3c3ee9efb15ba6bda9581882dd966445624438c9dc729a20600ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c81358eec84d9e6b837f087cbb163d3bdecac543543cc30445aa39643469e29"
   end
 
   depends_on "go" => :build
