@@ -1,11 +1,16 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https://github.com/KhronosGroup/SPIRV-Tools"
-  # TODO: Change `-DPYTHON_EXECUTABLE` to `-DPython3_EXECUTABLE` in next release.
-  # Ref: https://github.com/KhronosGroup/SPIRV-Tools/commit/a63ac9f73d29cd27cdb6e3388d98d1d934e512bb
-  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/v2023.2.tar.gz"
-  sha256 "7416cc8a98a10c32bacc36a39930b0c5b2a484963df5d68f388ed7ffee1faad3"
+  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.3.268.0.tar.gz"
+  sha256 "4c19fdcffb5fe8ef8dc93d7a65ae78b64edc7a5688893ee381c57f70be77deaf"
   license "Apache-2.0"
+  version_scheme 1
+  head "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d22d8c5984c120ada35dcec596e672e5da421c718b964195db049f9ee664efa1"
@@ -26,7 +31,7 @@ class SpirvTools < Formula
   resource "spirv-headers" do
     # revision number could be found in ./DEPS
     url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-        revision: "1feaf4414eb2b353764d01d88f8aa4bcc67b60db"
+        revision: "1c6bb2743599e6eb6f37b2969acc0aef812e32e3"
   end
 
   def install
@@ -35,7 +40,7 @@ class SpirvTools < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DBUILD_SHARED_LIBS=ON",
-                    "-DPYTHON_EXECUTABLE=#{which("python3")}",
+                    "-DPython3_EXECUTABLE=#{which("python3")}",
                     "-DSPIRV_SKIP_TESTS=ON",
                     "-DSPIRV_TOOLS_BUILD_STATIC=OFF",
                     *std_cmake_args
