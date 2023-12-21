@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.15.4.tar.gz"
-  sha256 "2af0cf00f70123d253c86e5f4fad1395cbe0579c1eb5e928a26056d8eab3148b"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.15.5.tar.gz"
+  sha256 "f4be5950732c1eafdbef905b29113de89913656e923ceb10365944fa50083d2b"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -111,7 +111,8 @@ class Awscli < Formula
       ENV.prepend "LDFLAGS", "-L./build/temp.linux-x86_64-#{python_version}/deps/install/lib"
     end
 
-    virtualenv_install_with_resources
+    virtualenv_install_with_resources(system_site_packages: false)
+
     pkgshare.install "awscli/examples"
 
     rm bin.glob("{aws.cmd,aws_bash_completer,aws_zsh_completer.sh}")
