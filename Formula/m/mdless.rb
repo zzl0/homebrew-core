@@ -1,18 +1,18 @@
 class Mdless < Formula
   desc "Provides a formatted and highlighted view of Markdown files in Terminal"
   homepage "https://github.com/ttscoff/mdless"
-  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.1.39.tar.gz"
-  sha256 "ea492765c9dd5bed75063cfbd21620463539f6986d0998ac60bf9191e9a797d0"
+  url "https://github.com/ttscoff/mdless/archive/refs/tags/2.1.40.tar.gz"
+  sha256 "9dc20745b3dd34e19631303ec7417e5828569dd8ebf1e73fd11df8a8ebc2f764"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "44f02bd30e5d442126de6ebf23d67b94d41748c5e038de47e819b07b32d3e78d"
-    sha256 cellar: :any,                 arm64_ventura:  "a1a093304c7caccd79649071eba9c8a09e94f51d949e4fa074ed1190d11a2f24"
-    sha256 cellar: :any,                 arm64_monterey: "3aba4b9fcb531801bd322caf6c0975b5470ec086c72d21be090bcac2d6bf54eb"
-    sha256 cellar: :any,                 sonoma:         "4898e955de3e1d0297172056c92f41724698bd177cd1b549a180e5361b2bfb33"
-    sha256 cellar: :any,                 ventura:        "980eae33be9f470fada239c688b1d5965c6018940a09501f8918a3ab64f90842"
-    sha256 cellar: :any,                 monterey:       "25d16aa713d4268ffddc633ab478eed18cdf311e6be4b3f3f6444ad8d5d77e73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95ad773ee15825cf6d997396b8c8aeecad6aa6505c0278d9ab4de526af29c89f"
+    sha256 cellar: :any,                 arm64_sonoma:   "d808938e92139c3641c74220ce5301241c9e9286b278b7a1e0d4c1d78a7dca33"
+    sha256 cellar: :any,                 arm64_ventura:  "aba4b17d841be49041c8ad31abf783c1c3ef9fe56309693211f49ceea02dd8ec"
+    sha256 cellar: :any,                 arm64_monterey: "90e885feea23c65759126627f58fa22fecbc6eb7512fd2a22b2170a7bdb3bc1d"
+    sha256 cellar: :any,                 sonoma:         "6c7efd2ae3c9e90d934986854444792691ba43d4ec25b8517a0fe6db73ec3cc7"
+    sha256 cellar: :any,                 ventura:        "46598edde27ed6ee11632d618996764f1041587c752862ae9f51f03aac6c106b"
+    sha256 cellar: :any,                 monterey:       "3af4c8c2f1c190f4d9e4b4cd231c1a3cbf002b5c6c195fbfa627bf04379b4fd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f628b89d25a03d2ebaebea01e84ee7f1f7e615ec8c02591417761c14a19178"
   end
 
   # Requires Ruby >= 2.7
