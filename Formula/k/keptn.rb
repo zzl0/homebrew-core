@@ -5,11 +5,6 @@ class Keptn < Formula
   sha256 "2b767fedf0ac9581b914bb6c89720749023cf102d154c283697a653103a3318c"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "423b33841420a90882c5969217d114ab5deab10ef1c06c79b32b4629daff77ca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1b1139e9d32bcf7c1cc2f576952aae560568efcb57267267d682944945f0345"
@@ -19,6 +14,8 @@ class Keptn < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "b70fb2caa668ef82dcb5a46340bb831d055f6922e200edd74f8d6dbc19910b73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fc0beacc9f716d912ecc6cb638b023c98a87cb079ea782e787f6de36b50b2c1"
   end
+
+  deprecate! date: "2023-12-21", because: :repo_archived
 
   depends_on "go" => :build
 
