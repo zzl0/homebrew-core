@@ -1,9 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  # TODO: check if we can build with go1.21
-  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.20.0.tar.gz"
-  sha256 "701bdcbd42ef34fc04b581b278b3cda914c5a78b39bbba9d7ffa74095472bdb2"
+  url "https://github.com/ooni/probe-cli/archive/refs/tags/v3.20.1.tar.gz"
+  sha256 "a62242eddd014c347935b3bbface9a0343458a2f8424fa29b1ad927135c732dd"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -19,8 +18,7 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a8a563b82592d101032ca1135362bacf1a090db1160c9a5086a95f3a39ffc1d"
   end
 
-  # go1.21 build issue report, https://github.com/ooni/probe/issues/2548
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
   depends_on "tor"
 
   def install
