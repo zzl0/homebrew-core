@@ -2,8 +2,8 @@ class Ijq < Formula
   desc "Interactive jq"
   homepage "https://sr.ht/~gpanders/ijq/"
   url "https://git.sr.ht/~gpanders/ijq",
-      tag:      "v0.4.1",
-      revision: "22034bea72c80db75cb8aa9fdd5808940bd45fd4"
+      tag:      "v1.0.0",
+      revision: "ddee00530d57f230c5ea9fe2fa2b4e3cfe956565"
   license "GPL-3.0-or-later"
   head "https://git.sr.ht/~gpanders/ijq", branch: "master"
 
