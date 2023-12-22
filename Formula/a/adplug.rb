@@ -1,9 +1,18 @@
 class Adplug < Formula
   desc "Free, hardware independent AdLib sound player library"
   homepage "https://adplug.github.io"
-  url "https://github.com/adplug/adplug/releases/download/adplug-2.3.3/adplug-2.3.3.tar.bz2"
-  sha256 "a0f3c1b18fb49dea7ac3e8f820e091a663afa5410d3443612bf416cff29fa928"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
+
+  stable do
+    url "https://github.com/adplug/adplug/releases/download/adplug-2.3.3/adplug-2.3.3.tar.bz2"
+    sha256 "a0f3c1b18fb49dea7ac3e8f820e091a663afa5410d3443612bf416cff29fa928"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9279ed164adb8828ea78aa011cc7593e531f6b7b47f60598a8e8b3dff9d6279b"
@@ -20,6 +29,14 @@ class Adplug < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dd7290f9bbac079019cee98d1e303f863db604c58c6b942ed8dfd4df364c88f"
   end
 
+  head do
+    url "https://github.com/adplug/adplug.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libbinio"
 
@@ -32,13 +49,8 @@ class Adplug < Formula
     sha256 "2af9bfc390f545bc7f51b834e46eb0b989833b11058e812200d485a5591c5877"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
   def install
+    system "autoreconf", "-ivf" if build.head?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
