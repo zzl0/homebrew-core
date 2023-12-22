@@ -1,10 +1,9 @@
 class Poac < Formula
-  desc "Package Manager for C++"
+  desc "Package manager and build system for C++"
   homepage "https://github.com/poac-dev/poac"
-  url "https://github.com/poac-dev/poac/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "40f55553f7cca3bdad39599ce8c9049aeecf8f6140cfebac28c51d7d9abbbb78"
+  url "https://github.com/poac-dev/poac/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "8ed0189e3fbb4b1326cb2678f80db1652a77399f5b944c57895ce2e00f2d031e"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/poac-dev/poac.git", branch: "main"
 
   bottle do
@@ -19,15 +18,6 @@ class Poac < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5861b764ec78792acd2aa3853b275b1eec71279d09cd659fa9432e9271d69d2a"
   end
 
-  depends_on "cmake" => :build
-  depends_on "boost"
-  depends_on "fmt"
-  depends_on "libgit2"
-  depends_on "openssl@3"
-  depends_on "spdlog"
-
-  uses_from_macos "libarchive"
-
   on_macos do
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
   end
@@ -41,23 +31,13 @@ class Poac < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
-
-    # Help to find OpenSSL.
-    inreplace "cmake/AddOpenSSL.cmake", "${POAC_HOMEBREW_ROOT_PATH}/openssl",
-                                        Formula["openssl@3"].opt_prefix
-
-    system "cmake", "-S", ".", "-B", "build", "-DPOAC_BUILD_TESTING=OFF", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
-
-    man.install "src/etc/man/man1"
-    bash_completion.install "src/etc/poac.bash" => "poac"
-    zsh_completion.install_symlink bash_completion/"poac" => "_poac"
+    system "make", "RELEASE=1"
+    bin.install "build-out/poac"
   end
 
   test do
     ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
-    system bin/"poac", "create", "hello_world"
+    system bin/"poac", "new", "hello_world"
     cd "hello_world" do
       assert_match "Hello, world!", shell_output("#{bin}/poac run")
     end
