@@ -3,10 +3,12 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https://github.com/magic-wormhole/magic-wormhole"
+  # Move completions to stable on the next release. Currently, they are only available on HEAD.
   url "https://files.pythonhosted.org/packages/cc/e1/75c31ad5db873268ba0750006b3d0e40c30b0ad39e6f58b1e28a28d6de48/magic-wormhole-0.13.0.tar.gz"
   sha256 "ac3bd68286270e7f149c06149a8e409e5fa34d7feb0e88844a26d29eed2d1516"
   license "MIT"
   revision 2
+  head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4c11c68a6c13f5a69b0ade5592d2332185bc874db1cfb4d4452ebeb94fbf7a0e"
@@ -153,6 +155,12 @@ class MagicWormhole < Formula
     ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
     man1.install "docs/wormhole.1"
+    if build.head?
+      # Move completions to stable on the next release. Currently, they are only available on HEAD.
+      bash_completion.install "wormhole_complete.bash"=> "wormhole.bash"
+      fish_completion.install "wormhole_complete.fish" => "wormhole.fish"
+      zsh_completion.install "wormhole_complete.zsh" => "_wormhole"
+    end
   end
 
   test do
