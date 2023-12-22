@@ -1,8 +1,8 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https://0x727.github.io/ObserverWard/"
-  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.11.29.tar.gz"
-  sha256 "dd17eee7f845140184ed583c46182b76ddb8e2030144c33714cee4987ef6a1de"
+  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.12.22.tar.gz"
+  sha256 "17a83b8c564af7d221543ffe1c06f250a08cb153a40f4283b1c0af672f31c6f6"
   license "MIT"
 
   bottle do
@@ -23,7 +23,7 @@ class Observerward < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "observer_ward")
   end
 
   def check_binary_linkage(binary, library)
