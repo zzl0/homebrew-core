@@ -31,7 +31,7 @@ class Mftrace < Formula
 
   depends_on "fontforge"
   depends_on "potrace"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "t1utils"
 
   # Fixed in https://github.com/hanwen/mftrace/pull/14
@@ -41,7 +41,7 @@ class Mftrace < Formula
   end
 
   def install
-    ENV["PYTHON"] = which("python3.11")
+    ENV["PYTHON"] = which("python3.12")
     buildpath.install resource("manpage") if build.stable?
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args
