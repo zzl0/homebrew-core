@@ -56,22 +56,13 @@ class Singular < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ntl"
-  depends_on "python@3.11"
-
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "python@3.12"
 
   def install
-    # Run autogen on macOS so that -flat_namespace flag is not used.
-    system "./autogen.sh" if build.head? || OS.mac?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-python=#{which("python3.11")}",
+                          "--with-python=#{which("python3.12")}",
                           "CXXFLAGS=-std=c++11"
     system "make", "install"
   end
