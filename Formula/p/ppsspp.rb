@@ -20,13 +20,13 @@ class Ppsspp < Formula
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "libzip"
   depends_on "miniupnpc"
   depends_on "sdl2"
   depends_on "snappy"
   depends_on "zstd"
 
+  uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "zlib"
 
   on_macos do
@@ -63,32 +63,31 @@ class Ppsspp < Formula
     (vulkan_frameworks/"libMoltenVK.dylib").unlink
     vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
 
-    mkdir "build" do
-      args = std_cmake_args + %w[
-        -DUSE_SYSTEM_LIBZIP=ON
-        -DUSE_SYSTEM_SNAPPY=ON
-        -DUSE_SYSTEM_LIBSDL2=ON
-        -DUSE_SYSTEM_LIBPNG=ON
-        -DUSE_SYSTEM_ZSTD=ON
-        -DUSE_SYSTEM_MINIUPNPC=ON
-        -DUSE_WAYLAND_WSI=OFF
-      ]
+    args = %w[
+      -DUSE_SYSTEM_LIBZIP=ON
+      -DUSE_SYSTEM_SNAPPY=ON
+      -DUSE_SYSTEM_LIBSDL2=ON
+      -DUSE_SYSTEM_LIBPNG=ON
+      -DUSE_SYSTEM_ZSTD=ON
+      -DUSE_SYSTEM_MINIUPNPC=ON
+      -DUSE_WAYLAND_WSI=OFF
+    ]
 
-      system "cmake", "..", *args
-      system "make"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
 
-      if OS.mac?
-        prefix.install "PPSSPPSDL.app"
-        bin.write_exec_script "#{prefix}/PPSSPPSDL.app/Contents/MacOS/PPSSPPSDL"
-        mv "#{bin}/PPSSPPSDL", "#{bin}/ppsspp"
+    if OS.mac?
+      prefix.install "build/PPSSPPSDL.app"
+      bin.write_exec_script prefix/"PPSSPPSDL.app/Contents/MacOS/PPSSPPSDL"
 
-        # Replace app bundles with symlinks to allow dependencies to be updated
-        app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
-        ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
-      else
-        bin.install "PPSSPPSDL" => "ppsspp"
-      end
+      # Replace app bundles with symlinks to allow dependencies to be updated
+      app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
+      ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
+    else
+      system "cmake", "--install", "build"
     end
+
+    bin.install_symlink "PPSSPPSDL" => "ppsspp"
   end
 
   test do
