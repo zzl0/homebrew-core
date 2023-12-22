@@ -17,13 +17,13 @@ class Emqx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "02757787eb2c7fab318411d437556552c372a1eb9c49adb6d74cb67ad4e5f646"
-    sha256 cellar: :any,                 arm64_ventura:  "eab5f64919f17f5e69f92a8dd36a6c580557cec8ccb71fc0319570ee2c8125a8"
-    sha256 cellar: :any,                 arm64_monterey: "4da91fb38d4ce50323c1762e01f8588ed4f27d4b211365e0d7a12f80502d920d"
-    sha256 cellar: :any,                 sonoma:         "e9d7d828b28968539cd62fd35813a97ceeab00e491d114e1722fa020ad1780bb"
-    sha256 cellar: :any,                 ventura:        "4a3455430d3523fa0f115df7ba6b63df9c33a74ed7790c6b9e2f50997f6d2959"
-    sha256 cellar: :any,                 monterey:       "0b89a8c6b126dfad7bdf1569182492c11525d19adf80b0e93936df5606269c46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fbae30c3845e58b71fbbb6fb3ceed2431c8c5eefd1e320ef72f08224724638b"
+    sha256 cellar: :any,                 arm64_sonoma:   "1d1eeb902515982a2129af648c2722d42bea2b8169479fc74ebdcbc88a0073a8"
+    sha256 cellar: :any,                 arm64_ventura:  "31dd0ba1e2e5ee81f9f049d05d8e04f553d474ff0af0f60309a2a758c9dcb78e"
+    sha256 cellar: :any,                 arm64_monterey: "7e2b54f39d300ee636cbf0f763df030339acd9bb2f97789428e657d13cd93403"
+    sha256 cellar: :any,                 sonoma:         "ffe06c1d4a4992f6068b513d57ade47ea4228b6254939f3482f1f7c76be27135"
+    sha256 cellar: :any,                 ventura:        "f8344c186e540f50735a469fc90c6df2c362cc6e4fbde9a97d77f5b2a81ae8ac"
+    sha256 cellar: :any,                 monterey:       "5515e9ff855ff122c583d4598c731a696b21deb0302c0dd87feabc0208631d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "030006f22e19ec7c8c7d15645256e14a21db331ccd9f78982371daef92b7bc50"
   end
 
   depends_on "autoconf"  => :build
