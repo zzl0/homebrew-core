@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/4e/2a/90e7d20553caf25b3fa03612b97b21f9cc217b3dc039b7e1361b03066deb/dvc-3.35.0.tar.gz"
-  sha256 "d3745f01dfded6f89dbb7a8a12d1fd5afb1252fb8755c2b512c29b934f62c866"
+  url "https://files.pythonhosted.org/packages/05/84/3ec4f20a9c473c632812dabff0636a5fba76796a0e61a3a9cce5abfe4880/dvc-3.36.0.tar.gz"
+  sha256 "c32a9cf7b149baf1c2aa0db81d0896d4ae46feb27477d4cf1ab36be393f1626f"
   license "Apache-2.0"
 
   bottle do
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/e2/19/fb47366790300e06caf4c9820e01cf168e717a59b65994455a5f93f97806/dvc-data-3.1.0.tar.gz"
-    sha256 "14ff2d78946ee9caa57b8910eba32f7abec746b4f8d8791548759b16d4607682"
+    url "https://files.pythonhosted.org/packages/46/d8/0c18e252c2f5fe58bd82b5a842d1640fe99ae3c030deda3fdcad7f4a48b3/dvc-data-3.2.0.tar.gz"
+    sha256 "de38f3bbf913fd143dbe5b203d4ae9e18ad7c9399dd96187758f8a918c67fc32"
   end
 
   resource "dvc-gdrive" do
@@ -688,8 +688,8 @@ class Dvc < Formula
   end
 
   resource "sqltrie" do
-    url "https://files.pythonhosted.org/packages/f6/94/714fd33d1a808222839207d065d1ca8b2d11413a754c8d736fcac9ae4dc6/sqltrie-0.10.0.tar.gz"
-    sha256 "ce25bd13ee1865fba2f7f5429c9881ea777f9cdc10d4a5291310516b0465d26b"
+    url "https://files.pythonhosted.org/packages/12/98/77359c328ee9bf71bb1cc444a15c394a98aeaa38860c41f655117cc888b0/sqltrie-0.11.0.tar.gz"
+    sha256 "e613a74843e2b55ce1d20d333100d6a41127a1d6c12f835915f58fbd13944a82"
   end
 
   resource "sshfs" do
