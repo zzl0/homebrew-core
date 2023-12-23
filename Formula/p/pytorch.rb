@@ -3,11 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://github.com/pytorch/pytorch.git",
-      tag:      "v2.1.0",
-      revision: "7bcf7da3a268b435777fe87c7794c382f444e86d"
+  url "https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz"
+  sha256 "85effbcce037bffa290aea775c9a4bad5f769cb229583450c40055501ee1acd7"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -42,6 +40,7 @@ class Pytorch < Formula
   depends_on "python-sympy"
   depends_on "python-typing-extensions"
   depends_on "pyyaml"
+  depends_on "sleef"
 
   on_macos do
     depends_on "libomp"
@@ -55,45 +54,37 @@ class Pytorch < Formula
   end
 
   def install
-    python_exe = Formula["python@3.11"].opt_libexec/"bin/python"
-    args = %W[
-      -GNinja
-      -DBLAS=OpenBLAS
-      -DBUILD_CUSTOM_PROTOBUF=OFF
-      -DBUILD_PYTHON=ON
-      -DCMAKE_CXX_COMPILER=#{ENV.cxx}
-      -DCMAKE_C_COMPILER=#{ENV.cc}
-      -DPYTHON_EXECUTABLE=#{python_exe}
-      -DUSE_CUDA=OFF
-      -DUSE_DISTRIBUTED=ON
-      -DUSE_METAL=OFF
-      -DUSE_MKLDNN=OFF
-      -DUSE_NNPACK=OFF
-      -DUSE_OPENMP=ON
-      -DUSE_SYSTEM_EIGEN_INSTALL=ON
-      -DUSE_SYSTEM_PYBIND11=ON
-    ]
-    args << "-DUSE_MPS=ON" if OS.mac?
+    python3 = "python3.11"
 
-    ENV["LDFLAGS"] = "-L#{buildpath}/build/lib"
-
-    # Update references to shared libraries
-    inreplace "torch/__init__.py" do |s|
-      s.sub!(/here = os.path.abspath\(__file__\)/, "here = \"#{lib}\"")
-      s.sub!("get_file_path('torch', 'bin', 'torch_shm_manager')", "\"#{bin}/torch_shm_manager\"")
-    end
-
-    inreplace "torch/utils/cpp_extension.py", "_TORCH_PATH = os.path.dirname(os.path.dirname(_HERE))",
-                                              "_TORCH_PATH = \"#{opt_prefix}\""
-
-    system "cmake", "-B", "build", "-S", ".", *std_cmake_args, *args
+    ENV["ATEN_NO_TEST"] = "ON"
+    ENV["BLAS"] = "OpenBLAS"
+    ENV["BUILD_CUSTOM_PROTOBUF"] = "OFF"
+    ENV["BUILD_PYTHON"] = "ON"
+    ENV["BUILD_TEST"] = "OFF"
+    ENV["PYTHON_EXECUTABLE"] = which(python3)
+    ENV["USE_CUDA"] = "OFF"
+    ENV["USE_DISTRIBUTED"] = "ON"
+    ENV["USE_METAL"] = "OFF"
+    ENV["USE_MKLDNN"] = "OFF"
+    ENV["USE_NNPACK"] = "OFF"
+    ENV["USE_OPENMP"] = "ON"
+    ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
+    ENV["USE_SYSTEM_PYBIND11"] = "ON"
+    ENV["USE_SYSTEM_SLEEF"] = "ON"
+    ENV["USE_MPS"] = "ON" if OS.mac?
 
     # Avoid references to Homebrew shims
-    inreplace "build/caffe2/core/macros.h", Superenv.shims_path/ENV.cxx, ENV.cxx
+    inreplace "caffe2/core/macros.h.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
 
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install_and_link(buildpath, build_isolation: false)
+
+    # Expose C++ API
+    torch = libexec/Language::Python.site_packages(python3)/"torch"
+    include.install_symlink (torch/"include").children
+    lib.install_symlink (torch/"lib").children
+    (share/"cmake").install_symlink (torch/"share/cmake").children
   end
 
   test do
