@@ -35,14 +35,18 @@ class Mapserver < Formula
   depends_on "libpq"
   depends_on "proj"
   depends_on "protobuf-c"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "curl"
 
   fails_with gcc: "5"
 
+  # Backport fix for libxml2 2.12.
+  # Ref: https://github.com/MapServer/MapServer/commit/2cea5a12a35b396800296cb1c3ea08eb00b29760
+  patch :DATA
+
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
@@ -78,3 +82,44 @@ class Mapserver < Formula
     system python3, "-c", "import mapscript"
   end
 end
+
+__END__
+diff --git a/mapows.c b/mapows.c
+index f141a7b..5a94ecb 100644
+--- a/mapows.c
++++ b/mapows.c
+@@ -168,7 +168,7 @@ static int msOWSPreParseRequest(cgiRequestObj *request,
+ #endif
+     if (ows_request->document == NULL
+         || (root = xmlDocGetRootElement(ows_request->document)) == NULL) {
+-      xmlErrorPtr error = xmlGetLastError();
++      const xmlError *error = xmlGetLastError();
+       msSetError(MS_OWSERR, "XML parsing error: %s",
+                  "msOWSPreParseRequest()", error->message);
+       return MS_FAILURE;
+diff --git a/mapwcs.cpp b/mapwcs.cpp
+index 70e63b8..19afa79 100644
+--- a/mapwcs.cpp
++++ b/mapwcs.cpp
+@@ -362,7 +362,7 @@ static int msWCSParseRequest(cgiRequestObj *request, wcsParamsObj *params, mapOb
+     /* parse to DOM-Structure and get root element */
+     if((doc = xmlParseMemory(request->postrequest, strlen(request->postrequest)))
+         == NULL) {
+-      xmlErrorPtr error = xmlGetLastError();
++      const xmlError *error = xmlGetLastError();
+       msSetError(MS_WCSERR, "XML parsing error: %s",
+                  "msWCSParseRequest()", error->message);
+       return MS_FAILURE;
+diff --git a/mapwcs20.cpp b/mapwcs20.cpp
+index b35e803..2431bdc 100644
+--- a/mapwcs20.cpp
++++ b/mapwcs20.cpp
+@@ -1446,7 +1446,7 @@ int msWCSParseRequest20(mapObj *map,
+
+     /* parse to DOM-Structure and get root element */
+     if(doc == NULL) {
+-      xmlErrorPtr error = xmlGetLastError();
++      const xmlError *error = xmlGetLastError();
+       msSetError(MS_WCSERR, "XML parsing error: %s",
+                  "msWCSParseRequest20()", error->message);
+       return MS_FAILURE;
