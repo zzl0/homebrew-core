@@ -6,13 +6,13 @@ class DuaCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a7a98565d85281221b29f34dfc05edbbd75e9b4eac203762afe296c75de73fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c3b6fad8680a5ef1c735009a42872eb3ed34ee1e6e84271a60ce78cfafaba22"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a2c84d9c0d5bf2bc1004d4f05a0cb39ef8eaa7c4f16918a3fcd3c2c09fdf4b5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f2221f3c343910842eb9f24fd6789d8db91c14cf01e5838cd71dc1e40979370"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f0ddca9c87c533899698a28f44e2d9e11f3d1979a004eb47116664a05c3ce06"
-    sha256 cellar: :any_skip_relocation, monterey:       "48b9f88b90b2e1ec5ec41807c0c0a8921482fddafe443e13b687bd49a5f3607b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91bbdacbaeef1ff5c24d9b4b8f5b772556aa8fcfd3eec955ee632af61b279322"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7bb50d799698d3fc86c68ce1332526ba3752d6d99b1b627555594e8675a7a7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95eb159c20743d14793feb86c6beb2b6373600f5593f23649047a92f974187b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fefe0170ae6f735b0566e0801ea347cba4d5e357d8ee5cdc7ef5f8b55e74dbd0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1ad9e2766975491df9c9ba9f409e238800b0cc9796dde7935186ed7eebf7581f"
+    sha256 cellar: :any_skip_relocation, ventura:        "f03c336e2edf2d9942e656da4c864bd423fbc52c3eb6465a0e11fee05a577421"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2fdb3d80bfcbd3e788df0287f6db554e294d2d2c1f5a5d34b424e7caa563b3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0aff33730c9ef2494737fc6d546844acea0dc8defee881bd5d5f54ffadb6a40"
   end
 
   depends_on "rust" => :build
