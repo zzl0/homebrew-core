@@ -2,8 +2,8 @@ class Kubent < Formula
   desc "Easily check your clusters for use of deprecated APIs"
   homepage "https://github.com/doitintl/kube-no-trouble"
   url "https://github.com/doitintl/kube-no-trouble.git",
-      tag:      "0.7.0",
-      revision: "d1bb4e5fd6550b533b2013671aa8419d923ee042"
+      tag:      "0.7.1",
+      revision: "1ed4bfb4bd271f88731d245131edec931956cf74"
   license "MIT"
   head "https://github.com/doitintl/kube-no-trouble.git", branch: "master"
 
