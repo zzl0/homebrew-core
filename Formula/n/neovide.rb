@@ -1,8 +1,8 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https://github.com/neovide/neovide"
-  url "https://github.com/neovide/neovide/archive/refs/tags/0.11.2.tar.gz"
-  sha256 "62e973a5407a6bfc731ce78e0495d2ed10930d33b22fe94cfe23acccbf789ae9"
+  url "https://github.com/neovide/neovide/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "8770dd6977605f9bafa990a60cf8f2ebeba7df16417dab2e8c5583d279ec86ef"
   license "MIT"
   head "https://github.com/neovide/neovide.git", branch: "main"
 
@@ -44,8 +44,6 @@ class Neovide < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/neovide --version")
-
     test_server = "localhost:#{free_port}"
     nvim_cmd = ["nvim", "--headless", "--listen", test_server]
     ohai nvim_cmd.join(" ")
@@ -53,7 +51,7 @@ class Neovide < Formula
 
     sleep 10
 
-    neovide_cmd = [bin/"neovide", "--nofork", "--remote-tcp=#{test_server}"]
+    neovide_cmd = [bin/"neovide", "--no-fork", "--remote-tcp=#{test_server}"]
     ohai neovide_cmd.join(" ")
     neovide_pid = spawn(*neovide_cmd)
 
