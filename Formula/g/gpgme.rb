@@ -20,12 +20,12 @@ class Gpgme < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c164a32c1038b62a9e9d9fe968ba55828970f829435b46e89757c81f30152d8"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
-  depends_on "python-setuptools"
 
   def python3
     "python3.12"
@@ -41,22 +41,17 @@ class Gpgme < Formula
     # error: 'auto' not allowed in lambda parameter
     ENV.append "CXXFLAGS", "-std=c++14"
 
-    site_packages = prefix/Language::Python.site_packages(python3)
-    ENV.append_path "PYTHONPATH", site_packages
-    # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
+    # Use pip over executing setup.py, which installs a deprecated egg distribution
+    # https://dev.gnupg.org/T6784
     inreplace "lang/python/Makefile.in",
-              /^\s*install\s*\\\n\s*--prefix "\$\(DESTDIR\)\$\(prefix\)"/,
-              "\\0 --install-lib=#{site_packages}"
+              /^\s*\$\$PYTHON setup\.py\s*\\/,
+              "$$PYTHON -m pip install --use-pep517 #{std_pip_args.join(" ")} . && : \\"
 
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-static"
     system "make"
     system "make", "install"
-
-    # Rename the `easy-install.pth` file to avoid `brew link` conflicts.
-    site_packages.install site_packages/"easy-install.pth" => "homebrew-gpgme-#{version}.pth"
 
     # avoid triggering mandatory rebuilds of software that hard-codes this path
     inreplace bin/"gpgme-config", prefix, opt_prefix
