@@ -4,6 +4,7 @@ class Uffizzi < Formula
   url "https://github.com/UffizziCloud/uffizzi_cli/archive/refs/tags/v2.3.4.tar.gz"
   sha256 "170849b4054e45b6a4c0fd8343f05e55817c8f10b6190d7f0d3edf1ae994629e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
