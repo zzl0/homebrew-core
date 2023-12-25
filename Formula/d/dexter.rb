@@ -4,6 +4,7 @@ class Dexter < Formula
   url "https://github.com/ankane/dexter/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "280403858ea209b41910f487f737fd602b41c60cc6cd3e5cf54ed5db9330b321"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "92cb0fbac4487c140ca08f6f455a59c08244fc1a983c7601231a350a5a57e14e"
