@@ -1,10 +1,19 @@
 class Pdfpc < Formula
   desc "Presenter console with multi-monitor support for PDF files"
   homepage "https://pdfpc.github.io/"
-  url "https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.4.1.tar.gz"
-  sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
   license "GPL-3.0-or-later"
-  revision 3
+  head "https://github.com/pdfpc/pdfpc.git", branch: "master"
+
+  stable do
+    url "https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.6.0.tar.gz"
+    sha256 "3b1a393f36a1b0ddc29a3d5111d8707f25fb2dd2d93b0401ff1c66fa95f50294"
+
+    # Backport fix for Vala 0.56.7+. Remove in the next release.
+    patch do
+      url "https://github.com/pdfpc/pdfpc/commit/18beaecbbcc066e0d4c889b3aa3ecaa7351f7768.patch?full_index=1"
+      sha256 "894a0cca9525a045f4bd28b54963bd0ad8b1752907f1ad4d8b4f7d9fdd4880c3"
+    end
+  end
 
   bottle do
     sha256 arm64_sonoma:   "0fa98a189234582e235215997734a148ef5f4b6f96a0279e5212426eaca55a05"
@@ -16,34 +25,32 @@ class Pdfpc < Formula
     sha256 x86_64_linux:   "581f359bbbeca6405785b33d0d9d7f3b33e59184b76f89db2f29ec79b1faaf48"
   end
 
-  head do
-    url "https://github.com/pdfpc/pdfpc.git", branch: "master"
-
-    depends_on "discount"
-    depends_on "json-glib"
-    depends_on "libsoup@2"
-    depends_on "qrencode"
-
-    on_linux do
-      depends_on "webkitgtk"
-    end
-  end
-
   depends_on "cmake" => :build
   depends_on "vala" => :build
+  depends_on "discount"
   depends_on "gstreamer"
   depends_on "gtk+3"
+  depends_on "json-glib"
   depends_on "libgee"
   depends_on "librsvg"
   depends_on "poppler"
 
+  on_linux do
+    depends_on "webkitgtk"
+  end
+
   def install
-    # NOTE: You can avoid the `libsoup@2` dependency by passing `-DREST=OFF`.
-    # https://github.com/pdfpc/pdfpc/blob/3310efbf87b5457cbff49076447fcf5f822c2269/src/CMakeLists.txt#L38-L40
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+    # Upstream currently uses webkit2gtk-4.0 (API for GTK 3 and libsoup 2)
+    # but we only provide webkit2gtk-4.1 (API for GTK 3 and libsoup 3).
+    # Issue ref: https://github.com/pdfpc/pdfpc/issues/671
+    inreplace "src/CMakeLists.txt", "webkit2gtk-4.0", "webkit2gtk-4.1"
+
+    system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DMDVIEW=#{OS.linux?}", # Needs webkitgtk
-                    "-DMOVIES=ON"
+                    "-DMOVIES=ON",
+                    "-DREST=OFF",
+                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
