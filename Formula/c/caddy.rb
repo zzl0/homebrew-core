@@ -38,11 +38,20 @@ class Caddy < Formula
     man8.install Dir[buildpath/"man/*.8"]
   end
 
+  def caveats
+    <<~EOS
+      When running the provided service, caddy's data dir will be set as
+        `#{HOMEBREW_PREFIX}/var/lib`
+        instead of the default location found at https://caddyserver.com/docs/conventions#data-directory
+    EOS
+  end
+
   service do
     run [opt_bin/"caddy", "run", "--config", etc/"Caddyfile"]
     keep_alive true
     error_log_path var/"log/caddy.log"
     log_path var/"log/caddy.log"
+    environment_variables XDG_DATA_HOME: "#{HOMEBREW_PREFIX}/var/lib"
   end
 
   test do
