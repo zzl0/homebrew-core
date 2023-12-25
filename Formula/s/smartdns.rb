@@ -1,8 +1,8 @@
 class Smartdns < Formula
-  desc "Rule-based DNS server for fast IP resolution, DoT/DoH/DoQ supported"
+  desc "Rule-based DNS server for fast IP resolution, DoT/DoQ/DoH/DoH3 supported"
   homepage "https://github.com/mokeyish/smartdns-rs"
-  url "https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.6.5.tar.gz"
-  sha256 "eabb03adc91a5cc985c4fbbcb64dfaa5bd475051060d6c3540dfd03c8d379f11"
+  url "https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.7.1.tar.gz"
+  sha256 "4b459bd7790a6806f89c744906265cbc9f87713aa5ca991d3d45edf11ac82b08"
   license "GPL-3.0-only"
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
@@ -19,10 +19,14 @@ class Smartdns < Formula
   depends_on "rust" => :build
 
   on_linux do
+    depends_on "openssl@3" =>  :build # cargo patch
+    depends_on "pkg-config" => :build # cargo patch
     depends_on "bind" => :test # for `dig`
   end
 
   def install
+    system "cargo", "install", "patch-crate"
+    system "cargo", "patch-crate"
     system "cargo", "install", "--features", "homebrew", *std_cargo_args
     sbin.install bin/"smartdns"
     pkgetc.install "etc/smartdns/smartdns.conf"
