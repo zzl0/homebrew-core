@@ -1,10 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.7.1.tar.gz"
-  sha256 "7e3811e6024db0698bfbc321bb324572446b8853d01b4073f09865957b0cab98"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.8.tar.gz"
+  sha256 "1d7dc4d0f2bbcc2a871bb954ff4a5df63048dea9c16f5f1e9bc8260fa41a1004"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -45,6 +44,7 @@ class Vice < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "curl"
 
   on_linux do
     depends_on "alsa-lib"
