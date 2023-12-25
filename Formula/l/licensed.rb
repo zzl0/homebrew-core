@@ -5,7 +5,7 @@ class Licensed < Formula
       tag:      "4.4.0",
       revision: "0f5e5a1d289665e8a3d7133cba6c6f3a15359ecb"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "01f9d3789a4289a252f371d5bf13629b1439344c6591c93575d9c133b2fbcde2"
