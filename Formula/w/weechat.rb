@@ -1,9 +1,10 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-4.1.2.tar.xz"
+  url "https://weechat.org/files/src/weechat-4.1.2.tar.xz" # if after 4.1.2, should be able to remove below 0879f9e patch
   sha256 "9a9b910fbe768bb9de7c7ac944f5db8f233833f345b2e505e16ec6ef35effbb5"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
@@ -35,6 +36,12 @@ class Weechat < Formula
 
   def python3
     which("python3.12")
+  end
+
+  patch do
+    # Patch cmake/FindRuby.cmake to be aware of Ruby 3.3
+    url "https://github.com/weechat/weechat/commit/5c65a73432f278a0caf36363a8b01571f1c7236a.patch?full_index=1"
+    sha256 "0879f9e21bd606726cd62a14cab76fcd8a4631c614c178cdb72c124a6c610cdc"
   end
 
   def install
