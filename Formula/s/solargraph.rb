@@ -6,6 +6,7 @@ class Solargraph < Formula
       tag:      "v0.50.0",
       revision: "58f3b8d0f31a3bded0b1cdbb6b2934eee262f03b"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4de169818f370c104c019f7c90ad134c1f88c75129c565274efc9c6d857bd80b"
@@ -19,7 +20,7 @@ class Solargraph < Formula
 
   depends_on "ruby" # Requires >= Ruby 2.7
 
-  uses_from_macos "xz"
+  depends_on "xz"
 
   def install
     ENV["GEM_HOME"] = libexec
