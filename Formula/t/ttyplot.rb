@@ -1,8 +1,8 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
   homepage "https://github.com/tenox7/ttyplot"
-  url "https://github.com/tenox7/ttyplot/archive/refs/tags/1.5.2.tar.gz"
-  sha256 "a0279e55c1996133645437ccb02574c82d62f0baa9744065779b5667c1f1cb8d"
+  url "https://github.com/tenox7/ttyplot/archive/refs/tags/1.6.0.tar.gz"
+  sha256 "99ae8b5923720113d034df868104fa70f4ac1d34af449224bfda690a1811baaf"
   license "Apache-2.0"
 
   bottle do
