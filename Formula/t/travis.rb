@@ -4,7 +4,7 @@ class Travis < Formula
   url "https://github.com/travis-ci/travis.rb/archive/refs/tags/v1.11.1.tar.gz"
   sha256 "438b30362b54ed5c8668abf4212f239ac9081ab3aeb7cb9a24a9bf4b044495c3"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c4a01bf208216d3e979382d7d8c1a73e8354cbaabbd39bb210f680d4c9d05d59"
