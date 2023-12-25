@@ -22,6 +22,7 @@ class Kondo < Formula
     cd "kondo" do
       system "cargo", "install", *std_cargo_args
     end
+    generate_completions_from_executable(bin/"kondo", "--completions")
   end
 
   test do
