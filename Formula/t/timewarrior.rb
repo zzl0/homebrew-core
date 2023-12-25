@@ -1,8 +1,8 @@
 class Timewarrior < Formula
   desc "Command-line time tracking application"
   homepage "https://timewarrior.net/"
-  url "https://github.com/GothenburgBitFactory/timewarrior/releases/download/v1.6.0/timew-1.6.0.tar.gz"
-  sha256 "cd1aa610ed50558bb2cf141022fa7b41523091ac3ae5fbb9c2d459cfe1afc782"
+  url "https://github.com/GothenburgBitFactory/timewarrior/releases/download/v1.7.0/timew-1.7.0.tar.gz"
+  sha256 "fd7433bf6964b3aab22c0f9542a14b4182dbcba092bd214e03d57d326d2bc8b2"
   license "MIT"
   head "https://github.com/GothenburgBitFactory/timewarrior.git", branch: "dev"
 
