@@ -1,8 +1,8 @@
 class Tinycdb < Formula
   desc "Create and read constant databases"
   homepage "https://www.corpit.ru/mjt/tinycdb.html"
-  url "https://www.corpit.ru/mjt/tinycdb/tinycdb-0.80.tar.gz"
-  sha256 "c321b905e902c2ca99a3ff8a8dddfd8823247fe1edec8a4bb85f83869c639fb8"
+  url "https://www.corpit.ru/mjt/tinycdb/tinycdb-0.81.tar.gz"
+  sha256 "469de2d445bf54880f652f4b6dc95c7cdf6f5502c35524a45b2122d70d47ebc2"
   license :public_domain
 
   livecheck do
