@@ -1,8 +1,8 @@
 class MinimalRacket < Formula
   desc "Modern programming language in the Lisp/Scheme family"
   homepage "https://racket-lang.org/"
-  url "https://mirror.racket-lang.org/installers/8.10/racket-minimal-8.10-src.tgz"
-  sha256 "9353739a489880f90fe3653ed3c2e38dbdc5114ece337944697b0b1f6f61bde0"
+  url "https://mirror.racket-lang.org/installers/8.11.1/racket-minimal-8.11.1-src.tgz"
+  sha256 "1f55fd6e1430f7239a1126cae3eb6f7855956f813230d18b2ae930280a39f3cc"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
