@@ -2,18 +2,11 @@ class Ehco < Formula
   desc "Network relay tool and a typo :)"
   homepage "https://github.com/Ehco1996/ehco"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/Ehco1996/ehco.git", branch: "master"
 
   stable do
-    url "https://github.com/Ehco1996/ehco/archive/refs/tags/v1.1.2.tar.gz"
-    sha256 "064f80a267e22206033c62f5cd61b01172cd7cac532679669474e22993c4884b"
-
-    # go@1.20 build patch, remove in next release
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/cb97010/ehco/1.1.2-go-1.20-build.patch"
-      sha256 "47444d6fba83b0f1e02bd42cdc32842f3134ae2a92c029184fd2daa099b25f07"
-    end
+    url "https://github.com/Ehco1996/ehco/archive/refs/tags/v1.1.3.tar.gz"
+    sha256 "9d91dcc122578cf814574ed88d5c8517c74a2574e8af72d9d02f79376fcdb4bf"
   end
 
   livecheck do
@@ -33,7 +26,7 @@ class Ehco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3569c5b299625b6d80c20fc187a0e48b109a307addda8dd3729e0f82ad519ceb"
   end
 
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
 
   uses_from_macos "netcat" => :test
 
