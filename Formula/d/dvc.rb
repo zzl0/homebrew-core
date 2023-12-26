@@ -35,7 +35,7 @@ class Dvc < Formula
   depends_on "python-pyparsing"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
