@@ -1,8 +1,8 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https://dystroy.org/bacon/"
-  url "https://github.com/Canop/bacon/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "009c7ca9e3903ea7141d9979a1006ef0e3bf0d6e5e294c88d4ea76194422c3e0"
+  url "https://github.com/Canop/bacon/archive/refs/tags/v2.14.1.tar.gz"
+  sha256 "c8b6cf52918a1fb42e7f725fa4215145ebeea22c4edb7c9a2050972269856f19"
   license "AGPL-3.0-or-later"
   head "https://github.com/Canop/bacon.git", branch: "main"
 
