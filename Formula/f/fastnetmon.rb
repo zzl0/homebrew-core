@@ -1,7 +1,6 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
   homepage "https://github.com/pavel-odintsov/fastnetmon/"
-  # TODO: Check if we can use unversioned `grpc` at version bump
   url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
@@ -21,12 +20,13 @@ class Fastnetmon < Formula
   depends_on "abseil"
   depends_on "boost"
   depends_on "capnp"
-  depends_on "grpc@1.54"
+  depends_on "grpc"
   depends_on "hiredis"
   depends_on "log4cpp"
   depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur
   depends_on "mongo-c-driver"
   depends_on "openssl@3"
+  depends_on "protobuf"
   uses_from_macos "ncurses"
 
   on_linux do
@@ -36,6 +36,13 @@ class Fastnetmon < Formula
   end
 
   fails_with gcc: "5"
+
+  # Fix build with newer `protobuf` using open PR.
+  # PR ref: https://github.com/pavel-odintsov/fastnetmon/pull/997
+  patch do
+    url "https://github.com/pavel-odintsov/fastnetmon/commit/fad8757b8986226024d549a6dfb40abbab01643e.patch?full_index=1"
+    sha256 "2da8dbdf9dc63df9f17067aef20d198123ce1338559d394f29461761e6b85f85"
+  end
 
   def install
     system "cmake", "-S", "src", "-B", "build",
