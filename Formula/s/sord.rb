@@ -23,12 +23,12 @@ class Sord < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "serd"
   depends_on "zix"
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dtests=disabled"
+    system "meson", "setup", "build", "-Dtests=disabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
