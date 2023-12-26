@@ -3,8 +3,8 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/74/a4/364724cf4bde0915d038d6505b64d43e6fd92277503969b554baaf8670b9/hatch-1.9.0.tar.gz"
-  sha256 "e1e6a511e152ec7cd4dbabc4f4f6a1874870bd49c97d17d390b9232dda685ce3"
+  url "https://files.pythonhosted.org/packages/79/fb/b0d0d7d3b0674f73e9b0b3b935600b11ebab70e62e50874e85c7a986b79c/hatch-1.9.1.tar.gz"
+  sha256 "77462d9f1fd3c161ebaa7afc51f62b3f1392375e1d3a0cd23dba4cd996bd1cec"
   license "MIT"
 
   bottle do
@@ -47,8 +47,8 @@ class Hatch < Formula
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/8c/23/911d93a022979d3ea295f659fbe7edb07b3f4561a477e83b3a6d0e0c914e/httpx-0.25.2.tar.gz"
-    sha256 "8b8fcaa0c8ea7b05edd69a094e63a2094c4efcb48129fb757361bc423c0ad9e8"
+    url "https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "hyperlink" do
