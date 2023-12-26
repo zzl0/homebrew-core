@@ -1,8 +1,8 @@
 class Cloudfox < Formula
   desc "Automating situational awareness for cloud penetration tests"
   homepage "https://github.com/BishopFox/cloudfox"
-  url "https://github.com/BishopFox/cloudfox/archive/refs/tags/v1.12.3.tar.gz"
-  sha256 "e082972b5368c90308ea97bc06a8732b0fc45053a78472022626392580fbe0b1"
+  url "https://github.com/BishopFox/cloudfox/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "6b72280c71a894edddd09ae05a6667f76ed4e4049b137d9a651ac618d78a55af"
   license "MIT"
   head "https://github.com/BishopFox/cloudfox.git", branch: "main"
 
