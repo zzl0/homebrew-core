@@ -1,8 +1,8 @@
 class PythonBotocore < Formula
   desc "Low-level, data-driven core of boto 3"
   homepage "https://botocore.amazonaws.com/v1/documentation/api/latest/index.html"
-  url "https://files.pythonhosted.org/packages/f4/18/daf6799ca51e8ab2d5fe10e1e1bd05e156a14228ac1bf9f402e0599892ee/botocore-1.33.13.tar.gz"
-  sha256 "fb577f4cb175605527458b04571451db1bd1a2036976b626206036acd4496617"
+  url "https://files.pythonhosted.org/packages/c4/3e/728ff51ed1890b86a841ac35a14b4a39bb00248e43a27c0d542f3a8f727d/botocore-1.34.8.tar.gz"
+  sha256 "02a4026d713a2af1e33a77abd95ef83115efd3ea7bd01a2cffef35fef89acfe1"
   license "Apache-2.0"
 
   bottle do
