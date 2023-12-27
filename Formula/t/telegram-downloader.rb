@@ -1,9 +1,10 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
-  homepage "https://github.com/iyear/tdl"
-  url "https://github.com/iyear/tdl/archive/refs/tags/v0.13.3.tar.gz"
-  sha256 "f92356bbc29a98bdcbd5bf2ae9c71280cf9d3a577ef0ca3f490a4cbc22739078"
+  homepage "https://docs.iyear.me/tdl/"
+  url "https://github.com/iyear/tdl/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "80d58805d8c138280a40fbaaa3b3c5e07503c33b67da61fc4bd1523416d6dd2f"
   license "AGPL-3.0-only"
+  head "https://github.com/iyear/tdl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "124d737f12b58c4756de599b304d12320fc03dd7738c8282c4f747034b674c78"
@@ -18,11 +19,18 @@ class TelegramDownloader < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tdl")
+    ldflags = %W[
+      -s -w
+      -X github.com/iyear/tdl/pkg/consts.Version=#{version}
+      -X github.com/iyear/tdl/pkg/consts.Commit=#{tap.user}
+      -X github.com/iyear/tdl/pkg/consts.CommitDate=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tdl")
   end
 
   test do
-    assert_match "# ID of dialog", shell_output("#{bin}/tdl chat ls -f -")
+    assert_match version.to_s, shell_output("#{bin}/tdl version")
+
     assert_match "not authorized. please login first", shell_output("#{bin}/tdl chat ls -n _test", 1)
   end
 end
