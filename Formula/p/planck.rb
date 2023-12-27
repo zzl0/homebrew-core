@@ -28,11 +28,9 @@ class Planck < Formula
 
   uses_from_macos "vim" => :build # for xxd
   uses_from_macos "curl"
-  uses_from_macos "libffi"
+  uses_from_macos "zlib"
 
   on_linux do
-    depends_on "glib"
-    depends_on "pcre"
     depends_on "webkitgtk"
   end
 
@@ -43,7 +41,7 @@ class Planck < Formula
   patch :DATA
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Language::Java.java_home
 
     if OS.linux?
       ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
