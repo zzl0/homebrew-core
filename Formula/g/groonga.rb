@@ -32,7 +32,6 @@ class Groonga < Formula
   depends_on "mecab-ipadic"
   depends_on "msgpack"
   depends_on "openssl@3"
-  depends_on "pcre"
 
   uses_from_macos "libxcrypt"
 
