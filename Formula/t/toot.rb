@@ -3,8 +3,8 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.bezdomni.net/"
-  url "https://files.pythonhosted.org/packages/f9/ec/5648267071f8289d85ffc61f7aabb71ed9a1bc4aabba267c1e4ccd5b0248/toot-0.39.0.tar.gz"
-  sha256 "b359d47713de1440eea606a577e89c1fd63bba3a7797edad2fddc48447660819"
+  url "https://files.pythonhosted.org/packages/59/fc/77a13af0a018cc77124fa1cf898aa9246b72519160f83bb24ba0ce429213/toot-0.40.0.tar.gz"
+  sha256 "12e98f8ba07ff117f500a762d3be7a4b64469cbf007cfef7614e51bd8c1a5662"
   license "GPL-3.0-only"
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
@@ -31,9 +31,14 @@ class Toot < Formula
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+  end
+
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "requests" do
@@ -57,8 +62,8 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/81/f4/fa6da5de99e11e60d826567609eaa815146f835285a26f6c0f61e6015e2c/urwid-2.2.3.tar.gz"
-    sha256 "e4516d55dcee6bd012b3e72a10c75f2866c63a740f0ec4e1ada05c1e1cc02e34"
+    url "https://files.pythonhosted.org/packages/97/52/0f9b7a2414ec1fea3aff598adffb9865782d95906fd79b42daec99af4043/urwid-2.3.4.tar.gz"
+    sha256 "18b9f84cc80a4fcda55ea29f0ea260d31f8c1c721ff6a0396a396020e6667738"
   end
 
   resource "wcwidth" do
@@ -71,7 +76,7 @@ class Toot < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/toot")
-    assert_match "You are not logged in to any accounts", shell_output("#{bin}/toot auth")
+    assert_match version.to_s, shell_output("#{bin}/toot --version")
+    assert_equal "You are not logged in to any accounts", shell_output("#{bin}/toot auth").chomp
   end
 end
