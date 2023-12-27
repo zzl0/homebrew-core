@@ -6,7 +6,7 @@ class UrdfdomHeaders < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7af8770bcbebfab71cb7921651eae92d0d57a1e4176842c0a63dc7fc64715e8c"
+    sha256 cellar: :any_skip_relocation, all: "9c343415f07893bdee8693c0015e04a1c7b70dc79d2a8e1b8fb6da74364664af"
   end
 
   depends_on "cmake" => :build
