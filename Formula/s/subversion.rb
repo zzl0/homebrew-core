@@ -16,13 +16,13 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "faabf09fea6c7369b4aafe8d8f7eba5fb1ba343be0ecd38658cd8a40c9b1f855"
-    sha256 arm64_ventura:  "b21cb76132af5fe1e40c2703d0b8f85a7ddc0910a691264e52cbe2b01194cee7"
-    sha256 arm64_monterey: "caf3259da72c733308ff60b417302300aa6a05801dd123ffe9a38f70dc318c65"
-    sha256 sonoma:         "812d5448aedad802288ec79d25dc7473ec72b2f645aae5e0c6748bb2677aafd8"
-    sha256 ventura:        "7862c63584e5bab970d1c95633fbbf0c90ffbd6a99665872f777937a259cb1f0"
-    sha256 monterey:       "1c41c68e2949c1d0957e5ad3e9ebf5808c7b6ba0dd4f69a66574c86557be9df9"
-    sha256 x86_64_linux:   "3fd92f7e310550b0ee8f4d777c228c05b97168ce98ed92260578b8b07a822838"
+    sha256 arm64_sonoma:   "b51808010d560f470bf6f4c14df7965d7f0840fa36ea5d84f38a83697b710ba3"
+    sha256 arm64_ventura:  "ad02a2f65ee3ac5e6023e64427ebfff10fde2f298ba7d6e4b298fb55c3898388"
+    sha256 arm64_monterey: "97b753bf79a9f4a041d12052ec229bceb34bc420af98f9990b510c4848ccc990"
+    sha256 sonoma:         "024a680f2f7b4fbd9916cb5d02f5923866ba9f67b5bcfa0f3b502076a9721ea3"
+    sha256 ventura:        "e3372419e8caa3545b4567d4146a6769a3a440d53eca0ea38617c4024bf70d95"
+    sha256 monterey:       "c811f533a2e0cf5805808cbfdca17043b3f2c5c7364bd460b35f324aa42078af"
+    sha256 x86_64_linux:   "e3aaf417aed39c962a61c2c1d11292992abd183c8d32ec57cd760188c054beea"
   end
 
   head do
