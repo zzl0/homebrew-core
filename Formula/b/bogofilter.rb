@@ -19,11 +19,12 @@ class Bogofilter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a74a36fca55ff920b663466e33ed22a127726da33b90f26b45abcc084074f33"
   end
 
-  depends_on "berkeley-db"
+  uses_from_macos "sqlite"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules",
+                          "--with-database=sqlite3",
+                          *std_configure_args
     system "make", "install"
   end
 
