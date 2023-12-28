@@ -3,10 +3,9 @@ class Virtualenvwrapper < Formula
 
   desc "Python virtualenv extensions"
   homepage "https://virtualenvwrapper.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c1/6b/2f05d73b2d2f2410b48b90d3783a0034c26afa534a4a95ad5f1178d61191/virtualenvwrapper-4.8.4.tar.gz"
-  sha256 "51a1a934e7ed0ff221bdd91bf9d3b604d875afbb3aa2367133503fee168f5bfa"
+  url "https://files.pythonhosted.org/packages/b3/db/450a94145125297929aca586595a8765db0ef15ca219cd47df0337480730/virtualenvwrapper-6.0.0.tar.gz"
+  sha256 "4cdaca4a01bb11c3343b01439cf2d76ebe97bb28c4b9a653a9b1f1f7585cd097"
   license "MIT"
-  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdbc2e8546e743b3c6dfb7a1b36fbbd7c384bdc9e9709718a4301b38d5fdd096"
@@ -23,8 +22,8 @@ class Virtualenvwrapper < Formula
   depends_on "virtualenv"
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/02/d8/acee75603f31e27c51134a858e0dea28d321770c5eedb9d1d673eb7d3817/pbr-5.11.1.tar.gz"
-    sha256 "aefc51675b0b533d56bb5fd1c8c6c0522fe31896679882e1c4c63d5e4a0fccb3"
+    url "https://files.pythonhosted.org/packages/8d/c2/ee43b3b11bf2b40e56536183fc9f22afbb04e882720332b6276ee2454c24/pbr-6.0.0.tar.gz"
+    sha256 "d1377122a5a00e2f940ee482999518efe16d745d423a670c27773dfbc3c9a7d9"
   end
 
   resource "stevedore" do
