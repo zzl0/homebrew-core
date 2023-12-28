@@ -27,18 +27,18 @@ class Heimdal < Formula
   keg_only "conflicts with Kerberos"
 
   depends_on "bison" => :build
-  depends_on "berkeley-db"
+  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "flex"
   depends_on "lmdb"
   depends_on "openldap"
   depends_on "openssl@3"
 
+  uses_from_macos "perl" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "libxcrypt"
-  uses_from_macos "perl"
 
   on_linux do
     depends_on "pkg-config" => :build
-    depends_on "python@3.11" => :build
   end
 
   resource "JSON" do
@@ -47,36 +47,34 @@ class Heimdal < Formula
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", buildpath/"perl5/lib/perl5"
 
     resource("JSON").stage do
-      system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+      system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}/perl5"
       system "make"
       system "make", "install"
     end
 
-    ENV.append "LDFLAGS", "-L#{Formula["berkeley-db"].opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["berkeley-db@5"].opt_lib}"
     ENV.append "LDFLAGS", "-L#{Formula["lmdb"].opt_lib}"
     ENV.append "CFLAGS", "-I#{Formula["lmdb"].opt_include}"
 
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --without-x
       --enable-static=no
       --enable-pthread-support
       --disable-afs-support
       --disable-ndbm-db
       --disable-heimdal-documentation
+      --disable-silent-rules
       --with-openldap=#{Formula["openldap"].opt_prefix}
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-hcrypto-default-backend=ossl
       --with-berkeley-db
-      --with-berkeley-db-include=#{Formula["berkeley-db"].opt_include}
+      --with-berkeley-db-include=#{Formula["berkeley-db@5"].opt_include}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
