@@ -12,13 +12,13 @@ class Monetdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "742b18ac8b12a2af43e80ece1e93b7e98867ac451007701edd65b8859f9e1751"
-    sha256 arm64_ventura:  "9da841adc79f8723c9a7739034c1869ee4573722259ac4f2d87b3ae2c9674662"
-    sha256 arm64_monterey: "0dc04e6ec4ec6a8149c5d1ab70b32a867bd9c9da7a1cc9d0cae9d644a676fde1"
-    sha256 sonoma:         "cd23acb1dca2ecf73870b5b5dab9199a8abee27a3ab32c2002552a7ccb50d462"
-    sha256 ventura:        "3b1dc6fba5430675beeb70ceacc7b77a5d8c96da9c013b83b20175ddf09a290e"
-    sha256 monterey:       "37128b55078ccd18f6d058dc91ae14d9f0fa736a55cb501705aacb85294835e8"
-    sha256 x86_64_linux:   "af46e457115a2af149ea1ea5b934f962cdb72c38d9b1855dd09de7b8b193b473"
+    sha256 arm64_sonoma:   "2d95c3fafccff542dbc356985d2640255e2d0f23a41d0d08813dbaf5c318ff41"
+    sha256 arm64_ventura:  "9a29399c50b5bbf938482f011c2f026bb9a595083ebc37ca98a6b6c180e39a06"
+    sha256 arm64_monterey: "13d26ec289fe0257a7fc0d59f76c6367b673ec67e8e96f73fb9cc157c39e4d79"
+    sha256 sonoma:         "97ea142c95c5a1a0e94a410a7863a122f905dbe40acd6edbc3057d0e66c99573"
+    sha256 ventura:        "5ac0df816b0d62cb605ec1aaf301b585a8b0ec9863722c186bec1796aa8e82eb"
+    sha256 monterey:       "6a823d3d8d804ea2e80f1e1e89dc21ae8a0c1233c5cbb9246ff20849982de965"
+    sha256 x86_64_linux:   "a803b302bd97f824d11c3320c3dcb70ecd7aba94c7cc96e22b75d9cc9644da29"
   end
 
   depends_on "bison" => :build # macOS bison is too old
