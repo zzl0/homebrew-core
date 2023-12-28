@@ -9,13 +9,13 @@ class Shub < Formula
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf7d183086d6b6709477f88d66ac46ea06230856b88cd938900c056942f41d97"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c763c57ac1809639f995a6380ee80352607c6760e38e7432ef1576303ee2412c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1b075a2d6a6a2d6d0f27491f3fd1901b20c3869075c6c59aeb2f51087e201f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9f4fa974b66374592a5268c04c5810b707bd493956b4c90c49c4978b888a9594"
-    sha256 cellar: :any_skip_relocation, ventura:        "b59ab9ac596f0c84d7293efa172463c7de9ae05b4ced0111ef1e332addc1d4f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bc31fae53101b816002ffd5fcf053ec3d05d651c2b19cf5dfaf758a812c4b7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ed0f1a36241b90f9510dd4f4feac90bdcf56a7de600d152c0fc13c681ab5369"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9253251ae079627baa086695097fd28bac1007932934bc825a2ef24b24f6df1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "538d6cde4e5bf33779843fa12fd56646741f5005825a105a2b75df0a5bd0ce38"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "217c9778e208879de55c595ce7ed5ea5da9c05799bb1987e8170216a07a325dc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0bca31215255406332464fa4d3a259232cae8488dac824b4549c5fe39c76d3fe"
+    sha256 cellar: :any_skip_relocation, ventura:        "18f9ffab6ab87cdba223cd0582547f4c89bf048785910a272b86935dc281c23d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2f4cc629a5d745721448c1a691898e0415934b590ff869aaa7ec5dd769996c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc3f0aecb42f0d88dc2ab772989ef5a7a353f00ab7bda9c5ea7bc591a209306f"
   end
 
   depends_on "python-certifi"
