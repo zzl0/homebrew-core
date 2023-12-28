@@ -3,8 +3,8 @@ class CargoRelease < Formula
   homepage "https://github.com/crate-ci/cargo-release"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "fbde90b749180128e2d4171b5d411a1895819e911bcf560264808dc610d0c5ff"
+  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.1.tar.gz"
+  sha256 "acb4b54cb60097459ec74f4b7f74d2623f45cc4172b16ef0fdd9a7fc4b4625a2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
@@ -21,16 +21,10 @@ class CargoRelease < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/crate-ci/cargo-release/blob/v#{version}/Cargo.lock
-  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Migrate to the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
 
   def install
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
@@ -57,7 +51,7 @@ class CargoRelease < Formula
     end
 
     [
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-release", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
