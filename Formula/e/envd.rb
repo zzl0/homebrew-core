@@ -1,8 +1,8 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://github.com/tensorchord/envd/archive/refs/tags/v0.3.40.tar.gz"
-  sha256 "3923fad229064604c3539d0b03de7a4491962a7e724df748cdf84aaa817b319a"
+  url "https://github.com/tensorchord/envd/archive/refs/tags/v0.3.43.tar.gz"
+  sha256 "588609b0573d2456359f63fed25bf36ba976b3da734e857e8ec98d6b30d56057"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
@@ -42,7 +42,7 @@ class Envd < Formula
     expected = if OS.mac?
       "failed to list containers: Cannot connect to the Docker daemon"
     else
-      "failed to list containers: Got permission denied while trying to connect to the Docker daemon"
+      "failed to list containers: permission denied while trying to connect to the Docker daemon"
     end
 
     stderr = shell_output("#{bin}/envd env list 2>&1", 1)
