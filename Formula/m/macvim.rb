@@ -15,6 +15,12 @@ class Macvim < Formula
       url "https://github.com/vim/vim/commit/fa145f200966e47e11c403520374d6d37cfd1de7.patch?full_index=1"
       sha256 "b449dbcb51e6725b5365a12f987ebe1265bdaf1665bbe3bce4566478957d796d"
     end
+
+    # Backport Sonoma tabs fix. Remove in the next release.
+    patch do
+      url "https://github.com/macvim-dev/macvim/commit/e9167c29dbf3dd5bb80b48c6425c7b20301a8d44.patch?full_index=1"
+      sha256 "cdeff4ea17bd3f67022f17b78d6ccf9bc8a90b4b1a18b721bd3f65103bfef04e"
+    end
   end
 
   # The stable Git tags use a `release-123` format and it's necessary to check
