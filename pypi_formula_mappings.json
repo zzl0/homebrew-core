@@ -752,7 +752,7 @@
     "exclude_packages": ["certifi", "click"]
   },
   "nox": {
-    "exclude_packages": ["argcomplete", "packaging", "six", "virtualenv"]
+    "exclude_packages": ["argcomplete", "packaging", "virtualenv"]
   },
   "nvchecker": {
     "package_name": "nvchecker[pypi]",
