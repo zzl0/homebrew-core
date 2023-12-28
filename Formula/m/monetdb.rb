@@ -1,8 +1,8 @@
 class Monetdb < Formula
   desc "Column-store database"
   homepage "https://www.monetdb.org/"
-  url "https://www.monetdb.org/downloads/sources/Jun2023-SP3/MonetDB-11.47.17.tar.xz"
-  sha256 "fa7f2fcf3153e3cb3ae5c964a732d0216d62f9b3d3448f06a6fd29fe0604cad9"
+  url "https://www.monetdb.org/downloads/sources/Dec2023/MonetDB-11.49.1.tar.xz"
+  sha256 "f112ee377ae0d00c29e277b4e57e8140f57d33a41c03b5b4ede3c31384212cef"
   license "MPL-2.0"
   head "https://dev.monetdb.org/hg/MonetDB", using: :hg
 
@@ -25,6 +25,7 @@ class Monetdb < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "lz4"
+  depends_on "openssl@3"
   depends_on "pcre"
   depends_on "readline" # Compilation fails with libedit
   depends_on "xz"
@@ -50,6 +51,7 @@ class Monetdb < Formula
                       "-DWITH_CURL=ON",
                       "-DWITH_LZ4=ON",
                       "-DWITH_LZMA=ON",
+                      "-DWITH_OPENSSL=ON",
                       "-DWITH_PCRE=ON",
                       "-DWITH_PROJ=OFF",
                       "-DWITH_SNAPPY=OFF",
