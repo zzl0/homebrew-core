@@ -7,13 +7,13 @@ class Gickup < Formula
   head "https://github.com/cooperspencer/gickup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63ee815f14cf757ba01c5bafeaa4d26135b1491c9687941a43133efe36220727"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97b0a88550b54d88e395f2e614a18f8e1d358d8b1d250c88e0d9d0940ad2b187"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48536a9a2f21c9116563f7163e79966a0979e0ff3a12d7a9dab5624ce5e4ce34"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7fb773624a3a41dc3af0755f206e9d56877d8adc951db4b05b4cf622cb14dd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b14755ff66eea5fdd535bfc9dbec1e43ae15c37c1e0526ae112a710b4c16a16"
-    sha256 cellar: :any_skip_relocation, monterey:       "440bed386358ff41451641c7d6f9aac5b256a10ad464c0aa9ec4b4857ca6f72e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "234c71502320d31cf8d36296b413becafc312c801e814ac76eb6fdd2ced0e74a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28515bd86ff2e6be68c3aa20f20c8d8f00b3050dd55cb13b56780c6d19324871"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97bc3551a105f467a1bf5b3c663fa496b94290619677a71b87b0b7c50782e16b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d113e641812c0e6179d4847cd8d07a79c59b06f2908a8414c37b0c70a18c3765"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b671384c0e9e73ead4c8bddb58544f08c4ff90ee686718cf7afceb08b15395d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "552dcae81b08d7c2c7feadedaa466efae7e67cf83d94f4c0c5a282e486ca44e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "da19f9e33b5c1f4647364f85667855014c9c7471e2e95f2e57a11903e7b57b5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e42bd717337fd9ea95660c14aef6ee941224c397a64c8574d45754ba5eb3ac58"
   end
 
   depends_on "go" => :build
