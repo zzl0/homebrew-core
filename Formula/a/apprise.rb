@@ -1,8 +1,8 @@
 class Apprise < Formula
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/9c/24/24356d021be60b63c96248a2202153932bfa6c6dee6c29a36e86e9cd7c78/apprise-1.7.0.tar.gz"
-  sha256 "d8d5710d3c952586c2cfadf7ce9ea0fe60b80eca93946497e3ef18f3cc0eec19"
+  url "https://files.pythonhosted.org/packages/25/0c/519f0c8ca5d236c0a863fa9427937e013a0f9d534f8163ea1b69e9774b15/apprise-1.7.1.tar.gz"
+  sha256 "8d439d08550470524425dedee4bc8a72766c216c218f3772c37404eb2fd86e5a"
   license "BSD-3-Clause"
 
   bottle do
