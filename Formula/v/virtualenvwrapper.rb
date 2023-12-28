@@ -18,7 +18,6 @@ class Virtualenvwrapper < Formula
   end
 
   depends_on "python@3.12"
-  depends_on "six"
   depends_on "virtualenv"
 
   resource "pbr" do
