@@ -2,12 +2,11 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
-  revision 6
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.2.tar.bz2"
-    mirror "https://archive.apache.org/dist/subversion/subversion-1.14.2.tar.bz2"
-    sha256 "c9130e8d0b75728a66f0e7038fc77052e671830d785b5616aad53b4810d3cc28"
+    url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.3.tar.bz2"
+    mirror "https://archive.apache.org/dist/subversion/subversion-1.14.3.tar.bz2"
+    sha256 "949efd451a09435f7e8573574c71c7b71b194d844890fa49cd61d2262ea1a440"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -66,8 +65,8 @@ class Subversion < Formula
   end
 
   resource "py3c" do
-    url "https://github.com/encukou/py3c/archive/refs/tags/v1.1.tar.gz"
-    sha256 "c7ffc22bc92dded0ca859db53ef3a0b466f89a9f8aad29359c9fe4ff18ebdd20"
+    url "https://github.com/encukou/py3c/archive/refs/tags/v1.4.tar.gz"
+    sha256 "abc745079ef906148817f4472c3fb4bc41d62a9ea51a746b53e09819494ac006"
   end
 
   resource "serf" do
