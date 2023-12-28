@@ -19,7 +19,7 @@ class Iproute2 < Formula
   depends_on "flex" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "berkeley-db"
+  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "elfutils"
   depends_on "libbpf"
   depends_on "libcap"
