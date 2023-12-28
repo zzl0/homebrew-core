@@ -3,8 +3,8 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/c0/78/9514122831360ccf1f509cb2eeb94375bcd014492904453600a099f879fc/datalad-0.19.4.tar.gz"
-  sha256 "9f1063c656fb7596ad3745ca53ee3c3ae59f2651e56cc1fe062c4a2ef11c8507"
+  url "https://files.pythonhosted.org/packages/49/5b/acf4c60ffae666db155ad567022269208794f4a9b2bb91dc9e4d1488e61b/datalad-0.19.5.tar.gz"
+  sha256 "639cdd5ede96f614933e017f65ddb01f17637ab7bf700005ea0ac7835cc2b905"
   license "MIT"
 
   bottle do
@@ -45,8 +45,8 @@ class Datalad < Formula
   end
 
   resource "distro" do
-    url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
-    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
+    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "fasteners" do
@@ -65,8 +65,8 @@ class Datalad < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/db/5a/392426ddb5edfebfcb232ab7a47e4a827aa1d5b5267a5c20c448615feaa9/importlib_metadata-7.0.0.tar.gz"
-    sha256 "7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7"
+    url "https://files.pythonhosted.org/packages/90/b4/206081fca69171b4dc1939e77b378a7b87021b0f43ce07439d49d8ac5c84/importlib_metadata-7.0.1.tar.gz"
+    sha256 "f238736bb06590ae52ac1fab06a3a9ef1d8dce2b7a35b5ab329371d6c8f5d2cc"
   end
 
   resource "iso8601" do
@@ -77,6 +77,11 @@ class Datalad < Formula
   resource "jaraco-classes" do
     url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
     sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "keyring" do
@@ -115,8 +120,8 @@ class Datalad < Formula
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/0d/3d/efdfb3a2902df814fb694b1a9da153a8ba5de16f5bd3f706b6daea6d6c1c/python-gitlab-4.2.0.tar.gz"
-    sha256 "f870d76f98c95d05c43399d73b1eaab59c671b32793830cd2f9ddf32cc93541e"
+    url "https://files.pythonhosted.org/packages/5e/27/0dc12a91032bd2f10757105ebb3dfb8a8bc3bd352f62d3b0eb01bc010bdc/python-gitlab-4.3.0.tar.gz"
+    sha256 "eb31d1f2bfd8653f74996f9d0bf84ce7afb0843f9122a257c9a93b0e027d1df0"
   end
 
   resource "requests" do
@@ -127,6 +132,11 @@ class Datalad < Formula
   resource "requests-toolbelt" do
     url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
     sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "tqdm" do
