@@ -4,6 +4,7 @@ class Jack < Formula
   url "https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.22.tar.gz"
   sha256 "1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -26,7 +27,7 @@ class Jack < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "berkeley-db"
+  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "libsamplerate"
 
   uses_from_macos "python" => :build
