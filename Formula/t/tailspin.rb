@@ -20,6 +20,9 @@ class Tailspin < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"tspin", "--z-generate-shell-completions")
+    man1.install "man/tspin.1"
   end
 
   test do
