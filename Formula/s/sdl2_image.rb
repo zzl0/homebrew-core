@@ -4,6 +4,7 @@ class Sdl2Image < Formula
   url "https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.1/SDL2_image-2.8.1.tar.gz"
   sha256 "e4cab9a58c347a490c46723c17553b4e12233cd821d3b993a8475a50497f5a3e"
   license "Zlib"
+  revision 1
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
