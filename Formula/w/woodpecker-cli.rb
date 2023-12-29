@@ -1,8 +1,8 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "56429d9cbe1e6e81ab019b1549e6de49f2fa8b5abbc6322203a266b92139ca68"
+  url "https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "5b042b610f4dfa4f1ddd888483dbf743d468ac572474d51d95c4bd7dc28df016"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
@@ -19,7 +19,7 @@ class WoodpeckerCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/version.Version=#{version}"
+    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli"
   end
 
