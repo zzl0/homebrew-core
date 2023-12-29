@@ -2,7 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.4.1/Agda-2.6.4.1.tar.gz"
@@ -11,6 +11,11 @@ class Agda < Formula
     resource "stdlib" do
       url "https://github.com/agda/agda-stdlib/archive/refs/tags/v2.0.tar.gz"
       sha256 "14eecb83d62495f701e1eb03ffba59a2f767491f728a8ab8c8bb9243331399d8"
+    end
+
+    resource "cubical" do
+      url "https://github.com/agda/cubical/archive/refs/tags/v0.6.tar.gz"
+      sha256 "10b78aec56c4dfa24a340852153e305306e6a569c49e75d1ba7edbaaa6bba8e3"
     end
   end
 
@@ -29,6 +34,10 @@ class Agda < Formula
 
     resource "stdlib" do
       url "https://github.com/agda/agda-stdlib.git", branch: "master"
+    end
+
+    resource "cubical" do
+      url "https://github.com/agda/cubical.git", branch: "master"
     end
   end
 
@@ -57,7 +66,16 @@ class Agda < Formula
     end
 
     # Clean up references to Homebrew shims
-    rm_rf "#{lib}/agda/dist-newstyle/cache"
+    rm_rf "#{agdalib}/dist-newstyle/cache"
+
+    # generate the cubical library's documentation files
+    cubicallib = agdalib/"cubical"
+    resource("cubical").stage cubicallib
+    cd cubicallib do
+      system "make", "gen-everythings", "listings",
+             "AGDA_BIN=#{bin/"agda"}",
+             "RUNHASKELL=#{Formula["ghc"].bin/"runhaskell"}"
+    end
   end
 
   test do
@@ -98,6 +116,20 @@ class Agda < Formula
       +-assoc (suc m) n o = cong suc (+-assoc m n o)
     EOS
 
+    cubicaltest = testpath/"CubicalTest.agda"
+    cubicaltest.write <<~EOS
+      {-# OPTIONS --cubical #-}
+      module CubicalTest where
+
+      open import Cubical.Foundations.Prelude
+      open import Cubical.Foundations.Isomorphism
+      open import Cubical.Foundations.Univalence
+      open import Cubical.Data.Int
+
+      suc-equiv : ℤ ≡ ℤ
+      suc-equiv = ua (isoToEquiv (iso sucℤ predℤ sucPred predSuc))
+    EOS
+
     iotest = testpath/"IOTest.agda"
     iotest.write <<~EOS
       module IOTest where
@@ -115,14 +147,18 @@ class Agda < Formula
     EOS
 
     # we need a test-local copy of the stdlib as the test writes to
-    # the stdlib directory
+    # the stdlib directory; the same applies to the cubical library
     resource("stdlib").stage testpath/"lib/agda"
+    resource("cubical").stage testpath/"lib/agda/cubical"
 
     # typecheck a simple module
     system bin/"agda", simpletest
 
     # typecheck a module that uses the standard library
     system bin/"agda", "-i", testpath/"lib/agda/src", stdlibtest
+
+    # typecheck a module that uses the cubical library
+    system bin/"agda", "-i", testpath/"lib/agda/cubical", cubicaltest
 
     # compile a simple module using the JS backend
     system bin/"agda", "--js", simpletest
