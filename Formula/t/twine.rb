@@ -1,4 +1,4 @@
-class TwinePypi < Formula
+class Twine < Formula
   include Language::Python::Virtualenv
 
   desc "Utilities for interacting with PyPI"
@@ -6,19 +6,7 @@ class TwinePypi < Formula
   url "https://files.pythonhosted.org/packages/b7/1a/a7884359429d801cd63c2c5512ad0a337a509994b0e42d9696d4778d71f6/twine-4.0.2.tar.gz"
   sha256 "9e102ef5fdd5a20661eb88fad46338806c3bd32cf1db729603fe3697b1bc83c8"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/pypa/twine.git", branch: "main"
-
-  bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "9ef55b50588bb2f409831c5b4a75cf5ac6d0a06236bf2bfc4acf070cb36a3ae8"
-    sha256 cellar: :any,                 arm64_ventura:  "ec2e0f2be508c6488f3084b67283acb8ac4a29a5ad66ff6caa682228b9e9058e"
-    sha256 cellar: :any,                 arm64_monterey: "4b7e3d5df27e1573284e8a1c8393d9391b4788c39e27cc238b7b58cd386920f1"
-    sha256 cellar: :any,                 sonoma:         "c152f703bbe5da5b6d6cc49a8dfee0e611488f35bfbeca72ff6eacb34920dd3f"
-    sha256 cellar: :any,                 ventura:        "b9f506c710bd9cd77b30eb0cd28d8d97fb7cb4ed06d4d3d34165f9cbc4fbd5ea"
-    sha256 cellar: :any,                 monterey:       "d3a18f9eecd1f78834fdfb657a9979dda430356b73eba3e6885d774fa75e29e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fab619fe2a9bad1527d757047316895787dfc33481cbb3ddfe8a59d16dade22"
-  end
 
   depends_on "rust" => :build
   depends_on "docutils"

@@ -1254,7 +1254,7 @@
   "twarc": {
     "exclude_packages": ["click", "configobj", "python-dateutil", "requests", "requests-oauthlib", "six"]
   },
-  "twine-pypi": {
+  "twine": {
     "exclude_packages": ["certifi", "docutils", "keyring", "Pygments", "six"]
   },
   "twtxt": {
