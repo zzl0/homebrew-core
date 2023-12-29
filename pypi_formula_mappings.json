@@ -717,7 +717,7 @@
     "exclude_packages": ["cryptography", "packaging", "pygments", "pyyaml", "six"]
   },
   "mongo-orchestration": {
-    "exclude_packages": ["certifi", "six"]
+    "exclude_packages": ["certifi"]
   },
   "moto": {
     "package_name": "moto[all,server]",
