@@ -5,6 +5,7 @@ class Aom < Formula
       tag:      "v3.8.0",
       revision: "b681eac83963950afc7be55df56c22fa5210aaa2"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "cb4fff67b23992cdac1190e2e519e9bd110facfcc3ae8a7bea626eed706267b6"
@@ -45,7 +46,6 @@ class Aom < Formula
       "-DENABLE_TESTS=off",
       "-DENABLE_TOOLS=off",
       "-DBUILD_SHARED_LIBS=on",
-      "-DCONFIG_TUNE_BUTTERAUGLI=1",
       "-DCONFIG_TUNE_VMAF=1",
     ]
 
