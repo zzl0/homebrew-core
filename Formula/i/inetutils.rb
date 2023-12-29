@@ -1,9 +1,9 @@
 class Inetutils < Formula
   desc "GNU utilities for networking"
   homepage "https://www.gnu.org/software/inetutils/"
-  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz"
-  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.4.tar.xz"
-  sha256 "1789d6b1b1a57dfe2a7ab7b533ee9f5dfd9cbf5b59bb1bb3c2612ed08d0f68b2"
+  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.5.tar.xz"
+  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.5.tar.xz"
+  sha256 "87697d60a31e10b5cb86a9f0651e1ec7bee98320d048c0739431aac3d5764fb6"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -19,6 +19,7 @@ class Inetutils < Formula
     sha256 x86_64_linux:   "f1dfc69baed24c9608d2f5ecf54a650960780de44fced9a712bb91a4e52e3fac"
   end
 
+  depends_on "help2man" => :build
   depends_on "libidn2"
 
   uses_from_macos "libxcrypt"
@@ -48,6 +49,9 @@ class Inetutils < Formula
     list << "whois" # whois
     list
   end
+
+  # upstream bug report, https://savannah.gnu.org/bugs/index.php?65093
+  patch :DATA
 
   def install
     system "./configure", *std_configure_args,
@@ -125,3 +129,19 @@ class Inetutils < Formula
     assert_match "Connected to ftp.gnu.org.\n220 GNU FTP server ready", output
   end
 end
+
+__END__
+diff --git a/src/syslogd.c b/src/syslogd.c
+index 918686d..dd8c359 100644
+--- a/src/syslogd.c
++++ b/src/syslogd.c
+@@ -278,7 +278,9 @@ void logerror (const char *);
+ void logmsg (int, const char *, const char *, int);
+ void printline (const char *, const char *);
+ void printsys (const char *);
++#if !__APPLE__
+ char *ttymsg (struct iovec *, int, char *, int);
++#endif
+ void wallmsg (struct filed *, struct iovec *);
+ char **crunch_list (char **oldlist, char *list);
+ char *textpri (int pri);
