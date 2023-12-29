@@ -23,15 +23,13 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "914f44e5948dadbda17c95651a6c690a0bca7b888d2b5c664595de5fcb8b7b77"
-    sha256 cellar: :any,                 arm64_ventura:  "923dcb56245d63d810769af204979ce8ec79b8c5948129018ec3ca1c24a9b3b1"
-    sha256 cellar: :any,                 arm64_monterey: "ed26e75302ce842f8d1db3f8deca7edc47da2bdbd86593fa8adc26e9e4efe9ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "bf3964edddd790884e2e230a7df0732e11e6a991f27dbdefb4cafdb759718e8d"
-    sha256 cellar: :any,                 sonoma:         "bfb6eca5b46a983a19094d1ef7b2dbf984bfff076cb68157eaf00e0a3ce14424"
-    sha256 cellar: :any,                 ventura:        "df68e49baa4c80fd8a0ac350d610b0b273960843b42c4276947ddd826a0b6bdf"
-    sha256 cellar: :any,                 monterey:       "ac0f7843d7a98dd6ff7df3bb7d475999b124bb1d84ac8f0ae50eba85599330a4"
-    sha256 cellar: :any,                 big_sur:        "e347443e3a34f8b43abd15e72ec214b4d277b65e7420bc8ff8f270556ff88e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b1e4ffb2d4b2c2e150bf969ec6e373130ca94a33ffeac66d301ac9111978e1e"
+    sha256 cellar: :any,                 arm64_sonoma:   "d340fd21f54e5688d13be3f0d7663971b686d0456f77497cab5e59a1a2a46667"
+    sha256 cellar: :any,                 arm64_ventura:  "c5e164f26fd809f4d3a3c9f88b01816154b29aaef164192083fb784205e801f9"
+    sha256 cellar: :any,                 arm64_monterey: "09d9c6f9c987cfa98a9712c00c663ebfcfdcb961955f05b5dfd9e2f732764a4a"
+    sha256 cellar: :any,                 sonoma:         "3683f4d4561c74150d124b394c17e62d3e899188509c6bf10c65ce6134a9eb14"
+    sha256 cellar: :any,                 ventura:        "a0388fd2c369e209433407c30741028db7231118e7cc58d0c6c4dfc9f5e10cb9"
+    sha256 cellar: :any,                 monterey:       "8c2965859dce4434085fa1bfa56d1c056942b5f98df5fae4d0569398bdf3938c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "448d382cef529987cc27e4e7f74cad05d2ccb3388e3246192fbfe2decc3574c0"
   end
 
   depends_on "ninja" => :build
