@@ -8,6 +8,16 @@ class Twine < Formula
   license "Apache-2.0"
   head "https://github.com/pypa/twine.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "a9dd481576536371f78268e9446a89778f1bc944f9fa647de718e0211b7d009c"
+    sha256 cellar: :any,                 arm64_ventura:  "1b0a7dba06601f5e10372a3582c3c023bdca8433af1fd4f1786330f615ad278d"
+    sha256 cellar: :any,                 arm64_monterey: "7b93729af70150f062ed42f9c96208ca96e3452a1f3cc34642d32531c6060393"
+    sha256 cellar: :any,                 sonoma:         "02cc84e4729144c4176b6e435d12b8785bd3ff25590411ffbd95fccf57292fbb"
+    sha256 cellar: :any,                 ventura:        "2453b393a9938bea6f21edde1b955db7b3888c97810a6c9809f57775c07c8521"
+    sha256 cellar: :any,                 monterey:       "4ffb25ea1db940879e881500f384e654ea880e5dc568ee741f373e879bcd51ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1e5b17f00125f80766c0faf6e402c94a420e6733e4a8621a6555bc2c2be7171"
+  end
+
   depends_on "rust" => :build
   depends_on "docutils"
   depends_on "keyring"
