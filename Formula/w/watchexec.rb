@@ -1,6 +1,6 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
-  homepage "https://github.com/watchexec/watchexec"
+  homepage "https://watchexec.github.io/"
   url "https://github.com/watchexec/watchexec/archive/refs/tags/v1.24.2.tar.gz"
   sha256 "d863b77332bd56cd37a45a99ae2be50a9aa332b66b523a4a76676bd778c017d4"
   license "Apache-2.0"
@@ -27,6 +27,8 @@ class Watchexec < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
+
+    generate_completions_from_executable(bin/"watchexec", "--completions")
     man1.install "doc/watchexec.1"
   end
 
@@ -37,5 +39,7 @@ class Watchexec < Formula
     sleep 15
     Process.kill("TERM", o.pid)
     assert_match "saw file change", o.read
+
+    assert_match version.to_s, shell_output("#{bin}/watchexec --version")
   end
 end
