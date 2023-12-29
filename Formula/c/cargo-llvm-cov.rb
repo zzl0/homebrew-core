@@ -6,6 +6,16 @@ class CargoLlvmCov < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/taiki-e/cargo-llvm-cov.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "fbce50dfd090848f064873d64db6c6da56fe7e9aaacf382603ce9c6caef5fd1f"
+    sha256 cellar: :any,                 arm64_ventura:  "b58d50a85f9f6930e48ee925da5443989909814f33739610552a1ccae12621e9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0748ac96dc744a847171a6575041efe67c691a805f65c3f271ac0add1b73b3cc"
+    sha256 cellar: :any,                 sonoma:         "d79475785d9ef478b09d1580e29122fcd6d3dd522191d63710fd01f373fcf3f6"
+    sha256 cellar: :any,                 ventura:        "85f3534f6134180f6dbbf77b342da28cf7c415a4731e9302b07b9394f36e8add"
+    sha256 cellar: :any_skip_relocation, monterey:       "20cecb74d289fae102452e1561c3b9f76e00c77f5ca05a0c8ab24abb37bf0f24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9ab987eb439916e5aec1ae02d7b55e415d9e0e0e3be431b8b5153969d2f93cd"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   depends_on "llvm"
