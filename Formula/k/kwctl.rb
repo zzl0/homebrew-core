@@ -24,12 +24,14 @@ class Kwctl < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"kwctl", "completions", "--shell")
   end
 
   test do
     test_policy = "ghcr.io/kubewarden/policies/safe-labels:v0.1.7"
     assert_equal "kwctl #{version}", shell_output("#{bin}/kwctl --version").strip.split("\n")[0]
-    system "#{bin}/kwctl", "pull", test_policy
+    system bin/"kwctl", "pull", test_policy
     assert_match test_policy, shell_output("#{bin}/kwctl policies")
 
     (testpath/"ingress.json").write <<~EOS
