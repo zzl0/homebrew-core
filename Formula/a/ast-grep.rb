@@ -4,6 +4,7 @@ class AstGrep < Formula
   url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.16.0.tar.gz"
   sha256 "523f68b73c534a9881945f30a77b3be2183164d18f41d4b54adf610b925b5f62"
   license "MIT"
+  head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b35dd9e28c31f45a5f311e335e04e5acb4dd2bcf9798e454ec25cfd0432ca950"
@@ -19,10 +20,14 @@ class AstGrep < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
+
+    generate_completions_from_executable(bin/"ast-grep", "completions")
   end
 
   test do
     (testpath/"hi.js").write("console.log('it is me')")
-    system "#{bin}/sg", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
+    system bin/"sg", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
+
+    assert_match version.to_s, shell_output("#{bin}/ast-grep --version")
   end
 end
