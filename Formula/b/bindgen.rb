@@ -4,6 +4,7 @@ class Bindgen < Formula
   url "https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.69.1.tar.gz"
   sha256 "c10e2806786fb75f05ef32f3f03f4cb7e37bb8e06be5a4a0e95f974fdc567d87"
   license "BSD-3-Clause"
+  head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b2f91ae5ac5cc1cc501ed57b06560e92b1a49c9a4fb2d9282e462d4561a88af"
@@ -21,6 +22,8 @@ class Bindgen < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "bindgen-cli")
+
+    generate_completions_from_executable(bin/"bindgen", "--generate-shell-completions")
   end
 
   test do
@@ -35,5 +38,7 @@ class Bindgen < Formula
 
     output = shell_output("#{bin}/bindgen cool.h")
     assert_match "pub struct CoolStruct", output
+
+    assert_match version.to_s, shell_output("#{bin}/bindgen --version")
   end
 end
