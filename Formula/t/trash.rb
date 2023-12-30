@@ -25,6 +25,9 @@ class Trash < Formula
   conflicts_with "trash-cli", because: "both install a `trash` binary"
 
   def install
+    # https://github.com/ali-rantakari/trash/issues/43
+    inreplace "Makefile", "-force_cpusubtype_ALL", ""
+
     system "make"
     system "make", "docs"
     bin.install "trash"
