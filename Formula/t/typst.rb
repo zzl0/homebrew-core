@@ -1,6 +1,6 @@
 class Typst < Formula
   desc "Markup-based typesetting system"
-  homepage "https://github.com/typst/typst"
+  homepage "https://typst.app/"
   url "https://github.com/typst/typst/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "f1b7baba3c6f6f37dee6d05c9ab53d2ba5cd879a57b6e726dedf9bc51811e132"
   license "Apache-2.0"
@@ -28,6 +28,8 @@ class Typst < Formula
     ENV["TYPST_VERSION"] = version.to_s
     ENV["GEN_ARTIFACTS"] = "artifacts"
     system "cargo", "install", *std_cargo_args(path: "crates/typst-cli")
+
+    man1.install Dir["crates/typst-cli/artifacts/*.1"]
     bash_completion.install "crates/typst-cli/artifacts/typst.bash" => "typst"
     fish_completion.install "crates/typst-cli/artifacts/typst.fish"
     zsh_completion.install "crates/typst-cli/artifacts/_typst"
