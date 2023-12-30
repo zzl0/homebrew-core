@@ -1,6 +1,6 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
-  homepage "https://pimalaya.org/himalaya/"
+  homepage "https://pimalaya.org/himalaya/cli/latest/"
   url "https://github.com/soywod/himalaya/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "9a5593a3a92dcce8227cea45870a88432d8df3a012636eb5461165cf599dbcbb"
   license "MIT"
@@ -26,6 +26,9 @@ class Himalaya < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    system bin/"himalaya", "man", buildpath
+    man1.install Dir["*.1"]
     generate_completions_from_executable(bin/"himalaya", "completion")
   end
 
