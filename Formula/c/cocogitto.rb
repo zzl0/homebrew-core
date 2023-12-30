@@ -1,6 +1,6 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
-  homepage "https://github.com/cocogitto/cocogitto"
+  homepage "https://docs.cocogitto.io/"
   url "https://github.com/cocogitto/cocogitto/archive/refs/tags/6.0.1.tar.gz"
   sha256 "2a0e332b7028ffcfeb113c734b4bf506c34362730e371b03a3e4a71142099330"
   license "MIT"
@@ -24,11 +24,14 @@ class Cocogitto < Formula
 
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"cog", "generate-completions", base_name: "cog")
+
+    system bin/"cog", "generate-manpages", buildpath
+    man1.install Dir["*.1"]
   end
 
   test do
     # Check that a typical Conventional Commit is considered correct.
-    system "git", "init"
+    system "git", "init", "--initial-branch=main"
     (testpath/"some-file").write("")
     system "git", "add", "some-file"
     system "git", "config", "user.name", "'A U Thor'"
