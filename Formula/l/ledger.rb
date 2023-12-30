@@ -31,10 +31,18 @@ class Ledger < Formula
   depends_on "mpfr"
   depends_on "python@3.12"
 
+  uses_from_macos "mandoc" => :build
   uses_from_macos "libedit"
 
-  on_system :linux, macos: :ventura_or_newer do
-    depends_on "groff" => :build
+  # Support building with mandoc
+  # Remove with v3.4.x
+  patch do
+    url "https://github.com/ledger/ledger/commit/f40cee6c3af4c9cec05adf520fc7077a45060434.patch?full_index=1"
+    sha256 "d5be89dbadff7e564a750c10cdb04b83e875452071a2115dd70aae6e7a8ee76c"
+  end
+  patch do
+    url "https://github.com/ledger/ledger/commit/14b90d8d952b40e0a474223e7f74a1e6505d5450.patch?full_index=1"
+    sha256 "d250557e385163e3ad3002117ebe985af040d915aab49ae1ea342db82398aeda"
   end
 
   def install
