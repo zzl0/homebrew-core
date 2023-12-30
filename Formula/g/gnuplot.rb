@@ -28,6 +28,7 @@ class Gnuplot < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gnu-sed" => :build # https://sourceforge.net/p/gnuplot/bugs/2676/
   depends_on "pkg-config" => :build
   depends_on "gd"
   depends_on "libcerf"
@@ -51,6 +52,9 @@ class Gnuplot < Formula
       RCC=#{Formula["qt"].pkgshare}/libexec/rcc
       UIC=#{Formula["qt"].pkgshare}/libexec/uic
     ]
+
+    # https://sourceforge.net/p/gnuplot/bugs/2676/
+    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
 
     if OS.mac?
       # pkg-config files are not shipped on macOS, making our job harder
