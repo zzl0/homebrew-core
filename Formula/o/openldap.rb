@@ -28,6 +28,8 @@ class Openldap < Formula
 
   depends_on "openssl@3"
 
+  uses_from_macos "mandoc" => :build
+
   on_linux do
     depends_on "util-linux"
   end
@@ -65,17 +67,18 @@ class Openldap < Formula
       --without-systemd
     ]
 
-    if OS.linux? || MacOS.version >= :ventura
-      # Disable manpage generation, because it requires groff which has a huge
-      # dependency tree on Linux and isn't included on macOS since Ventura.
-      inreplace "Makefile.in" do |s|
-        subdirs = s.get_make_var("SUBDIRS").split - ["doc"]
-        s.change_make_var! "SUBDIRS", subdirs.join(" ")
+    soelim = if OS.mac?
+      if MacOS.version >= :ventura
+        "mandoc_soelim"
+      else
+        "soelim"
       end
+    else
+      "bsdsoelim"
     end
 
     system "./configure", *args
-    system "make", "install"
+    system "make", "install", "SOELIM=#{soelim}"
     (var/"run").mkpath
 
     # https://github.com/Homebrew/homebrew-dupes/pull/452
