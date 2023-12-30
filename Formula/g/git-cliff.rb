@@ -24,11 +24,21 @@ class GitCliff < Formula
 
     system "cargo", "install", *std_cargo_args(path: "git-cliff")
 
+    # Setup buildpath for completions and manpage generation
     ENV["OUT_DIR"] = buildpath
+
+    # Generate completions
     system bin/"git-cliff-completions"
-    bash_completion.install "git-cliff.bash"
+    bash_completion.install "git-cliff.bash" => "git-cliff"
     fish_completion.install "git-cliff.fish"
     zsh_completion.install "_git-cliff"
+
+    # generate manpage
+    system bin/"git-cliff-mangen"
+    man1.install "git-cliff.1"
+
+    # no need to ship `git-cliff-completions` and `git-cliff-mangen` binaries
+    rm [bin/"git-cliff-completions", bin/"git-cliff-mangen"]
   end
 
   test do
