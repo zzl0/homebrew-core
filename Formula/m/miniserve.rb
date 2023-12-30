@@ -23,6 +23,7 @@ class Miniserve < Formula
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"miniserve", "--print-completions")
+    (man1/"miniserve.1").write Utils.safe_popen_read(bin/"miniserve", "--print-manpage")
   end
 
   test do
