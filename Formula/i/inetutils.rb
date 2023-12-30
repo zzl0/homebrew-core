@@ -7,16 +7,13 @@ class Inetutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "50f122bba318958640692ef91dc3dc1019bf8724cea78ae071fcb144ed373379"
-    sha256 arm64_ventura:  "872275661200b6f4372aee795840075b23dd2c4862ded07f4000d706ba37409e"
-    sha256 arm64_monterey: "b9ffd46bc37271e9c1f57a333d39af249ef131fa68a89565bcf06fcf0cb7e4da"
-    sha256 arm64_big_sur:  "02e7db5f94d356b61cf55ba51c85df000ddce5df9fd9925c81d415fa15b6aa5e"
-    sha256 sonoma:         "40ad5a635012aa63c0a7c97ea8c8bca55b95a71dc925cdf190d9510e0b28099e"
-    sha256 ventura:        "8c34d17dd5c58955e33eb77b68dc06a43e1c8f193bf3f12c314f0fa45efd9404"
-    sha256 monterey:       "538573e4777f6f7ba4d5ab5ec8546b3e614a219dfedcfdb08c968210a4f012de"
-    sha256 big_sur:        "f6e3c7e2ae01a7d3e7801122bf93b525bd353dc995724e25a719d7b6362167bd"
-    sha256 catalina:       "0b8cb0db259708450273e70e7d037a6806137c09ab16a6fc53d4a5093f2aa46a"
-    sha256 x86_64_linux:   "f1dfc69baed24c9608d2f5ecf54a650960780de44fced9a712bb91a4e52e3fac"
+    sha256 arm64_sonoma:   "eb362cd58b231f8472ff804a0556c2d028803781e66019f1aeb6faf8e60263ae"
+    sha256 arm64_ventura:  "352aa9dadeca1469fed9beb698ef3771b920e764dfc2d828824b5f7974020524"
+    sha256 arm64_monterey: "b69db528c4cf1e7bbdfa4e2b410fa55a0458610c09589b041c2d9c170c815b25"
+    sha256 sonoma:         "4c6873d55b69d42e53e91fd4557eef9db185e995aede9e9ddb0edd298819c6e1"
+    sha256 ventura:        "0f9ca71c5ea6aa16379b60f604f1af305878983cbe0f48ab234da91968e6d3d8"
+    sha256 monterey:       "ce0fe97b4c1706fb77d17a8672148be394bd8a5e81bdcf44e9ad8cb3facf730d"
+    sha256 x86_64_linux:   "494e2ab0b32fdc71e6c715f06ed8aa51e1fea2d525c9061073921220de93f135"
   end
 
   depends_on "help2man" => :build
