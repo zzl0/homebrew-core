@@ -1,10 +1,18 @@
 class CouchbaseShell < Formula
   desc "Modern and fun shell for Couchbase Server and Capella"
   homepage "https://couchbase.sh"
-  url "https://github.com/couchbaselabs/couchbase-shell/archive/refs/tags/v0.75.2.tar.gz"
-  sha256 "72d99bf1de8a050137b080825299eca01d2aa4fb5e10bf75927008314e88b783"
   license "Apache-2.0"
   head "https://github.com/couchbaselabs/couchbase-shell.git", branch: "main"
+
+  stable do
+    url "https://github.com/couchbaselabs/couchbase-shell/archive/refs/tags/v0.75.2.tar.gz"
+    sha256 "72d99bf1de8a050137b080825299eca01d2aa4fb5e10bf75927008314e88b783"
+
+    # Use `llvm@15` to work around build failure with LLVM Clang 16 (Apple Clang 15)
+    # described in https://github.com/rust-lang/rust-bindgen/issues/2312.
+    # TODO: Remove in the next release
+    depends_on "llvm@15" => :build if DevelopmentTools.clang_build_version >= 1500
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "311bd08f0e1124ec4bcb6b10c4b0837cc153678ed436e7d1c876ea447c5ddd0f"
@@ -28,6 +36,9 @@ class CouchbaseShell < Formula
   end
 
   def install
+    odie "Check if `llvm@15` dependency can be removed!" if build.stable? && version > "0.75.2"
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
     system "cargo", "install", *std_cargo_args
   end
 
