@@ -89,6 +89,12 @@ class Newsboat < Formula
     ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib"
 
+    # Work around Apple's ncurses5.4-config outputting -lncursesw
+    if OS.mac? && MacOS.version >= :sonoma
+      system "gmake", "config", "prefix=#{prefix}"
+      inreplace "config.mk", "-lncursesw", "-lncurses"
+    end
+
     # Call `make` as `gmake` to use Homebrew `make`.
     system "gmake", "install", "prefix=#{prefix}"
   end
