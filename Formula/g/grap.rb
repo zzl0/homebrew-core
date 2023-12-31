@@ -1,8 +1,8 @@
 class Grap < Formula
   desc "Language for typesetting graphs"
   homepage "https://www.lunabase.org/~faber/Vault/software/grap/"
-  url "https://www.lunabase.org/~faber/Vault/software/grap/grap-1.46.tar.gz"
-  sha256 "7a8ecefdecfee96699913f2a412da68703911fa640bac3b964a413131f848bb4"
+  url "https://www.lunabase.org/~faber/Vault/software/grap/grap-1.47.tar.gz"
+  sha256 "8ff6f0dc43a660e2ac7423f161247fd0d5b765960e32d62f62ab4a404bbc11c1"
   license "BSD-2-Clause"
 
   livecheck do
