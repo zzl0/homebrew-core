@@ -91,6 +91,10 @@
   "asitop": {
     "exclude_packages": ["psutil", "six"]
   },
+  "astrometry-net": {
+    "exclude_packages": ["numpy"],
+    "extra_packages": ["fitsio"]
+  },
   "athenacli": {
     "exclude_packages": ["click", "pygments", "python-dateutil", "six", "sqlparse", "tabulate", "urllib3"]
   },
