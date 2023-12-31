@@ -6,13 +6,13 @@ class Noir < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:   "65a453315181de7bdff8e9c8fb1b8eb1b35448e32c2b3705e70bbe419a8ec8a3"
-    sha256 arm64_ventura:  "d8ae269aa95daa33eb369afeb57640246613e369aac730c61c22d3ab87f890b3"
-    sha256 arm64_monterey: "811bfd0fb1b96ef9bef35de0609087fd1c405f77c9c3965c2943e5a54146cf40"
-    sha256 sonoma:         "9a41267eb4bfd6f3a6bee70dcfe917d138322348066a47cc3bdd330f71389a31"
-    sha256 ventura:        "42d1c99bc8a609d2771cd8d138159c3d8e8f96187bb98000fbaf88b193f8133d"
-    sha256 monterey:       "7ee7561d3ed30001eaa9b1987bc93d3ef4c7cf2f3aeaf315b5890b5868d03cb8"
-    sha256 x86_64_linux:   "d3cf110bcba845ad07c06bcb2d9dfc21f1f1b45ac4f2771dfb471d3f8796f16e"
+    sha256 arm64_sonoma:   "c8585e77b5eb913e8a9885bda4c4851a7fcffabbb6c59e720136c4011ed7c37c"
+    sha256 arm64_ventura:  "e29aaeb651869280e6551f2f221f0b93de1f54ed61409b946d70e48ce4943c27"
+    sha256 arm64_monterey: "b75c2e1232ecd0e92c6981929b808b407483a4d34ff1385cd0266d59c0f88ea1"
+    sha256 sonoma:         "be2881417dc0490bc8d287079dca15214cc909c2220f3169f13a79b0f16ba0d3"
+    sha256 ventura:        "cee19674ef910ec858390e4c27a6a40c1c7181e8d9a19325ca91f770b990cc23"
+    sha256 monterey:       "b83178de23b77667ddf9dad08dd91e9b9ac57282baffddac78a27af2f9048c72"
+    sha256 x86_64_linux:   "5e01f1cf10a8bd72036de9a242da967b15aaa5c3abe77b9a83c5a46417cd039a"
   end
 
   depends_on "crystal"
