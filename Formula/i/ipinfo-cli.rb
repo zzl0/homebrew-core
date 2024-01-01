@@ -27,6 +27,7 @@ class IpinfoCli < Formula
   def install
     system "./ipinfo/build.sh"
     bin.install "build/ipinfo"
+    generate_completions_from_executable(bin/"ipinfo", "completion")
   end
 
   test do
