@@ -2,8 +2,8 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https://openrct2.io/"
   url "https://github.com/OpenRCT2/OpenRCT2.git",
-      tag:      "v0.4.6",
-      revision: "b40b5da5a570155298335e276839a41588337b5d"
+      tag:      "v0.4.7",
+      revision: "0e8d46ea7cfdb2118435d1735967a359f936dbea"
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
@@ -49,8 +49,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https://github.com/OpenRCT2/objects/releases/download/v1.3.11/objects.zip"
-    sha256 "bf85d88e4fb11ca2e5915567390898747dc2459b3c7a057bdc32b829c91780b4"
+    url "https://github.com/OpenRCT2/objects/releases/download/v1.3.13/objects.zip"
+    sha256 "0711779d69778652d4430d4173903e2444673be374b0ed78c797b5636349b968"
   end
 
   def install
