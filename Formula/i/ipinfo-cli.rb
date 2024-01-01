@@ -11,13 +11,13 @@ class IpinfoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c9d9166563933dc3fff2e409839952a0c5d9ed3d4a694145e8e96f1cf6f7b69"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1909b291ea0e13bcb358ffcbc9b9a12448efcc24c3c05be21f007aa31b0d579e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ea85b5ffbe2777806330e0be39d85694be325a123aab1c794416f7f3125b682"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4774ff8389acd984a674f9d704876082dbe8151011a128ad25a904d54b6676d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "2bccf0dfbe19237df737573449a05a63f55edcdbb21d6a32652aab6b3d61d641"
-    sha256 cellar: :any_skip_relocation, monterey:       "11250b402b87be6ae093d008f8bd2ef222f77ef0949684c87da533d6de97ec94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e28cc93a4203261e790e742820fb4a8830f8e048d5e988cdc58f216480d7dd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fdfde8ad46e5468179ab530b3ffb804a753176b92f699cba013d11ff6d0c1eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7823d9236b678e10e05cfe66b49ef546ed182e8b112b768ed7291180751cba36"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76d9110df5d885234ccd7a270aee24e1ecf19ac1c7ecbb68b00375b6d223caa1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0ad504858488a166b7595aff10a4cbc6a10c76c18f45bf0cbf2d3765f843cf10"
+    sha256 cellar: :any_skip_relocation, ventura:        "cd48387df844279d38526f385de57f6ce11ecc2f9a23a7d9a617274cb81ba108"
+    sha256 cellar: :any_skip_relocation, monterey:       "3497cf1674511bffb8b5995cd72487ad4c6f7fa0c4553f9616bc2736d7be2e6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61e9ffcc6997ad12d94bb887c8f086083ea580f0aa9af0e9b43891fae8dccd06"
   end
 
   depends_on "go" => :build
