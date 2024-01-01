@@ -11,13 +11,14 @@ class IpinfoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fdfde8ad46e5468179ab530b3ffb804a753176b92f699cba013d11ff6d0c1eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7823d9236b678e10e05cfe66b49ef546ed182e8b112b768ed7291180751cba36"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76d9110df5d885234ccd7a270aee24e1ecf19ac1c7ecbb68b00375b6d223caa1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0ad504858488a166b7595aff10a4cbc6a10c76c18f45bf0cbf2d3765f843cf10"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd48387df844279d38526f385de57f6ce11ecc2f9a23a7d9a617274cb81ba108"
-    sha256 cellar: :any_skip_relocation, monterey:       "3497cf1674511bffb8b5995cd72487ad4c6f7fa0c4553f9616bc2736d7be2e6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61e9ffcc6997ad12d94bb887c8f086083ea580f0aa9af0e9b43891fae8dccd06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a890ab424c2003b2c1041317c08de00c4161f6d878c33e247bd1030496ed7b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea2ff859451743f1d01b2c76295e3dfcd0604777fb033451ac4b5716be3e2050"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "64dc809280e977531f34dd74d4546ffee2cb45efbe9ee8de8c08b8ffa1d3f6ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad244ae0fd693a2d0844b23d80f1cfdf487906b2e379ec4e26bc340793d50712"
+    sha256 cellar: :any_skip_relocation, ventura:        "4daed60eef138ab905420d0dfc3536dadd0b09f51da719ddf66c9d723f60a0c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d00f4343d1d8d140ebf6b8781e6c637abfea9895d1303adb5aef66a06ae3753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e55c905ca88062290d6843685d6d5506ed34448da276beac34b0e191cfd7b982"
   end
 
   depends_on "go" => :build
@@ -27,6 +28,7 @@ class IpinfoCli < Formula
   def install
     system "./ipinfo/build.sh"
     bin.install "build/ipinfo"
+    generate_completions_from_executable(bin/"ipinfo", "completion")
   end
 
   test do
