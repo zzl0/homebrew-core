@@ -5,6 +5,16 @@ class Libnsbmp < Formula
   sha256 "5407a7682a122baaaa5a15b505290e2d37df54c13c5edef4b09d12c862d82293"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "9a29a254a2f286b15219fa8e1b95858569fe653728184fa20b83130eb67d5f23"
+    sha256 cellar: :any,                 arm64_ventura:  "52b3d890d4ed6f2a9763b7848ca24955059fdeb61b1f097dc230e343f44547c6"
+    sha256 cellar: :any,                 arm64_monterey: "c2c58f67547e5a4cfc4c717bbd303cc30542e767632be818af61de3a5b43c25f"
+    sha256 cellar: :any,                 sonoma:         "11b45814407dd3a3d4ba8976717cf1a64b425fe776e13d93caa96bb489ff8a6e"
+    sha256 cellar: :any,                 ventura:        "e6ae9d7f2d428e878b319086665048a1a58d4b1f6eb96a9c88106f13cbe81968"
+    sha256 cellar: :any,                 monterey:       "e67ef1fb84121dcea357001d14e1b2fc6614f0dcb36bda9ce06cb291acf24bf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86f827dd9ea13403f33582394b79f80f88117747da6bbbae89d70cde8cef8615"
+  end
+
   depends_on "netsurf-buildsystem" => :build
 
   def install
