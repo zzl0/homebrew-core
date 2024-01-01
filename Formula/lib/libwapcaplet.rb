@@ -6,6 +6,16 @@ class Libwapcaplet < Formula
   license "MIT"
   head "https://git.netsurf-browser.org/libwapcaplet.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "5610a67ece4b5be886260e784b100c438ec7c083c7043a4684aabf8bda19feac"
+    sha256 cellar: :any,                 arm64_ventura:  "8323a6bff5ca487dd247baf5cf9e0176073b6c6ced4ded461c0d121606cf54d1"
+    sha256 cellar: :any,                 arm64_monterey: "2d26edc578df10929cbe2fab48bebf5a21476a4eae3b8079ff20b840e181d8da"
+    sha256 cellar: :any,                 sonoma:         "15ce272c1fdafa38065a3a567fde1c81430a414ee10646ab2b2da2ec91948575"
+    sha256 cellar: :any,                 ventura:        "9ce24413c4c058e26f16e19cd7a4eb0e737f630959a093d388ca5596c4a7ccf0"
+    sha256 cellar: :any,                 monterey:       "f5df809a0a5fab07b2722764d74d56540e045ce80b4ecba874318a17a395f534"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d6d7288b404e81e20a7107f424e195d7faa5a8b8a68f5518bd8a8a0cdbdbd80"
+  end
+
   depends_on "netsurf-buildsystem" => :build
 
   def install
