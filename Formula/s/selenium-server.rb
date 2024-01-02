@@ -11,13 +11,7 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, ventura:        "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, monterey:       "068bbd7f8a7deb14348608feb703b372e2d28b196572469090a06617bc0b4cad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38ffaaa85b8a3a278f72fcc4b90bc4b6f3e20c7781bba976fcd0f39df4b1e4ac"
+    sha256 cellar: :any_skip_relocation, all: "620487882f75adafa091d93c4be716c6a5c73e153f0d1587e9daf6a5ea573962"
   end
 
   depends_on "openjdk"
