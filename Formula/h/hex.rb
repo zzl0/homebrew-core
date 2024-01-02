@@ -1,8 +1,8 @@
 class Hex < Formula
   desc "Futuristic take on hexdump"
   homepage "https://github.com/sitkevij/hex"
-  url "https://github.com/sitkevij/hex/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "7159eb1bf14d3c55aeb260cc5fb857fc8c91aca36fec3d22123aa22ecbab0509"
+  url "https://github.com/sitkevij/hex/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7952ee2b6782e49259f82155c3b5287f1be72f15360a88e379c9270bd0d2416c"
   license "MIT"
   head "https://github.com/sitkevij/hex.git", branch: "master"
 
