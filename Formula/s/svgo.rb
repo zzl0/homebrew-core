@@ -8,7 +8,7 @@ class Svgo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "41922841b0706d87ce668d8bd6e7ddf05fb6998b2b90c9dae5f62e37353985df"
+    sha256 cellar: :any_skip_relocation, all: "27750cae5fbec8fd08be6cba447873728c0d5de176ef63676f0d4039d66b93ae"
   end
 
   depends_on "node"
