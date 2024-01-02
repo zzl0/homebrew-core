@@ -3,8 +3,8 @@ class Libjcat < Formula
 
   desc "Library for reading Jcat files"
   homepage "https://github.com/hughsie/libjcat"
-  url "https://github.com/hughsie/libjcat/releases/download/0.1.14/libjcat-0.1.14.tar.xz"
-  sha256 "702706d75ff0c7253d0f5697bdd482e8c2cfe9909749fc7d68ddb364730b7383"
+  url "https://github.com/hughsie/libjcat/releases/download/0.2.0/libjcat-0.2.0.tar.xz"
+  sha256 "14dcfa678fe9fe7561ab8b795999dde2c02eb57d4bcc7da3153e1ea1a569a9ad"
   license "LGPL-2.1-or-later"
   head "https://github.com/hughsie/libjcat.git", branch: "main"
 
