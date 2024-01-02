@@ -1,8 +1,8 @@
 class ChainBench < Formula
   desc "Software supply chain auditing tool based on CIS benchmark"
   homepage "https://github.com/aquasecurity/chain-bench"
-  url "https://github.com/aquasecurity/chain-bench/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "debeff7a47acbe86f74b5cfdb970cb4843a547f3b363f56b3b45b89762dd5e60"
+  url "https://github.com/aquasecurity/chain-bench/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "5bfeaacd9cf7d272e88597135bff7f329d455a810aaf2b6a763ac55e18d383c1"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/chain-bench.git", branch: "main"
 
