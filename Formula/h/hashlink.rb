@@ -1,8 +1,8 @@
 class Hashlink < Formula
   desc "Virtual machine for Haxe"
   homepage "https://hashlink.haxe.org/"
-  url "https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.13.tar.gz"
-  sha256 "696aef6871771e5e12c617df79187d1761e79bcfe3927531e99f665a8002956f"
+  url "https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.14.tar.gz"
+  sha256 "7def473c8fa620011c7359dc36524246c83d0b6a25d495d421750ecb7182cc99"
   license "MIT"
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
