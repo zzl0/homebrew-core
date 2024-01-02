@@ -1,10 +1,9 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
   homepage "https://atari800.github.io/"
-  url "https://github.com/atari800/atari800/releases/download/ATARI800_5_0_0/atari800-5.0.0-src.tgz"
-  sha256 "eaa2df7b76646f1e49d5e564391707e5a4b56d961810cff6bc7c809bfa774605"
-  license "GPL-2.0"
-  revision 1
+  url "https://github.com/atari800/atari800/releases/download/ATARI800_5_2_0/atari800-5.2.0-src.tgz"
+  sha256 "3874d02b89d83c8089f75391a4c91ecb4e94001da2020c2617be088eba1f461f"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
@@ -29,9 +28,9 @@ class Atari800 < Formula
   depends_on "sdl12-compat"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-sdltest",
-                          "--disable-riodevice"
+    system "./configure", "--disable-sdltest",
+                          "--disable-riodevice",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
