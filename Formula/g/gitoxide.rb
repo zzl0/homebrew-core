@@ -32,6 +32,7 @@ class Gitoxide < Formula
     # See: https://github.com/Byron/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
     features = %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
+    generate_completions_from_executable(bin/"gix", "completions", "-s")
   end
 
   test do
