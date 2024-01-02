@@ -1,10 +1,10 @@
-class Rtx < Formula
+class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
-  homepage "https://github.com/jdx/rtx"
-  url "https://github.com/jdx/rtx/archive/refs/tags/v2024.0.0.tar.gz"
-  sha256 "ad1b103f3be751a23c9801facae228dcac02e35efbe9fe39a2b8cc8d11de25be"
+  homepage "https://github.com/jdx/mise"
+  url "https://github.com/jdx/mise/archive/refs/tags/v2024.1.0.tar.gz"
+  sha256 "0b78bb36f4bf566d0c2f11d1d31d4cf452b8fd73e04da3d0e6b407f66ee96697"
   license "MIT"
-  head "https://github.com/jdx/rtx.git", branch: "main"
+  head "https://github.com/jdx/mise.git", branch: "main"
 
   livecheck do
     url :stable
@@ -30,25 +30,25 @@ class Rtx < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "man/man1/rtx.1"
-    generate_completions_from_executable(bin/"rtx", "completion")
+    man1.install "man/man1/mise.1"
+    generate_completions_from_executable(bin/"mise", "completion")
     lib.mkpath
     touch lib/".disable-self-update"
-    (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
-      if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
-        #{opt_bin}/rtx activate fish | source
+    (share/"fish"/"vendor_conf.d"/"mise-activate.fish").write <<~EOS
+      if [ "$MISE_FISH_AUTO_ACTIVATE" != "0" ]
+        #{opt_bin}/mise activate fish | source
       end
     EOS
   end
 
   def caveats
     <<~EOS
-      If you are using fish shell, rtx will be activated for you automatically.
+      If you are using fish shell, mise will be activated for you automatically.
     EOS
   end
 
   test do
-    system "#{bin}/rtx", "install", "nodejs@18.13.0"
-    assert_match "v18.13.0", shell_output("#{bin}/rtx exec nodejs@18.13.0 -- node -v")
+    system "#{bin}/mise", "install", "nodejs@18.13.0"
+    assert_match "v18.13.0", shell_output("#{bin}/mise exec nodejs@18.13.0 -- node -v")
   end
 end
