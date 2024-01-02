@@ -4,6 +4,7 @@ class Gifski < Formula
   url "https://github.com/ImageOptim/gifski/archive/refs/tags/1.31.1.tar.gz"
   sha256 "5d06fc2eeefb4abc8ce4e2a7722178e177837c561561fc1019d1438ba85999b5"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d449584828bda7fc55259c00c707621a9fb4fdd73221ea660389ed11e802a133"
@@ -22,6 +23,13 @@ class Gifski < Formula
   uses_from_macos "llvm" => :build
 
   fails_with gcc: "5" # rubberband is built with GCC
+
+  # Update ffmpeg-next to build against ffmpeg 6.1
+  # upstream PR ref, https://github.com/ImageOptim/gifski/pull/318
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/692a55565d0206accee1ba34c3c0bc68e1fc3585/gifski/1.31.1-ffmpeg-6.1.patch"
+    sha256 "2d5e6f8749c7b02d7128f2dc57f9875e33099695340ac854927eab60e556370e"
+  end
 
   def install
     system "cargo", "install", "--features", "video", *std_cargo_args
