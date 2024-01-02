@@ -1,11 +1,9 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
   homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
-  url "ftp://ftp-sop.inria.fr/indes/fp/Bigloo/bigloo-4.5a-1.tar.gz"
-  version "4.5a-1"
-  sha256 "d8f04e889936187dc519719b749ad03fe574165a0b6d318e561f1b3bce0d5808"
+  url "ftp://ftp-sop.inria.fr/indes/fp/Bigloo/bigloo-4.5b.tar.gz"
+  sha256 "864d525ee6a7ff339fd9a8c973cc46bf9a623a3827d84bfb6e04a29223707da5"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www-sop.inria.fr/indes/fp/Bigloo/download.html"
@@ -33,6 +31,7 @@ class Bigloo < Formula
   depends_on "openjdk"
   depends_on "openssl@3"
   depends_on "pcre2"
+  depends_on "sqlite"
 
   on_linux do
     depends_on "alsa-lib"
@@ -42,12 +41,13 @@ class Bigloo < Formula
     # Force bigloo not to use vendored libraries
     inreplace "configure", /(^\s+custom\w+)=yes$/, "\\1=no"
 
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --mandir=#{man1}
-      --infodir=#{info}
+    # configure doesn't respect --mandir or MANDIR
+    inreplace "configure", "$prefix/man/man1", "$prefix/share/man/man1"
+
+    # configure doesn't respect --infodir or INFODIR
+    inreplace "configure", "$prefix/info", "$prefix/share/info"
+
+    args = %w[
       --customgc=no
       --customgmp=no
       --customlibuv=no
@@ -59,19 +59,13 @@ class Bigloo < Formula
     ]
 
     if OS.mac?
-      args += %w[
-        --os-macosx
-        --disable-alsa
-      ]
+      args << "--os-macosx"
+      args << "--disable-alsa"
+    else
+      args << "--disable-libbacktrace"
     end
 
-    if OS.linux?
-      args += %w[
-        --disable-libbacktrace
-      ]
-    end
-
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
 
     system "make"
     system "make", "install"
