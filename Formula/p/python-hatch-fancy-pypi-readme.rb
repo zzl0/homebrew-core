@@ -1,8 +1,8 @@
 class PythonHatchFancyPypiReadme < Formula
   desc "Fancy PyPI READMEs with Hatch"
   homepage "https://github.com/hynek/hatch-fancy-pypi-readme"
-  url "https://files.pythonhosted.org/packages/85/a6/58d585eba4321bf2e7a4d1ed2af141c99d88c1afa4b751926be160f09325/hatch_fancy_pypi_readme-23.1.0.tar.gz"
-  sha256 "b1df44063094af1e8248ceacd47a92c9cf313d6b9823bf66af8a927c3960287d"
+  url "https://files.pythonhosted.org/packages/b4/c2/c9094283a07dd96c5a8f7a5f1910259d40d2e29223b95dd875a6ca13b58f/hatch_fancy_pypi_readme-24.1.0.tar.gz"
+  sha256 "44dd239f1a779b9dcf8ebc9401a611fd7f7e3e14578dcf22c265dfaf7c1514b8"
   license "MIT"
 
   bottle do
