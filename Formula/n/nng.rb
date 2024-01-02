@@ -6,7 +6,7 @@ class Nng < Formula
   license "MIT"
 
   livecheck do
-    url "https://github.com/nanomsg/nng.git"
+    url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
