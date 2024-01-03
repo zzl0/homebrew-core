@@ -18,6 +18,7 @@ class Mailcatcher < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "libedit"
   depends_on "libyaml"
 
   uses_from_macos "xz" => :build
@@ -29,7 +30,7 @@ class Mailcatcher < Formula
 
   on_linux do
     depends_on "node" => :build
-    depends_on "ruby"
+    depends_on "ruby@3.2"
   end
 
   resource "bundler" do
