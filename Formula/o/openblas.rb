@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
-  url "https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.25.tar.gz"
-  sha256 "4c25cb30c4bb23eddca05d7d0a85997b8db6144f5464ba7f8c09ce91e2f35543"
+  url "https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.26.tar.gz"
+  sha256 "4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68"
   license "BSD-3-Clause"
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
@@ -36,9 +36,12 @@ class Openblas < Formula
     ENV["USE_OPENMP"] = "1"
     # Force a large NUM_THREADS to support larger Macs than the VMs that build the bottles
     ENV["NUM_THREADS"] = "56"
+    # See available targets in TargetList.txt
     ENV["TARGET"] = case Hardware.oldest_cpu
     when :arm_vortex_tempest
       "VORTEX"
+    when :westmere
+      "NEHALEM"
     else
       Hardware.oldest_cpu.upcase.to_s
     end
