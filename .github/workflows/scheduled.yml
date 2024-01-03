@@ -105,19 +105,3 @@ jobs:
           gh issue comment "$REPORTING_ISSUE" \
                            --repo homebrew/homebrew-core \
                            --body "${{ matrix.formula }} source has problems. Check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
-      - name: Try and build formula.
-        id: build
-        env:
-          HOMEBREW_NO_INSTALL_FROM_API: '1'
-        run: brew install -s ${{ matrix.formula }}
-
-      # TODO: Re-enable once it skips formulae that are not fir the current OS
-      # - name: Report build issues
-      #   if: ${{ failure() && steps.build.conclusion == 'failure' }}
-      #   run:  |
-      #     gh issue comment "$REPORTING_ISSUE" \
-      #                      --repo homebrew/homebrew-core \
-      #                      --body "${{ matrix.formula }} failed to build on ${{ matrix.os }}. Check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
-
