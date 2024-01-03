@@ -1,8 +1,8 @@
 class Libntlm < Formula
   desc "Implements Microsoft's NTLM authentication"
   homepage "https://gitlab.com/gsasl/libntlm/"
-  url "https://download.savannah.nongnu.org/releases/libntlm/libntlm-1.6.tar.gz"
-  sha256 "f2376b87b06d8755aa3498bb1226083fdb1d2cf4460c3982b05a9aa0b51d6821"
+  url "https://download.savannah.nongnu.org/releases/libntlm/libntlm-1.7.tar.gz"
+  sha256 "d805ebb901cbc9ff411e704cbbf6de4d28e7bcb05c9eca2124f582cbff31c0b1"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -26,18 +26,16 @@ class Libntlm < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules",
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
-    pkgshare.install "config.h", "test_ntlm.c", "test.txt", "gl/md4.c", "gl/md4.h"
-    pkgshare.install "gl/byteswap.h" if OS.mac?
+    pkgshare.install "config.h", "test_ntlm.c", "test.txt", "lib/md4-stream.c", "lib/md4.c", "lib/md4.h"
+    pkgshare.install "lib/byteswap.h" if OS.mac?
   end
 
   test do
     cp pkgshare.children, testpath
-    system ENV.cc, "test_ntlm.c", "md4.c", "-I#{testpath}", "-L#{lib}", "-lntlm",
+    system ENV.cc, "test_ntlm.c", "md4-stream.c", "md4.c", "-I#{testpath}", "-L#{lib}", "-lntlm",
                    "-DNTLM_SRCDIR=\"#{testpath}\"", "-o", "test_ntlm"
     system "./test_ntlm"
   end
