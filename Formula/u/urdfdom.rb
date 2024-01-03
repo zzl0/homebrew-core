@@ -1,14 +1,16 @@
 class Urdfdom < Formula
   desc "Unified Robot Description Format (URDF) parser"
   homepage "https://wiki.ros.org/urdf/"
-  url "https://github.com/ros/urdfdom/archive/refs/tags/3.0.0.tar.gz"
-  sha256 "3c780132d9a0331eb2116ea5dac6fa53ad2af86cb09f37258c34febf526d52b4"
+  url "https://github.com/ros/urdfdom/archive/refs/tags/4.0.0.tar.gz"
+  sha256 "9848d106dc88dc0b907d5667c09da3ca53241fbcf17e982d8c234fe3e0d6ddcc"
   license "BSD-3-Clause"
-  revision 1
 
+  # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
+  # created a few releases on GitHub in the past but now they simply use tags.
+  # See: https://github.com/Homebrew/homebrew-core/pull/158963#issuecomment-1879185279
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,7 +28,7 @@ class Urdfdom < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
   depends_on "console_bridge"
-  depends_on "tinyxml"
+  depends_on "tinyxml2"
   depends_on "urdfdom_headers"
 
   def install
@@ -50,7 +52,7 @@ class Urdfdom < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", shell_output("pkg-config --cflags urdfdom_headers").chomp,
+    system ENV.cxx, "test.cpp", *shell_output("pkg-config --cflags urdfdom").chomp.split,
                     "-L#{lib}", "-lurdfdom_world",
                     "-std=c++11", "-o", "test"
     system "./test"
