@@ -4,6 +4,7 @@ class Sugarjar < Formula
   url "https://github.com/jaymzh/sugarjar/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "5a75fab10cfb1509ae9e7ee5cfced13afbfec19e44e5020acf4a219f9c04f79c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4c7417515051fd9decc51f77a4d4f19749dc1c61a5802696140d93f28cef2864"
