@@ -1,10 +1,9 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
   homepage "https://www.cp2k.org/"
-  url "https://github.com/cp2k/cp2k/releases/download/v2023.2/cp2k-2023.2.tar.bz2"
-  sha256 "adbcc903c1a78cba98f49fe6905a62b49f12e3dfd7cedea00616d1a5f50550db"
+  url "https://github.com/cp2k/cp2k/releases/download/v2024.1/cp2k-2024.1.tar.bz2"
+  sha256 "a7abf149a278dfd5283dc592a2c4ae803b37d040df25d62a5e35af5c4557668f"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -21,7 +20,7 @@ class Cp2k < Formula
     sha256               x86_64_linux:   "e7c09a2661f7e5b61fcdc7683fd5c52904510c35a2644630c5ba896e25987f7f"
   end
 
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "fftw"
   depends_on "gcc" # for gfortran
   depends_on "libxc"
@@ -51,13 +50,9 @@ class Cp2k < Formula
     if OS.mac?
       arch = "Darwin-gfortran"
 
-      # libint needs `-lstdc++` (https://github.com/cp2k/cp2k/blob/master/INSTALL.md)
-      # Can remove if added upstream to Darwin-gfortran.psmp and Darwin-gfortran.ssmp
-      # PR submitted: https://github.com/cp2k/cp2k/pull/2966
       libs = %W[
         -L#{Formula["fftw"].opt_lib}
         -lfftw3
-        -lstdc++
       ]
 
       ENV["LIBXC_INCLUDE_DIR"] = Formula["libxc"].opt_include
@@ -113,6 +108,7 @@ class Cp2k < Formula
         --with-spla=no
         --with-cosma=no
         --with-libvori=no
+        --with-libgrpp=no
       ]
       args << "--target-cpu=generic" if build.bottle?
 
