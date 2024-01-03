@@ -4,6 +4,7 @@ class Pgsync < Formula
   url "https://github.com/ankane/pgsync/archive/refs/tags/v0.7.4.tar.gz"
   sha256 "0d8c0d319374f658a8aacafb15edbc074328aaec503fa92aae6032d3e1f12e60"
   license "MIT"
+  revision 1
 
   bottle do
     sha256                               arm64_sonoma:   "dcffe5761fc5428530f190c688049136dd2410e1b8dd686d16e06f7c687ef1f6"
