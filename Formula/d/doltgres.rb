@@ -5,20 +5,15 @@ class Doltgres < Formula
   sha256 "6d2458306755489f84ef6ac78bdf58f090511d2d3b099c3ff429a04daf4be024"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc912688caccd9172cb0c78584a6e193a4eaf778fe9464ad5f52b16ca659c085"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fe05c375a095a82f08e2b2ef7a17bd737cf4a607734a7031ae9091610f13c93"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36725d9fb1b9d620b99a0d698ed1bc2e1edf552860f56c9f3042db9780e5d9a1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fb32193ab52b23fe42ac961c278e46dd0217fd30b97ead0fec50a93f0cae8506"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5708b82a0eed74c153a33b83a055f07bd81811a54db520946b3ced498ae8ef1"
-    sha256 cellar: :any_skip_relocation, monterey:       "348d41a41d79216906b80c7544a7139b345e044e77cb4024b696833a0fe0ddb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4e053dc96b07fcef7f0f6a52fffc7ee35fc608e969496dc97326c38b01354f0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "642a7b60f23e9db380c175e4f372d37c7a6b14ed98e09487b31289b6ac17e66f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1290530e02f78ff86eeb501717c0380328847b45ea36accb5a069decfe2c0734"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17588e3c6fb1248a1f6e9b8a2d1ed51c8650078938b37daeaeb671365cf8e549"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e2ea85e907ef8621f6db7aac80afb41497e9945f6a433776c8cb3f6458abd49"
+    sha256 cellar: :any_skip_relocation, ventura:        "463e188f2d323a8da3ba3b4c53441a3013207fe2513df65dd5f2ad272d231c72"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e4e1b87be34f167fb67b34fbb61e9a86521e6dbfdbf0e45451c6c2b13b5d84e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a1d5a3c5b62d6e80bda010dc9aa870772ee8d236a0b98ed56288d3c8f9ffefe"
   end
 
   depends_on "go" => :build
@@ -26,7 +21,7 @@ class Doltgres < Formula
 
   def install
     system "./postgres/parser/build.sh"
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
