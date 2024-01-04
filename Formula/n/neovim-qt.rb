@@ -58,8 +58,8 @@ class NeovimQt < Formula
     system "nvim", *nvim_opts, "--remote", testfile
     system "nvim", *nvim_opts, "--remote-send", testcommand
     system "nvim", *nvim_opts, "--remote-send", ":w<CR>"
-    assert_equal testexpected, testfile.read.chomp
     system "nvim", "--server", testserver, "--remote-send", ":q<CR>"
+    assert_equal testexpected, testfile.read.chomp
     Process.wait nvimqt_pid
   end
 end
