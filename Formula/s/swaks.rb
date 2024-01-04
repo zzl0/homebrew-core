@@ -11,7 +11,7 @@ class Swaks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d4baaa4d56b279d495b708a878b6e41f25c6278a3d214be0736178ff0cc35104"
+    sha256 cellar: :any_skip_relocation, all: "4680f9c22f57ee86564e8a405ca115c2e1ab3aaa07453c7244479c7128e98c95"
   end
 
   def install
