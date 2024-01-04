@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/c4/22/7534eaaba68f3529d2aa6bf4c6d38aa37c7a6ea9f8c53b245f4bad9ba99c/dvc-3.37.0.tar.gz"
-  sha256 "080bc9acf7f49f571cd4e9c739055a15d1042ca8573fd9c79577012dddebdd46"
+  url "https://files.pythonhosted.org/packages/5a/b9/45ef5cf27a82bfac583d003e34ee538f9c842a9e4729d8c22dba28ad940a/dvc-3.38.0.tar.gz"
+  sha256 "61294ffc71e5263bd12c3a0b410f606e4d6f7808b1d6d2a998fec0b07b1476ad"
   license "Apache-2.0"
 
   bottle do
@@ -123,8 +123,8 @@ class Dvc < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "azure-core" do
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/3b/36/02b4134d9404d5205ac8ce972fee66f14995a0e7dd32670ef4c878a81626/dvc-data-3.5.0.tar.gz"
-    sha256 "0a3c7da7a16f0d0964785f3dc1700e7cec2bfb4d067fb5b14042470a7ae3ed4c"
+    url "https://files.pythonhosted.org/packages/b3/cd/54f5517e2e38400b202dec3e3df024c67d9f5b679f8ccdcb9ed3080776f8/dvc-data-3.6.0.tar.gz"
+    sha256 "85a37501a883764a68eafb0c13cabcf7408eb0d1de028706fbc01afd263e56f7"
   end
 
   resource "dvc-gdrive" do
@@ -273,8 +273,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/4d/78/00e5868f277349abe64d8e9d9a6bb6043b4e1c9ed7bbdba7b76150e5c2f1/dvc-objects-3.0.0.tar.gz"
-    sha256 "fe6412d365d88b8f50e42aa3ed571b316f50e3466e9a83dbf99988e0802537ce"
+    url "https://files.pythonhosted.org/packages/62/45/cb6948864754b2166fc1c5c0c083e00ec1c68e9e59d997274c57bccebb98/dvc-objects-3.0.3.tar.gz"
+    sha256 "4d6df96aa9999f2a6ade9d592b2245988f1b0063be73ea5ab26e6873aa34016f"
   end
 
   resource "dvc-oss" do
@@ -378,8 +378,8 @@ class Dvc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/05/77/84608894384e02f3b0b2621b09ecb0b85e57ba368f13eecbbc43cd1b8719/google-auth-2.25.2.tar.gz"
-    sha256 "42f707937feb4f5e5a39e6c4f343a17300a459aaf03141457ba505812841cc40"
+    url "https://files.pythonhosted.org/packages/bc/c0/b5119831db4888e703b2adaa912709931181678ae3a50ca08d51a3904765/google-auth-2.26.1.tar.gz"
+    sha256 "54385acca5c0fbdda510cd8585ba6f3fcb06eeecf8a6ecca39d3ee148b092590"
   end
 
   resource "google-auth-httplib2" do
@@ -588,13 +588,13 @@ class Dvc < Formula
   end
 
   resource "pydot" do
-    url "https://files.pythonhosted.org/packages/13/6e/916cdf94f9b38ae0777b254c75c3bdddee49a54cc4014aac1460a7a172b3/pydot-1.4.2.tar.gz"
-    sha256 "248081a39bcb56784deb018977e428605c1c758f10897a339fce1dd728ff007d"
+    url "https://files.pythonhosted.org/packages/d7/2f/482fcbc389e180e7f8d7e7cb06bc5a7c37be6c57939dfb950951d97f2722/pydot-2.0.0.tar.gz"
+    sha256 "60246af215123fa062f21cd791be67dda23a6f280df09f68919e637a1e4f3235"
   end
 
   resource "pydrive2" do
-    url "https://files.pythonhosted.org/packages/d1/fb/809d215b100232d3253162061b1ffa55089b158d7f5f6d4e97cc757104ef/PyDrive2-1.18.1.tar.gz"
-    sha256 "49dca8842f7c3d63fd35ab55492af2a8b5b39f1cc811042fe37ffbed1c48303f"
+    url "https://files.pythonhosted.org/packages/bd/37/f256fce47c0bd63af9e8c63253e144f26e22ad5969dc83dfa59282ff11cb/PyDrive2-1.19.0.tar.gz"
+    sha256 "21aea7da27635c2c3f7050e020206191f3b0305c6550315e6e8e3dd526f8b531"
   end
 
   resource "pygtrie" do
@@ -713,8 +713,8 @@ class Dvc < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/70/e5/81f99b9fced59624562ab62a33df639a11b26c582be78864b339dafa420d/tzdata-2023.3.tar.gz"
-    sha256 "11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"
+    url "https://files.pythonhosted.org/packages/4d/60/acd18ca928cc20eace3497b616b6adb8ce1abc810dd4b1a22bc6bdefac92/tzdata-2023.4.tar.gz"
+    sha256 "dd54c94f294765522c77399649b4fefd95522479a664a0cec87f41bebc6148c9"
   end
 
   resource "uritemplate" do
