@@ -7,13 +7,13 @@ class VulkanTools < Formula
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b4d41df7875f155c4fdadc3345f49901772efcb8d70424fe389f6a4c856126af"
-    sha256 cellar: :any,                 arm64_ventura:  "d4cac3776598e19391ed199f8bdfc4de6c630af8e8c6fe4a962631996fa2ea04"
-    sha256 cellar: :any,                 arm64_monterey: "940fe5d5f84beeb96219bead4454a8bdfcace6505f1d4d0d5ad4354fe0371507"
-    sha256 cellar: :any,                 sonoma:         "d9ad23d802ddd301ff8116d979023e5807e8d5ad585bd9078265d065742e5246"
-    sha256 cellar: :any,                 ventura:        "ca30603a36c46a092a240c162bdd664c9e2d0d2a8aad5b54655ef1cba3339dcd"
-    sha256 cellar: :any,                 monterey:       "80b6af96aa3a7ee0aa0a56992bdacfc519f7cc9f2137835d0c649a3835300e66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4e8ab6083445030ee7036adc642dded10bccff35fccbceb18313ac5a222507d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2c5b1a464503a2514977bd897bad5a3655ff27f7909d0ee50c7f30f9695c1f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24335e1247ef2e55e2bd53cd975d9c0c493caee9b7655e0a18f235332dca3d0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac671cf404ae2f8295bfbe25db3b413044daf10b809b9581736d7ab9e9b9a754"
+    sha256 cellar: :any_skip_relocation, sonoma:         "334c634c1431af66c7ac9f193667be8a32c75de251adbfd295f8c92ad49c207c"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6a60022b26f510fb8b3d537df5e2c8bd8549ca36d0530884c7454e6b9630212"
+    sha256 cellar: :any_skip_relocation, monterey:       "55da7e8df2203a0c404ccc702bd69618795be108b9d36499f1ff789db8a25ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b10fc3f32d441aacf51f799d88753b917c31d28449a708559c455fad539b44d"
   end
 
   depends_on "cmake" => :build
