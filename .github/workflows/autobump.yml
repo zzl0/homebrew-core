@@ -345,6 +345,7 @@ env:
     countdown
     counterfeiter
     coursier
+    cp2k
     cpm
     cpp-httplib
     cppcheck
@@ -650,6 +651,7 @@ env:
     gh
     ghz
     ghz-web
+    gickup
     gifski
     ginac
     git-annex
@@ -813,6 +815,7 @@ env:
     kustomize
     kyma-cli
     kyverno
+    lacework-cli
     languagetool
     latex2html
     latexml
@@ -850,6 +853,7 @@ env:
     log4cxx
     lout
     luau
+    luit
     lux
     lychee
     macchina
