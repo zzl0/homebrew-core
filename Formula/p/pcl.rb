@@ -1,10 +1,9 @@
 class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
-  url "https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.13.1.tar.gz"
-  sha256 "8ab98a9db371d822de0859084a375a74bdc7f31c96d674147710cf4101b79621"
+  url "https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.14.0.tar.gz"
+  sha256 "de297b929eafcb93747f12f98a196efddf3d55e4edf1b6729018b436d5be594d"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
@@ -33,10 +32,6 @@ class Pcl < Formula
   on_macos do
     depends_on "libomp"
   end
-
-  # Fix build with Qt 6
-  # https://github.com/PointCloudLibrary/pcl/issues/5776
-  patch :DATA
 
   def install
     args = std_cmake_args + %w[
@@ -131,16 +126,3 @@ class Pcl < Formula
     end
   end
 end
-__END__
-diff -pur a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h
---- a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-05-10 08:44:47
-+++ b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-07-31 18:04:25
-@@ -42,6 +42,8 @@
- 
- #pragma once
- 
-+#include <QList>
-+#include <QObject>
- #include <QPointer>
- 
- namespace pcl
