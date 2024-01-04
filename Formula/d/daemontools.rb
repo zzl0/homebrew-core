@@ -31,6 +31,12 @@ class Daemontools < Formula
     sha256 "b7beb4cfe150b5cad1f50f4879d91cd8fc72e581940da4a716b99467d3a14937"
   end
 
+  # Fix build failure due to missing headers for POSIX-related functions.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/36d482722d0959abc80a8b0b944c9bc266e6fe5f/daemontools/posix-headers.patch"
+    sha256 "4c8f57406e5d077dbcaf7c92ba0febf59a5ac00b96309220f7723d135ea82c42"
+  end
+
   def install
     cd "daemontools-#{version}" do
       inreplace ["package/run", "src/svscanboot.sh"] do |s|
