@@ -21,6 +21,8 @@ class Cadical < Formula
   end
 
   def install
+    ENV.append_to_cflags "-fPIC" if OS.linux?
+
     system "./configure"
     chdir "build" do
       system "make"
