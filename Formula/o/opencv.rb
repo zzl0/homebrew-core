@@ -1,10 +1,9 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/refs/tags/4.8.1.tar.gz"
-  sha256 "62f650467a60a38794d681ae7e66e3e8cfba38f445e0bf87867e2f2cdc8be9d5"
+  url "https://github.com/opencv/opencv/archive/refs/tags/4.9.0.tar.gz"
+  sha256 "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c"
   license "Apache-2.0"
-  revision 5
 
   livecheck do
     url :stable
@@ -48,15 +47,8 @@ class Opencv < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.1.tar.gz"
-    sha256 "0c082a0b29b3118f2a0a1856b403bb098643af7b994a0080f402a12159a99c6e"
-  end
-
-  # Fix static build with OpenVINO (https://github.com/opencv/opencv/pull/23963)
-  # Remove patch when available in release.
-  patch do
-    url "https://github.com/opencv/opencv/commit/ef9d14f181ad8cca71443beaf3874de3197d4e47.patch?full_index=1"
-    sha256 "efdf5534479af2e246c162215d5cbc2ae49e962ca58ccd9fef610fa40ee4a4ed"
+    url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.9.0.tar.gz"
+    sha256 "8952c45a73b75676c522dd574229f563e43c271ae1d5bbbd26f8e2b6bc1a4dae"
   end
 
   def python3
