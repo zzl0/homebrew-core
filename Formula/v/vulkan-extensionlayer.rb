@@ -7,13 +7,13 @@ class VulkanExtensionlayer < Formula
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4863eafe85a71d3f47029d5d3b1098a3a36b9ee200fc7481e8d335980fdc8841"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d44f601b9f0931f0e808e2d4e241f0da6e6cfde8e503cdad8cbdc9a9a53ef55"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37a2a6da2a019b87acfa9548e34e58b0191397cbeb5e1525df1c5e4f8f4d3b20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6712427862da96e9a6c8e9c91c183e39c2704c38f032d55eb99a0a20dd671562"
-    sha256 cellar: :any_skip_relocation, ventura:        "141799afecfc728676905d61e2beaf143ce46b5c83975b9e57a81d30b0c139bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6af951d041a7c7816e9180594d82363b6dd77394da15acd34a1564e2d79f48e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b2b88f11c14db216711f4f5305d8aae413cce3482aee144c1f182933f9449cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c979faa463f54ee8a187b9b087c7a8daa638fbf4bc2566837eaa663bb43fc1c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11bc0f31e6524c277214361485c9a6396b087891a6336afc2884e96b52e67908"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36068155387b4e9ddc97123266270fa74dbf600b7c8263dd863e78d8cda04679"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6ec5c473a24b0048048693be91349346855ef3f1055d76391c68fbaecb52c91"
+    sha256 cellar: :any_skip_relocation, ventura:        "f87f976639b89043dadfd234bf70ad1afd0e3d62b069776c3f3c95a19a0c077a"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa011398372a057abf0f6c5eab4a8642556a4b9ef6fadbc4e9fd36b5f30bd88f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63189fccb3f6e08d963faa72391e390bfb6bb19ae9bfe9d0f5532207f0bbc4fa"
   end
 
   depends_on "cmake" => :build
