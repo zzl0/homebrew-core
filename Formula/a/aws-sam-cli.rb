@@ -8,13 +8,13 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81ccd8b2d9113ecb6d704b1e4f9867e3c1b93f9a18545d4872f4a4bf874f5f8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b370b664856de814ca29e706fa75dd350adbd26f81d5f9c9d13c622b5db56134"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3b6c3faec00ba48a6fea5329b5a85c2759453ddaa70ece5269e43c8c5c4ca76"
-    sha256 cellar: :any_skip_relocation, sonoma:         "19d79cd5776e9b7a4d6dc4b30a611d6bce4f696aec41f190a646780a34fef67c"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a73e923c4873dab541f0aee5b14097785b8e18d4268f25f5da300e810ca2733"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf7e0f72a567cbc7a86b419802589150c6471801467c1ac2c2f11a6229ebf492"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36b5501383a85e2e666451de8ebca2e8b19db835fcf9351acd4b3edb94255e28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "474cd18c9cd104e33b05cfb9bd85e154d5850a7ed90bfbbc99d158270fa23b1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96dd0ebb0300fbe2720a697aefe9516cc193a32c0feea6ecd08c55cf05273adb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1be5ac22e67a278c188552dadf7dd468229a47921d40a584905e715fe324f1fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "257b73cac30de8ac3b8faccf6061ec9947fd271fad278409df152f2420d57b9a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2f9f51abe18491d7c4fed5eb2ddc7655637f1a2cb1bfc25f08ab19d695aba5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a92f85b1ea0ab18ba06adb3dd55d44f572bc4d5ecd07d30aa0bc1076b04cc0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "001f828a27ae8068760b48aeb16081a9c7487e1b3519a022d7e9170f3bce7e21"
   end
 
   depends_on "rust" => :build # for rpds-py
