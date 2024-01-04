@@ -1,30 +1,10 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
   homepage "https://github.com/ampas/CTL"
+  url "https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.3.tar.gz"
+  sha256 "0a9f5f3de8964ac5cca31597aca74bf915a3d8214e3276fdcb52c80ad25b0096"
   license "AMPAS"
-  revision 12
   head "https://github.com/ampas/CTL.git", branch: "master"
-
-  stable do
-    url "https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.2.tar.gz"
-    sha256 "d7fac1439332c4d84abc3c285b365630acf20ea041033b154aa302befd25e0bd"
-
-    # Backport support for OpenEXR/Imath 3. Remove in the next release.
-    # Due to large number of changes from last stable release to OpenEXR 3 commit
-    # https://github.com/ampas/CTL/commit/3fc4ae7a8af35d380654e573d895216fd5ba407e,
-    # we apply a patch generated from GitHub compare range.
-    patch do
-      url "https://github.com/ampas/CTL/compare/ctl-1.5.2..3fc4ae7a8af35d380654e573d895216fd5ba407e.patch?full_index=1"
-      sha256 "701df07c80ad10341d8e70da09ce4a624ae3cccbe86e72bf07e6e6187bca96cc"
-    end
-
-    # Fix installation error: file cannot create directory: /CTL.
-    # Remove in the next release.
-    patch do
-      url "https://github.com/ampas/CTL/commit/f2474a09f647426302472009649edb4c3daac471.patch?full_index=1"
-      sha256 "9adb22c5558bf661afea173695bad0a23a19af12981ba31c9fc0c6f9129fe6f1"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a0168820a05b59e486be9e08500d23a1c6db05004c13b359c66273a42c94460d"
