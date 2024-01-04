@@ -7,13 +7,13 @@ class VulkanValidationlayers < Formula
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b2faeae2112793e49e0dff23705d210b9758ca935d1a345895fd34cc58e6862"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5643bc8bfedf740f2c8565e6f28e38e06a5766ec75b8bff87f9f8531ad876a69"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a1a6ab45fd460528a6579567aa8717110e84c21c9c907265cc7e29e5570f4c0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "475053e934ed60dea58cb02b36d1b04390749e9476e4a35b2bf3c56d44aeae58"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d94eecae0f22c5b450b895072cf03bdf5732751df1a63efa47a19e7557764de"
-    sha256 cellar: :any_skip_relocation, monterey:       "f20028cfa2a5fa3f975f2e9b40ee425c3ad2ac085f6969b86d7e6321addc802c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39e3b3fdc68b8208790323c32a704bda2139f3b9b23e193f8cdb9864adb09da8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78b31358444a59b19dd08ba6e43dad2677826bc07e46c0c34d1f86cfca127db7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2c4f5168dfc745b280afa0c4b4593a3a5bb64024e45c09e4af7cf651a99eecc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9022aa83b588f7a48c0e321541563fb9ee613286c77e81a6e61d8395cec3ffa6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "970cef1aca2df31a4d49d6c6d98f31545ceaa2e9b342d62f2a9f95f53d4ada72"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9e3ad2061b93ee4bbb067a769d1e82d7f4d4a6014cf3d967077641dbc29b49d"
+    sha256 cellar: :any_skip_relocation, monterey:       "047d2db7101623c10c1256bc7f52ecf4c83d46042c41de1bccfc622cf41b572b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddff9ca1ddbe03a2cb9b7c22700b4bb956912a6e9f3c6d4b501db66ea2c47006"
   end
 
   depends_on "cmake" => :build
