@@ -31,6 +31,10 @@ class Caddy < Formula
     end
 
     generate_completions_from_executable("go", "run", "cmd/caddy/main.go", "completion")
+
+    system bin/"caddy", "manpage", "--directory", buildpath/"man"
+
+    man8.install Dir[buildpath/"man/*.8"]
   end
 
   service do
