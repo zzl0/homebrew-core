@@ -7,15 +7,13 @@ class Cpm < Formula
   head "https://github.com/skaji/cpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c35b72285ccc9e2cfa5ff58560de6f412e47e83b286ebd24184f4022eebd81d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee698a91238dadaa9520095aa2ec02b6d47cf7241a824f9e50f868c14bf73d23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee698a91238dadaa9520095aa2ec02b6d47cf7241a824f9e50f868c14bf73d23"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ee698a91238dadaa9520095aa2ec02b6d47cf7241a824f9e50f868c14bf73d23"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5f50a4e436a8a20749f1b0d2484398089a3c1ee4d3c668a70bd19778be40c12b"
-    sha256 cellar: :any_skip_relocation, ventura:        "58824744d85f35ab9c2f9609f54ddcefae47eaf4aeec45a8848c97b13dacf34f"
-    sha256 cellar: :any_skip_relocation, monterey:       "58824744d85f35ab9c2f9609f54ddcefae47eaf4aeec45a8848c97b13dacf34f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58824744d85f35ab9c2f9609f54ddcefae47eaf4aeec45a8848c97b13dacf34f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75cc2b69f43a01bb3de2c4724c08ceb20b2c64049656a134a330e0dfc3d70687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c3f4a427bb14713cb10039cf64352524e294f7dbcdb70c935a3fd824884c17"
   end
 
   depends_on "perl"
