@@ -6,6 +6,11 @@ class CargoWatch < Formula
   license "CC0-1.0"
   head "https://github.com/watchexec/cargo-watch.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16f413123002352d2ea9ce30e8c21c74b2c58e3f44b5883f09985987ee595e1e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c58395331cae06d64c50ad2515a9dec4240e6b23fe7d12a6bd2c46ce9a621c4"
