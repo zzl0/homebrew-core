@@ -5,12 +5,6 @@ class Doltgres < Formula
   sha256 "6d2458306755489f84ef6ac78bdf58f090511d2d3b099c3ff429a04daf4be024"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc912688caccd9172cb0c78584a6e193a4eaf778fe9464ad5f52b16ca659c085"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fe05c375a095a82f08e2b2ef7a17bd737cf4a607734a7031ae9091610f13c93"
@@ -26,7 +20,7 @@ class Doltgres < Formula
 
   def install
     system "./postgres/parser/build.sh"
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
