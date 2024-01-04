@@ -1,8 +1,8 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.20.4.tar.gz"
-  sha256 "d7d973c960520289f10142edf6d64dc1bbb1fc207723129f31bfb949ba20f4d7"
+  url "https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.20.5.tar.gz"
+  sha256 "7bac757a93d8a5afcbd71460afdaffc7ea0eaf9d8a26cc223c65f6a051eaf09d"
   license "MIT"
 
   bottle do
