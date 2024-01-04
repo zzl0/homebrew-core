@@ -1,8 +1,8 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997014.tar.gz"
-  sha256 "2dd4c03c54039c2d02ccdd2ef95bc6ff56cfbdb746cd076fcb0a9547c5049908"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997015.tar.gz"
+  sha256 "623f8c67287d864b5fb1cd9c70aaa2a31c82c245cc80d01ff01e166f4cdd4ffc"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "master"
 
@@ -21,8 +21,8 @@ class Cpm < Formula
   depends_on "perl"
 
   resource "Module::Build::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.046.tar.gz"
-    sha256 "be193027e2debb4c9926434aaf1aa46c9fc7bf4db83dcc347eb6e359ee878289"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.047.tar.gz"
+    sha256 "71260e9421b93c33dd1b3e7d0cf15f759c0ca7c753fa840279ec3be70f8f8c9d"
   end
 
   resource "CPAN::Common::Index" do
@@ -141,8 +141,8 @@ class Cpm < Formula
   end
 
   resource "URI" do
-    url "https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz"
-    sha256 "8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.21.tar.gz"
+    sha256 "96265860cd61bde16e8415dcfbf108056de162caa0ac37f81eb695c9d2e0ab77"
   end
 
   resource "Win32::ShellQuote" do
@@ -151,8 +151,8 @@ class Cpm < Formula
   end
 
   resource "YAML::PP" do
-    url "https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-PP-0.036.tar.gz"
-    sha256 "c8b4e50584adf92ef7573f6bb01d6ed58e6217632c57427b7274cfa7ca46fc1b"
+    url "https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-PP-v0.37.0.tar.gz"
+    sha256 "9c4cb4e8801a69b44440c0dbcc40e6b6f0646f2016a5f30877aadef6b28071ad"
   end
 
   resource "local::lib" do
