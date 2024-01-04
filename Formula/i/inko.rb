@@ -4,6 +4,7 @@ class Inko < Formula
   url "https://releases.inko-lang.org/0.13.2.tar.gz"
   sha256 "3f188a4a2242c61624081d757b66281ba0f0cfb193ebb590f1470f1f6400f773"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/inko-lang/inko.git", branch: "main"
 
   bottle do
@@ -15,8 +16,8 @@ class Inko < Formula
   end
 
   depends_on "coreutils" => :build
-  depends_on "llvm@15" => :build
   depends_on "rust" => :build
+  depends_on "llvm@15"
   depends_on "zstd"
 
   uses_from_macos "libffi", since: :catalina
