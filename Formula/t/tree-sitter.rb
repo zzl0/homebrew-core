@@ -20,29 +20,13 @@ class TreeSitter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d413c47e7b8641aae812d19b39c3f927088e450eabde992f3d7cc32de7d29aa9"
   end
 
-  depends_on "emscripten" => [:build, :test]
-  depends_on "node" => [:build, :test]
   depends_on "rust" => :build
+  depends_on "node" => :test
 
   def install
     system "make", "AMALGAMATED=1"
     system "make", "install", "PREFIX=#{prefix}"
-
-    # NOTE: This step needs to be done *before* `cargo install`
-    cd "lib/binding_web" do
-      system "npm", "install", *Language::Node.local_npm_install_args
-    end
-    system "script/build-wasm"
-
-    cd "cli" do
-      system "cargo", "install", *std_cargo_args
-    end
-
-    # Install the wasm module into the prefix.
-    # NOTE: This step needs to be done *after* `cargo install`.
-    %w[tree-sitter.js tree-sitter-web.d.ts tree-sitter.wasm package.json].each do |file|
-      (lib/"binding_web").install "lib/binding_web/#{file}"
-    end
+    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
@@ -106,9 +90,5 @@ class TreeSitter < Formula
     EOS
     system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
     assert_equal "tree creation failed", shell_output("./test_program")
-
-    # test `tree-sitter build-wasm`
-    ENV.delete "CPATH"
-    system bin/"tree-sitter", "build-wasm"
   end
 end
