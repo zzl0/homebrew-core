@@ -9,19 +9,8 @@ class Influxdb < Formula
 
   stable do
     url "https://github.com/influxdata/influxdb.git",
-        tag:      "v2.7.3",
-        revision: "ed645d9216af16b49f8c6a49aee84341ea168180"
-
-    # Backport flux upgrades to build with newer Rust 1.72+. Remove in the next release.
-    patch :DATA # Minimal diff to apply upstream commits. Reverted via inreplace during install
-    patch do
-      url "https://github.com/influxdata/influxdb/commit/08b4361b367460fb8c6b77047ff518634739ccec.patch?full_index=1"
-      sha256 "9cc2b080012dcc39f57e3b14aedb6e6255388944c793ca8016a82b7b996d5642"
-    end
-    patch do
-      url "https://github.com/influxdata/influxdb/commit/924735a96d73ea4c67501447f0b885a6dc2e0d28.patch?full_index=1"
-      sha256 "b0da74d79580ab4ccff57858d053f447ae23f60909875a73b4f21376c2f1ce95"
-    end
+        tag:      "v2.7.5",
+        revision: "09a9607fd9fe017cae589610364017b1939ae9a2"
   end
 
   # There can be a notable gap between when a version is tagged and a
@@ -76,12 +65,6 @@ class Influxdb < Formula
   end
 
   def install
-    # Revert :DATA patch to avoid having to modify go.sum
-    if build.stable?
-      inreplace "go.mod", "golang.org/x/tools v0.14.0",
-                          "golang.org/x/tools v0.14.1-0.20231011210224-b9b97d982b0a"
-    end
-
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
     resource("pkg-config-wrapper").stage do
@@ -158,18 +141,3 @@ class Influxdb < Formula
     Process.wait influxd
   end
 end
-
-__END__
-diff --git a/go.mod b/go.mod
-index a5e2981ff2..2bf67347a4 100644
---- a/go.mod
-+++ b/go.mod
-@@ -68,7 +68,7 @@ require (
- 	golang.org/x/sys v0.13.0
- 	golang.org/x/text v0.13.0
- 	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8
--	golang.org/x/tools v0.14.1-0.20231011210224-b9b97d982b0a
-+	golang.org/x/tools v0.14.0
- 	google.golang.org/protobuf v1.28.1
- 	gopkg.in/yaml.v2 v2.4.0
- 	gopkg.in/yaml.v3 v3.0.1
