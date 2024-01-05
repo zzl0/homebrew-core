@@ -1,8 +1,8 @@
 class Lfe < Formula
   desc "Concurrent Lisp for the Erlang VM"
   homepage "https://lfe.io/"
-  url "https://github.com/lfe/lfe/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "59743c2496f72f2ad595843311f49d09ef932ffaa5bb26075c79c368a3948f80"
+  url "https://github.com/lfe/lfe/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "83a80e9baf89045d3975a01b89ef679544d693a689f1798f05360ab0ca20df15"
   license "Apache-2.0"
   head "https://github.com/lfe/lfe.git", branch: "develop"
 
@@ -19,6 +19,12 @@ class Lfe < Formula
 
   depends_on "emacs" => :build
   depends_on "erlang"
+
+  # build patch for macos, upstream pr ref, https://github.com/lfe/lfe/pull/487
+  patch do
+    url "https://github.com/lfe/lfe/commit/7115d469e3239d7e7965db101e3e98675840a8f9.patch?full_index=1"
+    sha256 "96e08c3517bc905f53a27e2678018a9f4d5d3297cb9c6e18a35b71777fdcbc8f"
+  end
 
   def install
     system "make"
