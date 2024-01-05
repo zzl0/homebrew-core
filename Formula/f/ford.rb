@@ -3,8 +3,8 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/48/b1/4947d7fa7ff2c6649e787cab8021d4775d5633c1efa06c50700f7cade80b/FORD-7.0.3.tar.gz"
-  sha256 "45889de5bc6e8d8f65199c83f260c972495e5396b0b138e95654b8b6b49a1670"
+  url "https://files.pythonhosted.org/packages/40/fd/ad8d8d0cb39028462119b4aaa000897786e9c151e2c2eaba0cdb02075416/FORD-7.0.4.tar.gz"
+  sha256 "92b543906580cfb95eaf5afb09166b90109f77b522d7e019fc87a225e9aeadd9"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
@@ -66,8 +66,8 @@ class Ford < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "soupsieve" do
