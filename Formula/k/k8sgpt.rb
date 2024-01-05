@@ -6,6 +6,16 @@ class K8sgpt < Formula
   license "Apache-2.0"
   head "https://github.com/k8sgpt-ai/k8sgpt.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b125fc1c59cbe3c2f40e308a1b59335e24d01d40de9e8c8c532ff0806c58772e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b9f47f34876cd66dc26d3fdc0004b3a303be304e5457f8689fc11eeecec5473"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "738027837ec9cf1455e94b993f7567a8b34737400c58acf1f0254a66f475bc34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "660db34585ab85e243488615e8d3c3f31b0b445498237949e6a00516158cbce6"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f2091334f8d8db39fe70d22453a52158391c57a792aac0ac06484a9c0653a50"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d387656bc6884d5f4632a9af5d7a4024e2260b96e93a218751da7bff0ea069c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24bc6361c233364ebc19e20113f952e656705ae8172d4d1833775528c36efc64"
+  end
+
   depends_on "go" => :build
 
   def install
