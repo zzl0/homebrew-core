@@ -1,8 +1,8 @@
 class Pdfrip < Formula
   desc "Multi-threaded PDF password cracking utility"
   homepage "https://github.com/mufeedvh/pdfrip"
-  url "https://github.com/mufeedvh/pdfrip/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "911cd38805ca31cf941eebdf1a7d465bd6ad47d7c4603a5a896a2d3d67598996"
+  url "https://github.com/mufeedvh/pdfrip/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "b00c01f23f02a067d3fec48ee42d0ed42796fc6f3383537147c7f9dd74257b40"
   license "MIT"
   head "https://github.com/mufeedvh/pdfrip.git", branch: "main"
 
@@ -29,7 +29,7 @@ class Pdfrip < Formula
     assert_match version.to_s, shell_output("#{bin}/pdfrip --version")
 
     touch testpath/"test.pdf"
-    output = shell_output("#{bin}/pdfrip test.pdf --num-bruteforce 1-5 2>&1")
-    assert_match "None of those were the password :(", output
+    output = shell_output("#{bin}/pdfrip -f test.pdf range 1 5 2>&1")
+    assert_match "Failed to crack file", output
   end
 end
