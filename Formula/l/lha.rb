@@ -1,21 +1,11 @@
 class Lha < Formula
   desc "Utility for creating and opening lzh archives"
-  homepage "https://lha.osdn.jp/"
-  # Canonical: https://osdn.net/dl/lha/lha-1.14i-ac20050924p1.tar.gz
-  url "https://dotsrc.dl.osdn.net/osdn/lha/22231/lha-1.14i-ac20050924p1.tar.gz"
-  version "1.14i-ac20050924p1"
-  sha256 "b5261e9f98538816aa9e64791f23cb83f1632ecda61f02e54b6749e9ca5e9ee4"
+  homepage "https://github.com/jca02266/lha/"
+  url "https://github.com/jca02266/lha/archive/refs/tags/release-20211125.tar.gz"
+  version "1.14i-ac20211125"
+  sha256 "8761edac9613cf1c06cbc341259fb2abd804f8f5bb8ba25970779062701e8a46"
   license "MIT"
-
-  # OSDN releases pages use asynchronous requests to fetch the archive
-  # information for each release, rather than including this information in the
-  # page source. As such, we identify versions from the release names instead.
-  # The portion of the regex that captures the version is looser than usual
-  # because the version format is unusual and may change in the future.
-  livecheck do
-    url "https://osdn.net/projects/lha/releases/"
-    regex(%r{href=.*?/projects/lha/releases/[^>]+?>\s*?v?(\d+(?:[.-][\da-z]+)+)}im)
-  end
+  head "https://github.com/jca02266/lha.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -32,11 +22,8 @@ class Lha < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8b7a7201b538cc3ef658c5b8cb0512fbd02bad5cff1fda24c89a2c0e18e0817"
   end
 
-  head do
-    url "https://github.com/jca02266/lha.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
 
   conflicts_with "lhasa", because: "both install a `lha` binary"
 
@@ -44,11 +31,9 @@ class Lha < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system "autoreconf", "-is" if build.head?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "-fvi"
+    system "./configure", "--mandir=#{man}",
+                          *std_configure_args
     system "make", "install"
   end
 
