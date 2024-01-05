@@ -1,9 +1,9 @@
 class Tarlz < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/tarlz.html"
-  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
-  sha256 "49838effe95acb29d548b7ef2ddbb4b63face40536df0d9a80a62900c7170576"
+  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.25.tar.lz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.25.tar.lz"
+  sha256 "7d0bbe9c3a137bb93a10be56988fcf7362e4dbc65490639edc4255b704105fce"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -23,12 +23,6 @@ class Tarlz < Formula
 
   depends_on "lzlib"
 
-  # patch for missing major/minor/makedev for osx builds
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/0fe617f/tarlz/0.24.patch"
-    sha256 "289a90c49c6ae7990debca5d4516cbb2c17d64d7e8ab23564e65b12d1f2feb9c"
-  end
-
   def install
     system "./configure", *std_configure_args
     system "make"
@@ -47,7 +41,7 @@ class Tarlz < Formula
     mkdir_p spath
     mkdir_p dpath
 
-    system "#{bin}/tarlz", "-C", testpath, "-cf", lzipfilepath, "source"
+    system bin/"tarlz", "-C", testpath, "-cf", lzipfilepath, "source"
     assert_predicate lzipfilepath, :exist?
 
     system "#{bin}/tarlz", "-C", dpath, "-xf", lzipfilepath
