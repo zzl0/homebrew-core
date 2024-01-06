@@ -4,6 +4,7 @@ class Gearman < Formula
   url "https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz"
   sha256 "2688b83e48f26fdcd4fbaef2413ff1a76c9ecb067d1621d0e0986196efecd308"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b004f8a7a32009a63fac5a3f9a70d7a90249509cf439f977bedbe853cd6578c7"
@@ -63,6 +64,7 @@ class Gearman < Formula
     ]
 
     ENV.append_to_cflags "-DHAVE_HTONLL"
+    ENV.append "CXXFLAGS", "-std=c++14"
 
     (var/"log").mkpath
     system "./configure", *args
