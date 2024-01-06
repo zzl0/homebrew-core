@@ -6,13 +6,13 @@ class Ugrep < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256                               arm64_sonoma:   "8bd56e07f24f27dfc9d3ab88a36d9c448cd9a4c248b91502faded1f500b1dfd2"
-    sha256                               arm64_ventura:  "bfeea2840f8196be3b57a5ae962ed1212a2443416981df526221827d07187c4f"
-    sha256                               arm64_monterey: "5b91cb20a1d16200ba48f8f6146fb5396669d9e997d46f8ea98172cc94319f01"
-    sha256                               sonoma:         "4f809594a33f006ed92ef1d92ff0ae4259248fde8574b3171410dff018edd029"
-    sha256                               ventura:        "7da551885a5f1401a677eae688b717f2a7a89734ad2d14a875f95ca9caa0cdab"
-    sha256                               monterey:       "43baf0cc8dd4c135bfcc60d76618de203980bd0a246527b1332ae4d18ae39e54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8818df971b8dfdd7a7e312a039de074667fff93ed00a09ad3669854beaab1578"
+    sha256                               arm64_sonoma:   "222b40439976d39c0733041e2f915fd5af043766b2923e2d98bc75aa5ad03c1e"
+    sha256                               arm64_ventura:  "cd8c51e1ed66c3205a4fb99f107adb090577d042c6182e01a919c71f37e8c83d"
+    sha256                               arm64_monterey: "30eb5e20d5871b0c37744c8224687c0a1293941ef20388b739f18bf8d9954536"
+    sha256                               sonoma:         "f512b84f3750f6635d2d15b5f71b4f90c2ff0e4b3aca9950791f692bac466d1e"
+    sha256                               ventura:        "8fa73204a725a9cd3a4998e85a5547ab5883fd0a008a7fa15ed0455e0ae0faf4"
+    sha256                               monterey:       "06077f9b40f1da191529142d858efbd77a81192c7cbf4ec613c49446df5e2b22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e66da558194f1dbf204fa88a884d808f3c483903c8d164a8f857249be0ec4780"
   end
 
   depends_on "pcre2"
