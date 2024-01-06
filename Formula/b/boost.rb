@@ -1,8 +1,8 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
-  sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
+  url "https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz"
+  sha256 "2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -31,10 +31,6 @@ class Boost < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
-
-  # fix for https://github.com/boostorg/process/issues/342
-  # should eventually be in boost 1.84
-  patch :DATA
 
   def install
     # Force boost to compile with the desired compiler
@@ -139,28 +135,3 @@ class Boost < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/libs/process/include/boost/process/detail/posix/handles.hpp b/libs/process/include/boost/process/detail/posix/handles.hpp
-index cd9e1ce5..304e77b1 100644
---- a/libs/process/include/boost/process/detail/posix/handles.hpp
-+++ b/libs/process/include/boost/process/detail/posix/handles.hpp
-@@ -33,7 +33,7 @@ inline std::vector<native_handle_type> get_handles(std::error_code & ec)
-     else
-         ec.clear();
-
--    auto my_fd = ::dirfd(dir.get());
-+    auto my_fd = dirfd(dir.get());
-
-     struct ::dirent * ent_p;
-
-@@ -117,7 +117,7 @@ struct limit_handles_ : handler_base_ext
-             return;
-         }
-
--        auto my_fd = ::dirfd(dir);
-+        auto my_fd = dirfd(dir);
-         struct ::dirent * ent_p;
-
-         while ((ent_p = readdir(dir)) != nullptr)
-
