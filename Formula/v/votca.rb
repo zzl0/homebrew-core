@@ -4,6 +4,7 @@ class Votca < Formula
   url "https://github.com/votca/votca/archive/refs/tags/v2023.tar.gz"
   sha256 "ac78d2eb5a6694b76878d2ab1ec86bb161765143a447cc23905cdcb2bb6743be"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "786d030d23ad69cb3f00ba8850cc2100ee40011751e17e8a88a3d4111f25f659"
@@ -22,7 +23,8 @@ class Votca < Formula
   depends_on "fftw"
   depends_on "gcc" # for OpenMP
   # add gromacs dep back once it was built with clang
-  depends_on "hdf5"
+  # Use hdf5@1.10: Unable to determine HDF5 CXX flags from HDF5 wrapper.
+  depends_on "hdf5@1.10"
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"
