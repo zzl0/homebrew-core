@@ -4,7 +4,7 @@ class Augustus < Formula
   url "https://github.com/Gaius-Augustus/Augustus/archive/refs/tags/v3.5.0.tar.gz"
   sha256 "5ed6ce6106303b800c5e91d37a250baff43b20824657b853ae04d11ad8bdd686"
   license "Artistic-1.0"
-  revision 4
+  revision 5
   head "https://github.com/Gaius-Augustus/Augustus.git", branch: "master"
 
   bottle do
@@ -27,6 +27,8 @@ class Augustus < Formula
   def install
     # Compile executables for macOS. Tarball ships with executables for Linux.
     system "make", "clean"
+
+    ENV.append "CXXFLAGS", "-std=c++14"
 
     system "make", "COMPGENEPRED=false",
                    "INCLUDE_PATH_BAMTOOLS=-I#{Formula["bamtools"].opt_include}/bamtools",
