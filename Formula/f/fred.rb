@@ -1,8 +1,8 @@
 class Fred < Formula
   desc "Fully featured FRED Command-line Interface & Python API wrapper"
   homepage "https://fred.stlouisfed.org/docs/api/fred/"
-  url "https://files.pythonhosted.org/packages/dd/2c/51a14730b2091563018e948bf4f5c3600298a966c50862cd9ef98bee836c/fred-py-api-1.1.1.tar.gz"
-  sha256 "e2689366a92f194f8f85db15463153a2116f241459ffc07d0bb5bbd5fb00837e"
+  url "https://files.pythonhosted.org/packages/b9/4d/5997ff747d69b8451a63b92182eb3df42a87a171e0a1c8acc2792bc8afc1/fred-py-api-1.1.2.tar.gz"
+  sha256 "361886a97b8016e3010557e2c2e60f5656f2192f37eae05fa53867c6c3b0653c"
   license "MIT"
 
   bottle do
