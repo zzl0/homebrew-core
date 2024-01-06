@@ -6,7 +6,7 @@ class Toml11 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "81f63739751b2e5b61269547bd02ce49fa35bbf57cb85b5e9cf83833489a4098"
+    sha256 cellar: :any_skip_relocation, all: "1f83002476e1309bb559d006869d1d8f8375d1d32aa1aecce5f88e4039c29907"
   end
 
   depends_on "cmake" => :build
