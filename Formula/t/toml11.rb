@@ -1,8 +1,8 @@
 class Toml11 < Formula
   desc "TOML for Modern C++"
   homepage "https://github.com/ToruNiina/toml11"
-  url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "afeaa9aa0416d4b6b2cd3897ca55d9317084103077b32a852247d8efd4cf6068"
+  url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.0.tar.gz"
+  sha256 "36ce64b09f9151b57ba1970f12a591006fcae17b751ba011314c1f5518e77bc7"
   license "MIT"
 
   bottle do
@@ -12,7 +12,8 @@ class Toml11 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=11",
+                                              *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
