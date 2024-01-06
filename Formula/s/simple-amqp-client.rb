@@ -4,7 +4,7 @@ class SimpleAmqpClient < Formula
   url "https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
 
   bottle do
@@ -23,8 +23,16 @@ class SimpleAmqpClient < Formula
   depends_on "rabbitmq-c"
 
   def install
+    # Remove hard-coded CMAKE_CXX_STANDARD
+    # Else setting DCMAKE_CXX_STANDARD does not work
+    inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 98)", ""
+
     mkdir "build" do
-      system "cmake", "..", "-DCMAKE_INSTALL_LIBDIR=lib", *std_cmake_args
+      system "cmake",
+             "..",
+             "-DCMAKE_INSTALL_LIBDIR=lib",
+             "-DCMAKE_CXX_STANDARD=14",
+             *std_cmake_args
       system "make", "install"
     end
   end
@@ -42,7 +50,7 @@ class SimpleAmqpClient < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-L#{lib}", "-lSimpleAmqpClient", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lSimpleAmqpClient", "-o", "test"
     system "./test"
   end
 end
