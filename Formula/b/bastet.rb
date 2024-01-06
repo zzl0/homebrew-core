@@ -4,7 +4,7 @@ class Bastet < Formula
   url "https://github.com/fph/bastet/archive/refs/tags/0.43.2.tar.gz"
   sha256 "f219510afc1d83e4651fbffd5921b1e0b926d5311da4f8fa7df103dc7f2c403f"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
     sha256 arm64_sonoma:   "e8c2e4120965628ac8fedc471b7e22c7b608de43854a855c909229040bfb846e"
@@ -27,6 +27,8 @@ class Bastet < Formula
 
   def install
     inreplace %w[Config.cpp bastet.6], "/var", var
+
+    ENV.append "CXXFLAGS", "-std=c++14"
 
     system "make", "all"
 
