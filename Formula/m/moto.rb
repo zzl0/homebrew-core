@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/0f/4d/2671039ebc3ecbb15342ffc8d3d600fa8fa6225663698b12459df48819b0/moto-4.2.12.tar.gz"
-  sha256 "7c4d37f47becb4a0526b64df54484e988c10fde26861fc3b5c065bc78800cb59"
+  url "https://files.pythonhosted.org/packages/f8/3a/1d4e51bbd57da9a0cb70d9c73997cb012aec25ce8b52fcf18e3c5ad60d1e/moto-4.2.13.tar.gz"
+  sha256 "01aef6a489a725c8d725bd3dc6f70ff1bedaee3e2641752e4b471ff0ede4b4d7"
   license "Apache-2.0"
 
   bottle do
