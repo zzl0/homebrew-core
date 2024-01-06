@@ -1,8 +1,8 @@
 class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https://github.com/poac-dev/poac"
-  url "https://github.com/poac-dev/poac/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "ebade39fcbfea45407c724e5193d2f280da0386a96fdba79b0de241bc702b44d"
+  url "https://github.com/poac-dev/poac/archive/refs/tags/0.9.1.tar.gz"
+  sha256 "f2e14d1e13b4a036081d7d33c283a6ffc2a8382a541ba0e9553232ccc31f507b"
   license "Apache-2.0"
   head "https://github.com/poac-dev/poac.git", branch: "main"
 
@@ -16,7 +16,9 @@ class Poac < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8cfc413b04351257442c6e7833c54bc58026c801aa5952954ec01a55cc9ad54"
   end
 
+  depends_on "curl"
   depends_on "libgit2"
+  depends_on "nlohmann-json"
   depends_on "pkg-config"
 
   on_macos do
@@ -39,7 +41,7 @@ class Poac < Formula
     ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
     system bin/"poac", "new", "hello_world"
     cd "hello_world" do
-      assert_match "Hello, world!", shell_output("#{bin}/poac run")
+      assert_equal "Hello, world!", shell_output("#{bin}/poac run").split("\n").last
     end
   end
 end
