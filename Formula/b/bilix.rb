@@ -9,13 +9,13 @@ class Bilix < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9e9fe62be42a5a4893de210e549a14335628bca014b667e22afee90348e57c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b61f8904ac6f31d917eafb449f6a53d72ee2e2c9861bce003e71f833b3b2307"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b538949b35e1237457280d83c67fc214ad0c72c258c6aaf86e621e228cc4a69a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a2c1ddc38eaf1b7229187a33a1ec5d48af20cfbc66155fe0c128863317da172"
-    sha256 cellar: :any_skip_relocation, ventura:        "22be86a7376bb52d43ed7a57e7d8508dd66beb404b90429bb0832adb04c0b795"
-    sha256 cellar: :any_skip_relocation, monterey:       "5949f5137e95012a5f2d09a07254589e1a0bd1ed852c709abf598a302a07cd2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f4d31ea259313ca7ce34970763bdcfdb578085c6ea9016eaea3b8dd84cb8d76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f19cd78257e15afe1dbe97f411378222ddfb1b52d2d4cc8878d539c7554ffcf1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e550f1ff8243cf203a19c6a983ee01eb2ab6262a83345efc7e51f06bec1ace92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04d685381f125b8a0710ae625a4a0eac5c77649dc13f1e6d8548506b86143b83"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b76755947ae12833297e85609cb7f6effacfd7461132705d37e6347cf19078f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "888dd55b8fcda7aa4892db34d4439ea7998468826767e37966c6c87ed9a17ebe"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ae83107891645d92ec9fc3549d6ec37afad0c1e203893129f60410a4fe5fbd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "743ad18779e54d728d7f15de3ce6135c0bbcf1a9e4eb785a29bdaae21fad8f68"
   end
 
   depends_on "pygments"
