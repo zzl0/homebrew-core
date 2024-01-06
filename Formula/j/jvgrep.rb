@@ -1,19 +1,10 @@
 class Jvgrep < Formula
   desc "Grep for Japanese users of Vim"
   homepage "https://github.com/mattn/jvgrep"
+  url "https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.12.tar.gz"
+  sha256 "7e24a6954db1874f226054d1ca2e720945a1c92f9b6aac219e20ed4c3ab6e79c"
   license "MIT"
   head "https://github.com/mattn/jvgrep.git", branch: "master"
-
-  stable do
-    url "https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.10.tar.gz"
-    sha256 "93b253a75a505bf0f58b23428b0aaa4bed842fe0060e282793066ee88d7672c9"
-
-    # upstream PR, https://github.com/mattn/jvgrep/pull/81
-    patch do
-      url "https://github.com/mattn/jvgrep/commit/5b5a04d66d00c890bc263754bb5681fbe2f837a9.patch?full_index=1"
-      sha256 "a9cc6518b6ea9e68e32bcd4f30fcb4a4a37b5df554306d27f24199f281bc046f"
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd3fbdc85d5706bd5849c72931fd69c082aa18197b70f1573ea76ed10e4177b0"
