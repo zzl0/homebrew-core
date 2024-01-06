@@ -6,6 +6,7 @@ class PreCommit < Formula
   url "https://files.pythonhosted.org/packages/88/e8/4330d06f2b00ad3a9c66e07a68fe23f70233a4e7e1aaba5a738a93d2cb5d/pre_commit-3.6.0.tar.gz"
   sha256 "d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d"
   license "MIT"
+  revision 1
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
@@ -18,6 +19,7 @@ class PreCommit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1984c2637a432088c3d98ad10e9219afa6612387718a16cb076927ee39dc0ea5"
   end
 
+  depends_on "python-setuptools" # remove with nodeenv>1.8.0
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "virtualenv"
