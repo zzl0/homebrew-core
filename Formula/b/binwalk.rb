@@ -6,6 +6,7 @@ class Binwalk < Formula
   url "https://github.com/ReFirmLabs/binwalk/archive/refs/tags/v2.3.4.tar.gz"
   sha256 "60416bfec2390cec76742ce942737df3e6585c933c2467932f59c21e002ba7a9"
   license "MIT"
+  revision 1
   head "https://github.com/ReFirmLabs/binwalk.git", branch: "master"
 
   livecheck do
@@ -60,8 +61,8 @@ class Binwalk < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/c4/9f/9c3c66017e2be1aa04d9ae54936c932b1e3ad09f70987a9b8a9a2c71ccaa/fonttools-4.44.3.tar.gz"
-    sha256 "f77b6c0add23a3f1ec8eda40015bcb8e92796f7d06a074de102a31c7d007c05b"
+    url "https://files.pythonhosted.org/packages/dd/e5/9adc30ebca9009d5ad36c7e74462ee5fc51985ca9a845fd26f9f5c99b3df/fonttools-4.47.0.tar.gz"
+    sha256 "ec13a10715eef0e031858c1c23bfaee6cba02b97558e4a7bfa089dba4a8c2ebf"
   end
 
   resource "gnupg" do
@@ -75,13 +76,13 @@ class Binwalk < Formula
   end
 
   resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/b4/1b/1b80fcc6b7f33a4c7fa025e944416f8b63fa8d278fad32470c82a2edf319/matplotlib-3.8.1.tar.gz"
-    sha256 "044df81c1f6f3a8e52d70c4cfcb44e77ea9632a10929932870dfaa90de94365d"
+    url "https://files.pythonhosted.org/packages/fb/ab/38a0e94cb01dacb50f06957c2bed1c83b8f9dac6618988a37b2487862944/matplotlib-3.8.2.tar.gz"
+    sha256 "01a978b871b881ee76017152f1f1a0cbf6bd5f7b8ff8c96df0df1bd57d8755a1"
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/1a/72/acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025b/pycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https://files.pythonhosted.org/packages/b1/38/42a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151/pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "python-dateutil" do
