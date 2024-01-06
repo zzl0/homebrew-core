@@ -20,6 +20,11 @@ class Hfsutils < Formula
   end
 
   def install
+    # hpwd.c:55:7: error: call to undeclared library function 'strcmp' with type 'int (const char *, const char *)';
+    # ISO C99 and later do not support implicit function declarations
+    # Notified the author via email on 2023-01-05
+    inreplace "hpwd.c", "# include <stdio.h>\n", "# include <stdio.h>\n# include <string.h>\n"
+
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     bin.mkpath
     man1.mkpath
