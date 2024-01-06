@@ -7,15 +7,13 @@ class Jvgrep < Formula
   head "https://github.com/mattn/jvgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd3fbdc85d5706bd5849c72931fd69c082aa18197b70f1573ea76ed10e4177b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3500cca592776298c3e931471df33ddd104d896132172ef65c3b23a40c97044"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3500cca592776298c3e931471df33ddd104d896132172ef65c3b23a40c97044"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3500cca592776298c3e931471df33ddd104d896132172ef65c3b23a40c97044"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7d3ced0f6941b7fd41399272c7d16cbeb02d0b2c7247398cf518c38419fc490f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a81d099a7a5124558df7a8cd3086ab9ff28ecbe2bbfa6d1efc76c68e993e0ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a81d099a7a5124558df7a8cd3086ab9ff28ecbe2bbfa6d1efc76c68e993e0ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a81d099a7a5124558df7a8cd3086ab9ff28ecbe2bbfa6d1efc76c68e993e0ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81f31884bb494544933b0764d6094c64bb6c830be1b57b1aac8621165ae7eb8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
+    sha256 cellar: :any_skip_relocation, ventura:        "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
+    sha256 cellar: :any_skip_relocation, monterey:       "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c903876a35a55737263a79668f2f4f915c38481e0299ebe9f4296a66c4899c0b"
   end
 
   depends_on "go" => :build
