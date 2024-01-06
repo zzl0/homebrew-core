@@ -3,8 +3,8 @@ require "language/node"
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https://tailwindcss.com"
-  url "https://github.com/tailwindlabs/tailwindcss/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "555562f66e6d95dcb7feca807988fbb9735fc6fb61739fbc9d55b1cf7299db36"
+  url "https://github.com/tailwindlabs/tailwindcss/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "a3f5a288d8d0b2b9b9dbe0448fb325247fd71a758c6b645f76a93c3a4ab510fb"
   license "MIT"
 
   bottle do
