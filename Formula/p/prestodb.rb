@@ -16,11 +16,7 @@ class Prestodb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma:       "2b648d6d3a8845e33fdcdfb0b62070e7b3acbf5497d0e059c22d517bcf3a02fd"
-    sha256 cellar: :any_skip_relocation, ventura:      "2b648d6d3a8845e33fdcdfb0b62070e7b3acbf5497d0e059c22d517bcf3a02fd"
-    sha256 cellar: :any_skip_relocation, monterey:     "2b648d6d3a8845e33fdcdfb0b62070e7b3acbf5497d0e059c22d517bcf3a02fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "893fd8e9e243f59a8e745fb1bc4d2e5e8b5e88997ad0df1724316171dfd2aabf"
+    sha256 cellar: :any_skip_relocation, all: "ccc86ca8cb7f162ee30a70311de8ceda80bd7901fc75d3ce2fa0ba1c98d61652"
   end
 
   # https://github.com/prestodb/presto/issues/17146
