@@ -5,6 +5,7 @@ class Llvm < Formula
   sha256 "58a8818c60e6627064f312dbf46c02d9949956558340938b71cf731ad8bc0813"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -48,6 +49,14 @@ class Llvm < Formula
 
   # Fails at building LLDB
   fails_with gcc: "5"
+
+  # Fix arm64 misoptimisation in some cases.
+  # https://github.com/Homebrew/homebrew-core/issues/158957
+  # Remove with LLVM 18.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/23704400c86976aaa4f421f56928484a270ac79c/llvm/17.x-arm64-opt.patch"
+    sha256 "0e312207fd9474bd26f4a283ee23d94b334d3ec8732086d30bce95f7c8dc2201"
+  end
 
   def python3
     "python3.12"
