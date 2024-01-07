@@ -20,8 +20,16 @@ class IcalBuddy < Formula
   depends_on :macos
 
   def install
-    # Allow native builds rather than only x86_64
-    inreplace "Makefile", "-arch x86_64", ""
+    inreplace "Makefile" do |s|
+      # Allow native builds rather than only x86_64
+      s.gsub! "-arch x86_64", ""
+
+      # https://github.com/dkaluta/icalBuddy64/pull/5
+      s.gsub! "-force_cpusubtype_ALL", ""
+
+      # Keep the build date (used in manpages) reproducible
+      s.change_make_var! "CURRDATE", time.strftime("%Y-%m-%d")
+    end
 
     args = %W[
       icalBuddy
@@ -34,5 +42,11 @@ class IcalBuddy < Formula
     system "make", *args
     bin.install "icalBuddy"
     man1.install Dir["*.1"]
+  end
+
+  test do
+    # Testing of other calendar functionality requires granting calendar access
+    # to the program (or the terminal emulator).
+    assert_match "Non-lossy ASCII", shell_output("#{bin}/icalBuddy strEncodings")
   end
 end
