@@ -6,6 +6,16 @@ class Csvlens < Formula
   license "MIT"
   head "https://github.com/YS-L/csvlens.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f1e2cb7099395a9b9c27d8726dbfa4364d4129d1eab1a246bbe1e265a72b128"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcddb3ed6ec79365223497881a0b15a4360926b591b14fec03dc8000029af2e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7951f625fca152d9448fdd2440809f55461aab002063f1f28d4fdad504a3c990"
+    sha256 cellar: :any_skip_relocation, sonoma:         "94a1f6bb07ee21393920b6e0ee5cd3631488063b90fc071fb081285a386082a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "76d83ab409174f02f90dda013d95c759b6b8652eb05b974a4ffa2e3b466dc608"
+    sha256 cellar: :any_skip_relocation, monterey:       "d69900eea876983767d14f0685c3d5becba639ff561995b20415976ece19deec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96a0ee4631418e67a460dd94ad92a719c920a0a64d430a809e4f9eff114787e9"
+  end
+
   depends_on "rust" => :build
 
   def install
