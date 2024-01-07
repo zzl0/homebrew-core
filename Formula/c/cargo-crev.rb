@@ -11,13 +11,13 @@ class CargoCrev < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d65f4d3fc402db741fbffb31dcc5f030452b61ac9211b7ffc1ca2ade212cfa4"
-    sha256 cellar: :any,                 arm64_ventura:  "5d800aecb1e4bb6f196eed1af738ccab2e88710975e516ad361edac18a6766e6"
-    sha256 cellar: :any,                 arm64_monterey: "3ba3bdb6b262d8ea87030932c369d29aaff5896581df6dbf6edbd9138ce0e02d"
-    sha256 cellar: :any,                 sonoma:         "49375d0272a2a678333bf2567e074b51760de9305b1c2b7c1e5b72eb80d820ac"
-    sha256 cellar: :any,                 ventura:        "6e61f6e375c30de02aad9e4bca7a9048f25c78d79ec1d771b59548b1ca27ce29"
-    sha256 cellar: :any,                 monterey:       "c1bbabe03ed844026df06704ae120d07400025bbdb6996447056b1cf0ced638e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cacdb2f98114ea7cdda438b24d03f1314118fcb45eb135e423a77c399ccbead8"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3599b6c69101d5ba72bb1fc0c4100be176ee47ae7306499e35fe20f1b7be170"
+    sha256 cellar: :any,                 arm64_ventura:  "7778c92bfce4c83a367e760fa2a141f60a92028c28759a2acb30735d644759ee"
+    sha256 cellar: :any,                 arm64_monterey: "7f045f704f0c816fbe5ecfc9b11791b982a79c6ea4e9748b822c8046c322d1de"
+    sha256 cellar: :any,                 sonoma:         "2aeaec5546018793975c9b879b4a5669f67dcbe608759740a05de23159c4b71f"
+    sha256 cellar: :any,                 ventura:        "4c56b0b4131dfcd8b6990af0afd4b2abfec1feef0eb650c5b88a1f0bc847ff8b"
+    sha256 cellar: :any,                 monterey:       "dd4eb3df299fde2a0ecd66e75c05d25768a43feb7656a729f019f4674ad7530b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94cb24cfc95696b2ffa4f9012f24e2dd7fa36d086283d96b62b1f1af1af61458"
   end
 
   depends_on "rust" => :build
