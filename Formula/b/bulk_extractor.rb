@@ -1,8 +1,8 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
   homepage "https://github.com/simsong/bulk_extractor/wiki"
-  url "https://github.com/simsong/bulk_extractor/releases/download/v2.0.3/bulk_extractor-2.0.3.tar.gz"
-  sha256 "3967225075164f7dc5a0326e594cad4da5a49d4f091cfeaade447cc305541e32"
+  url "https://github.com/simsong/bulk_extractor/releases/download/v2.0.6/bulk_extractor-2.0.6.tar.gz"
+  sha256 "ab2640c522339fce8ab99541c090e272b16430760828b567229c89d4c1b469ad"
   license "MIT"
 
   livecheck do
