@@ -26,13 +26,7 @@ class Mpi4py < Formula
   end
 
   def install
-    system python3, *Language::Python.setup_install_args(libexec, python3)
-
-    system python3, "setup.py",
-                    "build", "--mpicc=mpicc -shared", "--parallel=#{ENV.make_jobs}",
-                    "install", "--prefix=#{prefix}",
-                    "--single-version-externally-managed", "--record=installed.txt",
-                    "--install-lib=#{prefix/Language::Python.site_packages(python3)}"
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
