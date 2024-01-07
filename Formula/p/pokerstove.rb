@@ -1,10 +1,9 @@
 class Pokerstove < Formula
   desc "Poker evaluation and enumeration software"
   homepage "https://github.com/andrewprock/pokerstove"
-  url "https://github.com/andrewprock/pokerstove/archive/refs/tags/v1.0.tar.gz"
-  sha256 "68503e7fc5a5b2bac451c0591309eacecba738d787874d5421c81f59fde2bc74"
+  url "https://github.com/andrewprock/pokerstove/archive/refs/tags/v1.1.tar.gz"
+  sha256 "ee263f579846b95df51cf3a4b6beeb2ea5ea0450ce7f1c8d87ed6dd77b377220"
   license "BSD-3-Clause"
-  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2bbf42350c3afd84c40a1211420e4cc1345b2048e11758b669089e83cb2d72b3"
@@ -18,23 +17,11 @@ class Pokerstove < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20618ea7f04f4bf92a7606f18df854a90268948e8f903c1484b4ea9154c7799c"
   end
 
-  # failing to build in https://github.com/Homebrew/homebrew-core/pull/128510,
-  # no response upstream since ~2021
-  disable! date: "2024-01-06", because: :does_not_build
-
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "boost@1.76"
-
-  # Build against our googletest instead of the included one
-  # Works around https://github.com/andrewprock/pokerstove/issues/74
-  patch :DATA
+  depends_on "boost"
 
   def install
-    rm_rf "src/ext/googletest"
-
-    # Our `googletest` requires a newer C++ standard.
-    inreplace "CMakeLists.txt", " -std=c++0x", ""
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"
     prefix.install "build/bin"
@@ -44,18 +31,3 @@ class Pokerstove < Formula
     system bin/"peval_tests"
   end
 end
-
-__END__
---- pokerstove-1.0/CMakeLists.txt.ORIG	2021-02-14 19:26:14.000000000 +0000
-+++ pokerstove-1.0/CMakeLists.txt	2021-02-14 19:26:29.000000000 +0000
-@@ -14,8 +14,8 @@
-
- # Set up gtest. This must be set up before any subdirectories are
- # added which will use gtest.
--add_subdirectory(src/ext/googletest)
--find_library(gtest REQUIRED)
-+#add_subdirectory(src/ext/googletest)
-+find_package(GTest REQUIRED)
- include_directories(${GTEST_INCLUDE_DIRS})
- link_directories(${GTEST_LIBS_DIR})
- add_definitions("-fPIC")
