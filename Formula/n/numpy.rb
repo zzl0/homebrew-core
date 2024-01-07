@@ -1,10 +1,15 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/d0/b0/13e2b50c95bfc1d5ee04925eb5c105726c838f922d0aaddd57b7c8be0f8b/numpy-1.26.3.tar.gz"
-  sha256 "697df43e2b6310ecc9d95f05d5ef20eacc09c7c4ecc9da3f235d39e71b7da1e4"
   license "BSD-3-Clause"
   head "https://github.com/numpy/numpy.git", branch: "main"
+
+  stable do
+    url "https://files.pythonhosted.org/packages/d0/b0/13e2b50c95bfc1d5ee04925eb5c105726c838f922d0aaddd57b7c8be0f8b/numpy-1.26.3.tar.gz"
+    sha256 "697df43e2b6310ecc9d95f05d5ef20eacc09c7c4ecc9da3f235d39e71b7da1e4"
+
+    depends_on "python-setuptools" => :build
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "53605ab2edf1a9410a6364274662dac00f8827408f9aec55d1ed3100e2618419"
@@ -18,7 +23,9 @@ class Numpy < Formula
 
   depends_on "gcc" => :build # for gfortran
   depends_on "libcython" => :build
-  depends_on "python-setuptools" => :build
+  depends_on "meson" => :build
+  depends_on "meson-python" => :build
+  depends_on "ninja" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "openblas"
@@ -27,32 +34,21 @@ class Numpy < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .select { |f| f.name.start_with?("python@") }
         .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use newest python
   end
 
   def install
-    openblas = Formula["openblas"]
-    ENV["ATLAS"] = "None" # avoid linking against Accelerate.framework
-    ENV["BLAS"] = ENV["LAPACK"] = openblas.opt_lib/shared_library("libopenblas")
-
-    config = <<~EOS
-      [openblas]
-      libraries = openblas
-      library_dirs = #{openblas.opt_lib}
-      include_dirs = #{openblas.opt_include}
-    EOS
-
-    Pathname("site.cfg").write config
+    ENV.prepend_path "PATH", Formula["libcython"].opt_libexec/"bin"
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      site_packages = Language::Python.site_packages(python_exe)
+      python3 = python.opt_libexec/"bin/python"
+      site_packages = Language::Python.site_packages(python3)
       ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
 
-      system python_exe, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
-                                              "--parallel=#{ENV.make_jobs}"
-      system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
+      system python3, "-m", "pip", "install", *std_pip_args, ".",
+                                   "-Csetup-args=-Dblas=openblas",
+                                   "-Csetup-args=-Dlapack=openblas"
     end
   end
 
