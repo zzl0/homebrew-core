@@ -1,8 +1,8 @@
 class Miniserve < Formula
   desc "High performance static file server"
   homepage "https://github.com/svenstaro/miniserve"
-  url "https://github.com/svenstaro/miniserve/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "ed0619bfbad3f9ea635aa266a9c4e96247ad94683d50743f0464f48f9e48ae88"
+  url "https://github.com/svenstaro/miniserve/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "27986ea4f3ba6670798e6c78709b7c11d5bbd1417b93826123e829c40b5bd000"
   license "MIT"
 
   bottle do
