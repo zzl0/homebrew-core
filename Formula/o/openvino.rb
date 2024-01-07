@@ -27,7 +27,8 @@ class Openvino < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "protobuf@21" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "numpy"
   depends_on "pugixml"
   depends_on "snappy"
@@ -79,7 +80,14 @@ class Openvino < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
+  end
+
+  # Fix linux build with our OpenCL
+  # https://github.com/openvinotoolkit/openvino/pull/22051
+  patch do
+    url "https://github.com/openvinotoolkit/openvino/commit/0d455544f599ca5b2bb8993f209a01e7b61a336e.patch?full_index=1"
+    sha256 "67a1ba9296d3f23eeb5a3cf95dfe24171657d21e6cc6eef372a7e308f57a3092"
   end
 
   def install
@@ -130,16 +138,14 @@ class Openvino < Formula
     system "cmake", "--install", openvino_binary_dir
 
     # build & install python bindings
-    cd "src/bindings/python/wheel" do
-      ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
-      ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
-      ENV["WHEEL_VERSION"] = version
-      ENV["SKIP_RPATH"] = "1"
-      ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
-      ENV["CPACK_GENERATOR"] = "BREW"
+    ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
+    ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
+    ENV["WHEEL_VERSION"] = version
+    ENV["SKIP_RPATH"] = "1"
+    ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
+    ENV["CPACK_GENERATOR"] = "BREW"
 
-      system python3, *Language::Python.setup_install_args(prefix, python3)
-    end
+    system python3, "-m", "pip", "install", *std_pip_args, "./src/bindings/python/wheel"
   end
 
   test do
