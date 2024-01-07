@@ -21,6 +21,7 @@ class Fq < Formula
   uses_from_macos "sqlite"
 
   on_linux do
+    depends_on "bind" => :test # for `dig`
     depends_on "openssl@3"
     depends_on "util-linux"
   end
@@ -37,10 +38,12 @@ class Fq < Formula
   end
 
   test do
-    pid = fork { exec sbin/"fqd", "-D", "-c", testpath/"test.sqlite" }
+    ipv4 = shell_output("dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d '\"'").strip
+    port = free_port
+    pid = fork { exec sbin/"fqd", "-p", port.to_s, "-n", ipv4, "-D", "-c", testpath/"test.sqlite" }
     sleep 10
     begin
-      assert_match "Circonus Fq Operational Dashboard", shell_output("curl 127.0.0.1:8765")
+      assert_match "Circonus Fq Operational Dashboard", shell_output("curl 127.0.0.1:#{port}")
     ensure
       Process.kill 9, pid
       Process.wait pid
