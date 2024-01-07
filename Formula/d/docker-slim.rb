@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.7.tar.gz"
-  sha256 "b3cbfb6a3bb36bbf1a4d2807756a759d5a9c27fe25efa576c32d6e4e0592b449"
+  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.8.tar.gz"
+  sha256 "c5bf341aab1b7a705c9b92f801d78755e9204842498702ff0c3c500550384469"
   license "Apache-2.0"
 
   livecheck do
