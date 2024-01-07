@@ -1,9 +1,14 @@
 class Toml11 < Formula
   desc "TOML for Modern C++"
   homepage "https://github.com/ToruNiina/toml11"
-  url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.0.tar.gz"
-  sha256 "36ce64b09f9151b57ba1970f12a591006fcae17b751ba011314c1f5518e77bc7"
+  url "https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz"
+  sha256 "6a3d20080ecca5ea42102c078d3415bef80920f6c4ea2258e87572876af77849"
   license "MIT"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1f83002476e1309bb559d006869d1d8f8375d1d32aa1aecce5f88e4039c29907"
