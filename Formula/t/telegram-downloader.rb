@@ -1,8 +1,8 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloader/tools written in Golang"
   homepage "https://docs.iyear.me/tdl/"
-  url "https://github.com/iyear/tdl/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "80d58805d8c138280a40fbaaa3b3c5e07503c33b67da61fc4bd1523416d6dd2f"
+  url "https://github.com/iyear/tdl/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "cc425e67a5bae964acbd0a20a5cbffca046eb6739ae8850ed5d9c949ee2ca1b6"
   license "AGPL-3.0-only"
   head "https://github.com/iyear/tdl.git", branch: "master"
 
@@ -26,6 +26,8 @@ class TelegramDownloader < Formula
       -X github.com/iyear/tdl/pkg/consts.CommitDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tdl")
+
+    generate_completions_from_executable(bin/"tdl", "completion")
   end
 
   test do
