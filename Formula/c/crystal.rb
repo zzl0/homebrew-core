@@ -2,15 +2,14 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.10.1.tar.gz"
-    sha256 "f6449ffff519c86383f5e845455f3e6f6b10d6090effab09568f4c7414a8a51b"
+    url "https://github.com/crystal-lang/crystal/archive/refs/tags/1.11.0.tar.gz"
+    sha256 "3c4eeb1191478770172a6fa7c4afb074526db9ecf0a80d434d1f4a6441414ae6"
 
     resource "shards" do
-      url "https://github.com/crystal-lang/shards/archive/refs/tags/v0.17.3.tar.gz"
-      sha256 "6512ff51bd69057f4da4783eb6b14c29d9a88b97d35985356d1dc644a08424c7"
+      url "https://github.com/crystal-lang/shards/archive/refs/tags/v0.17.4.tar.gz"
+      sha256 "3576c7418fa9fe09636f985a0043037bb84345f88e03ddb3da78dbe96683232d"
     end
   end
 
@@ -58,20 +57,20 @@ class Crystal < Formula
   #
   # See: https://github.com/Homebrew/homebrew-core/pull/81318
   resource "boot" do
-    boot_version = Version.new("1.5.1-1")
+    boot_version = Version.new("1.10.1-1")
     version boot_version
 
     on_macos do
       url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-darwin-universal.tar.gz"
       # version boot_version
-      sha256 "432c2fc992247f666db7e55fb15509441510831a72beba34affa2d76b6f2e092"
+      sha256 "e6490e6d09745483bacea43c4d8974273632526c1f98f13db5aae0a5fc2c7924"
     end
 
     on_linux do
       on_intel do
         url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-linux-x86_64.tar.gz"
         # version boot_version
-        sha256 "a475c3d99dbe0f2d5a72d471fa25e03c124b599e47336eed746973b4b4d787bc"
+        sha256 "1742e3755d3653d1ba07c0291f10a517fa392af87130dba4497ed9d82c12348b"
       end
     end
   end
