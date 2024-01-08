@@ -1,8 +1,8 @@
 class Flyscrape < Formula
   desc "Standalone and scriptable web scraper"
   homepage "https://flyscrape.com/"
-  url "https://github.com/philippta/flyscrape/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "f6aee457ec9e1eee9346a4ac45c11cd6742881674fb1cb627202162484a7002d"
+  url "https://github.com/philippta/flyscrape/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "4480c597688d63bd3a4601801f7a056f9e0723bbad199a9e52573cc7893fea85"
   license "MPL-2.0"
   head "https://github.com/philippta/flyscrape.git", branch: "master"
 
