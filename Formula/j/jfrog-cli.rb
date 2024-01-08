@@ -4,6 +4,7 @@ class JfrogCli < Formula
   url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.52.9.tar.gz"
   sha256 "6bf863e2cbc1ad06d3c8507b08c7f7a99e36eae8b7cafb6d9d5f4105a7a3c767"
   license "Apache-2.0"
+  head "https://github.com/jfrog/jfrog-cli.git", branch: "v2"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae0ba11ad554069127fd051fb194dd736ade30a9cb43c65625c174cd379f841c"
