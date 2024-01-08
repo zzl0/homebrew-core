@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
   url "https://github.com/jmorganca/ollama.git",
-      tag:      "v0.1.15",
-      revision: "d9e60f634bf420ef41fe5388b32cfda3ceb2c898"
+      tag:      "v0.1.18",
+      revision: "3a9f4471412cf132f0fa7b872cb4f616a1dd8b59"
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
@@ -29,8 +29,11 @@ class Ollama < Formula
   depends_on "go" => :build
 
   def install
-    # Fix build on big sur by setting SDKROOT
-    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version == :big_sur
+    # Fix build by setting SDKROOT
+    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
+    # Fix "ollama --version"
+    inreplace "version/version.go", /var Version string = "[\d.]+"/, "var Version string = \"#{version}\""
+
     system "go", "generate", "./..."
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
