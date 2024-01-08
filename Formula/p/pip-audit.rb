@@ -3,8 +3,8 @@ class PipAudit < Formula
 
   desc "Audits Python environments and dependency trees for known vulnerabilities"
   homepage "https://pypi.org/project/pip-audit/"
-  url "https://files.pythonhosted.org/packages/cc/f4/90de50daed96a82e1bd46f3e173479d282270e8c8bba26389dae44be61c4/pip_audit-2.6.2.tar.gz"
-  sha256 "0bbd023a199a104b29f949f063a872d41113b5a9048285666820fa35a76a7794"
+  url "https://files.pythonhosted.org/packages/ff/bb/8cb2f6721d2cc2f1213b0522748046be9d40ed767e5169189fed1d08765b/pip_audit-2.6.3.tar.gz"
+  sha256 "bd796066f69684b2f4fc2c2b6d222589e23190db0bbde069cea5c2b0be2cc57d"
   license "Apache-2.0"
   version_scheme 1
 
@@ -42,8 +42,8 @@ class PipAudit < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/ed/9e/5198201845fa810ad0645401ae3e25f1ce15ebc2c0c40df003c320e5e189/cyclonedx_python_lib-5.2.0.tar.gz"
-    sha256 "b9ebf2c0520721d2f8ee16aadc2bbb9d4e015862c84ab1691a49b177f3014d99"
+    url "https://files.pythonhosted.org/packages/e7/8c/4a3db7f66dcca7a9fc2086375e45f34bd98a11bd8089a8e264015b1f74e8/cyclonedx_python_lib-6.3.0.tar.gz"
+    sha256 "82f2489de3c0cadad5af1ad7fa6b6a185f985746370245d38769699c734533c6"
   end
 
   resource "defusedxml" do
@@ -87,8 +87,8 @@ class PipAudit < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/e5/9d/9ef479ff1378b70adea861c2d1548033763ebf3f703d4d7b913eaae73e01/packageurl-python-0.13.1.tar.gz"
-    sha256 "84f8053f4b85294b98b3b78715475847fb48f4525ec302d06dc35b26a9b3078a"
+    url "https://files.pythonhosted.org/packages/b5/64/56122e785f91009ff4df4bdc068b7026b46d627636b4a6312ec6f323fc6d/packageurl-python-0.13.3.tar.gz"
+    sha256 "63514d3b72f22a9c092913b3fa7b4670e479998dff3d93597863c413735e2ec7"
   end
 
   resource "pip-api" do
@@ -102,8 +102,8 @@ class PipAudit < Formula
   end
 
   resource "py-serializable" do
-    url "https://files.pythonhosted.org/packages/66/bb/477b7d60381d97a4ba45ae1bcedd6eeb1f689bea82034f80bbdc9634d639/py-serializable-0.15.0.tar.gz"
-    sha256 "8fc41457d8ee5f5c5a12f41fd87bf1a4f2ecf9da39fee92059b728e78f320771"
+    url "https://files.pythonhosted.org/packages/01/74/fdfbb3c4af7c14477099809ad32be0964b8fefac9969c5932bb71dbd07e3/py-serializable-0.17.1.tar.gz"
+    sha256 "875bb9c01df77f563dfcd1e75bb4244b5596083d3aad4ccd3fb63e1f5a9d3e5f"
   end
 
   resource "requests" do
