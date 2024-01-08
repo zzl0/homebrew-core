@@ -9,14 +9,13 @@ class Awsume < Formula
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a81ac39e8c197e5ed36534cfc23f573e40775aa824f0bd450f8e381441cf95ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "300eeaf0ad9e1ca207ee6d464d9c0b640a45f93fd32257909d98c2f87d599407"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3fb70bd9e57d6b27c746c731b60ce4dcc6639ddf253d5fb615f4c74e58c1d315"
-    sha256 cellar: :any_skip_relocation, sonoma:         "939613eb6cb25804176e03e4c4e169c55d9f8f1beeba6fb5bc082df7c9446a63"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2784202d8aad654b710cd1b3e4e2641bb1afe218d064c4939f92037fda7e080"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3025b59faeaae4254f48523e8c3fb436b2013fd6d1192f606020cefe2e94f14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d20e0464b529558106606be9e9460c4adfeade68f7d0a5464c2a9ebaad7fe915"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0baab1cd576a8746670b27b527c33ece0d92c7b6710f425e848eb9c23c26a729"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "073ea726d720fcd52c18eddd8b42573dee7000aa813e90680ca1dbedd6b243d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6dabc02c6053c1e1e18b2e85cfc8c59052bb118a583e6f7917b00d5a2674ed5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2de589c76b7ceaf0700ebb168b9909a1698cc00587acd3b45109757299e54029"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2325f84c18bab11f3e7fc389a6beba8bf9f54e573a46bd4b71c54ee50580287"
+    sha256 cellar: :any_skip_relocation, monterey:       "652571844ec1f914a6bf896766bd03e1a50476ac3d51fcdfc411ff00953a5a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d424431bae3fd74268153e164d9008408f3c87fcced8d048eba3ba6fee9d060"
   end
 
   depends_on "python-psutil"
