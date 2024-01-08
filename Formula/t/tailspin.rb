@@ -1,8 +1,8 @@
 class Tailspin < Formula
   desc "Log file highlighter"
   homepage "https://github.com/bensadeh/tailspin"
-  url "https://github.com/bensadeh/tailspin/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "afa7ffa24d47d6266ea96b06ca9b30cc9898095dd4d077e8fe9618ace96c6b89"
+  url "https://github.com/bensadeh/tailspin/archive/refs/tags/2.3.0.tar.gz"
+  sha256 "f523a9ccf59e6d5ae4bb66a5b0a4d480832f604c09a3c2f4dd00b5efc8f1b03d"
   license "MIT"
   head "https://github.com/bensadeh/tailspin.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Tailspin < Formula
   end
 
   test do
-    output = shell_output("#{bin}/tspin --tail 2>&1")
+    output = shell_output("#{bin}/tspin --start-at-end 2>&1")
 
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       ""
