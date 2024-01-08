@@ -26,7 +26,7 @@ class Gjs < Formula
     # ensure that we don't run the meson post install script
     ENV["DESTDIR"] = "/"
 
-    args = std_meson_args + %w[
+    args = %w[
       -Dprofiler=disabled
       -Dreadline=enabled
       -Dinstalled_tests=false
@@ -35,11 +35,9 @@ class Gjs < Formula
       -Dskip_gtk_tests=true
     ]
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
@@ -53,6 +51,6 @@ class Gjs < Formula
       if (31 != GLib.Date.get_days_in_month(GLib.DateMonth.JANUARY, 2000))
         imports.system.exit(1)
     EOS
-    system "#{bin}/gjs", "test.js"
+    system bin/"gjs", "test.js"
   end
 end
