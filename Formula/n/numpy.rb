@@ -12,13 +12,14 @@ class Numpy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "53605ab2edf1a9410a6364274662dac00f8827408f9aec55d1ed3100e2618419"
-    sha256 cellar: :any,                 arm64_ventura:  "23d451d38178ed316626fdf919b4a43e069040db7f8eb802256d459ddac8fccf"
-    sha256 cellar: :any,                 arm64_monterey: "0af87e29714bd725b1fd4b440a1ceace9235a32425eb8890c05e1ee5cdf44008"
-    sha256 cellar: :any,                 sonoma:         "885a65964840e582380c804ba15d03cd843f5eacfa10b5688fc8994ed212e3cb"
-    sha256 cellar: :any,                 ventura:        "aa648e5665242850c56ad9edfb4ad7a5ebc4c1183898bdcf15aa4358953755c5"
-    sha256 cellar: :any,                 monterey:       "6870a2850ae62638320b8b0a124391d4edbef363774af173e2bdd5415b3fe4a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1431374f2f591fb15a13859a2310d3e6a7f1db844a11b60925210fa90ef1c1c2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "7bf09cac32c033c6fa63bbb48ae01311acb68699911cdbf60cc092d02b492fb6"
+    sha256 cellar: :any,                 arm64_ventura:  "68b8c9c41814faf053a9678f1d7437688b57594c7a936d91a6e99a85c9a3240c"
+    sha256 cellar: :any,                 arm64_monterey: "6fc4819ec74de1824586841c0219f6b4c0b3abff9b1d4f2f00f52c620811795b"
+    sha256 cellar: :any,                 sonoma:         "0bf0a6fc222766456866b85b610429c54797c048f905b035a84577d0684f75d1"
+    sha256 cellar: :any,                 ventura:        "621ecf8a6c74d4c81e0719acd9586dc7301c5972dba72c6ed6eccb473e179bfe"
+    sha256 cellar: :any,                 monterey:       "af1351ee973bbd8381cda31873bbade6920c1e2529722dd4499d1d48b9c065e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52f7ec6f5d24dc2636b28753c80d1d5571f1f16ac26391f2a0547fcebb01001b"
   end
 
   depends_on "gcc" => :build # for gfortran
