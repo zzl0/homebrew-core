@@ -6,13 +6,13 @@ class PythonTroveClassifiers < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "210a0d58c2192f37bc7d216f23ffa8475c270980743b1e07fbe2055163c5b97d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd4c9e9dc2137c45c9bc825c6aeb1f14cb10c1e74170a95f151d6793d53711d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "663ef236a67063d9cc4f5f768bb1a3862d298cde1644974e85c315abfe0ebb4d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7b92efc5654750d3d0ee700bc6c007060747d1ee1aa47a61b8ad5496300e176"
-    sha256 cellar: :any_skip_relocation, ventura:        "55800164b1c103e86015495aea980227c4e8efa9f0cac57f5f6a9ec68a6379e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "c801c605586ce30ace4e555fbc8b7ef28d7b78d072e0231f0d0101ebb4fc903a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff50e6bb985fadfbdcd018f36ebeb6f4e74407ac90860faa027217ab4e63396b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdc933cf7b0df167488f813ce9cbec39c9dd1f59e2a228fa21828e008e3e75df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fff2396a4612ba16493ef427b96b0e7b14ee2dcf637b021bd17a55dd66fa66f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a05b68616501236d01ab75e854d89943ffa2d4aef5dd733321ffbc50fc2958f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ebd0259c237d757589cdbdd6c89402ccbb0392341248e72a38d5fdae1b987ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "291c8c7cab59bad962202ce19ff3d4a8cb5b1a0488f0624e836b49b9564b05a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "77781cd4d5945e3fac28084c6d0db5e6be68cb32104b308850893049ca612851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2db900df8a44854ff967fd9d682e1645b262d0bbe5beee65062f964d05c80c4"
   end
 
   depends_on "python-setuptools" => :build
