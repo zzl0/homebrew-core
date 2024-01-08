@@ -2,8 +2,8 @@ class Caf < Formula
   # Renamed from libccpa
   desc "Implementation of the Actor Model for C++"
   homepage "https://www.actor-framework.org/"
-  url "https://github.com/actor-framework/actor-framework/archive/refs/tags/0.19.4.tar.gz"
-  sha256 "114d43e3a7a2305ca1d2106cd0daeff471564f62b90db1e453ba9eb5c47c02f6"
+  url "https://github.com/actor-framework/actor-framework/archive/refs/tags/0.19.5.tar.gz"
+  sha256 "7eedfa9bc4d508185de12417f552f360812103a279ce9def568bffa8c512cbb4"
   license "BSD-3-Clause"
   head "https://github.com/actor-framework/actor-framework.git", branch: "master"
 
