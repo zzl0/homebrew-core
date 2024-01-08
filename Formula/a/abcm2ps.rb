@@ -1,8 +1,8 @@
 class Abcm2ps < Formula
   desc "ABC music notation software"
   homepage "http://moinejf.free.fr"
-  url "https://github.com/leesavide/abcm2ps/archive/refs/tags/v8.14.14.tar.gz"
-  sha256 "5b39ca08cd5e0d1992071b0be9eb77304489823824570236c4df4dc0f8b33aab"
+  url "https://github.com/leesavide/abcm2ps/archive/refs/tags/v8.14.15.tar.gz"
+  sha256 "5f02ac6203c4226cfbc6206935dca715ed7c45328535ee23e776c9da0219c822"
   license "GPL-3.0-or-later"
 
   bottle do
