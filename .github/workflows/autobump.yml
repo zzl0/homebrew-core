@@ -1075,6 +1075,7 @@ env:
     sn0int
     sniffer
     sniffglue
+    snyk-cli
     solana
     sollya
     solr
@@ -1157,6 +1158,7 @@ env:
     triangle
     trivy
     trojan-go
+    trufflehog
     typedb
     typos-cli
     tz
