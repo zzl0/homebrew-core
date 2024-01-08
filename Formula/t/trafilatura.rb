@@ -3,8 +3,8 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/aa/2d/e91ca57ca6ead5bf72e2c651fc81d47052c4c794a27d729598fba90404b4/trafilatura-1.6.3.tar.gz"
-  sha256 "671dd6e0000e101c4bce8d70f4408bcb79fcbf2275ee25591efe33e2c8a1600d"
+  url "https://files.pythonhosted.org/packages/0d/79/b86cab24322758f3b6e23eb9460741dbe56aca35ee1d226abbb7d9ff8b3d/trafilatura-1.6.4.tar.gz"
+  sha256 "97609203089b73be9aa8d1aaaefd5d8dd93e2e92037b0d72f19976af91b18c8a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -37,8 +37,8 @@ class Trafilatura < Formula
   end
 
   resource "htmldate" do
-    url "https://files.pythonhosted.org/packages/24/fb/26213bb6300dd7d17afb131d222b4f7e083d822d0fd72089eb60e3b134c1/htmldate-1.6.0.tar.gz"
-    sha256 "5827c8f626a16800a29e57e8188a3d32d0b08ca4c7bd662537b73bbbf22c45a6"
+    url "https://files.pythonhosted.org/packages/78/91/5553678746d5beeb24850994bedaeeb367bc39379523a5dd80312cabc250/htmldate-1.6.1.tar.gz"
+    sha256 "3bf0a67ab9d103e183f777e4ffacb6e0b9800f5f117f06cc991aea29c1b07425"
   end
 
   resource "justext" do
@@ -52,8 +52,8 @@ class Trafilatura < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/6b/38/49d968981b5ec35dbc0f742f8219acab179fc1567d9c22444152f950cf0d/regex-2023.10.3.tar.gz"
-    sha256 "3fef4f844d2290ee0ba57addcec17eec9e3df73f10a2748485dfd6a3a188cc0f"
+    url "https://files.pythonhosted.org/packages/b5/39/31626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853/regex-2023.12.25.tar.gz"
+    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
   end
 
   resource "tld" do
