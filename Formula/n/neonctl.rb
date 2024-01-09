@@ -3,8 +3,8 @@ require "language/node"
 class Neonctl < Formula
   desc "Neon CLI tool"
   homepage "https://neon.tech/docs/reference/neon-cli"
-  url "https://registry.npmjs.org/neonctl/-/neonctl-1.25.2.tgz"
-  sha256 "bc2c1ff170c84a3ba9ea0e03116bb191336c12b512116d94e609679dbe88494c"
+  url "https://registry.npmjs.org/neonctl/-/neonctl-1.25.3.tgz"
+  sha256 "47de7ed1a01e038b06dc832455f83860032a70bfedf6048381430c50f5b35a02"
   license "Apache-2.0"
 
   bottle do
