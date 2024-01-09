@@ -1,8 +1,8 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
   homepage "https://github.com/leo-arch/clifm"
-  url "https://github.com/leo-arch/clifm/archive/refs/tags/v1.15.tar.gz"
-  sha256 "6248c8352f6fb77f9dc6bc0a3f84c06c881b82c08679f93ed8c32d6c208787b4"
+  url "https://github.com/leo-arch/clifm/archive/refs/tags/v1.16.tar.gz"
+  sha256 "05980c916b987ac724deeea2cd35af99986cec205568a5f0f6e20a5b2030fb9d"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -38,7 +38,7 @@ class Clifm < Formula
     ENV["TERM"] = "xterm"
 
     output = shell_output("#{bin}/clifm nonexist 2>&1", 2)
-    assert_match "clifm: nonexist: No such file or directory", output
+    assert_match "clifm: 'nonexist': No such file or directory", output
     assert_match version.to_s, shell_output("#{bin}/clifm --version")
   end
 end
