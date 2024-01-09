@@ -4,6 +4,7 @@ class Ugrep < Formula
   url "https://github.com/Genivia/ugrep/archive/refs/tags/v4.5.1.tar.gz"
   sha256 "81b4854b6a8bd69ff3bac616a8e5363bd020224161fa0a1af3c63da0e7a07150"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256                               arm64_sonoma:   "87e17bc53321b105edd492a179a4091ee7494b96ecc491d51c441082a2e11b20"
@@ -15,8 +16,11 @@ class Ugrep < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f3a8dd8452a426ad57adacdd9eafb4452669bf11767896b134a29d997d1551"
   end
 
+  depends_on "brotli"
+  depends_on "lz4"
   depends_on "pcre2"
   depends_on "xz"
+  depends_on "zstd"
 
   def install
     system "./configure", "--enable-color",
