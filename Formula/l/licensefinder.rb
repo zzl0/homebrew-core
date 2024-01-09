@@ -10,15 +10,13 @@ class Licensefinder < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ef656bf28c2086f747658798a989432e14c90e58c01c15bf792b1a5b5b711e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "164e134801f7eccba5c5cc70d98657dccdc5cf935a9fd92934e74d6c0ffce0e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "164e134801f7eccba5c5cc70d98657dccdc5cf935a9fd92934e74d6c0ffce0e0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "164e134801f7eccba5c5cc70d98657dccdc5cf935a9fd92934e74d6c0ffce0e0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "57aad28e9489cc374ffd446e32f92c1eebf13294e601d169b293dea44345b14b"
-    sha256 cellar: :any_skip_relocation, ventura:        "87ac993d1fa172a2e30ba894f7c7329f4c69a071c4cbb2b3f7b8fc4fdbddfa69"
-    sha256 cellar: :any_skip_relocation, monterey:       "87ac993d1fa172a2e30ba894f7c7329f4c69a071c4cbb2b3f7b8fc4fdbddfa69"
-    sha256 cellar: :any_skip_relocation, big_sur:        "87ac993d1fa172a2e30ba894f7c7329f4c69a071c4cbb2b3f7b8fc4fdbddfa69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bdbc4f522c64ed0bf539afbb6e48f43c96b1284d2a00416dd535706e140d373"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2dd84e133cb82c6ed665cc0eaf65255c2c9dabd20c87a4c8d3163c758c3363c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2dd84e133cb82c6ed665cc0eaf65255c2c9dabd20c87a4c8d3163c758c3363c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dd84e133cb82c6ed665cc0eaf65255c2c9dabd20c87a4c8d3163c758c3363c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3ee729550f311358fbd9eda1f7608db191e2b29548637f6b951d75b84c9230b"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3ee729550f311358fbd9eda1f7608db191e2b29548637f6b951d75b84c9230b"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3ee729550f311358fbd9eda1f7608db191e2b29548637f6b951d75b84c9230b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a202d220452af880ab1a2cb0c756d44cca45eef6f71953b243baadc78b777191"
   end
 
   depends_on "ruby"
