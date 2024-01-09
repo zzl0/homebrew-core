@@ -1,8 +1,8 @@
 class Orientdb < Formula
   desc "Graph database"
   homepage "https://orientdb.org/"
-  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.25/orientdb-community-3.2.25.zip"
-  sha256 "96c37dd32f292f8849aa33e77757a729fed74034b84eff0aaaef1429cfd82120"
+  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.26/orientdb-community-3.2.26.zip"
+  sha256 "998086ba728a875ac2ff12188944fbd825e733a99b90e40d06442734866d611d"
   license "Apache-2.0"
 
   livecheck do
