@@ -1,10 +1,9 @@
 class Zbar < Formula
   desc "Suite of barcodes-reading tools"
   homepage "https://github.com/mchehab/zbar"
-  url "https://linuxtv.org/downloads/zbar/zbar-0.23.90.tar.bz2"
-  sha256 "9152c8fb302b3891e1cb9cc719883d2f4ccd2483e3430783a2cf2d93bd5901ad"
+  url "https://linuxtv.org/downloads/zbar/zbar-0.23.93.tar.bz2"
+  sha256 "83be8f85fc7c288fd91f98d52fc55db7eedbddcf10a83d9221d7034636683fa0"
   license "LGPL-2.1-only"
-  revision 4
 
   livecheck do
     url :homepage
