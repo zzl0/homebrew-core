@@ -1,10 +1,9 @@
 class Qca < Formula
   desc "Qt Cryptographic Architecture (QCA)"
   homepage "https://userbase.kde.org/QCA"
-  url "https://download.kde.org/stable/qca/2.3.7/qca-2.3.7.tar.xz"
-  sha256 "fee2343b54687d5be3e30fb33ce296ee50ac7ae5e23d7ab725f63ffdf7af3f43"
+  url "https://download.kde.org/stable/qca/2.3.8/qca-2.3.8.tar.xz"
+  sha256 "48759ca86a0202461d908ba66134380cc3bb7d20fed3c031b9fc0289796a8264"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
   livecheck do
