@@ -1,8 +1,8 @@
 class Libmonome < Formula
   desc "Library for easy interaction with monome devices"
   homepage "https://monome.org/"
-  url "https://github.com/monome/libmonome/archive/refs/tags/v1.4.6.tar.gz"
-  sha256 "dbb886eacb465ea893465beb7b5ed8340ae77c25b24098ab36abcb69976ef748"
+  url "https://github.com/monome/libmonome/archive/refs/tags/v1.4.7.tar.gz"
+  sha256 "fb84198556623d0781efbd5f1dd2132594d6a86021043713995d06db4b2ef9ac"
   license "ISC"
   head "https://github.com/monome/libmonome.git", branch: "main"
 
