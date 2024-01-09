@@ -1,8 +1,8 @@
 class Imake < Formula
   desc "Build automation system written for X11"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.9.tar.xz"
-  sha256 "72de9d278f74d95d320ec7b0d745296f582264799eab908260dbea0ce8e08f83"
+  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.10.tar.xz"
+  sha256 "75decbcea8d7b354cf36adc9675e53c4790ee3de56a14bd87b42c8e8aad2ecf5"
   license "MIT"
 
   livecheck do
@@ -26,8 +26,8 @@ class Imake < Formula
   depends_on "tradcpp"
 
   resource "xorg-cf-files" do
-    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.6.tar.bz2"
-    sha256 "4dcf5a9dbe3c6ecb9d2dd05e629b3d373eae9ba12d13942df87107fdc1b3934d"
+    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.8.tar.xz"
+    sha256 "7408955defcfab0f44d1bedd4ec0c20db61914917ad17bfc1f1c9bf56acc17b9"
   end
 
   def install
