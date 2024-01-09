@@ -3,10 +3,9 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/40/bd/86b3e22ada4ced9529739b6ec7004c3f5b3cadf31c83bb4ce3e9650b5a2e/snakefmt-0.8.5.tar.gz"
-  sha256 "5aa5182dbbbeb84d477dd0f5a9eeeba41bac1f185cfd4897a0b005d4af59ba71"
+  url "https://files.pythonhosted.org/packages/e1/ca/ddd0028b2c65850f0e12ed91356a0677221e76ae914fa34382b7336b33a3/snakefmt-0.9.0.tar.gz"
+  sha256 "54c78050edead20cea5f87a6c9674ee1b5e4e38faac2852b45d0650faf9cb319"
   license "MIT"
-  revision 1
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
