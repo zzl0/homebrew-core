@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https://github.com/fastlane/fastlane/archive/refs/tags/2.219.0.tar.gz"
   sha256 "100458a3bc60c23fbc374748b7eab3f4666aa50fb84ffe94daa9e074d5dbf059"
   license "MIT"
+  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "397caeb13a5bead9215f885df5d6aea7b8a26bc3ec210ea6ac75dae8c0d6779f"
-    sha256 cellar: :any,                 arm64_ventura:  "cb915232b6657002178e4db3cc6d6b71227fe2bcc69ac0490e7946ec733ec905"
-    sha256 cellar: :any,                 arm64_monterey: "0f7ec9e5855c0a8f9018c82132802fa7858524f8cc38cf4b2bb0b0844f648279"
-    sha256 cellar: :any,                 sonoma:         "0aa6a12d03a67e17da1581eccee4185df6a868b6141f9efd3c54fe36e44b6f47"
-    sha256 cellar: :any,                 ventura:        "bcd08fdb7202bc4bba640010155b1a59be548e89fa72e2d420bfa5fcfcca7d6b"
-    sha256 cellar: :any,                 monterey:       "755e44135e6c81a37fe7f7a35d9d6e0b577a6eacc8f733d187450a63feed5132"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33f43c7d3371961a0f928275ba75c6c1ed9ac235483d03ed76c574b7772bfb53"
+    sha256 cellar: :any,                 arm64_sonoma:   "5e0413c4a77ea10e5c0dd51c4a7b95fb6e9b0a05721deea42de89aa3dacdfa50"
+    sha256 cellar: :any,                 arm64_ventura:  "e9dcc2a41d4ed76fab9d725597898f074b3b23dada7e95624c86d2f2cd449976"
+    sha256 cellar: :any,                 arm64_monterey: "29b15a7adec7e8d52796ffd7173f56a87eba3bd1b815a47e953ef6c21a9c1809"
+    sha256 cellar: :any,                 sonoma:         "4d55ebd2b53f5b89dfd10123e16ebc2a849ff21da895195c7dd041c7cf17a068"
+    sha256 cellar: :any,                 ventura:        "0b8a40f1456ba5b6225c7d8bccd1780f74481bd23a11f86263f190b8126bc06b"
+    sha256 cellar: :any,                 monterey:       "d4405e8b7ac272967da58ba02a9f267ba1618c85f9413aa4933f5ce78e844047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da1de0978be5c3374b380b1a664b9a249042bfae872025f6215dc66827a75f47"
   end
 
   depends_on "ruby"
