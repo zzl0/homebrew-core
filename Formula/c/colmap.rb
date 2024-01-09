@@ -1,8 +1,8 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://github.com/colmap/colmap/archive/refs/tags/3.9.tar.gz"
-  sha256 "68872fb90832e9c3454e6163676ced84901a30b2bd8fb69d36d4a50fa07c032c"
+  url "https://github.com/colmap/colmap/archive/refs/tags/3.9.1.tar.gz"
+  sha256 "f947ad80802baa8f00f30f26d316d8c608ab2626465eac1c81cf325d57879862"
   license "BSD-3-Clause"
 
   bottle do
@@ -32,6 +32,10 @@ class Colmap < Formula
 
   uses_from_macos "sqlite"
 
+  # Remove this patch after https://github.com/colmap/colmap/pull/2338 is included in
+  # a future release
+  patch :DATA
+
   def install
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].prefix
 
@@ -45,3 +49,30 @@ class Colmap < Formula
     assert_path_exists (testpath / "db")
   end
 end
+__END__
+diff --git a/src/colmap/image/line.cc b/src/colmap/image/line.cc
+index 3637c3dc..33fff7da 100644
+--- a/src/colmap/image/line.cc
++++ b/src/colmap/image/line.cc
+@@ -27,6 +27,8 @@
+ // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ // POSSIBILITY OF SUCH DAMAGE.
+ 
++#include <memory>
++
+ #include "colmap/image/line.h"
+ 
+ #include "colmap/util/logging.h"
+diff --git a/src/colmap/mvs/workspace.h b/src/colmap/mvs/workspace.h
+index 73d21b78..6d2c862c 100644
+--- a/src/colmap/mvs/workspace.h
++++ b/src/colmap/mvs/workspace.h
+@@ -29,6 +29,8 @@
+ 
+ #pragma once
+ 
++#include <memory>
++
+ #include "colmap/mvs/consistency_graph.h"
+ #include "colmap/mvs/depth_map.h"
+ #include "colmap/mvs/model.h"
