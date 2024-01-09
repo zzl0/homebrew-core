@@ -5,6 +5,7 @@ class Podman < Formula
       tag:      "v4.8.3",
       revision: "85dc30df56566a654700722a4dd190e1b9680ee7"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  revision 1
   head "https://github.com/containers/podman.git", branch: "main"
 
   bottle do
@@ -49,6 +50,13 @@ class Podman < Formula
     end
   end
 
+  resource "vfkit" do
+    on_macos do
+      url "https://github.com/crc-org/vfkit/archive/refs/tags/v0.5.0.tar.gz"
+      sha256 "abfc3ca8010aca5bd7cc658680ffaae0a80ba1a180a2b37f9a7c4fce14b8957f"
+    end
+  end
+
   resource "catatonit" do
     on_linux do
       url "https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.0.tar.gz"
@@ -84,6 +92,15 @@ class Podman < Formula
       resource("gvproxy").stage do
         system "gmake", "gvproxy"
         (libexec/"podman").install "bin/gvproxy"
+      end
+
+      resource("vfkit").stage do
+        ENV["CGO_ENABLED"] = "1"
+        ENV["CGO_CFLAGS"] = "-mmacosx-version-min=11.0"
+        ENV["GOOS"]="darwin"
+        arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
+        system "gmake", "out/vfkit-#{arch}"
+        (libexec/"podman").install "out/vfkit-#{arch}" => "vfkit"
       end
 
       system "gmake", "podman-remote-darwin-docs"
