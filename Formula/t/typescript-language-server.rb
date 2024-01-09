@@ -3,8 +3,8 @@ require "language/node"
 class TypescriptLanguageServer < Formula
   desc "Language Server Protocol implementation for TypeScript wrapping tsserver"
   homepage "https://github.com/typescript-language-server/typescript-language-server"
-  url "https://registry.npmjs.org/typescript-language-server/-/typescript-language-server-4.2.0.tgz"
-  sha256 "b20d0ed6ec3a2f72c394f2936d75ec5d563047e73b1c7e5cf3dc4d21e7c4a2ff"
+  url "https://registry.npmjs.org/typescript-language-server/-/typescript-language-server-4.3.0.tgz"
+  sha256 "6c73671208d0dd25ba369befdbdf9d317f193bc2fcacd6b417ce820c87f1921e"
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
