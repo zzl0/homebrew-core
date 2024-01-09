@@ -55,8 +55,21 @@ class Ruby < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
-  def api_version
+  def determine_api_version
     Utils.safe_popen_read("#{bin}/ruby", "-e", "print Gem.ruby_api_version")
+  end
+
+  def api_version
+    if head?
+      if latest_head_prefix
+        determine_api_version
+      else
+        # Best effort guess
+        "#{stable.version.major.to_i}.#{stable.version.minor.to_i + 1}.0+0"
+      end
+    else
+      "#{version.major.to_i}.#{version.minor.to_i}.0"
+    end
   end
 
   def rubygems_bindir
@@ -237,8 +250,6 @@ class Ruby < Formula
   end
 
   def caveats
-    return unless latest_version_installed?
-
     <<~EOS
       By default, binaries installed by gem will be placed into:
         #{rubygems_bindir}
@@ -250,6 +261,9 @@ class Ruby < Formula
   test do
     hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
     assert_equal "hello\n", hello_text
+
+    assert_equal api_version, determine_api_version
+
     ENV["GEM_HOME"] = testpath
     system "#{bin}/gem", "install", "json"
 
