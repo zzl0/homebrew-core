@@ -26,12 +26,16 @@ class Ncompress < Formula
   keg_only :provided_by_macos
 
   def install
+    # Remove archaic leading colon before shebang, so that brew install
+    # cleanup code correctly preserves executable bit
+    inreplace %w[zcmp zdiff zmore], /^:\s*\n#!/, "#!"
+
     system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man1}"
   end
 
   test do
-    Pathname.new("hello").write "Hello, world!"
-    system "#{bin}/compress", "-f", "hello"
+    (testpath/"hello").write "Hello, world!"
+    system bin/"compress", "-f", "hello"
     assert_match "Hello, world!", shell_output("#{bin}/compress -cd hello.Z")
   end
 end
