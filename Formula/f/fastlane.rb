@@ -4,7 +4,7 @@ class Fastlane < Formula
   url "https://github.com/fastlane/fastlane/archive/refs/tags/2.219.0.tar.gz"
   sha256 "100458a3bc60c23fbc374748b7eab3f4666aa50fb84ffe94daa9e074d5dbf059"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -36,7 +36,7 @@ class Fastlane < Formula
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
     (bin/"fastlane").write_env_script libexec/"bin/fastlane",
-      PATH:                            "#{Formula["ruby@3.1"].opt_bin}:#{libexec}/bin:$PATH",
+      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}/bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
       GEM_HOME:                        libexec.to_s,
       GEM_PATH:                        libexec.to_s
