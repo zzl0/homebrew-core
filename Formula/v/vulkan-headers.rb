@@ -7,7 +7,7 @@ class VulkanHeaders < Formula
   head "https://github.com/KhronosGroup/Vulkan-Headers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ca9dd030127be297301ded7cdf814b9039a7d48f56055de11e04ca745965c736"
+    sha256 cellar: :any_skip_relocation, all: "5843a0eb75b6c42637bab99bccc302ebab4d474a472789af4a3fce0208812823"
   end
 
   depends_on "cmake" => :build
