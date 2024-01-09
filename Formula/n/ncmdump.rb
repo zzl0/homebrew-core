@@ -6,6 +6,16 @@ class Ncmdump < Formula
   license "MIT"
   head "https://github.com/taurusxin/ncmdump.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "6b6ea8422cf6c07ba41cdec25cd75e74881a0b9d131ca4fc4e7fa5a36a45ccae"
+    sha256 cellar: :any,                 arm64_ventura:  "78c634b892549c682cd00c6962208eb52b451c184356d7d1629f6c1206beeab3"
+    sha256 cellar: :any,                 arm64_monterey: "af2c32f41f65892c7b8d2e09972e438827624e440d438d65ec13c56508f8445c"
+    sha256 cellar: :any,                 sonoma:         "62112dfde17a6a5e81071383e42befcb8b29660ccc4851dcb62209d9f2aeb8be"
+    sha256 cellar: :any,                 ventura:        "05583fb35e51d6227ba2dbfd43052a60a362af345ae7e70a9acf284404bda5db"
+    sha256 cellar: :any,                 monterey:       "157a0d4a3b8860df60878495e101b2264eb5e2c740e3fa1232af96f945667b79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef82870ff5763efecb19096dd73cc4090c392d694cdce5e4e1d22cd169cb568"
+  end
+
   depends_on "taglib"
 
   def install
