@@ -1,10 +1,8 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for details.
-  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "acb4b54cb60097459ec74f4b7f74d2623f45cc4172b16ef0fdd9a7fc4b4625a2"
+  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.2.tar.gz"
+  sha256 "77756509d7e94d721056b2a35f99bec97665ce24323bfd25d76a39aa04b61dbb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
