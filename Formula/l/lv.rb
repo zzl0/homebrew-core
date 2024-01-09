@@ -4,7 +4,7 @@ class Lv < Formula
   url "https://web.archive.org/web/20150915000000/www.ff.iij4u.or.jp/~nrt/freeware/lv451.tar.gz"
   version "4.51"
   sha256 "e1cd2e27109fbdbc6d435f2c3a99c8a6ef2898941f5d2f7bacf0c1ad70158bcf"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 1
 
   # The first-party website is no longer available (as of 2016) and there are no
@@ -33,7 +33,8 @@ class Lv < Formula
     depends_on "gzip"
   end
 
-  # See https://github.com/Homebrew/homebrew-core/pull/53085
+  # See https://github.com/Homebrew/homebrew-core/pull/53085.
+  # Further issues regarding missing headers reported upstream to nrt@ff.iij4u.or.jp
   patch :DATA
 
   def install
@@ -73,3 +74,24 @@ __END__
      SIDX = index;
  
      if( 'm' != ch ){
+--- a/src/guess.c
++++ b/src/guess.c
+@@ -21,7 +21,7 @@
+  */
+
+ #include <stdio.h>
+-
++#include <string.h>
+ #include <import.h>
+ #include <decode.h>
+ #include <big5.h>
+--- a/src/guesslocale.c
++++ b/src/guesslocale.c
+@@ -24,6 +24,7 @@
+
+ #include <stdlib.h>
+ #include <string.h>
++#include <ctype.h>
+ #include <locale.h>
+ #if defined(HAVE_LANGINFO_CODESET)
+ #include <langinfo.h>
