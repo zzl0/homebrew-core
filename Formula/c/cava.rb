@@ -1,8 +1,8 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
   homepage "https://github.com/karlstav/cava"
-  url "https://github.com/karlstav/cava/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "483f571d5fba5fb8aa81511c4dcf8ce0949c7c503ec6c743c2914cd78e6faf03"
+  url "https://github.com/karlstav/cava/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "1e40c93cb476ada538c131cb68ab1b56ce214d75b834508cbe76a57ae1ea153f"
   license "MIT"
   head "https://github.com/karlstav/cava.git", branch: "master"
 
