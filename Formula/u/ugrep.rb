@@ -4,19 +4,23 @@ class Ugrep < Formula
   url "https://github.com/Genivia/ugrep/archive/refs/tags/v4.5.1.tar.gz"
   sha256 "81b4854b6a8bd69ff3bac616a8e5363bd020224161fa0a1af3c63da0e7a07150"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "87e17bc53321b105edd492a179a4091ee7494b96ecc491d51c441082a2e11b20"
-    sha256                               arm64_ventura:  "98ae036367df17c3213f24a993c83aa94ff0521e2a1bae77fb742ee7f8788c7a"
-    sha256                               arm64_monterey: "3770dee24972ab58db21ac34df7d3d77692995e32f4cc815586cc8bda7034e28"
-    sha256                               sonoma:         "e468a96a7ca47a81afb4f2c21a077ca5d873831c23473faa2a3c0eb4bb359749"
-    sha256                               ventura:        "00a0cf33706d451ba0620576833a09026ce9d060d8a2148c4eafd997d23b6c57"
-    sha256                               monterey:       "830a1f7747754b1246815c39993c37558e0a0f9dd65c41a538a1b31583c926de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f3a8dd8452a426ad57adacdd9eafb4452669bf11767896b134a29d997d1551"
+    sha256                               arm64_sonoma:   "a9a15764049203466cb3baed0119944d42b66a3b6fdd34d56fd559e2ee424f4f"
+    sha256                               arm64_ventura:  "bf6a46d02dfff7dd03915e14cf041e902916bd23f28b7256638f233656901554"
+    sha256                               arm64_monterey: "ca693b15e5792179ff14bb538b2d92d49ff400a34cfeb1fb066cf0b9871010ae"
+    sha256                               sonoma:         "44bcb29b4e3c5aca63f6c471550353b79b84cf2c850fb7fd0f0c5ce80b306d38"
+    sha256                               ventura:        "8c72f65ae8f7f5f47f1df159241a9a2dc706afeb70e8354fdced5c8e5c043e0d"
+    sha256                               monterey:       "9b77002d4005aa82e36d5896d9bd45e3c041ee44dc3ea9d2edc0fa96aca861a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6c8dab059ec38f97afd9d5c87fd01545712f5fc5b0e252f4419313afa700f19"
   end
 
+  depends_on "brotli"
+  depends_on "lz4"
   depends_on "pcre2"
   depends_on "xz"
+  depends_on "zstd"
 
   def install
     system "./configure", "--enable-color",
