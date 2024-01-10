@@ -5,13 +5,13 @@ class Rav1e < Formula
   head "https://github.com/xiph/rav1e.git", branch: "master"
 
   stable do
-    url "https://github.com/xiph/rav1e/archive/refs/tags/v0.7.0.tar.gz"
-    sha256 "dd6c4b771d985f547787383f5d77bc124ac406d574a308a897da9642410c1855"
+    url "https://github.com/xiph/rav1e/archive/refs/tags/v0.7.1.tar.gz"
+    sha256 "da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c"
 
     # keep the version in sync
     resource "Cargo.lock" do
-      url "https://github.com/xiph/rav1e/releases/download/v0.7.0/Cargo.lock"
-      sha256 "2c5b50b978cc1e8cddd898c226276100419953ff9e0bafc5b02fbdb67a9dd346"
+      url "https://github.com/xiph/rav1e/releases/download/v0.7.1/Cargo.lock"
+      sha256 "4482976bfb7647d707f9a01fa1a3848366988f439924b5c8ac7ab085fba24240"
     end
   end
 
@@ -37,11 +37,6 @@ class Rav1e < Formula
     depends_on "nasm" => :build
   end
 
-  resource "homebrew-bus_qcif_7.5fps.y4m" do
-    url "https://media.xiph.org/video/derf/y4m/bus_qcif_7.5fps.y4m"
-    sha256 "1f5bfcce0c881567ea31c1eb9ecb1da9f9583fdb7d6bb1c80a8c9acfc6b66f6b"
-  end
-
   def install
     buildpath.install resource("Cargo.lock") if build.stable?
     system "cargo", "install", *std_cargo_args
@@ -49,6 +44,11 @@ class Rav1e < Formula
   end
 
   test do
+    resource "homebrew-bus_qcif_7.5fps.y4m" do
+      url "https://media.xiph.org/video/derf/y4m/bus_qcif_7.5fps.y4m"
+      sha256 "1f5bfcce0c881567ea31c1eb9ecb1da9f9583fdb7d6bb1c80a8c9acfc6b66f6b"
+    end
+
     assert_equal version, resource("Cargo.lock").version, "`Cargo.lock` resource needs updating!" unless head?
     resource("homebrew-bus_qcif_7.5fps.y4m").stage do
       system bin/"rav1e", "--tile-rows=2",
