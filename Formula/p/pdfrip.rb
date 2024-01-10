@@ -1,8 +1,8 @@
 class Pdfrip < Formula
   desc "Multi-threaded PDF password cracking utility"
   homepage "https://github.com/mufeedvh/pdfrip"
-  url "https://github.com/mufeedvh/pdfrip/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "b00c01f23f02a067d3fec48ee42d0ed42796fc6f3383537147c7f9dd74257b40"
+  url "https://github.com/mufeedvh/pdfrip/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "60f284d79bac98c97e6eaa1a2f29d66055de5b3c8a129eb14b24057a7cb31cd3"
   license "MIT"
   head "https://github.com/mufeedvh/pdfrip.git", branch: "main"
 
