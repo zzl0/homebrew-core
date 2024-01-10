@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.7.3.tar.gz"
-  sha256 "4d60ffb84b62005156b8b28d4c212a675946eb7bee557856517822e5bf2c1539"
+  url "https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.8.1.tar.gz"
+  sha256 "4191cb4aa609aff6c24c7cdafab3283a6cd3f45ba460e33992ea3bcd405f5598"
   license "MIT"
   version_scheme 1
 
@@ -28,13 +28,7 @@ class Dnscontrol < Formula
   depends_on "go" => :build
 
   def install
-    go_ldflags = %W[
-      -s -w
-      -X main.SHA=#{tap.user}
-      -X main.Version=#{version}
-      -X main.BuildTime=#{time.iso8601}
-    ]
-    system "go", "build", *std_go_args(ldflags: go_ldflags)
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
     generate_completions_from_executable(bin/"dnscontrol", "shell-completion", shells: [:bash, :zsh])
   end
@@ -46,7 +40,6 @@ class Dnscontrol < Formula
   test do
     version_output = shell_output("#{bin}/dnscontrol version")
     assert_match version.to_s, version_output
-    assert_match tap.user, version_output
 
     (testpath/"dnsconfig.js").write <<~EOS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");
