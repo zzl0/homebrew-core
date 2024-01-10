@@ -60,7 +60,7 @@ class Dexter < Formula
     ENV["LC_ALL"] = "C"
 
     postgresql = Formula["postgresql@16"]
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
