@@ -10,15 +10,14 @@ class Cassandra < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52642dd8fadb9930a9036b2fd18f112bb8ef81cfa2b17311dfa2271e56246e23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0610b55b05846c59f1d3f6d44bd7c80738de3d4cffac733774dd927c48b9845d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3db0db93085264e252aa354c945b215cc8b3b8e8add5be2cee7520349dc7e02a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b12b02aef016ae17586982fbb679adb98f1568c3d4eb3214c8a060d1075610a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "690df7c6cf01f7a5c64dde63c6ce3021e11410bccacaceb43d038e0cb68511be"
-    sha256 cellar: :any_skip_relocation, ventura:        "51d3199282a83aceea9988699a9ce57f0155e472f22a1a93f51e35ffb30e2989"
-    sha256 cellar: :any_skip_relocation, monterey:       "809072721b7ba47f772821081247e219dc0541a9779cdaa71b2ecaac08f6045c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "590831ccddc447c276fe39fd248e40d4aa4d108f953aefbf51987c6b1e825b63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca731177a00a9bfc4227ebb1502972648dd0221ced0cffd8deb42d7e9e287699"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "17d43db6c431701b8d62b1f42c763d1e706eea0675f58a194ed6b51e4880cdcf"
+    sha256 cellar: :any,                 arm64_ventura:  "ee26c7a69c7d70df6562d6a87a14d946a19670d5e78d37109fc96c7bbd452a2b"
+    sha256 cellar: :any,                 arm64_monterey: "d59276b9cd47a79640394efc07239c72b95840db30507bbad631320c29b10a28"
+    sha256 cellar: :any,                 sonoma:         "94ff583e7a2916934671036e219f435438c07064e255b3593e5b8baaa8ad18b9"
+    sha256 cellar: :any,                 ventura:        "c1a2dc9ef57439c1f07f0d04132994379906f54e40ff4616bf297595a0dfb2a3"
+    sha256 cellar: :any,                 monterey:       "fda6982d0a37286dddf606439e09ee6891a84b891a8febbfa0b8846b9df5ec2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1bf6281e3739b30c184976a233f9739158c50f982a04ad0d66c6d044f7739c1"
   end
 
   depends_on "libcython" => :build
