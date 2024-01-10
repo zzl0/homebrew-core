@@ -1,8 +1,8 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
-  homepage "https://www.powerdns.com/recursor.html"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-4.9.2.tar.bz2"
-  sha256 "4cb8180458ecfb528a3d9a34ba2844b6cd2ed69ca1c461dde24a0ebd66829144"
+  homepage "https://www.powerdns.com/powerdns-recursor"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-5.0.1.tar.bz2"
+  sha256 "70a3b0bfde350e94cdb0746b06d06e6d2f3dc0e171be3b12caef9f3c38468ca3"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -21,9 +21,12 @@ class Pdnsrec < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "rust" => :build
   depends_on "boost"
   depends_on "lua"
   depends_on "openssl@3"
+
+  uses_from_macos "curl"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
