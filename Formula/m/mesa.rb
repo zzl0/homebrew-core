@@ -5,8 +5,8 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-23.3.2.tar.xz"
-    sha256 "3cfcb81fa16f89c56abe3855d2637d396ee4e03849b659000a6b8e5f57e69adc"
+    url "https://mesa.freedesktop.org/archive/mesa-23.3.3.tar.xz"
+    sha256 "518307c0057fa3cee8b58df78be431d4df5aafa7edc60d09278b2d7a0a80f3b4"
 
     # Backport macOS build fixes from HEAD.
     # Ref: https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/25992
