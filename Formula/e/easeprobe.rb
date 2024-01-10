@@ -7,15 +7,13 @@ class Easeprobe < Formula
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db40c79d44d902061406cadf9f76938cb59f9f605fc6b47dcef0b0b63ae98770"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "106f298416f1ea5f8ca9ec63dfa9c5f144f952eca9ed28f34ba7637dab45ee87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "106f298416f1ea5f8ca9ec63dfa9c5f144f952eca9ed28f34ba7637dab45ee87"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "106f298416f1ea5f8ca9ec63dfa9c5f144f952eca9ed28f34ba7637dab45ee87"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e516b118270bef24bd8be1b7c6c4f0d6921895ff5baf3c21341c0a35bafaf5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "91d8a4013fb1a8fb3b4d72cb3c4aecd8815d1c2ae72c7ed1425516f583bad9f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "91d8a4013fb1a8fb3b4d72cb3c4aecd8815d1c2ae72c7ed1425516f583bad9f4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "91d8a4013fb1a8fb3b4d72cb3c4aecd8815d1c2ae72c7ed1425516f583bad9f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdad5aef27db513302c0364efce30fcfea5cca73a7247414d8f74cc00cb24431"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c41da9c3e6e151f5991e4025adc3f15b5c80deca8a862f297324e3896bfc884b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15320d1cf8cb8964c82c91e774f5fb737416622130686c6611bc559574d0a388"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b5c5a3b106b23796925defabd6b891b32f9cd07e8044d867b0c0ae200f2897f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "35a9a229d960f2800730e63576bd1fb2ce0a57391d5e0a02943287f7dc2466b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f6f2d4d07d340ef17fdb94767f503b012ca76cf136902e2f36ae6fca1313e03"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ecc00215f4a97eba7328a8dc00779e1f464406cbe2a15ea1a28cac26f851312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f072d4a9f3f7ffd5393cfc3220839ac8700b82462d9e068dfe22f9393f40f213"
   end
 
   depends_on "go" => :build
