@@ -7,13 +7,13 @@ class CrunchyCli < Formula
   head "https://github.com/crunchy-labs/crunchy-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8782dc293a91e3adb71a896df245e4a6fc5692c1ecf0a31cc00219261c54817"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e3781ef7dbf96c3475853ef572ba909d50bc599bb61d52dcbfc61e01ebfe353"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "586cd5dbdfb17d3a1931c897f96c1e4cf30e1aa1c87c5ba13abf89e1c0f126f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f291b506fa39115399fffe142de2724d8c6bb0e008b3c1194b597bde285653a1"
-    sha256 cellar: :any_skip_relocation, ventura:        "98c6555fefffa582be1dfa605aef1806133913a975e07f2eba82ae37cb801913"
-    sha256 cellar: :any_skip_relocation, monterey:       "6224638785a923a9c48631268aa57b98eaeed5514d5e8dcee0bf0c2474dd2f28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bafe61e08f1360327391e7b7cb263e47879450352bf3fdbc04464ad17d094676"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6ef80b93a0213a6a1478c830c78ae2b06fb424878f08370a3e0815937d45f31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab0ebdf27d04403fc8401e0e4ccfd7a5f4659da13ce46b68795d7bd0a145d58c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad11f9cdfba99dab1c2917b410fcbc3add8bfc0c4942cd5ed605b562396216b4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ef878c2e786255443a0b4fd73cae32ac94e60744e464a589bea4cbf8908838dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "cff5fc334d02be7ec7ce69954e285d042f6c52e91f9859b796ede4361a97e5fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "9dca18a4c8a3968c43e81e6898f24e8b078a6f91dab74be2349a028999641436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7132d8e352f26b7daab280d3fdf1eb12b4e19c79ae182a87c8bb88f7fc7406c1"
   end
 
   depends_on "pkg-config" => :build
