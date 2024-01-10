@@ -1,9 +1,8 @@
 class Protolint < Formula
   desc "Pluggable linter and fixer to enforce Protocol Buffer style and conventions"
   homepage "https://github.com/yoheimuta/protolint"
-  url "https://github.com/yoheimuta/protolint.git",
-      tag:      "v0.47.4",
-      revision: "2f86d18771d823c48735989d3f82793e520a842e"
+  url "https://github.com/yoheimuta/protolint/archive/refs/tags/v0.47.5.tar.gz"
+  sha256 "958a5852dfb90cfdb8fab2af1764818098278edcc9a967e560aa2811d8c57ce1"
   license "MIT"
   head "https://github.com/yoheimuta/protolint.git", branch: "master"
 
@@ -23,12 +22,12 @@ class Protolint < Formula
     protolint_ldflags = %W[
       -s -w
       -X github.com/yoheimuta/protolint/internal/cmd.version=#{version}
-      -X github.com/yoheimuta/protolint/internal/cmd.revision=#{Utils.git_head(length: 8)}
+      -X github.com/yoheimuta/protolint/internal/cmd.revision=#{tap.user}
     ]
     protocgenprotolint_ldflags = %W[
       -s -w
       -X github.com/yoheimuta/protolint/internal/cmd/protocgenprotolint.version=#{version}
-      -X github.com/yoheimuta/protolint/internal/cmd/protocgenprotolint.revision=#{Utils.git_head(length: 8)}
+      -X github.com/yoheimuta/protolint/internal/cmd/protocgenprotolint.revision=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags: protolint_ldflags), "./cmd/protolint"
     system "go", "build",
