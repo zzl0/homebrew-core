@@ -1,10 +1,9 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https://github.com/ankane/dexter"
-  url "https://github.com/ankane/dexter/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "280403858ea209b41910f487f737fd602b41c60cc6cd3e5cf54ed5db9330b321"
+  url "https://github.com/ankane/dexter/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "78773d4d75fdba34843c89a49d4d91f8f3496752308005d965153586a091f64e"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "be94f7b338b28ed362c82b4b8d731ebfb3f6fd175fc98e8c7514d08583528406"
@@ -16,23 +15,23 @@ class Dexter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81868f9315ef4a076f205b3876385b98175a728b67985142a9dc6f5ee4b43026"
   end
 
-  depends_on "postgresql@15" => :test
+  depends_on "postgresql@16" => :test
   depends_on "libpq"
   depends_on "ruby"
 
   resource "google-protobuf" do
-    url "https://rubygems.org/gems/google-protobuf-3.23.2.gem"
-    sha256 "499ac76d22e86a050e3743a4ca332c84eb5a501a29079849f15c6dfecdbcd00f"
+    url "https://rubygems.org/gems/google-protobuf-3.25.2.gem"
+    sha256 "9c2e6121d768f812f50b78cb6f26056f2af6bab92af793d376b772126e26500b"
   end
 
   resource "pg" do
-    url "https://rubygems.org/gems/pg-1.5.3.gem"
-    sha256 "6b9ee5e2d5aee975588232c41f8203e766157cf71dba54ee85b343a45ced9bfd"
+    url "https://rubygems.org/gems/pg-1.5.4.gem"
+    sha256 "04f7b247151c639a0b955d8e5a9a41541343f4640aa3c2bdf749a872c339d25d"
   end
 
   resource "pg_query" do
-    url "https://rubygems.org/gems/pg_query-4.2.1.gem"
-    sha256 "b04820a9d1c0c1608e3240b7d84baabbee1b95a7302f29fdd0f00e901c604833"
+    url "https://rubygems.org/gems/pg_query-4.2.3.gem"
+    sha256 "1cc9955c7bce8e51e1abc11f1952e3d9d0f1cd4c16c58c56ec75d5aaf1cfd697"
   end
 
   resource "slop" do
@@ -60,7 +59,7 @@ class Dexter < Formula
   test do
     ENV["LC_ALL"] = "C"
 
-    postgresql = Formula["postgresql@15"]
+    postgresql = Formula["postgresql@16"]
     pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 
