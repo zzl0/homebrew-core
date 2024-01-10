@@ -1,9 +1,8 @@
 class Easeprobe < Formula
   desc "Simple, standalone, and lightWeight tool that can do health/status checking"
   homepage "https://github.com/megaease/easeprobe"
-  url "https://github.com/megaease/easeprobe.git",
-      tag:      "v2.1.1",
-      revision: "5b3a33c0eacafeffde0d38f9a65a0218468d5fb0"
+  url "https://github.com/megaease/easeprobe/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "e5372b2a29aa46d527b38aec39ea4cc9fc3f4b35712f9d5dff532924bfbc0db7"
   license "Apache-2.0"
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
@@ -21,11 +20,18 @@ class Easeprobe < Formula
 
   depends_on "go" => :build
 
+  # build patch to support go1.21 build
+  # upstream pr ref, https://github.com/megaease/easeprobe/pull/471
+  patch do
+    url "https://github.com/megaease/easeprobe/commit/54a3a9aca42510ad2032f624ba9dff7e17b47e54.patch?full_index=1"
+    sha256 "aeac6dfe643556d763b2d206c958385482c62fef3d1556d704bc93a52ea8ddbf"
+  end
+
   def install
     ldflags = %W[
       -s -w
       -X github.com/megaease/easeprobe/pkg/version.RELEASE=#{version}
-      -X github.com/megaease/easeprobe/pkg/version.COMMIT=#{Utils.git_head}
+      -X github.com/megaease/easeprobe/pkg/version.COMMIT=#{tap.user}
       -X github.com/megaease/easeprobe/pkg/version.REPO=megaease/easeprobe
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/easeprobe"
