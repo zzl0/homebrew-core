@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.54.tar.gz"
-  sha256 "3d6d53800409aac71ba6c425525fd4135b6661254af50f15da3cbb667ee12162"
+  url "https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.55.tar.gz"
+  sha256 "bada1fc4b4f10532d6ba7bc453f535385204fa384e27f229368e3936d5da4a7e"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasm-tools.git", branch: "main"
 
