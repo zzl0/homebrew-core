@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/01/ad/fe5882462e812f57a55c8f2eb5182420dbb3eab633d2bc9486372f169967/aws-sam-cli-1.106.0.tar.gz"
-  sha256 "885c7a81a8cab23b798c98cb3a4362ae189b7a55507d560d4fb2cbdf244a2bc2"
+  url "https://files.pythonhosted.org/packages/3a/7f/511e1ddb8ca577662de4349a76ebb17aba112de43fc64a431744a5a5910e/aws-sam-cli-1.107.0.tar.gz"
+  sha256 "e0940d1727b23592675254ef33632cef565635d66367b1b347d93a80d9c7f517"
   license "Apache-2.0"
 
   bottle do
@@ -45,13 +45,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3-stubs" do
-    url "https://files.pythonhosted.org/packages/52/a9/e927da123fb47a00cd3d7255ebb41ac1a9a0317a111709926f74de3afef1/boto3-stubs-1.34.9.tar.gz"
-    sha256 "41220432e898a7a3fa60bb52ef2d49c864f5b38e2baa6a6235f57387325a242e"
+    url "https://files.pythonhosted.org/packages/e6/e4/729eca0c6a26af7fbb6c21f63529ed30affeaae9cead056bdcea410c65fe/boto3-stubs-1.34.12.tar.gz"
+    sha256 "f0f9ea058624e22359f4060a5aece334eaabb4173581b7b1e2fc41056d44f938"
   end
 
   resource "botocore-stubs" do
-    url "https://files.pythonhosted.org/packages/e5/b1/051770581dab9810511d1bf42e613580f0a12306c585393669c044ffc493/botocore_stubs-1.34.12.tar.gz"
-    sha256 "bc0caf41c0e05464ea74a8c502d8e5e16761a2f9975ff598483b87c4c1d7f253"
+    url "https://files.pythonhosted.org/packages/65/fe/b5e024745093721cf9f041a61e73112fb72e1f692a0f426e94a7881f274b/botocore_stubs-1.34.16.tar.gz"
+    sha256 "f11369ca8e53c91641390734a4dfce93432e29e5d4d267bcb77ded7d08b18302"
   end
 
   resource "chevron" do
@@ -65,8 +65,8 @@ class AwsSamCli < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/f0/73/f7c9a14e88e769f38cb7fb45aa88dfd795faa8e18aea11bababf6e068d5e/docker-6.1.3.tar.gz"
-    sha256 "aa6d17830045ba5ef0168d5eaa34d37beeb113948c413affe1d5991fc11f9a20"
+    url "https://files.pythonhosted.org/packages/25/14/7d40f8f64ceca63c741ee5b5611ead4fb8d3bcaf3e6ab57d2ab0f01712bc/docker-7.0.0.tar.gz"
+    sha256 "323736fb92cd9418fc5e7133bc953e11a9da04f4483f828b527db553f1e7e5a3"
   end
 
   resource "flask" do
@@ -110,8 +110,8 @@ class AwsSamCli < Formula
   end
 
   resource "mypy-boto3-s3" do
-    url "https://files.pythonhosted.org/packages/10/67/821fb516d4c151a7a18e660b780e883d1cd440b7077ca481704387799ac7/mypy-boto3-s3-1.34.0.tar.gz"
-    sha256 "7644a00e096ebb1c3292551059f64ff8329625dacd40827ced9481b14d64c733"
+    url "https://files.pythonhosted.org/packages/16/f8/a420878066d6bc684a6360c47117b1a068be29fd5a89a644b04eee1b7a0c/mypy-boto3-s3-1.34.14.tar.gz"
+    sha256 "71c39ab0623cdb442d225b71c1783f6a513cff4c4a13505a2efbb2e3aff2e965"
   end
 
   resource "mypy-boto3-schemas" do
@@ -164,6 +164,11 @@ class AwsSamCli < Formula
     sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
+  end
+
   resource "tomlkit" do
     url "https://files.pythonhosted.org/packages/df/fc/1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400/tomlkit-0.12.3.tar.gz"
     sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
@@ -187,11 +192,6 @@ class AwsSamCli < Formula
   resource "watchdog" do
     url "https://files.pythonhosted.org/packages/95/a6/d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ec/watchdog-3.0.0.tar.gz"
     sha256 "4d98a320595da7a7c5a18fc48cb633c2e73cda78f93cac2ef42d42bf609a33f9"
-  end
-
-  resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/20/07/2a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330/websocket-client-1.7.0.tar.gz"
-    sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
   end
 
   resource "werkzeug" do
