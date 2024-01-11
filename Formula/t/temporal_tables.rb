@@ -20,28 +20,23 @@ class TemporalTables < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "35187d653f58864f5bc79d688246fb84e6daa88f33fd6a2fe5e4804aee449583"
   end
 
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
-
-    # Use stage directory to prevent installing to pg_config-defined dirs,
-    # which would not be within this package's Cellar.
-    mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
-
-    stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    share.install (buildpath/stage_path/"share").children
+    system "make", "install", "PG_CONFIG=#{postgresql.opt_libexec}/bin/pg_config",
+                              "pkglibdir=#{lib/postgresql.name}",
+                              "datadir=#{share/postgresql.name}",
+                              "docdir=#{doc}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    psql = postgresql.opt_libexec/"bin/psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
