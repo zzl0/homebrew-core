@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.1.5.tar.gz"
-  sha256 "75d25efb7975d4ee6f5df4b3213d37005e9e91598640f568b39e1d4a98d09e92"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.1.6.tar.gz"
+  sha256 "5df1e92acb6074143a3a8d1c0e93a985424d4eef4a81f06ec406bc45a76f8f20"
   license "PostgreSQL"
 
   livecheck do
@@ -22,28 +22,24 @@ class Pgroonga < Formula
 
   depends_on "pkg-config" => :build
   depends_on "groonga"
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
-
+    ENV.prepend_path "PATH", postgresql.opt_libexec/"bin"
     system "make"
-    mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
-
-    stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    share.install (buildpath/stage_path/"share").children
-    include.install (buildpath/stage_path/"include").children
+    system "make", "install", "datadir=#{share/postgresql.name}",
+                              "pkglibdir=#{lib/postgresql.name}",
+                              "pkgincludedir=#{include/postgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    psql = postgresql.opt_libexec/"bin/psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
