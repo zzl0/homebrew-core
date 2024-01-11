@@ -19,10 +19,10 @@ class Pushpin < Formula
   end
 
   bottle do
-    sha256 sonoma:       "c01c689ca8623864c1ddb7ce3aa36a5a5f625da28dcb7c6db41457d12fd7927a"
-    sha256 ventura:      "14ea4ecaa5e10187d5d138ea46349c877cc18adc6205da84a6ba5f55a106a06d"
-    sha256 monterey:     "c06b30ebad48cad4c33e78a288dfc191edf83d56eec4a5771c5b116d4d585596"
-    sha256 x86_64_linux: "0b395e30678c52c69f6147e1693f0a767a61b7463c24e60134811537389922d7"
+    sha256 cellar: :any,                 sonoma:       "81f2c6e156315aef82f7e0fc11b1aabb44ef025bed358ede917a10c8f4655cbe"
+    sha256 cellar: :any,                 ventura:      "92354afd447abc7fd4e59d9237d99240ca9e79ef75640e0d42675f6b132e8a8c"
+    sha256 cellar: :any,                 monterey:     "5627e0fc4a44217389727c56cdb34739778dd246e7ee4438215f0359ad2bf3c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24069e84ab4746114b10d4052c7920370e75515a1385cd96b5e1a3ed6c20e575"
   end
 
   depends_on "boost" => :build
