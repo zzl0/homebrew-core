@@ -6,6 +6,7 @@ class Nbdime < Formula
   url "https://files.pythonhosted.org/packages/97/3f/8f926f0eba7b31a3c67a224e747b0e084c643180c7a7500f879f8bf7a09e/nbdime-4.0.1.tar.gz"
   sha256 "f1a760c0b00c1ba9b4945c16ce92577f393fb51d184f351b7685ba6e8502098e"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74306467ff5e6f94c21b708d9bb013eb18d1bde2312240dcd2d993ec3b10751c"
@@ -39,8 +40,8 @@ class Nbdime < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/0d/b2/37265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3ea/GitPython-3.1.40.tar.gz"
-    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
+    url "https://files.pythonhosted.org/packages/e5/c2/6e3a26945a7ff7cf2854b8825026cf3f22ac8e18285bc11b6b1ceeb8dc3f/GitPython-3.1.41.tar.gz"
+    sha256 "ed66e624884f76df22c8e16066d567aaa5a37d5b5fa19db2c6df6f7156db9048"
   end
 
   resource "jupyter-server-mathjax" do
