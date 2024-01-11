@@ -10,13 +10,13 @@ class Bandit < Formula
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eded313e5d615389b6fd9d73c84721345fcfde24050b4d3201f5b8adc56347a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56269035f9863f596e4f2983431a537912c373e9780da1b3cb32d1ffdd8a8580"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c5a3005d5f6527ec25d36d7b81c11420295afc2761f0b98be33d0fd4f02d262"
-    sha256 cellar: :any_skip_relocation, sonoma:         "392e7f34cd861cf5105d99eabb0a97e7aee9ca98672047235f1303620f3505f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7d34f22444a40fc064090361b4b545b27acb15af3fc5ac8b52b0c0cf1754f9e"
-    sha256 cellar: :any_skip_relocation, monterey:       "4dfc6a17349ca17acc5503f30caa771cbf893423e70c83da7abd2feb769d57c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8671f4d7310f524b596ad7f210d3a9aa900435a44baaaa4546b0f452f84c7d15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b5e1ace8a7e5f06cd6078bfd704bc8b1a8031ea31bd351d651c711da42f1909"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc9541c49f443e42c7f3e9874e93a704946277eb83f5ed7dfcf58b47aebe2e09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18107e95264e506a656b2e4f434dae841a830679038dbe1425d8a8c0209d88ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5c942d002d489f723a0133c05d705e59c92da26cf2deca8e5f35bc2d283c41a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "cefffe21ae6f279f32c5702820815c51d9c96520d84fe8674da9a8e9c8022b6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "36b24a229c9bda8e6cdb066b3957c6f5f00707bd28d430b506309badd6c7fbc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d648e797c8d8370e7d5fa5ac8f427a83df3fc4cbc1a532256e2efd61217a504"
   end
 
   depends_on "pygments"
