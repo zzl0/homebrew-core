@@ -1,8 +1,8 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
   homepage "https://protomaps.com/docs/pmtiles"
-  url "https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.11.3.tar.gz"
-  sha256 "f2165529fe20d77ce7ec926a69e42bcb1e3a32d90a521374c0c96fadf831a518"
+  url "https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "22b1c5ed5a64e632d2414acf13504b840a2bffe130fe15ffdc460fc1653c187b"
   license "BSD-3-Clause"
 
   livecheck do
@@ -34,7 +34,7 @@ class Pmtiles < Formula
     end
     sleep 3
     output = shell_output("curl -sI http://localhost:#{port}")
-    assert_match "404 Not Found", output
+    assert_match "HTTP/1.1 204 No Content", output
   ensure
     Process.kill("HUP", pid)
   end
