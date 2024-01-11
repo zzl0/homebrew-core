@@ -6,6 +6,7 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/ea/3f/c1861f5f8f6c8430c34b3cac46aa7c8723a403a5bffec448a8acf1cfd23c/cf2tf-0.6.2.tar.gz"
   sha256 "7b2ec09154279d247a3dada67b82c571143805ff7e9bb6d7ebada8fa6908a773"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
@@ -46,8 +47,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/0d/b2/37265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3ea/GitPython-3.1.40.tar.gz"
-    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
+    url "https://files.pythonhosted.org/packages/e5/c2/6e3a26945a7ff7cf2854b8825026cf3f22ac8e18285bc11b6b1ceeb8dc3f/GitPython-3.1.41.tar.gz"
+    sha256 "ed66e624884f76df22c8e16066d567aaa5a37d5b5fa19db2c6df6f7156db9048"
   end
 
   resource "idna" do
@@ -66,8 +67,8 @@ class Cf2tf < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/38/d4/174f020da50c5afe9f5963ad0fc5b56a4287e3586e3de5b3c8bce9c547b4/pytest-7.4.3.tar.gz"
-    sha256 "d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5"
+    url "https://files.pythonhosted.org/packages/80/1f/9d8e98e4133ffb16c90f3b405c43e38d3abb715bb5d7a63a5a684f7e46a3/pytest-7.4.4.tar.gz"
+    sha256 "2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280"
   end
 
   resource "pyyaml" do
@@ -76,8 +77,8 @@ class Cf2tf < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/8b/f3/bf5e82eca3b88853a5fe596bf8c94fb6f2775dc1b55b7bfee9de21afab03/rapidfuzz-3.5.2.tar.gz"
-    sha256 "9e9b395743e12c36a3167a3a9fd1b4e11d92fb0aa21ec98017ee6df639ed385e"
+    url "https://files.pythonhosted.org/packages/d4/f4/039e35e99c967100d73616ec08d4c02325f67e0d5c32a6d5a49a7f620942/rapidfuzz-3.6.1.tar.gz"
+    sha256 "35660bee3ce1204872574fa041c7ad7ec5175b3053a4cb6e181463fc07013de7"
   end
 
   resource "requests" do
