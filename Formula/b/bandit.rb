@@ -6,6 +6,7 @@ class Bandit < Formula
   url "https://files.pythonhosted.org/packages/fa/09/049dff8b2fa7fc7cf82bd28999a3c97d55727d8235d0d8b3c95ff78b16fd/bandit-1.7.6.tar.gz"
   sha256 "72ce7bc9741374d96fb2f1c9a8960829885f1243ffde743de70a19cee353e8f3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
@@ -28,8 +29,8 @@ class Bandit < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/0d/b2/37265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3ea/GitPython-3.1.40.tar.gz"
-    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
+    url "https://files.pythonhosted.org/packages/e5/c2/6e3a26945a7ff7cf2854b8825026cf3f22ac8e18285bc11b6b1ceeb8dc3f/GitPython-3.1.41.tar.gz"
+    sha256 "ed66e624884f76df22c8e16066d567aaa5a37d5b5fa19db2c6df6f7156db9048"
   end
 
   resource "markdown-it-py" do
