@@ -7,14 +7,13 @@ class Pgvector < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d0976826d4c49e76a138ee3c132e113035c18a678a65c485d62eee6609fad66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b5f0ef0a13a2aadd8b91bff83adbf3a4e178d35a47b31e6e2a44211b03e30e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84c1d23af66832d810132b02e4f8e1ef9a418fa08feca30db02e8ea4c71c0dd4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "51d124f27e7bea6538799b17802f62b2aaed9ad64c0f7f492ac692320fdd4918"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e2abf65b3dbcfbd141f79f9952fb289e6a64de6d3ebd524aaba876d22dde087"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac522f57c063ed96d2b5ffef87488fd61a7d68fbdac536260ddb3c0bc8dbf229"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0724750eaedf54c546ccc75dae7613cef15f773bb189eb531bd5bba00f1732a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "314a8501335fa515421bca8d5a9b1613a7450a64823e7bb472059e023456ca42"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ba5f02c51017a7c6caccf80d2e45d8589dbe95f27cae25bd0667c40d48ca6c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b42114e8f1570a2c0d8b17867b2ae946564f82a7657b8324d00b7dd9e500d124"
+    sha256 cellar: :any_skip_relocation, sonoma:         "315c0b2e3e45ce311aa101357a06c4c98b3dcf2971c172dbfb00980756792752"
+    sha256 cellar: :any_skip_relocation, ventura:        "d7b6f0de11920424a6fa5705a166ae40b01abbbf4c54176e9ec5603bbeaabb6e"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e19680f3fc909f4fbcc6a76be8d7c2c2984d5194887ca1a36adce5cca046ef6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "195acce97a366c3ae066ea91e146dfe87d8e073c6e6edb0d97a8a10f9d6dcfdc"
   end
 
   depends_on "postgresql@15" => [:build, :test]
