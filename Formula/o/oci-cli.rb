@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/1a/9d/4245eef1e3d70273f5edde262f03bfe4373001711d405335f398d0e27c8f/oci-cli-3.37.2.tar.gz"
-  sha256 "a7d5ba33c0036b405db23093e25e93e6f11a300e99298f94b9a8dfca2e21bfe2"
+  url "https://files.pythonhosted.org/packages/5a/93/697b6c580809c6ea6882073a86405b4413be4ed1b9f6730a8a55292ca7cf/oci-cli-3.37.3.tar.gz"
+  sha256 "d51899f1bfabead9395849d3eb52b1610b75f9b4a931d804bb9acb0f4b440b28"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -32,16 +32,6 @@ class OciCli < Formula
     sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
   end
 
-  resource "asn1crypto" do
-    url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
-    sha256 "13ae38502be632115abf8a24cbe5f4da52e3b5231990aff31123c805306ccb9c"
-  end
-
-  resource "cached-property" do
-    url "https://files.pythonhosted.org/packages/61/2c/d21c1c23c2895c091fa7a91a54b6872098fea913526932d21902088a7c41/cached-property-1.5.2.tar.gz"
-    sha256 "9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"
-  end
-
   resource "circuitbreaker" do
     url "https://files.pythonhosted.org/packages/92/ec/7f1dd19e3878f5391afb508e6a2fd8d9e5b176ca2992b90b55926c7341d8/circuitbreaker-1.4.0.tar.gz"
     sha256 "80b7bda803d9a20e568453eb26f3530cd9bf602d6414f6ff6a74c611603396d2"
@@ -53,8 +43,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/a6/80/8d7319c7caaaecf12009b3788e4c59cf1fad3d0d9b7ed7e4432735eb3f19/oci-2.118.1.tar.gz"
-    sha256 "ab77b235a397b720411b796f1377db6a572467f3f2a1fe696665de1234c6ad9b"
+    url "https://files.pythonhosted.org/packages/25/66/eb63fc8f4945d7c3342cbdef7ee35c522d95e4e8d8a9344ee98068222002/oci-2.118.2.tar.gz"
+    sha256 "66c11462201640e9d8080d3e376687e744ab20dfa5d7695ffcf0cd80f28a6575"
   end
 
   resource "prompt-toolkit" do
@@ -70,11 +60,6 @@ class OciCli < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "python-pkcs11" do
-    url "https://files.pythonhosted.org/packages/3e/24/9d55a78b3501201d2dfeb035ce1b139f8846505b3ddb9cadb4c2254259d0/python-pkcs11-0.7.0.tar.gz"
-    sha256 "9737e0c24cabb8bc9d48bf8c57c3df2a70f8cdd96b70c50290803286f9e46bf7"
   end
 
   resource "terminaltables" do
