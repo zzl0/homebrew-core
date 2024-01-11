@@ -6,13 +6,13 @@ class PythonJinja < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afdf73cfe600bfc37e034a18594fe75160ddbb07140a7346a37d10dff5dda84f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13464ec67985d66fdccb5177f1c7de1d6da35f5cac38c317852c0de009fe6586"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5748e6caf4f6fefafac5139824e75504f82d4cfc775d8041478201a5771d2224"
-    sha256 cellar: :any_skip_relocation, sonoma:         "60c05aaddd7e5220266d273cb36a6ff527853395e765d60f7fcdec621d8dd1ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8f20fb070c842a5fe7af82c1368355b5a95ee8e87ee5df3f672de530c465359"
-    sha256 cellar: :any_skip_relocation, monterey:       "14de028b67099b3d9770c1d3f3d193866d7f1ad21219012e1c3e2517c725c9a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10f275df59683cc1e8d013e00dc24ed060f1a91a842908eab6c2bb18fff9e679"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ce7b04fb5672bb5ed46c9f28f58838bdd35d92fd76af45defb01d70984497dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0979d6782b1745de1147da22c5645b03711651ddd05d3a9c19f887c507ad7190"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "164d8cd525b62dfa5be7b9c0ccb20749f1ec4635aaa374f7aa843b41e72f0f2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb0687eefcc52ef3630d43db050b64688214e62e6a544a6b063065ce83ff9090"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ea50eea7e83dc0001c9621f7cd64fb62434aef00c04144228997646269a436d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f98af5a56a1df11600035ab8f86f346330d697bc3659ae4bfce16dd71c59bb10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e175af45bf54c1e0ef5f7f9a28ab85d6ec0f466dcda39bd0ab6c00a43b5f0d2"
   end
 
   depends_on "python-setuptools" => :build
