@@ -15,25 +15,26 @@ class PgCron < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0718344de02cc3e52d659bc55464f804cafab8a07fd2cccc0a62f0a9fd88c51"
   end
 
-  # upstream issue for running with pg@15, https://github.com/citusdata/pg_cron/issues/237
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    # Work around for ld: Undefined symbols: _libintl_ngettext
+    # Issue ref: https://github.com/citusdata/pg_cron/issues/269
+    ENV["PG_LDFLAGS"] = "-lintl" if OS.mac?
 
-    system "make"
-    (lib/postgresql.name).install "pg_cron.so"
-    (share/postgresql.name/"extension").install Dir["pg_cron--*.sql"]
-    (share/postgresql.name/"extension").install "pg_cron.control"
+    system "make", "install", "PG_CONFIG=#{postgresql.opt_libexec}/bin/pg_config",
+                              "pkglibdir=#{lib/postgresql.name}",
+                              "datadir=#{share/postgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    psql = postgresql.opt_libexec/"bin/psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
