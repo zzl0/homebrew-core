@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/refs/tags/v8.11.3.tar.gz"
-  sha256 "bf8167f25f5e8ae1cb42286932bb144e6af42d87eb3ef0a8d68964cb0589ad7e"
+  url "https://github.com/elastic/logstash/archive/refs/tags/v8.11.4.tar.gz"
+  sha256 "a077dfc5d01d6faf0a94c64da2bb80bbfc7f51ba003b47cf174f2f7456694a6b"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -67,7 +67,6 @@ class Logstash < Formula
     # remove non-native architecture pre-built libraries
     paths = [
       libexec/"vendor/jruby/lib/ruby/stdlib/libfixposix/binary",
-      libexec/"vendor/bundle/jruby/3.1.0/gems/ffi-binary-libfixposix-0.5.1.1-java/lib/libfixposix/binary",
     ]
     paths.each do |path|
       path.each_child { |dir| dir.rmtree unless dir.to_s.include? Hardware::CPU.arch.to_s }
