@@ -1,8 +1,8 @@
 class QuickLintJs < Formula
   desc "Find bugs in your JavaScript code"
   homepage "https://quick-lint-js.com/"
-  url "https://c.quick-lint-js.com/releases/3.0.0/source/quick-lint-js-3.0.0.tar.gz"
-  sha256 "86f0e1411d5c5bb4ee1ab79e5cc1339e0f2d1c5a208b99986128b2939788123c"
+  url "https://c.quick-lint-js.com/releases/3.1.0/source/quick-lint-js-3.1.0.tar.gz"
+  sha256 "d5f133780ebf8735e4f6e4c8fafbf04dd7a7db17cd2c31e899613d5bd32d0b1a"
   license "GPL-3.0-or-later"
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
