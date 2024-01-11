@@ -8,7 +8,7 @@ class Rpmspectool < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c0e42332bbcadd0d09d3a8356ada8aa5d91f18ab4c52f028c5c730cf585fd09f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "121a47cd15dc9959fc3a51f762c9879cd5d14a22fbcd92bdf74ac055219249bf"
   end
 
   depends_on :linux
