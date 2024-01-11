@@ -10,13 +10,13 @@ class Cf2tf < Formula
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "485a292c9938eb28c66c552741fcb01f575ba339cde4d44942bda36a1d2f3237"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e70a76d012d33a65faae36f52ec4592609683aff6b7e2889cb3fa8be85204401"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b92e050b565de94b54aea2b272b0e44418656b00344b3e2c32605a4a2a5400ac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e49af997ad84659ae3a83bade8c852197408dd83eceb8553a59eeeba9e04e8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "354fe666056ba7fab167e5efa348b2b822f261f645b28a842ddc3c166db5b5e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "6029e836472aab2fa2aae40967515709f8bd51b9b44259de714ccb6682670687"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "382d075821c8b8fb282a68269868606337ff0fc32d14aaba699907cd067c3a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1110aaec54e0f607c615fb3efdc03407b40e968038454c15b261736cdf2c93ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1d5e2b1b4089b61b2931d537404b9e27a41666e78121dedb77828559a8d44c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "440ef00648677632d30ed0070f899985a6e12ea3bd86df21341cf209d903d499"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f9efa146e76217fe1fe51dcf3816b630a7aaeac2e256c658880603ea0571b7ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "7536a702d64378a2c441727ef496de824de8a9395a70582c13e01fdf6b4bf8a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "33fdb703a0b0d1aee85c476b7413155b20a01560ec31c2247403c6a553046d36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf5fe51a79c1cd58c8c5d429e9edc3d092f3223e5819be3fac43220564409278"
   end
 
   depends_on "cmake" => :build
