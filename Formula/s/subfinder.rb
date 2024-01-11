@@ -1,8 +1,8 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.3.tar.gz"
-  sha256 "bd587a7545504949b18e7bf781fe4165e62785881a32969e42f911e85f95cf14"
+  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.4.tar.gz"
+  sha256 "8e491c31ba1bba8d9e5dfd0c6f8ebf4ffb078db97b2be42a4ba39841fddecaf9"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git", branch: "master"
 
@@ -28,6 +28,16 @@ class Subfinder < Formula
 
   test do
     assert_match "docs.brew.sh", shell_output("#{bin}/subfinder -d brew.sh")
-    assert_predicate testpath/".config/subfinder/config.yaml", :exist?
+
+    # upstream issue, https://github.com/projectdiscovery/subfinder/issues/1124
+    if OS.mac?
+      assert_predicate testpath/"Library/Application Support/subfinder/config.yaml", :exist?
+      assert_predicate testpath/"Library/Application Support/subfinder/provider-config.yaml", :exist?
+    else
+      assert_predicate testpath/".config/subfinder/config.yaml", :exist?
+      assert_predicate testpath/".config/subfinder/provider-config.yaml", :exist?
+    end
+
+    assert_match version.to_s, shell_output("#{bin}/subfinder -version 2>&1")
   end
 end
