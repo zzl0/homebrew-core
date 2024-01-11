@@ -15,25 +15,24 @@ class Pgvector < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "125ac363467a38139f439964cdfddbae17632b1d4615ebcf55ff697ad38abfd8"
   end
 
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
-
+    ENV.prepend_path "PATH", postgresql.opt_libexec/"bin"
     system "make"
-    (lib/postgresql.name).install "vector.so"
-    (share/postgresql.name/"extension").install "vector.control"
-    (share/postgresql.name/"extension").install Dir["sql/vector--*.sql"]
-    (include/postgresql.name/"server/extension/vector").install "src/vector.h"
+    system "make", "install", "pkglibdir=#{lib/postgresql.name}",
+                              "datadir=#{share/postgresql.name}",
+                              "pkgincludedir=#{include/postgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    psql = postgresql.opt_libexec/"bin/psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
