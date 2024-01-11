@@ -24,24 +24,21 @@ class Wal2json < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6cec39726b0b3dc1f51319d2831875716e1dec9e5a50a27981f7cee77db1447"
   end
 
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
-
-    mkdir "stage"
-    system "make", "install", "USE_PGXS=1", "DESTDIR=#{buildpath}/stage"
-
-    stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
+    system "make", "install", "USE_PGXS=1",
+                              "PG_CONFIG=#{postgresql.opt_libexec}/bin/pg_config",
+                              "pkglibdir=#{lib/postgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
