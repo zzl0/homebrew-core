@@ -20,39 +20,32 @@ class Citus < Formula
 
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "postgresql@14"
+  depends_on "postgresql@15"
   depends_on "readline"
   depends_on "zstd"
 
   uses_from_macos "curl"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@15"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_libexec/"bin/pg_config"
 
-    system "./configure"
-    # workaround for https://github.com/Homebrew/legacy-homebrew/issues/49948
-    system "make", "libpq=-L#{postgresql.opt_lib} -lpq"
-
-    # Use stage directory to prevent installing to pg_config-defined dirs,
-    # which would not be within this package's Cellar.
-    mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
-
-    stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    include.install (buildpath/stage_path/"include").children
-    share.install (buildpath/stage_path/"share").children
-
-    bin.install (buildpath/File.join("stage", postgresql.bin.realpath)).children
+    system "./configure", *std_configure_args
+    system "make"
+    # Override the hardcoded install paths set by the PGXS makefiles.
+    system "make", "install", "bindir=#{bin}",
+                              "datadir=#{share/postgresql.name}",
+                              "pkglibdir=#{lib/postgresql.name}",
+                              "pkgincludedir=#{include/postgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    psql = postgresql.opt_libexec/"bin/psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
