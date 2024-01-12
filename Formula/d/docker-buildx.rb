@@ -1,9 +1,8 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://github.com/docker/buildx.git",
-      tag:      "v0.12.0",
-      revision: "542e5d810e4a1a155684f5f3c5bd7e797632a12f"
+  url "https://github.com/docker/buildx/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "9cc176ed55e7c423c23de35bd31df3b449261f1b90765c17f003bd4de86a6aa4"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
@@ -23,7 +22,7 @@ class DockerBuildx < Formula
     ldflags = %W[
       -s -w
       -X github.com/docker/buildx/version.Version=v#{version}
-      -X github.com/docker/buildx/version.Revision=#{Utils.git_head}
+      -X github.com/docker/buildx/version.Revision=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/buildx"
