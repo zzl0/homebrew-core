@@ -6,6 +6,7 @@ class SigmaCli < Formula
   url "https://files.pythonhosted.org/packages/23/c1/cab449bf8cd1541ad32617061accd4f4150ef2e906f0fe7cac9054dd91cd/sigma_cli-0.7.11.tar.gz"
   sha256 "9337ec46b46cfdbea262a439e90df58a83319df33f4339c965cb6b7b318cd5b8"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
@@ -41,8 +42,8 @@ class SigmaCli < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "packaging" do
@@ -56,13 +57,13 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https://files.pythonhosted.org/packages/17/06/db5dba338b198b8932f0aff42fe76d1fb989b68be8fc1e39eb5b38ac2568/pysigma-0.10.9.tar.gz"
-    sha256 "aa498c9b6daafcfd0001e6f7b78e6f9c04302b8bc18e8c486eb54197982b248d"
+    url "https://files.pythonhosted.org/packages/ae/94/967c1bba7f905ae2e9e3a530ad5c27e5382d7cc6329fac2d42044b709d1b/pysigma-0.10.10.tar.gz"
+    sha256 "4b26d21472ea11b5f036d7e544c66b1567f0736e935e75c98483dbe545370b33"
   end
 
   resource "pysigma-backend-sqlite" do
-    url "https://files.pythonhosted.org/packages/b6/13/144274ca0f2d721e79360e309b062a3a765cecdc87c03d2a893430e00454/pysigma_backend_sqlite-0.1.0.tar.gz"
-    sha256 "0ff6f8029a5e4de7d31e30916f073f23422091da5e204653ac7272483f513521"
+    url "https://files.pythonhosted.org/packages/8d/79/2b8c9061a4a140894d20d49ae6dbf32b2155041a950f41b0b5d6842e9f0b/pysigma_backend_sqlite-0.1.1.tar.gz"
+    sha256 "a96067e215077a7cb39ebb46a09db1abf7824ed7a624a3ee6d9d1e493d2d7f12"
   end
 
   resource "requests" do
@@ -76,8 +77,8 @@ class SigmaCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
-    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install
