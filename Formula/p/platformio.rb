@@ -3,8 +3,8 @@ class Platformio < Formula
 
   desc "Your Gateway to Embedded Software Development Excellence"
   homepage "https://platformio.org/"
-  url "https://files.pythonhosted.org/packages/56/11/843e9088f60049f32d438baffae4cdad334b25e59f46031e2b0673e7414f/platformio-6.1.12.tar.gz"
-  sha256 "9ec61e65a0eea96e625e783b516f6eb2c534ecb43136b13a2d2b4ed527743808"
+  url "https://files.pythonhosted.org/packages/f1/7c/149bb05152ebbb6f4c29d00fe7ee5433e870b73f1e51cf46bcfcf11d1707/platformio-6.1.13.tar.gz"
+  sha256 "ed7c6397f0ced579bc8137c8253465c0cfab6c0cc38d4f63da4502e995bdb5ce"
   license "Apache-2.0"
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
@@ -86,8 +86,8 @@ class Platformio < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/4f/36/168ba6d56a28382f3b081b23b0cc431de35786e120b94c1f372708ed3059/starlette-0.34.0.tar.gz"
-    sha256 "ed050aaf3896945bfaae93bdf337e53ef3f29115a9d9c153e402985115cd9c8e"
+    url "https://files.pythonhosted.org/packages/5e/8a/80e0343c8051e522752eaae54e96c814946ac97ae0c08b441620e3a22755/starlette-0.35.1.tar.gz"
+    sha256 "3e2639dac3520e4f58734ed22553f950d3f3cb1001cd2eaac4d57e8cdc5f66bc"
   end
 
   resource "urllib3" do
