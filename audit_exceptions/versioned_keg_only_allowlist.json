@@ -26,8 +26,6 @@
   "openssl@3",
   "pangomm@2.46",
   "postgresql@14",
-  "postgresql@15",
-  "postgresql@16",
   "pyqt@5",
   "python@3.7",
   "python@3.8",
