@@ -31,7 +31,7 @@ class Rdkit < Formula
   depends_on "eigen"
   depends_on "freetype"
   depends_on "numpy"
-  depends_on "postgresql@15"
+  depends_on "postgresql@16"
   depends_on "py3cairo"
   depends_on "python@3.12"
 
@@ -46,7 +46,7 @@ class Rdkit < Formula
   end
 
   def postgresql
-    Formula["postgresql@15"]
+    Formula["postgresql@16"]
   end
 
   def install
@@ -64,9 +64,12 @@ class Rdkit < Formula
     site_packages = Language::Python.site_packages(python_executable)
     numpy_include = Formula["numpy"].opt_prefix/site_packages/"numpy/core/include"
 
-    pg_config = postgresql.opt_bin/"pg_config"
-    postgresql_lib = Utils.safe_popen_read(pg_config, "--pkglibdir").chomp
-    postgresql_include = Utils.safe_popen_read(pg_config, "--includedir-server").chomp
+    # Prevent trying to install into pg_config-defined dirs
+    inreplace "Code/PgSQL/rdkit/CMakeLists.txt" do |s|
+      s.gsub! "set(PG_PKGLIBDIR \"${PG_PKGLIBDIR}", "set(PG_PKGLIBDIR \"#{lib/postgresql.name}"
+      s.gsub! "set(PG_EXTENSIONDIR \"${PG_SHAREDIR}", "set(PG_EXTENSIONDIR \"#{share/postgresql.name}"
+    end
+    ENV["DESTDIR"] = "/" # to force creation of non-standard PostgreSQL directories
 
     # set -DMAEPARSER and COORDGEN_FORCE_BUILD=ON to avoid conflicts with some formulae i.e. open-babel
     args = %W[
@@ -88,8 +91,7 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DPostgreSQL_LIBRARY=#{postgresql_lib}
-      -DPostgreSQL_INCLUDE_DIR=#{postgresql_include}
+      -DPostgreSQL_CONFIG=#{postgresql.opt_libexec}/bin/pg_config
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
