@@ -2,10 +2,20 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http://eighttails.seesaa.net/ gives 405 error
   homepage "https://github.com/eighttails/PC6001VX"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.2.5_src.tar.gz"
-  sha256 "4f44df8940db6d412bf4d316c950c540f03c5ab543b028b793998bfeeaac64ac"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
+
+  stable do
+    url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.2.5_src.tar.gz"
+    sha256 "4f44df8940db6d412bf4d316c950c540f03c5ab543b028b793998bfeeaac64ac"
+
+    # backport a fix for incorrectly handling SIGTERM
+    patch do
+      url "https://github.com/eighttails/PC6001VX/commit/93f2a366d1944237d4712a6de4290ac1bda15771.patch?full_index=1"
+      sha256 "f4e9d7f23ec7d0f87d869cfcef84de80f1371cc703600313a00970f84d77c632"
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "58618f072671e7dbe6721691a737600c9c7e063fdd51e1eebf042372ddff77ab"
@@ -38,7 +48,6 @@ class Pc6001vx < Formula
   test do
     # locales aren't set correctly within the testing environment
     ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["LANG"] = "en_US.UTF-8"
     user_config_dir = testpath/".pc6001vx4"
     user_config_dir.mkpath
     pid = fork do
@@ -48,6 +57,11 @@ class Pc6001vx < Formula
     assert_predicate user_config_dir/"rom",
                      :exist?, "User config directory should exist"
   ensure
+    # the first SIGTERM signal closes a window which spawns another immediately
+    # after 5 seconds, send a second SIGTERM signal to ensure the process is fully stopped
     Process.kill("TERM", pid)
+    sleep 5
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
