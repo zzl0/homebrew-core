@@ -1,8 +1,8 @@
 class Bluetoothconnector < Formula
   desc "Connect and disconnect Bluetooth devices"
   homepage "https://github.com/lapfelix/BluetoothConnector"
-  url "https://github.com/lapfelix/BluetoothConnector/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "41474f185fd40602fb197e79df5cd4783ff57b92c1dfe2b8e2c4661af038ed9b"
+  url "https://github.com/lapfelix/BluetoothConnector/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "cbb192e5f94da27408bd8306a25e11bbffd643d916f6a03d532f83a229281f77"
   license "MIT"
   head "https://github.com/lapfelix/BluetoothConnector.git", branch: "master"
 
@@ -15,16 +15,8 @@ class Bluetoothconnector < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "1a0c1e83b5640a35c48ba982f1b7cf5b1bebdda6fd4957368262c3e001c740e3"
   end
 
-  deprecate! date: "2023-05-31", because: :unmaintained
-
-  depends_on xcode: ["11.0", :build]
+  depends_on xcode: ["15.0", :build]
   depends_on :macos
-
-  # Fix build failure in Xcode 13. Remove with next release.
-  patch do
-    url "https://github.com/lapfelix/BluetoothConnector/commit/b628be43c95115488576e8b9360ca2f503d50f5a.patch?full_index=1"
-    sha256 "996629003ec7a6c9487684c5e2c9cf7f093221f6e530ad0f25e59d41b5ab316d"
-  end
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--static-swift-stdlib"
