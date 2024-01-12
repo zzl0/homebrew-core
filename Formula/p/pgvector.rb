@@ -4,7 +4,7 @@ class Pgvector < Formula
   url "https://github.com/pgvector/pgvector/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "cc7a8e034a96e30a819911ac79d32f6bc47bdd1aa2de4d7d4904e26b83209dc8"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "314a8501335fa515421bca8d5a9b1613a7450a64823e7bb472059e023456ca42"
@@ -16,43 +16,36 @@ class Pgvector < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "195acce97a366c3ae066ea91e146dfe87d8e073c6e6edb0d97a8a10f9d6dcfdc"
   end
 
-  depends_on "postgresql@15" => [:build, :test]
-  depends_on "postgresql@16" => [:build, :test]
+  depends_on "postgresql@14"
 
-  def postgresqls
-    deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("postgresql@") }
+  def postgresql
+    Formula["postgresql@14"]
   end
 
   def install
-    postgresqls.each do |postgresql|
-      ENV["PG_CONFIG"] = postgresql.opt_libexec/"bin/pg_config"
-      system "make", "clean"
-      system "make"
-      system "make", "install", "pkglibdir=#{lib/postgresql.name}",
-                                "datadir=#{share/postgresql.name}",
-                                "pkgincludedir=#{include/postgresql.name}"
-    end
+    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    system "make"
+    system "make", "install", "pkglibdir=#{lib/postgresql.name}",
+                              "datadir=#{share/postgresql.name}",
+                              "pkgincludedir=#{include/postgresql.name}"
   end
 
   test do
     ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
+    datadir = testpath/postgresql.name
+    port = free_port
 
-    postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
-      psql = postgresql.opt_libexec/"bin/psql"
-      datadir = testpath/postgresql.name
-      port = free_port
-
-      system pg_ctl, "initdb", "-D", datadir
-      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
-        port = #{port}
-      EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log"
-      begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION vector;", "postgres"
-      ensure
-        system pg_ctl, "stop", "-D", datadir
-      end
+    system pg_ctl, "initdb", "-D", datadir
+    (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
+      port = #{port}
+    EOS
+    system pg_ctl, "start", "-D", datadir, "-l", testpath/"log"
+    begin
+      system psql, "-p", port.to_s, "-c", "CREATE EXTENSION vector;", "postgres"
+    ensure
+      system pg_ctl, "stop", "-D", datadir
     end
   end
 end
