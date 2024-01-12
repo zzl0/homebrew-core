@@ -16,14 +16,13 @@ class Citus < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "17326cd59837094b9bfbc6d9ff5896b25499bce16bb574c735954c27a05b8cb7"
-    sha256 cellar: :any,                 arm64_ventura:  "a5baf03c959fbef16bfd4574f66a0c875f8f63693deef6b8f733ccb5da99dcba"
-    sha256 cellar: :any,                 arm64_monterey: "39dbd80b36a184b4d2212edba926771431aa29b4808818509a3c2a5c6920fe7d"
-    sha256 cellar: :any,                 sonoma:         "d69701ca154c1b9dda7c64db6b3f9e71126238c0c1af97080bfb667765444d80"
-    sha256 cellar: :any,                 ventura:        "d1074ef6010dd8a10aa2d4a8ab089631a3c5d712e392a706f613125ebb0eea1a"
-    sha256 cellar: :any,                 monterey:       "42e65a865e1211766e2a9c64aeac6cfc0b1960dcff6bb7aad542da976ef18da7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a578130355c16b60bf6e59265acf3223ce92bbfa4aed3d9d8f129157aa4939a4"
+    sha256 cellar: :any,                 arm64_sonoma:   "3feaa17bbc05d3902404413582f22f70b526f55797c357c775654f8c4e55c9b4"
+    sha256 cellar: :any,                 arm64_ventura:  "6d9282cc121e512b2cbe73e20f5047af310c9c7c8d2350026acceedced653dd2"
+    sha256 cellar: :any,                 arm64_monterey: "6098668e13f985faff1ca249be2999b13f60434a44250c3f5704994384140698"
+    sha256 cellar: :any,                 sonoma:         "002a5bd41e70330a8a7efe7c23ec7c320d7bcb1730324fb848a19e075d0a5b98"
+    sha256 cellar: :any,                 ventura:        "dff6698a79f2681322cd2dac6d7d190f45123e9a7db3addb985bd9aa61f52f02"
+    sha256 cellar: :any,                 monterey:       "50a2bf23c39566f1c65069d816b3dd23ff4c95477e9edb973c08a794db1a15eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab0339a42b57a9bbd0ef4c243ffcc78868f5f7d6c7c72e6b4fd62dc9d576e107"
   end
 
   depends_on "lz4"
