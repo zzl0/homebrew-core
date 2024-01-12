@@ -1,10 +1,20 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https://docs.astral.sh/ruff/"
-  url "https://github.com/astral-sh/ruff/archive/refs/tags/v0.1.11.tar.gz"
-  sha256 "47cf8357c7036829ea859184cce125cd256b9f74afc2f5288c697facbb6f6677"
   license "MIT"
   head "https://github.com/astral-sh/ruff.git", branch: "main"
+
+  stable do
+    url "https://github.com/astral-sh/ruff/archive/refs/tags/v0.1.12.tar.gz"
+    sha256 "7550d9ceff0283d74964f27017585441d179bb9cea85254f59425cb50d793b24"
+
+    # remove in next version
+    # see upstream issue: https://github.com/astral-sh/ruff/issues/9478
+    patch do
+      url "https://github.com/astral-sh/ruff/commit/350dcb807ac3e1f58b895149a7f8e4c680ffaa5a.patch?full_index=1"
+      sha256 "920954bbf87df9dd3028d10a2a794bba8e162e80e49a2597275a360d5ca412e4"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "705458546000203221bc457a3eaa76d0bc827c79d0bd7768988419083348499c"
