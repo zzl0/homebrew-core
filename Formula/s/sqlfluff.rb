@@ -9,14 +9,13 @@ class Sqlfluff < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbfe147231526c01caa65da84f190b240ac9a26a1c9cb29709fcae53656abeb4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b0a841020f825ea89397d0d051db00afab62de41fb19f9353a2dcf3577915c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6acd7b1ad07e06258e43857c18fcd39385899ad9a728bb39d82bcbf718884156"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a91b1d58e69234582716081d44fc73303da30816bea0cce284639d898b93544d"
-    sha256 cellar: :any_skip_relocation, ventura:        "01e2c875adee22f99f5939385f653d83dd3aa00e67589484be8c7e5f3208676d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5cc8ce2f4a145fbfa6da81a7ffe5610a6d1c3e2d9e57c21460ec4f77cea491f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d190392aafab31341fede0c96764cc8fb3be0ac133e0cc74bc393d8457d77dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b390e0265a63168a6c4649408300d58c97723041b64c900c14303c9f918a4079"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5470551e0343f8eb44bb765507d8f623ff571dc0ca7a8bce5bdd7af984b6e6b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4799fd04e710ceb96a189f6c5eb5cea09e110e5a78a3a6e4634d9ecebd29211"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fd1028036d1b06693055d43e127fcb4bf625d3696564106a3864194d099cf295"
+    sha256 cellar: :any_skip_relocation, ventura:        "463f242ff3cb58d053da9d7117d017e80df97f8ff90c195cb400ed249cf7c481"
+    sha256 cellar: :any_skip_relocation, monterey:       "6428b35351f55e18a3358cd36b5625bd470ae02f2e998e37eedab1e8992f8bee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ef11f51a5e59738c881933863576e76eecfa8a45fdc3fbc0a3cae9faa329461"
   end
 
   depends_on "pygments"
