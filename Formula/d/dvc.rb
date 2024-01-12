@@ -3,10 +3,9 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/82/e9/365e05fc9c0b59f33b35c24e4d98a1231df58b125250415f8f192ab43788/dvc-3.38.1.tar.gz"
-  sha256 "3124b5155e15edb6f09e99c63b4e7eb0b5ec3d3680a6d70469c714b5b9daa077"
+  url "https://files.pythonhosted.org/packages/fe/6e/2b9d344557d97c31a34e5bdd02f450ed451f380bce09fb8f9fd3cc304e72/dvc-3.39.0.tar.gz"
+  sha256 "878d3c89f1ece1d0f90d41d6e9b092d1d26a2416f7ab0acdf88db731c76df046"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ef4522ee9e3659857f322237a94ca5f12d611ff070da9adb0f203962999cdb81"
@@ -659,8 +658,8 @@ class Dvc < Formula
   end
 
   resource "scmrepo" do
-    url "https://files.pythonhosted.org/packages/3e/a4/aa08ce0f092b9b1a4d59540f767a70b9c567ec31484af89ed719765659b7/scmrepo-2.0.2.tar.gz"
-    sha256 "17e75b6b8d730d84e0e0479f4b4e15fce7f191c54ee9604164004041cf0f07de"
+    url "https://files.pythonhosted.org/packages/dd/36/71d5606b3e1cd8b84b21b0d3d031be2344922ed157e298338137050240a2/scmrepo-2.0.3.tar.gz"
+    sha256 "981fa5af7f73cb97490b0ceb56d9b4166cfd318f77ad5b9cf590687aea6ec1cb"
   end
 
   resource "semver" do
