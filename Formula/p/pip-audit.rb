@@ -3,8 +3,8 @@ class PipAudit < Formula
 
   desc "Audits Python environments and dependency trees for known vulnerabilities"
   homepage "https://pypi.org/project/pip-audit/"
-  url "https://files.pythonhosted.org/packages/ff/bb/8cb2f6721d2cc2f1213b0522748046be9d40ed767e5169189fed1d08765b/pip_audit-2.6.3.tar.gz"
-  sha256 "bd796066f69684b2f4fc2c2b6d222589e23190db0bbde069cea5c2b0be2cc57d"
+  url "https://files.pythonhosted.org/packages/c4/f7/04fa45dd9bff66b4e67989ab929994ec2fc63def442c30dbbe848d1fb9fa/pip_audit-2.7.0.tar.gz"
+  sha256 "67740c5b1d5d967a258c3dfefc46f9713a2819c48062505ddf4b29de101c2b75"
   license "Apache-2.0"
   version_scheme 1
 
@@ -87,8 +87,8 @@ class PipAudit < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/b5/64/56122e785f91009ff4df4bdc068b7026b46d627636b4a6312ec6f323fc6d/packageurl-python-0.13.3.tar.gz"
-    sha256 "63514d3b72f22a9c092913b3fa7b4670e479998dff3d93597863c413735e2ec7"
+    url "https://files.pythonhosted.org/packages/8c/33/e50adf6a6cd4cde7ccd140e4538d898cea7a609f7aee5d6365e5cd44b6c8/packageurl-python-0.13.4.tar.gz"
+    sha256 "6eb5e995009cc73387095e0b507ab65df51357d25ddc5fce3d3545ad6dcbbee8"
   end
 
   resource "pip-api" do
