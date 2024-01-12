@@ -1,9 +1,10 @@
 class Ircii < Formula
   desc "IRC and ICB client"
-  homepage "http://www.eterna.com.au/ircii/"
-  url "https://ircii.warped.com/ircii-20210314.tar.bz2"
-  mirror "https://deb.debian.org/debian/pool/main/i/ircii/ircii_20210314.orig.tar.bz2"
-  sha256 "866f2b847daed3d70859f208f7cb0f20b58c0933b2159f7ff92a68c518d393a9"
+  # notified upstream about the site issue on 2024-01-12
+  homepage "https://web.archive.org/web/20231024192652/http://eterna.com.au/ircii/"
+  url "https://ircii.warped.com/ircii-20240111.tar.bz2"
+  mirror "https://deb.debian.org/debian/pool/main/i/ircii/ircii_20240111.orig.tar.bz2"
+  sha256 "acb9351d9215c783111ad118ab2a1d3ac27f96e53db9bdc685e5dde1c14fd95d"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause",
