@@ -6,6 +6,7 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/f8/3a/1d4e51bbd57da9a0cb70d9c73997cb012aec25ce8b52fcf18e3c5ad60d1e/moto-4.2.13.tar.gz"
   sha256 "01aef6a489a725c8d725bd3dc6f70ff1bedaee3e2641752e4b471ff0ede4b4d7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccc69cef384e100c67b2d24df4b538e4738d17dd0e58ced707ee6cae047f6a0d"
@@ -82,8 +83,8 @@ class Moto < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "jsondiff" do
@@ -154,6 +155,11 @@ class Moto < Formula
   resource "rsa" do
     url "https://files.pythonhosted.org/packages/aa/65/7d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52/rsa-4.9.tar.gz"
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   resource "sshpubkeys" do
