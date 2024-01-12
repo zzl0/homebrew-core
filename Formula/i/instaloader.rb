@@ -1,8 +1,8 @@
 class Instaloader < Formula
   desc "Download media from Instagram"
   homepage "https://instaloader.github.io/"
-  url "https://files.pythonhosted.org/packages/aa/94/93b6130a32ebaeec7671c65b2b0cc76e657de1113aebe82c015245aaaf8a/instaloader-4.10.2.tar.gz"
-  sha256 "2ddf1b3e85977bf07141383dff5dab23b2c59ccf40a1d2d8696ad11d43bb8198"
+  url "https://files.pythonhosted.org/packages/65/2d/ffcd7916414b5bce2a497c39f015ec55e754f165a254cf3ac8ec76f3dc0e/instaloader-4.10.3.tar.gz"
+  sha256 "168065ab4bc93c1f309e4342883f5645235f2fc17d401125e5c6597d21e2c85b"
   license "MIT"
 
   bottle do
