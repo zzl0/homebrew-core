@@ -1,10 +1,19 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://github.com/citusdata/citus/archive/refs/tags/v12.0.0.tar.gz"
-  sha256 "9a6adaecc28e80e03a0523d07ee14c4b848f86f48ed37f84aa8cb98f3489f632"
   license "AGPL-3.0-only"
   head "https://github.com/citusdata/citus.git", branch: "main"
+
+  stable do
+    url "https://github.com/citusdata/citus/archive/refs/tags/v12.1.0.tar.gz"
+    sha256 "cc25122ecd5717ac0b14d8cba981265d15d71cd955210971ce6f174eb0036f9a"
+
+    # Backport fix for macOS dylib suffix.
+    patch do
+      url "https://github.com/citusdata/citus/commit/0f28a69f12418d211ffba5f7ddd222fd0c47daeb.patch?full_index=1"
+      sha256 "b8a350538d75523ecc171ea8f10fc1d0a2f97bd7ac6116169d773b0b5714215e"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -19,14 +28,14 @@ class Citus < Formula
 
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "postgresql@15"
+  depends_on "postgresql@16"
   depends_on "readline"
   depends_on "zstd"
 
   uses_from_macos "curl"
 
   def postgresql
-    Formula["postgresql@15"]
+    Formula["postgresql@16"]
   end
 
   def install
