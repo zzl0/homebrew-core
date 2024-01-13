@@ -10,14 +10,13 @@ class NeovimRemote < Formula
   head "https://github.com/mhinz/neovim-remote.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f980706b34fe571d0a79ecc93d044ed123cee711067febb1bc5648d6b3e32579"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8623a84cc3efb21f6c06bdf385f174326b18b41c02a2be1d0e584e0bb03ce75c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8728ddcde8d9f9735a95b32d70e206525a98c6d1dbbcb79d0cdff89db4eb1a33"
-    sha256 cellar: :any_skip_relocation, sonoma:         "90bd4d9cdb03d800e8babb6dfe7b9ecc2dbba301159986d6062ac8cf74060928"
-    sha256 cellar: :any_skip_relocation, ventura:        "63ff717460bac417a09bec0d9a96c96c8df067610668795e8ace4cb43beb5073"
-    sha256 cellar: :any_skip_relocation, monterey:       "551ba8060da6e18a8fe81407c2cc039e4c8ee8d47df0453825454b3cea07bec2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cdf332a93e94684b793cc33222126d4abd8b4af6d6d97c0dd2e06c12ba35d7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "151a27a44d43add54e313b0185bfec8a1e5bd25be55ea6e2ea4411e4b7f04d6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5d2b37e858f6fa406ec4cf2abc3eccb69e3b12cbf85cfa894854ccfc0e58f8a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "459ee985cb6c2bbd89adc4aeb566a79e8e3dbedcf82e8a1e9a099bfdc89d5edc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b9af83827d88c1cba23d47c33a74da5375898f4bb0d55dd67439f042b760db41"
+    sha256 cellar: :any_skip_relocation, ventura:        "61785e5c235142c13a0c48ed4b91f37aa8fb68f04e18a2733ff209d02aa4c829"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e1bf47d94815141e545c7d37d3ee6945299c1080f695156d0ce2ea9545e6d87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8abc9f95b4f43f0b6961cd3e37ef56b14b6f911884b3cc6ec98038d5e6610c34"
   end
 
   depends_on "neovim"
