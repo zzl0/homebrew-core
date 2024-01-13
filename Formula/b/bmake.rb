@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20231210.tar.gz"
-  sha256 "1d44f4cb9fa95cc5bfb663553f5a0d041e135e4de167b7c79582b24ca54fbaed"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20240108.tar.gz"
+  sha256 "3772578820616e999916f4c51dbd2415b06f7281f68ccccc5e1d38ed238e3107"
   license "BSD-3-Clause"
 
   livecheck do
@@ -23,9 +23,6 @@ class Bmake < Formula
   uses_from_macos "bc" => :build
 
   def install
-    # Don't pre-roff cat pages.
-    inreplace "mk/man.mk", "MANTARGET?", "MANTARGET"
-
     # -DWITHOUT_PROG_LINK means "don't symlink as bmake-VERSION."
     # shell-ksh test segfaults since macOS 11.
     args = ["--prefix=#{prefix}", "-DWITHOUT_PROG_LINK", "--install", "BROKEN_TESTS=shell-ksh"]
