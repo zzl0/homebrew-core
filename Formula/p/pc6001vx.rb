@@ -18,12 +18,12 @@ class Pc6001vx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "58618f072671e7dbe6721691a737600c9c7e063fdd51e1eebf042372ddff77ab"
-    sha256 cellar: :any, arm64_ventura:  "f6307dcaed2bbc05d3c42f119540b2b541d246edcaca51f6b106da6eae28ffd0"
-    sha256 cellar: :any, arm64_monterey: "51c6e2cf8ada814c83132e0868be43e740aa8fcd9ab6f8dbf5ac13f76fbdd736"
-    sha256 cellar: :any, sonoma:         "5a62bee188b5bc8c44a46055b03d9561dad1b7f6cae94a7267539da4cf2797cf"
-    sha256 cellar: :any, ventura:        "c14b25c52c6b649ebe4ec841f731008ad0f8d45fb680b4e7466e19f1e8066524"
-    sha256 cellar: :any, monterey:       "6296a3e8d539a31c7d8717eb53fff6a8ad5caf4b6339b4ccfd961f2dada91f0a"
+    sha256 cellar: :any, arm64_sonoma:   "65dea9e1fbc2308ac2e2dffcaf79b2cf18f564345e87a07bbc56c810150899ff"
+    sha256 cellar: :any, arm64_ventura:  "5ecc46cb15241a806a0850625880ca2f480b033ed1e52a4a8aa7c53e9ed522a0"
+    sha256 cellar: :any, arm64_monterey: "87288283dc869c461f72796389efc1364dbcef14fbda590531764cd9836fa496"
+    sha256 cellar: :any, sonoma:         "215c5be9581f838738d92e21b3a04eaa00013054ba8f15a4572f4e4117cf50f1"
+    sha256 cellar: :any, ventura:        "aa9cbcfed113f9d8588be9ba49f39bff59bf315a266cbd47a73a3b98da7b4cc4"
+    sha256 cellar: :any, monterey:       "c0fd47cd4c5cdaabe5f6eafb0deb2a3f3201b3c840e102d49be037df22684721"
   end
 
   depends_on "pkg-config" => :build
