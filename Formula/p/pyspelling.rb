@@ -3,8 +3,8 @@ class Pyspelling < Formula
 
   desc "Spell checker automation tool"
   homepage "https://facelessuser.github.io/pyspelling/"
-  url "https://files.pythonhosted.org/packages/cc/49/789313a50b9cf1f46389f38d90549269472093ea4f21aff9269c5ff0a41c/pyspelling-2.9.tar.gz"
-  sha256 "df74c42e6e24171b7e1a83ac62fa2e151028ac045817c4f0384791c2d6099c5c"
+  url "https://files.pythonhosted.org/packages/12/07/168a857755a29b7e41550a28cd8f527025bc62fcb36a951d8f3f2eedcdf7/pyspelling-2.10.tar.gz"
+  sha256 "acd67133c1b7cecd410e3d4489e61f2e4b1f0b6acf1ae6c48c240fbb21729c37"
   license "MIT"
 
   bottle do
