@@ -5,12 +5,12 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.106.0.tar.gz"
-    sha256 "1079649c41a9b8e0d3e81c573c82d84cd6873b3afc95b37d6f5206842cedc7c9"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.106.1.tar.gz"
+    sha256 "298e2933a4cf87933f73e8ced52c34f4be97e884a4cb6f95e31754e62ba10fcb"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.106.0.tar.gz"
-      sha256 "3f926ee26905c2f6fe457e7ad2fe4feac8cad83c571a70adea30b6cd4a4366b6"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.106.1.tar.gz"
+      sha256 "acf2a27bb37f18aff300b5f38875c2af1dbb7203deddca7f870b3d69a791f333"
     end
   end
 
@@ -65,9 +65,19 @@ class Dmd < Formula
     cp_r ["phobos/std", "phobos/etc"], include/"dlang/dmd"
     lib.install Dir["druntime/**/libdruntime.*", "phobos/**/libphobos2.*"]
 
+    dflags = "-I#{opt_include}/dlang/dmd -L-L#{opt_lib}"
+    # We include the -ld_classic linker argument in dmd.conf because it seems to need
+    # changes upstream to support the newer linker:
+    # https://forum.dlang.org/thread/jwmpdecwyazcrxphttoy@forum.dlang.org?page=1
+    # https://github.com/ldc-developers/ldc/issues/4501
+    #
+    # Also, macOS can't run CLT/Xcode new enough to need this flag, so restrict to Ventura
+    # and above.
+    dflags << " -L-ld_classic" if OS.mac? && DevelopmentTools.clang_build_version >= 1500
+
     (buildpath/"dmd.conf").write <<~EOS
       [Environment]
-      DFLAGS=-I#{opt_include}/dlang/dmd -L-L#{opt_lib}
+      DFLAGS=#{dflags}
     EOS
     etc.install "dmd.conf"
   end
