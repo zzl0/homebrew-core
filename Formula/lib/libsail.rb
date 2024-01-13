@@ -1,10 +1,9 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https://github.com/HappySeaFox/sail"
-  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "892738e0f56fed8c6387e1045bba2bfbf1b095024a495845d4879edb310cd1a7"
+  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "d02ce889b70d9e237b64806df26b044753e3edf3e87c8af42c32ec9968133a88"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "0310e1610e101b1a6ffe17a0338f503068152e96051663bf4e1ee7be63141258"
