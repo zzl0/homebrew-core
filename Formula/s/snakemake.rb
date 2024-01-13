@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e5/7d/38d93dcab9eb4c4b1b96fde09a81916f9ad2161cc5182d78614e9c05d2f9/snakemake-8.1.1.tar.gz"
-  sha256 "767e165b9803a3eb91d50e5f7d4410f537f3f1db102c99fcc97a9b40371cd46a"
+  url "https://files.pythonhosted.org/packages/bd/43/01610851f71670d81e757434a728ed20c454643c7e1666865416f10be142/snakemake-8.1.2.tar.gz"
+  sha256 "594b73269a3b1903929f07f055609c42f166abc3a6bd1f0b06403bd83e7ff9c8"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -141,8 +141,8 @@ class Snakemake < Formula
   end
 
   resource "pulp" do
-    url "https://files.pythonhosted.org/packages/59/41/44d617a67407ea5db026500025b8aa7cad0b2b52621c04991b248c3b383d/PuLP-2.7.0.tar.gz"
-    sha256 "e73ee6b32d639c9b8cf4b4aded334ba158be5f8313544e056f796ace0a10ae63"
+    url "https://files.pythonhosted.org/packages/2c/e0/683a36567b0a396961192dc9ec477ba1f88be56d968ca26688bd6e02f23b/PuLP-2.8.0.tar.gz"
+    sha256 "4903bf96110bbab8ed2c68533f90565ebb76aa367d9e4df38e51bf727927c125"
   end
 
   resource "referencing" do
@@ -161,8 +161,8 @@ class Snakemake < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/c2/63/94a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1/rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "smart-open" do
@@ -225,8 +225,17 @@ class Snakemake < Formula
     sha256 "d2d77e53eafca74f58234fcd3fea28cc0a719e4f3784911511e35e86594bc880"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
     virtualenv_install_with_resources
+
+    # cleanup `pulp/solverdir/cbc`
+    site_packages_path = Language::Python.site_packages(python3)
+    pulp_solverdir_path = libexec/site_packages_path/"pulp/solverdir/cbc"
+    pulp_solverdir_path.rmtree
   end
 
   test do
