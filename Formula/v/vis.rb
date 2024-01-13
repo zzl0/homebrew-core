@@ -4,6 +4,7 @@ class Vis < Formula
   url "https://github.com/martanne/vis/archive/refs/tags/v0.8.tar.gz"
   sha256 "61b10d40f15c4db2ce16e9acf291dbb762da4cbccf0cf2a80b28d9ac998a39bd"
   license "ISC"
+  revision 1
   head "https://github.com/martanne/vis.git", branch: "master"
 
   bottle do
@@ -28,7 +29,7 @@ class Vis < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--enable-lua"
+    system "./configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
     system "make", "install"
 
     return unless OS.mac?
