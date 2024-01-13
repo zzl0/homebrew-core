@@ -3,6 +3,7 @@ class Libetonyek < Formula
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
   url "https://dev-www.libreoffice.org/src/libetonyek/libetonyek-0.1.10.tar.xz"
   sha256 "b430435a6e8487888b761dc848b7981626eb814884963ffe25eb26a139301e9a"
+  license "MPL-2.0"
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -30,13 +31,13 @@ class Libetonyek < Formula
   uses_from_macos "libxml2"
 
   resource "liblangtag" do
-    url "https://bitbucket.org/tagoh/liblangtag/downloads/liblangtag-0.6.4.tar.bz2"
-    sha256 "5701062c17d3e73ddaa49956cbfa5d47d2f8221988dec561c0af2118c1c8a564"
+    url "https://bitbucket.org/tagoh/liblangtag/downloads/liblangtag-0.6.7.tar.bz2"
+    sha256 "5ed6bcd4ae3f3c05c912e62f216cd1a44123846147f729a49fb5668da51e030e"
   end
 
   def install
     resource("liblangtag").stage do
-      system "./configure", "--prefix=#{libexec}", "--enable-modules=no"
+      system "./configure", "--disable-modules", "--disable-silent-rules", *std_configure_args(prefix: libexec)
       system "make"
       system "make", "install"
     end
@@ -46,15 +47,21 @@ class Libetonyek < Formula
     mdds_pc_file = (Formula["mdds"].share/"pkgconfig").glob("mdds-*.pc").first.to_s
     mdds_api_version = File.basename(mdds_pc_file, File.extname(mdds_pc_file)).split("-")[1]
 
+    # Override -std=gnu++11 as mdds>=2.1.1 needs C++17 std::bool_constant
+    ENV.append "CXXFLAGS", "-std=gnu++17"
+    # Work around upstream boost issue, see https://github.com/boostorg/phoenix/issues/115
+    # TODO: Try to remove after boost>=1.84
+    ENV.append "CXXFLAGS", "-DBOOST_PHOENIX_STL_TUPLE_H_"
+
     ENV["LANGTAG_CFLAGS"] = "-I#{libexec}/include"
     ENV["LANGTAG_LIBS"] = "-L#{libexec}/lib -llangtag -lxml2"
     system "./configure", "--without-docs",
-                          "--disable-dependency-tracking",
-                          "--enable-static=no",
+                          "--disable-silent-rules",
+                          "--disable-static",
                           "--disable-werror",
                           "--disable-tests",
-                          "--prefix=#{prefix}",
-                          "--with-mdds=#{mdds_api_version}"
+                          "--with-mdds=#{mdds_api_version}",
+                          *std_configure_args
     system "make", "install"
   end
 
