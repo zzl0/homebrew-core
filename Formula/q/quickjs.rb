@@ -1,8 +1,8 @@
 class Quickjs < Formula
   desc "Small and embeddable JavaScript engine"
   homepage "https://bellard.org/quickjs/"
-  url "https://bellard.org/quickjs/quickjs-2023-12-09.tar.xz"
-  sha256 "e8afe386f875d0e52310ea91aa48e2b0e04182e821f19147794e3e272f4c8d8c"
+  url "https://bellard.org/quickjs/quickjs-2024-01-13.tar.xz"
+  sha256 "3c4bf8f895bfa54beb486c8d1218112771ecfc5ac3be1036851ef41568212e03"
   license "MIT"
 
   livecheck do
@@ -21,7 +21,7 @@ class Quickjs < Formula
   end
 
   def install
-    system "make", "install", "prefix=#{prefix}", "CONFIG_M32="
+    system "make", "install", "PREFIX=#{prefix}", "CONFIG_M32="
   end
 
   test do
