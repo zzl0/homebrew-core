@@ -1,8 +1,8 @@
 class Bounceback < Formula
   desc "Stealth redirector for red team operation security"
   homepage "https://github.com/D00Movenok/BounceBack"
-  url "https://github.com/D00Movenok/BounceBack/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "9f18c3b00f19f832a6ec9cfc4383d38a3ca400e470cc356c3cd41ea3d7919466"
+  url "https://github.com/D00Movenok/BounceBack/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "e6173fe04b027c500759455745cc9f5d9e6317c4f523d7f8c187e3220d841dc4"
   license "MIT"
   head "https://github.com/D00Movenok/BounceBack.git", branch: "main"
 
