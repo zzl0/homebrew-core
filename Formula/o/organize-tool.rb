@@ -3,8 +3,8 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https://github.com/tfeldmann/organize"
-  url "https://files.pythonhosted.org/packages/24/af/3ad46df41f247aff4c9e1d9a3cd1bb65d9b9db7ae40322681189561d96c4/organize_tool-3.0.0.tar.gz"
-  sha256 "13791171a4621a18c37aaade75805f9de643fc646596cf6c7a4cb399bd1d9e54"
+  url "https://files.pythonhosted.org/packages/04/66/a402f36c6c1cd4746bd395639cc888520ca09577714a3dc9714582acc388/organize_tool-3.0.1.tar.gz"
+  sha256 "32ffc7d51353633104c0b5ee2f441dd661b74ba73ff2ecd2db493d61de1976fc"
   license "MIT"
 
   bottle do
@@ -96,8 +96,8 @@ class OrganizeTool < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/1b/2d/f189e5c03c22700c4ce5aece4b51bb73fa8adcfd7848629de0fb78af5f6f/types-python-dateutil-2.8.19.14.tar.gz"
-    sha256 "1f4f10ac98bb8b16ade9dbee3518d9ace017821d94b057a425b069f834737f4b"
+    url "https://files.pythonhosted.org/packages/9b/47/2a9e51ae8cf48cea0089ff6d9d13fff60701f8c9bf72adaee0c4e5dc88f9/types-python-dateutil-2.8.19.20240106.tar.gz"
+    sha256 "1f8db221c3b98e6ca02ea83a58371b22c374f42ae5bbdf186db9c9a76581459f"
   end
 
   resource "typing-extensions" do
