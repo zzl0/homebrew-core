@@ -6,6 +6,14 @@ class Libcouchbase < Formula
   license "Apache-2.0"
   head "https://github.com/couchbase/libcouchbase.git", branch: "master"
 
+  # github_releases is used here as there have been tags pushed for new
+  # releases but without a corresponding GitHub release
+  livecheck do
+    url :head
+    regex(/^?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
+  end
+
   bottle do
     sha256 arm64_sonoma:   "c27418629da8698371efa91c0cc51879d1073b347e75d56ebed0c29a0a3d5259"
     sha256 arm64_ventura:  "60c9b6f0bc4f8e30f1646574972f32c7251bf81f5ea6fddf31fd0fe75b2c7ff1"
