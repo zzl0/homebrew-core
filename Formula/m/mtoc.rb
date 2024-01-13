@@ -1,8 +1,8 @@
 class Mtoc < Formula
   desc "Mach-O to PE/COFF binary converter"
   homepage "https://opensource.apple.com/"
-  url "https://github.com/apple-oss-distributions/cctools/archive/refs/tags/cctools-1009.2.tar.gz"
-  sha256 "da3b7d3a9069e9c0138416e3ec56dbb7dd165b73d108d3cee6397031d9582255"
+  url "https://github.com/apple-oss-distributions/cctools/archive/refs/tags/cctools-1009.3.tar.gz"
+  sha256 "4b92468ca792244131c821b25cb7e8d133e7508178de1b3f4992ba8f08f19dca"
   license "APSL-2.0"
 
   bottle do
