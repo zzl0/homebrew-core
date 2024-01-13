@@ -6,6 +6,16 @@ class HelmLs < Formula
   license "MIT"
   head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad208396cb3b4279b2b2bd5b17f40cf45b4b948d64890a62e244cf6cddef51ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "465919ec906b493c8e8359142c2bd807d76e35c08b69530f234fddb1983d2981"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af64d0c0abdcbf04b8277a21a87736e1efe7557a516fc7cdc412f4df97c9a849"
+    sha256 cellar: :any_skip_relocation, sonoma:         "482da594366ac12cb6e001e3d24bcb3463e87fb34f361fd104488de8e845da95"
+    sha256 cellar: :any_skip_relocation, ventura:        "88d29e9836875fa13cfd387b06c0c2f1f9792f919e4291b7520203027b3f781d"
+    sha256 cellar: :any_skip_relocation, monterey:       "4015adbc81b0b19956d536a328392599e851b48f80db18ce0dd5749b421d0dec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20bb977d185d4c12f2fd3feecc47f3119929ec918da29fe7bfac7b8867793080"
+  end
+
   depends_on "go" => :build
 
   def install
