@@ -2,7 +2,7 @@ class Nauty < Formula
   desc "Automorphism groups of graphs and digraphs"
   homepage "https://pallini.di.uniroma1.it/"
   url "https://pallini.di.uniroma1.it/nauty2_8_8.tar.gz"
-  sha256 "accf5eeddde623d179c8fee9d15cfb7d66d7a90cc7684d11c96ad9b3f3655dbb"
+  sha256 "159d2156810a6bb240410cd61eb641add85088d9f15c888cdaa37b8681f929ce"
   license "Apache-2.0"
   version_scheme 1
 
@@ -25,21 +25,9 @@ class Nauty < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
-    system "make", "all"
-
-    bin.install %w[
-      NRswitchg addedgeg addptg amtog ancestorg assembleg biplabg catg complg
-      converseg copyg countg cubhamg deledgeg delptg dimacs2g directg dreadnaut
-      dretodot dretog edgetransg genbg genbgL geng gengL genposetg genquarticg
-      genrang genspecialg gentourng gentreeg hamheuristic labelg linegraphg
-      listg multig nbrhoodg newedgeg pickg planarg productg ranlabg shortg
-      showg subdivideg twohamg underlyingg vcolg watercluster2
-    ]
-
-    (include/"nauty").install Dir["*.h"]
-
-    lib.install "nauty.a" => "libnauty.a"
+    system "./configure", "--includedir=#{include}/nauty", *std_configure_args
+    system "make", "all", "TLSlibs"
+    system "make", "install", "TLSinstall"
 
     doc.install "nug#{version.major_minor.to_s.tr(".", "")}.pdf", "README", Dir["*.txt"]
 
@@ -58,7 +46,7 @@ class Nauty < Formula
     # test that the library is installed and linkable-against
     (testpath/"test.c").write <<~EOS
       #define MAXN 1000
-      #include <nauty.h>
+      #include <nauty/nauty.h>
 
       int main()
       {
