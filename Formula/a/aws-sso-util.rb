@@ -10,13 +10,13 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3c3b604bfa4caae5a34579e8c8698da8b5f13038aea00df832bf9ea8252d113"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4b3a085cbcd2d72b18cf68e3ec35487cc7b2f8cb0c22780896cd91c7e25e568"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a326e4ff456195d7f56387f1a3ef92aa3f81e4393553a8122a833e7220890d90"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2ca462771cc1967692da37038b009afc591fc7061887361d3904381aba632372"
-    sha256 cellar: :any_skip_relocation, ventura:        "f464695d1fe2df8ad2d46d3903d10d3cbfdfaaceeeaed75aca8a788daba568d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf2ca344893c28bdc194b99f82ecd818c971799c00d83c939969d8b6aaed74b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f02080a09fe01e25c8bbee9a1e51f332e76d18202d01da411ac57ffd12dad9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5bf2c009179ecad087e410e540c3c985456496feea3c09d21188f2b88de4b221"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dd7cd311614d7c0e9f1ee94c95f4b680fbe49014862e498333be79d74f1ed91"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "62d06aee6fc1e986b5d97ea05113a2f205eb7ae827d4a1b6f1c37cec2d542b1a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "432b66d82718b9e845b49600f8adcaa5babf14f0537ac1c4b1e067a1712dc6b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "94145a5e9f4fc4ea63b9cd0f66f6830cbc20fb6a2ae232c9160b768dfdafb018"
+    sha256 cellar: :any_skip_relocation, monterey:       "adbf86c38eb72ad49acfe0a3e33cdba81fec7665e986e76ab26d1d3651d8e02a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0a7730a7f27adeacf7b1e865dd123eed763996ba7d3143ad475557a5aeaf84c"
   end
 
   depends_on "python-certifi"
