@@ -18,6 +18,10 @@ class Ocmtoc < Formula
   conflicts_with "mtoc", because: "both install `mtoc` binaries"
 
   def install
+    # error: DT_TOOLCHAIN_DIR cannot be used to evaluate HEADER_SEARCH_PATHS, use TOOLCHAIN_DIR instead
+    inreplace "xcode/libstuff.xcconfig", "${DT_TOOLCHAIN_DIR}/usr/local/include",
+                                         "${TOOLCHAIN_DIR}/usr/local/include"
+
     xcodebuild "-arch", Hardware::CPU.arch,
                "-project", "cctools.xcodeproj",
                "-scheme", "mtoc",
