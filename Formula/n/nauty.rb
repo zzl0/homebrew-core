@@ -15,13 +15,14 @@ class Nauty < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc17c5700166b0e9e5c17bb7454c2eddbe108e4b04863af6d5e0bdd89a75bc38"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b6432a71064390f2afa50d16ffa26b8fe907c2ef3a2cd0c8f5d7696c3953352"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f368b7a5e5d259c01226c1e95ca0eb53bc13549b4286db953a9f25220ae8fed6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "915f0ee5a28c9b40707d590b5051982c2df808405c1b9f27b919ff819850acf3"
-    sha256 cellar: :any_skip_relocation, ventura:        "b26562027d60564b34b4e27a987869f51e974c5903218e39d50fb23f163c0d98"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cbfbb5e238919a56a2a7ba900c061c509f1f184af78059b929b8494adc058fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1571908d43d478112477c4e47a0bf17ae88851b5922c606dc2aa72e88f62b78d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fed27805a663a09efa433ef5357e248ffec3c616dc647bb1e34039d888013c6d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e1b40c66a5aaef7e82d32e902254f73db4fd48a3e2cf2e845822c188386139"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01b1b4ef4dafbdd33262d1d85b7d2170c0fc43b292a71fdd16cc500397717d6b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de41633db5ca8ea97031b485790b2839bd66f9da9e6965e4b2f7133ecd4dd5e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef39df7ed559a8aa15eec5e7be9df22d1b0ebd989e1c79b4a413c4364dae34eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "10cd676f9d46b633a1dc17aa099e33422e5a21cd4aaffc493e35729729e1424d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a439879b6cf21d24797ac4420500a0ecf519a5afa59eb3a7c00fe3900eb4400"
   end
 
   def install
