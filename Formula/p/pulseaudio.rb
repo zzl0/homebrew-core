@@ -1,23 +1,10 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
+  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
+  sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
   head "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git", branch: "master"
-
-  stable do
-    url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-16.1.tar.xz"
-    sha256 "8eef32ce91d47979f95fd9a935e738cd7eb7463430dabc72863251751e504ae4"
-
-    # Backport fix for macOS build. Remove in the next release
-    patch do
-      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/baa3d24b760fe48d25d379b972728ea3ffa5492d.diff"
-      sha256 "af1862ed1196719ae404be9bfde4ea2d74fb512b50fd5a37445de43be00c30c1"
-    end
-    patch do
-      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/47a6918739cb06dafa970d0b528bed1951d95039.diff"
-      sha256 "03264a384ccc84a1c61e206ddb136cc9a6ae67e88172b08e5b4378aca74f06a5"
-    end
-  end
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
