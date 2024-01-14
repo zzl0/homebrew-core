@@ -8,13 +8,13 @@ class MetaPackageManager < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40e5e41f5a05106f189dfb2429ab44e3c8b31ec8ca071bd7fe754db59a6fae31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "849fe40cd0be41a927546e5b12adbad87f998a660abe949245c76766d13ee64a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a75d9d8bb9db62fe23d82f2f62b55ca38fe7b48f9169baacc608348218175ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "651e9535e53f1e972908dcd63b1d36fad00cc95026841eaba3966fae36c1a555"
-    sha256 cellar: :any_skip_relocation, ventura:        "391faa06a9a5f9ea5f247ebea67f6fc8d8a18d37e04065bd203d0bc3ba72a694"
-    sha256 cellar: :any_skip_relocation, monterey:       "d9ed8b03d265709b960a30b9ffe375638d0f8570fd3f8e352531b2a064fbc031"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "346308b4ad0a54182328653c2df24c824c7d31f090f8819984c2493fe248a078"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484e689cb4ed5c88b4844acd54ad2641571bc9148171f533471ae0c602d8a575"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cdda0511a6ab783c2a5b87f23d58d6122b6872fee41908783eff3f7d4eabccd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f88abbb69b8d7facbc4fd860a1475bc5f695306f925ff573732d77d5b27175e7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b3119d881ab6c7ec0405684f8ade6ef47f94fbee04d42e4ce2dcddfca6f875a"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa09b4bc88212d89c617008ba6df50c4581f5dc25fe17ee641f8b852fbad7b59"
+    sha256 cellar: :any_skip_relocation, monterey:       "8714b1ca79d615796a5277a70bfc961d131bd88c67ee3489bb784d8ca7312c5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c1bee581bb6431d7e136db0db2e91b32e941524f1d2dcd8b80d8064ce1a2d57"
   end
 
   depends_on "docutils"
