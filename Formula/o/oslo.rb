@@ -1,8 +1,8 @@
 class Oslo < Formula
   desc "CLI tool for the OpenSLO spec"
   homepage "https://openslo.com/"
-  url "https://github.com/OpenSLO/oslo/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "ee43704402d8867e952bc02086da4ec175a405599ffe3ac654053e9245ff10f7"
+  url "https://github.com/OpenSLO/oslo/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "d76baf57820b896a648b720e387bb6f8c6137bc05f888a3b1e0e2029827cd607"
   license "Apache-2.0"
   head "https://github.com/openslo/oslo.git", branch: "main"
 
@@ -20,7 +20,7 @@ class Oslo < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/oslo"
 
     generate_completions_from_executable(bin/"oslo", "completion")
 
