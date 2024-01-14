@@ -10,7 +10,7 @@ class Bash < Formula
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2.tar.gz"
     sha256 "a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb"
-    version "5.2.21"
+    version "5.2.26"
 
     %w[
       001 f42f2fee923bc2209f406a1892772121c467f44533bedfe00a176139da5d310a
@@ -34,6 +34,11 @@ class Bash < Formula
       019 325c26860ad4bba8558356c4ab914ac57e7b415dac6f5aae86b9b05ccb7ed282
       020 b6fc252aeb95ce67c9b017d29d81e8a5e285db4bf20d4ec8cdca35892be5c01d
       021 8334b88117ad047598f23581aeb0c66c0248cdd77abc3b4e259133aa307650cd
+      022 78b5230a49594ec30811e72dcd0f56d1089710ec7828621022d08507aa57e470
+      023 af905502e2106c8510ba2085aa2b56e64830fc0fdf6ee67ebb459ac11696dcd3
+      024 971534490117eb05d97d7fd81f5f9d8daf927b4d581231844ffae485651b02c3
+      025 5138f487e7cf71a6323dc81d22419906f1535b89835cc2ff68847e1a35613075
+      026 96ee1f549aa0b530521e36bdc0ba7661602cfaee409f7023cac744dd42852eac
     ].each_slice(2) do |p, checksum|
       patch :p0 do
         url "https://ftp.gnu.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
