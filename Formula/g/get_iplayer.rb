@@ -1,8 +1,8 @@
 class GetIplayer < Formula
   desc "Utility for downloading TV and radio programmes from BBC iPlayer"
   homepage "https://github.com/get-iplayer/get_iplayer"
-  url "https://github.com/get-iplayer/get_iplayer/archive/refs/tags/v3.34.tar.gz"
-  sha256 "72128a0edd731c1b1d932108b3c47c74f93e17ca99915f5c769767344f339be8"
+  url "https://github.com/get-iplayer/get_iplayer/archive/refs/tags/v3.35.tar.gz"
+  sha256 "048ff5f9bd5c6c0f51a05fd0c97eb137029d1950b594384a920c3c674f121e8c"
   license "GPL-3.0-or-later"
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
@@ -135,7 +135,7 @@ class GetIplayer < Formula
     output = shell_output("\"#{bin}/get_iplayer\" -f --refresh-include=\"BBC None\" -q dontshowanymatches 2>&1")
     assert_match "get_iplayer #{pkg_version}-homebrew", output, "Unexpected version"
     assert_match "INFO: 0 matching programmes", output, "Unexpected output"
-    assert_match "INFO: Indexing tv programmes (concurrent)", output,
+    assert_match "INFO: Indexing tv programme schedules", output,
                          "Mojolicious not found"
   end
 end
