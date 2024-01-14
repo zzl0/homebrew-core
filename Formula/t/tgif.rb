@@ -1,6 +1,6 @@
 class Tgif < Formula
   desc "Xlib-based interactive 2D drawing tool"
-  homepage "https://bourbon.usc.edu/tgif/"
+  homepage "https://sourceforge.net/projects/tgif/"
   url "https://downloads.sourceforge.net/project/tgif/tgif/4.2.5/tgif-QPL-4.2.5.tar.gz"
   sha256 "2f24e9fecafae6e671739bd80691a06c9d032bdd1973ca164823e72ab1c567ba"
   license "QPL-1.0"
@@ -28,6 +28,10 @@ class Tgif < Formula
   depends_on "libxt"
 
   uses_from_macos "zlib"
+
+  # patch sent upstream to the author email (bill.cheng@usc.edu)
+  # fixes the -Wimplicit-function-declaration error on Sonoma
+  patch :DATA
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
@@ -71,3 +75,20 @@ class Tgif < Formula
     assert_predicate testpath/"test.txt", :exist?
   end
 end
+__END__
+--- a/wb.c
++++ b/wb.c
+@@ -20,11 +20,12 @@
+ 
+ #define _INCLUDE_FROM_WB_C_
+ 
++#include "tgifdefs.h"
++
+ #if (defined(PTHREAD) || defined(HAVE_LIBPTHREAD))
+ #include <pthread.h>
+ #endif /* (defined(PTHREAD) || defined(HAVE_LIBPTHREAD)) */
+ 
+-#include "tgifdefs.h"
+ #include "cmdids.h"
+ 
+ #ifdef _HAS_STREAMS_SUPPORT
