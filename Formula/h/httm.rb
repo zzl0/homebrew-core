@@ -1,8 +1,8 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.34.0.tar.gz"
-  sha256 "14a4d71e9ea8248c182efc292e9b45ba222c539a691cbf3b7a7929f4b1fd3e40"
+  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.34.2.tar.gz"
+  sha256 "bffb7b5ae3402aa286875f8092353ca1661c415a98f617f96cda4f77141a981f"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
@@ -18,9 +18,18 @@ class Httm < Formula
 
   depends_on "rust" => :build
 
+  on_linux do
+    depends_on "acl"
+  end
+
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--features", "xattrs,acls", *std_cargo_args
     man1.install "httm.1"
+
+    bin.install "scripts/ounce.bash" => "ounce"
+    bin.install "scripts/bowie.bash" => "bowie"
+    bin.install "scripts/nicotine.bash" => "nicotine"
+    bin.install "scripts/equine.bash" => "equine"
   end
 
   test do
