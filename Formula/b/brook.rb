@@ -1,8 +1,8 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://txthinking.github.io/brook/"
-  url "https://github.com/txthinking/brook/archive/refs/tags/v20230606.tar.gz"
-  sha256 "4490f203973b59e5bbaa4cbfb8835232f9671dac1b82ab4de882d32a2ad6b612"
+  url "https://github.com/txthinking/brook/archive/refs/tags/v20240214.tar.gz"
+  sha256 "d3c77b8069b21cfdb14f3282eba26b7b4860cd741462e4d6b6929ad07fa55153"
   license "GPL-3.0-only"
 
   bottle do
@@ -19,12 +19,6 @@ class Brook < Formula
   end
 
   depends_on "go" => :build
-
-  # quic-go patch for go1.21.0 build
-  patch do
-    url "https://github.com/txthinking/brook/commit/3b8488e9138393b63da3a1f090e0f0fb109f12d1.patch?full_index=1"
-    sha256 "8974cc16188269daabd84950aac061cf3af827bb1d9a713c66647511011829a7"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/brook"
