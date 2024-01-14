@@ -1,8 +1,14 @@
 class Tth < Formula
   desc "TeX/LaTeX to HTML converter"
-  homepage "http://hutchinson.belmont.ma.us/tth/"
-  url "http://hutchinson.belmont.ma.us/tth/tth_distribution/tth_4.16.tgz"
-  sha256 "ff8b88c6dbb938f01fe6a224c396fc302ae5d89b9b6d97f207f7ae0c4e7f0a32"
+  homepage "http://silas.psfc.mit.edu/tth/"
+  url "https://downloads.sourceforge.net/project/tth/tth4.16.tar.gz"
+  sha256 "b0e118d49a37e06598c1e2b524ea352ceabf064afef25acf02b556229ee43512"
+  license "GPL-2.0-only"
+
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/tth[._-]?v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdeb38cd3835c63253e57a04f574b8ecf27ff68c27fd990f65eaa390cea3261f"
@@ -14,11 +20,12 @@ class Tth < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c446bed3720c8c0492ecf875b8b14069e32d593b887ba5ccd956dc604e4a913e"
   end
 
-  deprecate! date: "2023-06-26", because: :repo_removed
+  uses_from_macos "flex" => :build
 
   def install
+    system "make", "tth.c"
     system ENV.cc, "-o", "tth", "tth.c"
-    bin.install %w[tth latex2gif ps2gif ps2png]
+    bin.install %w[tth latex2gif ps2gif]
     man1.install "tth.1"
   end
 
