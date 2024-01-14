@@ -1,8 +1,8 @@
 class Nickle < Formula
   desc "Desk calculator language"
   homepage "https://www.nickle.org/"
-  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.96.tar.xz"
-  sha256 "0a6f9852b44a58afc7b053b2d766e210f1efb3980d345f4bc9ee907594ec05a4"
+  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.97.tar.xz"
+  sha256 "cde788af96f4cef72da26c60cc9917b1b3d05b7a82347c92645cdfe665e84eb5"
   license "MIT"
   head "https://keithp.com/cgit/nickle.git", branch: "master"
 
