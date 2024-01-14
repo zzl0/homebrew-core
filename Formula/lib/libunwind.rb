@@ -1,8 +1,8 @@
 class Libunwind < Formula
   desc "C API for determining the call-chain of a program"
   homepage "https://www.nongnu.org/libunwind/"
-  url "https://github.com/libunwind/libunwind/releases/download/v1.7.2/libunwind-1.7.2.tar.gz"
-  sha256 "a18a6a24307443a8ace7a8acc2ce79fbbe6826cd0edf98d6326d0225d6a5d6e6"
+  url "https://github.com/libunwind/libunwind/releases/download/v1.8.0/libunwind-1.8.0.tar.gz"
+  sha256 "b6b3df40a0970c8f2865fb39aa2af7b5d6f12ad6c5774e266ccca4d6b8b72268"
   license "MIT"
 
   livecheck do
