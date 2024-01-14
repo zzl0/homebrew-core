@@ -6,13 +6,13 @@ class Monolith < Formula
   license "CC0-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3458f63ad8be5a4df54f76da03350520cb9235ab475de15d87b6b695850a6a5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b8a9ff4180651c3672d23a08752382fc000a14ade5f04d6e2503974b251fc99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68f873b4956a0651576a705c015032033a38bd6f09120719597a43d467661b3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e265f0cd47917289de249755f104dcb9eb1e9c454d37e954163da7889def553"
-    sha256 cellar: :any_skip_relocation, ventura:        "6529c4f0a093cd9ef11991ab0aa14f926f33154be270a17a953567270f0cddae"
-    sha256 cellar: :any_skip_relocation, monterey:       "f77d053257388f0dc143b9b34b4ae4a58db88174fed60b8aed4ee47079e5e18a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d04dfb9e68fc264c539fe83a1375eaafc81921bdda719d243ce8e508df06a156"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6706f0c92e08ef9a6ddde3909affb08c2bc73a182bba2743d9a749f2d04d1d4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53c97c6e153e089a3060cfd56e6cb3ac0b905acf04605fdd2504d624d61690f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9eb4b854965d62ff6cfa4d0dca120c1fa260c170763dc242afa43b36efee24eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2b5fa9d548cf64fc872b6507abe24648215ee6bb7e6b9c1ecc8d0eed30aa53fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ee9e494db43ce35bb963af6784d6ce3fdb99a5a5c8a381c0665cef324e6cc4f"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d0a0eefb85a3193bae463e17820735abff925de23c2d9ef63ef3b870f6ee31e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaf5fe1cfb7273562ab9ab32697e869cf02f2e33cb85dda48b70c0157229c13d"
   end
 
   depends_on "pkg-config" => :build
