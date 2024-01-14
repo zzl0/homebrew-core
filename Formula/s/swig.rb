@@ -1,8 +1,8 @@
 class Swig < Formula
   desc "Generate scripting interfaces to C/C++ code"
   homepage "https://www.swig.org/"
-  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz"
-  sha256 "2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b"
+  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.2.0/swig-4.2.0.tar.gz"
+  sha256 "261ca2d7589e260762817b912c075831572b72ff2717942f75b3e51244829c97"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -29,6 +29,7 @@ class Swig < Formula
   uses_from_macos "python" => :test
 
   def install
+    ENV.append "CXXFLAGS", "-std=c++11" # Fix `nullptr` support detection.
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
