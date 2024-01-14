@@ -1,9 +1,9 @@
 class Cpio < Formula
   desc "Copies files into or out of a cpio or tar archive"
   homepage "https://www.gnu.org/software/cpio/"
-  url "https://ftp.gnu.org/gnu/cpio/cpio-2.14.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.14.tar.bz2"
-  sha256 "fcdc15d60f7267a6fc7efcd6b9db7b6c8966c4f2fbbb964c24d41336fd3f2c12"
+  url "https://ftp.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.15.tar.bz2"
+  sha256 "937610b97c329a1ec9268553fb780037bcfff0dcffe9725ebc4fd9c1aa9075db"
   license "GPL-3.0-or-later"
 
   bottle do
