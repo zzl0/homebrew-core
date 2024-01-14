@@ -12,7 +12,7 @@ class Attr < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "a05ee49c7e8fcf992d4cc1cf6f1a9f72a6800ddcfa11f70dbf6ab957ed847ff3"
+    sha256 x86_64_linux: "2c131520e0e49f68b20bce55f7efe36909ede3f95e484606d3f721b1d39a5f15"
   end
 
   depends_on "gettext" => :build
