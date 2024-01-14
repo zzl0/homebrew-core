@@ -1,8 +1,8 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
   homepage "https://k8sgpt.ai/"
-  url "https://github.com/k8sgpt-ai/k8sgpt/archive/refs/tags/v0.3.25.tar.gz"
-  sha256 "db8304df35089fb69eb16b8720f902dee508f1cbbec2ed4015a8d343d8701868"
+  url "https://github.com/k8sgpt-ai/k8sgpt/archive/refs/tags/v0.3.26.tar.gz"
+  sha256 "9de7d3afffe3302ad5b96adbc7da11c7060f3e35f28046c10c308d4ab50b9d2f"
   license "Apache-2.0"
   head "https://github.com/k8sgpt-ai/k8sgpt.git", branch: "main"
 
