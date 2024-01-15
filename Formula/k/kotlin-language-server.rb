@@ -1,8 +1,8 @@
 class KotlinLanguageServer < Formula
   desc "Intelligent Kotlin support for any editor/IDE using the Language Server Protocol"
   homepage "https://github.com/fwcd/kotlin-language-server"
-  url "https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.7.tar.gz"
-  sha256 "a9144242b3892fe7f90cf800d1b6e0960f55829efd5e26cdd83c14344a53aaf7"
+  url "https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.9.tar.gz"
+  sha256 "4c06ce35b1686c27cc4a8b8dc0905dd3901e83de7028e0c7c0cfd2b6082e1e09"
   license "MIT"
 
   bottle do
