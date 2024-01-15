@@ -3,8 +3,8 @@ require "language/node"
 class MarkdownlintCli2 < Formula
   desc "Fast, flexible, config-based cli for linting Markdown/CommonMark files"
   homepage "https://github.com/DavidAnson/markdownlint-cli2"
-  url "https://registry.npmjs.org/markdownlint-cli2/-/markdownlint-cli2-0.12.0.tgz"
-  sha256 "34978e8ec951412009bb028cc66488fb90107b507a290fd13e35bd52e6707aa9"
+  url "https://registry.npmjs.org/markdownlint-cli2/-/markdownlint-cli2-0.12.1.tgz"
+  sha256 "480c949c85742c44c48e83fc2595aaf50e0c7d2778d2da5a48bb5668d378b7f5"
   license "MIT"
 
   bottle do
