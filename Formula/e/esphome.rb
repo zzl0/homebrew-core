@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/0e/09/bd5d6f86b16180a9e3a982946b7dbfea4e3b623584f3d7b2c8351f72ec24/esphome-2023.12.5.tar.gz"
-  sha256 "08f2c14e157ecfbe34837c6cfa8af306e99ae00d3a9cfeda7145713ff98f16ad"
+  url "https://files.pythonhosted.org/packages/bf/b4/2bbe3c69c647959617c333c13a7524243095e9955764dfc54f341061c5a0/esphome-2023.12.6.tar.gz"
+  sha256 "c05d9c3059220ce4a36b8b9a3117e00bf42d49264d5fd03f664c0faa7541e20c"
   license "MIT"
 
   bottle do
@@ -36,13 +36,13 @@ class Esphome < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/5c/bf/891e9ad17e95f28c57d252f057f93dfb9f7f370688ec4c556ef445a45302/aiohappyeyeballs-2.3.1.tar.gz"
-    sha256 "ff2148f2a64b8cea9c8f6bd94dbf813adb30a8f6bc516e6ecc25bca8be2930f8"
+    url "https://files.pythonhosted.org/packages/cc/83/f731ac54f82fc25984ee4d6abadf69b824dde03b629a1348f459e7b35d5a/aiohappyeyeballs-2.3.2.tar.gz"
+    sha256 "77e15a733090547a1f5369a1287ddfc944bd30df0eb8993f585259c34b405f4e"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/ab/70/5a08324266a222ab9d8282b18a1cd07535c686531f29142b9f10f16a65f2/bitarray-2.9.1.tar.gz"
-    sha256 "912efbeed6d8b155c8e8c37464f79d75b1de58936c0f29ffb599ce95af5563f2"
+    url "https://files.pythonhosted.org/packages/c7/bf/25cf92a83e1fe4948d7935ae3c02f4c9ff9cb9c13e977fba8af11a5f642c/bitarray-2.9.2.tar.gz"
+    sha256 "a8f286a51a32323715d77755ed959f94bef13972e9a2fe71b609e40e6d27957e"
   end
 
   resource "bitstring" do
@@ -106,8 +106,8 @@ class Esphome < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/70/e5/81f99b9fced59624562ab62a33df639a11b26c582be78864b339dafa420d/tzdata-2023.3.tar.gz"
-    sha256 "11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"
+    url "https://files.pythonhosted.org/packages/4d/60/acd18ca928cc20eace3497b616b6adb8ce1abc810dd4b1a22bc6bdefac92/tzdata-2023.4.tar.gz"
+    sha256 "dd54c94f294765522c77399649b4fefd95522479a664a0cec87f41bebc6148c9"
   end
 
   resource "tzlocal" do
