@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://github.com/solana-labs/solana/archive/refs/tags/v1.16.27.tar.gz"
-  sha256 "afbd484e91933aae1d4997f2f828f798e12ccbb1cf7b2b3e507cf68e006059b7"
+  url "https://github.com/solana-labs/solana/archive/refs/tags/v1.17.16.tar.gz"
+  sha256 "1d44ebc853345c5153602d9a88511e795ed53ec5e89fb09038a3f8c76e2c6f93"
   license "Apache-2.0"
   version_scheme 1
 
@@ -45,10 +45,6 @@ class Solana < Formula
     depends_on "systemd"
   end
 
-  # Backport part of upstream commit to build with newer Rust.
-  # Ref: https://github.com/solana-labs/solana/commit/9e703f85de4184f577f22a1c72a0d33612f2feb1
-  patch :DATA
-
   def install
     %w[
       cli
@@ -71,17 +67,3 @@ class Solana < Formula
     assert_match version.to_s, shell_output("#{bin}/solana-keygen --version")
   end
 end
-
-__END__
-diff --git a/sdk/program/src/account_info.rs b/sdk/program/src/account_info.rs
-index 372370d0e15a0f2877b02ad29586e5b352438b24..3db3e9839b6535786e60be5602c03d0c909bf937 100644
---- a/sdk/program/src/account_info.rs
-+++ b/sdk/program/src/account_info.rs
-@@ -182,6 +182,7 @@ impl<'a> AccountInfo<'a> {
-         Ok(())
-     }
- 
-+    #[rustversion::attr(since(1.72), allow(invalid_reference_casting))]
-     pub fn assign(&self, new_owner: &Pubkey) {
-         // Set the non-mut owner field
-         unsafe {
