@@ -1,8 +1,8 @@
 class CrunchyCli < Formula
   desc "Command-line downloader for Crunchyroll"
   homepage "https://github.com/crunchy-labs/crunchy-cli"
-  url "https://github.com/crunchy-labs/crunchy-cli/archive/refs/tags/v3.2.4.tar.gz"
-  sha256 "0ffe6f2b2dc3fa8cefe7cf019043367d7c625a8a87d15a29d599662614bc586c"
+  url "https://github.com/crunchy-labs/crunchy-cli/archive/refs/tags/v3.2.5.tar.gz"
+  sha256 "ec3932cdee1cdcd506efcb0b48ca3250a314ceae760b2cf81fe526ecb4e2f821"
   license "MIT"
   head "https://github.com/crunchy-labs/crunchy-cli.git", branch: "master"
 
