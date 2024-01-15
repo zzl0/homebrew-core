@@ -1,8 +1,8 @@
 class Yazi < Formula
   desc "Blazing fast terminal file manager written in Rust, based on async I/O"
   homepage "https://github.com/sxyazi/yazi"
-  url "https://github.com/sxyazi/yazi/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "cfaf32fe58f68b7532f33b2a60e9507939ee54e32164db051357e059c553afec"
+  url "https://github.com/sxyazi/yazi/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "65c897fbedde55bb5bfdd81a9a4892ecc8a65ab9b2aa76d2faa56a64b1f281a6"
   license "MIT"
   head "https://github.com/sxyazi/yazi.git", branch: "main"
 
@@ -19,8 +19,8 @@ class Yazi < Formula
   depends_on "rust" => :build
 
   def install
-    path = build.head? ? "yazi-fm" : "app"
-    system "cargo", "install", *std_cargo_args(path: path)
+    ENV["VERGEN_GIT_SHA"] = tap.user
+    system "cargo", "install", *std_cargo_args(path: "yazi-fm")
   end
 
   test do
@@ -37,6 +37,6 @@ class Yazi < Formula
       end
     end
 
-    assert_equal "yazi #{version}", shell_output("#{bin}/yazi --version").strip
+    assert_match "yazi #{version}", shell_output("#{bin}/yazi --version").strip
   end
 end
