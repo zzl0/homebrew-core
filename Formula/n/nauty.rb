@@ -25,6 +25,10 @@ class Nauty < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a439879b6cf21d24797ac4420500a0ecf519a5afa59eb3a7c00fe3900eb4400"
   end
 
+  # patch to correct the location of nauty*.pc files
+  # upstream informed and responded that it will be worked on
+  patch :DATA
+
   def install
     system "./configure", "--includedir=#{include}/nauty", *std_configure_args
     system "make", "all", "TLSlibs"
@@ -61,3 +65,18 @@ class Nauty < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/makefile.in b/makefile.in
+index 422ff69..572448f 100644
+--- a/makefile.in
++++ b/makefile.in
+@@ -17,7 +17,7 @@ exec_prefix=@exec_prefix@
+ bindir=@bindir@
+ libdir=@libdir@
+ includedir=@includedir@
+-pkgconfigexecdir=${prefix}/libdata/pkgconfig
++pkgconfigexecdir=${libdir}/pkgconfig
+
+ INSTALL=@INSTALL@
+ INSTALL_DATA=@INSTALL_DATA@
