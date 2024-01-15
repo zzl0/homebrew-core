@@ -1,8 +1,8 @@
 class Pypy39 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.9-v7.3.14-src.tar.bz2"
-  sha256 "560fe6161e159557e1fe612aaadf9b293eefded1da372e70b8e3b23bba598366"
+  url "https://downloads.python.org/pypy/pypy3.9-v7.3.15-src.tar.bz2"
+  sha256 "e42c16593dd2d8e30ffa6287660c6984562bf4e9f95e660706e16764dfec85a8"
   license "MIT"
   head "https://github.com/pypy/pypy.git", branch: "main"
 
