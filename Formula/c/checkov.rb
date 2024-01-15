@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/82/f9/c0bb62815a645e467a7408f5e01d91f79a42a84aa57be3d69af71f9ee9bd/checkov-3.1.50.tar.gz"
-  sha256 "18ccd011b15e2740884c4cd252463a52eb98c57e74b0dfe48791149f1616b476"
+  url "https://files.pythonhosted.org/packages/f0/16/76a5b3c5f87858f2c7ee9f5e1a03df241aa35562adf1b3fbff6d9d62e50b/checkov-3.1.60.tar.gz"
+  sha256 "324daffdc9cdbb6610e21854455ab05aec1b81d614c77528005d8a34669e701c"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fb60b566ce9f390da1792e49bb4cb9a7070c94d3c76e8673ae1a3a6a0633442a"
@@ -100,13 +99,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/00/7f/a57904d439ff55617b2d0e0c5071973b971f978de341822231a087397f5b/boto3-1.34.16.tar.gz"
-    sha256 "a316c87223f7f37b62af825524745ffb93f5b18580f3912acc39a1704d44ea43"
+    url "https://files.pythonhosted.org/packages/4f/2e/ef7530d7e5d0576ca252fbdd99001ebbd94f3d7ffb8b4a496915d07fdddf/boto3-1.34.19.tar.gz"
+    sha256 "95d2c2bde86a0934d4c461020c50fc1344b444f167654e215f1de549bc77fc0f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/92/b4/c3c57cf4e4fcf8a93dc54e842cc6c554dc02abe2372d177409d70f899c2c/botocore-1.34.16.tar.gz"
-    sha256 "94697602998dced2ce63321a3dbb2e3ddd477721b376cde41fcca9d3ef069037"
+    url "https://files.pythonhosted.org/packages/bc/d8/a31a6f55f2e438e6e3f19fc302a540ecf2c545684be5b7f5b875aca54892/botocore-1.34.19.tar.gz"
+    sha256 "64352b2f05de5c6ab025c1d5232880c22775356dcc5a53d798a6f65db847e826"
   end
 
   resource "cached-property" do
@@ -325,8 +324,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/c2/63/94a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1/rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "rustworkx" do
