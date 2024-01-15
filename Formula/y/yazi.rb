@@ -7,13 +7,13 @@ class Yazi < Formula
   head "https://github.com/sxyazi/yazi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b50744b72dcb5c074d7bdda8b19724e48ee656a810955d7f4318791d6ae300e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5be8049f6a9422adcccdf8b4c91d8340a569e94693bb95668a1f8e7436b5714b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3676e95614db729138473147498ed5abde5558e06b8dffa2cb7cc631cfcb66b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68c0028ac63869139707253d19da55f573c263c4f91c448fd21c67c67b5d02d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "762ce4a801525ed8ef8f0cf22ac319e556db0b2ce9ac54d7446ce3240d2ff880"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce424d94681c839c467b0e5a98a8cafc06d11b2e522df31e15708cd086b318a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "425962eb6f2d7d52c2272931726d19af6461342878f37bb4ff114817ba061c97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bede36e75f06be786f7de1b79ff2af8d602b30b0fd8dea1123718ac8010a001a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20b93e66d8323982c99d8c6ec10b14d30e4303cd2ea86f20d01a344fa22a3f67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b2b5033889eaa5c5ed8d3372cbf96ac038c63840ef8fada962dc61af740a603"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a2f7b790cf7a6cab20fecddb24a3f0735c214edb4f00179dc4f7a8d99c29d73"
+    sha256 cellar: :any_skip_relocation, ventura:        "86380b300d5bb05dcd112fb3aefa719b62f58fcf94c935360efaa1c26c500243"
+    sha256 cellar: :any_skip_relocation, monterey:       "f85d31a38aef1b22d13a35db9c432220923d72f55da9b6d16d2837be41ca4958"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a86f30480159a875e092f51d2f951fca6b4dc9a18de1cccde893bd4ce7c1c595"
   end
 
   depends_on "rust" => :build
