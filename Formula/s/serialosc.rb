@@ -3,8 +3,8 @@ class Serialosc < Formula
   homepage "https://github.com/monome/docs/blob/gh-pages/serialosc/osc.md"
   # pull from git tag to get submodules
   url "https://github.com/monome/serialosc.git",
-      tag:      "v1.4.3",
-      revision: "12fa410a14b2759617c6df2ff9088bc79b3ee8de"
+      tag:      "v1.4.4",
+      revision: "19ad3a211876c4434346ab2565eeec09cc949856"
   license "ISC"
   head "https://github.com/monome/serialosc.git", branch: "main"
 
@@ -34,8 +34,12 @@ class Serialosc < Formula
     depends_on "systemd" # for libudev
   end
 
+  # Uses fmemopen API (High Sierra) but defining a target macOS version of Leopard:
+  # https://github.com/monome/serialosc/pull/71
+  patch :DATA
+
   def install
-    system "python3", "./waf", "configure", "--enable-system-libuv", "--prefix=#{prefix}"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
     system "python3", "./waf", "build"
     system "python3", "./waf", "install"
   end
@@ -51,3 +55,19 @@ class Serialosc < Formula
     assert_match version.to_s, shell_output("#{bin}/serialoscd -v")
   end
 end
+__END__
+diff --git a/wscript b/wscript
+index 5026c5c..8af6e84 100644
+--- a/wscript
++++ b/wscript
+@@ -272,8 +272,8 @@ def configure(conf):
+ 					'-Wl,--enable-stdcall-fixup'])
+ 		conf.env.append_unique("WINRCFLAGS", ["-O", "coff"])
+ 	elif conf.env.DEST_OS == "darwin":
+-		conf.env.append_unique("CFLAGS", ["-mmacosx-version-min=10.5"])
+-		conf.env.append_unique("LINKFLAGS", ["-mmacosx-version-min=10.5"])
++		conf.env.append_unique("CFLAGS", ["-mmacosx-version-min=10.13"])
++		conf.env.append_unique("LINKFLAGS", ["-mmacosx-version-min=10.13"])
+ 
+ 	if conf.options.disable_zeroconf:
+ 		conf.define("SOSC_NO_ZEROCONF", True)
