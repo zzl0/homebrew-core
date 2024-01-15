@@ -59,13 +59,12 @@ class MoltenVk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "824854916a8585d9ca8c4aa5320207c6c7d9a17ea80231a296353cc99c7c67ec"
-    sha256 cellar: :any, arm64_ventura:  "ef70b4f7386544e4501ca678d0c4161675bd7255cdd2feed40236dbd93dd3733"
-    sha256 cellar: :any, arm64_monterey: "582db3ddb81439b7d6a6521b0173615906c903ff13bf2a59e1c07d6ce13732f2"
-    sha256 cellar: :any, sonoma:         "1b6217a945ce747dbdfd73d628bdaff2522929cdecd0e37f8a10ef5af53ba9f3"
-    sha256 cellar: :any, ventura:        "95c0a376b5e4b736fa409d2871897da543497554519eefcfce1ae1cb94bd012f"
-    sha256 cellar: :any, monterey:       "a5d0472bbc7c2049f070aa19b3f7b6f70f6c1d9538400ccf619fe8636e781609"
+    sha256 cellar: :any, arm64_sonoma:   "d5c9c58fb6e8ade6c059a4f8584b4cfb9b77e6d93a6c46856c9c61d72a827b92"
+    sha256 cellar: :any, arm64_ventura:  "d5c9c58fb6e8ade6c059a4f8584b4cfb9b77e6d93a6c46856c9c61d72a827b92"
+    sha256 cellar: :any, arm64_monterey: "3cebad86a5ed6dbbfb8585c3d53a3b231daf0920d1e828b25d70f96f0739fd0f"
+    sha256 cellar: :any, sonoma:         "e71d24f1f20db3dae42699531bf49cf656f533f03291616179f21f99a32680e5"
+    sha256 cellar: :any, ventura:        "e71d24f1f20db3dae42699531bf49cf656f533f03291616179f21f99a32680e5"
+    sha256 cellar: :any, monterey:       "8830b328d1ce651e6f9ef1be8b85f01c955f055eb0b5c386786a865054d9e0ec"
   end
 
   head do
