@@ -1,10 +1,9 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
   homepage "https://github.com/libsdl-org/SDL_mixer"
-  url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz"
-  sha256 "7a6ba86a478648ce617e3a5e9277181bc67f7ce9876605eea6affd4a0d6eea8f"
+  url "https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.0/SDL2_mixer-2.8.0.tar.gz"
+  sha256 "1cfb34c87b26dbdbc7afd68c4f545c0116ab5f90bbfecc5aebe2a9cb4bb31549"
   license "Zlib"
-  revision 1
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -37,11 +36,13 @@ class Sdl2Mixer < Formula
   depends_on "pkg-config" => :build
   depends_on "flac"
   depends_on "fluid-synth"
+  depends_on "game-music-emu"
   depends_on "libvorbis"
   depends_on "libxmp"
   depends_on "mpg123"
   depends_on "opusfile"
   depends_on "sdl2"
+  depends_on "wavpack"
 
   def install
     inreplace "SDL2_mixer.pc.in", "@prefix@", HOMEBREW_PREFIX
@@ -61,7 +62,7 @@ class Sdl2Mixer < Formula
       "--enable-music-midi-fluidsynth",
       "--disable-music-midi-fluidsynth-shared",
       "--disable-music-midi-native",
-      "--disable-music-midi-timidy",
+      "--disable-music-midi-timidity",
       "--enable-music-ogg",
       "--enable-music-ogg-vorbis",
       "--disable-music-ogg-vorbis-shared",
@@ -74,9 +75,14 @@ class Sdl2Mixer < Formula
       "--enable-music-mp3",
       "--enable-music-mp3-mpg123",
       "--disable-music-mp3-mpg123-shared",
-      "--disable-music-mp3-drmp3",
+      "--disable-music-mp3-minimp3",
       "--enable-music-opus",
-      "--disable-music-opus-shared"
+      "--disable-music-opus-shared",
+      "--enable-music-gme",
+      "--disable-music-gme-shared",
+      "--enable-music-wavpack",
+      "--enable-music-wavpack-dsd",
+      "--disable-music-wavpack-shared"
 
     system "make", "install"
   end
@@ -88,7 +94,7 @@ class Sdl2Mixer < Formula
 
       int main()
       {
-          const int INIT_FLAGS = MIX_INIT_FLAC | MIX_INIT_MOD | MIX_INIT_MP3 | MIX_INIT_OGG | MIX_INIT_MID | MIX_INIT_OPUS;
+          const int INIT_FLAGS = MIX_INIT_FLAC | MIX_INIT_MOD | MIX_INIT_MP3 | MIX_INIT_OGG | MIX_INIT_MID | MIX_INIT_OPUS | MIX_INIT_WAVPACK;
           int success = Mix_Init(INIT_FLAGS);
           Mix_Quit();
           return success == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
