@@ -1,8 +1,8 @@
 class Pypy310 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.10-v7.3.14-src.tar.bz2"
-  sha256 "a3481af466103fa13740db4e27780e0423dcf8626b3340f60d3d3c28fbc11ae0"
+  url "https://downloads.python.org/pypy/pypy3.10-v7.3.15-src.tar.bz2"
+  sha256 "48ce19ca7642131b8468ddfb7ef355f49952518702ab501e2c6b3d9b4eb09ad4"
   license "MIT"
   head "https://github.com/pypy/pypy.git", branch: "main"
 
