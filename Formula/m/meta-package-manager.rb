@@ -1,11 +1,13 @@
 class MetaPackageManager < Formula
   include Language::Python::Virtualenv
+  include Language::Python::Shebang
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
   url "https://files.pythonhosted.org/packages/7b/7c/4dd9cf8781048142762c387064412c060e43742e7890611725598150e3db/meta_package_manager-5.14.0.tar.gz"
   sha256 "c3f7d8ae30f50bd6961085f667c4ca1c8941593309c8dc1a63abcf0b9a0cd066"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484e689cb4ed5c88b4844acd54ad2641571bc9148171f533471ae0c602d8a575"
@@ -184,6 +186,7 @@ class MetaPackageManager < Formula
   end
 
   def install
+    rewrite_shebang detected_python_shebang, "meta_package_manager/bar_plugin.py"
     virtualenv_install_with_resources
   end
 
