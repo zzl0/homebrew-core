@@ -9,17 +9,13 @@ class Serialosc < Formula
   head "https://github.com/monome/serialosc.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "167c9c76b53a711595088b8fa35873625dbc4310cf7ea32ea4990dd119569c24"
-    sha256 cellar: :any,                 arm64_ventura:  "3080c9badf496b7befff93f8a00d58fa83ce0de652bb0eb08296b409491b2efb"
-    sha256 cellar: :any,                 arm64_monterey: "318e77a4ee30e5b95315e2d05ee4967400fabc94cfb9621961f425132fa96f78"
-    sha256 cellar: :any,                 arm64_big_sur:  "f5b5a750553afaad105661c6c3a1d863bd18e89a6c1f818877e09fab50798e23"
-    sha256 cellar: :any,                 sonoma:         "dd51fc0dbf6fbdc7c0613a14c77f2d37c39eedbc929cebd43461e67f3accce76"
-    sha256 cellar: :any,                 ventura:        "740a5861d890f439eab1812de773d574c27dac4581db94ccbb09a1c3acb70077"
-    sha256 cellar: :any,                 monterey:       "cf20c8747d7be7d4fea6709348af811a25f7e82c40ec462f6f2fe746951da665"
-    sha256 cellar: :any,                 big_sur:        "dd151339ca334c6719b61216a4ca378f1980079de8b7d666a7b544aa3eb71484"
-    sha256 cellar: :any,                 catalina:       "8f47b03bae3c5309d74a3032264246f33e9c05141b6679a057b9cfbc0fa3a8c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a80b151ced619522b991261dfb4a40a18acd6b47a02c82a2748fe13b29636813"
+    sha256 cellar: :any,                 arm64_sonoma:   "c9d79b6270b3a2e19e0154148b34f315f4396e62795d13ea6ed30306ee4e152e"
+    sha256 cellar: :any,                 arm64_ventura:  "dfc2861176110ab1853c2cd2f196f2081570b8280b27cd246a29d8d1879f8ce5"
+    sha256 cellar: :any,                 arm64_monterey: "972d810857722ce1b6fa7dd49f9a3b62623d81269267913bea17cbe845e35413"
+    sha256 cellar: :any,                 sonoma:         "203065f92d72654c7e957e3742b8df010254f4bdb5ead9f1b6ff8883c4ee0ad5"
+    sha256 cellar: :any,                 ventura:        "1be36c6a1de9496207dc9697788252f7b31036bad06a21683bf11bc5ee2534c2"
+    sha256 cellar: :any,                 monterey:       "d87477eb3bade445735ddae8ff084f67f376293fb744782f03895e398a96f280"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56b10b96744fac9f1e5e476ab8d1600b963bdbbc1c54f25a8835cee647355d19"
   end
 
   depends_on "confuse"
