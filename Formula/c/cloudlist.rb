@@ -1,8 +1,8 @@
 class Cloudlist < Formula
   desc "Tool for listing assets from multiple cloud providers"
   homepage "https://github.com/projectdiscovery/cloudlist"
-  url "https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "e7f6e981d20c95a34eb5b858ac554f39003b01f5a50d37980be4bf87e98c7712"
+  url "https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "2144e98b2b0fc2543bec596b2c45491ba3dbe0316fd96c1f99a785309a093dc3"
   license "MIT"
   head "https://github.com/projectdiscovery/cloudlist.git", branch: "main"
 
