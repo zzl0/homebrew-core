@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v1.2.278.tar.gz"
-  sha256 "6a81f8931b4a29669f2e2f8526dffe0662416652d3ae60591f6a6aa451c8d0c4"
+  url "https://github.com/werf/werf/archive/refs/tags/v1.2.279.tar.gz"
+  sha256 "e05795cb66d79add8306274b3d67e694d299bd9d09178385b857dc58414381d8"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -30,6 +30,12 @@ class Werf < Formula
     depends_on "pkg-config" => :build
     depends_on "btrfs-progs"
     depends_on "device-mapper"
+  end
+
+  # build patch to support go1.21 build, upstream pr ref, https://github.com/werf/werf/pull/5931
+  patch do
+    url "https://github.com/werf/werf/commit/cf07a1a90022188ec40bf5d3cdc70855ee475ef5.patch?full_index=1"
+    sha256 "112876536e7a8887e9e307773790ebb56c009f44cf1b75719a240ff280431093"
   end
 
   def install
