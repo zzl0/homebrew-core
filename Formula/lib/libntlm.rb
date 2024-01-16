@@ -11,18 +11,13 @@ class Libntlm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b4dc0f1daed24b50ca4e781f8e59ae1f77a8ebeb0c664b1d4a1a19802082597d"
-    sha256 cellar: :any,                 arm64_ventura:  "d8d6009fd8f61ed5c328f0dc175769f814070d7df24e112c13c4a41852eff77b"
-    sha256 cellar: :any,                 arm64_monterey: "2f27227db0e6572c8332911e61888cbbc0cf223426de87191f97b35164ef20fa"
-    sha256 cellar: :any,                 arm64_big_sur:  "0b3b553a37a15dd0ffd396e8d07b295197e39f8f4e8670dc49a5ae214ded1cc1"
-    sha256 cellar: :any,                 sonoma:         "3e5f804fd463824049c6310a8ced98662b68a892700553e17a6fd08b6a3733a0"
-    sha256 cellar: :any,                 ventura:        "0f53829f0f54569250c5e698e582ec9caeb48ab8c0f7b43c729f2778e5e248e1"
-    sha256 cellar: :any,                 monterey:       "77de0ff9606d4701c26356065cc8ee0f6bbe9ca13b12e3494addf1b0e41f4c01"
-    sha256 cellar: :any,                 big_sur:        "c8662388829c4cacb52f1c948b8ae2ba19ad8c28ef53cda651b0e5cf8c0529fe"
-    sha256 cellar: :any,                 catalina:       "7e34bd216191b40a86075d825c98c929d4f61842be989b605caba169ac68c999"
-    sha256 cellar: :any,                 mojave:         "a7de6d5c400b83a6f5e18423d396321aa45fb1a12dd1577df04389a7379e743a"
-    sha256 cellar: :any,                 high_sierra:    "e9b9b29b0f54e3349be1fad6f281d7ed0b972deaab07a0febe2ab75a73028ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4d65c7586feae3a5fa694b88d3ec258e7825ca6e14dee9403541dd5be2b0b40"
+    sha256 cellar: :any,                 arm64_sonoma:   "a19de329bc94a571183ca05e94a2b5d6ba191f791acec2cc84685edeb7830c92"
+    sha256 cellar: :any,                 arm64_ventura:  "6c497f294540cb3d3e7e0d4e30ea323ce98626a266a777afbaa04982fbfd0c7b"
+    sha256 cellar: :any,                 arm64_monterey: "f4aa92e91bfce75842ec9ea9800dd43f2d6afa38e11b735d72d0c0ab88845e19"
+    sha256 cellar: :any,                 sonoma:         "d4fa60526ecddba17fc60ae7410499f03b779015c2c0e98b50aece688c8e52e8"
+    sha256 cellar: :any,                 ventura:        "418598d92ec06810ab33c0db40cc674f0609b4d217a543bc6299c4b3e462abb9"
+    sha256 cellar: :any,                 monterey:       "62ddd12d3c8ec321ef216145d37e1151bab4c22e30fb167c8388a6918eef54a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ca554f42dd1ae5813bf910251332b7faee13f680fc6b7fb433b8f1ff946ef39"
   end
 
   def install
