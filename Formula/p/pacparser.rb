@@ -1,8 +1,8 @@
 class Pacparser < Formula
   desc "Library to parse proxy auto-config (PAC) files"
   homepage "https://github.com/manugarg/pacparser"
-  url "https://github.com/manugarg/pacparser/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "99ddfdea3473fceef42a31dde59116ad79d04b2f1cd18d76556bbd50e2e80bbc"
+  url "https://github.com/manugarg/pacparser/archive/refs/tags/v1.4.3.tar.gz"
+  sha256 "437adddb23fac102a4fb781f49ef4da41cf62d12a24920061b8eaccc98c528af"
   license "LGPL-3.0-or-later"
   head "https://github.com/manugarg/pacparser.git", branch: "master"
 
