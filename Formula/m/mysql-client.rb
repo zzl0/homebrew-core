@@ -1,8 +1,8 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
-  homepage "https://dev.mysql.com/doc/refman/8.2/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.2/mysql-boost-8.2.0.tar.gz"
-  sha256 "9a6fe88c889dfb54a8ee203a3aaa2af4d21c97fbaf171dadaf5956714552010e"
+  homepage "https://dev.mysql.com/doc/refman/8.3/en/"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.3/mysql-boost-8.3.0.tar.gz"
+  sha256 "f0a73556b8a417bc4dc6d2d78909080512beb891930cd93d0740d22207be285b"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -62,10 +62,6 @@ class MysqlClient < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Fix bad linker flags in `mysql_config`.
-    # https://bugs.mysql.com/bug.php?id=111011
-    inreplace bin/"mysql_config", "-lzlib", "-lz"
   end
 
   test do
