@@ -4,19 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/7b/7c/4dd9cf8781048142762c387064412c060e43742e7890611725598150e3db/meta_package_manager-5.14.0.tar.gz"
-  sha256 "c3f7d8ae30f50bd6961085f667c4ca1c8941593309c8dc1a63abcf0b9a0cd066"
+  url "https://files.pythonhosted.org/packages/eb/50/ce722b0bd646702b54e855bea3d33ed17a3b212d890cde29fdf9ab1beceb/meta_package_manager-5.14.1.tar.gz"
+  sha256 "77128a3911acc3a290b11bc310a858c0ec1630a77a5e2f716f53bf63796e5b10"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75b448b9c168a541a8eb4c235042afb89a76664f3bc2a0d5c2294e453a63b81b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6143516b0448a936425f6a104405905ac5a054c7418faac39b5a7abfe1dbbfb8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "319673507cebc37574d709654732b15ba27cec2d603341f9a2456d35fd6c6a26"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c4a5b0b40ef99007e6ae406c8e8879ed9cc8b486dc6996c2f106084815890d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "905d1fa7df3aea1c6fbe0a8acabe0f8875519230b311d9c10918d09a66965ed4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c24d6e135e4968d32dd3258fc6d4582017fc38c658059f298e902ab14eace82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e183a33940b8d8e54599554ae6e26291b9adbdb6171baae2f6b86f60f36b7c5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09e3a5023f2740be5cc3dbcfdd9bdd38010b63c9d6b06aeb82ae39fb07b6ff0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8aebc3fc308e3eaa99dda605bd18f8894a6628abd9e834415e8715ad09d98cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cdec3be97572be7ec11c85d8b8a048872e52c25edd7652d073b6aefbf1a470d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "800dcfe7c7280c4a800857b08a9ef6e8c388eb28ea4e0b8ac44a5f2f48a82c37"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cac71a0f927f7b60ca10fb12eb4c5839911f3a74f57c0c86c5e276d6ca68dd7"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec6cae104a34b2e8f8179c3cfdc4845704f855903863e229280ba80eb26fed69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b693fccbbbd739e1593ef5af900081c47f731cccac88d268dbcdb85a3c835c9"
   end
 
   depends_on "docutils"
