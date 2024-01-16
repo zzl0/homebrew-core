@@ -32,6 +32,7 @@ class Mplayershell < Formula
                "-configuration", "Release",
                "clean", "build",
                "SYMROOT=build",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "DSTROOT=build"
     bin.install "build/Release/mps"
     man1.install "Source/mps.1"
