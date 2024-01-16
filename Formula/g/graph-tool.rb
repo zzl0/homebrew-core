@@ -3,10 +3,9 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.58.tar.bz2"
-  sha256 "72a36c3cf17d0f624f093d6d083dd5ecaf040c7022bf332148c772008c987a17"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.59.tar.bz2"
+  sha256 "cde479c0a7254b72f6e795d03b0273b0a7d81611a6a3364ba649c2c85c99acae"
   license "LGPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -51,14 +50,8 @@ class GraphTool < Formula
   uses_from_macos "expat" => :build
 
   resource "zstandard" do
-    url "https://files.pythonhosted.org/packages/4d/70/1f883646641d7ad3944181549949d146fa19e286e892bc013f7ce1579e8f/zstandard-0.21.0.tar.gz"
-    sha256 "f08e3a10d01a247877e4cb61a82a319ea746c356a3786558bed2481e6c405546"
-  end
-
-  # fix boost 1.83 compatibility, remove in next release
-  patch do
-    url "https://git.skewed.de/count0/graph-tool/-/commit/0a837b40538df619f43706d50efe0c7afde755a9.patch"
-    sha256 "db2a1014c98812bb7121ff69527ce8407bf5a0351241116a160bc1c826d6d514"
+    url "https://files.pythonhosted.org/packages/5d/91/2162ab4239b3bd6743e8e407bc2442fca0d326e2d77b3f4a88d90ad5a1fa/zstandard-0.22.0.tar.gz"
+    sha256 "8226a33c542bcb54cd6bd0a366067b610b41713b64c9abec1bc4533d69f51e70"
   end
 
   # https://git.skewed.de/count0/graph-tool/-/wikis/Installation-instructions#manual-compilation
