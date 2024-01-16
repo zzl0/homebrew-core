@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_09_2.tar.gz"
-  sha256 "d6ed9e0cdf231550fa850070be7ea53154d46ec6cf32a9b5fd5fec2d34a60c6b"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_09_4.tar.gz"
+  sha256 "abacae431bbc5882b87cc8629b7ddc02757204e854aa45b6157ec2bf45d623ef"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -26,6 +26,7 @@ class Rdkit < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "swig" => :build
   depends_on "boost"
   depends_on "boost-python3"
@@ -92,7 +93,7 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DPostgreSQL_CONFIG=#{postgresql.opt_libexec}/bin/pg_config
+      -DPostgreSQL_CONFIG=#{postgresql.bin}/pg_config
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
