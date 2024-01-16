@@ -1,8 +1,8 @@
 class Govulncheck < Formula
   desc "Database client and tools for the Go vulnerability database"
   homepage "https://github.com/golang/vuln"
-  url "https://github.com/golang/vuln/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "973a94a499c19c90f76624f9fc22d8a15b68fbb9565d74d237d4fb524bddf4ec"
+  url "https://github.com/golang/vuln/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "e5a38b9bd7aedc67f0cab6a9c90d0515041da2cea919fb2fb2351b94fe6bf29b"
   license "BSD-3-Clause"
 
   bottle do
