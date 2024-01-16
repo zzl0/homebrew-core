@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tar.xz"
   sha256 "01597db0132c1cf7b331eff68ae09b5a235a3c3caa9c944c29cac7d1c4c4c00a"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
