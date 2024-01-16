@@ -9,8 +9,8 @@ class Kdoctools < Formula
   ]
 
   stable do
-    url "https://download.kde.org/stable/frameworks/5.113/kdoctools-5.113.0.tar.xz"
-    sha256 "4a7dd10c60796f433f48bde5b9ff5de0bd3430ba790d99d2cffa9e0bed27da31"
+    url "https://download.kde.org/stable/frameworks/5.114/kdoctools-5.114.0.tar.xz"
+    sha256 "fb883f7e3a95535fad243059f91cb302a31820ca31e1d4c1e093b5fd45464597"
     depends_on "qt@5"
   end
 
