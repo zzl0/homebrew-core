@@ -1,8 +1,8 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https://kubecm.cloud"
-  url "https://github.com/sunny0826/kubecm/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "6ce8802571be851e99603713cc638023776da0d2120cdc7d137a8e9319453f73"
+  url "https://github.com/sunny0826/kubecm/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "901dc2759ab14fa5048a0cdd09301d3f8ff30870435c06ac07bc91ea0117804e"
   license "Apache-2.0"
 
   bottle do
@@ -16,13 +16,6 @@ class Kubecm < Formula
   end
 
   depends_on "go" => :build
-
-  # patch to use go1.21 for build
-  # upstream pr ref, https://github.com/sunny0826/kubecm/pull/847
-  patch do
-    url "https://github.com/sunny0826/kubecm/commit/e8bcf31999e9629eb68174ee817b6f1c1b2951a3.patch?full_index=1"
-    sha256 "63a48460535c857b804095eedea8d91c2dc42f76c9fd5d8004213dbdd6fe925f"
-  end
 
   def install
     ldflags = "-s -w -X github.com/sunny0826/kubecm/version.Version=#{version}"
