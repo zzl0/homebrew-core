@@ -1,8 +1,8 @@
 class PythonAbseil < Formula
   desc "Abseil Common Libraries (Python)"
   homepage "https://abseil.io/docs/python/"
-  url "https://files.pythonhosted.org/packages/c6/09/fe8d9ab3e640b12322f8f73448db3428bf417b7dcfe14702fc7413e6c5c9/absl-py-2.0.0.tar.gz"
-  sha256 "d9690211c5fcfefcdd1a45470ac2b5c5acd45241c3af71eed96bc5441746c0d5"
+  url "https://files.pythonhosted.org/packages/7a/8f/fc001b92ecc467cc32ab38398bd0bfb45df46e7523bf33c2ad22a505f06e/absl-py-2.1.0.tar.gz"
+  sha256 "7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff"
   license "Apache-2.0"
 
   bottle do
