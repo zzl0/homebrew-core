@@ -8,8 +8,8 @@ class Ki18n < Formula
   ]
 
   stable do
-    url "https://download.kde.org/stable/frameworks/5.113/ki18n-5.113.0.tar.xz"
-    sha256 "fc94ba4cd1a4f0d25958764efcfc052cbf29fcf302cd668be2b18f62c6c58042"
+    url "https://download.kde.org/stable/frameworks/5.114/ki18n-5.114.0.tar.xz"
+    sha256 "1ba88bf8b6dcbe0136f193839a3e49354fab400c69f3b71e355e95ceb81ae0f9"
     depends_on "qt@5"
   end
 
