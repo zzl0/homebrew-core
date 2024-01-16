@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-21.0.1-ga.tar.gz"
-  sha256 "4414ebc898e53489c2325ff6cb1a73640840f31c2fd671bd598e23c8a87e88ad"
+  url "https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-21.0.2-ga.tar.gz"
+  sha256 "17eda717843ffbbacc7de4bdcd934f404a23a57ebb3cda3cec630a668651531f"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -55,22 +55,22 @@ class Openjdk < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_macos-aarch64_bin.tar.gz"
-        sha256 "2e6522bb574f76cd3f81156acd59115a014bf452bbe4107f0d31ff9b41b3da57"
+        url "https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-aarch64_bin.tar.gz"
+        sha256 "9760eaa019b6d214a06bd44a304f3700ac057d025000bdfb9739b61080969a96"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_macos-x64_bin.tar.gz"
-        sha256 "c65ba92b73d8076e2a10029a0674d40ce45c3e0183a8063dd51281e92c9f43fc"
+        url "https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-x64_bin.tar.gz"
+        sha256 "1ca6db9e6c09752f842eee6b86a2f7e51b76ae38e007e936b9382b4c3134e9ea"
       end
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-aarch64_bin.tar.gz"
-        sha256 "3238c93267c663dbca00f5d5b0e3fbba40e1eea2b4281612f40542d208b6dd9a"
+        url "https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_linux-aarch64_bin.tar.gz"
+        sha256 "f5e4e4622756fafe05ac0105a8efefa1152c8aad085a2bbb9466df0721bf2ba4"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-x64_bin.tar.gz"
-        sha256 "beaf61959c2953310595e1162b0c626aef33d58628771033ff2936609661956c"
+        url "https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_linux-x64_bin.tar.gz"
+        sha256 "7e80146b2c3f719bf7f56992eb268ad466f8854d5d6ae11805784608e458343f"
       end
     end
   end
@@ -175,12 +175,12 @@ diff -pur a/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c b/src/jdk.
 +++ b/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c	2022-10-24 18:27:36.000000000 +0200
 @@ -29,9 +29,9 @@
  #include <unistd.h>
- 
+
  #include <jni.h>
 -#include <netinet/tcp.h>
- 
+
  #define __APPLE_USE_RFC_3542
 +#include <netinet/tcp.h>
  #include <netinet/in.h>
- 
+
  #ifndef IP_DONTFRAG
