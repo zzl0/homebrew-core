@@ -995,7 +995,7 @@
     "exclude_packages": ["argcomplete", "PyYAML"]
   },
   "pythran": {
-    "exclude_packages": ["numpy", "ply"]
+    "exclude_packages": ["numpy", "ply", "setuptools"]
   },
   "pyvim": {
     "exclude_packages": ["six", "Pygments"]
