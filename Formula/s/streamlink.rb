@@ -3,10 +3,9 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/c7/eb/bd99f3ce5d9cf720d267d6f7219e12042ab95ed89abd093d97073a3f190e/streamlink-6.5.0.tar.gz"
-  sha256 "8f4d61593bcce10f8d5e84ca956aac4fa639c0a349e7df379834373a883966ed"
+  url "https://files.pythonhosted.org/packages/6a/9d/c2813174d64802b04888cb9ff844c9922a3f1c4c729202a6d1e6b50185ef/streamlink-6.5.1.tar.gz"
+  sha256 "207fb4ce99c35bfeb1b8f7c76b96cfcb4076ad6881c61eaea553c2ec13d97c57"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
@@ -58,8 +57,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/83/18/1d0c7cf3df839cc2827a0deee2e4b42f4048bc4c1c15612271e2db3928e5/lxml-5.0.1.tar.gz"
-    sha256 "4432a1d89a9b340bc6bd1201aef3ba03112f151d3f340d9218247dc0c85028ab"
+    url "https://files.pythonhosted.org/packages/2b/b4/bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845/lxml-5.1.0.tar.gz"
+    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
   end
 
   resource "outcome" do
@@ -73,8 +72,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/b1/38/42a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151/pycryptodome-3.19.1.tar.gz"
-    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
+    url "https://files.pythonhosted.org/packages/b9/ed/19223a0a0186b8a91ebbdd2852865839237a21c74f1fbc4b8d5b62965239/pycryptodome-3.20.0.tar.gz"
+    sha256 "09609209ed7de61c2b560cc5c8c4fbf892f8b15b1faf7e4cbffac97db1fffda7"
   end
 
   resource "pysocks" do
@@ -98,8 +97,8 @@ class Streamlink < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/c7/9a/39e0a59d762f4c72cec458f263ee2265e29f883421062f64fd8e01f69013/trio-0.23.2.tar.gz"
-    sha256 "da1d35b9a2b17eb32cae2e763b16551f9aa6703634735024e32f325c9285069e"
+    url "https://files.pythonhosted.org/packages/8a/f3/07c152213222c615fe2391b8e1fea0f5af83599219050a549c20fcbd9ba2/trio-0.24.0.tar.gz"
+    sha256 "ffa09a74a6bf81b84f8613909fb0beaee84757450183a7a2e0b47b455c0cac5d"
   end
 
   resource "trio-websocket" do
