@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v1.2.279.tar.gz"
-  sha256 "e05795cb66d79add8306274b3d67e694d299bd9d09178385b857dc58414381d8"
+  url "https://github.com/werf/werf/archive/refs/tags/v1.2.280.tar.gz"
+  sha256 "af0fa9e9f304bdc9aaa2f2b30eb52fcfcb9022cd85848ee1012aee4aba4e7730"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05c050887ab31ff84f140dee19f382c5a0cbacb8388492d6e19de8b3cb94642f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "114f452635df0db5788ab59e19872824a996fba639970534ca7bdaf9a1493636"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bcc9dbd8036024f248ca954112a64e40c0843d7dbcdefb4ddd846073a46b59b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "21390ec82153043461b3c4d48ed34a95025ec394dac080d623a99c74975b7b7a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f1b17f7ac5c020158e42c334d227b5932f7584c55646914379ceb2ea83a8126c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4545ceacc5a5a96445a65f7fa7f0ff77edeabbf5dc45ff5ac2e5eeb6b3cc5c7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "889c17fd07623d32f47e88866ebab8e6d916851694f32de6d67dba1ee6a8203f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4db8332e521a17b352cddb93f64aa304359321e46ba69455e32b0978818ce6a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4adf3059abbe9d4eed1796180d1cc74401773832f452634192695c36e641b1f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f78ee420e3ef497dbb1f93fd0999bd8168d982f36ce2f179b2be48f6eb8ae7a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4855cd6293406a075aae47f947e52bfe9a1f91dac7179c6ff28f30e3f977b755"
+    sha256 cellar: :any_skip_relocation, ventura:        "588a739141207427fc506d6b32eaf41059ec65fdad69d4e25e5176c6866cfa00"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a13266a2f1d2aeea882a3c04d303a2e8bb51998e14e49b421fef5131b6baa9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbd6a233e31a54d8b8f86ddf382db7e9f6ce9101a8bde859aad8089f4c9b3c91"
   end
 
   depends_on "go" => :build
@@ -30,12 +30,6 @@ class Werf < Formula
     depends_on "pkg-config" => :build
     depends_on "btrfs-progs"
     depends_on "device-mapper"
-  end
-
-  # build patch to support go1.21 build, upstream pr ref, https://github.com/werf/werf/pull/5931
-  patch do
-    url "https://github.com/werf/werf/commit/cf07a1a90022188ec40bf5d3cdc70855ee475ef5.patch?full_index=1"
-    sha256 "112876536e7a8887e9e307773790ebb56c009f44cf1b75719a240ff280431093"
   end
 
   def install
