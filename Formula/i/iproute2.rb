@@ -12,8 +12,7 @@ class Iproute2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "17fd0334f62c219c1bc18363355e3fddf367324a7b8bb694336761ef29783db6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3efb5987dda1554228babaf42521101ac2e79368bbff1a9391f069e8552976e6"
   end
 
   depends_on "bison" => :build
