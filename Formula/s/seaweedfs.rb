@@ -1,11 +1,20 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/seaweedfs/seaweedfs"
-  url "https://github.com/seaweedfs/seaweedfs.git",
-    tag:      "3.59",
-    revision: "27b34f37935fb3eddb9c7759acf397dbae20eb03"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
+
+  stable do
+    url "https://github.com/seaweedfs/seaweedfs.git",
+        tag:      "3.62",
+        revision: "59b8af99b0aca1b9e88fec7b5f27c7d15e5e8604"
+
+    # patch for http assign logic
+    patch do
+      url "https://github.com/seaweedfs/seaweedfs/commit/3002087541f2d4447cbccd67c48554b7b86772b1.patch?full_index=1"
+      sha256 "4c40a870e51887ef5c9135809c88c00e3b0297a6f40e20cdff42fc57a0980512"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49057409518be8dc8b828e13a86763fbeabe73c8a07716b92ba5f301e45e5822"
