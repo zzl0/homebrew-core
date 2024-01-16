@@ -9,8 +9,8 @@ class Karchive < Formula
   ]
 
   stable do
-    url "https://download.kde.org/stable/frameworks/5.113/karchive-5.113.0.tar.xz"
-    sha256 "2da489460198e4c9aabe4734793c97290ecf08f789160fae639ef40a0bba430d"
+    url "https://download.kde.org/stable/frameworks/5.114/karchive-5.114.0.tar.xz"
+    sha256 "aa413081eff657576944e2b20df298add063b2a9e99d8b0ec9c8dbac7e60af04"
     depends_on "qt@5"
   end
 
