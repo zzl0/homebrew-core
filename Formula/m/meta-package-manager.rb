@@ -1,20 +1,22 @@
 class MetaPackageManager < Formula
   include Language::Python::Virtualenv
+  include Language::Python::Shebang
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
   url "https://files.pythonhosted.org/packages/7b/7c/4dd9cf8781048142762c387064412c060e43742e7890611725598150e3db/meta_package_manager-5.14.0.tar.gz"
   sha256 "c3f7d8ae30f50bd6961085f667c4ca1c8941593309c8dc1a63abcf0b9a0cd066"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484e689cb4ed5c88b4844acd54ad2641571bc9148171f533471ae0c602d8a575"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cdda0511a6ab783c2a5b87f23d58d6122b6872fee41908783eff3f7d4eabccd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f88abbb69b8d7facbc4fd860a1475bc5f695306f925ff573732d77d5b27175e7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b3119d881ab6c7ec0405684f8ade6ef47f94fbee04d42e4ce2dcddfca6f875a"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa09b4bc88212d89c617008ba6df50c4581f5dc25fe17ee641f8b852fbad7b59"
-    sha256 cellar: :any_skip_relocation, monterey:       "8714b1ca79d615796a5277a70bfc961d131bd88c67ee3489bb784d8ca7312c5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c1bee581bb6431d7e136db0db2e91b32e941524f1d2dcd8b80d8064ce1a2d57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75b448b9c168a541a8eb4c235042afb89a76664f3bc2a0d5c2294e453a63b81b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6143516b0448a936425f6a104405905ac5a054c7418faac39b5a7abfe1dbbfb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "319673507cebc37574d709654732b15ba27cec2d603341f9a2456d35fd6c6a26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c4a5b0b40ef99007e6ae406c8e8879ed9cc8b486dc6996c2f106084815890d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "905d1fa7df3aea1c6fbe0a8acabe0f8875519230b311d9c10918d09a66965ed4"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c24d6e135e4968d32dd3258fc6d4582017fc38c658059f298e902ab14eace82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e183a33940b8d8e54599554ae6e26291b9adbdb6171baae2f6b86f60f36b7c5b"
   end
 
   depends_on "docutils"
@@ -184,6 +186,7 @@ class MetaPackageManager < Formula
   end
 
   def install
+    rewrite_shebang detected_python_shebang, "meta_package_manager/bar_plugin.py"
     virtualenv_install_with_resources
   end
 
