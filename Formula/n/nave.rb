@@ -7,15 +7,13 @@ class Nave < Formula
   head "https://github.com/isaacs/nave.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58ec21b9754af33112168f4878cbe6035e9da081baba466208ccdad4d2b11704"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c6dac4fcbb6d1b0c9e0f2046ca1a2dda7b79f76258c94e240ed328ea0b5226d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c6dac4fcbb6d1b0c9e0f2046ca1a2dda7b79f76258c94e240ed328ea0b5226d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c6dac4fcbb6d1b0c9e0f2046ca1a2dda7b79f76258c94e240ed328ea0b5226d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "316ed35b9e300f40c281a97e047283a3e1da1bdb8b3ee11c79800c0dd6f44902"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f9651e421727a2314a952f1ffe678b308205abfed8144ac56b4178244a9c4b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f9651e421727a2314a952f1ffe678b308205abfed8144ac56b4178244a9c4b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2f9651e421727a2314a952f1ffe678b308205abfed8144ac56b4178244a9c4b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c6dac4fcbb6d1b0c9e0f2046ca1a2dda7b79f76258c94e240ed328ea0b5226d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
+    sha256 cellar: :any_skip_relocation, monterey:       "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
   end
 
   def install
