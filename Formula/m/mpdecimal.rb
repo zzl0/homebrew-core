@@ -22,6 +22,7 @@ class Mpdecimal < Formula
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
+    ENV.append "LDXXFLAGS", "-Wl,-rpath,#{rpath}"
     system "./configure", *std_configure_args
     system "make"
     system "make", "install"
