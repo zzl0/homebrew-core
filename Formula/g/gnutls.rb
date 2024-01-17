@@ -1,9 +1,9 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.2.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.2.tar.xz"
-  sha256 "e765e5016ffa9b9dd243e363a0460d577074444ee2491267db2e96c9c2adef77"
+  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.3.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.3.tar.xz"
+  sha256 "f74fc5954b27d4ec6dfbb11dea987888b5b124289a3703afcada0ee520f4173e"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
 
   livecheck do
