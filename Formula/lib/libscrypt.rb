@@ -17,16 +17,24 @@ class Libscrypt < Formula
   end
 
   def install
+    # `-Os` leads to bugs. https://github.com/technion/libscrypt/issues/60
+    ENV.O1
+
+    args = ["PREFIX=#{prefix}"]
+    install_target = "install"
+
     if OS.mac?
-      system "make", "install-osx", "PREFIX=#{prefix}", "LDFLAGS=", "LDFLAGS_EXTRA=", "CFLAGS_EXTRA="
-      system "make", "check", "LDFLAGS=", "LDFLAGS_EXTRA=", "CFLAGS_EXTRA="
-    else
-      system "make"
-      system "make", "check"
-      lib.install "libscrypt.a", "libscrypt.so", "libscrypt.so.0"
-      include.install "libscrypt.h"
-      prefix.install "libscrypt.version"
+      args += %w[CFLAGS_EXTRA=-fstack-protector LDFLAGS= LDFLAGS_EXTRA=]
+      install_target << "-osx"
     end
+
+    system "make", "check", *args
+    system "make", install_target, *args
+    system "make", "install-static", *args
+
+    return if OS.mac?
+
+    prefix.install "libscrypt.version"
   end
 
   test do
