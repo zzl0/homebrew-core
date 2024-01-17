@@ -1,9 +1,9 @@
 class Ncftp < Formula
   desc "FTP client with an advanced user interface"
   homepage "https://www.ncftp.com/"
-  url "https://mirrorservice.org/sites/ftp.ncftp.com/ncftp/ncftp-3.2.6-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/ncftp-3.2.6-src.tar.gz"
-  sha256 "129e5954850290da98af012559e6743de193de0012e972ff939df9b604f81c23"
+  url "https://www.ncftp.com/public_ftp/ncftp/ncftp-3.2.7-src.tar.xz"
+  mirror "https://fossies.org/linux/misc/ncftp-3.2.7-src.tar.xz"
+  sha256 "d41c5c4d6614a8eae2ed4e4d7ada6b6d3afcc9fb65a4ed9b8711344bef24f7e8"
   license "ClArtistic"
 
   livecheck do
@@ -28,6 +28,9 @@ class Ncftp < Formula
 
   uses_from_macos "ncurses"
 
+  # fix conflicting types for macos build, sent the patch to support@ncftp.com
+  patch :DATA
+
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
@@ -45,3 +48,17 @@ class Ncftp < Formula
     system "#{bin}/ncftp", "-F"
   end
 end
+
+__END__
+diff --git a/sio/DNSUtil.c b/sio/DNSUtil.c
+index 0d542bb..eb7e867 100644
+--- a/sio/DNSUtil.c
++++ b/sio/DNSUtil.c
+@@ -12,7 +12,7 @@
+ #	define Strncpy(a,b,s) strncpy(a, b, s); a[s - 1] = '\0'
+ #endif
+
+-#if (((defined(MACOSX)) && (MACOSX < 10300)) || (defined(AIX) && (AIX < 430)) || (defined(DIGITAL_UNIX)) || (defined(SOLARIS)) || (defined(SCO)) || (defined(HPUX)))
++#if ((defined(AIX) && (AIX < 430)) || (defined(DIGITAL_UNIX)) || (defined(SOLARIS)) || (defined(SCO)) || (defined(HPUX)))
+ extern int getdomainname(char *name, gethostname_size_t namelen);
+ #endif
