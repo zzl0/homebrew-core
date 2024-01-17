@@ -1,10 +1,9 @@
 class Zenity < Formula
   desc "GTK+ dialog boxes for the command-line"
   homepage "https://wiki.gnome.org/Projects/Zenity"
-  url "https://download.gnome.org/sources/zenity/3.44/zenity-3.44.2.tar.xz"
-  sha256 "3fb5b8b1044d3d129262d3c54cf220eb7f76bc21bd5ac6d96ec115cd3518300e"
+  url "https://download.gnome.org/sources/zenity/4.0/zenity-4.0.1.tar.xz"
+  sha256 "0c2f537813b10f728470d9d05d6c95713db2512f9c95096e1e85b1a6739605e6"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
     sha256 arm64_sonoma:   "58f6bd294009256de48247741826763dbb2f1ee3dc1966305772771093b9d6f3"
@@ -17,12 +16,14 @@ class Zenity < Formula
   end
 
   depends_on "gettext" => :build
+  depends_on "help2man" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "gtk+3"
+  depends_on "libadwaita"
 
   def install
     ENV["DESTDIR"] = "/"
