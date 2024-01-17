@@ -9,13 +9,13 @@ class Enex2notion < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd2e88d6b73520b37140cf866b6590a58a22aff654fbcb76a576b72142249c11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ebcba69344dd662af056f4a3a4e9642e96c0cd3caa74c69f0d45d621690ed70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4619bfef993a4a4a440b118c2956f80b89bee6e6ef84f687bdc2b5eff0f803ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc02815148edbdf374e44bf11a627969da5dec10f8e49c3a5f09715c508d20ab"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5121211adf25093c0048681a486addc986a2be847acead2116838ae5cf99ef2"
-    sha256 cellar: :any_skip_relocation, monterey:       "63f0e58e7617b1279ac70de4ae0e69c48bb5cce0bc5e3bb250b5a0298b9b3468"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5033eaec71899ffbf63f44162e18553fa2341ebc4c394acaa5e4419e9c6d3c56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3fa9f62620faa0814d9642e8b50009e727126cd3f919f038da84cd593bee5c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e4a0cc21fb36d818d9fe8d796f6753d81920c7b306513db88a79071a94659fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b29fd3e0ce2e825cc05233dffd069b580fc235aa26d7bdef9df5fc120145bb1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aef6783d0ccae7500852fad63659f028301b286a6048a012de83f15b4e96edce"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ee34d5fb6dd170c8d12f8400e4450b29fdba3e0a929caa93e3c447c04f09f12"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e8af9a339f882c1d7348ddf88831facc2e3471d79c1df8102b31ed9fd091777"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d846dfa4623c36bb61b2e83272dec4ea7cacd7c17333cdccd69d7a706326dfb"
   end
 
   depends_on "python-setuptools" => :build
