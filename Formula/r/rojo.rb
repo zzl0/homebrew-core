@@ -1,8 +1,10 @@
 class Rojo < Formula
   desc "Professional grade Roblox development tools"
   homepage "https://rojo.space/"
-  url "https://github.com/rojo-rbx/rojo/archive/refs/tags/v7.3.0.tar.gz"
-  sha256 "849626d5395ccc58de04c4d6072c905880432c58bb2dc71ca27ab7f794b82187"
+  # pull from git tag to get submodules
+  url "https://github.com/rojo-rbx/rojo.git",
+      tag:      "v7.4.0",
+      revision: "c0a96e38110c14e932c3319b8ae32a1aaf8f2e9b"
   license "MPL-2.0"
   head "https://github.com/rojo-rbx/rojo.git", branch: "master"
 
@@ -18,11 +20,15 @@ class Rojo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3100624c3e30d51adb62aa7806296374faae2d357fee855dcb231a49b80887ff"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "wally" => :build
+  depends_on "openssl@3"
 
   def install
-    system "wally", "install", "--project-path", "./plugin"
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 
