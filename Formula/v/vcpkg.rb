@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2023-11-16.tar.gz"
-  version "2023.11.16"
-  sha256 "9ed144f6836bb608c10f4facfed39c2caf3ceee9f2d9543f304568c46825c03f"
+  url "https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2024-01-11.tar.gz"
+  version "2024.01.11"
+  sha256 "36590cb374eec56e3cc6ec49a3afdda0ece1afb81011a06c8c52da3fd017f8a1"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -60,6 +60,6 @@ class Vcpkg < Formula
   test do
     # DO NOT CHANGE. If the test breaks then the `inreplace` needs fixing.
     message = "error: Could not detect vcpkg-root."
-    assert_match message, shell_output("#{bin}/vcpkg search sqlite", 1)
+    assert_match message, shell_output("#{bin}/vcpkg search sqlite 2>&1", 1)
   end
 end
