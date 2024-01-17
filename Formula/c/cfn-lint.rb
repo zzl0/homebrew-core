@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/9e/73/9013f1837b2e38a1af27f69b888920d2ad2c2771c79988d9ec7127031301/cfn-lint-0.83.8.tar.gz"
-  sha256 "fbbe31925d78cb9373b160d944ba30cafc085dcd256a3c30139004ef96482154"
+  url "https://files.pythonhosted.org/packages/0a/75/87b419149db1da90a32f11cfb3fc7faad9a87f4ca49b9a2694a03fe5edc7/cfn-lint-0.84.0.tar.gz"
+  sha256 "7a819ffa48ab23f775037ddb0d9330ba206d547439f69bc72f76f1183d8bc124"
   license "MIT-0"
 
   bottle do
@@ -40,13 +40,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5f/b6/1e45c3a145304c3feaf48959c6a46efe9a256eec4d417a445b0d9827d20c/boto3-1.34.14.tar.gz"
-    sha256 "5c1bb487c68120aae236354d81b8a1a55d0aa3395d30748a01825ef90891921e"
+    url "https://files.pythonhosted.org/packages/15/41/ef925ff414b28fc55babb0df145cbee23e2f1e8896e4eab80c4f082f9289/boto3-1.34.21.tar.gz"
+    sha256 "206e61ba1f8c830e5df0355606d178ad5bc970df12c4c318b021c71da410eb0c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/35/6d/a5aaf38f980060d17905398301033e9eb45c2552bf281fa7fd4c8e23ebdd/botocore-1.34.14.tar.gz"
-    sha256 "041bed0852649cab7e4dcd4d87f9d1cc084467fb846e5b60015e014761d96414"
+    url "https://files.pythonhosted.org/packages/38/4b/14c863acefe2b242f659cba1b7e58cba3f5bc9a5bda59e708714195be216/botocore-1.34.21.tar.gz"
+    sha256 "21983bb0473a19130192c50ec6974d55f0c4aa48a7094bcf40f7882c8b69b8f1"
   end
 
   resource "jmespath" do
@@ -75,8 +75,8 @@ class CfnLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
-    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
+    url "https://files.pythonhosted.org/packages/44/cd/1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279ad/jsonschema-4.21.0.tar.gz"
+    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
   end
 
   resource "jsonschema-specifications" do
@@ -110,8 +110,8 @@ class CfnLint < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/c2/63/94a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1/rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "s3transfer" do
