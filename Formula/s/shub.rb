@@ -3,8 +3,8 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https://shub.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/c2/e9/1c4e174e304fbb419b99589d7c567e0d3379cfc07757624b147f56023e5c/shub-2.15.1.tar.gz"
-  sha256 "e336711cd3aa5d7ef1c010f9d2265b32f10627f7b09ff0367fb8f0d5e934dd45"
+  url "https://files.pythonhosted.org/packages/4b/48/df85a1fdbd6c3928f70c6384ab9bd9197abaad8dbe302e19fba58ce6b7ff/shub-2.15.2.tar.gz"
+  sha256 "bf529b3d1777b6d9dbb65cd1afe55791af1a66bacdfa857079a9255462c4df1a"
   license "BSD-3-Clause"
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
@@ -20,7 +20,8 @@ class Shub < Formula
 
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
