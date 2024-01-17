@@ -1,8 +1,8 @@
 class Iputils < Formula
   desc "Set of small useful utilities for Linux networking"
   homepage "https://github.com/iputils/iputils"
-  url "https://github.com/iputils/iputils/archive/refs/tags/20231222.tar.gz"
-  sha256 "18d51e7b416da0ecbc0ae18a2cba76407ca0b5b3f32c356034f258a0cb56793f"
+  url "https://github.com/iputils/iputils/archive/refs/tags/20240117.tar.gz"
+  sha256 "a5d66e2997945b2541b8f780a7f5a5ec895d53a517ae1dc4f3ab762573edea9a"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/iputils/iputils.git", branch: "master"
 
