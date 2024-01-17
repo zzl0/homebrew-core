@@ -47,7 +47,8 @@ class Djbdns < Formula
     else
       "/usr"
     end
-    (buildpath/"conf-cc").write "gcc -O2 -include #{usr}/include/errno.h"
+    # `-Wno-implicit-function-declaration` fixes compile with newer Clang
+    (buildpath/"conf-cc").write "gcc -O2 -include #{usr}/include/errno.h -Wno-implicit-function-declaration"
 
     bin.mkpath
     (prefix/"etc").mkpath # Otherwise "file does not exist"
