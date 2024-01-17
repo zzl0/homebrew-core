@@ -1,8 +1,8 @@
 class Kvazaar < Formula
   desc "Ultravideo HEVC encoder"
   homepage "https://github.com/ultravideo/kvazaar"
-  url "https://github.com/ultravideo/kvazaar/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "df21f327318d530fe7f2ec65ccabf400690791ebad726d8b785c243506f0e446"
+  url "https://github.com/ultravideo/kvazaar/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "6d88a9c92c06c275e33ff5df9ed6081f43277988b782298544caa76c20b2b601"
   license "BSD-3-Clause"
   head "https://github.com/ultravideo/kvazaar.git", branch: "master"
 
