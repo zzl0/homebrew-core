@@ -8,11 +8,11 @@ class Sourcery < Formula
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e012881ad07b5493991c62d4e830cbad1ccf16896c1551892b396ea2a92d0c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3607a7cbab48a5412badfbbd7df9a884121b9a24eaf919c600ccf52e64b7a0c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33e260721d234835d1fab9b95e3ac4d348036c200ee3ccd1f2586261394a4de7"
-    sha256 cellar: :any_skip_relocation, ventura:       "6542a985047226fd43d53a185807229581a9953cc36a4e22a58fbe51ffd50445"
-    sha256                               x86_64_linux:  "13c0e0a831aa4cfb64059d541f9dcb01c9af5fa6655496c5aee0f61b4f1ca41a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1ffaaa42ccd25efc96bb4056f9a61ff281d19baddac30c1d4dd6d35869d04b6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af9a3ec966400a7ee5980b6166d1d9bf5ec8ba73ace9d28dfb6dc9c9f8e173cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34c4556c9719d44b8ab08d83de6753b434a29cb1d637aed4574d8ae11a50f22d"
+    sha256 cellar: :any_skip_relocation, ventura:       "8dbfa66711eb1f3c8dba6c83b36460b403f4bd8974d30501fe31332e7099e0d9"
+    sha256                               x86_64_linux:  "cc327bbc34b52dbbd87ddfc2ada1fc14f022b5da078488826c15078fbf7523f7"
   end
 
   depends_on xcode: "14.3"
