@@ -1,10 +1,9 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/archive/refs/tags/2.4.0.0.tar.gz"
-  sha256 "67bbfae1275aabbfdb26869bc6df91feb58e03427cb76df89f74b864dbb5d57b"
+  url "https://github.com/haskell/haskell-language-server/archive/refs/tags/2.6.0.0.tar.gz"
+  sha256 "b23a165121553b59dde8f7e8f9ce24b8eee39d6b6ed5fae20d0882ec16f9da44"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -25,8 +24,7 @@ class HaskellLanguageServer < Formula
   end
 
   depends_on "cabal-install" => [:build, :test]
-  # ghc 9.8 support issue, https://github.com/haskell/haskell-language-server/issues/3861
-  depends_on "ghc@9.2" => [:build, :test]
+  depends_on "ghc" => [:build, :test]
   depends_on "ghc@9.4" => [:build, :test]
   depends_on "ghc@9.6" => [:build, :test]
 
