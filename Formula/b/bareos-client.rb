@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://github.com/bareos/bareos/archive/refs/tags/Release/23.0.0.tar.gz"
-  sha256 "6d3afe2a6e3340e2942f654546a1e919242511dede783aff1c8a97a81bc6a706"
+  url "https://github.com/bareos/bareos/archive/refs/tags/Release/23.0.1.tar.gz"
+  sha256 "ab35e0be81c11913c42e62829daa3228c1ae94ad96d76b829cab0d3eb6f2ef6c"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -38,12 +38,6 @@ class BareosClient < Formula
   end
 
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"
-
-  # build patch for `sprintf` error, upstream PR ref, https://github.com/bareos/bareos/pull/1636
-  patch do
-    url "https://github.com/bareos/bareos/commit/bac6e7f30c0ef0df859e62bd1cd47ed563175d2a.patch?full_index=1"
-    sha256 "1768352769ee7e5f54831d402e8458ddc13c02bfe18a6d96003b45c64dc8b965"
-  end
 
   def install
     # Work around Linux build failure by disabling warnings:
