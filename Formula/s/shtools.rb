@@ -1,8 +1,8 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
   homepage "https://shtools.github.io/SHTOOLS/"
-  url "https://github.com/SHTOOLS/SHTOOLS/releases/download/v4.10.4/SHTOOLS-4.10.4.tar.gz"
-  sha256 "f31ab09e960d85ad23d046fa427b692ffb80915a2c96773725bb83ad90bdec20"
+  url "https://github.com/SHTOOLS/SHTOOLS/archive/refs/tags/v4.11.7.tar.gz"
+  sha256 "855348aab0f807414187ac29c79faf6333ff3422f4c8912f1962d83538329251"
   license "BSD-3-Clause"
   head "https://github.com/SHTOOLS/SHTOOLS.git", branch: "master"
 
