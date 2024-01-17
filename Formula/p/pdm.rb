@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/19/79/e1a41e060f9c9f98aa971d7b71e88212c1120c34d6166d246e77b0cddc4d/pdm-2.11.2.tar.gz"
-  sha256 "5b31255c48d4aca596c73fb872a82848cbe8ff92f008712a9a264455247063ee"
+  url "https://files.pythonhosted.org/packages/17/cf/17f69d1c9df4d7619a1e50b433a2904e0a3656ab0fdf7e60ddeec89cb7c2/pdm-2.12.0.tar.gz"
+  sha256 "271180373d980827e411fd8fdd9e30aa8fbc6bf383908eed0028c50f5de478a7"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -116,8 +116,8 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/07/0f/17dce4ecf6e1dc736bf6545ef6183d0a07284ced5ca0b8a38563d7148e29/unearth-0.12.1.tar.gz"
-    sha256 "4caad941b60f51e50fdc109866234d407910aef77f1233aa1b6b5d168c7427ee"
+    url "https://files.pythonhosted.org/packages/2c/8e/55f2075b91268108c97e025275dd6cf0c03ec648ba28834f9c79fbc64fe1/unearth-0.14.0.tar.gz"
+    sha256 "f3cddfb94ac0f865fbcf964231556ef7183010379c00b01205517a50c78a186d"
   end
 
   resource "urllib3" do
