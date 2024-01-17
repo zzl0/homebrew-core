@@ -1,10 +1,9 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
-  homepage "https://github.com/pymupdf/PyMuPDF"
-  url "https://files.pythonhosted.org/packages/3a/75/743a7b990a56eaf4a870f0c6eb7ccd80a9ece040d56c89b851caba49cce0/PyMuPDF-1.23.6.tar.gz"
-  sha256 "618b8e884190ac1cca9df1c637f87669d2d532d421d4ee7e4763c848dc4f3a1e"
+  homepage "https://pymupdf.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/6f/b1/2ab072c90cb0778728e7b93480b89380fcc8777888db8cff500bd4593985/PyMuPDF-1.23.15.tar.gz"
+  sha256 "54fe0c0e6879922875a8d43ec8f66cc346cbc7ee71fc47d34fe101653cb0661d"
   license "AGPL-3.0-only"
-  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f3ba9c8d34158989ac87dd4c91b20e1009f5d09b51fa8db8a684752fbd91c417"
@@ -53,7 +52,8 @@ class Pymupdf < Formula
       import sys
       from pathlib import Path
 
-      import fitz
+      # per 1.23.9 release, `fitz` module got renamed to `fitz_old`
+      import fitz_old as fitz
 
       in_pdf = sys.argv[1]
       out_png = sys.argv[2]
