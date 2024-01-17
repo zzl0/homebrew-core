@@ -1,8 +1,8 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.5.5.tar.gz"
-  sha256 "014ef9d4f5b5f4e7af4d93ad399667947bb55e31860e671f0def1b8ae6f05de0"
+  url "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.5.6.tar.gz"
+  sha256 "e4a527e38e67090c1d2dc41df28270d16c15f7ca5210a3e7ec4c4b8fda36e28f"
   license "BSD-3-Clause"
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
