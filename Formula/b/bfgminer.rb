@@ -7,9 +7,11 @@ class Bfgminer < Formula
   head "https://github.com/luke-jr/bfgminer.git", branch: "bfgminer"
 
   bottle do
+    sha256 arm64_sonoma:   "e3d88bfc64abc6a6e41f8d96d5d6b099b7c93c5829f17f1ec134a3b0e0aad44d"
     sha256 arm64_ventura:  "b45669226e0d2a3155e437d643ef700ff143ce071dd3c4affce7a80ef24ab568"
     sha256 arm64_monterey: "2179e3de8ffd1c871a9b3a7fa539e569d62ba42b67d0c12ed609098cb9214e6d"
     sha256 arm64_big_sur:  "f397c2b4428a3c96239d86edf75efb444ba7b1cc79f6d2550ba04960e40308e2"
+    sha256 sonoma:         "dd8db416717d33317ea08df28bf38dc497bef8044161067a44ffa16d32df254a"
     sha256 ventura:        "90867fc9aba1b6844de5403e3e3bc71a01b01686c28b06e574759c44d541ed06"
     sha256 monterey:       "5548f25bdbecdca56951bcc0d0d44b5fc509bb86c525c02c64599fd826928eab"
     sha256 big_sur:        "0ae6dafd587a2dd9d20d57b34d96ddcea07d570c251db4d0b9e4397ebd6ca0ec"
