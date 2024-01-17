@@ -7,7 +7,7 @@ class Iputils < Formula
   head "https://github.com/iputils/iputils.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b5210ac3b74c8ae63cdfee5157f59ec09eec7e25a9e6bca4bb44c68c04240117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c3b72929f9f259e4e409961d0dbd080a0815177c8d969223d1ea1cef57c80270"
   end
 
   depends_on "meson" => :build
