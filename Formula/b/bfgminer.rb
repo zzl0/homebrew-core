@@ -1,7 +1,7 @@
 class Bfgminer < Formula
   desc "Modular CPU/GPU/ASIC/FPGA miner written in C"
-  homepage "http://bfgminer.org"
-  url "http://bfgminer.org/files/latest/bfgminer-5.5.0.txz"
+  homepage "https://web.archive.org/web/20221230131107/http://bfgminer.org/"
+  url "https://web.archive.org/web/20190824104403/http://bfgminer.org/files/latest/bfgminer-5.5.0.txz"
   sha256 "ac254da9a40db375cb25cacdd2f84f95ffd7f442e31d2b9a7f357a48d32cc681"
   license "GPL-3.0-or-later"
   head "https://github.com/luke-jr/bfgminer.git", branch: "bfgminer"
@@ -29,7 +29,7 @@ class Bfgminer < Formula
   uses_from_macos "curl"
 
   def install
-    configure_args = std_configure_args + %w[
+    args = %w[
       --without-system-libbase58
       --enable-cpumining
       --enable-opencl
@@ -38,9 +38,9 @@ class Bfgminer < Formula
       --enable-bitmain
       --enable-alchemist
     ]
-    configure_args << "--with-udevrulesdir=#{lib}/udev" if OS.linux?
+    args << "--with-udevrulesdir=#{lib}/udev" if OS.linux?
 
-    system "./configure", *configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
