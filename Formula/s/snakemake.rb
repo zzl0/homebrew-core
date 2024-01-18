@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/10/0a/573580447e19bf0b96dffa2099bf6a711123029642d103d9e9f658aac335/snakemake-8.2.0.tar.gz"
-  sha256 "4226179d344152e046d5ceaa589f4a77c2b19af99976322ca2ede58a57942a63"
+  url "https://files.pythonhosted.org/packages/d9/16/b1ac26651fa482047172b1dcf060b10b6d2043195632922a5bd8bd18f830/snakemake-8.2.1.tar.gz"
+  sha256 "f177ada98188a10602aa2ed758fc9b7ff13e7107c5e582463ae681c525c28f0c"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -111,8 +111,8 @@ class Snakemake < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
-    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
+    url "https://files.pythonhosted.org/packages/44/cd/1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279ad/jsonschema-4.21.0.tar.gz"
+    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
   end
 
   resource "jsonschema-specifications" do
@@ -176,8 +176,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-common" do
-    url "https://files.pythonhosted.org/packages/9c/48/2ccc5927dd713ef5e39a87585bda4049101b1d06ea39c92b9ee6e11446ab/snakemake_interface_common-1.15.0.tar.gz"
-    sha256 "58eb3c02d0e34fa1fd28c87218964d3ab65df6de3a0dab0f51fdce2c9179d8d0"
+    url "https://files.pythonhosted.org/packages/d6/33/3e633a6fbf525c13b1c9e6cb51334e796b2695f3497143675ce0f95338d3/snakemake_interface_common-1.15.1.tar.gz"
+    sha256 "5a779c7a0f27412bce26e1dfe4ccc712d04e0c0b9ceaa1640335a35d02509732"
   end
 
   resource "snakemake-interface-executor-plugins" do
