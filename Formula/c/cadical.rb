@@ -11,16 +11,19 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13b837a9034ff0a1ad7a0af153fab6c4a7106fc5318f2c7af6389ce8fe8c1d46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f271b809b40e12060400e268c0f9428df90d8295305b0439e75d574d6c0f33d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b22034b8fdedef13debfcc725cbfd7bf1558ce74533466e1014e674a985726b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b96e0d337aa447c7e38fc365875810ffc62f814936dc3d64c98d547f5aca65bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "00871826a5f2600d9e3b48106e9126f4a8d30fabce0bcc4cd7f8d8f85672d306"
-    sha256 cellar: :any_skip_relocation, monterey:       "192920c2618906fbe106392fc23cc66372176a60c38e15f9a681c2639a26dc96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bf4ff7f9cc4b6b526a0b943af72b9a21c98a11ad044bb08ee6eb473ceb30cd8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12a6ba5e47163f21c2adea4a9c24d54ec718eaf15814a8b9fb50f3fb7a405536"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9da25027f1b1d1a05961ac36d35e5ce300e6da4ffc363af51704d9b814b3a70e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "14c65f2b7b8a5779aa2de566b87ebf742f32e91580cb2e24361b713892576c8a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "22f7cd2152275b6ada552d02bc2368a6fe2165f0b6326fc33a7a01f359a0db1b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c60eafb731dd91d5a445580b4293eebd4cfd53facda4bf9633bcdff5229314cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "215968a1857596651a10aa52518389ffdd0b8afac93c755d4fd816625238db8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9eddc91fcce428dad58af47c8e7a685295bba5eeab08f53fb0490ec3f332f270"
   end
 
   def install
+    ENV.append_to_cflags "-fPIC" if OS.linux?
+
     system "./configure"
     chdir "build" do
       system "make"
