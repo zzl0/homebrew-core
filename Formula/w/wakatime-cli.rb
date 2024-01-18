@@ -8,13 +8,13 @@ class WakatimeCli < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d48dd47aca34410e02f5346ea9f28c63b6c5eb5a7a7982a4813df1fc735a888"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d67dba13f02c8e48eeef5eb7e419b01e5fd1c4d3d63f69998816131681237809"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27dcdaca1f2e90dabb4d2c468b80d120867d6ba084bcc1ea47b3d3ee93b5b1e2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4ec1e990039da5a82ac4cd0893bcf232a54b385ed3d839e74913a158bd5887d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "aed9271624ae60d09afc90140e9582f09674ffbe6c851490dd8bd87de8396b32"
-    sha256 cellar: :any_skip_relocation, monterey:       "d80b3385eb7a6a344e4e620d6ad0a5dc32ee8c364373f383c7c4157194300c05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80531a31a53e85f2d185a226cfa59d8d34ac819d2b10110e3bbaeb01b2b24ce4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3c5b125ffb05ae8548c11959579dbfa65207a663a238078b0c03f39c68f5a3c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7270bcae55e4baefd8f15732e6eaf22e45bee2ba554644e6574a4556cb46b2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "594b78175ab208211ff4f6ae7c590ea87782d452452d23d561e9f2329783fa6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "83a2c7cdf995e77b7116a056cac2a7e786f2917ba97a31d1aca50739ccd53583"
+    sha256 cellar: :any_skip_relocation, ventura:        "497ceca75ad3e959323c6a212748324f7ed259b2b1c284d9130e00771c2068ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e294703b85c44516035a0f05dee96cfcba9c7f1041608bb25f52f6566896d8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "083c0ea09824ecd24a68d73f46f0f0432ea9b86c0a2fab4ed427a233f8faa809"
   end
 
   depends_on "go" => :build
