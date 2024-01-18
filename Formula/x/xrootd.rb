@@ -30,11 +30,14 @@ class Xrootd < Formula
   depends_on "krb5"
   depends_on "openssl@3"
   depends_on "readline"
-  depends_on "util-linux" # for libuuid
 
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "util-linux" # for libuuid
+  end
 
   def install
     args = std_cmake_args + %W[
