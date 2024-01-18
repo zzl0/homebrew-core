@@ -3,10 +3,9 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https://gnuradio.org/"
-  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.7.0.tar.gz"
-  sha256 "55156650ada130600c70bc2ab38eee718fc1d23011be548471e888399f207ddc"
+  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.9.2.tar.gz"
+  sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
   license "GPL-3.0-or-later"
-  revision 4
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -61,8 +60,8 @@ class Gnuradio < Formula
   fails_with gcc: "5"
 
   resource "cheetah3" do
-    url "https://files.pythonhosted.org/packages/ee/6f/29c6d74d8536dede06815eeaebfad53699e3f3df0fb22b7a9801a893b426/Cheetah3-3.2.6.tar.gz"
-    sha256 "f1c2b693cdcac2ded2823d363f8459ae785261e61c128d68464c8781dba0466b"
+    url "https://files.pythonhosted.org/packages/23/33/ace0250068afca106c1df34348ab0728e575dc9c61928d216de3e381c460/Cheetah3-3.2.6.post1.tar.gz"
+    sha256 "58b5d84e5fbff6cf8e117414b3ea49ef51654c02ee887d155113c5b91d761967"
   end
 
   resource "click-plugins" do
@@ -72,8 +71,8 @@ class Gnuradio < Formula
 
   # pygccxml only published a .whl file on PyPi
   resource "pygccxml" do
-    url "https://github.com/CastXML/pygccxml/archive/refs/tags/v2.2.1.tar.gz"
-    sha256 "9815a12e3bf6b83b2e9d8c88335fb3fa0e2b4067d7fbaaed09c3bf26c6206cc7"
+    url "https://github.com/CastXML/pygccxml/archive/refs/tags/v2.4.0.tar.gz"
+    sha256 "d59867809f8008ec48a5567a7203bb4c130ff203a8ddd708c945690749723c70"
   end
 
   def install
@@ -183,7 +182,7 @@ class Gnuradio < Formula
         top.run();
       }
     EOS
-    system ENV.cxx, testpath/"test.c++", "-std=c++11", "-L#{lib}",
+    system ENV.cxx, testpath/"test.c++", "-std=c++17", "-L#{lib}",
            "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
            "-L#{Formula["boost"].opt_lib}", "-lboost_system",
            "-L#{Formula["log4cpp"].opt_lib}", "-llog4cpp",
