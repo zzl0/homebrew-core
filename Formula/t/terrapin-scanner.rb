@@ -1,8 +1,8 @@
 class TerrapinScanner < Formula
   desc "Vulnerability scanner for the Terrapin attack"
   homepage "https://terrapin-attack.com/"
-  url "https://github.com/RUB-NDS/Terrapin-Scanner/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "f804944de6a2afa061433ddb9d393a9247e8392bf1eb76ccce92175bceb99dab"
+  url "https://github.com/RUB-NDS/Terrapin-Scanner/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "3dde1f19e9228a2a284d73c63b193fdf775cb993945fb328cd01e3a6cc834bf1"
   license "Apache-2.0"
   head "https://github.com/RUB-NDS/Terrapin-Scanner.git", branch: "main"
 
