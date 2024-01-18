@@ -1,8 +1,8 @@
 class Davmail < Formula
   desc "POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway"
   homepage "https://davmail.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/davmail/davmail/6.2.0/davmail-6.2.0-3464.zip"
-  sha256 "15ab41d2dfc185944ca1f604d0a0f92c36068c343c86b888b332893fca8dbe1c"
+  url "https://downloads.sourceforge.net/project/davmail/davmail/6.2.1/davmail-6.2.1-3496.zip"
+  sha256 "907ca9e460b8f3f0748461c740e6cc29e26ee8b5b6e613484fee79f357a5f792"
   license "GPL-2.0-or-later"
 
   livecheck do
