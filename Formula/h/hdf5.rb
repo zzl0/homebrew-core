@@ -38,6 +38,7 @@ class Hdf5 < Formula
     ENV["libaec_DIR"] = Formula["libaec"].opt_prefix.to_s
     args = %w[
       -DHDF5_USE_GNU_DIRS:BOOL=ON
+      -DHDF5_INSTALL_CMAKE_DIR=lib/cmake/hdf5
       -DHDF5_BUILD_FORTRAN:BOOL=ON
       -DHDF5_BUILD_CPP_LIB:BOOL=ON
       -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
