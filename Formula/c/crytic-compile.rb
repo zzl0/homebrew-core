@@ -3,10 +3,9 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/3a/9c/e100d2dbc90471010716e56766ef6608717c44d7278eea3dacb5bb48276a/crytic-compile-0.3.5.tar.gz"
-  sha256 "f9b2bf3dc8c99fbc58c4ae6f82b3e8e378f56e107e37fd8786a36567dd68fa6e"
+  url "https://files.pythonhosted.org/packages/76/07/b629a6bf2c56f63bb6cd1b2000e58395642dcd72ebae746282a58c0feb3f/crytic-compile-0.3.6.tar.gz"
+  sha256 "9a53c8913daadfd0f67e288acbe9e74130fe52cc344849925e6e969abc1b8340"
   license "AGPL-3.0-only"
-  revision 1
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
@@ -25,8 +24,8 @@ class CryticCompile < Formula
   depends_on "solc-select"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/d9/69/de486293f5211d2e8fe1a19854e69f2811a18448162c52b48c67f8fbcac3/cbor2-5.4.6.tar.gz"
-    sha256 "b893500db0fe033e570c3adc956af6eefc57e280026bd2d86fd53da9f1e594d7"
+    url "https://files.pythonhosted.org/packages/bb/66/b09bf8421645852616044d3de9e632e1131c059f928a53bf46b1bc08e3ec/cbor2-5.6.0.tar.gz"
+    sha256 "9d94e2226f8f5792fdba5ab20e07b9bfe02e76c10c3ca126418cd4310439d002"
   end
 
   def install
