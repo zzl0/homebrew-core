@@ -1,8 +1,8 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V3.23.5.tar.gz"
-  sha256 "2e4b113aadee25e40c4672e1458294a7f3111e1593e3483681409ce5bbb947e5"
+  url "https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V3.23.6.tar.gz"
+  sha256 "0a9a3fbc907a95deb8c1481f2b5906f866210764203d0dec5a84089737451e14"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -40,8 +40,8 @@ class Latexindent < Formula
   end
 
   resource "Devel::StackTrace" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Devel-StackTrace-2.04.tar.gz"
-    sha256 "cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855"
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Devel-StackTrace-2.05.tar.gz"
+    sha256 "63cb6196e986a7e578c4d28b3c780e7194835bfc78b68eeb8f00599d4444888c"
   end
 
   resource "Dist::CheckConflicts" do
