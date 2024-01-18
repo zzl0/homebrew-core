@@ -11,7 +11,7 @@ class ImapBackup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "01ac2974aaa5d6b3340ce90e32e50ca2dbfa32463ccd395ee19cddea0bab060a"
+    sha256 cellar: :any_skip_relocation, all: "8fe9de766ebc1653bf758fa4dc8808fe1f82eba759ec492933acc04675efc1fd"
   end
 
   # Requires Ruby >= 2.7
