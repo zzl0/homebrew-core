@@ -8,14 +8,13 @@ class Dolphie < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42a9ee149e564fbf6fe2c3060153826d18793e549d62dcbef46bc849964d1ba6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdc0a9bc8e7dfd2b7b17cd3f451b2a8d2181bc03edd0c3d9261b36aa3b826f04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e386634507ba08666a98c6f9a98f7c755b68d1cad5ed308f4a84d630b7a1c12a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fad846b21c544865608372b9603fe0fb447486ed287232e81ab180d2ca648856"
-    sha256 cellar: :any_skip_relocation, ventura:        "78b040e0ec288c42df8a2e2efbae0c420ed256232d7c69eccb274aeefecc0ffa"
-    sha256 cellar: :any_skip_relocation, monterey:       "836545725bae7b3f8c30f02205153f8c26849f329deae905a48fb9ed6ae4d908"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2464c7e734b90d97acfa3420c7f2e31ebf95445ab25bc847d12685c919098fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "029c68586ee231cdd5af4998840ed012de214e914c30695a557d91573c4fc35e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81cba858788aa4406cf966ccfe2b9e7328cc5c6654816b3f60b1c5593070c23d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d62bb5902822f7a170749b2fbd45f4af14d5d774c8c132f017f39fcca0e66c5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e6489ebb443cd9f5d296e6fc5b687c5937ac9cb16060e44eb2b539fdb51fb9d"
+    sha256 cellar: :any_skip_relocation, ventura:        "389206dc118305aba39ae10854e4b54c6b649bc77713659b6086aa7aa4895d78"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a0f2628873c96bec287dd00030abda4d19c6969e7d30310e227cddbca2039c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67ee09f7099f7d257a27409e9840f53e2dccce98d1e8250b7a98ee0b3127a0d9"
   end
 
   depends_on "cffi"
