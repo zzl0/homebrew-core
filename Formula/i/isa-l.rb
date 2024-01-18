@@ -1,8 +1,8 @@
 class IsaL < Formula
   desc "Intelligent Storage Acceleration Library"
   homepage "https://github.com/intel/isa-l"
-  url "https://github.com/intel/isa-l/archive/refs/tags/v2.30.0.tar.gz"
-  sha256 "bcf592c04fdfa19e723d2adf53d3e0f4efd5b956bb618fed54a1108d76a6eb56"
+  url "https://github.com/intel/isa-l/archive/refs/tags/v2.31.0.tar.gz"
+  sha256 "e218b7b2e241cfb8e8b68f54a6e5eed80968cc387c4b1af03708b54e9fb236f1"
   license "BSD-3-Clause"
 
   bottle do
