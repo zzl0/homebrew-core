@@ -11,14 +11,13 @@ class Cadical < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12a6ba5e47163f21c2adea4a9c24d54ec718eaf15814a8b9fb50f3fb7a405536"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9da25027f1b1d1a05961ac36d35e5ce300e6da4ffc363af51704d9b814b3a70e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "14c65f2b7b8a5779aa2de566b87ebf742f32e91580cb2e24361b713892576c8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "22f7cd2152275b6ada552d02bc2368a6fe2165f0b6326fc33a7a01f359a0db1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "c60eafb731dd91d5a445580b4293eebd4cfd53facda4bf9633bcdff5229314cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "215968a1857596651a10aa52518389ffdd0b8afac93c755d4fd816625238db8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9eddc91fcce428dad58af47c8e7a685295bba5eeab08f53fb0490ec3f332f270"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "531039129b71895c06d6c4cb9710ddec426a1b58c9d2bdde1fed8e58d3db8c93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47ce132cd04bf93473759d84712a390c3019332021d3fa786f39e02f6c5bbc84"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba96834d0685697f44054206bac328f4655cf59e062f0516484b0f93090f72f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5cc90d700f35537520f8974e572b206d80959af7c9bb25c6fdf873ec9b3005a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "c03edc463190a12d60f730c35c73f1f1317f15dae116959b0548621b5c6ce526"
+    sha256 cellar: :any_skip_relocation, monterey:       "8156675a7ebfba7ee149cf10c1e111ec6738a34803295dc94b6368a29e570e20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8e84424cb812c9e6b64c3998bfed60766e980c1e24aee0813d15cb558bcdb5"
   end
 
   def install
