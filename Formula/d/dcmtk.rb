@@ -1,9 +1,9 @@
 class Dcmtk < Formula
   desc "OFFIS DICOM toolkit command-line utilities"
   homepage "https://dicom.offis.de/dcmtk.php.en"
-  url "https://dicom.offis.de/download/dcmtk/dcmtk367/dcmtk-3.6.7.tar.gz"
-  sha256 "7c58298e3e8d60232ee6fc8408cfadd14463cc11a3c4ca4c59af5988c7e9710a"
-  revision 1
+  url "https://dicom.offis.de/download/dcmtk/dcmtk368/dcmtk-3.6.8.tar.gz"
+  sha256 "232076655503138debf2f624109f1799e539354f186ce4e04b27cf82a9d8720f"
+  license "BSD-3-Clause"
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
   livecheck do
