@@ -6,6 +6,16 @@ class Libnsgif < Formula
   license "MIT"
   head "https://git.netsurf-browser.org/libnsgif.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "fb3bd5d0ed63cb47edc86bded832614216985a5f020d4d3e9acf28c05a7d0d8b"
+    sha256 cellar: :any,                 arm64_ventura:  "4ab139b0fdd222e35bcbfed812dcc51b330b3ba6349177cb5032b48c5b4d7af8"
+    sha256 cellar: :any,                 arm64_monterey: "8c885328683eea466ae2ca2006464e4c5b99417f73bd5cec07434509d64c734e"
+    sha256 cellar: :any,                 sonoma:         "7cd6863f98da0e27df13a0a97e80a346077c055408386a7a38dbe60ed67a6ec7"
+    sha256 cellar: :any,                 ventura:        "09d9fcad4d83227aec32245847c57beb11a30a5cb8f65ff91977c90cec0e8f0a"
+    sha256 cellar: :any,                 monterey:       "c9d626fb8d00576af6ab58d5b64c5485d176969bda7160bccc853f636b910211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7daa143db902d9ecc5a9133f4a82a430c6c4bd14bd5de120f879c82a39b1fb91"
+  end
+
   depends_on "netsurf-buildsystem" => :build
 
   def install
