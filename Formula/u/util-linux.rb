@@ -40,6 +40,7 @@ class UtilLinux < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "pkg-config" => :build # fixes ncursesw detection
     depends_on "gettext" # for libintl
   end
 
@@ -56,6 +57,10 @@ class UtilLinux < Formula
     args = %w[--disable-silent-rules --disable-asciidoc]
 
     if OS.mac?
+      # Support very old ncurses used on macOS 13 and earlier
+      # https://github.com/util-linux/util-linux/issues/2389
+      ENV.append_to_cflags "-D_XOPEN_SOURCE_EXTENDED" if MacOS.version <= :ventura
+
       args << "--disable-ipcs" # does not build on macOS
       args << "--disable-ipcrm" # does not build on macOS
       args << "--disable-wall" # already comes with macOS
