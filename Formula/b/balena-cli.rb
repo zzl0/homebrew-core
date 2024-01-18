@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.4.11.tgz"
-  sha256 "65ffe83d58abd76aba20332b730e983559698de77b147d37acd1628984965b79"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.4.12.tgz"
+  sha256 "c0c4daee7e3f76ebb5588df3c3a0e2d46945a91339ca78ec758da9e6fca17e8a"
   license "Apache-2.0"
 
   livecheck do
@@ -22,7 +22,8 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "25bf62903ddd57f519b21aa586a57fa6948af277995a7f315046038c707ca3d2"
   end
 
-  depends_on "node"
+  # need node@18, and also align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21
+  depends_on "node@18"
 
   on_macos do
     depends_on "macos-term-size"
@@ -73,6 +74,8 @@ class BalenaCli < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["node@18"].bin
+
     assert_match "Logging in to balena-cloud.com",
       shell_output("#{bin}/balena login --credentials --email johndoe@gmail.com --password secret 2>/dev/null", 1)
   end
