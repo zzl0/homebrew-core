@@ -1,8 +1,8 @@
 class Gittuf < Formula
   desc "Security layer for Git repositories"
   homepage "https://gittuf.dev/"
-  url "https://github.com/gittuf/gittuf/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "f4fe8f15ed1b65ac921ccec545d2a637e88a239e4262f6c7f1479dced681f188"
+  url "https://github.com/gittuf/gittuf/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "508ce6b396dded2391fef0657922fb6310ba52abd1e3dd5a2dcd79abc6cd5d06"
   license "Apache-2.0"
   head "https://github.com/gittuf/gittuf.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Gittuf < Formula
 
   test do
     output = shell_output("#{bin}/gittuf policy init 2>&1", 1)
-    assert_match "signing key to use to sign policy file", output
+    assert_match "Error: signing key not specified in git config", output unless OS.linux?
 
     output = shell_output("#{bin}/gittuf rsl remote check brewtest 2>&1", 1)
     assert_match "Error: repository does not exist", output
