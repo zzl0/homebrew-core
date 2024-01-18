@@ -1,8 +1,8 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
   homepage "https://stella-emu.github.io/"
-  url "https://github.com/stella-emu/stella/releases/download/6.7/stella-6.7-src.tar.xz"
-  sha256 "babfcbb39abbd1a992cb1e6d3b2f508df7ed19cb9d0b5b5d624828bb98f97267"
+  url "https://github.com/stella-emu/stella/archive/refs/tags/6.7.1.tar.gz"
+  sha256 "c65067ea0cd99c56a4b6a7e7fbb0e0912ec1f6963eccba383aece69114d5f50b"
   license "GPL-2.0-or-later"
   head "https://github.com/stella-emu/stella.git", branch: "master"
 
@@ -19,10 +19,12 @@ class Stella < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f33ba21d74a54ccc7dcf1510060b5a88e104483c6257abbc2379a4bee0ebc6b6"
   end
 
+  depends_on "pkg-config" => :build
   depends_on xcode: :build
   depends_on "libpng"
   depends_on "sdl2"
 
+  uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
@@ -41,7 +43,7 @@ class Stella < Formula
                   "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
           s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
         end
-        xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build"
+        xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build", "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
         prefix.install "build/Release/Stella.app"
         bin.write_exec_script "#{prefix}/Stella.app/Contents/MacOS/Stella"
       end
