@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/fe/6e/2b9d344557d97c31a34e5bdd02f450ed451f380bce09fb8f9fd3cc304e72/dvc-3.39.0.tar.gz"
-  sha256 "878d3c89f1ece1d0f90d41d6e9b092d1d26a2416f7ab0acdf88db731c76df046"
+  url "https://files.pythonhosted.org/packages/2b/d3/19633911fe838387bef026eeab69fcd33114762c03e43baeaba8eeb573e5/dvc-3.40.0.tar.gz"
+  sha256 "9d36b140ac5e00c24b4f22080b7d97f86ca622b6af58ace6bd0d9b24762bcc16"
   license "Apache-2.0"
 
   bottle do
@@ -48,8 +48,8 @@ class Dvc < Formula
   end
 
   resource "aiobotocore" do
-    url "https://files.pythonhosted.org/packages/7b/ea/5ee4b3d4dd6d6f7debc5aece4714915b0d3cd1988fb423151bf10d7ae5ce/aiobotocore-2.9.0.tar.gz"
-    sha256 "4dc1e20da4561ae662219ca95b20f923328c3106764a741bec00e98eb6680f7e"
+    url "https://files.pythonhosted.org/packages/c2/e2/bf1efa3d659d1c544b886220d2b28d0e4497260c6f4398671ebd3caca10f/aiobotocore-2.9.1.tar.gz"
+    sha256 "24daf4f1ce86e2fb5aee146cdc944736ef76791635ec3a9b6f3d5755b1ac3c46"
   end
 
   resource "aiohttp" do
@@ -373,8 +373,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/13/be/92a5451a52fe40720460848e514b53682a120952740d7b68087f870c3241/google-api-python-client-2.113.0.tar.gz"
-    sha256 "bcffbc8ffbad631f699cf85aa91993f3dc03060b234ca9e6e2f9135028bd9b52"
+    url "https://files.pythonhosted.org/packages/47/5f/2cb762b9996a4c3644a1efe602043ca178f3b63cce051bb83b729a04bead/google-api-python-client-2.114.0.tar.gz"
+    sha256 "e041bbbf60e682261281e9d64b4660035f04db1cccba19d1d68eebc24d1465ed"
   end
 
   resource "google-auth" do
@@ -478,8 +478,8 @@ class Dvc < Formula
   end
 
   resource "kombu" do
-    url "https://files.pythonhosted.org/packages/f1/24/f88282626d5f5b720fed5a8d1a609a504569b93465cbbfe8e7c049fba54e/kombu-5.3.4.tar.gz"
-    sha256 "0bb2e278644d11dea6272c17974a3dbb9688a949f3bb60aeb5b791329c44fadc"
+    url "https://files.pythonhosted.org/packages/55/61/0b91085837d446570ea12f63f79463e5a74b449956b1ca9d1946a6f584c2/kombu-5.3.5.tar.gz"
+    sha256 "30e470f1a6b49c70dc6f6d13c3e4cc4e178aa6c469ceb6bcd55645385fc84b93"
   end
 
   resource "markdown-it-py" do
