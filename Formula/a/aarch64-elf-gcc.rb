@@ -5,6 +5,7 @@ class Aarch64ElfGcc < Formula
   mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
   sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  revision 1
 
   livecheck do
     formula "gcc"
@@ -24,8 +25,12 @@ class Aarch64ElfGcc < Formula
 
   depends_on "aarch64-elf-binutils"
   depends_on "gmp"
+  depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
+  depends_on "zstd"
+
+  uses_from_macos "zlib"
 
   def install
     target = "aarch64-elf"
@@ -34,11 +39,14 @@ class Aarch64ElfGcc < Formula
                              "--prefix=#{prefix}",
                              "--infodir=#{info}/#{target}",
                              "--disable-nls",
-                             "--without-isl",
                              "--without-headers",
                              "--with-as=#{Formula["aarch64-elf-binutils"].bin}/aarch64-elf-as",
                              "--with-ld=#{Formula["aarch64-elf-binutils"].bin}/aarch64-elf-ld",
-                             "--enable-languages=c,c++"
+                             "--enable-languages=c,c++,objc,lto",
+                             "--enable-lto",
+                             "--with-system-zlib",
+                             "--with-zstd",
+                             *std_configure_args
       system "make", "all-gcc"
       system "make", "install-gcc"
       system "make", "all-target-libgcc"
