@@ -35,15 +35,13 @@ class Tor < Formula
 
   def install
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -56,13 +54,9 @@ class Tor < Formula
   end
 
   test do
-    if OS.mac?
-      pipe_output("script -q /dev/null #{bin}/tor-gencert --create-identity-key", "passwd\npasswd\n")
-    else
-      pipe_output("script -q /dev/null -e -c \"#{bin}/tor-gencert --create-identity-key\"", "passwd\npasswd\n")
-    end
+    pipe_output("#{bin}/tor-gencert --create-identity-key --passphrase-fd 0")
     assert_predicate testpath/"authority_certificate", :exist?
-    assert_predicate testpath/"authority_signing_key", :exist?
     assert_predicate testpath/"authority_identity_key", :exist?
+    assert_predicate testpath/"authority_signing_key", :exist?
   end
 end
