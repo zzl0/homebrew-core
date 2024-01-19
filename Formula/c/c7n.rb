@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.33.0.tar.gz"
-  sha256 "6dd600c0202a4c29a9dd0edfb2c6afab1cad02c3c4d4af11a203e18354c6881d"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.34.0.tar.gz"
+  sha256 "5896f438c329a1f3f6cedc1e842376445760cca4a4735024abbbf668cf006bac"
   license "Apache-2.0"
 
   livecheck do
@@ -31,18 +31,18 @@ class C7n < Formula
   depends_on "six"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/9d/4d/09a3eb00e6d017dafae80c6ea307992263405aad315587e0b63864ae97e5/boto3-1.33.2.tar.gz"
-    sha256 "70626598dd6698d6da8f2854a1ae5010f175572e2a465b2aa86685c745c1013c"
+    url "https://files.pythonhosted.org/packages/b0/6b/5a1aabd772b26537d7a347beec1318303f489fd75fbad57bf04057d64247/boto3-1.34.22.tar.gz"
+    sha256 "a98c0b86f6044ff8314cc2361e1ef574d674318313ab5606ccb4a6651c7a3f8c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d5/73/40c9dd27acb7fad5d13259c406d305e4452f927d1b1dd16eee79586f5f9c/botocore-1.33.2.tar.gz"
-    sha256 "16a30faac6e6f17961c009defb74ab1a3508b8abc58fab98e7cf96af0d91ea84"
+    url "https://files.pythonhosted.org/packages/0c/91/82c3c17bb22ebb6291d8dc5b07b88c55d5cc55eeaf2ddaf755aa802d8a85/botocore-1.34.22.tar.gz"
+    sha256 "c47ba4286c576150d1b6ca6df69a87b5deff3d23bd84da8bcf8431ebac3c40ba"
   end
 
   resource "docutils" do
@@ -51,8 +51,8 @@ class C7n < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/a6/1d/7a01bc53a248ddb14eb0dca86f089ddf848d7b9485c31d7f840f27acbcfe/importlib_metadata-5.2.0.tar.gz"
-    sha256 "404d48d62bba0b7a77ff9d405efd91501bef2e67ff4ace0bed40a0cf28c3c7cd"
+    url "https://files.pythonhosted.org/packages/ee/eb/58c2ab27ee628ad801f56d4017fe62afab0293116f6d0b08f1d5bd46e06f/importlib_metadata-6.11.0.tar.gz"
+    sha256 "1231cf92d825c9e03cfc4da076a16de6422c863558229ea0b22b675657463443"
   end
 
   resource "jmespath" do
@@ -61,13 +61,13 @@ class C7n < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
-    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
+    url "https://files.pythonhosted.org/packages/44/cd/1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279ad/jsonschema-4.21.0.tar.gz"
+    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/d4/84/8f5072792a260016048d3a5ae5186ec3be9e090480ddf5446484394dd8c3/jsonschema_specifications-2023.11.1.tar.gz"
-    sha256 "c9b234904ffe02f079bf91b14d79987faa685fd4b39c377a0996954c0090b9ca"
+    url "https://files.pythonhosted.org/packages/f8/b9/cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4b/jsonschema_specifications-2023.12.1.tar.gz"
+    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
   end
 
   resource "python-dateutil" do
@@ -81,13 +81,13 @@ class C7n < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
-    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/d3/8c/babd90ebb61a8ce1ade0dc1f87e067287f7d97bf84d5ded1c4cc3fed5134/s3transfer-0.8.1.tar.gz"
-    sha256 "e6cafd5643fc7b44fddfba1e5b521005675b0e07533ddad958a3554bc87d7330"
+    url "https://files.pythonhosted.org/packages/a0/b5/4c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40ba/s3transfer-0.10.0.tar.gz"
+    sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
   end
 
   resource "urllib3" do
