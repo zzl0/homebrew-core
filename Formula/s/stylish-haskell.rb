@@ -1,8 +1,8 @@
 class StylishHaskell < Formula
   desc "Haskell code prettifier"
   homepage "https://github.com/haskell/stylish-haskell"
-  url "https://github.com/haskell/stylish-haskell/archive/refs/tags/v0.14.5.0.tar.gz"
-  sha256 "580af1dc2f2cc3089bb255fd0af15dfb795a9ba0d9e76b2d0ce0c9ed2bcd9f07"
+  url "https://github.com/haskell/stylish-haskell/archive/refs/tags/v0.14.6.0.tar.gz"
+  sha256 "0c0f34271670c23cc4feec7da04487a169a3cd0fde995721503bb5379755b91a"
   license "BSD-3-Clause"
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"
 
@@ -19,16 +19,11 @@ class StylishHaskell < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc" => :build
 
   def install
     system "cabal", "v2-update"
-    # Work around build failure by enabling `ghc-lib` flag
-    # lib/Language/Haskell/Stylish/GHC.hs:71:51: error:
-    #     • Couldn't match expected type 'GHC.LlvmConfig'
-    #                   with actual type 'ghc-lib-parser-9.4.3.20221104:GHC.Driver.Session.LlvmConfig'
-    # Issue ref: https://github.com/haskell/stylish-haskell/issues/405
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+ghc-lib"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do
