@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/2b/d3/19633911fe838387bef026eeab69fcd33114762c03e43baeaba8eeb573e5/dvc-3.40.0.tar.gz"
-  sha256 "9d36b140ac5e00c24b4f22080b7d97f86ca622b6af58ace6bd0d9b24762bcc16"
+  url "https://files.pythonhosted.org/packages/57/4d/f5baa0967ed6eef6f945547a34b018f19b041a5ea7ac6255dc16c071118e/dvc-3.40.1.tar.gz"
+  sha256 "2be77c113e33e05e9dac06d855165334d224d6736930bef9ab710d3e694f60d1"
   license "Apache-2.0"
 
   bottle do
@@ -128,8 +128,8 @@ class Dvc < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/ad/78/a1aeb8f80306101112810263e74ec81a99cdd50ecca1f03819716c1aedb3/azure-core-1.29.6.tar.gz"
-    sha256 "13b485252ecd9384ae624894fe51cfa6220966207264c360beada239f88b738a"
+    url "https://files.pythonhosted.org/packages/cc/c3/b60ac8b63a6f8982cbdab64cb1bd3d9ab036bff5756f4ea74199d80a186c/azure-core-1.29.7.tar.gz"
+    sha256 "2944faf1a7ff1558b1f457cabf60f279869cabaeef86b353bed8eb032c7d8c5e"
   end
 
   resource "azure-datalake-store" do
@@ -528,8 +528,8 @@ class Dvc < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/72/75/642688bf5d99131fe8cf603f4ef9f26e4b1c6ed8f7f5c7e6fb31def54fb7/orjson-3.9.10.tar.gz"
-    sha256 "9ebbdbd6a046c304b1845e96fbcc5559cd296b4dfd3ad2509e33c4d9ce07d6a1"
+    url "https://files.pythonhosted.org/packages/3d/27/6a821fc97a2b68705cba3158e5ddb300938500a8c2b19dc084f6d43587d4/orjson-3.9.12.tar.gz"
+    sha256 "da908d23a3b3243632b523344403b128722a5f45e278a8343c2bb67538dff0e4"
   end
 
   resource "oss2" do
