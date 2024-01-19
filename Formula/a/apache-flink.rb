@@ -14,7 +14,7 @@ class ApacheFlink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8429a52884cc5d631d693cae127f81ebb03d7069f3ecc4b5e1cfdfe65884c243"
+    sha256 cellar: :any_skip_relocation, all: "34daf472c2e035aa8a379f81919c19432a9cef1d6316ac04f756697ab5450773"
   end
 
   depends_on "openjdk@11"
