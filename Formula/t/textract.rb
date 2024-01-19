@@ -8,14 +8,14 @@ class Textract < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5f5c391f5615d5e4abb0f087a2cf5e579b0287966850854dc39b6ebbf183547"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f67ebdc7dcc9ee9adcec6105e16a8cc93c318381a2c5a66c6f25e86dbe0d83fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1f3082bd34fd108c69dc582d4c9aa0c3767f9ceaf436bbf66eaa089903de4da"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d520a4c97bd11a66a0e000d34b739d39b33782066f79f4bdcf161b378797d20"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbc1ba9f604222a44dd12258cb8a2749c230892c201c497bd0a5f89ac0252309"
-    sha256 cellar: :any_skip_relocation, big_sur:        "318532dfba7140276340128ada24a8e6790eaf2c8f40edf30893022f598b7a19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f34dffd7f6facfcbc1ad72802cf799d6e0d8921a0a1151d397a922665935d067"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac81d4839f9b851a2f4e1a995ce84960a0b93b07c1de0c3e903c2e56db6ab7fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54ec93ae61892006d62f8247ce82724046809095b0600c16a20b21ae5a381451"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f73fc995a39db4d81c8d35163b9f9cae3dccfe5d1301bad97712e40210ad950"
+    sha256 cellar: :any_skip_relocation, sonoma:         "733c22e8913930e238e45b3452922d03e0903c419b05c2e5b7477a80dbc080bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "0014b1e810a0fec8226fa6df4e7f1e42b9cde726e377395b798ff881538ac8b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "b158398620874d3fe52bd3a480eb7c5f0b5a387b32d1cdf56f4006457ca8c21e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a5a2d03ce7587158d794670e55c0c5a64f44276fdc5a4c3bf7721b15d7b2ce"
   end
 
   depends_on "antiword"
