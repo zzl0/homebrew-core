@@ -1,8 +1,8 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https://docs.astral.sh/ruff/"
-  url "https://github.com/astral-sh/ruff/archive/refs/tags/v0.1.13.tar.gz"
-  sha256 "36a32001c821b844d19fc3d95d6d9265b9ef03b08c5e0950dfa94191454b5a93"
+  url "https://github.com/astral-sh/ruff/archive/refs/tags/v0.1.14.tar.gz"
+  sha256 "7b186090cab2dfd602dc36f8abfb68b8421fb1e959fbc023e001eed2e5ea8cdd"
   license "MIT"
   head "https://github.com/astral-sh/ruff.git", branch: "main"
 
@@ -19,7 +19,7 @@ class Ruff < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/ruff_cli")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/ruff")
     generate_completions_from_executable(bin/"ruff", "generate-shell-completion")
   end
 
