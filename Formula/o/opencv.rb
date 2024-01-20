@@ -50,6 +50,12 @@ class Opencv < Formula
   resource "contrib" do
     url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.9.0.tar.gz"
     sha256 "8952c45a73b75676c522dd574229f563e43c271ae1d5bbbd26f8e2b6bc1a4dae"
+
+    # TODO: remove with next OpenCV release. Fix https://github.com/opencv/opencv_contrib/pull/3624
+    patch do
+      url "https://github.com/opencv/opencv_contrib/commit/46fb893f9a632012990713c4003d7d3cab4f2f25.patch?full_index=1"
+      sha256 "8f89f3db9fd022ffbb30dd1992df6d20603980fadfe090384e12c57731a9e062"
+    end
   end
 
   def python3
