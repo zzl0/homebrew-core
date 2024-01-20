@@ -4,6 +4,7 @@ class Simdutf < Formula
   url "https://github.com/simdutf/simdutf/archive/refs/tags/v4.0.8.tar.gz"
   sha256 "bbc1b5fdfec7d0f83c6a9d24bf90d10c2a462f30aa1ced30bed72288006a2194"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
@@ -28,6 +29,9 @@ class Simdutf < Formula
 
   def install
     args = %W[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
     ]
