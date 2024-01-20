@@ -1,10 +1,9 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-4.1.2.tar.xz" # if after 4.1.2, should be able to remove below 0879f9e patch
-  sha256 "9a9b910fbe768bb9de7c7ac944f5db8f233833f345b2e505e16ec6ef35effbb5"
+  url "https://weechat.org/files/src/weechat-4.1.3.tar.xz" # if after 4.1.2, should be able to remove below 0879f9e patch
+  sha256 "db1e57bd7786d66859666d306b0646baad337238319a005362ad0d78615710ef"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
