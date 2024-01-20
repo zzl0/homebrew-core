@@ -17,13 +17,13 @@ class MscGenerator < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "481ba557acc8ca2c54932be8baf663bd93449ae578dcd59711531a636a1acf6b"
-    sha256 arm64_ventura:  "9648ffea72f393453dd6127d3c2ddd3ae62536ac9b65f54c82cda7d8c941ffa5"
-    sha256 arm64_monterey: "91d386f1a42bc506d0c19816167f2e7da445e5c9c5f26a6829c6c0163eb864fe"
-    sha256 sonoma:         "edea0264665d1d70bac7f859b24ceef5b2a98c0e2712546aa27d4e28240419ae"
-    sha256 ventura:        "c1147a240cdef6b1dec06dde4ff3c4824e29a47720f6aed5b6b1c8590aaffdc8"
-    sha256 monterey:       "349f139e04be1720d13e433d33b8037924ecf52a9fc4a55f022560aed35d0703"
-    sha256 x86_64_linux:   "9f52a479c325f00e01cdb5f22226286cb5700ce710b21f6d4182ee4502fe6bf0"
+    sha256 arm64_sonoma:   "3e00d902a9026a506a377cb60f65907637cb9a1b504f43e5ab0d5a14d67829e4"
+    sha256 arm64_ventura:  "28372cf91533d742b97596987183c7bb4562bdd76ab37980c87f5c79d216bcd5"
+    sha256 arm64_monterey: "51e156b15fabca3b08b0a0d562e4e99f0a8169da43aa3ab7b1454b757ef3c4fe"
+    sha256 sonoma:         "0d8be9dcfa13b600ac491923d6be8cfae52abc444e413d6e7d685b24f2e12d71"
+    sha256 ventura:        "2f8407084c53d6b96fa290276baa62a9aa32375e44dad20479e83ca8caaf0551"
+    sha256 monterey:       "8bdd66e2db21a4494338a802bfd943c6a48903e3ab870a5fafc929c4217847b8"
+    sha256 x86_64_linux:   "45f0d45aa644eeffaae8657987a7c21ad2fb14826ceff341d319072ba45ec46c"
   end
 
   depends_on "autoconf" => :build
