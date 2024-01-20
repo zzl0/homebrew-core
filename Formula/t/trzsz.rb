@@ -3,8 +3,8 @@ class Trzsz < Formula
 
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
-  url "https://files.pythonhosted.org/packages/02/bf/1ee2d66a0ae97eb7fa893239a512a8a19058e325323828a591232f9dd8aa/trzsz-1.1.4.tar.gz"
-  sha256 "942ad73d1c307880ab23fde569ab41191fce469d861b534826a8a1e07c4edf96"
+  url "https://files.pythonhosted.org/packages/22/1e/40a495c84a0dc625a4d97638c5cae308306718c493f480ee5ac64801947b/trzsz-1.1.5.tar.gz"
+  sha256 "57be064b259d57326f75683704b8e93a56ce0d67d9b3b2b36ad4d53e98a28854"
   license "MIT"
 
   bottle do
@@ -27,23 +27,23 @@ class Trzsz < Formula
   end
 
   resource "trzsz-iterm2" do
-    url "https://files.pythonhosted.org/packages/84/a7/13d3f511f73dd0de5f7f3c2abda51a3fe5acd9cd0afcff5281570e3df1dc/trzsz-iterm2-1.1.4.tar.gz"
-    sha256 "27898b478283e42011066ab52e388c8f4de662ebb61b0ebab5efd92223d8ce63"
+    url "https://files.pythonhosted.org/packages/1e/21/e8c12001396080263407277edc85ba765ee18bed54ae6d72e83516de7d9c/trzsz-iterm2-1.1.5.tar.gz"
+    sha256 "a7f6fb6359523d871d03be099a876043d039458cb6086d22d1e0f3e874283c4b"
   end
 
   resource "trzsz-libs" do
-    url "https://files.pythonhosted.org/packages/ae/81/c1e3cc75c7bfa69bf5f190a8399be84fb59b871e182b0b90b2f8448b733d/trzsz-libs-1.1.4.tar.gz"
-    sha256 "2c48a7268294ef535479823a3eaee801d9e4fb8ba2ac4f152f8396849c3f851f"
+    url "https://files.pythonhosted.org/packages/f2/c2/89cfeb038585c18e320ede2182d70096a162f22298e29b7f1234bbc5230e/trzsz-libs-1.1.5.tar.gz"
+    sha256 "baff5cea450e1310a292f5702d4a8f7dc855fbe2aefe21b13d2451bc05cedea4"
   end
 
   resource "trzsz-svr" do
-    url "https://files.pythonhosted.org/packages/22/a0/e9a530592ecc36d0ccc2dae6cabb45540d3b6da5bf5fb2d6dc79ae999544/trzsz-svr-1.1.4.tar.gz"
-    sha256 "0cf4abda5a6832eebfeeeab4598fdd9fb5512fb6143442da17c54398af1a4e1e"
+    url "https://files.pythonhosted.org/packages/76/c7/78c1c91eeb99c86dd80d903cdb463da0d1fbea9b7f25a1c1de5b0f96ecf5/trzsz-svr-1.1.5.tar.gz"
+    sha256 "2f1fbc119df3c6010bf7b030635a5dc3cc1513025e5d0415d84d2d2a417b077f"
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
-    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
+    url "https://files.pythonhosted.org/packages/2e/62/7a7874b7285413c954a4cca3c11fd851f11b2fe5b4ae2d9bee4f6d9bdb10/websockets-12.0.tar.gz"
+    sha256 "81df9cbcbb6c260de1e007e58c011bfebe2dafc8435107b0537f393dd38c8b1b"
   end
 
   def install
