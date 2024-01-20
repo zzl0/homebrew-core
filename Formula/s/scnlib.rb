@@ -6,6 +6,15 @@ class Scnlib < Formula
   license "Apache-2.0"
   head "https://github.com/eliaskosunen/scnlib.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_sonoma:   "160139345f1ecb71a4889408a553348e3ff757bc993f2fa4ee7d44ef6ee5dafc"
+    sha256 cellar: :any, arm64_ventura:  "a857e39ca2054beafbf8cfd7ce6129388e2dc605cd64fc3e749edf04e603a37b"
+    sha256 cellar: :any, arm64_monterey: "10043eb4a407068ae0da43190e5843d11c2eaea9057d6528039b0b790979feed"
+    sha256 cellar: :any, sonoma:         "4563ca716a5975eb0404539ff69d1c7547a4befeba314109c46d2dc598617720"
+    sha256 cellar: :any, ventura:        "2296167e227d5ebbc935b7bfc3a35a67925333f422b9512b33161740241e3a16"
+    sha256 cellar: :any, monterey:       "41e1e7238c0d60fd61a09294a3629fe811abc13f2e2e5f3f720b9bcac0280671"
+  end
+
   depends_on "cmake" => :build
   depends_on "simdutf"
 
