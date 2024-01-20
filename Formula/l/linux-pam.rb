@@ -17,7 +17,7 @@ class LinuxPam < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "ead04bf7c0145cd6b712e05b9adb5d946541537ce862aed512df04c79fc44a92"
+    sha256 x86_64_linux: "d6ee4d3bf342df33c406adfa855c1db6725520e482b9850ced836ff9d4962cf5"
   end
 
   depends_on "pkg-config" => :build
