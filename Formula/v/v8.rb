@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
-  url "https://github.com/v8/v8/archive/refs/tags/12.0.267.10.tar.gz"
-  sha256 "63c849f6986c99f979a071d1ef1359d9e0908e183f265d3138cc16ddce1aeeb0"
+  url "https://github.com/v8/v8/archive/refs/tags/12.1.285.24.tar.gz"
+  sha256 "30942df4ec837b212b697895b9453459b2cdce118eed2e07656dcefea465da72"
   license "BSD-3-Clause"
 
   livecheck do
@@ -51,10 +51,10 @@ class V8 < Formula
   fails_with gcc: "5"
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#64
+  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#74
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "e4702d7409069c4f12d45ea7b7f0890717ca3f4b"
+        revision: "7367b0df0a0aa25440303998d54045bda73935a5"
   end
 
   resource "v8/base/trace_event/common" do
@@ -64,7 +64,7 @@ class V8 < Formula
 
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "a21fc6065131d0442e8a54c3ca2638e393b69438"
+        revision: "9b8bc79c291c01ddcdb0383ace9316e3dcccce2f"
 
     # Use Arch Linux Chromium package patch to remove some LLVM/Clang 18 flags
     patch :p2 do
@@ -95,12 +95,12 @@ class V8 < Formula
 
   resource "v8/third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "dfc48fc4de8e80416606e2aab42f430ced2a524e"
+        revision: "dd5fc1316c9bfe87091c4f418e427633590a84a4"
   end
 
   resource "v8/third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "16ed8d7d56105c49a0bbc04a428bf00dc7fadaf6"
+        revision: "0764ad493e54a79c7e3e02fc3412ef55b4835b9e"
   end
 
   def install
