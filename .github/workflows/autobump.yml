@@ -1053,6 +1053,7 @@ env:
     seaweedfs
     selene
     selenium-server
+    semgrep
     seqkit
     ser2net
     serverless
