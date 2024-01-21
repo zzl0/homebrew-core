@@ -1,8 +1,8 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
   homepage "https://github.com/mity/md4c"
-  url "https://github.com/mity/md4c/archive/refs/tags/release-0.5.0.tar.gz"
-  sha256 "79548a689bb931d099dc8242a6824e13160553fa843ae3d8a9eded571d89168e"
+  url "https://github.com/mity/md4c/archive/refs/tags/release-0.5.1.tar.gz"
+  sha256 "2dca17c6175a7f11182943079c2a4f9adb5071433e3d3d05ba801ff794993f34"
   license "MIT"
 
   bottle do
