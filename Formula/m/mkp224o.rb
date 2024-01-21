@@ -1,10 +1,9 @@
 class Mkp224o < Formula
   desc "Vanity address generator for tor onion v3 (ed25519) hidden services"
   homepage "https://github.com/cathugger/mkp224o"
-  url "https://github.com/cathugger/mkp224o/releases/download/v1.6.1/mkp224o-1.6.1-src.tar.gz"
-  sha256 "772d4b429c08f04eca3bc45cd3f6ce57b71fa912fa6c061cd39f73bf2fec8e70"
+  url "https://github.com/cathugger/mkp224o/releases/download/v1.7.0/mkp224o-1.7.0-src.tar.gz"
+  sha256 "e38465ea893c6032ddfd7c133cbbf0de2eeaf1c428ca563fac5e85aeb609c929"
   license "CC0-1.0"
-  revision 1
   head "https://github.com/cathugger/mkp224o.git", branch: "master"
 
   bottle do
