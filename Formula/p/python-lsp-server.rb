@@ -3,10 +3,9 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/f1/cf/812d3bc1fb63e32edaf291950a188d6acce9a177c59e6d7baee487dc6912/python-lsp-server-1.9.0.tar.gz"
-  sha256 "dc0c8298f0222fd66a52aa3170f3a5c8fe3021007a02098bb72f7fd8df353d13"
+  url "https://files.pythonhosted.org/packages/6c/9f/4a3a6cc6e982eca3dfad39fdcaf48dcdc5a020f38dfe973e4487765e0048/python-lsp-server-1.10.0.tar.gz"
+  sha256 "0c9a52dcc16cd0562404d529d50a03372db1ea6fb8dfcc3792b3265441c814f4"
   license "MIT"
-  revision 1
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
@@ -46,8 +45,8 @@ class PythonLspServer < Formula
   end
 
   resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/3e/fe/f7671a4fb28606ff1663bba60aff6af21b1e43a977c74c33db13cb83680f/lsprotocol-2023.0.0.tar.gz"
-    sha256 "c9d92e12a3f4ed9317d3068226592860aab5357d93cf5b2451dc244eee8f35f2"
+    url "https://files.pythonhosted.org/packages/65/4a/c9a61e98a8f766c989546a02b6b96d2059e2504db9f96dec495c5834b8e7/lsprotocol-2024.0.0a1.tar.gz"
+    sha256 "d0a181c6c8888cfd148ecb451425fae65fd69675ff18345da8b835780fb4918c"
   end
 
   resource "parso" do
@@ -81,8 +80,8 @@ class PythonLspServer < Formula
   end
 
   resource "python-lsp-ruff" do
-    url "https://files.pythonhosted.org/packages/77/d2/2d1fdc5aaa6691e5264992ef723a66229a0d171d888dd6714f94accb80c6/python-lsp-ruff-2.0.1.tar.gz"
-    sha256 "b204b4c3016e01a69e9fd6ffbe926ba40b14bc4da57a17c755a381fe14a897d9"
+    url "https://files.pythonhosted.org/packages/94/78/296a431800664008dedc46554090fe13e82554fa4ab708c51e8ba0e42db4/python-lsp-ruff-2.0.2.tar.gz"
+    sha256 "b4a6219119d73d9175ffd88aeacb0db6859ae72f606158fdcc550e105957c8e0"
 
     # this depends on `ruff` solely to install the binary,
     # but we can just depend on the `ruff` formula in Homebrew
@@ -90,13 +89,13 @@ class PythonLspServer < Formula
   end
 
   resource "pytoolconfig" do
-    url "https://files.pythonhosted.org/packages/78/ab/9e5168b7101e682e2916b5d028e9fcd857b79cbbc9a29e36b1597f3926d0/pytoolconfig-1.2.6.tar.gz"
-    sha256 "f2d00ea4f8cbdffd3006780ba51016618c835b338f634e3f7f8b2715b1710889"
+    url "https://files.pythonhosted.org/packages/18/dc/abf70d2c2bcac20e8c71a7cdf6d44e4ddba4edf65acb179248d554d743db/pytoolconfig-1.3.1.tar.gz"
+    sha256 "51e6bd1a6f108238ae6aab6a65e5eed5e75d456be1c2bf29b04e5c1e7d7adbae"
   end
 
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/53/38/b28a6eeaf083dcdc1c779edda80d399283fb87008fffb4a556bc3be634e2/rope-1.11.0.tar.gz"
-    sha256 "ac0cbdcda5a546e1e56c54976df07ea2cb04c806f65459bc213536c5d1bc073e"
+    url "https://files.pythonhosted.org/packages/4c/c5/606e9b76ce5f0fe1b66db493b13e4dc6a9d495570d30fc8ea76d275693d9/rope-1.12.0.tar.gz"
+    sha256 "93a1bb991fbf0426e8d415102d1c092ccc42e826ce9a42c4d61ce53d7786d9d9"
   end
 
   resource "tomli" do
