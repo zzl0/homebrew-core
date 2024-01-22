@@ -4,7 +4,7 @@ class Mysqlxx < Formula
   url "https://tangentsoft.com/mysqlpp/releases/mysql++-3.3.0.tar.gz"
   sha256 "449cbc46556cc2cc9f9d6736904169a8df6415f6960528ee658998f96ca0e7cf"
   license "LGPL-2.1-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -23,12 +23,12 @@ class Mysqlxx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d04204c93a9db0aa946a735e4bef186a0f1caddab7c985c5244b8d39e129d9ec"
   end
 
-  depends_on "mysql-client"
+  depends_on "mysql-client@8.0" # Does not build with > 8.3: https://tangentsoft.com/mysqlpp/tktview/703152e2da
 
   fails_with gcc: "5"
 
   def install
-    mysql = Formula["mysql-client"]
+    mysql = Formula["mysql-client@8.0"]
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-field-limit=40",
@@ -54,7 +54,7 @@ class Mysqlxx < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{Formula["mysql-client"].opt_include}/mysql",
+    system ENV.cxx, "test.cpp", "-I#{Formula["mysql-client@8.0"].opt_include}/mysql",
                     "-L#{lib}", "-lmysqlpp", "-o", "test"
     system "./test", "-u", "foo", "-p", "bar"
   end
