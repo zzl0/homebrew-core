@@ -1,19 +1,19 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-4.1.3.tar.xz" # if after 4.1.2, should be able to remove below 0879f9e patch
-  sha256 "db1e57bd7786d66859666d306b0646baad337238319a005362ad0d78615710ef"
+  url "https://weechat.org/files/src/weechat-4.2.0.tar.xz"
+  sha256 "32f6a6f213fb634db931e2ab8f01adb9a9b50e77faa1c52ca116efa320575a4a"
   license "GPL-3.0-or-later"
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "1950a510d702e6b350d2e740fbc7fdaab65be37683c4c3b8f88300b93bda52c3"
-    sha256 arm64_ventura:  "2f4c5e4d388d30d1143aba6e4d7f7d8e18e22fcabe54c04a4d28c69316a98da5"
-    sha256 arm64_monterey: "ce51bdc7021d57c9af313f7d96608ceea729bc79e782a85b05b00d7a0f810d71"
-    sha256 sonoma:         "5cb757b9a1c52ff4b999bfee6f7b0aa0d62ed198ee39728afd45f245cfa8e738"
-    sha256 ventura:        "ce3f6ef3ab61eaa6d06a317678ba4234d007c66ee25ef3067328245976ff0ec4"
-    sha256 monterey:       "3db6a7144a658321a6197e11373ec513f1fa7d1d5ee627780366fac2c226d7be"
-    sha256 x86_64_linux:   "4b67df002b184bef92b6ea806e2564b175183fb218ba8f2738dc68c796c01d52"
+    sha256 arm64_sonoma:   "1631a2c9479d11f14ded3f7d760e11267a3bbae9a5e4cff462ba63921d9630cd"
+    sha256 arm64_ventura:  "e63c492315935e5d6e375585bbe053bacb221f63e75a8a2d05ae1b62bbaf8ddd"
+    sha256 arm64_monterey: "18f16000722d5bce8c096156b8a8efee69cec5982a5271668e90a6990f4524d2"
+    sha256 sonoma:         "9aa3f78ab2a7b846508871052b6dc9c0546d4eed6f60cff52bf39be3aa75df2b"
+    sha256 ventura:        "255e758ec17b3c9b7adabfe4fe8b43ea32d726d5322e737abf6628aa6da14976"
+    sha256 monterey:       "aa0bbfd355508a14bb32617e7a863503aee202c3f0c0af7b03d9d86b87d1d544"
+    sha256 x86_64_linux:   "2015fbe512cd6b9e1d916aa55e0d3bcaf450cc84e9a8a9ee1f0ac86de5910e98"
   end
 
   depends_on "asciidoctor" => :build
@@ -35,12 +35,6 @@ class Weechat < Formula
 
   def python3
     which("python3.12")
-  end
-
-  patch do
-    # Patch cmake/FindRuby.cmake to be aware of Ruby 3.3
-    url "https://github.com/weechat/weechat/commit/5c65a73432f278a0caf36363a8b01571f1c7236a.patch?full_index=1"
-    sha256 "0879f9e21bd606726cd62a14cab76fcd8a4631c614c178cdb72c124a6c610cdc"
   end
 
   def install
