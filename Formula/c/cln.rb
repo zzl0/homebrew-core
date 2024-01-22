@@ -1,18 +1,9 @@
 class Cln < Formula
   desc "Class Library for Numbers"
   homepage "https://www.ginac.de/CLN/"
+  url "https://www.ginac.de/CLN/cln-1.3.7.tar.bz2"
+  sha256 "7c7ed8474958337e4df5bb57ea5176ad0365004cbb98b621765bc4606a10d86b"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://www.ginac.de/CLN/cln-1.3.6.tar.bz2"
-    sha256 "f492530e8879bda529009b6033e1923c8f4aae843149fc28c667c20b094d984a"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     url :homepage
