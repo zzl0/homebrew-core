@@ -1,8 +1,8 @@
 class Limesuite < Formula
   desc "Device drivers utilities, and interface layers for LimeSDR"
   homepage "https://myriadrf.org/projects/software/lime-suite/"
-  url "https://github.com/myriadrf/LimeSuite/archive/refs/tags/v23.10.0.tar.gz"
-  sha256 "3fcbc4a777e61c92d185e09f15c251e52c694f13ff3df110badc4ed36dc58b00"
+  url "https://github.com/myriadrf/LimeSuite/archive/refs/tags/v23.11.0.tar.gz"
+  sha256 "fd8a448b92bc5ee4012f0ba58785f3c7e0a4d342b24e26275318802dfe00eb33"
   license "Apache-2.0"
 
   bottle do
