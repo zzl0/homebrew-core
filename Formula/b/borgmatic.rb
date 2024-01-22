@@ -3,10 +3,9 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/bb/28/9a941feff4af4e8449ef753860d879f9c23d51cb279a1cb571107d8996c5/borgmatic-1.8.6.tar.gz"
-  sha256 "5a5d97b90c838c222df2c78f7552b604fdf7aac92f15c0319438d3efa07b7691"
+  url "https://files.pythonhosted.org/packages/a9/ef/cc7719ee7b55b2061230e037bf7bd446f49906c12ce077d4a2d263813930/borgmatic-1.8.7.tar.gz"
+  sha256 "d50f5fe3e64575e6bf57b4593a6ed7320963d86e5be6eba8cb6726e60cf80fdc"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0f4e44022794c17fb61572f3b7517227163e86b67706b5fb7741e69c9cd93066"
@@ -44,8 +43,8 @@ class Borgmatic < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
-    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
+    url "https://files.pythonhosted.org/packages/4d/c5/3f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9be/jsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do
@@ -64,8 +63,8 @@ class Borgmatic < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/c2/63/94a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1/rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "ruamel-yaml" do
