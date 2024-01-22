@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v13.0.0.tar.gz"
-  sha256 "6d83af871b6ce108dd4773c81835734d306b41425c41c533095ca5a82324b049"
+  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "5635080f7b8d092c107b2b49a18b707a275bd07c6f121778d49b9d147eef9891"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -22,11 +22,18 @@ class Topgrade < Formula
 
   depends_on "rust" => :build
 
+  # patch for terminal notification, remove in next release
+  patch do
+    url "https://github.com/topgrade-rs/topgrade/commit/f794329913db5571a71e9ac8a36a44959d3f6a33.patch?full_index=1"
+    sha256 "4b280f19c327e6eb9d86056c4f882234d4996b7429ad7f21c0b78d118f2d0a34"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    ENV["TOPGRADE_SKIP_BRKC_NOTIFY"] = "true"
     assert_match version.to_s, shell_output("#{bin}/topgrade --version")
 
     output = shell_output("#{bin}/topgrade -n --only brew_formula")
