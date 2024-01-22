@@ -4,6 +4,7 @@ class Ldc < Formula
   url "https://github.com/ldc-developers/ldc/releases/download/v1.36.0/ldc-1.36.0-src.tar.gz"
   sha256 "a00c79073123a887c17f446c7782a49556a3512a3d35ab676b7d53ae1bb8d6ef"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
   livecheck do
