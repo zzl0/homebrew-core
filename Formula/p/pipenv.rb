@@ -3,10 +3,9 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/08/1e/d8e3b937de28491a887683600d6496b05c10a5e0693ec703f3c89638ea66/pipenv-2023.11.15.tar.gz"
-  sha256 "f587ffff47e8aa76f17803d571f64cf5a24b2bdfb9334435e6528b22ad5e304f"
+  url "https://files.pythonhosted.org/packages/7d/ce/68f8b53ebd58fb895062384f1fa7820de24a6aaa4e6a701cdaca6acdfb11/pipenv-2023.11.17.tar.gz"
+  sha256 "408f2f1219e9bfe28f26a3511817e2a792eeafddc621f12a856fbd5ceca7bdf1"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77fce9c9831b9c85d2aebc71780dbf02bf23c2e35b8f3f33cae496e8625d09f9"
@@ -77,9 +76,9 @@ class Pipenv < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     assert_match "Commands", shell_output("#{bin}/pipenv")
-    system "#{bin}/pipenv", "--python", which(python3)
-    system "#{bin}/pipenv", "install", "requests"
-    system "#{bin}/pipenv", "install", "boto3"
+    system bin/"pipenv", "--python", which(python3)
+    system bin/"pipenv", "install", "requests"
+    system bin/"pipenv", "install", "boto3"
     assert_predicate testpath/"Pipfile", :exist?
     assert_predicate testpath/"Pipfile.lock", :exist?
     assert_match "requests", (testpath/"Pipfile").read
