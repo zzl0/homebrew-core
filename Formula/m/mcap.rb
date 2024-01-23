@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pub/sub messages"
   homepage "https://mcap.dev"
-  url "https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.0.38.tar.gz"
-  sha256 "06e8c3d4eb0f7a1cc2128a54025ba9bd62366f4f0eceef5b23e2e5d727873425"
+  url "https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.0.39.tar.gz"
+  sha256 "344effd2fa8e765eeff36539c635bc34aa4d31ad81ab4dbab376f34318aace47"
   license "MIT"
   head "https://github.com/foxglove/mcap.git", branch: "main"
 
