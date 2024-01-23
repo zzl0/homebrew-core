@@ -4,7 +4,7 @@ class Libzdb < Formula
   url "https://tildeslash.com/libzdb/dist/libzdb-3.2.3.tar.gz"
   sha256 "a1957826fab7725484fc5b74780a6a7d0d8b7f5e2e54d26e106b399e0a86beb0"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   livecheck do
     url :homepage
@@ -23,11 +23,13 @@ class Libzdb < Formula
 
   depends_on "libpq"
   depends_on macos: :high_sierra # C++ 17 is required
-  depends_on "mysql-client@8.0" # Does not build with > 8.3: https://bitbucket.org/tildeslash/libzdb/issues/67/build-error-with-mysql-83
+  depends_on "mysql-client"
   depends_on "openssl@3"
   depends_on "sqlite"
 
-  fails_with gcc: "5" # C++ 17 is required
+  fails_with gcc: "5"
+
+  patch :DATA # C++ 17 is required
 
   def install
     system "./configure", *std_configure_args
@@ -43,3 +45,22 @@ class Libzdb < Formula
     end
   end
 end
+
+__END__
+diff --git a/src/db/mysql/MysqlConnection.c b/src/db/mysql/MysqlConnection.c
+index 45ae896..7b6c1e3 100644
+--- a/src/db/mysql/MysqlConnection.c
++++ b/src/db/mysql/MysqlConnection.c
+@@ -96,8 +96,10 @@ static MYSQL *_doConnect(Connection_T delegator, char **error) {
+         // Options
+         if (IS(URL_getParameter(url, "compress"), "true"))
+                 clientFlags |= CLIENT_COMPRESS;
+-        if (IS(URL_getParameter(url, "use-ssl"), "true"))
+-                mysql_ssl_set(db, 0,0,0,0,0);
++        if (IS(URL_getParameter(url, "use-ssl"), "true")) {
++                enum mysql_ssl_mode ssl_mode = SSL_MODE_REQUIRED;
++                mysql_options(db, MYSQL_OPT_SSL_MODE, &ssl_mode);
++        }
+ #if MYSQL_VERSION_ID < 80000
+         if (IS(URL_getParameter(url, "secure-auth"), "true"))
+                 mysql_options(db, MYSQL_SECURE_AUTH, (const char*)&yes);
