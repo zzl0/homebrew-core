@@ -1,8 +1,8 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
   homepage "https://github.com/XCTestHTMLReport/XCTestHTMLReport"
-  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.4.1.tar.gz"
-  sha256 "a27aa4bfa5ea3a96890d65df017dd5d69aca93d635c46df3ebfa245b9d1b7b90"
+  url "https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.4.2.tar.gz"
+  sha256 "ab98463c3981eb8ebc0e1b90773d483f39b6af12e06b30598d1e143edf800807"
   license "MIT"
   head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
