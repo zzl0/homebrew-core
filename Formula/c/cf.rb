@@ -3,6 +3,7 @@ class Cf < Formula
   homepage "https://ee.lbl.gov/"
   url "https://ee.lbl.gov/downloads/cf/cf-1.2.7.tar.gz"
   sha256 "cdb8d7aa1c45f2baa4b3c2b355ab8653a8a4b222fce6d9092edb4c3a98fef081"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://ee.lbl.gov/downloads/cf/"
