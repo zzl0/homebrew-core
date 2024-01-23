@@ -56,7 +56,7 @@ class MsgpackCxx < Formula
       }
     EOS
 
-    system ENV.cxx, "-o", "test", "test.cpp", "-I#{include}"
+    system ENV.cxx, "-std=c++14", "-o", "test", "test.cpp", "-I#{include}"
     assert_equal "[\"Hello\",\"MessagePack\"]\n", `./test`
   end
 end
