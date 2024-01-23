@@ -1,20 +1,10 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
+  url "https://github.com/facebook/proxygen/releases/download/v2024.01.22.00/proxygen-v2024.01.22.00.tar.gz"
+  sha256 "57ec9ce32648a97a7fe244301a03cc2c6fb9caaa219b2119a8853102f495715e"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
-
-  stable do
-    url "https://github.com/facebook/proxygen/releases/download/v2024.01.15.00/proxygen-v2024.01.15.00.tar.gz"
-    sha256 "d0f28a54e47c76299da537852499aed8a6be9f4aa4ff64cf5c1d17135b15c3e8"
-
-    # Patch can be removed in the next version as it's been already merged
-    # https://github.com/facebook/proxygen/issues/479#issuecomment-1899292578
-    patch do
-      url "https://github.com/facebook/proxygen/commit/343ffcbba4f97ddc2a31570b429ac71ea59f670e.patch?full_index=1"
-      sha256 "88561e8876f1404d05b120438134a5479e430f189e6f4a6ae02f1bca64af9ce2"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7cd03a62318e2f9d6e8877eb5352c825166da17476d0f8cd8f0f19204419ec83"
