@@ -14,15 +14,13 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "49eef1d5c285de242bb9429e296546f11a84a51bba40470c938ac659b1a90afb"
-    sha256 cellar: :any,                 arm64_ventura:  "c043dc385f650b3e3724a7095113ee5fbf573486a0b2611c5dfb721ee63774ed"
-    sha256 cellar: :any,                 arm64_monterey: "904d0603c8b469af83ed67a29be09a7e762109c284ea154b788c6fafcf49ffa2"
-    sha256 cellar: :any,                 arm64_big_sur:  "c682563d2f4a9cabc9658f787e4514072883227e1974139600e23c841556418b"
-    sha256 cellar: :any,                 sonoma:         "ce2d1ba3e5acb2abb7b87954d25edd756276b07c96ce1de355ff62632778d25f"
-    sha256 cellar: :any,                 ventura:        "32ee9039da185a509b83bef2b516d7cc2abe6e90272cdede82dbb028c22bce7b"
-    sha256 cellar: :any,                 monterey:       "d6da5c475e9790af0c7c1c7f4650eabb5512696a0fb1e50f62915cc75c8d7ca6"
-    sha256 cellar: :any,                 big_sur:        "64d6f21fc6e6a0cd02d4faddfe32c7daf42ce7abff31ce858515b0bcc08c160e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b7c2f966442b5364127e4ed065b1bb77b15e27f01cc4bc171a59b26aecaef73"
+    sha256 cellar: :any,                 arm64_sonoma:   "972081963fe5bc4cf9bc169a233a3e303ad0390077f3c24ad3331e6512316812"
+    sha256 cellar: :any,                 arm64_ventura:  "10782c49221f8f1625bf0d18ad3a66f179cb4b59a7cf8db111976f50db298d66"
+    sha256 cellar: :any,                 arm64_monterey: "0e8a4d1a79d71d8a2c80232e98fffac350c3c37f8fe06838551522761d776082"
+    sha256 cellar: :any,                 sonoma:         "b3d4c4483c863040ddf5b7168d10cb62932ed46343e7e1d6f6cac56e1b174848"
+    sha256 cellar: :any,                 ventura:        "28f0d9e87343d9f0e5bcbfa35bb08270090fbe144245e78656e50e3633c490b8"
+    sha256 cellar: :any,                 monterey:       "eb944da0f3bb8a927ff56adfef78f88f1414af872ac2522603b6d7b9931973cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ad00dad0c5461fdb13e972fd1e9185e7acb4754fbe122ec53324a7f7e30dcda"
   end
 
   head do
