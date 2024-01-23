@@ -27,16 +27,6 @@ class Topgrade < Formula
   end
 
   test do
-    # Configuration path details: https://github.com/r-darwish/topgrade/blob/HEAD/README.md#configuration-path
-    # Sample config file: https://github.com/r-darwish/topgrade/blob/HEAD/config.example.toml
-    (testpath/"Library/Preferences/topgrade.toml").write <<~EOS
-      # Additional git repositories to pull
-      #git_repos = [
-      #    "~/src/*/",
-      #    "~/.config/something"
-      #]
-    EOS
-
     assert_match version.to_s, shell_output("#{bin}/topgrade --version")
 
     output = shell_output("#{bin}/topgrade -n --only brew_formula")
