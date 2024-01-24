@@ -1,8 +1,8 @@
 class Qjackctl < Formula
   desc "Simple Qt application to control the JACK sound server daemon"
   homepage "https://qjackctl.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/qjackctl/qjackctl/0.9.12/qjackctl-0.9.12.tar.gz"
-  sha256 "08ac61980820e1aa9b7e728e04d8ca1d463b50861e3b572c6b46127fb9836540"
+  url "https://downloads.sourceforge.net/project/qjackctl/qjackctl/0.9.13/qjackctl-0.9.13.tar.gz"
+  sha256 "ebbc3774b8c2db6ded3c5553939c65e095ce796750d53ee1a299c113a33564b3"
   license "GPL-2.0-or-later"
   head "https://git.code.sf.net/p/qjackctl/code.git", branch: "master"
 
@@ -22,6 +22,7 @@ class Qjackctl < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "jack"
   depends_on "qt"
 
