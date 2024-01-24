@@ -11,7 +11,7 @@ class Acl < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "bda9616eeceada8e39117a143c7ab5a581e58d26c9a6c32acb930c07d8a934d8"
+    sha256 x86_64_linux: "1396de40585eeb80034e800377c3dcd69d26550ea39d29152145ea4a79174e94"
   end
 
   depends_on "attr"
