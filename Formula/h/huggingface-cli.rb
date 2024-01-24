@@ -8,13 +8,13 @@ class HuggingfaceCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "238a24ad9978358366f7b0d0cf262c225155cac7f4755dbdf50dc6b9573eec3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e2b7c205b7b9f03ee373392a81b5ca39f9a2ced098857bd870b70aabc4e5524"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "85b62650fec3b9f4abf35816f8bb5fa54a8088f95950862a9bf03577860b9ed8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c367a88735565a666074de7d435d29bd1ebe9a22916eba373656954020197c33"
-    sha256 cellar: :any_skip_relocation, ventura:        "960e5341d23776446af307f72b1bfd1cc1eec9924eaad27e9e1b2e85c5e406ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d4099c311dafe82ca2c2eb3aa2fc2b829426d7354808370741d2bdd6e3bed60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81eac60154f6e8c1c5f272f87ca7973120d0e8d68a8553b9d3aaa7b4a82c5867"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1b0236132b92295f8c453fd1e6737f97ff698b51bf84d2682be2fa05a9a3844"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b1e5119d4302cec909a5a77acb45165d7bb8cb57f2c246c535336cabec1f14c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a512ab0602c05097ddffd3eb35bbf30b1a75be30829ac6713647e9bf48a28851"
+    sha256 cellar: :any_skip_relocation, sonoma:         "211313857cfc4419c17846cab7d5587b56ae77fe58cc276f20b7c3c52308fe75"
+    sha256 cellar: :any_skip_relocation, ventura:        "7fa89d4fb53bb7ae7ead9c7cbab08b7a734aa1237c1286ad62e1d937fe259550"
+    sha256 cellar: :any_skip_relocation, monterey:       "f05332a73d18630b831f18d28d3f1bfb199ad78887c87ad852511b992f94e7fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ec16e7b669e955e0f7a4d5cc5cbeddddab3272d28c089593068e941b5d5a7e8"
   end
 
   depends_on "git-lfs"
