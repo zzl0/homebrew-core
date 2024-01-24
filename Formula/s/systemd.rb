@@ -1,8 +1,8 @@
 class Systemd < Formula
   desc "System and service manager"
   homepage "https://wiki.freedesktop.org/www/Software/systemd/"
-  url "https://github.com/systemd/systemd-stable/archive/refs/tags/v255.2.tar.gz"
-  sha256 "ba7354a742dc9a8bb7dbeaa40cbf7cf2ca84f506d5b7ae5ab8d14c8eecb7aca0"
+  url "https://github.com/systemd/systemd-stable/archive/refs/tags/v255.3.tar.gz"
+  sha256 "27807c65f969d0e0e44629dee8379e1e2c30e6c5e84be0389438c4ab1b225000"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://github.com/systemd/systemd.git", branch: "main"
 
