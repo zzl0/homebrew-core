@@ -3,8 +3,8 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https://shub.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4b/48/df85a1fdbd6c3928f70c6384ab9bd9197abaad8dbe302e19fba58ce6b7ff/shub-2.15.2.tar.gz"
-  sha256 "bf529b3d1777b6d9dbb65cd1afe55791af1a66bacdfa857079a9255462c4df1a"
+  url "https://files.pythonhosted.org/packages/4b/a3/27c88f9316fa079297719ba889ce24da7501856abe1077d5eae5b9b1cbae/shub-2.15.3.tar.gz"
+  sha256 "4198819e636835e73f9e606a42d09e06821eb798bff6fdd13ec8a9776afa663a"
   license "BSD-3-Clause"
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
@@ -58,6 +58,11 @@ class Shub < Formula
   resource "scrapinghub" do
     url "https://files.pythonhosted.org/packages/a4/5e/83f599af82e467a804da77824e2301ff253c6251c31ac56d0f70bac9e9ce/scrapinghub-2.4.0.tar.gz"
     sha256 "58b90ba44ee01b80576ecce45645e19ca4e6f1176f4da26fcfcbb71bf26f6814"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   resource "toml" do
