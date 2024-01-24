@@ -1299,7 +1299,7 @@
   "vunnel": {
     "exclude_packages": [
       "certifi", "click", "jinja2", "lxml", "markupsafe", "packaging", "pluggy",
-      "python-dateutil", "pyyaml", "six", "typing-extensions"
+      "python-dateutil", "pyyaml", "ruff", "six", "typing-extensions"
     ]
   },
   "watson": {
