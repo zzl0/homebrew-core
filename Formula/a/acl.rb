@@ -1,8 +1,8 @@
 class Acl < Formula
   desc "Commands for manipulating POSIX access control lists"
   homepage "https://savannah.nongnu.org/projects/acl/"
-  url "https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.gz"
-  sha256 "760c61c68901b37fdd5eefeeaf4c0c7a26bdfdd8ac747a1edff1ce0e243c11af"
+  url "https://download.savannah.nongnu.org/releases/acl/acl-2.3.2.tar.gz"
+  sha256 "5f2bdbad629707aa7d85c623f994aa8a1d2dec55a73de5205bac0bf6058a2f7c"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
