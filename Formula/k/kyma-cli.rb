@@ -1,10 +1,9 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/refs/tags/2.20.1.tar.gz"
-  sha256 "f9ed216465b3b3124efb299c9a0f444a6294eed65243a08d5c0765048a05d0f0"
+  url "https://github.com/kyma-project/cli/archive/refs/tags/2.20.2.tar.gz"
+  sha256 "f928b90913310297d3aece93c1ed06a9326253e17659fbdb9d9b982b80aba921"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
