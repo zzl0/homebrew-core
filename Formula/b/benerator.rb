@@ -6,7 +6,7 @@ class Benerator < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b9dbcf4f48977d55becf5ba073086aaf6e338435b5dba1a646683e7e94685e4f"
+    sha256 cellar: :any_skip_relocation, all: "2a29d39f500d665eb68d076bcb8941a3537245a4ca391d55821b947b0f86247b"
   end
 
   depends_on "openjdk"
