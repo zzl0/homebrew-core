@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
-  url "https://github.com/snapcore/snapcraft/archive/refs/tags/8.0.1.tar.gz"
-  sha256 "21c63a4002533c1af6e9a22c0d95e5d4f4fabb754c93edb7c3c6f5ee6cf04363"
+  url "https://github.com/snapcore/snapcraft/archive/refs/tags/8.0.2.tar.gz"
+  sha256 "a2e4302c4a722e93c9f95d8fc6c3c6303546afd573cf1eb9d7ea6ea078923381"
   license "GPL-3.0-only"
 
   livecheck do
