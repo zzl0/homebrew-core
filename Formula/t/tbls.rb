@@ -7,13 +7,13 @@ class Tbls < Formula
   head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb69968402a7df1674fdd619c2061cb59da50d68546c56a8e0e0e5c487ef319a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a738311f372e9cdc20063bbaec99ded309b07f6e014e02d253d3a2c4ba80ab39"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ea589d504ca99430bfef7b77d6038cb97e89d3aff9abdcd1abf271b84e97210"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b43ca9ba2ced6fb792bc6b3edce572e817e575765cfb4744d63f4b066cf271a"
-    sha256 cellar: :any_skip_relocation, ventura:        "48e3679277625bb93ea2bae70daf3af4d5c02ea2a97d40ef85ab17755bfb9e77"
-    sha256 cellar: :any_skip_relocation, monterey:       "59aa840de2d462324389b18540fb17f1dcfcf9121c91ae84970fd03e117662f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d774ac30e14b0e72b0a3b81cd9cad75137345f07a7bc2b94cf37a426657e016b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a813069c3882289c5b8666528cb01f46d57c882baefaeb8ad894b1de20506ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e67dc515db53fc766d7c7f38f4fa1189661f6ccd8b27fbba7d4e949695178faf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f4de5f311d6d7b792c730c03d93102802e8fc953f0355aba5bd210d42c13613"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ebfc6b66e5865ce5be4d42d50622c85c41f2f50f07a5bf7ce4aea6b3df8dc09"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c88ed51889030cad91b0d245adf63f6ad50eaad24fbe174959ca79942875fd2"
+    sha256 cellar: :any_skip_relocation, monterey:       "1818574b716c2427e64cda8a3a42b19b5456014cc3e42933a510a20f4403cf58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74bab01b6a952544f0cc1b29b3ea6e5ddd54741e568122626164e36306ab1237"
   end
 
   depends_on "go" => :build
