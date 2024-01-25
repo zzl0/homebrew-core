@@ -6,16 +6,13 @@ class Grin < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e39401a14c113a9dc0f5596b05254528729459bd91487dd9c1491378365c473b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1fab9195a99a295a16188c052518879bd5dadedc2ebcbd8c320ed498facf1f28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6401984d8253b18d9b6ddb50d7804d53e77df627b97430a4dc7403f24e8ee2de"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e85a55594c77f1a6864064b8764221e543b679b673adab978e586c21945bee4b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "930b4c12cf15053a5064bafcf708adf1d78083b6ebfc6a3b2d8d4f992edaf8e6"
-    sha256 cellar: :any_skip_relocation, ventura:        "33b88a2920ae853a8945fb31b60fb913b729618811a1ed2059bf34ac862011fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "379a7ae7790a3e4eaa6d43da60a43e9d431dd94cb9c21165be3cd5ce640b8161"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2c30855732887dd75a1fdb3e88127a42c3f748f2787cf133c5643ba8bf976f34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4be0f608e09ddd44d9f897f6cdf080411306d47967b135a806c616931e89c84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80cbaf50c6c9f08b073e27445c4d3dfad73a020255a26f1f207efdc0ae0638e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1776e745ea7afbd4b2fc5f34aec4063c44b01d6581f373aa026b4ef7ea55523"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "359fafc884243814d31f62073c6ea4333271cff375a255eb7456a3cf0376cc78"
+    sha256 cellar: :any_skip_relocation, sonoma:         "85f24243e5d9f163be61d2daf51390e7ecde2159bcc8594182f105082b6bea81"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8132a1f9dbd6db7e788777db771fe3bb940af20316188d68d7122229585fd19"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe57a47d8371de9896bf50347d98a3c337e016c298bcce7cd75ea47096c541c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "031122bb316749a63cdb3e6ad53262531d6b8a5bab50fe44dcba0df0e02f060f"
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
