@@ -1,9 +1,8 @@
 class Grin < Formula
   desc "Minimal implementation of the Mimblewimble protocol"
   homepage "https://grin.mw/"
-  # TODO: remove the `cargo update` line when this is next updated (5.2.x).
-  url "https://github.com/mimblewimble/grin/archive/refs/tags/v5.1.2.tar.gz"
-  sha256 "a4856335d88630e742b75e877f1217d7c9180b89f030d2e1d1c780c0f8cc475c"
+  url "https://github.com/mimblewimble/grin/archive/refs/tags/v5.2.0.tar.gz"
+  sha256 "23d958e4c07075d62b66185fd07bb862457f56c4e518e62650fe5650c738a8f8"
   license "Apache-2.0"
 
   bottle do
@@ -28,21 +27,10 @@ class Grin < Formula
 
   uses_from_macos "ncurses"
 
-  # Patch to build with rust 1.71.0, remove in next release
-  # upstream PR ref, https://github.com/mimblewimble/grin/pull/3763
-  patch do
-    url "https://github.com/mimblewimble/grin/commit/399fb19c3014a4a5c3f0575dd222e7df6fda8c83.patch?full_index=1"
-    sha256 "0966dd64d8b91a3179207c38f0590ffbeb61ff911ddd3dc4be45045c9331eebf"
-  end
-
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
-
-    # Fixes compile with newer Rust.
-    # REMOVE ME in the next release.
-    system "cargo", "update", "--package", "socket2", "--precise", "0.3.16"
 
     bindgen_version = Version.new(
       (buildpath/"Cargo.lock").read
