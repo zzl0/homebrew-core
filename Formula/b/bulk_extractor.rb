@@ -1,8 +1,8 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
   homepage "https://github.com/simsong/bulk_extractor/wiki"
-  url "https://github.com/simsong/bulk_extractor/releases/download/v2.0.6/bulk_extractor-2.0.6.tar.gz"
-  sha256 "ab2640c522339fce8ab99541c090e272b16430760828b567229c89d4c1b469ad"
+  url "https://github.com/simsong/bulk_extractor/releases/download/v2.1.0/bulk_extractor-2.1.0.tar.gz"
+  sha256 "2ac7911e6cec65be851a538ca2b4ba8a43c560d70449af5da6e593a865f26c9b"
   license "MIT"
 
   livecheck do
@@ -26,7 +26,9 @@ class BulkExtractor < Formula
     depends_on "automake" => :build
   end
 
+  depends_on "pkg-config" => :build
   depends_on "openssl@3"
+  depends_on "re2"
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
