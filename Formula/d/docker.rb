@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v25.0.0",
-      revision: "e758fe5a7fb956b126ca5f9eb2df5a86c4841fbd"
+      tag:      "v25.0.1",
+      revision: "29cf62922279a56e122dc132eb84fe98f61d5950"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -27,14 +27,18 @@ class Docker < Formula
   depends_on "docker-completion"
 
   def install
+    # TODO: Drop GOPATH when merged/released: https://github.com/docker/cli/pull/4116
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-
     (buildpath/"src/github.com/docker").install_symlink buildpath => "cli"
-    ldflags = ["-X \"github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}\"",
-               "-X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}",
-               "-X github.com/docker/cli/cli/version.Version=#{version}",
-               "-X \"github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community\""]
+
+    ldflags = %W[
+      -s -w
+      -X github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}
+      -X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}
+      -X github.com/docker/cli/cli/version.Version=#{version}
+      -X "github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community"
+    ]
 
     system "go", "build", *std_go_args(ldflags: ldflags), "github.com/docker/cli/cmd/docker"
 
