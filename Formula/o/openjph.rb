@@ -6,6 +6,16 @@ class Openjph < Formula
   license "BSD-2-Clause"
   head "https://github.com/aous72/OpenJPH.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "0660bc2dc2bb1570b60b47bb9fa1431df176ea256797d75851d2a20143df5c79"
+    sha256 cellar: :any,                 arm64_ventura:  "b52096283d579b14e6d08f821414ab6a900db85240ed73a1cb7c96bff4cb7fae"
+    sha256 cellar: :any,                 arm64_monterey: "d21589a3de4618a57406f70f1dd95e98373b6f0b5cea4b746f2a82517d95eefb"
+    sha256 cellar: :any,                 sonoma:         "20c6e2e7ccdcbfb718fbfe7526b1d6968db481ae4c36da9f33918043ae35623c"
+    sha256 cellar: :any,                 ventura:        "054993c2d865bdbd28ff233d39206a18e025f8666e1cbfb31ae9ac65570a9ab6"
+    sha256 cellar: :any,                 monterey:       "1b257f76dce7b37cd4c8d086eced54800fae2af91e2d9e40e021dc16e8e28592"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dfb671b7eae9ad0f9de66d7d0a4698b8c232641bac699b27d563884f970f1ce"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "libtiff"
