@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-dist.zip"
-  sha256 "bd88ff602c8bbb29ee82ba2a6b12ad092d51ec668c6577f9628f18e48ff4e51e"
+  url "https://github.com/bazelbuild/bazel/releases/download/7.0.2/bazel-7.0.2-dist.zip"
+  sha256 "dea2b90575d43ef3e41c402f64c2481844ecbf0b40f8548b75a204a4d504e035"
   license "Apache-2.0"
 
   livecheck do
@@ -36,16 +36,13 @@ class Bazel < Formula
     ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
 
     # Bazel clears environment variables other than PATH during build, which
-    # breaks Homebrew shim scripts. We don't see this issue on macOS since
-    # the build uses a Bazel-specific wrapper for clang rather than the shim;
-    # specifically, it uses `external/local_config_cc/wrapped_clang`.
+    # breaks Homebrew's shim scripts that need HOMEBREW_* variables.
+    # Bazel's build also resolves the realpath of executables like `cc`,
+    # which breaks Homebrew's shim scripts that expect symlink paths.
     #
-    # The workaround here is to disable the Linux shim for C/C++ compilers.
-    # Remove this when a way to retain HOMEBREW_* variables is found.
-    if OS.linux?
-      ENV["CC"] = "/usr/bin/cc"
-      ENV["CXX"] = "/usr/bin/c++"
-    end
+    # The workaround here is to disable the shim for C/C++ compilers.
+    ENV["CC"] = "/usr/bin/cc"
+    ENV["CXX"] = "/usr/bin/c++" if OS.linux?
 
     (buildpath/"sources").install buildpath.children
 
