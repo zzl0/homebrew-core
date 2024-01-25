@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.5.1.tar.gz"
-  sha256 "dccfb5f75aa83fe2edb4eb2462fc984a086c82bad8433f63c31048d84b565d74"
+  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.6.0.tar.gz"
+  sha256 "19cbeb9964ebe439413dd66d82ace1f904adc5f25d8a823c1b48c34bd0d29ea5"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
