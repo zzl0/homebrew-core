@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v14.0.0.tar.gz"
-  sha256 "5635080f7b8d092c107b2b49a18b707a275bd07c6f121778d49b9d147eef9891"
+  url "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v14.0.1.tar.gz"
+  sha256 "e4262fae2c89efe889b5a3533dc25d35dd3fbaf373091170f20bcc852017e8be"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -21,12 +21,6 @@ class Topgrade < Formula
   end
 
   depends_on "rust" => :build
-
-  # patch for terminal notification, remove in next release
-  patch do
-    url "https://github.com/topgrade-rs/topgrade/commit/f794329913db5571a71e9ac8a36a44959d3f6a33.patch?full_index=1"
-    sha256 "4b280f19c327e6eb9d86056c4f882234d4996b7429ad7f21c0b78d118f2d0a34"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
