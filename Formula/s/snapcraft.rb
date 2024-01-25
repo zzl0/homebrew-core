@@ -184,8 +184,8 @@ class Snapcraft < Formula
   end
 
   resource "lazr-restfulclient" do
-    url "https://files.pythonhosted.org/packages/88/e2/6b8b83d69aa06ae515a969320a8b8e371afa42b4226c03159641fc773c55/lazr.restfulclient-0.14.5.tar.gz"
-    sha256 "0751717c7e74db1987e9a77335707d4d7d97cf04b1ad0898b822f12333d6887c"
+    url "https://files.pythonhosted.org/packages/ea/a3/45d80620a048c6f5d1acecbc244f00e65989914bca370a9179e3612aeec8/lazr.restfulclient-0.14.6.tar.gz"
+    sha256 "43f12a1d3948463b1462038c47b429dcb5e42e0ba7f2e16511b02ba5d2adffdb"
   end
 
   resource "lazr-uri" do
