@@ -15,14 +15,13 @@ class Boost < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "6b756f347001abeab4d06117f818d6c786c69b43f1169807af626bce7357ccb1"
-    sha256 cellar: :any,                 arm64_ventura:  "b0d919557c04b0141596b9936e231eefeb5b80ea0e9cefeb40cbe1937404fb60"
-    sha256 cellar: :any,                 arm64_monterey: "a38751ff7e50f5e9b340ea6028f6c7f1ac80e131e261c108394b7f7c53fbd3c1"
-    sha256 cellar: :any,                 sonoma:         "16f3b4ef9fc39f10c000061ff2817843cd44d41722c7bf5a8e72c5293d73d771"
-    sha256 cellar: :any,                 ventura:        "61da54543473024c5d585d9f5dd8d725db5c08646bd94d2c034d2f505b69345a"
-    sha256 cellar: :any,                 monterey:       "b954ded2e6de1c7c2d91f0abf566fdb8ac0352d094f9a0517f1047f227b4152a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17ebadc40acbb098b0401925c791c0e26584c23953cbf164137d9664fdd8df63"
+    sha256 cellar: :any,                 arm64_sonoma:   "e3661208930c23ae720a1ec345863747117864f1a5cbc239e4941962914331b5"
+    sha256 cellar: :any,                 arm64_ventura:  "a21b17403a8bf3e8f554f6efeb1162ba5893333750af95922b6f81c17e3444f0"
+    sha256 cellar: :any,                 arm64_monterey: "05363952d5026af7e63184e5cc6f27280dcb2f3eb9a500e2e17e791baadd907e"
+    sha256 cellar: :any,                 sonoma:         "345f64368780bbc92e1ac0a9307e6cebfcf4dbee58f93fad49cc1ae66585eca7"
+    sha256 cellar: :any,                 ventura:        "0e6dc6d7ee9e302e94849db4e03240e86c1e274be9e21b3f40f38c8882f039b4"
+    sha256 cellar: :any,                 monterey:       "022cc5c1f9e7eb894b3ece1d03b276f2eecde08da0a782903fcc84523effe643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e376faa3651c3e207c21dd9cd52b5c0e075a44526e71703a6a3d246d3cc6734b"
   end
 
   depends_on "icu4c"
