@@ -38,6 +38,12 @@ class Tarsnap < Formula
     depends_on "e2fsprogs" => :build
   end
 
+  # Needed for tarsnap 1.0.40; should not be needed for 1.0.41 or higher
+  patch do
+    url "https://github.com/Tarsnap/tarsnap/commit/4af6d8350ab53d0f1f3104ce3d9072c2d5f9ef7a.patch?full_index=1"
+    sha256 "4136b5643e25f7d5e454c014b3c13d7ad015a02e796c5c91b3e4eeca28c1556e"
+  end
+
   def install
     system "autoreconf", "-iv" if build.head?
 
