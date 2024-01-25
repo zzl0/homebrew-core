@@ -1,8 +1,8 @@
 class Caracal < Formula
   desc "Static analyzer for Starknet smart contracts"
   homepage "https://github.com/crytic/caracal"
-  url "https://github.com/crytic/caracal/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "dcc8f8ebbede56c9f68e025f444ede4f5966dc6c1c2695f09f999cf8f26f26af"
+  url "https://github.com/crytic/caracal/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "70a505b46d19cc389fa11bc17bed106e15ede6b076fb1f8b350a4ccabb4e7052"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/caracal.git", branch: "master"
 
@@ -27,8 +27,8 @@ class Caracal < Formula
 
   test do
     resource "corelib" do
-      url "https://github.com/starkware-libs/cairo/archive/refs/tags/v2.2.0.tar.gz"
-      sha256 "147204fd038332f0a731c99788930eb3a8e042142965b0aa9543e93d532e08df"
+      url "https://github.com/starkware-libs/cairo/archive/refs/tags/v2.5.0.tar.gz"
+      sha256 "0c21b58bc7ae2e8a6d47acedc4d20f30a41957deb6e24f8adaf31183112f8a4d"
     end
 
     resource("corelib").stage do
