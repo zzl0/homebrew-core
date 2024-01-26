@@ -11,17 +11,13 @@ class Libgig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b641c41afaac2a1335dcbd5312f8d4d7f89c33253864588224ef126ebcdbc02c"
-    sha256 cellar: :any,                 arm64_ventura:  "ad74c66aa9b606ed8b195ea1547ce273bc20c818830c25d2d1630fb928704267"
-    sha256 cellar: :any,                 arm64_monterey: "f25257d7f210d0d3a2f0cff724db229618be0a8123ccffa358d2823ef77f8241"
-    sha256 cellar: :any,                 arm64_big_sur:  "fa41e608f0e97d0854cb808a6841addebcefc1243b231b9fa98052feda51ea67"
-    sha256 cellar: :any,                 sonoma:         "42655dc19ba49e41adcf596fed65dc4a8db1fc2eb310da14aa3a0a61193045fb"
-    sha256 cellar: :any,                 ventura:        "63cfad1ef3c6f3c744d5bfaebbc234a9ea7c52317db2a932aed6e1dac4de7b46"
-    sha256 cellar: :any,                 monterey:       "9f5f9c6755666c7a5fa7f893782c9f438d5c67e3fa6f3d010ed0cbcf8fb0a580"
-    sha256 cellar: :any,                 big_sur:        "155c5b2d28ca46b08c4d88ffe669d0d16af29d84f58d81c42036bc6beaf1f093"
-    sha256 cellar: :any,                 catalina:       "0b00303d4e051d1099a234022f9ee695838ea6effc232dc830c42304b0d5e699"
-    sha256 cellar: :any,                 mojave:         "17999aa905c481e685770fe73604dd5c0ff635fa9410c0a8e5ac1067f1de37c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f6e21355854f6b5b7ce78a61253f2b1c4f91f5a67092335bb582d10106ba4ff"
+    sha256 cellar: :any,                 arm64_sonoma:   "a8852fc0cbdf394d0d6aa81b70a1295032d00a3d807c02738efd24dd438cc01d"
+    sha256 cellar: :any,                 arm64_ventura:  "39a6dac35658dd82ebb37d439a025494e9d38a5f578bd843921fb01c17c5e83a"
+    sha256 cellar: :any,                 arm64_monterey: "a18ef09113d7cb18446d4490001c63f3998f3eca77ddb52d0fc18ffbe96ed35d"
+    sha256 cellar: :any,                 sonoma:         "e2f162237927953c0ab2b4b50ffd8ba0b8a9b9354f4903d2301b5a0e2784da2a"
+    sha256 cellar: :any,                 ventura:        "dd7663f819c3d815f53b4b368565f2dd18a93849d15b29aae41ebe599b63892a"
+    sha256 cellar: :any,                 monterey:       "84856efdb102ced26fef47ae18945e94694a2b7d042ac14cb8c29af4555f0c50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4537ed3bbd107fb171c762a14fe9611196b8a584e7e3409606aa7a56b40fb16"
   end
 
   depends_on "pkg-config" => :build
