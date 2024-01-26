@@ -1,8 +1,9 @@
 class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
-  url "https://github.com/cucumber/cucumber-cpp/archive/refs/tags/v0.6.tar.gz"
-  sha256 "d4f8155b665a8b338a60f97bd652bb04a1b41f5c32750e13dbf48664a942d93a"
+  url "https://github.com/cucumber/cucumber-cpp.git",
+      tag:      "v0.7.0",
+      revision: "ceb025fb720f59b3c8d98ab0de02925e7eab225c"
   license "MIT"
 
   bottle do
@@ -16,30 +17,31 @@ class CucumberCpp < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
+  depends_on "qt@5" => :build
   depends_on "ruby" => :test
-  depends_on "boost"
+  depends_on "asio"
+  depends_on "tclap"
 
   def install
     args = %w[
       -DCUKE_DISABLE_GTEST=on
-      -DCUKE_DISABLE_CPPSPEC=on
-      -DCUKE_DISABLE_FUNCTIONAL=on
-      -DCUKE_DISABLE_BOOST_TEST=on
-      -DCMAKE_CXX_STANDARD=17
+      -DCUKE_ENABLE_EXAMPLES=on
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    doc.install "examples"
   end
 
   test do
-    boost = Formula["boost"]
     ENV.prepend_path "PATH", Formula["ruby"].opt_bin
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
 
-    system "gem", "install", "activesupport:7.0.8", "cucumber:5.2.0"
+    system "gem", "install", "cucumber:9.1.1", "cucumber-wire:7.0.0", "--no-document"
 
     (testpath/"features/test.feature").write <<~EOS
       Feature: Test
@@ -52,6 +54,9 @@ class CucumberCpp < Formula
       host: localhost
       port: 3902
     EOS
+    (testpath/"features/support/wire.rb").write <<~EOS
+      require 'cucumber/wire'
+    EOS
     (testpath/"test.cpp").write <<~EOS
       #include <cucumber-cpp/generic.hpp>
       GIVEN("^A given statement$") {
@@ -61,26 +66,34 @@ class CucumberCpp < Formula
       THEN("^A then statement$") {
       }
     EOS
-    system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}",
-           "-lcucumber-cpp", "-I#{boost.opt_include}",
-           "-L#{boost.opt_lib}", "-lboost_regex", "-lboost_system",
-           "-lboost_program_options", "-lboost_filesystem", "-lboost_chrono",
-           "-pthread"
+
+    cxx_args = %W[
+      -std=c++17
+      test.cpp
+      -o
+      test
+      -I#{include}
+      -L#{lib}
+      -lcucumber-cpp
+      -pthread
+    ]
+    system ENV.cxx, *cxx_args
+
     begin
       pid = fork { exec "./test" }
-      sleep 5
+      sleep 1
       expected = <<~EOS
         Feature: Test
 
-          Scenario: Just for test   # features/test.feature:2
-            Given A given statement # test.cpp:2
-            When A when statement   # test.cpp:4
-            Then A then statement   # test.cpp:6
+          Scenario: Just for test
+            Given A given statement
+            When A when statement
+            Then A then statement
 
         1 scenario (1 passed)
         3 steps (3 passed)
       EOS
-      assert_match expected, shell_output("#{testpath}/bin/cucumber --publish-quiet")
+      assert_match expected, shell_output("#{testpath}/bin/cucumber --quiet")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)
