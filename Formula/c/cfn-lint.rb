@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/0a/75/87b419149db1da90a32f11cfb3fc7faad9a87f4ca49b9a2694a03fe5edc7/cfn-lint-0.84.0.tar.gz"
-  sha256 "7a819ffa48ab23f775037ddb0d9330ba206d547439f69bc72f76f1183d8bc124"
+  url "https://files.pythonhosted.org/packages/c4/9d/76462d22b8f2d8e4878f3c4980eec878a52ee0188dbc69e6b707e4da7461/cfn-lint-0.85.0.tar.gz"
+  sha256 "64d6e8d85cdc573b61add78f9ff95a142a1834edb4793d1291551f6d953f73fe"
   license "MIT-0"
 
   bottle do
@@ -40,13 +40,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/15/41/ef925ff414b28fc55babb0df145cbee23e2f1e8896e4eab80c4f082f9289/boto3-1.34.21.tar.gz"
-    sha256 "206e61ba1f8c830e5df0355606d178ad5bc970df12c4c318b021c71da410eb0c"
+    url "https://files.pythonhosted.org/packages/09/22/56312b56c225d2453fbb88fbc2d34bc258c2814beae859063760f3f6b4d7/boto3-1.34.28.tar.gz"
+    sha256 "9e0dcca7bb0567f7b4b84d1d26c19b217abfe149d19106af7f120f09142688cf"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/38/4b/14c863acefe2b242f659cba1b7e58cba3f5bc9a5bda59e708714195be216/botocore-1.34.21.tar.gz"
-    sha256 "21983bb0473a19130192c50ec6974d55f0c4aa48a7094bcf40f7882c8b69b8f1"
+    url "https://files.pythonhosted.org/packages/3f/e9/ba8173b7c6b7ddc874b7630b8ac278d29c86ffcc80975a740a4eb266af47/botocore-1.34.28.tar.gz"
+    sha256 "45c99ccc6389ab1a87e996a7cc8797c7e41d5ecd9a5757d567ba3a57cb7655e7"
   end
 
   resource "jmespath" do
@@ -75,8 +75,8 @@ class CfnLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/44/cd/1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279ad/jsonschema-4.21.0.tar.gz"
-    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
+    url "https://files.pythonhosted.org/packages/4d/c5/3f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9be/jsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do
