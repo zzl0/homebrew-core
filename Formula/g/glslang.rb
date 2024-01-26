@@ -23,14 +23,16 @@ class Glslang < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "spirv-tools"
   uses_from_macos "python" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXTERNAL=OFF",
+                    "-DALLOW_EXTERNAL_SPIRV_TOOLS=ON",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DENABLE_CTEST=OFF",
-                    "-DENABLE_OPT=OFF",
+                    "-DENABLE_OPT=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
     system "cmake", "--build", "build"
