@@ -8,13 +8,13 @@ class Bilix < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f19cd78257e15afe1dbe97f411378222ddfb1b52d2d4cc8878d539c7554ffcf1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e550f1ff8243cf203a19c6a983ee01eb2ab6262a83345efc7e51f06bec1ace92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04d685381f125b8a0710ae625a4a0eac5c77649dc13f1e6d8548506b86143b83"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b76755947ae12833297e85609cb7f6effacfd7461132705d37e6347cf19078f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "888dd55b8fcda7aa4892db34d4439ea7998468826767e37966c6c87ed9a17ebe"
-    sha256 cellar: :any_skip_relocation, monterey:       "4ae83107891645d92ec9fc3549d6ec37afad0c1e203893129f60410a4fe5fbd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "743ad18779e54d728d7f15de3ce6135c0bbcf1a9e4eb785a29bdaae21fad8f68"
+    sha256 cellar: :any,                 arm64_sonoma:   "0fbe3920c7ac40b28777a160e05938204ecbcfe448cc00b2971f2cd2efbaa9f3"
+    sha256 cellar: :any,                 arm64_ventura:  "3169c1e19c95b48ec032f6a44e33bbd498628cdff90e4d15eaf96b95c6445dd5"
+    sha256 cellar: :any,                 arm64_monterey: "11403ebbeaedfc0175942f189007fcb52667de3f6ba5ff3fa76fb6b3fb215111"
+    sha256 cellar: :any,                 sonoma:         "367af61e7efeb3dd5b4e9e675156ca6be172388ba603f02b99f061484e9364b4"
+    sha256 cellar: :any,                 ventura:        "22ecc8343c46131f2528a8428d7549326144501fb70aa3c5918f8f4d3cc51648"
+    sha256 cellar: :any,                 monterey:       "f865fbe3fbc78d651c6510faaf1bf7d6b025d4cd2a4eb4a171be03224b498b35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf938827dd23b01d1aa634e3e97728c91e5da957bbb7a9750266c63c8f29446"
   end
 
   depends_on "rust" => :build # for pydantic_core
