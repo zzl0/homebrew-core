@@ -1,8 +1,8 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://github.com/libgit2/pygit2"
-  url "https://files.pythonhosted.org/packages/09/50/f0795db653ceda94f4388d2b40598c188aa4990715909fabcf16b381b843/pygit2-1.13.3.tar.gz"
-  sha256 "0257c626011e4afb99bdb20875443f706f84201d4c92637f02215b98eac13ded"
+  url "https://files.pythonhosted.org/packages/7b/3c/697dbc6b7b27f599ea96fbe0cd59bc4bed05652372a550d59990ab460096/pygit2-1.14.0.tar.gz"
+  sha256 "f529ed9660edbf9b625ccae7e51098ef73662e61496609009772d4627a826aa8"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
@@ -16,6 +16,7 @@ class Pygit2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c98db8ca84bbee7209257f6af23aa886f11f0b6f942408baac029e7bc2bf5e23"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "cffi"
