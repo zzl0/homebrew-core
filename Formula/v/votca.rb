@@ -1,10 +1,9 @@
 class Votca < Formula
   desc "Versatile Object-oriented Toolkit for Coarse-graining Applications"
   homepage "https://www.votca.org/"
-  url "https://github.com/votca/votca/archive/refs/tags/v2023.tar.gz"
-  sha256 "ac78d2eb5a6694b76878d2ab1ec86bb161765143a447cc23905cdcb2bb6743be"
+  url "https://github.com/votca/votca/archive/refs/tags/v2024.tar.gz"
+  sha256 "be1f8ad3de2ce86f0c01014aa5358c181f128a847bc4508ba0a4bffd5c82a1cf"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1514b7dbb172def8b8b4f2a8d33da4f0063ea4ca7b56be0a73aa1e137f66179e"
@@ -29,7 +28,7 @@ class Votca < Formula
   depends_on "libint"
   depends_on "libxc"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "expat"
 
