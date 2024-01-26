@@ -1,8 +1,8 @@
 class Timg < Formula
   desc "Terminal image and video viewer"
   homepage "https://timg.sh/"
-  url "https://github.com/hzeller/timg/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "ddf2fb1fb2376d31957415d278bc34ff0ef574eb69ef96ddcb564c392d2e4c27"
+  url "https://github.com/hzeller/timg/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "9e1b99b4eaed82297ad2ebbde02e3781775e3bba6d3e298d7598be5f4e1c49af"
   license "GPL-2.0-only"
   head "https://github.com/hzeller/timg.git", branch: "main"
 
@@ -24,8 +24,10 @@ class Timg < Formula
   depends_on "libdeflate"
   depends_on "libexif"
   depends_on "libpng"
+  depends_on "librsvg"
   depends_on "libsixel"
   depends_on "openslide"
+  depends_on "poppler"
   depends_on "webp"
 
   fails_with gcc: "5" # rubberband is built with GCC
