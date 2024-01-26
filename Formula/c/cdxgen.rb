@@ -3,8 +3,8 @@ require "language/node"
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https://github.com/CycloneDX/cdxgen"
-  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-9.11.2.tgz"
-  sha256 "2f03abbb84e34a5d8a7ea0c47eb97708600b44dd5d1928a198393d73f82ea079"
+  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-9.11.3.tgz"
+  sha256 "85299e1a21e49d859bfb1a3b95dd857c7b11b503f3f92c18329ebe8f47a0e384"
   license "Apache-2.0"
 
   bottle do
