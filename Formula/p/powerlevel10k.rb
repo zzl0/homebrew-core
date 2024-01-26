@@ -1,8 +1,8 @@
 class Powerlevel10k < Formula
   desc "Theme for zsh"
   homepage "https://github.com/romkatv/powerlevel10k"
-  url "https://github.com/romkatv/powerlevel10k/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "ac3395e572b5d5b77813009fd206762268fc73b9d305c2a99f4f26ad6fecf024"
+  url "https://github.com/romkatv/powerlevel10k/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "d8187d44b697b3a37a8c4896678b4380e717cbf2850179529358348780a2d3d7"
   license "MIT"
   head "https://github.com/romkatv/powerlevel10k.git", branch: "master"
 
