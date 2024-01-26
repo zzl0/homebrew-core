@@ -328,7 +328,7 @@ jobs:
       - name: generate build provenance
         uses: github-early-access/generate-build-provenance@main
         with:
-          subject-path: '${{steps.pr-pull.outputs.bottle-path}}/*.tar.gz'
+          subject-path: '${{steps.pr-pull.outputs.bottle_path}}/*.tar.gz'
   
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
