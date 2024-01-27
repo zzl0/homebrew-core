@@ -1,8 +1,8 @@
 class Fdupes < Formula
   desc "Identify or delete duplicate files"
   homepage "https://github.com/adrianlopezroche/fdupes"
-  url "https://github.com/adrianlopezroche/fdupes/releases/download/v2.2.1/fdupes-2.2.1.tar.gz"
-  sha256 "846bb79ca3f0157856aa93ed50b49217feb68e1b35226193b6bc578be0c5698d"
+  url "https://github.com/adrianlopezroche/fdupes/releases/download/v2.3.0/fdupes-2.3.0.tar.gz"
+  sha256 "6170d64a7e565ee314cca4dd25a123e60aa1e3febb11e57078bebb9c1da7e019"
   license "MIT"
   version_scheme 1
 
@@ -22,9 +22,10 @@ class Fdupes < Formula
   depends_on "pcre2"
 
   uses_from_macos "ncurses"
+  uses_from_macos "sqlite"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make"
     system "make", "install"
   end
