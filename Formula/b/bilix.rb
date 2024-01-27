@@ -3,8 +3,8 @@ class Bilix < Formula
 
   desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https://github.com/HFrost0/bilix"
-  url "https://files.pythonhosted.org/packages/64/a4/ffb7e9214fc09efa1d12d3078258b075bdf60567736397816633e6f75007/bilix-0.18.6.tar.gz"
-  sha256 "ce46703ff1506ec86f3996e4512ca837376adee7283dd96961ac2abf0a24fa2b"
+  url "https://files.pythonhosted.org/packages/08/de/f349e3a5571613b39f109247c07f9f9b493ad4fd5ae4c42301210574885a/bilix-0.18.7.tar.gz"
+  sha256 "d39543a2198c3e6218d674fb83fea0b62a5c98224609828abffbec018ea2cc20"
   license "Apache-2.0"
 
   bottle do
@@ -176,12 +176,6 @@ class Bilix < Formula
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/ce/21/952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717b/soupsieve-2.5.tar.gz"
     sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
-  end
-
-  # fix pydantic validation error, remove in next release
-  patch do
-    url "https://github.com/HFrost0/bilix/commit/c4c2e6d9e8c9383acdb4c1f3f72a7c4d3e251664.patch?full_index=1"
-    sha256 "43beb93cfdfe6e0219d7eeb7ad208c3adc60178088950e69ee7698e2d5991a69"
   end
 
   def install
