@@ -3,10 +3,9 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/19/02/9da6f88be47a0d0296821b4cca2d6e94439b000473795ffb1f4e5751aca6/locust-2.20.1.tar.gz"
-  sha256 "9ba4c8658a158aed55774ac3650ac0139fcc1dfa65fea0dabb00ea35b0d56a4e"
+  url "https://files.pythonhosted.org/packages/1a/f4/399a5911027e683d27661aef2f69395003ab2a0ec2ccc2f345213cdd457c/locust-2.21.0.tar.gz"
+  sha256 "682f27d6696a2eea9f04f2c3ba87aab255a90285ba3a57c3c40444f646b39726"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "750a7d2a01e09a3f1ba7b6b42417a2723fbab529b3a0a95c75e80e565cf11cfe"
@@ -44,18 +43,18 @@ class Locust < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/d8/09/c1a7354d3925a3c6c8cfdebf4245bae67d633ffda1ba415add06ffc839c5/flask-3.0.0.tar.gz"
-    sha256 "cfadcdb638b609361d29ec22360d6070a77d7463dcb3ab08d2c2f2f168845f58"
-  end
-
-  resource "flask-basicauth" do
-    url "https://files.pythonhosted.org/packages/16/18/9726cac3c7cb9e5a1ac4523b3e508128136b37aadb3462c857a19318900e/Flask-BasicAuth-0.2.0.tar.gz"
-    sha256 "df5ebd489dc0914c224419da059d991eb72988a01cdd4b956d52932ce7d501ff"
+    url "https://files.pythonhosted.org/packages/b2/14/97b9137a02f57d2287f3a9731b3a339fda716d2d3a157d7d1d89c2bebf7b/flask-3.0.1.tar.gz"
+    sha256 "6489f51bb3666def6f314e15f19d50a1869a19ae0e8c9a3641ffe66c77d42403"
   end
 
   resource "flask-cors" do
     url "https://files.pythonhosted.org/packages/c8/b0/bd7130837a921497520f62023c7ba754e441dcedf959a43e6d1fd86e5451/Flask-Cors-4.0.0.tar.gz"
     sha256 "f268522fcb2f73e2ecdde1ef45e2fd5c71cc48fe03cffb4b441c6d1b40684eb0"
+  end
+
+  resource "flask-login" do
+    url "https://files.pythonhosted.org/packages/c3/6e/2f4e13e373bb49e68c02c51ceadd22d172715a06716f9299d9df01b6ddb2/Flask-Login-0.6.3.tar.gz"
+    sha256 "5e23d14a607ef12806c699590b89d0f0e0d67baeec599d75947bf9c147330333"
   end
 
   resource "gevent" do
