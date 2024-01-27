@@ -10,8 +10,6 @@ class Overdrive < Formula
     sha256 cellar: :any_skip_relocation, all: "de1c03f99f65cd9933fd70347b92f185b6a1b4c776e4efaeea56084ee52dd28c"
   end
 
-  depends_on "tidy-html5"
-
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
