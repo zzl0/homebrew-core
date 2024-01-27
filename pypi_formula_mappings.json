@@ -658,7 +658,7 @@
   "llm": {
     "exclude_packages": [
       "click", "certifi", "pluggy", "Pygments", "python-dateutil", "PyYAML",
-      "six", "sqlite-utils", "tabulate", "typing-extensions"
+      "setuptools", "six", "sqlite-utils", "tabulate", "typing-extensions"
     ]
   },
   "localstack": {
