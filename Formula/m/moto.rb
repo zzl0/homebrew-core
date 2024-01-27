@@ -3,18 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/f8/b2/06671ae921e7c7ebf18a20a6218fb55e83c3784b026eaf3d5670f9315924/moto-4.2.14.tar.gz"
-  sha256 "8f9263ca70b646f091edcc93e97cda864a542e6d16ed04066b1370ed217bd190"
+  url "https://files.pythonhosted.org/packages/1a/92/f920190cacaec0b4fc0fce8524e08bfd9b477081e7fecb54a50b88ef6d20/moto-5.0.0.tar.gz"
+  sha256 "4a94a147ee70e85e0842da8d1093728c66085165775d1d302f0f77538bf92b95"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4278e8c13dc0bff7b88b0b2d44bc1098f62935476b7371f1b5947060ca849cac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd3145db6632b47dfafc3d854111ca0eb309592aba445a308ee2197c667c9603"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e241235837bfa30eeb6b27018d6a4b5d064e6fdf302e97375cc4bd59e1d4d03b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9389a764d905b92c72f105804970e7f5b680971e58ad48b600b026f98f95a8ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "4aee545f3d9f3b4c9e5debac43e83f4ab00c6de2bc55657be99a637243aecb87"
-    sha256 cellar: :any_skip_relocation, monterey:       "8591975fd7f9749f3b0c166fbd6c62dee7091f1f2a7cc17d93bb231a521ed50a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff2cdb52f7bb482d93ea12bd3e731679ca01c45d3b87d617e1e8a6b43d5f44f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5a637a2613f69465e856b7772d6a1e2775a84186574b33a256a001efb476cab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf6a313c82f78f4dc23e34cb921a0780fa7c0eff9e4890b4e557a6f05ee3c619"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbad243a2a35a2f4acf7d15747166e6d53205101aaeac61cdfa691b4d57d0431"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48bf79ad0739291fde6fc4753f1a4193bb92e2fa6ad8bd2653a1a1c4aea26a47"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4b45e228f4f93abe072ecb35f3bb4e62da97a9a962b7ec341b936704bee2983"
+    sha256 cellar: :any_skip_relocation, monterey:       "30f77ed678dc9ac47d852eb95ac8aae36bfd301c73933fa50e2370da92ad0d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4cc2d20b54f2f57a9d0d0f67b0607c3d0f65d6fffcba026d0fbe7d459b6fe71"
   end
 
   depends_on "cffi"
