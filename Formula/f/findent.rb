@@ -1,8 +1,8 @@
 class Findent < Formula
   desc "Indent and beautify Fortran sources and generate dependency information"
   homepage "https://www.ratrabbit.nl/ratrabbit/findent/index.html"
-  url "https://downloads.sourceforge.net/project/findent/findent-4.3.0.tar.gz"
-  sha256 "bbff2a754c26f525596c0926eb2198992e1e2eac5b9bc9cbe31e302875de6278"
+  url "https://downloads.sourceforge.net/project/findent/findent-4.3.1.tar.gz"
+  sha256 "6e4ea2fdac92f62dd1a8ec13a60d98c20cbd1b21df1e65edfcda104c4717aa80"
   license "BSD-3-Clause"
 
   livecheck do
