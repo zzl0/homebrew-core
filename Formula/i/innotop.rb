@@ -1,10 +1,12 @@
 class Innotop < Formula
   desc "Top clone for MySQL"
   homepage "https://github.com/innotop/innotop/"
+  # Check if mysql-client@8.0 can be update to latest with next version
+  # if DBD::mysql > 5.003 - https://github.com/perl5-dbi/DBD-mysql/issues/375
   url "https://github.com/innotop/innotop/archive/refs/tags/v1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 6
+  revision 7
   head "https://github.com/innotop/innotop.git"
 
   bottle do
@@ -15,7 +17,7 @@ class Innotop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5331cfdb419c2669ad272183abccd8e622e182b863e156b2bf5a8634d84a28d"
   end
 
-  depends_on "mysql-client"
+  depends_on "mysql-client@8.0"
   depends_on "openssl@3"
 
   uses_from_macos "perl"
