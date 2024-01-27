@@ -11,13 +11,13 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "8434ad4d2e79651c391fde1ef01214306472efbec91586314a85c02bd72fc2cb"
-    sha256 cellar: :any, arm64_ventura:  "b0223e230b1086a6dab7c00472fac8ef67f799bf570a8f1b38e6844f9c224368"
-    sha256 cellar: :any, arm64_monterey: "cd6a8ae3e2b9c3edcbb41a91086e7b9eba56f43e4c2df0129da940eb6f7de92c"
-    sha256 cellar: :any, sonoma:         "ab5d32ae29ea72e85d1169d4c34cdf6faaf96c7859f51bcb98305efd89c9602c"
-    sha256 cellar: :any, ventura:        "1b4756f75bd4f3050d72c6edfcc3d67da764526cc66cae6ed021b8cb41c6b1aa"
-    sha256 cellar: :any, monterey:       "28ffa2b1363d45e92a5bd425a8fd3ec77696b3a859f63dd61c15a149690b54bf"
-    sha256               x86_64_linux:   "90f191bb2d7a118a3509df17eddcad6ec3be26a13064b10145a26c7de1578733"
+    sha256 cellar: :any, arm64_sonoma:   "9850be1875b9df8e9fa3510b6f2e947be2ff228d64a1c8e0daebc57a018ce2ef"
+    sha256 cellar: :any, arm64_ventura:  "5a43da34c9d24e6179ab12a4f36f16c888ca2575aa8c5b437bedf0879770c368"
+    sha256 cellar: :any, arm64_monterey: "7064d08dd517f18e64b77b918776cac027dd2496658aefac9d48b09532a19e30"
+    sha256 cellar: :any, sonoma:         "dae1cda0c456621bc3138b597af13d13d97edc7e24e23510ee6167a8c07c6be4"
+    sha256 cellar: :any, ventura:        "f92a8414aace5b73f91e86c47d885945a6d7b57e4a562ef938b92bb51fca8be6"
+    sha256 cellar: :any, monterey:       "4db45bfd6d0809281ed940ad53a9de79cbd7926cebbd1ae4b84deab1a4f1b542"
+    sha256               x86_64_linux:   "5c1018f253412a4910800121274c63998bece38da5656f13b697bdb3774d8b31"
   end
 
   keg_only :shadowed_by_macos
