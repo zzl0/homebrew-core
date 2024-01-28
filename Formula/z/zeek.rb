@@ -2,8 +2,8 @@ class Zeek < Formula
   desc "Network security monitor"
   homepage "https://www.zeek.org"
   url "https://github.com/zeek/zeek.git",
-      tag:      "v6.0.2",
-      revision: "dbaa9bf33d26be80f820e73a550a25d4be2740a7"
+      tag:      "v6.1.1",
+      revision: "37c47f17511762ab08d4a2494fa0555450f056d0"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
@@ -41,7 +41,7 @@ class Zeek < Formula
   def install
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
     # https://github.com/Homebrew/homebrew-core/pull/74932
-    inreplace "zeek-config.in" do |s|
+    inreplace "cmake_templates/zeek-config.in" do |s|
       s.gsub! "@ZEEK_CONFIG_PCAP_INCLUDE_DIR@", ""
       s.gsub! "@ZEEK_CONFIG_ZLIB_INCLUDE_DIR@", ""
     end
