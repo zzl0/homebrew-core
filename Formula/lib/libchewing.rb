@@ -1,9 +1,9 @@
 class Libchewing < Formula
   desc "Intelligent phonetic input method library"
   homepage "https://chewing.im/"
-  url "https://github.com/chewing/libchewing/releases/download/v0.5.1/libchewing-0.5.1.tar.bz2"
-  sha256 "9708c63415fa6034435c0f38100e7d30d0e1bac927f67bec6dfeb3fef016172b"
-  license "LGPL-2.1"
+  url "https://github.com/chewing/libchewing/releases/download/v0.6.0/libchewing-0.6.0.tar.xz"
+  sha256 "c2913bed55b7fdb25942b6a5832c254bc9bcb9c365d3cafa0a569b4b7cbd8f00"
+  license "LGPL-2.1-only"
 
   bottle do
     rebuild 1
@@ -21,22 +21,17 @@ class Libchewing < Formula
     sha256               x86_64_linux:   "e655d141d9a30243dd3059296cddacb68138eaee3ad064dde0a0de81b5b35c1a"
   end
 
-  head do
-    url "https://github.com/chewing/libchewing.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
-  depends_on "texinfo" => :build
+  depends_on "cmake" => :build
   uses_from_macos "sqlite"
 
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
+  end
+
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
