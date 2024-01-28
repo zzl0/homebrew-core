@@ -7,8 +7,8 @@ class Sile < Formula
   # - Remove `cosmo` resource and corresponding references in install
   # - Switch `lua` dependency to `luajit` and clean up `lua` references
   stable do
-    url "https://github.com/sile-typesetter/sile/releases/download/v0.14.14/sile-0.14.14.tar.xz"
-    sha256 "c4671b0f8df27c9e91bbb994ed1f8dc5f2b56179c80f071832307efa070da988"
+    url "https://github.com/sile-typesetter/sile/releases/download/v0.14.16/sile-0.14.16.tar.xz"
+    sha256 "cf97585b7dcf77d99e328f6cdce71a4070324fe001f7876f730fa04c6c923857"
 
     depends_on "lua"
   end
@@ -74,8 +74,8 @@ class Sile < Formula
   end
 
   resource "lua_cliargs" do
-    url "https://luarocks.org/manifests/amireh/lua_cliargs-3.0-2.src.rock"
-    sha256 "3c79981292aab72dbfba9eb5c006bb37c5f42ee73d7062b15fdd840c00b70d63"
+    url "https://luarocks.org/manifests/lunarmodules/lua_cliargs-3.0.2-1.src.rock"
+    sha256 "a2dfbd3f0236eaf4b0421dbd06a631d92b550335eb263b7283e1161a6e90d92e"
   end
 
   resource "lua-zlib" do
