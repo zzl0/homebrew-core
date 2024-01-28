@@ -8,14 +8,13 @@ class JenkinsJobBuilder < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e363e8ffba9fea51b3771dd251fb0b9c4aa26dcced533df25af64e2bb24d7ac3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "430964632a4f1619d660a1d41e28457f864ded999627dc31b94f946afcfbcbb2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "221203f74961e006858f570f1224bd0c9d3228fb4b974d3380a56094013d1ee3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67bd30b76036598c50dfd89d09b20ad85e55032f36934330b46d5571b3f68273"
-    sha256 cellar: :any_skip_relocation, ventura:        "c28b8e05248307e24dc52efb33f36ef39ce1fde693c2b2faf42f42046659bb61"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e1833bb5532a4ecc918c0067ba53080c0e60674f227a50cad75145eeca8eeae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c4119aa8d7cb347d729b73998884826cfb46581865e93011eca7fc847b6cfe4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b38957c34c4a5204870820f27a46efdd8af5a5fd794285c0b719594ccf5611e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2ad2a8b456a1af1b733fa66755a9331b6e42f84b24e26c9003d14e2297d9461"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ed086f703e5735c38d26ea62a273763279a6c9364ee53671bc9a6ef8f944d5a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3eed755680bdc8160d1d78899211286ad3663e03ff4cb006e0b8d119ea58eb76"
+    sha256 cellar: :any_skip_relocation, ventura:        "a052c1be0a7fdb2978a298c35c5e24a9d8aa075a8b80df92592c9e93afd00c9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0cf12397cb56c8afcb7789951361ab42989750dd32dbb849907a2fb3b555b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b4b5481e0abe634545b3cdfbe4682b31cb1f4c3383c051df2d46605bee606de"
   end
 
   depends_on "python-certifi"
