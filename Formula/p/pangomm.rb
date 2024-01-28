@@ -1,8 +1,8 @@
 class Pangomm < Formula
   desc "C++ interface to Pango"
   homepage "https://www.pango.org/"
-  url "https://download.gnome.org/sources/pangomm/2.50/pangomm-2.50.1.tar.xz"
-  sha256 "ccc9923413e408c2bff637df663248327d72822f11e394b423e1c5652b7d9214"
+  url "https://download.gnome.org/sources/pangomm/2.50/pangomm-2.50.2.tar.xz"
+  sha256 "1bc5ab4ea3280442580d68318226dab36ceedfc3288f9d83711cf7cfab50a9fb"
   license "LGPL-2.1-only"
 
   bottle do
