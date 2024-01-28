@@ -893,7 +893,7 @@
   },
   "pydocstyle": "pydocstyle[toml]",
   "pygit2": {
-    "exclude_packages": ["cffi", "pycparser"]
+    "exclude_packages": ["cffi", "pycparser", "setuptools"]
   },
   "pygitup": {
     "exclude_packages": ["typing-extensions"]
