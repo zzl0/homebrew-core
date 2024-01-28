@@ -6,13 +6,13 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69274bcb4fafe866025cf0b8e446f8ed4ef23f67157870e1c0dbfaf0e4b5734a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c12a7afaff520c1304d4a93f88fa3bce81643734f91030f8002c446d1afcf80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f45ad5011e78e997ff7482746156adf4f8efb81465de336a5449bfebc30b9b96"
-    sha256 cellar: :any_skip_relocation, sonoma:         "021286181d537fc2eb4c3ae3bec67edbe6cdfa21186159cdf990cbbc8fd8b132"
-    sha256 cellar: :any_skip_relocation, ventura:        "582d989ee8ddd9cd231e8da735c0cad7840d2de5501b07a5acf1b87ececb74c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4ed5e2b0e7ff0ed2ed9485cb79e996234f1a36b6e54898a804b4ac7ced7cdb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c5d00522d9fe5b52a45e44ab5fa76cdfc4eca1b1a093b8b0c29fff55a9f6b65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c8ac88640e2fe7f41c75861117330e387eff1863b5b9c7b29cf853bab2aa511"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52ace3d76901afc72cc634ffe956c7a8c31b58c8f8383a38b693e63b0b378e74"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "62711ceb660ddd87fba25d61709d5ec944dcea13ad76ce5470a3556fe50cc90d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e9dc6bb41abfa38408e50f432e9f41704e1795b362ab33b8d8057c0528abfc1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "cde663f69134d76fc46ca6e4751189d56030e11f82d0eda721dc4ab60a3b5930"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba0127910d3044d567b62f35a92247107b8015aca9b36619937b31a9ecfbb285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f977a7d663ff7d03f1969925215a0d20f61eeb93da6ed388bf1bc6c58f7bea90"
   end
 
   depends_on "python-setuptools" => :build
