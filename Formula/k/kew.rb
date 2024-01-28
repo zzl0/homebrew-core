@@ -1,8 +1,8 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v2.0.4.tar.gz"
-  sha256 "043d6251f4e1cc6c955afad2eda3458f8ea71e75d6ad507e9b99bd153f95ba84"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "bb3571b8233fe0fb50068e112903b3be834b72da486740a111b5126b42f067ce"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
