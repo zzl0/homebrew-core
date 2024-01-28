@@ -45,10 +45,14 @@ class Languagetool < Formula
       export JAVA_HOME="#{Language::Java.overridable_java_home_env(java_version)[:JAVA_HOME]}"
       exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/languagetool-server.jar" org.languagetool.server.HTTPServer "$@"
     EOS
+
+    touch buildpath/"server.properties"
+    pkgetc.install "server.properties"
   end
 
   service do
-    run [opt_bin/"languagetool-server", "--port", "8081", "--allow-origin"]
+    run [opt_bin/"languagetool-server", "--config", etc/"languagetool/server.properties", "--port", "8081",
+         "--allow-origin"]
     keep_alive true
     log_path var/"log/languagetool/languagetool-server.log"
     error_log_path var/"log/languagetool/languagetool-server.log"
