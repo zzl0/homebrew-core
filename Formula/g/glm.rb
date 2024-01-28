@@ -13,18 +13,13 @@ class Glm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "530954e416065df681a2828b4df2b1c5f1cedc02a4473627ea305927f0c56635"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43539a6af68c678e1d8aef0489f4eff77bf05dda37954c3e727c64bc3c14fa26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3fb20151677b15dfe14e1213ffb9339c497e6168dfc00415c2b89bf91d35c79"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4835a0d6b85dd518d3b47830bbae5f45521f4588bd02d3f690f792a6960b9492"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f47eadac98f421b50dc7097ee18f25f865d50d4c1c53d474e11972bdf92454b"
-    sha256 cellar: :any_skip_relocation, ventura:        "336127e65536ea9d1823084ec8b336b65618a2e7eda8da4d2d88a29f3646170f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5c3ab27388c4c90f518af0889da3a0a65174d370b7efdd74d52411ce5725e75"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0533418aa7813363241f157a547604acc2c097790a6ddaff2967ede127e8225b"
-    sha256 cellar: :any_skip_relocation, catalina:       "9b661be1f704c2e946dbd4d4f96d58ae82427824ef88d7dd9f0f0cfc3fae2233"
-    sha256 cellar: :any_skip_relocation, mojave:         "7210910c6f106de4c22874f3977b1457cea3db6bb03269ea6831ffae861bb80e"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "ea41bb7f8f195c22d6f7834c57684412d752e2c72ff795b9056dd90aaebf9d84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5c2dbbad2a1f3c87f7dada3710c9404ec33953f84d6793fba3fc39dd2f683a4"
+    sha256 cellar: :any,                 arm64_sonoma:   "8d177748719b95658993ecd43fa12655701a17c90265b21f276cca23692d370e"
+    sha256 cellar: :any,                 arm64_ventura:  "2c98bea16ad38d1bfe8aa6c5e53c80902ab810a64ae3fc07737f7fbd68307031"
+    sha256 cellar: :any,                 arm64_monterey: "0b88a03a507fc6a844fd031fec6a01ac1564b9dda9e32165c923ff74374f931d"
+    sha256 cellar: :any,                 sonoma:         "5bf46f03e749fc17cb2db89b6e8d00e021246806ebafcdd4ed4fc677b533bc3a"
+    sha256 cellar: :any,                 ventura:        "ac194c8b7d6d568639ee2a7611c06127003ac1315ac2e9a86fb53ce2ddc5536d"
+    sha256 cellar: :any,                 monterey:       "324b50967d56d320c4d47f4f23ac205a8f813b1b7ec16e0278df6f78d77f378c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2aa9340b302c688c807ce9d93aa1b6303e8f018e0bce74d4cd678185caa2559"
   end
 
   depends_on "cmake" => :build
