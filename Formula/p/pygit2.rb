@@ -7,13 +7,13 @@ class Pygit2 < Formula
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3e18c0e320d819c2be32109fa63371cde46e618c3bf4fd4466602e4527b53909"
-    sha256 cellar: :any,                 arm64_ventura:  "2c60b4a14cd02a0d0f795178df8005a3d1beada99ff632545a51379ab3996385"
-    sha256 cellar: :any,                 arm64_monterey: "7c68d1853fea9f4519821153c66164ae4021f4ba7a62c7f12ca2047c2f47502c"
-    sha256 cellar: :any,                 sonoma:         "75903337466e82f6989858dd71a3e130da5365d28b0f2d69ad5da4d0e9d4927a"
-    sha256 cellar: :any,                 ventura:        "bc022f022b1081b624ab8eabdeb82cc4701182c1975994ad09927c69294db911"
-    sha256 cellar: :any,                 monterey:       "7461a77372d86acb2de61b58bc311b9b1033e21c8e95616b017a5a3a706ec058"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c98db8ca84bbee7209257f6af23aa886f11f0b6f942408baac029e7bc2bf5e23"
+    sha256 cellar: :any,                 arm64_sonoma:   "34e811af2a5abf09eb36d044ef57f12d3f481fcdf0b9a69bf879c380c09e3bf1"
+    sha256 cellar: :any,                 arm64_ventura:  "7bd8b0142c9ffdc30f3b94a149f5b2d3e8aea9d3bf5e9a5ffcc77923aac04401"
+    sha256 cellar: :any,                 arm64_monterey: "91503a3d3dacbf0bba19ed1d4975cfb948955202b10f663ee47541c6413cc0db"
+    sha256 cellar: :any,                 sonoma:         "670847f561bc2ec88a8504b37f05f6b54a859c8c8827dfa968167fc9aeb7d832"
+    sha256 cellar: :any,                 ventura:        "80306ce71336d98155f7e392dde3adb81b0de78d96a4ab2737a959677d90dcef"
+    sha256 cellar: :any,                 monterey:       "a63afa242c61c0659473cc2fc2ba00a488cfeee41ce525d67733f18d2977d3ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25f0513381d2267e4994fdb4ba91c4a3bf6574ec4857d38d707af0c22cced20c"
   end
 
   depends_on "python-setuptools" => :build
