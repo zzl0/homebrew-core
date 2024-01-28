@@ -3,10 +3,9 @@ class Thrax < Formula
 
   desc "Tools for compiling grammars into finite state transducers"
   homepage "https://www.openfst.org/twiki/bin/view/GRM/Thrax"
-  url "https://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.3.8.tar.gz"
-  sha256 "e21c449798854f7270bb5ac723f6a8d292e149fc6bbe24fd9f345c85aabc7cd4"
+  url "https://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.3.9.tar.gz"
+  sha256 "1e6ed84a747d337c28f2064348563121a439438f5cc0c4de4b587ddf779f1ae3"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url "https://www.openfst.org/twiki/bin/view/GRM/ThraxDownload"
