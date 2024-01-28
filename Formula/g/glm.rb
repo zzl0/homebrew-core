@@ -1,8 +1,8 @@
 class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https://glm.g-truc.net/"
-  url "https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip"
-  sha256 "37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c"
+  url "https://github.com/g-truc/glm/archive/refs/tags/1.0.0.tar.gz"
+  sha256 "e51f6c89ff33b7cfb19daafb215f293d106cd900f8d681b9b1295312ccadbd23"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https://github.com/g-truc/glm.git", branch: "master"
@@ -31,10 +31,15 @@ class Glm < Formula
   depends_on "doxygen" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-    end
+    args = %w[
+      -DGLM_BUILD_TESTS=OFF
+      -DBUILD_SHARED_LIBS=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     include.install "glm"
     lib.install "cmake"
     (lib/"pkgconfig/glm.pc").write <<~EOS
