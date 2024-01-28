@@ -1,11 +1,11 @@
 class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
-  url "https://github.com/jmorganca/ollama.git",
-      tag:      "v0.1.20",
-      revision: "ab6be852c77064d7abeffb0b03c096aab90e95fe"
+  url "https://github.com/ollama/ollama.git",
+      tag:      "v0.1.22",
+      revision: "a47d8b2557259ffc9881817df97fbf6d6824e89e"
   license "MIT"
-  head "https://github.com/jmorganca/ollama.git", branch: "main"
+  head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
