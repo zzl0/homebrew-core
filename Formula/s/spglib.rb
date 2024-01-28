@@ -1,8 +1,8 @@
 class Spglib < Formula
   desc "C library for finding and handling crystal symmetries"
   homepage "https://spglib.readthedocs.io/"
-  url "https://github.com/spglib/spglib/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "ac929e20ec9d4621411e2cdec59b1442e02506c1e546005bbe2c7f781e9bd49a"
+  url "https://github.com/spglib/spglib/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "2fc3b42867d12a41b952ffd5896426797a39564e129c04c9c626d880371614ad"
   license "BSD-3-Clause"
 
   bottle do
