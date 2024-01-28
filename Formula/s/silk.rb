@@ -1,8 +1,8 @@
 class Silk < Formula
   desc "Collection of traffic analysis tools"
   homepage "https://tools.netsa.cert.org/silk/"
-  url "https://tools.netsa.cert.org/releases/silk-3.22.1.tar.gz"
-  sha256 "e10096e9fa4ef4980cfff300b8f7a0aed6a8e8f172b444e43dd79ed7e05a7e02"
+  url "https://tools.netsa.cert.org/releases/silk-3.22.2.tar.gz"
+  sha256 "81b38f3e648bcc9125124df69516d9c157e28e1efe693bd2ff57212e9ca10af3"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
