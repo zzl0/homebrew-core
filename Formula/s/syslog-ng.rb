@@ -3,8 +3,8 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.5.0/syslog-ng-4.5.0.tar.gz"
-  sha256 "08828ed200436c3ca4c98e5b74885440661c1036965e219aa9261b31a24fa144"
+  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.6.0/syslog-ng-4.6.0.tar.gz"
+  sha256 "b69e3360dfb96a754a4e1cbead4daef37128b1152a23572356db4ab64a475d4f"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
@@ -38,14 +38,6 @@ class SyslogNg < Formula
   depends_on "riemann-client"
 
   uses_from_macos "curl"
-
-  # Clang c++ compilation fixes.
-  # Remove when merged and released: https://github.com/syslog-ng/syslog-ng/pull/4739
-  # See also: https://github.com/Homebrew/homebrew-core/pull/156185#issuecomment-1837419001
-  patch do
-    url "https://github.com/syslog-ng/syslog-ng/commit/27db599781eaf07ed6a93d96564df4e126dd1518.patch?full_index=1"
-    sha256 "1f78793bb456d7ee7656116b2238ded280cf42ebb4b37b65de20cb26ba753041"
-  end
 
   def install
     # In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/c++/v1/compare:157:
