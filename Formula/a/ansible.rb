@@ -6,6 +6,7 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/eb/ab/e6993e1608fa911ee84dd0f29f494064f3b7f4a277f99608c9421a7a5ed4/ansible-9.1.0.tar.gz"
   sha256 "5ad94991fb0e0e53a770a9ffcf1b68047f61b2282d948a7d2682ecd8fb8fa1bf"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
@@ -24,6 +25,7 @@ class Ansible < Formula
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "pycparser"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-dateutil"
