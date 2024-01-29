@@ -5,9 +5,12 @@ class PerconaToolkit < Formula
 
   desc "Command-line tools for MySQL, MariaDB and system tasks"
   homepage "https://www.percona.com/software/percona-toolkit/"
+  # Check if mysql-client@8.0 can be updated to latest with next version
+  # if DBD::mysql > 5.003 - https://github.com/perl5-dbi/DBD-mysql/issues/375
   url "https://www.percona.com/downloads/percona-toolkit/3.5.5/source/tarball/percona-toolkit-3.5.5.tar.gz"
   sha256 "629a3c619c9f81c8451689b7840e50d13c656073a239d1ef2e5bcc250a80f884"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
@@ -26,7 +29,7 @@ class PerconaToolkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d830b67b9486645f6bc29c60fab820d67b08011fac498d7f0cd3d6ae2a0f75f6"
   end
 
-  depends_on "mysql-client"
+  depends_on "mysql-client@8.0"
   depends_on "openssl@3"
 
   uses_from_macos "perl"
