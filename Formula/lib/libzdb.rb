@@ -29,7 +29,7 @@ class Libzdb < Formula
 
   fails_with gcc: "5"
 
-  patch :DATA # C++ 17 is required
+  patch :DATA # Fix build error my mysql-client 8.3.0 https://bitbucket.org/tildeslash/libzdb/issues/67/build-error-with-mysql-83
 
   def install
     system "./configure", *std_configure_args
