@@ -1,9 +1,14 @@
 class Ntbtls < Formula
   desc "Not Too Bad TLS Library"
-  homepage "https://gnupg.org/index.html"
-  url "https://gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.3.1.tar.bz2"
-  sha256 "8922181fef523b77b71625e562e4d69532278eabbd18bc74579dbe14135729ba"
+  homepage "https://gnupg.org/"
+  url "https://gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.3.2.tar.bz2"
+  sha256 "bdfcb99024acec9c6c4b998ad63bb3921df4cfee4a772ad6c0ca324dbbf2b07c"
   license "GPL-3.0-or-later"
+
+  livecheck do
+    url "https://gnupg.org/download/"
+    regex(/href=.*?ntbtls[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0cb72cd0e8f862f16eeca69cb74e56baaf34484cce7c3413e93fa30faebed126"
