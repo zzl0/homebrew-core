@@ -12,14 +12,13 @@ class Openvino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "dbaa768c272a0934254ebbf863e6c63ade5141d3717727f4b88bc3a915a57b99"
-    sha256 cellar: :any,                 arm64_ventura:  "d48c2a20108f28f33a9d765aa2ce3cb8ee5312228976ea0233892f3d6c8ff4e5"
-    sha256 cellar: :any,                 arm64_monterey: "a324bc3e99dd85d1830a8fc8fb3c47af65bf1674de11bb796ee9490cd739f097"
-    sha256 cellar: :any,                 sonoma:         "309ebf4e8e62eaa304694e02f36b002588638265d7cdf80549f26f3378f632f5"
-    sha256 cellar: :any,                 ventura:        "f133c8b1fa3a50d8aa478e7151eb5f76b47b83e6b627a328c461e620f1b47273"
-    sha256 cellar: :any,                 monterey:       "20d832372096a92bc8aec5ee6264d94f20f3d81815b77357b8b5f7e67cabe12d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ae02ea2f43ca2744e0396777ec7c43a0656dd4e0e5301feae422d7c98b97797"
+    sha256 cellar: :any,                 arm64_sonoma:   "0aa85634e6098d2700f123a7938482dbc04ed8fdb9e7ed5c8126bca81c5ae7b6"
+    sha256 cellar: :any,                 arm64_ventura:  "1b4878e5aa0687c126e221c4b623757ffd9f5d285a657aefbc8f43090a20c12c"
+    sha256 cellar: :any,                 arm64_monterey: "c348ebe9b9513ca07f63386bb285e41b4764935d99e51d0424665281ecca05fd"
+    sha256 cellar: :any,                 sonoma:         "507fe65857c6227ef974646e002b36241f59acfc3de8969d184842971e56f375"
+    sha256 cellar: :any,                 ventura:        "e1db750a4f82eb41c7639b23a84b49bc540e8a298049c335a35e507c01c1efb2"
+    sha256 cellar: :any,                 monterey:       "6eac7a57c4fb2f7babc6e51dbd03d737a01038f56c5dfe81a559eb02c05cf20a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44900ffc477d5c4bca4575a96f05448c69e298a4c2a4e059295aaa25172b8389"
   end
 
   depends_on "cmake" => [:build, :test]
