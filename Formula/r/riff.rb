@@ -1,8 +1,8 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https://github.com/walles/riff"
-  url "https://github.com/walles/riff/archive/refs/tags/2.28.0.tar.gz"
-  sha256 "4a4cec6432e61955a5c88808b11782191361e4c74b771ad4bc2b0d5d3201e40e"
+  url "https://github.com/walles/riff/archive/refs/tags/2.29.0.tar.gz"
+  sha256 "4c8bce997224a8afa2d5bb69733093fd12e160a6a633a748f89789d1c3d7ff7d"
   license "MIT"
 
   bottle do
