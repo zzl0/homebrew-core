@@ -3,8 +3,8 @@ class Virtualenvwrapper < Formula
 
   desc "Python virtualenv extensions"
   homepage "https://virtualenvwrapper.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b3/db/450a94145125297929aca586595a8765db0ef15ca219cd47df0337480730/virtualenvwrapper-6.0.0.tar.gz"
-  sha256 "4cdaca4a01bb11c3343b01439cf2d76ebe97bb28c4b9a653a9b1f1f7585cd097"
+  url "https://files.pythonhosted.org/packages/4e/00/71629f631867c434e49fa276d659894c7cb5715f5de2233c10bc47c1fcc6/virtualenvwrapper-6.1.0.tar.gz"
+  sha256 "d467beac5a44be00fb5cd1bcf332398c3dab5fb3bd3af7815ea86b4d6bb3d3a4"
   license "MIT"
 
   bottle do
