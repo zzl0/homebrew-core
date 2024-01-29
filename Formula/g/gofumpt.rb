@@ -6,15 +6,13 @@ class Gofumpt < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "677ef719a80c09ab4abc7bbd5bfebbcdbb862b6d0b9cce4f1247ba0ead56bc52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "241c7a1670da1fd7fd0220237c541fd5e3fcf45d750084a9b9ad354b01929a01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "241c7a1670da1fd7fd0220237c541fd5e3fcf45d750084a9b9ad354b01929a01"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "241c7a1670da1fd7fd0220237c541fd5e3fcf45d750084a9b9ad354b01929a01"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d7b47a8c7ed5c2bd1bba28da59a37e24fcf0eaba6155fffc26dd0f7d2001fe76"
-    sha256 cellar: :any_skip_relocation, ventura:        "898b89543bde7a2d79d2f298960115cafa3a8f566f18f97ccce67d7715518a2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "898b89543bde7a2d79d2f298960115cafa3a8f566f18f97ccce67d7715518a2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "898b89543bde7a2d79d2f298960115cafa3a8f566f18f97ccce67d7715518a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c200163cfb0748b11aecc5bce47c8a4071541541a0a01247a816a2c948a6105"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ab381b52eee934d5a02f3595113849d18b9e486952d01fc36822dba681ff293"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ab381b52eee934d5a02f3595113849d18b9e486952d01fc36822dba681ff293"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ab381b52eee934d5a02f3595113849d18b9e486952d01fc36822dba681ff293"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3bbf4cd6b9b4d2172b60499a7aae7da01fe63c2f3c9ecc26e69eea57eac5db8b"
+    sha256 cellar: :any_skip_relocation, ventura:        "3bbf4cd6b9b4d2172b60499a7aae7da01fe63c2f3c9ecc26e69eea57eac5db8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "3bbf4cd6b9b4d2172b60499a7aae7da01fe63c2f3c9ecc26e69eea57eac5db8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f462e72be27e9a0d1d87d60482b52728fe459882566040c47e44b3d498b5054a"
   end
 
   depends_on "go"
