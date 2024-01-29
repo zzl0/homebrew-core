@@ -1,8 +1,8 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https://github.com/stackrox/kube-linter"
-  url "https://github.com/stackrox/kube-linter/archive/refs/tags/v0.6.6.tar.gz"
-  sha256 "02f49d8f615e8549a8bc690d9aac93fb4fde3deb4d0ad803c654ff19d70736c8"
+  url "https://github.com/stackrox/kube-linter/archive/refs/tags/v0.6.7.tar.gz"
+  sha256 "4eddda7b150883fb23164f3359eb26403ef66aa5848ee7748db5fb60fadf9062"
   license "Apache-2.0"
   head "https://github.com/stackrox/kube-linter.git", branch: "master"
 
@@ -17,12 +17,6 @@ class KubeLinter < Formula
   end
 
   depends_on "go" => :build
-
-  # support go1.21 build, upstream pr ref, https://github.com/stackrox/kube-linter/pull/696
-  patch do
-    url "https://github.com/stackrox/kube-linter/commit/1085300cc73a29961547c4507bd4acdb4f385c64.patch?full_index=1"
-    sha256 "50ebde54ac0c69fb19ccd2d545c1ec079256bd5c15cdd4d9199bb2007f64a9c0"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "0"
