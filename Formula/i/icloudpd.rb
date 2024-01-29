@@ -8,6 +8,16 @@ class Icloudpd < Formula
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65a7a3caafb04712198a2c21a27c5c08a8e902628f65cdb2cc243b5903575961"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad20d559839485e31f3d83470f00b8debe58ef6102edb12220f40c824fe6c4d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "971bcb057f149373596d09ac08a40ff5a3095b4cdd6321b74c115aad51a12ecf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe9db6bcd641915d5b205a5102ce74712c59c131d73f381a2e2c3820c2ceb670"
+    sha256 cellar: :any_skip_relocation, ventura:        "20b5e8d2c65698f0d4eaa9c1a826565528224b9f178a00f1cb7a1dd7564654f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e43602bdd08c567b8ec9084aa68f11de244222938069cd2caecc4a08a94b94d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "078ed3972d7c52928f67c5fbe156c6ed91d92b788922cd187262f067c57c830c"
+  end
+
   depends_on "python@3.12"
 
   resource "certifi" do
