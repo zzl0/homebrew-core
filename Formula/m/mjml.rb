@@ -3,8 +3,8 @@ require "language/node"
 class Mjml < Formula
   desc "JavaScript framework that makes responsive-email easy"
   homepage "https://mjml.io"
-  url "https://registry.npmjs.org/mjml/-/mjml-4.14.1.tgz"
-  sha256 "fb9ebe982773f05711ab7da2d26fcf4eb11e50e44a6e8d12ef354b6f6057867d"
+  url "https://registry.npmjs.org/mjml/-/mjml-4.15.2.tgz"
+  sha256 "47ced5d72f001745b0edadd7075e7c8b1bac3fe4f0c479a0898ee9eb5158f0d2"
   license "MIT"
 
   bottle do
