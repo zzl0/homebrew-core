@@ -6,13 +6,13 @@ class PythonMako < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a2f1c743d786f19d2c51b23bf40bbdbbac4398e0899c84d68d4772edf373ac8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "317af2f3882956e46fdfc696ed559e07acf7ca36f41fe785326b345245d862c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "262c2817219fa03b34e5456a364df57d84a41ab6c3f80639471e95890dd15402"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d22249c705c5395c0beedb3d2e15c0cf5f4a76e975fec09083fb172fec1aa86"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d9a22535cddd472794bdd2601a7db8ea76245dff7cdce1c833bf0371384c416"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4d0c1526cc5a56342786f119497ec25ff229f8a95bf836f567530e908ebcc85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d5e7b60a46f37742fb488ca5a902f835a389e551c8818799760d6028b6b0b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69b144051df06b792d1c01ebf8eb347d667402177bd03ec0cf63f8702865d713"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b78616165ab17b3907e276dd3f64ef8ce683f22314a4dd24550cff9521c61f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70488d10d30cb4ed9c1b988330fba13a2763386567e8da414c90cbdf467fb8a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2163323bbcd74b38325cb0d65ac9845d5e9bae9a3fbae90499d34a09143e4a00"
+    sha256 cellar: :any_skip_relocation, ventura:        "182c85d9fccf746935b085af2f03c80324d93dd2ee68431accca8bdfa76bce29"
+    sha256 cellar: :any_skip_relocation, monterey:       "52eb3f1e308a73ea8b63ac5f2ff14d84806079f812d55b80f17a66f973c39c22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae21ee2930e9b555f3d40b97f540b70e2d7b8f94e752112c749828895415c72"
   end
 
   depends_on "python-setuptools" => :build
