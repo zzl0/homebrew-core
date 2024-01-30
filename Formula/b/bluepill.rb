@@ -16,10 +16,12 @@ class Bluepill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0ffa6af5fa7bfd51c38de8b99070da76841dcf257e851817a8b114572495069"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d2facc7ec129d0fa81f8f3d41d5142cc5a46c013d96e95c191eeea9aced9075"
-    sha256 cellar: :any_skip_relocation, ventura:        "41d58786aa26333752352a423248c6ab7caa037e0d410a98696aa1dbde5558a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4556f2d4ed6c5ca9f4054ae3e06c77aaa8e2c91306a62d58fc969fa50304d05f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a92ddfe4cfcaabe31286b25bea4673891111bb9225751574894552d7bc56fc00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48bb18fef3a6ba58029c0167a3bf903b6e7fd88e96af3ccb2dc7cfdcd4846e26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e562b58dd64848a0f333325f2925883f1f3a8f841d9d122b4d7e0a3db032c5ad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c1c6546ce0eed8ede74042419f0ce6a242dfa971db31806f6927fff369a3537e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b89586a8fe4f4049de8446d3e55f040ebf645678b7038a2c59b0c5714db11bb3"
+    sha256 cellar: :any_skip_relocation, monterey:       "81990e0749d7b856571867c719d08c2b15ec2414e300ba7dc1a2b0d7dbf6af07"
   end
 
   depends_on xcode: ["14.0", :build]
