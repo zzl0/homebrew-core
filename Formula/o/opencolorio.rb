@@ -1,8 +1,8 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https://opencolorio.org/"
-  url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "7196e979a0449ce28afd46a78383476f3b8fc1cc1d3a417192be439ede83437b"
+  url "https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "6bbf4e7fa4ea2f743a238cb22aff44890425771a2f57f62cece1574e46ceec2f"
   license "BSD-3-Clause"
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "master"
 
@@ -32,9 +32,6 @@ class Opencolorio < Formula
   def python3
     "python3.12"
   end
-
-  # upstream issue report, https://github.com/AcademySoftwareFoundation/OpenColorIO/issues/1920
-  patch :DATA
 
   def install
     args = %W[
@@ -71,18 +68,3 @@ class Opencolorio < Formula
     system python3, "-c", "import PyOpenColorIO as OCIO; print(OCIO.GetCurrentConfig())"
   end
 end
-
-__END__
-diff --git a/src/OpenColorIO/ConfigUtils.cpp b/src/OpenColorIO/ConfigUtils.cpp
-index 2e77472..b4228ff 100644
---- a/src/OpenColorIO/ConfigUtils.cpp
-+++ b/src/OpenColorIO/ConfigUtils.cpp
-@@ -3,7 +3,7 @@
-
- #include "ConfigUtils.h"
- #include "MathUtils.h"
--#include "pystring/pystring.h"
-+#include "pystring.h"
- #include "utils/StringUtils.h"
-
- namespace OCIO_NAMESPACE
