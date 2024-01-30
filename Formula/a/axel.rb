@@ -1,8 +1,8 @@
 class Axel < Formula
   desc "Light UNIX download accelerator"
   homepage "https://github.com/axel-download-accelerator/axel"
-  url "https://github.com/axel-download-accelerator/axel/releases/download/v2.17.11/axel-2.17.11.tar.xz"
-  sha256 "580b2c18692482fd7f1e2b2819159484311ffc50f6d18924dceb80fd41d4ccf9"
+  url "https://github.com/axel-download-accelerator/axel/releases/download/v2.17.12/axel-2.17.12.tar.xz"
+  sha256 "fb4e70535ebf732211af253bfe24f9ada57d80fd465ac02c721406c7d4e1d496"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
@@ -36,6 +36,12 @@ class Axel < Formula
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "openssl@3"
+
+  # upstream patch PR, https://github.com/axel-download-accelerator/axel/pull/425
+  patch do
+    url "https://github.com/axel-download-accelerator/axel/commit/fb8bb09257e3c5ce4da46d83fbb252c7fa74c933.patch?full_index=1"
+    sha256 "8f71c3ac32a22a327662b29d61c87aa7aae6e77d20818ed758f9d42616f40da7"
+  end
 
   def install
     if build.head?
