@@ -4,6 +4,7 @@ class Pgroonga < Formula
   url "https://packages.groonga.org/source/pgroonga/pgroonga-3.1.6.tar.gz"
   sha256 "5df1e92acb6074143a3a8d1c0e93a985424d4eef4a81f06ec406bc45a76f8f20"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://pgroonga.github.io/install/source.html"
@@ -22,14 +23,13 @@ class Pgroonga < Formula
 
   depends_on "pkg-config" => :build
   depends_on "groonga"
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
 
   def postgresql
-    Formula["postgresql@16"]
+    Formula["postgresql@14"]
   end
 
   def install
-    ENV.prepend_path "PATH", postgresql.opt_libexec/"bin"
     system "make"
     system "make", "install", "datadir=#{share/postgresql.name}",
                               "pkglibdir=#{lib/postgresql.name}",
@@ -38,8 +38,8 @@ class Pgroonga < Formula
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
-    psql = postgresql.opt_libexec/"bin/psql"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
