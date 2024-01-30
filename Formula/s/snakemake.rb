@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/aa/cb/de2682183acd215aea02eda6947383ef374cc8ccb6cf59270ec44055fdde/snakemake-8.4.1.tar.gz"
-  sha256 "476f1f979b98dc2cd10d774e7e5319262dc2559a4f36013459e94d03e076ab4a"
+  url "https://files.pythonhosted.org/packages/28/cb/0a2c96ef2efd135664acf14d32fe53e7b3944a0f06d558a2bfea308c2e39/snakemake-8.4.2.tar.gz"
+  sha256 "ea9273d7a27706b635fafae87bb21100dad02275570e138fdcff125cb3cba4f4"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -211,8 +211,8 @@ class Snakemake < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https://files.pythonhosted.org/packages/e2/cc/abf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9/urllib3-2.2.0.tar.gz"
+    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
   end
 
   resource "wrapt" do
