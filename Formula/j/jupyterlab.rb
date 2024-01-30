@@ -3,8 +3,8 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/dc/93/05b8742f2c0021b3c556d62493da1beca3e80a16964bcd087ac54b3b502f/jupyterlab-4.0.11.tar.gz"
-  sha256 "d1aec24712566bc25a36229788242778e498ca4088028e2f9aa156b8b7fdc8fc"
+  url "https://files.pythonhosted.org/packages/23/b4/cc3bdb1c0b4736e0081afdc1cda3444093d7a0b7f75b5ee64ae75225bac1/jupyterlab-4.0.12.tar.gz"
+  sha256 "965d92efa82a538ed70ccb3968d9aabba788840da882e13d7b061780cdedc3b7"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
@@ -151,8 +151,8 @@ class Jupyterlab < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/44/cd/1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279ad/jsonschema-4.21.0.tar.gz"
-    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
+    url "https://files.pythonhosted.org/packages/4d/c5/3f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9be/jsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do
@@ -191,8 +191,8 @@ class Jupyterlab < Formula
   end
 
   resource "jupyter-server-terminals" do
-    url "https://files.pythonhosted.org/packages/69/c1/ba084effb487a65c3746ee0c085c1f8a3909d851edba2055f58270a9ce0a/jupyter_server_terminals-0.5.1.tar.gz"
-    sha256 "16d3be9cf48be6a1f943f3a6c93c033be259cf4779184c66421709cf63dccfea"
+    url "https://files.pythonhosted.org/packages/e2/71/c07cc931bdf27c808ccbaff693299f7d68612c87ffdac7e28c2a59020070/jupyter_server_terminals-0.5.2.tar.gz"
+    sha256 "396b5ccc0881e550bf0ee7012c6ef1b53edbde69e67cab1d56e89711b46052e8"
   end
 
   resource "jupyterlab-pygments" do
@@ -226,8 +226,8 @@ class Jupyterlab < Formula
   end
 
   resource "nest-asyncio" do
-    url "https://files.pythonhosted.org/packages/12/39/d97da0edd33ae223e5f7cfdc2dfae016a0b5c3e2762ded7dc008d5bb1643/nest_asyncio-1.5.9.tar.gz"
-    sha256 "d1e1144e9c6e3e6392e0fcf5211cb1c8374b5648a98f1ebe48e5336006b41907"
+    url "https://files.pythonhosted.org/packages/83/f8/51569ac65d696c8ecbee95938f89d4abf00f47d58d48f6fbabfe8f0baefe/nest_asyncio-1.6.0.tar.gz"
+    sha256 "6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe"
   end
 
   resource "notebook" do
@@ -241,8 +241,8 @@ class Jupyterlab < Formula
   end
 
   resource "overrides" do
-    url "https://files.pythonhosted.org/packages/4d/27/30c865a1e62f1913a0730e667e94459ca038392b6f44d69ef7a585690337/overrides-7.4.0.tar.gz"
-    sha256 "9502a3cca51f4fac40b5feca985b6703a5c1f6ad815588a7ca9e285b9dca6757"
+    url "https://files.pythonhosted.org/packages/36/86/b585f53236dec60aba864e050778b25045f857e17f6e5ea0ae95fe80edd2/overrides-7.7.0.tar.gz"
+    sha256 "55158fa3d93b98cc75299b1e67078ad9003ca27945c76162c1c0766d6f91820a"
   end
 
   resource "pandocfilters" do
@@ -251,8 +251,8 @@ class Jupyterlab < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/62/d1/7feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9a/platformdirs-4.1.0.tar.gz"
-    sha256 "906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"
+    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
+    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
   end
 
   resource "prometheus-client" do
@@ -271,8 +271,8 @@ class Jupyterlab < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/81/ce/910573eca7b1a1c6358b0dc0774ce1eeb81f4c98d4ee371f1c85f22040a1/referencing-0.32.1.tar.gz"
-    sha256 "3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"
+    url "https://files.pythonhosted.org/packages/21/c5/b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9a/referencing-0.33.0.tar.gz"
+    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
   end
 
   resource "rfc3339-validator" do
