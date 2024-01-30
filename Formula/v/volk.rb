@@ -1,8 +1,8 @@
 class Volk < Formula
   desc "Vector Optimized Library of Kernels"
   homepage "https://www.libvolk.org/"
-  url "https://github.com/gnuradio/volk/releases/download/v3.1.0/volk-3.1.0.tar.gz"
-  sha256 "4f5bb84f535ce86cfadc953379587bdd5a1a171d684b0a6f35adcaf2ac46fd01"
+  url "https://github.com/gnuradio/volk/releases/download/v3.1.1/volk-3.1.1.tar.gz"
+  sha256 "d8c25fad82243d69a653bb989eced8e404b12d7caec6baee16675ef9f77c27fa"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -17,7 +17,6 @@ class Volk < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "orc"
   depends_on "pygments"
   depends_on "python-mako"
   depends_on "python-markupsafe"
@@ -28,6 +27,12 @@ class Volk < Formula
   end
 
   fails_with gcc: "5" # https://github.com/gnuradio/volk/issues/375
+
+  # see discussions in https://github.com/gnuradio/volk/issues/745
+  patch do
+    url "https://github.com/gnuradio/volk/commit/bc59cad9dcde3865f87b71988634109bd3b6fb1c.patch?full_index=1"
+    sha256 "52476d6ee7511ead8ee396f9f1af45bcd7519a859b088418232226c770a9864a"
+  end
 
   def install
     python = "python3.12"
