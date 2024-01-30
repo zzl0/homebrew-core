@@ -1,8 +1,8 @@
 class Gdrive < Formula
   desc "Google Drive CLI Client"
   homepage "https://github.com/glotlabs/gdrive"
-  url "https://github.com/glotlabs/gdrive/archive/refs/tags/3.9.0.tar.gz"
-  sha256 "a4476480f0cf759f6a7ac475e06f819cbebfe6bb6f1e0038deff1c02597a275a"
+  url "https://github.com/glotlabs/gdrive/archive/refs/tags/3.9.1.tar.gz"
+  sha256 "a46ab3c3c8ca1c0d050288e909717ffb5a6bc9b20635bc90574f7eb29e020f74"
   license "MIT"
   head "https://github.com/glotlabs/gdrive.git", branch: "main"
 
