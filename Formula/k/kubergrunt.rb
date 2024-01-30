@@ -14,13 +14,13 @@ class Kubergrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3c086bdfcafff052b1c2b50d895fab1f04efc2f0cfe370bbb4ae2094d5b7472"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "516f1b7dbf566e3a021ef2f9ce17daba3bdf224a6a7a54447d779b9186202579"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ec0f93a9614c34f2f0d3c5a9de697c5e7bb312b4eab1d9b145eb683b4e1681c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0dd8488e6dc91c6ac938dbdeb40f1693d505f46a513574195b96ec998728707e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6004867e7e55e48a93008a2a7ddbbb3368844ddec959356049be5f619401684"
-    sha256 cellar: :any_skip_relocation, monterey:       "ecc57e1738db620f9edca80e869dc194730be86a9599d509f97fdd95c9d529c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac52a60dde0e641191b0eadc3f105537f791e7387c0869323f3492b05df367ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58c66a030c2c17a30284885f3e5b06cf169d58973a70b9367da235e975bb777e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c02881620f7c2d2e5abab63e66563cd3b43b97935d8ad1535b11052707c25764"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "885a87d1602f6cfd93c80f720d3289ecf6f73442a2ed42fdfa4611fc249df092"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2915d197754f74c0b3e27cda6578426dc03849331afb33aee4936985a432770b"
+    sha256 cellar: :any_skip_relocation, ventura:        "1286ee0fd7bbdd2d9a6c72dd246aced77d0325ed759576206796b60db582fc56"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad13aec0e14c765177f9f2c13ee06bc71bf1ef059adab620c65406e05b7b0bda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da26d9a71e31e4b9196296be9c6541f91f29ccabe05aa2cc6bb6302cc657fa3e"
   end
 
   depends_on "go" => :build
