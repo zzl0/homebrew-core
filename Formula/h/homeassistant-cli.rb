@@ -10,14 +10,13 @@ class HomeassistantCli < Formula
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f140b27e55e106bf56d7bd8e037eafd7e389fd2cddd194232534bc5c6ef4d640"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32b75c3aac3da7a16723c88f6c8f4716b348381c6e283cbef3ca90412ad17e2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2d4fb55bbe7a583950798dee2243ee5bc6cd8cc8cf9b938893b269d23f168c1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a65898a4496fe331ca40b6aff5d59cc710497bac2f8a5ce894ee41b78926dd6"
-    sha256 cellar: :any_skip_relocation, ventura:        "092dbeb3ca259b86d2b5312bd830c06c46c1076d1c96778faeb5b5e0bb2d6068"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e834fd452897ba1c48c5abb86bd806d3e4cab8c0bb634ffb067dd3586e00332"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16e55d861c61f2f3903cbc4f8d0a853061c48c284e891298b3ca2a06dcedc4e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6896be90f5f0303cc83991675e96bb6ed2cd52c3386fd809e904207f9e4c6a9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e566298a8da19b7408774192e3d19f2a3018544d528a53a7df0537b5342f42ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3bdb54890889e3cc71d5cced7ff2a77adbf80e46435229a70a63dfd80cf8687"
+    sha256 cellar: :any_skip_relocation, sonoma:         "53d2bbfc5f21d454205a709a800d0fe0b48a6ec5ebc6d4873e56e188c601d565"
+    sha256 cellar: :any_skip_relocation, ventura:        "01739a27d0ddaa24db56e493f014d458d9e3140eb3baf82401e110fb2bbb060c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9df1b00d4e1d47a4ec0ed52a11a974f1f8a5193203575bf45d92a4e2f7f178d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "564de712b06777f82e301c86107abaee4ef329d64e8e86639f2459b87e81b19e"
   end
 
   depends_on "python-attrs"
