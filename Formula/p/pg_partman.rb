@@ -4,6 +4,7 @@ class PgPartman < Formula
   url "https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "75b541733a9659a6c90dbd40fccb904a630a32880a6e3044d0c4c5f4c8a65525"
   license "PostgreSQL"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2d729a6cf7ad10cf391030757a9a0dd05347792830826319d51b680bf94a3b9"
@@ -15,14 +16,14 @@ class PgPartman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f22aa2166c3662412f4e04b41abe48f3d6a9272c786e689493989676cc9a4a"
   end
 
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
 
   def postgresql
-    Formula["postgresql@16"]
+    Formula["postgresql@14"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_libexec/"bin/pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
 
     system "make"
     system "make", "install", "bindir=#{bin}",
@@ -33,8 +34,8 @@ class PgPartman < Formula
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
-    psql = postgresql.opt_libexec/"bin/psql"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
