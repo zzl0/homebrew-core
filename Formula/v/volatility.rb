@@ -3,10 +3,9 @@ class Volatility < Formula
 
   desc "Advanced memory forensics framework"
   homepage "https://github.com/volatilityfoundation/volatility3"
-  url "https://files.pythonhosted.org/packages/83/f6/be2fb46e5656f322eeb807a1b0d8a767561cec26824f275f8a3e29e4280c/volatility3-2.5.0.tar.gz"
-  sha256 "278ec521c9213967a01321361e4d007c71e681a0c577a75710f482bfa15d0506"
+  url "https://files.pythonhosted.org/packages/b1/4a/18f068948a7156ee733c6ea42ef8a201421931568b3b83b49a381a477ab2/volatility3-2.5.2.tar.gz"
+  sha256 "63716fa9ad29686c6d25471eaaf58380df1bd508b827de7ef9ada63bda6d8e76"
   license :cannot_represent
-  revision 1
   version_scheme 1
   head "https://github.com/volatilityfoundation/volatility3.git", branch: "develop"
 
@@ -37,8 +36,8 @@ class Volatility < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
-    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
+    url "https://files.pythonhosted.org/packages/4d/c5/3f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9be/jsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do
@@ -52,18 +51,18 @@ class Volatility < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/b1/38/42a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151/pycryptodome-3.19.1.tar.gz"
-    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
+    url "https://files.pythonhosted.org/packages/b9/ed/19223a0a0186b8a91ebbdd2852865839237a21c74f1fbc4b8d5b62965239/pycryptodome-3.20.0.tar.gz"
+    sha256 "09609209ed7de61c2b560cc5c8c4fbf892f8b15b1faf7e4cbffac97db1fffda7"
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/81/ce/910573eca7b1a1c6358b0dc0774ce1eeb81f4c98d4ee371f1c85f22040a1/referencing-0.32.1.tar.gz"
-    sha256 "3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"
+    url "https://files.pythonhosted.org/packages/21/c5/b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9a/referencing-0.33.0.tar.gz"
+    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/c2/63/94a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1/rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "yara-python" do
