@@ -3,9 +3,9 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.70.tar.gz"
-  mirror "https://exiftool.org/Image-ExifTool-12.70.tar.gz"
-  sha256 "4cb2522445cc3e3f3bd13904c6aeaeada5fc5a5e2498d7abad2957dcb42caffe"
+  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.75.tar.gz"
+  mirror "https://exiftool.org/Image-ExifTool-12.75.tar.gz"
+  sha256 "40c75e199c3e7c79748e8813b15362b3da8b3cf8dd451e41be060745393c56d4"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
