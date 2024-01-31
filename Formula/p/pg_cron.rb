@@ -4,6 +4,7 @@ class PgCron < Formula
   url "https://github.com/citusdata/pg_cron/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "9f4eb3193733c6fa93a6591406659aac54b82c24a5d91ffaf4ec243f717d94a0"
   license "PostgreSQL"
+  revision 1
 
   bottle do
     rebuild 1
@@ -16,10 +17,14 @@ class PgCron < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce8abe1eb67c86d1380d0c44dd7ff20c4498226ef6e43ab95d4b15ab06a5309f"
   end
 
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
+
+  on_macos do
+    depends_on "gettext" # for libintl
+  end
 
   def postgresql
-    Formula["postgresql@16"]
+    Formula["postgresql@14"]
   end
 
   def install
@@ -27,15 +32,15 @@ class PgCron < Formula
     # Issue ref: https://github.com/citusdata/pg_cron/issues/269
     ENV["PG_LDFLAGS"] = "-lintl" if OS.mac?
 
-    system "make", "install", "PG_CONFIG=#{postgresql.opt_libexec}/bin/pg_config",
+    system "make", "install", "PG_CONFIG=#{postgresql.opt_bin}/pg_config",
                               "pkglibdir=#{lib/postgresql.name}",
                               "datadir=#{share/postgresql.name}"
   end
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
-    psql = postgresql.opt_libexec/"bin/psql"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
