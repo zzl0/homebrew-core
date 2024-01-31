@@ -11,13 +11,13 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f8791908b0d29047b3ec092f70db3f62b84ff3a15dbe88b4db37790b2137e92b"
-    sha256 cellar: :any,                 arm64_ventura:  "de374372dcd47512da695b4e040688195a4b5c7bca3c2ca239b70d803e5960d1"
-    sha256 cellar: :any,                 arm64_monterey: "c09e745541c8e8a950d9e33b981cfde1a90fca1e08cb94d550f1b67669e9ca56"
-    sha256 cellar: :any,                 sonoma:         "a55b594379a924c1c9bb0ed192605f1092b615c1771275c6207d9b5fa72d5852"
-    sha256 cellar: :any,                 ventura:        "7fd81987d252c21eb91077f292f10d578be26d1e5d68393dff2e98b22ba10e5c"
-    sha256 cellar: :any,                 monterey:       "eb03e994f811bc819ae88d07659bb8ebef60b9b6dec9d9ae398a661f7557d6f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08e5ec57b80b391934a059c72f31ca226c091fb15f92d0d53902119d2d8ee7c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "a5ef61e66539986692ab1d4c40686195ef77b29c314eae76732a5075c597da61"
+    sha256 cellar: :any,                 arm64_ventura:  "791aa6f3904ddcf1bd6fc54ac5c7f0028509ea8db4c294e5be626a1ed4b658ff"
+    sha256 cellar: :any,                 arm64_monterey: "a1653e597e6847ea2538ab1487b9ec436c287d56d39e51519e8a50aa2cbd70cb"
+    sha256 cellar: :any,                 sonoma:         "313b5c9421a9c3ebf304434420c101118289c86e32e25629e03dacc4aed11791"
+    sha256 cellar: :any,                 ventura:        "3e49e6a8817cc26d97fa727b0fe661da738025b2fd01e7041743d3bc8e79a187"
+    sha256 cellar: :any,                 monterey:       "da4822b5729be16be0bf25b2cde23d46960d994c961115b98c3fbf95673fa27c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45682133a83d4149564bf1f1182278765118b197acc10f10de55e254897a508a"
   end
 
   depends_on "python-hatchling" => :build
