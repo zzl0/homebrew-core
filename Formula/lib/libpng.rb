@@ -1,9 +1,9 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "http://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.41/libpng-1.6.41.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.41/libpng-1.6.41.tar.xz"
-  sha256 "d6a49a7a4abca7e44f72542030e53319c081fea508daccf4ecc7c6d9958d190f"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.42/libpng-1.6.42.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.42/libpng-1.6.42.tar.xz"
+  sha256 "c919dbc11f4c03b05aba3f8884d8eb7adfe3572ad228af972bb60057bdb48450"
   license "libpng-2.0"
 
   livecheck do
