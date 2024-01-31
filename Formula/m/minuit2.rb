@@ -1,8 +1,8 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
-  sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
+  url "https://root.cern.ch/download/root_v6.30.04.source.tar.gz"
+  sha256 "2b4180b698f39cc65d91084d833a884515b325bc5f673c8e39abe818b025d8cc"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
@@ -21,13 +21,6 @@ class Minuit2 < Formula
   end
 
   depends_on "cmake" => :build
-
-  # Fix VERSION_FILE path for standalone mode
-  # Remove in next release
-  patch do
-    url "https://github.com/root-project/root/commit/25731a7b0731a65f6a949dd249b098fdd612095d.patch?full_index=1"
-    sha256 "058daafb2103b43b9d7775f895f16992050ba339083e844124c551ce9133b0a3"
-  end
 
   def install
     system "cmake", "-S", "math/minuit2", "-B", "build/shared", *std_cmake_args,
