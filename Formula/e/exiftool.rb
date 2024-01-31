@@ -14,13 +14,13 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "999f1d958e40e3897b1d27fecfc0bfd3a565f8e789a44ecdb57ee5727bf2893b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad413ba50a54932cd451afce6e4c4c24c5de4d8094f8c13253f39ae205518cf1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad413ba50a54932cd451afce6e4c4c24c5de4d8094f8c13253f39ae205518cf1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "93a3dfb99bff9bcaeeedecef19e02470f7e272dcbc30ecf6e7f316107be9d396"
-    sha256 cellar: :any_skip_relocation, ventura:        "a73733b00f2f30a35e189c23f2ca91f661b90bd05ff6a796dd0d0c87f1af6042"
-    sha256 cellar: :any_skip_relocation, monterey:       "a73733b00f2f30a35e189c23f2ca91f661b90bd05ff6a796dd0d0c87f1af6042"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5525d5a4311fbebc70aa5d6124d2147f94e1958d3700e542d5fd48d406b8c79f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaefac7e07b3e99c42d2aa0a99c8e78355c6d6a874245445de60d45c846febd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c98ed3b14a4d1c66cdb7c19b21fab826ce4c53df12e7a02a51f093f342e7c3b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c98ed3b14a4d1c66cdb7c19b21fab826ce4c53df12e7a02a51f093f342e7c3b3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7518674545b5024eb61598e5597c0a42a3eec16bebe249c5ac00de773a45169"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a9703e2864c0e897286d4bb8d77d63612ca50fcec2c61e809c19838acb60474"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a9703e2864c0e897286d4bb8d77d63612ca50fcec2c61e809c19838acb60474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01ef54fe0dfd9c6b794a61a269cd1599b58a79851f74c4369fbb33f1737f813c"
   end
 
   uses_from_macos "perl"
