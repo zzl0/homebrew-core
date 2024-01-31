@@ -4,6 +4,7 @@ class Wal2json < Formula
   url "https://github.com/eulerto/wal2json/archive/refs/tags/wal2json_2_5.tar.gz"
   sha256 "b516653575541cf221b99cf3f8be9b6821f6dbcfc125675c85f35090f824f00e"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -22,21 +23,21 @@ class Wal2json < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8251e42a8bac872bc7c5b596fa500d029f124ac7808904da05807e8ee35b33b"
   end
 
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
 
   def postgresql
-    Formula["postgresql@16"]
+    Formula["postgresql@14"]
   end
 
   def install
     system "make", "install", "USE_PGXS=1",
-                              "PG_CONFIG=#{postgresql.opt_libexec}/bin/pg_config",
+                              "PG_CONFIG=#{postgresql.opt_bin}/pg_config",
                               "pkglibdir=#{lib/postgresql.name}"
   end
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
