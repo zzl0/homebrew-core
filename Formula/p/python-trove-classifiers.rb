@@ -1,8 +1,8 @@
 class PythonTroveClassifiers < Formula
   desc "Canonical source for classifiers on PyPI"
   homepage "https://github.com/pypa/trove-classifiers"
-  url "https://files.pythonhosted.org/packages/44/e4/9de7cda4a03a996758fbdb7ddacc071b4c62fdcd645e0a1192a22e8c55c0/trove-classifiers-2024.1.8.tar.gz"
-  sha256 "6e36caf430ff6485c4b57a4c6b364a13f6a898d16b9417c6c37467e59c14b05a"
+  url "https://files.pythonhosted.org/packages/c2/d3/2c793df6cea96eda294daa400e4b6f06cd75b7a65005eb2c84aae2d08c5c/trove-classifiers-2024.1.31.tar.gz"
+  sha256 "bfdfe60bbf64985c524416afb637ecc79c558e0beb4b7f52b0039e01044b0229"
   license "Apache-2.0"
 
   bottle do
