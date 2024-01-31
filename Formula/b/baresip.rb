@@ -19,6 +19,10 @@ class Baresip < Formula
   depends_on "pkg-config" => :build
   depends_on "libre"
 
+  on_macos do
+    depends_on "openssl@3"
+  end
+
   def install
     libre = Formula["libre"]
     args = %W[
