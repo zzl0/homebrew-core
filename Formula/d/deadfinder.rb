@@ -6,6 +6,16 @@ class Deadfinder < Formula
   license "MIT"
   head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "a42db7f64908f83de65a3d7baf4ab8f80584357a75d1884e37913eca755ae6aa"
+    sha256 cellar: :any,                 arm64_ventura:  "0012f43ea8e8fb4cb5978be35889ab6b9a701883ac16a2f62a88fb27b182287c"
+    sha256 cellar: :any,                 arm64_monterey: "f75d8d901cb23916e82be5f3e1747fa7c61c39da533123df29f8236300cd4d0d"
+    sha256 cellar: :any,                 sonoma:         "2c9da96df700b8e6082bfb7ab34a308347de5b9d536a3b8f315c1085966ce424"
+    sha256 cellar: :any,                 ventura:        "58bd84c9b8ffa9426f0e4561130abebfd560fca5c81445e3e4d15f2361287891"
+    sha256 cellar: :any,                 monterey:       "62e31dbd0c5ff09406649aa9b824120166bb4a74ce3fa8ab76994db68ef05d4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f4dfdbbe43581cc086866f7b6bdc41cec9e1a1dbe7dfc1166652e73c2c3ed8b"
+  end
+
   depends_on "ruby"
 
   uses_from_macos "libffi"
