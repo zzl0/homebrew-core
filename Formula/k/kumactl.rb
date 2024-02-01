@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://github.com/kumahq/kuma/archive/refs/tags/2.5.1.tar.gz"
-  sha256 "57f5dab796e46a8c8f03dadeebb7b88d5b7b2d0affd4ea5ba8bda7afe7548b97"
+  url "https://github.com/kumahq/kuma/archive/refs/tags/2.6.0.tar.gz"
+  sha256 "5fa180d5773f8a5916205fa12f36a9cf45ab723453690247942b6e843a244e9b"
   license "Apache-2.0"
 
   livecheck do
@@ -33,11 +33,6 @@ class Kumactl < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "./app/kumactl"
 
     generate_completions_from_executable(bin/"kumactl", "completion")
-
-    ENV["DESTDIR"] = buildpath
-    ENV["FORMAT"] = "man"
-    system "go", "run", "tools/docs/generate.go"
-    man1.install Dir["kumactl/*.1"]
   end
 
   test do
