@@ -2,17 +2,16 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.34.1.tar.gz"
-    sha256 "840a9099b66984c6ba71bb750b9440fb51c508d06e97e20d152c4f9a5e50d757"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.35.0.tar.gz"
+    sha256 "1b40ddc0ce3ceaf18c22a29c862085e7ea836759f7ea9639508539ccbb7d2da6"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
     resource "falcosecurity-libs" do
-      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.13.1.tar.gz"
-      sha256 "2be42a27be3ffe6bd7e53eaa5d8358cab05a0dca821819c6e9059e51b9786219"
+      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.14.1.tar.gz"
+      sha256 "defdea24bf3b176c63f10900d3716fe4373151965cc09d3fe67a31a3a9af0b13"
     end
   end
 
@@ -47,6 +46,7 @@ class Sysdig < Formula
   depends_on "luajit"
   depends_on "re2"
   depends_on "tbb"
+  depends_on "uthash"
   depends_on "yaml-cpp"
 
   uses_from_macos "curl"
