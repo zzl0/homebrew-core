@@ -1,8 +1,8 @@
 class Perltidy < Formula
   desc "Indents and reformats Perl scripts to make them easier to read"
   homepage "https://perltidy.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/perltidy/20230912/Perl-Tidy-20230912.tar.gz"
-  sha256 "0c57888f206f987777e16640e72574aa0a777846719f8e3ed0413c35325f5540"
+  url "https://downloads.sourceforge.net/project/perltidy/20240202/Perl-Tidy-20240202.tar.gz"
+  sha256 "9451adde47c2713652d39b150fb3eeb3ccc702add46913e989125184cd7ec57d"
   license "GPL-2.0-or-later"
 
   livecheck do
