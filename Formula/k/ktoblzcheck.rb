@@ -26,7 +26,11 @@ class Ktoblzcheck < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  # Support python 3.12
+  # https://sourceforge.net/p/ktoblzcheck/code/ci/f5973ed2507f22f8d75dbfa81ca5d392683a1406/
+  patch :DATA
 
   def install
     # Work around to help Python bindings find shared library on macOS.
@@ -42,6 +46,17 @@ class Ktoblzcheck < Formula
   test do
     assert_match "Ok", shell_output("#{bin}/ktoblzcheck --outformat=oneline 10000000 123456789")
     assert_match "unknown", shell_output("#{bin}/ktoblzcheck --outformat=oneline 12345678 100000000", 3)
-    system "python3.11", "-c", "import ktoblzcheck"
+    system "python3.12", "-c", "import ktoblzcheck"
   end
 end
+
+__END__
+--- a/src/python/ktoblzcheck.py
++++ b/src/python/ktoblzcheck.py
+@@ -41,7 +41,7 @@
+
+ try:
+     kto = cdll.ktoblzcheck
+-except OSError:
++except (OSError, AttributeError):
+     kto = cdll['libktoblzcheck.so.1']
