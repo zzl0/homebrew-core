@@ -11,13 +11,13 @@ class Po4a < Formula
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "753cd58cd335f98500d339124b9b2450836b90b1c6103c443c68afcee5431124"
-    sha256 cellar: :any,                 arm64_ventura:  "f41454c413eee73a9aadacdc0c28d3a2c72c2a115f3c15bcb901aafb9a352cfb"
-    sha256 cellar: :any,                 arm64_monterey: "4b55c5e0421f37dd40f5e729dd52e63dc4558fdda7d2a976c974442ee7146b92"
-    sha256 cellar: :any,                 sonoma:         "30981a63cd8f32008e133721cd49563af0f8e0d053e00023a7f2d85deceb592d"
-    sha256 cellar: :any,                 ventura:        "67e604417389d05067285da3afc1d99c577e5e1378a2eadd3539195a3e15c100"
-    sha256 cellar: :any,                 monterey:       "012a5578e2899e3af8c9a57b9b537d1f17dc96af6cb86c91fb99a308de517930"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70d5af935d7467916c35632972159b434b472cb7ad8a074012a9d9945d776b6b"
+    sha256 cellar: :any,                 arm64_sonoma:   "8f963cece13390048408484ca18986c8cb234c1d601f44bf2d280cd9fed64017"
+    sha256 cellar: :any,                 arm64_ventura:  "0076946c9fd74e0816d1799fd35ae8c5c35b4b8af11dd37381a8acbe1d334fcc"
+    sha256 cellar: :any,                 arm64_monterey: "5daafbb387e87cd496e11ce0d288348e3f6a30455aa14d20e275ce3b205602d9"
+    sha256 cellar: :any,                 sonoma:         "2d82f042370f0ad9e0944323808a3c276e0e574eae1f0df7c96cf627b208d9a0"
+    sha256 cellar: :any,                 ventura:        "1240628a93467fc5dc5581d3732ace25d4e9ca7578252d5106a24c4b07985d34"
+    sha256 cellar: :any,                 monterey:       "bba35fd3d85446190df2e62ef11164b191cf88697d11643245721b7668231021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f957fc2a48be1955f619a329546dfdb05482b2dbe4793327bd9fa4598c36362a"
   end
 
   depends_on "docbook-xsl" => :build
