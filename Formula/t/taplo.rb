@@ -1,8 +1,8 @@
 class Taplo < Formula
   desc "TOML toolkit written in Rust"
   homepage "https://taplo.tamasfe.dev"
-  url "https://github.com/tamasfe/taplo/archive/refs/tags/release-taplo-cli-0.8.1.tar.gz"
-  sha256 "8c011d724bb6dd5d6af1fc4d416409f6686102850a6e74779f6bfa785c03bf4f"
+  url "https://github.com/tamasfe/taplo/archive/refs/tags/release-taplo-cli-0.9.0.tar.gz"
+  sha256 "7d292f52c2d97d9e9c447a725d6d4e59096fce10e2f72ec6b80387034c20ba35"
   license "MIT"
   head "https://github.com/tamasfe/taplo.git", branch: "master"
 
@@ -30,6 +30,7 @@ class Taplo < Formula
   end
 
   test do
+    test_file = testpath/"invalid.toml"
     (testpath/"invalid.toml").write <<~EOS
       # INVALID TOML DOC
       fruit = []
@@ -37,6 +38,9 @@ class Taplo < Formula
       [[fruit]] # Not allowed
     EOS
 
-    assert_match("invalid file error", shell_output("#{bin}/taplo lint invalid.toml 2>&1", 1))
+    output = shell_output("#{bin}/taplo lint #{test_file} 2>&1", 1)
+    assert_match "expected array of tables", output
+
+    assert_match version.to_s, shell_output("#{bin}/taplo --version")
   end
 end
