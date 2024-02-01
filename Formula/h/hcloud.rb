@@ -1,8 +1,8 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https://github.com/hetznercloud/cli"
-  url "https://github.com/hetznercloud/cli/archive/refs/tags/v1.41.1.tar.gz"
-  sha256 "900e308cf1156b7707c2a1ad17feec1a7f3059225ba8a9728743aa9393d697db"
+  url "https://github.com/hetznercloud/cli/archive/refs/tags/v1.42.0.tar.gz"
+  sha256 "b99ec2b89d1485c3b14d6db2966cc355c9173ca98fe29754216b70f72317d8ad"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class Hcloud < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/hetznercloud/cli/internal/version.Version=v#{version}"
+    ldflags = "-s -w -X github.com/hetznercloud/cli/internal/version.version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hcloud"
 
     generate_completions_from_executable(bin/"hcloud", "completion")
