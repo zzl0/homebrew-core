@@ -1,8 +1,8 @@
 class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https://github.com/poac-dev/poac"
-  url "https://github.com/poac-dev/poac/archive/refs/tags/0.9.2.tar.gz"
-  sha256 "ac96de35709bd37b6ec55d9068fcfc637b7a6a47ad64e66df5696b18de8b5fc1"
+  url "https://github.com/poac-dev/poac/archive/refs/tags/0.9.3.tar.gz"
+  sha256 "122aa46923e3e93235305b726617df7df747ed7a26072ccd6b87ffaf84a33aed"
   license "Apache-2.0"
   head "https://github.com/poac-dev/poac.git", branch: "main"
 
@@ -20,6 +20,7 @@ class Poac < Formula
   depends_on "libgit2"
   depends_on "nlohmann-json"
   depends_on "pkg-config"
+  depends_on "tbb"
 
   on_macos do
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
