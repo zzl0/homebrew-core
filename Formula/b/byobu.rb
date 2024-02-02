@@ -6,7 +6,7 @@ class Byobu < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "307888338bac3600b1805eda416940ee4c78089b70abc1dc21d49c69d8ad94fb"
+    sha256 cellar: :any_skip_relocation, all: "355c2e08500664375925c2e2e827d390793cacc76bd4995ad9d6b55096c91c17"
   end
 
   depends_on "autoconf" => :build
