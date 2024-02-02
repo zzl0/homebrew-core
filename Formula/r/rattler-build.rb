@@ -7,13 +7,13 @@ class RattlerBuild < Formula
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d238a9ab93d4b1a1f9dd65b678268ac02a08a0c7174c5760cb929a1d0fee4d6d"
-    sha256 cellar: :any,                 arm64_ventura:  "a603665140f34c865621c55fcaf6673db888adfe99e53122c864eb9934c6d3d5"
-    sha256 cellar: :any,                 arm64_monterey: "42a5b5555f43dd8483e4e55a3910aa77e396eaf5b708692eb625ab2cfbe70081"
-    sha256 cellar: :any,                 sonoma:         "9b388de82f9494d9417d1fa7bdd911174de1a820cb82894b37417e6ee2a00aeb"
-    sha256 cellar: :any,                 ventura:        "2dcd5f054b9406abfe93be7d0928b97dba63df86e7743136c3298a01588eba10"
-    sha256 cellar: :any,                 monterey:       "99ad04f820a278db029afe8e85312883b700187e0d01811e53deb084cb2dde16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbec774c52d360f22e158ed15f3ad8b15793eb1c3c3a55e1c1dbeb644310e660"
+    sha256 cellar: :any,                 arm64_sonoma:   "45ef1125f061bfe5f4abb7e9468465163da0b3ee9390c8ffa2ab4297c6e87e9a"
+    sha256 cellar: :any,                 arm64_ventura:  "cbd73e39a5d16dfc04a1b717ffffe822bd51a67a6788d0d447c4032f5eaeec9e"
+    sha256 cellar: :any,                 arm64_monterey: "68f92ec81692857c9974bb1b5e4b7a4a1c70b3f6084269e9410c1b0166169295"
+    sha256 cellar: :any,                 sonoma:         "2bd9647d82a5f74e09e22664f9249d68d2c9db9b115891fc886b4a0f16882b34"
+    sha256 cellar: :any,                 ventura:        "01ce8ad9fa24b7205cf9ddb567eb26e01562be8332ba3ae8f4d22be86d088fee"
+    sha256 cellar: :any,                 monterey:       "32a27aa38577b097501257d7cf1da7b45388f0e2ea8da69ab89c83c69e068cd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dadab299ffb13b31f7b068481945b8d42492465ebcd8d478ac3d50670ce3322"
   end
 
   depends_on "pkg-config" => :build
