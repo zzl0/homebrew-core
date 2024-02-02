@@ -7,15 +7,13 @@ class Libmicrohttpd < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f6588a99dc2a09ab36702a8509dd61b157326311711436e2afe1e6744835f1de"
-    sha256 cellar: :any,                 arm64_ventura:  "db5805160eb11ac4c60b5de2e9b29ac0a9f2a35db53cc0fc9b9a5c8d9dc6ba9c"
-    sha256 cellar: :any,                 arm64_monterey: "d9038f31539af0dd9d376bfa304f30c755c9c61ca4f751048a4e02c81fb406f0"
-    sha256 cellar: :any,                 arm64_big_sur:  "a1ab5dd724062a0931c3c8b2545c6a282114b662a653b48dbf50b16ec26bb95d"
-    sha256 cellar: :any,                 sonoma:         "a2bd288e0453bb559c76f8ae2c94526506f1063deae35fc2961b041084b66eec"
-    sha256 cellar: :any,                 ventura:        "1dbaac9c6d165536ff5a7834227305e6aad50dd8c6583e1575e1b6eac3ca346d"
-    sha256 cellar: :any,                 monterey:       "117479b8d61630e7eefa071e1eb586af7af8d9db1dd4c78a34343a37c1d76d32"
-    sha256 cellar: :any,                 big_sur:        "c5a7c2d00dff286ff8c70c757b609a4c8f085019955885ca99da0f8537763409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d77426c489b76f16982e5d2e12ac46d96011d65022e82e03e8e220aa9332c0"
+    sha256 cellar: :any,                 arm64_sonoma:   "2a4186c771da28f3c8fa959acc200388609c07e7b8a78cf52f809355a11b0874"
+    sha256 cellar: :any,                 arm64_ventura:  "118a6807bfa78955b68d205daafee58b4ee0c84d234eadff9902c8a4f6b31cef"
+    sha256 cellar: :any,                 arm64_monterey: "ee43b56c13e1036a2db4d2529237261d9d8ba97c5d241d4cc6c6d76999dc8f86"
+    sha256 cellar: :any,                 sonoma:         "7f5d33cdd8b5851741ed4d45fa14f5d0c95f66b7d97870302ff9c791a8f84551"
+    sha256 cellar: :any,                 ventura:        "71a7d3c0c76acbb4d2cf644bcf153fc82779bc3c894ba59dd2288b7ae69f4cd6"
+    sha256 cellar: :any,                 monterey:       "697a2985bb9e763fa70a2f34d0e031fb8111185c608c6c7c2be355aa96a64958"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc78a8e64a4b97b1a469f147dddedcdfa2cf163509280cc3bc5758c0f5a83b6b"
   end
 
   depends_on "gnutls"
