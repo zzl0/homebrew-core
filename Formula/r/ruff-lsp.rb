@@ -3,8 +3,8 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https://github.com/astral-sh/ruff-lsp"
-  url "https://files.pythonhosted.org/packages/fa/99/17188370c07a58139e40ed16e93076a12ccb45b8ded0376ac61207262b7f/ruff_lsp-0.0.50.tar.gz"
-  sha256 "e16b496c1ba82f29d7e9b9c24add835998f323795a746f507ea8f967346b916b"
+  url "https://files.pythonhosted.org/packages/ce/e2/eb9b7d3ab17b0192f606faf67a69826dfb755e9ab97697e7dcaf952a50db/ruff_lsp-0.0.51.tar.gz"
+  sha256 "6411486a0c304d44153c09dca2636d84c692d206799ee61c4942981d2c503eb5"
   license "MIT"
 
   bottle do
@@ -33,13 +33,13 @@ class RuffLsp < Formula
   end
 
   resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/3e/fe/f7671a4fb28606ff1663bba60aff6af21b1e43a977c74c33db13cb83680f/lsprotocol-2023.0.0.tar.gz"
-    sha256 "c9d92e12a3f4ed9317d3068226592860aab5357d93cf5b2451dc244eee8f35f2"
+    url "https://files.pythonhosted.org/packages/9d/f6/6e80484ec078d0b50699ceb1833597b792a6c695f90c645fbaf54b947e6f/lsprotocol-2023.0.1.tar.gz"
+    sha256 "cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d"
   end
 
   resource "pygls" do
-    url "https://files.pythonhosted.org/packages/e6/94/534c11ba5475df09542e48d751a66e0448d52bbbb92cbef5541deef7760d/pygls-1.2.1.tar.gz"
-    sha256 "04f9b9c115b622dcc346fb390289066565343d60245a424eca77cb429b911ed8"
+    url "https://files.pythonhosted.org/packages/e9/8d/31b50ac0879464049d744a1ddf00dc6474433eb55d40fa0c8e8510591ad2/pygls-1.3.0.tar.gz"
+    sha256 "1b44ace89c9382437a717534f490eadc6fda7c0c6c16ac1eaaf5568e345e4fb8"
   end
 
   def install
