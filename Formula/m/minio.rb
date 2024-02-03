@@ -52,7 +52,7 @@ class Minio < Formula
   end
 
   service do
-    run [opt_bin/"minio", "server", "--config-dir=#{etc}/minio", "--address=:9000", var/"minio"]
+    run [opt_bin/"minio", "server", "--certs-dir=#{etc}/minio/certs", "--address=:9000", var/"minio"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
     log_path var/"log/minio.log"
