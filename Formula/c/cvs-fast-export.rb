@@ -1,8 +1,8 @@
 class CvsFastExport < Formula
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.63.tar.gz"
-  sha256 "61917641e6d66ef9ff37da4ba5c72e759b051f3a1c269ff73341b1f69edf4396"
+  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.64.tar.gz"
+  sha256 "c70ec229991d118412a1c243a3c8130c85367a294ffeb3136dff30bd88b685a5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -25,8 +25,7 @@ class CvsFastExport < Formula
     depends_on "bison" => :build
   end
 
-  depends_on "asciidoc" => :build
-  depends_on "docbook-xsl" => :build
+  depends_on "asciidoctor" => :build
   depends_on "cvs" => :test
 
   uses_from_macos "libxml2"
