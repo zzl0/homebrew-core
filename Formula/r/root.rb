@@ -1,10 +1,9 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
-  sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
+  url "https://root.cern.ch/download/root_v6.30.04.source.tar.gz"
+  sha256 "2b4180b698f39cc65d91084d833a884515b325bc5f673c8e39abe818b025d8cc"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
@@ -68,11 +67,6 @@ class Root < Formula
 
   def python3
     "python3.11"
-  end
-
-  patch do
-    url "https://github.com/root-project/root/commit/d6b6a7371725ad71a0574e7f3c3b4924b99353dd.patch?full_index=1"
-    sha256 "9482350c673c461058996af8c0945d3a2c1455af744c01ef655e3737eb9bc46a"
   end
 
   def install
