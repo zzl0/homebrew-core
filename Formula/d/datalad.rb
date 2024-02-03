@@ -3,8 +3,8 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/49/5b/acf4c60ffae666db155ad567022269208794f4a9b2bb91dc9e4d1488e61b/datalad-0.19.5.tar.gz"
-  sha256 "639cdd5ede96f614933e017f65ddb01f17637ab7bf700005ea0ac7835cc2b905"
+  url "https://files.pythonhosted.org/packages/57/2f/10e55c07277da8ba5e2fd989d8783c2539db249d1910484a43a0396aa7d6/datalad-0.19.6.tar.gz"
+  sha256 "e0da2dbb1a9f233a18a652d59df3d63ebac3185a6713752e263e1f7b48e1c54c"
   license "MIT"
 
   bottle do
@@ -100,8 +100,8 @@ class Datalad < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
+    url "https://files.pythonhosted.org/packages/df/ad/7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4/more-itertools-10.2.0.tar.gz"
+    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
   end
 
   resource "msgpack" do
@@ -110,18 +110,18 @@ class Datalad < Formula
   end
 
   resource "patool" do
-    url "https://files.pythonhosted.org/packages/c6/db/50398c9aaeb18b82b437c15ce95b758cbcc6f942e8af6f9d952fd9cc954f/patool-2.0.0.tar.gz"
-    sha256 "1dd48cd48043fc78ebf88b8ea5b00d5123fba50a6a9d11182fbcfd677681cab5"
+    url "https://files.pythonhosted.org/packages/35/9c/d4514a98e262824389e4a00272fa7e14b63fa114b96ef214f96502973bd7/patool-2.1.1.tar.gz"
+    sha256 "d55d82694038aae18bc34be25ef29d042c244f93a03a4f66c8b4d218f927e7cb"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/62/d1/7feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9a/platformdirs-4.1.0.tar.gz"
-    sha256 "906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"
+    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
+    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/5e/27/0dc12a91032bd2f10757105ebb3dfb8a8bc3bd352f62d3b0eb01bc010bdc/python-gitlab-4.3.0.tar.gz"
-    sha256 "eb31d1f2bfd8653f74996f9d0bf84ce7afb0843f9122a257c9a93b0e027d1df0"
+    url "https://files.pythonhosted.org/packages/8d/6d/934b832b55ca42740b078fe18aa83680ac7d196802feee39f9b87195a156/python-gitlab-4.4.0.tar.gz"
+    sha256 "1d117bf7b433ae8255e5d74e72c660978f50ee85eb62248c9fb52ef43c3e3814"
   end
 
   resource "requests" do
@@ -145,8 +145,8 @@ class Datalad < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https://files.pythonhosted.org/packages/e2/cc/abf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9/urllib3-2.2.0.tar.gz"
+    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
   end
 
   resource "zipp" do
