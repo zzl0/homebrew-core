@@ -1,8 +1,8 @@
 class Benerator < Formula
   desc "Tool for realistic test data generation"
   homepage "https://rapiddweller.github.io/homebrew-benerator/"
-  url "https://github.com/rapiddweller/rapiddweller-benerator-ce/releases/download/3.2.0/rapiddweller-benerator-ce-3.2.0-jdk-11-dist.tar.gz"
-  sha256 "dadc11c8f05efc30c51fd12d87d6d67a960f1ce1f03a1453c65873e1642ccae4"
+  url "https://github.com/rapiddweller/rapiddweller-benerator-ce/releases/download/3.2.1/rapiddweller-benerator-ce-3.2.1-jdk-11-dist.tar.gz"
+  sha256 "5d1b3de2344f0c2a1719eed5ab8154a75597a5d7693c373734e0603a45e5f96d"
   license "Apache-2.0"
 
   bottle do
