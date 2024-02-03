@@ -5,7 +5,7 @@ class Csound < Formula
       tag:      "6.18.1",
       revision: "a1580f9cdf331c35dceb486f4231871ce0b00266"
   license "LGPL-2.1-or-later"
-  revision 5
+  revision 6
   head "https://github.com/csound/csound.git", branch: "master"
 
   livecheck do
@@ -67,8 +67,8 @@ class Csound < Formula
   fails_with gcc: "5"
 
   resource "ableton-link" do
-    url "https://github.com/Ableton/link/archive/refs/tags/Link-3.1.0.tar.gz"
-    sha256 "6a9e70a70b5ea1d8825f6b2f34085f8e3e52d0581a62e6eb3f72de168c1a13bc"
+    url "https://github.com/Ableton/link/archive/refs/tags/Link-3.1.1.tar.gz"
+    sha256 "90f9c8bd6526776235dc36dec71620ea82dbd89761294b6270595335cd2e2078"
   end
 
   resource "csound-plugins" do
