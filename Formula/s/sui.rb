@@ -10,6 +10,16 @@ class Sui < Formula
     regex(/^testnet[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f708da9c0ddc37769de498e83f79b8a569184975d29c222d86c0bd27692eadb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "589fecc9c503567537feadbf0055882ccd6f2b2af80ee41e64681221ba92e5de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "61ccf2a6aa49ca3b1a475c63a640a869fe32035fcc38acf64a4546561ca835c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29c92a45be39d64e8690fcfb39da8841341b9056870a9f8b6a8fa8e11fc0e545"
+    sha256 cellar: :any_skip_relocation, ventura:        "bda2362ddfaf82fd00337ca953ffc46923aa015a749c2265771961a8ee15b48f"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f8c001d603cb55d241d0c99f7cf94bbf2245546c3e37c3ad528a4a1837f55ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e244d59d3a2b3de66dad438537b0cc845c40e3f178fc65afc6b2d10dd6f7a80"
+  end
+
   depends_on "cmake" => :build
   depends_on "libpq" => :build
   depends_on "rust" => :build
