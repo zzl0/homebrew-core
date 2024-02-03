@@ -3,8 +3,8 @@ class Bilix < Formula
 
   desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https://github.com/HFrost0/bilix"
-  url "https://files.pythonhosted.org/packages/08/de/f349e3a5571613b39f109247c07f9f9b493ad4fd5ae4c42301210574885a/bilix-0.18.7.tar.gz"
-  sha256 "d39543a2198c3e6218d674fb83fea0b62a5c98224609828abffbec018ea2cc20"
+  url "https://files.pythonhosted.org/packages/1a/f5/83c35a59e43453033deeecdc19893cedf9558fa601068890f68544e6235f/bilix-0.18.8.tar.gz"
+  sha256 "582b4ff828cf7b7edb4bbcabe4a6384f1d2c94f3304afcba126297cc5a02c3fe"
   license "Apache-2.0"
 
   bottle do
@@ -149,13 +149,13 @@ class Bilix < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/aa/3f/56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490/pydantic-2.5.3.tar.gz"
-    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
+    url "https://files.pythonhosted.org/packages/78/6c/87e7c6e46206e27b3037acdf637906c4be500a0b1dd7ccbb805a72b9f494/pydantic-2.6.0.tar.gz"
+    sha256 "ae887bd94eb404b09d86e4d12f93893bdca79d766e738528c6fa1c849f3c6bcf"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/b2/7d/8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79/pydantic_core-2.14.6.tar.gz"
-    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
+    url "https://files.pythonhosted.org/packages/a0/a7/61d013c73773bb03d02de9de8e4e5b2ed2c100dc98ae7046d54485ecf5d4/pydantic_core-2.16.1.tar.gz"
+    sha256 "daff04257b49ab7f4b3f73f98283d3dbb1a65bf3500d55c7beac3c66c310fe34"
   end
 
   resource "pymp4" do
