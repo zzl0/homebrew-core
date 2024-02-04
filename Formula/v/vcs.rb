@@ -25,9 +25,6 @@ class Vcs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "032fbce3c72e8ea03c3b4fbcde03f391d7c9df149ae5b664618d7e5b2a265bce"
   end
 
-  # notified upstream maintainer
-  deprecate! date: "2024-02-04", because: :repo_removed
-
   depends_on "ffmpeg"
   depends_on "ghostscript"
   depends_on "gnu-getopt"
