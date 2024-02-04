@@ -1,9 +1,10 @@
 class Zydis < Formula
   desc "Fast and lightweight x86/x86_64 disassembler library"
   homepage "https://zydis.re"
+  # pull from git tag to get submodules
   url "https://github.com/zyantific/zydis.git",
-      tag:      "v4.0.0",
-      revision: "1ba75aeefae37094c7be8eba07ff81d4fe0f1f20"
+      tag:      "v4.1.0",
+      revision: "569320ad3c4856da13b9dbf1f0d9e20bda63870e"
   license "MIT"
   head "https://github.com/zyantific/zydis.git", branch: "master"
 
@@ -22,7 +23,7 @@ class Zydis < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DZYDIS_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
