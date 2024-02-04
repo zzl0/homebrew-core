@@ -1,8 +1,8 @@
 class Crystalline < Formula
   desc "Language Server Protocol implementation for Crystal"
   homepage "https://github.com/elbywan/crystalline"
-  url "https://github.com/elbywan/crystalline/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "83b9ef5e15a8dadc459460460a920b8e16a3cca443da699721d9e1b0e5b054a1"
+  url "https://github.com/elbywan/crystalline/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "32d137f1e4edd29c74381cc010e9080379346b23646ca5f0806f64d2e05628fb"
   license "MIT"
 
   bottle do
