@@ -3,8 +3,8 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https://github.com/tfeldmann/organize"
-  url "https://files.pythonhosted.org/packages/04/66/a402f36c6c1cd4746bd395639cc888520ca09577714a3dc9714582acc388/organize_tool-3.0.1.tar.gz"
-  sha256 "32ffc7d51353633104c0b5ee2f441dd661b74ba73ff2ecd2db493d61de1976fc"
+  url "https://files.pythonhosted.org/packages/95/bc/485c1ec8666496ce96ec17bb0158c299709b323b6c22e9ae6de18fdca2a9/organize_tool-3.1.0.tar.gz"
+  sha256 "16012c34abdd39ee16ca0baa19dd97b5cb172951b697b806c6ec3d7a0d429c93"
   license "MIT"
 
   bottle do
@@ -61,18 +61,18 @@ class OrganizeTool < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/62/d1/7feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9a/platformdirs-4.1.0.tar.gz"
-    sha256 "906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"
+    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
+    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/aa/3f/56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490/pydantic-2.5.3.tar.gz"
-    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
+    url "https://files.pythonhosted.org/packages/78/6c/87e7c6e46206e27b3037acdf637906c4be500a0b1dd7ccbb805a72b9f494/pydantic-2.6.0.tar.gz"
+    sha256 "ae887bd94eb404b09d86e4d12f93893bdca79d766e738528c6fa1c849f3c6bcf"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/b2/7d/8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79/pydantic_core-2.14.6.tar.gz"
-    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
+    url "https://files.pythonhosted.org/packages/a0/a7/61d013c73773bb03d02de9de8e4e5b2ed2c100dc98ae7046d54485ecf5d4/pydantic_core-2.16.1.tar.gz"
+    sha256 "daff04257b49ab7f4b3f73f98283d3dbb1a65bf3500d55c7beac3c66c310fe34"
   end
 
   resource "python-dateutil" do
