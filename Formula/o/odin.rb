@@ -2,9 +2,9 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2024-01",
-      revision: "5961d4b31680aa4fc628b85fb49b6f936b3b925f"
-  version "2024-01"
+      tag:      "dev-2024-02",
+      revision: "539cec7496c128a0f8bb10794a1d3d0d043705f0"
+  version "2024-02"
   license "BSD-3-Clause"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
@@ -29,7 +29,7 @@ class Odin < Formula
     args = []
     args << "ODIN_VERSION=dev-#{version}" unless build.head?
     system "make", "release", *args
-    libexec.install "odin", "core", "shared"
+    libexec.install "odin", "core", "shared", "base"
     (bin/"odin").write <<~EOS
       #!/bin/bash
       export PATH="#{llvm.opt_bin}:$PATH"
