@@ -8,13 +8,13 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a376dda4bc58177dc8edca142652aa6bdbb7720ebce8bf4acd41523be245315f"
-    sha256 cellar: :any,                 arm64_ventura:  "229563f042908acf9dae8e57c5e43d8f4913b4bbebac1514cc031d569830e289"
-    sha256 cellar: :any,                 arm64_monterey: "64492258ff40c63885fd01c2f8cc5e149355b0e9826c1fdc0d42185efd37e81e"
-    sha256 cellar: :any,                 sonoma:         "8f69ccd40a6703a2b08259ec7d16233a3ff5f1bb8117581698a5f69266ee4b35"
-    sha256 cellar: :any,                 ventura:        "377e6a9514968aac57e35e28c5dc93f80724d68b96add7b2eb82070a4ebdcf1f"
-    sha256 cellar: :any,                 monterey:       "637dd4d718a47a1d2597e01fe2c8aa3caf3e47462e928405490dc3b82c59d933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "034d9da41fe015cfcf2a9b14b4dbe3c2691d75b7ffaf8f5b54b39960616c680a"
+    sha256 cellar: :any,                 arm64_sonoma:   "b7d28eb13e3a534595c4c8abcecf8d466ce064312774d727699df5f3b12d31e2"
+    sha256 cellar: :any,                 arm64_ventura:  "5e73aadb158dd28176d7a76eda04a39d817bcc559684b7c06f2eac5bd457baa0"
+    sha256 cellar: :any,                 arm64_monterey: "f48d47630fc92e7452ae0fb05ae43e1cb7c94def6a74949eb505e5aa7157a794"
+    sha256 cellar: :any,                 sonoma:         "2174c54a7ac392a16e6f67cc46d52c89ee26a0f4641ac4ad73c5380464e60e80"
+    sha256 cellar: :any,                 ventura:        "042ac4b4451f19a0103503927e5c034005f06a354bdc1f71dc68bc8a94c35b9c"
+    sha256 cellar: :any,                 monterey:       "d978c05467292b7bfd84a5fc2d756a1733710403d08f7982491b12d1ba7fae7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dc9eedf9ed57c8f068de37df792e6b439ab4f84813c76b786d37e618d30053b"
   end
 
   depends_on "python-brotli"
