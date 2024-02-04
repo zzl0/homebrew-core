@@ -8,15 +8,13 @@ class Csfml < Formula
   head "https://github.com/SFML/CSFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9faf9aff5b2bd8f901055d477e3ff0702fa675ccb6dea5fc1f34f79ce50acd38"
-    sha256 cellar: :any,                 arm64_ventura:  "ffe6c174f1386b9aa9e82eebf34240395dec2167a8783861cb10fd9f64654275"
-    sha256 cellar: :any,                 arm64_monterey: "4d40b9e48454350f58bac875b12091e58de655677abc212eb32808fa97536fe2"
-    sha256 cellar: :any,                 arm64_big_sur:  "caa271cb7428aa9813fada7fe4d080faa058f3b1599c2ef4eff05453260658a3"
-    sha256 cellar: :any,                 sonoma:         "0ed8a2f8ae71c6813fff337242e774b45d2d141500ca18687ee1432ad2661008"
-    sha256 cellar: :any,                 ventura:        "dd3a2adba0082f3d5505d1564345bd28ccfa2a4eaf00642558354e025140a7c0"
-    sha256 cellar: :any,                 monterey:       "881ff68b8f8a5e2f9e4feac22d1af3f7255179bd0cac00720e358059a717be5f"
-    sha256 cellar: :any,                 big_sur:        "37b4d2ae7b2f5ff1a9032b8086eaa7b0d3960185f264f28992d053621feb094a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33bc409017a399d20809d94e7280864a48125da44205a2a64ed9de6e0298b971"
+    sha256 cellar: :any,                 arm64_sonoma:   "abd199c3601d38b1a400457c69c6f0abad215be865bad9fe0b18af2871277fa0"
+    sha256 cellar: :any,                 arm64_ventura:  "93edd427c5c7b9e134712b0b26098f115b7d6c1a38b111730e01bea8a1c7fee7"
+    sha256 cellar: :any,                 arm64_monterey: "bc9651bc5a2ae540e9e1dee3dddd852d01ad8dba30fa5b9440843c6ee89b4674"
+    sha256 cellar: :any,                 sonoma:         "1cd935d96e93751987e2046349ade2a4a209d39f1a4b1b158a3604a9b28a4f74"
+    sha256 cellar: :any,                 ventura:        "ff7d7b53678a6a3780e0d4b2892f43e7dcc68339e513c34cf3350d14fc3fd0f3"
+    sha256 cellar: :any,                 monterey:       "e3800b0f0a0671fe40fa6bb82f336915ab225a04d3bb0baa2895b8d5494697d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1469dc07b0e988eed340b4f715db767c530dcab5fc02b656ad93f208fd9ca5f7"
   end
 
   depends_on "cmake" => :build
