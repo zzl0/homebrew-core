@@ -3,6 +3,7 @@ class Vcs < Formula
   homepage "https://p.outlyer.net/vcs/"
   url "https://p.outlyer.net/files/vcs/vcs-1.13.4.tar.gz"
   sha256 "dc1d6145e10eeed61d16c3591cfe3496a6ac392c9c2f7c2393cbdb0cf248544b"
+  license "LGPL-2.0-or-later"
   revision 3
 
   livecheck do
@@ -23,6 +24,9 @@ class Vcs < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "2100a37453706602e0bd5941c7fb343cf64659493b27889957bad498934c6daf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "032fbce3c72e8ea03c3b4fbcde03f391d7c9df149ae5b664618d7e5b2a265bce"
   end
+
+  # notified upstream maintainer
+  deprecate! date: "2024-02-04", because: :repo_removed
 
   depends_on "ffmpeg"
   depends_on "ghostscript"
