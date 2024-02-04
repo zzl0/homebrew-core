@@ -11,13 +11,14 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "afa1c6cdff4809dacea068dac134b2e8e861382d477f110e9bbdd4cc99513acb"
-    sha256 cellar: :any, arm64_ventura:  "7bdd89ca6bb7254483dd6bdc185ca3fb524fbd544d61f8d183509b82f41fab80"
-    sha256 cellar: :any, arm64_monterey: "cdbcdef206ab2a266eee36142264696fa1ce6e0ecd97a600522d2a54713bbfb9"
-    sha256 cellar: :any, sonoma:         "72dcb6262d54fbde7d84104581388ddb54f164c7328479bea63aa085b9f98a18"
-    sha256 cellar: :any, ventura:        "4d47f258b198986b4fda6643e1291ee146ea7ad57a3804f6be7853e7cabbed95"
-    sha256 cellar: :any, monterey:       "06535d5670667a3254e14b3c1b2865f12d57d1962a19e84db4216c0d53a4800d"
-    sha256               x86_64_linux:   "16055b3ba5722c5c73e2404970afb806bf4b72ae932f4e113320211a499ad0c2"
+    rebuild 1
+    sha256 arm64_sonoma:   "fc9760f1c03934d4b87c768b02195129e13babc78a174059ff4987b204dd0d98"
+    sha256 arm64_ventura:  "384e8884db6ec442a2fa0e57fcd3d44ea6004c516969b6dd82930d4c56b90ace"
+    sha256 arm64_monterey: "612fc3597eb8a74da99da978cbb97e8e67a4a33fd75c419a671782ab974663cd"
+    sha256 sonoma:         "65df5da13054e5c7e4023eaec235f0d16dbf339f1a5826150fa90e93798e9560"
+    sha256 ventura:        "a75d0ceac451e6ef213300f2f0179bdec7b0b889a3555f9fc70dcc47aeb1aee0"
+    sha256 monterey:       "d0fbe428294198e0eeaa64778c9ba08db0cd18cdd8b67e9bfacb1a5fe32102ea"
+    sha256 x86_64_linux:   "a2bd232db7d2a02767c8630db162127abbfc9b4467111d9b04ffb58dcee7d9c1"
   end
 
   depends_on "cmake" => :build
