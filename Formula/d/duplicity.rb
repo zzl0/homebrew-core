@@ -3,8 +3,8 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https://gitlab.com/duplicity/duplicity"
-  url "https://files.pythonhosted.org/packages/84/94/f80eb99de1ff0aacfd35fcec58b0636f4532e7a9bd37365bfd46f340f6ca/duplicity-2.2.1.tar.gz"
-  sha256 "ac5d211e5c81cd9535fafdb815b96582b8e6f4c386818a27ba6646dc2799c52a"
+  url "https://files.pythonhosted.org/packages/f3/33/da4f4edb3332f47051017f876709b47633873904aeb7c9ccf9dcaf3d7433/duplicity-2.2.2.tar.gz"
+  sha256 "833ef5fa922d559be1c4f6a0f61315e8cb26da409f2024bcf310ba3fb9486d27"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -53,8 +53,8 @@ class Duplicity < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/cc/c3/b60ac8b63a6f8982cbdab64cb1bd3d9ab036bff5756f4ea74199d80a186c/azure-core-1.29.7.tar.gz"
-    sha256 "2944faf1a7ff1558b1f457cabf60f279869cabaeef86b353bed8eb032c7d8c5e"
+    url "https://files.pythonhosted.org/packages/b1/38/ecb085532b46ca3893732d2dafa8b75a1754164b1c0e757e7c53c4250714/azure-core-1.30.0.tar.gz"
+    sha256 "6f3a7883ef184722f6bd997262eddaf80cfe7e5b3e0caaaf8db1695695893d35"
   end
 
   resource "azure-storage-blob" do
@@ -63,8 +63,8 @@ class Duplicity < Formula
   end
 
   resource "b2sdk" do
-    url "https://files.pythonhosted.org/packages/0d/4c/69a49dcc578cbc30bedb78e985de45c2106e7b4e55cadcb0fe9c6bb2514a/b2sdk-1.29.1.tar.gz"
-    sha256 "4da970d4fd099cf754f9d0e00bc2764c948e57f2ec86043205b3d812accaa5f0"
+    url "https://files.pythonhosted.org/packages/24/0c/cf4705f98ca0edff0f29e3f7407a1cd2265fa6920c27be74ee172cdb37e1/b2sdk-1.30.1.tar.gz"
+    sha256 "9217c30bfb5891e468c726aae2aace996e628411885752437bdf0d4b8a3ba29d"
   end
 
   resource "bcrypt" do
@@ -73,13 +73,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/a3/e41f6e612a4b48abc828c37b0658ad6792bc83d48ba21e5545247dff127b/boto3-1.34.31.tar.gz"
-    sha256 "c4dec7ea9bc9210ec783d39b56d332f5a266b0d1e31a96c5092f6bd5252361ba"
+    url "https://files.pythonhosted.org/packages/50/a0/f332de5bc770ddbcbddc244a9ced5476ac2d105a14fbd867c62f702a73ee/boto3-1.34.34.tar.gz"
+    sha256 "b2f321e20966f021ec800b7f2c01287a3dd04fc5965acdfbaa9c505a24ca45d1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/81/06/35f0126d507964b4431e2fbe65907dccd7f5dc91c43f4d0f246845ba090f/botocore-1.34.31.tar.gz"
-    sha256 "d5a2153dbe9687f510f179e03913bc9b4e266c865cabebe440c4d05ab923faa7"
+    url "https://files.pythonhosted.org/packages/18/58/b38387dda6dae1db663c716f7184a728941367d039830a073a30c3a28d3c/botocore-1.34.34.tar.gz"
+    sha256 "54093dc97372bb7683f5c61a279aa8240408abf3b2cc494ae82a9a90c1b784b5"
   end
 
   resource "boxsdk" do
@@ -133,8 +133,8 @@ class Duplicity < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/9d/16/794f780141400c5ce65b7d5631a255b192167be70d822b620235a987a70d/google-api-core-2.16.1.tar.gz"
-    sha256 "7f668ffa3d5b9f3c6930407e5f5d691c05a376050a5a5fd772b9dc32e70a0c30"
+    url "https://files.pythonhosted.org/packages/49/e6/6ae0a07727e6be8500986cfb1d5ae7d665f2c5663cda2265b4d4d3e7da13/google-api-core-2.16.2.tar.gz"
+    sha256 "032d37b45d1d6bdaf68fb11ff621e2593263a239fa9246e2e94325f9c47876d2"
   end
 
   resource "google-api-python-client" do
