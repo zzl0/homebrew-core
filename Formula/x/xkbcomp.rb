@@ -1,8 +1,8 @@
 class Xkbcomp < Formula
   desc "XKB keyboard description compiler"
   homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/app/xkbcomp-1.4.6.tar.xz"
-  sha256 "fa50d611ef41e034487af7bd8d8c718df53dd18002f591cca16b0384afc58e98"
+  url "https://www.x.org/releases/individual/app/xkbcomp-1.4.7.tar.xz"
+  sha256 "0a288114e5f44e31987042c79aecff1ffad53a8154b8ec971c24a69a80f81f77"
   license all_of: ["HPND", "MIT-open-group"]
 
   bottle do
