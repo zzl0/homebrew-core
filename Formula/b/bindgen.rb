@@ -1,8 +1,8 @@
 class Bindgen < Formula
   desc "Automatically generates Rust FFI bindings to C (and some C++) libraries"
   homepage "https://rust-lang.github.io/rust-bindgen/"
-  url "https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.69.2.tar.gz"
-  sha256 "78fbb8bd100e145d1effc982eaab21b555ccc3fc1cbe6e734f17cdfe5c33af32"
+  url "https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.69.3.tar.gz"
+  sha256 "5cdaa156403841e7b286ccbb7b31398c8b49b99f89ebf329457101819aa5eaf0"
   license "BSD-3-Clause"
   head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
