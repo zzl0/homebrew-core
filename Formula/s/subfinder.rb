@@ -1,8 +1,8 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.4.tar.gz"
-  sha256 "8e491c31ba1bba8d9e5dfd0c6f8ebf4ffb078db97b2be42a4ba39841fddecaf9"
+  url "https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.5.tar.gz"
+  sha256 "acd9ccdbb9b5877cf3568ad299ce0a3445ccced09583280dfd881cffd20859f9"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git", branch: "master"
 
