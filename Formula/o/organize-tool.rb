@@ -25,7 +25,6 @@ class OrganizeTool < Formula
   depends_on "python-click"
   depends_on "python-jinja"
   depends_on "python-markupsafe"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -50,9 +49,19 @@ class OrganizeTool < Formula
     sha256 "a0f74af5040168d3883bbc980efe26d06c89f026dc86ba28eb34107662d51766"
   end
 
+  resource "macos-tags" do
+    url "https://files.pythonhosted.org/packages/d4/6e/e0b2ea37ef831a5c6b5aebbd14701d96d9dc061f04a867b05335a4bc099d/macos-tags-1.5.1.tar.gz"
+    sha256 "f144c5bc05d01573966d8aca2483cb345b20b76a5b32e9967786e086a38712e7"
+  end
+
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+  end
+
+  resource "mdfind-wrapper" do
+    url "https://files.pythonhosted.org/packages/0e/74/148968c2665c0f2db1fbd470fbb454b1f808ea5d4cb8d75bc99f451d0ece/mdfind-wrapper-0.1.5.tar.gz"
+    sha256 "c0dbd5bc99c6d1fb4678bfa1841a3380ccac61e9b43a26a8d658aa9cafe27441"
   end
 
   resource "mdurl" do
@@ -73,6 +82,16 @@ class OrganizeTool < Formula
   resource "pydantic-core" do
     url "https://files.pythonhosted.org/packages/a0/a7/61d013c73773bb03d02de9de8e4e5b2ed2c100dc98ae7046d54485ecf5d4/pydantic_core-2.16.1.tar.gz"
     sha256 "daff04257b49ab7f4b3f73f98283d3dbb1a65bf3500d55c7beac3c66c310fe34"
+  end
+
+  resource "pyobjc-core" do
+    url "https://files.pythonhosted.org/packages/50/d5/0b93cb9dc94ab4b78b2b7aa54c80f037e4de69897fff81a5ededa91d2704/pyobjc-core-10.1.tar.gz"
+    sha256 "1844f1c8e282839e6fdcb9a9722396c1c12fb1e9331eb68828a26f28a3b2b2b1"
+  end
+
+  resource "pyobjc-framework-cocoa" do
+    url "https://files.pythonhosted.org/packages/5d/1d/964a0da846d49511489bd99ed705f9d85c5081fc832d0dba384c4c0d2fb2/pyobjc-framework-Cocoa-10.1.tar.gz"
+    sha256 "8faaf1292a112e488b777d0c19862d993f3f384f3927dc6eca0d8d2221906a14"
   end
 
   resource "python-dateutil" do
@@ -105,19 +124,19 @@ class OrganizeTool < Formula
     sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   end
 
+  resource "xattr" do
+    url "https://files.pythonhosted.org/packages/91/ac/5898d1811abc88c3710317243168feff61ce12be220b9c92ee045ecd66c4/xattr-0.9.9.tar.gz"
+    sha256 "09cb7e1efb3aa1b4991d6be4eb25b73dc518b4fe894f0915f5b0dcede972f346"
+  end
+
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     venv = virtualenv_create(libexec, "python3.12")
-    dependencies = resources.to_set(&:name)
-    if OS.linux?
-      # `macos-tags` and its dependencies are only needed on macOS
-      # TODO: Currently requires manual check to confirm PyPI dependency tree
-      dependencies -= %w[macos-tags mdfind-wrapper xattr cffi pycparser]
-      # Same for `pyobjc-framework-cocoa` and its dependencies
-      dependencies -= %w[pyobjc-framework-cocoa pyobjc-core]
-    end
-    dependencies.each do |r|
-      venv.pip_install resource(r)
-    end
+    # `macos-tags` and `pyobjc-framework-cocoa` + dependencies are only needed on macOS
+    # TODO: Currently requires manual check to confirm PyPI dependency tree
+    skipped = %w[macos-tags mdfind-wrapper xattr cffi pycparser]
+    skipped += %w[pyobjc-framework-cocoa pyobjc-core]
+    venv.pip_install resources.reject { |r| OS.linux? && skipped.include?(r.name) }
     venv.pip_install_and_link buildpath
   end
 
