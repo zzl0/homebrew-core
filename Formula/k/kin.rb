@@ -8,6 +8,16 @@ class Kin < Formula
   license "Apache-2.0"
   head "https://github.com/Serchinastico/Kin.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c18b30fe63a931ce39a351a56757d056f8cb8eb65afcb66915da95473119ec81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a68442572da54214562be750571ce8523e44f3ebe27dd34974f0995bb4112bd4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe35cbc07de38118dc432ca0ed8f90e1560234e9e0f96ff861d9fc123993ba25"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6c0067848905a9e285758c23a5a58b7f0abc8cdb3996ca843f4d9d14349ed478"
+    sha256 cellar: :any_skip_relocation, ventura:        "828ebe0b72e6689e961f0f0d1d1cd21a5703f942213cb8a8bba81785a44036b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c1b9a596f879be72d378fd5d230dc0565933537c695cd966cd867704f34a5b9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d74221f7f0650cad1b5add5a690012ade87146f477f946e9886321d5def43556"
+  end
+
   depends_on "python@3.12"
 
   resource "antlr4-python3-runtime" do
