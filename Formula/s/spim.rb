@@ -27,8 +27,8 @@ class Spim < Formula
     cd "spim" do
       system "make", "EXCEPTION_DIR=#{share}"
       system "make", "install", "BIN_DIR=#{bin}",
-                                "EXCEPTION_DIR=#{share}",
-                                "MAN_DIR=#{man1}"
+                                "EXCEPTION_DIR=#{share}"
+      system "make", "install-man", "MAN_DIR=#{man1}"
     end
   end
 
