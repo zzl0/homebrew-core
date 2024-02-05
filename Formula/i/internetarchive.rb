@@ -18,7 +18,6 @@ class Internetarchive < Formula
   end
 
   depends_on "python-certifi"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
 
   resource "charset-normalizer" do
@@ -67,13 +66,17 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https://files.pythonhosted.org/packages/e2/cc/abf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9/urllib3-2.2.0.tar.gz"
+    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
   end
 
+  # Drop setuptools dep
+  # https://github.com/jjjake/internetarchive/pull/621
+  patch :DATA
+
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
-    bin.install_symlink libexec/"bin/ia"
   end
 
   test do
@@ -81,3 +84,49 @@ class Internetarchive < Formula
     assert_equal metadata["metadata"]["uploader"], "mistydemeo@gmail.com"
   end
 end
+
+__END__
+From 7f882e7d25c7baaadca1f9abf014f8c16f7e76d0 Mon Sep 17 00:00:00 2001
+From: Letu Ren <fantasquex@gmail.com>
+Date: Tue, 9 Jan 2024 18:28:50 +0800
+Subject: [PATCH] Switch to importlib-metadata to drop deprecated pkg_resources
+
+According to https://setuptools.pypa.io/en/latest/pkg_resources.html,
+pkg_resources has been deprecated and importlib-metadata is recommended.
+`DistributionNotFound` only can be thrown from `find_plugins()` which is
+not used by ia. Tested with plugin
+https://github.com/JesseWeinstein/ia_recent.
+
+Closes: https://github.com/jjjake/internetarchive/issues/613
+---
+ internetarchive/cli/ia.py | 6 +++---
+ setup.cfg                 | 1 +
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/internetarchive/cli/ia.py b/internetarchive/cli/ia.py
+index 8e044c36..9a5b2c70 100755
+--- a/internetarchive/cli/ia.py
++++ b/internetarchive/cli/ia.py
+@@ -64,7 +64,7 @@
+ import sys
+
+ from docopt import docopt, printable_usage
+-from pkg_resources import DistributionNotFound, iter_entry_points
++from importlib.metadata import entry_points
+ from schema import Or, Schema, SchemaError  # type: ignore[import]
+
+ from internetarchive import __version__
+@@ -97,11 +97,11 @@ def load_ia_module(cmd: str):
+             return __import__(_module, fromlist=['internetarchive.cli'])
+         else:
+             _module = f'ia_{cmd}'
+-            for ep in iter_entry_points('internetarchive.cli.plugins'):
++            for ep in entry_points(group='internetarchive.cli.plugins'):
+                 if ep.name == _module:
+                     return ep.load()
+             raise ImportError
+-    except (ImportError, DistributionNotFound):
++    except (ImportError):
+         print(f"error: '{cmd}' is not an ia command! See 'ia help'",
+               file=sys.stderr)
+         matches = '\t'.join(difflib.get_close_matches(cmd, cmd_aliases.values()))
