@@ -18,9 +18,13 @@ class GitReview < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc4c21a96afbd8a772fe47cb80f9c1b60e623fab18a152bd0e2a0aef9d5fbf55"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-requests"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
+
+  # Drop setuptools dep
+  # https://review.opendev.org/c/opendev/git-review/+/907101
+  patch :DATA
 
   def python3
     "python3.12"
@@ -39,6 +43,64 @@ class GitReview < Formula
     (testpath/"foo").write "test file"
     system "git", "add", "foo"
     system "git", "commit", "-m", "test"
-    system "#{bin}/git-review", "--dry-run"
+    system bin/"git-review", "--dry-run"
   end
 end
+
+__END__
+From 7b823c16e22f115684ede6bdd6bac72e258ca410 Mon Sep 17 00:00:00 2001
+From: Tim Burke <tim.burke@gmail.com>
+Date: Mon, 29 Jan 2024 08:58:07 -0800
+Subject: [PATCH] Use importlib.metadata instead of pkg_resources
+
+...if available. It was added in Python 3.8, and marked no-longer-
+provisional in Python 3.10.
+
+Python 3.12 no longer pre-installs setuptools in virtual environments,
+which means we can no longer rely on distutils, setuptools,
+pkg_resources, and easy_install being available.
+
+Fortunately, importlib.metadata covers the one use we have of
+pkg_resources.
+
+Change-Id: Iaa68282960a1c73569f916c3b00acf7f839b9807
+---
+
+diff --git a/git_review/cmd.py b/git_review/cmd.py
+index 837bfa7..d3fce69 100644
+--- a/git_review/cmd.py
++++ b/git_review/cmd.py
+@@ -32,9 +32,16 @@
+ from urllib.parse import urljoin
+ from urllib.parse import urlparse
+
+-import pkg_resources
+ import requests
+
++try:
++    import importlib.metadata as importlib_metadata
++    pkg_resources = None
++except ImportError:
++    # Pre-py38
++    importlib_metadata = None
++    import pkg_resources
++
+
+ VERBOSE = False
+ UPDATE = False
+@@ -220,9 +227,12 @@
+
+
+ def get_version():
+-    requirement = pkg_resources.Requirement.parse('git-review')
+-    provider = pkg_resources.get_provider(requirement)
+-    return provider.version
++    if importlib_metadata:
++        return importlib_metadata.version('git-review')
++    else:
++        requirement = pkg_resources.Requirement.parse('git-review')
++        provider = pkg_resources.get_provider(requirement)
++        return provider.version
+
+
+ def get_git_version():
