@@ -3,8 +3,8 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/23/b4/cc3bdb1c0b4736e0081afdc1cda3444093d7a0b7f75b5ee64ae75225bac1/jupyterlab-4.0.12.tar.gz"
-  sha256 "965d92efa82a538ed70ccb3968d9aabba788840da882e13d7b061780cdedc3b7"
+  url "https://files.pythonhosted.org/packages/31/c6/d60b787af86f8c4ed15b8f734153ecaceeef5dc137496d4e6c0ab889fc9d/jupyterlab-4.1.0.tar.gz"
+  sha256 "92cdfd86c53e163fb9e91e14497901153536c5a889c9225dade270f6107a077f"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
@@ -120,6 +120,11 @@ class Jupyterlab < Formula
     sha256 "105ed3677e767fb5ca086a0c1f4bb66ebc3c100be518f0e0d755d9eae164d89f"
   end
 
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
+    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+  end
+
   resource "hatch-jupyter-builder" do
     url "https://files.pythonhosted.org/packages/b1/b2/3c304707d4d3c30b2c87f1b8f8b2eb4a682662fea13bd5ab8f16c4c0eb0b/hatch_jupyter_builder-0.8.3.tar.gz"
     sha256 "0dbd14a8aef6636764f88a8fd1fcc9a91921e5c50356e6aab251782f264ae960"
@@ -128,6 +133,16 @@ class Jupyterlab < Formula
   resource "hatch-nodejs-version" do
     url "https://files.pythonhosted.org/packages/af/b6/c9406cfa9edf740c6b3de6173408a159228eac0cee80eead4a5b9cc88848/hatch_nodejs_version-0.3.2.tar.gz"
     sha256 "8a7828d817b71e50bbbbb01c9bfc0b329657b7900c56846489b9c958de15b54c"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/18/56/78a38490b834fa0942cbe6d39bd8a7fd76316e8940319305a98d2b320366/httpcore-1.0.2.tar.gz"
+    sha256 "9fc092e4799b26174648e54b74ed5f683132a464e95643b226e00c2ed2fa6535"
+  end
+
+  resource "httpx" do
+    url "https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "ipykernel" do
