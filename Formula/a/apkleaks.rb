@@ -21,7 +21,6 @@ class Apkleaks < Formula
   depends_on "jadx"
   depends_on "python-click"
   depends_on "python-lxml"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
 
   resource "asn1crypto" do
@@ -30,11 +29,19 @@ class Apkleaks < Formula
   end
 
   resource "pyaxmlparser" do
-    url "https://files.pythonhosted.org/packages/58/7f/327c19329f535c332451b5f1f906bff5f952fe3070d00376b75e67052f35/pyaxmlparser-0.3.28.tar.gz"
-    sha256 "c482826380fd84ce1a6386183861f2a6728017241a230c13d521e3e7737e803e"
+    url "https://files.pythonhosted.org/packages/e3/7c/fae519a8eb4e91587b2b4bf9b1ff738451984687a2cfff778df71b74727d/pyaxmlparser-0.3.30.tar.gz"
+    sha256 "ce301723fa7f05b3c2869f18f7af9e75abfbda362dc77789f668bb80287c9b3b"
+  end
+
+  # Drop distutils/setuptools
+  # https://github.com/dwisiswant0/apkleaks/pull/81
+  patch do
+    url "https://github.com/dwisiswant0/apkleaks/commit/fc8871ac605447db1456cb1189fa79e673f71e1b.patch?full_index=1"
+    sha256 "5c0eda68fbba60b9ecb8471f7a3ec92c2cb34988ca98188daad3af572bb09b83"
   end
 
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 
