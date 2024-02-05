@@ -8,14 +8,14 @@ class GitReview < Formula
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e3e07cd3081c724acabed1b87c5de98195cdcfed701cd8e2d5a9b123a4005ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "119c392a0f881ef5fa797fa5c068fa7d1668281cb129e137a2140fa61e0ec9f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a4819494bbd02ec9588319c9233531d0bcd81c455464d4449b881094f58ac7b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02183437c33b30c51c5471091830a09958f590670009bb1940adf9ae09a72a23"
-    sha256 cellar: :any_skip_relocation, ventura:        "151d000730015c13a9922a4467687b146febf6ae1412a0ae478ac85e53bb72e7"
-    sha256 cellar: :any_skip_relocation, monterey:       "79912fd48bd1c9ebcb6e080a2118bf8841bea906d6b8167be6f8e29a7d987a9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc4c21a96afbd8a772fe47cb80f9c1b60e623fab18a152bd0e2a0aef9d5fbf55"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d5d414cdf10919defc6b017799249cdb150fbe3bd64ea3ac4f155037c52fc90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db17a9e895ee7d18eddfe94b6c3c3798b3020a7a793039f410c9331232739157"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b6646591dc77bca2e0825bfd0a0ab61260ef9915444f61ac783b6a194769f32"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb8c641a5531c73335e61314cc08da60d19f86670150b410a9d6729fa0ac7cac"
+    sha256 cellar: :any_skip_relocation, ventura:        "22c31a9c79bc2b4aefb797ea12d89b90f03ab20f8220e0a42493df00ec5b82a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "72dc7edeae00453acda5d92736f375e96e1e9196ce44619aebfe56e3f1604e8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81911c588fb66a24bf496193671a967d8a342a96596e45737eaafa0df542d2f2"
   end
 
   depends_on "python-setuptools" => :build
