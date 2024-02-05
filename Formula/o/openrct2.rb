@@ -2,8 +2,8 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https://openrct2.io/"
   url "https://github.com/OpenRCT2/OpenRCT2.git",
-      tag:      "v0.4.7",
-      revision: "0e8d46ea7cfdb2118435d1735967a359f936dbea"
+      tag:      "v0.4.8",
+      revision: "05efdb2497676e8970876c068c4825fb382c1a8a"
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
