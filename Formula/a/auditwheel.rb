@@ -8,7 +8,7 @@ class Auditwheel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d5c4e8a43af16fb81fd4ac6e481e69f3e23cf1f764d77773070e29757a1da87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e7935f976c5420a4d7a74ecc0a10b0fc8766bdc92756551cd16542e40a3a6cf"
   end
 
   depends_on :linux
