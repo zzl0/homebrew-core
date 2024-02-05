@@ -20,7 +20,6 @@ class Shodan < Formula
 
   depends_on "python-certifi"
   depends_on "python-click"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -74,7 +73,15 @@ class Shodan < Formula
     sha256 "de810bf328c6a4550f4ffd6b0b34972aeb7ffcf40f3d285a0413734f9b63a929"
   end
 
+  # Drop setuptools dep
+  # https://github.com/achillean/shodan-python/pull/209
+  patch do
+    url "https://github.com/achillean/shodan-python/commit/a99fbf53139bad62fe5ba8f41ac130d5212cbf71.patch?full_index=1"
+    sha256 "3f674707548497ea79c760697e4cd44afe0e0df4433b3b49af8ea3637903acd7"
+  end
+
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 
