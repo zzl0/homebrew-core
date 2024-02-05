@@ -19,12 +19,11 @@ class VpnSlice < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1c9ffddb15031d6e821823f58baaf7d855da147d7b1f7f50e7269ecaaeb12c6"
   end
 
-  depends_on "python-setuptools"
   depends_on "python@3.12"
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
-    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
+    url "https://files.pythonhosted.org/packages/65/51/fbffab4071afa789e515421e5749146beff65b3d371ff30d861e85587306/dnspython-2.5.0.tar.gz"
+    sha256 "a0034815a59ba9ae888946be7ccca8f7c157b286f8455b379c692efb51022a15"
   end
 
   resource "setproctitle" do
@@ -32,14 +31,21 @@ class VpnSlice < Formula
     sha256 "c913e151e7ea01567837ff037a23ca8740192880198b7fbb90b16d181607caae"
   end
 
+  # Drop setuptools dep
+  # https://github.com/dlenski/vpn-slice/pull/149
+  patch do
+    url "https://github.com/dlenski/vpn-slice/commit/5d0c48230854ffed5042192d921d8d97fbe427be.patch?full_index=1"
+    sha256 "0ae3a54d14f1be373478820de2c774861dd97f9ae156fef21d27c76cee157951"
+  end
+
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 
   test do
     # vpn-slice needs root/sudo credentials
-    output = `#{bin}/vpn-slice 192.168.0.0/24 2>&1`
+    output = shell_output("#{bin}/vpn-slice 192.168.0.0/24 2>&1", 1)
     assert_match "Cannot read/write /etc/hosts", output
-    assert_equal 1, $CHILD_STATUS.exitstatus
   end
 end
