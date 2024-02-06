@@ -8,8 +8,7 @@ class Sloc < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f2fffe38885f7cebab2d105c1dc8492bdfd9a7b8b02a7ae2cc03ad35f46066f5"
+    sha256 cellar: :any_skip_relocation, all: "401c79fd025169082d6f2a07f7855dc67af62872f54bc7d22f0ec59aeef416fe"
   end
 
   depends_on "node"
