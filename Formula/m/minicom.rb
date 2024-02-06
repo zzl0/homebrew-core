@@ -1,8 +1,8 @@
 class Minicom < Formula
   desc "Menu-driven communications program"
   homepage "https://packages.debian.org/sid/minicom"
-  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.8.orig.tar.bz2"
-  sha256 "38cea30913a20349326ff3f1763ee1512b7b41601c24f065f365e18e9db0beba"
+  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.9.orig.tar.bz2"
+  sha256 "9efbb6458140e5a0de445613f0e76bcf12cbf7a9892b2f53e075c2e7beaba86c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -64,6 +64,6 @@ class Minicom < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/minicom -v", 1)
+    assert_match version.to_s, shell_output("#{bin}/minicom -v")
   end
 end
