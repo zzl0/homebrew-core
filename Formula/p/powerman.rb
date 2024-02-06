@@ -1,18 +1,9 @@
 class Powerman < Formula
   desc "Control (remotely and in parallel) switched power distribution units"
   homepage "https://github.com/chaos/powerman"
+  url "https://github.com/chaos/powerman/releases/download/v2.4.0/powerman-2.4.0.tar.gz"
+  sha256 "ff5f66285e1d952b4dbcb9543ef7969bb4abb464276aaecff949f629b72da605"
   license "GPL-2.0-or-later"
-
-  stable do
-    url "https://github.com/chaos/powerman/releases/download/v2.3.27/powerman-2.3.27.tar.gz"
-    sha256 "1575f0c2cc49ba14482582b9bbba19e95496434f95d52de6ad2412e66200d2d8"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   bottle do
     sha256 arm64_sonoma:   "fd35a442ecd342e00a4c09e0c29f49eefea4b07e08756742ab5af006dbc77a29"
@@ -36,6 +27,9 @@ class Powerman < Formula
   end
 
   depends_on "curl"
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
     system "./autogen.sh" if build.head?
