@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.2.4.tar.gz"
-  sha256 "1a2c75e9447380ff7242ae6642f1c8c8ccaf89049fcd8722608be6ac1fc6b4d0"
+  url "https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "1cdb838f679163e2759e05e423bf0f30c932205aea2910496bf29b3bb523c06a"
   license "Apache-2.0"
 
   livecheck do
@@ -21,7 +21,7 @@ class Micronaut < Formula
   end
 
   depends_on "gradle" => :build
-  # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
+  # jdk21 support issue, https://github.com/micronaut-projects/micronaut-core/issues/10046
   depends_on "openjdk@17"
 
   def install
