@@ -1,8 +1,8 @@
 class Proxytunnel < Formula
   desc "Create TCP tunnels through HTTPS proxies"
   homepage "https://github.com/proxytunnel/proxytunnel"
-  url "https://github.com/proxytunnel/proxytunnel/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "76091c8d6161c73ad02f25bee26396bb6aa45422156ee7b63f46128fa8b39f18"
+  url "https://github.com/proxytunnel/proxytunnel/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "acc111ba4ef47a61878eb480636941add36edb38defae22dd54288bcf036cdc4"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
