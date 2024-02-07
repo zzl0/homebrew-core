@@ -22,11 +22,7 @@ class Axel < Formula
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
     depends_on "gawk" => :build
-
-    resource "txt2man" do
-      url "https://github.com/mvertes/txt2man/archive/refs/tags/txt2man-1.7.1.tar.gz"
-      sha256 "4d9b1bfa2b7a5265b4e5cb3aebc1078323b029aa961b6836d8f96aba6a9e434d"
-    end
+    depends_on "txt2man" => :build
   end
 
   depends_on "pkg-config" => :build
@@ -34,11 +30,7 @@ class Axel < Formula
   depends_on "openssl@3"
 
   def install
-    if build.head?
-      resource("txt2man").stage { (buildpath/"txt2man").install "txt2man" }
-      ENV.prepend_path "PATH", buildpath/"txt2man"
-      system "autoreconf", "--force", "--install", "--verbose"
-    end
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}"
