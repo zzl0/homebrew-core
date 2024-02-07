@@ -1,8 +1,8 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https://tavianator.com/projects/bfs.html"
-  url "https://github.com/tavianator/bfs/archive/refs/tags/3.0.4.tar.gz"
-  sha256 "7196f5a624871c91ad051752ea21043c198a875189e08c70ab3167567a72889d"
+  url "https://github.com/tavianator/bfs/archive/refs/tags/3.1.tar.gz"
+  sha256 "aa6a94231915d3d37e5dd62d194cb58a575a8f45270020f2bdd5ab41e31d1492"
   license "0BSD"
 
   bottle do
@@ -24,6 +24,7 @@ class Bfs < Formula
   on_linux do
     depends_on "acl"
     depends_on "libcap"
+    depends_on "liburing"
   end
 
   def install
