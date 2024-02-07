@@ -11,7 +11,7 @@ class Ddcutil < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "451f85c8d05f51ae3a14188749f4ccec58db5788c838f5cf9a1cebbb7f9fac63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f5370904f0c4e81282f5b52851fc28774c508ee71b3f019e153e416d50f7ec0"
   end
 
   depends_on "pkg-config" => :build
