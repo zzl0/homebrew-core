@@ -1,8 +1,8 @@
 class Numactl < Formula
   desc "NUMA support for Linux"
   homepage "https://github.com/numactl/numactl"
-  url "https://github.com/numactl/numactl/releases/download/v2.0.17/numactl-2.0.17.tar.gz"
-  sha256 "8824ddd529a6f935dc2670bba6f52fb0f605f9f48e1176f69d6b7e48aad8cb27"
+  url "https://github.com/numactl/numactl/releases/download/v2.0.18/numactl-2.0.18.tar.gz"
+  sha256 "b4fc0956317680579992d7815bc43d0538960dc73aa1dd8ca7e3806e30bc1274"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", :public_domain, :cannot_represent]
 
   bottle do
