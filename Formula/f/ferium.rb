@@ -1,8 +1,8 @@
 class Ferium < Formula
   desc "Fast and multi-source CLI program for managing Minecraft mods and modpacks"
   homepage "https://github.com/gorilla-devs/ferium"
-  url "https://github.com/gorilla-devs/ferium/archive/refs/tags/v4.5.0.tar.gz"
-  sha256 "c9b54673a494cecabfc62a48d03d504b6fea00af1b749c3ccb210021f8528bf0"
+  url "https://github.com/gorilla-devs/ferium/archive/refs/tags/v4.5.1.tar.gz"
+  sha256 "b337f0a5884f1e1f6786417914e052ca08fea7e946e6977ccb68abe4fbcf09ee"
   license "MPL-2.0"
   head "https://github.com/gorilla-devs/ferium.git", branch: "main"
 
