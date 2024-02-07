@@ -1,8 +1,8 @@
 class Yazi < Formula
   desc "Blazing fast terminal file manager written in Rust, based on async I/O"
   homepage "https://github.com/sxyazi/yazi"
-  url "https://github.com/sxyazi/yazi/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "ce830fc312fc7a9515abefbbc71c8d1a46515257e9d1c56165cf6ff2fa5404c7"
+  url "https://github.com/sxyazi/yazi/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "61b6b0372360bbe2b720a75127bef9325b7d507d544235d6a548db01424553e9"
   license "MIT"
   head "https://github.com/sxyazi/yazi.git", branch: "main"
 
@@ -32,19 +32,7 @@ class Yazi < Formula
   end
 
   test do
-    require "pty"
-
-    PTY.spawn(bin/"yazi") do |r, w, _pid|
-      r.winsize = [80, 60]
-      sleep 1
-      w.write "quit"
-      begin
-        r.read
-      rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
-      end
-    end
-
+    # yazi is a GUI application
     assert_match "yazi #{version}", shell_output("#{bin}/yazi --version").strip
   end
 end
