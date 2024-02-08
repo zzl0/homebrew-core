@@ -97,6 +97,7 @@ env:
     ast-grep
     astgen
     astro
+    astyle
     asuka
     asymptote
     asyncapi
@@ -118,6 +119,7 @@ env:
     aws-sso-cli
     awscli
     awscli@1
+    axel
     azcopy
     b2-tools
     b3sum
@@ -219,6 +221,7 @@ env:
     cargo-edit
     cargo-generate
     cargo-instruments
+    cargo-llvm-cov
     cargo-llvm-lines
     cargo-make
     cargo-nextest
@@ -283,6 +286,7 @@ env:
     clarinet
     clazy
     clhep
+    cli11
     cli53
     clickhouse-cpp
     cliclick
@@ -359,8 +363,11 @@ env:
     cromwell
     crowdin
     crun
+    cryptol
     cryptominisat
     crystal
+    crystalline
+    csfml
     css-crush
     csvq
     csvtk
@@ -519,6 +526,7 @@ env:
     embulk
     emqx
     emscripten
+    enchant
     entr
     envconsul
     envd
@@ -557,30 +565,43 @@ env:
     fastnetmon
     fastp
     fastqc
+    faudio
     faust
+    fblog
     fclones
     fd
     fdroidcl
+    fdroidserver
+    feh
     felinks
     fend
     fennel
+    ferium
     feroxbuster
+    ffsend
     ffuf
     fheroes2
     fig2dev
     filebeat
     findent
     findomain
+    firebase-cli
+    firefoxpwa
     fisher
     flac
     flank
     flann
+    flarectl
     flashrom
     flatbuffers
     fleet-cli
     flint
     flix
+    flow-cli
     fluent-bit
+    flume
+    flyway
+    fmt
     fn
     fnm
     folderify
@@ -609,39 +630,12 @@ env:
     func-e
     functionalplus
     fuse-overlayfs
+    fuseki
+    futhark
     fw
     fwupd
     fx
-    faudio
-    fblog
-    fdroidserver
-    feh
-    fennel
-    feroxbuster
-    ffsend
-    findomain
-    firebase-cli
-    firefoxpwa
-    flac
-    flank
-    flarectl
-    fleet-cli
-    flow-cli
-    fluent-bit
-    flume
-    flyway
-    fmt
-    fn
-    fontforge
-    fop
-    ford
-    fortio
-    frugal
-    fselect
-    func-e
-    fuse-overlayfs
-    fuseki
-    futhark
+    g-ls
     gatsby-cli
     gau
     gdu
@@ -656,6 +650,7 @@ env:
     ginac
     git-annex
     git-cliff
+    git-codereview
     git-delta
     git-lfs
     git-town
@@ -676,6 +671,7 @@ env:
     gnuplot
     go-feature-flag-relay-proxy
     go-md2man
+    goaccess
     goffice
     gofumpt
     gojq
@@ -701,6 +697,7 @@ env:
     grafana
     grafana-agent
     grails
+    greed
     grin
     gromacs
     groovy
@@ -717,6 +714,7 @@ env:
     helm
     helmfile
     helmsman
+    hermit
     hexyl
     hidapi
     himalaya
@@ -728,6 +726,7 @@ env:
     htmlq
     htmltest
     htpdate
+    httm
     httpx
     httpyac
     hyperfine
@@ -753,6 +752,7 @@ env:
     jadx
     jaq
     java-service-wrapper
+    jc
     jena
     jenkins
     jenkins-job-builder
@@ -760,6 +760,7 @@ env:
     jetty
     jfrog-cli
     jhipster
+    jj
     jmeter
     jnethack
     jql
@@ -831,8 +832,10 @@ env:
     libdap
     libepoxy
     libgetdata
+    libgit2@1.6
     libgr
     libgsf
+    libint
     liblinear
     libnfs
     liboqs
@@ -842,6 +845,7 @@ env:
     librespot
     libressl
     libsndfile
+    libxkbfile
     lima
     linkerd
     linode-cli
@@ -859,7 +863,9 @@ env:
     macchina
     mackup
     mage
+    mailpit
     mailutils
+    makedepend
     manifest-tool
     mapcidr
     marked
@@ -872,7 +878,9 @@ env:
     mdbook
     mdcat
     mdzk
+    mediamtx
     meilisearch
+    melange
     melody
     memcached
     mesa
@@ -901,8 +909,10 @@ env:
     muffet
     murex
     mutt
+    mx
     mydumper
     mypy
+    mysqltuner
     naabu
     nagios
     nanoflann
@@ -921,6 +931,7 @@ env:
     netdata
     nethogs
     netlify-cli
+    newman
     newrelic-cli
     newrelic-infra-agent
     nfpm
@@ -930,8 +941,10 @@ env:
     notcurses
     nsq
     nuclei
+    numactl
     numcpp
     nushell
+    nvc
     oauth2_proxy
     oauth2c
     ocaml-findlib
@@ -948,6 +961,7 @@ env:
     ooniprobe
     opa
     openiothub-server
+    openjph
     openrtsp
     opensearch
     openvdb
@@ -956,6 +970,7 @@ env:
     or-tools
     oras
     orc-tools
+    organize-tool
     orientdb
     orocos-kdl
     ortp
@@ -968,9 +983,11 @@ env:
     passenger
     patchelf
     payara
+    pdal
     pdftk-java
     pdm
     pdnsrec
+    pfetch-rs
     pgbadger
     pgbouncer
     pgloader
@@ -985,6 +1002,8 @@ env:
     picard-tools
     pig
     pillow
+    pipenv
+    pkgconf
     plantuml
     plow
     pmd
@@ -999,21 +1018,31 @@ env:
     prestodb
     principalmapper
     procs
+    prometheus-cpp
     protoc-gen-go-grpc
+    proxytunnel
+    prqlc
+    prr
     psalm
     pstoedit
+    ptpython
     pueue
+    purescript
     pushpin
     pwntools
     py-spy
     pyflow
     pyoxidizer
+    pyright
+    python-cli-helpers
+    qbs
     qd
     qjackctl
     qpid-proton
     questdb
     quick-lint-js
     quicktype
+    qxmpp
     radamsa
     rancher-cli
     rav1e
@@ -1025,8 +1054,11 @@ env:
     recode
     regina-rexx
     regula
+    remind
     reminiscence
     reposurgeon
+    restic
+    resvg
     revive
     rhit
     riemann
@@ -1036,6 +1068,7 @@ env:
     rover
     rpg-cli
     rqlite
+    rswift
     rubberband
     rustup-init
     s-search
@@ -1043,6 +1076,7 @@ env:
     saml2aws
     sbt
     scala
+    sccache
     scorecard
     scotch
     scrcpy
@@ -1058,6 +1092,7 @@ env:
     ser2net
     serverless
     shadowenv
+    shadowsocks-rust
     sheldon
     shellharden
     shellz
@@ -1072,10 +1107,13 @@ env:
     slackcat
     sleuthkit
     slides
+    slirp4netns
+    sloc
     smimesign
     sn0int
     sniffer
     sniffglue
+    snowflake
     snyk-cli
     solana
     sollya
@@ -1089,6 +1127,7 @@ env:
     sqlc
     sqlmap
     sqlx-cli
+    squid
     sshs
     sslyze
     stanford-corenlp
@@ -1117,6 +1156,7 @@ env:
     swagger2markup-cli
     syncthing
     sysdig
+    talhelper
     talisman
     tanka
     tcsh
@@ -1140,11 +1180,14 @@ env:
     testkube
     tfsec
     thanos
+    theharvester
     thrift
     tika
     tile38
     timg
+    tippecanoe
     tm
+    tmux-xpanes
     toast
     tomcat
     tomcat-native
@@ -1165,6 +1208,7 @@ env:
     tz
     uni
     universal-ctags
+    usb
     v2ray
     vala
     valabind
@@ -1209,14 +1253,17 @@ env:
     wiremock-standalone
     wolfssl
     woodpecker-cli
+    wumpus
     wxwidgets
     xcbeautify
     xclogparser
+    xdg-ninja
     xdpyinfo
     xeol
     xerces-c
     xgboost
     xh
+    xkeyboardconfig
     xplr
     xray
     yaegi
@@ -1229,6 +1276,7 @@ env:
     zbctl
     zellij
     zenith
+    zf
     znapzend
     zola
     zookeeper
