@@ -7,14 +7,13 @@ class Teip < Formula
   head "https://github.com/greymd/teip.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "b8236a3ce68ab2062bf453517e5eeee3ca58edd543db01c1065bab68913d5419"
-    sha256 cellar: :any,                 arm64_ventura:  "3318cc516cddaa7ab4a31c63edfe1db4a1e911d846c06fa47f582af4b4b36edb"
-    sha256 cellar: :any,                 arm64_monterey: "88b1bd22cd5f91736a977181d132ce58aeac3ddbad78a72fb58d50cf8b49e45a"
-    sha256 cellar: :any,                 sonoma:         "8e469e75ba52cafb414cda79b1577d6a7a0092a97cfc3a192e8546fd5695c417"
-    sha256 cellar: :any,                 ventura:        "1fa2d3d2b009360140e0990c12558ce68843793a560443aed94506b0ac6a1745"
-    sha256 cellar: :any,                 monterey:       "b4c73b82a3010e8c2307fbbf1f1cb82cecdbb417654c2be13f39b113d91ed9bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "945a2668be5d0d4d6a81dbab65a76cf8bd6ba7c12708020623cdee8b4cc24b96"
+    sha256 cellar: :any,                 arm64_sonoma:   "96ca6b04fc906c04cc05a0cc8a5beedc3a277a296403eb0d4d9f73a5bac30937"
+    sha256 cellar: :any,                 arm64_ventura:  "cb341c1fc5e81ed1ed1f1002d12317f3acc1d5758bcb357759842b25956a02e6"
+    sha256 cellar: :any,                 arm64_monterey: "4c76498ece6924e88c723d5c2977b9c0dcba7b297b49370983f4b0ca24d42037"
+    sha256 cellar: :any,                 sonoma:         "1a5b47217756090ea94f8b355d1f6df605c474c24ef5d039ea3768f37a065055"
+    sha256 cellar: :any,                 ventura:        "52b3135da21a531d14d1253fba9b877abc20a7c08dae9441c0b12950f61f3375"
+    sha256 cellar: :any,                 monterey:       "f2b205f63cbbc61b99ccc5807e26dd3c0c23c41b540468400b93db8687a540e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e2dae639a3ca2ac77b99afea4a2783ac4fd409a2a8cc95a7746cd7e69ef779a"
   end
 
   depends_on "pkg-config" => :build
