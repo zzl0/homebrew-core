@@ -11,13 +11,13 @@ class WpCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dace929d5d39a8582f3b590acbbcafb8066381e8b2e3332b16d5f330e0f1d737"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dace929d5d39a8582f3b590acbbcafb8066381e8b2e3332b16d5f330e0f1d737"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dace929d5d39a8582f3b590acbbcafb8066381e8b2e3332b16d5f330e0f1d737"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd21081f212ac6544e0d1def23cbeff4119e2d492fcf66e9a075aa2a574e0422"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd21081f212ac6544e0d1def23cbeff4119e2d492fcf66e9a075aa2a574e0422"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd21081f212ac6544e0d1def23cbeff4119e2d492fcf66e9a075aa2a574e0422"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dace929d5d39a8582f3b590acbbcafb8066381e8b2e3332b16d5f330e0f1d737"
   end
 
   depends_on "php"
