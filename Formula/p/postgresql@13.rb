@@ -11,13 +11,13 @@ class PostgresqlAT13 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3f5726702af2f5445bb2a5aa275fff8a3af9ce95ce5a0d522987cd5f7c3a0fe8"
-    sha256 arm64_ventura:  "9d12d6a9a2badd16851b66b2518d0ac6f0b6645cc2a823da180fcef99cdb8215"
-    sha256 arm64_monterey: "b699aa5abdc5bbf6927bafc45299be5c247517d65236ae8e3400fd8a69f1d8ec"
-    sha256 sonoma:         "24b6e70b0fdf274c4ab0d1d050786d18ef86458fcbb869690fe3a101d14ea413"
-    sha256 ventura:        "2ba0f422a2f9ad6f97518614893fe62770cd29b9a45d09b32548f46c3b1f678d"
-    sha256 monterey:       "76d344edc661da3fb57d08b089a648803d8d5b58bf37d7e34e48869c27515481"
-    sha256 x86_64_linux:   "a431b819d9d09707e5ca0b507000b77462af7091a5fbdd0bb40b1e7e5a20b2a6"
+    sha256 arm64_sonoma:   "9d14352d3c7dc7e76b48f3b811dd42de415166357c748560ffa90b5ccd709d66"
+    sha256 arm64_ventura:  "55c74d27290df58cdee5b2d986abe47fa41bf7115e59e07d62e272fd93590c69"
+    sha256 arm64_monterey: "b9c40f385d15c5564b4b8ff83d0de246daa6c8a708e6ea217ccba4748d4e13c4"
+    sha256 sonoma:         "2b2399ffb0c272d196ad78072a03619caeb2c0a7636169e7655a4efb35fa90f7"
+    sha256 ventura:        "7636e596e7c3735efa7af3a83611513181c44c37641707e7eae42abf6ba4b39f"
+    sha256 monterey:       "7599bbd43b4b56d7da0e4d17ea8c6a4b4dea94a1e6c9c57b8bb061d66f67e282"
+    sha256 x86_64_linux:   "de912556b8370a896301975b4ada52cd0892c0739a82c6c7273d2f2f14cea21c"
   end
 
   keg_only :versioned_formula
