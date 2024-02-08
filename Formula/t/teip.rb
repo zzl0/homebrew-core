@@ -1,8 +1,8 @@
 class Teip < Formula
   desc 'Masking tape to help commands "do one thing well"'
   homepage "https://github.com/greymd/teip"
-  url "https://github.com/greymd/teip/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "4c39466613f39d27fa22ae2a6309ac732ea94fdbc8711ecd4149fc1ecdfbaedf"
+  url "https://github.com/greymd/teip/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "29147678f3828a3ed83c0462ec8b300307cbe8833ce94ed46016a5bfa3f9b3a5"
   license "MIT"
   head "https://github.com/greymd/teip.git", branch: "main"
 
@@ -17,29 +17,13 @@ class Teip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "945a2668be5d0d4d6a81dbab65a76cf8bd6ba7c12708020623cdee8b4cc24b96"
   end
 
-  # Use `llvm@15` to work around build failure with Clang 16 described in
-  # https://github.com/rust-lang/rust-bindgen/issues/2312.
-  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
-  # updated to 0.62.0 or newer. There is a check in the `install` method.
-  depends_on "llvm@15" => :build # for libclang
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
 
+  uses_from_macos "llvm" => :build # for libclang
+
   def install
-    bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
-    )
-    if bindgen_version >= "0.62.0"
-      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
-           'this check and try switching to `uses_from_macos "llvm" => :build`.'
-    end
-
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
-
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", "--features", "oniguruma", *std_cargo_args
