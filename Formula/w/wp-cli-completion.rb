@@ -1,8 +1,8 @@
 class WpCliCompletion < Formula
   desc "Bash completion for Wpcli"
   homepage "https://github.com/wp-cli/wp-cli"
-  url "https://github.com/wp-cli/wp-cli/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "442e70e4ab4e451b5316c178394fb2e54d1dbebabdc875be7c5a66965f370a12"
+  url "https://github.com/wp-cli/wp-cli/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "13ac74b1d55c20a365debe7866dd2bd287f2c7f43b0bd1162d114c1216873de7"
   license "MIT"
   head "https://github.com/wp-cli/wp-cli.git", branch: "main"
 
