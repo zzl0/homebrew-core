@@ -1,8 +1,8 @@
 class GLs < Formula
   desc "Powerful and cross-platform ls"
   homepage "https://g.equationzhao.space"
-  url "https://github.com/Equationzhao/g/archive/refs/tags/v0.25.4.tar.gz"
-  sha256 "e65b805911aea06a5de65cddef6ee3c43ae755b4b95e930fa9461a336c819647"
+  url "https://github.com/Equationzhao/g/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "d0f86bf45ecbaa12d6f3e5cf73686081025c4adfd6251792e751a85f203bcf2f"
   license "MIT"
   head "https://github.com/Equationzhao/g.git", branch: "master"
 
@@ -22,6 +22,7 @@ class GLs < Formula
     system "go", "build", *std_go_args(output: bin/"g", ldflags: "-s -w")
 
     man1.install buildpath.glob("man/*.1.gz")
+    zsh_completion.install "completions/zsh/_g"
   end
 
   test do
