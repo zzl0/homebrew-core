@@ -9,13 +9,13 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55a79849514f16ef2387054bcf6353571e89aef75130f6571b2cd1a45e834a79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f523dd775af8500f79975e8a4aea210e33564e7aca79f856d20c37f8bf969450"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1be48eef66877c7ceab824a66f59a9d64ffeaaa91c266f0535658c724d9b6793"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f487bbd1ff41247e22d0f3b1bb474b4600848c24ead3dd9f042e7624217f259"
-    sha256 cellar: :any_skip_relocation, ventura:        "12f659b7401ce73cdac9f08d61d6263ad0d6395717bfa60cf9c949f13a16d7f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "41422eca7be819304015297e107b794d49d7a7a63da87069a0139e9c21359815"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e746f8b4b57430f683ef7afd58872a62d2ec2588f4d1bae338c587244dc96e01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67f6e19c6f2c2ba539b1d22abbaf6479c7683adf7fa79e7f5c180c1183e71c02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a42cf5de7de2075631ca6ea34da5c9455d25af005ef112fe334095e0596c05fb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "572ebaf8856c768c5d10d43cd8828633f366a3c08c6e15d013863e3eb1a7d251"
+    sha256 cellar: :any_skip_relocation, sonoma:         "525ca7a0fe99389c1f418630e983d719cc002f5ea282e0fc159b68cf1c41279f"
+    sha256 cellar: :any_skip_relocation, ventura:        "87d3b76a9ecf4eeeee18d727e127b669b75652c7ac525478e8c5fca4e82a99f7"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a8fc99e1180ceda0cd05fc0505f6b2587e43a434e4783681aa91f8b96ce089d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79dc4a5dbe07379fd6c4c9ded464df087b040b992ee596227b8a96946f519025"
   end
 
   depends_on "python-setuptools" => :build
