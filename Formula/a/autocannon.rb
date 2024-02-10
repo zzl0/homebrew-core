@@ -8,7 +8,7 @@ class Autocannon < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "06b9f21e1f6f803d43241584b676e7aee3e55cac0c2456bec157eceb4d60a2ca"
+    sha256 cellar: :any_skip_relocation, all: "0c7a7bf16826e0b08b168b93a5d73fc798bf1e5e02ab8b7dffa05d3bd767c207"
   end
 
   depends_on "node"
