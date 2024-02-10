@@ -3,10 +3,9 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/88/e8/4330d06f2b00ad3a9c66e07a68fe23f70233a4e7e1aaba5a738a93d2cb5d/pre_commit-3.6.0.tar.gz"
-  sha256 "d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d"
+  url "https://files.pythonhosted.org/packages/1f/a7/37bb57af1681e945c0f4237a6f2da562bc54dd42db103ee9f6b41a958289/pre_commit-3.6.1.tar.gz"
+  sha256 "c90961d8aa706f75d60935aba09469a6b0bcb8345f127c3fbee4bdc5f114cf4b"
   license "MIT"
-  revision 1
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
@@ -37,6 +36,11 @@ class PreCommit < Formula
   resource "nodeenv" do
     url "https://files.pythonhosted.org/packages/48/92/8e83a37d3f4e73c157f9fcf9fb98ca39bd94701a469dc093b34dca31df65/nodeenv-1.8.0.tar.gz"
     sha256 "d51e0c37e64fbf47d017feac3145cdbb58836d7eee8c6f6d3b6880c5456227d2"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   def python3
