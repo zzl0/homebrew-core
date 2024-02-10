@@ -6,7 +6,7 @@ class Crun < Formula
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "69e5a89f88d29757b2ac5fa8d882f7374d603dfe1ba64a039eb224593fa063bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0dffe88e53e93635da81f807c3f576782b285f812b0fbfed1b0f23a1795f7f84"
   end
 
   depends_on "autoconf" => :build
