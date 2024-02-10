@@ -1,8 +1,8 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
-  homepage "https://github.com/budimanjojo/talhelper"
-  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "9e496f8f42818123f413869b03f84898f10e5f46992e3de48ded89da339f5f3b"
+  homepage "https://budimanjojo.github.io/talhelper/latest/"
+  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "9ae040c6dcd07e2874c0d67cc1fefc104a9812bc4693b1bfb0f1b0501a64da0d"
   license "BSD-3-Clause"
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
