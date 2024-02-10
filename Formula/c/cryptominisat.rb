@@ -1,12 +1,11 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://github.com/msoos/cryptominisat/archive/refs/tags/5.11.15.tar.gz"
-  sha256 "b2ee17e7a5c6e6843420230215b6c70923b6955f3bef1e443c40555fc59510b0"
+  url "https://github.com/msoos/cryptominisat/archive/refs/tags/5.11.21.tar.gz"
+  sha256 "288fd53d801909af797c72023361a75af3229d1806dbc87a0fcda18f5e03763b"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
